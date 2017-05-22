@@ -16,6 +16,7 @@ npm run dev
 
 - The file system is your routes. Drop a new file in pages and it becomes a route
 - Automatic code splitting at route level
+- Does away with alot of tooling configuration boilerplate
 
 
 ## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/27)
