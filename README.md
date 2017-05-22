@@ -29,6 +29,7 @@ npm run dev
 
 ## Testing with [Jest](https://facebook.github.io/jest/)
 
+## [Offline access (PWA) with service worker](https://developers.google.com/web/progressive-web-apps/) and localForage (https://github.com/localForage/localForage)
 
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download)):
 
