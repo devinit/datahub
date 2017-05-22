@@ -21,7 +21,7 @@ npm run dev
 ## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/27)
 - Types make code more mantainable and easier to reason about.
 
-## state management and data fetching with [apollo](https://github.com/apollographql/apollo-client) and [redux](https://github.com/reactjs/redux)
+## State management and data fetching with [apollo](https://github.com/apollographql/apollo-client) and [redux](https://github.com/reactjs/redux)
 - Apollo graphql integration takes away alot of data fetching boilerplate commonly found in react apps. 
 - Apollo graphql also alows for effeicient data fetching through fewer network requests.
 
@@ -29,7 +29,10 @@ npm run dev
 
 ## Testing with [Jest](https://facebook.github.io/jest/)
 
+## Styling with [semantic UI](https://github.com/Semantic-Org/Semantic-UI-React) and [glamorous](https://github.com/paypal/glamorous)
+
 ## [Offline access (PWA) with service worker](https://developers.google.com/web/progressive-web-apps/) and [localForage](https://github.com/localForage/localForage)
+
 
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download)):
 
