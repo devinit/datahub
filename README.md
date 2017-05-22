@@ -27,6 +27,7 @@ npm run dev
 
 ## [Atomic react design component development](http://bradfrost.com/blog/post/atomic-web-design/) with [storybook](https://storybooks.js.org/)
 
+## Testing with [Jest](https://facebook.github.io/jest/)
 
 
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download)):
