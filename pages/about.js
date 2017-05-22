@@ -1,6 +1,5 @@
-import App from '../components/App'
 import { rehydrate } from 'glamor'
-import GenericTemplate from '../components/templates/Generic'
+import App from '../components/templates/Generic'
 
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
@@ -10,7 +9,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default (props) => (
-  <GenericTemplate pathName={props.url.pathname}>
+  <App pathName={props.url.pathname}>
     <article>
       <h1>The Idea Behind This Example</h1>
       <p>
@@ -26,5 +25,5 @@ export default (props) => (
         This example relies on <a href='http://graph.cool'>graph.cool</a> for its GraphQL backend.
       </p>
     </article>
-  </GenericTemplate>
+  </App>
 )

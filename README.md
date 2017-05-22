@@ -15,7 +15,7 @@ npm run dev
 ## why build on top of next
 
 
-## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/27)
+## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html)
 
 
 ## state management and data fetching with apollo
