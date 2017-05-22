@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../organisms/Header'
+import Header from '../../organisms/Header'
 import glamorous from 'glamorous'
 
 
 
 export default ({children, pathName}) => {
   const mainStyles = {
-    backgroundColor: 'white',
+    backgroundColor: 'yellow',
     color: 'cornflowerblue',
     border: '1px solid lightgreen',
     borderRight: 'none',
@@ -17,11 +17,11 @@ export default ({children, pathName}) => {
     padding: `1rem 0.5rem`
   }
 
-  const Main = glamorous.div(basicStyles)
+  const Main = glamorous.div(mainStyles)
 
   return (
     <div>
-      <Header path = {pathName} />
+      <Header pathName = {pathName} />
       <main>
         {children}
       </main>

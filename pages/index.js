@@ -1,8 +1,7 @@
-import App from '../components/templates/App'
 import Submit from '../components/organisms/Submit'
 import PostList from '../components/organisms/PostList'
 import { rehydrate } from 'glamor'
-import GenericTemplate from '../components/templates/Generic'
+import App from '../components/templates/Generic'
 import withData from '../lib/withData'
 
 // Adds server generated styles to glamor cache.
@@ -14,9 +13,9 @@ if (typeof window !== 'undefined') {
 
 export default withData((props) => {
   return (
-    <GenericTemplate pathName={props.url.pathname}>
+    <App pathName={props.url.pathname}>
       <Submit />
       <PostList />
-    </GenericTemplate>
+    </App>
   )
 })

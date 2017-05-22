@@ -1,5 +1,5 @@
 import { gql, graphql } from 'react-apollo'
-import PostUpvoter from './PostUpvoter'
+import PostUpvoter from '../PostUpvoter'
 
 const POSTS_PER_PAGE = 10
 
