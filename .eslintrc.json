@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "airbnb-flow"],
   "plugins": [
     "react",
     "jsx-a11y",
