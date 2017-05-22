@@ -19,7 +19,7 @@ npm run dev
 - Does away with alot of tooling configuration boilerplate
 
 
-## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html#/27)
+## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html)
 - Types make code more mantainable and easier to reason about.
 
 
