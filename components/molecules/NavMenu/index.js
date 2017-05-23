@@ -10,7 +10,7 @@ const StyledHeader = glamorous.div({
   padding: 16,
 });
 
-const NavMenu = ({links, current}) => {
+const NavMenu = ({links, current }) => {
   return (
     <StyledHeader>
       { links
