@@ -22,6 +22,7 @@
     "react/forbid-prop-types": 0,
     "react/no-unused-prop-types": 0,
     "flowtype-errors/show-errors": 2,
+    "flowtype-errors/enforce-min-coverage": [2, 50],
     "react/jsx-filename-extension": [2, {
       "extensions": [".js", ".jsx"]
     }]
