@@ -9,7 +9,7 @@
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "jest",
-    "coverage": "npm test -- --coverage",
+    "codecov": "jest && codecov",
     "storybook": "start-storybook -p 6006 ",
     "build-storybook": "build-storybook -o .out"
   },
@@ -47,5 +47,9 @@
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
     "sinon": "^2.3.1"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }

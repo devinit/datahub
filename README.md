@@ -1,7 +1,8 @@
 [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/devinit/datahub)
 [![Build Status](https://travis-ci.org/devinit/datahub.svg?branch=master)](https://travis-ci.org/devinit/datahub)
-[![Coverage Status](https://coveralls.io/repos/github/devinit/datahub/badge.svg?branch=master)](https://coveralls.io/github/devinit/datahub?branch=master)
-[![Dependency Status](https://david-dm.org/devinit/datahub.svg)](https://david-dm.org/devinit/datahub)
+![Code Climate](https://codeclimate.com/github/devinit/datahub.svg)
+[![codecov](https://codecov.io/gh/devinit/datahub/branch/master/graph/badge.svg)](https://codecov.io/gh/devinit/datahub)
+[![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 [![devDependency Status](https://david-dm.org/devinit/datahub/dev-status.svg)](https://david-dm.org/devinit/datahub?type=dev)
 
 
