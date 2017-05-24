@@ -3,7 +3,7 @@
 ![Code Climate](https://codeclimate.com/github/devinit/datahub.svg)
 [![codecov](https://codecov.io/gh/devinit/datahub/branch/master/graph/badge.svg)](https://codecov.io/gh/devinit/datahub)
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
-[![devDependency Status](https://david-dm.org/devinit/datahub/dev-status.svg)](https://david-dm.org/devinit/datahub?type=dev)
+
 
 
 # DataHub - Next
