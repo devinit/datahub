@@ -1,10 +1,15 @@
-import React from 'react'
-import Header from '../../organisms/Header'
-import glamorous from 'glamorous'
+// @flow
+import React from 'react';
+import glamorous from 'glamorous';
+import type { Element } from 'react';
+import Header from '../../organisms/Header';
 
+type Props = {
+  children?: Element<any>,
+  pathName: string
+};
 
-
-export default ({children, pathName}) => {
+export default ({ children, pathName }: Props) => {
   const mainStyles = {
     backgroundColor: 'yellow',
     color: 'cornflowerblue',
@@ -13,18 +18,18 @@ export default ({children, pathName}) => {
     borderBottom: 'none',
     boxShadow: '5px 5px 0 0 lightgreen, 10px 10px 0 0 lightyellow',
     transition: 'all 0.1s linear',
-    margin: `3rem 0`,
-    padding: `1rem 0.5rem`
-  }
+    margin: '3rem 0',
+    padding: '1rem 0.5rem',
+  };
 
-  const Main = glamorous.div(mainStyles)
+  const Main = glamorous.div(mainStyles);
 
   return (
     <div>
-      <Header pathName = {pathName} />
+      <Header pathName={pathName} />
       <main>
         {children}
       </main>
     </div>
-  )
-}
+  );
+};

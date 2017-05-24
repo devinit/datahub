@@ -1,11 +1,18 @@
-import Link from 'next/link'
-import NavTag from '../../atoms/NavTag'
+// @flow
+import Link from 'next/link';
+import React from 'react';
+import NavTag from '../../atoms/NavTag';
 
+type Props = {
+  path: string,
+  pathName: string,
+  isActive: boolean
+};
 
-const NavItem = ({path, pathName, isActive}) => (
-   <Link href={path}>
-      <NavTag isActive = {isActive} size = "small"> {pathName} </NavTag>
+const NavItem = ({ path, pathName, isActive }: Props) => (
+  <Link href={path}>
+    <NavTag isActive={isActive} size="small"> {pathName} </NavTag>
   </Link>
-)
+);
 
 export default NavItem;

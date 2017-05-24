@@ -1,8 +1,12 @@
 [ignore]
-
+.next
+.*/node_modules/.*
+.*/semantic/.*
+.out
 [include]
-
+components
+pages
+lib
 [libs]
-types/
 
 [options]

@@ -8,6 +8,7 @@
 
 # DataHub - Next
 
+This is just primarily the frontend part of the DataHub, to keep things modular the backend will be in a separate repo.
 
 ## How to use
 
@@ -15,7 +16,7 @@ Install it and run:
 
 ```bash
 
-npm install & npm install -g gulp
+npm install & npm install -g gulp flow-typed
 npm run dev
 ```
 ## Development guidelines
@@ -35,8 +36,21 @@ npm run format
 - Does away with a lot of tooling configuration boilerplate
 
 
-## [On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html)
-- Types make code more mantainable and easier to reason about.
+## Flow for types
+
+[On why we chose flow for types](https://djcordhose.github.io/flow-vs-typescript/2016_hhjs.html)
+
+ #### Making flow work well with external libraries
+In oder to get the best out of flow we need type information for external libraries.
+Flow helps with it through the [flow-typed](https://github.com/flowtype/flow-typed) tool
+  >
+  - ```$ npm install -g flow-typed``` (if not installed already)
+  - ```$ flow-typed install ``` -- this installs all the flow type definitions relative to the project
+  - when you add a new Dependency add its types as follows
+  -  ```$ flow-typed install rxjs@5.0.x ```
+
+There are dependencies for which flow-typed has no definitions for those have a look at [flowgen](https://github.com/joarwilk/flowgen) which offers away of transpiling typescript definitions to flow definitions.
+
 
 
 ## State management and data fetching with [apollo](https://github.com/apollographql/apollo-client) and [redux](https://github.com/reactjs/redux)

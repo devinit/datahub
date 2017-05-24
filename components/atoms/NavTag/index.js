@@ -7,7 +7,7 @@ const NavTag = glamorous.a(
   props => ({
     fontSize: props.size === 'big' ? 24 : 16,
     textDecoration: props.isActive ? 'underline' : 'none',
-  })
+  }),
 );
 
 export default NavTag;

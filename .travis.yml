@@ -1,11 +1,11 @@
 language: node_js
 node_js:
   - v7
+install:
+  - yarn
 script:
   - npm run lint
   - npm test -- --coverage
   - npm run build
 cache:
   - yarn
-after_success:
-  - bash <(curl -s https://codecov.io/bash)

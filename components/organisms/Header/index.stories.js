@@ -1,8 +1,5 @@
-import React from 'react'
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Header from '.'
+import Header from '.';
 
-storiesOf('Header', module)
-  .add('default', () => (
-    <Header pathName = 'home'></Header>
-  ));
+storiesOf('Header', module).add('default', () => <Header pathName="home" />);

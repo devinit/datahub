@@ -1,5 +1,12 @@
+// @flow
 import React from 'react';
+import type { Element } from 'react';
 import PropTypes from 'prop-types';
+
+type Props = {
+  children: Element<any>,
+  onClick?: (value: string | void) => void
+}
 
 const buttonStyles = {
   border: '1px solid #eee',
@@ -11,15 +18,11 @@ const buttonStyles = {
   margin: 10,
 };
 
-const Button = ({ children, onClick }) => (
+const Button = ({ children, onClick }: Props) => (
   <button style={buttonStyles} onClick={onClick}>
     {children}
   </button>
 );
 
-Button.propTypes = {
-  children: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-};
 
 export default Button;
