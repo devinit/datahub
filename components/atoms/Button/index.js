@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import type { Element } from 'react';
-import PropTypes from 'prop-types';
+
 
 type Props = {
   children: Element<any>,
