@@ -2,11 +2,13 @@
 import React from 'react';
 import type { Element } from 'react';
 import PropTypes from 'prop-types';
-
-type Props = {
-  children: Element<any>,
-  onClick?: (value: string | void) => void
-}
+import {Button} from 'semantic-ui-react';
+// import '../../../node_modules/semantic-ui/dist/semantic.min.css';
+// import
+// type Props = {
+//   children: Element<any>,
+//   onClick?: (value: string | void) => void
+// }
 
 const buttonStyles = {
   border: '1px solid #eee',
@@ -18,11 +20,14 @@ const buttonStyles = {
   margin: 10,
 };
 
-const Button = ({ children, onClick }: Props) => (
-  <button style={buttonStyles} onClick={onClick}>
-    {children}
-  </button>
-);
+// const button = ({ children, onClick }: Props) => (
+//   <Button style={buttonStyles} onClick={onClick}>
+//     {children}
+//   </Button>
+// );
 
+const button = (props) => (
+  <Button {...props} />
+  );
 
-export default Button;
+export default button;

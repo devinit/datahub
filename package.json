@@ -11,7 +11,8 @@
     "test": "jest",
     "codecov": "jest && codecov",
     "storybook": "start-storybook -p 6006 ",
-    "build-storybook": "build-storybook -o .out"
+    "build-storybook": "build-storybook -o .out",
+    "build-theme": "gulp build --gulpfile ./semantic/gulpfile.js"
   },
   "dependencies": {
     "glamor": "^2.20.25",
