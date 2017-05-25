@@ -2,7 +2,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
-import Header from '../../organisms/Header';
+import Header from '../../organisms/Menu';
 
 type Props = {
   children?: Element<any>,
