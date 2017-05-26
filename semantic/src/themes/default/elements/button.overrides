@@ -6,14 +6,14 @@
 }
 
 .ui.primary.button {
-  background: #e8443a;
-  color: #ffffff;
+  background: @color-red;
+  color: @white;
   border: 1px solid;
   border-color: transparent;
 }
 .ui.primary.button:hover {
   border-color: transparent;
-  background: #e8443a;
+  background: @color-red;
 }
 
 .ui.secondary.button {
@@ -30,14 +30,14 @@
 }
 
 .ui.white.button {
-  background: #ffffff;
-  color: #ffffff;
+  background: @white;
+  color: @white;
   border: 1px solid;
   border-color: transparent;
 }
 .ui.light.button {
   background: lighten(#453f43, 65%);;
-  color: #ffffff;
+  color: @white;
   border: 1px solid;
   border-color: transparent;
 }

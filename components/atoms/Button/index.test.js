@@ -10,9 +10,3 @@ it('renders children when passed in', () => {
   expect(wrapper.contains('Click Me')).toBe(true);
 });
 
-it('simulates click events', () => {
-  const onClick = sinon.spy();
-  const wrapper = shallow(<Button onClick={onClick}>Hello Button</Button>);
-  wrapper.find('button').simulate('click');
-  expect(onClick.callCount).toBe(1);
-});

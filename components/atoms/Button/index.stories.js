@@ -14,4 +14,4 @@ storiesOf('Button', module)
       <Icon name="right arrow" />
     </Button>))
   .add('With Icon and Text', () => <Button>Continue <Icon name="right arrow" /></Button>)
-  .add('with some emoji', () => <Button><span role="img" aria-label="emojis">😀 😎 👍 💯</span></Button>);
+  .add('With some emoji', () => <Button><span role="img" aria-label="emojis">😀 😎 👍 💯</span></Button>);

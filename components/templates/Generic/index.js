@@ -2,7 +2,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
-import Header from '../../organisms/Menu';
+import Menu from '../../organisms/Menu';
 
 type Props = {
   children?: Element<any>,
@@ -26,7 +26,7 @@ export default ({ children, pathName }: Props) => {
 
   return (
     <div>
-      <Header pathName={pathName} />
+      <Menu pathName={pathName} />
       <main>
         {children}
       </main>
