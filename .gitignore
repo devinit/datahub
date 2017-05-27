@@ -1,6 +1,7 @@
 # build output
 dist
 .output
+.out
 .next
 
 # dependencies
@@ -16,3 +17,6 @@ coverage
 # test output
 test/**/out
 .DS_Store
+
+.csslintrc
+yarn.lock
