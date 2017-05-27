@@ -11,7 +11,8 @@
     "test": "BABEL_ENV=test jest",
     "coverage": "BABEL_ENV=test npm test -- --coverage",
     "storybook": "BABEL_ENV=development start-storybook -p 6006 ",
-    "build-storybook": "BABEL_ENV=production build-storybook -o .out"
+    "build-storybook": "BABEL_ENV=production build-storybook -o .out",
+    "build-theme": "gulp build --gulpfile ./semantic/gulpfile.js"
   },
   "dependencies": {
     "glamor": "^2.20.25",
