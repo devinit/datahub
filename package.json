@@ -12,7 +12,8 @@
     "coverage": "BABEL_ENV=test npm test -- --coverage",
     "storybook": "BABEL_ENV=development start-storybook -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -o .out",
-    "build-theme": "gulp build --gulpfile ./semantic/gulpfile.js"
+    "mv-semantic-to-static": "mv ./semantic/dist/semantic.min.css ./static/semantic.min.css && mv ./semantic/dist/themes/default/assets ./static/",
+    "build-theme": "gulp build --gulpfile ./semantic/gulpfile.js &&  npm run mv-semantic-to-static"
   },
   "dependencies": {
     "express": "^4.15.3",

@@ -15,7 +15,6 @@ var
   build        = require('./tasks/build'),
   buildJS      = require('./tasks/build/javascript'),
   buildCSS     = require('./tasks/build/css'),
-  moveCSS      = require('./tasks/build/moveCSS'),
   buildAssets  = require('./tasks/build/assets'),
 
   // utility
