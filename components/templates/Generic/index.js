@@ -26,7 +26,7 @@ export default ({ children, pathName }: Props) => {
 
   return (
     <div>
-      <Menu pathName={pathName} />
+      <Menu />
       <main>
         {children}
       </main>
