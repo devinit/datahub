@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "BABEL_ENV=development node server.js",
     "build": "BABEL_ENV=production next build",
-    "start": "BABEL_ENV=production next start",
+    "start": "BABEL_ENV=production NODE_ENV=production node server",
     "lint": "eslint components lib && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",

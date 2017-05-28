@@ -76,3 +76,7 @@ Development environment
 
 - Advised to use any modern linux OS or MacOS
 - Advised to use NodeJs 7 and above
+
+TODO
+
+- [ ] Reduce service worker pre-cache bundle

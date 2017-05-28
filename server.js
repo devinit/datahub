@@ -16,7 +16,7 @@ app.prepare().then(_ => {
   server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
 
   // static files
-  const rootStaticFiles = ['/robots.txt', '/sitemap.xml', '/favicon.ico'];
+  const rootStaticFiles = ['/robots.txt', '/sitemap.xml', '/favicon.ico', '/manifest.json'];
 
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
