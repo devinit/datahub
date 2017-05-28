@@ -11,7 +11,12 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config:  path.join(__dirname, 'private/.storybook/webpack.config.js')
+        config: {
+          resolve: {
+            extensions: ['.js', '.jsx'],
+            modules: ['node_modules', path.resolve(__dirname, 'private'), path.resolve(__dirname, 'public/semantic')],
+          },
+        }
       }
     }
   },

@@ -16,6 +16,9 @@
     }
   },
   "plugins": [
-    "transform-flow-strip-types"
+    "transform-flow-strip-types",
+    ["module-resolver", {
+      "root": ["./private", "public/semantic"]
+    }]
   ]
 }
