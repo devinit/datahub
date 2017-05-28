@@ -13,13 +13,14 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "**.css"
   - "**.js"
   - "**.jsx"
   - "**.module"
 exclude_paths:
 - node_modules/
+- __mocks__
 - semantic/
+- static/
 - flow-typed/
 - coverage/
 - .next/
