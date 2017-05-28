@@ -18,7 +18,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "glamor": "^2.20.25",
-    "glamorous": "^3.18.0",
+    "glamorous": "^3.19.0",
     "graphql": "^0.10.1",
     "isomorphic-fetch": "^2.2.1",
     "next": "beta",
@@ -26,7 +26,7 @@
     "react-apollo": "^1.1.3",
     "react-dom": "^15.5.4",
     "redux": "^3.6.0",
-    "semantic-ui-react": "^0.68.3"
+    "semantic-ui-react": "^0.68.4"
   },
   "author": "epicallan.al@gmail.com",
   "license": "ISC",

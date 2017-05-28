@@ -35,6 +35,7 @@ npm run format
 - Automatic code splitting at route level
 - Does away with a lot of tooling configuration boilerplate
 
+[if you are wondering why is the file structure is so flat, checkout the linked next issue](https://github.com/zeit/next.js/issues/91)
 
 ## Flow for types
 
