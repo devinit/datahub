@@ -1,4 +1,5 @@
 import { configure } from '@storybook/react';
+import '../static/semantic/semantic.min.css';
 
 const req = require.context('../components', true, /.stories.js$/);
 

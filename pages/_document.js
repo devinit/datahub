@@ -23,6 +23,9 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <title>With Glamorous</title>
+          <meta name="theme-color" content="#673ab7" />
+          <link rel="manifest" href="manifest.json" />
+          <link rel="stylesheet" href="semantic.min.css" />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>

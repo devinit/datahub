@@ -12,8 +12,8 @@
     "coverage": "BABEL_ENV=test npm test -- --coverage",
     "storybook": "BABEL_ENV=development start-storybook -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -o .out",
-    "mv-semantic-to-static": "mv ./semantic/dist/semantic.min.css ./static/semantic.min.css && mv ./semantic/dist/themes/default/assets ./static/",
-    "build-theme": "gulp build --gulpfile ./semantic/gulpfile.js &&  npm run mv-semantic-to-static"
+    "mv-semantic-to-static": "mv ./semantic/dist/semantic.min.css ./static/semantic.min.css && rm -rf ./static/assets &&  mv ./semantic/dist/themes/default/assets ./static/",
+    "build-theme": "gulp  --gulpfile ./semantic/gulpfile.js"
   },
   "dependencies": {
     "express": "^4.15.3",
@@ -31,6 +31,7 @@
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-storyshots": "^3.0.0-alpha.0",
     "@storybook/react": "3.0.0-alpha.4",
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
@@ -54,6 +55,10 @@
   },
   "jest": {
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }

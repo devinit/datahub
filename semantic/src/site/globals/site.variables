@@ -1,128 +1,16 @@
 /*******************************
-     User Global Variables
+         Site Settings
 *******************************/
-@defaultBorderRadius: 0;
-@white:                        #ffffff;
-@gray-lighter:                 lighten(#453f43, 65%);
-@gray-light:                   lighten(#453f43, 45%);
-@gray:                         lighten(#453f43, 10%);
-@gray-dark:                    lighten(#453f43, 5%);
-@gray-darker:                  #453f43;
-@black:                        darken(@gray, 20%);
 
-@color-yellow:                 #FECB2F;
-@color-red:                    #e8443a;
-@color-green:                  #B7BF10;
-@color-blue:                   #0095CB;
-@color-navy:                   #1B365D;
-@color-purple:                 #93328E;
-@color-orange:                 #EA7600;
+/*-------------------
+       Fonts
+--------------------*/
 
-@bg-color:                     @white;
-@faded-text:                   @gray;
+@fontName          : 'geomanist';
+@fontSmoothing     : antialiased;
 
-@loading-bar-color:            @white;
+@headerFont        : @fontName, sans-serif;
+@pageFont          : @fontName, sans-serif;
 
-// Typography
-@font-family-base:             geomanist, sans-serif;
-@text-color:                   @gray-darker;
-
-@link-color:                   inherit;
-
-@font-size-base:               1.6rem; // 16px
-@font-size-lead:               2.2rem; // 22px
-@font-size-small:              1.4rem; // 14px
-
-@line-height-base:             1.5;
-@line-height-heading:          1.25;
-
-@font-weight-bold:             700;
-@font-weight-lead:             300;
-@font-weight-heading:          700;
-
-@font-size-h1:                 3.2rem;   // ~40px —— ~48px on desktop
-@font-size-h2:                 3.2rem; // ~32px —— ~40px on desktop
-@font-size-h3:                 2.4rem; // ~24px
-@font-size-h4:                 2rem;   // ~20px
-@font-size-h5:                 1.6rem; // ~16px
-@font-size-h6:                 1.4rem; // ~14px
-
-// Horizontal Ruler
-@hr-thickness:                 2px;
-@hr-style:                     solid;
-@hr-color:                     @gray-lighter;
-
-// Grid
-@screen-xs-min:                480px;
-@screen-sm-min:                768px;
-@screen-md-min:                992px;
-@screen-lg-min:                1200px;
-
-@screen-xs-max:                (@screen-sm-min - 1); // Not crucial
-@screen-sm-max:                (@screen-md-min - 1); // Not crucial
-@screen-md-max:                (@screen-lg-min - 1); // Not crucial
-
-@grid-columns:                 12;
-@grid-gutter-width:            30px;
-@grid-float-breakpoint:        @screen-sm-min;               // Not crucial
-@grid-float-breakpoint-max:    (@grid-float-breakpoint - 1); // Not crucial
-
-@container-tablet:             (720px + @grid-gutter-width);
-@container-sm:                 @container-tablet;
-@container-desktop:            (940px + @grid-gutter-width);
-@container-md:                 @container-desktop;
-@container-large-desktop:      (1140px + @grid-gutter-width);
-@container-lg:                 @container-large-desktop;
-
-// Buttons
-@btn-border-weight:            2px;
-// @btn-height:                   2.7em;
-@btn-height:                   3em;
-@btn-padding-horizontal:       1.25em;
-
-@btn-border-radius:            0.25em;
-
-// Navbar and paddings —— deprecated paddings
-@navbar-height:                60px;
-@padding-vertical:             0.8em;
-@padding-horizontal:           1.5em;
-
-@wp-admin-offset-xs:46px;
-@wp-admin-offset-sm:32px;
-
-
-// Target IE9 through media query
-@ie9-10: ~"screen and (min-width:0\0)";
-
-
-//== Tables
-//
-//## Customizes the `.table` component with basic values, each used across all table variations.
-
-//** Padding for `<th>`s and `<td>`s.
-@table-cell-padding:            8px;
-//** Padding for cells in `.table-condensed`.
-@table-condensed-cell-padding:  5px;
-
-//** Default background color used for all tables.
-@table-bg:                      transparent;
-//** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
-//** Background color used for `.table-hover`.
-@table-bg-hover:                #f5f5f5;
-@table-bg-active:               @table-bg-hover;
-
-//** Border color for table and cell borders.
-@table-border-color:            #ddd;
-
-
-@z-index-1: 										50;
-@z-index-2: 										100;
-@z-index-3: 										150;
-@z-index-4: 										200;
-@z-index-5: 										250;
-@z-index-6: 										300;
-@z-index-7: 										350;
-@z-index-8: 										400;
-@z-index-9: 										450;     // site header and navigation drawer
-@z-index-10:										1000000; // Modals
+@googleFontName    : @fontName;
+@importGoogleFonts : false;

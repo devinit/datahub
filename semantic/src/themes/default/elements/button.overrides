@@ -6,14 +6,14 @@
 }
 
 .ui.primary.button {
-  background: @color-red;
+  background: @red;
   color: @white;
   border: 1px solid;
   border-color: transparent;
 }
 .ui.primary.button:hover {
   border-color: transparent;
-  background: @color-red;
+  background: @red;
 }
 
 .ui.secondary.button {

@@ -2,8 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { Icon } from 'semantic-ui-react';
-import '../../../semantic/dist/semantic.min.css';
 import Button from '.';
+
 
 storiesOf('Button', module)
   .add('with text', () => <Button content="Hello World" />)
