@@ -18,6 +18,7 @@ ratings:
 exclude_paths:
 - node_modules
 - private/__mocks__
+- private/semantic
 - public/
 - flow-typed/
 - coverage/
