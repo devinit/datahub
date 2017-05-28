@@ -6,6 +6,7 @@ import Submit from '../components/organisms/Submit';
 import PostList from '../components/organisms/PostList';
 import App from '../components/templates/Generic';
 import withData from '../lib/withData';
+import '../lib/offline-install'; // Get our service worker on the page
 
 type Props = {
   url: {pathname: string}

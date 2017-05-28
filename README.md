@@ -71,3 +71,8 @@ Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.
 ```bash
 now
 ```
+
+Development environment
+
+- Advised to use any modern linux OS or MacOS
+- Advised to use NodeJs 7 and above
