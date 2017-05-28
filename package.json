@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.0",
   "scripts": {
-    "dev": "BABEL_ENV=development next",
+    "dev": "BABEL_ENV=development node server.js",
     "build": "BABEL_ENV=production next build",
     "start": "BABEL_ENV=production next start",
     "lint": "eslint components lib && npm run flow",
