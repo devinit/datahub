@@ -3476,9 +3476,9 @@ glamor@^2.20.25:
     object-assign "^4.1.0"
     prop-types "^15.5.8"
 
-glamorous@^3.18.0:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-3.18.1.tgz#ac1a2a7e3d018930ece7f8fe79bc790ea31e1b14"
+glamorous@^3.19.0:
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/glamorous/-/glamorous-3.19.0.tgz#4744d0335d90d8ca086363b4d3f99158916b8ce5"
   dependencies:
     brcast "^2.0.0"
     doctoc "^1.3.0"
@@ -7623,9 +7623,9 @@ schema-utils@^0.x:
   dependencies:
     ajv "^5.0.0"
 
-semantic-ui-react@^0.68.3:
-  version "0.68.3"
-  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.68.3.tgz#4caedb2cc307c80864d9bd55306b905de3b653e2"
+semantic-ui-react@^0.68.4:
+  version "0.68.4"
+  resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.68.4.tgz#b2d719b7d93ebf01713b89a589f300240e07f672"
   dependencies:
     babel-runtime "^6.22.0"
     classnames "^2.1.5"
