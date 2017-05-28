@@ -5,15 +5,14 @@
     "dev": "BABEL_ENV=development node server.js",
     "build": "BABEL_ENV=production next build",
     "start": "BABEL_ENV=production NODE_ENV=production node server",
-    "lint": "eslint components lib && npm run flow",
+    "lint": "eslint private server.js && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
     "coverage": "BABEL_ENV=test npm test -- --coverage",
-    "storybook": "BABEL_ENV=development start-storybook -p 6006 ",
-    "build-storybook": "BABEL_ENV=production build-storybook -o .out",
-    "mv-semantic-to-static": "mv ./semantic/dist/semantic.min.css ./static/semantic.min.css && rm -rf ./static/assets &&  mv ./semantic/dist/themes/default/assets ./static/",
-    "build-theme": "gulp  --gulpfile ./semantic/gulpfile.js"
+    "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -p 6006 ",
+    "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -o .out",
+    "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js"
   },
   "dependencies": {
     "express": "^4.15.3",
@@ -38,6 +37,7 @@
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
+    "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-flowtype": "^2.33.0",
     "eslint-plugin-flowtype-errors": "^3.3.0",
     "eslint-plugin-import": "^2.3.0",
@@ -57,8 +57,8 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/private/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/private/__mocks__/styleMock.js"
     }
   }
 }

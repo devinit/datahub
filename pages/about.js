@@ -2,7 +2,7 @@
 /* eslint-disable max-len, react/no-unescaped-entities */
 import { rehydrate } from 'glamor';
 import React from 'react';
-import App from '../components/templates/Generic';
+import App from 'components/templates/Generic';
 
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls

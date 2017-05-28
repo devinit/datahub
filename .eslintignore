@@ -3,4 +3,4 @@ flow-typed
 semantic
 coverage
 __mocks__
-static
+public

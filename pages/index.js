@@ -2,11 +2,11 @@
 /* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
 import React from 'react';
 import { rehydrate } from 'glamor';
-import Submit from '../components/organisms/Submit';
-import PostList from '../components/organisms/PostList';
-import App from '../components/templates/Generic';
-import withData from '../lib/withData';
-import '../lib/offline-install'; // Get our service worker on the page
+import Submit from 'components/organisms/Submit';
+import PostList from 'components/organisms/PostList';
+import App from 'components/templates/Generic';
+import withData from 'lib/withData';
+import 'lib/offline-install'; // Get our service worker on the page
 
 type Props = {
   url: {pathname: string}

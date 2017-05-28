@@ -21,7 +21,7 @@ app.prepare().then(_ => {
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
     if (rootStaticFiles.includes(parsedUrl.pathname) || parsedUrl.pathname.match(/semantic/g)) {
-      const staticPath = path.join(__dirname, 'static', parsedUrl.pathname);
+      const staticPath = path.join(__dirname, 'public', parsedUrl.pathname);
       app.serveStatic(req, res, staticPath);
     } else {
       handle(req, res);

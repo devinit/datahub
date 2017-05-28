@@ -1,6 +1,14 @@
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const path = require('path');
+
+const configChanges = {
+  resolve: {
+    modules: ['node_modules', path.resolve(__dirname, 'private'), path.resolve(__dirname, 'public/semantic')],
+  }
+};
 
 module.exports = {
+  changes: configChanges, // for use in storybook webpack config
   webpack: (config, { dev }) => {
     /* Enable only in Production */
     if (!dev) {
@@ -28,7 +36,6 @@ module.exports = {
         })
       );
     }
-
-    return config;
+    return Object.assign(config, configChanges);
   }
 };
