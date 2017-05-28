@@ -15,12 +15,10 @@ ratings:
   paths:
   - "**.js"
   - "**.jsx"
-  - "**.module"
 exclude_paths:
-- node_modules/
-- __mocks__
-- semantic/
-- static/
+- node_modules
+- private/__mocks__
+- public/
 - flow-typed/
 - coverage/
 - .next/
