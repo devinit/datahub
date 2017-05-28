@@ -1,28 +1,16 @@
 // @flow
 import React from 'react';
 import type { Element } from 'react';
-
+import { Button } from 'semantic-ui-react';
 
 type Props = {
-  children: Element<any>,
-  onClick?: (value: string | void) => void
+  children?: Element<any>,
+  onClick?: (value: string | void) => void,
+  props?: any
 }
 
-const buttonStyles = {
-  border: '1px solid #eee',
-  borderRadius: 3,
-  backgroundColor: '#FFFFFF',
-  cursor: 'pointer',
-  fontSize: 15,
-  padding: '3px 10px',
-  margin: 10,
-};
-
-const Button = ({ children, onClick }: Props) => (
-  <button style={buttonStyles} onClick={onClick}>
-    {children}
-  </button>
-);
-
+const button = ({ props, onClick, children }: Props) => (
+  <Button {...props} onClick={onClick}> {children} </Button>
+  );
 
 export default Button;
