@@ -33,22 +33,24 @@ exports[`Storyshots Button With Icon and Text 1`] = `
 
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
-  className="ui button"
+  className="ui primary button"
   onClick={[Function]}
   tabIndex={undefined}
 >
    
+  Primary
    
 </button>
 `;
 
 exports[`Storyshots Button With Secondary Color 1`] = `
 <button
-  className="ui button"
+  className="ui secondary button"
   onClick={[Function]}
   tabIndex={undefined}
 >
    
+  Secondary
    
 </button>
 `;
@@ -77,6 +79,7 @@ exports[`Storyshots Button with text 1`] = `
   tabIndex={undefined}
 >
    
+  Hello World
    
 </button>
 `;
