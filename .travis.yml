@@ -1,14 +1,12 @@
 language: node_js
-sudo: false
 node_js:
   - v7
-cache:
-  directories:
-    - node_modules
 install:
+  - yarn
   - npm install -g codecov
-  - npm install --ignore-scripts
 script:
   - npm run lint
-  - npm run coverage
+  - npm run codecov
   - npm run build
+cache:
+  - yarn
