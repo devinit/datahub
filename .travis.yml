@@ -5,8 +5,7 @@ node_js:
 cache: yarn
 install:
   - npm install -g codecov
-  - npm install -g yarn
-  - yarn install --ignore-optional
+  - npm install --ignore-scripts
 script:
   - npm run lint
   - npm run coverage
