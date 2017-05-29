@@ -16,7 +16,7 @@ Install it and run:
 
 ```bash
 
-npm install & npm install -g gulp flow-typed
+yarn --ignore-scripts & npm install -g flow-typed
 npm run dev
 ```
 ## Development guidelines
