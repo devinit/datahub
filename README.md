@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/devinit/datahub.svg?branch=master)](https://travis-ci.org/devinit/datahub)
 ![Code Climate](https://codeclimate.com/github/devinit/datahub.svg)
 [![codecov](https://codecov.io/gh/devinit/datahub/branch/master/graph/badge.svg)](https://codecov.io/gh/devinit/datahub)
+[![Coverage Status](https://coveralls.io/repos/github/devinit/datahub/badge.svg)](https://coveralls.io/github/devinit/datahub)
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 
 
@@ -15,10 +16,11 @@ This is just primarily the frontend part of the DataHub, to keep things modular 
 Install it and run:
 
 ```bash
-
 yarn --ignore-scripts & npm install -g flow-typed
 npm run dev
 ```
+__[why we have an ignore-scripts option on yarn install](https://github.com/Semantic-Org/Semantic-UI/issues/3533)__
+
 ## Development guidelines
 
 Create a branch for which ever issue you are working on. After you are done create and submit a pull request to the master branch.

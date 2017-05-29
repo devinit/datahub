@@ -10,6 +10,8 @@ script:
   - npm run build
   - npm run build-theme
   - npm run build-storybook
+env:
+  - CODECOV_TOKEN="995db5b4-2d7b-4ad4-9d53-19098e4d9316"
 cache:
   - yarn
   - node_modules

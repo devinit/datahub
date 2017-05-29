@@ -12,7 +12,8 @@
     "coverage": "BABEL_ENV=test npm test -- --coverage",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -o .out",
-    "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js"
+    "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js",
+    "build-theme-w": "gulp watch --gulpfile ./private/semantic/gulpfile.js"
   },
   "dependencies": {
     "express": "^4.15.3",

@@ -51,7 +51,6 @@ export default ComposedComponent => {
           }
         };
       }
-
       return {
         serverState,
         ...composedInitialProps
