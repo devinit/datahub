@@ -5,7 +5,7 @@ node_js:
   - v7
 cache: yarn
 install:
-  - yarn install --production
+  - yarn install --ignore-optional
   - npm install -g codecov
 script:
   - npm run lint
