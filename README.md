@@ -2,7 +2,6 @@
 [![Build Status](https://travis-ci.org/devinit/datahub.svg?branch=master)](https://travis-ci.org/devinit/datahub)
 ![Code Climate](https://codeclimate.com/github/devinit/datahub.svg)
 [![codecov](https://codecov.io/gh/devinit/datahub/branch/master/graph/badge.svg)](https://codecov.io/gh/devinit/datahub)
-[![Coverage Status](https://coveralls.io/repos/github/devinit/datahub/badge.svg)](https://coveralls.io/github/devinit/datahub)
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 
 
