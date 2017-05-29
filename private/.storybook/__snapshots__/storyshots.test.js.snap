@@ -6,10 +6,12 @@ exports[`Storyshots Button With Icon 1`] = `
   onClick={[Function]}
   tabIndex={undefined}
 >
+   
   <i
     aria-hidden="true"
     className="right arrow icon"
   />
+   
 </button>
 `;
 
@@ -19,31 +21,35 @@ exports[`Storyshots Button With Icon and Text 1`] = `
   onClick={[Function]}
   tabIndex={undefined}
 >
+   
   Continue 
   <i
     aria-hidden="true"
     className="right arrow icon"
   />
+   
 </button>
 `;
 
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
-  className="ui primary button"
+  className="ui button"
   onClick={[Function]}
   tabIndex={undefined}
 >
-  Primary
+   
+   
 </button>
 `;
 
 exports[`Storyshots Button With Secondary Color 1`] = `
 <button
-  className="ui secondary button"
+  className="ui button"
   onClick={[Function]}
   tabIndex={undefined}
 >
-  Secondary
+   
+   
 </button>
 `;
 
@@ -53,12 +59,14 @@ exports[`Storyshots Button With some emoji 1`] = `
   onClick={[Function]}
   tabIndex={undefined}
 >
+   
   <span
     aria-label="emojis"
     role="img"
   >
     😀 😎 👍 💯
   </span>
+   
 </button>
 `;
 
@@ -68,7 +76,8 @@ exports[`Storyshots Button with text 1`] = `
   onClick={[Function]}
   tabIndex={undefined}
 >
-  Hello World
+   
+   
 </button>
 `;
 

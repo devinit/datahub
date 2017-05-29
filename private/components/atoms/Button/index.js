@@ -6,11 +6,13 @@ import { Button } from 'semantic-ui-react';
 type Props = {
   children?: Element<any>,
   onClick?: (value: string | void) => void,
-  props?: any
+  content?: string,
+  primary?: boolean, // i got this from the semantic-ui-react code
+  secondary?: boolean
 }
 
-const button = ({ props, onClick, children }: Props) => (
-  <Button {...props} onClick={onClick}> {children} </Button>
+const button = ({ onClick, children, content, primary}: Props) => (
+  <Button primary={primary} onClick={onClick}> {children || content} </Button>
   );
 
-export default Button;
+export default button;
