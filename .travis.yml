@@ -3,6 +3,7 @@ sudo: false
 node_js:
   - v6
   - v7
+cache: yarn
 install:
   - yarn
   - npm install -g codecov
@@ -10,5 +11,3 @@ script:
   - npm run lint
   - npm run coverage
   - npm run build
-cache:
-  - yarn
