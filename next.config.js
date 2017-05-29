@@ -11,11 +11,12 @@ module.exports = {
         new SWPrecacheWebpackPlugin({
           filename: 'sw.js',
           minify: true,
-          staticFileGlobsIgnorePatterns: [/\.next\//],
+          staticFileGlobsIgnorePatterns: [/\.next\//, /\.map$/],
           staticFileGlobs: [
-            'static/**/*' // Precache all static files by default
+            'public/**/*' // Precache all static files by default
           ],
           forceDelete: true,
+          stripPrefix: 'public',
           runtimeCaching: [
             // Example with different handlers
             {
@@ -25,6 +26,10 @@ module.exports = {
             {
               handler: 'networkFirst',
               urlPattern: /^http.*/ // cache all files
+            },
+            {
+              handler: 'networkFirst',
+              urlPattern: /^https.*/ // cache all files
             }
           ]
         })

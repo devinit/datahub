@@ -10,8 +10,8 @@ if (
     })
     .then(reg => {
       reg.onupdatefound = () => {
+        console.log('In update found callback...');
         const installingWorker = reg.installing;
-
         installingWorker.onstatechange = () => {
           switch (installingWorker.state) {
             case 'installed':
@@ -23,6 +23,8 @@ if (
               break;
             case 'redundant':
               console.log('The installing serviceWorker became redundant.');
+              // TODO
+              // code for trying updating serviceWorker later on
               break;
             default:
               console.log('unknown serviceWorker event');
