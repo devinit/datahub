@@ -1,4 +1,4 @@
-import { ApolloClient, createNetworkInterface } from 'react-apollo';
+import { ApolloClient, createBatchingNetworkInterface } from 'react-apollo';
 import fetch from 'isomorphic-fetch';
 
 let apolloClient = null;
@@ -11,13 +11,16 @@ if (!process.browser) {
 function create() {
   return new ApolloClient({
     ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
-    networkInterface: createNetworkInterface({
+    networkInterface: createBatchingNetworkInterface({
       uri: 'https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn', // Server URL (must be absolute)
+      batchInterval: 10,
       opts: {
         // Additional fetch() options like `credentials` or `headers`
         credentials: 'same-origin',
       },
     }),
+    queryDeduplication: true,
+    dataIdFromObject: object => object.id,
   });
 }
 

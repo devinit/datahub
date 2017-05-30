@@ -10,7 +10,7 @@ if (
     })
     .then(reg => {
       reg.onupdatefound = () => {
-        console.log('In update found callback...');
+        console.log('In update found callback..........');
         const installingWorker = reg.installing;
         installingWorker.onstatechange = () => {
           switch (installingWorker.state) {
