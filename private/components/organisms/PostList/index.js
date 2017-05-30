@@ -65,6 +65,7 @@ const allPosts = gql`
 // available on the `data` prop of the wrapped component (PostList)
 export default graphql(allPosts, {
   options: {
+    fetchPolicy: 'cache-first',
     variables: {
       skip: 0,
       first: POSTS_PER_PAGE,

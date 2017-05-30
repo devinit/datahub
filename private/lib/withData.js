@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
+import { compose } from 'redux';
 import initApollo from './initApollo';
-import initRedux from './initRedux';
+import { initRedux } from './initRedux';
+import { persistStore, createPersistor, getStoredState } from 'redux-persist';
 
 export default ComposedComponent => {
   return class WithData extends React.Component {
@@ -20,7 +22,6 @@ export default ComposedComponent => {
         composedInitialProps = await ComposedComponent.getInitialProps(ctx);
         console.log('composedInitialProps', composedInitialProps);
       }
-
       // Run all graphql queries in the component tree
       // and extract the resulting data
       if (!process.browser) {
@@ -56,14 +57,32 @@ export default ComposedComponent => {
         ...composedInitialProps
       };
     }
+    componentWillMount(){
+      persistStore(store, {}, () => {
+        this.setState({ rehydrated: true })
+      })
+    }
 
     constructor(props) {
       super(props);
+      this.state = { rehydrated: false };
       this.apollo = initApollo();
+      if (process.browser) {
+        const persistConfig = { whitelist: ['apollo'] };
+        getStoredState(persistConfig, (err, restoredState) => {
+          this.redux = initRedux(this.apollo, Object.assign(this.props.serverState, restoredState));
+          this.setState({ rehydrated: true });
+          console.log('hydated store');
+          const persistor = createPersistor(this.redux, persistConfig);
+        });
+      }
       this.redux = initRedux(this.apollo, this.props.serverState);
     }
 
     render() {
+      // if (!this.state.rehydrated && process.browser) {
+      //   return (<div>Loading...</div>);
+      // }
       return (
         // No need to use the Redux Provider
         // because Apollo sets up the store for us

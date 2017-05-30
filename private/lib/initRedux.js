@@ -1,4 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+
+// import localForage from 'localforage';
 import reducers from './reducers';
 
 let reduxStore = null;
@@ -8,6 +10,8 @@ let devtools = f => f;
 if (process.browser && window.__REDUX_DEVTOOLS_EXTENSION__) {
   devtools = window.__REDUX_DEVTOOLS_EXTENSION__();
 }
+
+// middleware for autoRehydration of the store
 
 function create(apollo, initialState = {}) {
   return createStore(
@@ -24,13 +28,12 @@ function create(apollo, initialState = {}) {
   );
 }
 
-export default function initRedux(apollo, initialState) {
+export function initRedux(apollo, initialState) {
   // Make sure to create a new store for every server-side request so that data
   // isn't shared between connections (which would be bad)
   if (!process.browser) {
     return create(apollo, initialState);
   }
-
   // Reuse store on the client-side
   if (!reduxStore) {
     reduxStore = create(apollo, initialState);
