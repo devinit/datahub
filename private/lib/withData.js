@@ -58,15 +58,9 @@ export default ComposedComponent => {
       };
     }
 
-    shouldComponentUpdate(nextProps) {
-      if (nextProps.rehydrated) return false;
-      return true;
-    }
-
-    async componentDidMount() {
+    async componentWillMount() {
       // only called in browser
-      console.info('componentDidMount called ...');
-      await makeStorePersist(this.redux, this.apollo); // dispatches an Hydrate action
+      await makeStorePersist(this.redux); // dispatches an Hydrate action
     }
 
     constructor(props) {
@@ -76,7 +70,6 @@ export default ComposedComponent => {
     }
 
     render() {
-      // if (process.browser) this.redux = await makeStorePersist(this.redux);
       return (
         // No need to use the Redux Provider
         // because Apollo sets up the store for us

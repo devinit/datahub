@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { persistStore } from 'redux-persist';
-// import localForage from 'localforage';
-import reducers from './reducers';
+import localForage from 'localforage';
+import {app, apolloWrapper} from './reducers';
 
 let reduxStore = null;
 
@@ -11,18 +11,12 @@ if (process.browser && window.__REDUX_DEVTOOLS_EXTENSION__) {
   devtools = window.__REDUX_DEVTOOLS_EXTENSION__();
 }
 
-// middleware for autoRehydration of the store
-// let autoRehydateMiddleware = f => f;
-// if (process.browser) {
-//   autoRehydateMiddleware = autoRehydrate({ log: true });
-// }
-
 function create(apollo, initialState) {
   return createStore(
     combineReducers({
       // Setup reducers
-      ...reducers,
-      apollo: apollo.reducer(),
+      ...app,
+      apollo: apolloWrapper(apollo.reducer()),
     }),
     initialState, // Hydrate the store with server-side data
     compose(
@@ -35,15 +29,13 @@ function create(apollo, initialState) {
 export function makeStorePersist(store, apollo) {
   return new Promise((resolve, reject) => {
     persistStore(store, {
+      storage: localForage,
       whitelist: ['apollo'] }, (err, cachedStore) => {
         if (err) {
           console.error('persisting store error: ', err);
           reject(store);
         }
-        if (cachedStore) {
-          console.log('got persisted store...', cachedStore);
-          resolve(cachedStore);
-        }
+        if (cachedStore) resolve(cachedStore);
       });
   });
 }
