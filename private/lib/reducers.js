@@ -1,12 +1,16 @@
+const inititial = {
+  rehydrated: false
+};
+
 export default {
-  example: (state = {}, { type, payload }) => {
+  app: (state = inititial, { type, payload }) => {
     switch (type) {
-      case 'EXAMPLE_ACTION':
+      case 'EXAMPLE_ACTION': {
         return {
-          ...state,
+          ...state
         };
-      default:
-        return state;
+      }
+      default: return state;
     }
-  },
+  }
 };

@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-
+import { persistStore } from 'redux-persist';
 // import localForage from 'localforage';
 import reducers from './reducers';
 
@@ -12,8 +12,12 @@ if (process.browser && window.__REDUX_DEVTOOLS_EXTENSION__) {
 }
 
 // middleware for autoRehydration of the store
+// let autoRehydateMiddleware = f => f;
+// if (process.browser) {
+//   autoRehydateMiddleware = autoRehydrate({ log: true });
+// }
 
-function create(apollo, initialState = {}) {
+function create(apollo, initialState) {
   return createStore(
     combineReducers({
       // Setup reducers
@@ -23,21 +27,32 @@ function create(apollo, initialState = {}) {
     initialState, // Hydrate the store with server-side data
     compose(
       applyMiddleware(apollo.middleware()), // Add additional middleware here
-      devtools,
+      devtools
     ),
   );
+}
+
+export function makeStorePersist(store, apollo) {
+  return new Promise((resolve, reject) => {
+    persistStore(store, {
+      whitelist: ['apollo'] }, (err, cachedStore) => {
+        if (err) {
+          console.error('persisting store error: ', err);
+          reject(store);
+        }
+        if (cachedStore) {
+          console.log('got persisted store...', cachedStore);
+          resolve(cachedStore);
+        }
+      });
+  });
 }
 
 export function initRedux(apollo, initialState) {
   // Make sure to create a new store for every server-side request so that data
   // isn't shared between connections (which would be bad)
-  if (!process.browser) {
-    return create(apollo, initialState);
-  }
+  if (!process.browser) return create(apollo, initialState);
   // Reuse store on the client-side
-  if (!reduxStore) {
-    reduxStore = create(apollo, initialState);
-  }
-
+  if (!reduxStore) reduxStore = create(apollo, initialState);
   return reduxStore;
 }

@@ -25,6 +25,7 @@ module.exports = {
     'arrow-body-style': 0,
     'arrow-parens': 0,
     'global-require': 0,
+    'object-curly-spacing': 0,
     'no-unused-expressions': 0,
     'no-confusing-arrow': 0,
     'no-unused-vars': 0,
