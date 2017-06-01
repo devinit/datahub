@@ -8,7 +8,8 @@ type Props = {
   onClick?: (value: string | void) => void,
   content?: string,
   primary?: boolean, // i got this from the semantic-ui-react code
-  secondary?: boolean
+  secondary?: boolean,
+  extra?: any,
 };
 
 const button = ({ onClick, children, content, primary, secondary }: Props) => (

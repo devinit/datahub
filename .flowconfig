@@ -7,6 +7,7 @@
 private
 pages
 [libs]
+private/types
 [options]
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=private
