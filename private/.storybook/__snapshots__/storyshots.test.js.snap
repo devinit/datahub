@@ -1,5 +1,225 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Datahub Footer 1`] = `
+<div
+  className="css-1bj7z6h"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="four wide column"
+        >
+          <h4
+            className="css-w0yocm"
+          >
+            First Columns
+          </h4>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Data blog 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 2 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 3 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 4 
+          </a>
+        </div>
+        <div
+          className="four wide column"
+        >
+          <h4
+            className="css-w0yocm"
+          >
+            Second Columns
+          </h4>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Data blog 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 2 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 3 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 4 
+          </a>
+        </div>
+        <div
+          className="four wide column"
+        >
+          <h4
+            className="css-w0yocm"
+          >
+            Third Columns
+          </h4>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Data blog 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 2 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 3 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 4 
+          </a>
+        </div>
+        <div
+          className="four wide column"
+        >
+          <h4
+            className="css-w0yocm"
+          >
+            Fourth Columns
+          </h4>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Data blog 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 2 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 3 
+          </a>
+          <a
+            className="css-zpd97m"
+            href="http://devinit.org/#!/blog"
+          >
+             Link 4 
+          </a>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="sixteen wide column"
+        >
+          <a
+            className="css-1dps91a"
+            href={undefined}
+          >
+            <i
+              className="{type} square icon"
+            />
+          </a>
+          <a
+            className="css-1dps91a"
+            href={undefined}
+          >
+            <i
+              className="{type} square icon"
+            />
+          </a>
+          <a
+            className="css-1dps91a"
+            href={undefined}
+          >
+            <i
+              className="{type} square icon"
+            />
+          </a>
+          <a
+            className="css-1dps91a"
+            href={undefined}
+          >
+            <i
+              className="{type} square icon"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="sixteen wide column"
+        >
+          <div
+            className="lightBlack css-11fqrq6"
+          >
+            <div
+              className="ui container"
+            >
+              <div
+                className="css-cqrj0i"
+              >
+                <p>
+                  © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+                  <a
+                    href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+                  >
+                    privacy policy
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Button With Icon 1`] = `
 <button
   className="ui button"
