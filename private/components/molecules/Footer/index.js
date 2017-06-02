@@ -33,8 +33,8 @@ const WhiteContainer = glamorous.div({
   backgroundColor: theme.white,
   width: '100%',
   flexDirection: 'row',
-  paddingTop:'20px',
-  paddingBottom:'20px'
+  paddingTop: '20px',
+  paddingBottom: '20px'
 });
 
 const FooterHeader = glamorous.h4({
@@ -48,8 +48,7 @@ const footer = () => (
   <FooterDiv>
     <BlackContainer>
       <TopFooter>
-        <Container
-        >
+        <Container>
           <Grid>
             <Grid.Row>
               <Grid.Column width={4}>
@@ -87,15 +86,13 @@ const footer = () => (
     </BlackContainer>
     <WhiteContainer>
       <Grid.Row>
-        <Container
-          textAlign="center"
-        >
-        <Grid.Column width={16}>
-          <SocialMedia href="https://twitter.com/devinitorg" type="twitter"/>
-          <SocialMedia href="https://twitter.com/devinitorg" type="facebook f"/>
-          <SocialMedia href="https://twitter.com/devinitorg" type="youtube play"/>
-          <SocialMedia href="https://twitter.com/devinitorg" type="flickr"/>
-        </Grid.Column>
+        <Container textAlign="center">
+          <Grid.Column width={16}>
+            <SocialMedia href="https://twitter.com/devinitorg" type="twitter" />
+            <SocialMedia href="https://twitter.com/devinitorg" type="facebook f" />
+            <SocialMedia href="https://twitter.com/devinitorg" type="youtube play" />
+            <SocialMedia href="https://twitter.com/devinitorg" type="flickr" />
+          </Grid.Column>
         </Container>
       </Grid.Row>
     </WhiteContainer>
