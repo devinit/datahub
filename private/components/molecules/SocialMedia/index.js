@@ -8,7 +8,7 @@ type Props = {
 };
 const SocialMedia = ({ type, url }: Props) => (
   <SocialMediaLink href={url}>
-    <i className="{type} square icon" />
+    <i className={`${type} square icon`} />
   </SocialMediaLink>
 );
 export default SocialMedia;
