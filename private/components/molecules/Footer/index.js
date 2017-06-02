@@ -32,7 +32,9 @@ const BlackContainer = glamorous.div({
 const WhiteContainer = glamorous.div({
   backgroundColor: theme.white,
   width: '100%',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  paddingTop:'20px',
+  paddingBottom:'20px'
 });
 
 const FooterHeader = glamorous.h4({
