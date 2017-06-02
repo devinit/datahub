@@ -2,7 +2,11 @@ import glamorous from 'glamorous';
 import theme from 'components/theme';
 
 export const FooterLink = glamorous.a({
-  fontSize: theme.smallFont
+  fontSize: theme.smallFont,
+  display: 'block',
+  color: theme.white,
+  paddingBottom: '.5em',
+  paddingTop: '.5em',
 });
 
 export const NormalLink = glamorous.a({
