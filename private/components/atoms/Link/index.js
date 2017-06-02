@@ -15,5 +15,17 @@ export const NormalLink = glamorous.a({
 
 // social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({
-  display: 'inline'
+  display: 'inline-block',
+  color: theme.black,
+  border: `2px solid ${theme.grey}`,
+  borderRadius: '50%',
+  fontSize: '1.5em',
+  height: '2.5em',
+  width: '2.5em',
+  background: '0 0',
+  lineHeight: '2.3em',
+  textAlign: 'center',
+  boxSizing: 'border-box',
+  paddingLeft: '3px',
+
 });

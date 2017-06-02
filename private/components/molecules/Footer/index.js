@@ -90,8 +90,8 @@ const footer = () => (
         >
         <Grid.Column width={16}>
           <SocialMedia href="https://twitter.com/devinitorg" type="twitter"/>
-          <SocialMedia href="https://twitter.com/devinitorg" type="facebook"/>
-          <SocialMedia href="https://twitter.com/devinitorg" type="youtube"/>
+          <SocialMedia href="https://twitter.com/devinitorg" type="facebook f"/>
+          <SocialMedia href="https://twitter.com/devinitorg" type="youtube play"/>
           <SocialMedia href="https://twitter.com/devinitorg" type="flickr"/>
         </Grid.Column>
         </Container>
