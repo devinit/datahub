@@ -5,214 +5,226 @@ exports[`Storyshots Button Datahub Footer 1`] = `
   className="css-1bj7z6h"
 >
   <div
-    className="ui container"
+    className="css-uajphc"
   >
     <div
-      className="ui grid"
+      className="css-1tfdju4"
     >
       <div
-        className="row"
+        className="ui container"
       >
         <div
-          className="four wide column"
-        >
-          <h4
-            className="css-w0yocm"
-          >
-            First Columns
-          </h4>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Data blog 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 2 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 3 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 4 
-          </a>
-        </div>
-        <div
-          className="four wide column"
-        >
-          <h4
-            className="css-w0yocm"
-          >
-            Second Columns
-          </h4>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Data blog 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 2 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 3 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 4 
-          </a>
-        </div>
-        <div
-          className="four wide column"
-        >
-          <h4
-            className="css-w0yocm"
-          >
-            Third Columns
-          </h4>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Data blog 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 2 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 3 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 4 
-          </a>
-        </div>
-        <div
-          className="four wide column"
-        >
-          <h4
-            className="css-w0yocm"
-          >
-            Fourth Columns
-          </h4>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Data blog 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 2 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 3 
-          </a>
-          <a
-            className="css-zpd97m"
-            href="http://devinit.org/#!/blog"
-          >
-             Link 4 
-          </a>
-        </div>
-      </div>
-      <div
-        className="row"
-      >
-        <div
-          className="sixteen wide column"
-        >
-          <a
-            className="css-1dps91a"
-            href={undefined}
-          >
-            <i
-              className="{type} square icon"
-            />
-          </a>
-          <a
-            className="css-1dps91a"
-            href={undefined}
-          >
-            <i
-              className="{type} square icon"
-            />
-          </a>
-          <a
-            className="css-1dps91a"
-            href={undefined}
-          >
-            <i
-              className="{type} square icon"
-            />
-          </a>
-          <a
-            className="css-1dps91a"
-            href={undefined}
-          >
-            <i
-              className="{type} square icon"
-            />
-          </a>
-        </div>
-      </div>
-      <div
-        className="row"
-      >
-        <div
-          className="sixteen wide column"
+          className="ui grid"
         >
           <div
-            className="lightBlack css-11fqrq6"
+            className="row"
           >
             <div
-              className="ui container"
+              className="four wide column"
             >
-              <div
-                className="css-cqrj0i"
+              <h4
+                className="css-106dsda"
               >
-                <p>
-                  © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
-                  <a
-                    href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
-                  >
-                    privacy policy
-                  </a>
-                  .
-                </p>
-              </div>
+                First Columns
+              </h4>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-106dsda"
+              >
+                Second Columns
+              </h4>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-106dsda"
+              >
+                Third Columns
+              </h4>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-106dsda"
+              >
+                Fourth Columns
+              </h4>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1hc5g8p"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1ecftt0"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="ui center aligned container"
+      >
+        <div
+          className="sixteen wide column"
+        >
+          <a
+            className="css-1zicc8"
+            href={undefined}
+          >
+            <i
+              className="twitter icon"
+            />
+          </a>
+          <a
+            className="css-1zicc8"
+            href={undefined}
+          >
+            <i
+              className="facebook f icon"
+            />
+          </a>
+          <a
+            className="css-1zicc8"
+            href={undefined}
+          >
+            <i
+              className="youtube play icon"
+            />
+          </a>
+          <a
+            className="css-1zicc8"
+            href={undefined}
+          >
+            <i
+              className="flickr icon"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="lightBlack css-uajphc"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="css-1i088ce"
+        >
+          <p>
+            © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+            <a
+              href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+            >
+              privacy policy
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>
