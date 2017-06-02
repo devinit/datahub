@@ -4,6 +4,6 @@ export default {
   black: '#453f43',
   smallFont: '0.8em',
   regularFont: '1em',
-  white:'#e9e7e8',
+  white: '#e9e7e8',
   grey: '#d0cccf'
 };
