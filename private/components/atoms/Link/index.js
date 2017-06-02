@@ -27,5 +27,6 @@ export const SocialMediaLink = glamorous.a({
   textAlign: 'center',
   boxSizing: 'border-box',
   paddingLeft: '3px',
+  marginLeft: '5px',
 
 });
