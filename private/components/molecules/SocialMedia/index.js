@@ -6,6 +6,7 @@ type Props = {
   type: string,
   href: string
 };
+
 const SocialMedia = ({ type, href }: Props) => (
   <SocialMediaLink href={href}>
     <i className="{type} square icon" />
