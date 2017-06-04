@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { SocialMediaLink } from 'components/atoms/Link';
+import { Icon } from 'semantic-ui-react';
 
 type Props = {
   type: string,
@@ -9,7 +10,7 @@ type Props = {
 
 const SocialMedia = ({ type, href }: Props) => (
   <SocialMediaLink href={href}>
-    <i className="{type} square icon" />
+    <Icon name={type} />
   </SocialMediaLink>
 );
 export default SocialMedia;

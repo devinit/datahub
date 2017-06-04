@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import theme from 'components/theme';
+import * as theme from 'components/theme';
 import {Container, Grid} from 'semantic-ui-react';
 import {FooterLink} from 'components/atoms/Link';
 import SocialMedia from 'components/molecules/SocialMedia';
@@ -25,12 +25,12 @@ const TopFooter = glamorous.div({
 });
 
 const BlackContainer = glamorous.div({
-  backgroundColor: theme.black,
+  backgroundColor: theme.colors.black,
   width: '100%',
   flexDirection: 'row'
 });
 const WhiteContainer = glamorous.div({
-  backgroundColor: theme.white,
+  backgroundColor: theme.colors.white,
   width: '100%',
   flexDirection: 'row',
   paddingTop: '20px',
