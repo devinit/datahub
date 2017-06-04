@@ -2,6 +2,16 @@
 # yarn lockfile v1
 
 
+"@storybook/addon-actions@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.0.0.tgz#e141378eeff36cbc61d27ba4330eaadfb6cd5c8b"
+  dependencies:
+    "@storybook/addons" "^3.0.0"
+    deep-equal "^1.0.1"
+    json-stringify-safe "^5.0.1"
+    prop-types "^15.5.8"
+    react-inspector "^2.0.0"
+
 "@storybook/addon-actions@^3.0.0-alpha.0", "@storybook/addon-actions@^3.0.0-alpha.4":
   version "3.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.0.0-alpha.4.tgz#3bf0c2fcb6639bbdf9c0e1113b85d6d53721d74d"
@@ -10,6 +20,12 @@
     json-stringify-safe "^5.0.1"
     prop-types "^15.5.8"
     react-inspector "^2.0.0"
+
+"@storybook/addon-links@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.0.0.tgz#497ae071b9f36f150a47a5c61d0688d615faec0c"
+  dependencies:
+    "@storybook/addons" "^3.0.0"
 
 "@storybook/addon-links@^3.0.0-alpha.0", "@storybook/addon-links@^3.0.0-alpha.4":
   version "3.0.0-alpha.4"
@@ -28,9 +44,20 @@
     prop-types "^15.5.8"
     read-pkg-up "^2.0.0"
 
+"@storybook/addons@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.0.0.tgz#0a59b73bbea15f927ec439d7bd9e67ef3719a819"
+
 "@storybook/addons@^3.0.0-alpha.0":
   version "3.0.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.0.0-alpha.0.tgz#b3902587f60196408c6d8289a21dcadeabdbee36"
+
+"@storybook/channel-postmessage@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.0.0.tgz#b70bd706bb384e40b407603f829e299e1dc23ece"
+  dependencies:
+    "@storybook/channels" "^3.0.0"
+    json-stringify-safe "^5.0.1"
 
 "@storybook/channel-postmessage@^3.0.0-alpha.0":
   version "3.0.0-alpha.0"
@@ -38,6 +65,10 @@
   dependencies:
     "@storybook/channels" "^3.0.0-alpha.0"
     json-stringify-safe "^5.0.1"
+
+"@storybook/channels@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.0.0.tgz#603a1ea4779ee3d0b86d854f0ae6f899958ba73d"
 
 "@storybook/channels@^3.0.0-alpha.0":
   version "3.0.0-alpha.0"
@@ -52,7 +83,57 @@
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-"@storybook/react@3.0.0-alpha.4", "@storybook/react@^3.0.0-alpha.0":
+"@storybook/react@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.0.0.tgz#8e0d7118691bd09c37264000525accaf6546aa5f"
+  dependencies:
+    "@storybook/addon-actions" "^3.0.0"
+    "@storybook/addon-links" "^3.0.0"
+    "@storybook/addons" "^3.0.0"
+    "@storybook/channel-postmessage" "^3.0.0"
+    "@storybook/ui" "^3.0.0"
+    airbnb-js-shims "^1.1.1"
+    autoprefixer "^7.1.1"
+    babel-core "^6.24.1"
+    babel-loader "^7.0.0"
+    babel-plugin-react-docgen "^1.4.2"
+    babel-preset-es2015 "^6.24.1"
+    babel-preset-es2016 "^6.24.1"
+    babel-preset-react "^6.24.1"
+    babel-preset-react-app "^3.0.0"
+    babel-preset-stage-0 "^6.24.1"
+    babel-runtime "^6.23.0"
+    case-sensitive-paths-webpack-plugin "^2.0.0"
+    chalk "^1.1.3"
+    commander "^2.9.0"
+    common-tags "^1.4.0"
+    configstore "^3.1.0"
+    css-loader "^0.28.1"
+    express "^4.15.3"
+    file-loader "^0.11.1"
+    find-cache-dir "^1.0.0"
+    json-loader "^0.5.4"
+    json-stringify-safe "^5.0.1"
+    json5 "^0.5.1"
+    lodash.pick "^4.4.0"
+    postcss-flexbugs-fixes "^3.0.0"
+    postcss-loader "^2.0.5"
+    prop-types "^15.5.10"
+    qs "^6.4.0"
+    react-modal "^1.7.7"
+    redux "^3.6.0"
+    request "^2.81.0"
+    serve-favicon "^2.4.3"
+    shelljs "^0.7.7"
+    style-loader "^0.17.0"
+    url-loader "^0.5.8"
+    util-deprecate "^1.0.2"
+    uuid "^3.0.1"
+    webpack "^2.5.1"
+    webpack-dev-middleware "^1.10.2"
+    webpack-hot-middleware "^2.18.0"
+
+"@storybook/react@^3.0.0-alpha.0":
   version "3.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.0.0-alpha.4.tgz#bd1c4951b187e57e794115f127e574b3a38773e8"
   dependencies:
@@ -101,6 +182,29 @@
     webpack "^2.5.1"
     webpack-dev-middleware "^1.10.2"
     webpack-hot-middleware "^2.18.0"
+
+"@storybook/ui@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.0.0.tgz#64d83dd7529ebe0ffe7622d90e08bf00cd362508"
+  dependencies:
+    "@storybook/react-fuzzy" "^0.4.0"
+    babel-runtime "^6.23.0"
+    deep-equal "^1.0.1"
+    events "^1.1.1"
+    fuzzysearch "^1.0.3"
+    json-stringify-safe "^5.0.1"
+    keycode "^2.1.8"
+    lodash.pick "^4.4.0"
+    lodash.sortby "^4.7.0"
+    mantra-core "^1.7.0"
+    podda "^1.2.2"
+    prop-types "^15.5.8"
+    qs "^6.4.0"
+    react-inspector "^2.0.0"
+    react-komposer "^2.0.0"
+    react-modal "^1.7.6"
+    react-split-pane "^0.1.63"
+    redux "^3.6.0"
 
 "@storybook/ui@^3.0.0-alpha.0":
   version "3.0.0-alpha.0"
@@ -2905,9 +3009,9 @@ eslint-plugin-flowtype-errors@^3.3.0:
     babel-runtime "^6.23.0"
     slash "^1.0.0"
 
-eslint-plugin-flowtype@^2.33.0:
-  version "2.33.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.33.0.tgz#b2783814ed2ddcf729953b8f65ff73c90cabee4b"
+eslint-plugin-flowtype@^2.34.0:
+  version "2.34.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.34.0.tgz#b9875f314652e5081623c9d2b18a346bbb759c09"
   dependencies:
     lodash "^4.15.0"
 
@@ -3547,6 +3651,10 @@ getpass@^0.1.1:
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
   dependencies:
     assert-plus "^1.0.0"
+
+git-pre-hooks@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/git-pre-hooks/-/git-pre-hooks-1.2.0.tgz#7296704cd74423f08ab82280129df4f173944a4f"
 
 glamor@^2.20.25:
   version "2.20.25"
