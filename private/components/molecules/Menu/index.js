@@ -4,14 +4,27 @@ import {Container, Grid} from 'semantic-ui-react';
 import React from 'react';
 
 
-const MenuContainer = glamorous.h4({
-  backgroundColor:theme.
+const MenuContainer = glamorous.div({
+  backgroundColor: theme.red,
+  color: theme.plainWhite,
+  display: 'flex',
+});
+const ListContainer = glamorous.ul({
+  flexDirection: 'column',
+  color: theme.plainWhite,
+  alignSelf: 'flex-end',
 });
 
 const footer = () => (
-  <FooterDiv>
+  <MenuContainer>
+    <ListContainer>
+      <li><a href="">Menu 1</a></li>
+      <li><a href="">Menu 1</a></li>
+      <li><a href="">Menu 1</a></li>
+      <li><a href="">Menu 1</a></li>
+    </ListContainer>
 
-  </FooterDiv>
+  </MenuContainer>
 );
 
 export default footer;
