@@ -17,6 +17,7 @@
   },
   "plugins": [
     "transform-flow-strip-types",
+    "ramda",
     ["module-resolver", {
       "root": ["./private", "public/semantic"]
     }]

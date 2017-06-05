@@ -1,237 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Datahub Footer 1`] = `
-<div
-  className="css-1bj7z6h"
->
-  <div
-    className="css-uajphc"
-  >
-    <div
-      className="css-1tfdju4"
-    >
-      <div
-        className="ui container"
-      >
-        <div
-          className="ui grid"
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="four wide column"
-            >
-              <h4
-                className="css-106dsda"
-              >
-                First Columns
-              </h4>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Data blog 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 2 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 3 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 4 
-              </a>
-            </div>
-            <div
-              className="four wide column"
-            >
-              <h4
-                className="css-106dsda"
-              >
-                Second Columns
-              </h4>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Data blog 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 2 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 3 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 4 
-              </a>
-            </div>
-            <div
-              className="four wide column"
-            >
-              <h4
-                className="css-106dsda"
-              >
-                Third Columns
-              </h4>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Data blog 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 2 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 3 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 4 
-              </a>
-            </div>
-            <div
-              className="four wide column"
-            >
-              <h4
-                className="css-106dsda"
-              >
-                Fourth Columns
-              </h4>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Data blog 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 2 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 3 
-              </a>
-              <a
-                className="css-1hc5g8p"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 4 
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-1ecftt0"
-  >
-    <div
-      className="row"
-    >
-      <div
-        className="ui center aligned container"
-      >
-        <div
-          className="sixteen wide column"
-        >
-          <a
-            className="css-1zicc8"
-            href={undefined}
-          >
-            <i
-              className="twitter icon"
-            />
-          </a>
-          <a
-            className="css-1zicc8"
-            href={undefined}
-          >
-            <i
-              className="facebook f icon"
-            />
-          </a>
-          <a
-            className="css-1zicc8"
-            href={undefined}
-          >
-            <i
-              className="youtube play icon"
-            />
-          </a>
-          <a
-            className="css-1zicc8"
-            href={undefined}
-          >
-            <i
-              className="flickr icon"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="lightBlack css-uajphc"
-  >
-    <div
-      className="row"
-    >
-      <div
-        className="ui container"
-      >
-        <div
-          className="css-1i088ce"
-        >
-          <p>
-            © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
-            <a
-              href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
-            >
-              privacy policy
-            </a>
-            .
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Button With Icon 1`] = `
 <button
   className="ui button"
@@ -314,6 +82,242 @@ exports[`Storyshots Button with text 1`] = `
   Hello World
    
 </button>
+`;
+
+exports[`Storyshots Footer Datahub Footer 1`] = `
+<div
+  className="css-xwxuqh"
+>
+  <div
+    className="css-140jqim"
+  >
+    <div
+      className="css-1tfdju4"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-v73krq"
+              >
+                First Columns
+              </h4>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-v73krq"
+              >
+                Second Columns
+              </h4>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-v73krq"
+              >
+                Third Columns
+              </h4>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+            <div
+              className="four wide column"
+            >
+              <h4
+                className="css-v73krq"
+              >
+                Fourth Columns
+              </h4>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Data blog 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 2 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 3 
+              </a>
+              <a
+                className="css-1j6tgbo"
+                href="http://devinit.org/#!/blog"
+              >
+                 Link 4 
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-8v7vv"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="ui center aligned container"
+      >
+        <div
+          className="sixteen wide column"
+        >
+          <a
+            className="css-1zicc8"
+            href="https://twitter.com/devinitorg"
+          >
+            <i
+              aria-hidden="true"
+              className="twitter icon"
+            />
+          </a>
+          <a
+            className="css-1zicc8"
+            href="https://twitter.com/devinitorg"
+          >
+            <i
+              aria-hidden="true"
+              className="facebook f icon"
+            />
+          </a>
+          <a
+            className="css-1zicc8"
+            href="https://twitter.com/devinitorg"
+          >
+            <i
+              aria-hidden="true"
+              className="youtube play icon"
+            />
+          </a>
+          <a
+            className="css-1zicc8"
+            href="https://twitter.com/devinitorg"
+          >
+            <i
+              aria-hidden="true"
+              className="flickr icon"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="lightBlack css-140jqim"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="css-12p5b9r"
+        >
+          <p>
+            © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+            <a
+              href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+            >
+              privacy policy
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Menu default 1`] = `

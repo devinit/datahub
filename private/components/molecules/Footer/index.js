@@ -25,12 +25,12 @@ const TopFooter = glamorous.div({
 });
 
 const BlackContainer = glamorous.div({
-  backgroundColor: theme.colors.black,
+  backgroundColor: theme.black,
   width: '100%',
   flexDirection: 'row'
 });
 const WhiteContainer = glamorous.div({
-  backgroundColor: theme.colors.white,
+  backgroundColor: theme.white,
   width: '100%',
   flexDirection: 'row',
   paddingTop: '20px',
