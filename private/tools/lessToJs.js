@@ -13,6 +13,7 @@ const sitePath = path.resolve(config.base, config.paths.source.site);
 
 const themesPath = path.resolve(config.base, config.paths.source.themes);
 
+// The typle of global variables we are capturing by default
 const defauWhiteltList = ['Sizes', 'Site Colors'];
 
 const getGroupsNames = (lines) => {
@@ -86,7 +87,7 @@ const getWantedVariableLines = (themeVarsRaw, siteVarsRaw, whiteListed) => {
   return mergedVars;
 };
 
-const lineToJson = line => {
+const lineToJsObj = line => {
   const arr = line.split(':');
   const key = arr[0].replace('@', '');
   const value = JSON.stringify(arr[1]);
@@ -95,9 +96,9 @@ const lineToJson = line => {
 
 const groupsToJsLines = (variableGroups) =>
   R.keys(variableGroups)
-    .map(groupNName => R.map(lineToJson, variableGroups[groupNName]));
+    .map(groupNName => R.map(lineToJsObj, variableGroups[groupNName]));
 
-const jsonToEs6 = R.reduce((acc, JsLineObj) =>
+const jsObjToEs6 = R.reduce((acc, JsLineObj) =>
   `${acc} \n export const ${JsLineObj.name} = ${JsLineObj.value};`,
   '// This file is auto generated from semantic less variable globals \n');
 
@@ -105,7 +106,7 @@ const writeToFile = content =>
   fs.writeFile('./private/components/theme/semantic.js',
     prettier.format(content, {singleQuote: true}));
 
-const run = R.compose(writeToFile, jsonToEs6, R.flatten, groupsToJsLines);
+const run = R.compose(writeToFile, jsObjToEs6, R.flatten, groupsToJsLines);
 
 // whiteList represents the type of global variables we want to extract
 // theme is the theme we are extracting from
@@ -128,6 +129,6 @@ module.exports = {
   getWantedVariableLines,
   getSiteAndThemeGroupVars,
   getGroupsNames,
-  lineToJson,
+  lineToJsObj,
   getGroupsVariables
 };
