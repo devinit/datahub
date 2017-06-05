@@ -37,7 +37,6 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/no-unused-prop-types': 0,
     'no-console': 0,
-    'no-tabs': 0,
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
     'flowtype-errors/show-errors': 2,

@@ -9,4 +9,3 @@ it('renders children when passed in', () => {
   const wrapper = wrap({ children: 'Click Me' });
   expect(wrapper.contains('Click Me')).toBe(true);
 });
-
