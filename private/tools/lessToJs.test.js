@@ -31,9 +31,8 @@ describe('semantic global less to ES6', () => {
     expect(siteAndThemeGroupVars.length).toBe(2);
     expect(siteAndThemeGroupVars[1].Fonts.length).toBeGreaterThan(2);
   });
-  it('should get required variable lines', () => {
+  it('should get required whiteListed variable lines', () => {
     const wantedLines = lessToJs.getWantedVariableLines(lessTheme, lessSite, ['Fonts', 'Brand Colors']);
-    console.log(wantedLines);
     expect(wantedLines).toBeDefined();
   });
 });
