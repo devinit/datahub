@@ -1,7 +1,22 @@
 import React from 'react';
+import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
+import theme from 'components/theme';
 import SearchInput from '../SearchInput';
-import {SearchTitle} from '../../atoms/SearchInput';
+
+const SearchTitle = glamorous.div({
+  backgroundColor: theme.black,
+  fontSize: theme.big,
+  textAlign: 'center',
+  color: theme.plainWhite,
+  fontWeight: '700',
+  paddingTop: '1em',
+  paddingBottom: '1em',
+  '& .clickable': {
+    textDecoration: 'underline',
+    cursor: 'pointer',
+  },
+});
 
 class Search extends React.Component {
   constructor(props) {
