@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import * as theme from 'components/theme';
+import theme from 'components/theme';
 import {Container, Grid} from 'semantic-ui-react';
 import {FooterLink} from 'components/atoms/Link';
 import SocialMedia from 'components/molecules/SocialMedia';

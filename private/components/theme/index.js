@@ -6,4 +6,5 @@ export default {
   grey: '#d0cccf',
   small: '0.8em',
   normal: '1em',
+  big: '2.4rem',
 };
