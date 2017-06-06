@@ -1,17 +1,34 @@
 import React from 'react';
-import { Button, Modal } from 'semantic-ui-react';
+import { Button, Modal, Icon } from 'semantic-ui-react';
+
+export const SocialIconsContainer = glamorous.div({
+  marginTop: '1.5em',
+});
 
 const ChartShare = () => (
-  <Modal trigger={<Button>Show Modal</Button>} closeIcon='close'>
+  <Modal
+    trigger={
+      <Button size="big" secondary>
+        <Icon name="share alternate" />Share Chart</Button>}
+    closeIcon="close"
+  >
     <Modal.Content>
       <Modal.Description>
-
-        <h5>Share this Visualization</h5>
-          <p>Is it okay to use this photo?</p>
+        <Container>
+          <h4>Share this Visualization</h4>
+          <input type="radio"value="default" /> in default view <br />
+          <input type="radio"value="default" />  as I configured it<br />
+          <input className="link" />
+          <SocialIconsContainer>
+            <Button icon="facebook f" />
+            <Button icon="twitter" />
+            <Button icon="mail outline" />
+          </SocialIconsContainer>
+        </Container>
       </Modal.Description>
     </Modal.Content>
   </Modal>
-)
+);
 
 export default ChartShare;
 
