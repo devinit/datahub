@@ -8,18 +8,26 @@ const SearchTitle = glamorous.div({
   fontSize: theme.big,
   textAlign: 'center',
   color: theme.plainWhite,
+  fontWeight: '700',
+  paddingTop: '24px',
+  paddingBottom: '24px',
+  '& .clickable': {
+    textDecoration: 'underline',
+    cursor: 'pointer',
+  },
 });
+
 class Search extends React.Component {
   componentWillMount() {
   }
+
   render() {
     return (<div>
-      <Container>
-        <SearchTitle>
-          <span>Explore by <span className="clickable">country</span> </span>
-        </SearchTitle>
-
-      </Container>
+      <SearchTitle>
+        <Container>
+          <h2>Explore by <span className="clickable">country</span> </h2>
+        </Container>
+      </SearchTitle>
     </div>);
   }
 }
