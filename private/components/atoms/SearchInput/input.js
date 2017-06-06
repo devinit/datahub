@@ -35,5 +35,3 @@ export const Input = glamorous.input({
     boxShadow: '0 .125em .125em 0 rgba(0,0,0,.2)',
   },
 });
-
-
