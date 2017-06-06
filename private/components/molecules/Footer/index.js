@@ -11,6 +11,7 @@ import {
   FooterDisclaimer
 } from '../../atoms/Footer';
 
+/* eslint-disable max-len */
 const footer = () => (
   <FooterDiv>
     <BlackContainer>
