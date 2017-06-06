@@ -2,7 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import theme from 'components/theme';
-import SearchInput from 'components/atoms/SearchInput';
+import SearchInput from '../SearchInput';
 
 const SearchTitle = glamorous.div({
   backgroundColor: theme.black,
