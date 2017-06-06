@@ -50,7 +50,7 @@ class Search extends React.Component {
       </SearchTitle>
       <SearchInput
         visible={this.state.showInput}
-        countries={['Test']}
+        countries={['Uganda', 'Kenya', 'Tanzania']}
         placeholder="Type Your Country Name"
       />
     </div>);

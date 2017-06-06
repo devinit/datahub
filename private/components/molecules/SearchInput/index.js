@@ -29,8 +29,7 @@ const SearchInput = ({countries, placeholder, visible}: Props) => (
         className="list"
       >
         <List >
-          <li>Item1</li>
-          <li>Item2</li>
+          {countries.map(country => <li>{country}</li>)}
         </List>
       </Wrapper>
     </Container>
