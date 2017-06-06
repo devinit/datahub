@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
+import glamorous from 'glamorous';
+import {Container} from '../../atoms/ChartShare';
 
 export const SocialIconsContainer = glamorous.div({
   marginTop: '1.5em',
