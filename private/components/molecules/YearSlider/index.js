@@ -2,52 +2,115 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 
+const Slider = glamorous.div({
+  display: 'inline-block',
+  position: 'relative',
+  height: '14px',
+  width: '100%',
+  margin: '25px 5px',
+  verticalAlign: 'middle',
+  cursor: 'pointer',
+  backgroundColor: '#ddd',
+  '& .bubble': {
+    cursor: 'default',
+    top: '-26px',
+    padding: '1px 3px',
+    fontSize: '.9em',
+    color: '#b8b1b6',
+  }
+});
+const Input = glamorous.input({
+  whiteSpace: 'nowrap',
+  position: 'absolute',
+  display: 'block',
+  zIndex: 2,
+  margin: '0px',
+  padding: '0px',
+  opacity: '0',
+  height: '100%',
+  left: '0px',
+  width: '100%',
+  cursor: 'pointer',
+});
+
+const Pointer = glamorous.span({
+  position: 'absolute',
+  cursor: 'pointer',
+  width: '35px',
+  height: '35px',
+  borderRadius: '50%',
+  border: '1px solid #666',
+  top: '-10px',
+  color: '#ffffff',
+  paddingTop: '8px',
+  textAlign: 'center',
+  backgroundColor: '#e8443a',
+  zIndex: 1 },
+  (props) => ({
+    left: `${props.left}%`,
+  }));
+
+const Floor = glamorous.span({
+  whiteSpace: 'nowrap',
+  position: 'absolute',
+  display: 'block',
+  zIndex: 1,
+  left: '0px',
+  opacity: 1,
+});
+
+const Ceiling = glamorous.span({
+  whiteSpace: 'nowrap',
+  position: 'absolute',
+  display: 'block',
+  zIndex: 1,
+  right: '0px',
+  opacity: 1,
+});
+
 
 class YearSlider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showInput: false,
+      position: 98,
     };
   }
 
+  onSliderChange = (e) => {
+    const position = parseInt(e.target.value, 0) - 2;
+    this.setState({position});
+  }
 
   render() {
-    return (<div>
-      <input
+    return (<Slider>
+      <Floor
+        className="bubble"
+      >
+        1
+      </Floor>
+      <Pointer
+        left={this.state.position}
+      >
+        {this.state.position + 2}
+      </Pointer>
+      <Input
         type="range"
         className="input low"
         step="1"
-        min="1990"
-        max="2013"
-        onChange={(e) => console.log(e.target.value)}
+        min="1"
+        max="100"
+        value="100"
+        onChange={this.onSliderChange}
       />
-    </div>);
+      <Ceiling
+        className="bubble"
+      >
+        100
+      </Ceiling>
+    </Slider>);
   }
 }
 
 export default YearSlider;
-
-// <div slider="" ng-model="model.year" ng-disabled="isSliderDisabled" floor="1990" ceiling="2013" step-width="1"
-//      precision="0" translate-fn="formatValue(value)"
-//      class="slider ng-untouched ng-valid ng-isolate-scope ng-dirty ng-valid-parse">
-//   <span
-//     class="bar full"
-//     style="white-space: nowrap; position: absolute; display: block; z-index: 1; left: 0px; right: 0px;">
-//   </span>
-//   <span
-//     class="bar steps" style="white-space: nowrap; position: absolute; display: block; z-index: 1;"></span>
-//   <span
-//     class="pointer low"
-//     style="white-space: nowrap; position: absolute; display: block; z-index: 1; left: 315px;"></span>
-//   <span
-//   class="bubble low ng-binding" ng-bind-template="2013"
-//   style="white-space: nowrap; position: absolute; display: block; z-index: 1; left: 315px;">2013</span><span
-//   class="bubble limit floor ng-binding" ng-bind-template="1990"
-//   style="white-space: nowrap; position: absolute; display: block; z-index: 1; left: 0px; opacity: 1;">1990</span><span
-//   class="bubble limit ceiling ng-binding" ng-bind-template="2013"
-//   style="white-space: nowrap; position: absolute; display: block; z-index: 1; left: 317px; opacity: 0;">2013</span>
-//   <input
-//
-//     style="white-space: nowrap; position: absolute; display: block; z-index: 1; margin: 0px; padding: 0px; opacity: 0; height: 100%; left: 0px; width: 100%;"/>
-// </div>
