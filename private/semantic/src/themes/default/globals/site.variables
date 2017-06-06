@@ -420,8 +420,8 @@
 @invertedSelectedTextColor   : rgba(255, 255, 255, 1);
 @invertedDisabledTextColor   : rgba(255, 255, 255, 0.2);
 
-/*-------------------
-     Brand Colors
+/*----------------------
+     Social Media Colors
 --------------------*/
 
 @facebookColor   : #3B5998;
