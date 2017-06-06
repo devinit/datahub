@@ -1,22 +1,23 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
+import theme from '../../theme';
 
 const Slider = glamorous.div({
   display: 'inline-block',
   position: 'relative',
-  height: '14px',
+  height: '1em',
   width: '100%',
-  margin: '25px 5px',
+  margin: '2.5em .02em',
   verticalAlign: 'middle',
   cursor: 'pointer',
-  backgroundColor: '#ddd',
+  backgroundColor: theme.lightGray,
   '& .bubble': {
     cursor: 'default',
-    top: '-26px',
-    padding: '1px 3px',
+    top: '-2em',
+    padding: '0.012em 0.12em',
     fontSize: '.9em',
-    color: '#b8b1b6',
+    color: theme.greyText,
   }
 });
 const Input = glamorous.input({
@@ -24,11 +25,11 @@ const Input = glamorous.input({
   position: 'absolute',
   display: 'block',
   zIndex: 2,
-  margin: '0px',
-  padding: '0px',
+  margin: '0em',
+  padding: '0em',
   opacity: '0',
   height: '100%',
-  left: '0px',
+  left: '0em',
   width: '100%',
   cursor: 'pointer',
 });
@@ -36,15 +37,15 @@ const Input = glamorous.input({
 const Pointer = glamorous.span({
   position: 'absolute',
   cursor: 'pointer',
-  width: '35px',
-  height: '35px',
+  width: '2.65em',
+  height: '2.65em',
   borderRadius: '50%',
-  border: '1px solid #666',
-  top: '-10px',
-  color: '#ffffff',
-  paddingTop: '8px',
+  border: '0.012em solid #666',
+  top: '-0.8em',
+  color: theme.plainWhite,
+  paddingTop: '.6em',
   textAlign: 'center',
-  backgroundColor: '#e8443a',
+  backgroundColor: theme.darkRed,
   zIndex: 1 },
   (props) => ({
     left: `${props.left}%`,
@@ -55,7 +56,7 @@ const Floor = glamorous.span({
   position: 'absolute',
   display: 'block',
   zIndex: 1,
-  left: '0px',
+  left: '0em',
   opacity: 1,
 });
 
@@ -64,7 +65,7 @@ const Ceiling = glamorous.span({
   position: 'absolute',
   display: 'block',
   zIndex: 1,
-  right: '0px',
+  right: '0em',
   opacity: 1,
 });
 

@@ -8,5 +8,8 @@ export default {
   normal: '1em',
   big: '1.7em',
   plainWhite: '#ffffff',
-  shadow: '#ededed'
+  shadow: '#ededed',
+  greyText: '#b8b1b6',
+  darkRed: '#e8443a',
+  lightGray: '#ddd'
 };
