@@ -33,6 +33,7 @@ module.exports = {
     'no-constant-condition': 0,
     'import/no-dynamic-require': 0,
     'import/no-extraneous-dependencies': 0,
+    'import/no-array-index-key': 0,
     'import/prefer-default-export': 0,
     'react/require-default-props': 0,
     'react/forbid-prop-types': 0,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import Share from '.';
+import ChartShare from '.';
 
-storiesOf('Chart Share', module)
-  .add('Datahub Chart Share', () => <Share />);
+storiesOf('ChartShare', module)
+  .add('Datahub ChartShare', () => <ChartShare />);
