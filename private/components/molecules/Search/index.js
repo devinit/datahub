@@ -1,7 +1,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Grid} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
 import theme from 'components/theme';
+import SearchInput from 'components/atoms/SearchInput';
 
 const SearchTitle = glamorous.div({
   backgroundColor: theme.black,
@@ -9,8 +10,8 @@ const SearchTitle = glamorous.div({
   textAlign: 'center',
   color: theme.plainWhite,
   fontWeight: '700',
-  paddingTop: '24px',
-  paddingBottom: '24px',
+  paddingTop: '1em',
+  paddingBottom: '1em',
   '& .clickable': {
     textDecoration: 'underline',
     cursor: 'pointer',
@@ -18,16 +19,40 @@ const SearchTitle = glamorous.div({
 });
 
 class Search extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showInput: false,
+    };
+  }
+
+  showInput = () => {
+    if (this.state.showInput) {
+      this.setState({showInput: false});
+    } else {
+      this.setState({showInput: true});
+    }
   }
 
   render() {
     return (<div>
       <SearchTitle>
         <Container>
-          <h2>Explore by <span className="clickable">country</span> </h2>
+          <h2>Explore by
+            <span
+              onClick={this.showInput}
+              className="clickable"
+              role="button"
+            > country
+            </span>
+          </h2>
         </Container>
       </SearchTitle>
+      <SearchInput
+        visible={this.state.showInput}
+        countries={['Test']}
+        placeholder="Type Your Country Name"
+      />
     </div>);
   }
 }

@@ -6,6 +6,7 @@ export default {
   grey: '#d0cccf',
   small: '0.8em',
   normal: '1em',
-  big: '2.4rem',
+  big: '1.7em',
   plainWhite: '#f7f7f7',
+  shadow: '#ededed'
 };
