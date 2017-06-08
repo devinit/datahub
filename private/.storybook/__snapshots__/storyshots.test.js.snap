@@ -84,68 +84,6 @@ exports[`Storyshots Button with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots ChartShare Datahub ChartShare 1`] = `
-<div
-  className="css-kkf88m"
->
-  <h4>
-    Share this Visualization
-  </h4>
-  <input
-    type="radio"
-    value="default"
-  />
-   in default view 
-  <br />
-  <input
-    type="radio"
-    value="default"
-  />
-    as I configured it
-  <br />
-  <input
-    className="link"
-  />
-  <div
-    className="css-1m51egw"
-  >
-    <button
-      className="ui icon button"
-      onClick={[Function]}
-      tabIndex={undefined}
-    >
-      <i
-        aria-hidden="true"
-        className="facebook f icon"
-      />
-       
-    </button>
-    <button
-      className="ui icon button"
-      onClick={[Function]}
-      tabIndex={undefined}
-    >
-      <i
-        aria-hidden="true"
-        className="twitter icon"
-      />
-       
-    </button>
-    <button
-      className="ui icon button"
-      onClick={[Function]}
-      tabIndex={undefined}
-    >
-      <i
-        aria-hidden="true"
-        className="mail outline icon"
-      />
-       
-    </button>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Footer Datahub Footer 1`] = `
 <div
   className="css-1bj7z6h"
