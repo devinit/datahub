@@ -1,19 +1,20 @@
 import glamorous from 'glamorous';
 import theme from 'components/theme';
+import {white} from 'components/theme/semantic';
 import {Container, Grid} from 'semantic-ui-react';
 import {MenuLink} from 'components/atoms/Link';
-import {Logo} from 'components/atoms/Logo';
+import Logo from 'components/atoms/Logo';
 import React from 'react';
 
 
 const MenuContainer = glamorous.div({
-  backgroundColor: theme.red,
-  color: theme.plainWhite,
+  backgroundColor: theme.darkRed,
+  color: white,
   display: 'flex',
 });
 const ListContainer = glamorous.ul({
   flexDirection: 'column',
-  color: theme.plainWhite,
+  color: white,
   alignSelf: 'flex-end',
   listStyleType: 'square',
   float: 'right',
