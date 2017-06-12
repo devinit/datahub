@@ -1,48 +1,16 @@
-import glamorous from 'glamorous';
-import * as theme from 'components/theme';
 import {Container, Grid} from 'semantic-ui-react';
 import {FooterLink} from 'components/atoms/Link';
 import SocialMedia from 'components/molecules/SocialMedia';
 import React from 'react';
+import {
+  FooterDiv,
+  BlackContainer,
+  TopFooter,
+  FooterHeader,
+  WhiteContainer,
+  FooterDisclaimer
+} from '../../atoms/Footer';
 
-const FooterDiv = glamorous.div({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  backgroundColor: theme.red,
-  padding: 16
-});
-
-const FooterDisclaimer = glamorous.div({
-  padding: 4,
-  color: theme.white,
-  paddingTop: '2em',
-  paddingBottom: '2em'
-});
-const TopFooter = glamorous.div({
-  paddingTop: '2em',
-  paddingBottom: '2em'
-});
-
-const BlackContainer = glamorous.div({
-  backgroundColor: theme.black,
-  width: '100%',
-  flexDirection: 'row'
-});
-const WhiteContainer = glamorous.div({
-  backgroundColor: theme.white,
-  width: '100%',
-  flexDirection: 'row',
-  paddingTop: '20px',
-  paddingBottom: '20px'
-});
-
-const FooterHeader = glamorous.h4({
-  display: 'block',
-  color: theme.white,
-  marginTop: '1em',
-  marginBottom: '1em',
-});
 /* eslint-disable max-len */
 const footer = () => (
   <FooterDiv>

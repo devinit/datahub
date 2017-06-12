@@ -86,10 +86,10 @@ exports[`Storyshots Button with text 1`] = `
 
 exports[`Storyshots Footer Datahub Footer 1`] = `
 <div
-  className="css-xwxuqh"
+  className="css-1bj7z6h"
 >
   <div
-    className="css-140jqim"
+    className="css-uajphc"
   >
     <div
       className="css-1tfdju4"
@@ -107,7 +107,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               className="four wide column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 First Columns
               </h4>
@@ -140,7 +140,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               className="four wide column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 Second Columns
               </h4>
@@ -173,7 +173,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               className="four wide column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 Third Columns
               </h4>
@@ -206,7 +206,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               className="four wide column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 Fourth Columns
               </h4>
@@ -241,7 +241,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="css-8v7vv"
+    className="css-1ecftt0"
   >
     <div
       className="row"
@@ -293,7 +293,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="lightBlack css-140jqim"
+    className="lightBlack css-uajphc"
   >
     <div
       className="row"
@@ -302,7 +302,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
         className="ui container"
       >
         <div
-          className="css-12p5b9r"
+          className="css-1i088ce"
         >
           <p>
             © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
@@ -324,4 +324,87 @@ exports[`Storyshots Menu default 1`] = `
 <div
   className="ui menu"
 />
+`;
+
+exports[`Storyshots Search Datahub Main Search 1`] = `
+<div>
+  <div
+    className="css-1viqs2r"
+  >
+    <div
+      className="ui container"
+    >
+      <h2>
+        Explore by
+        <span
+          className="clickable"
+          onClick={[Function]}
+          role="button"
+        >
+           country
+        </span>
+      </h2>
+    </div>
+  </div>
+  <div
+    className="css-mv69bf"
+  >
+    <div
+      className="ui container"
+    >
+      <input
+        className="css-pnc7nu"
+        placeholder="Type Your Country Name"
+      />
+      <div
+        className="list css-13azwyo"
+      >
+        <ul
+          className="css-vi44j9"
+        >
+          <li>
+            Uganda
+          </li>
+          <li>
+            Kenya
+          </li>
+          <li>
+            Tanzania
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
+<div
+  className="css-dggfml"
+>
+  <span
+    className="bubble css-1ujcf02"
+  >
+    1
+  </span>
+  <span
+    className="css-2rxq9m"
+  >
+    100
+  </span>
+  <input
+    className="input low css-13v2tq9"
+    max="100"
+    min="1"
+    onChange={[Function]}
+    step="1"
+    type="range"
+    value="100"
+  />
+  <span
+    className="bubble css-2q5yx4"
+  >
+    100
+  </span>
+</div>
 `;
