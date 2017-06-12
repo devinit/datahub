@@ -7,13 +7,14 @@ const path = require('path');
 const fs = require('fs-extra');
 const config = require('../../semantic.json');
 const R = require('ramda');
+const less = require('less');
 const prettier = require('prettier');
+const cssToJsObject = require('css-to-js-object');
 
 const sitePath = path.resolve(config.base, config.paths.source.site);
 
 const themesPath = path.resolve(config.base, config.paths.source.themes);
 
-const defauWhiteltList = ['Sizes', 'Site Colors'];
 
 const getGroupsNames = (lines) => {
   const regex = new RegExp(/^\s+\w.*/, 'gm');
@@ -50,10 +51,12 @@ const getCleanLines = (linesObject) =>
   R.keys(linesObject)
     .reduce((acc, key) => {
       const linesArr = linesObject[key]
+        .filter(line => line.includes(';'))
+        .filter(line => !line.includes('~'))
         .map(line => line.replace(/\s+/g, '')
                           .replace(/;/g, '')
                           .replace(/\\/g, ''))
-        .filter(line => line[0] === '@');
+        .filter(line => line[0] === '@' && !Number(line[1]));
       return Object.assign(acc, {[key]: linesArr});
     }, {});
 
@@ -75,59 +78,103 @@ const mergeSiteAndGroupVars = ([theme, site]) =>
     return Object.assign(acc, {[key]: groupVals});
   }, {});
 
-const getWantedVariableLines = (themeVarsRaw, siteVarsRaw, whiteListed) => {
+const getWantedVariableLines = (themeVarsRaw, siteVarsRaw, whiteListed = [], blackListed = []) => {
   const allGroupNames = R.compose(getGroupsNames, R.split('\n'))(themeVarsRaw);
-  const siteAndThemeGroupVars =
-    getSiteAndThemeGroupVars(allGroupNames)([themeVarsRaw, siteVarsRaw]);
-  const getWantedGroupVars = getWhiteListedGroups(whiteListed); // its a curryed function
-  const whiteListedGroups = R.map(getWantedGroupVars, siteAndThemeGroupVars);
-  const cleanedLines = R.map(getCleanLines, whiteListedGroups);
+  const effectiveGroupnames = allGroupNames.filter(name => !blackListed.includes(name));
+  let siteAndThemeGroupVars =
+    getSiteAndThemeGroupVars(effectiveGroupnames)([themeVarsRaw, siteVarsRaw]);
+  if (whiteListed.length) {
+    const getWantedGroupVars = getWhiteListedGroups(whiteListed); // its a curryed function
+    siteAndThemeGroupVars = R.map(getWantedGroupVars, siteAndThemeGroupVars);
+  }
+  const cleanedLines = R.map(getCleanLines, siteAndThemeGroupVars);
   const mergedVars = mergeSiteAndGroupVars(cleanedLines);
   return mergedVars;
 };
 
-const lineToJson = line => {
+const lessVarLineToJsObj = line => {
   const arr = line.split(':');
   const key = arr[0].replace('@', '');
-  const value = JSON.stringify(arr[1]);
+  const value =
+    arr[1].replace(/"/g, '') // remove quotes
+          .replace(/\/\/+.*/, ''); // remove comments
   return { name: key, value };
 };
 
-const groupsToJsLines = (variableGroups) =>
+const varGroupsToJsObjs = (variableGroups) =>
   R.keys(variableGroups)
-    .map(groupNName => R.map(lineToJson, variableGroups[groupNName]));
+    .map(groupNName => R.map(lessVarLineToJsObj, variableGroups[groupNName]));
 
-const jsonToEs6 = R.reduce((acc, JsLineObj) =>
-  `${acc} \n export const ${JsLineObj.name} = ${JsLineObj.value};`,
+// functions below evaluates less variables to evaluated css and back to js objects
+// this code came as an after thought and it could better be organised
+// this hack that turns less variables into css classes with an evaluated value property
+
+const lessVarJsObjsToCss = R.reduce((styles, lessVarObj) => {
+  const styleVar = `@${lessVarObj.name}:${lessVarObj.value};`;
+  return `${styles}\n${styleVar}\n.${lessVarObj.name} {value:${lessVarObj.value}}\n`;
+}, '');
+
+const evaluateToCssClasses = styles =>
+  new Promise((resolve, reject) => {
+    less.render(styles, {fileName: 'logs.less'}, (err, output) => {
+      output ? resolve(output.css) : resolve('output error');
+      if (err) console.log(err);
+      reject(err);
+    });
+  });
+
+const evaluatedClassesToJsObjs = (css) => {
+  const cssJson = cssToJsObject(css);
+  return R.keys(cssJson).map(cssClass =>
+    ({name: cssClass.substring(1), value: cssJson[cssClass].value }));
+};
+
+const jsObjToEs6 = R.reduce((acc, JsLineObj) =>
+  `${acc} \n export const ${JsLineObj.name} = ${JSON.stringify(JsLineObj.value)};`,
   '// This file is auto generated from semantic less variable globals \n');
 
 const writeToFile = content =>
   fs.writeFile('./private/components/theme/semantic.js',
     prettier.format(content, {singleQuote: true}));
 
-const run = R.compose(writeToFile, jsonToEs6, R.flatten, groupsToJsLines);
 
+const processToUnevalutedCss = R.compose(lessVarJsObjsToCss, R.flatten, varGroupsToJsObjs);
+
+const run = R.composeP(writeToFile, jsObjToEs6, evaluatedClassesToJsObjs, evaluateToCssClasses);
+
+// theme is the theme we are extracting from, its values are merged with the site
 // whiteList represents the type of global variables we want to extract
-// theme is the theme we are extracting from
-const main = async (theme = 'default', whiteList = []) => {
-  const userWhiteList = whiteList.concat(defauWhiteltList);
+// and the returned results will only contain those results
+// blacklist is for when you have nothing whitelisted and you want to exclude some groups
+const main = async ({ theme = 'default', whiteList = [], blackList = [] }) => {
   const themeVarsRaw = await fs.readFile(
     path.resolve(themesPath, theme, 'globals/site.variables'),
     'utf8'
     );
   const siteVarsRaw = await fs.readFile(path.resolve(sitePath, 'globals/site.variables'), 'utf8');
-  const variableLines = getWantedVariableLines(themeVarsRaw, siteVarsRaw, userWhiteList);
-  return run(variableLines)
+  const variableLines = getWantedVariableLines(themeVarsRaw, siteVarsRaw, whiteList, blackList);
+  const lessStyles = processToUnevalutedCss(variableLines);
+  const newCss = await evaluateToCssClasses(lessStyles);
+  // console.log(lessStyles);
+  return run(lessStyles)
     .then(() => console.log('success!'))
     .catch((error) => console.error(error));
 };
-
-if (process.env.NODE_ENV !== 'test') main();
+// TODO: make CLI
+// pass in a theme and the types of global variables you want to capture
+// The typle of global variables we are capturing by default
+if (process.env.NODE_ENV !== 'test') {
+  main({
+    whiteList: ['Site Colors', 'Brand Colors', 'Sizes']
+  });
+}
 
 module.exports = {
   getWantedVariableLines,
   getSiteAndThemeGroupVars,
   getGroupsNames,
-  lineToJson,
+  lessVarJsObjsToCss,
+  evaluateToCssClasses,
+  evaluatedClassesToJsObjs,
   getGroupsVariables
 };
