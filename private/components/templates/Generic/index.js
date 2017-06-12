@@ -2,14 +2,15 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
-import Menu from '../../organisms/Menu';
+import Footer from '../../molecules/Footer';
+import Menu from '../../molecules/Menu';
 
 type Props = {
   children?: Element<any>,
   pathName: string
 };
 
-export default ({ children, pathName }: Props) => {
+export default ({ children}: Props) => {
   const mainStyles = {
     backgroundColor: 'yellow',
     color: 'cornflowerblue',
@@ -30,6 +31,7 @@ export default ({ children, pathName }: Props) => {
       <main>
         {children}
       </main>
+      <Footer />
     </div>
   );
 };

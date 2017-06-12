@@ -6,7 +6,6 @@ export const FooterDiv = glamorous.div({
   flexDirection: 'column',
   alignItems: 'center',
   backgroundColor: theme.red,
-  padding: 16
 });
 
 export const FooterDisclaimer = glamorous.div({
