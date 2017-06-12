@@ -30,7 +30,7 @@ const MenuListItem = glamorous.li({
 const footer = () => (
   <MenuContainer>
     <Container>
-      <Logo/>
+      <Logo />
       <ListContainer>
         <MenuListItem><MenuLink href="">Global Picture</MenuLink></MenuListItem>
         <MenuListItem><MenuLink href="">Profile</MenuLink></MenuListItem>

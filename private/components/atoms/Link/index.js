@@ -13,6 +13,13 @@ export const NormalLink = glamorous.a({
   fontSize: theme.smallFont
 });
 
+export const MenuLink = glamorous.a({
+  color: theme.plainWhite,
+  fontWeight: '700',
+  paddingRight: '10px;',
+  paddingLeft: '10px',
+});
+
 // social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({
   display: 'inline-block',
