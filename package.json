@@ -67,8 +67,6 @@
   "git-pre-hooks": {
   },
   "git-pre-hooks": {
-    "pre-commit": "npm run lint",
-    "pre-push": "npm run test"
   },
   "jest": {
     "coverageDirectory": "./coverage/",

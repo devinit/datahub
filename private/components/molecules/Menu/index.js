@@ -2,6 +2,7 @@ import glamorous from 'glamorous';
 import theme from 'components/theme';
 import {Container, Grid} from 'semantic-ui-react';
 import {MenuLink} from 'components/atoms/Link';
+import {Logo} from 'components/atoms/Logo';
 import React from 'react';
 
 
@@ -29,6 +30,7 @@ const MenuListItem = glamorous.li({
 const footer = () => (
   <MenuContainer>
     <Container>
+      <Logo/>
       <ListContainer>
         <MenuListItem><MenuLink href="">Global Picture</MenuLink></MenuListItem>
         <MenuListItem><MenuLink href="">Profile</MenuLink></MenuListItem>
