@@ -1,4 +1,5 @@
 import React from 'react';
+import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import {
   Slider,
@@ -8,17 +9,23 @@ import {
   Pointer
 } from '../../atoms/YearSlider';
 
+export const PointerContainer = glamorous.div({
+  width: '100%',
+  left: '0.5em',
+  position: 'relative'
+});
+
 class YearSlider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showInput: false,
-      position: 98,
+      position: 100,
     };
   }
 
   onSliderChange = (e) => {
-    const position = parseInt(e.target.value, 0) - 2;
+    const position = parseInt(e.target.value, 0);
     this.setState({position});
   }
 
@@ -29,11 +36,13 @@ class YearSlider extends React.Component {
       >
         1
       </Floor>
-      <Pointer
-        left={this.state.position}
-      >
-        {this.state.position + 2}
-      </Pointer>
+      <PointerContainer>
+        <Pointer
+          left={this.state.position}
+        >
+          {this.state.position}
+        </Pointer>
+      </PointerContainer>
       <Input
         type="range"
         className="input low"
