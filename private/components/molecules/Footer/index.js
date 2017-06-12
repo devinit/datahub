@@ -18,29 +18,29 @@ const footer = () => (
       <TopFooter>
         <Container>
           <Grid>
-            <Grid.Row>
-              <Grid.Column width={4}>
+            <Grid.Row columns={4}>
+              <Grid.Column>
                 <FooterHeader>First Columns</FooterHeader>
                 <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
               </Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column>
                 <FooterHeader>Second Columns</FooterHeader>
                 <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
               </Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column>
                 <FooterHeader>Third Columns</FooterHeader>
                 <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
               </Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column>
                 <FooterHeader>Fourth Columns</FooterHeader>
                 <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
