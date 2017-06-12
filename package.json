@@ -8,7 +8,7 @@
     "lint": "eslint private server.js && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
-    "test": "BABEL_ENV=test jest",
+    "test": "BABEL_ENV=test jest lessToJs.test.js",
     "coverage": "BABEL_ENV=test jest && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -o .out",
@@ -65,6 +65,10 @@
     "sw-precache-webpack-plugin": "^0.11.3"
   },
   "git-pre-hooks": {
+  },
+  "git-pre-hooks": {
+    "pre-commit": "npm run lint",
+    "pre-push": "npm run test"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
