@@ -1,7 +1,7 @@
 import glamorous from 'glamorous';
 import theme from 'components/theme';
 import {white} from 'components/theme/semantic';
-import {Container, Grid} from 'semantic-ui-react';
+import {Container, Grid, Icon, List} from 'semantic-ui-react';
 import MenuLink from 'components/atoms/MenuLink';
 import Logo from 'components/atoms/Logo';
 import React from 'react';
@@ -38,8 +38,31 @@ const footer = () => (
     <Container>
       <Logo />
       <ListContainer>
-        <MenuListItem><MenuLink menu="Global Picture">Child</MenuLink></MenuListItem>
-        <MenuListItem><MenuLink menu="Global Picture">Child</MenuLink></MenuListItem>
+        <MenuListItem><MenuLink icon="browser" hasSubMenu menu="Global Picture">
+          <List>
+            <List.Item>
+              <List.Icon name="users" />
+              <List.Content>Child One</List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name="barcode" />
+              <List.Content>Child Two</List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name="mail" />
+              <List.Content>
+                Child Three
+              </List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name="linkify" />
+              <List.Content>
+                Child Four
+              </List.Content>
+            </List.Item>
+          </List>
+        </MenuLink></MenuListItem>
+        <MenuListItem><MenuLink menu="Global Picture" /></MenuListItem>
       </ListContainer>
     </Container>
   </MenuContainer>

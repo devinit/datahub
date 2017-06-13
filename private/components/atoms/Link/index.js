@@ -16,7 +16,11 @@ export const NormalLink = glamorous.a({
 export const NavLink = glamorous.a({
   color: theme.plainWhite,
   fontWeight: '700',
-
+  textAlign: 'center',
+  transition: 'all .3s',
+  ':hover': {
+    color: theme.plainWhite,
+  }
 });
 
 
