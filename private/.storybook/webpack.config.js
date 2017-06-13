@@ -5,7 +5,8 @@ const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/w
 
 const moduleResolver = {
   resolve: {
-    modules: ['node_modules', path.resolve(__dirname, 'private'),
+    modules: ['node_modules',
+              path.resolve(__dirname, 'private'),
               path.resolve(__dirname, 'public/semantic'),
               path.resolve(__dirname, 'public/img')],
   }
