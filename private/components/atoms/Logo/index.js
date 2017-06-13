@@ -2,7 +2,8 @@ import glamorous from 'glamorous';
 import {Container, Grid} from 'semantic-ui-react';
 import {MenuLink} from 'components/atoms/Link';
 import React from 'react';
-import logoImage from 'logo.png'; // made public/img an npm/webpack resolution path
+// https://github.com/zeit/next.js/issues/1825
+// import logoImage from 'logo.png';
 
 const LogoContainer = glamorous.div({
   display: 'flex',
@@ -16,7 +17,7 @@ const LogoContainer = glamorous.div({
 
 const logo = () => (
   <LogoContainer>
-    <img src={logoImage} alt="Development Initiatives" height="32" width="132" />
+    <img src="/img/logo.png" alt="Development Initiatives" height="32" width="132" />
   </LogoContainer>
 );
 
