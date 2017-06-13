@@ -18,6 +18,9 @@ export const MenuLink = glamorous.a({
   fontWeight: '700',
   paddingRight: '10px;',
   paddingLeft: '10px',
+  '& :hover': {
+    cursor: 'pointer',
+  },
 });
 
 // social-media_circle-icon style as circular icon
