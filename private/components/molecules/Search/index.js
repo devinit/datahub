@@ -35,7 +35,7 @@ class Search extends React.Component {
       </SearchTitle>
       <SearchInput
         visible={this.state.showInput}
-        countries={['Uganda', 'Kenya', 'Tanzania']}
+        countries={[{name: 'Uganda', id: 1}, {name: 'Kenya', id: 2}, {name: 'Tanzania', id: 3}]}
         placeholder="Type Your Country Name"
       />
     </div>);

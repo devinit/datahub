@@ -46,7 +46,7 @@ export const Pointer = glamorous.span({
   backgroundColor: theme.darkRed,
   zIndex: 1 },
   (props) => ({
-    left: `${props.left}%`,
+    right: `${100 - props.left}%`,
   }));
 
 export const Floor = glamorous.span({

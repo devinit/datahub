@@ -7,7 +7,7 @@ import {Input, InputContainer} from '../../atoms/SearchInput/input';
 import {List} from '../../atoms/SearchInput/list';
 
 type Props = {
-  countries: [string],
+  countries: [Object],
   placeholder: string,
   visible: boolean
 };
@@ -29,7 +29,7 @@ const SearchInput = ({countries, placeholder, visible}: Props) => (
         className="list"
       >
         <List >
-          {countries.map((country, i) => <li key={'-key'}>{country}</li>)}
+          {countries.map((country, i) => <li key={country.id}>{country.name}</li>)}
         </List>
       </Wrapper>
     </Container>
