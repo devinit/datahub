@@ -10,7 +10,7 @@ export const SocialIconsContainer = glamorous.div({
 const ChartShare = () => (
   <Modal
     trigger={
-      <Button size="big" basic secondary>
+      <Button size="big" secondary>
         <Icon name="share alternate" />Share Chart</Button>}
     closeIcon="close"
   >
