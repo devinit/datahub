@@ -6,6 +6,12 @@ import logoImage from 'logo.png'; // made public/img an npm/webpack resolution p
 
 const LogoContainer = glamorous.div({
   display: 'flex',
+  float: 'left',
+  '& img': {
+    height: '2em',
+    width: 'auto',
+    marginTop: '1em'
+  }
 });
 
 const logo = () => (
