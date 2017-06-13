@@ -86,10 +86,10 @@ exports[`Storyshots Button with text 1`] = `
 
 exports[`Storyshots Footer Datahub Footer 1`] = `
 <div
-  className="css-xwxuqh"
+  className="css-14if9aj"
 >
   <div
-    className="css-140jqim"
+    className="css-uajphc"
   >
     <div
       className="css-1tfdju4"
@@ -101,13 +101,13 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
           className="ui grid"
         >
           <div
-            className="row"
+            className="four column row"
           >
             <div
-              className="four wide column"
+              className="column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 First Columns
               </h4>
@@ -137,10 +137,10 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               </a>
             </div>
             <div
-              className="four wide column"
+              className="column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 Second Columns
               </h4>
@@ -170,10 +170,10 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               </a>
             </div>
             <div
-              className="four wide column"
+              className="column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 Third Columns
               </h4>
@@ -203,10 +203,10 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               </a>
             </div>
             <div
-              className="four wide column"
+              className="column"
             >
               <h4
-                className="css-v73krq"
+                className="css-106dsda"
               >
                 Fourth Columns
               </h4>
@@ -241,7 +241,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="css-8v7vv"
+    className="css-ntu1fe"
   >
     <div
       className="row"
@@ -293,7 +293,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="lightBlack css-140jqim"
+    className="lightBlack css-uajphc"
   >
     <div
       className="row"
@@ -302,7 +302,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
         className="ui container"
       >
         <div
-          className="css-12p5b9r"
+          className="css-1i088ce"
         >
           <p>
             © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
@@ -320,8 +320,2725 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
 </div>
 `;
 
+exports[`Storyshots Menu Datahub Logo 1`] = `
+<div
+  className="css-1d4suyd"
+>
+  <img
+    alt="Development Initiatives"
+    height="32"
+    src="test-file-stub"
+    width="132"
+  />
+</div>
+`;
+
+exports[`Storyshots Menu Datahub Menu 1`] = `
+<div
+  className="css-1ffx9ig"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="css-1d4suyd"
+    >
+      <img
+        alt="Development Initiatives"
+        height="32"
+        src="test-file-stub"
+        width="132"
+      />
+    </div>
+    <ul
+      className="css-1mml9l4"
+    >
+      <li
+        className="css-lumi0m"
+      >
+        <span
+          className="css-1cyepbr"
+        >
+          <a
+            className="css-vksbfm"
+            href={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="setting icon"
+            />
+            Global Picture
+          </a>
+          <div
+            className="css-1hqij7g"
+          >
+            <div
+              className="ui container"
+            >
+              <ul
+                className="css-ttljof"
+              >
+                <div
+                  className="ui list"
+                  role="list"
+                >
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    <div
+                      className="content"
+                    >
+                      Child One
+                    </div>
+                  </div>
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    <div
+                      className="content"
+                    >
+                      Child Two
+                    </div>
+                  </div>
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="mail icon"
+                    />
+                    <div
+                      className="content"
+                    >
+                      Child Three
+                    </div>
+                  </div>
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="linkify icon"
+                    />
+                    <div
+                      className="content"
+                    >
+                      Child Four
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </span>
+      </li>
+      <li
+        className="css-lumi0m"
+      >
+        <span
+          className="css-1cyepbr"
+        >
+          <a
+            className="css-vksbfm"
+            href={undefined}
+          >
+            
+            Global Picture
+          </a>
+          
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Menu default 1`] = `
 <div
   className="ui menu"
 />
+`;
+
+exports[`Storyshots Search Datahub Main Search 1`] = `
+<div>
+  <div
+    className="css-1viqs2r"
+  >
+    <div
+      className="ui container"
+    >
+      <h2>
+        Explore by
+        <span
+          className="clickable"
+          onClick={[Function]}
+          role="button"
+        >
+           country
+        </span>
+      </h2>
+    </div>
+  </div>
+  <div
+    className="css-mv69bf"
+  >
+    <div
+      className="ui container"
+    >
+      <input
+        className="css-pnc7nu"
+        placeholder="Type Your Country Name"
+      />
+      <div
+        className="list css-13azwyo"
+      >
+        <ul
+          className="css-vi44j9"
+        >
+          <li>
+            Uganda
+          </li>
+          <li>
+            Kenya
+          </li>
+          <li>
+            Tanzania
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates  Spot Light 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="test-file-stub"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="setting icon"
+              />
+              Global Picture
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child One
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Two
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="mail icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Three
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="linkify icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Four
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qaws8s"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="center aligned sixteen wide column"
+          >
+            <b>
+              Spotlight
+            </b>
+             on Uganda is a comprehensive source of Uganda's financial resource flow data at the sub-national (district) level, alongside indicators on poverty, population, education, health, water, hygiene and sanitation. It highlights the geographical variance in sector performance and financial resources, and seeks to answer whether resources are allocated according to need. Explore the country picture by selecting topics and click on a district for an in-depth profile.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-14if9aj"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  First Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Second Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Third Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Fourth Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates  Where are the poor 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="test-file-stub"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="setting icon"
+              />
+              Global Picture
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child One
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Two
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="mail icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Three
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="linkify icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Four
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qaws8s"
+      >
+        <h1
+          className="ui header"
+        >
+          <div
+            className="content"
+          >
+            Where are the poor and where will they be?
+            <div
+              className="sub header"
+            >
+              Between 1990 and 2010, extreme poverty was cut in half. Explore plausible poverty outcomes for 2030 based on models of consumption.
+            </div>
+          </div>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-14if9aj"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  First Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Second Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Third Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Fourth Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Country Profiles 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="test-file-stub"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="setting icon"
+              />
+              Global Picture
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child One
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Two
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="mail icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Three
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="linkify icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Four
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="ui grid"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="ten wide column"
+          >
+            <div
+              className="css-1u3uxzx"
+            >
+              <div
+                className="ui header"
+              >
+                <i
+                  aria-hidden="true"
+                  className="globe icon"
+                />
+                <div
+                  className="content"
+                >
+                  General Picture
+                </div>
+              </div>
+              <div
+                className="css-1gfdluh"
+              >
+                <div
+                  className="ui container"
+                >
+                  <input
+                    className="css-pnc7nu"
+                    placeholder="Type Your Country Name"
+                  />
+                  <div
+                    className="list css-13azwyo"
+                  >
+                    <ul
+                      className="css-vi44j9"
+                    >
+                      <li>
+                        Uganda
+                      </li>
+                      <li>
+                        Kenya
+                      </li>
+                      <li>
+                        Tanzania
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <span
+                className="css-nilhcx"
+              >
+                Jump to 
+                <a>
+                  International resources
+                </a>
+              </span>
+              <div
+                className="css-1m51egw"
+              >
+                <button
+                  className="ui icon button"
+                  onClick={[Function]}
+                  tabIndex={undefined}
+                >
+                  <i
+                    aria-hidden="true"
+                    className="facebook f icon"
+                  />
+                   
+                </button>
+                <button
+                  className="ui icon button"
+                  onClick={[Function]}
+                  tabIndex={undefined}
+                >
+                  <i
+                    aria-hidden="true"
+                    className="twitter icon"
+                  />
+                   
+                </button>
+                <button
+                  className="ui icon button"
+                  onClick={[Function]}
+                  tabIndex={undefined}
+                >
+                  <i
+                    aria-hidden="true"
+                    className="google plus icon"
+                  />
+                   
+                </button>
+                <button
+                  className="ui icon button"
+                  onClick={[Function]}
+                  tabIndex={undefined}
+                >
+                  <i
+                    aria-hidden="true"
+                    className="mail outline icon"
+                  />
+                   
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-14if9aj"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  First Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Second Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Third Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Fourth Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Main Generic 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="test-file-stub"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="setting icon"
+              />
+              Global Picture
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child One
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Two
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="mail icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Three
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="linkify icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Four
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  />
+  <div
+    className="css-14if9aj"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  First Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Second Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Third Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Fourth Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Unbundling Aid 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="test-file-stub"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="setting icon"
+              />
+              Global Picture
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child One
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Two
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="mail icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Three
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="linkify icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Four
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qaws8s"
+      >
+        <h1
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            Unbundling aid
+            <div
+              className="sub header"
+            >
+              Explore and compare funding priorities for official development assistance
+            </div>
+          </div>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-14if9aj"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  First Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Second Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Third Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Fourth Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Unbundling other official flows 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="test-file-stub"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="setting icon"
+              />
+              Global Picture
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child One
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Two
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="mail icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Three
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="linkify icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Child Four
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-1cyepbr"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qaws8s"
+      >
+        <h1
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            Unbundling other official flows
+            <div
+              className="sub header"
+            >
+              Explore and compare funding priorities for other official flows (OOFs)
+            </div>
+          </div>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-14if9aj"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  First Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Second Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Third Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Fourth Columns
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 2 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 3 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Link 4 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
+<div
+  className="css-dggfml"
+>
+  <span
+    className="bubble css-1ujcf02"
+  >
+    1
+  </span>
+  <div
+    className="css-1whzuw8"
+  >
+    <span
+      className="css-b04w2l"
+    >
+      100
+    </span>
+  </div>
+  <input
+    className="input low css-13v2tq9"
+    max="100"
+    min="1"
+    onChange={[Function]}
+    step="1"
+    type="range"
+    value="100"
+  />
+  <span
+    className="bubble css-2q5yx4"
+  >
+    100
+  </span>
+</div>
 `;
