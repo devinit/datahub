@@ -47,10 +47,10 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
+@primaryColor        : @red;
 @secondaryColor      : @black;
 
-@lightPrimaryColor   : @lightBlue;
+@lightPrimaryColor   : @lightRed;
 @lightSecondaryColor : @lightBlack;
 
 /*--------------
@@ -121,7 +121,7 @@
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.4285em;
-@textColor           : rgba(0, 0, 0, 0.87);
+@textColor           : @lightBlack;
 
 /*-------------------
       Paragraph
@@ -134,16 +134,16 @@
        Links
 --------------------*/
 
-@linkColor           : #4183C4;
+@linkColor           : @lightBlack;
 @linkUnderline       : none;
-@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
+@linkHoverColor      : @red;
 @linkHoverUnderline  : @linkUnderline;
 
 /*-------------------
   Highlighted Text
 --------------------*/
 
-@highlightBackground      : #CCE2FF;
+@highlightBackground      : @red;
 @highlightColor           : @textColor;
 
 @inputHighlightBackground : rgba(100, 100, 100, 0.4);
@@ -191,23 +191,23 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@red              : #DB2828;
-@orange           : #F2711C;
-@yellow           : #FBBD08;
+@red              : #e8443a;
+@orange           : #EA7600;
+@yellow           : #FECB2F;
 @olive            : #B5CC18;
 @green            : #21BA45;
 @teal             : #00B5AD;
-@blue             : #2185D0;
+@blue             : #0095CB;
 @violet           : #6435C9;
-@purple           : #A333C8;
+@purple           : #93328E;
 @pink             : #E03997;
 @brown            : #A5673F;
-@grey             : #767676;
-@black            : #1B1C1D;
+@grey             : lighten(#453f43, 10%);
+@black            : darken(#453f43, 10%);
 
 /*---  Light Colors  ---*/
-@lightRed         : #FF695E;
-@lightOrange      : #FF851B;
+@lightRed         : lighten(@red, 20%);
+@lightOrange      : lighten(@orange, 20%);
 @lightYellow      : #FFE21F;
 @lightOlive       : #D9E778;
 @lightGreen       : #2ECC40;
@@ -217,8 +217,8 @@
 @lightPurple      : #DC73FF;
 @lightPink        : #FF8EDF;
 @lightBrown       : #D67C1C;
-@lightGrey        : #DCDDDE;
-@lightBlack       : #545454;
+@lightGrey        : lighten(@grey, 45%);
+@lightBlack       : #453f43;
 
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;

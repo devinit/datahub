@@ -6,4 +6,10 @@ export default {
   grey: '#d0cccf',
   small: '0.8em',
   normal: '1em',
+  big: '1.7em',
+  plainWhite: '#ffffff',
+  shadow: '#ededed',
+  greyText: '#b8b1b6',
+  darkRed: '#e8443a',
+  lightGray: '#ddd'
 };
