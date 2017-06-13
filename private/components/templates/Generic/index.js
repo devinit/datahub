@@ -12,12 +12,17 @@ type Props = {
 };
 
 export default ({ children}: Props) => {
+  const mainStyles = {
+    marginTop: '4em',
+  };
+
+  const Main = glamorous.div(mainStyles);
   return (
     <div>
       <Menu />
-      <main>
+      <Main>
         {children}
-      </main>
+      </Main>
       <Footer />
     </div>
   );
