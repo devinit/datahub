@@ -14,7 +14,9 @@ module.exports = {
         config: {
           resolve: {
             extensions: ['.js', '.jsx'],
-            modules: ['node_modules', path.resolve(__dirname, 'private'), path.resolve(__dirname, 'public/semantic')],
+            modules: ['node_modules', path.resolve(__dirname, 'private'),
+              path.resolve(__dirname, 'public/semantic'),  
+              path.resolve(__dirname, 'public/img')],
           },
         }
       }

@@ -2,8 +2,7 @@ import glamorous from 'glamorous';
 import {Container, Grid} from 'semantic-ui-react';
 import {MenuLink} from 'components/atoms/Link';
 import React from 'react';
-
-const logoImage = require('../../../images/logo.png');
+import logoImage from 'logo.png'; // made public/img an npm/webpack resolution path
 
 const LogoContainer = glamorous.div({
   display: 'flex',

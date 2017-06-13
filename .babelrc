@@ -19,7 +19,7 @@
     "transform-flow-strip-types",
     "ramda",
     ["module-resolver", {
-      "root": ["./private", "public/semantic"]
+      "root": ["./private", "public/semantic", "public/img"]
     }]
   ]
 }

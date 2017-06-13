@@ -39,5 +39,4 @@ export const SocialMediaLink = glamorous.a({
   boxSizing: 'border-box',
   paddingLeft: '3px',
   marginLeft: '5px',
-
 });
