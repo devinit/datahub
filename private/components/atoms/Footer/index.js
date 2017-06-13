@@ -1,5 +1,6 @@
 import glamorous from 'glamorous';
 import theme from 'components/theme';
+import {white} from 'components/theme/semantic';
 
 export const FooterDiv = glamorous.div({
   display: 'flex',
@@ -25,7 +26,7 @@ export const BlackContainer = glamorous.div({
   flexDirection: 'row'
 });
 export const WhiteContainer = glamorous.div({
-  backgroundColor: theme.white,
+  backgroundColor: white,
   width: '100%',
   flexDirection: 'row',
   paddingTop: '20px',
