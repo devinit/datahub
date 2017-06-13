@@ -1,36 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button With Icon 1`] = `
-<button
-  className="ui button"
-  onClick={[Function]}
-  tabIndex={undefined}
->
-   
-  <i
-    aria-hidden="true"
-    className="right arrow icon"
-  />
-   
-</button>
-`;
-
-exports[`Storyshots Button With Icon and Text 1`] = `
-<button
-  className="ui button"
-  onClick={[Function]}
-  tabIndex={undefined}
->
-   
-  Continue 
-  <i
-    aria-hidden="true"
-    className="right arrow icon"
-  />
-   
-</button>
-`;
-
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
   className="ui primary button"
@@ -51,23 +20,6 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 >
    
   Secondary
-   
-</button>
-`;
-
-exports[`Storyshots Button With some emoji 1`] = `
-<button
-  className="ui button"
-  onClick={[Function]}
-  tabIndex={undefined}
->
-   
-  <span
-    aria-label="emojis"
-    role="img"
-  >
-    😀 😎 👍 💯
-  </span>
    
 </button>
 `;
@@ -327,7 +279,7 @@ exports[`Storyshots Menu Datahub Logo 1`] = `
   <img
     alt="Development Initiatives"
     height="32"
-    src="test-file-stub"
+    src="/img/logo.png"
     width="132"
   />
 </div>
@@ -346,7 +298,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
       <img
         alt="Development Initiatives"
         height="32"
-        src="test-file-stub"
+        src="/img/logo.png"
         width="132"
       />
     </div>
@@ -545,7 +497,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="test-file-stub"
+          src="/img/logo.png"
           width="132"
         />
       </div>
@@ -944,7 +896,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="test-file-stub"
+          src="/img/logo.png"
           width="132"
         />
       </div>
@@ -1345,7 +1297,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="test-file-stub"
+          src="/img/logo.png"
           width="132"
         />
       </div>
@@ -1842,7 +1794,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="test-file-stub"
+          src="/img/logo.png"
           width="132"
         />
       </div>
@@ -2220,7 +2172,7 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="test-file-stub"
+          src="/img/logo.png"
           width="132"
         />
       </div>
@@ -2621,7 +2573,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="test-file-stub"
+          src="/img/logo.png"
           width="132"
         />
       </div>
