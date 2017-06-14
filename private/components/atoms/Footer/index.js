@@ -7,6 +7,9 @@ export const FooterDiv = glamorous.div({
   flexDirection: 'column',
   alignItems: 'center',
   backgroundColor: theme.red,
+  '& p': {
+    color: white,
+  }
 });
 
 export const FooterDisclaimer = glamorous.div({

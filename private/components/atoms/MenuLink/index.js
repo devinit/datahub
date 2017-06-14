@@ -36,6 +36,7 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
     ':hover i': {
       display: 'block',
       margin: '0',
+      marginTop: '-3px',
       width: 'auto'
     },
     ':hover div': {
@@ -74,7 +75,7 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
   return (
     <LocalContainer>
       <NavLink href={link}>
-        {hasSubMenu ? <Icon name="setting" /> : ''}
+        {hasSubMenu ? <Icon name="pie graph" /> : ''}
         {menu}</NavLink>
       {hasSubMenu ? <Drawer>
         <Container>
