@@ -20,32 +20,30 @@ const footer = () => (
           <Grid>
             <Grid.Row columns={4}>
               <Grid.Column>
-                <FooterHeader>First Columns</FooterHeader>
+                <FooterHeader>Sections</FooterHeader>
                 <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog"> Publications</FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog"> Events</FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog"> Working with us </FooterLink>
               </Grid.Column>
               <Grid.Column>
-                <FooterHeader>Second Columns</FooterHeader>
-                <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
+                <FooterHeader>Quick Links</FooterHeader>
+                <FooterLink href="http://devinit.org/#!/blog"> Contact us </FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog"> Topics</FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog"> Our consultancy services </FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog"> Open DI - publishing to IATI </FooterLink>
               </Grid.Column>
               <Grid.Column>
-                <FooterHeader>Third Columns</FooterHeader>
-                <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
+                <FooterHeader>Newsletter</FooterHeader>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </Grid.Column>
               <Grid.Column>
-                <FooterHeader>Fourth Columns</FooterHeader>
-                <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 2 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 3 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Link 4 </FooterLink>
+                <FooterHeader>Creative Commons</FooterHeader>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>

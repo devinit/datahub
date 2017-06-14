@@ -38,7 +38,7 @@ exports[`Storyshots Button with text 1`] = `
 
 exports[`Storyshots Footer Datahub Footer 1`] = `
 <div
-  className="css-14if9aj"
+  className="css-1byv32y"
 >
   <div
     className="css-uajphc"
@@ -61,7 +61,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               <h4
                 className="css-106dsda"
               >
-                First Columns
+                Sections
               </h4>
               <a
                 className="css-1j6tgbo"
@@ -73,19 +73,19 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Link 2 
+                 Publications
               </a>
               <a
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Link 3 
+                 Events
               </a>
               <a
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Link 4 
+                 Working with us 
               </a>
             </div>
             <div
@@ -94,31 +94,31 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               <h4
                 className="css-106dsda"
               >
-                Second Columns
+                Quick Links
               </h4>
               <a
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Data blog 
+                 Contact us 
               </a>
               <a
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Link 2 
+                 Topics
               </a>
               <a
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Link 3 
+                 Our consultancy services 
               </a>
               <a
                 className="css-1j6tgbo"
                 href="http://devinit.org/#!/blog"
               >
-                 Link 4 
+                 Open DI - publishing to IATI 
               </a>
             </div>
             <div
@@ -127,32 +127,11 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               <h4
                 className="css-106dsda"
               >
-                Third Columns
+                Newsletter
               </h4>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Data blog 
-              </a>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 2 
-              </a>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 3 
-              </a>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 4 
-              </a>
+              <p>
+                Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+              </p>
             </div>
             <div
               className="column"
@@ -160,32 +139,11 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               <h4
                 className="css-106dsda"
               >
-                Fourth Columns
+                Creative Commons
               </h4>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Data blog 
-              </a>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 2 
-              </a>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 3 
-              </a>
-              <a
-                className="css-1j6tgbo"
-                href="http://devinit.org/#!/blog"
-              >
-                 Link 4 
-              </a>
+              <p>
+                This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+              </p>
             </div>
           </div>
         </div>
@@ -309,7 +267,23 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-lumi0m"
       >
         <span
-          className="css-1cyepbr"
+          className="css-uff70l"
+        >
+          <a
+            className="css-vksbfm"
+            href={undefined}
+          >
+            
+            Global Picture
+          </a>
+          
+        </span>
+      </li>
+      <li
+        className="css-lumi0m"
+      >
+        <span
+          className="css-uff70l"
         >
           <a
             className="css-vksbfm"
@@ -317,9 +291,9 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
           >
             <i
               aria-hidden="true"
-              className="setting icon"
+              className="pie graph icon"
             />
-            Global Picture
+            Profiles
           </a>
           <div
             className="css-1hqij7g"
@@ -342,14 +316,97 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                   >
                     <i
                       aria-hidden="true"
-                      className="users icon"
+                      className="area graph icon"
                     />
                     <div
                       className="content"
                     >
-                      Child One
+                      Country Profiles
                     </div>
                   </div>
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    <div
+                      className="content"
+                    >
+                      Multilateral Profiles
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </span>
+      </li>
+      <li
+        className="css-lumi0m"
+      >
+        <span
+          className="css-uff70l"
+        >
+          <a
+            className="css-vksbfm"
+            href={undefined}
+          >
+            
+            Unnbuling aid
+          </a>
+          
+        </span>
+      </li>
+      <li
+        className="css-lumi0m"
+      >
+        <span
+          className="css-uff70l"
+        >
+          <a
+            className="css-vksbfm"
+            href={undefined}
+          >
+            
+            Spotlingt on Uganda
+          </a>
+          
+        </span>
+      </li>
+      <li
+        className="css-lumi0m"
+      >
+        <span
+          className="css-uff70l"
+        >
+          <a
+            className="css-vksbfm"
+            href={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon"
+            />
+            Other Visualizations
+          </a>
+          <div
+            className="css-1hqij7g"
+          >
+            <div
+              className="ui container"
+            >
+              <ul
+                className="css-ttljof"
+              >
+                <div
+                  className="ui list"
+                  role="list"
+                >
                   <div
                     className="item"
                     data-value={undefined}
@@ -363,7 +420,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                     <div
                       className="content"
                     >
-                      Child Two
+                      Unbundling other official flows
                     </div>
                   </div>
                   <div
@@ -374,12 +431,12 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                   >
                     <i
                       aria-hidden="true"
-                      className="mail icon"
+                      className="users icon"
                     />
                     <div
                       className="content"
                     >
-                      Child Three
+                       Where are the poor and where will they be?
                     </div>
                   </div>
                   <div
@@ -390,12 +447,28 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                   >
                     <i
                       aria-hidden="true"
-                      className="linkify icon"
+                      className="area graph icon"
                     />
                     <div
                       className="content"
                     >
-                      Child Four
+                      Are domestic public resources able to meet the needs of the poorest people?
+                    </div>
+                  </div>
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    <div
+                      className="content"
+                    >
+                      Different providers, different priorities
                     </div>
                   </div>
                 </div>
@@ -408,14 +481,14 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-lumi0m"
       >
         <span
-          className="css-1cyepbr"
+          className="css-uff70l"
         >
           <a
             className="css-vksbfm"
             href={undefined}
           >
             
-            Global Picture
+            Methodology
           </a>
           
         </span>
@@ -508,7 +581,23 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
@@ -516,9 +605,9 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             >
               <i
                 aria-hidden="true"
-                className="setting icon"
+                className="pie graph icon"
               />
-              Global Picture
+              Profiles
             </a>
             <div
               className="css-1hqij7g"
@@ -541,14 +630,97 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="users icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child One
+                        Country Profiles
                       </div>
                     </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
                     <div
                       className="item"
                       data-value={undefined}
@@ -562,7 +734,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       <div
                         className="content"
                       >
-                        Child Two
+                        Unbundling other official flows
                       </div>
                     </div>
                     <div
@@ -573,12 +745,12 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="mail icon"
+                        className="users icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Three
+                         Where are the poor and where will they be?
                       </div>
                     </div>
                     <div
@@ -589,12 +761,28 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="linkify icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Four
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
                       </div>
                     </div>
                   </div>
@@ -607,14 +795,14 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
               href={undefined}
             >
               
-              Global Picture
+              Methodology
             </a>
             
           </span>
@@ -647,7 +835,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
     </div>
   </div>
   <div
-    className="css-14if9aj"
+    className="css-1byv32y"
   >
     <div
       className="css-uajphc"
@@ -670,7 +858,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  First Columns
+                  Sections
                 </h4>
                 <a
                   className="css-1j6tgbo"
@@ -682,19 +870,19 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Publications
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Events
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Working with us 
                 </a>
               </div>
               <div
@@ -703,31 +891,31 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Second Columns
+                  Quick Links
                 </h4>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Data blog 
+                   Contact us 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Topics
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Our consultancy services 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Open DI - publishing to IATI 
                 </a>
               </div>
               <div
@@ -736,32 +924,11 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Third Columns
+                  Newsletter
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </div>
               <div
                 className="column"
@@ -769,32 +936,11 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Fourth Columns
+                  Creative Commons
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </div>
             </div>
           </div>
@@ -907,7 +1053,23 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
@@ -915,9 +1077,9 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
             >
               <i
                 aria-hidden="true"
-                className="setting icon"
+                className="pie graph icon"
               />
-              Global Picture
+              Profiles
             </a>
             <div
               className="css-1hqij7g"
@@ -940,14 +1102,97 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="users icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child One
+                        Country Profiles
                       </div>
                     </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
                     <div
                       className="item"
                       data-value={undefined}
@@ -961,7 +1206,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                       <div
                         className="content"
                       >
-                        Child Two
+                        Unbundling other official flows
                       </div>
                     </div>
                     <div
@@ -972,12 +1217,12 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="mail icon"
+                        className="users icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Three
+                         Where are the poor and where will they be?
                       </div>
                     </div>
                     <div
@@ -988,12 +1233,28 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="linkify icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Four
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
                       </div>
                     </div>
                   </div>
@@ -1006,14 +1267,14 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
               href={undefined}
             >
               
-              Global Picture
+              Methodology
             </a>
             
           </span>
@@ -1048,7 +1309,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
     </div>
   </div>
   <div
-    className="css-14if9aj"
+    className="css-1byv32y"
   >
     <div
       className="css-uajphc"
@@ -1071,7 +1332,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  First Columns
+                  Sections
                 </h4>
                 <a
                   className="css-1j6tgbo"
@@ -1083,19 +1344,19 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Publications
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Events
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Working with us 
                 </a>
               </div>
               <div
@@ -1104,31 +1365,31 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Second Columns
+                  Quick Links
                 </h4>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Data blog 
+                   Contact us 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Topics
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Our consultancy services 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Open DI - publishing to IATI 
                 </a>
               </div>
               <div
@@ -1137,32 +1398,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Third Columns
+                  Newsletter
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </div>
               <div
                 className="column"
@@ -1170,32 +1410,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Fourth Columns
+                  Creative Commons
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </div>
             </div>
           </div>
@@ -1308,7 +1527,23 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
@@ -1316,9 +1551,9 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             >
               <i
                 aria-hidden="true"
-                className="setting icon"
+                className="pie graph icon"
               />
-              Global Picture
+              Profiles
             </a>
             <div
               className="css-1hqij7g"
@@ -1341,14 +1576,97 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="users icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child One
+                        Country Profiles
                       </div>
                     </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
                     <div
                       className="item"
                       data-value={undefined}
@@ -1362,7 +1680,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       <div
                         className="content"
                       >
-                        Child Two
+                        Unbundling other official flows
                       </div>
                     </div>
                     <div
@@ -1373,12 +1691,12 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="mail icon"
+                        className="users icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Three
+                         Where are the poor and where will they be?
                       </div>
                     </div>
                     <div
@@ -1389,12 +1707,28 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="linkify icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Four
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
                       </div>
                     </div>
                   </div>
@@ -1407,14 +1741,14 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
               href={undefined}
             >
               
-              Global Picture
+              Methodology
             </a>
             
           </span>
@@ -1545,7 +1879,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
     </div>
   </div>
   <div
-    className="css-14if9aj"
+    className="css-1byv32y"
   >
     <div
       className="css-uajphc"
@@ -1568,7 +1902,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  First Columns
+                  Sections
                 </h4>
                 <a
                   className="css-1j6tgbo"
@@ -1580,19 +1914,19 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Publications
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Events
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Working with us 
                 </a>
               </div>
               <div
@@ -1601,31 +1935,31 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Second Columns
+                  Quick Links
                 </h4>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Data blog 
+                   Contact us 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Topics
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Our consultancy services 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Open DI - publishing to IATI 
                 </a>
               </div>
               <div
@@ -1634,32 +1968,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Third Columns
+                  Newsletter
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </div>
               <div
                 className="column"
@@ -1667,32 +1980,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Fourth Columns
+                  Creative Commons
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </div>
             </div>
           </div>
@@ -1805,7 +2097,23 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
@@ -1813,9 +2121,9 @@ exports[`Storyshots Templates Main Generic 1`] = `
             >
               <i
                 aria-hidden="true"
-                className="setting icon"
+                className="pie graph icon"
               />
-              Global Picture
+              Profiles
             </a>
             <div
               className="css-1hqij7g"
@@ -1838,14 +2146,97 @@ exports[`Storyshots Templates Main Generic 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="users icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child One
+                        Country Profiles
                       </div>
                     </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
                     <div
                       className="item"
                       data-value={undefined}
@@ -1859,7 +2250,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                       <div
                         className="content"
                       >
-                        Child Two
+                        Unbundling other official flows
                       </div>
                     </div>
                     <div
@@ -1870,12 +2261,12 @@ exports[`Storyshots Templates Main Generic 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="mail icon"
+                        className="users icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Three
+                         Where are the poor and where will they be?
                       </div>
                     </div>
                     <div
@@ -1886,12 +2277,28 @@ exports[`Storyshots Templates Main Generic 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="linkify icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Four
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
                       </div>
                     </div>
                   </div>
@@ -1904,14 +2311,14 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
               href={undefined}
             >
               
-              Global Picture
+              Methodology
             </a>
             
           </span>
@@ -1923,7 +2330,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
     className="css-1p5z960"
   />
   <div
-    className="css-14if9aj"
+    className="css-1byv32y"
   >
     <div
       className="css-uajphc"
@@ -1946,7 +2353,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  First Columns
+                  Sections
                 </h4>
                 <a
                   className="css-1j6tgbo"
@@ -1958,19 +2365,19 @@ exports[`Storyshots Templates Main Generic 1`] = `
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Publications
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Events
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Working with us 
                 </a>
               </div>
               <div
@@ -1979,31 +2386,31 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Second Columns
+                  Quick Links
                 </h4>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Data blog 
+                   Contact us 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Topics
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Our consultancy services 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Open DI - publishing to IATI 
                 </a>
               </div>
               <div
@@ -2012,32 +2419,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Third Columns
+                  Newsletter
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </div>
               <div
                 className="column"
@@ -2045,32 +2431,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Fourth Columns
+                  Creative Commons
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </div>
             </div>
           </div>
@@ -2183,7 +2548,23 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
@@ -2191,9 +2572,9 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
             >
               <i
                 aria-hidden="true"
-                className="setting icon"
+                className="pie graph icon"
               />
-              Global Picture
+              Profiles
             </a>
             <div
               className="css-1hqij7g"
@@ -2216,14 +2597,97 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="users icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child One
+                        Country Profiles
                       </div>
                     </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
                     <div
                       className="item"
                       data-value={undefined}
@@ -2237,7 +2701,7 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                       <div
                         className="content"
                       >
-                        Child Two
+                        Unbundling other official flows
                       </div>
                     </div>
                     <div
@@ -2248,12 +2712,12 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="mail icon"
+                        className="users icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Three
+                         Where are the poor and where will they be?
                       </div>
                     </div>
                     <div
@@ -2264,12 +2728,28 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="linkify icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Four
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
                       </div>
                     </div>
                   </div>
@@ -2282,14 +2762,14 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
               href={undefined}
             >
               
-              Global Picture
+              Methodology
             </a>
             
           </span>
@@ -2324,7 +2804,7 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
     </div>
   </div>
   <div
-    className="css-14if9aj"
+    className="css-1byv32y"
   >
     <div
       className="css-uajphc"
@@ -2347,7 +2827,7 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  First Columns
+                  Sections
                 </h4>
                 <a
                   className="css-1j6tgbo"
@@ -2359,19 +2839,19 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Publications
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Events
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Working with us 
                 </a>
               </div>
               <div
@@ -2380,31 +2860,31 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Second Columns
+                  Quick Links
                 </h4>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Data blog 
+                   Contact us 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Topics
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Our consultancy services 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Open DI - publishing to IATI 
                 </a>
               </div>
               <div
@@ -2413,32 +2893,11 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Third Columns
+                  Newsletter
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </div>
               <div
                 className="column"
@@ -2446,32 +2905,11 @@ exports[`Storyshots Templates Unbundling Aid 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Fourth Columns
+                  Creative Commons
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </div>
             </div>
           </div>
@@ -2584,7 +3022,23 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
@@ -2592,9 +3046,9 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
             >
               <i
                 aria-hidden="true"
-                className="setting icon"
+                className="pie graph icon"
               />
-              Global Picture
+              Profiles
             </a>
             <div
               className="css-1hqij7g"
@@ -2617,14 +3071,97 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="users icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child One
+                        Country Profiles
                       </div>
                     </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
                     <div
                       className="item"
                       data-value={undefined}
@@ -2638,7 +3175,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                       <div
                         className="content"
                       >
-                        Child Two
+                        Unbundling other official flows
                       </div>
                     </div>
                     <div
@@ -2649,12 +3186,12 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="mail icon"
+                        className="users icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Three
+                         Where are the poor and where will they be?
                       </div>
                     </div>
                     <div
@@ -2665,12 +3202,28 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                     >
                       <i
                         aria-hidden="true"
-                        className="linkify icon"
+                        className="area graph icon"
                       />
                       <div
                         className="content"
                       >
-                        Child Four
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
                       </div>
                     </div>
                   </div>
@@ -2683,14 +3236,14 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           className="css-lumi0m"
         >
           <span
-            className="css-1cyepbr"
+            className="css-uff70l"
           >
             <a
               className="css-vksbfm"
               href={undefined}
             >
               
-              Global Picture
+              Methodology
             </a>
             
           </span>
@@ -2725,7 +3278,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
     </div>
   </div>
   <div
-    className="css-14if9aj"
+    className="css-1byv32y"
   >
     <div
       className="css-uajphc"
@@ -2748,7 +3301,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  First Columns
+                  Sections
                 </h4>
                 <a
                   className="css-1j6tgbo"
@@ -2760,19 +3313,19 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Publications
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Events
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Working with us 
                 </a>
               </div>
               <div
@@ -2781,31 +3334,31 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Second Columns
+                  Quick Links
                 </h4>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Data blog 
+                   Contact us 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 2 
+                   Topics
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 3 
+                   Our consultancy services 
                 </a>
                 <a
                   className="css-1j6tgbo"
                   href="http://devinit.org/#!/blog"
                 >
-                   Link 4 
+                   Open DI - publishing to IATI 
                 </a>
               </div>
               <div
@@ -2814,32 +3367,11 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Third Columns
+                  Newsletter
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
               </div>
               <div
                 className="column"
@@ -2847,32 +3379,11 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 <h4
                   className="css-106dsda"
                 >
-                  Fourth Columns
+                  Creative Commons
                 </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 2 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 3 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Link 4 
-                </a>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
               </div>
             </div>
           </div>
