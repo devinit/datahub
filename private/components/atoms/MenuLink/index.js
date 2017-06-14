@@ -25,6 +25,9 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
     paddingLeft: '0.8em',
     paddingRight: '0.8em',
     cursor: 'pointer',
+    '& .item': {
+      marginBottom: '12px',
+    },
     '& i': {
       display: 'none',
       margin: '0',

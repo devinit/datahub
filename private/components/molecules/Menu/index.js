@@ -38,31 +38,50 @@ const footer = () => (
     <Container>
       <Logo />
       <ListContainer>
-        <MenuListItem><MenuLink icon="browser" hasSubMenu menu="Global Picture">
-          <List>
-            <List.Item>
-              <List.Icon name="users" />
-              <List.Content>Child One</List.Content>
-            </List.Item>
-            <List.Item>
-              <List.Icon name="barcode" />
-              <List.Content>Child Two</List.Content>
-            </List.Item>
-            <List.Item>
-              <List.Icon name="mail" />
-              <List.Content>
-                Child Three
-              </List.Content>
-            </List.Item>
-            <List.Item>
-              <List.Icon name="linkify" />
-              <List.Content>
-                Child Four
-              </List.Content>
-            </List.Item>
-          </List>
-        </MenuLink></MenuListItem>
         <MenuListItem><MenuLink menu="Global Picture" /></MenuListItem>
+        <MenuListItem>
+          <MenuLink menu="Profiles" icon="pie graph" hasSubMenu>
+            <List>
+              <List.Item>
+                <List.Icon name="area graph" />
+                <List.Content>Country Profiles</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Icon name="area graph" />
+                <List.Content>Multilateral Profiles</List.Content>
+              </List.Item>
+            </List>
+          </MenuLink>
+        </MenuListItem>
+        <MenuListItem><MenuLink menu="Unnbuling aid" /></MenuListItem>
+        <MenuListItem><MenuLink menu="Spotlingt on Uganda" /></MenuListItem>
+        <MenuListItem>
+          <MenuLink menu="Other Visualizations" icon="pie graph" hasSubMenu>
+            <List>
+              <List.Item>
+                <List.Icon name="barcode" />
+                <List.Content>Unbundling other official flows</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Icon name="users" />
+                <List.Content> Where are the poor and where will they be?</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Icon name="area graph" />
+                <List.Content>
+                  Are domestic public resources able to meet the needs of the poorest people?
+                </List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Icon name="area graph" />
+                <List.Content>
+                  Different providers, different priorities
+                </List.Content>
+              </List.Item>
+            </List>
+          </MenuLink>
+        </MenuListItem>
+        <MenuListItem><MenuLink menu="Methodology" /></MenuListItem>
       </ListContainer>
     </Container>
   </MenuContainer>
