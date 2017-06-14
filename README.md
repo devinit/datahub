@@ -82,4 +82,4 @@ Development environment
 TODO
 
 - [ ] Reduce service worker pre-cache bundle
-- [ ] [Reduce the amount to data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
+- [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
