@@ -13,3 +13,14 @@ export const HeaderGroup = glamorous.div({
     marginTop: 0,
   }
 });
+export const SectionHeader = glamorous.h2({
+  padding: '1em 2em 1em 1em',
+  display: 'inline-block',
+  margin: 0,
+  letterSpacing: '1px',
+  lineHeight: 1,
+  textTransform: 'uppercase'
+},
+  (props) => ({
+    color: props.color || '#e9e7e8'
+  }));

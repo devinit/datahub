@@ -23,19 +23,6 @@ const cardStyles = {
   overflow: 'visible',
 };
 
-const LightBg = glamorous.div({
-  background: '#e9e7e8',
-  paddingTop: '3em',
-  paddingBottom: '3em',
-});
-
-const HeaderGroup = glamorous.div({
-  marginTop: '2em',
-  '& .header': {
-    marginBottom: 0,
-    marginTop: 0,
-  }
-});
 const CardContainer = glamorous.div(cardStyles);
 
 const SocialIconsContainer = glamorous.div({
