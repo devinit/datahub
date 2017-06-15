@@ -1,5 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
+import {red} from 'components/theme/semantic';
 
 export const LightBg = glamorous.div({
   background: '#e9e7e8',
@@ -21,6 +22,9 @@ export const SectionHeader = glamorous.h2({
   lineHeight: 1,
   textTransform: 'uppercase',
   fontSize: '1.0rem',
+  '& span': {
+    color: red
+  }
 },
   (props) => ({
     background: props.color || '#e9e7e8'
