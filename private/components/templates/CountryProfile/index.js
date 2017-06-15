@@ -7,8 +7,10 @@ import Pane from 'components/atoms/Tabs/Pane';
 import Overview from 'components/atoms/CountryProfiles/OverviewTab';
 import PovertyTab from 'components/atoms/CountryProfiles/PovertyTab';
 import PopulationTab from 'components/atoms/CountryProfiles/PopulationTab';
-import GovernmentFinance from 'components/atoms/CountryProfiles/GovernmentFinanceTab';
+import GovernmentFinanceTab from 'components/atoms/CountryProfiles/GovernmentFinanceTab';
 import InternationalResourcesTab from 'components/atoms/CountryProfiles/InternationalResourcesTab';
+import InternationalResources from 'components/atoms/CountryProfiles/LowerTabs/InternationalResources';
+import GovernmentFinance from 'components/atoms/CountryProfiles/LowerTabs/GovernmentFinance';
 import {SectionHeader} from 'components/atoms/CountryProfiles/Common';
 
 import Generic from '../Generic';
@@ -95,7 +97,7 @@ export default () =>
         <PopulationTab />
       </Pane>
       <Pane label="Government Finance">
-        <GovernmentFinance />
+        <GovernmentFinanceTab />
       </Pane>
       <Pane label="International Resources">
         <InternationalResourcesTab />
@@ -111,10 +113,10 @@ export default () =>
     </HeaderContainer>
     <Tabs selected={0} textAlign="center">
       <Pane label="Government Finance">
-        1
+        <GovernmentFinance />
       </Pane>
       <Pane label="International Resources">
-        1
+        <InternationalResources />
       </Pane>
     </Tabs>
   </Generic>);

@@ -5,14 +5,14 @@ import {white} from 'components/theme/semantic';
 import {LightBg, SectionHeader} from '../Common';
 
 export const TextBlock = glamorous.div({
-  fontSize: '2em',
+  fontSize: '1.2em',
   paddingTop: '1em',
   paddingBottom: '1em',
 });
 
 const InternationalResources = () => (
   <LightBg>
-    <Container>
+    <Container textAlign="center">
       <Grid>
         <Grid.Column width={16} >
           <SectionHeader color={white}>
