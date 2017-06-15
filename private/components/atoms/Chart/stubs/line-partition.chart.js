@@ -4,10 +4,12 @@ const lineConfig = {
   colors: ['#0095cb'],
   linearAxis: {
     indicator: 'value',
+    showAxis: true,
     showGridlines: true,
   },
   categoryAxis: {
     indicator: 'year',
+    showAxis: true,
   }
 };
 
