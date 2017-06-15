@@ -4,6 +4,7 @@ import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import { red } from 'components/theme/semantic';
 import Tabs from 'components/atoms/Tabs';
 import Pane from 'components/atoms/Tabs/Pane';
+import Overview from 'components/atoms/ContryProfiles/OverviewTab';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -16,9 +17,21 @@ const cardStyles = {
   paddingBottom: '1.5em',
   paddingTop: '1.5em',
   overflow: 'visible',
-  marginBottom: '4em'
 };
 
+const LightBg = glamorous.div({
+  background: '#e9e7e8',
+  paddingTop: '3em',
+  paddingBottom: '3em',
+});
+
+const HeaderGroup = glamorous.div({
+  marginTop: '2em',
+  '& .header': {
+    marginBottom: 0,
+    marginTop: 0,
+  }
+});
 const CardContainer = glamorous.div(cardStyles);
 
 const SocialIconsContainer = glamorous.div({
@@ -64,21 +77,108 @@ export default () =>
                 <Button icon="google plus" />
                 <Button icon="mail outline" />
               </SocialIconsContainer>
-
-              <Tabs selected={0}>
-                <Pane label="Tab 1">
-                  <div>This is my tab 1 contents!</div>
-                </Pane>
-                <Pane label="Tab 2">
-                  <div>This is my tab 2 contents!</div>
-                </Pane>
-                <Pane label="Tab 3">
-                  <div>This is my tab 3 contents!</div>
-                </Pane>
-              </Tabs>
             </CardContainer>
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Container>
+    <Tabs selected={0}>
+      <Pane label="Overview">
+        <Overview />
+      </Pane>
+      <Pane label="Poverty">
+        <LightBg>
+          <Container>
+            <Grid>
+              <Grid.Column width={5}>
+                <Header
+                  textAlign="center"
+                  as="h3"
+                >
+                  IS POVERTY REDUCING OVER TIME?
+                </Header>
+              </Grid.Column>
+
+              <Grid.Column width={5}>
+                <Header
+                  textAlign="center"
+                  as="h3"
+                >
+                  HOW DEEP IS POVERTY?
+                </Header>
+
+                <HeaderGroup>
+                  <Header
+                    textAlign="center"
+                    as="h1"
+                    color="red"
+                  >
+                    10%
+                  </Header>
+                  <Header
+                    textAlign="center"
+                    as="h5"
+                  >
+                    out of a population of 39 million people
+                  </Header>
+                </HeaderGroup>
+              </Grid.Column>
+
+              <Grid.Column width={5}>
+                <Header
+                  textAlign="center"
+                  as="h3"
+                >
+                  HOW IS INCOME DISTRIBUTED?
+                </Header>
+
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </LightBg>
+      </Pane>
+      <Pane label="Population">
+        <Grid>
+          <Grid.Column width={5}>
+            <Header
+              textAlign="center"
+              as="h3"
+            >
+              WHAT IS THE POPULATION
+            </Header>
+            <Header
+              textAlign="center"
+              as="h1"
+              color="red"
+            >
+              39m
+            </Header>
+          </Grid.Column>
+          <Grid.Column width={5}>
+            <Header
+              textAlign="center"
+              as="h3"
+            >
+              WHAT IS THE URBAN VS RURAL SPLIT?
+            </Header>
+
+          </Grid.Column>
+
+          <Grid.Column width={5}>
+            <Header
+              textAlign="center"
+              as="h3"
+            >
+              WHAT IS THE AGE PROFILE?
+            </Header>
+          </Grid.Column>
+        </Grid>
+      </Pane>
+      <Pane label="Government Finance">
+        <div>This is my tab 3 contents!</div>
+      </Pane>
+      <Pane label="International Resources">
+        <div>This is my tab 3 contents!</div>
+      </Pane>
+    </Tabs>
   </Generic>);
