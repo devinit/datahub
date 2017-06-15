@@ -1798,7 +1798,7 @@ exports[`Storyshots Templates Country Profile 1`] = `
                   >
                     <input
                       className="css-pnc7nu"
-                      placeholder="Type Your Country Name"
+                      placeholder="Uganda"
                     />
                     <div
                       className="list css-13azwyo"
@@ -1819,6 +1819,11 @@ exports[`Storyshots Templates Country Profile 1`] = `
                     </div>
                   </div>
                 </div>
+                <p
+                  className="css-1oyuyx"
+                >
+                  Explore this in-depth profile of Uganda to find out overall levels of poverty, income distribution, division of wealth and more. Discover how national and sub-national revenue is generated.
+                </p>
                 <span
                   className="css-nilhcx"
                 >
