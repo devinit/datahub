@@ -6,6 +6,7 @@ import Tabs from 'components/atoms/Tabs';
 import Pane from 'components/atoms/Tabs/Pane';
 import Overview from 'components/atoms/ContryProfiles/OverviewTab';
 import PovertyTab from 'components/atoms/ContryProfiles/PovertyTab';
+import PopulationTab from 'components/atoms/ContryProfiles/PopulationTab';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -91,41 +92,7 @@ export default () =>
         <PovertyTab />
       </Pane>
       <Pane label="Population">
-        <Grid>
-          <Grid.Column width={5}>
-            <Header
-              textAlign="center"
-              as="h3"
-            >
-              WHAT IS THE POPULATION
-            </Header>
-            <Header
-              textAlign="center"
-              as="h1"
-              color="red"
-            >
-              39m
-            </Header>
-          </Grid.Column>
-          <Grid.Column width={5}>
-            <Header
-              textAlign="center"
-              as="h3"
-            >
-              WHAT IS THE URBAN VS RURAL SPLIT?
-            </Header>
-
-          </Grid.Column>
-
-          <Grid.Column width={5}>
-            <Header
-              textAlign="center"
-              as="h3"
-            >
-              WHAT IS THE AGE PROFILE?
-            </Header>
-          </Grid.Column>
-        </Grid>
+        <PopulationTab />
       </Pane>
       <Pane label="Government Finance">
         <div>This is my tab 3 contents!</div>
