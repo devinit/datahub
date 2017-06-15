@@ -6,7 +6,6 @@ import MenuLink from 'components/atoms/MenuLink';
 import Logo from 'components/atoms/Logo';
 import React from 'react';
 
-
 const MenuContainer = glamorous.div({
   backgroundColor: theme.darkRed,
   color: white,
