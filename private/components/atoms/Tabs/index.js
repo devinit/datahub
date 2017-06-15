@@ -6,11 +6,11 @@ import { Container } from 'semantic-ui-react';
 
 type Props = {
   children: any,
-    selected?: number
+    selected?: number,
+    textAlign?: string
 }
 const Wrapper = glamorous.div({
   paddingTop: '1rem',
-  borderTop: '2px solid #ddd9dc',
 });
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
@@ -26,7 +26,7 @@ const TabsContainer = glamorous.ul({
     fontWeight: '700',
   },
   '& li': {
-    float: 'left',
+    display: 'inline',
   }
 });
 const TabLink = glamorous.a({
@@ -86,7 +86,7 @@ class Tabs extends React.Component {
     return (
       <Wrapper>
         <div className="tabs">
-          <Container>
+          <Container textAlign={this.props.textAlign || 'left'}>
             {this._renderTitles()}
           </Container>
           {this._renderContent()}

@@ -4,11 +4,12 @@ import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import { red } from 'components/theme/semantic';
 import Tabs from 'components/atoms/Tabs';
 import Pane from 'components/atoms/Tabs/Pane';
-import Overview from 'components/atoms/ContryProfiles/OverviewTab';
-import PovertyTab from 'components/atoms/ContryProfiles/PovertyTab';
-import PopulationTab from 'components/atoms/ContryProfiles/PopulationTab';
-import GovernmentFinance from 'components/atoms/ContryProfiles/GovernmentFinanceTab';
-import InternationalResourcesTab from 'components/atoms/ContryProfiles/InternationalResourcesTab';
+import Overview from 'components/atoms/CountryProfiles/OverviewTab';
+import PovertyTab from 'components/atoms/CountryProfiles/PovertyTab';
+import PopulationTab from 'components/atoms/CountryProfiles/PopulationTab';
+import GovernmentFinance from 'components/atoms/CountryProfiles/GovernmentFinanceTab';
+import InternationalResourcesTab from 'components/atoms/CountryProfiles/InternationalResourcesTab';
+import {SectionHeader} from 'components/atoms/CountryProfiles/Common';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -28,6 +29,14 @@ const CardContainer = glamorous.div(cardStyles);
 const SocialIconsContainer = glamorous.div({
   marginTop: '1.5em'
 });
+const UpperContainer = glamorous.div({
+  borderBottom: '2px solid #ddd9dc',
+  marginBottom: '.2em',
+});
+const HeaderContainer = glamorous.div({
+  paddingTop: '4em',
+  paddingBottom: '4em'
+});
 
 const JumpToResource = glamorous.span({
   marginTop: '1.5em',
@@ -39,41 +48,43 @@ const JumpToResource = glamorous.span({
 
 export default () =>
   (<Generic pathName="/aid">
-    <Container>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={10}>
-            <CardContainer>
-              <Header>
-                <Icon name="globe" />
-                <Header.Content>
-                  General Picture
-                </Header.Content>
-              </Header>
-              <SearchInput
-                visible
-                countries={[
-                  { name: 'Uganda', id: 1 },
-                  { name: 'Kenya', id: 2 },
-                  { name: 'Tanzania', id: 3 }
-                ]}
-                placeholder="Type Your Country Name"
-              />
-              <JumpToResource>
-                Jump to <a>International resources</a>
-              </JumpToResource>
-              <SocialIconsContainer>
-                <Button icon="facebook f" />
-                <Button icon="twitter" />
-                <Button icon="google plus" />
-                <Button icon="mail outline" />
-              </SocialIconsContainer>
-            </CardContainer>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Container>
-    <Tabs selected={0}>
+    <UpperContainer>
+      <Container>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={10}>
+              <CardContainer>
+                <Header>
+                  <Icon name="globe" />
+                  <Header.Content>
+                    General Picture
+                  </Header.Content>
+                </Header>
+                <SearchInput
+                  visible
+                  countries={[
+                    { name: 'Uganda', id: 1 },
+                    { name: 'Kenya', id: 2 },
+                    { name: 'Tanzania', id: 3 }
+                  ]}
+                  placeholder="Type Your Country Name"
+                />
+                <JumpToResource>
+                  Jump to <a>International resources</a>
+                </JumpToResource>
+                <SocialIconsContainer>
+                  <Button icon="facebook f" />
+                  <Button icon="twitter" />
+                  <Button icon="google plus" />
+                  <Button icon="mail outline" />
+                </SocialIconsContainer>
+              </CardContainer>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </UpperContainer>
+    <Tabs selected={0} >
       <Pane label="Overview">
         <Overview />
       </Pane>
@@ -88,6 +99,22 @@ export default () =>
       </Pane>
       <Pane label="International Resources">
         <InternationalResourcesTab />
+      </Pane>
+    </Tabs>
+
+    <HeaderContainer>
+      <Container textAlign="center">
+        <SectionHeader>
+          EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
+        </SectionHeader>
+      </Container>
+    </HeaderContainer>
+    <Tabs selected={0} textAlign="center">
+      <Pane label="Government Finance">
+        1
+      </Pane>
+      <Pane label="International Resources">
+        1
       </Pane>
     </Tabs>
   </Generic>);
