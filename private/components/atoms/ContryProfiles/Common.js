@@ -6,7 +6,7 @@ export const LightBg = glamorous.div({
   paddingTop: '3em',
   paddingBottom: '3em',
 });
-const HeaderGroup = glamorous.div({
+export const HeaderGroup = glamorous.div({
   marginTop: '2em',
   '& .header': {
     marginBottom: 0,

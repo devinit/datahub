@@ -5,6 +5,7 @@ import { red } from 'components/theme/semantic';
 import Tabs from 'components/atoms/Tabs';
 import Pane from 'components/atoms/Tabs/Pane';
 import Overview from 'components/atoms/ContryProfiles/OverviewTab';
+import PovertyTab from 'components/atoms/ContryProfiles/PovertyTab';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -87,55 +88,7 @@ export default () =>
         <Overview />
       </Pane>
       <Pane label="Poverty">
-        <LightBg>
-          <Container>
-            <Grid>
-              <Grid.Column width={5}>
-                <Header
-                  textAlign="center"
-                  as="h3"
-                >
-                  IS POVERTY REDUCING OVER TIME?
-                </Header>
-              </Grid.Column>
-
-              <Grid.Column width={5}>
-                <Header
-                  textAlign="center"
-                  as="h3"
-                >
-                  HOW DEEP IS POVERTY?
-                </Header>
-
-                <HeaderGroup>
-                  <Header
-                    textAlign="center"
-                    as="h1"
-                    color="red"
-                  >
-                    10%
-                  </Header>
-                  <Header
-                    textAlign="center"
-                    as="h5"
-                  >
-                    out of a population of 39 million people
-                  </Header>
-                </HeaderGroup>
-              </Grid.Column>
-
-              <Grid.Column width={5}>
-                <Header
-                  textAlign="center"
-                  as="h3"
-                >
-                  HOW IS INCOME DISTRIBUTED?
-                </Header>
-
-              </Grid.Column>
-            </Grid>
-          </Container>
-        </LightBg>
+        <PovertyTab />
       </Pane>
       <Pane label="Population">
         <Grid>
