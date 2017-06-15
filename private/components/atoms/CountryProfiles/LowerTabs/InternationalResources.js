@@ -2,12 +2,12 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import React from 'react';
 import glamorous from 'glamorous';
 import {white} from 'components/theme/semantic';
-import {LightBg, SectionHeader} from '../Common';
+import {LightBg, SectionHeader, Lead} from '../Common';
 
 export const TextBlock = glamorous.div({
-  fontSize: '1.2em',
-  paddingTop: '1em',
-  paddingBottom: '1em',
+  fontSize: '1.3rem',
+  paddingLeft: '4em',
+  paddingRight: '4em',
 });
 
 const InternationalResources = () => (
@@ -18,17 +18,22 @@ const InternationalResources = () => (
           <SectionHeader color={white}>
             INFLOWS <span>VS</span> OUTFLOWS
           </SectionHeader>
-          <TextBlock>
-            A dynamic mix of resources flow to and from Uganda.
-            All resources can play a role in ending poverty,
-            though different resources impact poverty directly and indirectly
-            through different mechanisms and flow for wide-ranging objectives.
-          </TextBlock>
-          <TextBlock>
-          To understand the value of different resources for poverty
-          reduction we must start by understanding the volumes - move the slider
-          to explore how official, commercial, private and illicit resources flow to and from Uganda
-          </TextBlock>
+          <Lead>
+            <TextBlock>
+              A dynamic mix of resources flow to and from Uganda.
+              All resources can play a role in ending poverty,
+              though different resources impact poverty directly and indirectly
+              through different mechanisms and flow for wide-ranging objectives.
+            </TextBlock>
+          </Lead>
+          <Lead>
+            <TextBlock>
+              To understand the value of different resources for poverty
+              reduction we must start by understanding the volumes - move the slider
+              to explore how official, commercial, private and illicit
+              resources flow to and from Uganda
+            </TextBlock>
+          </Lead>
         </Grid.Column>
 
       </Grid>

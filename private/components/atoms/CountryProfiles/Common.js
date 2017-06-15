@@ -7,6 +7,11 @@ export const LightBg = glamorous.div({
   paddingTop: '4em',
   paddingBottom: '4em',
 });
+export const Lead = glamorous.p({
+  marginTop: '1rem',
+  fontSize: '1.8rem',
+  fontWeight: 300,
+});
 export const HeaderGroup = glamorous.div({
   marginTop: '2em',
   '& .header': {

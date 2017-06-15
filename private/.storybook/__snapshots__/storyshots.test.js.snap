@@ -1502,6 +1502,804 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
 </div>
 `;
 
+exports[`Storyshots Templates Country Profile 1`] = `
+<div>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1d4suyd"
+      >
+        <img
+          alt="Development Initiatives"
+          height="32"
+          src="/img/logo.png"
+          width="132"
+        />
+      </div>
+      <ul
+        className="css-1mml9l4"
+      >
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Global Picture
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Profiles
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Country Profiles
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Multilateral Profiles
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Unnbuling aid
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Spotlingt on Uganda
+            </a>
+            
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              <i
+                aria-hidden="true"
+                className="pie graph icon"
+              />
+              Other Visualizations
+            </a>
+            <div
+              className="css-1hqij7g"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-ttljof"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="barcode icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Unbundling other official flows
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="users icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                         Where are the poor and where will they be?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="area graph icon"
+                      />
+                      <div
+                        className="content"
+                      >
+                        Different providers, different priorities
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </li>
+        <li
+          className="css-lumi0m"
+        >
+          <span
+            className="css-uff70l"
+          >
+            <a
+              className="css-vksbfm"
+              href={undefined}
+            >
+              
+              Methodology
+            </a>
+            
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="css-1c5cy4h"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="ten wide column"
+            >
+              <div
+                className="css-ymwgoh"
+              >
+                <div
+                  className="ui header"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="globe icon"
+                  />
+                  <div
+                    className="content"
+                  >
+                    General Picture
+                  </div>
+                </div>
+                <div
+                  className="css-1gfdluh"
+                >
+                  <div
+                    className="ui container"
+                  >
+                    <input
+                      className="css-pnc7nu"
+                      placeholder="Type Your Country Name"
+                    />
+                    <div
+                      className="list css-13azwyo"
+                    >
+                      <ul
+                        className="css-vi44j9"
+                      >
+                        <li>
+                          Uganda
+                        </li>
+                        <li>
+                          Kenya
+                        </li>
+                        <li>
+                          Tanzania
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <span
+                  className="css-nilhcx"
+                >
+                  Jump to 
+                  <a>
+                    International resources
+                  </a>
+                </span>
+                <div
+                  className="css-1m51egw"
+                >
+                  <button
+                    className="ui icon button"
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="facebook f icon"
+                    />
+                     
+                  </button>
+                  <button
+                    className="ui icon button"
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="twitter icon"
+                    />
+                     
+                  </button>
+                  <button
+                    className="ui icon button"
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="google plus icon"
+                    />
+                     
+                  </button>
+                  <button
+                    className="ui icon button"
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="mail outline icon"
+                    />
+                     
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-g2btyb"
+    >
+      <div
+        className="tabs"
+      >
+        <div
+          className="ui left aligned container"
+        >
+          <ul
+            className="css-17o30lr"
+          >
+            <li>
+              <a
+                className="active css-16co4b6"
+                onClick={[Function]}
+              >
+                Overview
+              </a>
+            </li>
+            <li>
+              <a
+                className="css-16co4b6"
+                onClick={[Function]}
+              >
+                Poverty
+              </a>
+            </li>
+            <li>
+              <a
+                className="css-16co4b6"
+                onClick={[Function]}
+              >
+                Population
+              </a>
+            </li>
+            <li>
+              <a
+                className="css-16co4b6"
+                onClick={[Function]}
+              >
+                Government Finance
+              </a>
+            </li>
+            <li>
+              <a
+                className="css-16co4b6"
+                onClick={[Function]}
+              >
+                International Resources
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="tabs__content"
+        >
+          <div>
+            <div
+              className="css-13dh4yr"
+            >
+              <div
+                className="ui container"
+              >
+                <div
+                  className="ui grid"
+                >
+                  <div
+                    className="five wide column"
+                  >
+                    <h3
+                      className="ui center aligned header"
+                    >
+                      HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
+                    </h3>
+                    <h1
+                      className="ui red center aligned header"
+                    >
+                      19.6M
+                    </h1>
+                    <h5
+                      className="ui center aligned header"
+                    >
+                      out of a population of 39 million people
+                    </h5>
+                  </div>
+                  <div
+                    className="five wide column"
+                  >
+                    <h3
+                      className="ui center aligned header"
+                    >
+                      WHAT RESOURCES ARE AVAILABLE?
+                    </h3>
+                    <div
+                      className="css-1rl1u7u"
+                    >
+                      <h4
+                        className="ui red center aligned header"
+                      >
+                        Domestic public
+                      </h4>
+                      <h2
+                        className="ui red center aligned header"
+                      >
+                        US$ 3bn
+                      </h2>
+                      <h4
+                        className="ui center aligned header"
+                      >
+                        International
+                      </h4>
+                      <h2
+                        className="ui center aligned header"
+                      >
+                        US$ 4.4bn
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="five wide column"
+                  >
+                    <h3
+                      className="ui center aligned header"
+                    >
+                      HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
+                    </h3>
+                    <div
+                      className="css-1rl1u7u"
+                    >
+                      <h1
+                        className="ui red center aligned header"
+                      >
+                        PPP$ 365
+                      </h1>
+                      <h5
+                        className="ui center aligned header"
+                      >
+                        out of a population of 39 million people
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-1qaws8s"
+    >
+      <div
+        className="ui center aligned container"
+      >
+        <h2
+          className="css-1lgu7f5"
+        >
+          EXPLORE 
+          <span>
+            DOMESTIC AND INTERNATIONAL RESOURCES
+          </span>
+        </h2>
+      </div>
+    </div>
+    <div
+      className="css-g2btyb"
+    >
+      <div
+        className="tabs"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <ul
+            className="css-17o30lr"
+          >
+            <li>
+              <a
+                className="active css-16co4b6"
+                onClick={[Function]}
+              >
+                Government Finance
+              </a>
+            </li>
+            <li>
+              <a
+                className="css-16co4b6"
+                onClick={[Function]}
+              >
+                International Resources
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="tabs__content"
+        >
+          <div>
+            <div
+              className="css-13dh4yr"
+            >
+              <div
+                className="ui container"
+              >
+                <div
+                  className="ui grid"
+                >
+                  <div
+                    className="sixteen wide column"
+                  >
+                    <h3
+                      className="ui center aligned header"
+                    >
+                      How does Uganda finance and spend its budget? Move the year slider or click a box to drill down.
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1byv32y"
+  >
+    <div
+      className="css-uajphc"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Sections
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Publications
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Events
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Working with us 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Quick Links
+                </h4>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Contact us 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Topics
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Our consultancy services 
+                </a>
+                <a
+                  className="css-1j6tgbo"
+                  href="http://devinit.org/#!/blog"
+                >
+                   Open DI - publishing to IATI 
+                </a>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Newsletter
+                </h4>
+                <p>
+                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                </p>
+              </div>
+              <div
+                className="column"
+              >
+                <h4
+                  className="css-106dsda"
+                >
+                  Creative Commons
+                </h4>
+                <p>
+                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-1zicc8"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="lightBlack css-uajphc"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-1i088ce"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Templates Country Profiles 1`] = `
 <div>
   <div

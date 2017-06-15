@@ -11,7 +11,7 @@ import GovernmentFinanceTab from 'components/atoms/CountryProfiles/GovernmentFin
 import InternationalResourcesTab from 'components/atoms/CountryProfiles/InternationalResourcesTab';
 import InternationalResources from 'components/atoms/CountryProfiles/LowerTabs/InternationalResources';
 import GovernmentFinance from 'components/atoms/CountryProfiles/LowerTabs/GovernmentFinance';
-import {SectionHeader} from 'components/atoms/CountryProfiles/Common';
+import {SectionHeader, Lead} from 'components/atoms/CountryProfiles/Common';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -69,8 +69,14 @@ export default () =>
                     { name: 'Kenya', id: 2 },
                     { name: 'Tanzania', id: 3 }
                   ]}
-                  placeholder="Type Your Country Name"
+                  placeholder="Uganda"
                 />
+                <Lead>
+                  Explore this in-depth profile of Uganda to
+                  find out overall levels of poverty, income distribution,
+                  division of wealth and more. Discover how national
+                  and sub-national revenue is generated.
+                </Lead>
                 <JumpToResource>
                   Jump to <a>International resources</a>
                 </JumpToResource>
