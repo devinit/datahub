@@ -13,6 +13,17 @@ export const NormalLink = glamorous.a({
   fontSize: theme.smallFont
 });
 
+export const NavLink = glamorous.a({
+  color: theme.plainWhite,
+  fontWeight: '700',
+  textAlign: 'center',
+  transition: 'all .3s',
+  ':hover': {
+    color: theme.plainWhite,
+  }
+});
+
+
 // social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({
   display: 'inline-block',
@@ -28,5 +39,4 @@ export const SocialMediaLink = glamorous.a({
   boxSizing: 'border-box',
   paddingLeft: '3px',
   marginLeft: '5px',
-
 });

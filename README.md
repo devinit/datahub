@@ -53,6 +53,11 @@ Flow helps with it through the [flow-typed](https://github.com/flowtype/flow-typ
 
 There are dependencies for which flow-typed has no definitions for those have a look at [flowgen](https://github.com/joarwilk/flowgen) which offers away of transpiling typescript definitions to flow definitions.
 
+If the above options arent viable consider generating a stub for the types as below
+```
+flow-typed create-stub @devinit/charts@1.1.4
+```
+
 
 
 ## State management and data fetching with [apollo](https://github.com/apollographql/apollo-client) and [redux](https://github.com/reactjs/redux)
@@ -82,4 +87,4 @@ Development environment
 TODO
 
 - [ ] Reduce service worker pre-cache bundle
-- [ ] [Reduce the amount to data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
+- [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)

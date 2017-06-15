@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // eslint-disable-next-line flowtype-errors/show-errors
-import {draw} from '@devinit/charts/lib';
+import {draw} from '@devinit/charts';
 
 type Props = {
   data: [],
