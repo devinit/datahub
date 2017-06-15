@@ -2,12 +2,17 @@
 import React from 'react';
 import type { Element } from 'react';
 
+type Props = {
+  children: any,
+    selected?: number
+}
+
 class Tabs extends React.Component {
 
   static defaultProps = {
     selected: 0,
   }
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       selected: props.selected
@@ -16,11 +21,7 @@ class Tabs extends React.Component {
   state: {
     selected?: number
   }
-  props: {
-    children: any,
-    selected?: number
-  }
-  handleClick(index, event) {
+  handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({
       selected: index
@@ -34,23 +35,23 @@ class Tabs extends React.Component {
     );
   }
   _renderTitles() {
-    function labels(child, index) {
+    const labels = (child, index) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
       return (
         <li key={index}>
           <a
             href=""
             className={activeClass}
-            onClick={(e) => this.handleClick.bind(this, index)}
+            onClick={(e) => this.handleClick(index, e)}
           >
             {child.props.label}
           </a>
         </li>
       );
-    }
+    };
     return (
       <ul className="tabs__labels">
-        {this.props.children.map(labels.bind(this))}
+        {this.props.children.map(labels)}
       </ul>
     );
   }
@@ -65,3 +66,4 @@ class Tabs extends React.Component {
   }
 }
 
+export default Tabs;
