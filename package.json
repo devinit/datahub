@@ -17,6 +17,7 @@
     "build-theme-w": "gulp watch --gulpfile ./private/semantic/gulpfile.js"
   },
   "dependencies": {
+    "@devinit/charts": "^1.1.4",
     "express": "^4.15.3",
     "glamor": "^2.20.25",
     "glamorous": "^3.21.0",
@@ -65,7 +66,6 @@
     "sw-precache-webpack-plugin": "^0.11.3"
   },
   "git-pre-hooks": {
-    "pre-push": "npm run test"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
