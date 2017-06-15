@@ -7,6 +7,8 @@ import Pane from 'components/atoms/Tabs/Pane';
 import Overview from 'components/atoms/ContryProfiles/OverviewTab';
 import PovertyTab from 'components/atoms/ContryProfiles/PovertyTab';
 import PopulationTab from 'components/atoms/ContryProfiles/PopulationTab';
+import GovernmentFinance from 'components/atoms/ContryProfiles/GovernmentFinanceTab';
+import InternationalResourcesTab from 'components/atoms/ContryProfiles/InternationalResourcesTab';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -95,10 +97,10 @@ export default () =>
         <PopulationTab />
       </Pane>
       <Pane label="Government Finance">
-        <div>This is my tab 3 contents!</div>
+        <GovernmentFinance />
       </Pane>
       <Pane label="International Resources">
-        <div>This is my tab 3 contents!</div>
+        <InternationalResourcesTab />
       </Pane>
     </Tabs>
   </Generic>);
