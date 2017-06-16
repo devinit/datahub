@@ -52,7 +52,7 @@ const footer = () => (
           </MenuLink>
         </MenuListItem>
         <MenuListItem><MenuLink menu="Unnbuling aid" /></MenuListItem>
-        <MenuListItem><MenuLink menu="Spotlingt on Uganda" /></MenuListItem>
+        <MenuListItem><MenuLink menu="Spotlight on Uganda" /></MenuListItem>
         <MenuListItem>
           <MenuLink menu="Other Visualizations" icon="pie graph" hasSubMenu>
             <List>
