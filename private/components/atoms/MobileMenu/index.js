@@ -48,7 +48,7 @@ export const Navigation = glamorous.nav({
 class MobileMenu extends React.Component {
 
   static defaultProps = {
-    selected: 0,
+    selected: null,
   }
   constructor(props: Props) {
     super(props);
@@ -57,7 +57,10 @@ class MobileMenu extends React.Component {
     };
   }
   state: {
-    selected?: number
+    selected?: any
+  }
+  resetSelected() {
+    this.setState({selected: null});
   }
   handleClick(index: number, event: any) {
     event.preventDefault();
@@ -75,6 +78,7 @@ class MobileMenu extends React.Component {
           className={`navigation__item ${activeClass}`}
           onClick={(e) => {
             child.props.hasSub ? this.handleClick(index, e) : '';
+            this.state.selected === index ? this.resetSelected() : '';
           }
             }
         >
