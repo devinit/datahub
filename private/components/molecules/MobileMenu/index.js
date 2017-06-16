@@ -1,7 +1,9 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {Icon} from 'semantic-ui-react';
-import {white, redHeaderColor, midWhite, lightBlack} from 'components/theme/semantic';
+import {Icon, List} from 'semantic-ui-react';
+import {white, redHeaderColor, black, lightGrey} from 'components/theme/semantic';
+import Menu from 'components/atoms/MobileMenu';
+import MenuItem from 'components/atoms/MobileMenu/MobileMenuItem';
 
 export const ToggleButton = glamorous.button({
   position: 'absolute',
@@ -26,39 +28,16 @@ export const ToggleButton = glamorous.button({
   }
 });
 
-export const Navigation = glamorous.nav({
-  position: 'fixed',
-  top: '4em',
-  right: '-14px',
-  width: '23em',
-  height: '100%',
-  borderTop: `10px solid ${redHeaderColor}`,
-  paddingBottom: '4em',
-  overflow: 'scroll',
-  background: white,
-  boxShadow: '0 4px 6px rgba(0,0,0,.3)',
-  transform: 'translate(100%,0)',
-  transition: 'all .3s',
-  '& .navigation__item': {
-    position: 'relative',
-    display: 'block',
-    marginBottom: '2px',
-    height: '4em',
-    overflow: 'hidden',
-  },
-  '& .navigation__item-title': {
-    display: 'block',
-    height: '4em',
-    padding: '1.5rem 1.8rem 1.8rem 1.8rem',
-    fontWeight: '700',
-    background: midWhite,
-    cursor: 'pointer',
-    color: lightBlack,
+export const SubMenuContainer = glamorous.ul({
+  listStyleType: 'none',
+  color: black,
+  margin: 0,
+  padding: 0,
+  '& li': {
+    padding: '1rem 1.6rem',
+    borderBottom: ` 1px solid ${lightGrey}`
   }
-}, (props) => ({
-  transform: props.open ? 'translate(0,0)' : 'translate(100%,0)',
-}));
-
+});
 class MobileMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -80,38 +59,26 @@ class MobileMenu extends React.Component {
       <ToggleButton onClick={() => this.toggleNav()}>
         { open ? <Icon name="cancel" /> : <Icon name="align justify" />}
       </ToggleButton>
-      <Navigation onBlur={() => this.setState({open: false})} open={open}>
-        <li className="navigation__item">
-          <span className="navigation__item-title small">
-            <a href="">Global Picture</a>
-          </span>
-        </li>
-        <li className="navigation__item">
-          <span className="navigation__item-title small">
-            <a href="">Profiles</a>
-          </span>
-        </li>
-        <li className="navigation__item">
-          <span className="navigation__item-title small">
-            <a href="">Unbundling Aid</a>
-          </span>
-        </li>
-        <li className="navigation__item">
-          <span className="navigation__item-title small">
-            <a href="">Spotlight on Uganda</a>
-          </span>
-        </li>
-        <li className="navigation__item">
-          <span className="navigation__item-title small">
-            <a href="">Other Visualizations</a>
-          </span>
-        </li>
-        <li className="navigation__item">
-          <span className="navigation__item-title small">
-            <a href="">Methodology</a>
-          </span>
-        </li>
-      </Navigation>
+      <Menu open={open}>
+        <MenuItem label="Global Picture" url="" />
+        <MenuItem label="Profiles" url="" hasSub>
+          <SubMenuContainer>
+            <li><a href=""><Icon name="area graph" />Country Profiles</a></li>
+            <li><a href=""><Icon name="area graph" />Multilateral Profiles</a></li>
+          </SubMenuContainer>
+        </MenuItem>
+        <MenuItem label="Unbudling Aid" url="" />
+        <MenuItem label="Spotlight on Uganda" url="" />
+        <MenuItem label="Other Visualizations" url="" hasSub>
+          <SubMenuContainer>
+            <li><a href=""><Icon name="barcode" />Unbundling other official flows</a></li>
+            <li><a href=""><Icon name="users" />Where are the poor and where will they be?</a></li>
+            <li><a href=""><Icon name="area graph" />Are domestic public resources able to meet the needs of the poorest people?</a></li>
+            <li><a href=""><Icon name="area graph" />Different providers, different priorities</a></li>
+          </SubMenuContainer>
+        </MenuItem>
+        <MenuItem label="Methodology" url="" />
+      </Menu>
     </div>
     );
   }
