@@ -1,7 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Icon} from 'semantic-ui-react';
-import {white, redHeaderColor, lightGrey, lightBlack} from 'components/theme/semantic';
+import {white, redHeaderColor, midWhite, lightBlack} from 'components/theme/semantic';
 
 export const ToggleButton = glamorous.button({
   position: 'absolute',
@@ -29,7 +29,7 @@ export const ToggleButton = glamorous.button({
 export const Navigation = glamorous.nav({
   position: 'fixed',
   top: '4em',
-  right: 0,
+  right: '-14px',
   width: '23em',
   height: '100%',
   borderTop: `10px solid ${redHeaderColor}`,
@@ -51,7 +51,7 @@ export const Navigation = glamorous.nav({
     height: '4em',
     padding: '1.5rem 1.8rem 1.8rem 1.8rem',
     fontWeight: '700',
-    background: lightGrey,
+    background: midWhite,
     cursor: 'pointer',
     color: lightBlack,
   }
