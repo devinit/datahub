@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
 import {Container, Icon} from 'semantic-ui-react';
-import {white, red, black} from 'components/theme/semantic';
+import {white, redHeaderColor, black} from 'components/theme/semantic';
 import {NavLink} from '../Link';
 
 type Props = {
@@ -17,35 +17,52 @@ type Props = {
 export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
   const LocalContainer = glamorous.span({
     height: '4em',
-    float: 'left',
     color: white,
     position: 'relative',
     background: '0 0',
     paddingTop: '1.2em',
     paddingLeft: '0.8em',
     paddingRight: '0.8em',
+    display: 'inline-table',
     cursor: 'pointer',
     '& .item': {
       marginBottom: '12px',
     },
-    '& i': {
-      display: 'none',
-      margin: '0',
-      width: 'auto'
-    },
-    ':hover i': {
+    '&  i.menu-icon': {
       display: 'block',
       margin: '0',
-      marginTop: '-3px',
-      width: 'auto'
+      zIndex: '2',
+      position: 'absolute',
+      bottom: '102%',
+      width: '100%',
+      left: '0%',
+      textAlign: 'center',
+      transform: 'translate(0,0)',
+      transition: 'transform .3s cubic-bezier(.215,.61,.355,1)',
+      transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
+    },
+    ':hover i.menu-icon': {
+      transform: 'translate(0,180%)',
+    },
+    '& .menu-text': {
+      transform: 'translate(0,0)',
+      transition: 'transform .3s cubic-bezier(.215,.61,.355,1)',
+      transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
+    },
+    ':hover .menu-text': {
+      transform: 'translate(0,80%)',
     },
     ':hover div': {
       opacity: 1,
       visibility: 'visible',
     },
     ':hover': {
-      background: red,
-    }});
+      background: redHeaderColor,
+    }}, (props) => ({
+      ':hover .menu-text': {
+        transform: hasSubMenu ? 'translate(0,50%)' : '',
+      }
+    }));
   const Drawer = glamorous.div({
     position: 'fixed',
     top: '3em',
@@ -53,7 +70,7 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
     color: black,
     width: '100%',
     height: 'auto',
-    borderTop: `10px solid ${red}`,
+    borderTop: `10px solid ${redHeaderColor}`,
     paddingTop: '1em',
     paddingBottom: '2em',
     background: white,
@@ -73,10 +90,12 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
   });
 
   return (
-    <LocalContainer>
+    <LocalContainer
+      hasSubMenu={hasSubMenu}
+    >
+      {hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : ''}
       <NavLink href={link}>
-        {hasSubMenu ? <Icon name="pie graph" /> : ''}
-        {menu}</NavLink>
+        <div className="menu-text">{menu}</div></NavLink>
       {hasSubMenu ? <Drawer>
         <Container>
           <ListContainer>

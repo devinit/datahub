@@ -11,7 +11,8 @@ const LogoContainer = glamorous.div({
   '& img': {
     height: '2em',
     width: 'auto',
-    marginTop: '1em'
+    marginTop: '1em',
+    marginBottom: '1em'
   }
 });
 

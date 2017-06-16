@@ -18,6 +18,7 @@ export const NavLink = glamorous.a({
   fontWeight: '700',
   textAlign: 'center',
   transition: 'all .3s',
+
   ':hover': {
     color: theme.plainWhite,
   }
