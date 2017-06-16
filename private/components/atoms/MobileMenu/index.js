@@ -65,18 +65,22 @@ class MobileMenu extends React.Component {
       selected: index
     });
   }
+  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   _renderContent() {
     const items = (child, index) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
       return (
-        <li key={index} className={`navigation__item ${activeClass}`}>
+        <li
+          key={index}
+          className={`navigation__item ${activeClass}`}
+          onClick={(e) => {
+            child.props.hasSub ? this.handleClick(index, e) : '';
+          }
+            }
+        >
           <span className="navigation__item-title small">
             <a
               href={child.props.url}
-              onClick={(e) => {
-                child.props.hasSub ? this.handleClick(index, e) : '';
-              }
-            }
             >
               {child.props.label}
             </a>
