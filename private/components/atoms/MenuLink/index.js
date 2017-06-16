@@ -42,7 +42,7 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
       transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
     },
     ':hover i.menu-icon': {
-      transform: 'translate(0,160%)',
+      transform: 'translate(0,180%)',
     },
     '& .menu-text': {
       transform: 'translate(0,0)',
@@ -50,7 +50,7 @@ export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
       transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
     },
     ':hover .menu-text': {
-      transform: 'translate(0,60%)',
+      transform: 'translate(0,80%)',
     },
     ':hover div': {
       opacity: 1,
