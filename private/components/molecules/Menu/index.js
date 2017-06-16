@@ -40,14 +40,13 @@ const footer = () => (
         <MenuListItem><MenuLink menu="Global Picture" /></MenuListItem>
         <MenuListItem>
           <MenuLink menu="Profiles" icon="pie graph" hasSubMenu>
-            <List>
+            <List floated="left">
               <List.Item>
-                <List.Icon name="area graph" />
-                <List.Content>Country Profiles</List.Content>
+                <List.Content><Icon name="area graph" />Country Profiles</List.Content>
               </List.Item>
               <List.Item>
                 <List.Icon name="area graph" />
-                <List.Content>Multilateral Profiles</List.Content>
+                <List.Content><Icon name="area graph" />Multilateral Profiles</List.Content>
               </List.Item>
             </List>
           </MenuLink>
@@ -58,22 +57,24 @@ const footer = () => (
           <MenuLink menu="Other Visualizations" icon="pie graph" hasSubMenu>
             <List>
               <List.Item>
-                <List.Icon name="barcode" />
-                <List.Content>Unbundling other official flows</List.Content>
-              </List.Item>
-              <List.Item>
-                <List.Icon name="users" />
-                <List.Content> Where are the poor and where will they be?</List.Content>
-              </List.Item>
-              <List.Item>
-                <List.Icon name="area graph" />
                 <List.Content>
+                  <Icon name="barcode" />
+                  Unbundling other official flows</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content>
+                  <Icon name="users" />
+                  Where are the poor and where will they be?</List.Content>
+              </List.Item>
+              <List.Item>
+                <List.Content floated="left">
+                  <Icon name="area graph" />
                   Are domestic public resources able to meet the needs of the poorest people?
                 </List.Content>
               </List.Item>
               <List.Item>
-                <List.Icon name="area graph" />
                 <List.Content>
+                  <Icon name="area graph" />
                   Different providers, different priorities
                 </List.Content>
               </List.Item>
