@@ -23,13 +23,12 @@ const ListContainer = glamorous.ul({
   flexDirection: 'column',
   color: white,
   alignSelf: 'flex-end',
-  listStyleType: 'square',
+  listStyleType: 'none',
   float: 'right',
   margin: '0',
 });
 const MenuListItem = glamorous.li({
   display: 'inline',
-  float: 'left',
 });
 
 
