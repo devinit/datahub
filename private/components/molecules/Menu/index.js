@@ -5,6 +5,7 @@ import {Container, Grid, Icon, List} from 'semantic-ui-react';
 import MenuLink from 'components/atoms/MenuLink';
 import Logo from 'components/atoms/Logo';
 import DesktopMenu from 'components/molecules/DesktopMenu';
+import MobileMenu from 'components/molecules/MobileMenu';
 import React from 'react';
 
 
@@ -26,6 +27,7 @@ const menu = () => (
     <Container>
       <Logo />
       <DesktopMenu />
+      <MobileMenu />
     </Container>
   </MenuContainer>
 );
