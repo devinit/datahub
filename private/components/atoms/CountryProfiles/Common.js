@@ -1,11 +1,17 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {red} from 'components/theme/semantic';
+import {red, lightBlack} from 'components/theme/semantic';
 
 export const LightBg = glamorous.div({
   background: '#e9e7e8',
   paddingTop: '4em',
   paddingBottom: '4em',
+});
+export const DarkBg = glamorous.div({
+  background: lightBlack,
+  paddingTop: '2em',
+  paddingBottom: '2em',
+  textAlign: 'center'
 });
 export const Lead = glamorous.p({
   marginTop: '1rem',
@@ -32,5 +38,6 @@ export const SectionHeader = glamorous.h2({
   }
 },
   (props) => ({
-    background: props.color || '#e9e7e8'
+    background: props.color || '#e9e7e8',
+    color: props.fontColor || lightBlack
   }));
