@@ -1,9 +1,10 @@
 import { Container, Header, Grid } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import React from 'react';
-import {LightBg} from '../Common';
+import { white } from 'components/theme/semantic';
+import {LightBg, SectionHeader} from '../Common';
 
-export const Lead = glamorous.span({
+const Lead = glamorous.span({
   fontSize: '1.5rem',
   fontWeight: '300',
   textAlign: 'center',
@@ -13,6 +14,12 @@ export const Lead = glamorous.span({
     fontWeight: '600',
   }
 });
+
+const ChartSection = glamorous.div({
+  paddingTop: '2em',
+  paddingBottom: '2em'
+});
+
 const Government = () => (
   <LightBg>
     <Container>
@@ -31,6 +38,26 @@ const Government = () => (
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <ChartSection>
+        <Grid>
+          <Grid.Row>
+            <SectionHeader color={white}>
+              REVENUE AND GRANTS <span>2015</span>
+            </SectionHeader>
+          </Grid.Row>
+          <Grid.Row>
+            <SectionHeader color={white}>
+              FINANCING <span>2015</span>
+            </SectionHeader>
+          </Grid.Row>
+        </Grid>
+      </ChartSection>
+      <Header as="h2" textAlign="center">Expenditure</Header>
+      <ChartSection>
+        <SectionHeader color={white}>
+          EXPENDITURE <span>2015</span>
+        </SectionHeader>
+      </ChartSection>
     </Container>
   </LightBg>
 );
