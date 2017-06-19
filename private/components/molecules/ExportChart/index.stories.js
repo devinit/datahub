@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import ChatShare from '.';
+import ExportChart from '.';
 
 storiesOf('Chart share DontTest', module)
-  .add('ChatShare', () => <ChatShare size="big" color="black" />);
+  .add('ExportChart', () => <ExportChart />);
