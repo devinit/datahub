@@ -3,6 +3,7 @@ import glamorous from 'glamorous';
 import React from 'react';
 import { white } from 'components/theme/semantic';
 import ExportChart from 'components/molecules/ExportChart';
+import ChartFilter from '../ChartFilter';
 import {LightBg, SectionHeader} from '../Common';
 
 const Lead = glamorous.span({
@@ -44,14 +45,21 @@ const Government = () => (
         <ExportChart />
         <Grid>
           <Grid.Row>
-            <SectionHeader color={white}>
-              REVENUE AND GRANTS <span>2015</span>
-            </SectionHeader>
+            <Grid.Column width={8}>
+              <SectionHeader color={white}>
+                REVENUE AND GRANTS <span>2015</span>
+              </SectionHeader>
+            </Grid.Column>
+            <Grid.Column width={8} textAlign="right">
+              <ChartFilter />
+            </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <SectionHeader color={white}>
-              FINANCING <span>2015</span>
-            </SectionHeader>
+            <Grid.Column width={8}>
+              <SectionHeader color={white}>
+                FINANCING <span>2015</span>
+              </SectionHeader>
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </ChartSection>
