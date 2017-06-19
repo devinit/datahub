@@ -66,11 +66,17 @@ const Government = () => (
       <Header as="h2" textAlign="center">Expenditure</Header>
       <Divider />
       <ChartSection>
+        <ExportChart />
         <Grid>
           <Grid.Row>
-            <SectionHeader color={white}>
-              EXPENDITURE <span>2015</span>
-            </SectionHeader>
+            <Grid.Column width={8}>
+              <SectionHeader color={white}>
+                EXPENDITURE <span>2015</span>
+              </SectionHeader>
+            </Grid.Column>
+            <Grid.Column width={8} textAlign="right">
+              <ChartFilter />
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </ChartSection>
