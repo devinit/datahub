@@ -54,9 +54,13 @@ const Government = () => (
       </ChartSection>
       <Header as="h2" textAlign="center">Expenditure</Header>
       <ChartSection>
-        <SectionHeader color={white}>
-          EXPENDITURE <span>2015</span>
-        </SectionHeader>
+        <Grid>
+          <Grid.Row>
+            <SectionHeader color={white}>
+              EXPENDITURE <span>2015</span>
+            </SectionHeader>
+          </Grid.Row>
+        </Grid>
       </ChartSection>
     </Container>
   </LightBg>
