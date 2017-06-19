@@ -25,7 +25,7 @@ export default ({ children}: Props) => {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={4} textAlign="center">
-              <ChartShare />
+              <ChartShare size="big" color="black" />
             </Grid.Column>
           </Grid.Row>
         </Grid>
