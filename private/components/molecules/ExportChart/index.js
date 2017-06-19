@@ -4,16 +4,15 @@ import ChartShare from '../ChartShare';
 
 const ExportChart = () => (
   <Grid>
-    <Grid.Row>
-      <Grid width="12" verticalAlign="middle" textAlign="right">
+    <Grid.Row textAlign="right">
+      <Grid.Column>
         <ChartShare color="grey" size="medium" />
         <Button size="medium" color="grey">
-          <Icon name="print" />
-        </Button>
-        <Button size="small">
+          <Icon name="print" /></Button>
+        <Button size="medium" color="grey">
           Using this visualisation
         </Button>
-      </Grid>
+      </Grid.Column>
     </Grid.Row>
   </Grid>
 );

@@ -1,7 +1,8 @@
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Header, Grid, Divider } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import React from 'react';
 import { white } from 'components/theme/semantic';
+import ExportChart from 'components/molecules/ExportChart';
 import {LightBg, SectionHeader} from '../Common';
 
 const Lead = glamorous.span({
@@ -38,7 +39,9 @@ const Government = () => (
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <Divider />
       <ChartSection>
+        <ExportChart />
         <Grid>
           <Grid.Row>
             <SectionHeader color={white}>
@@ -53,6 +56,7 @@ const Government = () => (
         </Grid>
       </ChartSection>
       <Header as="h2" textAlign="center">Expenditure</Header>
+      <Divider />
       <ChartSection>
         <Grid>
           <Grid.Row>
