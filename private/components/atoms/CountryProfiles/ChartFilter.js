@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import {after} from 'glamor';
 import { white, lightBlack } from 'components/theme/semantic';
 
-const Select = glamorous.select({
+export const Select = glamorous.select({
   display: 'inline-block',
   verticalAlign: 'middle',
   margin: 0,
