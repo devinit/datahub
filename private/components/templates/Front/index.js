@@ -5,6 +5,7 @@ import type { Element } from 'react';
 import glamorous from 'glamorous';
 import {HeaderGroup} from 'components/atoms/CountryProfiles/Common';
 import CountriesRankings from 'components/atoms/Front/CountriesRankings';
+import {Pane, TabsDark} from 'components/atoms/Tabs';
 import Generic from '../Generic';
 import Search from '../../molecules/Search';
 import Slider from '../../molecules/YearSlider';
@@ -33,6 +34,14 @@ export default ({ children}: Props) => {
           </Grid>
         </HeaderContainer>
       </Container>
+      <TabsDark selected={0} >
+        <Pane label="Poverty">
+          Test
+        </Pane>
+        <Pane label="Vulnerability">
+          Test
+        </Pane>
+      </TabsDark>
       <Container>
         <Grid centered>
           <Grid.Row centered>
