@@ -4,7 +4,7 @@ import { white, red, primaryColor, black, redHeaderColor} from 'components/theme
 import { Header, Button } from 'semantic-ui-react';
 
 const ParentContainer = glamorous.div({
-  height: '40em',
+  height: '32em',
   padding: '1em',
 });
 const Container = glamorous.div({
