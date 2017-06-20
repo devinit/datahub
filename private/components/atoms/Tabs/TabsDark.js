@@ -3,38 +3,35 @@ import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
 import { Container } from 'semantic-ui-react';
-import TabsDark from './TabsDark';
-import Pane from './Pane';
+import { lightBlack, white, lightGrey } from 'components/theme/semantic';
 
 type Props = {
   children: any,
-    selected?: number,
-    textAlign?: string
+  selected?: number,
+  textAlign?: string
 }
-const Wrapper = glamorous.div({
-  paddingTop: '1rem',
-});
+
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
   margin: 0,
-  textTransform: 'uppercase',
   padding: 0,
   listStyle: 'none',
-  height: '2.5em',
-  color: '#b8b1b6',
+  color: lightBlack,
   '& .active': {
-    color: '#453f43',
-    borderBottom: '4px solid #e8443a',
-    fontWeight: '700',
+    color: white,
+    backgroundColor: lightBlack,
   },
   '& li': {
-    display: 'inline',
+    display: 'inline-flex',
   }
 });
 const TabLink = glamorous.a({
-  padding: '.75em .35em',
-  marginRight: '30px',
+  padding: '.75em .85em',
+  marginRight: '0',
   cursor: 'pointer',
+});
+const TabLinkWrapper = glamorous.div({
+  background: lightGrey,
 });
 
 class Tabs extends React.Component {
@@ -87,16 +84,16 @@ class Tabs extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <div className="tabs">
+      <div className="tabs">
+        <TabLinkWrapper>
           <Container textAlign={this.props.textAlign || 'left'}>
             {this._renderTitles()}
           </Container>
-          {this._renderContent()}
-        </div>
-      </Wrapper>
+        </TabLinkWrapper>
+        {this._renderContent()}
+      </div>
     );
   }
 }
-export {TabsDark, Pane};
+
 export default Tabs;

@@ -17,8 +17,7 @@ export const Select = glamorous.select({
   outline: 0,
   appearance: 'none',
   transition: 'all .25s',
-},
-  after({
+  ':after': {
     position: 'absolute',
     top: '50%',
     right: '1.25em',
@@ -33,7 +32,8 @@ export const Select = glamorous.select({
     borderBottom: '.35em solid transparent',
     borderLeft: '.35em solid transparent',
     transform: 'scale(1.2,1.2)'
-  }),
+  }
+},
   );
 const ChartFilter = () => (
   <div>
