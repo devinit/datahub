@@ -5,6 +5,7 @@ import type { Element } from 'react';
 import glamorous from 'glamorous';
 import {HeaderGroup} from 'components/atoms/CountryProfiles/Common';
 import CountriesRankings from 'components/atoms/Front/CountriesRankings';
+import Poverty from 'components/atoms/Front/tabs/Poverty';
 import {Pane, TabsDark} from 'components/atoms/Tabs';
 import Generic from '../Generic';
 import Search from '../../molecules/Search';
@@ -36,7 +37,7 @@ export default ({ children}: Props) => {
       </Container>
       <TabsDark selected={0} >
         <Pane label="Poverty">
-          Test
+          <Poverty />
         </Pane>
         <Pane label="Vulnerability">
           Test

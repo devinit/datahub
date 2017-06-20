@@ -1,3 +1,11 @@
-/**
- * Created by kraiba on 20/06/2017.
- */
+import glamorous from 'glamorous';
+import {Icon} from 'semantic-ui-react';
+import React from 'react';
+import { lightBlack } from 'components/theme/semantic';
+
+export const TabHeader = glamorous.div({
+  backgroundColor: lightBlack,
+  fontWeight: '700',
+  paddingTop: '.5em',
+  paddingBottom: '.5em',
+});
