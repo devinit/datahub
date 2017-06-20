@@ -2,7 +2,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Header} from 'semantic-ui-react';
-import type { Element } from 'react';
+import InteractiveChartToolBar from 'components/atoms/UnbundlingAid/InteractiveChartToolBar';
 import Generic from '../Generic';
 
 
@@ -26,6 +26,7 @@ export default () => {
           </Header>
         </HeaderContainer>
       </Container>
+      <InteractiveChartToolBar />
     </Generic>
   );
 };
