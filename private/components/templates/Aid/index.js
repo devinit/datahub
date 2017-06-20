@@ -3,6 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Header} from 'semantic-ui-react';
 import InteractiveChartToolBar from 'components/atoms/UnbundlingAid/InteractiveChartToolBar';
+import TotalODA from 'components/atoms/UnbundlingAid/TotalODA';
 import Generic from '../Generic';
 
 
@@ -27,6 +28,7 @@ export default () => {
         </HeaderContainer>
       </Container>
       <InteractiveChartToolBar />
+      <TotalODA />
     </Generic>
   );
 };
