@@ -75,7 +75,8 @@ There are dependencies for which flow-typed has no definitions for those have a 
 
 --------
 
-We use a mapbox-gl [react wrapper for the maps component](https://github.com/uber/react-map-gl). This wrapper workers better immutable data structures and thats why we have the [immutable.js dependency](https://facebook.github.io/immutable-js/)
+We use a mapbox-gl [react wrapper for the maps component](https://github.com/uber/react-map-gl). This wrapper workers best with immutable data structures and thats why we have the [immutable.js dependency](https://facebook.github.io/immutable-js/)
+You will be required to add a MapboxAccessToken to your system environment variable to get it working.
 
 ### Deployments to Now for staging and test previews
 
@@ -99,7 +100,7 @@ Development environment and notes
 
 --------
 - module resolution is handled by babel not webpack this is a next.js constraint
-- storybook has its own webpack config file you may need to update if required
+- storybook has its own webpack config file you may need to update it where required
 - Advised to use any modern linux OS or MacOS
 - Advised to use NodeJs 7 and above
 

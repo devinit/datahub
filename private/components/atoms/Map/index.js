@@ -4,26 +4,43 @@ import MapGL from 'react-map-gl';
 import {MapPlaceholder} from '../Container';
 
 type Viewport = {
-  latitude: number;
-  longitude: number;
-  zoom: number;
-  width: number;
-  height: number;
+  latitude?: number;
+  longitude?: number;
+  zoom?: number;
+  width?: number;
+  height?: number;
 }
 
 type Props = {
-  mapStyle: string;
-  viewport: Viewport;
-  token: string;
+  mapStyle?: string;
+  viewport?: Viewport;
+  token?: string;
 }
 
 class Map extends Component {
 
-  constructor(props: Props) {
+  constructor(props?: Props) {
     super(props);
-    this.state = props;
+    this.state = {
+      ...this.state,
+      viewport: {...this.viewport, ...this.props.viewport}
+    };
   }
-  state = {}
+  state = {
+    token: process.env.MapboxAccessToken,
+    mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
+    viewport: this.viewport
+  };
+
+  viewport = {
+    latitude: 25,
+    longitude: 20,
+    zoom: 1,
+    bearing: 0,
+    pitch: 0,
+    width: process.browser ? window.innerWidth : 1200,
+    height: process.browser && window.innerWidth < 1200 ? 480 : 600
+  };
 
   render() {
     const {viewport, mapStyle, token} = this.state;

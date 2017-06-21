@@ -1,4 +1,5 @@
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
     /* Enable only in Production */
     if (!dev) {
       // Service Worker
-      config.plugins.push(
+      config.plugins.concat([
         new SWPrecacheWebpackPlugin({
           filename: 'sw.js',
           minify: true,
@@ -28,8 +29,9 @@ module.exports = {
               urlPattern: /^https.*/ // when live
             }
           ]
-        })
-      );
+        }),
+        new webpack.EnvironmentPlugin(['MapboxAccessToken'])
+      ]);
     }
     // const alias = Object.assign(config.resolve.alias, {
     //   'mapbox-gl': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js'),
