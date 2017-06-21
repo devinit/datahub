@@ -3,6 +3,13 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Grid, Icon} from 'semantic-ui-react';
 import {Pane, TabsDark} from 'components/atoms/Tabs';
+import Poverty from 'components/atoms/SpotLight/tabs/Poverty';
+import DistrictPublicResources from 'components/atoms/SpotLight/tabs/DistrictPublicResources';
+import Education from 'components/atoms/SpotLight/tabs/Education';
+import Health from 'components/atoms/SpotLight/tabs/Health';
+import Population from 'components/atoms/SpotLight/tabs/Population';
+import WaterandSanitation from 'components/atoms/SpotLight/tabs/WaterandSanitation';
+import DistrictRank from 'components/atoms/SpotLight/DistrictRank';
 import Generic from '../Generic';
 
 
@@ -30,6 +37,29 @@ export default () => {
             </Grid.Column>
           </Grid>
         </HeaderContainer>
+      </Container>
+      <TabsDark selected={0} textAlign="center">
+        <Pane label="Poverty">
+          <Poverty />
+        </Pane>
+        <Pane label="Population">
+          <Population />
+        </Pane>
+        <Pane label="Education">
+          <Education />
+        </Pane>
+        <Pane label="Health">
+          <Health />
+        </Pane>
+        <Pane label="Water and Sanitation">
+          <WaterandSanitation />
+        </Pane>
+        <Pane label="District Public Resources">
+          <DistrictPublicResources />
+        </Pane>
+      </TabsDark>
+      <Container>
+        <DistrictRank />
       </Container>
     </Generic>
   );
