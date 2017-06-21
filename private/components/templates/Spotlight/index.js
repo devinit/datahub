@@ -1,7 +1,8 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Grid} from 'semantic-ui-react';
+import {Container, Grid, Icon} from 'semantic-ui-react';
+import {Pane, TabsDark} from 'components/atoms/Tabs';
 import Generic from '../Generic';
 
 
@@ -18,9 +19,9 @@ export default () => {
     <Generic pathName="/aid">
       <Container>
         <HeaderContainer>
-          <Grid>
-            <Grid.Column width={16} textAlign="center">
-              <b>Spotlight</b> on Uganda is a comprehensive source of Uganda's
+          <Grid centered>
+            <Grid.Column width={12} textAlign="center">
+              <b><Icon name="pie graph" />Spotlight</b> on Uganda is a comprehensive source of Uganda's
               financial resource flow data at the sub-national (district) level,
               alongside indicators on poverty, population, education, health, water, hygiene and sanitation.
               It highlights the geographical variance in sector performance and financial resources,
