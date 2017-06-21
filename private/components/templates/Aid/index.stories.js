@@ -3,5 +3,5 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Aid from '.';
 
-storiesOf('Templates', module)
+storiesOf('Templates DontTest', module)
   .add('Unbundling Aid', () => <Aid />);
