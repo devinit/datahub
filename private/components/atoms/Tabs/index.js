@@ -8,8 +8,8 @@ import Pane from './Pane';
 
 type Props = {
   children: any,
-    selected?: number,
-    textAlign?: string
+  selected?: number,
+  textAlign?: string
 }
 const Wrapper = glamorous.div({
   paddingTop: '1rem',
