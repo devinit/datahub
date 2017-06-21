@@ -13,7 +13,8 @@ type Viewport = {
 
 type Props = {
   mapStyle: string;
-  viewport: Viewport
+  viewport: Viewport;
+  token: string;
 }
 
 class Map extends Component {
@@ -25,16 +26,19 @@ class Map extends Component {
   state = {}
 
   render() {
-    const {viewport, mapStyle} = this.state;
+    const {viewport, mapStyle, token} = this.state;
 
     return (
       <section>
-        <MapGL
+        {process.browser ?
+        (<MapGL
           {...viewport}
           mapStyle={mapStyle}
           onViewportChange={v => this.setState({viewport: v})}
+          mapboxApiAccessToken={token}
           preventStyleDiffing={false}
-        />
+        />) :
+        (<MapPlaceholder />)}
       </section>
 
     );

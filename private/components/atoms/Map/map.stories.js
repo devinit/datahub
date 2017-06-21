@@ -7,13 +7,14 @@ const mapProps = {
   viewport: {
     latitude: 25,
     longitude: 20,
-    zoom: 14,
+    zoom: 1,
     bearing: 0,
     pitch: 0,
-    width: window.innerWidth,
-    height: window.innerWidth < 1200 ? 480 : 600
+    width: process.browser ? window.innerWidth : 1200,
+    height: process.browser && window.innerWidth < 1200 ? 480 : 600
   },
-  mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
+  token: 'pk.eyJ1IjoiYWttaWxsZXIwMSIsImEiOiJjaXJmMTExYXcwMDUyZ2VuZXVudGs2NXN6In0.UCGi9Cx5COTKxzSiDbusCg',
+  mapStyle: 'mapbox://styles/akmiller01/ciyw0iolu00252snt7hzo1fny',
 };
 
 storiesOf('Maps', module)
