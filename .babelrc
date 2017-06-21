@@ -19,7 +19,10 @@
     "transform-flow-strip-types",
     "ramda",
     ["module-resolver", {
-      "root": ["./private", "public/semantic", "public/img"]
+      "root": ["./private", "public/semantic", "public/img"],
+      "alias": {
+         "mapbox-gl$": "node_modules/mapbox-gl/dist/mapbox-gl.js"
+      }
     }]
   ]
 }

@@ -31,6 +31,11 @@ module.exports = {
         })
       );
     }
+    // const alias = Object.assign(config.resolve.alias, {
+    //   'mapbox-gl': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js'),
+    //   'mapbox-gl$': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js')
+    // });
+    // config.resolve.alias = alias;
     return config;
   }
 };
