@@ -44,7 +44,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             className="four column row"
           >
             <div
-              className="column"
+              className="four wide computer sixteen wide mobile eight wide tablet column"
             >
               <h4
                 className="css-106dsda"
@@ -77,7 +77,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               </a>
             </div>
             <div
-              className="column"
+              className="four wide computer sixteen wide mobile eight wide tablet column"
             >
               <h4
                 className="css-106dsda"
@@ -110,7 +110,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               </a>
             </div>
             <div
-              className="column"
+              className="four wide computer sixteen wide mobile eight wide tablet column"
             >
               <h4
                 className="css-106dsda"
@@ -122,7 +122,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
               </p>
             </div>
             <div
-              className="column"
+              className="four wide computer sixteen wide mobile eight wide tablet column"
             >
               <h4
                 className="css-106dsda"
@@ -191,7 +191,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="lightBlack css-omymer"
+    className="css-omymer lightBlack"
   >
     <div
       className="row"
@@ -1199,7 +1199,7 @@ exports[`Storyshots Search Datahub Main Search 1`] = `
         placeholder="Type Your Country Name"
       />
       <div
-        className="list css-13azwyo"
+        className="css-13azwyo list"
       >
         <ul
           className="css-vi44j9"
@@ -1732,7 +1732,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             <li>
               <a
-                className="active css-2rtur8"
+                className="css-2rtur8 active"
                 onClick={[Function]}
               >
                 Poverty
@@ -2436,7 +2436,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               className="four column row"
             >
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -2469,7 +2469,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -2502,7 +2502,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -2514,7 +2514,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 </p>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -2583,7 +2583,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -3127,7 +3127,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               className="four column row"
             >
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3160,7 +3160,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3193,7 +3193,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3205,7 +3205,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 </p>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3274,7 +3274,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -3815,7 +3815,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     placeholder="Type Your Country Name"
                   />
                   <div
-                    className="list css-13azwyo"
+                    className="css-13azwyo list"
                   >
                     <ul
                       className="css-vi44j9"
@@ -3914,7 +3914,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               className="four column row"
             >
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3947,7 +3947,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3980,7 +3980,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -3992,7 +3992,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 </p>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -4061,7 +4061,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -4582,7 +4582,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               className="four column row"
             >
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -4615,7 +4615,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -4648,7 +4648,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -4660,7 +4660,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 </p>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -4729,7 +4729,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -5273,7 +5273,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               className="four column row"
             >
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -5306,7 +5306,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -5339,7 +5339,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 </a>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -5351,7 +5351,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 </p>
               </div>
               <div
-                className="column"
+                className="four wide computer sixteen wide mobile eight wide tablet column"
               >
                 <h4
                   className="css-106dsda"
@@ -5420,7 +5420,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -5453,7 +5453,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
   className="css-dggfml"
 >
   <span
-    className="bubble css-1ujcf02"
+    className="css-1ujcf02 bubble"
   >
     1
   </span>
@@ -5467,7 +5467,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     </span>
   </div>
   <input
-    className="input low css-13v2tq9"
+    className="css-13v2tq9 input low"
     max="100"
     min="1"
     onChange={[Function]}
@@ -5476,7 +5476,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     value="100"
   />
   <span
-    className="bubble css-2q5yx4"
+    className="css-2q5yx4 bubble"
   >
     100
   </span>
