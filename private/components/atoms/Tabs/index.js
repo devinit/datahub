@@ -13,6 +13,7 @@ type Props = {
 }
 const Wrapper = glamorous.div({
   paddingTop: '1rem',
+  height: '25em',
 });
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
@@ -36,7 +37,29 @@ const TabLink = glamorous.a({
   marginRight: '30px',
   cursor: 'pointer',
 });
-
+const TabsContentWrapper = glamorous.div({
+  position: 'relative',
+  height: '18em',
+  background: '#e9e7e8',
+  '& .tabs__content': {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    opacity: 0,
+    paddingTop: '4em',
+    paddingBottom: '4em',
+    visibility: 'hidden',
+    transform: 'translate(0,100%)',
+    transition: '.3s cubic-bezier(.215,.61,.355,1)',
+    transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
+  },
+  '& .visible': {
+    visibility: 'visible',
+    opacity: 1,
+    transform: 'none',
+  }
+});
 class Tabs extends React.Component {
 
   static defaultProps = {
@@ -58,11 +81,15 @@ class Tabs extends React.Component {
     });
   }
   _renderContent() {
-    return (
-      <div className="tabs__content">
-        {this.props.children[this.state.selected]}
-      </div>
-    );
+    const content = this.props.children.map((child, index) => {
+      const activeClass = (this.state.selected === index ? 'visible' : '');
+      return (
+        <div className={`tabs__content ${activeClass}`}>
+          {this.props.children[index]}
+        </div>
+      );
+    });
+    return content;
   }
   _renderTitles() {
     const labels = (child, index) => {
@@ -92,7 +119,9 @@ class Tabs extends React.Component {
           <Container textAlign={this.props.textAlign || 'left'}>
             {this._renderTitles()}
           </Container>
-          {this._renderContent()}
+          <TabsContentWrapper>
+            {this._renderContent()}
+          </TabsContentWrapper>
         </div>
       </Wrapper>
     );
