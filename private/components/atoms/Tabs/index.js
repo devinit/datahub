@@ -9,19 +9,19 @@ import Pane from './Pane';
 type Props = {
   children: any,
   selected?: number,
-  textAlign?: string
+  textAlign?: string,
+  height?: string
 }
 const Wrapper = glamorous.div({
   paddingTop: '1rem',
-  height: '25em',
 });
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
   margin: 0,
   textTransform: 'uppercase',
   padding: 0,
+  paddingBottom: '1em',
   listStyle: 'none',
-  height: '2.5em',
   color: '#b8b1b6',
   '& .active': {
     color: '#453f43',
@@ -39,7 +39,6 @@ const TabLink = glamorous.a({
 });
 const TabsContentWrapper = glamorous.div({
   position: 'relative',
-  height: '18em',
   background: '#e9e7e8',
   '& .tabs__content': {
     position: 'absolute',
@@ -59,7 +58,9 @@ const TabsContentWrapper = glamorous.div({
     opacity: 1,
     transform: 'none',
   }
-});
+}, (props) => ({
+  height: props.height,
+}));
 class Tabs extends React.Component {
 
   static defaultProps = {
@@ -115,14 +116,12 @@ class Tabs extends React.Component {
   render() {
     return (
       <Wrapper>
-        <div className="tabs">
-          <Container textAlign={this.props.textAlign || 'left'}>
-            {this._renderTitles()}
-          </Container>
-          <TabsContentWrapper>
-            {this._renderContent()}
-          </TabsContentWrapper>
-        </div>
+        <Container textAlign={this.props.textAlign || 'left'}>
+          {this._renderTitles()}
+        </Container>
+        <TabsContentWrapper height={this.props.height}>
+          {this._renderContent()}
+        </TabsContentWrapper>
       </Wrapper>
     );
   }

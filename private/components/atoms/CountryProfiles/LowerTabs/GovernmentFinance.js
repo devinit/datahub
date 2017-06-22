@@ -4,7 +4,7 @@ import React from 'react';
 import { white } from 'components/theme/semantic';
 import ExportChart from 'components/molecules/ExportChart';
 import ChartFilter from '../ChartFilter';
-import {LightBg, SectionHeader} from '../Common';
+import {SectionHeader} from '../Common';
 
 const Lead = glamorous.span({
   fontSize: '1.5rem',
@@ -23,65 +23,63 @@ const ChartSection = glamorous.div({
 });
 
 const Government = () => (
-  <LightBg>
-    <Container>
-      <Grid centered>
+  <Container>
+    <Grid centered>
+      <Grid.Row>
+        <Grid.Column width={8} textAlign="center">
+          <Lead>
+            How does Uganda finance and spend its budget?
+              <span>Move the year slider</span>or <span>click a box</span> to drill down.
+          </Lead>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={8} textAlign="center">
+          <Header as="h2">Government revenue, financing and expenditure</Header>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+    <Divider />
+    <ChartSection>
+      <ExportChart />
+      <Grid>
         <Grid.Row>
-          <Grid.Column width={8} textAlign="center">
-            <Lead>
-              How does Uganda finance and spend its budget?
-                <span>Move the year slider</span>or <span>click a box</span> to drill down.
-            </Lead>
+          <Grid.Column width={8}>
+            <SectionHeader color={white}>
+              REVENUE AND GRANTS <span>2015</span>
+            </SectionHeader>
+          </Grid.Column>
+          <Grid.Column width={8} textAlign="right">
+            <ChartFilter />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width={8} textAlign="center">
-            <Header as="h2">Government revenue, financing and expenditure</Header>
+          <Grid.Column width={8}>
+            <SectionHeader color={white}>
+              FINANCING <span>2015</span>
+            </SectionHeader>
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <Divider />
-      <ChartSection>
-        <ExportChart />
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <SectionHeader color={white}>
-                REVENUE AND GRANTS <span>2015</span>
-              </SectionHeader>
-            </Grid.Column>
-            <Grid.Column width={8} textAlign="right">
-              <ChartFilter />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <SectionHeader color={white}>
-                FINANCING <span>2015</span>
-              </SectionHeader>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </ChartSection>
-      <Header as="h2" textAlign="center">Expenditure</Header>
-      <Divider />
-      <ChartSection>
-        <ExportChart />
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <SectionHeader color={white}>
-                EXPENDITURE <span>2015</span>
-              </SectionHeader>
-            </Grid.Column>
-            <Grid.Column width={8} textAlign="right">
-              <ChartFilter />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </ChartSection>
-    </Container>
-  </LightBg>
+    </ChartSection>
+    <Header as="h2" textAlign="center">Expenditure</Header>
+    <Divider />
+    <ChartSection>
+      <ExportChart />
+      <Grid>
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <SectionHeader color={white}>
+              EXPENDITURE <span>2015</span>
+            </SectionHeader>
+          </Grid.Column>
+          <Grid.Column width={8} textAlign="right">
+            <ChartFilter />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </ChartSection>
+  </Container>
 );
 
 export default Government;

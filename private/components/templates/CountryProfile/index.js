@@ -92,7 +92,7 @@ export default () =>
         </Grid>
       </Container>
     </UpperContainer>
-    <Tabs selected={0} >
+    <Tabs selected={0} height="20em">
       <Pane label="Overview">
         <Overview />
       </Pane>
@@ -117,7 +117,7 @@ export default () =>
         </SectionHeader>
       </Container>
     </HeaderContainer>
-    <Tabs selected={0} textAlign="center">
+    <Tabs selected={0} textAlign="center" height="60em">
       <Pane label="Government Finance">
         <GovernmentFinance />
       </Pane>
