@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>With Glamorous</title>
+          <title>Data hub</title>
           <meta name="theme-color" content="#673ab7" />
           <link rel="manifest" href="manifest.json" />
           <link rel="stylesheet" href="semantic/semantic.min.css" />

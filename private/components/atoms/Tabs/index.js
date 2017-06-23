@@ -47,7 +47,7 @@ const TabsContentWrapper = glamorous.div({
     width: '100%',
     opacity: 0,
     paddingTop: '4em',
-    paddingBottom: '4em',
+    // paddingBottom: '4em',
     visibility: 'hidden',
     transform: 'translate(0,100%)',
     transition: '.3s cubic-bezier(.215,.61,.355,1)',

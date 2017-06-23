@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
+import {Container} from 'semantic-ui-react';
 import type { Element } from 'react';
 import Footer from '../../molecules/Footer';
 import Menu from '../../molecules/Menu';
@@ -18,12 +19,12 @@ export default ({ children}: Props) => {
 
   const Main = glamorous.div(mainStyles);
   return (
-    <div>
+    <Container fluid>
       <Menu />
       <Main>
         {children}
       </Main>
       <Footer />
-    </div>
+    </Container>
   );
 };

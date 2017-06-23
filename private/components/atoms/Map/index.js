@@ -37,7 +37,7 @@ class Map extends Component {
     longitude: 20,
     zoom: 1,
     bearing: 0,
-    pitch: 0,
+    scrollZoom: false,
     width: process.browser ? window.innerWidth : 1200,
     height: process.browser && window.innerWidth < 1200 ? 480 : 600
   };

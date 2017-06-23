@@ -6,6 +6,7 @@ import glamorous from 'glamorous';
 import {HeaderGroup} from 'components/atoms/CountryProfiles/Common';
 import CountriesRankings from 'components/atoms/Front/CountriesRankings';
 import Poverty from 'components/atoms/Front/tabs/Poverty';
+import Map from 'components/atoms/Map';
 import Vulnerability from 'components/atoms/Front/tabs/Vulnerability';
 import GovernmentFinance from 'components/atoms/Front/tabs/GovernmentFinance';
 import InternationalFinance from 'components/atoms/Front/tabs/InternationalFinance';
@@ -68,6 +69,9 @@ export default ({ children}: Props) => {
           <ForwardLooking />
         </Pane>
       </TabsDark>
+      <Container fluid>
+        <Map />
+      </Container>
       <Container>
         <Grid centered>
           <Grid.Row centered>

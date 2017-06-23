@@ -3,8 +3,7 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
-import Map from 'components/atoms/Map';
-import App from 'components/templates/Generic';
+import App from 'components/templates/Front';
 import 'lib/offline-install'; // Get our service worker on the page
 
 type Props = {
@@ -19,8 +18,6 @@ if (typeof window !== 'undefined') {
 
 export default withData((props: Props) => {
   return (
-    <App pathName={props.url.pathname}>
-      <Map />
-    </App>
+    <App pathName={props.url.pathname} />
   );
 });

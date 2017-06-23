@@ -191,7 +191,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="css-omymer lightBlack"
+    className="lightBlack css-omymer"
   >
     <div
       className="row"
@@ -1199,7 +1199,7 @@ exports[`Storyshots Search Datahub Main Search 1`] = `
         placeholder="Type Your Country Name"
       />
       <div
-        className="css-13azwyo list"
+        className="list css-13azwyo"
       >
         <ul
           className="css-vi44j9"
@@ -1732,7 +1732,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             <li>
               <a
-                className="css-2rtur8 active"
+                className="active css-2rtur8"
                 onClick={[Function]}
               >
                 Poverty
@@ -2583,7 +2583,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="lightBlack css-omymer"
     >
       <div
         className="row"
@@ -3274,7 +3274,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="lightBlack css-omymer"
     >
       <div
         className="row"
@@ -3815,7 +3815,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     placeholder="Type Your Country Name"
                   />
                   <div
-                    className="css-13azwyo list"
+                    className="list css-13azwyo"
                   >
                     <ul
                       className="css-vi44j9"
@@ -4061,7 +4061,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="lightBlack css-omymer"
     >
       <div
         className="row"
@@ -4729,7 +4729,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="lightBlack css-omymer"
     >
       <div
         className="row"
@@ -5420,7 +5420,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="lightBlack css-omymer"
     >
       <div
         className="row"
@@ -5453,7 +5453,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
   className="css-dggfml"
 >
   <span
-    className="css-1ujcf02 bubble"
+    className="bubble css-1ujcf02"
   >
     1
   </span>
@@ -5467,7 +5467,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     </span>
   </div>
   <input
-    className="css-13v2tq9 input low"
+    className="input low css-13v2tq9"
     max="100"
     min="1"
     onChange={[Function]}
@@ -5476,7 +5476,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     value="100"
   />
   <span
-    className="css-2q5yx4 bubble"
+    className="bubble css-2q5yx4"
   >
     100
   </span>
