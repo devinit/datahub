@@ -1,12 +1,14 @@
+// TODO:  Move some of the container like atoms into the container atom and
+// just compose them from base containers
 import glamorous from 'glamorous';
 import theme from 'components/theme';
-import {white} from 'components/theme/semantic';
+import {white, red, black} from 'components/theme/semantic';
 
 export const FooterDiv = glamorous.div({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: theme.red,
+  backgroundColor: red,
   '& p': {
     color: white,
   }
@@ -14,7 +16,7 @@ export const FooterDiv = glamorous.div({
 
 export const FooterDisclaimer = glamorous.div({
   padding: 4,
-  color: theme.white,
+  color: white,
   paddingTop: '2em',
   paddingBottom: '2em'
 });
@@ -24,7 +26,7 @@ export const TopFooter = glamorous.div({
 });
 
 export const BlackContainer = glamorous.div({
-  backgroundColor: theme.black,
+  backgroundColor: black,
   width: '100%',
   flexDirection: 'row'
 });

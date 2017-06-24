@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
@@ -7,10 +8,14 @@ export const SocialIconsContainer = glamorous.div({
   marginTop: '1.5em',
 });
 
-const ChartShare = () => (
+type Props = {
+  size: string,
+  color: string,
+};
+const ChartShare = ({size, color}: Props) => (
   <Modal
     trigger={
-      <Button size="big" secondary>
+      <Button size={size} color={color}>
         <Icon name="share alternate" />Share Chart</Button>}
     closeIcon="close"
   >

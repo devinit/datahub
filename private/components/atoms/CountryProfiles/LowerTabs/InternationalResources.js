@@ -2,19 +2,26 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import React from 'react';
 import glamorous from 'glamorous';
 import {white} from 'components/theme/semantic';
-import {LightBg, SectionHeader, Lead} from '../Common';
+import {Select} from 'components/atoms/CountryProfiles/ChartFilter';
+import ChartShare from 'components/molecules/ChartShare';
+import YearSlider from 'components/molecules/YearSlider';
+import {SectionHeader, Lead} from '../Common';
 
 export const TextBlock = glamorous.div({
   fontSize: '1.3rem',
-  paddingLeft: '4em',
-  paddingRight: '4em',
+  paddingLeft: '1em',
+  paddingRight: '1em',
 });
-
+const FlexSpace = glamorous.div({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between'
+});
 const InternationalResources = () => (
-  <LightBg>
-    <Container textAlign="center">
-      <Grid>
-        <Grid.Column width={16} >
+  <Container textAlign="center">
+    <Grid centered>
+      <Grid.Row>
+        <Grid.Column width={12} textAlign="center">
           <SectionHeader color={white}>
             INFLOWS <span>VS</span> OUTFLOWS
           </SectionHeader>
@@ -34,11 +41,41 @@ const InternationalResources = () => (
               resources flow to and from Uganda
             </TextBlock>
           </Lead>
+          <FlexSpace>
+            <SectionHeader color={white}>
+              RESOURCE FLOWS TO UGANDA <span>4.4BN</span>
+            </SectionHeader>
+            <SectionHeader color={white}>
+              RESOURCE FLOWS LEAVING UGANDA <span>1.2BN</span>
+            </SectionHeader>
+          </FlexSpace>
         </Grid.Column>
-
-      </Grid>
-    </Container>
-  </LightBg>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={6} textAlign="center">
+          <YearSlider />
+          <ChartShare color="grey" size="medium" />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column width={8} textAlign="center">
+          <SectionHeader color={white}>
+            <span>IN DETAIL</span> INTERNATIONAL RESOURCES
+          </SectionHeader>
+          <Lead>
+            <TextBlock>
+              Where are international resources originating and where are they destined?
+              Start by selecting inflows or outflows:
+            </TextBlock>
+          </Lead>
+          <Select>
+            <option>Inflows in Uganda</option>
+            <option>Outflows in Uganda</option>
+          </Select>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  </Container>
 );
 
 export default InternationalResources;

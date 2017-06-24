@@ -1,7 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
-import { red } from 'components/theme/semantic';
+import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
+import { red, lightBlack, white } from 'components/theme/semantic';
 import Tabs from 'components/atoms/Tabs';
 import Pane from 'components/atoms/Tabs/Pane';
 import Overview from 'components/atoms/CountryProfiles/OverviewTab';
@@ -11,7 +11,7 @@ import GovernmentFinanceTab from 'components/atoms/CountryProfiles/GovernmentFin
 import InternationalResourcesTab from 'components/atoms/CountryProfiles/InternationalResourcesTab';
 import InternationalResources from 'components/atoms/CountryProfiles/LowerTabs/InternationalResources';
 import GovernmentFinance from 'components/atoms/CountryProfiles/LowerTabs/GovernmentFinance';
-import {SectionHeader, Lead} from 'components/atoms/CountryProfiles/Common';
+import {SectionHeader, Lead, DarkBg, LightBg} from 'components/atoms/CountryProfiles/Common';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
@@ -92,7 +92,7 @@ export default () =>
         </Grid>
       </Container>
     </UpperContainer>
-    <Tabs selected={0} >
+    <Tabs selected={0} height="20em">
       <Pane label="Overview">
         <Overview />
       </Pane>
@@ -117,7 +117,7 @@ export default () =>
         </SectionHeader>
       </Container>
     </HeaderContainer>
-    <Tabs selected={0} textAlign="center">
+    <Tabs selected={0} textAlign="center" height="60em">
       <Pane label="Government Finance">
         <GovernmentFinance />
       </Pane>
@@ -125,4 +125,51 @@ export default () =>
         <InternationalResources />
       </Pane>
     </Tabs>
+    <DarkBg>
+      <SectionHeader color={red} fontColor={white}>
+        MORE FROM DI ON UGANDA
+      </SectionHeader>
+    </DarkBg>
+    <LightBg>
+      <Container>
+        <Grid centered>
+          <Grid.Row>
+            <Grid.Column width={16} textAlign="center">
+              <SectionHeader color={white}>
+                COUNTRY PROFILE DATA SOURCES
+              </SectionHeader>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Table basic="very">
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Name</Table.HeaderCell>
+                  <Table.HeaderCell>Description</Table.HeaderCell>
+                  <Table.HeaderCell>Methodology</Table.HeaderCell>
+                  <Table.HeaderCell>Unit</Table.HeaderCell>
+                  <Table.HeaderCell>Source</Table.HeaderCell>
+                  <Table.HeaderCell>Download</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                <Table.Row>
+                  <Table.Cell>Depth of extreme poverty (poverty gap)</Table.Cell>
+                  <Table.Cell>
+                    Depth of extreme poverty
+                    (also known as the poverty gap) tells
+                    us how far people are from the extreme
+                    poverty line, on average per country.
+                  </Table.Cell>
+                  <Table.Cell>World Bank PovcalNet: http://iresearch.worldbank.org/PovcalNet/povDuplicateWB.aspx.</Table.Cell>
+                  <Table.Cell>percent</Table.Cell>
+                  <Table.Cell>World Bank PovcalNet.</Table.Cell>
+                  <Table.Cell><Icon name="file" />ZIP <Icon name="file" />CSV</Table.Cell>
+                </Table.Row>
+              </Table.Body>
+            </Table>
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </LightBg>
   </Generic>);

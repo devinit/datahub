@@ -3,8 +3,7 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
-import Submit from 'components/organisms/Submit';
-import PostList from 'components/organisms/PostList';
+import Map from 'components/atoms/Map';
 import App from 'components/templates/Generic';
 import 'lib/offline-install'; // Get our service worker on the page
 
@@ -21,8 +20,7 @@ if (typeof window !== 'undefined') {
 export default withData((props: Props) => {
   return (
     <App pathName={props.url.pathname}>
-      <Submit />
-      <PostList />
+      <Map />
     </App>
   );
 });
