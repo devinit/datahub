@@ -6,7 +6,8 @@ type Props = {
   data: any,
   config: {},
   width?: string,
-  height?: string
+  height?: string,
+  onClick(d: {id: string, parent: string}): void,
 }
 
 class Chart extends React.Component {
@@ -26,7 +27,12 @@ class Chart extends React.Component {
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
-    draw({element, data, config}).then(chart => { this.chart = chart; });
+
+    draw({element, data, config})
+      .then(chart => {
+        this.chart = chart;
+        this.chart.onClick(this.props.onClick);
+      });
   }
 
   componentWillUpdate(props: Props) {

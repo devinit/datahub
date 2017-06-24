@@ -7,9 +7,11 @@ const config = {
   colors: ['#ba0c2f', '#93328e', '#b7bf10', '#004862'],
   linearAxis: {
     indicator: 'value',
+    showAxis: true,
   },
   categoryAxis: {
     indicator: 'year',
+    showAxis: true,
   }
 };
 

@@ -8,7 +8,7 @@ const config = {
   circular: {
     label: 'flow-name',
     value: 'value',
-    innerRadius: 40,
+    innerRadius: 70,
     strokeWidth: 0,
     strokeColor: '#fff',
   },

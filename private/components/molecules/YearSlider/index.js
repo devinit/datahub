@@ -42,7 +42,7 @@ class YearSlider extends React.Component {
     };
   }
 
-  onSliderChange = (e) => {
+  onSliderChange = (e: any) => {
     const position = parseInt(e.target.value, 0);
     this.props.onChange(position);
     this.setState({position});
@@ -52,7 +52,11 @@ class YearSlider extends React.Component {
     return (<Slider>
       <Floor className="bubble">{this.props.minimum}</Floor>
       <PointerContainer>
-        <Pointer left={(this.state.position - this.props.minimum) / (this.props.maximum - this.props.minimum)}>
+        <Pointer
+          left={
+            (this.state.position - this.props.minimum) /
+            (this.props.maximum - this.props.minimum)}
+        >
           {this.state.position}
         </Pointer>
       </PointerContainer>

@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+// eslint-disable-next-line
 import approximate from 'approximate-number';
 import {Grid, Header, Dropdown, Container} from 'semantic-ui-react';
 import {LightBg, SectionHeader} from '../../atoms/CountryProfiles/Common';
@@ -72,7 +73,9 @@ class InternationalResources extends React.Component {
 
           <Grid.Column width={10}>
             <Header as="h3" textAlign="center">
-              <Header.Content>The mix of resources in <span>{this.state.currentYear}</span></Header.Content>
+              <Header.Content>
+                The mix of resources in <span>{this.state.currentYear}</span>
+              </Header.Content>
             </Header>
           </Grid.Column>
 

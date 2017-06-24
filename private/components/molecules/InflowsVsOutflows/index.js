@@ -1,6 +1,8 @@
 // @flow
+/* eslint-disable react/sort-comp */
 import React from 'react';
 import {Segment, Grid} from 'semantic-ui-react';
+// eslint-disable-next-line
 import approximate from 'approximate-number';
 import {LightBg, SectionHeader} from '../../atoms/CountryProfiles/Common';
 import Chart from '../../atoms/Chart/index';
@@ -13,6 +15,7 @@ type Props = {
 }
 
 type State = {
+  config: any,
   currentYear: number,
   currentYearData: any,
   inflowSum: number,
@@ -21,7 +24,6 @@ type State = {
 
 class InflowsOutFlows extends React.Component {
 
-  // eslint-disable-next-line
   props: Props;
   state: State;
 
@@ -31,8 +33,6 @@ class InflowsOutFlows extends React.Component {
     const maximum = Math.max.apply(null, this.props.data.map(d => d.value));
     const exponent = Math.ceil(Math.log10(maximum));
     const scaleMaximum = Math.ceil(maximum / (10 ** (exponent - 1))) * (10 ** (exponent - 1));
-
-    console.log(scaleMaximum / maximum);
 
     this.state = {
       ...this.getYearState(parseInt(props.startYear, 10)),
@@ -50,10 +50,6 @@ class InflowsOutFlows extends React.Component {
     };
   }
 
-  updateCurrentYear(year: number) {
-    this.setState(this.getYearState(year));
-  }
-
   getYearState(year: number) {
     const currentYearData = this.props.data.filter(d => d.year === year);
     const inflowSum = currentYearData.filter(d => d.direction === 'in').reduce((sum, datum) => sum + datum.value, 0);
@@ -65,6 +61,11 @@ class InflowsOutFlows extends React.Component {
       outflowSum: approximate(outflowSum),
     };
   }
+
+  updateCurrentYear(year: number) {
+    this.setState(this.getYearState(year));
+  }
+
 
   render() {
     return (

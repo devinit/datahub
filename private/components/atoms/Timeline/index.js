@@ -3,7 +3,7 @@ import React from 'react';
 import { draw } from '@devinit/charts';
 
 type Props = {
-  data: [],
+  data: any,
   config: any,
   width?: string,
   height?: string,
@@ -40,8 +40,9 @@ class Timeline extends React.Component {
   }
 
   componentWillReceiveProps(props: Props) {
-    if (this.chart)  {
+    if (this.chart) {
       this.chart.moveAnchor(props.config.anchor.start.toString());
+      this.chart.addData(props.data);
     }
   }
 
