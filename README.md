@@ -87,6 +87,12 @@ Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.
 ``` bash
 now
 ```
+### Deployment
+cd into root of the project
+```
+  $ docker build -t datahub-2 .
+  $ docker run -it -d -p 7777:3333 6002:6002 --name datahub-2-app datahub-2
+```
 
 ### TODO
 

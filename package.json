@@ -5,6 +5,7 @@
     "dev": "BABEL_ENV=development node server.js",
     "build": "BABEL_ENV=production NODE_ENV=production next build",
     "start": "BABEL_ENV=production NODE_ENV=production node server",
+    "start-dev": "npm start && static-server -p 6002 /src/.out",
     "lint": "eslint private server.js && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",

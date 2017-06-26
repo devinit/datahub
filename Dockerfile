@@ -20,7 +20,7 @@ ENV NODE_ENV production
 RUN npm run build
 RUN npm run build-storybook
 
-EXPOSE 3000
-EXPOSE 6000
+EXPOSE 3333
+EXPOSE 6002
 
-CMD npm run start && static-server -p 6000 /src/.out
+CMD npm run start-dev
