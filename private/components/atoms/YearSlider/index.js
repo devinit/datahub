@@ -6,14 +6,15 @@ export const Slider = glamorous.div({
   position: 'relative',
   height: '1em',
   width: '100%',
-  margin: '2.5em .02em',
+  margin: '0',
+  padding: '0 2em 0 0',
   verticalAlign: 'middle',
   cursor: 'pointer',
   backgroundColor: theme.lightGray,
   '& .bubble': {
     cursor: 'default',
     top: '-2em',
-    padding: '0.012em 0.12em',
+    padding: '0',
     fontSize: '.9em',
     color: theme.greyText,
   }
@@ -24,7 +25,7 @@ export const Input = glamorous.input({
   display: 'block',
   zIndex: 2,
   margin: '0em',
-  padding: '0em',
+  padding: '0em 1em',
   opacity: '0',
   height: '100%',
   left: '0em',
@@ -44,10 +45,9 @@ export const Pointer = glamorous.span({
   paddingTop: '.6em',
   textAlign: 'center',
   backgroundColor: theme.darkRed,
+  userSelect: 'none',
   zIndex: 1 },
-  (props) => ({
-    right: `${100 - props.left}%`,
-  }));
+  (props) => ({left: `${100 * props.left}%`}));
 
 export const Floor = glamorous.span({
   whiteSpace: 'nowrap',

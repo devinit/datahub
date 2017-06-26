@@ -1,5 +1,6 @@
 import { configure } from '@storybook/react';
 import 'semantic.min.css';
+import '../../public/di-charts/di-charts.min.css';
 
 const req = require.context('../components', true, /.stories.js$/);
 

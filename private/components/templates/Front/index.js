@@ -72,7 +72,7 @@ export default ({ children}: Props) => {
         <Grid centered>
           <Grid.Row centered>
             <Grid.Column width={4} textAlign="center">
-              <Slider />
+              <Slider minimum={2000} maximum={2020} position={2017} step={1} onChange={d => {}} />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
