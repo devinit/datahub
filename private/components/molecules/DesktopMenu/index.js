@@ -23,21 +23,21 @@ const MenuListItem = glamorous.li({
 
 const menu = () => (
   <ListContainer>
-    <MenuListItem><MenuLink menu="Global Picture" /></MenuListItem>
+    <MenuListItem><MenuLink menu="Global Picture" link="/" /></MenuListItem>
     <MenuListItem>
       <MenuLink menu="Profiles" icon="pie graph" hasSubMenu>
         <List floated="left">
           <List.Item>
-            <List.Content><Icon name="area graph" />Country Profiles</List.Content>
+            <List.Content><Icon name="area graph" link="/country-profiles" />Country Profiles</List.Content>
           </List.Item>
           <List.Item>
-            <List.Content><Icon name="area graph" />Multilateral Profiles</List.Content>
+            <List.Content><Icon name="area graph" link="/#multilateral-profiles" />Multilateral Profiles</List.Content>
           </List.Item>
         </List>
       </MenuLink>
     </MenuListItem>
-    <MenuListItem><MenuLink menu="Unnbuling aid" /></MenuListItem>
-    <MenuListItem><MenuLink menu="Spotlight on Uganda" /></MenuListItem>
+    <MenuListItem><MenuLink menu="Unnbuling aid" link="/unbundling-aid" /></MenuListItem>
+    <MenuListItem><MenuLink menu="Spotlight on Uganda" link="/spotlight-on-uganda" /></MenuListItem>
     <MenuListItem>
       <MenuLink menu="Other Visualizations" icon="pie graph" hasSubMenu>
         <List>
@@ -66,7 +66,7 @@ const menu = () => (
         </List>
       </MenuLink>
     </MenuListItem>
-    <MenuListItem><MenuLink menu="Methodology" /></MenuListItem>
+    <MenuListItem><MenuLink menu="Methodology" link="/methodology" /></MenuListItem>
   </ListContainer>
 );
 

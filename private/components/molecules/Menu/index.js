@@ -2,7 +2,6 @@ import glamorous from 'glamorous';
 import theme from 'components/theme';
 import {white} from 'components/theme/semantic';
 import {Container, Grid, Icon, List} from 'semantic-ui-react';
-import MenuLink from 'components/atoms/MenuLink';
 import Logo from 'components/atoms/Logo';
 import DesktopMenu from 'components/molecules/DesktopMenu';
 import MobileMenu from 'components/molecules/MobileMenu';
