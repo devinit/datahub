@@ -29,8 +29,7 @@ class Chart extends React.Component {
     draw({element, data, config}).then(chart => { this.chart = chart; });
   }
 
-  componentWillUpdate(props: Props) {
-    console.log(props);
+  componentWillReceiveProps(props: Props) {
     if (props.data !== this.props.data && this.chart) {
       this.chart.addData(props.data);
     }

@@ -20,7 +20,7 @@
     "graphql": "^0.10.1"
   },
   "dependencies": {
-    "@devinit/charts": "^1.2.7",
+    "@devinit/charts": "^1.2.9",
     "approximate-number": "^2.0.0",
     "express": "^4.15.3",
     "glamor": "^2.20.25",
