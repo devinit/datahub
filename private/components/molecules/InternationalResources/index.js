@@ -3,7 +3,8 @@ import React from 'react';
 // eslint-disable-next-line
 import approximate from 'approximate-number';
 import {Grid, Header, Dropdown, Container} from 'semantic-ui-react';
-import {LightBg, SectionHeader} from '../../atoms/CountryProfiles/Common';
+import {LightBg} from '../../atoms/Backgrounds';
+import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
 import Chart from '../../atoms/Chart/index';
 import Timeline from '../../atoms/Timeline/index';
 

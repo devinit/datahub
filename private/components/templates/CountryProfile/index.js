@@ -11,7 +11,8 @@ import GovernmentFinanceTab from 'components/molecules/CountryProfiles/Governmen
 import InternationalResourcesTab from 'components/molecules/CountryProfiles/InternationalResourcesTab';
 import InternationalResources from 'components/molecules/CountryProfiles/LowerTabs/InternationalResources';
 import GovernmentFinance from 'components/molecules/CountryProfiles/LowerTabs/GovernmentFinance';
-import {SectionHeader, Lead, DarkBg, LightBg} from 'components/molecules/CountryProfiles/Common';
+import {SectionHeader, Lead} from 'components/molecules/CountryProfiles/Common';
+import {LightBg,DarkBg} from 'components/atoms/Backgrounds';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';

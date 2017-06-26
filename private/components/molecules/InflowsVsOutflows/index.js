@@ -4,7 +4,8 @@ import React from 'react';
 import {Segment, Grid} from 'semantic-ui-react';
 // eslint-disable-next-line
 import approximate from 'approximate-number';
-import {LightBg, SectionHeader} from '../../atoms/CountryProfiles/Common';
+import {LightBg} from '../../atoms/Backgrounds';
+import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
 import Chart from '../../atoms/Chart/index';
 import YearSlider from '../YearSlider/index';
 

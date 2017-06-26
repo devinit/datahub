@@ -98,7 +98,7 @@ Ask Allan for latest staging url
 cd into root of the project
 ``` bash
   $ docker build -t datahub-2 .
-  $ docker run -it -d -p 7777:3333 -p 6002:6002 --name datahub-2-app datahub-2
+  $ docker run -it -d -p 7777:3333 --name datahub-2-app datahub-2
 ```
 
 ## TODO
