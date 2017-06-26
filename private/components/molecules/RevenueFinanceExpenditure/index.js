@@ -2,11 +2,11 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Button, Container, Dropdown, Grid, Header, Icon, Label, Segment} from 'semantic-ui-react';
+import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
 import {makeUnique} from '@devinit/charts/lib/factories/createDataset';
 import TreeChart from '../../atoms/TreeChart/index';
 import Timeline from '../../atoms/Timeline/index';
 import {LightBg} from '../../atoms/Backgrounds';
-import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
 
 type Props = {
   startYear: number,

@@ -2,10 +2,10 @@
 /* eslint-disable react/sort-comp */
 import React from 'react';
 import {Segment, Grid} from 'semantic-ui-react';
+import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
 // eslint-disable-next-line
 import approximate from 'approximate-number';
 import {LightBg} from '../../atoms/Backgrounds';
-import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
 import Chart from '../../atoms/Chart/index';
 import YearSlider from '../YearSlider/index';
 

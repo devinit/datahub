@@ -12,7 +12,7 @@ import InternationalResourcesTab from 'components/molecules/CountryProfiles/Inte
 import InternationalResources from 'components/molecules/CountryProfiles/LowerTabs/InternationalResources';
 import GovernmentFinance from 'components/molecules/CountryProfiles/LowerTabs/GovernmentFinance';
 import {SectionHeader, Lead} from 'components/molecules/CountryProfiles/Common';
-import {LightBg,DarkBg} from 'components/atoms/Backgrounds';
+import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';

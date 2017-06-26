@@ -68,8 +68,11 @@
     "prettier": "^1.4.4",
     "prettier-eslint-cli": "^4.0.3",
     "react-test-renderer": "^15.5.4",
-    "semantic-ui": "^2.2.10",
-    "sinon": "^2.3.4"
+    "semantic-ui": "^2.2.10"
+  },
+  "git-pre-hooks": {
+    "pre-commit": "npm run lint",
+    "pre-push": "npm run test"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
