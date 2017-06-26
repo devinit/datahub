@@ -4,14 +4,14 @@ import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react'
 import { red, lightBlack, white } from 'components/theme/semantic';
 import Tabs from 'components/atoms/Tabs';
 import Pane from 'components/atoms/Tabs/Pane';
-import Overview from 'components/atoms/CountryProfiles/OverviewTab';
-import PovertyTab from 'components/atoms/CountryProfiles/PovertyTab';
-import PopulationTab from 'components/atoms/CountryProfiles/PopulationTab';
-import GovernmentFinanceTab from 'components/atoms/CountryProfiles/GovernmentFinanceTab';
-import InternationalResourcesTab from 'components/atoms/CountryProfiles/InternationalResourcesTab';
-import InternationalResources from 'components/atoms/CountryProfiles/LowerTabs/InternationalResources';
-import GovernmentFinance from 'components/atoms/CountryProfiles/LowerTabs/GovernmentFinance';
-import {SectionHeader, Lead, DarkBg, LightBg} from 'components/atoms/CountryProfiles/Common';
+import Overview from 'components/molecules/CountryProfiles/OverviewTab';
+import PovertyTab from 'components/molecules/CountryProfiles/PovertyTab';
+import PopulationTab from 'components/molecules/CountryProfiles/PopulationTab';
+import GovernmentFinanceTab from 'components/molecules/CountryProfiles/GovernmentFinanceTab';
+import InternationalResourcesTab from 'components/molecules/CountryProfiles/InternationalResourcesTab';
+import InternationalResources from 'components/molecules/CountryProfiles/LowerTabs/InternationalResources';
+import GovernmentFinance from 'components/molecules/CountryProfiles/LowerTabs/GovernmentFinance';
+import {SectionHeader, Lead, DarkBg, LightBg} from 'components/molecules/CountryProfiles/Common';
 
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
