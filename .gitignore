@@ -21,3 +21,4 @@ test/**/out
 
 #editors
 .vscode
+.idea
