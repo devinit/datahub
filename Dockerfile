@@ -6,7 +6,7 @@ RUN mkdir /src
 # Provides cached layer for node_modules
 
 ADD package.json /tmp/
-RUN cd /tmp && npm install --ignore-scripts --silent
+RUN cd /tmp && npm install --production --ignore-scripts --silent
 RUN cp -a /tmp/node_modules /src/
 
 # copy app files into
