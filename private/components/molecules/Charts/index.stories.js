@@ -1,5 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
+import {Segment} from 'semantic-ui-react';
+
 import Chart from '../../atoms/Chart';
 
 import donut from './stubs/donut.chart';
@@ -16,16 +18,16 @@ import InternationalResources from '../InternationalResources/index';
 
 const chartStories = storiesOf('Chart DontTest', module)
   .add('How have resource in flows changed over time?', () =>
-    <Chart config={line.config} data={line.data} height="150px" />
+    <Segment padded="very"><Chart config={line.config} data={line.data} height="150px" /></Segment>
   )
   .add('What is the mix of resources?', () =>
-    <Chart config={donut.config} data={donut.data} height="150px" />
+    <Segment padded="very"><Chart config={donut.config} data={donut.data} height="150px" /></Segment>
   )
   .add('How is income distributed?', () =>
-    <Chart config={histogram.config} data={histogram.data} height="120px" />
+    <Segment padded="very"><Chart config={histogram.config} data={histogram.data} height="120px" /></Segment>
   )
   .add('Is Poverty reducing over time?', () =>
-    <Chart config={area.config} data={area.data} height="120px" />
+    <Segment padded="very"><Chart config={area.config} data={area.data} height="120px" /></Segment>
   )
   .add('Inflow Vs Outflows', () => (
     <InflowsOutFlows

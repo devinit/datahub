@@ -8,6 +8,7 @@ const config = {
     indicator: 'value',
     axisMaximum: 50,
     axisMinimum: 0,
+    ticking: 'odd'
   },
   categoryAxis: {
     indicator: 'indicator',
