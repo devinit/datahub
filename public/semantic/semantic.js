@@ -7881,7 +7881,7 @@ $.fn.dropdown.settings = {
     labels          : 'Allowing user additions currently requires the use of labels.',
     missingMultiple : '<select> requires multiple property to be set to correctly preserve multiple values',
     method          : 'The method you called is not defined.',
-    noAPI           : 'The API module is required to load resources remotely',
+    noAPI           : 'The API module is required to load finance remotely',
     noStorage       : 'Saving remote data requires session storage',
     noTransition    : 'This module requires ui transitions <https://github.com/Semantic-Org/UI-Transition>'
   },

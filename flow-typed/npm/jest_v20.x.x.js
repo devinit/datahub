@@ -261,12 +261,12 @@ type JestObjectType = {
    */
   autoMockOn(): JestObjectType,
   /**
-   * Clears the mock.calls and mock.instances properties of all mocks.
+   * Clears the mock.calls and mock.instances properties of all stubs.
    * Equivalent to calling .mockClear() on every mocked function.
    */
   clearAllMocks(): JestObjectType,
   /**
-   * Resets the state of all mocks. Equivalent to calling .mockReset() on every
+   * Resets the state of all stubs. Equivalent to calling .mockReset() on every
    * mocked function.
    */
   resetAllMocks(): JestObjectType,
@@ -304,7 +304,7 @@ type JestObjectType = {
    * The second argument can be used to specify an explicit module factory that
    * is being run instead of using Jest's automocking feature.
    *
-   * The third argument can be used to create virtual mocks -- mocks of modules
+   * The third argument can be used to create virtual stubs -- stubs of modules
    * that don't exist anywhere in the system.
    */
   mock(moduleName: string, moduleFactory?: any): JestObjectType,
