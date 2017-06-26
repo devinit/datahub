@@ -5,7 +5,6 @@
     "dev": "BABEL_ENV=development node server.js",
     "build": "BABEL_ENV=production NODE_ENV=production next build",
     "start": "BABEL_ENV=production NODE_ENV=production node server",
-    "start-dev": "npm start && static-server -p 6002 /src/.out",
     "lint": "eslint private server.js && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
@@ -35,7 +34,12 @@
     "react-map-gl": "3.0.0-alpha.12",
     "redux": "^3.6.0",
     "redux-persist": "^4.8.0",
-    "semantic-ui-react": "^0.68.5"
+    "semantic-ui-react": "^0.68.5",
+    "sw-precache-webpack-plugin": "^0.11.3",
+    "localforage": "^1.5.0",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-ramda": "^1.2.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0"
   },
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
@@ -43,9 +47,6 @@
     "@storybook/addon-storyshots": "^3.0.0",
     "@storybook/react": "3.0.0",
     "babel-eslint": "^7.2.3",
-    "babel-plugin-module-resolver": "^2.7.1",
-    "babel-plugin-ramda": "^1.2.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "css-to-js-object": "^0.0.3",
     "enzyme": "^2.8.2",
     "eslint": "3.19.0",
@@ -62,13 +63,11 @@
     "gulp": "^3.9.1",
     "jest": "^20.0.4",
     "less": "^2.7.2",
-    "localforage": "^1.5.0",
     "prettier": "^1.4.4",
     "prettier-eslint-cli": "^4.0.3",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
-    "sinon": "^2.3.4",
-    "sw-precache-webpack-plugin": "^0.11.3"
+    "sinon": "^2.3.4"
   },
   "git-pre-hooks": {
     "pre-commit": "npm run lint",
