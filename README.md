@@ -78,7 +78,7 @@ There are dependencies for which flow-typed has no definitions for those have a 
 We use a mapbox-gl [react wrapper for the maps component](https://github.com/uber/react-map-gl). This wrapper workers best with immutable data structures and thats why we have the [immutable.js dependency](https://facebook.github.io/immutable-js/)
 You will be required to add a MapboxAccessToken to your system environment variable to get it working.
 
-### Deployments to Now for staging and test previews
+## Deployments handled by Now for staging and test previews
 
 --------
 
@@ -87,15 +87,16 @@ Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.
 ``` bash
 now
 ```
-### Deployment
+Ask Allan for latest staging url
+
+## Deployment for production
 cd into root of the project
-```
+``` bash
   $ docker build -t datahub-2 .
   $ docker run -it -d -p 7777:3333 -p 6002:6002 --name datahub-2-app datahub-2
 ```
-current staging / test deploys are handled by now. Ask Allan for latest staging url
 
-### TODO
+## TODO
 
 ---------
 
@@ -103,7 +104,7 @@ current staging / test deploys are handled by now. Ask Allan for latest staging 
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
 
-Development environment and notes
+## Development environment and notes
 
 --------
 - module resolution is handled by babel not webpack this is a next.js constraint
