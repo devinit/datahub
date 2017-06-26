@@ -21,5 +21,6 @@ RUN npm run build
 RUN npm run build-storybook
 
 EXPOSE 3000
+EXPOSE 6000
 
 CMD npm run start && static-server -p 6000 /src/.out
