@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid, Table, Flag} from 'semantic-ui-react';
-import {TableContainer} from 'components/atoms/Front';
+import {TableContainer} from 'components/molecules/Front';
 
 const DistrictRank = () => (
   <Grid.Row>

@@ -2,7 +2,7 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import React from 'react';
 import glamorous from 'glamorous';
 import {white} from 'components/theme/semantic';
-import {Select} from 'components/atoms/CountryProfiles/ChartFilter';
+import {Select} from 'components/molecules/CountryProfiles/ChartFilter';
 import ChartShare from 'components/molecules/ChartShare';
 import YearSlider from 'components/molecules/YearSlider';
 import {LightBg} from 'components/atoms/Backgrounds';
