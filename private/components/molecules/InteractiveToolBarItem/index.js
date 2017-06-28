@@ -10,7 +10,6 @@ type Props = {
   width: number,
   data: any,
 };
-// @flow-disable
 const ToolBarItem = ({ width, data }: Props) => (
   <Grid.Column width={width} textAlign="right" verticalAlign="middle">
     <span>ODA in
