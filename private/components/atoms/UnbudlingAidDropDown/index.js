@@ -5,9 +5,9 @@ import glamorous from 'glamorous';
 import {white, midWhite, black} from 'components/theme/semantic';
 
 type Props = {
-  visible: boolean,
+  visible: any,
   text: string,
-  children: Array<any>,
+  items: Array<Object>,
 };
 const Wrapper = glamorous.div({
   background: white,
@@ -48,8 +48,8 @@ const Text = glamorous.select({
   textAlignt: 'center'
 });
 
-const DropDown = ({visible, children, text}: Props) => {
-  const options = children.map(item => <option key={item.value}>{item.name}</option>);
+const DropDown = ({visible, items, text}: Props) => {
+  const options = items.map(item => <option key={item.value}>{item.name}</option>);
   return (<Wrapper visible={visible}>
     <Text>{text}</Text>
     <Select>
