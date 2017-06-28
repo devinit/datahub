@@ -15,7 +15,7 @@ module.exports = {
           resolve: {
             extensions: ['.js', '.jsx'],
             modules: ['node_modules', path.resolve(__dirname, 'private'),
-              path.resolve(__dirname, 'public/semantic'),  
+              path.resolve(__dirname, 'public/semantic'),
               path.resolve(__dirname, 'public/img')],
           },
         }
@@ -44,7 +44,7 @@ module.exports = {
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
     'flowtype-errors/show-errors': 2,
-    'flowtype-errors/enforce-min-coverage': [2, 30],
+    'flowtype-errors/enforce-min-coverage': [2, 10],
     'react/jsx-filename-extension': [
       2,
       {
