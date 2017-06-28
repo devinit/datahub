@@ -17,7 +17,7 @@ const Wrapper = glamorous.span({
 
 const TextWrapper = glamorous.span({
 }, (props) => ({
-  opacity: props.active ? '1' : '.8'
+  opacity: props.active ? '1' : '.5'
 }));
 
 const BoldText = glamorous.span({
@@ -50,12 +50,13 @@ class Select extends React.Component {
     }
   }
   render() {
-    return (<Wrapper>
-      <TextWrapper onClick={() => this.toggleDropDown()}>
+    return (<Wrapper >
+      <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
         <SmallText>{this.props.smallText}</SmallText>
         <BoldText>{this.props.bigText}</BoldText>
       </TextWrapper>
       <DropDown
+        active={this.props.active}
         onClose={() => this.toggleDropDown()}
         visible={this.state.visible}
         text={this.props.smallText || 'Select Year'}

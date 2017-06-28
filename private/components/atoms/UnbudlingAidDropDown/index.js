@@ -9,6 +9,7 @@ type Props = {
   text: string,
   items: Array<Object>,
   onClose: any,
+  active?: any,
 };
 const Wrapper = glamorous.div({
   background: white,
@@ -56,13 +57,15 @@ const Text = glamorous.span({
   listStyle: 'none',
   padding: '5px',
   textAlignt: 'center'
-});
+}, (props) => ({
+  opacity: props.active ? '1' : '.5'
+}));
 
-const DropDown = ({visible, items, text, onClose}: Props) => {
+const DropDown = ({visible, items, text, onClose, active}: Props) => {
   const options = items.map(item => <option key={item.value}>{item.name}</option>);
   return (<Wrapper visible={visible}>
     <Icon name="close" className="close" onClick={() => onClose()} />
-    <Text>{text}</Text>
+    <Text active={active}>{text}</Text>
     <Select>
       {options}
     </Select>

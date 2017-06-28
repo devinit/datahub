@@ -13,24 +13,12 @@ const ToolBarContainer = glamorous.div({
     opacity: '0.4',
   }
 });
-const BoldText = glamorous.span({
-  cursor: 'pointer',
-  textDecoration: 'underline',
-  fontWeight: '900',
-  paddingLeft: '.15em'
-});
-const SmallText = glamorous.span({
-  cursor: 'pointer',
-  fontSize: '.55em',
-  paddingLeft: '.15em'
-});
-
 const InteractiveChartToolBar = () => (
   <ToolBarContainer>
     <Container>
       <Grid>
         <Grid.Row>
-          <Grid.Column width="12" textAlign="right" verticalAlign="middle">
+          <Grid.Column width={6} textAlign="right" verticalAlign="middle">
             <span>ODA in
               <Select
                 active
@@ -65,6 +53,7 @@ const InteractiveChartToolBar = () => (
               />
             </span>
           </Grid.Column>
+
           <Grid.Column width="4" textAlign="right" verticalAlign="top">
             <Button size="large" color="grey">Compare <Icon name="plus" /></Button>
           </Grid.Column>
