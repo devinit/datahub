@@ -4,8 +4,8 @@ import glamorous from 'glamorous';
 import DropDown from 'components/atoms/UnbudlingAidDropDown';
 
 type Props = {
-  active: boolean,
-  smallText: ?string,
+  active?: boolean,
+  smallText?: string,
   bigText: string,
   options: Array<Object>,
 };
