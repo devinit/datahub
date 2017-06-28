@@ -9,9 +9,10 @@ import Select from 'components/molecules/UnbundlingAidSelect';
 type Props = {
   width: number,
   data: any,
+  textAlign?: string,
 };
-const ToolBarItem = ({ width, data }: Props) => (
-  <Grid.Column width={width} textAlign="right" verticalAlign="middle">
+const ToolBarItem = ({ width, data, textAlign }: Props) => (
+  <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
     <span>ODA in
       <Select
         active

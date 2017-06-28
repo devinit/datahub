@@ -44,9 +44,9 @@ class InteractiveChartToolBar extends React.Component {
         <Container>
           <Grid>
             <Grid.Row>
-              <ToolBar data={data.toolBar} width={compare ? 6 : 10} />
-              {compare ? <ToolBar data={data.toolBar} width={6} /> : ''}
-              <Grid.Column width="4" textAlign="right" verticalAlign="top">
+              <ToolBar data={data.toolBar} textAlign={compare ? 'left' : 'right'} width={compare ? 7 : 10} />
+              {compare ? <ToolBar textAlign={'right'} data={data.toolBar} width={7} /> : ''}
+              <Grid.Column width={compare ? 2 : 4} textAlign="right" verticalAlign="top">
                 <Button
                   onClick={() => this.toggleCompare()}
                   size="large"
