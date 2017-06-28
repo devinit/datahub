@@ -2,7 +2,7 @@ const data = {
   mainMenu: [
     {
       name: 'Global Picture',
-      link: '',
+      link: '/',
     },
     {
       name: 'Profile',
@@ -11,27 +11,23 @@ const data = {
       children: [
         {
           name: 'Country Profiles',
-          link: '',
+          link: '/country-profiles',
           icon: 'area graph'
         },
         {
           name: 'Multilateral Profiles',
-          link: '',
+          link: '/multilateral-profiles',
           icon: 'area graph'
         },
       ]
     },
     {
       name: 'Unbudling Aid',
-      link: '',
+      link: '/unbundling-aid',
     },
     {
       name: 'Spotlight on Uganda',
-      link: '',
-    },
-    {
-      name: 'Methodology',
-      link: '',
+      link: '/spotlight-on-uganda',
     },
     {
       name: 'Other Visualizations',
@@ -62,7 +58,7 @@ const data = {
     },
     {
       name: 'Methodology',
-      link: '',
+      link: '/methodology',
     },
   ]
 

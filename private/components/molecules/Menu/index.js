@@ -20,12 +20,12 @@ const MenuContainer = glamorous.div({
   boxShadow: '0 0 16px rgba(0,0,0,.3)',
 });
 
-const menu = () => (
+const menu = (props) => (
   <MenuContainer>
     <Container>
       <Logo />
-      <DesktopMenu />
-      <MobileMenu />
+      <DesktopMenu {...props} />
+      <MobileMenu {...props} />
     </Container>
   </MenuContainer>
 );
