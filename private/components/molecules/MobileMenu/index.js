@@ -52,7 +52,6 @@ class MobileMenu extends React.Component {
       this.setState({open: true});
     }
   }
-
   render() {
     const {open} = this.state;
     return (<div>
