@@ -7,6 +7,7 @@ import {white, redHeaderColor, midWhite, lightBlack} from 'components/theme/sema
 type Props = {
   children: any,
   selected?: number,
+  open?: any,
 }
 export const Navigation = glamorous.nav({
   position: 'fixed',
@@ -48,7 +49,7 @@ export const Navigation = glamorous.nav({
 class MobileMenu extends React.Component {
 
   static defaultProps = {
-    selected: null,
+    selected: 0,
   }
   constructor(props: Props) {
     super(props);

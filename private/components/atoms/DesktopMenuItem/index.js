@@ -14,7 +14,6 @@ const MenuListItem = glamorous.li({
 const menuItem = (props: Object) => {
   let children = {};
   let hasSubMenu = false;
-  console.log('props', props);
   if ('children' in props.menu) {
     children = props.menu.children.map(item => (
       <List.Item>
@@ -30,7 +29,7 @@ const menuItem = (props: Object) => {
   }
   return (
     <MenuListItem>
-      <MenuLink menu={props.menu.name} link="/" hasSubMenu={hasSubMenu}>
+      <MenuLink menu={props.menu.name} link={props.menu.link} hasSubMenu={hasSubMenu}>
         {children}
       </MenuLink>
     </MenuListItem>);
