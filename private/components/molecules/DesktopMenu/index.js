@@ -18,7 +18,7 @@ const ListContainer = glamorous.ul({
 });
 
 const menu = (props: Object) => {
-  const menuItems = props.menuItems.map(item => <MenuItem menu={item} />);
+  const menuItems = props.menu.map(item => <MenuItem menu={item} />);
   return <ListContainer>{menuItems}</ListContainer>;
 };
 

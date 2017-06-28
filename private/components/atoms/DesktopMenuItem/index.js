@@ -14,26 +14,26 @@ const MenuListItem = glamorous.li({
 const menuItem = (props: Object) => {
   let children = {};
   let hasSubMenu = false;
-  if (props.menu.children) {
+  console.log('props', props);
+  if ('children' in props.menu) {
     children = props.menu.children.map(item => (
       <List.Item>
         <List.Content>
           <a href={item.link}>
             <Icon name={item.icon} />
-            Country Profiles
+            {item.name}
           </a>
         </List.Content>
       </List.Item>));
     children = <List>{children}</List>;
     hasSubMenu = true;
   }
-  return (<MenuListItem>
+  return (
     <MenuListItem>
-      <MenuLink menu="Global Picture" link="/" hasSubMenu={hasSubMenu}>
+      <MenuLink menu={props.menu.name} link="/" hasSubMenu={hasSubMenu}>
         {children}
       </MenuLink>
-    </MenuListItem>
-  </MenuListItem>);
+    </MenuListItem>);
 };
 
 export default menuItem;
