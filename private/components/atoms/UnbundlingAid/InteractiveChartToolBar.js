@@ -2,6 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { white, lightGrey } from 'components/theme/semantic';
 import { Grid, Button, Icon, Container } from 'semantic-ui-react';
+import Select from 'components/molecules/UnbundlingAidSelect';
 
 const ToolBarContainer = glamorous.div({
   background: lightGrey,
@@ -31,9 +32,17 @@ const InteractiveChartToolBar = () => (
         <Grid.Row>
           <Grid.Column width="12" textAlign="right" verticalAlign="middle">
             <span>ODA in
-              <BoldText>2015 </BoldText>
-              <SmallText>to </SmallText>
-              <BoldText>All</BoldText>
+              <Select
+                active
+                bigText="2015"
+                options={[{name: '1', value: 'test'}]}
+              />
+              <Select
+                active
+                bigText="to"
+                smallText="All"
+                options={[{name: '1', value: 'test'}]}
+              />
               <SmallText className="disabled">from</SmallText>
               <BoldText className="disabled"> All</BoldText>
               <SmallText className="disabled">sector </SmallText>
