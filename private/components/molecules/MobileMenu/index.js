@@ -57,7 +57,13 @@ class MobileMenu extends React.Component {
       if ('children' in item) {
         hasSubMenu = true;
       }
-      return <MenuItem menu={item} label={item.name} url={item.link} hasSub={hasSubMenu} />;
+      return (<MenuItem
+        menu={item}
+        label={item.name}
+        url={item.link}
+        key={item.name}
+        hasSub={hasSubMenu}
+      />);
     });
 /* eslint-disable flowtype-errors/show-errors */
     return (<div>

@@ -16,7 +16,7 @@ const menuItem = (props: Object) => {
   let hasSubMenu = false;
   if ('children' in props.menu) {
     children = props.menu.children.map(item => (
-      <List.Item>
+      <List.Item key={item.name}>
         <List.Content>
           <a href={item.link}>
             <Icon name={item.icon} />

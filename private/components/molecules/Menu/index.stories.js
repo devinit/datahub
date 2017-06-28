@@ -4,4 +4,4 @@ import { storiesOf } from '@storybook/react';
 import Menu from '.';
 
 storiesOf('Menu', module)
-  .add('Datahub Menu', () => <Menu menu={data.menu} />);
+  .add('Datahub Menu', () => <Menu menu={data.mainMenu} />);

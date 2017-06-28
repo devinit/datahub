@@ -20,7 +20,7 @@ const menuItem = (props: Object) => {
   let hasSubMenu = false;
   if ('children' in props.menu) {
     children = props.menu.children.map(item => (
-      <li>
+      <li key={item.name}>
         <a href={item.link}>
           <Icon name={item.icon} />
           {item.name}
