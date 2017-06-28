@@ -8,8 +8,9 @@ import {LightBg} from '../../atoms/Backgrounds';
 import Chart from '../../atoms/Chart/index';
 import Timeline from '../../atoms/Timeline/index';
 
+
 type Props = {
-  data: any,
+  data: any, // TODO: reuse FlowData type currently in the inflows outflows file
   config: any,
   startYear: string
 }
@@ -44,6 +45,7 @@ class InternationalResources extends React.Component {
     const currentYearData = this.props.data.filter(d => d.year === year);
     return {
       currentYear: year,
+      // TODO: update when API data comes in
       currentFlowTypes: currentYearData.map(d => ({key: d['flow-group'], text: d['flow-group'], value: d['flow-group']})),
       currentYearTotal: approximate(currentYearData.reduce((sum, x) => sum + x.value, 0)),
       currentYearData: currentYearData.concat({'flow-group': year}),
