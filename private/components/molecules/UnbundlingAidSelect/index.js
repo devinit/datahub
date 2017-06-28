@@ -11,6 +11,8 @@ type Props = {
 };
 const Wrapper = glamorous.span({
   position: 'relative',
+  display: '-webkit-inline-box',
+  paddingLeft: '.2em',
 });
 
 const TextWrapper = glamorous.span({
@@ -56,7 +58,7 @@ class Select extends React.Component {
       <DropDown
         onClose={() => this.toggleDropDown()}
         visible={this.state.visible}
-        text={this.props.bigText}
+        text={this.props.smallText || 'Select Year'}
         items={this.props.options}
       />
     </Wrapper>);

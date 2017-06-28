@@ -39,18 +39,30 @@ const InteractiveChartToolBar = () => (
               />
               <Select
                 active
-                bigText="to"
-                smallText="All"
+                bigText="All"
+                smallText="to"
                 options={[{name: '1', value: 'test'}]}
               />
-              <SmallText className="disabled">from</SmallText>
-              <BoldText className="disabled"> All</BoldText>
-              <SmallText className="disabled">sector </SmallText>
-              <BoldText className="disabled">All</BoldText>
-              <SmallText className="disabled">in the form of</SmallText>
-              <BoldText className="disabled">All</BoldText>
-              <SmallText className="disabled">via channel</SmallText>
-              <BoldText className="disabled">All</BoldText>
+              <Select
+                bigText="All"
+                smallText="from"
+                options={[{name: '1', value: 'test'}]}
+              />
+              <Select
+                bigText="All"
+                smallText="sector"
+                options={[{name: '1', value: 'test'}]}
+              />
+              <Select
+                bigText="All"
+                smallText="in the form of"
+                options={[{name: '1', value: 'test'}]}
+              />
+              <Select
+                bigText="All"
+                smallText="via channel"
+                options={[{name: '1', value: 'test'}]}
+              />
             </span>
           </Grid.Column>
           <Grid.Column width="4" textAlign="right" verticalAlign="top">
