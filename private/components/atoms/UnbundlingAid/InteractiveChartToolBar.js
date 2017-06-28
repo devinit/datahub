@@ -3,17 +3,18 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { white, lightGrey } from 'components/theme/semantic';
 import { Grid, Button, Icon, Container } from 'semantic-ui-react';
-import Select from 'components/molecules/UnbundlingAidSelect';
+import ToolBar from 'components/molecules/InteractiveToolBarItem';
 
 const ToolBarContainer = glamorous.div({
   background: lightGrey,
-  paddingTop: '.5em',
-  paddingBottom: '.5em',
-  fontSize: '1.7em',
-  '& .disabled': {
-    opacity: '0.4',
+  '& i.icon': {
+    margin: '0 !important',
   }
-});
+}, (props) => ({
+  fontSize: props.compare ? '1em' : '1.7em',
+  paddingTop: props.compare ? '.85em' : '.5em',
+  paddingBottom: props.compare ? '.85em' : '.5em',
+}));
 
 type Props = {
 };
@@ -28,51 +29,31 @@ class InteractiveChartToolBar extends React.Component {
   state: {
     compare: boolean
   }
-
+  toggleCompare() {
+    if (this.state.compare) {
+      this.setState({compare: false});
+    } else {
+      this.setState({compare: true});
+    }
+  }
   render() {
+    const {compare} = this.state;
     return (
-      <ToolBarContainer>
+      <ToolBarContainer compare={compare}>
         <Container>
           <Grid>
             <Grid.Row>
-              <Grid.Column width={6} textAlign="right" verticalAlign="middle">
-                <span>ODA in
-                  <Select
-                    active
-                    bigText="2015"
-                    options={[{name: '1', value: 'test'}]}
-                  />
-                  <Select
-                    active
-                    bigText="All"
-                    smallText="to"
-                    options={[{name: '1', value: 'test'}]}
-                  />
-                  <Select
-                    bigText="All"
-                    smallText="from"
-                    options={[{name: '1', value: 'test'}]}
-                  />
-                  <Select
-                    bigText="All"
-                    smallText="sector"
-                    options={[{name: '1', value: 'test'}]}
-                  />
-                  <Select
-                    bigText="All"
-                    smallText="in the form of"
-                    options={[{name: '1', value: 'test'}]}
-                  />
-                  <Select
-                    bigText="All"
-                    smallText="via channel"
-                    options={[{name: '1', value: 'test'}]}
-                  />
-                </span>
-              </Grid.Column>
-
+              <ToolBar compare={compare} width={compare ? 6 : 10} />
+              {compare ? <ToolBar width={6} /> : ''}
               <Grid.Column width="4" textAlign="right" verticalAlign="top">
-                <Button size="large" color="grey">Compare <Icon name="plus" /></Button>
+                <Button
+                  onClick={() => this.toggleCompare()}
+                  size="large"
+                  color="grey"
+                >
+                  {compare ? <Icon name="close" /> : 'compare '}
+                  {!compare ? <Icon name="plus" /> : ''}
+                </Button>
               </Grid.Column>
             </Grid.Row>
           </Grid>
