@@ -4,6 +4,7 @@ import glamorous from 'glamorous';
 import { white, lightGrey } from 'components/theme/semantic';
 import { Grid, Button, Icon, Container } from 'semantic-ui-react';
 import ToolBar from 'components/molecules/InteractiveToolBarItem';
+import data from 'components/templates/Aid/data';
 
 const ToolBarContainer = glamorous.div({
   background: lightGrey,
@@ -43,8 +44,8 @@ class InteractiveChartToolBar extends React.Component {
         <Container>
           <Grid>
             <Grid.Row>
-              <ToolBar compare={compare} width={compare ? 6 : 10} />
-              {compare ? <ToolBar width={6} /> : ''}
+              <ToolBar data={data.toolBar} width={compare ? 6 : 10} />
+              {compare ? <ToolBar data={data.toolBar} width={6} /> : ''}
               <Grid.Column width="4" textAlign="right" verticalAlign="top">
                 <Button
                   onClick={() => this.toggleCompare()}
