@@ -8,13 +8,21 @@ type Props = {
   visible: any,
   text: string,
   items: Array<Object>,
+  onClose: any,
 };
 const Wrapper = glamorous.div({
   background: white,
   position: 'absolute',
   width: '200px',
+  padding: '20px',
   zIndex: 1000000,
   textAlign: 'center',
+  '& .close': {
+    position: 'absolute',
+    top: '5px',
+    right: '5px',
+    cursor: 'pointer',
+  }
 }, (props) => ({
   display: props.visible ? 'block' : 'none'
 }));
@@ -24,6 +32,7 @@ const Select = glamorous.select({
   width: '100%',
   lineHeight: '1.5',
   color: black,
+  height: '3em',
   backgroundColor: midWhite,
   cursor: 'pointer',
   margin: '0px',
@@ -37,9 +46,10 @@ const Select = glamorous.select({
   transition: 'all 0.25s',
   backgroundImage: 'none',
   boxSizing: 'border-box',
-  boxShadow: 'none'
+  boxShadow: 'none',
+  fontSize: '18px',
 });
-const Text = glamorous.select({
+const Text = glamorous.span({
   display: 'inline-block',
   position: 'relative',
   fontSize: '22px',
@@ -48,9 +58,10 @@ const Text = glamorous.select({
   textAlignt: 'center'
 });
 
-const DropDown = ({visible, items, text}: Props) => {
+const DropDown = ({visible, items, text, onClose}: Props) => {
   const options = items.map(item => <option key={item.value}>{item.name}</option>);
   return (<Wrapper visible={visible}>
+    <Icon name="close" className="close" onClick={() => onClose()} />
     <Text>{text}</Text>
     <Select>
       {options}

@@ -7,5 +7,6 @@ storiesOf('Unbundling Aid', module)
   .add('Select', () => (<Select
     active={false}
     bigText="Test"
+    smallText="all"
     options={[{name: '1', value: 'test'}]}
   />));

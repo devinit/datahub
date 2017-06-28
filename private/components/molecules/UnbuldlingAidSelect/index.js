@@ -53,7 +53,12 @@ class Select extends React.Component {
         <SmallText>{this.props.smallText}</SmallText>
         <BoldText>{this.props.bigText}</BoldText>
       </TextWrapper>
-      <DropDown visible={this.state.visible} text={this.props.bigText} items={this.props.options} />
+      <DropDown
+        onClose={() => this.toggleDropDown()}
+        visible={this.state.visible}
+        text={this.props.bigText}
+        items={this.props.options}
+      />
     </Wrapper>);
   }
 }
