@@ -25,6 +25,7 @@ export const lightPurple = '#DC73FF';
 export const lightPink = '#FF8EDF';
 export const lightBrown = '#D67C1C';
 export const lightGrey = '#d0cccf';
+export const lighterGrey = '#e9e7e8';
 export const lightBlack = '#453f43';
 export const fullBlack = '#000000';
 export const offWhite = '#F9FAFB';
