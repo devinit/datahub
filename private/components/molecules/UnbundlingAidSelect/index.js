@@ -37,10 +37,15 @@ class Select extends React.Component {
     super(props);
     this.state = {
       visible: false,
+      bigText: props.bigText,
     };
   }
   state: {
-    visible?: boolean
+    visible?: boolean,
+    bigText: string
+  }
+  setText(text: string) {
+    this.setState({bigText: text});
   }
   toggleDropDown() {
     if (this.state.visible) {
@@ -53,9 +58,10 @@ class Select extends React.Component {
     return (<Wrapper >
       <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
         <SmallText>{this.props.smallText}</SmallText>
-        <BoldText>{this.props.bigText}</BoldText>
+        <BoldText>{this.state.bigText}</BoldText>
       </TextWrapper>
       <DropDown
+        onChange={text => this.setText(text)}
         active={this.props.active}
         onClose={() => this.toggleDropDown()}
         visible={this.state.visible}
