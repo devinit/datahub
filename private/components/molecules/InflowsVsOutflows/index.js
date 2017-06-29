@@ -16,6 +16,7 @@ type FlowData = {
   flowName: string,
   flowCategory: string, // this is currently flow-group
   flowType: string,
+  color: string
 }
 
 type Props = {
