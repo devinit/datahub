@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { white, lightGrey } from 'components/theme/semantic';
 import { Grid, Button, Icon, Container } from 'semantic-ui-react';
-import ToolBar from 'components/molecules/InteractiveToolBarItem';
+import ToolBar from 'components/molecules/UnbundlingAidToolBarItem';
 import data from 'components/templates/Aid/data';
 
 const ToolBarContainer = glamorous.div({

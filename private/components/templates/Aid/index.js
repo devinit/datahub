@@ -2,9 +2,9 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Header, Grid} from 'semantic-ui-react';
-import InteractiveChartToolBar from 'components/atoms/UnbundlingAid/InteractiveChartToolBar';
-import TotalODA from 'components/atoms/UnbundlingAid/TotalODA';
-import Social from 'components/atoms/UnbundlingAid/Social';
+import InteractiveChartToolBar from 'components/molecules/UnbundlingAidChartToolBar';
+import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
+import Social from 'components/molecules/UnbundlingAidSocial';
 import Generic from '../Generic';
 
 const headerStyles = {
