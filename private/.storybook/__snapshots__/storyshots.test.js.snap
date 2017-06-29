@@ -191,7 +191,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="lightBlack css-omymer"
+    className="css-omymer lightBlack"
   >
     <div
       className="row"
@@ -291,12 +291,12 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
           />
           <a
             className="css-vksbfm"
-            href={undefined}
+            href=""
           >
             <div
               className="menu-text"
             >
-              Profiles
+              Profile
             </div>
           </a>
           <div
@@ -309,7 +309,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                 className="css-ttljof"
               >
                 <div
-                  className="ui left floated list"
+                  className="ui list"
                   role="list"
                 >
                   <div
@@ -321,11 +321,15 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                     <div
                       className="content"
                     >
-                      <i
-                        aria-hidden="true"
-                        className="area graph link icon"
-                      />
-                      Country Profiles
+                      <a
+                        href="/country-profiles"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="area graph icon"
+                        />
+                        Country Profiles
+                      </a>
                     </div>
                   </div>
                   <div
@@ -337,11 +341,15 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                     <div
                       className="content"
                     >
-                      <i
-                        aria-hidden="true"
-                        className="area graph link icon"
-                      />
-                      Multilateral Profiles
+                      <a
+                        href="/multilateral-profiles"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="area graph icon"
+                        />
+                        Multilateral Profiles
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -364,7 +372,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <div
               className="menu-text"
             >
-              Unnbuling aid
+              Unbudling Aid
             </div>
           </a>
           
@@ -402,7 +410,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
           />
           <a
             className="css-vksbfm"
-            href={undefined}
+            href=""
           >
             <div
               className="menu-text"
@@ -432,11 +440,15 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                     <div
                       className="content"
                     >
-                      <i
-                        aria-hidden="true"
-                        className="barcode icon"
-                      />
-                      Unbundling other official flows
+                      <a
+                        href=""
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="barcode icon"
+                        />
+                        Unbundling other official flows
+                      </a>
                     </div>
                   </div>
                   <div
@@ -448,27 +460,15 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                     <div
                       className="content"
                     >
-                      <i
-                        aria-hidden="true"
-                        className="users icon"
-                      />
-                      Where are the poor and where will they be?
-                    </div>
-                  </div>
-                  <div
-                    className="item"
-                    data-value={undefined}
-                    onClick={[Function]}
-                    role="listitem"
-                  >
-                    <div
-                      className="left floated content"
-                    >
-                      <i
-                        aria-hidden="true"
-                        className="area graph icon"
-                      />
-                      Are domestic public resources able to meet the needs of the poorest people?
+                      <a
+                        href=""
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="users icon"
+                        />
+                        Where are the poor and where will they be?
+                      </a>
                     </div>
                   </div>
                   <div
@@ -480,11 +480,35 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
                     <div
                       className="content"
                     >
-                      <i
-                        aria-hidden="true"
-                        className="area graph icon"
-                      />
-                      Different providers, different priorities
+                      <a
+                        href=""
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="area graph icon"
+                        />
+                        Are domestic public resources able to meet the needs of the poorest people?
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    className="item"
+                    data-value={undefined}
+                    onClick={[Function]}
+                    role="listitem"
+                  >
+                    <div
+                      className="content"
+                    >
+                      <a
+                        href=""
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="area graph icon"
+                        />
+                        Different providers, different priorities
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -528,21 +552,23 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-1hpbsc1"
       >
         <li
-          className="navigation__item "
+          className="navigation__item active"
           onClick={[Function]}
         >
           <span
             className="navigation__item-title small"
           >
             <a
-              href=""
+              href="/"
             >
               Global Picture
             </a>
           </span>
           <div
             className="nav-children"
-          />
+          >
+            
+          </div>
         </li>
         <li
           className="navigation__item "
@@ -554,7 +580,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <a
               href=""
             >
-              Profiles
+              Profile
             </a>
           </span>
           <div
@@ -565,7 +591,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             >
               <li>
                 <a
-                  href=""
+                  href="/country-profiles"
                 >
                   <i
                     aria-hidden="true"
@@ -576,7 +602,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
               </li>
               <li>
                 <a
-                  href=""
+                  href="/multilateral-profiles"
                 >
                   <i
                     aria-hidden="true"
@@ -596,14 +622,16 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             className="navigation__item-title small"
           >
             <a
-              href=""
+              href="/unbundling-aid"
             >
               Unbudling Aid
             </a>
           </span>
           <div
             className="nav-children"
-          />
+          >
+            
+          </div>
         </li>
         <li
           className="navigation__item "
@@ -613,14 +641,16 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             className="navigation__item-title small"
           >
             <a
-              href=""
+              href="/spotlight-on-uganda"
             >
               Spotlight on Uganda
             </a>
           </span>
           <div
             className="nav-children"
-          />
+          >
+            
+          </div>
         </li>
         <li
           className="navigation__item "
@@ -696,19 +726,306 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             className="navigation__item-title small"
           >
             <a
-              href=""
+              href="/methodology"
             >
               Methodology
             </a>
           </span>
           <div
             className="nav-children"
-          />
+          >
+            
+          </div>
         </li>
       </nav>
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots Menu Desktop Menu 1`] = `
+<ul
+  className="css-ks7n51"
+>
+  <li
+    className="css-1dps91a"
+  >
+    <span
+      className="css-gpblex"
+    >
+      
+      <a
+        className="css-vksbfm"
+        href="/"
+      >
+        <div
+          className="menu-text"
+        >
+          Global Picture
+        </div>
+      </a>
+      
+    </span>
+  </li>
+  <li
+    className="css-1dps91a"
+  >
+    <span
+      className="css-9k8qug"
+    >
+      <i
+        aria-hidden="true"
+        className="pie graph icon menu-icon"
+      />
+      <a
+        className="css-vksbfm"
+        href=""
+      >
+        <div
+          className="menu-text"
+        >
+          Profile
+        </div>
+      </a>
+      <div
+        className="css-qbgmp1"
+      >
+        <div
+          className="ui container"
+        >
+          <ul
+            className="css-ttljof"
+          >
+            <div
+              className="ui list"
+              role="list"
+            >
+              <div
+                className="item"
+                data-value={undefined}
+                onClick={[Function]}
+                role="listitem"
+              >
+                <div
+                  className="content"
+                >
+                  <a
+                    href="/country-profiles"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Country Profiles
+                  </a>
+                </div>
+              </div>
+              <div
+                className="item"
+                data-value={undefined}
+                onClick={[Function]}
+                role="listitem"
+              >
+                <div
+                  className="content"
+                >
+                  <a
+                    href="/multilateral-profiles"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Multilateral Profiles
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </li>
+  <li
+    className="css-1dps91a"
+  >
+    <span
+      className="css-gpblex"
+    >
+      
+      <a
+        className="css-vksbfm"
+        href="/unbundling-aid"
+      >
+        <div
+          className="menu-text"
+        >
+          Unbudling Aid
+        </div>
+      </a>
+      
+    </span>
+  </li>
+  <li
+    className="css-1dps91a"
+  >
+    <span
+      className="css-gpblex"
+    >
+      
+      <a
+        className="css-vksbfm"
+        href="/spotlight-on-uganda"
+      >
+        <div
+          className="menu-text"
+        >
+          Spotlight on Uganda
+        </div>
+      </a>
+      
+    </span>
+  </li>
+  <li
+    className="css-1dps91a"
+  >
+    <span
+      className="css-9k8qug"
+    >
+      <i
+        aria-hidden="true"
+        className="pie graph icon menu-icon"
+      />
+      <a
+        className="css-vksbfm"
+        href=""
+      >
+        <div
+          className="menu-text"
+        >
+          Other Visualizations
+        </div>
+      </a>
+      <div
+        className="css-qbgmp1"
+      >
+        <div
+          className="ui container"
+        >
+          <ul
+            className="css-ttljof"
+          >
+            <div
+              className="ui list"
+              role="list"
+            >
+              <div
+                className="item"
+                data-value={undefined}
+                onClick={[Function]}
+                role="listitem"
+              >
+                <div
+                  className="content"
+                >
+                  <a
+                    href=""
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    Unbundling other official flows
+                  </a>
+                </div>
+              </div>
+              <div
+                className="item"
+                data-value={undefined}
+                onClick={[Function]}
+                role="listitem"
+              >
+                <div
+                  className="content"
+                >
+                  <a
+                    href=""
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    Where are the poor and where will they be?
+                  </a>
+                </div>
+              </div>
+              <div
+                className="item"
+                data-value={undefined}
+                onClick={[Function]}
+                role="listitem"
+              >
+                <div
+                  className="content"
+                >
+                  <a
+                    href=""
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Are domestic public resources able to meet the needs of the poorest people?
+                  </a>
+                </div>
+              </div>
+              <div
+                className="item"
+                data-value={undefined}
+                onClick={[Function]}
+                role="listitem"
+              >
+                <div
+                  className="content"
+                >
+                  <a
+                    href=""
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Different providers, different priorities
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </span>
+  </li>
+  <li
+    className="css-1dps91a"
+  >
+    <span
+      className="css-gpblex"
+    >
+      
+      <a
+        className="css-vksbfm"
+        href="/methodology"
+      >
+        <div
+          className="menu-text"
+        >
+          Methodology
+        </div>
+      </a>
+      
+    </span>
+  </li>
+</ul>
 `;
 
 exports[`Storyshots Search Datahub Main Search 1`] = `
@@ -742,7 +1059,7 @@ exports[`Storyshots Search Datahub Main Search 1`] = `
         placeholder="Type Your Country Name"
       />
       <div
-        className="list css-13azwyo"
+        className="css-13azwyo list"
       >
         <ul
           className="css-vi44j9"
@@ -818,12 +1135,12 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
               >
-                Profiles
+                Profile
               </div>
             </a>
             <div
@@ -836,7 +1153,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                   className="css-ttljof"
                 >
                   <div
-                    className="ui left floated list"
+                    className="ui list"
                     role="list"
                   >
                     <div
@@ -848,11 +1165,15 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Country Profiles
+                        <a
+                          href="/country-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
                       </div>
                     </div>
                     <div
@@ -864,11 +1185,15 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Multilateral Profiles
+                        <a
+                          href="/multilateral-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -891,7 +1216,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               <div
                 className="menu-text"
               >
-                Unnbuling aid
+                Unbudling Aid
               </div>
             </a>
             
@@ -929,7 +1254,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
@@ -959,11 +1284,15 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="barcode icon"
-                        />
-                        Unbundling other official flows
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
                       </div>
                     </div>
                     <div
@@ -975,27 +1304,15 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="users icon"
-                        />
-                        Where are the poor and where will they be?
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="left floated content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Are domestic public resources able to meet the needs of the poorest people?
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
                       </div>
                     </div>
                     <div
@@ -1007,11 +1324,35 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Different providers, different priorities
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -1055,21 +1396,23 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           className="css-1hpbsc1"
         >
           <li
-            className="navigation__item "
+            className="navigation__item active"
             onClick={[Function]}
           >
             <span
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/"
               >
                 Global Picture
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -1081,7 +1424,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               <a
                 href=""
               >
-                Profiles
+                Profile
               </a>
             </span>
             <div
@@ -1092,7 +1435,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               >
                 <li>
                   <a
-                    href=""
+                    href="/country-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -1103,7 +1446,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="/multilateral-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -1123,14 +1466,16 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/unbundling-aid"
               >
                 Unbudling Aid
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -1140,14 +1485,16 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/spotlight-on-uganda"
               >
                 Spotlight on Uganda
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -1223,14 +1570,16 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/methodology"
               >
                 Methodology
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
         </nav>
       </div>
@@ -1277,7 +1626,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             <li>
               <a
-                className="active css-2rtur8"
+                className="css-2rtur8 active"
                 onClick={[Function]}
               >
                 Poverty
@@ -2128,7 +2477,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -2211,12 +2560,12 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
               >
-                Profiles
+                Profile
               </div>
             </a>
             <div
@@ -2229,7 +2578,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                   className="css-ttljof"
                 >
                   <div
-                    className="ui left floated list"
+                    className="ui list"
                     role="list"
                   >
                     <div
@@ -2241,11 +2590,15 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Country Profiles
+                        <a
+                          href="/country-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
                       </div>
                     </div>
                     <div
@@ -2257,11 +2610,15 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Multilateral Profiles
+                        <a
+                          href="/multilateral-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -2284,7 +2641,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               <div
                 className="menu-text"
               >
-                Unnbuling aid
+                Unbudling Aid
               </div>
             </a>
             
@@ -2322,7 +2679,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
@@ -2352,11 +2709,15 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="barcode icon"
-                        />
-                        Unbundling other official flows
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
                       </div>
                     </div>
                     <div
@@ -2368,27 +2729,15 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="users icon"
-                        />
-                        Where are the poor and where will they be?
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="left floated content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Are domestic public resources able to meet the needs of the poorest people?
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
                       </div>
                     </div>
                     <div
@@ -2400,11 +2749,35 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Different providers, different priorities
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -2448,21 +2821,23 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
           className="css-1hpbsc1"
         >
           <li
-            className="navigation__item "
+            className="navigation__item active"
             onClick={[Function]}
           >
             <span
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/"
               >
                 Global Picture
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -2474,7 +2849,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               <a
                 href=""
               >
-                Profiles
+                Profile
               </a>
             </span>
             <div
@@ -2485,7 +2860,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               >
                 <li>
                   <a
-                    href=""
+                    href="/country-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -2496,7 +2871,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="/multilateral-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -2516,14 +2891,16 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/unbundling-aid"
               >
                 Unbudling Aid
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -2533,14 +2910,16 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/spotlight-on-uganda"
               >
                 Spotlight on Uganda
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -2616,14 +2995,16 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/methodology"
               >
                 Methodology
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
         </nav>
       </div>
@@ -2821,7 +3202,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -2904,12 +3285,12 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
               >
-                Profiles
+                Profile
               </div>
             </a>
             <div
@@ -2922,7 +3303,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   className="css-ttljof"
                 >
                   <div
-                    className="ui left floated list"
+                    className="ui list"
                     role="list"
                   >
                     <div
@@ -2934,11 +3315,15 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Country Profiles
+                        <a
+                          href="/country-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
                       </div>
                     </div>
                     <div
@@ -2950,11 +3335,15 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Multilateral Profiles
+                        <a
+                          href="/multilateral-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -2977,7 +3366,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="menu-text"
               >
-                Unnbuling aid
+                Unbudling Aid
               </div>
             </a>
             
@@ -3015,7 +3404,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
@@ -3045,11 +3434,15 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="barcode icon"
-                        />
-                        Unbundling other official flows
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
                       </div>
                     </div>
                     <div
@@ -3061,27 +3454,15 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="users icon"
-                        />
-                        Where are the poor and where will they be?
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="left floated content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Are domestic public resources able to meet the needs of the poorest people?
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
                       </div>
                     </div>
                     <div
@@ -3093,11 +3474,35 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Different providers, different priorities
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -3141,21 +3546,23 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-1hpbsc1"
         >
           <li
-            className="navigation__item "
+            className="navigation__item active"
             onClick={[Function]}
           >
             <span
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/"
               >
                 Global Picture
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -3167,7 +3574,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <a
                 href=""
               >
-                Profiles
+                Profile
               </a>
             </span>
             <div
@@ -3178,7 +3585,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               >
                 <li>
                   <a
-                    href=""
+                    href="/country-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -3189,7 +3596,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="/multilateral-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -3209,14 +3616,16 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/unbundling-aid"
               >
                 Unbudling Aid
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -3226,14 +3635,16 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/spotlight-on-uganda"
               >
                 Spotlight on Uganda
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -3309,14 +3720,16 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/methodology"
               >
                 Methodology
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
         </nav>
       </div>
@@ -3364,7 +3777,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     placeholder="Type Your Country Name"
                   />
                   <div
-                    className="list css-13azwyo"
+                    className="css-13azwyo list"
                   >
                     <ul
                       className="css-vi44j9"
@@ -3610,7 +4023,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -3693,12 +4106,12 @@ exports[`Storyshots Templates Main Generic 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
               >
-                Profiles
+                Profile
               </div>
             </a>
             <div
@@ -3711,7 +4124,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                   className="css-ttljof"
                 >
                   <div
-                    className="ui left floated list"
+                    className="ui list"
                     role="list"
                   >
                     <div
@@ -3723,11 +4136,15 @@ exports[`Storyshots Templates Main Generic 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Country Profiles
+                        <a
+                          href="/country-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
                       </div>
                     </div>
                     <div
@@ -3739,11 +4156,15 @@ exports[`Storyshots Templates Main Generic 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Multilateral Profiles
+                        <a
+                          href="/multilateral-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -3766,7 +4187,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="menu-text"
               >
-                Unnbuling aid
+                Unbudling Aid
               </div>
             </a>
             
@@ -3804,7 +4225,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
@@ -3834,11 +4255,15 @@ exports[`Storyshots Templates Main Generic 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="barcode icon"
-                        />
-                        Unbundling other official flows
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
                       </div>
                     </div>
                     <div
@@ -3850,27 +4275,15 @@ exports[`Storyshots Templates Main Generic 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="users icon"
-                        />
-                        Where are the poor and where will they be?
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="left floated content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Are domestic public resources able to meet the needs of the poorest people?
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
                       </div>
                     </div>
                     <div
@@ -3882,11 +4295,35 @@ exports[`Storyshots Templates Main Generic 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Different providers, different priorities
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -3930,21 +4367,23 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-1hpbsc1"
         >
           <li
-            className="navigation__item "
+            className="navigation__item active"
             onClick={[Function]}
           >
             <span
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/"
               >
                 Global Picture
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -3956,7 +4395,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <a
                 href=""
               >
-                Profiles
+                Profile
               </a>
             </span>
             <div
@@ -3967,7 +4406,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               >
                 <li>
                   <a
-                    href=""
+                    href="/country-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -3978,7 +4417,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="/multilateral-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -3998,14 +4437,16 @@ exports[`Storyshots Templates Main Generic 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/unbundling-aid"
               >
                 Unbudling Aid
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -4015,14 +4456,16 @@ exports[`Storyshots Templates Main Generic 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/spotlight-on-uganda"
               >
                 Spotlight on Uganda
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -4098,14 +4541,16 @@ exports[`Storyshots Templates Main Generic 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/methodology"
               >
                 Methodology
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
         </nav>
       </div>
@@ -4280,7 +4725,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -4363,12 +4808,12 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
               >
-                Profiles
+                Profile
               </div>
             </a>
             <div
@@ -4381,7 +4826,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                   className="css-ttljof"
                 >
                   <div
-                    className="ui left floated list"
+                    className="ui list"
                     role="list"
                   >
                     <div
@@ -4393,11 +4838,15 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Country Profiles
+                        <a
+                          href="/country-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
                       </div>
                     </div>
                     <div
@@ -4409,11 +4858,15 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph link icon"
-                        />
-                        Multilateral Profiles
+                        <a
+                          href="/multilateral-profiles"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -4436,7 +4889,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <div
                 className="menu-text"
               >
-                Unnbuling aid
+                Unbudling Aid
               </div>
             </a>
             
@@ -4474,7 +4927,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
             />
             <a
               className="css-vksbfm"
-              href={undefined}
+              href=""
             >
               <div
                 className="menu-text"
@@ -4504,11 +4957,15 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="barcode icon"
-                        />
-                        Unbundling other official flows
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
                       </div>
                     </div>
                     <div
@@ -4520,27 +4977,15 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="users icon"
-                        />
-                        Where are the poor and where will they be?
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="left floated content"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Are domestic public resources able to meet the needs of the poorest people?
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
                       </div>
                     </div>
                     <div
@@ -4552,11 +4997,35 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                       <div
                         className="content"
                       >
-                        <i
-                          aria-hidden="true"
-                          className="area graph icon"
-                        />
-                        Different providers, different priorities
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href=""
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -4600,21 +5069,23 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           className="css-1hpbsc1"
         >
           <li
-            className="navigation__item "
+            className="navigation__item active"
             onClick={[Function]}
           >
             <span
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/"
               >
                 Global Picture
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -4626,7 +5097,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <a
                 href=""
               >
-                Profiles
+                Profile
               </a>
             </span>
             <div
@@ -4637,7 +5108,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               >
                 <li>
                   <a
-                    href=""
+                    href="/country-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -4648,7 +5119,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="/multilateral-profiles"
                   >
                     <i
                       aria-hidden="true"
@@ -4668,14 +5139,16 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/unbundling-aid"
               >
                 Unbudling Aid
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -4685,14 +5158,16 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/spotlight-on-uganda"
               >
                 Spotlight on Uganda
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
           <li
             className="navigation__item "
@@ -4768,14 +5243,16 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               className="navigation__item-title small"
             >
               <a
-                href=""
+                href="/methodology"
               >
                 Methodology
               </a>
             </span>
             <div
               className="nav-children"
-            />
+            >
+              
+            </div>
           </li>
         </nav>
       </div>
@@ -4973,7 +5450,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -5050,7 +5527,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
   className="css-egeejl"
 >
   <span
-    className="bubble css-1ujcf02"
+    className="css-1ujcf02 bubble"
   >
     2000
   </span>
@@ -5064,7 +5541,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     </span>
   </div>
   <input
-    className="input low css-13ehj2n"
+    className="css-13ehj2n input low"
     max={2020}
     min={2000}
     onChange={[Function]}
@@ -5073,7 +5550,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     value={2016}
   />
   <span
-    className="bubble css-2q5yx4"
+    className="css-2q5yx4 bubble"
   >
     2020
   </span>
