@@ -71,7 +71,7 @@
     "semantic-ui": "^2.2.10"
   },
   "git-pre-hooks": {
-    "pre-commit": "npm run lint",
+
     "pre-push": "npm run test"
   },
   "jest": {
