@@ -2,7 +2,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Grid, Icon, Header, Button} from 'semantic-ui-react';
-import {Pane, TabsDark} from 'components/atoms/Tabs';
+import Pane from 'components/atoms/Pane';
+import TabsDark from 'components/molecules/TabsDark';
 import Poverty from 'components/molecules/SpotLight/tabs/Poverty';
 import DistrictPublicResources from 'components/molecules/SpotLight/tabs/DistrictPublicResources';
 import Education from 'components/molecules/SpotLight/tabs/Education';

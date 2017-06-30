@@ -3,8 +3,6 @@ import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
 import { Container } from 'semantic-ui-react';
-import TabsDark from './TabsDark';
-import Pane from './Pane';
 
 type Props = {
   children: any,
@@ -126,5 +124,4 @@ class Tabs extends React.Component {
     );
   }
 }
-export {TabsDark, Pane};
 export default Tabs;

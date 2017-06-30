@@ -3,31 +3,32 @@ import React from 'react';
 import {Container, Grid, Header, Icon, Table} from 'semantic-ui-react';
 import type { Element } from 'react';
 import glamorous from 'glamorous';
-import {HeaderGroup} from 'components/molecules/CountryProfiles/Common';
-import CountriesRankings from 'components/molecules/Front/CountriesRankings';
-import Poverty from 'components/molecules/Front/tabs/Poverty';
-import Vulnerability from 'components/molecules/Front/tabs/Vulnerability';
-import GovernmentFinance from 'components/molecules/Front/tabs/GovernmentFinance';
-import InternationalFinance from 'components/molecules/Front/tabs/InternationalFinance';
-import InternationalOfficial from 'components/molecules/Front/tabs/InternationalOfficial';
-import HumanitarianFinance from 'components/molecules/Front/tabs/HumanitarianFinance';
-import DataRevolution from 'components/molecules/Front/tabs/DataRevolution';
-import ForwardLooking from 'components/molecules/Front/tabs/ForwardLooking';
-import {Pane, TabsDark} from 'components/atoms/Tabs';
+import {
+  DataRevolution,
+  ForwardLooking,
+  GovernmentFinance,
+  HumanitarianFinance,
+  InternationalFinance,
+  InternationalOfficial,
+  Poverty,
+  Vulnerability,
+} from 'components/molecules/GlobalTabs';
+import TabsDark from 'components/molecules/TabsDark';
+import Pane from 'components/atoms/Pane';
+import RankingsTable from 'components/molecules/RankingsTable';
+import {HeaderGroup} from 'components/atoms/Header';
+import data from './data';
 import Generic from '../Generic';
 import Search from '../../molecules/Search';
 import Slider from '../../molecules/YearSlider';
 import ChartShare from '../../molecules/ChartShare';
 
-type Props = {
-  children?: Element<any>,
-};
 const HeaderContainer = glamorous.div({
   paddingTop: '2em',
   paddingBottom: '2em',
   fontSize: '1.2rem',
 });
-export default ({ children}: Props) => {
+export default () => {
   return (
     <Generic pathName="/">
       <Search />
@@ -88,7 +89,7 @@ export default ({ children}: Props) => {
               <ChartShare size="big" color="black" />
             </Grid.Column>
           </Grid.Row>
-          <CountriesRankings />
+          <RankingsTable data={data.countryRankings} />
         </Grid>
       </Container>
     </Generic>

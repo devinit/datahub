@@ -1,8 +1,8 @@
 import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import React from 'react';
-import {TabHeader} from '../Common';
-import Select from '../Select';
+import TabHeader from 'components/atoms/DarkTabsHeader';
+import Select from 'components/atoms/DarkTabsSelect';
 
 const PaneContainer = glamorous.div({
   paddingBottom: '5em',

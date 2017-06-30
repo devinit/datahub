@@ -8,4 +8,9 @@ export const GreyContainer = glamorous.div({
   flexDirection: 'row'
 });
 
+export const RankingsTableContainer = glamorous.div({
+  paddingLeft: '1em',
+  paddingRight: '1em',
+});
+
 export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});

@@ -16,6 +16,7 @@ const TabsContainer = glamorous.ul({
   margin: 0,
   padding: 0,
   listStyle: 'none',
+  textAlign: 'center',
   color: lightBlack,
   '& .active': {
     color: white,

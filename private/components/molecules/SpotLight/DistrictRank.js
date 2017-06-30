@@ -1,11 +1,11 @@
 import React from 'react';
 import {Grid, Table, Flag} from 'semantic-ui-react';
-import {TableContainer} from 'components/molecules/Front';
+import {RankingsContainer} from 'components/atoms/Container';
 
 const DistrictRank = () => (
   <Grid.Row>
     <Grid.Column width={8}>
-      <TableContainer>
+      <RankingsContainer>
         <Table basic="very">
           <Table.Header>
             <Table.Row>
@@ -65,10 +65,10 @@ const DistrictRank = () => (
             </Table.Row>
           </Table.Body>
         </Table>
-      </TableContainer>
+      </RankingsContainer>
     </Grid.Column>
     <Grid.Column width={8}>
-      <TableContainer>
+      <RankingsContainer>
         <Table basic="very">
           <Table.Header>
             <Table.Row>
@@ -128,7 +128,7 @@ const DistrictRank = () => (
             </Table.Row>
           </Table.Body>
         </Table>
-      </TableContainer>
+      </RankingsContainer>
     </Grid.Column>
   </Grid.Row>
 );
