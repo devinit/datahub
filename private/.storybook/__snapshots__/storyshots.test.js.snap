@@ -1622,7 +1622,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           className="ui center aligned container"
         >
           <ul
-            className="css-18cqcru"
+            className="css-1j5lqol"
           >
             <li>
               <a
@@ -1724,6 +1724,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 </div>
               </div>
             </div>
+            <div />
           </div>
         </div>
       </div>
@@ -1738,7 +1739,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           className="row"
         >
           <div
-            className="eight wide column"
+            className="eight wide computer sixteen wide mobile sixteen wide tablet column"
           >
             <div
               className="css-bs33s4"
@@ -1754,7 +1755,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                   >
                     <th
                       className="center aligned"
-                      colSpan="4"
+                      colSpan="3"
                     >
                       Top 10
                     </th>
@@ -1773,6 +1774,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         1
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1794,6 +1796,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         2
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1815,6 +1818,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         3
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1836,6 +1840,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         4
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1857,6 +1862,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         5
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1878,6 +1884,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         6
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1899,6 +1906,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         7
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1920,6 +1928,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         8
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1941,6 +1950,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         9
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1949,7 +1959,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                     <td
                       className="right aligned"
                     >
-                      9%
+                      9.%
                     </td>
                   </tr>
                   <tr
@@ -1962,6 +1972,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         10
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -1978,7 +1989,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             </div>
           </div>
           <div
-            className="eight wide column"
+            className="eight wide computer sixteen wide mobile sixteen wide tablet column"
           >
             <div
               className="css-bs33s4"
@@ -2013,6 +2024,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         101
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2034,6 +2046,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         102
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2055,6 +2068,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         103
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2076,6 +2090,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         104
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2097,6 +2112,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         105
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2118,6 +2134,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         106
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2139,6 +2156,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         107
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2160,6 +2178,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         108
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2181,6 +2200,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         109
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
@@ -2202,6 +2222,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                         110
                       </b>
                     </td>
+                    
                     <td
                       className=""
                     >
