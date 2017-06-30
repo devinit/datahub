@@ -4,7 +4,7 @@ import React from 'react';
 const Government = () => (
   <Container>
     <Grid>
-      <Grid.Column width={5}>
+      <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
           as="h3"
@@ -20,7 +20,7 @@ const Government = () => (
         </Header>
       </Grid.Column>
 
-      <Grid.Column width={5}>
+      <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
           as="h3"
@@ -36,7 +36,7 @@ const Government = () => (
         </Header>
       </Grid.Column>
 
-      <Grid.Column width={5}>
+      <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
           as="h3"

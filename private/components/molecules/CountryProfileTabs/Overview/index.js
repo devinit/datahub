@@ -5,7 +5,7 @@ import {HeaderGroup} from 'components/atoms/Header';
 const Overview = () => (
   <Container>
     <Grid>
-      <Grid.Column width={5}>
+      <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
           as="h3"
@@ -27,7 +27,7 @@ const Overview = () => (
         </Header>
       </Grid.Column>
 
-      <Grid.Column width={5}>
+      <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
           as="h3"
@@ -64,7 +64,7 @@ const Overview = () => (
         </HeaderGroup>
       </Grid.Column>
 
-      <Grid.Column width={5}>
+      <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
           as="h3"

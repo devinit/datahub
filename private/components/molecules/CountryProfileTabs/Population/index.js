@@ -3,7 +3,7 @@ import React from 'react';
 
 const Population = () => (
   <Grid>
-    <Grid.Column width={5}>
+    <Grid.Column computer={5} tablet={16} mobile={16}>
       <Header
         textAlign="center"
         as="h3"
@@ -18,7 +18,7 @@ const Population = () => (
         39m
       </Header>
     </Grid.Column>
-    <Grid.Column width={5}>
+    <Grid.Column computer={5} tablet={16} mobile={16}>
       <Header
         textAlign="center"
         as="h3"
@@ -28,7 +28,7 @@ const Population = () => (
 
     </Grid.Column>
 
-    <Grid.Column width={5}>
+    <Grid.Column computer={5} tablet={16} mobile={16}>
       <Header
         textAlign="center"
         as="h3"
