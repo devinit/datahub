@@ -10,20 +10,14 @@ const Overview = () => (
           textAlign="center"
           as="h3"
         >
-          HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
+          WHAT PERCENTAGE OF PEOPLE IN BUIKWE LIVE BELOW THE NATIONAL POVERTY LINE?
         </Header>
         <Header
           textAlign="center"
           as="h1"
           color="red"
         >
-          19.6M
-        </Header>
-        <Header
-          textAlign="center"
-          as="h5"
-        >
-          out of a population of 39 million people
+          No data
         </Header>
       </Grid.Column>
 
@@ -32,36 +26,15 @@ const Overview = () => (
           textAlign="center"
           as="h3"
         >
-          WHAT RESOURCES ARE AVAILABLE?
+          WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN BUIKWE?
         </Header>
-        <HeaderGroup>
-          <Header
-            color="red"
-            textAlign="center"
-            as="h4"
-          >
-            Domestic public
-          </Header>
-          <Header
-            textAlign="center"
-            as="h2"
-            color="red"
-          >
-            US$ 3bn
-          </Header>
-          <Header
-            textAlign="center"
-            as="h4"
-          >
-            International
-          </Header>
-          <Header
-            textAlign="center"
-            as="h2"
-          >
-            US$ 4.4bn
-          </Header>
-        </HeaderGroup>
+        <Header
+          textAlign="center"
+          as="h1"
+          color="red"
+        >
+          US$9.3m
+        </Header>
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -69,23 +42,15 @@ const Overview = () => (
           textAlign="center"
           as="h3"
         >
-          HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
+          HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
         </Header>
-        <HeaderGroup>
-          <Header
-            textAlign="center"
-            as="h1"
-            color="red"
-          >
-            PPP$ 365
-          </Header>
-          <Header
-            textAlign="center"
-            as="h5"
-          >
-            out of a population of 39 million people
-          </Header>
-        </HeaderGroup>
+        <Header
+          textAlign="center"
+          as="h1"
+          color="red"
+        >
+          No data
+        </Header>
       </Grid.Column>
     </Grid>
   </Container>
