@@ -4,4 +4,4 @@ import { storiesOf } from '@storybook/react';
 import Profile from '.';
 
 storiesOf('Templates DontTest', module)
-  .add('Country Profile', () => <Profile />);
+  .add('Regional Profiles', () => <Profile />);
