@@ -4,18 +4,21 @@ import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react'
 import { red, lightBlack, white } from 'components/theme/semantic';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import Overview from 'components/molecules/CountryProfiles/OverviewTab';
-import PovertyTab from 'components/molecules/CountryProfiles/PovertyTab';
-import PopulationTab from 'components/molecules/CountryProfiles/PopulationTab';
-import GovernmentFinanceTab from 'components/molecules/CountryProfiles/GovernmentFinanceTab';
-import InternationalResourcesTab from 'components/molecules/CountryProfiles/InternationalResourcesTab';
-import InternationalResources from 'components/molecules/CountryProfiles/LowerTabs/InternationalResources';
-import GovernmentFinance from 'components/molecules/CountryProfiles/LowerTabs/GovernmentFinance';
-import {SectionHeader, Lead} from 'components/molecules/CountryProfiles/Common';
+import {
+  GovernmentFinance,
+  GovernmentFinanceLower,
+  InternationalResourcesLower,
+  InternationalResources,
+  Overview,
+  Population,
+  Poverty,
+} from 'components/molecules/CountryProfileTabs';
+import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
-
+import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
+import data from './data';
 
 const cardStyles = {
   background: 'rgba(255,255,255,.6)',
@@ -98,16 +101,16 @@ export default () =>
         <Overview />
       </Pane>
       <Pane label="Poverty">
-        <PovertyTab />
+        <Poverty />
       </Pane>
       <Pane label="Population">
-        <PopulationTab />
+        <Population />
       </Pane>
       <Pane label="Government Finance">
-        <GovernmentFinanceTab />
+        <GovernmentFinance />
       </Pane>
       <Pane label="International Resources">
-        <InternationalResourcesTab />
+        <InternationalResources />
       </Pane>
     </Tabs>
 
@@ -120,10 +123,10 @@ export default () =>
     </HeaderContainer>
     <Tabs selected={0} textAlign="center" height="60em">
       <Pane label="Government Finance">
-        <GovernmentFinance />
+        <GovernmentFinanceLower />
       </Pane>
       <Pane label="International Resources">
-        <InternationalResources />
+        <InternationalResourcesLower />
       </Pane>
     </Tabs>
     <DarkBg>
@@ -131,46 +134,5 @@ export default () =>
         MORE FROM DI ON UGANDA
       </SectionHeader>
     </DarkBg>
-    <LightBg>
-      <Container>
-        <Grid centered>
-          <Grid.Row>
-            <Grid.Column width={16} textAlign="center">
-              <SectionHeader color={white}>
-                COUNTRY PROFILE DATA SOURCES
-              </SectionHeader>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Table basic="very">
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell>Name</Table.HeaderCell>
-                  <Table.HeaderCell>Description</Table.HeaderCell>
-                  <Table.HeaderCell>Methodology</Table.HeaderCell>
-                  <Table.HeaderCell>Unit</Table.HeaderCell>
-                  <Table.HeaderCell>Source</Table.HeaderCell>
-                  <Table.HeaderCell>Download</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body>
-                <Table.Row>
-                  <Table.Cell>Depth of extreme poverty (poverty gap)</Table.Cell>
-                  <Table.Cell>
-                    Depth of extreme poverty
-                    (also known as the poverty gap) tells
-                    us how far people are from the extreme
-                    poverty line, on average per country.
-                  </Table.Cell>
-                  <Table.Cell>World Bank PovcalNet: http://iresearch.worldbank.org/PovcalNet/povDuplicateWB.aspx.</Table.Cell>
-                  <Table.Cell>percent</Table.Cell>
-                  <Table.Cell>World Bank PovcalNet.</Table.Cell>
-                  <Table.Cell><Icon name="file" />ZIP <Icon name="file" />CSV</Table.Cell>
-                </Table.Row>
-              </Table.Body>
-            </Table>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </LightBg>
+    <ProfileDataSourceTable data={data.dataSources} />
   </Generic>);

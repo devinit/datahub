@@ -2,7 +2,7 @@
 /* eslint-disable react/sort-comp */
 import React from 'react';
 import {Segment, Grid} from 'semantic-ui-react';
-import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
+import {SectionHeader} from 'components/atoms/Header';
 // eslint-disable-next-line
 import approximate from 'approximate-number';
 import {LightBg} from '../../atoms/Backgrounds';

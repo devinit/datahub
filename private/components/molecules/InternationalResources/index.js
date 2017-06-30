@@ -2,7 +2,7 @@
 import React from 'react';
 // eslint-disable-next-line
 import approximate from 'approximate-number';
-import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
+import {SectionHeader} from 'components/atoms/Header';
 import {Grid, Header, Dropdown, Container} from 'semantic-ui-react';
 import {LightBg} from '../../atoms/Backgrounds';
 import Chart from '../../atoms/Chart/index';
