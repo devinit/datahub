@@ -12,7 +12,7 @@ import {
   Overview,
   Population,
   Poverty,
-} from 'components/molecules/CountryProfileTabs';
+} from 'components/molecules/RegionalProfileTabs';
 import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
