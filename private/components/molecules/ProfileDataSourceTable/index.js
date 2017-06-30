@@ -37,7 +37,7 @@ const ProfileDataSourceTable = ({data}: Props) => (
                 <Table.Cell>{item.description}</Table.Cell>
                 <Table.Cell>{item.methodology}</Table.Cell>
                 <Table.Cell>{item.unit}</Table.Cell>
-                <Table.Cell>{item.source}</Table.Cell>
+                <Table.Cell><a href={item.source.link}>{item.source.link}</a></Table.Cell>
                 <Table.Cell><Icon name="file" />ZIP <Icon name="file" />CSV</Table.Cell>
               </Table.Row>))}
             </Table.Body>

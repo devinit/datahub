@@ -3,6 +3,10 @@ import glamorous from 'glamorous';
 import {after} from 'glamor';
 import { white, lightBlack } from 'components/theme/semantic';
 
+const Wrapper = glamorous.div({
+  paddingTop: '1em',
+});
+
 export const Select = glamorous.select({
   display: 'inline-block',
   verticalAlign: 'middle',
@@ -36,7 +40,7 @@ export const Select = glamorous.select({
 },
   );
 const ChartFilter = () => (
-  <div>
+  <Wrapper>
     <span>Budget Type</span>
     <Select>
       <option>Actual</option>
@@ -47,7 +51,7 @@ const ChartFilter = () => (
       <option>constant 2015 US$</option>
       <option>currency UGX</option>
     </Select>
-  </div>
+  </Wrapper>
 );
 
 export default ChartFilter;

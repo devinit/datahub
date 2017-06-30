@@ -2,6 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
 import { red, lightBlack, white } from 'components/theme/semantic';
+import RegionalProfileLowerSection from 'components/molecules/RegionalProfileLowerSection';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {
@@ -39,10 +40,6 @@ const UpperContainer = glamorous.div({
   borderBottom: '2px solid #ddd9dc',
   marginBottom: '.2em',
 });
-const HeaderContainer = glamorous.div({
-  paddingTop: '4em',
-  paddingBottom: '4em'
-});
 
 const JumpToResource = glamorous.span({
   marginTop: '1.5em',
@@ -69,7 +66,7 @@ export default () =>
                 <SearchInput
                   visible
                   countries={data.regions}
-                  placeholder="Uganda"
+                  placeholder={data.meta.region}
                 />
                 <Lead>{data.meta.description}</Lead>
                 <JumpToResource>
@@ -104,26 +101,6 @@ export default () =>
         <InternationalResources />
       </Pane>
     </Tabs>
-
-    <HeaderContainer>
-      <Container textAlign="center">
-        <SectionHeader>
-          EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
-        </SectionHeader>
-      </Container>
-    </HeaderContainer>
-    <Tabs selected={0} textAlign="center" height="60em">
-      <Pane label="Government Finance">
-        <GovernmentFinanceLower />
-      </Pane>
-      <Pane label="International Resources">
-        <InternationalResourcesLower />
-      </Pane>
-    </Tabs>
-    <DarkBg>
-      <SectionHeader color={red} fontColor={white}>
-        MORE FROM DI ON UGANDA
-      </SectionHeader>
-    </DarkBg>
+    <RegionalProfileLowerSection />
     <ProfileDataSourceTable data={data.dataSources} />
   </Generic>);
