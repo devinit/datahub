@@ -2,6 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
 import { red, lightBlack, white } from 'components/theme/semantic';
+import RegionalProfileLowerSection from 'components/molecules/RegionalProfileLowerSection';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {
@@ -12,7 +13,7 @@ import {
   Overview,
   Population,
   Poverty,
-} from 'components/molecules/CountryProfileTabs';
+} from 'components/molecules/RegionalProfileTabs';
 import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
@@ -39,10 +40,6 @@ const UpperContainer = glamorous.div({
   borderBottom: '2px solid #ddd9dc',
   marginBottom: '.2em',
 });
-const HeaderContainer = glamorous.div({
-  paddingTop: '4em',
-  paddingBottom: '4em'
-});
 
 const JumpToResource = glamorous.span({
   marginTop: '1.5em',
@@ -68,19 +65,10 @@ export default () =>
                 </Header>
                 <SearchInput
                   visible
-                  countries={[
-                    { name: 'Uganda', id: 1 },
-                    { name: 'Kenya', id: 2 },
-                    { name: 'Tanzania', id: 3 }
-                  ]}
-                  placeholder="Uganda"
+                  countries={data.regions}
+                  placeholder={data.meta.region}
                 />
-                <Lead>
-                  Explore this in-depth profile of Uganda to
-                  find out overall levels of poverty, income distribution,
-                  division of wealth and more. Discover how national
-                  and sub-national revenue is generated.
-                </Lead>
+                <Lead>{data.meta.description}</Lead>
                 <JumpToResource>
                   Jump to <a>International resources</a>
                 </JumpToResource>
@@ -113,26 +101,6 @@ export default () =>
         <InternationalResources />
       </Pane>
     </Tabs>
-
-    <HeaderContainer>
-      <Container textAlign="center">
-        <SectionHeader>
-          EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
-        </SectionHeader>
-      </Container>
-    </HeaderContainer>
-    <Tabs selected={0} textAlign="center" height="60em">
-      <Pane label="Government Finance">
-        <GovernmentFinanceLower />
-      </Pane>
-      <Pane label="International Resources">
-        <InternationalResourcesLower />
-      </Pane>
-    </Tabs>
-    <DarkBg>
-      <SectionHeader color={red} fontColor={white}>
-        MORE FROM DI ON UGANDA
-      </SectionHeader>
-    </DarkBg>
+    <RegionalProfileLowerSection />
     <ProfileDataSourceTable data={data.dataSources} />
   </Generic>);

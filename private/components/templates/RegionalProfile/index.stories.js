@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import Front from '.';
+import Profile from '.';
 
 storiesOf('Templates DontTest', module)
-  .add('Front Page', () => <Front />);
+  .add('Regional Profiles', () => <Profile />);
