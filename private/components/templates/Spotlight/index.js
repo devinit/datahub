@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Grid, Icon, Header, Button} from 'semantic-ui-react';
 import Pane from 'components/atoms/Pane';
-import TabsDark from 'components/molecules/TabsDark';
+import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import {
   DistrictPublicResources,
   Education,
@@ -50,7 +50,7 @@ export default () => {
           </Grid>
         </HeaderContainer>
       </Container>
-      <TabsDark selected={0} textAlign="center">
+      <NavigationBarTabs selected={0} textAlign="center">
         <Pane label="Poverty">
           <Poverty options={data.tabOptions.poverty} />
         </Pane>
@@ -69,7 +69,7 @@ export default () => {
         <Pane label="District Public Resources">
           <DistrictPublicResources options={data.tabOptions.districtPublicResources} />
         </Pane>
-      </TabsDark>
+      </NavigationBarTabs>
       <Container>
         <Grid centered>
           <RankingsTable data={data.regionalRankings} />

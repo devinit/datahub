@@ -13,7 +13,7 @@ import {
   Poverty,
   Vulnerability,
 } from 'components/molecules/GlobalTabs';
-import TabsDark from 'components/molecules/TabsDark';
+import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import Pane from 'components/atoms/Pane';
 import RankingsTable from 'components/molecules/RankingsTable';
 import {HeaderGroup} from 'components/atoms/Header';
@@ -43,7 +43,7 @@ export default () => {
           </Grid>
         </HeaderContainer>
       </Container>
-      <TabsDark selected={0} >
+      <NavigationBarTabs selected={0} >
         <Pane label="Poverty">
           <Poverty options={data.tabOptions.poverty} />
         </Pane>
@@ -68,7 +68,7 @@ export default () => {
         <Pane label="Forward Looking ODA">
           <ForwardLooking options={data.tabOptions.forwardLooking} />
         </Pane>
-      </TabsDark>
+      </NavigationBarTabs>
       <Container>
         <Grid centered>
           <Grid.Row centered>
