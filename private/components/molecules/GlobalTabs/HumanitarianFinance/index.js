@@ -1,24 +1,11 @@
-import glamorous from 'glamorous';
-import {Container} from 'semantic-ui-react';
+// @flow
 import React from 'react';
-import TabHeader from 'components/atoms/DarkTabsHeader';
-import Select from 'components/atoms/DarkTabsSelect';
+import Container from 'components/atoms/DarkTabsContainer';
 
-const PaneContainer = glamorous.div({
-  paddingBottom: '5em',
-});
-
-const options = [
-  {key: 0, value: 'Humanitarian assistance'},
-];
-const HumanitarianFinance = () => (
-  <PaneContainer>
-    <TabHeader>
-      <Container textAlign="center">
-        <Select options={options} />
-      </Container>
-    </TabHeader>
-  </PaneContainer>
+const HumanitarianFinance = (props: Object) => (
+  <Container options={props.options}>
+    <div />
+  </Container>
 );
 
 export default HumanitarianFinance;

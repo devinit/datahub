@@ -45,28 +45,28 @@ export default () => {
       </Container>
       <TabsDark selected={0} >
         <Pane label="Poverty">
-          <Poverty />
+          <Poverty options={data.tabOptions.poverty} />
         </Pane>
         <Pane label="Vulnerability">
-          <Vulnerability />
+          <Vulnerability options={data.tabOptions.vulnerability} />
         </Pane>
         <Pane label="Government Finance">
-          <GovernmentFinance />
+          <GovernmentFinance options={data.tabOptions.governmentFinance} />
         </Pane>
         <Pane label="International Finance">
-          <InternationalFinance />
+          <InternationalFinance options={data.tabOptions.internationalFinance} />
         </Pane>
         <Pane label="International Official Finance">
-          <InternationalOfficial />
+          <InternationalOfficial options={data.tabOptions.internationalOfficial} />
         </Pane>
         <Pane label="Humanitarian Finance">
-          <HumanitarianFinance />
+          <HumanitarianFinance options={data.tabOptions.humanitarianFinance} />
         </Pane>
         <Pane label="Data Revolution">
-          <DataRevolution />
+          <DataRevolution options={data.tabOptions.dataRevolution} />
         </Pane>
         <Pane label="Forward Looking ODA">
-          <ForwardLooking />
+          <ForwardLooking options={data.tabOptions.forwardLooking} />
         </Pane>
       </TabsDark>
       <Container>
