@@ -4,17 +4,20 @@ import glamorous from 'glamorous';
 import {Container, Grid, Icon, Header, Button} from 'semantic-ui-react';
 import Pane from 'components/atoms/Pane';
 import TabsDark from 'components/molecules/TabsDark';
-import Poverty from 'components/molecules/SpotLight/tabs/Poverty';
-import DistrictPublicResources from 'components/molecules/SpotLight/tabs/DistrictPublicResources';
-import Education from 'components/molecules/SpotLight/tabs/Education';
-import Health from 'components/molecules/SpotLight/tabs/Health';
-import Population from 'components/molecules/SpotLight/tabs/Population';
-import WaterandSanitation from 'components/molecules/SpotLight/tabs/WaterandSanitation';
-import DistrictRank from 'components/molecules/SpotLight/DistrictRank';
+import {
+  DistrictPublicResources,
+  Education,
+  Health,
+  Population,
+  Poverty,
+  WaterandSanitation
+} from 'components/molecules/SpotLightTabs';
 import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
-import {SectionHeader} from 'components/molecules/CountryProfiles/Common';
+import {SectionHeader} from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
+import RankingsTable from 'components/molecules/RankingsTable';
 import Generic from '../Generic';
+import data from './data';
 
 
 /* eslint-disable max-len */
@@ -49,27 +52,27 @@ export default () => {
       </Container>
       <TabsDark selected={0} textAlign="center">
         <Pane label="Poverty">
-          <Poverty />
+          <Poverty options={data.tabOptions.poverty} />
         </Pane>
         <Pane label="Population">
-          <Population />
+          <Population options={data.tabOptions.population} />
         </Pane>
         <Pane label="Education">
-          <Education />
+          <Education options={data.tabOptions.education} />
         </Pane>
         <Pane label="Health">
-          <Health />
+          <Health options={data.tabOptions.humanitarianFinance} />
         </Pane>
         <Pane label="Water and Sanitation">
-          <WaterandSanitation />
+          <WaterandSanitation options={data.tabOptions.waterandSanitation} />
         </Pane>
         <Pane label="District Public Resources">
-          <DistrictPublicResources />
+          <DistrictPublicResources options={data.tabOptions.districtPublicResources} />
         </Pane>
       </TabsDark>
       <Container>
         <Grid centered>
-          <DistrictRank />
+          <RankingsTable data={data.regionalRankings} />
         </Grid>
       </Container>
 
