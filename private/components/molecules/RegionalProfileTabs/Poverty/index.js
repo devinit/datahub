@@ -10,7 +10,14 @@ const Poverty = () => (
           textAlign="center"
           as="h3"
         >
-          IS POVERTY REDUCING OVER TIME?
+          WHAT PERCENTAGE OF PEOPLE IN BUIKWE LIVE BELOW THE NATIONAL POVERTY LINE?
+        </Header>
+        <Header
+          textAlign="center"
+          as="h1"
+          color="red"
+        >
+          No data
         </Header>
       </Grid.Column>
 
@@ -19,24 +26,15 @@ const Poverty = () => (
           textAlign="center"
           as="h3"
         >
-          HOW DEEP IS POVERTY?
+          WHAT IS THE AVERAGE LIFE EXPECTANCY?
         </Header>
-
-        <HeaderGroup>
-          <Header
-            textAlign="center"
-            as="h1"
-            color="red"
-          >
-            10%
-          </Header>
-          <Header
-            textAlign="center"
-            as="h5"
-          >
-            out of a population of 39 million people
-          </Header>
-        </HeaderGroup>
+        <Header
+          textAlign="center"
+          as="h1"
+          color="red"
+        >
+          No data
+        </Header>
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -44,9 +42,15 @@ const Poverty = () => (
           textAlign="center"
           as="h3"
         >
-          HOW IS INCOME DISTRIBUTED?
+          WHAT IS THE STANDARD OF LIVING SCORE?
         </Header>
-
+        <Header
+          textAlign="center"
+          as="h1"
+          color="red"
+        >
+          No data
+        </Header>
       </Grid.Column>
     </Grid>
   </Container>
