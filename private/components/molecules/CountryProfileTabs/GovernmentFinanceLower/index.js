@@ -28,7 +28,7 @@ const Government = () => (
   <Container>
     <Grid centered>
       <Grid.Row>
-        <Grid.Column width={8}  textAlign="center">
+        <Grid.Column width={8} textAlign="center">
           <Lead>
             How does Uganda finance and spend its budget?
               <span>Move the year slider</span>or <span>click a box</span> to drill down.
