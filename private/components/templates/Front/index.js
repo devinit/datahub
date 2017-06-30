@@ -3,31 +3,32 @@ import React from 'react';
 import {Container, Grid, Header, Icon, Table} from 'semantic-ui-react';
 import type { Element } from 'react';
 import glamorous from 'glamorous';
-import {HeaderGroup} from 'components/molecules/CountryProfiles/Common';
-import CountriesRankings from 'components/molecules/Front/CountriesRankings';
-import Poverty from 'components/molecules/Front/tabs/Poverty';
-import Vulnerability from 'components/molecules/Front/tabs/Vulnerability';
-import GovernmentFinance from 'components/molecules/Front/tabs/GovernmentFinance';
-import InternationalFinance from 'components/molecules/Front/tabs/InternationalFinance';
-import InternationalOfficial from 'components/molecules/Front/tabs/InternationalOfficial';
-import HumanitarianFinance from 'components/molecules/Front/tabs/HumanitarianFinance';
-import DataRevolution from 'components/molecules/Front/tabs/DataRevolution';
-import ForwardLooking from 'components/molecules/Front/tabs/ForwardLooking';
-import {Pane, TabsDark} from 'components/atoms/Tabs';
+import {
+  DataRevolution,
+  ForwardLooking,
+  GovernmentFinance,
+  HumanitarianFinance,
+  InternationalFinance,
+  InternationalOfficial,
+  Poverty,
+  Vulnerability,
+} from 'components/molecules/GlobalTabs';
+import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
+import Pane from 'components/atoms/Pane';
+import RankingsTable from 'components/molecules/RankingsTable';
+import {HeaderGroup} from 'components/atoms/Header';
+import data from './data';
 import Generic from '../Generic';
 import Search from '../../molecules/Search';
 import Slider from '../../molecules/YearSlider';
 import ChartShare from '../../molecules/ChartShare';
 
-type Props = {
-  children?: Element<any>,
-};
 const HeaderContainer = glamorous.div({
   paddingTop: '2em',
   paddingBottom: '2em',
   fontSize: '1.2rem',
 });
-export default ({ children}: Props) => {
+export default () => {
   return (
     <Generic pathName="/">
       <Search />
@@ -42,32 +43,32 @@ export default ({ children}: Props) => {
           </Grid>
         </HeaderContainer>
       </Container>
-      <TabsDark selected={0} >
+      <NavigationBarTabs selected={0} >
         <Pane label="Poverty">
-          <Poverty />
+          <Poverty options={data.tabOptions.poverty} />
         </Pane>
         <Pane label="Vulnerability">
-          <Vulnerability />
+          <Vulnerability options={data.tabOptions.vulnerability} />
         </Pane>
         <Pane label="Government Finance">
-          <GovernmentFinance />
+          <GovernmentFinance options={data.tabOptions.governmentFinance} />
         </Pane>
         <Pane label="International Finance">
-          <InternationalFinance />
+          <InternationalFinance options={data.tabOptions.internationalFinance} />
         </Pane>
         <Pane label="International Official Finance">
-          <InternationalOfficial />
+          <InternationalOfficial options={data.tabOptions.internationalOfficial} />
         </Pane>
         <Pane label="Humanitarian Finance">
-          <HumanitarianFinance />
+          <HumanitarianFinance options={data.tabOptions.humanitarianFinance} />
         </Pane>
         <Pane label="Data Revolution">
-          <DataRevolution />
+          <DataRevolution options={data.tabOptions.dataRevolution} />
         </Pane>
         <Pane label="Forward Looking ODA">
-          <ForwardLooking />
+          <ForwardLooking options={data.tabOptions.forwardLooking} />
         </Pane>
-      </TabsDark>
+      </NavigationBarTabs>
       <Container>
         <Grid centered>
           <Grid.Row centered>
@@ -88,7 +89,7 @@ export default ({ children}: Props) => {
               <ChartShare size="big" color="black" />
             </Grid.Column>
           </Grid.Row>
-          <CountriesRankings />
+          <RankingsTable data={data.countryRankings} />
         </Grid>
       </Container>
     </Generic>

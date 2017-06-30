@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import {Icon} from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import {white, midWhite, black} from 'components/theme/semantic';
+import { white, midWhite, black } from 'components/theme/semantic';
 
 type Props = {
   visible: any,
@@ -10,24 +10,27 @@ type Props = {
   items: Array<Object>,
   onClose: any,
   onChange?: any,
-  active?: any,
+  active?: any
 };
-const Wrapper = glamorous.div({
-  background: white,
-  position: 'absolute',
-  width: '200px',
-  padding: '20px',
-  zIndex: 1000000,
-  textAlign: 'center',
-  '& .close': {
+const Wrapper = glamorous.div(
+  {
+    background: white,
     position: 'absolute',
-    top: '5px',
-    right: '5px',
-    cursor: 'pointer',
-  }
-}, (props) => ({
-  display: props.visible ? 'block' : 'none'
-}));
+    width: '200px',
+    padding: '20px',
+    zIndex: 1000000,
+    textAlign: 'center',
+    '& .close': {
+      position: 'absolute',
+      top: '5px',
+      right: '5px',
+      cursor: 'pointer'
+    }
+  },
+  props => ({
+    display: props.visible ? 'block' : 'none'
+  })
+);
 const Select = glamorous.select({
   display: 'inline-block',
   verticalAlign: 'middle',
@@ -49,29 +52,42 @@ const Select = glamorous.select({
   backgroundImage: 'none',
   boxSizing: 'border-box',
   boxShadow: 'none',
-  fontSize: '18px',
+  fontSize: '18px'
 });
-const Text = glamorous.span({
-  display: 'inline-block',
-  position: 'relative',
-  fontSize: '22px',
-  listStyle: 'none',
-  padding: '5px',
-  textAlignt: 'center'
-}, (props) => ({
-  opacity: props.active ? '1' : '.5'
-}));
+const Text = glamorous.span(
+  {
+    display: 'inline-block',
+    position: 'relative',
+    fontSize: '22px',
+    listStyle: 'none',
+    padding: '5px',
+    textAlignt: 'center'
+  },
+  props => ({
+    opacity: props.active ? '1' : '.5'
+  })
+);
 
-const DropDown = ({visible, items, text, onClose, active, onChange}: Props) => {
-  const options = items.map(item => <option key={item.value}>{item.name}</option>);
-  return (<Wrapper visible={visible}>
-    <Icon name="close" className="close" onClick={() => onClose()} />
-    <Text active={active}>{text}</Text>
-    <Select onChange={(e) => onChange ? onChange(e.target.value) : 0}>
-      {options}
-    </Select>
-  </Wrapper>);
+const DropDown = ({
+  visible,
+  items,
+  text,
+  onClose,
+  active,
+  onChange
+}: Props) => {
+  const options = items.map(item =>
+    <option key={item.value}>{item.name}</option>
+  );
+  return (
+    <Wrapper visible={visible}>
+      <Icon name="close" className="close" onClick={() => onClose()} />
+      <Text active={active}>{text}</Text>
+      <Select onChange={e => (onChange ? onChange(e.target.value) : 0)}>
+        {options}
+      </Select>
+    </Wrapper>
+  );
 };
 
 export default DropDown;
-
