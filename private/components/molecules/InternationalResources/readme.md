@@ -1,1 +1,1 @@
-this is the dual side bar chart
+this is the area tree map chart
