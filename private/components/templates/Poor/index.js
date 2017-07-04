@@ -1,10 +1,10 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Header} from 'semantic-ui-react';
+import {Container, Header, Grid} from 'semantic-ui-react';
 import type { Element } from 'react';
 import Generic from '../Generic';
-
+import data from './data';
 
 export default () => {
   const headerStyles = {
@@ -20,12 +20,35 @@ export default () => {
             <Header.Content>
               Where are the poor and where will they be?
               <Header.Subheader>
-                Between 1990 and 2010, extreme poverty was cut in half.
-                Explore plausible poverty outcomes for 2030 based on models of consumption.
+                {data.subHeader}
               </Header.Subheader>
             </Header.Content>
           </Header>
         </HeaderContainer>
+      </Container>
+      <Container>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column computer="12" tablet="16" mobile="16">
+              <Header as="h3">About this visualization</Header>
+              <p>
+                {data.abtVisualization}
+              </p>
+              <Header as="h3">Scenario details</Header>
+              <p>
+                {data.scenarioDetails}
+              </p>
+              <Header as="h3">About the data</Header>
+              <p>
+                {data.aboutData}
+              </p>
+            </Grid.Column>
+            <Grid.Column computer="4" tablet="16" mobile="16">
+              <Header as="h3">Download the data</Header>
+              <p>Not yet available</p>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Container>
     </Generic>
   );
