@@ -6,16 +6,17 @@ import { white } from 'components/theme/semantic';
 import {SectionHeader, Lead} from 'components/atoms/Header';
 
 type Props = {
-  data: Array<Object>
+  data: Array<Object>,
+  title?: string,
 }
-const ProfileDataSourceTable = ({data}: Props) => (
+const ProfileDataSourceTable = ({title, data}: Props) => (
   <LightBg>
     <Container>
       <Grid centered>
         <Grid.Row>
           <Grid.Column width={16} textAlign="center">
             <SectionHeader color={white}>
-              COUNTRY PROFILE DATA SOURCES
+              {title || 'COUNTRY PROFILE DATA SOURCES'}
             </SectionHeader>
           </Grid.Column>
         </Grid.Row>
