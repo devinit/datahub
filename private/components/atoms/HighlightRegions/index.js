@@ -3,7 +3,7 @@ import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 
-const ColorSpan = glamorous.span({
+export const ColorSpan = glamorous.span({
   display: 'inline-block',
   width: '10px',
   height: '10px',
@@ -14,12 +14,13 @@ const ColorSpan = glamorous.span({
 
 type Props = {
   onChange?: (value: string | void) => void,
-  options: Array<Object>
+  options: Array<Object>,
+  colorBy: boolean
 };
 
-const HighlightRegion = ({ onChange, options }: Props) => (
+const HighlightRegion = ({ onChange, options, colorBy }: Props) => (
   <div>
-    {options.map(item => <div key={item.name}><input onChange={onChange} type="checkbox" value={item.name} /><ColorSpan color={item.color} />{item.name}</div>)}
+    {options.map(item => <div key={item.name}><input onChange={onChange} type="checkbox" value={item.name} />{colorBy ? <ColorSpan color={item.color} /> : false}{item.name}</div>)}
   </div>
 );
 
