@@ -9,7 +9,7 @@ import HighlightByRegions from 'components/atoms/HighlightRegions';
 import SelectedCountries from 'components/atoms/SelectedCountries';
 import data from './data';
 
-export default class BubbleChartWidget {
+export default class BubbleChartWidget extends React.Component {
   render() {
     return (
       <Container>

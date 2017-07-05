@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import { Dropdown } from 'semantic-ui-react';
+import { Dropdown, Header } from 'semantic-ui-react';
+import {Wrapper} from 'components/atoms/BubbleSizeDropDown';
 
 type Props = {
   onChange?: (value: string | void) => void,
@@ -8,10 +9,10 @@ type Props = {
 };
 
 const ColorBy = ({ onChange, options }: Props) => (
-  <div>
-    <span>Color By</span>
-    <Dropdown onClick={onChange} options={options} />
-  </div>
+  <Wrapper>
+    <Header as="h4">Color By</Header>
+    <Dropdown onClick={onChange} selection fluid options={options} />
+  </Wrapper>
 );
 
 export default ColorBy;

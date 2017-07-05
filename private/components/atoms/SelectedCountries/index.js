@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import { Dropdown } from 'semantic-ui-react';
+import { Dropdown, Header } from 'semantic-ui-react';
+import {Wrapper} from 'components/atoms/BubbleSizeDropDown';
 
 type Props = {
   onChange: (value: string | void) => void,
@@ -9,10 +10,17 @@ type Props = {
 };
 
 const selectedCountries = ({ onChange, options, placeholder }: Props) => (
-  <div>
-    <span>Selected countries</span>
-    <Dropdown onClick={onChange} placeholder={placeholder} fluid search options={options} />
-  </div>
+  <Wrapper>
+    <Header as="h4">Selected countries</Header>
+    <Dropdown
+      onClick={onChange}
+      placeholder={placeholder}
+      fluid
+      search
+      selection
+      options={options}
+    />
+  </Wrapper>
 );
 
 export default selectedCountries;
