@@ -4,13 +4,19 @@ import { Dropdown, Header } from 'semantic-ui-react';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 
 type Props = {
-  onChange?: (value: string | void) => void,
-  options?: Array<Object>
+  onChange: (value: string) => void,
+  options: Array<Object>
 };
 
 const ColorBy = ({ onChange, options }: Props) => (
   <Wrapper title="Color By">
-    <Dropdown onClick={onChange} selection fluid options={options} />
+    <Dropdown
+      defaultValue={options[0].value}
+      onChange={(e, data) => { onChange(data.value); }}
+      selection
+      fluid
+      options={options}
+    />
   </Wrapper>
 );
 

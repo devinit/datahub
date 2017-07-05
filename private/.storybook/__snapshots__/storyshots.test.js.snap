@@ -1,5 +1,500 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots BubbleChartWidget Main 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="twelve wide computer sixteen wide mobile twelve wide tablet column"
+      >
+        <div
+          className="css-18066sv"
+        >
+          <div
+            className="css-13azwyo"
+          >
+            <div
+              className="css-1kqtbeg"
+            >
+              <h5
+                className="ui header"
+              >
+                Since 2000, when the Millennium Development Goals were agreed, the domestic public resources available to many countries have grown and extreme poverty rates have fallen.
+              </h5>
+              <p>
+                Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain scarce and poverty rates, although falling slowly in some countries are actually rising in others.
+              </p>
+              <div
+                className="css-3qchb1"
+              >
+                <p>
+                  <a
+                    href=""
+                  >
+                    Click the years to see how countries have progressed
+                  </a>
+                </p>
+              </div>
+              <div
+                className="css-3qchb1"
+              >
+                <div
+                  className="ui buttons"
+                >
+                  <button
+                    className="ui button"
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    2000
+                  </button>
+                  <button
+                    className="ui button"
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    latest 
+                    <i
+                      aria-hidden="true"
+                      className="info circle icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ui grid"
+        >
+          <div
+            className="one wide column"
+          >
+            <div
+              className="css-1ppdvma"
+            >
+              <button
+                className="ui icon button"
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                <i
+                  aria-hidden="true"
+                  className="play icon"
+                />
+                 
+              </button>
+            </div>
+          </div>
+          <div
+            className="fifteen wide column"
+          >
+            <div
+              className="css-egeejl"
+            >
+              <span
+                className="css-1ujcf02 bubble"
+              >
+                2000
+              </span>
+              <div
+                className="css-1whzuw8"
+              >
+                <span
+                  className="css-1g4zm47"
+                >
+                  2016
+                </span>
+              </div>
+              <input
+                className="css-13ehj2n input low"
+                max={2020}
+                min={2000}
+                onChange={[Function]}
+                step={1}
+                type="range"
+                value={2016}
+              />
+              <span
+                className="css-2q5yx4 bubble"
+              >
+                2020
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="four wide computer sixteen wide mobile four wide tablet column"
+      >
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Bubble size
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui fluid search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value=""
+            >
+              <option
+                value=""
+              />
+              <option
+                value="Small"
+              >
+                Small
+              </option>
+            </select>
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              name="-search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <div
+              className="text"
+            />
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={undefined}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Small
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Selected countries
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui fluid search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value=""
+            >
+              <option
+                value=""
+              />
+              <option
+                value="Uganda"
+              >
+                Uganda
+              </option>
+            </select>
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              name="-search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <div
+              className="default text"
+            >
+              Select Country
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={undefined}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Uganda
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Color By
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui fluid selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value="region"
+            >
+              <option
+                value=""
+              />
+              <option
+                value="region"
+              >
+                region
+              </option>
+              <option
+                value="income-group"
+              >
+                income-group
+              </option>
+            </select>
+            <div
+              className="text"
+            >
+              region
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
+            >
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  region
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  income-group
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Income Group
+          </h4>
+          <div>
+            <input
+              onChange={undefined}
+              type="checkbox"
+              value="LDCs"
+            />
+            LDCs
+          </div>
+          <div>
+            <input
+              onChange={undefined}
+              type="checkbox"
+              value="LMICs"
+            />
+            LMICs
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Region
+          </h4>
+          <div>
+            <input
+              onChange={undefined}
+              type="checkbox"
+              value="Europe"
+            />
+            <span
+              className="css-r30r2w"
+            />
+            Europe
+          </div>
+          <div>
+            <input
+              onChange={undefined}
+              type="checkbox"
+              value="Far East Asia"
+            />
+            <span
+              className="css-2l4jre"
+            />
+            Far East Asia
+          </div>
+        </div>
+        <a
+          className="css-n84qqq"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+           More Info
+        </a>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Print and Share
+          </h4>
+          <button
+            className="ui icon button"
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="print icon"
+            />
+             
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
   className="ui primary button"
@@ -191,7 +686,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="lightBlack css-omymer"
+    className="css-omymer lightBlack"
   >
     <div
       className="row"
@@ -1059,7 +1554,7 @@ exports[`Storyshots Search Datahub Main Search 1`] = `
         placeholder="Type Your Country Name"
       />
       <div
-        className="list css-13azwyo"
+        className="css-13azwyo list"
       >
         <ul
           className="css-vi44j9"
@@ -1626,7 +2121,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             <li>
               <a
-                className="active css-2rtur8"
+                className="css-2rtur8 active"
                 onClick={[Function]}
               >
                 Poverty
@@ -2498,7 +2993,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -3275,7 +3770,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -3850,7 +4345,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     placeholder="Type Your Country Name"
                   />
                   <div
-                    className="list css-13azwyo"
+                    className="css-13azwyo list"
                   >
                     <ul
                       className="css-vi44j9"
@@ -4096,7 +4591,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -4798,7 +5293,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -5679,7 +6174,7 @@ exports[`Storyshots Templates Methodology 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -6404,7 +6899,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
       </div>
     </div>
     <div
-      className="lightBlack css-omymer"
+      className="css-omymer lightBlack"
     >
       <div
         className="row"
@@ -6481,7 +6976,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
   className="css-egeejl"
 >
   <span
-    className="bubble css-1ujcf02"
+    className="css-1ujcf02 bubble"
   >
     2000
   </span>
@@ -6495,7 +6990,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     </span>
   </div>
   <input
-    className="input low css-13ehj2n"
+    className="css-13ehj2n input low"
     max={2020}
     min={2000}
     onChange={[Function]}
@@ -6504,7 +6999,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     value={2016}
   />
   <span
-    className="bubble css-2q5yx4"
+    className="css-2q5yx4 bubble"
   >
     2020
   </span>
