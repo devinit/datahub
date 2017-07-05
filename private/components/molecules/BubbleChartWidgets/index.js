@@ -8,6 +8,7 @@ import HighlightByIncomeGroup from 'components/atoms/HighlightByIncomeGroup';
 import HighlightByRegions from 'components/atoms/HighlightRegions';
 import SelectedCountries from 'components/atoms/SelectedCountries';
 import BubbleChartPrint from 'components/atoms/BubbleChartPrint';
+import BubbleChartAxisSettings from 'components/atoms/BubbleChartAxisSettings';
 import Slider from 'components/molecules/YearSlider';
 
 const ChartContainer = glamorous.div({
@@ -63,6 +64,8 @@ class BubbleChartWidget extends React.Component {
               <ColorBy options={data.colorBy} />
               <HighlightByIncomeGroup options={data.highlightIncome} colorBy={false} />
               <HighlightByRegions options={data.highlightRegion} colorBy />
+              <BubbleChartAxisSettings title="X-axis settings" />
+              <BubbleChartAxisSettings title="Y-axis settings" />
               <BubbleChartPrint onClick={() => {}} />
             </Grid.Column>
           </Grid.Row>
