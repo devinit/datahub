@@ -4,4 +4,4 @@ import { storiesOf } from '@storybook/react';
 import BubbleChart from '.';
 
 storiesOf('BubbleChartWidget', module)
-  .add('Main', () => <BubbleChart menu={data} />);
+  .add('Main', () => <BubbleChart />);

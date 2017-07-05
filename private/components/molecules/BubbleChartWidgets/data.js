@@ -13,7 +13,7 @@ const data = {
     {name: 'LDCs', color: '#ba0c2f'},
     {name: 'LMICs', color: '#b7bf10'},
   ],
-  highlightCountry: [
+  highlightRegion: [
     {name: 'Europe', color: '#1b365d'},
     {name: 'Far East Asia', color: '#ea7600'},
   ],

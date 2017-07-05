@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import glamorous from 'glamorous';
 import {Grid, Container} from 'semantic-ui-react';
@@ -6,6 +7,7 @@ import ColorBy from 'components/atoms/ColorBy';
 import HighlightByIncomeGroup from 'components/atoms/HighlightByIncomeGroup';
 import HighlightByRegions from 'components/atoms/HighlightRegions';
 import SelectedCountries from 'components/atoms/SelectedCountries';
+import data from './data';
 
 export default class BubbleChartWidget {
   render() {
@@ -17,11 +19,11 @@ export default class BubbleChartWidget {
               <div />
             </Grid.Column>
             <Grid.Column computer={4} tablet={4} mobile={16}>
-              <BubbleSize />
-              <SelectedCountries />
-              <ColorBy />
-              <HighlightByIncomeGroup />
-              <HighlightByRegions />
+              <BubbleSize options={data.bubbleSize} />
+              <SelectedCountries placeholder="Select Country" onChange={() => {}} options={data.countries} />
+              <ColorBy options={data.colorBy} />
+              <HighlightByIncomeGroup options={data.highlightIncome} colorBy={false} />
+              <HighlightByRegions options={data.highlightRegion} colorBy />
             </Grid.Column>
           </Grid.Row>
         </Grid>
