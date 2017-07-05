@@ -7,10 +7,10 @@ type Props = {
   onClick: () => void,
 };
 
-const selectedCountries = ({ onClick }: Props) => (
-  <Wrapper title="Selected countries">
+const printWidget = ({ onClick }: Props) => (
+  <Wrapper title="Print and Share">
     <Button icon="print" />
   </Wrapper>
 );
 
-export default selectedCountries;
+export default printWidget;
