@@ -1,18 +1,8 @@
 // @flow
 import React from 'react';
 import { Header } from 'semantic-ui-react';
-import glamorous from 'glamorous';
+import {ColorSpan} from 'components/atoms/BubbleChartHighlightRegions';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
-
-export const ColorSpan = glamorous.span({
-  display: 'inline-block',
-  width: '10px',
-  height: '10px',
-}, (props) => ({
-  backgroundColor: props.color || '#7f7f7f',
-  marginLeft: '2px'
-})
-);
 
 type Props = {
   onChange?: (value: string | void) => void,
@@ -20,10 +10,10 @@ type Props = {
   colorBy: boolean
 };
 
-const HighlightRegion = ({ onChange, options, colorBy }: Props) => (
-  <Wrapper title="Highlight by Region">
+const HighlightByIncome = ({ onChange, options, colorBy }: Props) => (
+  <Wrapper title="Highlight by Income Group">
     {options.map(item => <div key={item.name}><input onChange={onChange} type="checkbox" value={item.name} />{colorBy ? <ColorSpan color={item.color} /> : false}{item.name}</div>)}
   </Wrapper>
 );
 
-export default HighlightRegion;
+export default HighlightByIncome;
