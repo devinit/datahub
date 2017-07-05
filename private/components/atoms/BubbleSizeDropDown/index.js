@@ -1,14 +1,7 @@
 // @flow
 import React from 'react';
 import { Dropdown, Header } from 'semantic-ui-react';
-import glamorous from 'glamorous';
-
-export const Wrapper = glamorous.div({
-  marginTop: '1em',
-  '& h4': {
-    marginBottom: '.5em !important'
-  }
-});
+import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 
 type Props = {
   onChange?: (value: string | void) => void,
@@ -16,8 +9,7 @@ type Props = {
 };
 
 const bubbleChartSize = ({ onChange, options }: Props) => (
-  <Wrapper>
-    <Header as="h4">Bubble size</Header>
+  <Wrapper title="Bubble size">
     <Dropdown onClick={onChange} search selection fluid options={options} />
   </Wrapper>
 );
