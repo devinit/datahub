@@ -9,10 +9,14 @@ import HighlightByRegions from 'components/atoms/HighlightRegions';
 import SelectedCountries from 'components/atoms/SelectedCountries';
 import BubbleChartPrint from 'components/atoms/BubbleChartPrint';
 import BubbleChartAxisSettings from 'components/atoms/BubbleChartAxisSettings';
+import BubbleChartAnnotation from 'components/atoms/BubbleChartAnnotation';
 import Slider from 'components/molecules/YearSlider';
 
 const ChartContainer = glamorous.div({
   height: '500px',
+});
+const AnnotationContainer = glamorous.div({
+  position: 'relative',
 });
 const PlayContainer = glamorous.div({
   marginTop: '-12px',
@@ -40,7 +44,11 @@ class BubbleChartWidget extends React.Component {
         <Grid>
           <Grid.Row>
             <Grid.Column computer={12} tablet={12} mobile={16}>
-              <ChartContainer />
+              <ChartContainer>
+                <AnnotationContainer>
+                  <BubbleChartAnnotation />
+                </AnnotationContainer>
+              </ChartContainer>
               <Grid>
                 <Grid.Column width={1}>
                   <PlayContainer>
