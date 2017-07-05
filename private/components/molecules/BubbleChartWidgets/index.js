@@ -1,22 +1,54 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Grid, Container} from 'semantic-ui-react';
+import {Grid, Container, Button} from 'semantic-ui-react';
 import BubbleSize from 'components/atoms/BubbleSizeDropDown';
 import ColorBy from 'components/atoms/ColorBy';
 import HighlightByIncomeGroup from 'components/atoms/HighlightByIncomeGroup';
 import HighlightByRegions from 'components/atoms/HighlightRegions';
 import SelectedCountries from 'components/atoms/SelectedCountries';
-import data from './data';
+import Slider from 'components/molecules/YearSlider';
 
-export default class BubbleChartWidget extends React.Component {
+const ChartContainer = glamorous.div({
+  height: '500px',
+});
+const PlayContainer = glamorous.div({
+  marginTop: '-12px',
+});
+
+type Props = {
+  data: Object
+}
+type State = {
+  colorBy: string,
+}
+
+class BubbleChartWidget extends React.Component {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      colorBy: 'income',
+    };
+  }
+  state: State;
   render() {
+    const {data} = this.props;
     return (
       <Container>
         <Grid>
           <Grid.Row>
             <Grid.Column computer={12} tablet={12} mobile={16}>
-              <div />
+              <ChartContainer />
+              <Grid>
+                <Grid.Column width={1}>
+                  <PlayContainer>
+                    <Button icon="play" />
+                  </PlayContainer>
+                </Grid.Column>
+                <Grid.Column width={15}>
+                  <Slider minimum={2000} maximum={2020} step={1} position={2016} />
+                </Grid.Column>
+              </Grid>
             </Grid.Column>
             <Grid.Column computer={4} tablet={4} mobile={16}>
               <BubbleSize options={data.bubbleSize} />
@@ -30,3 +62,5 @@ export default class BubbleChartWidget extends React.Component {
       </Container>);
   }
 }
+
+export default BubbleChartWidget;
