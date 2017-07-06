@@ -17,5 +17,8 @@ export const List = glamorous.ul({
   },
   '& li:hover': {
     backgroundColor: theme.white,
+  },
+  '& li.active': {
+    backgroundColor: theme.white,
   }
 });
