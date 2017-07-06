@@ -1043,6 +1043,10 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
           className="align justify icon"
         />
       </button>
+      <div
+        className="css-1g5irst"
+        onClick={[Function]}
+      />
       <nav
         className="css-1hpbsc1"
       >
@@ -1551,21 +1555,30 @@ exports[`Storyshots Search Datahub Main Search 1`] = `
     >
       <input
         className="css-pnc7nu"
+        onChange={[Function]}
+        onKeyDown={[Function]}
         placeholder="Type Your Country Name"
+        value=""
       />
       <div
         className="css-13azwyo list"
       >
         <ul
-          className="css-vi44j9"
+          className="css-1lsq08l"
         >
-          <li>
+          <li
+            className={false}
+          >
             Uganda
           </li>
-          <li>
+          <li
+            className={false}
+          >
             Kenya
           </li>
-          <li>
+          <li
+            className={false}
+          >
             Tanzania
           </li>
         </ul>
@@ -1887,6 +1900,10 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             className="align justify icon"
           />
         </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
         <nav
           className="css-1hpbsc1"
         >
@@ -3333,6 +3350,10 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
             className="align justify icon"
           />
         </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
         <nav
           className="css-1hpbsc1"
         >
@@ -4110,6 +4131,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             className="align justify icon"
           />
         </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
         <nav
           className="css-1hpbsc1"
         >
@@ -4342,21 +4367,30 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 >
                   <input
                     className="css-pnc7nu"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
                     placeholder="Type Your Country Name"
+                    value=""
                   />
                   <div
                     className="css-13azwyo list"
                   >
                     <ul
-                      className="css-vi44j9"
+                      className="css-1lsq08l"
                     >
-                      <li>
+                      <li
+                        className={false}
+                      >
                         Uganda
                       </li>
-                      <li>
+                      <li
+                        className={false}
+                      >
                         Kenya
                       </li>
-                      <li>
+                      <li
+                        className={false}
+                      >
                         Tanzania
                       </li>
                     </ul>
@@ -4931,6 +4965,10 @@ exports[`Storyshots Templates Main Generic 1`] = `
             className="align justify icon"
           />
         </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
         <nav
           className="css-1hpbsc1"
         >
@@ -5633,6 +5671,10 @@ exports[`Storyshots Templates Methodology 1`] = `
             className="align justify icon"
           />
         </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
         <nav
           className="css-1hpbsc1"
         >
@@ -6514,6 +6556,10 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
             className="align justify icon"
           />
         </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
         <nav
           className="css-1hpbsc1"
         >
