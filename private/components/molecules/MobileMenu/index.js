@@ -28,6 +28,18 @@ export const ToggleButton = glamorous.button({
     display: 'block',
   }
 });
+export const OutSideMenu = glamorous.div({
+  background: '#fff',
+  position: 'fixed',
+  top: '4em',
+  right: '0px',
+  width: '100%',
+  height: '100%',
+  transition: 'all .3s'
+}, (props) => ({
+  opacity: props.open ? 0.5 : 0,
+  display: props.open ? 'block' : 'none',
+}));
 
 type Props = {
   menu: Array<any>,
@@ -70,6 +82,7 @@ class MobileMenu extends React.Component {
       <ToggleButton onClick={() => this.toggleNav()}>
         { open ? <Icon name="cancel" /> : <Icon name="align justify" />}
       </ToggleButton>
+      <OutSideMenu onClick={() => this.toggleNav()} open={open} />
       <MenuContainer open={open}>
         {menuItems}
       </MenuContainer>
