@@ -11,14 +11,14 @@ type Country ={
   name: string
 }
 type Props = {
-  countries: [Country],
+  countries: Country[],
   placeholder: string,
   visible: boolean,
   onSelected?: (any) => void
 };
 type State = {
   selected: number,
-  countries: [Country],
+  countries: Country[],
   value: string
 }
 const Wrapper = glamorous.div({
@@ -67,10 +67,9 @@ class SearchInput extends React.Component {
   }
   onChange(text: string) {
     this.setState({value: text});
-    const countries = this.props.countries
-      .filter(country =>
-        country.name.toLowerCase().includes(text.toLowerCase()));
-    this.setState({countries});
+    const filteredCountries: Country[] = this.props.countries
+      .filter((country: Country) => country.name.toLowerCase().includes(text.toLowerCase()));
+    if (filteredCountries.length) this.setState({countries: filteredCountries});
   }
   onSubmit(value: Object) {
     this.setState({value: value.name});
@@ -94,7 +93,11 @@ class SearchInput extends React.Component {
             className="list"
           >
             <List >
-              {this.state.countries.map((country, i) => <li key={country.id} className={this.state.selected === i ? 'active' : false}>{country.name}</li>)}
+              {this.state.countries
+                  .map((country, i) =>
+                    (<li key={country.id} className={this.state.selected === i ? 'active' : false}>
+                      {country.name}
+                    </li>))}
             </List>
           </Wrapper>
         </Container>
