@@ -3,6 +3,8 @@ import React from 'react';
 import {Grid, Table, Flag} from 'semantic-ui-react';
 import {RankingsTableContainer} from 'components/atoms/Container';
 
+// TOD0 :create proper types
+// TODO: add an id field for use as key
 const RankingsTable = (props: Object) => (
   <Grid.Row>
     <Grid.Column computer={8} tablet={16} mobile={16}>
@@ -14,12 +16,13 @@ const RankingsTable = (props: Object) => (
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            { props.data.top.map(item => (<Table.Row>
-              <Table.Cell><b>{item.number}</b></Table.Cell>
-              {props.data.flags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell textAlign="right">{item.value}</Table.Cell>
-            </Table.Row>))}
+            { props.data.top.map(item => (
+              <Table.Row key={item.flag}>
+                <Table.Cell><b>{item.number}</b></Table.Cell>
+                {props.data.flags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
+                <Table.Cell>{item.name}</Table.Cell>
+                <Table.Cell textAlign="right">{item.value}</Table.Cell>
+              </Table.Row>))}
           </Table.Body>
         </Table>
       </RankingsTableContainer>
@@ -33,12 +36,13 @@ const RankingsTable = (props: Object) => (
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            { props.data.bottom.map(item => (<Table.Row>
-              <Table.Cell><b>{item.number}</b></Table.Cell>
-              {props.data.flags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell textAlign="right">{item.value}</Table.Cell>
-            </Table.Row>))}
+            { props.data.bottom.map(item => (
+              <Table.Row key={item.flag}>
+                <Table.Cell><b>{item.number}</b></Table.Cell>
+                {props.data.flags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
+                <Table.Cell>{item.name}</Table.Cell>
+                <Table.Cell textAlign="right">{item.value}</Table.Cell>
+              </Table.Row>))}
           </Table.Body>
         </Table>
       </RankingsTableContainer>
