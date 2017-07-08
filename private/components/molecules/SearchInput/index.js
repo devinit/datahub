@@ -6,15 +6,19 @@ import {SocialMediaLink} from 'components/atoms/Link';
 import {Input, InputContainer} from '../../atoms/SearchInput/input';
 import {List} from '../../atoms/SearchInput/list';
 
+type Country ={
+  id: string,
+  name: string
+}
 type Props = {
-  countries: [Object],
+  countries: [Country],
   placeholder: string,
   visible: boolean,
   onSelected?: (any) => void
 };
 type State = {
   selected: number,
-  countries: [Object],
+  countries: [Country],
   value: string
 }
 const Wrapper = glamorous.div({
@@ -34,20 +38,30 @@ class SearchInput extends React.Component {
   onKeyDown(e: Object) {
     let {selected} = this.state;
     const {countries} = this.state;
-    if (e.keyCode === 40) {
-      if ((selected + 1) < countries.length) {
-        selected += 1;
+    const keyCode = e.keyCode;
+    switch (keyCode) {
+      case 40: {
+        if ((selected + 1) < countries.length) {
+          selected += 1;
+        }
+        break;
       }
-    } else if (e.keyCode === 38) {
-      if (selected !== 0) {
-        selected -= 1;
+      case 38: {
+        if (selected !== 0) {
+          selected -= 1;
+        }
+        break;
       }
-    } else if (e.keyCode === 13) {
-      if (selected !== -1) {
-        this.onSubmit(countries[selected]);
+      case 13: {
+        if (selected !== -1) {
+          this.onSubmit(countries[selected]);
+        }
+        break;
       }
-    } else {
-      selected = -1;
+      default: {
+        selected = -1;
+        break;
+      }
     }
     this.setState({selected});
   }
@@ -56,7 +70,6 @@ class SearchInput extends React.Component {
     const countries = this.props.countries
       .filter(country =>
         country.name.toLowerCase().includes(text.toLowerCase()));
-    /* eslint-disable flowtype-errors/show-errors */
     this.setState({countries});
   }
   onSubmit(value: Object) {
