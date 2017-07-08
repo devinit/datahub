@@ -12,22 +12,11 @@ const PORT = process.env.PORT || 3333;
 app.prepare().then(_ => {
   const server = express();
 
+  server.use(express.static('public'));
   // serve service worker
   server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
 
-  // static files
-  const rootStaticFiles = ['/robots.txt', '/sitemap.xml', '/favicon.ico', '/manifest.json'];
-
-  server.get('*', (req, res) => {
-    const parsedUrl = parse(req.url, true);
-    if (rootStaticFiles.includes(parsedUrl.pathname)
-      || parsedUrl.pathname.match(/semantic/g) || parsedUrl.pathname.match(/img/g)) {
-      const staticPath = path.join(__dirname, 'public', parsedUrl.pathname);
-      app.serveStatic(req, res, staticPath);
-    } else {
-      handle(req, res);
-    }
-  });
+  server.get('*', (req, res) => handle(req, res));
 
   server.listen(PORT, err => {
     if (err) throw err;

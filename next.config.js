@@ -5,10 +5,11 @@ const path = require('path');
 module.exports = {
   // changes: configChanges, // for use in storybook webpack config
   webpack: (config, { dev }) => {
+    config.plugins.push(new webpack.EnvironmentPlugin(['MapboxAccessToken']));
     /* Enable only in Production */
     if (!dev) {
       // Service Worker
-      config.plugins.concat([
+      config.plugins.push(
         new SWPrecacheWebpackPlugin({
           filename: 'sw.js',
           minify: true,
@@ -19,7 +20,7 @@ module.exports = {
           forceDelete: true,
           stripPrefix: 'public',
           runtimeCaching: [
-            // Example with different handlers
+              // Example with different handlers
             {
               handler: 'fastest',
               urlPattern: /^http.*/ // TODO refactor to have more specific matches
@@ -29,15 +30,8 @@ module.exports = {
               urlPattern: /^https.*/ // when live
             }
           ]
-        }),
-        new webpack.EnvironmentPlugin(['MapboxAccessToken'])
-      ]);
+        }));
     }
-    // const alias = Object.assign(config.resolve.alias, {
-    //   'mapbox-gl': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js'),
-    //   'mapbox-gl$': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js')
-    // });
-    // config.resolve.alias = alias;
     return config;
   }
 };
