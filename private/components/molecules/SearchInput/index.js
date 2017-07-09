@@ -13,6 +13,7 @@ type Country ={
 type Props = {
   countries: Country[],
   placeholder: string,
+  loading: boolean,
   visible: boolean,
   onSelected?: (any) => void
 };
@@ -78,6 +79,7 @@ class SearchInput extends React.Component {
     }
   }
   render() {
+    if (this.props.loading) return (<p> loading ...</p>);
     return (
       <InputContainer
         visible={this.props.visible}
@@ -93,11 +95,14 @@ class SearchInput extends React.Component {
             className="list"
           >
             <List >
-              {this.state.countries
+              { this.props.countries ?
+                  this.props.countries
                   .map((country, i) =>
                     (<li key={country.id} className={this.state.selected === i ? 'active' : false}>
                       {country.name}
-                    </li>))}
+                    </li>))
+                    : <li> Error getting countries </li>
+              }
             </List>
           </Wrapper>
         </Container>

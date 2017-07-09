@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   extends: ['airbnb', 'plugin:flowtype/recommended'],
-  plugins: ['react', 'jsx-a11y', 'flowtype-errors', 'flowtype', 'import'],
+  plugins: ['react', 'jsx-a11y', 'flowtype-errors', 'flowtype', 'import', 'graphql'],
   env: {
     browser: true,
     jest: true,
@@ -50,6 +50,13 @@ module.exports = {
       {
         extensions: ['.js', '.jsx']
       }
-    ]
+    ],
+    'graphql/template-strings': ['error', {
+      // Import default settings for your GraphQL client. Supported values:
+      // 'apollo', 'relay', 'lokka', 'literal'
+      env: 'literal',
+      // Import your schema JSON here
+      schemaJson: require('./schema.json'),
+    }]
   }
 };

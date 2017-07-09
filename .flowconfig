@@ -2,6 +2,8 @@
 .next
 .*/node_modules/.*
 .*/semantic/.*
+**/schema.flow.js
+**/*.graphql
 .out
 [include]
 private

@@ -17,6 +17,7 @@
   },
   "plugins": [
     "transform-flow-strip-types",
+    "babel-plugin-inline-import-graphql-ast",
     "ramda",
     ["module-resolver", {
       "root": ["./private", "public/semantic", "public/img"],
