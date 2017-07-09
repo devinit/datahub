@@ -2555,50 +2555,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       className=""
                     >
                       <b>
-                        104
-                      </b>
-                    </td>
-                    
-                    <td
-                      className=""
-                    >
-                      Butambala
-                    </td>
-                    <td
-                      className="right aligned"
-                    >
-                      1.1%
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      <b>
-                        105
-                      </b>
-                    </td>
-                    
-                    <td
-                      className=""
-                    >
-                      Bukwo
-                    </td>
-                    <td
-                      className="right aligned"
-                    >
-                      1.1%
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      <b>
                         106
                       </b>
                     </td>
@@ -2621,28 +2577,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       className=""
                     >
                       <b>
-                        107
-                      </b>
-                    </td>
-                    
-                    <td
-                      className=""
-                    >
-                      Otuke
-                    </td>
-                    <td
-                      className="right aligned"
-                    >
-                      1%
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      <b>
                         108
                       </b>
                     </td>
@@ -2651,50 +2585,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                       className=""
                     >
                       Luwero
-                    </td>
-                    <td
-                      className="right aligned"
-                    >
-                      0.9%
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      <b>
-                        109
-                      </b>
-                    </td>
-                    
-                    <td
-                      className=""
-                    >
-                      Kubuku
-                    </td>
-                    <td
-                      className="right aligned"
-                    >
-                      0.9%
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      <b>
-                        110
-                      </b>
-                    </td>
-                    
-                    <td
-                      className=""
-                    >
-                      Bundibugyo
                     </td>
                     <td
                       className="right aligned"

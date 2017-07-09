@@ -17,7 +17,7 @@ const RankingsTable = (props: Object) => (
           </Table.Header>
           <Table.Body>
             { props.data.top.map(item => (
-              <Table.Row key={item.flag}>
+              <Table.Row key={item.value}>
                 <Table.Cell><b>{item.number}</b></Table.Cell>
                 {props.data.flags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
                 <Table.Cell>{item.name}</Table.Cell>
@@ -37,7 +37,7 @@ const RankingsTable = (props: Object) => (
           </Table.Header>
           <Table.Body>
             { props.data.bottom.map(item => (
-              <Table.Row key={item.flag}>
+              <Table.Row key={item.value}>
                 <Table.Cell><b>{item.number}</b></Table.Cell>
                 {props.data.flags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
                 <Table.Cell>{item.name}</Table.Cell>
