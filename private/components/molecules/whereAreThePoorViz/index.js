@@ -1,6 +1,8 @@
 import React from 'react';
 import * as d3 from 'd3';
 import glamarous from 'glamorous';
+import {Container, Grid} from 'semantic-ui-react';
+import Controls from 'components/molecules/PoorVizControls';
 import * as utils from '../../../lib/utils/poorVizUtils';
 
 const SvgContainer = glamarous.div({
@@ -16,11 +18,30 @@ class Poor extends React.Component {
     this.state = {
       year: 2013,
       indicator: 'Baseline',
-      level: 'global',
+      level: 'regional',
       change: false,
     };
   }
   componentDidMount() {
+    this.renderVisualization();
+  }
+  componentDidUpdate(prevProps, prevState) {
+    this.renderVisualization();
+  }
+  onLevelChange(level) {
+    this.setState({change: true});
+    this.setState({level});
+  }
+  onYearChange(year) {
+    this.setState({change: true});
+    this.setState({year});
+  }
+  onScenarioChange(scenario) {
+    this.setState({change: true});
+    this.setState({scenario});
+  }
+
+  renderVisualization() {
     let data = [];
     /* eslint-disable react/no-string-refs */
     const svg = d3.select(this.refs.svg);
@@ -133,7 +154,7 @@ class Poor extends React.Component {
     regionLabels = svg.selectAll('.millionLabel')
       .data(regionLabelData);
 
-    regionLabels.enter()
+    regionLabels = regionLabels.enter()
       .append('text')
       .attr('class', 'millionLabel')
       .attr('x', (d) => {
@@ -201,10 +222,10 @@ class Poor extends React.Component {
         .attr('fill-opacity', 1);
     }
     globalLabel.transition()
-        .text((d) => {
-          return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
-        })
-        .attr('fill-opacity', 1);
+      .text((d) => {
+        return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
+      })
+      .attr('fill-opacity', 1);
     globalLabel.exit().transition().attr('fill-opacity', 10e-6).remove();
     let icons;
     if (change) {
@@ -233,7 +254,7 @@ class Poor extends React.Component {
         return dur;
       })
         .attr('fill-opacity', 1)
-        .attr('transform', (d) => { return `translate(" ${d.x} , + ${d.y} "),scale("${utils.getScale(d.region)}")`; })
+        .attr('transform', (d) => { return `translate(${d.x} , ${d.y}),scale(${utils.getScale(d.region)})`; })
         .attr('fill', (d) => { return d.color; });
     }
     if (level === 'global') {
@@ -260,11 +281,21 @@ class Poor extends React.Component {
       .attr('transform', (d) => { return `translate(${d.x},${d.y} ),scale(0.1)`; })
       .attr('fill-opacity', 10e-6)
       .remove();
-    console.log('globalLabelData', globalLabelData);
   }
 /* eslint-disable react/no-string-refs */
   render() {
-    return <svg ref="svg" version="1.1" viewBox="0 0 940 600" preserveAspectRatio="xMinYMin meet" />;
+    return (
+      <Container textAlign="center">
+        <svg ref="svg" version="1.1" viewBox="0 0 940 600" preserveAspectRatio="xMinYMin meet" />
+        <Controls
+          year={this.state.year}
+          scenario={this.state.indicator}
+          level={this.state.level}
+          onScenarioChange={(x) => this.onScenarioChange(x)}
+          onYearChange={(x) => this.onYearChange(x)}
+          onLevelChange={(x) => this.onLevelChange(x)}
+        />
+      </Container>);
   }
 }
 
