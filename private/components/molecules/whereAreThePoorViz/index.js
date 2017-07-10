@@ -38,7 +38,7 @@ class Poor extends React.Component {
   }
   onScenarioChange(scenario) {
     this.setState({change: true});
-    this.setState({scenario});
+    this.setState({indicator: scenario});
   }
 
   renderVisualization() {
