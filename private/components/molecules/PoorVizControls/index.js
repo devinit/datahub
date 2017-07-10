@@ -39,9 +39,24 @@ const controls = ({year, level, scenario, onLevelChange, onScenarioChange}: Prop
       <Grid.Column width="5">
         <LabelFilter>Scenario</LabelFilter>
         <Button.Group>
-          <Button onClick={() => onScenarioChange('worst')}>Worst case</Button>
-          <Button onClick={() => onScenarioChange('baseline')} basic>Baseline</Button>
-          <Button onClick={() => onScenarioChange('best')} basic>Best case </Button>
+          <Button
+            onClick={() => onScenarioChange('Worst case')}
+            basic={scenario !== 'Worst Case'}
+          >
+            Worst case
+          </Button>
+          <Button
+            onClick={() => onScenarioChange('Baseline')}
+            basic={scenario !== 'Baseline'}
+          >
+            Baseline
+          </Button>
+          <Button
+            onClick={() => onScenarioChange('Best case')}
+            basic={scenario !== 'Best case'}
+          >
+            Best case
+          </Button>
         </Button.Group>
       </Grid.Column>
       <Grid.Column width="5">
