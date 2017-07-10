@@ -520,11 +520,90 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 `;
 
 exports[`Storyshots Charts Where Are the people Viz 1`] = `
-<svg
-  preserveAspectRatio="xMinYMin meet"
-  version="1.1"
-  viewBox="0 0 940 600"
-/>
+<div
+  className="ui center aligned container"
+>
+  <svg
+    preserveAspectRatio="xMinYMin meet"
+    version="1.1"
+    viewBox="0 0 940 600"
+  />
+  <div
+    className="ui grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="five wide column"
+      >
+        <div
+          className="css-robtza"
+        >
+          Level
+        </div>
+        <div
+          className="ui basic left attached button"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Global
+        </div>
+        <div
+          className="ui right attached button"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          Regional
+        </div>
+      </div>
+      <div
+        className="five wide column"
+      >
+        <div
+          className="css-robtza"
+        >
+          Scenario
+        </div>
+        <div
+          className="ui buttons"
+        >
+          <button
+            className="ui basic button"
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            Worst case
+          </button>
+          <button
+            className="ui button"
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            Baseline
+          </button>
+          <button
+            className="ui basic button"
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            Best case
+          </button>
+        </div>
+      </div>
+      <div
+        className="five wide column"
+      >
+        <div
+          className="css-robtza"
+        >
+          Year
+        </div>
+        Year
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Footer Datahub Footer 1`] = `
