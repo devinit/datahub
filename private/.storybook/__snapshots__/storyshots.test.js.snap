@@ -519,6 +519,14 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
+exports[`Storyshots Charts Where Are the people Viz 1`] = `
+<svg
+  preserveAspectRatio="xMinYMin meet"
+  version="1.1"
+  viewBox="0 0 940 600"
+/>
+`;
+
 exports[`Storyshots Footer Datahub Footer 1`] = `
 <div
   className="css-xtq3xk"
