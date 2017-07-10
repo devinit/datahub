@@ -41,7 +41,7 @@ const controls = ({year, level, scenario, onLevelChange, onScenarioChange}: Prop
         <Button.Group>
           <Button
             onClick={() => onScenarioChange('Worst case')}
-            basic={scenario !== 'Worst Case'}
+            basic={scenario !== 'Worst case'}
           >
             Worst case
           </Button>

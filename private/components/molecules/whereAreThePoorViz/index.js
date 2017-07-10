@@ -126,6 +126,8 @@ class Poor extends React.Component {
     }
 
     let regionLabels = svg.selectAll('.regionLabel').data(regionLabelData);
+    regionLabels.exit().transition()
+      .attr('fill-opacity', 10e-6).remove();
     regionLabels = regionLabels.enter()
       .append('text')
       .attr('class', 'regionLabel')
@@ -147,12 +149,13 @@ class Poor extends React.Component {
         return d.name;
       })
       .attr('fill-opacity', 1);
-    regionLabels.exit().transition()
-      .attr('fill-opacity', 10e-6).remove();
 
 
     regionLabels = svg.selectAll('.millionLabel')
       .data(regionLabelData);
+
+    regionLabels.exit().transition()
+      .attr('fill-opacity', 10e-6).remove();
 
     regionLabels = regionLabels.enter()
       .append('text')
@@ -183,8 +186,6 @@ class Poor extends React.Component {
         })
         .attr('fill-opacity', 1);
     }
-    regionLabels.exit().transition()
-      .attr('fill-opacity', 10e-6).remove();
 
     let globalLabelData = [{value: sum}];
 
@@ -193,6 +194,7 @@ class Poor extends React.Component {
     let globalLabel = svg.selectAll('.globalLabel')
       .data(globalLabelData);
 
+    globalLabel.exit().transition().attr('fill-opacity', 10e-6).remove();
 
     globalLabel = globalLabel.enter()
       .append('text')
@@ -226,7 +228,6 @@ class Poor extends React.Component {
         return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
       })
       .attr('fill-opacity', 1);
-    globalLabel.exit().transition().attr('fill-opacity', 10e-6).remove();
     let icons;
     if (change) {
       icons = svg.selectAll('.icon')
@@ -266,6 +267,11 @@ class Poor extends React.Component {
         });
     }
 
+    icons.exit().transition().duration(100)
+      .attr('transform', (d) => { return `translate(${d.x},${d.y} ),scale(0.1)`; })
+      .attr('fill-opacity', 10e-6)
+      .remove();
+
     icons = icons.enter().append('path')
       .attr('class', 'icon')
       .attr('d', (d) => { return d.shape; })
@@ -276,11 +282,6 @@ class Poor extends React.Component {
       .attr('fill-opacity', 1)
       .attr('transform', (d) => { return `translate(${d.x},${d.y} ),scale(0.5)`; })
       .attr('fill', (d) => { return d.color; });
-
-    icons.exit().transition().duration(100)
-      .attr('transform', (d) => { return `translate(${d.x},${d.y} ),scale(0.1)`; })
-      .attr('fill-opacity', 10e-6)
-      .remove();
   }
 /* eslint-disable react/no-string-refs */
   render() {
