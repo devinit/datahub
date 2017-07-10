@@ -9,17 +9,32 @@ const LabelFilter = glamorous.div({
   fontSize: '12px'
 });
 type Props = {
+  year: string,
+  level: string,
+  scenario: string,
   onLevelChange: (value: string | void) => void,
   onScenarioChange: (value: string | void) => void,
   onYearChange: (value: string | void) => void
 };
-const controls = ({onLevelChange, onScenarioChange}: Props) => (
+const controls = ({year, level, scenario, onLevelChange, onScenarioChange}: Props) => (
   <Grid>
     <Grid.Row>
       <Grid.Column width="5">
         <LabelFilter>Level</LabelFilter>
-        <Button attached="left" onClick={() => onLevelChange('global')}>Global</Button>
-        <Button attached="right" basic onClick={() => onLevelChange('regional')}>Regional</Button>
+        <Button
+          attached="left"
+          onClick={() => onLevelChange('global')}
+          basic={level === 'regional'}
+        >
+          Global
+        </Button>
+        <Button
+          attached="right"
+          onClick={() => onLevelChange('regional')}
+          basic={level === 'global'}
+        >
+          Regional
+        </Button>
       </Grid.Column>
       <Grid.Column width="5">
         <LabelFilter>Scenario</LabelFilter>
