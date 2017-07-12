@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
 import InternationalResourcesChart from './wrapper';
-import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
-import config from '../../../visboxConfigs/areaTreemapChart';
+import TABS_QUERY from '../../../graphql/InternationalResourcesTab.graphql';
 
-const withData = graphql(RESOURCES_QUERY, {
+const withData = graphql(TABS_QUERY, {
   options: (props) => ({
     variables: {
       id: props.id
@@ -17,8 +16,7 @@ const withData = graphql(RESOURCES_QUERY, {
     return {
       loading,
       startYear: 2015,
-      data: data.internationalResources ? data.internationalResources.resourcesOverTime : [],
-      config
+      data: data.internationalResources ? data.internationalResources : null,
     };
   }});
 

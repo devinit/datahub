@@ -9,21 +9,21 @@ fragment InternationalResourcesTab on InternationalResources {
   }
 }
 
-fragment InternationalResourcesFlowSelections on  InternationalResources {
-  inflows {
-    name
-    id
-    selections {
-      name
-      id
-    }
-  }
-  outflows {
-    name
-    id
-    selections {
-      name
-      id
-    }
-  }
-}
+# fragment InternationalResourcesFlowSelections on  InternationalResources {
+#   inflows {
+#     name
+#     id
+#     selections {
+#       name
+#       id
+#     }
+#   }
+#   outflows {
+#     name
+#     id
+#     selections {
+#       name
+#       id
+#     }
+#   }
+# }
