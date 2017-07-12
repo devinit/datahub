@@ -1929,6 +1929,18 @@
           "description": "",
           "fields": [
             {
+              "name": "StartYear",
+              "description": "TODO: add startyear",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "GNI",
               "description": "Gross National Income",
               "args": [],

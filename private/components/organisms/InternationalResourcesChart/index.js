@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
-import InternationalResourcesChart from 'components/molecules/InternationalResourcesChart';
+import InternationalResourcesChart from './wrapper';
 import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
 import config from '../../../visboxConfigs/areaTreemapChart';
 
@@ -11,13 +11,12 @@ const withData = graphql(RESOURCES_QUERY, {
     }
   }),
   props: ({data}) => {
-    const {error, internationalResources, loading} = data;
-    console.log('resourcesOverTime', data);
-    if (!internationalResources) throw new Error('error getting data');
+    const {error, loading} = data;
+    console.log('resourcesOverTime', data.internationalResources);
     return {
       loading,
       startYear: 2015,
-      data: internationalResources.resourcesOverTime,
+      data: data.internationalResources ? data.internationalResources.resourcesOverTime : [],
       config
     };
   }});
