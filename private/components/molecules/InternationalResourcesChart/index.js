@@ -44,7 +44,8 @@ class InternationalResources extends React.Component {
     return {
       currentYear: year,
       // TODO: update when API data comes in
-      currentFlowTypes: currentYearData.map(d => ({key: d.flow_category, text: d.flow_category, value: d.flow_category})),
+      currentFlowTypes: currentYearData
+        .map(d => ({key: d.flow_category, text: d.flow_category, value: d.flow_category})),
       currentYearTotal: approximate(currentYearData.reduce((sum, x) => sum + x.value, 0)),
       currentYearData: currentYearData.concat({flow_category: year}),
       timeAreaConfig: {

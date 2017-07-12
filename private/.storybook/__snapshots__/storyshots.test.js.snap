@@ -468,6 +468,12 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
+exports[`Storyshots Country Profiles live DONOT TEST Country Profiles tabs 1`] = `
+<p>
+   Loading ...
+</p>
+`;
+
 exports[`Storyshots Country Search Country Search With Data 1`] = `
 <p>
    loading ...
