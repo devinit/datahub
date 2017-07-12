@@ -16,44 +16,50 @@ type Props = {
   onScenarioChange: (value: string | void) => void,
   onYearChange: (value: string | void) => void
 };
-const controls = ({year, level, scenario, onLevelChange, onScenarioChange}: Props) => (
-  <Grid>
+const controls = ({
+  year,
+  level,
+  scenario,
+  onLevelChange,
+  onScenarioChange
+}: Props) =>
+  (<Grid>
     <Grid.Row>
       <Grid.Column width="5">
         <LabelFilter>Level</LabelFilter>
-        <Button
-          attached="left"
-          onClick={() => onLevelChange('global')}
-          basic={level === 'regional'}
-        >
-          Global
-        </Button>
-        <Button
-          attached="right"
-          onClick={() => onLevelChange('regional')}
-          basic={level === 'global'}
-        >
-          Regional
-        </Button>
+        <Button.Group basic>
+          <Button
+            onClick={() => onLevelChange('global')}
+            active={level === 'global'}
+          >
+            Global
+          </Button>
+          <Button
+            onClick={() => onLevelChange('regional')}
+            active={level === 'regional'}
+          >
+            Regional
+          </Button>
+        </Button.Group>
       </Grid.Column>
       <Grid.Column width="5">
         <LabelFilter>Scenario</LabelFilter>
-        <Button.Group>
+        <Button.Group basic>
           <Button
             onClick={() => onScenarioChange('Worst case')}
-            basic={scenario !== 'Worst case'}
+            active={scenario === 'Worst case'}
           >
             Worst case
           </Button>
           <Button
             onClick={() => onScenarioChange('Baseline')}
-            basic={scenario !== 'Baseline'}
+            active={scenario === 'Baseline'}
           >
             Baseline
           </Button>
           <Button
             onClick={() => onScenarioChange('Best case')}
-            basic={scenario !== 'Best case'}
+            active={scenario === 'Best case'}
           >
             Best case
           </Button>
@@ -64,7 +70,6 @@ const controls = ({year, level, scenario, onLevelChange, onScenarioChange}: Prop
         Year
       </Grid.Column>
     </Grid.Row>
-  </Grid>
-);
+  </Grid>);
 
 export default controls;

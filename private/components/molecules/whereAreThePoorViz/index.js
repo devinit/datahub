@@ -119,7 +119,6 @@ class Poor extends React.Component {
       sum = d3.sum(regionLabelData, (d) => {
         return d.value;
       });
-
       regionLabelData = [];
     }
 
@@ -186,7 +185,6 @@ class Poor extends React.Component {
     }
 
     let globalLabelData = [{value: sum}];
-
     if (level !== 'global') globalLabelData = [];
 
     let globalLabel = svg.selectAll('.globalLabel')
@@ -211,12 +209,14 @@ class Poor extends React.Component {
     if (change) {
       globalLabel.transition().duration(500).delay(2000)
         .text((d) => {
+          console.log('value', d.value)
           return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
         })
         .attr('fill-opacity', 1);
     } else {
       globalLabel.transition()
         .text((d) => {
+          console.log('value', d.value);
           return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
         })
         .attr('fill-opacity', 1);
