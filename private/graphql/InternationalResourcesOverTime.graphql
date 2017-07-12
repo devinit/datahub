@@ -1,0 +1,15 @@
+#import "./InternationalResources.graphql"
+
+query ResourcesOverTime ($id: String!) {
+  internationalResources(id: $id) {
+    resourcesOverTime {
+      year
+      value
+      flow_name
+      flow_category
+      flow_type
+      direction
+      color
+    }
+  }
+}

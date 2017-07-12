@@ -1,14 +1,14 @@
 import React from 'react';
-import { graphql, OperationComponent } from 'react-apollo';
+import { graphql} from 'react-apollo';
 import SearchInput from 'components/molecules/SearchInput';
-import COUNTRIES_QUERY from './countries.graphql';
+import COUNTRIES_QUERY from '../../../graphql/Countries.graphql';
 
 const withData = graphql(COUNTRIES_QUERY, {
-  props: ({ data }) => {
-    console.log('graphql data: ', data.bubbleChartIndicatorsList);
+  props: ({data: { loading, countries, error }}) => {
+    if (error) console.error(error);
     return {
-      loading: data.loading,
-      countries: data.bubbleChartIndicatorsList,
+      loading,
+      countries,
       visible: true,
       placeholder: 'Type Your Country Name'
     };

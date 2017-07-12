@@ -12,9 +12,9 @@ import govtrfeStub from './stubs/line-partition.chart';
 import inflowsOutflowsStub from './stubs/sidebar.chart';
 import internationalResources from './stubs/area-treemap.chart';
 
-import GovtRFE from '../RevenueFinanceExpenditure/index';
-import InflowsOutFlows from '../InflowsVsOutflows/index';
-import InternationalResources from '../InternationalResources/index';
+import GovtRFE from '../RevenueFinanceExpenditure';
+import InflowsOutFlows from '../InflowsVsOutflows';
+import InternationalResourcesChart from '../InternationalResourcesChart';
 
 const chartStories = storiesOf('Chart DontTest', module)
   .add('How have resource in flows changed over time?', () =>
@@ -37,7 +37,7 @@ const chartStories = storiesOf('Chart DontTest', module)
     />
   ))
   .add('International Resources', () => (
-    <InternationalResources
+    <InternationalResourcesChart
       startYear="2015"
       data={internationalResources.data}
       config={internationalResources.config}

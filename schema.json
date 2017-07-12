@@ -44,6 +44,22 @@
               "deprecationReason": null
             },
             {
+              "name": "countries",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "IdNamePair",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "globalPicturePageData",
               "description": "",
               "args": [],
@@ -869,6 +885,41 @@
         },
         {
           "kind": "OBJECT",
+          "name": "IdNamePair",
+          "description": "",
+          "fields": [
+            {
+              "name": "id",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "name",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "Theme",
           "description": "",
           "fields": [
@@ -1152,41 +1203,6 @@
                   "name": "BubbleChartData",
                   "ofType": null
                 }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "IdNamePair",
-          "description": "",
-          "fields": [
-            {
-              "name": "id",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "name",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -3116,7 +3132,7 @@
               "defaultValue": null
             },
             {
-              "name": "form",
+              "name": "buddle",
               "description": "",
               "type": {
                 "kind": "SCALAR",
@@ -3281,8 +3297,8 @@
               "deprecationReason": null
             },
             {
-              "name": "form",
-              "description": "",
+              "name": "buddles",
+              "description": "same as form",
               "args": [],
               "type": {
                 "kind": "LIST",

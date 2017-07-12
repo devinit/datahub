@@ -104,7 +104,7 @@ cd into root of the project
 ## TODO
 
 ---------
-
+- [ ] get flow working with in the organisms files
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 

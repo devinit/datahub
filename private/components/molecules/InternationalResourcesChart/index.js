@@ -24,24 +24,24 @@ type State = {
   timeAreaConfig: any
 }
 
-class InternationalResources extends React.Component {
+class InternationalResourcesChart extends React.Component {
   // eslint-disable-next-line react/sort-comp
   state: State;
 
   constructor(props: Props) {
     super(props);
 
-    this.state = this.getCurrentYear(props.startYear);
+    this.state = this.getCurrentYearData(props.startYear);
   }
 
   // eslint-disable-next-line react/sort-comp
   updateCurrentYear(year: string) {
     if (year !== this.state.currentYear) {
-      this.setState(this.getCurrentYear(year));
+      this.setState(this.getCurrentYearData(year));
     }
   }
 
-  getCurrentYear(year: string) {
+  getCurrentYearData(year: string) {
     const currentYearData = this.props.data.filter(d => d.year === year);
     return {
       currentYear: year,
@@ -113,4 +113,4 @@ class InternationalResources extends React.Component {
 }
 
 
-export default InternationalResources;
+export default InternationalResourcesChart;
