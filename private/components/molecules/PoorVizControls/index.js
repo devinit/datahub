@@ -22,6 +22,7 @@ const controls = ({
   level,
   scenario,
   onLevelChange,
+  onYearChange,
   onScenarioChange
 }: Props) =>
   (<Grid>
@@ -68,7 +69,7 @@ const controls = ({
       </Grid.Column>
       <Grid.Column width="5">
         <LabelFilter>Year</LabelFilter>
-        <YearSlider />
+        <YearSlider onYearChange={(year) => onYearChange(year)} />
       </Grid.Column>
     </Grid.Row>
   </Grid>);
