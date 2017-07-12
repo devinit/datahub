@@ -12,7 +12,7 @@ export const colMap = {
   'world': '#333',
 };
 
-export var entities = [{"id":"world","name":"Global","x":200,"y":450,"parent":"world","level":"global"},
+export var entities = [{"id":"world","name":"Global","x":290,"y":450,"parent":"world","level":"global"},
   {"id":"EAP","name":"East Asia & Pacific","x":750,"y":370,"parent":"world","level":"region"},
   {"id":"LAC","name":"Latin America and Caribbean","x":50,"y":300,"parent":"world","level":"region"},
   {"id":"ECA","name":"Europe & Central Asia","x":325,"y":70,"parent":"world","level":"region"},

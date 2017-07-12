@@ -7,9 +7,11 @@ import * as utils from '../../../lib/utils/poorVizUtils';
 
 const SvgContainer = glamarous.div({
   display: 'inline-block',
-  position: 'absolute',
-  top: 0,
-  left: 0,
+  position: 'relative',
+  width: '100%',
+  paddingBottom: '3%',
+  verticalAlign: 'middle',
+  overflow: 'hidden',
 });
 
 class Poor extends React.Component {
@@ -94,7 +96,7 @@ class Poor extends React.Component {
       }
     });
     if (level === 'global') {
-      const startX = (width / 2) - (utils.getCols('global') / (2 * 12));
+      const startX = utils.getX('world');
       const startY = utils.getY('world');
 
       let row = 0;
@@ -290,15 +292,17 @@ class Poor extends React.Component {
   render() {
     return (
       <Container textAlign="center">
-        <svg ref="svg" version="1.1" viewBox="0 0 940 600" preserveAspectRatio="xMinYMin meet" />
-        <Controls
-          year={this.state.year}
-          scenario={this.state.indicator}
-          level={this.state.level}
-          onScenarioChange={(x) => this.onScenarioChange(x)}
-          onYearChange={(x) => this.onYearChange(x)}
-          onLevelChange={(x) => this.onLevelChange(x)}
-        />
+        <SvgContainer>
+          <svg ref="svg" version="1.1" viewBox="0 0 940 600" preserveAspectRatio="xMinYMin meet" />
+          <Controls
+            year={this.state.year}
+            scenario={this.state.indicator}
+            level={this.state.level}
+            onScenarioChange={(x) => this.onScenarioChange(x)}
+            onYearChange={(x) => this.onYearChange(x)}
+            onLevelChange={(x) => this.onLevelChange(x)}
+          />
+        </SvgContainer>
       </Container>);
   }
 }
