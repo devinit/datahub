@@ -18,7 +18,7 @@ class Poor extends React.Component {
     this.state = {
       year: 2013,
       indicator: 'Baseline',
-      level: 'regional',
+      level: 'global',
       change: false,
     };
   }
@@ -153,6 +153,19 @@ class Poor extends React.Component {
 
     regionLabels.exit().transition()
       .attr('fill-opacity', 10e-6).remove();
+    if (change) {
+      regionLabels.transition().duration(200).delay(100)
+        .text((d) => {
+          return utils.formatNumber(d.value * 1000000);
+        })
+        .attr('fill-opacity', 1);
+    } else {
+      regionLabels.transition()
+        .text((d) => {
+          return utils.formatNumber(d.value * 1000000);
+        })
+        .attr('fill-opacity', 1);
+    }
 
     regionLabels = regionLabels.enter()
       .append('text')
@@ -170,19 +183,11 @@ class Poor extends React.Component {
         return utils.formatNumber(d.value * 1000000);
       })
       .attr('fill-opacity', 10e-6);
-    if (change) {
-      regionLabels.transition().duration(500).delay(2000)
-        .text((d) => {
-          return utils.formatNumber(d.value * 1000000);
-        })
-        .attr('fill-opacity', 1);
-    } else {
-      regionLabels.transition()
-        .text((d) => {
-          return utils.formatNumber(d.value * 1000000);
-        })
-        .attr('fill-opacity', 1);
-    }
+    regionLabels.transition()
+      .text((d) => {
+        return utils.formatNumber(d.value * 1000000);
+      })
+      .attr('fill-opacity', 1);
 
     let globalLabelData = [{value: sum}];
     if (level !== 'global') globalLabelData = [];
@@ -191,6 +196,20 @@ class Poor extends React.Component {
       .data(globalLabelData);
 
     globalLabel.exit().transition().attr('fill-opacity', 10e-6).remove();
+
+    if (change) {
+      globalLabel.transition().duration(200).delay(100)
+        .text((d) => {
+          return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
+        })
+        .attr('fill-opacity', 1);
+    } else {
+      globalLabel.transition()
+        .text((d) => {
+          return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
+        })
+        .attr('fill-opacity', 1);
+    }
 
     globalLabel = globalLabel.enter()
       .append('text')
@@ -206,19 +225,7 @@ class Poor extends React.Component {
         return utils.formatNumber(d.value * 1000000);
       })
       .attr('fill-opacity', 10e-6);
-    if (change) {
-      globalLabel.transition().duration(500).delay(2000)
-        .text((d) => {
-          return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
-        })
-        .attr('fill-opacity', 1);
-    } else {
-      globalLabel.transition()
-        .text((d) => {
-          return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
-        })
-        .attr('fill-opacity', 1);
-    }
+
     globalLabel.transition()
       .text((d) => {
         return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
