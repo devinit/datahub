@@ -16,7 +16,7 @@ import GovtRFE from '../RevenueFinanceExpenditure';
 import InflowsOutFlows from '../InflowsVsOutflows';
 import InternationalResourcesChart from '../InternationalResourcesChart';
 
-const chartStories = storiesOf('Chart DontTest', module)
+const chartStories = storiesOf('Chart Stubs DontTest', module)
   .add('How have resource in flows changed over time?', () =>
     <Segment padded="very"><Chart config={line.config} data={line.data} height="150px" /></Segment>
   )

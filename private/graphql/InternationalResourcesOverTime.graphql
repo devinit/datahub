@@ -1,5 +1,3 @@
-#import "./InternationalResources.graphql"
-
 query ResourcesOverTime ($id: String!) {
   internationalResources(id: $id) {
     resourcesOverTime {
