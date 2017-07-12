@@ -1,0 +1,7 @@
+#import "./InternationalResources.graphql"
+
+query ResourcesFlows ($id: String!) {
+  internationalResources(id: $id) {
+    ...InternationalResourcesFlowSelections
+  }
+}
