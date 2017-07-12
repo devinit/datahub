@@ -1,5 +1,6 @@
 import React from 'react';
 import Dragdealer from 'dragdealer';
+import 'dragdealer/src/dragdealer.css';
 
 class YearSlider extends React.Component {
   componentDidMount() {

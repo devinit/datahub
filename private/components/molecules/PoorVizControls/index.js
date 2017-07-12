@@ -3,6 +3,7 @@ import glamorous from 'glamorous';
 import {white} from 'components/theme/semantic';
 import {Button, Grid} from 'semantic-ui-react';
 import React from 'react';
+import YearSlider from '../PoorVizYearSlider';
 
 const LabelFilter = glamorous.div({
   fontStyle: 'italic',
@@ -67,7 +68,7 @@ const controls = ({
       </Grid.Column>
       <Grid.Column width="5">
         <LabelFilter>Year</LabelFilter>
-        Year
+        <YearSlider />
       </Grid.Column>
     </Grid.Row>
   </Grid>);
