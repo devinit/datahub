@@ -49,7 +49,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 >
                   <button
                     className="ui button"
-                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -57,7 +56,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                   </button>
                   <button
                     className="ui button"
-                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -83,7 +81,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             >
               <button
                 className="ui icon button"
-                disabled={undefined}
                 onClick={[Function]}
                 tabIndex={undefined}
               >
@@ -91,6 +88,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                   aria-hidden="true"
                   className="play icon"
                 />
+                 
               </button>
             </div>
           </div>
@@ -156,10 +154,27 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="combobox"
             tabIndex={undefined}
           >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value=""
+            >
+              <option
+                value=""
+              />
+              <option
+                value="Small"
+              >
+                Small
+              </option>
+            </select>
             <input
               aria-autocomplete="list"
               autoComplete="off"
               className="search"
+              name="-search"
               onChange={[Function]}
               style={
                 Object {
@@ -225,10 +240,27 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="combobox"
             tabIndex={undefined}
           >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value=""
+            >
+              <option
+                value=""
+              />
+              <option
+                value="Uganda"
+              >
+                Uganda
+              </option>
+            </select>
             <input
               aria-autocomplete="list"
               autoComplete="off"
               className="search"
+              name="-search"
               onChange={[Function]}
               style={
                 Object {
@@ -297,6 +329,27 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="listbox"
             tabIndex={0}
           >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value="region"
+            >
+              <option
+                value=""
+              />
+              <option
+                value="region"
+              >
+                region
+              </option>
+              <option
+                value="income-group"
+              >
+                income-group
+              </option>
+            </select>
             <div
               className="text"
             >
@@ -426,7 +479,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
           </h4>
           <button
             className="ui icon button"
-            disabled={undefined}
             onClick={[Function]}
             tabIndex={undefined}
           >
@@ -434,6 +486,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               aria-hidden="true"
               className="print icon"
             />
+             
           </button>
         </div>
       </div>
@@ -445,7 +498,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
   className="ui primary button"
-  disabled={undefined}
   onClick={[Function]}
   tabIndex={undefined}
 >
@@ -458,7 +510,6 @@ exports[`Storyshots Button With Primary Color 1`] = `
 exports[`Storyshots Button With Secondary Color 1`] = `
 <button
   className="ui secondary button"
-  disabled={undefined}
   onClick={[Function]}
   tabIndex={undefined}
 >
@@ -466,12 +517,6 @@ exports[`Storyshots Button With Secondary Color 1`] = `
   Secondary
    
 </button>
-`;
-
-exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 1`] = `
-<p>
-   Loading ...
-</p>
 `;
 
 exports[`Storyshots Country Search Country Search With Data 1`] = `
@@ -678,6 +723,14 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 <p>
    Loading
 </p>
+`;
+
+exports[`Storyshots Maps Base Map Atom 1`] = `
+<section>
+  <div
+    className="css-uohe12"
+  />
+</section>
 `;
 
 exports[`Storyshots Menu Datahub Logo 1`] = `
@@ -2187,7 +2240,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                   />
                   <button
                     className="ui medium button"
-                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -2682,7 +2734,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
         </div>
         <button
           className="ui grey large button"
-          disabled={undefined}
           onClick={[Function]}
           tabIndex={undefined}
         >
@@ -2692,787 +2743,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             className="chevron right icon"
           />
         </button>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-xtq3xk"
-  >
-    <div
-      className="css-omymer"
-    >
-      <div
-        className="css-1tfdju4"
-      >
-        <div
-          className="ui container"
-        >
-          <div
-            className="ui grid"
-          >
-            <div
-              className="four column row"
-            >
-              <div
-                className="four wide computer sixteen wide mobile eight wide tablet column"
-              >
-                <h4
-                  className="css-106dsda"
-                >
-                  Sections
-                </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Data blog 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Publications
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Events
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Working with us 
-                </a>
-              </div>
-              <div
-                className="four wide computer sixteen wide mobile eight wide tablet column"
-              >
-                <h4
-                  className="css-106dsda"
-                >
-                  Quick Links
-                </h4>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Contact us 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Topics
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Our consultancy services 
-                </a>
-                <a
-                  className="css-1j6tgbo"
-                  href="http://devinit.org/#!/blog"
-                >
-                   Open DI - publishing to IATI 
-                </a>
-              </div>
-              <div
-                className="four wide computer sixteen wide mobile eight wide tablet column"
-              >
-                <h4
-                  className="css-106dsda"
-                >
-                  Newsletter
-                </h4>
-                <p>
-                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
-                </p>
-              </div>
-              <div
-                className="four wide computer sixteen wide mobile eight wide tablet column"
-              >
-                <h4
-                  className="css-106dsda"
-                >
-                  Creative Commons
-                </h4>
-                <p>
-                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-ntu1fe"
-    >
-      <div
-        className="row"
-      >
-        <div
-          className="ui center aligned container"
-        >
-          <div
-            className="sixteen wide column"
-          >
-            <a
-              className="css-1zicc8"
-              href="https://twitter.com/devinitorg"
-            >
-              <i
-                aria-hidden="true"
-                className="twitter icon"
-              />
-            </a>
-            <a
-              className="css-1zicc8"
-              href="https://twitter.com/devinitorg"
-            >
-              <i
-                aria-hidden="true"
-                className="facebook f icon"
-              />
-            </a>
-            <a
-              className="css-1zicc8"
-              href="https://twitter.com/devinitorg"
-            >
-              <i
-                aria-hidden="true"
-                className="youtube play icon"
-              />
-            </a>
-            <a
-              className="css-1zicc8"
-              href="https://twitter.com/devinitorg"
-            >
-              <i
-                aria-hidden="true"
-                className="flickr icon"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-omymer lightBlack"
-    >
-      <div
-        className="row"
-      >
-        <div
-          className="ui container"
-        >
-          <div
-            className="css-10kx4dn"
-          >
-            <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
-              <a
-                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
-              >
-                privacy policy
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Templates  Where are the poor 1`] = `
-<div
-  className="ui fluid container"
->
-  <div
-    className="css-1ffx9ig"
-  >
-    <div
-      className="ui container"
-    >
-      <div
-        className="css-1v2szk2"
-      >
-        <img
-          alt="Development Initiatives"
-          height="32"
-          src="/img/logo.png"
-          width="132"
-        />
-      </div>
-      <ul
-        className="css-ks7n51"
-      >
-        <li
-          className="css-1dps91a"
-        >
-          <span
-            className="css-gpblex"
-          >
-            
-            <a
-              className="css-vksbfm"
-              href="/"
-            >
-              <div
-                className="menu-text"
-              >
-                Global Picture
-              </div>
-            </a>
-            
-          </span>
-        </li>
-        <li
-          className="css-1dps91a"
-        >
-          <span
-            className="css-9k8qug"
-          >
-            <i
-              aria-hidden="true"
-              className="pie graph icon menu-icon"
-            />
-            <a
-              className="css-vksbfm"
-              href=""
-            >
-              <div
-                className="menu-text"
-              >
-                Profile
-              </div>
-            </a>
-            <div
-              className="css-qbgmp1"
-            >
-              <div
-                className="ui container"
-              >
-                <ul
-                  className="css-ttljof"
-                >
-                  <div
-                    className="ui list"
-                    role="list"
-                  >
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="content"
-                      >
-                        <a
-                          href="/country-profiles"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="area graph icon"
-                          />
-                          Country Profiles
-                        </a>
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="content"
-                      >
-                        <a
-                          href="/multilateral-profiles"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="area graph icon"
-                          />
-                          Multilateral Profiles
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </span>
-        </li>
-        <li
-          className="css-1dps91a"
-        >
-          <span
-            className="css-gpblex"
-          >
-            
-            <a
-              className="css-vksbfm"
-              href="/unbundling-aid"
-            >
-              <div
-                className="menu-text"
-              >
-                Unbudling Aid
-              </div>
-            </a>
-            
-          </span>
-        </li>
-        <li
-          className="css-1dps91a"
-        >
-          <span
-            className="css-gpblex"
-          >
-            
-            <a
-              className="css-vksbfm"
-              href="/spotlight-on-uganda"
-            >
-              <div
-                className="menu-text"
-              >
-                Spotlight on Uganda
-              </div>
-            </a>
-            
-          </span>
-        </li>
-        <li
-          className="css-1dps91a"
-        >
-          <span
-            className="css-9k8qug"
-          >
-            <i
-              aria-hidden="true"
-              className="pie graph icon menu-icon"
-            />
-            <a
-              className="css-vksbfm"
-              href=""
-            >
-              <div
-                className="menu-text"
-              >
-                Other Visualizations
-              </div>
-            </a>
-            <div
-              className="css-qbgmp1"
-            >
-              <div
-                className="ui container"
-              >
-                <ul
-                  className="css-ttljof"
-                >
-                  <div
-                    className="ui list"
-                    role="list"
-                  >
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="content"
-                      >
-                        <a
-                          href="/unbundling-other-flows"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="barcode icon"
-                          />
-                          Unbundling other official flows
-                        </a>
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="content"
-                      >
-                        <a
-                          href="/where-are-the-poor"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="users icon"
-                          />
-                          Where are the poor and where will they be?
-                        </a>
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="content"
-                      >
-                        <a
-                          href="/methodology"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="area graph icon"
-                          />
-                          Are domestic public resources able to meet the needs of the poorest people?
-                        </a>
-                      </div>
-                    </div>
-                    <div
-                      className="item"
-                      data-value={undefined}
-                      onClick={[Function]}
-                      role="listitem"
-                    >
-                      <div
-                        className="content"
-                      >
-                        <a
-                          href="/"
-                        >
-                          <i
-                            aria-hidden="true"
-                            className="area graph icon"
-                          />
-                          Different providers, different priorities
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </span>
-        </li>
-        <li
-          className="css-1dps91a"
-        >
-          <span
-            className="css-gpblex"
-          >
-            
-            <a
-              className="css-vksbfm"
-              href="/methodology"
-            >
-              <div
-                className="menu-text"
-              >
-                Methodology
-              </div>
-            </a>
-            
-          </span>
-        </li>
-      </ul>
-      <div>
-        <button
-          className="css-js0rgg"
-          onClick={[Function]}
-        >
-          <i
-            aria-hidden="true"
-            className="align justify icon"
-          />
-        </button>
-        <div
-          className="css-1g5irst"
-          onClick={[Function]}
-        />
-        <nav
-          className="css-1hpbsc1"
-        >
-          <li
-            className="navigation__item active"
-            onClick={[Function]}
-          >
-            <span
-              className="navigation__item-title small"
-            >
-              <a
-                href="/"
-              >
-                Global Picture
-              </a>
-            </span>
-            <div
-              className="nav-children"
-            >
-              
-            </div>
-          </li>
-          <li
-            className="navigation__item "
-            onClick={[Function]}
-          >
-            <span
-              className="navigation__item-title small"
-            >
-              <a
-                href=""
-              >
-                Profile
-              </a>
-            </span>
-            <div
-              className="nav-children"
-            >
-              <ul
-                className="css-1w2zwps"
-              >
-                <li>
-                  <a
-                    href="/country-profiles"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="area graph icon"
-                    />
-                    Country Profiles
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/multilateral-profiles"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="area graph icon"
-                    />
-                    Multilateral Profiles
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li
-            className="navigation__item "
-            onClick={[Function]}
-          >
-            <span
-              className="navigation__item-title small"
-            >
-              <a
-                href="/unbundling-aid"
-              >
-                Unbudling Aid
-              </a>
-            </span>
-            <div
-              className="nav-children"
-            >
-              
-            </div>
-          </li>
-          <li
-            className="navigation__item "
-            onClick={[Function]}
-          >
-            <span
-              className="navigation__item-title small"
-            >
-              <a
-                href="/spotlight-on-uganda"
-              >
-                Spotlight on Uganda
-              </a>
-            </span>
-            <div
-              className="nav-children"
-            >
-              
-            </div>
-          </li>
-          <li
-            className="navigation__item "
-            onClick={[Function]}
-          >
-            <span
-              className="navigation__item-title small"
-            >
-              <a
-                href=""
-              >
-                Other Visualizations
-              </a>
-            </span>
-            <div
-              className="nav-children"
-            >
-              <ul
-                className="css-1w2zwps"
-              >
-                <li>
-                  <a
-                    href="/unbundling-other-flows"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="barcode icon"
-                    />
-                    Unbundling other official flows
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/where-are-the-poor"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="users icon"
-                    />
-                    Where are the poor and where will they be?
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/methodology"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="area graph icon"
-                    />
-                    Are domestic public resources able to meet the needs of the poorest people?
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="area graph icon"
-                    />
-                    Different providers, different priorities
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li
-            className="navigation__item "
-            onClick={[Function]}
-          >
-            <span
-              className="navigation__item-title small"
-            >
-              <a
-                href="/methodology"
-              >
-                Methodology
-              </a>
-            </span>
-            <div
-              className="nav-children"
-            >
-              
-            </div>
-          </li>
-        </nav>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-1p5z960"
-  >
-    <div
-      className="ui container"
-    >
-      <div
-        className="css-1qaws8s"
-      >
-        <h1
-          className="ui header"
-        >
-          <div
-            className="content"
-          >
-            Where are the poor and where will they be?
-            <div
-              className="sub header"
-            >
-              Between 1990 and 2010, extreme poverty was cut in half.Explore plausible poverty outcomes for 2030 based on models of consumption.
-            </div>
-          </div>
-        </h1>
-      </div>
-    </div>
-    <div
-      className="ui container"
-    >
-      <div
-        className="ui grid"
-      >
-        <div
-          className="row"
-        >
-          <div
-            className="twelve wide computer sixteen wide mobile sixteen wide tablet column"
-          >
-            <h3
-              className="ui header"
-            >
-              About this visualization
-            </h3>
-            <p>
-              This page allows you to explore three scenarios for future poverty levels both globally and by region up to 2030. The baseline scenario uses current forecasts for growth in consumption and current inequality levels. The best-case scenario shows what happens with more rapid growth that is shared more equally. By contrast, the worst-case scenario sees slower growth and increasing inequality. Forecasting future poverty levels is difficult, given the inherent uncertainties involved. Poverty modelling develops future scenarios to help inform policymaking. These models rely on simplifying assumptions, often focusing on economic growth and income distribution trends which determine how much poor people benefit from that growth.Data accessed from source: 20 August 2013.
-            </p>
-            <h3
-              className="ui header"
-            >
-              Scenario details
-            </h3>
-            <p>
-              The best and worst case scenarios are based on the extremes of two elements: For growth, a +/- 2 percentage point margin of error either side of baseline projections of consumption growth (which are driven by economic growth). This is in line with differences observed between past forecasts and actual outcomes. For inequality, an annual 0.25 percentage point change in the shares of national consumption between the poorest 40% and the richest 10%.
-            </p>
-            <h3
-              className="ui header"
-            >
-              About the data
-            </h3>
-            <p>
-              Projections based on Chandy, Ledlie and Penciakova, The Final Countdown: Prospects for Ending Extreme Poverty by 2030 (2013), using the same methodology applied to a dataset updated with 40 country surveys. All data for years after 2010 are forecasts.
-            </p>
-          </div>
-          <div
-            className="four wide computer sixteen wide mobile sixteen wide tablet column"
-          >
-            <h3
-              className="ui header"
-            >
-              Download the data
-            </h3>
-            <p>
-              Not yet available
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -4261,7 +3531,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               >
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -4269,10 +3538,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="facebook f icon"
                   />
+                   
                 </button>
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -4280,10 +3549,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="twitter icon"
                   />
+                   
                 </button>
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -4291,10 +3560,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="google plus icon"
                   />
+                   
                 </button>
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -4302,6 +3571,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="mail outline icon"
                   />
+                   
                 </button>
               </div>
             </div>
