@@ -468,7 +468,7 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
-exports[`Storyshots Country Search DONOT TEST Country Search With Data 1`] = `
+exports[`Storyshots Country Search Country Search With Data 1`] = `
 <p>
    loading ...
 </p>
@@ -666,6 +666,12 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots International Resources chart live DONOT TEST Area treemap Chart 1`] = `
+<p>
+   Loading
+</p>
 `;
 
 exports[`Storyshots Maps Base Map Atom 1`] = `
