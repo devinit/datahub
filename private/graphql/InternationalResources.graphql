@@ -7,6 +7,10 @@ fragment InternationalResourcesTab on InternationalResources {
     flow_name
     value
   }
+  resourcesOverTime {
+    flow_category
+    value
+  }
 }
 
 # fragment InternationalResourcesFlowSelections on  InternationalResources {

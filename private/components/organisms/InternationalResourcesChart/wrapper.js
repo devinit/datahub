@@ -6,14 +6,13 @@ import type {Props} from 'components/molecules/InternationalResourcesChart';
 type WrapperProps = Props & {
   children: any,
   id: string,
-  startYear: number,
   loading: boolean
 }
 
 const InternationalResourcesWrapper = (props: WrapperProps) => {
   if (props.loading) return (<p> Loading</p>);
   return (<InternationalResourcesChart
-    startYear={props.startYear}
+    startYear={props.data.startYear}
     data={props.data}
     config={props.config}
   />);

@@ -11,11 +11,9 @@ const withData = graphql(TABS_QUERY, {
   }),
   props: ({data}) => {
     const {error, loading} = data;
-    if (error) throw new Error(error);
-    console.log('resourcesOverTime', data.internationalResources);
+    if (error) console.error(error);
     return {
       loading,
-      startYear: 2015,
       data: data.internationalResources ? data.internationalResources : null,
     };
   }});

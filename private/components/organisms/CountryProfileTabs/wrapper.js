@@ -19,7 +19,6 @@ type WrapperProps = {
 }
 
 const countryProfileTabs = (props: WrapperProps) => {
-  console.log('tabs', props);
   if (props.loading) return (<p> Loading ...</p>);
   return (
     <Tabs selected={0} height="20em">
@@ -35,8 +34,8 @@ const countryProfileTabs = (props: WrapperProps) => {
       <Pane label="Government Finance">
         <GovernmentFinance />
       </Pane>
-      <Pane label="International Resources" GNI={props.data.GNI}>
-        <InternationalResources />
+      <Pane label="International Resources">
+        <InternationalResources {...props.data} />
       </Pane>
     </Tabs>
   );

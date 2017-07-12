@@ -16,8 +16,7 @@ const withData = graphql(RESOURCES_QUERY, {
     console.log('resourcesOverTime', data.internationalResources);
     return {
       loading,
-      startYear: 2015,
-      data: data.internationalResources ? data.internationalResources.resourcesOverTime : [],
+      data: data.internationalResources,
       config
     };
   }});
