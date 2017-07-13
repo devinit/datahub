@@ -1,20 +1,24 @@
 // @flow
 import React, {PureComponent} from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import {MapPlaceholder} from '../Container';
 
 type Viewport = {
   zoom: number;
   center: number[];
-  width: number;
-  height: number;
   attributionControl: boolean;
   bounds: number[][];
+  minZoom: number;
+  scrollZoom: boolean;
 }
 
 type Props = {
   mapStyle?: string;
-  viewport?: Viewport
+  viewport?: Viewport;
+  width?: number;
+  height?: number;
+  style?: Object;
 }
 
 type State = {
@@ -34,16 +38,19 @@ type FeatureProperty = {
   value?: number;
   type?: string
 }
-
+type Point = {
+  lng: number;
+  lat: number;
+}
 type PopupItem = {
   props: FeatureProperty;
-  pos: {lng: number; lat: number};
+  pos: Point;
 }
 
 class Map extends PureComponent {
   static getToken() {
-    if (!process.env.accessToken) throw new Error('Provide a mapbox access token');
-    const token = process.env.accessToken || 'put here to get rid of flow error warning';
+    if (!process.env.MapboxAccessToken) throw new Error('Provide a mapbox access token');
+    const token = process.env.MapboxAccessToken || 'put here to get rid of flow error warning';
     return token;
   }
   static tipTemplate(featureProperty: FeatureProperty) {
@@ -51,6 +58,11 @@ class Map extends PureComponent {
   }
   constructor(props?: Props) {
     super(props);
+    this.state = {
+      token: Map.getToken(),
+      mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
+      viewport: this.viewport
+    };
     if (props && props.viewport) {
       const viewport = {...this.state.viewport, ...props.viewport};
       this.state = {...this.state, viewport};
@@ -59,29 +71,25 @@ class Map extends PureComponent {
     mapboxgl.accessToken = this.state.token;
     this._isOnMobile = window.innerWidth < 1200;
   }
-  state: State = {
-    token: Map.getToken(),
-    mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
-    viewport: this.viewport
-  };
+
+  state: State;
+
   viewport: Viewport = {
     zoom: 1,
     center: [25, 20],
     attributionControl: true,
     minZoom: 0.5,
-    bearing: 0,
     bounds: [
       [-179, -61], // Southwest coordinates
       [188, 75]  // Northeast coordinates
     ],
     scrollZoom: false,
-    width: process.browser ? window.innerWidth : 1200,
-    height: process.browser && window.innerWidth < 1200 ? 480 : 600
   };
   _isOnMobile: boolean = false;
   _map: Object;
   _nav: Object;
   _popup: Object & {remove: any};
+  _center: Point;
   _zoomLevel: number;
 
   addPopupContent(obj: PopupItem) {
@@ -107,7 +115,26 @@ class Map extends PureComponent {
       return true;
     });
   }
-
+  dragListener() {
+    this._map.on('dragend', () => {
+      this._center = this._map.getCenter();
+      return true;
+    });
+  }
+  // Persists zoom and center on style change
+  persistZoomAndCenterLevel() {
+    this._map.on('data', (e) => {
+      if (e.dataType === 'style') {
+        if (this._zoomLevel) this._map.setZoom(this._zoomLevel);
+        if (this._center) this._map.setCenter([this._center.lng, this._center.lat]);
+      }
+    });
+  }
+  resize() {
+    window.addEventListener('resize', () => {
+      this._map.resize();
+    });
+  }
   draw(domElement: HTMLDivElement) {
     const defaultOpts = {...this.state.viewport, style: this.state.mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
@@ -118,17 +145,26 @@ class Map extends PureComponent {
     this._map.dragRotate.disable();
     this._map.touchZoomRotate.disableRotation();
     this.zoomListener();
+    this.dragListener();
+    this.persistZoomAndCenterLevel();
+    this.resize();
   }
   render() {
-    const {viewport, mapStyle, token} = this.state;
-
+    let {width, height, style} = this.props;
+    if (!width) width = '100%';
+    if (!height) height = window.innerWidth < 1000 ? 480 : 600;
+    if (!style) style = {};
+    const mapContainerStyle = {...style, width, height, position: 'relative'};
     return (
       <section>
         {process.browser ?
-        (<div key={'map-mapbox'} ref={(domElement) => this.draw(domElement)} />) :
+        (<div
+          key={'map-mapbox'}
+          ref={(domElement) => this.draw(domElement)}
+          style={mapContainerStyle}
+        />) :
         (<MapPlaceholder />)}
       </section>
-
     );
   }
 

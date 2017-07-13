@@ -10,10 +10,10 @@ const moduleResolver = {
               path.resolve(__dirname, 'private'),
               path.resolve(__dirname, 'public/semantic'),
               path.resolve(__dirname, 'public/img')],
-    alias: {
-      // From mapbox-gl-js README. Required for non-browserify bundlers (e.g. webpack):
-      'mapbox-gl$': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js')
-    }
+    // alias: {
+    //   // From mapbox-gl-js README. Required for non-browserify bundlers (e.g. webpack):
+    //   'mapboxgl': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js')
+    // }
   }
 };
 
