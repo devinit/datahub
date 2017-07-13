@@ -43,7 +43,7 @@ type PopupItem = {
 class Map extends PureComponent {
   static getToken() {
     if (!process.env.accessToken) throw new Error('Provide a mapbox access token');
-    const token = process.env.accessToken || 'put here to get rid of flow error';
+    const token = process.env.accessToken || 'put here to get rid of flow error warning';
     return token;
   }
   static tipTemplate(featureProperty: FeatureProperty) {
