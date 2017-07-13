@@ -1,0 +1,28 @@
+query TabData($id: String!) {
+  populationTab(id: $id) {
+    population
+    populationDistribution {
+      group
+      value
+      year
+    }
+    populationPerAgeBand {
+      band
+      value
+      year
+    }
+  }
+  internationalResources(id: $id) {
+    GNI
+    netODAOfGNIIn
+    netODAOfGNIOut
+    mixOfResources {
+      flow_name
+      value
+    }
+    resourcesOverTime {
+      flow_category
+      value
+    }
+  }
+}
