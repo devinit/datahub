@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { draw } from '@devinit/charts';
+import '../../../../public/di-charts/di-charts.min.css';
 
 type Props = {
   data: any,

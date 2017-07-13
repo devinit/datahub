@@ -15,3 +15,4 @@ module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=private
 module.system.node.resolve_dirname=public/semantic
 module.name_mapper.extension='graphql' -> '<PROJECT_ROOT>/private/__mocks__/graphql.js'
+module.name_mapper.extension='css' -> '<PROJECT_ROOT>/private/__mocks__/styleMock.js'
