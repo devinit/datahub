@@ -1,7 +1,0 @@
-#import "./InternationalResources.graphql"
-
-query ResourcesTab ($id: String!) {
-  internationalResources(id: $id) {
-    ...InternationalResourcesTab
-  }
-}

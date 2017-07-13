@@ -468,7 +468,7 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
-exports[`Storyshots Country Profiles live DONOT TEST Country Profiles tabs 1`] = `
+exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 1`] = `
 <p>
    Loading ...
 </p>
@@ -678,14 +678,6 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 <p>
    Loading
 </p>
-`;
-
-exports[`Storyshots Maps Base Map Atom 1`] = `
-<section>
-  <div
-    className="css-uohe12"
-  />
-</section>
 `;
 
 exports[`Storyshots Menu Datahub Logo 1`] = `

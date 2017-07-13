@@ -9,16 +9,16 @@ import {
   Population,
   Poverty,
 } from 'components/molecules/CountryProfileTabs';
-import type {Props as InternationalProps} from 'components/molecules/CountryProfileTabs/InternationalResources';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 
 type WrapperProps = {
   loading: boolean,
-  data: InternationalProps
+  data: TabDataQuery
 }
 
 const countryProfileTabs = (props: WrapperProps) => {
+  console.log('in country profiles', props);
   if (props.loading) return (<p> Loading ...</p>);
   return (
     <Tabs selected={0} height="20em">
@@ -35,7 +35,7 @@ const countryProfileTabs = (props: WrapperProps) => {
         <GovernmentFinance />
       </Pane>
       <Pane label="International Resources">
-        <InternationalResources {...props.data} />
+        <InternationalResources {...props} />
       </Pane>
     </Tabs>
   );

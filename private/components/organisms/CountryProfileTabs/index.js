@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
-import InternationalResourcesChart from './wrapper';
-import TABS_QUERY from '../../../graphql/InternationalResourcesTab.graphql';
+import CountryProfileTabs from './wrapper';
+import TABS_QUERY from '../../../graphql/TabData.graphql';
 
 const withData = graphql(TABS_QUERY, {
   options: (props) => ({
@@ -11,12 +11,9 @@ const withData = graphql(TABS_QUERY, {
   }),
   props: ({data}) => {
     const {error, loading} = data;
-    if (error) console.error(error);
-    return {
-      loading,
-      data: data.internationalResources ? data.internationalResources : null,
-    };
+    if (error) throw Error(error);
+    return data;
   }});
 
 
-export default withData(InternationalResourcesChart);
+export default withData(CountryProfileTabs);
