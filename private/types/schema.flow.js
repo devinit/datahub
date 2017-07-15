@@ -31,6 +31,72 @@ export type ResourcesOverTimeQuery = {|
   |},
 |};
 
+export type SpotLightTabDataQueryVariables = {|
+  id: string,
+  country: string,
+|};
+
+export type SpotLightTabDataQuery = {|
+  povertyTabRegional: ? {|
+    poorestPeople: ?string,
+    // WHAT IS THE AVERAGE LIFE EXPECTANCY?
+    lifeExpectancy: ?string,
+    // WHAT IS THE STANDARD OF LIVING SCORE?
+    stdOfLiving: ?string,
+  |},
+  // id is district slug
+  overViewTabRegional: ? {|
+    // WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
+    // can be no data or '12%'
+    poorestPeople: ?string,
+    // WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO? eg 3.6m or 2.7bn
+    // this is a total of local, donor and central government resources
+    regionalResources: ?string,
+    // IndicatorDataColored is defined in country profile types
+    // has local government, donor and central government
+    regionalResourcesBreakdown: ? Array< {|
+      id: ?string,
+      year: ?number,
+      value: ?number,
+      name: ?string,
+      color: ?string,
+    |} >,
+    // HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
+    localGovernmentSpendPerPerson: ?string,
+  |},
+  populationTabRegional: ? {|
+    // The total population of a given district and the population density in per sq km
+    totalPopulation: ?string,
+    populationDensity: ?string,
+    // Urban vs Rural population level
+    populationDistribution: ? Array< {|
+      group: ?string,
+      value: ?number,
+      year: ?number,
+    |} >,
+    averageDependencyRatio: ?string,
+    allAverageDependencyRatio: ?string,
+  |},
+  educationTabRegional: ? {|
+    // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
+    pupilTeacherRatioGovtSchl: ?string,
+    pupilTeacherRatioOtherSchl: ?string,
+    // WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
+    studentsPassRate: ?string,
+    studentsPassDistrictRank: ?string,
+    // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
+    primaryEducationfunding: ?string,
+  |},
+  healthTabRegional: ? {|
+    // WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
+    districtPerformance: ?string,
+    // WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
+    treatmeantOfTb: ?string,
+    // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
+    healthCareFunding: ?string,
+  |},
+|};
+
 export type TabDataQueryVariables = {|
   id: string,
 |};

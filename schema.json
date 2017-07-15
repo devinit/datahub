@@ -1929,7 +1929,7 @@
           "description": "",
           "fields": [
             {
-              "name": "StartYear",
+              "name": "startYear",
               "description": "TODO: add startyear",
               "args": [],
               "type": {
