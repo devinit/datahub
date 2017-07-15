@@ -1,4 +1,57 @@
 query TabData($id: String!) {
+  governmentFinance(id: $id){
+    totalRevenue
+    grantsAsPcOfRevenue
+    spendingAllocation {
+      value
+      name
+      color
+    }
+    currencyCode
+    expenditure {
+      budgetType
+      type
+      parentCategory
+      category
+      subCategory
+      year
+      value
+      valueNcu
+    }
+    revenueAndGrants {
+      budgetType
+      type
+      parentCategory
+      category
+      subCategory
+      year
+      value
+      valueNcu
+    }
+    finance {
+      budgetType
+      type
+      parentCategory
+      category
+      subCategory
+      year
+      value
+      valueNcu
+    }
+  }
+  povertyTab(id: $id){
+    poverty190Trend {
+      id
+      year
+      value
+      name
+    }
+    depthOfExtremePoverty
+    incomeDistTrend {
+      value
+      quintileName
+    }
+  }
   populationTab(id: $id) {
     population
     populationDistribution {
