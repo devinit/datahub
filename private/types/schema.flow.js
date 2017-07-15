@@ -36,6 +36,83 @@ export type TabDataQueryVariables = {|
 |};
 
 export type TabDataQuery = {|
+  governmentFinance: ? {|
+    // Total revenue for a particular year if not available return -1
+    // uses gdp
+    totalRevenue: ?string,
+    grantsAsPcOfRevenue: ?string,
+    // for donut chart
+    spendingAllocation: ? Array< {|
+      value: ?number,
+      name: ?string,
+      color: ?string,
+    |} >,
+    // for treemap
+    // such as constant 2015 USD for tree map
+    currencyCode: ?string,
+    // use resourcesRecipient sql
+    expenditure: ? Array< {|
+      // eg Actual or budget
+      budgetType: ?string,
+      // eg total_revenue and grants --> l1
+      type: ?string,
+      // eg revenue --> l2
+      parentCategory: ?string,
+      // eg tax revenue --> l3
+      category: ?string,
+      // eg value-added tax  --> l4
+      subCategory: ?string,
+      year: ?number,
+      value: ?number,
+      valueNcu: ?number,
+    |} >,
+    revenueAndGrants: ? Array< {|
+      // eg Actual or budget
+      budgetType: ?string,
+      // eg total_revenue and grants --> l1
+      type: ?string,
+      // eg revenue --> l2
+      parentCategory: ?string,
+      // eg tax revenue --> l3
+      category: ?string,
+      // eg value-added tax  --> l4
+      subCategory: ?string,
+      year: ?number,
+      value: ?number,
+      valueNcu: ?number,
+    |} >,
+    finance: ? Array< {|
+      // eg Actual or budget
+      budgetType: ?string,
+      // eg total_revenue and grants --> l1
+      type: ?string,
+      // eg revenue --> l2
+      parentCategory: ?string,
+      // eg tax revenue --> l3
+      category: ?string,
+      // eg value-added tax  --> l4
+      subCategory: ?string,
+      year: ?number,
+      value: ?number,
+      valueNcu: ?number,
+    |} >,
+  |},
+  povertyTab: ? {|
+    // Poverty reduction over time area chart trend
+    poverty190Trend: ? Array< {|
+      id: ?string,
+      year: ?number,
+      value: ?number,
+      name: ?string,
+    |} >,
+    // how deep is poverty %
+    depthOfExtremePoverty: ?string,
+    // Recipients: how income is distributed, % of income received by each quintil
+    incomeDistTrend: ? Array< {|
+      value: ?number,
+      quintileName: ?string,
+    |} >,
+  |},
   populationTab: ? {|
     // total population in a country
     population: ?string,

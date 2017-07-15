@@ -26,13 +26,13 @@ const countryProfileTabs = (props: WrapperProps) => {
         <Overview />
       </Pane>
       <Pane label="Poverty">
-        <Poverty />
+        <Poverty {...props} />
       </Pane>
       <Pane label="Population">
-        <Population />
+        <Population {...props} />
       </Pane>
       <Pane label="Government Finance">
-        <GovernmentFinance />
+        <GovernmentFinance {...props} />
       </Pane>
       <Pane label="International Resources">
         <InternationalResources {...props} />
