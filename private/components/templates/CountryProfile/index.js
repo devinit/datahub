@@ -2,20 +2,15 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
 import { red, lightBlack, white } from 'components/theme/semantic';
-import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {
-  GovernmentFinance,
   GovernmentFinanceLower,
   InternationalResourcesLower,
-  InternationalResources,
-  Overview,
-  Population,
-  Poverty,
 } from 'components/molecules/CountryProfileTabs';
 import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
+import Tabs from 'components/organisms/CountryProfileTabs';
 import Generic from '../Generic';
 import SearchInput from '../../molecules/SearchInput';
 import data from './data';
@@ -96,23 +91,7 @@ export default () =>
         </Grid>
       </Container>
     </UpperContainer>
-    <Tabs selected={0} height="20em">
-      <Pane label="Overview">
-        <Overview />
-      </Pane>
-      <Pane label="Poverty">
-        <Poverty />
-      </Pane>
-      <Pane label="Population">
-        <Population />
-      </Pane>
-      <Pane label="Government Finance">
-        <GovernmentFinance />
-      </Pane>
-      <Pane label="International Resources">
-        <InternationalResources />
-      </Pane>
-    </Tabs>
+    <Tabs />
 
     <HeaderContainer>
       <Container textAlign="center">
