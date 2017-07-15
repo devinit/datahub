@@ -78,4 +78,22 @@ query TabData($id: String!) {
       value
     }
   }
+  overViewTab(id:$id) {
+    countryType
+    poorestPeople
+    population
+    domesticResources
+    internationalResources
+    governmentSpendPerPerson
+    averageIncomerPerPerson {
+      year
+      value
+      id
+      name
+    }
+   incomeDistTrend {
+    value
+    quintileName
+    } 
+  }
 }

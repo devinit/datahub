@@ -3,6 +3,7 @@ import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {HeaderGroup} from 'components/atoms/Header';
 import PTag from 'components/atoms/PTag';
+import {red} from 'components/theme/semantic';
 
 
 const Poverty = (props: SpotLightTabDataQuery) => {
@@ -17,7 +18,7 @@ const Poverty = (props: SpotLightTabDataQuery) => {
           >
             WHAT PERCENTAGE OF PEOPLE IN BUIKWE LIVE BELOW THE NATIONAL POVERTY LINE?
           </Header>
-          <PTag size={'big'} fontWeight={'bold'}>{props.povertyTabRegional.poorestPeople}</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.povertyTabRegional.poorestPeople}</PTag>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -27,7 +28,7 @@ const Poverty = (props: SpotLightTabDataQuery) => {
           >
             WHAT IS THE AVERAGE LIFE EXPECTANCY?
           </Header>
-          <PTag size={'big'} fontWeight={'bold'}>{props.povertyTabRegional.lifeExpectancy}</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.povertyTabRegional.lifeExpectancy}</PTag>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -37,7 +38,7 @@ const Poverty = (props: SpotLightTabDataQuery) => {
           >
             WHAT IS THE STANDARD OF LIVING SCORE?
           </Header>
-          <PTag size={'big'} fontWeight={'bold'}>{props.povertyTabRegional.stdOfLiving}</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.povertyTabRegional.stdOfLiving}</PTag>
         </Grid.Column>
       </Grid>
     </Container>

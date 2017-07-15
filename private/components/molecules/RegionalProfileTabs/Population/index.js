@@ -18,7 +18,7 @@ const Population = (props: SpotLightTabDataQuery) => {
         <PTag color={red}>
         The total population is
       </PTag>
-        <PTag size={'big'} fontWeight={'bold'}>{props.populationTabRegional.totalPopulation}</PTag>
+        <PTag size={'big'} fontWeight={'bold'} color={red}>{props.populationTabRegional.totalPopulation}</PTag>
         <PTag>and the population density is</PTag>
         <PTag size={'big'} fontWeight={'bold'}>{props.populationTabRegional.populationDensity}</PTag>
         <PTag>per sq km</PTag>
@@ -40,7 +40,7 @@ const Population = (props: SpotLightTabDataQuery) => {
         >
         WHAT IS THE AVERAGE DEPENDENCY RATIO?
       </Header>
-        <PTag size={'big'} fontWeight={'bold'}>{props.populationTabRegional.averageDependencyRatio}</PTag>
+        <PTag size={'big'} fontWeight={'bold'} color={red}>{props.populationTabRegional.averageDependencyRatio}</PTag>
         <PTag>Compared with the all-district average:</PTag>
         <PTag size={'big'} fontWeight={'bold'}>{props.populationTabRegional.allAverageDependencyRatio}</PTag>
       </Grid.Column>

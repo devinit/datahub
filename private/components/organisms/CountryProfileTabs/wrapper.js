@@ -23,7 +23,7 @@ const countryProfileTabs = (props: WrapperProps) => {
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview">
-        <Overview />
+        <Overview {...props} />
       </Pane>
       <Pane label="Poverty">
         <Poverty {...props} />

@@ -16,7 +16,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.pupilTeacherRatioGovtSchl}</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.educationTabRegional.pupilTeacherRatioGovtSchl}</PTag>
           <PTag >in government schools  and</PTag>
           <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.pupilTeacherRatioOtherSchl}</PTag>
           <PTag>in all schools </PTag>
@@ -29,7 +29,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.studentsPassRate}</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.educationTabRegional.studentsPassRate}</PTag>
           <PTag>and is ranked in</PTag>
           <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.studentsPassDistrictRank}</PTag>
         </Grid.Column>
@@ -41,7 +41,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.primaryEducationfunding}</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.educationTabRegional.primaryEducationfunding}</PTag>
 
         </Grid.Column>
       </Grid>
