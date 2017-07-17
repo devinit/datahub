@@ -305,7 +305,7 @@
                 }
               ],
               "type": {
-                "kind": "UNION",
+                "kind": "OBJECT",
                 "name": "OverViewTab",
                 "ofType": null
               },
@@ -1214,31 +1214,22 @@
           "possibleTypes": null
         },
         {
-          "kind": "UNION",
+          "kind": "OBJECT",
           "name": "OverViewTab",
           "description": "",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": [
-            {
-              "kind": "OBJECT",
-              "name": "OverViewTabRecipients",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "OverViewTabDonors",
-              "ofType": null
-            }
-          ]
-        },
-        {
-          "kind": "OBJECT",
-          "name": "OverViewTabRecipients",
-          "description": "",
           "fields": [
+            {
+              "name": "countryType",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "poorestPeople",
               "description": "how many of the poorest people globally live in a country",
@@ -1289,30 +1280,7 @@
             },
             {
               "name": "governmentSpendPerPerson",
-              "description": "recipient countries $PPP",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "OverViewTabDonors",
-          "description": "",
-          "fields": [
-            {
-              "name": "governmentSpendPerPerson",
-              "description": "",
+              "description": "recipient countries $PPP, both donor and recipient",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1929,7 +1897,7 @@
           "description": "",
           "fields": [
             {
-              "name": "StartYear",
+              "name": "startYear",
               "description": "TODO: add startyear",
               "args": [],
               "type": {
@@ -2430,18 +2398,6 @@
               "deprecationReason": null
             },
             {
-              "name": "color",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "heading",
               "description": "",
               "args": [],
@@ -2507,6 +2463,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "color",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "isDeprecated": false,

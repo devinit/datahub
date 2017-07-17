@@ -2,6 +2,7 @@
 import React, {PureComponent} from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import {lightGrey, red} from 'components/theme/semantic';
 import {MapPlaceholder} from '../Container';
 
 type Viewport = {
@@ -12,8 +13,23 @@ type Viewport = {
   minZoom: number;
   scrollZoom: boolean;
 }
+type MapData = {
+  id?: string,
+  name?: string,
+  color?: string,
+  value?: number,
+}
+
+type PaintMap = {
+  data: MapData[];
+  baseColor?: string;
+  propertyName?: string;
+  propertyLayer?: string;
+  type?: string;
+}
 
 type Props = {
+  paint: PaintMap;
   mapStyle?: string;
   viewport?: Viewport;
   width?: number;
@@ -22,12 +38,11 @@ type Props = {
 }
 
 type State = {
-  token: string;
+  // token: string;
   mapStyle: string;
   viewport: Viewport
 }
-type MapBoxOptions = {
-  ...Viewport;
+type MapBoxOptions = Viewport & {
   style: string;
   container: HTMLDivElement | string;
 }
@@ -49,7 +64,7 @@ type PopupItem = {
 
 class Map extends PureComponent {
   static getToken() {
-    if (!process.env.MapboxAccessToken) throw new Error('Provide a mapbox access token');
+    if (!process.env.MapboxAccessToken) console.error('Provide a mapbox access token');
     const token = process.env.MapboxAccessToken || 'put here to get rid of flow error warning';
     return token;
   }
@@ -59,7 +74,7 @@ class Map extends PureComponent {
   constructor(props?: Props) {
     super(props);
     this.state = {
-      token: Map.getToken(),
+      token: Map.getToken(), // for when we use mapbox
       mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
       viewport: this.viewport
     };
@@ -78,7 +93,7 @@ class Map extends PureComponent {
     zoom: 1,
     center: [25, 20],
     attributionControl: true,
-    minZoom: 0.5,
+    minZoom: 1,
     bounds: [
       [-179, -61], // Southwest coordinates
       [188, 75]  // Northeast coordinates
@@ -99,7 +114,6 @@ class Map extends PureComponent {
   }
   mouseHoverEvent() {
     this._map.on('mousemove', (e) => {
-      // console.log('map bounds', e.lngLat);
       const features: {properties: any}[] = this._map.queryRenderedFeatures(e.point);
       // for some reason returns an array of the same event
       if (!features.length && this._popup) return this._popup.remove();
@@ -135,32 +149,52 @@ class Map extends PureComponent {
       this._map.resize();
     });
   }
-  draw(domElement: HTMLDivElement) {
+
+  colorMap({data, baseColor, propertyName, propertyLayer, type}: PaintMap) {
+    if (!data) throw new Error('you have to pass in data to color the map');
+    const stops = data
+      .filter(obj => obj.id && obj.color)
+      .map((obj: MapData) => [obj.id, obj.color]);
+
+    this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
+      {
+        property: 'ISO2',
+        type: 'categorical',
+        default: lightGrey,
+        stops,
+      });
+  }
+  draw(domElement: HTMLDivElement, paint: PaintMap) {
     const defaultOpts = {...this.state.viewport, style: this.state.mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
       {...defaultOpts, maxBounds: this.state.viewport.bounds} : defaultOpts;
     this._map = new mapboxgl.Map(opts);
     this._nav = new mapboxgl.NavigationControl();
     this._map.addControl(this._nav, 'top-right');
-    this._map.dragRotate.disable();
-    this._map.touchZoomRotate.disableRotation();
-    this.zoomListener();
-    this.dragListener();
-    this.persistZoomAndCenterLevel();
-    this.resize();
+    this._map.on('load', () => {
+      this._map.setPaintProperty('background', 'background-color', '#d3e0f4 ');
+      this.colorMap(paint);
+      this._map.dragRotate.disable();
+      this._map.touchZoomRotate.disableRotation();
+      this.zoomListener();
+      this.dragListener();
+      this.persistZoomAndCenterLevel();
+      this.resize();
+    });
   }
   render() {
     let {width, height, style} = this.props;
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     if (!style) style = {};
+    if (!this.props.paint.data) throw new Error('please provide a paint property with the required mapData');
     const mapContainerStyle = {...style, width, height, position: 'relative'};
     return (
       <section>
         {process.browser ?
         (<div
           key={'map-mapbox'}
-          ref={(domElement) => this.draw(domElement)}
+          ref={(domElement) => { if (domElement) this.draw(domElement, this.props.paint); }}
           style={mapContainerStyle}
         />) :
         (<MapPlaceholder />)}

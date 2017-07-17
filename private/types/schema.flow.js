@@ -8,6 +8,23 @@ export type CountriesQuery = {|
   |} >,
 |};
 
+export type GetMapDataQueryVariables = {|
+  id: string,
+|};
+
+export type GetMapDataQuery = {|
+  mapData: ? {|
+    map: ? Array< {|
+      // country code Id in DW this is di_id
+      id: ?string,
+      // countryName derived from entity.csv
+      name: ?string,
+      color: ?string,
+      value: ?number,
+    |} >,
+  |},
+|};
+
 export type ResourcesOverTimeQueryVariables = {|
   id: string,
 |};

@@ -13,11 +13,11 @@ function create(isForStorybook) {
     // Disables forceFetch on the server (so queries are only run once)
     ssrMode: isForStorybook ? false : !process.browser,
     networkInterface: createBatchingNetworkInterface({
-      uri: 'https://datahub-api-veuipxsgbe.now.sh/graphql', // Server URL (must be absolute) // TODO: chage url
+      uri: 'http://localhost:3000/graphql', // Server URL (must be absolute) // TODO: chage url
       batchInterval: 10,
     }),
     queryDeduplication: true,
-    dataIdFromObject: object => object.id,
+    dataIdFromObject: object => object.uid,
   });
 }
 
