@@ -1,0 +1,13 @@
+query GetMapData($id: String!) {
+  mapData(id: $id) {
+    map {
+      id
+      name
+      color
+      value
+      year
+      uid
+    }
+    theme
+  }
+}
