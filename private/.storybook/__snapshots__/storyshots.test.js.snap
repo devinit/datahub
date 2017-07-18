@@ -6824,35 +6824,6 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
 </div>
 `;
 
-exports[`Storyshots Tooltip Tooltip Test 1`] = `
-<div
-  className="Tooltip"
->
-  <div
-    className="css-nil"
-    onClick={[Function]}
-  >
-    <div
-      className="help-tip"
-    >
-      ?
-    </div>
-  </div>
-  <div
-    className="css-2st2fa"
-  >
-    <div>
-      <h1>
-        This is the tooltip!
-      </h1>
-      <p>
-        Tooltip body is a bit longer than title
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Unbundling Aid Select 1`] = `
 <span
   className="css-1kpemyl"
