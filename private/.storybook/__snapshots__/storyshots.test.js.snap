@@ -49,6 +49,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 >
                   <button
                     className="ui button"
+                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -56,6 +57,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                   </button>
                   <button
                     className="ui button"
+                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -81,6 +83,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             >
               <button
                 className="ui icon button"
+                disabled={undefined}
                 onClick={[Function]}
                 tabIndex={undefined}
               >
@@ -88,7 +91,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                   aria-hidden="true"
                   className="play icon"
                 />
-                 
               </button>
             </div>
           </div>
@@ -154,27 +156,10 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="combobox"
             tabIndex={undefined}
           >
-            <select
-              aria-hidden="true"
-              multiple={undefined}
-              name={undefined}
-              type="hidden"
-              value=""
-            >
-              <option
-                value=""
-              />
-              <option
-                value="Small"
-              >
-                Small
-              </option>
-            </select>
             <input
               aria-autocomplete="list"
               autoComplete="off"
               className="search"
-              name="-search"
               onChange={[Function]}
               style={
                 Object {
@@ -240,27 +225,10 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="combobox"
             tabIndex={undefined}
           >
-            <select
-              aria-hidden="true"
-              multiple={undefined}
-              name={undefined}
-              type="hidden"
-              value=""
-            >
-              <option
-                value=""
-              />
-              <option
-                value="Uganda"
-              >
-                Uganda
-              </option>
-            </select>
             <input
               aria-autocomplete="list"
               autoComplete="off"
               className="search"
-              name="-search"
               onChange={[Function]}
               style={
                 Object {
@@ -329,27 +297,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="listbox"
             tabIndex={0}
           >
-            <select
-              aria-hidden="true"
-              multiple={undefined}
-              name={undefined}
-              type="hidden"
-              value="region"
-            >
-              <option
-                value=""
-              />
-              <option
-                value="region"
-              >
-                region
-              </option>
-              <option
-                value="income-group"
-              >
-                income-group
-              </option>
-            </select>
             <div
               className="text"
             >
@@ -479,6 +426,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
           </h4>
           <button
             className="ui icon button"
+            disabled={undefined}
             onClick={[Function]}
             tabIndex={undefined}
           >
@@ -486,7 +434,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               aria-hidden="true"
               className="print icon"
             />
-             
           </button>
         </div>
       </div>
@@ -498,6 +445,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
   className="ui primary button"
+  disabled={undefined}
   onClick={[Function]}
   tabIndex={undefined}
 >
@@ -510,6 +458,7 @@ exports[`Storyshots Button With Primary Color 1`] = `
 exports[`Storyshots Button With Secondary Color 1`] = `
 <button
   className="ui secondary button"
+  disabled={undefined}
   onClick={[Function]}
   tabIndex={undefined}
 >
@@ -517,6 +466,12 @@ exports[`Storyshots Button With Secondary Color 1`] = `
   Secondary
    
 </button>
+`;
+
+exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 1`] = `
+<p>
+   Loading ...
+</p>
 `;
 
 exports[`Storyshots Country Search Country Search With Data 1`] = `
@@ -723,14 +678,6 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 <p>
    Loading
 </p>
-`;
-
-exports[`Storyshots Maps Base Map Atom 1`] = `
-<section>
-  <div
-    className="css-uohe12"
-  />
-</section>
 `;
 
 exports[`Storyshots Menu Datahub Logo 1`] = `
@@ -2240,6 +2187,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                   />
                   <button
                     className="ui medium button"
+                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -2734,6 +2682,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
         </div>
         <button
           className="ui grey large button"
+          disabled={undefined}
           onClick={[Function]}
           tabIndex={undefined}
         >
@@ -3531,6 +3480,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               >
                 <button
                   className="ui icon button"
+                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3538,10 +3488,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="facebook f icon"
                   />
-                   
                 </button>
                 <button
                   className="ui icon button"
+                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3549,10 +3499,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="twitter icon"
                   />
-                   
                 </button>
                 <button
                   className="ui icon button"
+                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3560,10 +3510,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="google plus icon"
                   />
-                   
                 </button>
                 <button
                   className="ui icon button"
+                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3571,7 +3521,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="mail outline icon"
                   />
-                   
                 </button>
               </div>
             </div>
