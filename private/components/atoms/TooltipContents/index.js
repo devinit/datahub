@@ -23,7 +23,7 @@ const Container = glamorous.div({
   zIndex: 2,
   textAlign: 'left',
   color: '#555',
-  '&after::': {
+  '&&after::': {
     content: '',
     position: 'absolute',
     marginLeft: '-7px',
@@ -33,7 +33,7 @@ const Container = glamorous.div({
     borderBottomColor: 'white',
     borderTop: 'none'
   },
-  '&before::': {
+  '&&before::': {
     top: '-14px',
     borderBottomColor: 'rgba(0, 0, 0, 0.12)',
     borderTop: 'none',
@@ -43,7 +43,7 @@ const Container = glamorous.div({
     marginLeft: '-7px',
     border: '14px solid transparent'
   }
-});
+}, (props) => ({display: props.active ? 'block' : 'none'}));
 const TooltipContents = ({ children, active, position}: Props) => (
   <Container
     active={active}

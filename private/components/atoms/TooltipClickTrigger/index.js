@@ -5,11 +5,11 @@ import glamorous from 'glamorous';
 
 type Props = {
   children: Element<any>,
-  onClick: () => void
+  onClick: (boolean) => void
 };
 const Container = glamorous.div({});
 const TooltipClickTrigger = ({ children, onClick}: Props) => (
-  <Container onClick={onClick}>
+  <Container onClick={() => onClick(true)}>
     {children}
   </Container>
 );

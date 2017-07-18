@@ -26,8 +26,8 @@ class Tooltip extends React.Component {
   render() {
     const nodes = this.props.children.map(child => {
       const props = {
-        tooltipActive: this.state.tooltipActive,
-        handleChange: (change) => this.handleChange(change),
+        active: this.state.tooltipActive,
+        onClick: () => this.handleChange(true),
       };
       return React.cloneElement(child, props);
     });
