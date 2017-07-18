@@ -25,12 +25,11 @@ class Tooltip extends React.Component {
   }
   render() {
     const nodes = this.props.children.map(child => {
-      child.props.tooltipActive = this.state.tooltipActive;
-      child.props.handleChange = this.handleChange.bind(this);
-      if(this.isMounted()) {
-        child.props.position = this.getDOMNode().getBoundingClientRect();
-      }
-      return child;
+      const props = {
+        tooltipActive: this.state.tooltipActive,
+        handleChange: (change) => this.handleChange(change),
+      };
+      return React.cloneElement(child, props);
     });
     return (
       <div className="Tooltip" >
