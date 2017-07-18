@@ -42,25 +42,26 @@ class Poor extends React.Component {
     this.setState({change: true});
     this.setState({indicator: scenario});
   }
-
-  renderVisualization() {
-    /* eslint-disable react/no-string-refs */
-    const svg = d3.select(this.refs.svg);
-    const width = 940;
-    const height = 600;
-    const scale = d3.scaleSqrt().domain([1, 1500]).range([2, 150]);
-    const colMap = utils.colMap;
-    const {year, indicator, level, change} = this.state;
-    const shape = 'M0-21L0-21L0-21c2.146,0.002,4.086,0.869,5.491,2.274   s2.272,3.346,2.273,5.488l0,0v0.003v0.001l0,0c-0.001,2.143-0.869,4.085-2.273,5.49C5.083-7.337,4.631-6.977,4.144-6.668H4.24   c3.612,0,6.567,2.955,6.567,6.566v12.567h-21.614V-0.102c0-3.611,2.955-6.566,6.566-6.566h0.097    c-0.588-0.309-0.94-0.569-1.348-1.076c-1.404-1.404-2.271-3.346-2.272-5.488h-0.001v-0.002v-0.001h0.001    c0-2.145,0.868-4.085,2.272-5.49c1.405-1.405,3.346-2.272,5.489-2.273V-21H0z';
-    let iconData = [];
-    const labelPlacement = {};
-    const data = utils.entities
+  getData() {
+    const {year, indicator} = this.state;
+    return utils.entities
       .map(item => {
         const value = utils.getValue(item.id, year, indicator);
         return {...item, value};
       })
       .filter(item => item.level === 'region')
       .map(item => ({...item, icons: Math.round(item.value / 5)}));
+  }
+  getSvg() {
+    /* eslint-disable react/no-string-refs */
+    const svg = d3.select(this.refs.svg);
+    return svg;
+  }
+  createIconData(data) {
+    const {level} = this.state;
+    const iconData = [];
+    const labelPlacement = {};
+    const colMap = utils.colMap;
     data.forEach(o => {
       const startX = utils.getX(o.id);
       const startY = utils.getY(o.id);
@@ -80,7 +81,7 @@ class Poor extends React.Component {
 
         icon.x = currentX;
         icon.y = currentY;
-        icon.shape = shape;
+        icon.shape = utils.shape;
         icon.color = colMap[o.id];
 
         icon.region = o.id;
@@ -95,35 +96,32 @@ class Poor extends React.Component {
         labelPlacement[o.id] = 10000;
       }
     });
-    if (level === 'global') {
-      const startX = utils.getX('world');
-      const startY = utils.getY('world');
+    return {iconData, labelPlacement};
+  }
+  createGlobalIconData(iconData) {
+    const {level} = this.state;
+    const startX = utils.getX('world');
+    const startY = utils.getY('world');
 
-      let row = 0;
-      let col = 0;
-      iconData = iconData.map((o, index) => {
-        const cols = utils.getCols(level);
+    let row = 0;
+    let col = 0;
+    return iconData.map((o, index) => {
+      const cols = utils.getCols(level);
 
-        if (index % cols === 0) {
-          row += 1;
-          col = 0;
-        }
+      if (index % cols === 0) {
+        row += 1;
+        col = 0;
+      }
 
-        const currentX = startX + (col * 12);
-        const currentY = startY - (row * 25);
-        col += 1;
-        return {...o, x: currentX, y: currentY, shape, color: '#333'};
-      });
-    }
-    let regionLabelData = d3.values(data);
-    let sum;
-    if (level === 'global') {
-      sum = d3.sum(regionLabelData, (d) => {
-        return d.value;
-      });
-      regionLabelData = [];
-    }
-
+      const currentX = startX + (col * 12);
+      const currentY = startY - (row * 25);
+      col += 1;
+      return {...o, x: currentX, y: currentY, shape: utils.shape, color: '#333'};
+    });
+  }
+  createRegionalLabels(regionLabelData) {
+    const svg = this.getSvg();
+    const {change} = this.state;
     let regionLabels = svg.selectAll('.regionLabel').data(regionLabelData);
     regionLabels.exit().transition()
       .attr('fill-opacity', 10e-6).remove();
@@ -191,9 +189,12 @@ class Poor extends React.Component {
       })
       .attr('fill-opacity', 1);
 
-    let globalLabelData = [{value: sum}];
-    if (level !== 'global') globalLabelData = [];
-
+    return svg;
+  }
+  createGlobalLabels(globalLabelData) {
+    const width = 940;
+    const svg = this.getSvg();
+    const {change} = this.state;
     let globalLabel = svg.selectAll('.globalLabel')
       .data(globalLabelData);
 
@@ -233,6 +234,10 @@ class Poor extends React.Component {
         return `In extreme poverty:  ${utils.formatNumber(d.value * 1000000)}`;
       })
       .attr('fill-opacity', 1);
+  }
+  createIcons(iconData) {
+    const {change, level} = this.state;
+    const svg = this.getSvg();
     let icons;
     if (change) {
       icons = svg.selectAll('.icon')
@@ -287,6 +292,28 @@ class Poor extends React.Component {
       .attr('fill-opacity', 1)
       .attr('transform', (d) => { return `translate(${d.x},${d.y} ),scale(0.5)`; })
       .attr('fill', (d) => { return d.color; });
+  }
+  renderVisualization() {
+    const {level} = this.state;
+    const data = this.getData();
+    let {iconData} = this.createIconData(data);
+    if (level === 'global') {
+      iconData = this.createGlobalIconData(iconData);
+    }
+    let regionLabelData = d3.values(data);
+    let sum;
+    if (level === 'global') {
+      sum = d3.sum(regionLabelData, (d) => {
+        return d.value;
+      });
+      regionLabelData = [];
+    }
+    let globalLabelData = [{value: sum}];
+    this.createRegionalLabels(regionLabelData);
+
+    if (level !== 'global') globalLabelData = [];
+    this.createGlobalLabels(globalLabelData);
+    this.createIcons(iconData);
   }
 /* eslint-disable react/no-string-refs */
   render() {
