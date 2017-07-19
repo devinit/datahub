@@ -1,21 +1,55 @@
-import {Container, Grid} from 'semantic-ui-react';
-import Contents from 'components/atoms/TooltipContents';
-import Tooltip from 'components/atoms/Tooltip';
-import Trigger from 'components/atoms/TooltipClickTrigger';
+// @flow
 import React from 'react';
+import type {Element} from 'react';
+import { Icon, Popup } from 'semantic-ui-react';
+import glamourous from 'glamorous';
 
-const logo = () => (
-  <Tooltip>
-    <Trigger>
-      <div className="help-tip">?</div>
-    </Trigger>
-    <Contents>
-      <div>
-        <h1>This is the tooltip!</h1>
-        <p>Tooltip body is a bit longer than title</p>
-      </div>
-    </Contents>
-  </Tooltip>
-);
+const HeaderContainer = glamourous.div({
+  textAlign: 'right',
+});
+type Props = {
+  children: any,
+  trigger: Element<any>,
+}
+type State ={
+  isOpen: boolean
+}
+class ToolTip extends React.Component {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
+  state: State;
+  handleOpen = () => {
+    this.setState({ isOpen: true });
+  };
 
-export default logo;
+  handleClose = () => {
+    this.setState({ isOpen: false });
+  };
+
+  render() {
+    return (
+      <Popup
+        trigger={this.props.trigger}
+        on="click"
+        open={this.state.isOpen}
+        onClose={this.handleClose}
+        onOpen={this.handleOpen}
+        position="top righ"
+      >
+        <Popup.Header>
+          <HeaderContainer>
+            <Icon name="close" onClick={this.handleClose} />
+          </HeaderContainer>
+        </Popup.Header>
+        <Popup.Content>{this.props.children}</Popup.Content>
+      </Popup>
+
+    );
+  }
+}
+
+export default ToolTip;
