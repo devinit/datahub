@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import TourItems from 'components/atoms/GlobalVisualizationTour';
+import TourItems from 'components/atoms/UnbundlingAidTour';
 import {Icon} from 'semantic-ui-react';
 
 type Props = {
