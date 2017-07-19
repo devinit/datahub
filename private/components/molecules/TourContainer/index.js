@@ -1,11 +1,12 @@
 // @flow
 import React from 'react';
+import type {Element} from 'react';
 import glamorous from 'glamorous';
-import TourItems from 'components/atoms/UnbundlingAidTour';
 import {Icon} from 'semantic-ui-react';
 
 type Props = {
   visible: boolean,
+  children: Element<any>,
 }
 type State = {
   visible: boolean,
@@ -51,7 +52,7 @@ class TourContainer extends React.Component {
           <CloseIcon>
             <Icon name="close" />
           </CloseIcon>
-          <TourItems />
+          {this.props.children}
         </Container>
       </Overlay>
     );
