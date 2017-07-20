@@ -1,11 +1,17 @@
 import glamorous from 'glamorous';
 import theme from 'components/theme';
-import {lightGrey} from 'components/theme/semantic';
+import {lightGrey, seaBackground, black} from 'components/theme/semantic';
+
+export const Container = glamorous.div({
+  width: '100%',
+  flexDirection: 'row',
+  backgroundColor: seaBackground,
+});
 
 export const GreyContainer = glamorous.div({
-  backgroundColor: lightGrey,
   width: '100%',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  backgroundColor: lightGrey,
 });
 
 export const RankingsTableContainer = glamorous.div({
@@ -13,4 +19,4 @@ export const RankingsTableContainer = glamorous.div({
   paddingRight: '1em',
 });
 
-export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});
+export const MapPlaceholder = glamorous(Container)({height: '600px'});
