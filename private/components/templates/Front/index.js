@@ -12,7 +12,7 @@ import {
   InternationalOfficial,
   Poverty,
   Vulnerability,
-} from 'components/molecules/GlobalTabs';
+} from 'components/molecules/GlobalMapNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import Pane from 'components/atoms/Pane';
 import RankingsTable from 'components/molecules/RankingsTable';
