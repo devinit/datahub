@@ -240,6 +240,7 @@
 @purpleBackground : #F6E7FF;
 @pinkBackground   : #FFE3FB;
 @brownBackground  : #F1E2D3;
+@seaBackground    : #d3e0f4;
 
 /*--- Colored Headers ---*/
 @redHeaderColor    : darken(@redTextColor, 5);

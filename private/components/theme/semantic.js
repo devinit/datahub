@@ -1,5 +1,4 @@
 // This file is auto generated from semantic less variable globals
-
 export const red = '#e8443a';
 export const orange = '#EA7600';
 export const yellow = '#FECB2F';
@@ -43,6 +42,7 @@ export const violetBackground = '#EAE7FF';
 export const purpleBackground = '#F6E7FF';
 export const pinkBackground = '#FFE3FB';
 export const brownBackground = '#F1E2D3';
+export const seaBackground = '#d3e0f4';
 export const redHeaderColor = '#e52e23';
 export const oliveHeaderColor = '#7aa61a';
 export const greenHeaderColor = '#1aa62a';

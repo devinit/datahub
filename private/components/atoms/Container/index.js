@@ -1,11 +1,17 @@
 import glamorous from 'glamorous';
 import theme from 'components/theme';
-import {lightGrey} from 'components/theme/semantic';
+import {lightGrey, seaBackground, black} from 'components/theme/semantic';
+
+export const Container = glamorous.div({
+  width: '100%',
+  flexDirection: 'row',
+  backgroundColor: seaBackground,
+});
 
 export const GreyContainer = glamorous.div({
-  backgroundColor: lightGrey,
   width: '100%',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  backgroundColor: lightGrey,
 });
 
 export const RankingsTableContainer = glamorous.div({
@@ -13,6 +19,7 @@ export const RankingsTableContainer = glamorous.div({
   paddingRight: '1em',
 });
 
+<<<<<<< HEAD
 export const CardContainer = glamorous.div({
   background: 'rgba(255,255,255,.6)',
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
@@ -22,3 +29,6 @@ export const CardContainer = glamorous.div({
 });
 
 export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});
+=======
+export const MapPlaceholder = glamorous(Container)({height: '600px'});
+>>>>>>> maps-dev

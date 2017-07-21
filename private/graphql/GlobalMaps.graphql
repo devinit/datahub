@@ -1,0 +1,24 @@
+query MapData($id: String!) {
+  mapData(id: $id) {
+    map {
+      id
+      name
+      color
+      year
+      uid
+      detail
+      value
+    }
+    start_year
+    end_year
+    country
+    uom_display
+    name
+    description
+    legend {
+      label
+      color
+      backgroundColor
+    }
+  }
+}
