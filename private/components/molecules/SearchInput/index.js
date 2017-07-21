@@ -78,6 +78,9 @@ class SearchInput extends React.Component {
       this.props.onSelected(value);
     }
   }
+  componentWillReceive(props: Props) {
+    this.setState({countries: props.countries});
+  }
   render() {
     if (this.props.loading) return (<p> loading ...</p>);
     return (

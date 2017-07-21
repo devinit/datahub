@@ -10,6 +10,8 @@ export const List = glamorous.ul({
   width: '100%',
   paddingLeft: '0px',
   backgroundColor: theme.plainWhite,
+  maxHeight: '18em',
+  overflowY: 'scroll',
   '& li': {
     padding: '1em',
     fontWeight: '700',
