@@ -95,8 +95,8 @@ class SearchInput extends React.Component {
             className="list"
           >
             <List >
-              { this.props.countries ?
-                  this.props.countries
+              { this.state.countries ?
+                  this.state.countries
                   .map((country, i) =>
                     (<li key={country.id} className={this.state.selected === i ? 'active' : false}>
                       {country.name}
