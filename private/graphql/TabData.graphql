@@ -1,4 +1,27 @@
 query TabData($id: String!) {
+  governmentFinance(id: $id){
+    totalRevenue
+    grantsAsPcOfRevenue
+    spendingAllocation {
+      value
+      name
+      color
+    }
+    currencyCode
+  }
+  povertyTab(id: $id){
+    poverty190Trend {
+      id
+      year
+      value
+      name
+    }
+    depthOfExtremePoverty
+    incomeDistTrend {
+      value
+      quintileName
+    }
+  }
   populationTab(id: $id) {
     population
     populationDistribution {
@@ -23,6 +46,24 @@ query TabData($id: String!) {
     resourcesOverTime {
       flow_category
       value
+    }
+  }
+  overViewTab(id:$id) {
+    countryType
+    poorestPeople
+    population
+    domesticResources
+    internationalResources
+    governmentSpendPerPerson
+    averageIncomerPerPerson {
+      year
+      value
+      id
+      name
+    }
+   incomeDistTrend {
+    value
+    quintileName
     }
   }
 }

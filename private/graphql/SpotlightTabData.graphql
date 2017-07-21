@@ -1,0 +1,42 @@
+query SpotLightTabData ($id: String!,$country: String!) {
+ povertyTabRegional (id:$id, country:$country) {
+  poorestPeople
+  lifeExpectancy
+  stdOfLiving
+  }
+ overViewTabRegional(id:$id, country:$country) {
+    poorestPeople
+    regionalResources
+    regionalResourcesBreakdown {
+      id
+      year
+      value
+      name
+      color
+    }
+    localGovernmentSpendPerPerson
+  }
+ populationTabRegional(id:$id,country:$country) {
+    totalPopulation
+    populationDensity
+  	populationDistribution {
+  	  group
+  	  value
+  	  year
+  	}
+  	averageDependencyRatio
+  	allAverageDependencyRatio
+ }
+  educationTabRegional(id:$id,country:$country) {
+    pupilTeacherRatioGovtSchl
+    pupilTeacherRatioOtherSchl
+    studentsPassRate
+    studentsPassDistrictRank
+    primaryEducationfunding
+  }
+  healthTabRegional(id:$id,country:$country) {
+    districtPerformance
+    treatmeantOfTb
+    healthCareFunding
+  }
+}
