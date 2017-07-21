@@ -29,7 +29,6 @@ class Map extends Component {
   }
   constructor(props: Props) {
     super(props);
-    if (!props) throw new Error('props missing');
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.map) throw new Error('mapData data is missing in props');
     if (!props.mapData.end_year) throw new Error('mapData end_year is missing in props');
@@ -58,8 +57,6 @@ class Map extends Component {
     if (!this.props.mapData.name) throw new Error('mapData name is missing in props ');
     if (!this.props.mapData.legend) throw new Error(`mapData legend is missing in props for ${this.props.mapData.name}`);
     if (!this.props.mapData.description) throw new Error(`mapData description is missing in props for ${this.props.mapData.name}`);
-    if (!this.props.mapData.end_year) throw new Error(`mapData end_year is missing in props for ${this.props.mapData.name}`);
-    if (!this.props.mapData.start_year) throw new Error(`mapData start_year is missing in props for ${this.props.mapData.name}`);
     if (!this.props.mapData.country) throw new Error(`mapData country is missing in props ${this.props.mapData.name}`);
     const country: string = this.props.mapData.country;
     const config = mapConfigs[country];
