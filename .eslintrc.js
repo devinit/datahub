@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   extends: ['airbnb', 'plugin:flowtype/recommended'],
-  plugins: ['react', 'jsx-a11y', 'flowtype-errors', 'flowtype', 'import', 'graphql'],
+  plugins: ['flowtype', 'react', 'jsx-a11y',  'import', 'graphql'],
   env: {
     browser: true,
     jest: true,
@@ -43,8 +43,6 @@ module.exports = {
     'no-console': 0,
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
-    'flowtype-errors/show-errors': 2,
-    'flowtype-errors/enforce-min-coverage': [2, 10],
     'react/jsx-filename-extension': [
       2,
       {

@@ -1,5 +1,4 @@
 // @flow
-
 import React, {PureComponent} from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import {lightGrey, red, seaBackground} from 'components/theme/semantic';

@@ -15,13 +15,12 @@ import {
 } from 'components/molecules/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import Pane from 'components/atoms/Pane';
-import RankingsTable from 'components/molecules/RankingsTable';
 import {HeaderGroup} from 'components/atoms/Header';
 import SearchInput from 'components/organisms/CountrySearch';
+// import Map from 'components/organisms/Map';
 import data from './data';
 import Generic from '../Generic';
-import Slider from '../../molecules/YearSlider';
-import ChartShare from '../../molecules/ChartShare';
+
 
 const HeaderContainer = glamorous.div({
   paddingTop: '2em',
@@ -70,27 +69,7 @@ export default () => {
         </Pane>
       </NavigationBarTabs>
       <Container>
-        <Grid centered>
-          <Grid.Row centered>
-            <Grid.Column width={4} textAlign="center">
-              <Slider minimum={2000} maximum={2020} position={2017} step={1} onChange={d => {}} />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row centered>
-            <Grid.Column width={5} textAlign="center">
-              <HeaderGroup>
-                <Header as="h3">2013</Header>
-                <Header as="h5">(This indicator has data for a single year only.)</Header>
-              </HeaderGroup>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row centered>
-            <Grid.Column width={5} textAlign="center">
-              <ChartShare size="big" color="black" />
-            </Grid.Column>
-          </Grid.Row>
-          <RankingsTable data={data.countryRankings} />
-        </Grid>
+        {/* <Map /> */}
       </Container>
     </Generic>
   );
