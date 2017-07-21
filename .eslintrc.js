@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  parser: 'babel-eslint',
   extends: ['airbnb', 'plugin:flowtype/recommended'],
   plugins: ['flowtype', 'react', 'jsx-a11y',  'import', 'graphql'],
   env: {

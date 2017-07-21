@@ -21,5 +21,4 @@ test/**/out
 .csslintrc
 
 #editors
-.vscode
 .idea
