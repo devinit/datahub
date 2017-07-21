@@ -1,14 +1,25 @@
+// @flow
 import React from 'react';
 import Dragdealer from 'dragdealer';
 import 'dragdealer/src/dragdealer.css';
 
+type Props = {
+  onYearChange: (year: number) => void
+}
+
+type State = {
+  year: number;
+}
+
 class YearSlider extends React.Component {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       year: 2013
     };
   }
+  state: State
+
   componentDidMount() {
     const firstYear = 1990;
     const lastYear = 2030;
