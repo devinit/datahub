@@ -7,11 +7,13 @@ import ChartShare from 'components/molecules/ChartShare';
 import YearSlider from 'components/molecules/YearSlider';
 import {SectionHeader, Lead} from 'components/atoms/Header';
 
-
-export const TextBlock = glamorous.div({
-  fontSize: '1.3rem',
+export const TextBlock = glamorous.p({
+  fontSize: '1.1em',
   paddingLeft: '1em',
   paddingRight: '1em',
+  paddingTop: '1.1em',
+  lineHeight: '1.5',
+  fontWeight: 300,
 });
 const FlexSpace = glamorous.div({
   display: 'flex',
@@ -26,22 +28,18 @@ const InternationalResources = () => (
           <SectionHeader color={white}>
             INFLOWS <span>VS</span> OUTFLOWS
           </SectionHeader>
-          <Lead>
-            <TextBlock>
+          <TextBlock>
               A dynamic mix of resources flow to and from Uganda.
               All resources can play a role in ending poverty,
               though different resources impact poverty directly and indirectly
               through different mechanisms and flow for wide-ranging objectives.
             </TextBlock>
-          </Lead>
-          <Lead>
-            <TextBlock>
+          <TextBlock>
               To understand the value of different resources for poverty
               reduction we must start by understanding the volumes - move the slider
               to explore how official, commercial, private and illicit
               resources flow to and from Uganda
             </TextBlock>
-          </Lead>
           <FlexSpace>
             <SectionHeader color={white}>
               RESOURCE FLOWS TO UGANDA <span>4.4BN</span>
@@ -63,12 +61,10 @@ const InternationalResources = () => (
           <SectionHeader color={white}>
             <span>IN DETAIL</span> INTERNATIONAL RESOURCES
           </SectionHeader>
-          <Lead>
-            <TextBlock>
+          <TextBlock>
               Where are international resources originating and where are they destined?
               Start by selecting inflows or outflows:
             </TextBlock>
-          </Lead>
           <Select>
             <option>Inflows in Uganda</option>
             <option>Outflows in Uganda</option>

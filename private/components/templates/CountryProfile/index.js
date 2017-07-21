@@ -4,6 +4,7 @@ import glamorous, {Div, A, Span} from 'glamorous';
 import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
 import { red, lightBlack, white, lighterGrey} from 'components/theme/semantic';
 import Pane from 'components/atoms/Pane';
+import Tabs from 'components/molecules/Tabs';
 import {
   GovernmentFinanceLower,
   InternationalResourcesLower,
@@ -11,7 +12,7 @@ import {
 import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
-import Tabs from 'components/organisms/CountryProfileTabs';
+import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import SearchInput from 'components/organisms/CountrySearch';
 import {CardContainer} from 'components/atoms/Container';
 import Generic from '../Generic';
@@ -56,7 +57,7 @@ export default (props: Props) =>
         </Grid>
       </CardContainer>
     </Div>
-    <Tabs id={props.id} />
+    <CountryProfileTopTabs id={props.id} />
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">
         <SectionHeader>
