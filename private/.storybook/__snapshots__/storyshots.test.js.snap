@@ -1486,6 +1486,14 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
 </ul>
 `;
 
+exports[`Storyshots PTag With Primary Color 1`] = `
+<p
+  className="css-1ps3mp8"
+>
+  Hello world
+</p>
+`;
+
 exports[`Storyshots Search Datahub Main Search 1`] = `
 <div>
   <div
@@ -1545,6 +1553,12 @@ exports[`Storyshots Search Datahub Main Search 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots Spotlight Tabs live DONOT TEST spotlight tabs 1`] = `
+<p>
+   Loading ...
+</p>
 `;
 
 exports[`Storyshots Templates  Spot Light 1`] = `
@@ -3414,7 +3428,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             className="ten wide column"
           >
             <div
-              className="css-1u3uxzx"
+              className="css-18g9jxc"
             >
               <div
                 className="ui header"
@@ -3429,44 +3443,9 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   General Picture
                 </div>
               </div>
-              <div
-                className="css-1gfdluh"
-              >
-                <div
-                  className="ui container"
-                >
-                  <input
-                    className="css-pnc7nu"
-                    onChange={[Function]}
-                    onKeyDown={[Function]}
-                    placeholder="Type Your Country Name"
-                    value=""
-                  />
-                  <div
-                    className="css-13azwyo list"
-                  >
-                    <ul
-                      className="css-1lsq08l"
-                    >
-                      <li
-                        className={false}
-                      >
-                        Uganda
-                      </li>
-                      <li
-                        className={false}
-                      >
-                        Kenya
-                      </li>
-                      <li
-                        className={false}
-                      >
-                        Tanzania
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <p>
+                 loading ...
+              </p>
               <span
                 className="css-nilhcx"
               >

@@ -11,7 +11,7 @@ import {
   Population,
   Poverty,
   WaterandSanitation
-} from 'components/molecules/SpotLightTabs';
+} from 'components/molecules/SpotLightNavTabs';
 import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';

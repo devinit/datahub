@@ -1,6 +1,8 @@
 // @flow
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
+import PTag from 'components/atoms/PTag';
+import {red} from 'components/theme/semantic';
 
 const Government = (props: TabDataQuery) => {
   if (!props.governmentFinance) return new Error('No Government Finance data');
@@ -14,13 +16,7 @@ const Government = (props: TabDataQuery) => {
           >
             WHAT IS THE TOTAL REVENUE OF UGANDA?
           </Header>
-          <Header
-            textAlign="center"
-            as="h1"
-            color="red"
-          >
-            {props.governmentFinance.totalRevenue}
-          </Header>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.governmentFinance.totalRevenue}</PTag>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -30,13 +26,7 @@ const Government = (props: TabDataQuery) => {
           >
             HOW MUCH GOVERNMENT REVENUE COMES FROM EXTERNAL GRANTS (AID)?
           </Header>
-          <Header
-            textAlign="center"
-            as="h1"
-            color="red"
-          >
-            {props.governmentFinance.grantsAsPcOfRevenue}%
-          </Header>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.governmentFinance.grantsAsPcOfRevenue}%</PTag>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>

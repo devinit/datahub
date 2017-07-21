@@ -1,7 +1,8 @@
 import React from 'react';
-
+import {withApolloProvider} from 'lib/storybook-apollo-addon';
 import { storiesOf } from '@storybook/react';
-import Profile from '.';
+import CountryProfile from '.';
 
 storiesOf('Templates DontTest', module)
-  .add('Country Profile', () => <Profile />);
+  .addDecorator(withApolloProvider())
+  .add('Country Profile', () => <CountryProfile id={'uganda'} />);

@@ -2,49 +2,49 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
 import {
-  GovernmentFinance,
-  GovernmentFinanceLower,
-  InternationalResourcesLower,
-  InternationalResources,
+  Education,
+  Health,
   Overview,
   Population,
   Poverty,
-} from 'components/molecules/CountryProfileTabs';
+} from 'components/molecules/RegionalProfileTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import TABS_QUERY from '../../../graphql/TabData.graphql';
+import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
 
-type TabsProps = {
+type WrapperProps = {
   loading: boolean,
-  ...TabDataQuery
+  ...SpotLightTabDataQuery
 }
 
-const countryProfileTabs = (props: TabsProps) => {
+const spotlightTabs = (props: WrapperProps) => {
   if (props.loading) return (<p> Loading ...</p>);
   return (
     <Tabs selected={0} height="20em">
-      <Pane label="Overview" key={1}>
+      <Pane label="Overview">
         <Overview {...props} />
       </Pane>
-      <Pane label="Poverty" key={2}>
+      <Pane label="Poverty">
         <Poverty {...props} />
       </Pane>
-      <Pane label="Population" key={3}>
+      <Pane label="Population">
         <Population {...props} />
       </Pane>
-      <Pane label="Government Finance" key={4}>
-        <GovernmentFinance {...props} />
+      <Pane label="Health">
+        <Health {...props} />
       </Pane>
-      <Pane label="International Resources" key={5}>
-        <InternationalResources {...props} />
+      <Pane label="Education">
+        <Education {...props} />
       </Pane>
     </Tabs>
   );
 };
+
 const withData = graphql(TABS_QUERY, {
   options: (props) => ({
     variables: {
-      id: props.id
+      id: props.id,
+      country: props.country
     }
   }),
   props: ({data}) => {
@@ -53,4 +53,4 @@ const withData = graphql(TABS_QUERY, {
     return data;
   }});
 
-export default withData(countryProfileTabs);
+export default withData(spotlightTabs);

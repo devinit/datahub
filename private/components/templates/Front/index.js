@@ -12,14 +12,14 @@ import {
   InternationalOfficial,
   Poverty,
   Vulnerability,
-} from 'components/molecules/GlobalTabs';
+} from 'components/molecules/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import Pane from 'components/atoms/Pane';
 import RankingsTable from 'components/molecules/RankingsTable';
 import {HeaderGroup} from 'components/atoms/Header';
+import SearchInput from 'components/organisms/CountrySearch';
 import data from './data';
 import Generic from '../Generic';
-import Search from '../../molecules/Search';
 import Slider from '../../molecules/YearSlider';
 import ChartShare from '../../molecules/ChartShare';
 
@@ -31,7 +31,7 @@ const HeaderContainer = glamorous.div({
 export default () => {
   return (
     <Generic pathName="/">
-      <Search />
+      <SearchInput />
       <Container>
         <HeaderContainer>
           <Grid centered>

@@ -2,6 +2,8 @@
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {HeaderGroup} from 'components/atoms/Header';
+import PTag from 'components/atoms/PTag';
+import {red} from 'components/theme/semantic';
 
 const Poverty = (props: TabDataQuery) => {
   if (!props.povertyTab) return new Error('No Poverty data');
@@ -24,22 +26,8 @@ const Poverty = (props: TabDataQuery) => {
           >
             HOW DEEP IS POVERTY?
           </Header>
-
-          <HeaderGroup>
-            <Header
-              textAlign="center"
-              as="h1"
-              color="red"
-            >
-              {props.povertyTab.depthOfExtremePoverty}%
-            </Header>
-            <Header
-              textAlign="center"
-              as="h5"
-            >
-              Depth of extreme poverty
-            </Header>
-          </HeaderGroup>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.povertyTab.depthOfExtremePoverty}%</PTag>
+          <PTag>Depth of extreme poverty</PTag>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>

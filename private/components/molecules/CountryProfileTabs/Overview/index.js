@@ -1,94 +1,52 @@
+// @flow
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {HeaderGroup} from 'components/atoms/Header';
+import PTag from 'components/atoms/PTag';
+import {red} from 'components/theme/semantic';
 
-const Overview = () => (
-  <Container>
-    <Grid>
-      <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+const Overview = (props: TabDataQuery) => {
+  if (!props.overViewTab) return new Error('No OverView data');
+  return (
+    <Container>
+      <Grid>
+        <Grid.Column computer={5} tablet={16} mobile={16}>
+          <Header
+            textAlign="center"
+            as="h3"
+          >
           HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
         </Header>
-        <Header
-          textAlign="center"
-          as="h1"
-          color="red"
-        >
-          19.6M
-        </Header>
-        <Header
-          textAlign="center"
-          as="h5"
-        >
-          out of a population of 39 million people
-        </Header>
-      </Grid.Column>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.overViewTab.poorestPeople}</PTag>
+          <PTag>out of a population of 39 million people</PTag>
+        </Grid.Column>
 
-      <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+        <Grid.Column computer={5} tablet={16} mobile={16}>
+          <Header
+            textAlign="center"
+            as="h3"
+          >
           WHAT RESOURCES ARE AVAILABLE?
         </Header>
-        <HeaderGroup>
-          <Header
-            color="red"
-            textAlign="center"
-            as="h4"
-          >
-            Domestic public
-          </Header>
-          <Header
-            textAlign="center"
-            as="h2"
-            color="red"
-          >
-            US$ 3bn
-          </Header>
-          <Header
-            textAlign="center"
-            as="h4"
-          >
-            International
-          </Header>
-          <Header
-            textAlign="center"
-            as="h2"
-          >
-            US$ 4.4bn
-          </Header>
-        </HeaderGroup>
-      </Grid.Column>
+          <PTag>Domestic public</PTag>
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.overViewTab.domesticResources}</PTag>
+          <PTag>International</PTag>
+          <PTag size={'big'} fontWeight={'bold'}>{props.overViewTab.internationalResources}</PTag>
+        </Grid.Column>
 
-      <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+        <Grid.Column computer={5} tablet={16} mobile={16}>
+          <Header
+            textAlign="center"
+            as="h3"
+          >
           HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
         </Header>
-        <HeaderGroup>
-          <Header
-            textAlign="center"
-            as="h1"
-            color="red"
-          >
-            PPP$ 365
-          </Header>
-          <Header
-            textAlign="center"
-            as="h5"
-          >
-            out of a population of 39 million people
-          </Header>
-        </HeaderGroup>
-      </Grid.Column>
-    </Grid>
-  </Container>
-);
+          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.overViewTab.governmentSpendPerPerson}</PTag>
+          <PTag>out of a population of 39 million people</PTag>
+        </Grid.Column>
+      </Grid>
+    </Container>
+  );
+};
 
 export default Overview;
