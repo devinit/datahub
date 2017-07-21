@@ -16,7 +16,7 @@
     "lessToJs": "node private/tools/lessToJs.js",
     "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js && npm run lessToJs",
     "build-theme-w": "gulp watch --gulpfile ./private/semantic/gulpfile.js",
-    "qql-schema": "apollo-codegen introspect-schema https://datahub-api-hpppvwtsul.now.sh   --output schema.json",
+    "qql-schema": "apollo-codegen introspect-schema https://datahub-api-hpppvwtsul.now.sh/graphql   --output schema.json",
     "gql-flow": "apollo-codegen generate private/**/*.graphql --schema schema.json --target flow --output private/types/schema.flow.js",
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },

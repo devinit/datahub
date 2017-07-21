@@ -13,7 +13,7 @@ function create(isForStorybook) {
     // Disables forceFetch on the server (so queries are only run once)
     ssrMode: isForStorybook ? false : !process.browser,
     networkInterface: createBatchingNetworkInterface({
-      uri: 'https://datahub-api-hpppvwtsul.now.sh  ',
+      uri: 'https://datahub-api-hpppvwtsul.now.sh/graphql',
       batchInterval: 10,
     }),
     queryDeduplication: true,

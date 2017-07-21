@@ -101,6 +101,11 @@ cd into root of the project
   $ docker run -it -d -p 7777:3333 --name datahub-2-app datahub-2
 ```
 
+## Graphql types
+
+Package.json has a ```qql-schema``` command in which you put a graphql api endpoint. This endpoint is used in the command to create a schema.json file which is used by the ```gql-flow``` command to create flow types for your graphql queries. The types are outputted
+in ```private/types/schema.flow.js```
+
 ## TODO
 
 ---------
@@ -108,7 +113,7 @@ cd into root of the project
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
-## known issues
+## known development issues
 
 - Updating eslint-plugin-react to 7.1.0 will break linting
 - eslint@4 is currently not supported
