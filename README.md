@@ -108,7 +108,7 @@ cd into root of the project
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
-### known issues
+## known issues
 
 - Updating eslint-plugin-react to 7.1.0 will break linting
 - eslint@4 is currently not supported
