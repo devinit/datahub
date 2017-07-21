@@ -84,7 +84,7 @@ class Map extends Component {
         </Grid.Row>
         <Grid.Row centered>
           <Grid.Column width={4} textAlign="center">
-             {
+            {
               this.yearSliderVisibility ?
                 (<YearSlider
                   minimum={this.startYear}
@@ -99,7 +99,7 @@ class Map extends Component {
                 <P>(This indicator has data for a single year only.)</P>
               </Div>)
             }
-           </Grid.Column>
+          </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
           <Grid.Column width={5} textAlign="center">

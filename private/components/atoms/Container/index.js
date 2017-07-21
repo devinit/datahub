@@ -19,7 +19,6 @@ export const RankingsTableContainer = glamorous.div({
   paddingRight: '1em',
 });
 
-<<<<<<< HEAD
 export const CardContainer = glamorous.div({
   background: 'rgba(255,255,255,.6)',
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
@@ -29,6 +28,3 @@ export const CardContainer = glamorous.div({
 });
 
 export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});
-=======
-export const MapPlaceholder = glamorous(Container)({height: '600px'});
->>>>>>> maps-dev

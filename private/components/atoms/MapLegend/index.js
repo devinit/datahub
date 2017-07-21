@@ -61,7 +61,8 @@ const legend = (props: Props) => (
     </Div>
     <Div>
       <LegendKeysContainer>
-        {props.legendData.map(item => (<LegendKey key={item.label} {...item}>{item.label}</LegendKey>))}
+        {props.legendData
+          .map(item => (<LegendKey key={item.label} {...item}>{item.label}</LegendKey>))}
       </LegendKeysContainer>
     </Div>
   </LegendContainer>

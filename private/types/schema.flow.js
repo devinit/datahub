@@ -203,7 +203,6 @@ export type TabDataQuery = {|
       value: number,
     |} >,
   |},
-<<<<<<< HEAD
   overViewTab: ? {|
     countryType: ?string,
     // how many of the poorest people globally live in a country
@@ -228,6 +227,3 @@ export type TabDataQuery = {|
     |} >,
   |},
 |};
-=======
-|};
->>>>>>> maps-dev
