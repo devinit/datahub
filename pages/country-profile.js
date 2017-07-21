@@ -18,6 +18,6 @@ if (typeof window !== 'undefined') {
 
 export default withData((props: Props) => {
   return (
-    <App pathName={props.url.pathname} />
+    <App id={props.url.pathname} />
   );
 });

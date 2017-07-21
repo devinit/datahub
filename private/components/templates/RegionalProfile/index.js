@@ -5,25 +5,13 @@ import { red, lightBlack, white } from 'components/theme/semantic';
 import RegionalProfileLowerSection from 'components/molecules/RegionalProfileLowerSection';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-
 import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
+import {CardContainer} from 'components/atoms/Container';
+import SearchInput from 'components/organisms/CountrySearch';
 import Generic from '../Generic';
-import SearchInput from '../../molecules/SearchInput';
 import data from './data';
-
-const cardStyles = {
-  background: 'rgba(255,255,255,.6)',
-  boxShadow: '0 1px 4px rgba(0,0,0,.1)',
-  paddingLeft: '1.5em',
-  paddingRight: '1.5em',
-  paddingBottom: '1.5em',
-  paddingTop: '1.5em',
-  overflow: 'visible',
-};
-
-const CardContainer = glamorous.div(cardStyles);
 
 const SocialIconsContainer = glamorous.div({
   marginTop: '1.5em'

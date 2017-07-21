@@ -8,36 +8,6 @@ query TabData($id: String!) {
       color
     }
     currencyCode
-    expenditure {
-      budgetType
-      type
-      parentCategory
-      category
-      subCategory
-      year
-      value
-      valueNcu
-    }
-    revenueAndGrants {
-      budgetType
-      type
-      parentCategory
-      category
-      subCategory
-      year
-      value
-      valueNcu
-    }
-    finance {
-      budgetType
-      type
-      parentCategory
-      category
-      subCategory
-      year
-      value
-      valueNcu
-    }
   }
   povertyTab(id: $id){
     poverty190Trend {
@@ -94,6 +64,6 @@ query TabData($id: String!) {
    incomeDistTrend {
     value
     quintileName
-    } 
+    }
   }
 }

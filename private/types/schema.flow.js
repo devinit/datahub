@@ -116,52 +116,6 @@ export type TabDataQuery = {|
     // for treemap
     // such as constant 2015 USD for tree map
     currencyCode: ?string,
-    // use resourcesRecipient sql
-    expenditure: ? Array< {|
-      // eg Actual or budget
-      budgetType: ?string,
-      // eg total_revenue and grants --> l1
-      type: ?string,
-      // eg revenue --> l2
-      parentCategory: ?string,
-      // eg tax revenue --> l3
-      category: ?string,
-      // eg value-added tax  --> l4
-      subCategory: ?string,
-      year: ?number,
-      value: ?number,
-      valueNcu: ?number,
-    |} >,
-    revenueAndGrants: ? Array< {|
-      // eg Actual or budget
-      budgetType: ?string,
-      // eg total_revenue and grants --> l1
-      type: ?string,
-      // eg revenue --> l2
-      parentCategory: ?string,
-      // eg tax revenue --> l3
-      category: ?string,
-      // eg value-added tax  --> l4
-      subCategory: ?string,
-      year: ?number,
-      value: ?number,
-      valueNcu: ?number,
-    |} >,
-    finance: ? Array< {|
-      // eg Actual or budget
-      budgetType: ?string,
-      // eg total_revenue and grants --> l1
-      type: ?string,
-      // eg revenue --> l2
-      parentCategory: ?string,
-      // eg tax revenue --> l3
-      category: ?string,
-      // eg value-added tax  --> l4
-      subCategory: ?string,
-      year: ?number,
-      value: ?number,
-      valueNcu: ?number,
-    |} >,
   |},
   povertyTab: ? {|
     // Poverty reduction over time area chart trend
@@ -214,6 +168,29 @@ export type TabDataQuery = {|
       // Category i.e FDI, ODA
       flow_category: ?string,
       value: number,
+    |} >,
+  |},
+  overViewTab: ? {|
+    countryType: ?string,
+    // how many of the poorest people globally live in a country
+    poorestPeople: ?string,
+    // total population for a given country
+    population: ?string,
+    domesticResources: ?string,
+    internationalResources: ?string,
+    // recipient countries $PPP, both donor and recipient
+    governmentSpendPerPerson: ?string,
+    // donor: gross nation income per capit GNI
+    averageIncomerPerPerson: ? Array< {|
+      year: ?number,
+      value: ?number,
+      id: ?string,
+      name: ?string,
+    |} >,
+    // donor: Income share by quintile
+    incomeDistTrend: ? Array< {|
+      value: ?number,
+      quintileName: ?string,
     |} >,
   |},
 |};

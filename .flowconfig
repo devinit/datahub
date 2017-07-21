@@ -9,7 +9,6 @@ pages
 [libs]
 flow-typed
 private/types
-./node_modules/react-apollo/lib/index.js.flow
 [options]
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=private
