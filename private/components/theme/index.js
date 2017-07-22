@@ -1,15 +1,7 @@
 // theme variables
-export default {
-  red: '#FFE8E6',
-  black: '#453f43',
-  white: '#e9e7e8',
-  grey: '#d0cccf',
-  small: '0.8em',
-  normal: '1em',
-  big: '1.7em',
-  plainWhite: '#ffffff',
-  shadow: '#ededed',
-  greyText: '#b8b1b6',
-  darkRed: '#e8443a',
-  lightGray: '#ddd'
-};
+export const tiny = '0.6em';
+export const small = '0.8em';
+export const medium = '1em';
+export const big = '1.2em';
+export const huge = '1.8em';
+export const massive = '2em';

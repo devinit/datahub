@@ -106,6 +106,15 @@ cd into root of the project
 Package.json has a ```qql-schema``` command in which you put a graphql api endpoint. This endpoint is used in the command to create a schema.json file which is used by the ```gql-flow``` command to create flow types for your graphql queries. The types are outputted
 in ```private/types/schema.flow.js```
 
+## Introspection of APIs for adding remote data into the project as json configs
+
+In order to reduce on unnecessary API calls of data that rarelly changes, we have a tool that queries APIs and dumps their data into the project.
+> ```npm run page-data``` will return page data and place it in various files alongside their templates </br>
+> ```npm run refs``` will return various reference data used at the frontend from the datahub cms eg global picture themes </br>
+> ```npm run visbox``` will get you all visbox data for chart configurations</br>
+ These commands should be run at new deployments.
+
+
 ## TODO
 
 ---------
@@ -117,10 +126,12 @@ in ```private/types/schema.flow.js```
 
 - Updating eslint-plugin-react to 7.1.0 will break linting
 - eslint@4 is currently not supported
+- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about the semantic.json file we set up that prevents semantic-ui auto installs.
 
 ## Development environment and notes
 
 --------
+- we use package.json for some configs, for instance the api link is in package.json's config key.
 - module resolution is handled by babel not webpack this is a next.js constraint
 - storybook has its own webpack config file you may need to update it where required
 - Advised to use any modern linux OS or MacOS

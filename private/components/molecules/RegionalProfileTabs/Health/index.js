@@ -2,7 +2,8 @@
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {HeaderGroup} from 'components/atoms/Header';
-import PTag from 'components/atoms/PTag';
+import {P} from 'glamorous';
+import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 
 const Health = (props: SpotLightTabDataQuery) => {
@@ -17,10 +18,10 @@ const Health = (props: SpotLightTabDataQuery) => {
           >
           WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.healthTabRegional.districtPerformance}</PTag>
-          <PTag>out of 100, and is ranked in</PTag>
-          <PTag size={'big'} fontWeight={'bold'}>...</PTag>
-          <PTag>place overall</PTag>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.healthTabRegional.districtPerformance}</P>
+          <P>out of 100, and is ranked in</P>
+          <P fontSize={big} fontWeight={'bold'}>...</P>
+          <P>place overall</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -30,7 +31,7 @@ const Health = (props: SpotLightTabDataQuery) => {
           >
           WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.healthTabRegional.treatmeantOfTb}</PTag>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.healthTabRegional.treatmeantOfTb}</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -40,7 +41,7 @@ const Health = (props: SpotLightTabDataQuery) => {
           >
           HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.healthTabRegional.healthCareFunding}</PTag>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.healthTabRegional.healthCareFunding}</P>
 
         </Grid.Column>
       </Grid>

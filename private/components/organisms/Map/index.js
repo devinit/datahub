@@ -2,7 +2,7 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
 import Map from 'components/molecules/Map';
-import GlOBALMAPSQUERY from '../../../graphql/GlobalMaps.graphql';
+import GlOBALMAPSQUERY from 'Graphql/GlobalMaps.graphql';
 
 type WrapperProps = {
   loading: boolean;

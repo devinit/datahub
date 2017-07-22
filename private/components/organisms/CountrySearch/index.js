@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
 import SearchInput from 'components/molecules/SearchInput';
-import COUNTRIES_QUERY from '../../../graphql/Countries.graphql';
+import COUNTRIES_QUERY from 'Graphql/Countries.graphql';
 
 const SearchwithData = graphql(COUNTRIES_QUERY, {
   props: ({data: { loading, countries, error }}) => {

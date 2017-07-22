@@ -1,5 +1,6 @@
 import { ApolloClient, createBatchingNetworkInterface } from 'react-apollo';
 import fetch from 'isomorphic-fetch';
+import {config} from '../../package.json';
 
 let apolloClient = null;
 
@@ -13,7 +14,7 @@ function create(isForStorybook) {
     // Disables forceFetch on the server (so queries are only run once)
     ssrMode: isForStorybook ? false : !process.browser,
     networkInterface: createBatchingNetworkInterface({
-      uri: 'https://datahub-api-hpppvwtsul.now.sh/graphql',
+      uri: config.api,
       batchInterval: 10,
     }),
     queryDeduplication: true,

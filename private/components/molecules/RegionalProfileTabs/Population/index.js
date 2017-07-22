@@ -2,7 +2,8 @@
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {red} from 'components/theme/semantic';
-import PTag from 'components/atoms/PTag';
+import {P} from 'glamorous';
+import {big} from 'components/theme';
 
 const Population = (props: SpotLightTabDataQuery) => {
   if (!props.populationTabRegional) throw new Error('regional population data is missing');
@@ -15,13 +16,13 @@ const Population = (props: SpotLightTabDataQuery) => {
         >
         WHAT IS THE POPULATION
       </Header>
-        <PTag color={red}>
+        <P color={red}>
         The total population is
-      </PTag>
-        <PTag size={'big'} fontWeight={'bold'} color={red}>{props.populationTabRegional.totalPopulation}</PTag>
-        <PTag>and the population density is</PTag>
-        <PTag size={'big'} fontWeight={'bold'}>{props.populationTabRegional.populationDensity}</PTag>
-        <PTag>per sq km</PTag>
+      </P>
+        <P fontSize={big} fontWeight={'bold'} color={red}>{props.populationTabRegional.totalPopulation}</P>
+        <P>and the population density is</P>
+        <P fontSize={big} fontWeight={'bold'}>{props.populationTabRegional.populationDensity}</P>
+        <P>per sq km</P>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
@@ -40,9 +41,9 @@ const Population = (props: SpotLightTabDataQuery) => {
         >
         WHAT IS THE AVERAGE DEPENDENCY RATIO?
       </Header>
-        <PTag size={'big'} fontWeight={'bold'} color={red}>{props.populationTabRegional.averageDependencyRatio}</PTag>
-        <PTag>Compared with the all-district average:</PTag>
-        <PTag size={'big'} fontWeight={'bold'}>{props.populationTabRegional.allAverageDependencyRatio}</PTag>
+        <P fontSize={big} fontWeight={'bold'} color={red}>{props.populationTabRegional.averageDependencyRatio}</P>
+        <P>Compared with the all-district average:</P>
+        <P fontSize={big} fontWeight={'bold'}>{props.populationTabRegional.allAverageDependencyRatio}</P>
       </Grid.Column>
     </Grid>
   );

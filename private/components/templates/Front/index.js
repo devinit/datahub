@@ -42,7 +42,7 @@ export default () => {
           </Grid>
         </HeaderContainer>
       </Container>
-      <NavigationBarTabs selected={0} >
+      <NavigationBarTabs selected={0}>
         <Pane label="Poverty">
           <Poverty options={data.tabOptions.poverty} />
         </Pane>

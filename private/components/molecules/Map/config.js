@@ -41,7 +41,7 @@ const mapConfigs: MapConfigs = {
       minZoom: 3.5,
       center: [33, 0.54],
       bounds: [
-          [-179, -61], // Southwest coordinates
+          [-179, -61], // TODO: change to correct values Southwest coordinates
           [188, 75]  // Northeast coordinates
       ]
     }

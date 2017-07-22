@@ -1,17 +1,17 @@
 // @flow
 import Link from 'next/link';
 import React from 'react';
-import NavTag from '../../atoms/NavTag';
+import {A} from 'glamorous';
+import {small} from 'components/theme';
 
 type Props = {
   path: string,
   pathName: string,
   isActive: boolean
 };
-
 const NavItem = ({ path, pathName, isActive }: Props) => (
   <Link href={path}>
-    <NavTag isActive={isActive} size="small"> {pathName} </NavTag>
+    <A isActive={isActive} fontSize={small} textDecoration={'none'}> {pathName} </A>
   </Link>
 );
 

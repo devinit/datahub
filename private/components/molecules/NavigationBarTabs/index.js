@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
 import { Container } from 'semantic-ui-react';
-import { lightBlack, white, lightGrey } from 'components/theme/semantic';
+import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
 
 type Props = {
   children: any,
@@ -32,7 +32,7 @@ const TabLink = glamorous.a({
   cursor: 'pointer',
 });
 const TabLinkWrapper = glamorous.div({
-  background: lightGrey,
+  background: lighterGrey,
 });
 
 class Tabs extends React.Component {
@@ -57,7 +57,7 @@ class Tabs extends React.Component {
   }
   _renderContent() {
     return (
-      <div className="tabs__content">
+      <div>
         {this.props.children[this.state.selected]}
       </div>
     );
@@ -85,7 +85,7 @@ class Tabs extends React.Component {
 
   render() {
     return (
-      <div className="tabs">
+      <div>
         <TabLinkWrapper>
           <Container textAlign={this.props.textAlign || 'left'}>
             {this._renderTitles()}

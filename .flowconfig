@@ -8,7 +8,7 @@ private
 pages
 [libs]
 flow-typed
-private/types
+private/types/
 [options]
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=private

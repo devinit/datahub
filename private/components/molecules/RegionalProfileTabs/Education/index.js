@@ -1,7 +1,8 @@
 // @flow
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
-import PTag from 'components/atoms/PTag';
+import {P} from 'glamorous';
+import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 
 const Educaton = (props: SpotLightTabDataQuery) => {
@@ -16,10 +17,10 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.educationTabRegional.pupilTeacherRatioGovtSchl}</PTag>
-          <PTag >in government schools  and</PTag>
-          <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.pupilTeacherRatioOtherSchl}</PTag>
-          <PTag>in all schools </PTag>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.educationTabRegional.pupilTeacherRatioGovtSchl}</P>
+          <P >in government schools  and</P>
+          <P fontSize={big} fontWeight={'bold'}>{props.educationTabRegional.pupilTeacherRatioOtherSchl}</P>
+          <P>in all schools </P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -29,9 +30,9 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.educationTabRegional.studentsPassRate}</PTag>
-          <PTag>and is ranked in</PTag>
-          <PTag size={'big'} fontWeight={'bold'}>{props.educationTabRegional.studentsPassDistrictRank}</PTag>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.educationTabRegional.studentsPassRate}</P>
+          <P>and is ranked in</P>
+          <P fontSize={big} fontWeight={'bold'}>{props.educationTabRegional.studentsPassDistrictRank}</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -41,7 +42,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
         </Header>
-          <PTag size={'big'} fontWeight={'bold'} color={red}>{props.educationTabRegional.primaryEducationfunding}</PTag>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.educationTabRegional.primaryEducationfunding}</P>
 
         </Grid.Column>
       </Grid>
