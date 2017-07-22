@@ -1,6 +1,6 @@
 // @flow
 import React, {PureComponent} from 'react';
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground} from 'components/theme/semantic';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './mabox-override.css';
