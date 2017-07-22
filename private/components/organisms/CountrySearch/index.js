@@ -1,17 +1,13 @@
 import React from 'react';
-import { graphql} from 'react-apollo';
 import SearchInput from 'components/molecules/SearchInput';
-import COUNTRIES_QUERY from 'Graphql/Countries.graphql';
+import data from './data';
 
-const SearchwithData = graphql(COUNTRIES_QUERY, {
-  props: ({data: { loading, countries, error }}) => {
-    if (error) console.error(error);
-    return {
-      loading,
-      countries,
-      visible: true,
-      placeholder: 'Type Your Country Name'
-    };
-  }})(SearchInput);
+const SearchwithData = () =>
+  (<SearchInput
+    countries={data.countries}
+    visible
+    placeholder={'Type a country name'}
+  />);
+
 
 export default SearchwithData;

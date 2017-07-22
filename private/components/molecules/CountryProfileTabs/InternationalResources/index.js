@@ -10,7 +10,7 @@ const International = (props: TabDataQuery) => {
   if (!props.internationalResources) return new Error('No international resources data');
   return (
     <Container>
-      <Grid>
+      <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
             textAlign="center"

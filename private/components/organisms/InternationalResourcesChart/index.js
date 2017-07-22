@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
+import config from 'visboxConfigs/areaTreemapChart';
 import InternationalResourcesChart from './wrapper';
-import RESOURCES_QUERY from 'Graphql/InternationalResourcesOverTime.graphql';
-import config from '../../../visboxConfigs/areaTreemapChart';
+import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
 
 const withData = graphql(RESOURCES_QUERY, {
   options: (props) => ({

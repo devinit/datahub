@@ -9,7 +9,7 @@ const Government = (props: TabDataQuery) => {
   if (!props.governmentFinance) return new Error('No Government Finance data');
   return (
     <Container>
-      <Grid>
+      <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
             textAlign="center"

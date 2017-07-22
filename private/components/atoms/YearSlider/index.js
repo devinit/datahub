@@ -1,5 +1,6 @@
 import glamorous from 'glamorous';
-import theme from '../../theme';
+import {white, red, lighterGrey, grey} from 'components/theme/semantic';
+
 
 export const Slider = glamorous.div({
   display: 'inline-block',
@@ -10,13 +11,13 @@ export const Slider = glamorous.div({
   padding: '0 2em 0 0',
   verticalAlign: 'middle',
   cursor: 'pointer',
-  backgroundColor: theme.lightGray,
+  backgroundColor: lighterGrey,
   '& .bubble': {
     cursor: 'default',
     top: '-2em',
     padding: '0',
     fontSize: '.9em',
-    color: theme.greyText,
+    color: grey,
   }
 });
 export const Input = glamorous.input({
@@ -41,10 +42,10 @@ export const Pointer = glamorous.span({
   borderRadius: '50%',
   border: '0.012em solid #666',
   top: '-0.8em',
-  color: theme.plainWhite,
+  color: white,
   paddingTop: '.6em',
   textAlign: 'center',
-  backgroundColor: theme.darkRed,
+  backgroundColor: red,
   userSelect: 'none',
   zIndex: 1 },
   (props) => ({left: `${100 * props.left}%`}));

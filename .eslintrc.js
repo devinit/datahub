@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   parser: 'babel-eslint',
   extends: ['airbnb', 'plugin:flowtype/recommended'],
-  plugins: ['flowtype', 'react', 'jsx-a11y',  'import', 'graphql'],
+  plugins: ['flowtype', 'react', 'jsx-a11y', 'import', 'graphql'],
   env: {
     browser: true,
     jest: true,
@@ -11,14 +11,11 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      webpack: {
-        config: {
-          resolve: {
-            extensions: ['.js', '.jsx'],
-            modules: ['node_modules', path.resolve(__dirname, 'private'),
-              path.resolve(__dirname, 'public/semantic'),
-              path.resolve(__dirname, 'public/img')],
-          },
+      'babel-module': {
+        'extensions': ['.js', '.graphql', '.jsx', '.gql'],
+        'root': ['private', 'public/semantic', 'public/img'],
+        'alias': {
+          "package.json": "./package.json"
         }
       }
     }

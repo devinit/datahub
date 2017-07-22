@@ -4,7 +4,7 @@ import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import {SocialMediaLink} from 'components/atoms/Link';
 import {Input, InputContainer} from '../../atoms/SearchInput/input';
-import {List} from '../../atoms/SearchInput/list';
+import {List} from 'components/atoms/SearchInput/list';
 
 type Country ={
   id: string,
@@ -29,6 +29,7 @@ const Wrapper = glamorous.div({
 class SearchInput extends React.Component {
   constructor(props: Props) {
     super(props);
+    if (!props.countries || !props.countries.length) throw new Error('countries data prop mixing');
     this.state = {
       selected: -1,
       countries: props.countries,

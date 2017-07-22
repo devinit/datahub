@@ -1,15 +1,14 @@
-// This file is not transpiled by babel, so no flow
 /**
  * Gets semantic theme variables and site variables and merges them together
  * out puts the results as es6 exports in one file
  */
-const path = require('path');
-const fs = require('fs-extra');
-const config = require('../../semantic.json');
-const R = require('ramda');
-const less = require('less');
-const prettier = require('prettier');
-const cssToJsObject = require('css-to-js-object');
+import path from 'path';
+import fs from 'fs-extra';
+import R from 'ramda';
+import less from 'less';
+import prettier from 'prettier';
+import cssToJsObject from 'css-to-js-object';
+import config from '../../semantic.json';
 
 const sitePath = path.resolve(config.base, config.paths.source.site);
 

@@ -1,4 +1,5 @@
 // This file is auto generated from semantic less variable globals
+
 export const red = '#e8443a';
 export const orange = '#EA7600';
 export const yellow = '#FECB2F';
@@ -26,6 +27,7 @@ export const lightBrown = '#D67C1C';
 export const lightGrey = '#d0cccf';
 export const lighterGrey = '#e9e7e8';
 export const lightBlack = '#453f43';
+export const darkRed = '#bc2629';
 export const fullBlack = '#000000';
 export const offWhite = '#F9FAFB';
 export const darkWhite = '#F3F4F5';

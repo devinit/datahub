@@ -221,6 +221,10 @@
 @lighterGrey      : #e9e7e8;
 @lightBlack       : #453f43;
 
+/*---  Dark Colors  ---*/
+@darkRed         : #bc2629;
+
+
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;
 @offWhite         : #F9FAFB;

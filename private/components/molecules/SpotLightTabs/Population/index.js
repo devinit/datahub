@@ -8,7 +8,7 @@ import {big} from 'components/theme';
 const Population = (props: SpotLightTabDataQuery) => {
   if (!props.populationTabRegional) throw new Error('regional population data is missing');
   return (
-    <Grid>
+    <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"

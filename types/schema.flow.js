@@ -41,6 +41,18 @@ export type MapDataQuery = {|
   |},
 |};
 
+export type GlobalPictureThemesQuery = {|
+  globalPictureThemes: ? Array< {|
+    id: ?string,
+    name: ?string,
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    default_indicator: ?string,
+  |} >,
+|};
+
 export type ResourcesOverTimeQueryVariables = {|
   id: string,
 |};
@@ -128,6 +140,22 @@ export type SpotLightTabDataQuery = {|
     // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
     healthCareFunding: ?string,
   |},
+|};
+
+export type SpotlightThemesQueryVariables = {|
+  country: string,
+|};
+
+export type SpotlightThemesQuery = {|
+  spotlightThemes: ? Array< {|
+    id: ?string,
+    name: ?string,
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    default_indicator: ?string,
+  |} >,
 |};
 
 export type TabDataQueryVariables = {|

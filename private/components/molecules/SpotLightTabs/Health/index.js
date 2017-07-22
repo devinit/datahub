@@ -10,7 +10,7 @@ const Health = (props: SpotLightTabDataQuery) => {
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   return (
     <Container>
-      <Grid>
+      <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
             textAlign="center"

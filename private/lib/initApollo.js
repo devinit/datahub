@@ -1,6 +1,6 @@
 import { ApolloClient, createBatchingNetworkInterface } from 'react-apollo';
 import fetch from 'isomorphic-fetch';
-import {config} from '../../package.json';
+import {config} from 'package.json';
 
 let apolloClient = null;
 

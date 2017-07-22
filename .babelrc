@@ -13,14 +13,28 @@
         }],
         "next/babel"
       ]
+    },
+    "tools": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
     }
   },
   "plugins": [
     "transform-flow-strip-types",
-    "babel-plugin-inline-import-graphql-ast",
-    "ramda",
-    ["module-resolver", {
-      "root": ["./private", "public/semantic", "public/img"]
+    "transform-async-generator-functions",
+    "babel-plugin-inline-import-graphql-ast", ["module-resolver", {
+      "root": ["private", "public/semantic", "public/img"],
+      "alias": {
+        "package.json": "./package.json"
+      }
     }]
   ]
 }

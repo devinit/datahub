@@ -1,5 +1,6 @@
 import glamorous from 'glamorous';
-import theme from 'components/theme';
+import {big} from 'components/theme';
+import {white} from 'components/theme/semantic';
 
 export const List = glamorous.ul({
   borderRadius: '.125em',
@@ -9,18 +10,19 @@ export const List = glamorous.ul({
   top: '-1.23em',
   width: '100%',
   paddingLeft: '0px',
-  backgroundColor: theme.plainWhite,
+  backgroundColor: white,
   maxHeight: '18em',
   overflowY: 'scroll',
+  zIndex: 9999,
   '& li': {
     padding: '1em',
     fontWeight: '700',
     cursor: 'pointer',
   },
   '& li:hover': {
-    backgroundColor: theme.white,
+    backgroundColor: white,
   },
   '& li.active': {
-    backgroundColor: theme.white,
+    backgroundColor: white,
   }
 });

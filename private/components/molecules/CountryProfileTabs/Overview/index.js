@@ -10,7 +10,7 @@ const Overview = (props: TabDataQuery) => {
   if (!props.overViewTab) return new Error('No OverView data');
   return (
     <Container>
-      <Grid>
+      <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
             textAlign="center"

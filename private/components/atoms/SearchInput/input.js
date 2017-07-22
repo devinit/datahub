@@ -1,9 +1,10 @@
 import glamorous from 'glamorous';
-import theme from 'components/theme';
+import {white, red, lighterGrey} from 'components/theme/semantic';
+import {big} from 'components/theme';
 
 export const InputContainer = glamorous.div({
   width: '100%',
-  backgroundColor: theme.white,
+  backgroundColor: lighterGrey,
   height: '0em',
   transition: 'all .3s ease-in-out',
   '& .list': {
@@ -21,7 +22,7 @@ export const Input = glamorous.input({
   height: '3.2em',
   width: '100%',
   marginTop: '1.2em',
-  fontSize: theme.big,
+  fontSize: big,
   fontWeight: '700',
   paddingLeft: '1.5em',
   backgroundColor: 'transparent',
@@ -30,7 +31,7 @@ export const Input = glamorous.input({
   ':focus': {
     outline: 'none',
     paddingLeft: '1.7em',
-    backgroundColor: theme.plainWhite,
+    backgroundColor: white,
     borderRadius: '.125em',
     boxShadow: '0 .125em .125em 0 rgba(0,0,0,.2)',
   },

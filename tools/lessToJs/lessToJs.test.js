@@ -1,6 +1,6 @@
-const lessToJs = require('./lessToJs');
-const path = require('path');
-const fs = require('fs-extra');
+import path from 'path';
+import fs from 'fs-extra';
+import lessToJs from '.';
 
 describe('semantic global less to ES6', () => {
   let lines = [];

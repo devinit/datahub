@@ -12,7 +12,7 @@ import {
 } from 'components/molecules/CountryProfileTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import TABS_QUERY from 'Graphql/TabData.graphql';
+import TABS_QUERY from '../../../graphql/TabData.graphql';
 
 type TabsProps = {
   loading: boolean,

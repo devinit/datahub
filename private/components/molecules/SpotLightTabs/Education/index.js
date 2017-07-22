@@ -9,7 +9,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
   return (
     <Container>
-      <Grid>
+      <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
             textAlign="center"

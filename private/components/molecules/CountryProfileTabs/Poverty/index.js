@@ -10,7 +10,7 @@ const Poverty = (props: TabDataQuery) => {
   if (!props.povertyTab) return new Error('No Poverty data');
   return (
     <Container>
-      <Grid>
+      <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
             textAlign="center"

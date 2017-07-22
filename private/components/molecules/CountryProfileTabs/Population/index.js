@@ -8,7 +8,7 @@ import {red} from 'components/theme/semantic';
 const Population = (props: TabDataQuery) => {
   if (!props.populationTab) return new Error('No Population data');
   return (
-    <Grid>
+    <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
           textAlign="center"
