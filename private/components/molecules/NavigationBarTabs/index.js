@@ -1,16 +1,32 @@
 // @flow
 import React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import type { Element } from 'react';
 import { Container } from 'semantic-ui-react';
+import NavigationBarTabsContainer from 'components/atoms/NavigationBarTabsContainer';
 import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
 
-type Props = {
-  children: any,
+type Indicator = {|
+  id: string,
+  name: string,
+|}
+
+type NavItem = {|
+    id: string,
+    name: string,
+    indicators: Indicator[],
+    default_indicator: string,
+|}
+
+export type ChangeActiveIndicator<T> =
+  ((activeMapIndicator: string) => Dispatch<T>);
+
+type Props<T> = {
+  navBarItems: NavItem[],
+  changeActiveIndicator?: ChangeActiveIndicator<T>,
   selected?: number,
   textAlign?: string
 }
-
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
   margin: 0,
@@ -31,54 +47,58 @@ const TabLink = glamorous.a({
   marginRight: '0',
   cursor: 'pointer',
 });
-const TabLinkWrapper = glamorous.div({
-  background: lighterGrey,
-});
 
 class Tabs extends React.Component {
-
   static defaultProps = {
     selected: 0,
   }
   constructor(props: Props) {
     super(props);
     this.state = {
-      selected: props.selected
+      selected: 0, // select first item by default
+      activeIndicator: this.props.navBarItems[0].default_indicator
     };
   }
   state: {
-    selected?: number
+    selected: number,
+    activeIndicator: string
   }
   handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({
-      selected: index
+      selected: index,
+      activeIndicator: this.props.navBarItems[index].default_indicator
     });
   }
+  handleSelect(event: any) {
+    event.preventDefault();
+    this.setState({activeIndicator: event.value});
+  }
   _renderContent() {
+    const selectedNavItem = this.props.navBarItems[this.state.selected || 0];
+    const options = selectedNavItem.indicators.map(obj => ({key: obj.id, value: obj.name}));
     return (
-      <div>
-        {this.props.children[this.state.selected]}
-      </div>
+      <NavigationBarTabsContainer options={options} onChange={this.handleSelect} />
     );
   }
   _renderTitles() {
-    const labels = (child, index) => {
+    const addNavBarLabels = (navItem: NavItem, index: number) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
       return (
         <li key={index}>
           <TabLink
             className={activeClass}
+            href={`/${navItem.id}`}
             onClick={(e) => this.handleClick(index, e)}
           >
-            {child.props.label}
+            {navItem.name}
           </TabLink>
         </li>
       );
     };
     return (
       <TabsContainer>
-        {this.props.children.map(labels)}
+        {this.props.navBarItems.map(addNavBarLabels)}
       </TabsContainer>
     );
   }
@@ -86,11 +106,11 @@ class Tabs extends React.Component {
   render() {
     return (
       <div>
-        <TabLinkWrapper>
+        <Div background={lighterGrey}>
           <Container textAlign={this.props.textAlign || 'left'}>
             {this._renderTitles()}
           </Container>
-        </TabLinkWrapper>
+        </Div>
         {this._renderContent()}
       </div>
     );

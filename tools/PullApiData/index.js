@@ -5,6 +5,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
 import COUNTRIES_QUERY from '../../private/graphql/Countries.graphql';
+import GLOBAL_PICTURE_THEMES_QUERY from '../../private/graphql/GlobalPictureThemes.graphql';
+import SPOTLIGHT_THEMES_QUERY from '../../private/graphql/SpotlightThemes.graphql';
 
 const baseOrganismsPath = 'private/components/organisms';
 const uri = config.api;
@@ -12,16 +14,26 @@ const uri = config.api;
 const apolloFetch = createApolloFetch({ uri });
 
 type ApolloResponse <T> = {
-  error: string,
+  errors: string,
   data: T,
   extensions: string,
 }
+type CallBack<T> = {
+  (data: T): string
+}
 
-async function getData <T>(query: string, variables?: Object): Promise<T> {
+type GetAndWriteDataOpts <T> = {
+  filePath: string,
+  query: string,
+  variables?: Object,
+  cb?: CallBack<T>
+}
+
+export async function getData <T>(query: string, variables?: Object): Promise<T> {
   try {
     const response: ApolloResponse<T> =
       variables ? await apolloFetch({query, variables}) : await apolloFetch({query});
-    if (response.error) throw response.error;
+    if (response.error) throw response.errors;
     return response.data;
   } catch (error) {
     throw error;
@@ -39,14 +51,40 @@ const jsonToJs = (json: string): string =>
 const writeToFile = (filePath, content: string): Promise<void> =>
   fs.writeFile(filePath, prettier.format(content, {singleQuote: true}));
 
+async function getAndWriteData <T>(opts: GetAndWriteDataOpts<T>): Promise<void> {
+  try {
+    const {query, variables, filePath, cb} = opts;
+    const response: T = await getData(query, variables);
+    if (cb) return await writeToFile(filePath, cb(response));
+    const content: string = jsonToJs(JSON.stringify(response));
+    return await writeToFile(filePath, content);
+  } catch (error) {
+    throw error;
+  }
+}
 export const getCountries = async () => {
   try {
-    const response: CountriesQuery = await getData(COUNTRIES_QUERY);
-    if (response.error) throw response.error;
     const filePath = path.join(baseOrganismsPath, 'CountrySearch/data.js');
-    // console.log(response);
-    const content: string = jsonToJs(JSON.stringify(response));
-    await writeToFile(filePath, content);
+    await getAndWriteData({query: COUNTRIES_QUERY, filePath});
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getGlobalPictureThemes = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'GlobalPictureNavTabs/data.js');
+    await getAndWriteData({query: GLOBAL_PICTURE_THEMES_QUERY, filePath});
+  } catch (error) {
+    console.error(error);
+  }
+};
+export const getSpotlightThemes = async () => {
+  // currently only getting spotlight uganda theme data
+  try {
+    const filePath = path.join(baseOrganismsPath, 'SpotlightNavTabs/ug-data.js');
+    const variables = {country: 'uganda'};
+    await getAndWriteData({query: SPOTLIGHT_THEMES_QUERY, filePath, variables});
   } catch (error) {
     console.error(error);
   }
@@ -54,4 +92,6 @@ export const getCountries = async () => {
 
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
+  getGlobalPictureThemes();
+  getSpotlightThemes();
 }

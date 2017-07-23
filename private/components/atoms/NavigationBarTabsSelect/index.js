@@ -33,14 +33,19 @@ const Wrapper = glamorous.div({
   }
 });
 
-type Props = {
-  options: Array<Object>,
-  onChange?: any,
-};
+export type Option = {|
+  key: string,
+  value: string
+|}
+
+export type Props = {
+  options: Array<Option>,
+  onChange?: ((event: any) => void)
+}
 
 const Select = ({options, onChange}: Props) => (
   <Wrapper>
-    <select onChange={onChange}>
+    <select onChange={event => onChange ? onChange(event) : false}>
       {options.map(item => <option value={item.key} key={item.key}>{item.value}</option>)}
     </select>
     <Icon name="caret down" />
