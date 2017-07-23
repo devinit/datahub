@@ -36,7 +36,7 @@
     "@devinit/charts": "^1.2.9",
     "apollo-fetch": "^0.3.0",
     "approximate-number": "^2.0.0",
-    "babel-plugin-inline-import-graphql-ast": "^1.2.3",
+    "babel-plugin-inline-import-graphql-ast": "^2.0.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "compression": "^1.6.2",
@@ -101,5 +101,8 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/private/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/private/__mocks__/styleMock.js"
     }
+  },
+  "engines": {
+    "node": ">=7"
   }
 }

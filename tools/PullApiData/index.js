@@ -28,7 +28,6 @@ async function getData <T>(query: string, variables?: Object): Promise<T> {
   }
 }
 
-
 const jsonToJs = (json: string): string =>
   `/* eslint-disable */
   // this file is auto generated
@@ -39,7 +38,6 @@ const jsonToJs = (json: string): string =>
 
 const writeToFile = (filePath, content: string): Promise<void> =>
   fs.writeFile(filePath, prettier.format(content, {singleQuote: true}));
-
 
 export const getCountries = async () => {
   try {
