@@ -1,8 +1,5 @@
 {
   "name": "datahub",
-  "env": {
-    "NODE_ENV": "production"
-  },
   "type": "npm",
   "engines": {
     "node": "7.0.0"

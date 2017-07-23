@@ -109,8 +109,7 @@ in ```private/types/schema.flow.js```
 ## Pulling API data into the project as Js modules (json) data.
 
 In order to reduce on unnecessary API calls of data that rarelly changes, we have a tool that queries APIs and dumps their data into the project.
-> ```npm run pull``` will return page data and place it in various files alongside their templates </br>
-> ```npm run refs``` will return various reference data used at the frontend from the datahub cms eg global picture themes </br>
+> ```npm run pull``` will return page data and some refrence data eg global map themes and place it in various files in the project </br>
 > ```npm run visbox``` will get you all visbox data for chart configurations</br>
  These commands should be run at new deployments.
 
@@ -121,7 +120,9 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
-## known development issues
+
+
+## Known development issues
 
 ----------
 

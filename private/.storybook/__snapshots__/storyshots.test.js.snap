@@ -98,7 +98,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             className="fifteen wide column"
           >
             <div
-              className="css-egeejl"
+              className="css-1l2vfq4"
             >
               <span
                 className="css-1ujcf02 bubble"
@@ -109,7 +109,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 className="css-1whzuw8"
               >
                 <span
-                  className="css-1g4zm47"
+                  className="css-yav0in"
                 >
                   2016
                 </span>
@@ -171,7 +171,9 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               value=""
             />
             <div
+              aria-live="polite"
               className="text"
+              role="alert"
             />
             <i
               aria-hidden="true"
@@ -240,7 +242,9 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               value=""
             />
             <div
+              aria-live="polite"
               className="default text"
+              role="alert"
             >
               Select Country
             </div>
@@ -298,7 +302,9 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             tabIndex={0}
           >
             <div
+              aria-live="polite"
               className="text"
+              role="alert"
             >
               region
             </div>
@@ -475,9 +481,1289 @@ exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 
 `;
 
 exports[`Storyshots Country Search Country Search With Data 1`] = `
-<p>
-   loading ...
-</p>
+<div
+  className="css-1gfdluh"
+>
+  <div
+    className="ui container"
+  >
+    <input
+      className="css-drphjz"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Type a country name"
+      value=""
+    />
+    <div
+      className="css-13azwyo list"
+    >
+      <ul
+        className="css-1kvbx74"
+      >
+        <li
+          className={false}
+        >
+          Afghanistan
+        </li>
+        <li
+          className={false}
+        >
+          Aland Islands
+        </li>
+        <li
+          className={false}
+        >
+          Albania
+        </li>
+        <li
+          className={false}
+        >
+          Algeria
+        </li>
+        <li
+          className={false}
+        >
+          American Samoa
+        </li>
+        <li
+          className={false}
+        >
+          Andorra
+        </li>
+        <li
+          className={false}
+        >
+          Angola
+        </li>
+        <li
+          className={false}
+        >
+          Anguilla
+        </li>
+        <li
+          className={false}
+        >
+          Antarctica
+        </li>
+        <li
+          className={false}
+        >
+          Antigua & Barbuda
+        </li>
+        <li
+          className={false}
+        >
+          Argentina
+        </li>
+        <li
+          className={false}
+        >
+          Armenia
+        </li>
+        <li
+          className={false}
+        >
+          Aruba
+        </li>
+        <li
+          className={false}
+        >
+          Australia
+        </li>
+        <li
+          className={false}
+        >
+          Austria
+        </li>
+        <li
+          className={false}
+        >
+          Azerbaijan
+        </li>
+        <li
+          className={false}
+        >
+          Bahamas
+        </li>
+        <li
+          className={false}
+        >
+          Bahrain
+        </li>
+        <li
+          className={false}
+        >
+          Bangladesh
+        </li>
+        <li
+          className={false}
+        >
+          Barbados
+        </li>
+        <li
+          className={false}
+        >
+          Belarus
+        </li>
+        <li
+          className={false}
+        >
+          Belgium
+        </li>
+        <li
+          className={false}
+        >
+          Belize
+        </li>
+        <li
+          className={false}
+        >
+          Benin
+        </li>
+        <li
+          className={false}
+        >
+          Bermuda
+        </li>
+        <li
+          className={false}
+        >
+          Bhutan
+        </li>
+        <li
+          className={false}
+        >
+          Bolivia
+        </li>
+        <li
+          className={false}
+        >
+          BES Islands
+        </li>
+        <li
+          className={false}
+        >
+          Bosnia & Herzegovina
+        </li>
+        <li
+          className={false}
+        >
+          Botswana
+        </li>
+        <li
+          className={false}
+        >
+          Bouvet Island
+        </li>
+        <li
+          className={false}
+        >
+          Brazil
+        </li>
+        <li
+          className={false}
+        >
+          British Indian Ocean Territory
+        </li>
+        <li
+          className={false}
+        >
+          Brunei
+        </li>
+        <li
+          className={false}
+        >
+          Bulgaria
+        </li>
+        <li
+          className={false}
+        >
+          Burkina Faso
+        </li>
+        <li
+          className={false}
+        >
+          Burundi
+        </li>
+        <li
+          className={false}
+        >
+          Cambodia
+        </li>
+        <li
+          className={false}
+        >
+          Cameroon
+        </li>
+        <li
+          className={false}
+        >
+          Canada
+        </li>
+        <li
+          className={false}
+        >
+          Cape Verde
+        </li>
+        <li
+          className={false}
+        >
+          Cayman Islands
+        </li>
+        <li
+          className={false}
+        >
+          CAR
+        </li>
+        <li
+          className={false}
+        >
+          Chad
+        </li>
+        <li
+          className={false}
+        >
+          Chile
+        </li>
+        <li
+          className={false}
+        >
+          China
+        </li>
+        <li
+          className={false}
+        >
+          Christmas Island
+        </li>
+        <li
+          className={false}
+        >
+          Cocos (Keeling) Islands
+        </li>
+        <li
+          className={false}
+        >
+          Colombia
+        </li>
+        <li
+          className={false}
+        >
+          Comoros
+        </li>
+        <li
+          className={false}
+        >
+          Congo
+        </li>
+        <li
+          className={false}
+        >
+          DRC
+        </li>
+        <li
+          className={false}
+        >
+          Cook Islands
+        </li>
+        <li
+          className={false}
+        >
+          Costa Rica
+        </li>
+        <li
+          className={false}
+        >
+          Côte d'Ivoire
+        </li>
+        <li
+          className={false}
+        >
+          Country not specified
+        </li>
+        <li
+          className={false}
+        >
+          Croatia
+        </li>
+        <li
+          className={false}
+        >
+          Cuba
+        </li>
+        <li
+          className={false}
+        >
+          Curacao
+        </li>
+        <li
+          className={false}
+        >
+          Cyprus
+        </li>
+        <li
+          className={false}
+        >
+          Czech Republic
+        </li>
+        <li
+          className={false}
+        >
+          Denmark
+        </li>
+        <li
+          className={false}
+        >
+          Djibouti
+        </li>
+        <li
+          className={false}
+        >
+          Dominica
+        </li>
+        <li
+          className={false}
+        >
+          Dominican Republic
+        </li>
+        <li
+          className={false}
+        >
+          Ecuador
+        </li>
+        <li
+          className={false}
+        >
+          Egypt
+        </li>
+        <li
+          className={false}
+        >
+          El Salvador
+        </li>
+        <li
+          className={false}
+        >
+          Equatorial Guinea
+        </li>
+        <li
+          className={false}
+        >
+          Eritrea
+        </li>
+        <li
+          className={false}
+        >
+          Estonia
+        </li>
+        <li
+          className={false}
+        >
+          Ethiopia
+        </li>
+        <li
+          className={false}
+        >
+          Falkland Islands
+        </li>
+        <li
+          className={false}
+        >
+          Faroe Islands
+        </li>
+        <li
+          className={false}
+        >
+          Fiji
+        </li>
+        <li
+          className={false}
+        >
+          Finland
+        </li>
+        <li
+          className={false}
+        >
+          France
+        </li>
+        <li
+          className={false}
+        >
+          French Guiana
+        </li>
+        <li
+          className={false}
+        >
+          French Polynesia
+        </li>
+        <li
+          className={false}
+        >
+          French Southern Territories
+        </li>
+        <li
+          className={false}
+        >
+          Gabon
+        </li>
+        <li
+          className={false}
+        >
+          Gambia
+        </li>
+        <li
+          className={false}
+        >
+          Georgia
+        </li>
+        <li
+          className={false}
+        >
+          Germany
+        </li>
+        <li
+          className={false}
+        >
+          Ghana
+        </li>
+        <li
+          className={false}
+        >
+          Gibraltar
+        </li>
+        <li
+          className={false}
+        >
+          Greece
+        </li>
+        <li
+          className={false}
+        >
+          Greenland
+        </li>
+        <li
+          className={false}
+        >
+          Grenada
+        </li>
+        <li
+          className={false}
+        >
+          Guadeloupe
+        </li>
+        <li
+          className={false}
+        >
+          Guam
+        </li>
+        <li
+          className={false}
+        >
+          Guatemala
+        </li>
+        <li
+          className={false}
+        >
+          Guernsey
+        </li>
+        <li
+          className={false}
+        >
+          Guinea
+        </li>
+        <li
+          className={false}
+        >
+          Guinea-Bissau
+        </li>
+        <li
+          className={false}
+        >
+          Guyana
+        </li>
+        <li
+          className={false}
+        >
+          Haiti
+        </li>
+        <li
+          className={false}
+        >
+          Heard Island & McDonald Islands
+        </li>
+        <li
+          className={false}
+        >
+          Holy See (Vatican City State)
+        </li>
+        <li
+          className={false}
+        >
+          Honduras
+        </li>
+        <li
+          className={false}
+        >
+          Hong Kong
+        </li>
+        <li
+          className={false}
+        >
+          Hungary
+        </li>
+        <li
+          className={false}
+        >
+          Iceland
+        </li>
+        <li
+          className={false}
+        >
+          India
+        </li>
+        <li
+          className={false}
+        >
+          Indonesia
+        </li>
+        <li
+          className={false}
+        >
+          Iran
+        </li>
+        <li
+          className={false}
+        >
+          Iraq
+        </li>
+        <li
+          className={false}
+        >
+          Ireland
+        </li>
+        <li
+          className={false}
+        >
+          Isle of Man
+        </li>
+        <li
+          className={false}
+        >
+          Israel
+        </li>
+        <li
+          className={false}
+        >
+          Italy
+        </li>
+        <li
+          className={false}
+        >
+          Jamaica
+        </li>
+        <li
+          className={false}
+        >
+          Japan
+        </li>
+        <li
+          className={false}
+        >
+          Jersey
+        </li>
+        <li
+          className={false}
+        >
+          Jordan
+        </li>
+        <li
+          className={false}
+        >
+          Kazakhstan
+        </li>
+        <li
+          className={false}
+        >
+          Kenya
+        </li>
+        <li
+          className={false}
+        >
+          Kiribati
+        </li>
+        <li
+          className={false}
+        >
+          North Korea
+        </li>
+        <li
+          className={false}
+        >
+          Korea
+        </li>
+        <li
+          className={false}
+        >
+          Kosovo
+        </li>
+        <li
+          className={false}
+        >
+          Kuwait
+        </li>
+        <li
+          className={false}
+        >
+          Kyrgyzstan
+        </li>
+        <li
+          className={false}
+        >
+          Lao
+        </li>
+        <li
+          className={false}
+        >
+          Latvia
+        </li>
+        <li
+          className={false}
+        >
+          Lebanon
+        </li>
+        <li
+          className={false}
+        >
+          Lesotho
+        </li>
+        <li
+          className={false}
+        >
+          Liberia
+        </li>
+        <li
+          className={false}
+        >
+          Libya
+        </li>
+        <li
+          className={false}
+        >
+          Liechtenstein
+        </li>
+        <li
+          className={false}
+        >
+          Lithuania
+        </li>
+        <li
+          className={false}
+        >
+          Luxembourg
+        </li>
+        <li
+          className={false}
+        >
+          Macao
+        </li>
+        <li
+          className={false}
+        >
+          Macedonia
+        </li>
+        <li
+          className={false}
+        >
+          Madagascar
+        </li>
+        <li
+          className={false}
+        >
+          Malawi
+        </li>
+        <li
+          className={false}
+        >
+          Malaysia
+        </li>
+        <li
+          className={false}
+        >
+          Maldives
+        </li>
+        <li
+          className={false}
+        >
+          Mali
+        </li>
+        <li
+          className={false}
+        >
+          Malta
+        </li>
+        <li
+          className={false}
+        >
+          Marshall Islands
+        </li>
+        <li
+          className={false}
+        >
+          Martinique
+        </li>
+        <li
+          className={false}
+        >
+          Mauritania
+        </li>
+        <li
+          className={false}
+        >
+          Mauritius
+        </li>
+        <li
+          className={false}
+        >
+          Mayotte
+        </li>
+        <li
+          className={false}
+        >
+          Mexico
+        </li>
+        <li
+          className={false}
+        >
+          Micronesia
+        </li>
+        <li
+          className={false}
+        >
+          Moldova
+        </li>
+        <li
+          className={false}
+        >
+          Monaco
+        </li>
+        <li
+          className={false}
+        >
+          Mongolia
+        </li>
+        <li
+          className={false}
+        >
+          Montenegro
+        </li>
+        <li
+          className={false}
+        >
+          Montserrat
+        </li>
+        <li
+          className={false}
+        >
+          Morocco
+        </li>
+        <li
+          className={false}
+        >
+          Mozambique
+        </li>
+        <li
+          className={false}
+        >
+          Myanmar
+        </li>
+        <li
+          className={false}
+        >
+          Namibia
+        </li>
+        <li
+          className={false}
+        >
+          Nauru
+        </li>
+        <li
+          className={false}
+        >
+          Nepal
+        </li>
+        <li
+          className={false}
+        >
+          Netherlands
+        </li>
+        <li
+          className={false}
+        >
+          Netherlands Antilles
+        </li>
+        <li
+          className={false}
+        >
+          New Caledonia
+        </li>
+        <li
+          className={false}
+        >
+          New Zealand
+        </li>
+        <li
+          className={false}
+        >
+          Nicaragua
+        </li>
+        <li
+          className={false}
+        >
+          Niger
+        </li>
+        <li
+          className={false}
+        >
+          Nigeria
+        </li>
+        <li
+          className={false}
+        >
+          Niue
+        </li>
+        <li
+          className={false}
+        >
+          Norfolk Island
+        </li>
+        <li
+          className={false}
+        >
+          Northern Mariana Islands
+        </li>
+        <li
+          className={false}
+        >
+          Norway
+        </li>
+        <li
+          className={false}
+        >
+          Oman
+        </li>
+        <li
+          className={false}
+        >
+          Pakistan
+        </li>
+        <li
+          className={false}
+        >
+          Palau
+        </li>
+        <li
+          className={false}
+        >
+          Palestine
+        </li>
+        <li
+          className={false}
+        >
+          Panama
+        </li>
+        <li
+          className={false}
+        >
+          Papua New Guinea
+        </li>
+        <li
+          className={false}
+        >
+          Paraguay
+        </li>
+        <li
+          className={false}
+        >
+          Peru
+        </li>
+        <li
+          className={false}
+        >
+          Philippines
+        </li>
+        <li
+          className={false}
+        >
+          Pitcairn
+        </li>
+        <li
+          className={false}
+        >
+          Poland
+        </li>
+        <li
+          className={false}
+        >
+          Portugal
+        </li>
+        <li
+          className={false}
+        >
+          Puerto Rico
+        </li>
+        <li
+          className={false}
+        >
+          Qatar
+        </li>
+        <li
+          className={false}
+        >
+          Reunion
+        </li>
+        <li
+          className={false}
+        >
+          Romania
+        </li>
+        <li
+          className={false}
+        >
+          Russian Federation
+        </li>
+        <li
+          className={false}
+        >
+          Rwanda
+        </li>
+        <li
+          className={false}
+        >
+          Saint Barthelemy
+        </li>
+        <li
+          className={false}
+        >
+          Saint Helena, Ascension & Tristan da Cunha
+        </li>
+        <li
+          className={false}
+        >
+          Saint Kitts and Nevis
+        </li>
+        <li
+          className={false}
+        >
+          Saint Lucia
+        </li>
+        <li
+          className={false}
+        >
+          Saint Martin
+        </li>
+        <li
+          className={false}
+        >
+          Saint Pierre & Miquelon
+        </li>
+        <li
+          className={false}
+        >
+          Saint Vincent & the Grenadines
+        </li>
+        <li
+          className={false}
+        >
+          Samoa
+        </li>
+        <li
+          className={false}
+        >
+          San Marino
+        </li>
+        <li
+          className={false}
+        >
+          Sao Tome & Principe
+        </li>
+        <li
+          className={false}
+        >
+          Saudi Arabia
+        </li>
+        <li
+          className={false}
+        >
+          Senegal
+        </li>
+        <li
+          className={false}
+        >
+          Serbia
+        </li>
+        <li
+          className={false}
+        >
+          Seychelles
+        </li>
+        <li
+          className={false}
+        >
+          Sierra Leone
+        </li>
+        <li
+          className={false}
+        >
+          Singapore
+        </li>
+        <li
+          className={false}
+        >
+          Sint Maarten (Dutch part)
+        </li>
+        <li
+          className={false}
+        >
+          Slovak Republic
+        </li>
+        <li
+          className={false}
+        >
+          Slovenia
+        </li>
+        <li
+          className={false}
+        >
+          Solomon Islands
+        </li>
+        <li
+          className={false}
+        >
+          Somalia
+        </li>
+        <li
+          className={false}
+        >
+          South Africa
+        </li>
+        <li
+          className={false}
+        >
+          South Georgia & the South Sandwich Islands
+        </li>
+        <li
+          className={false}
+        >
+          South Sudan
+        </li>
+        <li
+          className={false}
+        >
+          Spain
+        </li>
+        <li
+          className={false}
+        >
+          Sri Lanka
+        </li>
+        <li
+          className={false}
+        >
+          Sudan
+        </li>
+        <li
+          className={false}
+        >
+          Suriname
+        </li>
+        <li
+          className={false}
+        >
+          Svalbard & Jan Mayen
+        </li>
+        <li
+          className={false}
+        >
+          Swaziland
+        </li>
+        <li
+          className={false}
+        >
+          Sweden
+        </li>
+        <li
+          className={false}
+        >
+          Switzerland
+        </li>
+        <li
+          className={false}
+        >
+          Syria
+        </li>
+        <li
+          className={false}
+        >
+          Taiwan
+        </li>
+        <li
+          className={false}
+        >
+          Tajikistan
+        </li>
+        <li
+          className={false}
+        >
+          Tanzania
+        </li>
+        <li
+          className={false}
+        >
+          Thailand
+        </li>
+        <li
+          className={false}
+        >
+          Timor-Leste
+        </li>
+        <li
+          className={false}
+        >
+          Togo
+        </li>
+        <li
+          className={false}
+        >
+          Tokelau
+        </li>
+        <li
+          className={false}
+        >
+          Tonga
+        </li>
+        <li
+          className={false}
+        >
+          Trinidad & Tobago
+        </li>
+        <li
+          className={false}
+        >
+          Tunisia
+        </li>
+        <li
+          className={false}
+        >
+          Turkey
+        </li>
+        <li
+          className={false}
+        >
+          Turkmenistan
+        </li>
+        <li
+          className={false}
+        >
+          Turks & Caicos Islands
+        </li>
+        <li
+          className={false}
+        >
+          Tuvalu
+        </li>
+        <li
+          className={false}
+        >
+          Uganda
+        </li>
+        <li
+          className={false}
+        >
+          United Kingdom
+        </li>
+        <li
+          className={false}
+        >
+          Ukraine
+        </li>
+        <li
+          className={false}
+        >
+          UAE
+        </li>
+        <li
+          className={false}
+        >
+          United States
+        </li>
+        <li
+          className={false}
+        >
+          United States Minor Outlying Islands
+        </li>
+        <li
+          className={false}
+        >
+          Uruguay
+        </li>
+        <li
+          className={false}
+        >
+          Uzbekistan
+        </li>
+        <li
+          className={false}
+        >
+          Vanuatu
+        </li>
+        <li
+          className={false}
+        >
+          Venezuela
+        </li>
+        <li
+          className={false}
+        >
+          Viet Nam
+        </li>
+        <li
+          className={false}
+        >
+          Virgin Islands (GB)
+        </li>
+        <li
+          className={false}
+        >
+          Virgin Islands (US)
+        </li>
+        <li
+          className={false}
+        >
+          Wallis & Futuna
+        </li>
+        <li
+          className={false}
+        >
+          Western Sahara
+        </li>
+        <li
+          className={false}
+        >
+          Yemen
+        </li>
+        <li
+          className={false}
+        >
+          Zambia
+        </li>
+        <li
+          className={false}
+        >
+          Zimbabwe
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Footer Datahub Footer 1`] = `
@@ -502,31 +1788,31 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             <div
               className="four wide computer sixteen wide mobile eight wide tablet column"
             >
-              <h4
-                className="css-106dsda"
+              <h3
+                className="css-1ftmgmh"
               >
                 Sections
-              </h4>
+              </h3>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Data blog 
               </a>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Publications
               </a>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Events
               </a>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Working with us 
@@ -535,31 +1821,31 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             <div
               className="four wide computer sixteen wide mobile eight wide tablet column"
             >
-              <h4
-                className="css-106dsda"
+              <h3
+                className="css-1ftmgmh"
               >
                 Quick Links
-              </h4>
+              </h3>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Contact us 
               </a>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Topics
               </a>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Our consultancy services 
               </a>
               <a
-                className="css-1j6tgbo"
+                className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
                  Open DI - publishing to IATI 
@@ -568,11 +1854,11 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             <div
               className="four wide computer sixteen wide mobile eight wide tablet column"
             >
-              <h4
-                className="css-106dsda"
+              <h3
+                className="css-1ftmgmh"
               >
                 Newsletter
-              </h4>
+              </h3>
               <p>
                 Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
               </p>
@@ -580,11 +1866,11 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             <div
               className="four wide computer sixteen wide mobile eight wide tablet column"
             >
-              <h4
-                className="css-106dsda"
+              <h3
+                className="css-1ftmgmh"
               >
                 Creative Commons
-              </h4>
+              </h3>
               <p>
                 This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
               </p>
@@ -607,7 +1893,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
           className="sixteen wide column"
         >
           <a
-            className="css-1zicc8"
+            className="css-11jszci"
             href="https://twitter.com/devinitorg"
           >
             <i
@@ -616,7 +1902,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             />
           </a>
           <a
-            className="css-1zicc8"
+            className="css-11jszci"
             href="https://twitter.com/devinitorg"
           >
             <i
@@ -625,7 +1911,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             />
           </a>
           <a
-            className="css-1zicc8"
+            className="css-11jszci"
             href="https://twitter.com/devinitorg"
           >
             <i
@@ -634,7 +1920,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
             />
           </a>
           <a
-            className="css-1zicc8"
+            className="css-11jszci"
             href="https://twitter.com/devinitorg"
           >
             <i
@@ -721,7 +2007,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         >
           
           <a
-            className="css-vksbfm"
+            className="css-1oyn0yx"
             href="/"
           >
             <div
@@ -744,7 +2030,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             className="pie graph icon menu-icon"
           />
           <a
-            className="css-vksbfm"
+            className="css-1oyn0yx"
             href=""
           >
             <div
@@ -820,7 +2106,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         >
           
           <a
-            className="css-vksbfm"
+            className="css-1oyn0yx"
             href="/unbundling-aid"
           >
             <div
@@ -840,7 +2126,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         >
           
           <a
-            className="css-vksbfm"
+            className="css-1oyn0yx"
             href="/spotlight-on-uganda"
           >
             <div
@@ -863,7 +2149,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             className="pie graph icon menu-icon"
           />
           <a
-            className="css-vksbfm"
+            className="css-1oyn0yx"
             href=""
           >
             <div
@@ -979,7 +2265,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         >
           
           <a
-            className="css-vksbfm"
+            className="css-1oyn0yx"
             href="/methodology"
           >
             <div
@@ -1213,7 +2499,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     >
       
       <a
-        className="css-vksbfm"
+        className="css-1oyn0yx"
         href="/"
       >
         <div
@@ -1236,7 +2522,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
         className="pie graph icon menu-icon"
       />
       <a
-        className="css-vksbfm"
+        className="css-1oyn0yx"
         href=""
       >
         <div
@@ -1312,7 +2598,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     >
       
       <a
-        className="css-vksbfm"
+        className="css-1oyn0yx"
         href="/unbundling-aid"
       >
         <div
@@ -1332,7 +2618,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     >
       
       <a
-        className="css-vksbfm"
+        className="css-1oyn0yx"
         href="/spotlight-on-uganda"
       >
         <div
@@ -1355,7 +2641,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
         className="pie graph icon menu-icon"
       />
       <a
-        className="css-vksbfm"
+        className="css-1oyn0yx"
         href=""
       >
         <div
@@ -1471,7 +2757,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     >
       
       <a
-        className="css-vksbfm"
+        className="css-1oyn0yx"
         href="/methodology"
       >
         <div
@@ -1484,75 +2770,6 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     </span>
   </li>
 </ul>
-`;
-
-exports[`Storyshots PTag With Primary Color 1`] = `
-<p
-  className="css-1ps3mp8"
->
-  Hello world
-</p>
-`;
-
-exports[`Storyshots Search Datahub Main Search 1`] = `
-<div>
-  <div
-    className="css-1viqs2r"
-  >
-    <div
-      className="ui container"
-    >
-      <h2>
-        Explore by
-        <span
-          className="clickable"
-          onClick={[Function]}
-          role="button"
-        >
-           country
-        </span>
-      </h2>
-    </div>
-  </div>
-  <div
-    className="css-mv69bf"
-  >
-    <div
-      className="ui container"
-    >
-      <input
-        className="css-pnc7nu"
-        onChange={[Function]}
-        onKeyDown={[Function]}
-        placeholder="Type Your Country Name"
-        value=""
-      />
-      <div
-        className="css-13azwyo list"
-      >
-        <ul
-          className="css-12ta04c"
-        >
-          <li
-            className={false}
-          >
-            Uganda
-          </li>
-          <li
-            className={false}
-          >
-            Kenya
-          </li>
-          <li
-            className={false}
-          >
-            Tanzania
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
 `;
 
 exports[`Storyshots Spotlight Tabs live DONOT TEST spotlight tabs 1`] = `
@@ -1592,7 +2809,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/"
             >
               <div
@@ -1615,7 +2832,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -1691,7 +2908,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/unbundling-aid"
             >
               <div
@@ -1711,7 +2928,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/spotlight-on-uganda"
             >
               <div
@@ -1734,7 +2951,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -1850,7 +3067,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/methodology"
             >
               <div
@@ -2097,11 +3314,9 @@ exports[`Storyshots Templates  Spot Light 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="tabs"
-    >
+    <div>
       <div
-        className="css-sf0ohu"
+        className="css-1mjz3a"
       >
         <div
           className="ui center aligned container"
@@ -2160,9 +3375,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
           </ul>
         </div>
       </div>
-      <div
-        className="tabs__content"
-      >
+      <div>
         <div>
           <div
             className="css-1056ojt"
@@ -2730,31 +3943,31 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Sections
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Data blog 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Publications
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Events
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Working with us 
@@ -2763,31 +3976,31 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Quick Links
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Contact us 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Topics
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Our consultancy services 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Open DI - publishing to IATI 
@@ -2796,11 +4009,11 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Newsletter
-                </h4>
+                </h3>
                 <p>
                   Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
                 </p>
@@ -2808,11 +4021,11 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Creative Commons
-                </h4>
+                </h3>
                 <p>
                   This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
                 </p>
@@ -2835,7 +4048,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
             className="sixteen wide column"
           >
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -2844,7 +4057,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -2853,7 +4066,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -2862,7 +4075,7 @@ exports[`Storyshots Templates  Spot Light 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -2934,7 +4147,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/"
             >
               <div
@@ -2957,7 +4170,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -3033,7 +4246,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/unbundling-aid"
             >
               <div
@@ -3053,7 +4266,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/spotlight-on-uganda"
             >
               <div
@@ -3076,7 +4289,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -3192,7 +4405,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/methodology"
             >
               <div
@@ -3443,9 +4656,1289 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   General Picture
                 </div>
               </div>
-              <p>
-                 loading ...
-              </p>
+              <div
+                className="css-1gfdluh"
+              >
+                <div
+                  className="ui container"
+                >
+                  <input
+                    className="css-drphjz"
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Type a country name"
+                    value=""
+                  />
+                  <div
+                    className="css-13azwyo list"
+                  >
+                    <ul
+                      className="css-1kvbx74"
+                    >
+                      <li
+                        className={false}
+                      >
+                        Afghanistan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Aland Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Albania
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Algeria
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        American Samoa
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Andorra
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Angola
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Anguilla
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Antarctica
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Antigua & Barbuda
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Argentina
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Armenia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Aruba
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Australia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Austria
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Azerbaijan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bahamas
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bahrain
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bangladesh
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Barbados
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Belarus
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Belgium
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Belize
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Benin
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bermuda
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bhutan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bolivia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        BES Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bosnia & Herzegovina
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Botswana
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bouvet Island
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Brazil
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        British Indian Ocean Territory
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Brunei
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Bulgaria
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Burkina Faso
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Burundi
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cambodia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cameroon
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Canada
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cape Verde
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cayman Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        CAR
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Chad
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Chile
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        China
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Christmas Island
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cocos (Keeling) Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Colombia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Comoros
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Congo
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        DRC
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cook Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Costa Rica
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Côte d'Ivoire
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Country not specified
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Croatia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cuba
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Curacao
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Cyprus
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Czech Republic
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Denmark
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Djibouti
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Dominica
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Dominican Republic
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Ecuador
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Egypt
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        El Salvador
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Equatorial Guinea
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Eritrea
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Estonia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Ethiopia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Falkland Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Faroe Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Fiji
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Finland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        France
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        French Guiana
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        French Polynesia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        French Southern Territories
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Gabon
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Gambia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Georgia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Germany
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Ghana
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Gibraltar
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Greece
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Greenland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Grenada
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guadeloupe
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guam
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guatemala
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guernsey
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guinea
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guinea-Bissau
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Guyana
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Haiti
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Heard Island & McDonald Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Holy See (Vatican City State)
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Honduras
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Hong Kong
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Hungary
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Iceland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        India
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Indonesia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Iran
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Iraq
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Ireland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Isle of Man
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Israel
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Italy
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Jamaica
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Japan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Jersey
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Jordan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Kazakhstan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Kenya
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Kiribati
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        North Korea
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Korea
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Kosovo
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Kuwait
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Kyrgyzstan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Lao
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Latvia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Lebanon
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Lesotho
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Liberia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Libya
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Liechtenstein
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Lithuania
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Luxembourg
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Macao
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Macedonia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Madagascar
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Malawi
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Malaysia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Maldives
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mali
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Malta
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Marshall Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Martinique
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mauritania
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mauritius
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mayotte
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mexico
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Micronesia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Moldova
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Monaco
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mongolia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Montenegro
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Montserrat
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Morocco
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Mozambique
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Myanmar
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Namibia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Nauru
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Nepal
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Netherlands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Netherlands Antilles
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        New Caledonia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        New Zealand
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Nicaragua
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Niger
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Nigeria
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Niue
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Norfolk Island
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Northern Mariana Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Norway
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Oman
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Pakistan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Palau
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Palestine
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Panama
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Papua New Guinea
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Paraguay
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Peru
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Philippines
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Pitcairn
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Poland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Portugal
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Puerto Rico
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Qatar
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Reunion
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Romania
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Russian Federation
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Rwanda
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Barthelemy
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Helena, Ascension & Tristan da Cunha
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Kitts and Nevis
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Lucia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Martin
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Pierre & Miquelon
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saint Vincent & the Grenadines
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Samoa
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        San Marino
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Sao Tome & Principe
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Saudi Arabia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Senegal
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Serbia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Seychelles
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Sierra Leone
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Singapore
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Sint Maarten (Dutch part)
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Slovak Republic
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Slovenia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Solomon Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Somalia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        South Africa
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        South Georgia & the South Sandwich Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        South Sudan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Spain
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Sri Lanka
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Sudan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Suriname
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Svalbard & Jan Mayen
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Swaziland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Sweden
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Switzerland
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Syria
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Taiwan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Tajikistan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Tanzania
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Thailand
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Timor-Leste
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Togo
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Tokelau
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Tonga
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Trinidad & Tobago
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Tunisia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Turkey
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Turkmenistan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Turks & Caicos Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Tuvalu
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Uganda
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        United Kingdom
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Ukraine
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        UAE
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        United States
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        United States Minor Outlying Islands
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Uruguay
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Uzbekistan
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Vanuatu
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Venezuela
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Viet Nam
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Virgin Islands (GB)
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Virgin Islands (US)
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Wallis & Futuna
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Western Sahara
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Yemen
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Zambia
+                      </li>
+                      <li
+                        className={false}
+                      >
+                        Zimbabwe
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <span
                 className="css-nilhcx"
               >
@@ -3529,31 +6022,31 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Sections
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Data blog 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Publications
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Events
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Working with us 
@@ -3562,31 +6055,31 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Quick Links
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Contact us 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Topics
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Our consultancy services 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Open DI - publishing to IATI 
@@ -3595,11 +6088,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Newsletter
-                </h4>
+                </h3>
                 <p>
                   Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
                 </p>
@@ -3607,11 +6100,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Creative Commons
-                </h4>
+                </h3>
                 <p>
                   This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
                 </p>
@@ -3634,7 +6127,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             className="sixteen wide column"
           >
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -3643,7 +6136,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -3652,7 +6145,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -3661,7 +6154,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -3733,7 +6226,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/"
             >
               <div
@@ -3756,7 +6249,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -3832,7 +6325,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/unbundling-aid"
             >
               <div
@@ -3852,7 +6345,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/spotlight-on-uganda"
             >
               <div
@@ -3875,7 +6368,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -3991,7 +6484,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/methodology"
             >
               <div
@@ -4235,31 +6728,31 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Sections
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Data blog 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Publications
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Events
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Working with us 
@@ -4268,31 +6761,31 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Quick Links
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Contact us 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Topics
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Our consultancy services 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Open DI - publishing to IATI 
@@ -4301,11 +6794,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Newsletter
-                </h4>
+                </h3>
                 <p>
                   Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
                 </p>
@@ -4313,11 +6806,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Creative Commons
-                </h4>
+                </h3>
                 <p>
                   This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
                 </p>
@@ -4340,7 +6833,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
             className="sixteen wide column"
           >
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -4349,7 +6842,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -4358,7 +6851,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -4367,7 +6860,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -4439,7 +6932,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/"
             >
               <div
@@ -4462,7 +6955,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -4538,7 +7031,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/unbundling-aid"
             >
               <div
@@ -4558,7 +7051,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/spotlight-on-uganda"
             >
               <div
@@ -4581,7 +7074,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -4697,7 +7190,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/methodology"
             >
               <div
@@ -5120,31 +7613,31 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Sections
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Data blog 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Publications
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Events
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Working with us 
@@ -5153,31 +7646,31 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Quick Links
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Contact us 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Topics
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Our consultancy services 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Open DI - publishing to IATI 
@@ -5186,11 +7679,11 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Newsletter
-                </h4>
+                </h3>
                 <p>
                   Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
                 </p>
@@ -5198,11 +7691,11 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Creative Commons
-                </h4>
+                </h3>
                 <p>
                   This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
                 </p>
@@ -5225,7 +7718,7 @@ exports[`Storyshots Templates Methodology 1`] = `
             className="sixteen wide column"
           >
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5234,7 +7727,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5243,7 +7736,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5252,7 +7745,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5324,7 +7817,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/"
             >
               <div
@@ -5347,7 +7840,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -5423,7 +7916,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/unbundling-aid"
             >
               <div
@@ -5443,7 +7936,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/spotlight-on-uganda"
             >
               <div
@@ -5466,7 +7959,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               className="pie graph icon menu-icon"
             />
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href=""
             >
               <div
@@ -5582,7 +8075,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
           >
             
             <a
-              className="css-vksbfm"
+              className="css-1oyn0yx"
               href="/methodology"
             >
               <div
@@ -5849,31 +8342,31 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Sections
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Data blog 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Publications
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Events
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Working with us 
@@ -5882,31 +8375,31 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Quick Links
-                </h4>
+                </h3>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Contact us 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Topics
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Our consultancy services 
                 </a>
                 <a
-                  className="css-1j6tgbo"
+                  className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
                    Open DI - publishing to IATI 
@@ -5915,11 +8408,11 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Newsletter
-                </h4>
+                </h3>
                 <p>
                   Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
                 </p>
@@ -5927,11 +8420,11 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <div
                 className="four wide computer sixteen wide mobile eight wide tablet column"
               >
-                <h4
-                  className="css-106dsda"
+                <h3
+                  className="css-1ftmgmh"
                 >
                   Creative Commons
-                </h4>
+                </h3>
                 <p>
                   This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
                 </p>
@@ -5954,7 +8447,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
             className="sixteen wide column"
           >
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5963,7 +8456,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5972,7 +8465,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -5981,7 +8474,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               />
             </a>
             <a
-              className="css-1zicc8"
+              className="css-11jszci"
               href="https://twitter.com/devinitorg"
             >
               <i
@@ -6347,7 +8840,7 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
 
 exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
 <div
-  className="css-egeejl"
+  className="css-1l2vfq4"
 >
   <span
     className="css-1ujcf02 bubble"
@@ -6358,7 +8851,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     className="css-1whzuw8"
   >
     <span
-      className="css-1g4zm47"
+      className="css-yav0in"
     >
       2016
     </span>
