@@ -2,6 +2,6 @@
   "name": "datahub",
   "type": "npm",
   "engines": {
-    "node": "7.0.0"
+    "node": "8.0.0"
   }
 }
