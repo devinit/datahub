@@ -2,7 +2,7 @@
 import React from 'react';
 import Dragdealer from 'dragdealer';
 import stylesheet from 'dragdealer/src/dragdealer.css';
-/* eslint-disable react/no-danger*/
+/* eslint-disable react/no-danger */
 type Props = {
   onYearChange: (year: number) => void
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 import { draw } from '@devinit/charts';
 import stylesheet from '@devinit/charts/dist/di-charts.min.css';
-/* eslint-disable react/no-danger*/
+/* eslint-disable react/no-danger */
 
 type Props = {
   data: any,
