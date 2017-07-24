@@ -4,35 +4,40 @@ import { graphql} from 'react-apollo';
 import Map from 'components/molecules/Map';
 import {connect} from 'react-redux';
 import type {State} from 'lib/reducers';
-import GlOBALMAPSQUERY from '../../../graphql/GlobalMaps.graphql';
+import MAPSQUERY from '../../../graphql/Maps.graphql';
 
 type WrapperProps = {
   loading: boolean,
-  activeMapIndicator: string,
    ...MapDataQuery
 }
 
-const MapWrapper = (props: WrapperProps) => {
+type WithApolloProps = {
+  pathName: string,
+  spotlightIndicator: string,
+  globalIndicator: string
+}
+
+const mapWrapper = (props: WrapperProps) => {
   if (props.loading) {
     return (<p>Loading ...</p>);
   }
   return (<Map {...props} />);
 };
 
-const mapStateToProps = ({ activeMapIndicator }: State) => ({ activeMapIndicator });
-
-const MapWithRedux = connect(mapStateToProps)(MapWrapper);
-
-const MapwithApollo = graphql(GlOBALMAPSQUERY, {
-  options: (props) => ({
-    variables: {
-      id: props.activeMapIndicator
-    }
-  }),
+export const MapWithApollo = graphql(MAPSQUERY, {
+  options: (props: WithApolloProps) => {
+    if (props.id) return {variables: {id: props.id}};
+    if (props.pathName && props.pathName === 'spotlight') return {variables: {id: props.spotlightIndicator}};
+    return {variables: {id: props.globalIndicator}};
+  },
   props: ({data}) => {
     const {error, loading} = data;
     if (error) throw Error(error);
     return data;
-  }})(MapWithRedux);
+  }})(mapWrapper);
 
-export default MapwithApollo;
+const mapStateToProps = ({spotlightIndicator, globalIndicator}: State) =>
+  ({ spotlightIndicator, globalIndicator });
+
+export default connect(mapStateToProps)(MapWithApollo);
+

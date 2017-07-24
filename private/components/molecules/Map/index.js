@@ -7,7 +7,7 @@ import {lightGrey} from 'components/theme/semantic';
 import type {LegendField} from 'components/atoms/MapLegend';
 import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
-import {Grid} from 'semantic-ui-react';
+import {Grid, Container} from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
 import data from './data';
@@ -66,9 +66,12 @@ class Map extends Component {
     const config = mapConfigs[country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
     return (
-      <Grid>
+      <Container fluid>
+        <Grid columns={0}>
         <Grid.Row>
-          <BaseMap paint={paint} viewport={config.viewport} />
+          <Div width={'100%'}>
+            <BaseMap paint={paint} viewport={config.viewport} />
+          </Div>
           <Legend
             title={this.props.mapData.name}
             description={this.props.mapData.description}
@@ -83,22 +86,22 @@ class Map extends Component {
           >Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
         </Grid.Row>
         <Grid.Row centered>
-          <Grid.Column width={4} textAlign="center">
+          <Grid.Column width={4} textAlign="center" centered>
             {
-              this.yearSliderVisibility ?
-                (<YearSlider
-                  minimum={this.startYear}
-                  maximum={this.endYear}
-                  step={1}
-                  position={this.endYear}
-                  onChange={year => this.onYearChange(year)}
-                />)
-              :
-              (<Div fontWeight={'bold'}>
-                <P fontSize={'1.2em'}>{this.props.mapData.start_year}</P>
-                <P>(This indicator has data for a single year only.)</P>
-              </Div>)
-            }
+            this.yearSliderVisibility ?
+              (<YearSlider
+                minimum={this.startYear}
+                maximum={this.endYear}
+                step={1}
+                position={this.endYear}
+                onChange={year => this.onYearChange(year)}
+              />)
+            :
+            (<Div fontWeight={'bold'}>
+              <P fontSize={'1.2em'}>{this.props.mapData.start_year}</P>
+              <P>(This indicator has data for a single year only.)</P>
+            </Div>)
+          }
           </Grid.Column>
         </Grid.Row>
         <Grid.Row centered>
@@ -106,10 +109,10 @@ class Map extends Component {
             <ChartShare size="big" color="black" />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <RankingsTable data={data.countryRankings} />
-        </Grid.Row>
-      </Grid>
+        <RankingsTable data={data.countryRankings} />
+
+        </Grid>
+      </Container>
     );
   }
 }

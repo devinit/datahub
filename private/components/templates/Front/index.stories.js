@@ -1,5 +1,5 @@
 import React from 'react';
-import {withApolloProvider} from 'lib/storybook-apollo-addon';
+import {withApolloProvider} from 'lib/storybook-addon/apollo';
 import { storiesOf } from '@storybook/react';
 import Front from '.';
 

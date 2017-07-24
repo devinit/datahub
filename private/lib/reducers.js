@@ -20,7 +20,7 @@ export type State = {
 
 export type Reducer = (state: State, action: Action) => State;
 
-const inititial: State = {
+export const inititial: State = {
   rehydrated: false,
   spotlightIndicator: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
   globalIndicator: globalThemes.globalPictureThemes[0].default_indicator

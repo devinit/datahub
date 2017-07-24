@@ -12,10 +12,9 @@ export type SpotLightlIndicator = ActionBase & {
   spotlightIndicator: string
 }
 
-export const changeGlobalIndicator = (globalIndicator: string) =>
-  (dispatch: Dispatch<GlobalIndicator>): Dispatch<GlobalIndicator> =>
-    dispatch({ type: GLOBAL_INDICATOR, globalIndicator});
+export const changeGlobalIndicator = (globalIndicator: string): Dispatch<GlobalIndicator> =>
+  ({ type: GLOBAL_INDICATOR, globalIndicator});
 
-export const changeSpotlightIndicator = (spotlightIndicator: string) =>
-  (dispatch: Dispatch<SpotLightlIndicator>): Dispatch<SpotLightlIndicator> =>
-    dispatch({ type: SPOTLIGHT_INDICATOR, spotlightIndicator});
+export const changeSpotlightIndicator =
+  (spotlightIndicator: string): Dispatch<SpotLightlIndicator> =>
+    ({ type: SPOTLIGHT_INDICATOR, spotlightIndicator});

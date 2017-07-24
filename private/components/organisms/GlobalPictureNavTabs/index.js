@@ -10,19 +10,19 @@ import type {GlobalIndicator} from 'lib/actions';
 import data from './data';
 
 type Props = {
-  changeGlobalIndicator: ChangeActiveIndicator<GlobalIndicator>,
+  changeIndicator: ChangeActiveIndicator<GlobalIndicator>,
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): Props => {
   return {
-    changeGlobalIndicator: bindActionCreators(changeGlobalIndicator, dispatch)
+    changeIndicator: bindActionCreators(changeGlobalIndicator, dispatch)
   };
 };
 
 const globalPictureNavBarTab = (props: Props) =>
   (<NavigationBarTabs
     navBarItems={data.globalPictureThemes}
-    changeActiveIndicator={props.changeGlobalIndicator}
+    changeActiveIndicator={props.changeIndicator}
   />);
 
 export default connect(null, mapDispatchToProps)(globalPictureNavBarTab);

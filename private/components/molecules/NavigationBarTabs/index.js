@@ -48,37 +48,39 @@ const TabLink = glamorous.a({
   cursor: 'pointer',
 });
 
-class Tabs extends React.Component {
-  static defaultProps = {
-    selected: 0,
-  }
-  constructor(props: Props) {
+class Tabs<T> extends React.Component {
+
+  constructor(props: Props<T>) {
     super(props);
     this.state = {
-      selected: 0, // select first item by default
-      activeIndicator: this.props.navBarItems[0].default_indicator
+      selected: 0
     };
   }
   state: {
-    selected: number,
-    activeIndicator: string
+    selected: number
   }
   handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({
-      selected: index,
-      activeIndicator: this.props.navBarItems[index].default_indicator
+      selected: index
     });
+    const activeIndicator = this.props.navBarItems[index].default_indicator;
+    if (activeIndicator && this.props.changeActiveIndicator) {
+      this.props.changeActiveIndicator(activeIndicator);
+    }
   }
   handleSelect(event: any) {
     event.preventDefault();
-    this.setState({activeIndicator: event.value});
+    const activeIndicator = event.target.value;
+    if (activeIndicator && this.props.changeActiveIndicator) {
+      this.props.changeActiveIndicator(activeIndicator);
+    }
   }
   _renderContent() {
-    const selectedNavItem = this.props.navBarItems[this.state.selected || 0];
+    const selectedNavItem = this.props.navBarItems[this.state.selected];
     const options = selectedNavItem.indicators.map(obj => ({key: obj.id, value: obj.name}));
     return (
-      <NavigationBarTabsContainer options={options} onChange={this.handleSelect} />
+      <NavigationBarTabsContainer options={options} onChange={(e) => this.handleSelect(e)} />
     );
   }
   _renderTitles() {

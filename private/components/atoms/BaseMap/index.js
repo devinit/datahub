@@ -200,10 +200,14 @@ class BaseMap extends PureComponent {
     const defaultOpts = {...this.state.viewport, style: this.state.mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
       {...defaultOpts, maxBounds: this.state.viewport.bounds} : defaultOpts;
-    this._map = new mapboxgl.Map(opts);
-    this._nav = new mapboxgl.NavigationControl();
-    this._map.addControl(this._nav, 'top-right');
+    console.info('in map draw');
+    if (!this._map) this._map = new mapboxgl.Map(opts);
+    if (!this._nav) {
+      this._nav = new mapboxgl.NavigationControl();
+      this._map.addControl(this._nav, 'top-right');
+    }
     this._map.on('load', () => {
+      console.info('in map on load');
       this._map.setPaintProperty('background', 'background-color', seaBackground);
       this.colorMap(paint);
       this._map.dragRotate.disable();

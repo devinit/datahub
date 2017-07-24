@@ -11,7 +11,7 @@ if (process.browser && window.__REDUX_DEVTOOLS_EXTENSION__) {
   devtools = window.__REDUX_DEVTOOLS_EXTENSION__();
 }
 
-function create(apollo, initialState) {
+export function create(apollo, initialState) {
   return createStore(
     combineReducers({
       // Setup reducers

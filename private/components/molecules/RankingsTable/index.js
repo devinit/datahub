@@ -6,8 +6,8 @@ import {RankingsTableContainer} from 'components/atoms/Container';
 // TOD0 :create proper types
 // TODO: add an id field for use as key
 const RankingsTable = (props: Object) => (
-  <Grid.Row>
-    <Grid.Column computer={8} tablet={16} mobile={16}>
+  <Grid.Row centered className={'computer tablet only grid'}>
+    <Grid.Column computer={6} tablet={6} mobile={16}>
       <RankingsTableContainer>
         <Table basic="very">
           <Table.Header>
@@ -27,7 +27,7 @@ const RankingsTable = (props: Object) => (
         </Table>
       </RankingsTableContainer>
     </Grid.Column>
-    <Grid.Column computer={8} tablet={16} mobile={16}>
+    <Grid.Column computer={6} tablet={6} mobile={16}>
       <RankingsTableContainer>
         <Table basic="very">
           <Table.Header>
