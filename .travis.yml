@@ -3,7 +3,7 @@ node_js:
 - v7
 - v8
 install:
-- npm install
+- npm install --ignore-scripts
 - npm install -g codecov
 script:
 - npm run lint

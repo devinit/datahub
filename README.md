@@ -16,7 +16,7 @@ This is just primarily the frontend part of the DataHub, to keep things modular 
 Install it and run:
 
 ```bash
-npm install & npm install -g flow-typed # dont install with yarn see  Known development issues below
+npm install --ignore-scripts & npm install -g flow-typed # dont install with yarn see  Known development issues below
 npm run dev
 ```
 
