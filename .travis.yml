@@ -8,9 +8,6 @@ install:
 script:
 - npm run lint
 - npm run coverage
-- npm run build
-- npm run build-theme
-- npm run build-storybook
 cache:
 - node_modules
 env:
