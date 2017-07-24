@@ -45,7 +45,7 @@
     "graphql": "^0.10.3",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
-    "mapbox-gl": "^0.39.0",
+    "mapbox-gl": "^0.38.0",
     "next": "latest",
     "ramda": "^0.24.1",
     "react": "^15.6.1",
