@@ -87,7 +87,7 @@ class Tabs<T> extends React.Component {
     const addNavBarLabels = (navItem: NavItem, index: number) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
       return (
-        <li key={index}>
+        <li key={navItem.id}>
           <TabLink
             className={activeClass}
             href={`/${navItem.id}`}

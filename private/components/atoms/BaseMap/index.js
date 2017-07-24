@@ -230,15 +230,15 @@ class BaseMap extends PureComponent {
     if (!this.props.paint.data) throw new Error('please provide a paint property with the required mapData');
     const mapContainerStyle = {...style, width, height, position: 'relative'};
     return (
-      <section>
+      <MapContainer>
         {process.browser ?
-        (<MapContainer
+        (<div
           key={'map-mapbox'}
           ref={(domElement) => { if (domElement) this.draw(domElement, this.props.paint); }}
           style={mapContainerStyle}
         />) :
         (<MapPlaceholder />)}
-      </section>
+      </MapContainer>
     );
   }
 
