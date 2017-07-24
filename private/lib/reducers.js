@@ -1,7 +1,7 @@
 // @flow
 import {REHYDRATE} from 'redux-persist/constants';
 import globalThemes from 'components/organisms/GlobalPictureNavTabs/data';
-import spotlightUgandaThemes from 'components/organisms/SpotLightNavTabs/ug-data.js';
+import spotlightUgandaThemes from 'components/organisms/SpotLightNavTabs/ug-data';
 import {GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR} from './actions';
 import type {GlobalIndicator, SpotLightlIndicator} from './actions';
 

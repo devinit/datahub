@@ -8,7 +8,7 @@ import Select from 'components/atoms/NavigationBarTabsSelect';
 
 
 const DarkTabsContainer = (props: Selectprops) => (
-  <Div paddingBottom={'5em'}>
+  <Div>
     <TabHeader>
       <Container textAlign="center">
         <Select {...props} />

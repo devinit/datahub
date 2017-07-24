@@ -16,11 +16,14 @@ type ViewportDefaults = {
   attributionControl: boolean,
   scrollZoom: boolean
 }
-export type MapData = {|
+export type MapData = {| // TODO: consider getting this type from the schema flow type
   id: ?string,
+  uid: ?string,
+  year: ?number,
   name: ?string,
   color: ?string,
   value: ?number,
+  detail: ?string
 |}
 export type PaintMap = {
   data: MapData[],

@@ -13,7 +13,7 @@ const withData = graphql(RESOURCES_QUERY, {
   props: ({data}) => {
     const {error, loading} = data;
     if (error) throw new Error(error);
-    console.log('resourcesOverTime', data.internationalResources);
+    // console.log('resourcesOverTime', data.internationalResources);
     return {
       loading,
       data: data.internationalResources,

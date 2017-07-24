@@ -20,7 +20,7 @@ const JumpToResource = glamorous.span({
 });
 
 export default () =>
-  (<Generic pathName="/aid">
+  (<Generic>
     <Container>
       <Grid>
         <Grid.Row>

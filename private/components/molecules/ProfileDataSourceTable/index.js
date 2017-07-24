@@ -33,7 +33,7 @@ const ProfileDataSourceTable = ({title, data}: Props) => (
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {data.map(item => (<Table.Row>
+              {data.map((item, index) => (<Table.Row key={item.name}>
                 <Table.Cell>{item.name}</Table.Cell>
                 <Table.Cell>{item.description}</Table.Cell>
                 <Table.Cell>{item.methodology}</Table.Cell>

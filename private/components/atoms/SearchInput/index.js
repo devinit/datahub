@@ -2,7 +2,7 @@ import glamorous from 'glamorous';
 import {white, black} from 'components/theme/semantic';
 import {big} from 'components/theme';
 import * as Input from './input';
-import * as List from './list';
+import {List} from './list';
 
 const SearchTitle = glamorous.div({
   backgroundColor: black,

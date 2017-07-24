@@ -3,8 +3,9 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import {SocialMediaLink} from 'components/atoms/Link';
-import {Input, InputContainer} from '../../atoms/SearchInput/input';
 import {List} from 'components/atoms/SearchInput/list';
+import {Input, InputContainer} from '../../atoms/SearchInput/input';
+
 
 type Country ={
   id: string,

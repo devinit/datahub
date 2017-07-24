@@ -38,7 +38,7 @@ class ToolTip extends React.Component {
         open={this.state.isOpen}
         onClose={this.handleClose}
         onOpen={this.handleOpen}
-        position="top righ"
+        position="top right"
       >
         <Popup.Header>
           <HeaderContainer>

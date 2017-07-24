@@ -13,6 +13,7 @@ export default () => {
     paddingTop: '4em',
     paddingBottom: '4em',
   };
+  // TODO: consider creating an external HeaderContainer
   const HeaderContainer = glamorous.div(headerStyles);
   return (
     <Generic pathName="/aid">

@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {withReduxProvider} from 'lib/storybook-addon/redux';
-import NavBarTabOrgan from '.';
+import NavBarTab from '.';
 
-storiesOf('Global Picture Navbar tab with redux', module)
+storiesOf('Navbar tabs with redux', module)
   .addDecorator(withReduxProvider())
-  .add('Navbar with redux', () => <NavBarTabOrgan />);
+  .add('Navbar with redux', () => <NavBarTab />);
 

@@ -22,7 +22,7 @@ type Props = {
   id: string
 }
 export default (props: Props) =>
-  (<Generic pathName="/aid">
+  (<Generic>
     <Div borderBottom={'2px solid #ddd9dc'} marginBottom={'.2em'}>
       <CardContainer >
         <Grid>

@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): Props => {
 
 const spotlightNavBarTab = (props: Props) =>
   (<NavigationBarTabs
-    navBarItems={data.globalPictureThemes}
+    navBarItems={data.spotlightThemes}
     changeActiveIndicator={props.changeSpotlightIndicator}
   />);
 

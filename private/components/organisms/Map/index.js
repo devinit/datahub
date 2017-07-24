@@ -27,12 +27,11 @@ const mapWrapper = (props: WrapperProps) => {
 export const MapWithApollo = graphql(MAPSQUERY, {
   options: (props: WithApolloProps) => {
     if (props.id) return {variables: {id: props.id}};
-    if (props.pathName && props.pathName === 'spotlight') return {variables: {id: props.spotlightIndicator}};
+    if (props.pathName && props.pathName === '/spotlight') return {variables: {id: props.spotlightIndicator}};
     return {variables: {id: props.globalIndicator}};
   },
   props: ({data}) => {
     const {error, loading} = data;
-    // console.log(data);
     if (error) throw Error(error);
     return data;
   }})(mapWrapper);
