@@ -16,10 +16,9 @@ This is just primarily the frontend part of the DataHub, to keep things modular 
 Install it and run:
 
 ```bash
-yarn --ignore-scripts & npm install -g flow-typed
+npm install & npm install -g flow-typed # dont install with yarn see  Known development issues below
 npm run dev
 ```
-__[why we have an ignore-scripts option on yarn install](https://github.com/Semantic-Org/Semantic-UI/issues/3533)__
 
 ## Development guidelines
 
@@ -80,8 +79,7 @@ flow-typed create-stub @devinit/charts@1.1.4
 
 --------
 
-We use a mapbox-gl [react wrapper for the maps component](https://github.com/uber/react-map-gl). This wrapper workers best with immutable data structures and thats why we have the [immutable.js dependency](https://facebook.github.io/immutable-js/)
-You will be required to add a MapboxAccessToken to your system environment variable to get it working.
+We use a mapbox-gl 
 
 ## Deployments handled by Now for staging and test previews
 

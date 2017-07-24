@@ -9,8 +9,8 @@ import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
 import {Grid, Container} from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
+import type {Props as RankingsTableProps, Data as RankingsTableData} from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
-import data from './data';
 import mapConfigs from './config';
 
 type Props = {
@@ -39,9 +39,9 @@ class Map extends Component {
     if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year;
-    const yearSliderVisibility = this.endYear > this.startYear;
-    const data = yearSliderVisibility ?
-      Map.setCurrentYearData(props.mapData.end_year, props.mapData.map) : props.mapData.map;
+    this.yearSliderVisibility = this.endYear > this.startYear;
+    const data = this.yearSliderVisibility ?
+      Map.setCurrentYearData(this.endYear, props.mapData.map) : props.mapData.map;
     const currentYear: number = this.endYear;
     this.state = {currentYear, data};
   }
@@ -51,9 +51,29 @@ class Map extends Component {
     if (this.props && this.props.mapData && this.props.mapData.map) {
       const data = Map.setCurrentYearData(year, this.props.mapData.map);
       this.setState({currentYear: year, data});
-      console.log(this.state);
     }
   }
+  setCountryRankData(): RankingsTableProps {
+    const sortedData = this.state.data
+      .filter(obj => obj.value && obj.id)
+      .map((obj: MapData) => {
+        const flag: string = obj.id ? obj.id.toLocaleLowerCase() : 'N/A';
+        const name = obj.name ? obj.name : 'N/A';
+        if (!obj.value) throw new Error('value must be defined');
+        return {name, value: obj.value, flag};
+      })
+      .sort((a, b) => {
+        if (!a.value || !b.value) throw new Error('value must be defined');
+        return a.value - b.value;
+      });
+    const top = sortedData.slice(0, 10);
+    const bottom = sortedData.slice(-10);
+    return {
+      hasflags: true,
+      data: {top, bottom}
+    };
+  }
+  yearSliderVisibility: boolean;
   startYear: number;
   endYear: number;
   render() {
@@ -63,31 +83,35 @@ class Map extends Component {
     if (!this.props.mapData.description) throw new Error(`mapData description is missing in props for ${this.props.mapData.name}`);
     if (!this.props.mapData.country) throw new Error(`mapData country is missing in props ${this.props.mapData.name}`);
     const country: string = this.props.mapData.country;
+    const name: string = this.props.mapData.name;
+    const description: string = this.props.mapData.description;
+    const legendData = this.props.mapData.legend;
     const config = mapConfigs[country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
+    console.log('new year data', this.state.data[0]);
     return (
       <Container fluid>
-        <Grid columns={0}>
-        <Grid.Row>
-          <Div width={'100%'}>
-            <BaseMap paint={paint} viewport={config.viewport} />
-          </Div>
-          <Legend
-            title={this.props.mapData.name}
-            description={this.props.mapData.description}
-            legendData={this.props.mapData.legend}
-          />
-          <P
-            fontSize={'0.7em'}
-            color={lightGrey}
-            bottom={'15%'}
-            right={'2%'}
-            position={'absolute'}
-          >Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
-        </Grid.Row>
-        <Grid.Row centered>
-          <Grid.Column width={4} textAlign="center" centered>
-            {
+        <Grid columns={1}>
+          <Grid.Row>
+            <Div width={'100%'}>
+              <BaseMap paint={paint} viewport={config.viewport} />
+            </Div>
+            <Legend
+              title={name}
+              description={description}
+              legendData={legendData}
+            />
+            <P
+              fontSize={'0.7em'}
+              color={lightGrey}
+              bottom={'15%'}
+              right={'2%'}
+              position={'absolute'}
+            >Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={4} textAlign="center">
+              {
             this.yearSliderVisibility ?
               (<YearSlider
                 minimum={this.startYear}
@@ -98,19 +122,18 @@ class Map extends Component {
               />)
             :
             (<Div fontWeight={'bold'}>
-              <P fontSize={'1.2em'}>{this.props.mapData.start_year}</P>
+              <P fontSize={'1.2em'}>{this.startYear}</P>
               <P>(This indicator has data for a single year only.)</P>
             </Div>)
           }
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row centered>
-          <Grid.Column width={5} textAlign="center">
-            <ChartShare size="big" color="black" />
-          </Grid.Column>
-        </Grid.Row>
-        <RankingsTable data={data.countryRankings} />
-
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={5} textAlign="center">
+              <ChartShare size="big" color="black" />
+            </Grid.Column>
+          </Grid.Row>
+          <RankingsTable {...this.setCountryRankData()} />
         </Grid>
       </Container>
     );

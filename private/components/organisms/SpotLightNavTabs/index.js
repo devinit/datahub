@@ -10,20 +10,20 @@ import type {SpotLightlIndicator} from 'lib/actions';
 import data from './ug-data';
 
 type Props = {
-  changeGlobalIndicator: ChangeActiveIndicator<SpotLightlIndicator>,
+  changeSpotlightIndicator: ChangeActiveIndicator<SpotLightlIndicator>,
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): Props => {
   return {
-    changeGlobalIndicator: bindActionCreators(changeSpotlightIndicator, dispatch)
+    changeSpotlightIndicator: bindActionCreators(changeSpotlightIndicator, dispatch)
   };
 };
 
-const globalPictureNavBarTab = (props: Props) =>
+const spotlightNavBarTab = (props: Props) =>
   (<NavigationBarTabs
     navBarItems={data.globalPictureThemes}
-    changeActiveIndicator={props.changeGlobalIndicator}
+    changeActiveIndicator={props.changeSpotlightIndicator}
   />);
 
-export default connect(null, mapDispatchToProps)(globalPictureNavBarTab);
+export default connect(null, mapDispatchToProps)(spotlightNavBarTab);
 

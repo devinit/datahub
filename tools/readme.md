@@ -6,7 +6,7 @@ The files in here a run on the command line through npm
 lessToJs.js
 ____________
 
-Gets semantic theme variables and site variables and merges them together out puts the results as es6 exports in one file
+Gets semantic theme variables and site variables, merges them together & out puts the results as es6 exports in one file
 
 
 pullApiData.js

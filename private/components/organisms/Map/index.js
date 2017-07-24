@@ -32,6 +32,7 @@ export const MapWithApollo = graphql(MAPSQUERY, {
   },
   props: ({data}) => {
     const {error, loading} = data;
+    // console.log(data);
     if (error) throw Error(error);
     return data;
   }})(mapWrapper);
