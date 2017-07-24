@@ -23,10 +23,12 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <title>Data hub</title>
-          <meta name="theme-color" content="#673ab7" />
+          <meta name="theme-color" content="#e8443a" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="manifest" href="manifest.json" />
           <link rel="stylesheet" href="semantic/semantic.min.css" />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+          <link rel="preload" href="di-charts/di-charts.min.csss" as="style" />
         </Head>
         <body>
           <Main />

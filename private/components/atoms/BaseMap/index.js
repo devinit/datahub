@@ -3,7 +3,7 @@ import React, {PureComponent} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground} from 'components/theme/semantic';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import './mabox-override.css';
+import {MapContainer} from './styledMapContainer';
 import {MapPlaceholder} from '../Container';
 
 export type Viewport = {
@@ -232,9 +232,8 @@ class BaseMap extends PureComponent {
     return (
       <section>
         {process.browser ?
-        (<div
+        (<MapContainer
           key={'map-mapbox'}
-          id={'di-map-base'}
           ref={(domElement) => { if (domElement) this.draw(domElement, this.props.paint); }}
           style={mapContainerStyle}
         />) :

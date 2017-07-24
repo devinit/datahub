@@ -1,15 +1,9 @@
 // @flow
-import glamorous from 'glamorous';
+import glamorous, {Li} from 'glamorous';
 import {white} from 'components/theme/semantic';
 import {Container, Grid, Icon, List} from 'semantic-ui-react';
 import MenuLink from 'components/atoms/MenuLink';
 import React from 'react';
-
-
-const MenuListItem = glamorous.li({
-  display: 'inline',
-});
-
 
 const menuItem = (props: Object) => {
   let children = {};
@@ -28,11 +22,11 @@ const menuItem = (props: Object) => {
     hasSubMenu = true;
   }
   return (
-    <MenuListItem>
+    <Li display={'inline'}>
       <MenuLink menu={props.menu.name} link={props.menu.link} hasSubMenu={hasSubMenu}>
         {children}
       </MenuLink>
-    </MenuListItem>);
+    </Li>);
 };
 
 export default menuItem;
