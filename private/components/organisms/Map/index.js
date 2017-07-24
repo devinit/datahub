@@ -39,5 +39,6 @@ export const MapWithApollo = graphql(MAPSQUERY, {
 const mapStateToProps = ({spotlightIndicator, globalIndicator}: State) =>
   ({ spotlightIndicator, globalIndicator });
 
-export default connect(mapStateToProps)(MapWithApollo);
+const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
 
+export default MapWithRedux;

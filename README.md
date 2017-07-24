@@ -118,6 +118,18 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
+## VERY STRANGE BUG
+
+----------
+
+There is this strange bug where a react component willnot be exported out while using export default if its on one line.
+i.e
+```
+  export default connect(mapStateToProps)(MapWithApollo); // this will not export out your component
+  // this will work
+  const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
+  export default MapWithRedux;
+```
 
 
 ## Known development issues
