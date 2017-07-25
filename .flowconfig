@@ -10,6 +10,7 @@ tools
 [libs]
 flow-typed
 types
+./node_modules/apollo-client/index.js.flow
 [options]
 module.file_ext=.js
 module.file_ext=.json

@@ -118,6 +118,7 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
+
 ## VERY STRANGE BUG
 
 ----------
@@ -139,6 +140,7 @@ i.e
 - Currently Updating eslint-plugin-react to 7.1.0 will break linting
 - eslint@4 is currently not supported, we are wainting for [airbnb eslint config to support it](https://github.com/airbnb/javascript/issues/1447)
 - Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing.
+- Currently dont add react-apollo flow types. They have an issue that need to be corrected
 
 ## Development environment and notes
 

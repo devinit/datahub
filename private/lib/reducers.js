@@ -8,26 +8,33 @@ import type {GlobalIndicator, SpotLightlIndicator} from './actions';
 
 export type Action = GlobalIndicator & SpotLightlIndicator & {
   payload: {
-    apollo: any
+    apollo: Object
   }
 }
-
-export type State = {
+type AppState = {
   rehydrated: boolean,
   spotlightIndicator: string,
-  globalIndicator: string
+  globalIndicator: string,
+  apollo: Object
 }
+export type State = {
+  app: AppState,
+  apollo: Object
+}
+type Reducer<S, A> = (state: S, action: A) => S;
 
-export type Reducer = (state: State, action: Action) => State;
-
-export const inititial: State = {
+export type AppReducers <S, A> = {
+  app: Reducer<S, A>
+}
+export const initialState: AppState = {
   rehydrated: false,
   spotlightIndicator: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
-  globalIndicator: globalThemes.globalPictureThemes[0].default_indicator
+  globalIndicator: globalThemes.globalPictureThemes[0].default_indicator,
+  apollo: {}
 };
 
-export const app = {
-  app: (state: State = inititial, action: Action): State => {
+export const app: AppReducers<AppState, Action> = {
+  app: (state: AppState = initialState, action: Action): AppState => {
     switch (action.type) {
       case REHYDRATE: {
         return {...state, rehydrated: true};
@@ -43,8 +50,8 @@ export const app = {
   }
 };
 
-export const apolloWrapper = (apolloReducer: Reducer) =>
-  (state: State, action: Action): State => {
+export const apolloWrapper = (apolloReducer: Reducer<AppState, Action>) =>
+  (state: AppState, action: Action) => {
     switch (action.type) {
       case REHYDRATE: {
         return {...state, ...action.payload.apollo};

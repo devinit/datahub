@@ -30,10 +30,12 @@
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },
   "peerDependencies": {
-    "graphql": "^0.10.3"
+    "graphql": "^0.10.3",
+    "apollo-client": "^1.9.0-1"
   },
   "dependencies": {
     "@devinit/charts": "^1.2.9",
+    "apollo-client": "^1.9.0-1",
     "apollo-fetch": "^0.3.0",
     "approximate-number": "^2.0.0",
     "compression": "^1.6.2",
@@ -49,7 +51,7 @@
     "next": "latest",
     "ramda": "^0.24.1",
     "react": "^15.6.1",
-    "react-apollo": "^1.4.3",
+    "react-apollo": "^1.4.8",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
@@ -94,6 +96,7 @@
     "prettier": "^1.4.4",
     "prettier-eslint-cli": "^4.0.3",
     "pretty-format": "^20.0.3",
+    "prop-types": "^15.5.10",
     "raw-loader": "^0.5.1",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10"

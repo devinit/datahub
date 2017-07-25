@@ -1,10 +1,10 @@
 // @flow
+/* eslint-disable react/no-danger */
 import React, {PureComponent} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground} from 'components/theme/semantic';
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import {MapContainer} from './styledMapContainer';
-import {MapPlaceholder} from '../Container';
 
 export type Viewport = {
   zoom: number,
@@ -231,13 +231,12 @@ class BaseMap extends PureComponent {
     const mapContainerStyle = {...style, width, height, position: 'relative'};
     return (
       <MapContainer>
-        {process.browser ?
-        (<div
+        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
+        <div
           key={'map-mapbox'}
           ref={(domElement) => { if (domElement) this.draw(domElement, this.props.paint); }}
           style={mapContainerStyle}
-        />) :
-        (<MapPlaceholder />)}
+        />
       </MapContainer>
     );
   }

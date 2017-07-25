@@ -1,14 +1,26 @@
-import React from 'react';
 /**
  * simple apollo Provider for querying a live graphql API
  * TODO: add ability to mock data from schema
  */
-import { ApolloClient, ApolloProvider } from 'react-apollo';
-import initApollo from '../initApollo';
+import React from 'react';
+import { ApolloClient, ApolloProvider, createBatchingNetworkInterface } from 'react-apollo';
+import {config} from 'package.json';
 
-const client = initApollo(true);
+function create() {
+  return new ApolloClient({
+    networkInterface: createBatchingNetworkInterface({
+      uri: config.api,
+      batchInterval: 10,
+    }),
+    queryDeduplication: true,
+    dataIdFromObject: object => object.uid,
+  });
+}
 
-export const withApolloProvider = () => {
+
+export const client = create();
+
+const withApolloProvider = () => {
   return storyFn => {
     return (
       <ApolloProvider client={client}>
@@ -17,3 +29,4 @@ export const withApolloProvider = () => {
     );
   };
 };
+export default withApolloProvider;

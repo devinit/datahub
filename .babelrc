@@ -37,16 +37,10 @@
         "package.json": "./package.json"
       }
     }],
-    ["transform-inline-imports-commonjs", {
-      "allowTopLevelThis": true,
-      "strict": false,
-      "loose": true,
-      "excludeNodeBuiltins" : false
-    }],
     [
       "wrap-in-js",
       {
-        "extensions": ["css$", "less$"]
+        "extensions": ["css$"]
       }
     ]
   ]

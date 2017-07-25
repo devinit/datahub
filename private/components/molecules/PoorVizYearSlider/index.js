@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import Dragdealer from 'dragdealer';
 import stylesheet from 'dragdealer/src/dragdealer.css';
 /* eslint-disable react/no-danger */
@@ -11,7 +11,7 @@ type State = {
   year: number;
 }
 
-class YearSlider extends React.Component {
+class YearSlider extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {

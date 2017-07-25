@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { persistStore } from 'redux-persist';
 import localForage from 'localforage';
+// import type {State, Action} from './reducers';
 import {app, apolloWrapper} from './reducers';
 
 let reduxStore = null;
@@ -11,7 +12,7 @@ if (process.browser && window.__REDUX_DEVTOOLS_EXTENSION__) {
   devtools = window.__REDUX_DEVTOOLS_EXTENSION__();
 }
 
-export function create(apollo, initialState) {
+function create(apollo, initialState) {
   return createStore(
     combineReducers({
       // Setup reducers
@@ -26,7 +27,7 @@ export function create(apollo, initialState) {
   );
 }
 
-export function makeStorePersist(store, apollo) {
+export function makeStorePersist(store) {
   return new Promise((resolve, reject) => {
     persistStore(store, {
       storage: localForage,

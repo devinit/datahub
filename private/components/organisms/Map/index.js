@@ -13,31 +13,27 @@ type WrapperProps = {
 
 type WithApolloProps = {
   pathName: string,
-  spotlightIndicator: string,
-  globalIndicator: string
+  app: {
+    spotlightIndicator: string,
+    globalIndicator: string
+  }
 }
 
-const mapWrapper = (props: WrapperProps) => {
-  if (props.loading) {
-    return (<p>Loading ...</p>);
-  }
-  return (<Map {...props} />);
-};
-
-export const MapWithApollo = graphql(MAPSQUERY, {
+const MapWithApollo = graphql(MAPSQUERY, {
   options: (props: WithApolloProps) => {
+    console.log('map props', props);
     if (props.id) return {variables: {id: props.id}};
-    if (props.pathName && props.pathName === '/spotlight') return {variables: {id: props.spotlightIndicator}};
-    return {variables: {id: props.globalIndicator}};
+    if (props.pathName && props.pathName === '/spotlight') return {variables: {id: props.app.spotlightIndicator}};
+    return {variables: {id: props.app.globalIndicator}};
   },
   props: ({data}) => {
     const {error, loading} = data;
+    console.log('data', data);
     if (error) throw Error(error);
     return data;
-  }})(mapWrapper);
+  }})(Map);
 
-const mapStateToProps = ({spotlightIndicator, globalIndicator}: State) =>
-  ({ spotlightIndicator, globalIndicator });
+const mapStateToProps = ({app}: State) => ({app});
 
 const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
 
