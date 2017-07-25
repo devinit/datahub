@@ -98,8 +98,11 @@ class BaseMap extends PureComponent {
     if (props.paint.mapStyle) this.state = {...this.state, mapStyle: props.paint.mapStyle};
     this._isOnMobile = window.innerWidth < 1200;
   }
-
   state: State;
+  componentDidMount() {
+    if (!this.props.paint.data) throw new Error('please provide a paint property with the required mapData');
+    this.draw(this._element, this.props.paint);
+  }
 
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
@@ -112,6 +115,7 @@ class BaseMap extends PureComponent {
   _popup: Object & {remove: any};
   _center: Point;
   _zoomLevel: number;
+  _element: HTMLDivElement;
 
   tipTemplate(pointData: MapData) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : 'Base map';
@@ -197,12 +201,9 @@ class BaseMap extends PureComponent {
     const defaultOpts = {...this.state.viewport, style: this.state.mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
       {...defaultOpts, maxBounds: this.state.viewport.bounds} : defaultOpts;
-    if (!this._map) this._map = new mapboxgl.Map(opts);
-    if (!this._nav) {
-      this._nav = new mapboxgl.NavigationControl();
-      this._map.addControl(this._nav, 'top-right');
-    }
-    if (this._map && this._mapLoaded) this.colorMap(paint);
+    this._map = new mapboxgl.Map(opts);
+    this._nav = new mapboxgl.NavigationControl();
+    this._map.addControl(this._nav, 'top-right');
     this._map.on('load', () => {
       this._mapLoaded = true;
       this._map.setPaintProperty('background', 'background-color', seaBackground);
@@ -217,19 +218,17 @@ class BaseMap extends PureComponent {
     });
   }
   render() {
-    if (!process.browser) console.error('mapbox-gl only works in browsers and you dont seem to be in a browser enviroment');
-    let {width, height, style} = this.props;
+    let {width, height} = this.props;
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
-    if (!style) style = {};
-    if (!this.props.paint.data) throw new Error('please provide a paint property with the required mapData');
-    const mapContainerStyle = {...style, width, height, position: 'relative'};
+    const mapContainerStyle = {width, height, position: 'relative'};
+    if (this._mapLoaded && this._map) this.colorMap(this.props.paint);
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <div
           key={'map-mapbox'}
-          ref={(domElement) => { if (domElement) this.draw(domElement, this.props.paint); }}
+          ref={element => { this._element = element; }}
           style={mapContainerStyle}
         />
       </MapContainer>

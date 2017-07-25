@@ -35,6 +35,7 @@ module.exports = {
       test: /\.css$/,
       use: ['babel-loader', 'raw-loader'],
     });
-    return config;
+    const module = Object.assign(config.module, {noParse: /(mapbox-gl)\.js$/});
+    return Object.assign(config, {module});
   }
 };

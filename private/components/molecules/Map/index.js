@@ -139,7 +139,7 @@ class Map extends Component {
             <RankingsTable {...this.setCountryRankData()} />
           </Grid>
        :
-      (<Div beckgroundColor={lighterGrey} height={'600px'}>
+      (<Div beckgroundColor={lightGrey} height={'600px'}>
         <P color={lighterGrey} fontSize={'0.5em'}>Maps dont load on server ...</P>
       </Div>)
       }
