@@ -17,7 +17,7 @@ function create(apollo, initialState) {
     combineReducers({
       // Setup reducers
       ...app,
-      apollo: apollo.reducer(),
+      apollo: apolloWrapper(apollo.reducer()),
     }),
     initialState, // Hydrate the store with server-side data
     compose(
@@ -27,11 +27,17 @@ function create(apollo, initialState) {
   );
 }
 
-export function makeStorePersist(store) {
+export async function makeStorePersist(store) {
+  const storage = await localForage.config({
+    driver: localForage.INDEXEDDB,
+    name: 'datahub-v2',
+    version: 1.0,
+    storeName: 'datahub', // Should be alphanumeric, with underscores.
+    description: 'datahub client cache'
+  });
   return new Promise((resolve, reject) => {
-    if (!process.browser) return resolve(store);
     return persistStore(store, {
-      storage: localForage,
+      storage,
       whitelist: ['apollo'] }, (err, cachedStore) => {
         if (err) {
           console.error('persisting store error: ', err);

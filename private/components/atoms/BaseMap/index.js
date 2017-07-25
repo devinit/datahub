@@ -6,6 +6,7 @@ import {lightGrey, red, seaBackground} from 'components/theme/semantic';
 import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import {MapContainer} from './styledMapContainer';
 
+// TODO: possibly move types to separate file
 export type Viewport = {
   zoom: number,
   center: number[],
@@ -95,7 +96,6 @@ class BaseMap extends PureComponent {
       viewport
     };
     if (props.paint.mapStyle) this.state = {...this.state, mapStyle: props.paint.mapStyle};
-    mapboxgl.accessToken = this.state.token;
     this._isOnMobile = window.innerWidth < 1200;
   }
 
@@ -217,6 +217,7 @@ class BaseMap extends PureComponent {
     });
   }
   render() {
+    if (!process.browser) console.error('mapbox-gl only works in browsers and you dont seem to be in a browser enviroment');
     let {width, height, style} = this.props;
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;

@@ -89,7 +89,7 @@ class Map extends Component {
     const legendData = this.props.mapData.legend;
     const config = mapConfigs[country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
-    // console.log('process: ', process.browser);
+    console.log('are we in browser', process.browser);
     return (
       <Container fluid>
         { process.browser ?

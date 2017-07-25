@@ -41,7 +41,7 @@
       "allowTopLevelThis": true,
       "strict": false,
       "loose": true,
-      "excludeNodeBuiltins" : false
+      "excludeNodeBuiltins": true
     }],
     [
       "wrap-in-js",

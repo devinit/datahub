@@ -68,8 +68,8 @@ export default ComposedComponent => {
         ...composedInitialProps
       };
     }
-    async componentWillMount() {
-      // await makeStorePersist(this.redux); // dispatches an Hydrate action
+    async componentDidMount() {
+      // if (process.browser) await makeStorePersist(this.redux); // dispatches an Hydrate action
     }
     constructor(props) {
       super(props);

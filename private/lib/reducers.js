@@ -18,7 +18,7 @@ type AppState = {
 }
 export type State = {
   app: AppState,
-  apollo: Object
+  apollo: Store // from apollo client flow type definition
 }
 type Reducer<S, A> = (state: S, action: A) => S;
 
@@ -48,11 +48,12 @@ export const app: AppReducers<AppState, Action> = {
   }
 };
 
-export const apolloWrapper = (apolloReducer: Reducer<AppState, Action>) =>
-  (state: AppState, action: Action) => {
+export const apolloWrapper = (apolloReducer: Reducer<Store, Action>) =>
+  (state: Store, action: Action) => {
     switch (action.type) {
       case REHYDRATE: {
-        return process.browser ? {...state, ...action.payload.apollo} : state;
+        if (action && action.payload && action.payload.apollo) return action.payload.apollo;
+        return state;
       }
       default: return apolloReducer(state, action);
     }

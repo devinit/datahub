@@ -9,10 +9,10 @@
     "url": "https://github.com/devinit/datahub"
   },
   "scripts": {
-    "clean": "rm -rf ./node_modules/.cache",
-    "dev": "PORT=8888 BABEL_ENV=development npm run clean && node server.js",
+    "clean": "rm -rf ./node_modules/.cache ./next",
+    "dev": "BABEL_ENV=development NODE_ENV=development && PORT=4040 node server.js",
     "build": "BABEL_ENV=production NODE_ENV=production npm run clean && next build",
-    "start": "BABEL_ENV=production NODE_ENV=production PORT=8888 node server.js",
+    "start": "BABEL_ENV=production NODE_ENV=production PORT=9090 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
@@ -98,6 +98,7 @@
     "pretty-format": "^20.0.3",
     "prop-types": "^15.5.10",
     "raw-loader": "^0.5.1",
+    "react-no-ssr": "^1.1.0",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10"
   },

@@ -5,7 +5,7 @@ import type { Element } from 'react';
 import glamorous, {Div} from 'glamorous';
 import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
-import Pane from 'components/atoms/Pane';
+import NoSSR from 'react-no-ssr';
 import {HeaderGroup} from 'components/atoms/Header';
 import Map from 'components/organisms/Map';
 import Generic from '../Generic';
@@ -28,7 +28,7 @@ export default (props: Props) => {
         </Div>
       </Container>
       <GlobalPictureNavTabs />
-      <Map pathName={props.pathName} />
+      <NoSSR><Map pathName={props.pathName} /></NoSSR>
     </Generic>
   );
 };
