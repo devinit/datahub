@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type {MapData, PaintMap} from 'components/atoms/BaseMap';
 import glamorous, {Div, P} from 'glamorous';
-import {lightGrey, seaBackground} from 'components/theme/semantic';
+import {lightGrey} from 'components/theme/semantic';
 import type {LegendField} from 'components/atoms/MapLegend';
 import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
@@ -78,7 +78,7 @@ class Map extends Component {
   startYear: number;
   endYear: number;
   render() {
-    if (!this.props.mapData) throw new Error('mapData is missing in props');
+    if (!this.props.mapData) throw new Error('mapData is missing in props, checking the data was loaded or came through');
     if (!this.props.mapData.name) throw new Error('mapData name is missing in props ');
     if (!this.props.mapData.legend) throw new Error(`mapData legend is missing in props for ${this.props.mapData.name}`);
     if (!this.props.mapData.description) throw new Error(`mapData description is missing in props for ${this.props.mapData.name}`);
@@ -92,33 +92,31 @@ class Map extends Component {
     // console.log('new year data', this.state.data[0]);
     return (
       <Container fluid>
-        {this.props.loading ?
-          <Div width={'100%'} height={'600'} backgroundColor={seaBackground} /> :
-          <Grid columns={1}>
-            <Grid.Row>
-              { process.browser ?
-                <Div width={'100%'}>
-                  <BaseMap paint={paint} viewport={config.viewport} />
-                </Div>
+        <Grid columns={1}>
+          <Grid.Row>
+            { process.browser ?
+              <Div width={'100%'}>
+                <BaseMap paint={paint} viewport={config.viewport} />
+              </Div>
                 : <p> Maps dont load on server ...</p>
               }
-              <Legend
-                title={name}
-                description={description}
-                legendData={legendData}
-              />
-              <P
-                fontSize={'0.7em'}
-                color={lightGrey}
-                bottom={'15%'}
-                right={'2%'}
-                position={'absolute'}
-              >
+            <Legend
+              title={name}
+              description={description}
+              legendData={legendData}
+            />
+            <P
+              fontSize={'0.7em'}
+              color={lightGrey}
+              bottom={'15%'}
+              right={'2%'}
+              position={'absolute'}
+            >
               Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
-            </Grid.Row>
-            <Grid.Row centered>
-              <Grid.Column width={4} textAlign="center">
-                {
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={4} textAlign="center">
+              {
                 this.yearSliderVisibility ?
               (<YearSlider
                 minimum={this.startYear}
@@ -133,16 +131,15 @@ class Map extends Component {
               <P>(This indicator has data for a single year only.)</P>
             </Div>)
           }
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row centered>
-              <Grid.Column width={5} textAlign="center">
-                <ChartShare size="big" color="black" />
-              </Grid.Column>
-            </Grid.Row>
-            <RankingsTable {...this.setCountryRankData()} />
-          </Grid>
-        }
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={5} textAlign="center">
+              <ChartShare size="big" color="black" />
+            </Grid.Column>
+          </Grid.Row>
+          <RankingsTable {...this.setCountryRankData()} />
+        </Grid>
       </Container>
     );
   }

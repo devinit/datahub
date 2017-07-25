@@ -8,7 +8,7 @@ import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import Pane from 'components/atoms/Pane';
 import {HeaderGroup} from 'components/atoms/Header';
 import SearchInput from 'components/organisms/CountrySearch';
-// import Map from 'components/organisms/Map';
+import Map from 'components/organisms/Map';
 import Generic from '../Generic';
 
 type Props = {
@@ -30,7 +30,7 @@ export default (props: Props) => {
         </Div>
       </Container>
       <GlobalPictureNavTabs />
-      {/* <Map pathName={props.pathName} /> */}
+      <Map pathName={props.pathName} />
     </Generic>
   );
 };

@@ -2,6 +2,8 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
 import Map from 'components/molecules/Map';
+import {seaBackground} from 'components/theme/semantic';
+import {Div} from 'glamorous';
 import {connect} from 'react-redux';
 import type {State} from 'lib/reducers';
 import MAPSQUERY from '../../../graphql/Maps.graphql';
@@ -18,6 +20,10 @@ type WithApolloProps = {
     globalIndicator: string
   }
 }
+const MapWrapper = (props: WrapperProps) => {
+  if (props.loading) return (<Div width={'100%'} height={'600'} backgroundColor={seaBackground} />);
+  return (<Map {...props} />);
+};
 
 const MapWithApollo = graphql(MAPSQUERY, {
   options: (props: WithApolloProps) => {
@@ -31,7 +37,7 @@ const MapWithApollo = graphql(MAPSQUERY, {
     console.log('data', data);
     if (error) throw Error(error);
     return data;
-  }})(Map);
+  }})(MapWrapper);
 
 const mapStateToProps = ({app}: State) => ({app});
 

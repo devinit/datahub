@@ -7,7 +7,8 @@ import {RankingsTableContainer} from 'components/atoms/Container';
 export type Data = {
   value: number,
   name: string,
-  flag: string
+  flag: string,
+  uid: string,
 }
 
 export type Props = {
@@ -34,7 +35,7 @@ const RankingsTable = (props: Props) => (
               </Table.Header>
               <Table.Body>
                 {props.data[key].map((item, index) => (
-                  <Table.Row key={item.value}>
+                  <Table.Row key={item.uid}>
                     <Table.Cell><b>{index}</b></Table.Cell>
                     {props.hasflags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
                     <Table.Cell>{item.name}</Table.Cell>

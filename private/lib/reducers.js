@@ -40,6 +40,7 @@ export const app: AppReducers<AppState, Action> = {
         return {...state, rehydrated: true};
       }
       case GLOBAL_INDICATOR: {
+        console.log('in reducer');
         return {...state, globalIndicator: action.globalIndicator};
       }
       case SPOTLIGHT_INDICATOR: {
