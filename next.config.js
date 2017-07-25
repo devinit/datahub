@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
   // changes: configChanges, // for use in storybook webpack config
   webpack: (config, { dev }) => {
-    config.plugins.push(new webpack.EnvironmentPlugin(['MapboxAccessToken']));
+    config.plugins.push();
     /* Enable only in Production */
     if (!dev) {
       // Service Worker

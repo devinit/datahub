@@ -80,11 +80,6 @@ type GenericTipHtml = {
   value: string | number;
 }
 class BaseMap extends PureComponent {
-  static getToken() {
-    if (!process.env.MapboxAccessToken) console.error('Provide a mapbox access token');
-    const token = process.env.MapboxAccessToken || 'put here to get rid of flow error warning';
-    return token;
-  }
   static genericTipHtml({id, header, label, value, uom}: GenericTipHtml) {
     return `<i  style="display: block;margin: 0 auto;width: 30%;"
                 class="${id.toLocaleLowerCase()} flag"></i>
@@ -96,7 +91,6 @@ class BaseMap extends PureComponent {
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
     const viewport = {...this._viewportDefaults, ...props.viewport};
     this.state = {
-      token: BaseMap.getToken(), // for when we use mapbox
       mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
       viewport
     };

@@ -2,7 +2,7 @@
 import React from 'react';
 import { graphql} from 'react-apollo';
 import Map from 'components/molecules/Map';
-import {seaBackground} from 'components/theme/semantic';
+import {lightGrey} from 'components/theme/semantic';
 import {Div} from 'glamorous';
 import {connect} from 'react-redux';
 import type {State} from 'lib/reducers';
@@ -21,20 +21,20 @@ type WithApolloProps = {
   }
 }
 const MapWrapper = (props: WrapperProps) => {
-  if (props.loading) return (<Div width={'100%'} height={'600'} backgroundColor={seaBackground} />);
+  if (props.loading) return (<Div width={'100%'} height={'600'} backgroundColor={lightGrey} />);
   return (<Map {...props} />);
 };
 
 const MapWithApollo = graphql(MAPSQUERY, {
   options: (props: WithApolloProps) => {
-    console.log('map props', props);
+    // console.log('map props', props);
     if (props.id) return {variables: {id: props.id}};
     if (props.pathName && props.pathName === '/spotlight') return {variables: {id: props.app.spotlightIndicator}};
     return {variables: {id: props.app.globalIndicator}};
   },
   props: ({data}) => {
     const {error, loading} = data;
-    console.log('data', data);
+    // console.log('data', data);
     if (error) throw Error(error);
     return data;
   }})(MapWrapper);

@@ -60,8 +60,8 @@ class Map extends Component {
       .map((obj: MapData) => {
         const flag: string = obj.id ? obj.id.toLocaleLowerCase() : 'N/A';
         const name = obj.name ? obj.name : 'N/A';
-        if (!obj.value) throw new Error('value must be defined');
-        return {name, value: obj.value, flag};
+        if (!obj.value || !obj.uid) throw new Error('value must be defined');
+        return {name, value: obj.value, flag, uid: obj.uid};
       })
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined');
@@ -89,35 +89,33 @@ class Map extends Component {
     const legendData = this.props.mapData.legend;
     const config = mapConfigs[country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
-    // console.log('new year data', this.state.data[0]);
+    console.log('process: ', process.browser);
     return (
       <Container fluid>
-        <Grid columns={1}>
-          <Grid.Row>
-            { process.browser ?
+        { process.browser ?
+          <Grid columns={1}>
+            <Grid.Row>
               <Div width={'100%'}>
                 <BaseMap paint={paint} viewport={config.viewport} />
               </Div>
-                : <p> Maps dont load on server ...</p>
-              }
-            <Legend
-              title={name}
-              description={description}
-              legendData={legendData}
-            />
-            <P
-              fontSize={'0.7em'}
-              color={lightGrey}
-              bottom={'15%'}
-              right={'2%'}
-              position={'absolute'}
-            >
+              <Legend
+                title={name}
+                description={description}
+                legendData={legendData}
+              />
+              <P
+                fontSize={'0.7em'}
+                color={lightGrey}
+                bottom={'15%'}
+                right={'2%'}
+                position={'absolute'}
+              >
               Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
-          </Grid.Row>
-          <Grid.Row centered>
-            <Grid.Column width={4} textAlign="center">
-              {
-                this.yearSliderVisibility ?
+            </Grid.Row>
+            <Grid.Row centered>
+              <Grid.Column width={4} textAlign="center">
+                {
+              this.yearSliderVisibility ?
               (<YearSlider
                 minimum={this.startYear}
                 maximum={this.endYear}
@@ -130,16 +128,18 @@ class Map extends Component {
               <P fontSize={'1.2em'}>{this.startYear}</P>
               <P>(This indicator has data for a single year only.)</P>
             </Div>)
-          }
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row centered>
-            <Grid.Column width={5} textAlign="center">
-              <ChartShare size="big" color="black" />
-            </Grid.Column>
-          </Grid.Row>
-          <RankingsTable {...this.setCountryRankData()} />
-        </Grid>
+            }
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row centered>
+              <Grid.Column width={5} textAlign="center">
+                <ChartShare size="big" color="black" />
+              </Grid.Column>
+            </Grid.Row>
+            <RankingsTable {...this.setCountryRankData()} />
+          </Grid>
+       : (<P fontSize={'0.5em'} color={lightGrey}> Maps dont load on server ...</P>)
+      }
       </Container>
     );
   }

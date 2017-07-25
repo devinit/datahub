@@ -10,9 +10,9 @@
   },
   "scripts": {
     "clean": "rm -rf ./node_modules/.cache",
-    "dev": "PORT=8888 BABEL_ENV=development npm run clean && node private/server.js",
+    "dev": "PORT=8888 BABEL_ENV=development npm run clean && node server.js",
     "build": "BABEL_ENV=production NODE_ENV=production npm run clean && next build",
-    "start": "BABEL_ENV=production NODE_ENV=production node private/server.js",
+    "start": "BABEL_ENV=production NODE_ENV=production PORT=8888 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
