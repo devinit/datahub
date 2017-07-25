@@ -7,7 +7,6 @@ import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import Pane from 'components/atoms/Pane';
 import {HeaderGroup} from 'components/atoms/Header';
-import SearchInput from 'components/organisms/CountrySearch';
 import Map from 'components/organisms/Map';
 import Generic from '../Generic';
 
@@ -17,7 +16,6 @@ type Props = {
 export default (props: Props) => {
   return (
     <Generic>
-      <SearchInput />
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
           <Grid centered>

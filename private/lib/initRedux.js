@@ -17,7 +17,7 @@ function create(apollo, initialState) {
     combineReducers({
       // Setup reducers
       ...app,
-      apollo: apolloWrapper(apollo.reducer()),
+      apollo: apollo.reducer(),
     }),
     initialState, // Hydrate the store with server-side data
     compose(
@@ -29,7 +29,8 @@ function create(apollo, initialState) {
 
 export function makeStorePersist(store) {
   return new Promise((resolve, reject) => {
-    persistStore(store, {
+    if (!process.browser) return resolve(store);
+    return persistStore(store, {
       storage: localForage,
       whitelist: ['apollo'] }, (err, cachedStore) => {
         if (err) {

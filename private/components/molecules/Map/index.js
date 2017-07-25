@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type {MapData, PaintMap} from 'components/atoms/BaseMap';
 import glamorous, {Div, P} from 'glamorous';
-import {lightGrey} from 'components/theme/semantic';
+import {lighterGrey, lightGrey} from 'components/theme/semantic';
 import type {LegendField} from 'components/atoms/MapLegend';
 import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
@@ -89,7 +89,7 @@ class Map extends Component {
     const legendData = this.props.mapData.legend;
     const config = mapConfigs[country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
-    console.log('process: ', process.browser);
+    // console.log('process: ', process.browser);
     return (
       <Container fluid>
         { process.browser ?
@@ -138,7 +138,10 @@ class Map extends Component {
             </Grid.Row>
             <RankingsTable {...this.setCountryRankData()} />
           </Grid>
-       : (<P fontSize={'0.5em'} color={lightGrey}> Maps dont load on server ...</P>)
+       :
+      (<Div beckgroundColor={lighterGrey} height={'600px'}>
+        <P color={lighterGrey} fontSize={'0.5em'}>Maps dont load on server ...</P>
+      </Div>)
       }
       </Container>
     );
