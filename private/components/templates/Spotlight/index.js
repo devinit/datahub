@@ -33,7 +33,7 @@ export default () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-        <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={'/spotlight'} /></NoSSR>
+      <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={'/spotlight'} /></NoSSR>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS

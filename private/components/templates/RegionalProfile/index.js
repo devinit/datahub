@@ -9,7 +9,7 @@ import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import {CardContainer} from 'components/atoms/Container';
-import SearchInput from 'components/organisms/CountrySearch';
+import SearchInput from 'components/organisms/CountrySearchInput';
 import Generic from '../Generic';
 import data from './data';
 

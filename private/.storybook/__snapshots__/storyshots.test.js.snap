@@ -482,7 +482,7 @@ exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 
 
 exports[`Storyshots Country Search Country Search With Data 1`] = `
 <div
-  className="css-1gfdluh"
+  className="css-mv69bf"
 >
   <div
     className="ui container"
@@ -1968,43 +1968,43 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 
 exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map with redux 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux uganda_poverty_headcount 1`] = `
 <div
-  className="css-1fu9r5i"
+  className="css-v9l6ke"
 />
 `;
 
@@ -2078,7 +2078,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <div
               className="menu-text"
             >
-              Profile
+              Profiles
             </div>
           </a>
           <div
@@ -2366,7 +2366,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <a
               href=""
             >
-              Profile
+              Profiles
             </a>
           </span>
           <div
@@ -2570,7 +2570,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
         <div
           className="menu-text"
         >
-          Profile
+          Profiles
         </div>
       </a>
       <div
@@ -2916,24 +2916,9 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
             onChange={[Function]}
           >
             <option
-              value="data_series.avg_income_of_extreme_poor"
-            >
-              Average income of extreme poor
-            </option>
-            <option
-              value="data_series.depth_of_extreme_poverty_190"
-            >
-              Depth of extreme poverty (poverty gap)
-            </option>
-            <option
               value="data_series.poor_people_190"
             >
               Number of people living in extreme poverty
-            </option>
-            <option
-              value="data_series.poorest_20_percent"
-            >
-              Poorest 20%
             </option>
             <option
               value="data_series.poverty_190"
@@ -2941,9 +2926,19 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
               % of population living in extreme poverty
             </option>
             <option
+              value="data_series.depth_of_extreme_poverty_190"
+            >
+              Depth of extreme poverty (poverty gap)
+            </option>
+            <option
               value="data_series.poverdata_series.poverty_310"
             >
               % of population living on less than $3.10 a day
+            </option>
+            <option
+              value="data_series.poorest_20_percent"
+            >
+              Number of people in the P20
             </option>
           </select>
           <i
@@ -3049,6 +3044,11 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
             onChange={[Function]}
           >
             <option
+              value="spotlight_on_uganda.uganda_poverty_headcount"
+            >
+              Poverty headcount
+            </option>
+            <option
               value="spotlight_on_uganda.uganda_deprivation_living"
             >
               Decent standard of living score
@@ -3057,11 +3057,6 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
               value="spotlight_on_uganda.uganda_life_expectancy"
             >
               Life expectancy
-            </option>
-            <option
-              value="spotlight_on_uganda.uganda_poverty_headcount"
-            >
-              Poverty headcount
             </option>
           </select>
           <i
@@ -3149,7 +3144,7 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
               <div
                 className="menu-text"
               >
-                Profile
+                Profiles
               </div>
             </a>
             <div
@@ -3437,7 +3432,7 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
               <a
                 href=""
               >
-                Profile
+                Profiles
               </a>
             </span>
             <div
@@ -3708,6 +3703,11 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
                 onChange={[Function]}
               >
                 <option
+                  value="spotlight_on_uganda.uganda_poverty_headcount"
+                >
+                  Poverty headcount
+                </option>
+                <option
                   value="spotlight_on_uganda.uganda_deprivation_living"
                 >
                   Decent standard of living score
@@ -3716,11 +3716,6 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
                   value="spotlight_on_uganda.uganda_life_expectancy"
                 >
                   Life expectancy
-                </option>
-                <option
-                  value="spotlight_on_uganda.uganda_poverty_headcount"
-                >
-                  Poverty headcount
                 </option>
               </select>
               <i
@@ -3741,7 +3736,7 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
       </div>
     </div>
     <div
-      className="css-1fu9r5i"
+      className="css-v9l6ke"
     />
     <div
       className="css-7q1pau"
@@ -4089,7 +4084,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="menu-text"
               >
-                Profile
+                Profiles
               </div>
             </a>
             <div
@@ -4377,7 +4372,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <a
                 href=""
               >
-                Profile
+                Profiles
               </a>
             </span>
             <div
@@ -6168,7 +6163,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="menu-text"
               >
-                Profile
+                Profiles
               </div>
             </a>
             <div
@@ -6456,7 +6451,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <a
                 href=""
               >
-                Profile
+                Profiles
               </a>
             </span>
             <div
@@ -6874,7 +6869,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="menu-text"
               >
-                Profile
+                Profiles
               </div>
             </a>
             <div
@@ -7162,7 +7157,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               <a
                 href=""
               >
-                Profile
+                Profiles
               </a>
             </span>
             <div
@@ -7759,7 +7754,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <div
                 className="menu-text"
               >
-                Profile
+                Profiles
               </div>
             </a>
             <div
@@ -8047,7 +8042,7 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
               <a
                 href=""
               >
-                Profile
+                Profiles
               </a>
             </span>
             <div
