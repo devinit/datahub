@@ -36,14 +36,15 @@ class Map extends Component {
     super(props);
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.map) throw new Error('mapData data is missing in props');
-    if (!props.mapData.end_year) throw new Error('mapData end_year is missing in props');
     if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
+    if (!props.mapData.country) throw new Error('mapData country is missing in props values');
+    this.country = props.mapData.country;
     this.startYear = props.mapData.start_year;
-    this.endYear = props.mapData.end_year;
+    this.endYear = props.mapData.end_year || props.mapData.start_year;
     this.yearSliderVisibility = this.endYear > this.startYear;
     const data = this.yearSliderVisibility ?
       Map.setCurrentYearData(this.endYear, props.mapData.map) : props.mapData.map;
-    const currentYear: number = this.endYear;
+    const currentYear: number = this.endYear < 2016 ? this.endYear : 2015;
     this.state = {currentYear, data};
   }
   state: State
@@ -70,24 +71,23 @@ class Map extends Component {
     const top = sortedData.slice(0, 10);
     const bottom = sortedData.slice(-10);
     return {
-      hasflags: true,
+      hasflags: this.country === 'global',
       data: {top, bottom}
     };
   }
   yearSliderVisibility: boolean;
   startYear: number;
   endYear: number;
+  country: string;
   render() {
     if (!this.props.mapData) throw new Error('mapData is missing in props, checking the data was loaded or came through');
-    if (!this.props.mapData.name) throw new Error('mapData name is missing in props ');
+    if (!this.props.mapData.name) this.props.mapData.name = 'Place holder name';
     if (!this.props.mapData.legend) throw new Error(`mapData legend is missing in props for ${this.props.mapData.name}`);
-    if (!this.props.mapData.description) throw new Error(`mapData description is missing in props for ${this.props.mapData.name}`);
-    if (!this.props.mapData.country) throw new Error(`mapData country is missing in props ${this.props.mapData.name}`);
-    const country: string = this.props.mapData.country;
+    if (!this.props.mapData.description) this.props.mapData.description = 'Placeholder description';
     const name: string = this.props.mapData.name;
     const description: string = this.props.mapData.description;
     const legendData = this.props.mapData.legend;
-    const config = mapConfigs[country];
+    const config = mapConfigs[this.country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
     return (
       <Container fluid>

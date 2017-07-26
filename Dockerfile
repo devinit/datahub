@@ -17,6 +17,6 @@ WORKDIR /src
 ENV NODE_ENV production
 RUN npm run build
 
-EXPOSE 4040
+EXPOSE 9090
 
 CMD npm run start
