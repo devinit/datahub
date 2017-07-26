@@ -16,7 +16,7 @@
   "pitch": 0,
   "sources": {
     "composite": {
-      "url": "http://178.79.185.236:8080/data/uganda.json",
+      "url": "/data/uganda.json",
       "type": "vector"
     }
   },
