@@ -89,60 +89,53 @@ class Map extends Component {
     const legendData = this.props.mapData.legend;
     const config = mapConfigs[country];
     const paint: PaintMap = {data: this.state.data, ...config.paint};
-    console.log('are we in browser', process.browser);
     return (
       <Container fluid>
-        { process.browser ?
-          <Grid columns={1}>
-            <Grid.Row>
-              <Div width={'100%'}>
-                <BaseMap paint={paint} viewport={config.viewport} />
-              </Div>
-              <Legend
-                title={name}
-                description={description}
-                legendData={legendData}
-              />
-              <P
-                fontSize={'0.7em'}
-                color={lightGrey}
-                bottom={'15%'}
-                right={'2%'}
-                position={'absolute'}
-              >
-              Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
-            </Grid.Row>
-            <Grid.Row centered>
-              <Grid.Column width={4} textAlign="center">
-                {
-              this.yearSliderVisibility ?
-              (<YearSlider
-                minimum={this.startYear}
-                maximum={this.endYear}
-                step={1}
-                position={this.endYear}
-                onChange={year => this.onYearChange(year)}
-              />)
-            :
-            (<Div fontWeight={'bold'}>
-              <P fontSize={'1.2em'}>{this.startYear}</P>
-              <P>(This indicator has data for a single year only.)</P>
-            </Div>)
-            }
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row centered>
-              <Grid.Column width={5} textAlign="center">
-                <ChartShare size="big" color="black" />
-              </Grid.Column>
-            </Grid.Row>
-            <RankingsTable {...this.setCountryRankData()} />
-          </Grid>
-       :
-      (<Div beckgroundColor={lightGrey} height={'600px'}>
-        <P color={lighterGrey} fontSize={'0.5em'}>Maps dont load on server ...</P>
-      </Div>)
-      }
+        <Grid columns={1}>
+          <Grid.Row>
+            <Div width={'100%'}>
+              <BaseMap paint={paint} viewport={config.viewport} />
+            </Div>
+            <Legend
+              title={name}
+              description={description}
+              legendData={legendData}
+            />
+            <P
+              fontSize={'0.7em'}
+              color={lightGrey}
+              bottom={'15%'}
+              right={'2%'}
+              position={'absolute'}
+            >
+            Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={4} textAlign="center">
+              {
+            this.yearSliderVisibility ?
+            (<YearSlider
+              minimum={this.startYear}
+              maximum={this.endYear}
+              step={1}
+              position={this.endYear}
+              onChange={year => this.onYearChange(year)}
+            />)
+          :
+          (<Div fontWeight={'bold'}>
+            <P fontSize={'1.2em'}>{this.startYear}</P>
+            <P>(This indicator has data for a single year only.)</P>
+          </Div>)
+          }
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width={5} textAlign="center">
+              <ChartShare size="big" color="black" />
+            </Grid.Column>
+          </Grid.Row>
+          <RankingsTable {...this.setCountryRankData()} />
+        </Grid>
       </Container>
     );
   }

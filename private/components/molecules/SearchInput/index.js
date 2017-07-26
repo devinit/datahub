@@ -11,10 +11,9 @@ type Country ={
   id: string,
   name: string
 }
-type Props = {
+export type Props = {
   countries: Country[],
   placeholder: string,
-  loading: boolean,
   visible: boolean,
   onSelected?: (any) => void
 };
@@ -79,12 +78,12 @@ class SearchInput extends React.Component {
     if (this.props.onSelected) {
       this.props.onSelected(value);
     }
+    // TODO: navigate to new URL
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
   }
   render() {
-    if (this.props.loading) return (<p> loading ...</p>);
     return (
       <InputContainer
         visible={this.props.visible}

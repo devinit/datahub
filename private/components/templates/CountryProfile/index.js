@@ -13,7 +13,7 @@ import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
-import SearchInput from 'components/organisms/CountrySearch';
+import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import {CardContainer} from 'components/atoms/Container';
 import Generic from '../Generic';
 import data from './data';
@@ -35,7 +35,7 @@ export default (props: Props) =>
                     General Picture
                   </Header.Content>
                 </Header>
-                <SearchInput />
+                <CountrySeachInput />
                 <Lead>
                   Explore this in-depth profile of Uganda to
                   find out overall levels of poverty, income distribution,

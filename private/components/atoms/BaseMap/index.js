@@ -1,6 +1,6 @@
 // @flow
 /* eslint-disable react/no-danger */
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground} from 'components/theme/semantic';
 import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
@@ -51,6 +51,7 @@ type Props = {
 }
 type State = {
   mapStyle: string,
+  paint: PaintMap, // to force updates
   viewport: {...Viewport, ...ViewportDefaults}
 }
 type MapBoxOptions = {
@@ -80,7 +81,7 @@ type GenericTipHtml = {
   uom: string;
   value: string | number;
 }
-class BaseMap extends PureComponent {
+class BaseMap extends Component {
   static genericTipHtml({id, header, label, value, uom}: GenericTipHtml) {
     return `<i  style="display: block;margin: 0 auto;width: 30%;"
                 class="${id.toLocaleLowerCase()} flag"></i>
@@ -93,7 +94,8 @@ class BaseMap extends PureComponent {
     const viewport = {...this._viewportDefaults, ...props.viewport};
     this.state = {
       mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
-      viewport
+      viewport,
+      paint: this.props.paint
     };
     if (props.paint.mapStyle) this.state = {...this.state, mapStyle: props.paint.mapStyle};
     this._isOnMobile = window.innerWidth < 1200;
@@ -103,7 +105,11 @@ class BaseMap extends PureComponent {
     if (!this.props.paint.data) throw new Error('please provide a paint property with the required mapData');
     this.draw(this._element, this.props.paint);
   }
-
+  componentWillReceiveProps(nextProps: Props) {
+    console.log('nextprops', nextProps);
+    this.setState({paint: nextProps.paint});
+    // if (this._map && this._mapLoaded) this.colorMap(this.state.paint);
+  }
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
     scrollZoom: false,
@@ -184,7 +190,7 @@ class BaseMap extends PureComponent {
 
   colorMap({data, baseColor, propertyName, propertyLayer}: PaintMap) {
     if (!data) throw new Error('you have to pass in data to color the map');
-    // console.log('features: ', this._map.queryRenderedFeatures()[1]);
+    console.log('features in colorMap: ', this._map.queryRenderedFeatures()[1]);
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
@@ -222,7 +228,6 @@ class BaseMap extends PureComponent {
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     const mapContainerStyle = {width, height, position: 'relative'};
-    if (this._mapLoaded && this._map) this.colorMap(this.props.paint);
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />

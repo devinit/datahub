@@ -11,8 +11,9 @@ export type Action = GlobalIndicator & SpotLightlIndicator & {
     apollo: Object
   }
 }
-type AppState = {
+export type AppState = {
   rehydrated: boolean,
+  isFirstMapRender: boolean,
   spotlightIndicator: string,
   globalIndicator: string,
 }
@@ -27,6 +28,7 @@ export type AppReducers <S, A> = {
 }
 export const initialState: AppState = {
   rehydrated: false,
+  isFirstMapRender: true,
   spotlightIndicator: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
   globalIndicator: globalThemes.globalPictureThemes[0].default_indicator
 };
@@ -38,10 +40,10 @@ export const app: AppReducers<AppState, Action> = {
         return {...state, rehydrated: true};
       }
       case GLOBAL_INDICATOR: {
-        return {...state, globalIndicator: action.globalIndicator};
+        return {...state, globalIndicator: action.globalIndicator, isFirstMapRender: false};
       }
       case SPOTLIGHT_INDICATOR: {
-        return {...state, spotlightIndicator: action.spotlightIndicator};
+        return {...state, spotlightIndicator: action.spotlightIndicator, isFirstMapRender: false};
       }
       default: return state;
     }
