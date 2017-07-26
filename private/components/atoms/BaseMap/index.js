@@ -93,7 +93,7 @@ class BaseMap extends Component {
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
     const viewport = {...this._viewportDefaults, ...props.viewport};
     this.state = {
-      mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
+      mapStyle: '/styles/worldgeojson.json',
       viewport,
       paint: this.props.paint
     };
