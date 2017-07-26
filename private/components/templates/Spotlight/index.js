@@ -7,7 +7,7 @@ import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
 import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
-import { red, white } from 'components/theme/semantic';
+import { red, white, lighterGrey } from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
 import NoSSR from 'react-no-ssr';
 import Generic from '../Generic';
@@ -33,7 +33,7 @@ export default () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-        <NoSSR><Map pathName={'/spotlight'} /></NoSSR>
+        <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={'/spotlight'} /></NoSSR>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS

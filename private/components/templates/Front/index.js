@@ -6,6 +6,7 @@ import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import NoSSR from 'react-no-ssr';
 import {HeaderGroup} from 'components/atoms/Header';
+import {lighterGrey} from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
 import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
@@ -32,7 +33,7 @@ export default (props: Props) => {
         </Div>
       </Container>
       <GlobalPictureNavTabs />
-      <NoSSR><Map pathName={props.pathName} /></NoSSR>
+      <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={props.pathName} /></NoSSR>
     </Generic>
   );
 };
