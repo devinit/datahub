@@ -18,7 +18,7 @@ const mapConfigs: MapConfigs = {
     paint: {
       propertyLayer: 'national',
       propertyName: 'ISO2',
-      mapStyle: 'http://178.79.185.236:8080/styles/worldgeojson.json',
+      mapStyle: '/styles/worldgeojson.json',
     },
     viewport: {
       zoom: 1,
@@ -34,7 +34,7 @@ const mapConfigs: MapConfigs = {
     paint: {
       propertyLayer: 'uganda',
       propertyName: 'id',
-      mapStyle: 'http://178.79.185.236:8080/styles/ugandageojson.json'
+      mapStyle: '/styles/ugandageojson.json'
     },
     viewport: {
       zoom: 5.5,
@@ -50,7 +50,7 @@ const mapConfigs: MapConfigs = {
     paint: {
       propertyLayer: 'kenya',
       propertyName: 'id',
-      mapStyle: 'http://178.79.185.236:8080/styles/kenyageojson.json'
+      mapStyle: '/styles/kenyageojson.json'
     },
     viewport: {
       center: [37.65, 0.85],
