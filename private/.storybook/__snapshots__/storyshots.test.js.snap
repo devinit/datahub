@@ -1966,46 +1966,46 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 </p>
 `;
 
+exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] = `
+<div
+  className="css-1fu9r5i"
+/>
+`;
+
 exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map with redux 1`] = `
-<p>
-  Loading ...
-</p>
+<div
+  className="css-1fu9r5i"
+/>
 `;
 
-exports[`Storyshots Maps Live with only Apollo Depth of Poverty % Map 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = `
+<div
+  className="css-1fu9r5i"
+/>
 `;
 
-exports[`Storyshots Maps Live with only Apollo Number of Poorest 20% 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
+<div
+  className="css-1fu9r5i"
+/>
 `;
 
-exports[`Storyshots Maps Live with only Apollo fragile states 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
+<div
+  className="css-1fu9r5i"
+/>
 `;
 
-exports[`Storyshots Maps Live with only Apollo largest_intl_flow 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
+<div
+  className="css-1fu9r5i"
+/>
 `;
 
-exports[`Storyshots Maps Live with only Apollo latest_census 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`Storyshots Maps Live with only Apollo uganda_poverty_headcount 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`Storyshots Maps Live with Apollo and Redux uganda_poverty_headcount 1`] = `
+<div
+  className="css-1fu9r5i"
+/>
 `;
 
 exports[`Storyshots Menu Datahub Logo 1`] = `
@@ -3740,9 +3740,9 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
         </div>
       </div>
     </div>
-    <p>
-      Loading ...
-    </p>
+    <div
+      className="css-1fu9r5i"
+    />
     <div
       className="css-7q1pau"
     >
