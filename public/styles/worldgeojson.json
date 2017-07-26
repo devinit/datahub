@@ -1,0 +1,55 @@
+{
+  "version": 8,
+  "name": "Red P20 national",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "template",
+    "mapbox:groups": {
+      "cbefd3306f19f1436af7c731cde58ddf": {
+        "name": "National"
+      }
+    }
+  },
+  "center": [2.958521369101419, 0.7871051665330668],
+  "zoom": 1.5391903295435796,
+  "bearing": 0,
+  "pitch": 0,
+  "sources": {
+    "composite": {
+      "url": "http://178.79.185.236:8080/data/world.json",
+      "type": "vector"
+    }
+  },
+  "layers": [{
+    "id": "background",
+    "type": "background",
+    "layout": {
+      "visibility": "visible"
+    },
+    "paint": {
+      "background-color": "rgba(233,231,232,1)"
+    }
+  }, {
+    "id": "national",
+    "type": "fill",
+    "metadata": {
+      "mapbox:group": "cbefd3306f19f1436af7c731cde58ddf"
+    },
+    "source": "composite",
+    "source-layer": "worldgeojson",
+    "minzoom": 1,
+    "layout": {
+      "visibility": "visible"
+    },
+    "paint": {
+      "fill-color": "rgba(186,186,186,1)",
+      "fill-outline-color": "rgba(238,238,238,1)"
+    }
+  }],
+  "created": "2017-02-07T20:49:33.569Z",
+  "id": "ciyw0278n00252rmuwy3z9z5d",
+  "modified": "2017-05-03T13:17:55.771Z",
+  "owner": "akmiller01",
+  "visibility": "private",
+  "draft": false
+}
