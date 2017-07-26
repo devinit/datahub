@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.0",
   "config": {
-    "api": "https://datahub-api-xxioumnotf.now.sh/graphql"
+    "api": "https://datahub-api-aotrininsd.now.sh/graphql"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
-    "test": "BABEL_ENV=test jest",    "coverage": "BABEL_ENV=test jest && codecov",
+    "test": "BABEL_ENV=test jest",
+    "coverage": "BABEL_ENV=test jest && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -s public -o .out",
     "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js && npm run lessToJs",
@@ -48,6 +49,7 @@
     "localforage": "^1.5.0",
     "mapbox-gl": "^0.38.0",
     "next": "^3.0.1-beta.18",
+    "next-routes": "^1.0.40",
     "ramda": "^0.24.1",
     "react": "^15.6.1",
     "react-apollo": "^1.4.8",

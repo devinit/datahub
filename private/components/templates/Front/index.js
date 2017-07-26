@@ -18,7 +18,7 @@ export default (props: Props) => {
   return (
     <Generic>
       <GlobalPictureCountrySeach>
-        <CountrySeachInput />
+        <CountrySeachInput visible />
       </GlobalPictureCountrySeach>
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>

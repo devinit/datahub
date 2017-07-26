@@ -9,6 +9,7 @@ import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
+import NoSSR from 'react-no-ssr';
 import Generic from '../Generic';
 import data from './data';
 
@@ -32,7 +33,7 @@ export default () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      <Map pathName={'/spotlight'} />
+        <NoSSR><Map pathName={'/spotlight'} /></NoSSR>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS

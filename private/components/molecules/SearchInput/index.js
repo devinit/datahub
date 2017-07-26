@@ -3,6 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import {SocialMediaLink} from 'components/atoms/Link';
+import Router from 'next/router';
 import {List} from 'components/atoms/SearchInput/list';
 import {Input, InputContainer} from '../../atoms/SearchInput/input';
 
@@ -77,8 +78,9 @@ class SearchInput extends React.Component {
     this.setState({value: value.name});
     if (this.props.onSelected) {
       this.props.onSelected(value);
+    } else {
+      Router.push(`/country/${value.name}`);
     }
-    // TODO: navigate to new URL
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});

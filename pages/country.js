@@ -7,7 +7,10 @@ import App from 'components/templates/CountryProfile';
 import 'lib/offline-install'; // Get our service worker on the page
 
 type Props = {
-  url: {pathname: string}
+  url: {
+    pathname: string,
+    query: {slug: string}
+  }
 }
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
@@ -17,7 +20,8 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
+  console.log(props);
   return (
-    <App id={props.url.pathname} />
+    <App id={props.url.query.slug} />
   );
 });

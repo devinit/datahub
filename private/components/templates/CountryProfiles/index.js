@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import { red } from 'components/theme/semantic';
 import {CardContainer} from 'components/atoms/Container';
-import SearchInput from 'components/organisms/CountrySearch';
+import SearchInput from 'components/organisms/CountrySearchInput';
 import Generic from '../Generic';
 
 
@@ -32,7 +32,7 @@ export default () =>
                   General Picture
                 </Header.Content>
               </Header>
-              <SearchInput />
+              <SearchInput visible />
               <JumpToResource>
                 Jump to <a>International resources</a>
               </JumpToResource>

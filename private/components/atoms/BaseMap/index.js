@@ -106,9 +106,8 @@ class BaseMap extends Component {
     this.draw(this._element, this.props.paint);
   }
   componentWillReceiveProps(nextProps: Props) {
-    console.log('nextprops', nextProps);
+    this.colorMap(nextProps.paint);
     this.setState({paint: nextProps.paint});
-    // if (this._map && this._mapLoaded) this.colorMap(this.state.paint);
   }
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
