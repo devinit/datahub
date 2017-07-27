@@ -2931,7 +2931,7 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
               Depth of extreme poverty (poverty gap)
             </option>
             <option
-              value="data_series.poverdata_series.poverty_310"
+              value="data_series.poverty_310"
             >
               % of population living on less than $3.10 a day
             </option>
