@@ -20,7 +20,7 @@ export default {
           name: 'Depth of extreme poverty (poverty gap)'
         },
         {
-          id: 'data_series.poverdata_series.poverty_310',
+          id: 'data_series.poverty_310',
           name: '% of population living on less than $3.10 a day'
         },
         {
@@ -77,7 +77,7 @@ export default {
           name: 'Government revenue per person (including grants), 2015 PPP$'
         },
         {
-          id: 'data_series.government_revenue_pc_gdp',
+          id: 'data_series.govt_revenue_pc_gdp',
           name: 'Government revenue (excluding grants), % of GDP'
         },
         {
@@ -89,7 +89,7 @@ export default {
           name: 'Grants, % of government revenue'
         },
         {
-          id: 'data_series.government_spending_pc',
+          id: 'data_series.govt_spend_pc',
           name: 'Government spending per person, 2015 PPP$'
         }
       ],
@@ -129,7 +129,43 @@ export default {
     {
       id: 'international-official-finance',
       name: 'International official finance',
-      indicators: [],
+      indicators: [
+        { id: 'fact.in_oda_gross_2015', name: 'Gross ODA received, US$' },
+        { id: 'fact.in_oda_net_2015', name: 'Net ODA received, US$' },
+        {
+          id: 'fact.out_oda_net_2015',
+          name: 'Net ODA provided by OECD DAC members, US$'
+        },
+        {
+          id: 'data_series.oda_per_poor_person_2015',
+          name: 'ODA per person living on under $1.90 a day, US$'
+        },
+        {
+          id: 'fact.oda_percent_gni',
+          name:
+            'Net official development assistance (ODA) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income (GNI).'
+        },
+        {
+          id: 'fact.oda_to_ldcs_percent_gni',
+          name: 'Gross ODA provided by DAC members to LDCs, % of GNI'
+        },
+        {
+          id: 'data_series.in_oof_gross',
+          name: 'Gross other official flows received, US$'
+        },
+        {
+          id: 'data_series.out_oof_net',
+          name: 'Net other official flows provided, US$'
+        },
+        {
+          id: 'data_series.out_ssc_net',
+          name: 'Net south-south development cooperation provided, US$'
+        },
+        {
+          id: 'data_series.ssc_percent_gni',
+          name: 'South-south development cooperation provided, % of GNI'
+        }
+      ],
       default_indicator: 'fact.in_oda_gross_2015'
     },
     {

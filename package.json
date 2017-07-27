@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.0",
   "config": {
-    "api": "https://datahub-api-vmsvudllal.now.sh/graphql"
+    "api": "https://datahub-api-wdqklaxngt.now.sh/graphql"
   },
   "repository": {
     "type": "git",

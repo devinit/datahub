@@ -51,7 +51,7 @@ type Props = {
 }
 type State = {
   mapStyle: string,
-  paint: PaintMap, // to force updates
+  // paint: PaintMap, // to force updates
   viewport: {...Viewport, ...ViewportDefaults}
 }
 type MapBoxOptions = {
@@ -95,20 +95,18 @@ class BaseMap extends Component {
     this.state = {
       mapStyle: '/styles/worldgeojson.json',
       viewport,
-      paint: this.props.paint
+      // paint: this.props.paint
     };
     if (props.paint.mapStyle) this.state = {...this.state, mapStyle: props.paint.mapStyle};
     this._isOnMobile = window.innerWidth < 1200;
   }
   state: State;
-  componentDidMount() {
-    if (!this.props.paint.data) throw new Error('please provide a paint property with the required mapData');
-    this.draw(this._element, this.props.paint);
-  }
-  componentWillReceiveProps(nextProps: Props) {
-    this.colorMap(nextProps.paint);
-    this.setState({paint: nextProps.paint});
-  }
+  // componentWillReceiveProps(nextProps: Props) {
+  //   if (nextProps !== this.props) {
+  //     if (this._map && this._mapLoaded) this.colorMap(this.props.paint);
+  //     // this.setState({paint: nextProps.paint});
+  //   }
+  // }
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
     scrollZoom: false,
@@ -189,7 +187,7 @@ class BaseMap extends Component {
 
   colorMap({data, baseColor, propertyName, propertyLayer}: PaintMap) {
     if (!data) throw new Error('you have to pass in data to color the map');
-    console.log('features in colorMap: ', this._map.queryRenderedFeatures()[1]);
+    // console.log('features in colorMap: ', this._map.queryRenderedFeatures()[1]);
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
@@ -206,33 +204,40 @@ class BaseMap extends Component {
     const defaultOpts = {...this.state.viewport, style: this.state.mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
       {...defaultOpts, maxBounds: this.state.viewport.bounds} : defaultOpts;
-    this._map = new mapboxgl.Map(opts);
-    this._nav = new mapboxgl.NavigationControl();
-    this._map.addControl(this._nav, 'top-right');
-    this._map.on('load', () => {
-      this._mapLoaded = true;
-      this._map.setPaintProperty('background', 'background-color', seaBackground);
-      this.colorMap(paint);
-      this._map.dragRotate.disable();
-      this._map.touchZoomRotate.disableRotation();
-      this.zoomListener();
-      this.mouseHoverEvent();
-      this.dragListener();
-      this.persistZoomAndCenterLevel();
-      this.resize();
-    });
+    if (!this._map) this._map = new mapboxgl.Map(opts);
+    if (!this._nav) {
+      this._nav = new mapboxgl.NavigationControl();
+      this._map.addControl(this._nav, 'top-right');
+    }
+    if (this._map && this._mapLoaded) this.colorMap(paint);
+    if (!this.map) {
+      this._map.on('load', () => {
+        this._mapLoaded = true;
+        this._map.setPaintProperty('background', 'background-color', seaBackground);
+        this.colorMap(paint);
+        this._map.dragRotate.disable();
+        this._map.touchZoomRotate.disableRotation();
+        this.zoomListener();
+        this.mouseHoverEvent();
+        this.dragListener();
+        this.persistZoomAndCenterLevel();
+        this.resize();
+      });
+    }
   }
   render() {
     let {width, height} = this.props;
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     const mapContainerStyle = {width, height, position: 'relative'};
+    if (!this.props.paint.data) throw new Error('please provide a paint property with the required map data');
+    console.log('map render');
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <div
           key={'map-mapbox'}
-          ref={element => { this._element = element; }}
+          ref={element => { this.draw(element, this.props.paint); }}
           style={mapContainerStyle}
         />
       </MapContainer>

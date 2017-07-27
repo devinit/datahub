@@ -11,6 +11,7 @@ import {Grid, Container} from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
 import type {Props as RankingsTableProps, Data as RankingsTableData} from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
+import type {MapConfig} from './config';
 import mapConfigs from './config';
 
 type Props = {
@@ -21,7 +22,8 @@ type Props = {
 
 type State = {
    currentYear: number,
-   data: MapData[]
+   data: MapData[],
+   paint: PaintMap
 }
 
 class Map extends Component {
@@ -34,20 +36,16 @@ class Map extends Component {
   }
   constructor(props: Props) {
     super(props);
-    if (!props.mapData) throw new Error('mapData is missing in props');
-    if (!props.mapData.map) throw new Error('mapData data is missing in props');
-    if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
-    if (!props.mapData.country) throw new Error('mapData country is missing in props values');
+    if (!props.mapData || !props.mapData.country) throw new Error('mapData country is missing in props values');
     this.country = props.mapData.country;
-    this.startYear = props.mapData.start_year;
-    this.endYear = props.mapData.end_year || props.mapData.start_year;
-    this.yearSliderVisibility = this.endYear > this.startYear;
-    const data = this.yearSliderVisibility ?
-      Map.setCurrentYearData(this.endYear, props.mapData.map) : props.mapData.map;
-    const currentYear: number = this.endYear < 2016 ? this.endYear : 2015;
-    this.state = {currentYear, data};
+    this.config = mapConfigs[this.country];
+    this.init(props);
   }
   state: State
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps !== this.props) this.init(nextProps);
+  }
+
   onYearChange(year: number) {
     this.state.currentYear = year;
     if (this.props && this.props.mapData && this.props.mapData.map) {
@@ -75,26 +73,37 @@ class Map extends Component {
       data: {top, bottom}
     };
   }
+  init(props: Props) {
+    if (!props.mapData) throw new Error('mapData is missing in props');
+    if (!props.mapData.map) throw new Error('mapData data is missing in props');
+    if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
+    this.startYear = props.mapData.start_year;
+    this.endYear = props.mapData.end_year || props.mapData.start_year;
+    this.yearSliderVisibility = this.endYear > this.startYear;
+    const currentYear: number = this.endYear > 2016 ? 2016 : this.endYear;
+    const data = this.yearSliderVisibility ?
+      Map.setCurrentYearData(currentYear, props.mapData.map) : props.mapData.map;
+    const paint: PaintMap = {data, ...this.config.paint};
+    this.state = {currentYear, data, paint};
+  }
   yearSliderVisibility: boolean;
   startYear: number;
   endYear: number;
   country: string;
+  config: MapConfig;
   render() {
     if (!this.props.mapData) throw new Error('mapData is missing in props, checking the data was loaded or came through');
     if (!this.props.mapData.name) this.props.mapData.name = 'Place holder name';
     if (!this.props.mapData.legend) throw new Error(`mapData legend is missing in props for ${this.props.mapData.name}`);
-    if (!this.props.mapData.description) this.props.mapData.description = 'Placeholder description';
     const name: string = this.props.mapData.name;
-    const description: string = this.props.mapData.description;
+    const description: string = this.props.mapData.description || 'Please had a proper description ';
     const legendData = this.props.mapData.legend;
-    const config = mapConfigs[this.country];
-    const paint: PaintMap = {data: this.state.data, ...config.paint};
     return (
       <Container fluid>
         <Grid columns={1}>
           <Grid.Row>
             <Div width={'100%'}>
-              <BaseMap paint={paint} viewport={config.viewport} />
+              <BaseMap paint={this.state.paint} viewport={this.config.viewport} />
             </Div>
             <Legend
               title={name}
