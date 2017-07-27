@@ -101,12 +101,6 @@ class BaseMap extends Component {
     this._isOnMobile = window.innerWidth < 1200;
   }
   state: State;
-  // componentWillReceiveProps(nextProps: Props) {
-  //   if (nextProps !== this.props) {
-  //     if (this._map && this._mapLoaded) this.colorMap(this.props.paint);
-  //     // this.setState({paint: nextProps.paint});
-  //   }
-  // }
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
     scrollZoom: false,
@@ -231,7 +225,7 @@ class BaseMap extends Component {
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     const mapContainerStyle = {width, height, position: 'relative'};
     if (!this.props.paint.data) throw new Error('please provide a paint property with the required map data');
-    console.log('map render');
+
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />

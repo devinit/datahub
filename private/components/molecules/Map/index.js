@@ -80,7 +80,7 @@ class Map extends Component {
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year || props.mapData.start_year;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    const currentYear: number = this.endYear > 2016 ? 2016 : this.endYear;
+    const currentYear: number = this.endYear > 2015 ? 2015 : this.endYear;
     const data = this.yearSliderVisibility ?
       Map.setCurrentYearData(currentYear, props.mapData.map) : props.mapData.map;
     const paint: PaintMap = {data, ...this.config.paint};
