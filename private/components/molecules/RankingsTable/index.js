@@ -2,6 +2,7 @@
 import React from 'react';
 import {Grid, Table, Flag} from 'semantic-ui-react';
 import {Span} from 'glamorous';
+import approximate from 'approximate-number';
 import {RankingsTableContainer} from 'components/atoms/Container';
 
 export type Data = {
@@ -29,7 +30,8 @@ const RankingsTable = (props: Props) => (
               <Table.Header>
                 <Table.Row>
                   <Table.HeaderCell textAlign="center" colSpan={props.hasflags ? '4' : '3'}>
-                    <Span textTransform={'capitalize'}>{key}</Span> 10
+                    {props.data[key].length ?
+                    (<Span textTransform={'capitalize'}>{key} {props.data[key].length}</Span>) : ''}
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -39,7 +41,7 @@ const RankingsTable = (props: Props) => (
                     <Table.Cell><b>{index}</b></Table.Cell>
                     {props.hasflags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
                     <Table.Cell>{item.name}</Table.Cell>
-                    <Table.Cell textAlign="right">{item.value}</Table.Cell>
+                    <Table.Cell textAlign="right">{approximate(item.value)}</Table.Cell>
                   </Table.Row>))}
               </Table.Body>
             </Table>

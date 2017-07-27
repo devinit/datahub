@@ -14,6 +14,8 @@ query MapData($id: String!) {
     country
     uom_display
     name
+    theme
+    heading
     description
     legend {
       label

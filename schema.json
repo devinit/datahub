@@ -1380,6 +1380,30 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "uid",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "color",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
@@ -3192,7 +3216,7 @@
               "defaultValue": null
             },
             {
-              "name": "buddle",
+              "name": "bundle",
               "description": "",
               "type": {
                 "kind": "SCALAR",
@@ -3369,7 +3393,7 @@
               "deprecationReason": null
             },
             {
-              "name": "buddles",
+              "name": "bundles",
               "description": "same as form",
               "args": [],
               "type": {

@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground} from 'components/theme/semantic';
 import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
+import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
 
 // TODO: possibly move types to separate file
@@ -36,9 +37,10 @@ export type PaintMap = {
   paintProperty?: string
 }
 export type Meta = {
-  uom_display: ?string,
+  uom_display: string,
+  theme: string,
   // map indicator user friendly label / slug eg Poverty
-  name: ?string
+  name: string
 }
 
 type Props = {
@@ -49,11 +51,7 @@ type Props = {
   height?: number,
   style?: Object
 }
-type State = {
-  mapStyle: string,
-  // paint: PaintMap, // to force updates
-  viewport: {...Viewport, ...ViewportDefaults}
-}
+
 type MapBoxOptions = {
   style: string,
   ...Viewport,
@@ -76,31 +74,25 @@ type PopupItem = {
 }
 type GenericTipHtml = {
   id: string;
-  header: string;
-  label: string;
+  country: string;
+  name: string;
   uom: string;
   value: string | number;
 }
 class BaseMap extends Component {
-  static genericTipHtml({id, header, label, value, uom}: GenericTipHtml) {
+  static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
     return `<i  style="display: block;margin: 0 auto;width: 30%;"
                 class="${id.toLocaleLowerCase()} flag"></i>
-            <p style="text-align:center;font-weight: 700;line-height: 2; margin:0"> ${header} </p>
-            <em> ${label}: <b> ${value}${uom}</b></em>`;
+            <p style="text-align:center;font-weight: 700;line-height: 2; margin:0"> ${country} </p>
+            <em> ${name}: <b> ${value}${uom}</b></em>`;
   }
   constructor(props: Props) {
     super(props);
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
-    const viewport = {...this._viewportDefaults, ...props.viewport};
-    this.state = {
-      mapStyle: '/styles/worldgeojson.json',
-      viewport,
-      // paint: this.props.paint
-    };
-    if (props.paint.mapStyle) this.state = {...this.state, mapStyle: props.paint.mapStyle};
+    this._viewport = {...this._viewportDefaults, ...props.viewport};
+    this._mapStyle = props.paint.mapStyle || '/styles/worldgeojson.json';
     this._isOnMobile = window.innerWidth < 1200;
   }
-  state: State;
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
     scrollZoom: false,
@@ -113,19 +105,22 @@ class BaseMap extends Component {
   _center: Point;
   _zoomLevel: number;
   _element: HTMLDivElement;
+  _viewport: Viewport;
+  _mapStyle: string;
 
   tipTemplate(pointData: MapData) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : 'Base map';
-    const uom = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
-    if (!pointData.value) return `<div> ${JSON.stringify(pointData)} ${uom} ${name}</div>`; // possibly in debug
-    if (!pointData.id || !pointData.value || !pointData.name) return false;
-    const label = pointData.detail ? pointData.detail : name;
+    const uom = this.props.meta && this.props.meta.uom_display === '%' ? '%' : '';
+    if (!pointData.id || pointData.value === undefined || !pointData.name) return false;
+    let value = pointData.detail ? pointData.detail : approximate(pointData.value);
+    const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : 'default';
+    if (theme === 'data-revolution' && pointData.year) value = pointData.year.toString();
     const opts = {
       id: pointData.id,
-      value: pointData.value,
-      label,
+      value,
+      name,
       uom,
-      header: pointData.name
+      country: pointData.name
     };
     return BaseMap.genericTipHtml(opts);
   }
@@ -153,14 +148,12 @@ class BaseMap extends Component {
   zoomListener() {
     this._map.on('zoomend', () => {
       this._zoomLevel = this._map.getZoom();
-      // console.log('zoom level', this._zoomLevel);
       return true;
     });
   }
   dragListener() {
     this._map.on('dragend', () => {
       this._center = this._map.getCenter();
-      // console.log('center', [this._center.lng, this._center.lat]);
       return true;
     });
   }
@@ -178,14 +171,11 @@ class BaseMap extends Component {
       this._map.resize();
     });
   }
-
   colorMap({data, baseColor, propertyName, propertyLayer}: PaintMap) {
     if (!data) throw new Error('you have to pass in data to color the map');
-    // console.log('features in colorMap: ', this._map.queryRenderedFeatures()[1]);
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
-
     this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
       {
         property: propertyName || 'ISO2',
@@ -195,17 +185,20 @@ class BaseMap extends Component {
       });
   }
   draw(domElement: HTMLDivElement, paint: PaintMap) {
-    const defaultOpts = {...this.state.viewport, style: this.state.mapStyle, container: domElement};
+    const defaultOpts = {...this._viewport, style: this._mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
-      {...defaultOpts, maxBounds: this.state.viewport.bounds} : defaultOpts;
+      {...defaultOpts, maxBounds: this._viewport.bounds} : defaultOpts;
     if (!this._map) this._map = new mapboxgl.Map(opts);
     if (!this._nav) {
       this._nav = new mapboxgl.NavigationControl();
       this._map.addControl(this._nav, 'top-right');
     }
+    // React creates a new class instance per render
+    // and it recalls them i.e they continue existing
     if (this._map && this._mapLoaded) this.colorMap(paint);
-    if (!this.map) {
+    if (!this.map && !this._mapLoaded) {
       this._map.on('load', () => {
+        console.log('in map load');
         this._mapLoaded = true;
         this._map.setPaintProperty('background', 'background-color', seaBackground);
         this.colorMap(paint);
@@ -225,13 +218,12 @@ class BaseMap extends Component {
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     const mapContainerStyle = {width, height, position: 'relative'};
     if (!this.props.paint.data) throw new Error('please provide a paint property with the required map data');
-
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <div
           key={'map-mapbox'}
-          ref={element => { this.draw(element, this.props.paint); }}
+          ref={element => { if (element) this.draw(element, this.props.paint); }}
           style={mapContainerStyle}
         />
       </MapContainer>
