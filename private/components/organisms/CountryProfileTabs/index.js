@@ -10,6 +10,10 @@ import {
   Population,
   Poverty,
 } from 'components/molecules/CountryProfileTabs';
+import povertyConfig from 'visboxConfigs/povertyTabCharts';
+import populationConfig from 'visboxConfigs/populationTabCharts';
+import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
+import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
@@ -27,16 +31,16 @@ const countryProfileTabs = (props: TabsProps) => {
         <Overview {...props} />
       </Pane>
       <Pane label="Poverty" key={2}>
-        <Poverty {...props} />
+        <Poverty config={povertyConfig} {...props} />
       </Pane>
       <Pane label="Population" key={3}>
-        <Population {...props} />
+        <Population config={populationConfig} {...props} />
       </Pane>
       <Pane label="Government Finance" key={4}>
-        <GovernmentFinance {...props} />
+        <GovernmentFinance config={govtFinanceConfig} {...props} />
       </Pane>
       <Pane label="International Resources" key={5}>
-        <InternationalResources {...props} />
+        <InternationalResources config={internationalResourcesConfig} {...props} />
       </Pane>
     </Tabs>
   );
