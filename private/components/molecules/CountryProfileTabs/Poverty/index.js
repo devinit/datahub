@@ -1,6 +1,7 @@
 // @flow
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
+import Chart from 'components/atoms/Chart';
 import {HeaderGroup} from 'components/atoms/Header';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
@@ -18,6 +19,7 @@ const Poverty = (props: TabDataQuery) => {
           >
             IS POVERTY REDUCING OVER TIME?
           </Header>
+          <Chart config={props.config.area} data={props.povertyTab.poverty190Trend} height="120px" />
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -39,6 +41,15 @@ const Poverty = (props: TabDataQuery) => {
             HOW IS INCOME DISTRIBUTED?
           </Header>
 
+          <Chart
+            config={props.config.histogram}
+            // TODO: Add color from server side
+            data={props.povertyTab.incomeDistTrend.map((d, i) => ({...d, color: i ? undefined : '#e8443a'}))}
+            height="120px"
+          />
+          <P fontWeight="bold" textAlign="left" marginTop="1em">
+            Bottom quintile has {props.povertyTab.incomeDistTrend[0].value}% of the income.
+          </P>
         </Grid.Column>
       </Grid>
     </Container>

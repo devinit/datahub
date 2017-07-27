@@ -2,6 +2,7 @@
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {P} from 'glamorous';
+import Chart from 'components/atoms/Chart';
 import {red} from 'components/theme/semantic';
 import {big} from 'components/theme';
 
@@ -38,6 +39,12 @@ const Government = (props: TabDataQuery) => {
             HOW IS SPENDING ALLOCATED?
           </Header>
 
+          <Chart
+            config={props.config.spendingAllocation}
+            // TODO: Remove null data from server side
+            data={props.governmentFinance.spendingAllocation.filter(d => d.name)}
+            height="140px"
+          />
         </Grid.Column>
       </Grid>
     </Container>
