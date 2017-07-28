@@ -57,7 +57,7 @@ const Wrapper = glamorous.div({
   }
 });
 
-type Props = {
+export type Props = {
   options: Array<Object>,
   onChange?: any,
 };

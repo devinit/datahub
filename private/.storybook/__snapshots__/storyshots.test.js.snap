@@ -2910,7 +2910,11 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
         className="ui center aligned container"
       >
         <div
+<<<<<<< HEAD
+          className="css-1x8ctpc"
+=======
           className="css-1t2i9sr"
+>>>>>>> c2acaa9fb85c1ff9771d8339c8671d29b7d1deb4
         >
           <div
             aria-busy={undefined}
@@ -3130,7 +3134,11 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
         className="ui center aligned container"
       >
         <div
+<<<<<<< HEAD
+          className="css-1x8ctpc"
+=======
           className="css-1t2i9sr"
+>>>>>>> c2acaa9fb85c1ff9771d8339c8671d29b7d1deb4
         >
           <div
             aria-busy={undefined}
@@ -3853,7 +3861,11 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
             className="ui center aligned container"
           >
             <div
+<<<<<<< HEAD
+              className="css-1x8ctpc"
+=======
               className="css-1t2i9sr"
+>>>>>>> c2acaa9fb85c1ff9771d8339c8671d29b7d1deb4
             >
               <div
                 aria-busy={undefined}
