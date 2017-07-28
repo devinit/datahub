@@ -1,6 +1,6 @@
 // @flow
 import glamorous from 'glamorous';
-import {Icon, Button} from 'semantic-ui-react';
+import {Icon, Button, Select} from 'semantic-ui-react';
 import React from 'react';
 import { white } from 'components/theme/semantic';
 
@@ -30,27 +30,41 @@ const Wrapper = glamorous.div({
     cursor: 'pointer',
     outline: 0,
     appearance: 'none',
+  },
+  '& .ui.selection.dropdown': {
+    backgroundColor: 'transparent',
+    color: '#fff',
+    border: 'none',
+    minWidth: '1em',
+    fontSize: '1.2em',
+  },
+  '& .ui.selection.dropdown .menu': {
+    background: 'rgba(233,231,232,.9)',
+  },
+  '& .ui.selection.dropdown .menu>.item': {
+    borderTop: 'none',
+  },
+  '& .ui.selection.visible.dropdown>.text:not(.default)': {
+    color: '#fff'
+  },
+  '& .ui.selection.dropdown>.dropdown.icon': {
+    opacity: 1
   }
 });
 
-export type Option = {|
-  key: string,
-  value: string
-|}
-
 export type Props = {
-  options: Array<Option>,
-  onChange?: ((event: any) => void)
-}
+  options: Array<Object>,
+  onChange?: any,
+};
 
-const Select = ({options, onChange}: Props) => (
+const NavBarSelect = ({options, onChange}: Props) => (
   <Wrapper>
-    <select onChange={event => onChange ? onChange(event) : false}>
-      {options.map(item => <option value={item.key} key={item.key}>{item.value}</option>)}
-    </select>
-    <Icon name="caret down" />
+    <Select
+      defaultValue={options[0].value}
+      options={options.map(item => ({key: item.key, text: item.value, value: item.value}))}
+    />
     <Button size="medium">Using this Visualization</Button>
   </Wrapper>
 );
 
-export default Select;
+export default NavBarSelect;

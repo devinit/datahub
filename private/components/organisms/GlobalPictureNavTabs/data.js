@@ -137,7 +137,7 @@ export default {
           name: 'Net ODA provided by OECD DAC members, US$'
         },
         {
-          id: 'data_series.oda_per_poor_person_2015',
+          id: 'recipient_profile.oda_per_poor_person_2015',
           name: 'ODA per person living on under $1.90 a day, US$'
         },
         {

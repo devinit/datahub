@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.0",
   "config": {
-    "api": "https://datahub-api-wdqklaxngt.now.sh/graphql"
+    "api": "http://localhost:3000/graphql"
   },
   "repository": {
     "type": "git",
@@ -104,9 +104,7 @@
     "semantic-ui": "^2.2.10"
   },
   "git-pre-hooks": {
-    "pre-push": [
-      "npm run lint"
-    ]
+
   },
   "jest": {
     "coverageDirectory": "./coverage/",

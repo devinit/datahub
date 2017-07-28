@@ -69,7 +69,8 @@ export default ComposedComponent => {
       };
     }
     async componentDidMount() {
-      // if (process.browser) await makeStorePersist(this.redux); // dispatches an Hydrate action
+       // dispatches an Hydrate action
+      if (process.env.NODE_ENV === 'production') makeStorePersist(this.redux);
     }
     constructor(props) {
       super(props);

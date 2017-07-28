@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import BaseMap from 'components/atoms/BaseMap';
-import type {MapData, PaintMap} from 'components/atoms/BaseMap';
+import type {MapData, PaintMap, Meta} from 'components/atoms/BaseMap';
 import glamorous, {Div, P} from 'glamorous';
 import {lighterGrey, lightGrey} from 'components/theme/semantic';
 import type {LegendField} from 'components/atoms/MapLegend';
@@ -21,9 +21,8 @@ type Props = {
 };
 
 type State = {
-   currentYear: number,
    data: MapData[],
-   paint: PaintMap
+   currentYear: number
 }
 
 class Map extends Component {
@@ -47,7 +46,6 @@ class Map extends Component {
   }
 
   onYearChange(year: number) {
-    this.state.currentYear = year;
     if (this.props && this.props.mapData && this.props.mapData.map) {
       const data = Map.setCurrentYearData(year, this.props.mapData.map);
       this.setState({currentYear: year, data});
@@ -57,17 +55,18 @@ class Map extends Component {
     const sortedData = this.state.data
       .filter(obj => obj.value && obj.id)
       .map((obj: MapData) => {
-        const flag: string = obj.id ? obj.id.toLocaleLowerCase() : 'N/A';
+        if (!obj.id) throw new Error('data point id missing for country rank data');
+        const flagUrl: string = `/flags/svg/${obj.id}.svg`;
         const name = obj.name ? obj.name : 'N/A';
         if (!obj.value || !obj.uid) throw new Error('value must be defined');
-        return {name, value: obj.value, flag, uid: obj.uid};
+        return {name, value: obj.value, flagUrl, uid: obj.uid};
       })
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined');
         return a.value - b.value;
       });
-    const top = sortedData.slice(0, 10);
-    const bottom = sortedData.slice(-10);
+    const top = sortedData.slice(0, 10).reverse();
+    const bottom = sortedData.slice(-10).reverse();
     return {
       hasflags: this.country === 'global',
       data: {top, bottom}
@@ -75,40 +74,47 @@ class Map extends Component {
   }
   init(props: Props) {
     if (!props.mapData) throw new Error('mapData is missing in props');
-    if (!props.mapData.map) throw new Error('mapData data is missing in props');
     if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
     this.startYear = props.mapData.start_year;
-    this.endYear = props.mapData.end_year || props.mapData.start_year;
+    this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    const currentYear: number = this.endYear > 2016 ? 2016 : this.endYear;
+    // TODO: this is a temporary fix, i will add a default year value
+    const currentYear = props.mapData.default_year || this.startYear;
+    if (!props.mapData || !props.mapData.map) throw new Error('mapData data is missing in props');
     const data = this.yearSliderVisibility ?
       Map.setCurrentYearData(currentYear, props.mapData.map) : props.mapData.map;
-    const paint: PaintMap = {data, ...this.config.paint};
-    this.state = {currentYear, data, paint};
+    this.paint = {data, ...this.config.paint};
+    if (!props.mapData || !props.mapData.legend) throw new Error('mapData legend is missing in props');
+    this.legendData = props.mapData.legend;
+    this.name = props.mapData && props.mapData.name ? props.mapData.name : 'Indicator must have a name talk to Allan or Donata';
+    const uomDisplay = props.mapData.uom_display || '';
+    this.description = props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
+    if (!props.mapData.theme) throw new Error('theme is missing in map data props');
+    this.meta = {name: this.name, uom_display: uomDisplay, theme: props.mapData.theme};
+    this.state = {data, currentYear};
   }
   yearSliderVisibility: boolean;
   startYear: number;
+  paint: PaintMap; // map data
   endYear: number;
+  meta: Meta;
   country: string;
   config: MapConfig;
+  name: string;
+  description: string;
+  legendData: LegendField[];
   render() {
-    if (!this.props.mapData) throw new Error('mapData is missing in props, checking the data was loaded or came through');
-    if (!this.props.mapData.name) this.props.mapData.name = 'Place holder name';
-    if (!this.props.mapData.legend) throw new Error(`mapData legend is missing in props for ${this.props.mapData.name}`);
-    const name: string = this.props.mapData.name;
-    const description: string = this.props.mapData.description || 'Please had a proper description ';
-    const legendData = this.props.mapData.legend;
     return (
       <Container fluid>
         <Grid columns={1}>
           <Grid.Row>
             <Div width={'100%'}>
-              <BaseMap paint={this.state.paint} viewport={this.config.viewport} />
+              <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
             </Div>
             <Legend
-              title={name}
-              description={description}
-              legendData={legendData}
+              title={this.name}
+              description={this.description}
+              legendData={this.legendData}
             />
             <P
               fontSize={'0.7em'}
@@ -127,7 +133,7 @@ class Map extends Component {
               minimum={this.startYear}
               maximum={this.endYear}
               step={1}
-              position={this.endYear}
+              position={this.state.currentYear}
               onChange={year => this.onYearChange(year)}
             />)
           :

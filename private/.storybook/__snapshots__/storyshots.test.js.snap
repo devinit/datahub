@@ -2910,41 +2910,137 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
         className="ui center aligned container"
       >
         <div
-          className="css-9to0er"
+<<<<<<< HEAD
+          className="css-1x8ctpc"
+=======
+          className="css-1t2i9sr"
+>>>>>>> c2acaa9fb85c1ff9771d8339c8671d29b7d1deb4
         >
-          <select
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui selection dropdown"
+            onBlur={[Function]}
             onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
           >
-            <option
-              value="data_series.poor_people_190"
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
             >
               Number of people living in extreme poverty
-            </option>
-            <option
-              value="data_series.poverty_190"
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
             >
-              % of population living in extreme poverty
-            </option>
-            <option
-              value="data_series.depth_of_extreme_poverty_190"
-            >
-              Depth of extreme poverty (poverty gap)
-            </option>
-            <option
-              value="data_series.poverty_310"
-            >
-              % of population living on less than $3.10 a day
-            </option>
-            <option
-              value="data_series.poorest_20_percent"
-            >
-              Number of people in the P20
-            </option>
-          </select>
-          <i
-            aria-hidden="true"
-            className="caret down icon"
-          />
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Number of people living in extreme poverty
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  % of population living in extreme poverty
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Depth of extreme poverty (poverty gap)
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  % of population living on less than $3.10 a day
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Number of people in the P20
+                </span>
+              </div>
+            </div>
+          </div>
           <button
             className="ui medium button"
             disabled={undefined}
@@ -3038,31 +3134,99 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
         className="ui center aligned container"
       >
         <div
-          className="css-9to0er"
+<<<<<<< HEAD
+          className="css-1x8ctpc"
+=======
+          className="css-1t2i9sr"
+>>>>>>> c2acaa9fb85c1ff9771d8339c8671d29b7d1deb4
         >
-          <select
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui selection dropdown"
+            onBlur={[Function]}
             onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
           >
-            <option
-              value="spotlight_on_uganda.uganda_poverty_headcount"
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
             >
               Poverty headcount
-            </option>
-            <option
-              value="spotlight_on_uganda.uganda_deprivation_living"
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
             >
-              Decent standard of living score
-            </option>
-            <option
-              value="spotlight_on_uganda.uganda_life_expectancy"
-            >
-              Life expectancy
-            </option>
-          </select>
-          <i
-            aria-hidden="true"
-            className="caret down icon"
-          />
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Poverty headcount
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Decent standard of living score
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Life expectancy
+                </span>
+              </div>
+            </div>
+          </div>
           <button
             className="ui medium button"
             disabled={undefined}
@@ -3697,31 +3861,99 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
             className="ui center aligned container"
           >
             <div
-              className="css-9to0er"
+<<<<<<< HEAD
+              className="css-1x8ctpc"
+=======
+              className="css-1t2i9sr"
+>>>>>>> c2acaa9fb85c1ff9771d8339c8671d29b7d1deb4
             >
-              <select
+              <div
+                aria-busy={undefined}
+                aria-disabled={undefined}
+                aria-expanded={false}
+                aria-multiselectable={undefined}
+                className="ui selection dropdown"
+                onBlur={[Function]}
                 onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                role="listbox"
+                tabIndex={0}
               >
-                <option
-                  value="spotlight_on_uganda.uganda_poverty_headcount"
+                <div
+                  aria-live="polite"
+                  className="text"
+                  role="alert"
                 >
                   Poverty headcount
-                </option>
-                <option
-                  value="spotlight_on_uganda.uganda_deprivation_living"
+                </div>
+                <i
+                  aria-hidden="true"
+                  className="dropdown icon"
+                />
+                <div
+                  className="menu transition"
                 >
-                  Decent standard of living score
-                </option>
-                <option
-                  value="spotlight_on_uganda.uganda_life_expectancy"
-                >
-                  Life expectancy
-                </option>
-              </select>
-              <i
-                aria-hidden="true"
-                className="caret down icon"
-              />
+                  <div
+                    aria-checked={true}
+                    aria-disabled={undefined}
+                    aria-selected={true}
+                    className="active selected item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      Poverty headcount
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-disabled={undefined}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      Decent standard of living score
+                    </span>
+                  </div>
+                  <div
+                    aria-checked={false}
+                    aria-disabled={undefined}
+                    aria-selected={false}
+                    className="item"
+                    onClick={[Function]}
+                    role="option"
+                    style={
+                      Object {
+                        "pointerEvents": "all",
+                      }
+                    }
+                  >
+                    <span
+                      className="text"
+                    >
+                      Life expectancy
+                    </span>
+                  </div>
+                </div>
+              </div>
               <button
                 className="ui medium button"
                 disabled={undefined}
@@ -3797,10 +4029,26 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
             </p>
           </div>
         </div>
+        <div
+          className="centered row"
+        >
+          <div
+            centered={true}
+            className="eight wide column"
+          >
+            <iframe
+              frameBorder="0"
+              height="315"
+              src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&showinfo=0"
+              title="About Datahub"
+              width="560"
+            />
+          </div>
+        </div>
       </div>
     </div>
     <div
-      className="css-13dh4yr"
+      className="css-5431pt"
     >
       <div
         className="ui center aligned container"
@@ -7378,7 +7626,7 @@ exports[`Storyshots Templates Methodology 1`] = `
       </div>
     </div>
     <div
-      className="css-13dh4yr"
+      className="css-5431pt"
     >
       <div
         className="ui container"
