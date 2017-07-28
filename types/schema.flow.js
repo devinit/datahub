@@ -68,6 +68,7 @@ export type MapDataQuery = {|
     // map indicator user friendly label / slug eg Poverty
     name: ?string,
     theme: ?string,
+    heading: ?string,
     description: ?string,
     legend: ? Array< {|
       label: ?string,

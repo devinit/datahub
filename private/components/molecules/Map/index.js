@@ -46,7 +46,6 @@ class Map extends Component {
   }
 
   onYearChange(year: number) {
-    this.state.currentYear = year;
     if (this.props && this.props.mapData && this.props.mapData.map) {
       const data = Map.setCurrentYearData(year, this.props.mapData.map);
       this.setState({currentYear: year, data});
@@ -73,14 +72,14 @@ class Map extends Component {
       data: {top, bottom}
     };
   }
-  // TODO: create a default year field in cms
   init(props: Props) {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    const currentYear = this.yearSliderVisibility && this.endYear > 2015 ? 2016 : this.endYear;
+    // TODO: this is a temporary fix, i will add a default year value
+    const currentYear = props.mapData.default_year || this.startYear;
     if (!props.mapData || !props.mapData.map) throw new Error('mapData data is missing in props');
     const data = this.yearSliderVisibility ?
       Map.setCurrentYearData(currentYear, props.mapData.map) : props.mapData.map;
@@ -90,7 +89,6 @@ class Map extends Component {
     this.name = props.mapData && props.mapData.name ? props.mapData.name : 'Indicator must have a name talk to Allan or Donata';
     const uomDisplay = props.mapData.uom_display || '';
     this.description = props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
-    // console.log(data[9]);
     if (!props.mapData.theme) throw new Error('theme is missing in map data props');
     this.meta = {name: this.name, uom_display: uomDisplay, theme: props.mapData.theme};
     this.state = {data, currentYear};

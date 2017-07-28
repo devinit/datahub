@@ -41,7 +41,9 @@ class YearSlider extends React.Component {
       position: props.position,
     };
   }
-
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps !== this.props) this.setState({position: nextProps.position});
+  }
   onSliderChange = (e: any) => {
     const position = parseInt(e.target.value, 0);
     this.props.onChange(position);
