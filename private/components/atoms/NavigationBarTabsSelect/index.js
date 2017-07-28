@@ -35,7 +35,14 @@ const Wrapper = glamorous.div({
     backgroundColor: 'transparent',
     color: '#fff',
     border: 'none',
-    minWidth: '1em'
+    minWidth: '1em',
+    fontSize: '1.2em',
+  },
+  '& .ui.selection.dropdown .menu': {
+    background: 'rgba(233,231,232,.9)',
+  },
+  '& .ui.selection.dropdown .menu>.item': {
+    borderTop: 'none',
   },
   '& .ui.selection.visible.dropdown>.text:not(.default)': {
     color: '#fff'
