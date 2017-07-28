@@ -69,6 +69,17 @@ export default () => {
               </p>
             </Grid.Column>
           </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width="8" centered>
+              <iframe
+                src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
+                title="About Datahub"
+                frameBorder="0"
+                width="560"
+                height="315"
+              />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
       </Container>
       <LightBg>

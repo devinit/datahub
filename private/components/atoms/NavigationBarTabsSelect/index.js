@@ -35,7 +35,14 @@ const Wrapper = glamorous.div({
     backgroundColor: 'transparent',
     color: '#fff',
     border: 'none',
-    minWidth: '1em'
+    minWidth: '1em',
+    fontSize: '1.2em',
+  },
+  '& .ui.selection.dropdown .menu': {
+    background: 'rgba(233,231,232,.9)',
+  },
+  '& .ui.selection.dropdown .menu>.item': {
+    borderTop: 'none',
   },
   '& .ui.selection.visible.dropdown>.text:not(.default)': {
     color: '#fff'
@@ -45,15 +52,10 @@ const Wrapper = glamorous.div({
   }
 });
 
-export type Option = {|
-  key: string,
-  value: string
-|}
-
 export type Props = {
-  options: Array<Option>,
-  onChange?: ((event: any) => void)
-}
+  options: Array<Object>,
+  onChange?: any,
+};
 
 const NavBarSelect = ({options, onChange}: Props) => (
   <Wrapper>
