@@ -16,6 +16,7 @@ query MapData($id: String!) {
     name
     theme
     heading
+    default_year
     description
     legend {
       label

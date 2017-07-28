@@ -79,6 +79,7 @@ class SearchInput extends React.Component {
     if (this.props.onSelected) {
       this.props.onSelected(value);
     } else {
+      console.log('in router');
       Router.push(`/country/${value.name}`);
     }
   }

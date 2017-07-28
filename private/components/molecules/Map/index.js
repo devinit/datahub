@@ -75,11 +75,11 @@ class Map extends Component {
   init(props: Props) {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
+    if (!props.mapData.default_year) throw new Error('mapData default_year is missing in props');
+    const currentYear = props.mapData.default_year;
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    // TODO: this is a temporary fix, i will add a default year value
-    const currentYear = props.mapData.default_year || this.startYear;
     if (!props.mapData || !props.mapData.map) throw new Error('mapData data is missing in props');
     const data = this.yearSliderVisibility ?
       Map.setCurrentYearData(currentYear, props.mapData.map) : props.mapData.map;
@@ -109,7 +109,7 @@ class Map extends Component {
         <Grid columns={1}>
           <Grid.Row>
             <Div width={'100%'}>
-              <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
+               <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
             </Div>
             <Legend
               title={this.name}
