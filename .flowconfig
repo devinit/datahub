@@ -6,11 +6,20 @@
 [include]
 private
 pages
+tools
 [libs]
 flow-typed
-private/types
+types
+./node_modules/apollo-client/index.js.flow
 [options]
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.graphql
+module.file_ext=.gql
+module.file_ext=.jsx
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=private
 module.system.node.resolve_dirname=public/semantic
+module.name_mapper='package.json' -> '<PROJECT_ROOT>/package.json'
 module.name_mapper.extension='graphql' -> '<PROJECT_ROOT>/private/__mocks__/graphql.js'
+module.name_mapper.extension='css' -> '<PROJECT_ROOT>/private/__mocks__/styleMock.js'

@@ -7,23 +7,27 @@ const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/w
 const moduleResolver = {
   resolve: {
     modules: ['node_modules',
-              path.resolve(__dirname, 'private'),
-              path.resolve(__dirname, 'public/semantic'),
-              path.resolve(__dirname, 'public/img')],
+      path.resolve(__dirname, 'private'),
+      path.resolve(__dirname, 'public/semantic'),
+      path.resolve(__dirname, 'public/img')
+    ],
     alias: {
-      // From mapbox-gl-js README. Required for non-browserify bundlers (e.g. webpack):
-      'mapbox-gl$': path.resolve('node_modules/mapbox-gl/dist/mapbox-gl.js')
+      'package.json': './package.json'
     }
   }
 };
 
 const newPlugins = [
   new webpack.EnvironmentPlugin(['MapboxAccessToken']),
-  new webpack.DefinePlugin({'process.browser': true})
+  new webpack.DefinePlugin({
+    'process.browser': true
+  })
 ];
 
 module.exports = (config, env) => {
   const webpack = genDefaultConfig(config, env);
-  const plugins =webpack.plugins.concat(newPlugins);
-  return Object.assign(webpack, moduleResolver, {plugins});
+  const plugins = webpack.plugins.concat(newPlugins);
+  return Object.assign(webpack, moduleResolver, {
+    plugins
+  });
 };

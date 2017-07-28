@@ -7,7 +7,7 @@ import {
   Overview,
   Population,
   Poverty,
-} from 'components/molecules/RegionalProfileTabs';
+} from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';

@@ -1,43 +1,25 @@
 // @flow
 import React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import {Container, Grid, Icon, Header, Button} from 'semantic-ui-react';
 import Pane from 'components/atoms/Pane';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
-import {
-  DistrictPublicResources,
-  Education,
-  Health,
-  Population,
-  Poverty,
-  WaterandSanitation
-} from 'components/molecules/SpotLightNavTabs';
+import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
 import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
-import { red, white } from 'components/theme/semantic';
-import RankingsTable from 'components/molecules/RankingsTable';
+import { red, white, lighterGrey } from 'components/theme/semantic';
+import Map from 'components/organisms/Map';
+import NoSSR from 'react-no-ssr';
 import Generic from '../Generic';
 import data from './data';
 
-
-/* eslint-disable max-len */
 /* eslint-disable react/no-unescaped-entities */
-const headerStyles = {
-  paddingTop: '4em',
-  paddingBottom: '4em',
-};
-const HeaderContainer = glamorous.div(headerStyles);
-const HeaderWrapper = glamorous.div({
-  paddingTop: '2em',
-  paddingBottom: '2em',
-});
-
-
+/* eslint-disable max-len */
 export default () => {
   return (
-    <Generic pathName="/aid">
+    <Generic pathName="/spotlight">
       <Container>
-        <HeaderContainer>
+        <Div paddingTop={'4em'} paddingBottom={'4em'} >
           <Grid centered>
             <Grid.Column width={12} textAlign="center">
               <b><Icon name="pie graph" />Spotlight</b> on Uganda is a comprehensive source of Uganda's
@@ -48,34 +30,10 @@ export default () => {
               Explore the country picture by selecting topics and click on a district for an in-depth profile.
             </Grid.Column>
           </Grid>
-        </HeaderContainer>
+        </Div>
       </Container>
-      <NavigationBarTabs selected={0} textAlign="center">
-        <Pane label="Poverty">
-          <Poverty options={data.tabOptions.poverty} />
-        </Pane>
-        <Pane label="Population">
-          <Population options={data.tabOptions.population} />
-        </Pane>
-        <Pane label="Education">
-          <Education options={data.tabOptions.education} />
-        </Pane>
-        <Pane label="Health">
-          <Health options={data.tabOptions.humanitarianFinance} />
-        </Pane>
-        <Pane label="Water and Sanitation">
-          <WaterandSanitation options={data.tabOptions.waterandSanitation} />
-        </Pane>
-        <Pane label="District Public Resources">
-          <DistrictPublicResources options={data.tabOptions.districtPublicResources} />
-        </Pane>
-      </NavigationBarTabs>
-      <Container>
-        <Grid centered>
-          <RankingsTable data={data.regionalRankings} />
-        </Grid>
-      </Container>
-
+      <SpotLightNavTabs />
+      <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={'/spotlight'} /></NoSSR>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS
@@ -84,11 +42,11 @@ export default () => {
       <Container>
         <Grid>
           <Grid.Row centered>
-            <HeaderWrapper>
+            <Div paddingTop={'2em'} paddingBottom={'2em'} >
               <SectionHeader>
                 ABOUT THE <span>DEVELOPMENT DATA HUB</span>
               </SectionHeader>
-            </HeaderWrapper>
+            </Div>
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="8">
@@ -118,9 +76,9 @@ export default () => {
           <SectionHeader color={white}>
             DATA SOURCES
           </SectionHeader>
-          <HeaderWrapper>
+          <Div paddingTop={'4em'} paddingBottom={'4em'} >
             For documentation and data downloads, navigate to the methodology page.
-          </HeaderWrapper>
+          </Div>
           <Button color="grey" size="large">Methodology and Data <Icon name="chevron right" /></Button>
         </Container>
       </LightBg>

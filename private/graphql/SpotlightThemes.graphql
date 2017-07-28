@@ -1,0 +1,11 @@
+query SpotlightThemes($country: String!) {
+ 	 spotlightThemes(country: $country){
+    id
+    name
+    indicators {
+      id
+      name
+    }
+    default_indicator
+  }
+}

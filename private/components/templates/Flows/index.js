@@ -13,7 +13,7 @@ export default () => {
   };
   const HeaderContainer = glamorous.div(headerStyles);
   return (
-    <Generic pathName="/aid">
+    <Generic>
       <Container>
         <HeaderContainer>
           <Header as="h1" textAlign="center">

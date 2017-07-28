@@ -1,7 +1,6 @@
 // TODO:  Move some of the container like atoms into the container atom and
 // just compose them from base containers
 import glamorous from 'glamorous';
-import theme from 'components/theme';
 import {white, red, black} from 'components/theme/semantic';
 
 export const FooterDiv = glamorous.div({
@@ -38,9 +37,9 @@ export const WhiteContainer = glamorous.div({
   paddingBottom: '20px'
 });
 
-export const FooterHeader = glamorous.h4({
+export const FooterHeader = glamorous.h3({
   display: 'block',
-  color: theme.white,
+  color: white,
   marginTop: '1em',
   marginBottom: '1em',
 });

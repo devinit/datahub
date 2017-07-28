@@ -1,8 +1,9 @@
 const path = require('path');
 
 module.exports = {
+  parser: 'babel-eslint',
   extends: ['airbnb', 'plugin:flowtype/recommended'],
-  plugins: ['react', 'jsx-a11y', 'flowtype-errors', 'flowtype', 'import', 'graphql'],
+  plugins: ['flowtype', 'react', 'jsx-a11y', 'import', 'graphql'],
   env: {
     browser: true,
     jest: true,
@@ -10,14 +11,11 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      webpack: {
-        config: {
-          resolve: {
-            extensions: ['.js', '.jsx'],
-            modules: ['node_modules', path.resolve(__dirname, 'private'),
-              path.resolve(__dirname, 'public/semantic'),
-              path.resolve(__dirname, 'public/img')],
-          },
+      'babel-module': {
+        'extensions': ['.js', '.graphql', '.jsx', '.gql'],
+        'root': ['private', 'public/semantic', 'public/img'],
+        'alias': {
+          "package.json": "./package.json"
         }
       }
     }
@@ -43,8 +41,6 @@ module.exports = {
     'no-console': 0,
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
-    'flowtype-errors/show-errors': 2,
-    'flowtype-errors/enforce-min-coverage': [2, 10],
     'react/jsx-filename-extension': [
       2,
       {

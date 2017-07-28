@@ -1,11 +1,26 @@
 // @flow
 import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
-import glamorous from 'glamorous';
-import {Container} from '../../atoms/ChartShare';
+import {white, black} from 'components/theme/semantic';
+import glamorous, {Div} from 'glamorous';
 
-export const SocialIconsContainer = glamorous.div({
-  marginTop: '1.5em',
+const Container = glamorous.div({
+  padding: '5em',
+  '& input.link': {
+    display: 'inline-block',
+    width: '100%',
+    marginTop: '2em',
+    height: '3em',
+    padding: '.5em 1.5em',
+    fontSize: 'inherit',
+    lineHeight: 'inherit',
+    color: black,
+    backgroundColor: white,
+    boxSizing: 'border-box',
+    borderRadius: '.25em',
+    outline: 0,
+    border: `2px solid ${black}`,
+  }
 });
 
 type Props = {
@@ -26,11 +41,11 @@ const ChartShare = ({size, color}: Props) => (
           <input type="radio"value="default" /> in default view <br />
           <input type="radio"value="default" />  as I configured it<br />
           <input className="link" />
-          <SocialIconsContainer>
+          <Div marginTop={'1.5em'} >
             <Button icon="facebook f" />
             <Button icon="twitter" />
             <Button icon="mail outline" />
-          </SocialIconsContainer>
+          </Div>
         </Container>
       </Modal.Description>
     </Modal.Content>

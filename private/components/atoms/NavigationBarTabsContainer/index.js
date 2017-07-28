@@ -1,23 +1,20 @@
 // @flow
-import glamorous from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import React from 'react';
 import TabHeader from 'components/atoms/NavigationBarTabsHeader';
+import type {Props as Selectprops} from 'components/atoms/NavigationBarTabsSelect';
 import Select from 'components/atoms/NavigationBarTabsSelect';
 
-const PaneContainer = glamorous.div({
-  paddingBottom: '5em',
-});
 
-const DarkTabsContainer = (props: Object) => (
-  <PaneContainer>
+const DarkTabsContainer = (props: Selectprops) => (
+  <Div>
     <TabHeader>
       <Container textAlign="center">
-        <Select options={props.options} />
+        <Select {...props} />
       </Container>
     </TabHeader>
-    {props.children}
-  </PaneContainer>
+  </Div>
 );
 
 export default DarkTabsContainer;

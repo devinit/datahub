@@ -1,26 +1,23 @@
 import glamorous from 'glamorous';
-import theme from 'components/theme';
+import {white, lighterGrey, grey, black} from 'components/theme/semantic';
+import {medium} from 'components/theme';
 
 export const FooterLink = glamorous.a({
-  fontSize: theme.smallFont,
+  fontSize: medium,
   display: 'block',
-  color: theme.white,
+  color: lighterGrey,
   paddingBottom: '.5em',
   paddingTop: '.5em',
 });
 
-export const NormalLink = glamorous.a({
-  fontSize: theme.smallFont
-});
 
 export const NavLink = glamorous.a({
-  color: theme.plainWhite,
+  color: white,
   fontWeight: '700',
   textAlign: 'center',
   transition: 'all .3s',
-
   ':hover': {
-    color: theme.plainWhite,
+    color: white,
   }
 });
 
@@ -28,8 +25,8 @@ export const NavLink = glamorous.a({
 // social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({
   display: 'inline-block',
-  color: theme.black,
-  border: `2px solid ${theme.grey}`,
+  color: black,
+  border: `2px solid ${grey}`,
   borderRadius: '50%',
   fontSize: '1.5em',
   height: '2.5em',

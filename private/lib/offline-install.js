@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign*/
+/* eslint-disable no-param-reassign */
 if (
   process.env.NODE_ENV === 'production' &&
   typeof window !== 'undefined' &&

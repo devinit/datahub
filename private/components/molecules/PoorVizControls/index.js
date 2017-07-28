@@ -15,7 +15,7 @@ type Props = {
   scenario: string,
   onLevelChange: (value: string | void) => void,
   onScenarioChange: (value: string | void) => void,
-  onYearChange: (value: string | void) => void
+  onYearChange: (value: number) => void
 };
 const controls = ({
   year,

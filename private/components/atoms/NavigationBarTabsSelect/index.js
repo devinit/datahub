@@ -45,10 +45,15 @@ const Wrapper = glamorous.div({
   }
 });
 
-type Props = {
-  options: Array<Object>,
-  onChange?: any,
-};
+export type Option = {|
+  key: string,
+  value: string
+|}
+
+export type Props = {
+  options: Array<Option>,
+  onChange?: ((event: any) => void)
+}
 
 const NavBarSelect = ({options, onChange}: Props) => (
   <Wrapper>

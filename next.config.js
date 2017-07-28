@@ -5,7 +5,6 @@ const path = require('path');
 module.exports = {
   // changes: configChanges, // for use in storybook webpack config
   webpack: (config, { dev }) => {
-    config.plugins.push(new webpack.EnvironmentPlugin(['MapboxAccessToken']));
     /* Enable only in Production */
     if (!dev) {
       // Service Worker
@@ -32,6 +31,11 @@ module.exports = {
           ]
         }));
     }
-    return config;
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['babel-loader', 'raw-loader'],
+    });
+    const module = Object.assign(config.module, {noParse: /(mapbox-gl)\.js$/});
+    return Object.assign(config, {module});
   }
 };

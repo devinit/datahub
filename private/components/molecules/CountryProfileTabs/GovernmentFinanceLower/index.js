@@ -26,7 +26,7 @@ const ChartSection = glamorous.div({
 
 const Government = () => (
   <Container>
-    <Grid centered>
+    <Grid centered >
       <Grid.Row>
         <Grid.Column width={8} textAlign="center">
           <Lead>

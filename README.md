@@ -1,6 +1,6 @@
 [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/devinit/datahub)
 [![Build Status](https://travis-ci.org/devinit/datahub.svg?branch=master)](https://travis-ci.org/devinit/datahub)
-![Code Climate](https://codeclimate.com/github/devinit/datahub.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/73e243adf7f946208ae9bc8f892ed618)](https://www.codacy.com/app/epicallan/datahub?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=devinit/datahub&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/devinit/datahub/branch/master/graph/badge.svg)](https://codecov.io/gh/devinit/datahub)
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 
@@ -16,10 +16,9 @@ This is just primarily the frontend part of the DataHub, to keep things modular 
 Install it and run:
 
 ```bash
-yarn --ignore-scripts & npm install -g flow-typed
+npm install --ignore-scripts & npm install -g flow-typed # dont install with yarn see  Known development issues below
 npm run dev
 ```
-__[why we have an ignore-scripts option on yarn install](https://github.com/Semantic-Org/Semantic-UI/issues/3533)__
 
 ## Development guidelines
 
@@ -80,8 +79,7 @@ flow-typed create-stub @devinit/charts@1.1.4
 
 --------
 
-We use a mapbox-gl [react wrapper for the maps component](https://github.com/uber/react-map-gl). This wrapper workers best with immutable data structures and thats why we have the [immutable.js dependency](https://facebook.github.io/immutable-js/)
-You will be required to add a MapboxAccessToken to your system environment variable to get it working.
+We use a mapbox-gl 
 
 ## Deployments handled by Now for staging and test previews
 
@@ -98,22 +96,58 @@ Ask Allan for latest staging url
 cd into root of the project
 ``` bash
   $ docker build -t datahub-2 .
-  $ docker run -it -d -p 7777:3333 --name datahub-2-app datahub-2
+  $ docker run -it -d -p 7777:4040 --name datahub-2-app datahub-2
 ```
+
+## Graphql types
+
+Package.json has a ```qql-schema``` command in which you put a graphql api endpoint. This endpoint is used in the command to create a schema.json file which is used by the ```gql-flow``` command to create flow types for your graphql queries. The types are outputted
+in ```private/types/schema.flow.js```
+
+## Pulling API data into the project as Js modules (json) data.
+
+In order to reduce on unnecessary API calls of data that rarelly changes, we have a tool that queries APIs and dumps their data into the project.
+> ```npm run pull``` will return page data and some refrence data eg global map themes and place it in various files in the project </br>
+> ```npm run visbox``` will get you all visbox data for chart configurations</br>
+ These commands should be run at new deployments.
+
 
 ## TODO
 
 ---------
-- [ ] get flow working with in the organisms files
 - [ ] Reduce service worker pre-cache bundle
 - [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
 
 
+## VERY STRANGE BUG
+
+----------
+
+There is this strange bug where a react component willnot be exported out while using export default if its on one line.
+i.e
+```
+  export default connect(mapStateToProps)(MapWithApollo); // this will not export out your component
+  // this will work
+  const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
+  export default MapWithRedux;
+```
+
+
+## Known development issues
+
+----------
+
+- Currently Updating eslint-plugin-react to 7.1.0 will break linting
+- eslint@4 is currently not supported, we are wainting for [airbnb eslint config to support it](https://github.com/airbnb/javascript/issues/1447)
+- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing.
+- Currently dont add react-apollo flow types. They have an issue that need to be corrected
+
 ## Development environment and notes
 
 --------
+- we use package.json for some configs, for instance the api link is in package.json's config key.
 - module resolution is handled by babel not webpack this is a next.js constraint
-- storybook has its own webpack config file you may need to update it where required
+- storybook has its own webpack config file you may need to update it where required. It also has a module resolution config.
 - Advised to use any modern linux OS or MacOS
-- Advised to use NodeJs 7 and above
+- Advised to use NodeJs > 7 
 

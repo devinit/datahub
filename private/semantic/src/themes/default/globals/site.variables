@@ -221,6 +221,10 @@
 @lighterGrey      : #e9e7e8;
 @lightBlack       : #453f43;
 
+/*---  Dark Colors  ---*/
+@darkRed         : #bc2629;
+
+
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;
 @offWhite         : #F9FAFB;
@@ -240,6 +244,7 @@
 @purpleBackground : #F6E7FF;
 @pinkBackground   : #FFE3FB;
 @brownBackground  : #F1E2D3;
+@seaBackground    : #d3e0f4;
 
 /*--- Colored Headers ---*/
 @redHeaderColor    : darken(@redTextColor, 5);

@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { persistStore } from 'redux-persist';
 import localForage from 'localforage';
+// import type {State, Action} from './reducers';
 import {app, apolloWrapper} from './reducers';
 
 let reduxStore = null;
@@ -26,10 +27,17 @@ function create(apollo, initialState) {
   );
 }
 
-export function makeStorePersist(store, apollo) {
+export async function makeStorePersist(store) {
+  const storage = await localForage.config({
+    driver: localForage.INDEXEDDB,
+    name: 'datahub-v2',
+    version: 1.0,
+    storeName: 'datahub', // Should be alphanumeric, with underscores.
+    description: 'datahub client cache'
+  });
   return new Promise((resolve, reject) => {
-    persistStore(store, {
-      storage: localForage,
+    return persistStore(store, {
+      storage,
       whitelist: ['apollo'] }, (err, cachedStore) => {
         if (err) {
           console.error('persisting store error: ', err);

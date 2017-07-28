@@ -1,14 +1,25 @@
-import React from 'react';
+// @flow
+import React, {Component} from 'react';
 import Dragdealer from 'dragdealer';
-import 'dragdealer/src/dragdealer.css';
+// import stylesheet from 'dragdealer/src/dragdealer.css';
+/* eslint-disable react/no-danger */
+type Props = {
+  onYearChange: (year: number) => void
+}
 
-class YearSlider extends React.Component {
-  constructor(props) {
+type State = {
+  year: number;
+}
+
+class YearSlider extends Component {
+  constructor(props: Props) {
     super(props);
     this.state = {
       year: 2013
     };
   }
+  state: State
+
   componentDidMount() {
     const firstYear = 1990;
     const lastYear = 2030;
@@ -33,8 +44,11 @@ class YearSlider extends React.Component {
   }
   render() {
     return (
-      <div id="year-slider" className="dragdealer">
-        <div className="handle red-bar">{this.state.year}</div>
+      <div>
+        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
+        <div id="year-slider" className="dragdealer">
+          <div className="handle red-bar">{this.state.year}</div>
+        </div>
       </div>);
   }
 }

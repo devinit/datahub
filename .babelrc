@@ -13,17 +13,41 @@
         }],
         "next/babel"
       ]
+    },
+    "tools": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
     }
   },
   "plugins": [
     "transform-flow-strip-types",
+    "transform-async-generator-functions",
     "babel-plugin-inline-import-graphql-ast",
-    "ramda",
     ["module-resolver", {
-      "root": ["./private", "public/semantic", "public/img"],
+      "root": ["private", "public/semantic", "public/img"],
       "alias": {
-         "mapbox-gl$": "node_modules/mapbox-gl/dist/mapbox-gl.js"
+        "package.json": "./package.json"
       }
-    }]
+    }],
+    ["transform-inline-imports-commonjs", {
+      "allowTopLevelThis": true,
+      "strict": false,
+      "loose": true,
+      "excludeNodeBuiltins": true
+    }],
+    [
+      "wrap-in-js",
+      {
+        "extensions": ["css$", "less$"]
+      }
+    ]
   ]
 }

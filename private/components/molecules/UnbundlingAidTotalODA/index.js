@@ -47,7 +47,7 @@ const InteractiveChartToolBar = () => (
       <Container>
         <Header as="h1"><span className="red"> 2015</span> US$ 174.1 <span className="small">bn</span></Header>
         <Header as="h5">Official development assistance (total gross disbursements, 2015 prices)</Header>
-        <Button color="white">Explore</Button>
+        <Button>Explore</Button>
       </Container>
     </div>
   </ParentContainer>

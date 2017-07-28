@@ -1,12 +1,12 @@
 # docker file for the app, currently set up for storybooks
-FROM node:7
+FROM node:8
 
 RUN mkdir /src
 
 # Provides cached layer for node_modules
 
 ADD package.json /tmp/
-RUN cd /tmp && npm install --production --ignore-scripts --silent
+RUN cd /tmp && npm install --production --silent
 RUN cp -a /tmp/node_modules /src/
 
 # copy app files into
@@ -17,6 +17,6 @@ WORKDIR /src
 ENV NODE_ENV production
 RUN npm run build
 
-EXPOSE 3333
+EXPOSE 9090
 
 CMD npm run start
