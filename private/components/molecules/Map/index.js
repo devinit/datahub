@@ -109,7 +109,7 @@ class Map extends Component {
         <Grid columns={1}>
           <Grid.Row>
             <Div width={'100%'}>
-               <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
+              <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
             </Div>
             <Legend
               title={this.name}

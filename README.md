@@ -96,7 +96,7 @@ Ask Allan for latest staging url
 cd into root of the project
 ``` bash
   $ docker build -t datahub-2 .
-  $ docker run -it -d -p 7777:4040 --name datahub-2-app datahub-2
+  $ docker run -it -d -p 7070:9090 --name datahub-2-app datahub-2
 ```
 
 ## Graphql types
