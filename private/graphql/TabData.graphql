@@ -45,6 +45,7 @@ query TabData($id: String!) {
     }
     resourcesOverTime {
       year
+      flow_type
       flow_category
       value
     }

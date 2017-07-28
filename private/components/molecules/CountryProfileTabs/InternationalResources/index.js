@@ -1,5 +1,5 @@
 // @flow
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import {Button, Container, Grid, Header, Icon} from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
 import {HeaderGroup} from 'components/atoms/Header';
@@ -9,7 +9,37 @@ import {red} from 'components/theme/semantic';
 
 const International = (props: TabDataQuery) => {
   if (!props.internationalResources) return new Error('No international resources data');
-  console.log(props.internationalResources);
+
+  const resourcesOverTime = [props.internationalResources.resourcesOverTime]
+    .map(list => {
+      const years = list
+        .reduce((all, d) => {
+          if (all[d.year]) {
+            return {...all, [d.year]: [d, ...all[d.year]]};
+          }
+
+          return {[d.year]: [d], ...all};
+        }, {});
+
+      const types = Object.keys(years)
+        .map(y => {
+          const types = years[y]
+            .reduce((all, d) => {
+              if (all[d.flow_type]) {
+                return {...all, [d.flow_type]: [d, ...all[d.flow_type]]};
+              }
+
+              return {[d.flow_type]: [d], ...all};
+            }, {});
+
+          return Object.keys(types)
+            .map(t => types[t].reduce((s, d) => ({...s, value: s.value + d.value})));
+        });
+
+      return Object.keys(types).map(t => types[t]).reduce((all, d) => [...all, ...d], []);
+    })
+    .reduce((_, d) => d);
+
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -34,7 +64,7 @@ const International = (props: TabDataQuery) => {
 
           <Chart
             config={props.config.resourcesOverTime}
-            data={props.internationalResources.resourcesOverTime}
+            data={resourcesOverTime}
             height="140px"
           />
         </Grid.Column>

@@ -9,7 +9,7 @@ export const resourcesOverTime = {
     'rgb(190, 132, 187)',
     'rgb(0, 149, 200)'
   ],
-  groupBy: 'flow_category',
+  groupBy: 'flow_type',
   linearAxis: {
     showAxis: true,
     indicator: 'value',
