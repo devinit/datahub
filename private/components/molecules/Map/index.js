@@ -48,6 +48,7 @@ class Map extends Component {
   onYearChange(year: number) {
     if (this.props && this.props.mapData && this.props.mapData.map) {
       const data = Map.setCurrentYearData(year, this.props.mapData.map);
+      this.paint = {data, ...this.config.paint};
       this.setState({currentYear: year, data});
     }
   }

@@ -177,6 +177,7 @@ class BaseMap extends Component {
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
+    // console.log('new data', stops[50]);
     this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
       {
         property: propertyName || 'ISO2',
@@ -218,6 +219,7 @@ class BaseMap extends Component {
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     const mapContainerStyle = {width, height, position: 'relative'};
     if (!this.props.paint.data) throw new Error('please provide a paint property with the required map data');
+    // console.log(this.props.paint.data.length);
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
