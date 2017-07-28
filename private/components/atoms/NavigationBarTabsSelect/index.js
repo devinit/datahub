@@ -39,10 +39,15 @@ const Wrapper = glamorous.div({
     fontSize: '1.2em',
   },
   '& .ui.selection.dropdown .menu': {
-    background: 'rgba(233,231,232,.9)',
+    background: 'rgba(233,231,232,1)',
+    border: 0,
+    borderRadius: '3px',
+    marginTop: '-60px',
+    boxShadow: '0 1px 6px rgba(0,0,0,.3)',
   },
   '& .ui.selection.dropdown .menu>.item': {
     borderTop: 'none',
+    display: 'block',
   },
   '& .ui.selection.visible.dropdown>.text:not(.default)': {
     color: '#fff'
