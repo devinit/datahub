@@ -2940,6 +2940,11 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
             >
               Number of people in the P20
             </option>
+            <option
+              value="data_series.percent_in_p20_national"
+            >
+              % of population in the global P20
+            </option>
           </select>
           <i
             aria-hidden="true"
