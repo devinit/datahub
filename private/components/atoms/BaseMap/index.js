@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
-import {lightGrey, red, seaBackground} from 'components/theme/semantic';
+import {lightGrey, red, seaBackground, lightOrange} from 'components/theme/semantic';
 import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
@@ -81,10 +81,11 @@ type GenericTipHtml = {
 }
 class BaseMap extends Component {
   static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
-    return `<i  style="display: block;margin: 0 auto;width: 30%;"
-                class="${id.toLocaleLowerCase()} flag"></i>
-            <p style="text-align:center;font-weight: 700;line-height: 2; margin:0"> ${country} </p>
-            <em> ${name}: <b> ${value}${uom}</b></em>`;
+    return `<p style="text-align:center;line-height: 1; margin:0">
+              <img  style="max-width: 20px;max-height: 15px;" src="/flags/svg/${id}.svg">
+            </p>
+            <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>
+            <em>${name}:<span style="font-size: 1.2em; color:${lightOrange}"> ${value}${uom}</span></em>`;
   }
   constructor(props: Props) {
     super(props);
@@ -198,7 +199,6 @@ class BaseMap extends Component {
     if (this._map && this._mapLoaded) this.colorMap(paint);
     if (!this.map && !this._mapLoaded) {
       this._map.on('load', () => {
-        console.log('in map load');
         this._mapLoaded = true;
         this._map.setPaintProperty('background', 'background-color', seaBackground);
         this.colorMap(paint);

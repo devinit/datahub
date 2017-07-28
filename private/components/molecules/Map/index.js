@@ -56,17 +56,18 @@ class Map extends Component {
     const sortedData = this.state.data
       .filter(obj => obj.value && obj.id)
       .map((obj: MapData) => {
-        const flag: string = obj.id ? obj.id.toLocaleLowerCase() : 'N/A';
+        if (!obj.id) throw new Error('data point id missing for country rank data');
+        const flagUrl: string = `/flags/svg/${obj.id}.svg`;
         const name = obj.name ? obj.name : 'N/A';
         if (!obj.value || !obj.uid) throw new Error('value must be defined');
-        return {name, value: obj.value, flag, uid: obj.uid};
+        return {name, value: obj.value, flagUrl, uid: obj.uid};
       })
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined');
         return a.value - b.value;
       });
-    const top = sortedData.slice(0, 10);
-    const bottom = sortedData.slice(-10);
+    const top = sortedData.slice(0, 10).reverse();
+    const bottom = sortedData.slice(-10).reverse();
     return {
       hasflags: this.country === 'global',
       data: {top, bottom}

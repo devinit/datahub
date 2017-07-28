@@ -1,14 +1,13 @@
 // @flow
 import React from 'react';
-import {Grid, Table, Flag} from 'semantic-ui-react';
-import {Span} from 'glamorous';
-import approximate from 'approximate-number';
+import {Grid, Table} from 'semantic-ui-react';
+import {Span, Img} from 'glamorous';
 import {RankingsTableContainer} from 'components/atoms/Container';
 
 export type Data = {
   value: number,
   name: string,
-  flag: string,
+  flagUrl: string,
   uid: string,
 }
 
@@ -39,9 +38,10 @@ const RankingsTable = (props: Props) => (
                 {props.data[key].map((item, index) => (
                   <Table.Row key={item.uid}>
                     <Table.Cell><b>{index}</b></Table.Cell>
-                    {props.hasflags ? <Table.Cell><Flag name={item.flag} /></Table.Cell> : ''}
+                    {props.hasflags ? (<Table.Cell>
+                      <Img width={'20px'} maxHeight={'15px'} alt={item.name} src={item.flagUrl} /></Table.Cell>) : ''}
                     <Table.Cell>{item.name}</Table.Cell>
-                    <Table.Cell textAlign="right">{approximate(item.value)}</Table.Cell>
+                    <Table.Cell textAlign="right">{item.value.toLocaleString()}</Table.Cell>
                   </Table.Row>))}
               </Table.Body>
             </Table>
