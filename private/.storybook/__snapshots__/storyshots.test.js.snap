@@ -49,7 +49,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 >
                   <button
                     className="ui button"
-                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -57,7 +56,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                   </button>
                   <button
                     className="ui button"
-                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -83,7 +81,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             >
               <button
                 className="ui icon button"
-                disabled={undefined}
                 onClick={[Function]}
                 tabIndex={undefined}
               >
@@ -91,6 +88,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                   aria-hidden="true"
                   className="play icon"
                 />
+                 
               </button>
             </div>
           </div>
@@ -156,10 +154,27 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="combobox"
             tabIndex={undefined}
           >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value=""
+            >
+              <option
+                value=""
+              />
+              <option
+                value="Small"
+              >
+                Small
+              </option>
+            </select>
             <input
               aria-autocomplete="list"
               autoComplete="off"
               className="search"
+              name="-search"
               onChange={[Function]}
               style={
                 Object {
@@ -225,10 +240,27 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="combobox"
             tabIndex={undefined}
           >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value=""
+            >
+              <option
+                value=""
+              />
+              <option
+                value="Uganda"
+              >
+                Uganda
+              </option>
+            </select>
             <input
               aria-autocomplete="list"
               autoComplete="off"
               className="search"
+              name="-search"
               onChange={[Function]}
               style={
                 Object {
@@ -297,6 +329,27 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             role="listbox"
             tabIndex={0}
           >
+            <select
+              aria-hidden="true"
+              multiple={undefined}
+              name={undefined}
+              type="hidden"
+              value="region"
+            >
+              <option
+                value=""
+              />
+              <option
+                value="region"
+              >
+                region
+              </option>
+              <option
+                value="income-group"
+              >
+                income-group
+              </option>
+            </select>
             <div
               className="text"
             >
@@ -426,7 +479,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
           </h4>
           <button
             className="ui icon button"
-            disabled={undefined}
             onClick={[Function]}
             tabIndex={undefined}
           >
@@ -434,6 +486,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               aria-hidden="true"
               className="print icon"
             />
+             
           </button>
         </div>
       </div>
@@ -445,7 +498,6 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
 exports[`Storyshots Button With Primary Color 1`] = `
 <button
   className="ui primary button"
-  disabled={undefined}
   onClick={[Function]}
   tabIndex={undefined}
 >
@@ -458,7 +510,6 @@ exports[`Storyshots Button With Primary Color 1`] = `
 exports[`Storyshots Button With Secondary Color 1`] = `
 <button
   className="ui secondary button"
-  disabled={undefined}
   onClick={[Function]}
   tabIndex={undefined}
 >
@@ -2174,34 +2225,121 @@ exports[`Storyshots Templates  Spot Light 1`] = `
                 className="ui center aligned container"
               >
                 <div
-                  className="css-9to0er"
+                  className="css-1x8ctpc"
                 >
-                  <select
-                    onChange={undefined}
+                  <div
+                    aria-busy={undefined}
+                    aria-disabled={undefined}
+                    aria-expanded={false}
+                    aria-multiselectable={undefined}
+                    className="ui selection dropdown"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseDown={[Function]}
+                    role="listbox"
+                    tabIndex={0}
                   >
-                    <option
-                      value={0}
+                    <select
+                      aria-hidden="true"
+                      multiple={undefined}
+                      name={undefined}
+                      type="hidden"
+                      value="Decent standard of living score"
+                    >
+                      <option
+                        value=""
+                      />
+                      <option
+                        value="Decent standard of living score"
+                      >
+                        Decent standard of living score
+                      </option>
+                      <option
+                        value="Poverty headcount"
+                      >
+                        Poverty headcount
+                      </option>
+                      <option
+                        value="Life expectancy"
+                      >
+                        Life expectancy
+                      </option>
+                    </select>
+                    <div
+                      className="text"
                     >
                       Decent standard of living score
-                    </option>
-                    <option
-                      value={1}
+                    </div>
+                    <i
+                      aria-hidden="true"
+                      className="dropdown icon"
+                    />
+                    <div
+                      className="menu transition"
                     >
-                      Poverty headcount
-                    </option>
-                    <option
-                      value={2}
-                    >
-                      Life expectancy
-                    </option>
-                  </select>
-                  <i
-                    aria-hidden="true"
-                    className="caret down icon"
-                  />
+                      <div
+                        aria-checked={true}
+                        aria-disabled={undefined}
+                        aria-selected={true}
+                        className="active selected item"
+                        onClick={[Function]}
+                        role="option"
+                        style={
+                          Object {
+                            "pointerEvents": "all",
+                          }
+                        }
+                      >
+                        <span
+                          className="text"
+                        >
+                          Decent standard of living score
+                        </span>
+                      </div>
+                      <div
+                        aria-checked={false}
+                        aria-disabled={undefined}
+                        aria-selected={false}
+                        className="item"
+                        onClick={[Function]}
+                        role="option"
+                        style={
+                          Object {
+                            "pointerEvents": "all",
+                          }
+                        }
+                      >
+                        <span
+                          className="text"
+                        >
+                          Poverty headcount
+                        </span>
+                      </div>
+                      <div
+                        aria-checked={false}
+                        aria-disabled={undefined}
+                        aria-selected={false}
+                        className="item"
+                        onClick={[Function]}
+                        role="option"
+                        style={
+                          Object {
+                            "pointerEvents": "all",
+                          }
+                        }
+                      >
+                        <span
+                          className="text"
+                        >
+                          Life expectancy
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                   <button
                     className="ui medium button"
-                    disabled={undefined}
                     onClick={[Function]}
                     tabIndex={undefined}
                   >
@@ -2696,7 +2834,6 @@ exports[`Storyshots Templates  Spot Light 1`] = `
         </div>
         <button
           className="ui grey large button"
-          disabled={undefined}
           onClick={[Function]}
           tabIndex={undefined}
         >
@@ -3459,7 +3596,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               >
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3467,10 +3603,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="facebook f icon"
                   />
+                   
                 </button>
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3478,10 +3614,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="twitter icon"
                   />
+                   
                 </button>
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3489,10 +3625,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="google plus icon"
                   />
+                   
                 </button>
                 <button
                   className="ui icon button"
-                  disabled={undefined}
                   onClick={[Function]}
                   tabIndex={undefined}
                 >
@@ -3500,6 +3636,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     aria-hidden="true"
                     className="mail outline icon"
                   />
+                   
                 </button>
               </div>
             </div>
@@ -6032,6 +6169,273 @@ exports[`Storyshots Tooltip Tooltip Test 1`] = `
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 />
+`;
+
+exports[`Storyshots Tour Global Viz tour 1`] = `
+<div
+  className="css-2xdbq8"
+>
+  <div
+    className="css-8ys126"
+  >
+    <a
+      className="css-v1w6d2"
+    >
+      <i
+        aria-hidden="true"
+        className="close icon"
+      />
+    </a>
+    <ul
+      className="css-1l3cw6m"
+    >
+      <li
+        className="item-1"
+      >
+        Compare the colour
+        <br />
+        of each country
+        <br />
+        with the legend
+        <span
+          className="css-1k5wtej tour-item-pointer"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow down icon"
+          />
+        </span>
+      </li>
+      <li
+        className="item-2"
+      >
+        As you change theme and
+        <br />
+        indicator the colour of each
+        <br />
+        country will adapt to that
+        <br />
+        indicator
+      </li>
+      <li
+        className="item-3"
+      >
+        <i
+          aria-hidden="true"
+          className="arrow left icon"
+        />
+         Change theme
+      </li>
+      <li
+        className="item-4"
+      >
+        Change indicator 
+        <i
+          aria-hidden="true"
+          className="arrow right icon"
+        />
+      </li>
+      <li
+        className="item-5"
+      >
+        <i
+          aria-hidden="true"
+          className="arrow left icon"
+        />
+         Find source information
+      </li>
+      <li
+        className="item-6"
+      >
+        Zoom in and out 
+        <i
+          aria-hidden="true"
+          className="arrow up icon"
+        />
+      </li>
+      <li
+        className="item-7"
+      >
+        Hover over a country
+        <br />
+        to see data snapshot
+      </li>
+      <li
+        className="item-8"
+      >
+        Click a country to go
+        <br />
+        to country profile
+      </li>
+      <li
+        className="item-9"
+      >
+        Scroll down to see country rankings
+        <br />
+        <i
+          aria-hidden="true"
+          className="arrow down icon"
+        />
+      </li>
+      <li
+        className="item-10"
+      >
+        Click Share this chart view below to
+        <br />
+        to share the chart youve created
+        <br />
+        <i
+          aria-hidden="true"
+          className="arrow down icon"
+        />
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tour UnbundlindAid tour 1`] = `
+<div
+  className="css-2xdbq8"
+>
+  <div
+    className="css-8ys126"
+  >
+    <a
+      className="css-v1w6d2"
+    >
+      <i
+        aria-hidden="true"
+        className="close icon"
+      />
+    </a>
+    <ul
+      className="css-1mxmq93"
+    >
+      <li
+        className="item-1"
+      >
+        <b>
+          How to read this
+          <br />
+          visualistion
+        </b>
+        <br />
+        Each cell in the tree map
+        <br />
+        is sized by the volume of
+        <br />
+        ODA it represents. The
+        <br />
+        total amount of ODA
+        <br />
+        being viewed at any time
+        <br />
+        is given above the top left
+        <br />
+        corner of the tree map
+      </li>
+      <li
+        className="item-2 item-frame"
+      />
+      <li
+        className="item-3 text-right"
+      >
+        This sentence describes what the
+        <br />
+        tree map is showing. The
+        <br />
+        dimension in bold is the one
+        <br />
+        youre currently viewing
+        <i
+          aria-hidden="true"
+          className="arrow right icon"
+        />
+      </li>
+      <li
+        className="item-4 text-center"
+      >
+        Drag and drop dimensions to view in a customised order
+        <span
+          className="css-1k5wtej tour-item-pointer"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow left icon"
+          />
+          <i
+            aria-hidden="true"
+            className="arrow right icon"
+          />
+        </span>
+      </li>
+      <li
+        className="item-5 text-center"
+      >
+        <i
+          aria-hidden="true"
+          className="arrow up icon"
+        />
+        <br />
+        Change the
+        <br />
+        year here
+      </li>
+      <li
+        className="item-6"
+      >
+        <span
+          className="css-1k5wtej tour-item-pointer"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow up icon"
+          />
+        </span>
+        Click through the cells in the
+        <br />
+        tree map to drill down into the
+        <br />
+        details, or select a dimension
+        <br />
+        above to open a drop-down menu
+      </li>
+      <li
+        className="item-7 text-right"
+      >
+        <i
+          aria-hidden="true"
+          className="arrow up icon"
+        />
+        <br />
+        Click 
+        <b>
+          Compare
+        </b>
+         to view two
+        <br />
+        tree maps side by side
+      </li>
+      <li
+        className="item-8 text-center"
+      >
+        Click 
+        <b>
+          Share this chart
+        </b>
+         below to
+        <br />
+        share the chart you’ve created
+        <br />
+        <i
+          aria-hidden="true"
+          className="arrow down icon"
+        />
+      </li>
+    </ul>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Unbundling Aid Select 1`] = `
