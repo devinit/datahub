@@ -26,6 +26,10 @@ export default {
         {
           id: 'data_series.poorest_20_percent',
           name: 'Number of people in the P20'
+        },
+        {
+          id: 'data_series.percent_in_p20_national',
+          name: '% of population in the global P20'
         }
       ],
       default_indicator: 'data_series.poor_people_190'
@@ -142,8 +146,7 @@ export default {
         },
         {
           id: 'fact.oda_percent_gni',
-          name:
-            'Net official development assistance (ODA) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income (GNI).'
+          name: 'Net ODA provided by DAC members, % of GNI'
         },
         {
           id: 'fact.oda_to_ldcs_percent_gni',
@@ -227,8 +230,7 @@ export default {
         },
         {
           id: 'data_series.iati_budgets_dk',
-          name:
-            'Denmark DANIDA and Foreign Affairs forward-looking budgets for each country based on activities reported through IATI.'
+          name: 'Denmark, DANIDA and Foreign Affairs planned budgets'
         },
         {
           id: 'data_series.iati_budgets_nl',
