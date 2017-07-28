@@ -7,13 +7,17 @@ import Visualization from 'components/molecules/whereAreThePoorViz';
 import Generic from '../Generic';
 import data from './data';
 
-
+const HeaderContainer = glamorous.div({
+  paddingTop: '4em',
+  paddingBottom: '0em',
+  '& h1.ui.header': {
+    fontSize: '3em'
+  },
+  '& .sub.header': {
+    fontSize: '0.55em !important'
+  }
+});
 export default () => {
-  const headerStyles = {
-    paddingTop: '4em',
-    paddingBottom: '4em',
-  };
-  const HeaderContainer = glamorous.div(headerStyles);
   return (
     <Generic pathName="/aid">
       <Container>
