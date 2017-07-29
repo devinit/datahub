@@ -64,7 +64,7 @@ async function getAndWriteData <T>(opts: GetAndWriteDataOpts<T>): Promise<void> 
 }
 export const getCountries = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'CountrySearch/data.js');
+    const filePath = path.join(baseOrganismsPath, 'CountrySearchInput/data.js');
     await getAndWriteData({query: COUNTRIES_QUERY, filePath});
   } catch (error) {
     console.error(error);

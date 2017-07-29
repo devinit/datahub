@@ -13,7 +13,7 @@ import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
-import SearchInput from 'components/organisms/CountrySearch';
+import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import {CardContainer} from 'components/atoms/Container';
 import Generic from '../Generic';
 import data from './data';
@@ -23,40 +23,42 @@ type Props = {
 }
 export default (props: Props) =>
   (<Generic>
-    <Div borderBottom={'2px solid #ddd9dc'} marginBottom={'.2em'}>
-      <CardContainer >
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width={10}>
-              <CardContainer>
-                <Header>
-                  <Icon name="globe" />
-                  <Header.Content>
-                    General Picture
-                  </Header.Content>
-                </Header>
-                <SearchInput />
-                <Lead>
-                  Explore this in-depth profile of Uganda to
-                  find out overall levels of poverty, income distribution,
-                  division of wealth and more. Discover how national
-                  and sub-national revenue is generated.
-                </Lead>
-                <Span marginTop={'1.5em'} display={'block'}>
-                  Jump to <A color={red}>International resources</A>
-                </Span>
-                <Div marginTop={'1.5em'}>
-                  <Button icon="facebook f" />
-                  <Button icon="twitter" />
-                  <Button icon="google plus" />
-                  <Button icon="mail outline" />
-                </Div>
-              </CardContainer>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </CardContainer>
-    </Div>
+    <Container>
+      <Div borderBottom={'2px solid #ddd9dc'} marginBottom={'.2em'}>
+        <CardContainer >
+          <Grid>
+            <Grid.Row>
+              <Grid.Column width={10}>
+                <CardContainer>
+                  <Header>
+                    <Icon name="globe" />
+                    <Header.Content>
+                      General Picture
+                    </Header.Content>
+                  </Header>
+                  <CountrySeachInput visible />
+                  <Lead>
+                    Explore this in-depth profile of Uganda to
+                    find out overall levels of poverty, income distribution,
+                    division of wealth and more. Discover how national
+                    and sub-national revenue is generated.
+                  </Lead>
+                  <Span marginTop={'1.5em'} display={'block'}>
+                    Jump to <A color={red}>International resources</A>
+                  </Span>
+                  <Div marginTop={'1.5em'}>
+                    <Button icon="facebook f" />
+                    <Button icon="twitter" />
+                    <Button icon="google plus" />
+                    <Button icon="mail outline" />
+                  </Div>
+                </CardContainer>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </CardContainer>
+      </Div>
+    </Container>
     <CountryProfileTopTabs id={props.id} />
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">

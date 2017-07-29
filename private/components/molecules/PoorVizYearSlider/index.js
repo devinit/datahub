@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import Dragdealer from 'dragdealer';
-import stylesheet from 'dragdealer/src/dragdealer.css';
+// import stylesheet from 'dragdealer/src/dragdealer.css';
 /* eslint-disable react/no-danger */
 type Props = {
   onYearChange: (year: number) => void
@@ -45,7 +45,7 @@ class YearSlider extends Component {
   render() {
     return (
       <div>
-        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
         <div id="year-slider" className="dragdealer">
           <div className="handle red-bar">{this.state.year}</div>
         </div>

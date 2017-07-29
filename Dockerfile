@@ -1,5 +1,5 @@
 # docker file for the app, currently set up for storybooks
-FROM node:7
+FROM node:8
 
 RUN mkdir /src
 
@@ -17,6 +17,6 @@ WORKDIR /src
 ENV NODE_ENV production
 RUN npm run build
 
-EXPOSE 3333
+EXPOSE 9090
 
 CMD npm run start

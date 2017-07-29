@@ -1,13 +1,15 @@
 // @flow
 import React from 'react';
 import {Container, Grid, Header, Icon, Table} from 'semantic-ui-react';
-import type { Element } from 'react';
 import glamorous, {Div} from 'glamorous';
 import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import NoSSR from 'react-no-ssr';
 import {HeaderGroup} from 'components/atoms/Header';
+import {lighterGrey} from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
+import CountrySeachInput from 'components/organisms/CountrySearchInput';
+import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
 import Generic from '../Generic';
 
 type Props = {
@@ -16,6 +18,9 @@ type Props = {
 export default (props: Props) => {
   return (
     <Generic>
+      <GlobalPictureCountrySeach>
+        <CountrySeachInput visible />
+      </GlobalPictureCountrySeach>
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
           <Grid centered>
@@ -28,7 +33,7 @@ export default (props: Props) => {
         </Div>
       </Container>
       <GlobalPictureNavTabs />
-      <NoSSR><Map pathName={props.pathName} /></NoSSR>
+      <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={props.pathName} /></NoSSR>
     </Generic>
   );
 };

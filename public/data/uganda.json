@@ -1,0 +1,26 @@
+{
+  "tiles": ["http://178.79.185.236:8080/data/uganda/{z}/{x}/{y}.pbf"],
+  "name": "/data/uganda.mbtiles",
+  "format": "pbf",
+  "basename": "uganda.mbtiles",
+  "id": "uganda",
+  "description": "/data/uganda.mbtiles",
+  "version": "2",
+  "minzoom": 0,
+  "maxzoom": 10,
+  "center": [29.707031, -0.527334, 10],
+  "bounds": [29.573465, -1.48153, 35.001054, 4.231369],
+  "type": "overlay",
+  "vector_layers": [{
+    "id": "ugandageojson",
+    "description": "",
+    "minzoom": 0,
+    "maxzoom": 10,
+    "fields": {
+      "id": "String",
+      "name": "String",
+      "num": "Number"
+    }
+  }],
+  "tilejson": "2.0.0"
+}
