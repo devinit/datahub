@@ -25,6 +25,9 @@ export const resourcesOverTime = {
     axisMinimum: 2000,
     axisMaximum: 2015
   },
+  legend: {
+    showLegend: true,
+  }
 };
 
 export const mixOfResources = {
