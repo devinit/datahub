@@ -69,7 +69,10 @@ export type MapDataQuery = {|
     name: ?string,
     theme: ?string,
     heading: ?string,
+    default_year: ?number,
     description: ?string,
+    map_style: ?string,
+    id: ?string,
     legend: ? Array< {|
       label: ?string,
       color: ?string,

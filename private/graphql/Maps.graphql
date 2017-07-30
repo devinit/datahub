@@ -18,6 +18,8 @@ query MapData($id: String!) {
     heading
     default_year
     description
+    map_style
+    id
     legend {
       label
       color

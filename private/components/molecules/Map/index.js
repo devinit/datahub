@@ -73,7 +73,7 @@ class Map extends Component {
       data: {top, bottom}
     };
   }
-  init(props: Props) {
+  initYearSetup(props: Props) {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
     if (!props.mapData.default_year) throw new Error('mapData default_year is missing in props');
@@ -81,18 +81,32 @@ class Map extends Component {
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    if (!props.mapData || !props.mapData.map) throw new Error('mapData data is missing in props');
-    const data = this.yearSliderVisibility ?
-      Map.setCurrentYearData(currentYear, props.mapData.map) : props.mapData.map;
-    this.paint = {data, ...this.config.paint};
-    if (!props.mapData || !props.mapData.legend) throw new Error('mapData legend is missing in props');
+    this.state = {...this.state, currentYear};
+  }
+  initMetaSetup(props: Props) {
+    if (!props.mapData || !props.mapData.legend) throw new Error('mapData is missing in props');
     this.legendData = props.mapData.legend;
     this.name = props.mapData && props.mapData.name ? props.mapData.name : 'Indicator must have a name talk to Allan or Donata';
     const uomDisplay = props.mapData.uom_display || '';
     this.description = props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
     if (!props.mapData.theme) throw new Error('theme is missing in map data props');
-    this.meta = {name: this.name, uom_display: uomDisplay, theme: props.mapData.theme};
-    this.state = {data, currentYear};
+    if (!props.mapData.id) throw new Error('indicator id is missing in map data props');
+    this.meta =
+      {name: this.name, uom_display: uomDisplay, theme: props.mapData.theme, id: props.mapData.id};
+  }
+  init(props: Props) {
+    this.initYearSetup(props);
+    this.initMetaSetup(props);
+    let data = [];
+    if (props.mapData && props.mapData.map && props.mapData.map.length) {
+      data = this.yearSliderVisibility ?
+        Map.setCurrentYearData(this.state.currentYear, props.mapData.map) : props.mapData.map;
+      this.paint = {data, ...this.config.paint};
+    }
+    if (props.mapData && props.mapData.map_style) {
+      this.paint = {data, ...this.config.paint, mapStyle: props.mapData.map_style};
+    }
+    this.state = {...this.state, data};
   }
   yearSliderVisibility: boolean;
   startYear: number;

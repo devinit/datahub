@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
-import {lightGrey, red, seaBackground, lightOrange} from 'components/theme/semantic';
+import {lightGrey, red, seaBackground, orange} from 'components/theme/semantic';
 import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
@@ -28,9 +28,9 @@ export type MapData = {| // TODO: consider getting this type from the schema flo
   detail: ?string
 |}
 export type PaintMap = {
-  data: MapData[],
+  data?: MapData[],
   center?: number[],
-  mapStyle?: string,
+  mapStyle?: string, // we have a default style
   baseColor?: string,
   propertyName?: string,
   propertyLayer?: string,
@@ -39,6 +39,7 @@ export type PaintMap = {
 export type Meta = {
   uom_display: string,
   theme: string,
+  id: string,
   // map indicator user friendly label / slug eg Poverty
   name: string
 }
@@ -48,8 +49,7 @@ type Props = {
   meta?: Meta,
   viewport?: Viewport,
   width?: number,
-  height?: number,
-  style?: Object
+  height?: number
 }
 
 type MapBoxOptions = {
@@ -58,12 +58,20 @@ type MapBoxOptions = {
   ...ViewportDefaults,
   container: HTMLDivElement | string,
 }
-type FeatureProperty = {
-  id?: string,
-  ISO2?: string,
-  value?: number,
-  type?: string,
+type Feature = {
+  properties: {
+    id?: string,
+    ISO2?: string,
+    value?: number,
+    type?: string,
+    ISO?: string,
+    P20?: number,
+    DHSREGEN ?: string,
+    CNTRYNAMEE?: string,
+    dhsreg?: string
+  }
 }
+
 type Point = {
   lng: number,
   lat: number,
@@ -80,12 +88,33 @@ type GenericTipHtml = {
   value: string | number;
 }
 class BaseMap extends Component {
+  static pointDataForPreStyledMap(features: Feature[]): MapData {
+    if (!features[0].properties) throw new Error('Properties missing from map style');
+    const properties = features[0].properties;
+    const value: number = properties.P20 ? Math.round(properties.P20 * 100) : 0;
+    if (!features[0].properties.CNTRYNAMEE) throw new Error('country name missing from map style');
+    const name: string = features[0].properties.CNTRYNAMEE;
+    if (!features[0].properties.ISO) throw new Error('country ISO2 id missing from map style');
+    const id: string = features[0].properties.ISO;
+    return { value, id, name, detail: '', uid: '', year: 2013, color: ''};
+  }
   static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
+    const valueStr = BaseMap.tipToolTipValueStr(value, uom);
     return `<p style="text-align:center;line-height: 1; margin:0">
               <img  style="max-width: 20px;max-height: 15px;" src="/flags/svg/${id}.svg">
             </p>
             <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>
-            <em>${name}:<span style="font-size: 1.2em; color:${lightOrange}"> ${value}${uom}</span></em>`;
+            <em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>`;
+  }
+  static tipToolTipValueStr(value: string | number, uom: string) {
+    switch (uom) {
+      case '%':
+        return `${value}${uom}`;
+      case 'US$':
+        return `${uom}:${value}`;
+      default:
+        return value;
+    }
   }
   constructor(props: Props) {
     super(props);
@@ -111,18 +140,19 @@ class BaseMap extends Component {
 
   tipTemplate(pointData: MapData) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : 'Base map';
-    const uom = this.props.meta && this.props.meta.uom_display === '%' ? '%' : '';
-    if (!pointData.id || pointData.value === undefined || !pointData.name) return false;
-    let value = pointData.detail ? pointData.detail : approximate(pointData.value);
+    if (!pointData.id || !pointData.name) return false;
+    const country: string = pointData.name;
+    const id: string = pointData.id;
+    let value: string = '';
+    // TODO: find away of indicating what tooltip should be from concept.csv
+    if (Number(pointData.value)) value = approximate(pointData.value);
     const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : 'default';
-    if (theme === 'data-revolution' && pointData.year) value = pointData.year.toString();
-    const opts = {
-      id: pointData.id,
-      value,
-      name,
-      uom,
-      country: pointData.name
-    };
+    if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
+    if (theme === 'government-finance' && pointData.detail) value = `${value}-[${pointData.detail}]`;
+    if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) value = pointData.detail;
+    if (!value.length) console.error('value for tip template is empty');
+    const uom: string = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
+    const opts = { id, value, name, uom, country};
     return BaseMap.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
@@ -132,14 +162,21 @@ class BaseMap extends Component {
   }
   mouseHoverEvent() {
     this._map.on('mousemove', (e) => {
-      const features: {properties: any}[] = this._map.queryRenderedFeatures(e.point);
+      const features: Feature[] = this._map.queryRenderedFeatures(e.point);
       if (!features.length && this._popup) return this._popup.remove();
       if (!features.length) return false;
-      const pointData: MapData | void = this.props.paint.data
-        .find(obj => {
-          const paintProperty = this.props.paint.paintProperty || 'ISO2';
-          return obj.id === features[0].properties[paintProperty];
-        });
+      let pointData: MapData | void;
+      if (this.props.paint.data && this.props.paint.data.length) {
+        const pointData = this.props.paint.data
+          .find(obj => {
+            const paintProperty: string = this.props.paint.paintProperty || 'ISO2';
+            return obj.id === features[0].properties[paintProperty];
+          });
+      } else {
+        // TODO: add point data from features
+        if (features.length < 2) return false;
+        pointData = BaseMap.pointDataForPreStyledMap(features);
+      }
       if (!pointData && this._popup) return this._popup.remove();
       if (!pointData) return false;
       if (pointData && !this._popup) this._popup = new mapboxgl.Popup({offset: 10});
@@ -173,7 +210,7 @@ class BaseMap extends Component {
     });
   }
   colorMap({data, baseColor, propertyName, propertyLayer}: PaintMap) {
-    if (!data) throw new Error('you have to pass in data to color the map');
+    if (!data || !data.length) throw new Error('you have to pass in data to color the map');
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
@@ -197,16 +234,16 @@ class BaseMap extends Component {
     }
     // React creates a new class instance per render
     // and it recalls them i.e they continue existing
-    if (this._map && this._mapLoaded) this.colorMap(paint);
+    if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
     if (!this.map && !this._mapLoaded) {
       this._map.on('load', () => {
         this._mapLoaded = true;
         this._map.setPaintProperty('background', 'background-color', seaBackground);
-        this.colorMap(paint);
+        if (paint.data && paint.data.length) this.colorMap(paint);
         this._map.dragRotate.disable();
         this._map.touchZoomRotate.disableRotation();
         this.zoomListener();
-        this.mouseHoverEvent();
+        if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
         this.dragListener();
         this.persistZoomAndCenterLevel();
         this.resize();
@@ -218,8 +255,6 @@ class BaseMap extends Component {
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
     const mapContainerStyle = {width, height, position: 'relative'};
-    if (!this.props.paint.data) throw new Error('please provide a paint property with the required map data');
-    // console.log(this.props.paint.data.length);
     return (
       <MapContainer>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />

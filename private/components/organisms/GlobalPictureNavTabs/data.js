@@ -25,12 +25,17 @@ export default {
         },
         {
           id: 'data_series.poorest_20_percent',
-          name: 'Number of people in the P20'
+          name: 'Population in the global P20'
         },
         {
           id: 'data_series.percent_in_p20_national',
           name: '% of population in the global P20'
-        }
+        },
+        {
+          id: 'subnational_p20',
+          name: '% of people in the P20 (subnational level)'
+        },
+        { id: 'survey_p20', name: '% of people in the P20 (survey level)' }
       ],
       default_indicator: 'data_series.poor_people_190'
     },
