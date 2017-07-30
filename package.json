@@ -36,7 +36,7 @@
   "dependencies": {
     "@devinit/charts": "^1.2.9",
     "apollo-client": "^1.9.0-1",
-    "apollo-fetch": "^0.3.0",
+    "apollo-fetch": "^0.6.0",
     "approximate-number": "^2.0.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-inline-import-graphql-ast": "^2.0.0",
@@ -75,7 +75,7 @@
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.1.9",
     "@storybook/react": "^3.1.9",
-    "apollo-codegen": "^0.15.2",
+    "apollo-codegen": "^0.16.2",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "css-to-js-object": "^0.0.3",
