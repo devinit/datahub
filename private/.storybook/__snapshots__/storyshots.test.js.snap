@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Base Maps Base Map Atom 1`] = `
+<div
+  className="css-nlcjz6"
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": Object {},
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots BubbleChartWidget Main 1`] = `
 <div
   className="ui container"
@@ -2938,12 +2961,22 @@ exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
             <option
               value="data_series.poorest_20_percent"
             >
-              Number of people in the P20
+              Population in the global P20
             </option>
             <option
               value="data_series.percent_in_p20_national"
             >
               % of population in the global P20
+            </option>
+            <option
+              value="subnational_p20"
+            >
+              % of people in the P20 (subnational level)
+            </option>
+            <option
+              value="survey_p20"
+            >
+              % of people in the P20 (survey level)
             </option>
           </select>
           <i
