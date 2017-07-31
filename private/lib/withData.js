@@ -70,7 +70,7 @@ export default ComposedComponent => {
     }
     async componentDidMount() {
        // dispatches an Hydrate action
-      if (process.env.NODE_ENV === 'production') makeStorePersist(this.redux);
+      // if (process.env.NODE_ENV === 'production') makeStorePersist(this.redux);
     }
     constructor(props) {
       super(props);

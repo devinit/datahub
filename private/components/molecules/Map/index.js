@@ -35,7 +35,9 @@ class Map extends Component {
   }
   constructor(props: Props) {
     super(props);
-    if (!props.mapData || !props.mapData.country) throw new Error('mapData country is missing in props values');
+    console.log(props);
+    if (!props.mapData) throw new Error('mapData is missing in props');
+    if (!props.mapData.country) throw new Error('country is missing in props');
     this.country = props.mapData.country;
     this.config = mapConfigs[this.country];
     this.init(props);
@@ -75,8 +77,8 @@ class Map extends Component {
   }
   initYearSetup(props: Props) {
     if (!props.mapData) throw new Error('mapData is missing in props');
-    if (!props.mapData.start_year) throw new Error('mapData start_year is missing in props');
-    if (!props.mapData.default_year) throw new Error('mapData default_year is missing in props');
+    if (!props.mapData.start_year) throw new Error('start_year is missing in props');
+    if (!props.mapData.default_year) throw new Error('default_year is missing in props');
     const currentYear = props.mapData.default_year;
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;

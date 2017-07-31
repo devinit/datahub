@@ -38,8 +38,10 @@ const RankingsTable = (props: Props) => (
                 {props.data[key].map((item, index) => (
                   <Table.Row key={item.uid}>
                     <Table.Cell><b>{index}</b></Table.Cell>
-                    {props.hasflags ? (<Table.Cell>
-                      <Img width={'20px'} maxHeight={'15px'} alt={item.name} src={item.flagUrl} /></Table.Cell>) : ''}
+                    {props.hasflags ?
+                    (<Table.Cell>
+                      <Img width={'20px'} maxHeight={'15px'} alt={item.name} src={item.flagUrl} />
+                    </Table.Cell>) : ''}
                     <Table.Cell>{item.name}</Table.Cell>
                     <Table.Cell textAlign="right">{item.value.toLocaleString()}</Table.Cell>
                   </Table.Row>))}
