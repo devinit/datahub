@@ -1,10 +1,9 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { white, lightGrey } from 'components/theme/semantic';
-import { Grid, Button, Icon, Container } from 'semantic-ui-react';
+import {lightGrey, white} from 'components/theme/semantic';
+import {Button, Container, Grid, Icon} from 'semantic-ui-react';
 import ToolBar from 'components/molecules/UnbundlingAidToolBarItem';
-import data from 'components/templates/Aid/data';
 
 const ToolBarContainer = glamorous.div({
   background: lightGrey,
@@ -12,55 +11,42 @@ const ToolBarContainer = glamorous.div({
     margin: '0 !important',
   }
 }, (props) => ({
-  fontSize: props.compare ? '1em' : '1.7em',
-  paddingTop: props.compare ? '.85em' : '.5em',
-  paddingBottom: props.compare ? '.85em' : '.5em',
+  fontSize: props.compact ? '1em' : '1.7em',
+  paddingLeft: '0.5em',
+  paddingTop: props.compact ? '.85em' : '.5em',
+  paddingBottom: props.compact ? '.85em' : '.5em',
 }));
 
 type Props = {
+  compact: boolean, // is in compare mode
+  toolBarOptions: Object,
+  position: number,
+  rightPosition?: number,
+  values: string[],
+  rightValues?: string[],
+  onChange?: (key: string, value: string) => void,
+  onRightChange?: (key: string, value: string) => void
 };
-class InteractiveChartToolBar extends React.Component {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      compare: false,
-    };
-  }
+const InteractiveChartToolBar = (props: Props) => {
+  const {compact} = props;
+  return (
+    <ToolBarContainer compact={compact}>
+      <Container>
+        <Grid>
+          <Grid.Row>
+            <ToolBar
+              position={props.position}
+              values={props.values}
+              onChange={props.onChange}
+              data={props.toolBarOptions}
+              textAlign={compact ? 'left' : 'right'}
+              width={compact ? 16 : 10}
+            />
+          </Grid.Row>
+        </Grid>
+      </Container>
+    </ToolBarContainer>
+  );
+};
 
-  state: {
-    compare: boolean
-  }
-  toggleCompare() {
-    if (this.state.compare) {
-      this.setState({compare: false});
-    } else {
-      this.setState({compare: true});
-    }
-  }
-  render() {
-    const {compare} = this.state;
-    return (
-      <ToolBarContainer compare={compare}>
-        <Container>
-          <Grid>
-            <Grid.Row>
-              <ToolBar data={data.toolBar} textAlign={compare ? 'left' : 'right'} width={compare ? 7 : 10} />
-              {compare ? <ToolBar textAlign={'right'} data={data.toolBar} width={7} /> : ''}
-              <Grid.Column width={compare ? 2 : 4} textAlign="right" verticalAlign="top">
-                <Button
-                  onClick={() => this.toggleCompare()}
-                  size="large"
-                  color="grey"
-                >
-                  {compare ? <Icon name="close" /> : 'compare '}
-                  {!compare ? <Icon name="plus" /> : ''}
-                </Button>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </ToolBarContainer>
-    );
-  }
-}
 export default InteractiveChartToolBar;

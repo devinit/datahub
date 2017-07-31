@@ -51,12 +51,18 @@ const data = {
       {name: 'Water and sanitation', value: 'Water and sanitation'},
       {name: 'Other sectors (grouped)', value: 'Other sectors (grouped)'},
     ],
-    countries: [
+    to: [
       {name: 'all', value: 'all'},
       {name: 'Uganda', value: 'Uganda'},
       {name: 'Kenya', value: 'Kenya'},
       {name: 'Tanzania', value: 'Tanzania'},
-    ]
+    ],
+    from: [
+      {name: 'all', value: 'all'},
+      {name: 'Uganda', value: 'Uganda'},
+      {name: 'Kenya', value: 'Kenya'},
+      {name: 'Tanzania', value: 'Tanzania'},
+    ],
   },
 };
 export default data;
