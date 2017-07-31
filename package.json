@@ -75,7 +75,7 @@
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.1.9",
     "@storybook/react": "^3.1.9",
-    "apollo-codegen": "^0.16.2",
+    "apollo-codegen": "^0.15.2",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "css-to-js-object": "^0.0.3",

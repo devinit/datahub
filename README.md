@@ -141,6 +141,7 @@ i.e
 - eslint@4 is currently not supported, we are wainting for [airbnb eslint config to support it](https://github.com/airbnb/javascript/issues/1447)
 - Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing.
 - Currently dont add react-apollo flow types. They have an issue that need to be corrected
+- Dont upgrade apollo codegen as it will break liniting --> _Makes inner array types option_
 
 ## Development environment and notes
 

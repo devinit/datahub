@@ -2,17 +2,17 @@
 //  This file was automatically generated and should not be edited.
 
 export type CountriesQuery = {|
-  countries: ? Array<? {|
+  countries: ? Array< {|
     id: ?string,
     name: ?string,
   |} >,
 |};
 
 export type GlobalPictureThemesQuery = {|
-  globalPictureThemes: ? Array<? {|
+  globalPictureThemes: ? Array< {|
     id: ?string,
     name: ?string,
-    indicators: ? Array<? {|
+    indicators: ? Array< {|
       id: ?string,
       name: ?string,
       heading: ?string,
@@ -30,7 +30,7 @@ export type ResourcesOverTimeQuery = {|
   internationalResources: ? {|
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
-    resourcesOverTime: ? Array<? {|
+    resourcesOverTime: ? Array< {|
       year: number,
       value: number,
       flow_name: string,
@@ -51,7 +51,7 @@ export type MapDataQueryVariables = {|
 
 export type MapDataQuery = {|
   mapData: ? {|
-    map: ? Array<? {|
+    map: ? Array< {|
       // country code Id in DW this is di_id
       id: ?string,
       // countryName derived from entity.csv
@@ -75,7 +75,7 @@ export type MapDataQuery = {|
     description: ?string,
     map_style: ?string,
     id: ?string,
-    legend: ? Array<? {|
+    legend: ? Array< {|
       label: ?string,
       color: ?string,
       backgroundColor: ?string,
@@ -106,7 +106,7 @@ export type SpotLightTabDataQuery = {|
     regionalResources: ?string,
     // IndicatorDataColored is defined in country profile types
     // has local government, donor and central government
-    regionalResourcesBreakdown: ? Array<? {|
+    regionalResourcesBreakdown: ? Array< {|
       id: ?string,
       year: ?number,
       value: ?number,
@@ -121,7 +121,7 @@ export type SpotLightTabDataQuery = {|
     totalPopulation: ?string,
     populationDensity: ?string,
     // Urban vs Rural population level
-    populationDistribution: ? Array<? {|
+    populationDistribution: ? Array< {|
       group: ?string,
       value: ?number,
       year: ?number,
@@ -154,10 +154,10 @@ export type SpotlightThemesQueryVariables = {|
 |};
 
 export type SpotlightThemesQuery = {|
-  spotlightThemes: ? Array<? {|
+  spotlightThemes: ? Array< {|
     id: ?string,
     name: ?string,
-    indicators: ? Array<? {|
+    indicators: ? Array< {|
       id: ?string,
       name: ?string,
     |} >,
@@ -176,7 +176,7 @@ export type TabDataQuery = {|
     totalRevenue: ?string,
     grantsAsPcOfRevenue: ?string,
     // for donut chart
-    spendingAllocation: ? Array<? {|
+    spendingAllocation: ? Array< {|
       value: ?number,
       name: ?string,
       color: ?string,
@@ -187,7 +187,7 @@ export type TabDataQuery = {|
   |},
   povertyTab: ? {|
     // Poverty reduction over time area chart trend
-    poverty190Trend: ? Array<? {|
+    poverty190Trend: ? Array< {|
       id: ?string,
       year: ?number,
       value: ?number,
@@ -196,7 +196,7 @@ export type TabDataQuery = {|
     // how deep is poverty %
     depthOfExtremePoverty: ?string,
     // Recipients: how income is distributed, % of income received by each quintil
-    incomeDistTrend: ? Array<? {|
+    incomeDistTrend: ? Array< {|
       value: ?number,
       quintileName: ?string,
     |} >,
@@ -205,13 +205,13 @@ export type TabDataQuery = {|
     // total population in a country
     population: ?string,
     // Urban vs Rural population level
-    populationDistribution: ? Array<? {|
+    populationDistribution: ? Array< {|
       group: ?string,
       value: ?number,
       year: ?number,
     |} >,
     // Number of people in 3 age bands (65+, 15- 65, 0 - 14)
-    populationPerAgeBand: ? Array<? {|
+    populationPerAgeBand: ? Array< {|
       band: ?string,
       value: ?number,
       year: ?number,
@@ -226,13 +226,13 @@ export type TabDataQuery = {|
     netODAOfGNIOut: ?string,
     // Whats the mix of resources can be for donors (out flows) or receipient (in flows)
     // this is for the donut chart
-    mixOfResources: ? Array<? {|
+    mixOfResources: ? Array< {|
       flow_name: string,
       value: number,
     |} >,
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
-    resourcesOverTime: ? Array<? {|
+    resourcesOverTime: ? Array< {|
       // Category i.e FDI, ODA
       flow_category: ?string,
       value: number,
@@ -249,14 +249,14 @@ export type TabDataQuery = {|
     // recipient countries $PPP, both donor and recipient
     governmentSpendPerPerson: ?string,
     // donor: gross nation income per capit GNI
-    averageIncomerPerPerson: ? Array<? {|
+    averageIncomerPerPerson: ? Array< {|
       year: ?number,
       value: ?number,
       id: ?string,
       name: ?string,
     |} >,
     // donor: Income share by quintile
-    incomeDistTrend: ? Array<? {|
+    incomeDistTrend: ? Array< {|
       value: ?number,
       quintileName: ?string,
     |} >,
