@@ -58,7 +58,7 @@ class Map extends Component {
       .filter(obj => obj.value && obj.id)
       .map((obj: MapData) => {
         if (!obj.id) throw new Error('data point id missing for country rank data');
-        const flagUrl: string = `/flags/svg/${obj.id}.svg`;
+        const flagUrl: string = this.country === 'global' ? `/flags/svg/${obj.id}.svg` : '';
         const name = obj.name ? obj.name : 'N/A';
         if (!obj.value || !obj.uid) throw new Error('value must be defined');
         return {name, value: obj.value, flagUrl, uid: obj.uid};

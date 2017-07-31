@@ -120,8 +120,9 @@ class BaseMap extends Component {
   }
   static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
     const valueStr = BaseMap.tipToolTipValueStr(value, uom);
+    const flagUrl: string = this.country === 'global' ? `/flags/svg/${id}.svg` : '';
     return `<p style="text-align:center;line-height: 1; margin:0">
-              <img  style="max-width: 20px;max-height: 15px;" src="/flags/svg/${id}.svg">
+              <img  style="max-width: 20px;max-height: 15px;" src="${flagUrl}">
             </p>
             <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>
             <em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>`;
@@ -189,16 +190,15 @@ class BaseMap extends Component {
       if (!features.length) return false;
       let pointData: MapData | void;
       if (this.props.paint.data && this.props.paint.data.length) {
-        const pointData = this.props.paint.data
+        pointData = this.props.paint.data
           .find(obj => {
-            const paintProperty: string = this.props.paint.paintProperty || 'ISO2';
+            const paintProperty: string = this.props.paint.propertyName || 'ISO2';
             return obj.id === features[0].properties[paintProperty];
           });
       } else {
         // TODO: add point data from features
         if (features.length < 2 && this._popup) return this._popup.remove();
         if (features.length < 2) return false;
-        // console.log(features);
         if (this.props.meta && this.props.meta.id) {
           pointData = BaseMap.pointDataForPreStyledMap(features, this.props.meta.id);
         }
