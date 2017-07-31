@@ -1,6 +1,7 @@
 query ResourcesOverTime ($id: String!) {
   internationalResources(id: $id) {
     resourcesOverTime {
+      uid
       year
       value
       flow_name

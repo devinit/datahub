@@ -5,4 +5,4 @@ import InternationalResourcesChart from '.';
 
 storiesOf('International Resources chart live DONOT TEST', module)
   .addDecorator(withApolloProvider())
-  .add('Area treemap Chart', () => <InternationalResourcesChart id={'uganda'} />);
+  .add('Area treemap Chart', () => <InternationalResourcesChart id={'mali'} />);

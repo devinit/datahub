@@ -1,7 +1,7 @@
 const areaConfig = {
   type: 'stacked-timearea',
   groupBy: 'flow_category',
-  colors: ['rgb(186, 12, 47)', 'rgb(0, 149, 200)', 'rgb(147, 50, 142)', 'rgb(234, 118, 0)', 'rgb(27, 54, 93)'],
+  coloring: 'color',
   showLabels: true,
   linearAxis: {
     showAxis: true,
@@ -16,15 +16,18 @@ const areaConfig = {
     axisMaximum: '2015',
     ticking: 'years',
     tickingStep: 5,
-  }
+  },
 };
 
 const treemapConfig = {
   type: 'treemap',
-  colors: ['rgb(186, 12, 47)', 'rgb(0, 149, 200)', 'rgb(147, 50, 142)', 'rgb(234, 118, 0)', 'rgb(27, 54, 93)'],
+  coloring: 'color',
+  colors: [],
+  labeling: {
+    prefix: 'US$ '
+  },
   tree: {
     id: 'flow_category',
-    parent: 'year',
     value: 'value'
   },
   treemap: {
