@@ -2837,283 +2837,555 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
 </ul>
 `;
 
-exports[`Storyshots Navbar tabs with redux Navbar with redux 1`] = `
-<div>
-  <div
-    className="css-1mjz3a"
-  >
+exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
+<section>
+  <div>
     <div
-      className="ui left aligned container"
-    >
-      <ul
-        className="css-1j5lqol"
-      >
-        <li>
-          <a
-            className="css-2rtur8 active"
-            href="/poverty"
-            onClick={[Function]}
-          >
-            Poverty
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/vulnerability"
-            onClick={[Function]}
-          >
-            Vulnerability
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/government-finance"
-            onClick={[Function]}
-          >
-            Government finance
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/international-finance"
-            onClick={[Function]}
-          >
-            International finance
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/international-official-finance"
-            onClick={[Function]}
-          >
-            International official finance
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/humanitarian-finance"
-            onClick={[Function]}
-          >
-            Humanitarian finance
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/data-revolution"
-            onClick={[Function]}
-          >
-            Data revolution
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/forward-looking-oda"
-            onClick={[Function]}
-          >
-            Forward looking ODA
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    className="css-nil"
-  >
-    <div
-      className="css-kx9hs1"
+      className="css-1mjz3a"
     >
       <div
-        className="ui center aligned container"
+        className="ui left aligned container"
+      >
+        <ul
+          className="css-1j5lqol"
+        >
+          <li>
+            <a
+              className="css-2rtur8 active"
+              href="/poverty"
+              onClick={[Function]}
+            >
+              Poverty
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/vulnerability"
+              onClick={[Function]}
+            >
+              Vulnerability
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/government-finance"
+              onClick={[Function]}
+            >
+              Government finance
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/international-finance"
+              onClick={[Function]}
+            >
+              International finance
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/international-official-finance"
+              onClick={[Function]}
+            >
+              International official finance
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/humanitarian-finance"
+              onClick={[Function]}
+            >
+              Humanitarian finance
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/data-revolution"
+              onClick={[Function]}
+            >
+              Data revolution
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/forward-looking-oda"
+              onClick={[Function]}
+            >
+              Forward looking ODA
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="css-nil"
+    >
+      <div
+        className="css-kx9hs1"
       >
         <div
-          className="css-9to0er"
+          className="ui center aligned container"
         >
-          <select
-            onChange={[Function]}
+          <div
+            className="css-moli5b"
           >
-            <option
-              value="data_series.poor_people_190"
+            <select
+              onChange={[Function]}
             >
-              Number of people living in extreme poverty
-            </option>
-            <option
-              value="data_series.poverty_190"
+              <option
+                value="data_series.poor_people_190"
+              >
+                Number of people living in extreme poverty
+              </option>
+              <option
+                value="data_series.poverty_190"
+              >
+                % of population living in extreme poverty
+              </option>
+              <option
+                value="data_series.depth_of_extreme_poverty_190"
+              >
+                Depth of extreme poverty (poverty gap)
+              </option>
+              <option
+                value="data_series.poverty_310"
+              >
+                % of population living on less than $3.10 a day
+              </option>
+              <option
+                value="data_series.poorest_20_percent"
+              >
+                Population in the global P20
+              </option>
+              <option
+                value="data_series.percent_in_p20_national"
+              >
+                % of population in the global P20
+              </option>
+              <option
+                value="subnational_p20"
+              >
+                % of people in the P20 (subnational level)
+              </option>
+              <option
+                value="survey_p20"
+              >
+                % of people in the P20 (survey level)
+              </option>
+            </select>
+            <i
+              aria-hidden="true"
+              className="caret down icon"
+            />
+            <div
+              className="css-w0yocm"
             >
-              % of population living in extreme poverty
-            </option>
-            <option
-              value="data_series.depth_of_extreme_poverty_190"
-            >
-              Depth of extreme poverty (poverty gap)
-            </option>
-            <option
-              value="data_series.poverty_310"
-            >
-              % of population living on less than $3.10 a day
-            </option>
-            <option
-              value="data_series.poorest_20_percent"
-            >
-              Population in the global P20
-            </option>
-            <option
-              value="data_series.percent_in_p20_national"
-            >
-              % of population in the global P20
-            </option>
-            <option
-              value="subnational_p20"
-            >
-              % of people in the P20 (subnational level)
-            </option>
-            <option
-              value="survey_p20"
-            >
-              % of people in the P20 (survey level)
-            </option>
-          </select>
-          <i
-            aria-hidden="true"
-            className="caret down icon"
-          />
-          <button
-            className="ui medium button"
-            disabled={undefined}
-            onClick={[Function]}
-            tabIndex={undefined}
-          >
-            Using this Visualization
-          </button>
+              <button
+                className="ui medium button"
+                disabled={undefined}
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                Using this Visualization
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              className="info circle icon"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div
+    className="css-1phz37g"
+  >
+    <div
+      className="css-8ys126"
+    >
+      <a
+        className="css-v1w6d2"
+      >
+        <i
+          aria-hidden="true"
+          className="close icon"
+          onClick={[Function]}
+        />
+      </a>
+      <ul
+        className="css-1l3cw6m"
+      >
+        <li
+          className="item-1"
+        >
+          Compare the colour
+          <br />
+          of each country
+          <br />
+          with the legend
+          <span
+            className="css-1k5wtej tour-item-pointer"
+          >
+            <i
+              aria-hidden="true"
+              className="arrow down icon"
+            />
+          </span>
+        </li>
+        <li
+          className="item-2"
+        >
+          As you change theme and
+          <br />
+          indicator the colour of each
+          <br />
+          country will adapt to that
+          <br />
+          indicator
+        </li>
+        <li
+          className="item-3"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow left icon"
+          />
+           Change theme
+        </li>
+        <li
+          className="item-4"
+        >
+          Change indicator 
+          <i
+            aria-hidden="true"
+            className="arrow right icon"
+          />
+        </li>
+        <li
+          className="item-5"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow left icon"
+          />
+           Find source information
+        </li>
+        <li
+          className="item-6"
+        >
+          Zoom in and out 
+          <i
+            aria-hidden="true"
+            className="arrow up icon"
+          />
+        </li>
+        <li
+          className="item-7"
+        >
+          Hover over a country
+          <br />
+          to see data snapshot
+        </li>
+        <li
+          className="item-8"
+        >
+          Click a country to go
+          <br />
+          to country profile
+        </li>
+        <li
+          className="item-9"
+        >
+          Scroll down to see country rankings
+          <br />
+          <i
+            aria-hidden="true"
+            className="arrow down icon"
+          />
+        </li>
+        <li
+          className="item-10"
+        >
+          Click Share this chart view below to
+          <br />
+          to share the chart youve created
+          <br />
+          <i
+            aria-hidden="true"
+            className="arrow down icon"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 `;
 
 exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
-<div>
-  <div
-    className="css-1mjz3a"
-  >
+<section>
+  <div>
     <div
-      className="ui left aligned container"
-    >
-      <ul
-        className="css-1j5lqol"
-      >
-        <li>
-          <a
-            className="css-2rtur8 active"
-            href="/uganda-poverty"
-            onClick={[Function]}
-          >
-            Poverty
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/uganda-pop"
-            onClick={[Function]}
-          >
-            Population
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/uganda-education"
-            onClick={[Function]}
-          >
-            Education
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/uganda-health"
-            onClick={[Function]}
-          >
-            Health
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/uganda-wash"
-            onClick={[Function]}
-          >
-            Water and sanitation
-          </a>
-        </li>
-        <li>
-          <a
-            className="css-2rtur8"
-            href="/uganda-dist-resource"
-            onClick={[Function]}
-          >
-            District public resources
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    className="css-nil"
-  >
-    <div
-      className="css-kx9hs1"
+      className="css-1mjz3a"
     >
       <div
-        className="ui center aligned container"
+        className="ui left aligned container"
+      >
+        <ul
+          className="css-1j5lqol"
+        >
+          <li>
+            <a
+              className="css-2rtur8 active"
+              href="/uganda-poverty"
+              onClick={[Function]}
+            >
+              Poverty
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/uganda-pop"
+              onClick={[Function]}
+            >
+              Population
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/uganda-education"
+              onClick={[Function]}
+            >
+              Education
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/uganda-health"
+              onClick={[Function]}
+            >
+              Health
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/uganda-wash"
+              onClick={[Function]}
+            >
+              Water and sanitation
+            </a>
+          </li>
+          <li>
+            <a
+              className="css-2rtur8"
+              href="/uganda-dist-resource"
+              onClick={[Function]}
+            >
+              District public resources
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="css-nil"
+    >
+      <div
+        className="css-kx9hs1"
       >
         <div
-          className="css-9to0er"
+          className="ui center aligned container"
         >
-          <select
-            onChange={[Function]}
+          <div
+            className="css-moli5b"
           >
-            <option
-              value="spotlight_on_uganda.uganda_poverty_headcount"
+            <select
+              onChange={[Function]}
             >
-              Poverty headcount
-            </option>
-            <option
-              value="spotlight_on_uganda.uganda_deprivation_living"
+              <option
+                value="spotlight_on_uganda.uganda_poverty_headcount"
+              >
+                Poverty headcount
+              </option>
+              <option
+                value="spotlight_on_uganda.uganda_deprivation_living"
+              >
+                Decent standard of living score
+              </option>
+              <option
+                value="spotlight_on_uganda.uganda_life_expectancy"
+              >
+                Life expectancy
+              </option>
+            </select>
+            <i
+              aria-hidden="true"
+              className="caret down icon"
+            />
+            <div
+              className="css-gyrv08"
             >
-              Decent standard of living score
-            </option>
-            <option
-              value="spotlight_on_uganda.uganda_life_expectancy"
-            >
-              Life expectancy
-            </option>
-          </select>
-          <i
-            aria-hidden="true"
-            className="caret down icon"
-          />
-          <button
-            className="ui medium button"
-            disabled={undefined}
-            onClick={[Function]}
-            tabIndex={undefined}
-          >
-            Using this Visualization
-          </button>
+              <button
+                className="ui medium button"
+                disabled={undefined}
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                Using this Visualization
+              </button>
+            </div>
+            <i
+              aria-hidden="true"
+              className="info circle icon"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div
+    className="css-1phz37g"
+  >
+    <div
+      className="css-8ys126"
+    >
+      <a
+        className="css-v1w6d2"
+      >
+        <i
+          aria-hidden="true"
+          className="close icon"
+          onClick={[Function]}
+        />
+      </a>
+      <ul
+        className="css-1l3cw6m"
+      >
+        <li
+          className="item-1"
+        >
+          Compare the colour
+          <br />
+          of each country
+          <br />
+          with the legend
+          <span
+            className="css-1k5wtej tour-item-pointer"
+          >
+            <i
+              aria-hidden="true"
+              className="arrow down icon"
+            />
+          </span>
+        </li>
+        <li
+          className="item-2"
+        >
+          As you change theme and
+          <br />
+          indicator the colour of each
+          <br />
+          country will adapt to that
+          <br />
+          indicator
+        </li>
+        <li
+          className="item-3"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow left icon"
+          />
+           Change theme
+        </li>
+        <li
+          className="item-4"
+        >
+          Change indicator 
+          <i
+            aria-hidden="true"
+            className="arrow right icon"
+          />
+        </li>
+        <li
+          className="item-5"
+        >
+          <i
+            aria-hidden="true"
+            className="arrow left icon"
+          />
+           Find source information
+        </li>
+        <li
+          className="item-6"
+        >
+          Zoom in and out 
+          <i
+            aria-hidden="true"
+            className="arrow up icon"
+          />
+        </li>
+        <li
+          className="item-7"
+        >
+          Hover over a country
+          <br />
+          to see data snapshot
+        </li>
+        <li
+          className="item-8"
+        >
+          Click a country to go
+          <br />
+          to country profile
+        </li>
+        <li
+          className="item-9"
+        >
+          Scroll down to see country rankings
+          <br />
+          <i
+            aria-hidden="true"
+            className="arrow down icon"
+          />
+        </li>
+        <li
+          className="item-10"
+        >
+          Click Share this chart view below to
+          <br />
+          to share the chart youve created
+          <br />
+          <i
+            aria-hidden="true"
+            className="arrow down icon"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 `;
 
 exports[`Storyshots Spotlight Tabs live DONOT TEST spotlight tabs 1`] = `
@@ -3658,121 +3930,257 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
         </div>
       </div>
     </div>
-    <div>
-      <div
-        className="css-1mjz3a"
-      >
+    <section>
+      <div>
         <div
-          className="ui left aligned container"
-        >
-          <ul
-            className="css-1j5lqol"
-          >
-            <li>
-              <a
-                className="css-2rtur8 active"
-                href="/uganda-poverty"
-                onClick={[Function]}
-              >
-                Poverty
-              </a>
-            </li>
-            <li>
-              <a
-                className="css-2rtur8"
-                href="/uganda-pop"
-                onClick={[Function]}
-              >
-                Population
-              </a>
-            </li>
-            <li>
-              <a
-                className="css-2rtur8"
-                href="/uganda-education"
-                onClick={[Function]}
-              >
-                Education
-              </a>
-            </li>
-            <li>
-              <a
-                className="css-2rtur8"
-                href="/uganda-health"
-                onClick={[Function]}
-              >
-                Health
-              </a>
-            </li>
-            <li>
-              <a
-                className="css-2rtur8"
-                href="/uganda-wash"
-                onClick={[Function]}
-              >
-                Water and sanitation
-              </a>
-            </li>
-            <li>
-              <a
-                className="css-2rtur8"
-                href="/uganda-dist-resource"
-                onClick={[Function]}
-              >
-                District public resources
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div
-        className="css-nil"
-      >
-        <div
-          className="css-kx9hs1"
+          className="css-1mjz3a"
         >
           <div
-            className="ui center aligned container"
+            className="ui left aligned container"
+          >
+            <ul
+              className="css-1j5lqol"
+            >
+              <li>
+                <a
+                  className="css-2rtur8 active"
+                  href="/uganda-poverty"
+                  onClick={[Function]}
+                >
+                  Poverty
+                </a>
+              </li>
+              <li>
+                <a
+                  className="css-2rtur8"
+                  href="/uganda-pop"
+                  onClick={[Function]}
+                >
+                  Population
+                </a>
+              </li>
+              <li>
+                <a
+                  className="css-2rtur8"
+                  href="/uganda-education"
+                  onClick={[Function]}
+                >
+                  Education
+                </a>
+              </li>
+              <li>
+                <a
+                  className="css-2rtur8"
+                  href="/uganda-health"
+                  onClick={[Function]}
+                >
+                  Health
+                </a>
+              </li>
+              <li>
+                <a
+                  className="css-2rtur8"
+                  href="/uganda-wash"
+                  onClick={[Function]}
+                >
+                  Water and sanitation
+                </a>
+              </li>
+              <li>
+                <a
+                  className="css-2rtur8"
+                  href="/uganda-dist-resource"
+                  onClick={[Function]}
+                >
+                  District public resources
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="css-nil"
+        >
+          <div
+            className="css-kx9hs1"
           >
             <div
-              className="css-9to0er"
+              className="ui center aligned container"
             >
-              <select
-                onChange={[Function]}
+              <div
+                className="css-moli5b"
               >
-                <option
-                  value="spotlight_on_uganda.uganda_poverty_headcount"
+                <select
+                  onChange={[Function]}
                 >
-                  Poverty headcount
-                </option>
-                <option
-                  value="spotlight_on_uganda.uganda_deprivation_living"
+                  <option
+                    value="spotlight_on_uganda.uganda_poverty_headcount"
+                  >
+                    Poverty headcount
+                  </option>
+                  <option
+                    value="spotlight_on_uganda.uganda_deprivation_living"
+                  >
+                    Decent standard of living score
+                  </option>
+                  <option
+                    value="spotlight_on_uganda.uganda_life_expectancy"
+                  >
+                    Life expectancy
+                  </option>
+                </select>
+                <i
+                  aria-hidden="true"
+                  className="caret down icon"
+                />
+                <div
+                  className="css-gyrv08"
                 >
-                  Decent standard of living score
-                </option>
-                <option
-                  value="spotlight_on_uganda.uganda_life_expectancy"
-                >
-                  Life expectancy
-                </option>
-              </select>
-              <i
-                aria-hidden="true"
-                className="caret down icon"
-              />
-              <button
-                className="ui medium button"
-                disabled={undefined}
-                onClick={[Function]}
-                tabIndex={undefined}
-              >
-                Using this Visualization
-              </button>
+                  <button
+                    className="ui medium button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    Using this Visualization
+                  </button>
+                </div>
+                <i
+                  aria-hidden="true"
+                  className="info circle icon"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <div
+        className="css-1phz37g"
+      >
+        <div
+          className="css-8ys126"
+        >
+          <a
+            className="css-v1w6d2"
+          >
+            <i
+              aria-hidden="true"
+              className="close icon"
+              onClick={[Function]}
+            />
+          </a>
+          <ul
+            className="css-1l3cw6m"
+          >
+            <li
+              className="item-1"
+            >
+              Compare the colour
+              <br />
+              of each country
+              <br />
+              with the legend
+              <span
+                className="css-1k5wtej tour-item-pointer"
+              >
+                <i
+                  aria-hidden="true"
+                  className="arrow down icon"
+                />
+              </span>
+            </li>
+            <li
+              className="item-2"
+            >
+              As you change theme and
+              <br />
+              indicator the colour of each
+              <br />
+              country will adapt to that
+              <br />
+              indicator
+            </li>
+            <li
+              className="item-3"
+            >
+              <i
+                aria-hidden="true"
+                className="arrow left icon"
+              />
+               Change theme
+            </li>
+            <li
+              className="item-4"
+            >
+              Change indicator 
+              <i
+                aria-hidden="true"
+                className="arrow right icon"
+              />
+            </li>
+            <li
+              className="item-5"
+            >
+              <i
+                aria-hidden="true"
+                className="arrow left icon"
+              />
+               Find source information
+            </li>
+            <li
+              className="item-6"
+            >
+              Zoom in and out 
+              <i
+                aria-hidden="true"
+                className="arrow up icon"
+              />
+            </li>
+            <li
+              className="item-7"
+            >
+              Hover over a country
+              <br />
+              to see data snapshot
+            </li>
+            <li
+              className="item-8"
+            >
+              Click a country to go
+              <br />
+              to country profile
+            </li>
+            <li
+              className="item-9"
+            >
+              Scroll down to see country rankings
+              <br />
+              <i
+                aria-hidden="true"
+                className="arrow down icon"
+              />
+            </li>
+            <li
+              className="item-10"
+            >
+              Click Share this chart view below to
+              <br />
+              to share the chart youve created
+              <br />
+              <i
+                aria-hidden="true"
+                className="arrow down icon"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <div
       className="css-v9l6ke"
     />
@@ -8475,7 +8883,7 @@ exports[`Storyshots Tooltip Tooltip Test 1`] = `
 
 exports[`Storyshots Tour Global Viz tour 1`] = `
 <div
-  className="css-2xdbq8"
+  className="css-1phz37g"
 >
   <div
     className="css-8ys126"
@@ -8486,6 +8894,7 @@ exports[`Storyshots Tour Global Viz tour 1`] = `
       <i
         aria-hidden="true"
         className="close icon"
+        onClick={[Function]}
       />
     </a>
     <ul
@@ -8598,7 +9007,7 @@ exports[`Storyshots Tour Global Viz tour 1`] = `
 
 exports[`Storyshots Tour UnbundlindAid tour 1`] = `
 <div
-  className="css-2xdbq8"
+  className="css-1phz37g"
 >
   <div
     className="css-8ys126"
@@ -8609,6 +9018,7 @@ exports[`Storyshots Tour UnbundlindAid tour 1`] = `
       <i
         aria-hidden="true"
         className="close icon"
+        onClick={[Function]}
       />
     </a>
     <ul
