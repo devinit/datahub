@@ -54,7 +54,9 @@ export const apolloWrapper = (apolloReducer: Reducer<Store, Action>) =>
   (state: Store, action: Action) => {
     switch (action.type) {
       case REHYDRATE: {
-        if (action && action.payload && action.payload.apollo) return action.payload.apollo;
+        if (action && action.payload && action.payload.apollo) {
+          return {...state, ...action.payload.apollo};
+        }
         return state;
       }
       default: return apolloReducer(state, action);

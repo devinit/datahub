@@ -19,8 +19,10 @@ type WithApolloProps = {
   app: AppState
 }
 const MapWrapper = (props: WrapperProps) => {
-  // console.log('isFirst render', props.app.isFirstMapRender);
   if (props.loading) {
+    return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
+  }
+  if (!props.loading && !props.mapData) {
     return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
   }
   return (<Map {...props} />);

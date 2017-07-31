@@ -2,7 +2,8 @@
 type Process = {
     browser: string,
     env: {
-      MapboxAccessToken: string
+      MapboxAccessToken: string,
+      NODE_ENV: string
     }
 }
 declare var process: Process;
