@@ -66,8 +66,10 @@ type Feature = {
     type?: string,
     ISO?: string,
     P20?: number,
+    p20?: number,
     DHSREGEN ?: string,
     CNTRYNAMEE?: string,
+    NAME?: string,
     dhsreg?: string
   }
 }
@@ -88,14 +90,32 @@ type GenericTipHtml = {
   value: string | number;
 }
 class BaseMap extends Component {
-  static pointDataForPreStyledMap(features: Feature[]): MapData {
+  static foldOverSurveyMapFeatures(features: Feature[]): MapData {
+    const props = features.reverse().reduce((acc, feature) => {
+       // this is a country feature;
+      const p20: number = feature.properties && feature.properties.p20 ? feature.properties.p20 : 0;
+      if (p20 === 0) return {...acc, ...feature.properties};
+      const sum = acc.sum + p20;
+      const total = acc.total + 1;
+      return {...acc, sum, total, ...feature.properties};
+    }, { total: 0, sum: 0});
+    // console.log('props', props, features);
+    const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
+    const id: string = props.ISO2 || '';
+    const countryName: string = props.NAME || props.NAME || '';
+    const region: string = props.dhsreg ? props.dhsreg : '';
+    const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
+    return {value, id, name, detail: '', uid: '', year: 2013, color: ''};
+  }
+  static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData {
+    if (indicator === 'survey_p20') return BaseMap.foldOverSurveyMapFeatures(features);
     if (!features[0].properties) throw new Error('Properties missing from map style');
     const properties = features[0].properties;
     const value: number = properties.P20 ? Math.round(properties.P20 * 100) : 0;
-    if (!features[0].properties.CNTRYNAMEE) throw new Error('country name missing from map style');
-    const name: string = features[0].properties.CNTRYNAMEE;
-    if (!features[0].properties.ISO) throw new Error('country ISO2 id missing from map style');
-    const id: string = features[0].properties.ISO;
+    const countryName: string = properties.CNTRYNAMEE || '';
+    const id: string = properties.ISO || '';
+    const region: string = properties.DHSREGEN ? properties.DHSREGEN : '';
+    const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: ''};
   }
   static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
@@ -140,7 +160,9 @@ class BaseMap extends Component {
 
   tipTemplate(pointData: MapData) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : 'Base map';
-    if (!pointData.id || !pointData.name) return false;
+    if (!pointData.id || !pointData.name || !pointData.id.length || !pointData.name.length) {
+      return false;
+    }
     const country: string = pointData.name;
     const id: string = pointData.id;
     let value: string = '';
@@ -150,7 +172,7 @@ class BaseMap extends Component {
     if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
     if (theme === 'government-finance' && pointData.detail) value = `${value}-[${pointData.detail}]`;
     if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) value = pointData.detail;
-    if (!value.length) console.error('value for tip template is empty');
+    if (value === undefined || value === null) console.error('value for tip template is empty');
     const uom: string = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     const opts = { id, value, name, uom, country};
     return BaseMap.genericTipHtml(opts);
@@ -174,8 +196,12 @@ class BaseMap extends Component {
           });
       } else {
         // TODO: add point data from features
+        if (features.length < 2 && this._popup) return this._popup.remove();
         if (features.length < 2) return false;
-        pointData = BaseMap.pointDataForPreStyledMap(features);
+        // console.log(features);
+        if (this.props.meta && this.props.meta.id) {
+          pointData = BaseMap.pointDataForPreStyledMap(features, this.props.meta.id);
+        }
       }
       if (!pointData && this._popup) return this._popup.remove();
       if (!pointData) return false;
