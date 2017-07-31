@@ -72,7 +72,7 @@ export default (props: Props) => {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
-            <Grid.Column width="12" centered>
+            <Grid.Column width="12">
               <iframe
                 src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
                 title="About Datahub"

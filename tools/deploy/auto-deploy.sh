@@ -13,13 +13,13 @@ rm -rf datahub.git/.git # no need for git history
 
 echo 'rebuilding datahub docker containers'
 
-docker build -t datahub-2 .
+docker build -t datahub .
 
-docker stop datahub-2-app
+docker stop datahub-app
 
-docker rm datahub-2-app
+docker rm datahub-app
 
-docker run -it -d -p 7777:9090 --name datahub-2-app datahub-2
+docker run -it -d -p 7777:9090 --name datahub-app datahub
 
 
 

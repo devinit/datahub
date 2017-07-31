@@ -5,6 +5,8 @@ query GlobalPictureThemes {
     indicators {
       id
       name
+      heading
+      source
     }
     default_indicator
   }

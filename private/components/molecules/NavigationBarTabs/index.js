@@ -4,26 +4,27 @@ import glamorous, {Div} from 'glamorous';
 import type { Element } from 'react';
 import { Container } from 'semantic-ui-react';
 import NavigationBarTabsContainer from 'components/atoms/NavigationBarTabsContainer';
+import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
+import TourContainer from 'components/molecules/TourContainer';
 import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
 
 type Indicator = {|
-  id: string,
-  name: string,
+  id: ?string,
+  name: ?string,
+  heading: ?string,
+  source: ?string,
 |}
 
-type NavItem = {|
-    id: string,
-    name: string,
-    indicators: Indicator[],
-    default_indicator: string,
-|}
+type NavItem = GlobalPictureThemesQuery;
 
 export type ChangeActiveIndicator<T> =
   ((activeMapIndicator: string) => Dispatch<T>);
 
 type Props<T> = {
   navBarItems: NavItem[],
+  activeIndicator: string,
   changeActiveIndicator?: ChangeActiveIndicator<T>,
+  showUsingThisViz?: boolean,
   selected?: number,
   textAlign?: string
 }
@@ -49,22 +50,32 @@ const TabLink = glamorous.a({
 });
 
 class Tabs<T> extends React.Component {
-
   constructor(props: Props<T>) {
     super(props);
+    if (!props.navBarItems) throw new Error('nav bar data missing');
     this.state = {
-      selected: 0
+      selected: 0,
+      tourVisibility: false,
+      activeIndicator: props.activeIndicator,
+      info: 'hey'
     };
+    this.navBarItems = props.navBarItems;
   }
   state: {
-    selected: number
+    selected: number,
+    info: string,
+    activeIndicator: string,
+    tourVisibility: boolean
   }
+  navBarItems: NavItem[];
   handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({
       selected: index
     });
-    const activeIndicator = this.props.navBarItems[index].default_indicator;
+    if (!this.navBarItems[index].default_indicator) throw new Error('default indicator missing in nav items');
+    const activeIndicator: string = this.navBarItems[index].default_indicator;
+    this.setState({activeIndicator});
     if (activeIndicator && this.props.changeActiveIndicator) {
       this.props.changeActiveIndicator(activeIndicator);
     }
@@ -72,20 +83,46 @@ class Tabs<T> extends React.Component {
   handleSelect(event: any) {
     event.preventDefault();
     const activeIndicator = event.target.value;
+    this.setState({activeIndicator});
     if (activeIndicator && this.props.changeActiveIndicator) {
       this.props.changeActiveIndicator(activeIndicator);
     }
   }
+  handleUsingThisViz(event: any) {
+    if (!this.state.tourVisibility) return this.setState({tourVisibility: true});
+    return this.setState({tourVisibility: false});
+  }
+  toolTipinfo() {
+    let active = {heading: 'N/A', source: 'N/A'};
+    this.navBarItems.forEach((navItem: NavItem) => {
+      if (navItem.indicators) {
+        const item = navItem.indicators.find(obj => obj.id === this.state.activeIndicator);
+        if (item) active = item;
+      }
+    });
+    return active;
+  }
   _renderContent() {
-    const selectedNavItem = this.props.navBarItems[this.state.selected];
-    const options = selectedNavItem.indicators.map(obj => ({key: obj.id, value: obj.name}));
+    const selectedNavItem = this.navBarItems[this.state.selected];
+    if (!selectedNavItem.indicators) throw new Error('indicators missing in nav bar props');
+    const options = selectedNavItem.indicators.map(obj => {
+      if (!obj.id || !obj.name) throw new Error('id and name missing in nav bar indicators');
+      return {key: obj.id, value: obj.name};
+    });
     return (
-      <NavigationBarTabsContainer options={options} onChange={(e) => this.handleSelect(e)} />
+      <NavigationBarTabsContainer
+        options={options}
+        onChange={(e) => this.handleSelect(e)}
+        showUsingThisViz={this.props.showUsingThisViz}
+        onUsingThisVizHandler={e => this.handleUsingThisViz(e)}
+        toolTip={this.toolTipinfo()}
+      />
     );
   }
   _renderTitles() {
     const addNavBarLabels = (navItem: NavItem, index: number) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
+      if (!navItem.id || !navItem.name) throw new Error('navbar id and name missing');
       return (
         <li key={navItem.id}>
           <TabLink
@@ -100,21 +137,29 @@ class Tabs<T> extends React.Component {
     };
     return (
       <TabsContainer>
-        {this.props.navBarItems.map(addNavBarLabels)}
+        {this.navBarItems.map(addNavBarLabels)}
       </TabsContainer>
     );
   }
 
   render() {
     return (
-      <div>
-        <Div background={lighterGrey}>
-          <Container textAlign={this.props.textAlign || 'left'}>
-            {this._renderTitles()}
-          </Container>
-        </Div>
-        {this._renderContent()}
-      </div>
+      <section>
+        <div>
+          <Div background={lighterGrey}>
+            <Container textAlign={this.props.textAlign || 'left'}>
+              {this._renderTitles()}
+            </Container>
+          </Div>
+          {this._renderContent()}
+        </div>
+        <TourContainer
+          visible={this.state.tourVisibility}
+          closeHandler={event => this.handleUsingThisViz(event)}
+        >
+          <GlobalVisualizationTour />
+        </TourContainer>
+      </section>
     );
   }
 }

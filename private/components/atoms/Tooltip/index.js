@@ -9,7 +9,7 @@ type State = {
   tooltipActive: boolean,
 }
 
-class Tooltip extends React.Component {
+class ToolTip extends React.Component {
 
   constructor(props: Props) {
     super(props);
@@ -38,4 +38,4 @@ class Tooltip extends React.Component {
     );
   }
 }
-export default Tooltip;
+export default ToolTip;
