@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react';
 import withApolloProvider from 'lib/storybook-addon/apollo';
 import InternationalResourcesChart from '.';
 
-storiesOf('Country Profile Charts', module)
+storiesOf('International Resources chart live DONOT TEST', module)
   .addDecorator(withApolloProvider())
-  .add('International Resources', () => <InternationalResourcesChart id={'uganda'} />);
+  .add('Area treemap Chart', () => <InternationalResourcesChart id={'mali'} />);

@@ -16,11 +16,7 @@ const withData = graphql(QUERY, {
     if (error) throw new Error(error);
 
     return loading || !data.internationalResources ? {loading, config} : {
-      data: data.internationalResources.resourcesOverTime
-        .map(d => ({
-          ...d,
-          flow_group: `${d.flow_category}-${d.flow_type}`
-        })),
+      data: data.internationalResources.resourcesOverTime,
       config
     };
   }});
