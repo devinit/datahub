@@ -6,7 +6,8 @@ import DropDown from 'components/atoms/UnbudlingAidDropDown';
 type Props = {
   active?: boolean,
   smallText?: string,
-  bigText: string,
+  value: string,
+  onChange(value: string): void,
   options: Array<Object>,
 };
 const Wrapper = glamorous.span({
@@ -37,16 +38,22 @@ class Select extends React.Component {
     super(props);
     this.state = {
       visible: false,
-      bigText: props.bigText,
+      bigText: '',
+      value: 'all'
     };
   }
+
   state: {
     visible?: boolean,
-    bigText: string
+    bigText: string,
+    value: string,
+  };
+
+  onChanged(selected: Object) {
+    this.setState({bigText: selected.name, visible: false});
+    this.props.onChange(selected.value);
   }
-  setText(text: string) {
-    this.setState({bigText: text});
-  }
+
   toggleDropDown() {
     if (this.state.visible) {
       this.setState({visible: false});
@@ -54,14 +61,18 @@ class Select extends React.Component {
       this.setState({visible: true});
     }
   }
+
   render() {
+    const [selected = {}] = this.props.options.filter(d => d.value === this.props.value);
+    const {name = ''} = selected;
+
     return (<Wrapper >
       <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
         <SmallText>{this.props.smallText}</SmallText>
-        <BoldText>{this.state.bigText}</BoldText>
+        <BoldText>{name}</BoldText>
       </TextWrapper>
       <DropDown
-        onChange={text => this.setText(text)}
+        onChange={(selected) => this.onChanged && this.onChanged(selected)}
         active={this.props.active}
         onClose={() => this.toggleDropDown()}
         visible={this.state.visible}
