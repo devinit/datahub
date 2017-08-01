@@ -5,6 +5,7 @@ const compression = require('compression');
 const LRUCache = require('lru-cache');
 const fetch = require('isomorphic-fetch');
 const next = require('next');
+const countriesData = require('./private/components/organisms/CountrySearchInput/data');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -16,7 +17,7 @@ const homeLink = `http://localhost:${PORT}`;
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 200,
-  maxAge: 1000 * 60 * 60 * 24 * 30 * 6 // 6 months
+  maxAge: 1000 * 60 * 60 * 24 * 30 * 2 // 1 months
 });
 
 const renderAndCache = (req, res, pagePath, queryParams) => {
@@ -42,14 +43,16 @@ const renderAndCache = (req, res, pagePath, queryParams) => {
 const pagesToPreCache = ['/', '/spotlight-on-uganda', '/unbundling-aid'];
 
 const preCache = () => {
-  pagesToPreCache.forEach((link, index) => {
+  const countrySlugs = countriesData.countries.map(country => `/country?id=${country.id}`);
+  const preCacheList = pagesToPreCache.concat(countrySlugs);
+  preCacheList.forEach((link, index) => {
     setTimeout(() => {
       fetch(`${homeLink}${link}`).then(response => {
         if (response.status === 200) return console.info(`${link} was found and is now cached`);
         return console.error(`${link} was not found or bad response`);
       })
-      .catch(console.error);
-    }, 2000);
+      .catch((error) => console.error(error.message));
+    }, 10000);
   });
 };
 
@@ -81,6 +84,6 @@ app.prepare().then(_ => {
   server.listen(PORT, err => {
     if (err) throw err;
     console.log(`> App running on ${homeLink}`);
-    preCache();
+    if (process.env.NODE_ENV === 'production') preCache();
   });
 });

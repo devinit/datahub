@@ -8,6 +8,7 @@ query MapData($id: String!) {
       uid
       detail
       value
+      slug
     }
     start_year
     end_year

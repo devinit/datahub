@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this file is auto generated
 
-export default {
+module.exports = {
   spotlightThemes: [
     {
       id: 'uganda-poverty',

@@ -44,7 +44,7 @@ const jsonToJs = (json: string): string =>
   `/* eslint-disable */
   // this file is auto generated
   \n
-  export default ${json};
+  module.exports = ${json};
   \n
   `;
 
