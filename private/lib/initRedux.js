@@ -28,16 +28,9 @@ function create(apollo, initialState) {
 }
 
 export async function makeStorePersist(store) {
-  const storage = await localForage.config({
-    driver: localForage.INDEXEDDB,
-    name: 'datahub-v2',
-    version: 1.0,
-    storeName: 'datahub', // Should be alphanumeric, with underscores.
-    description: 'datahub client cache'
-  });
   return new Promise((resolve, reject) => {
     return persistStore(store, {
-      storage,
+      storage: localForage,
       whitelist: ['apollo'] }, (err, cachedStore) => {
         if (err) {
           console.error('persisting store error: ', err);

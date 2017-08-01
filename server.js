@@ -5,7 +5,6 @@ const compression = require('compression');
 const LRUCache = require('lru-cache');
 // const { fork } = require('child_process');
 const pagesToPreCache = require('./private/lib/precache/pages');
-
 const next = require('next');
 
 
@@ -15,11 +14,10 @@ const handle = app.getRequestHandler();
 
 const PORT = process.env.PORT || 4444;
 
-
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 200,
-  maxAge: 1000 * 60 * 60 * 24 * 30 * 2 // 1 months
+  maxAge: 1000 * 60 * 60 * 24 * 30  // 30 days
 });
 
 const renderAndCache = (req, res, pagePath, queryParams) => {

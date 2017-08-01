@@ -32,7 +32,7 @@
     "transform-async-generator-functions",
     "babel-plugin-inline-import-graphql-ast",
     ["module-resolver", {
-      "root": ["private", "public/semantic", "public/img"],
+      "root": ["private", "public/semantic", "public/img", "public/di-charts"],
       "alias": {
         "package.json": "./package.json"
       }

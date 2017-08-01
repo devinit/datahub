@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { draw } from '@devinit/charts';
-// import stylesheet from '@devinit/charts/dist/di-charts.min.css';
-// import Nossr from 'react-no-ssr';
+// import stylesheet from '@devinit/charts/dist/di-charts.min.css'; TODO: use me
+import stylesheet from 'di-charts.min.css';
 /* eslint-disable react/no-danger */
 
 type Props = {
@@ -41,13 +41,11 @@ class Chart extends React.Component {
   render() {
     return (
       <div>
-        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
-        {/* <Nossr onSSR={<p>{'loading...'}</p>}> */}
-          <div
-            ref={element => { this.element = element; }}
-            style={{width: this.props.width, height: this.props.height}}
-          />
-        {/* </Nossr> */}
+        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+        <div
+          ref={element => { this.element = element; }}
+          style={{width: this.props.width, height: this.props.height}}
+        />
       </div>
     );
   }

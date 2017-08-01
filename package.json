@@ -10,7 +10,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./node_modules/.cache ./next",
-    "dev": "BABEL_ENV=development NODE_ENV=development && PORT=5555 node server.js",
+    "dev": "BABEL_ENV=development NODE_ENV=development && PORT=4040 node server.js",
     "build": "BABEL_ENV=development NODE_ENV=development npm run clean && next build",
     "start": "NODE_ENV=production PORT=9999 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
@@ -56,7 +56,7 @@
     "localforage": "^1.5.0",
     "lru-cache": "^4.1.1",
     "mapbox-gl": "^0.39.1",
-    "next": "^2.4.9",
+    "next": "^3.0.1-beta.20",
     "next-routes": "^1.0.40",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",

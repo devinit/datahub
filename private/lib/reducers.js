@@ -8,7 +8,7 @@ import type {GlobalIndicator, SpotLightlIndicator} from './actions';
 
 export type Action = GlobalIndicator & SpotLightlIndicator & {
   payload: {
-    apollo: Object
+    apollo: any
   }
 }
 export type AppState = {
@@ -55,7 +55,9 @@ export const apolloWrapper = (apolloReducer: Reducer<Store, Action>) =>
     switch (action.type) {
       case REHYDRATE: {
         if (action && action.payload && action.payload.apollo) {
-          return {...state, ...action.payload.apollo};
+          const data = {...state.data, ...action.payload.apollo.data};
+          const queries = {...state.data, ...action.payload.queries};
+          return {...state, data, queries};
         }
         return state;
       }
