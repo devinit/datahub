@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this file is auto generated
 
-export default {
+module.exports = {
   countries: [
     { id: 'afghanistan', name: 'Afghanistan' },
     { id: 'aland-islands', name: 'Aland Islands' },

@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground, orange} from 'components/theme/semantic';
+import Router from 'next/router';
 import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
@@ -20,6 +21,7 @@ type ViewportDefaults = {
 }
 export type MapData = {|
   id: ?string,
+  slug: ?string,
   name: ?string,
   color: ?string,
   year: ?number,
@@ -236,6 +238,23 @@ class BaseMap extends Component {
       this._map.resize();
     });
   }
+  mouseMapClick(paint: PaintMap) {
+    this._map.on('click', (event) => {
+      if (!this.props.meta || this.props.meta.id === 'survey_p20' || this.props.meta.id === 'regional_p20') return false;
+      const features: Feature = this._map.queryRenderedFeatures(event.point);
+      if (!features.length) return false;
+      const property = paint.paintProperty || 'ISO2';
+      const countryId: string = features[0].properties[property];
+      if (!paint.data) return false;
+      const point: MapData | void = paint.data.find(obj => {
+        if (!obj.id) return false;
+        return obj.id === countryId;
+      });
+      console.log('point', point);
+      if (!point || !point.slug) return false;
+      return Router.push(`/country?id=${point.slug}`, `/country/${point.slug}`);
+    });
+  }
   colorMap({data, baseColor, propertyName, propertyLayer}: PaintMap) {
     if (!data || !data.length) throw new Error('you have to pass in data to color the map');
     const stops = data
@@ -271,6 +290,7 @@ class BaseMap extends Component {
         this._map.touchZoomRotate.disableRotation();
         this.zoomListener();
         if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
+        this.mouseMapClick(paint);
         this.dragListener();
         this.persistZoomAndCenterLevel();
         this.resize();

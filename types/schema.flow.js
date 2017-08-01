@@ -57,6 +57,7 @@ export type MapDataQuery = {|
       // countryName derived from entity.csv
       name: ?string,
       color: ?string,
+      slug: ?String
       year: ?number,
       uid: ?string,
       detail: ?string,

@@ -2529,6 +2529,18 @@
               "deprecationReason": null
             },
             {
+              "name": "slug",
+              "description": "country slug",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "name",
               "description": "countryName derived from entity.csv",
               "args": [],

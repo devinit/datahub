@@ -518,7 +518,7 @@ exports[`Storyshots Country Search Country Search With Data 1`] = `
       value=""
     />
     <div
-      className="css-13azwyo"
+      className="css-13azwyo list"
     >
       <ul
         className="css-1jjh1xe"
@@ -6284,7 +6284,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     value=""
                   />
                   <div
-                    className="css-13azwyo"
+                    className="css-13azwyo list"
                   >
                     <ul
                       className="css-1jjh1xe"

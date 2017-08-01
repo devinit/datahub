@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this file is auto generated
 
-export default {
+module.exports = {
   globalPictureThemes: [
     {
       id: 'poverty',
