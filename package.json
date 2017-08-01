@@ -104,6 +104,11 @@
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10"
   },
+   "git-pre-hooks": {
+    "pre-push": [
+      "npm run test -- -u"
+    ]
+  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
