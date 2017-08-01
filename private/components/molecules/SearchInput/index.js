@@ -24,7 +24,6 @@ type State = {
   countries: Country[],
   value: string
 }
-
 class SearchInput extends React.Component {
   constructor(props: Props) {
     super(props);
@@ -73,7 +72,6 @@ class SearchInput extends React.Component {
     if (filteredCountries.length) this.setState({countries: filteredCountries});
   }
   onSubmit(value: Object) {
-    console.log('on submit');
     this.setState({value: value.name});
     if (this.props.onSelected) {
       this.props.onSelected(value);
