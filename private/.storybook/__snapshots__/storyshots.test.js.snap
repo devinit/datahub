@@ -497,10 +497,810 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
+exports[`Storyshots Chart Stubs How have resource in flows changed over time? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": Object {},
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "150px",
+          "width": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs How is income distributed? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": Object {},
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "120px",
+          "width": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs Inflow Vs Outflows 1`] = `
+<div
+  className="css-13dh4yr"
+>
+  <div
+    className="ui grid"
+  >
+    <div
+      className="eight wide column"
+    >
+      <div
+        className="ui basic clearing segment"
+      >
+        <h2
+          className="css-o28kwy"
+          style={
+            Object {
+              "float": "right",
+              "marginRight": "22px",
+            }
+          }
+        >
+          RESOURCE FLOWS TO UNITED KINGDOM 
+          <span>
+            423m
+          </span>
+        </h2>
+      </div>
+    </div>
+    <div
+      className="eight wide column"
+    >
+      <div
+        className="ui basic clearing segment"
+      >
+        <h2
+          className="css-o28kwy"
+          style={
+            Object {
+              "float": "left",
+              "marginLeft": "20px",
+            }
+          }
+        >
+          RESOURCE FLOWS FROM UNITED KINGDOM 
+          <span>
+            28b
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": Object {},
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "400px",
+          "width": undefined,
+        }
+      }
+    />
+  </div>
+  <div
+    className="ui centered grid"
+  >
+    <div
+      className="eight wide column"
+    >
+      <div
+        className="ui basic very padded segment"
+      >
+        <div
+          className="css-1l2vfq4"
+        >
+          <span
+            className="css-1ujcf02 bubble"
+          >
+            2000
+          </span>
+          <div
+            className="css-1whzuw8"
+          >
+            <span
+              className="css-yltwl4"
+            >
+              2010
+            </span>
+          </div>
+          <input
+            className="css-13ehj2n input low"
+            max={2015}
+            min={2000}
+            onChange={[Function]}
+            step={1}
+            type="range"
+            value={2010}
+          />
+          <span
+            className="css-2q5yx4 bubble"
+          >
+            2015
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs International Resources 1`] = `
+<div
+  className="css-13dh4yr"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui grid"
+    >
+      <div
+        className="six wide column"
+      >
+        <h3
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            Outflows over time
+          </div>
+        </h3>
+        <div
+          aria-busy={undefined}
+          aria-disabled={undefined}
+          aria-expanded={false}
+          aria-multiselectable={undefined}
+          className="ui fluid selection dropdown"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            Choose a flow for more details
+          </div>
+          <i
+            aria-hidden="true"
+            className="dropdown icon"
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={true}
+              className="selected item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                dfis
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                fdi
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                oda
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                oofs
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                pda
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                remittances
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ten wide column"
+      >
+        <h3
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            The mix of resources in 
+            <span>
+              2015
+            </span>
+          </div>
+        </h3>
+      </div>
+    </div>
+    <div
+      className="ui grid"
+    >
+      <div
+        className="six wide column"
+      >
+        <div
+          style={
+            Object {
+              "height": "400px",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="ten wide column"
+      >
+        <h2
+          className="css-11lf0dt"
+        >
+          US$ 
+          42b
+        </h2>
+        <div>
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": Object {},
+              }
+            }
+          />
+          <div
+            style={
+              Object {
+                "height": "360px",
+                "width": undefined,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs Is Poverty reducing over time? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": Object {},
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "120px",
+          "width": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs Revenue, financing and expenditure 1`] = `
+<div
+  className="css-13dh4yr"
+>
+  <div
+    className="ui basic segment"
+  >
+    <div
+      className="ui basic clearing segment"
+      style={
+        Object {
+          "paddingLeft": 0,
+          "paddingRight": 0,
+        }
+      }
+    >
+      <h2
+        className="css-o28kwy"
+        style={
+          Object {
+            "float": "left",
+          }
+        }
+      >
+        REVENUE AND GRANT 
+        <span>
+          2014
+        </span>
+      </h2>
+      <div
+        className="ui basic right floated segment"
+        style={
+          Object {
+            "margin": 0,
+            "padding": 0,
+          }
+        }
+      >
+        <div
+          className="ui label"
+          onClick={[Function]}
+        >
+          Budget Type
+        </div>
+        <div
+          aria-busy={undefined}
+          aria-disabled={undefined}
+          aria-expanded={false}
+          aria-multiselectable={undefined}
+          className="ui selection dropdown"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            actual
+          </div>
+          <i
+            aria-hidden="true"
+            className="dropdown icon"
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              aria-checked={true}
+              aria-disabled={undefined}
+              aria-selected={true}
+              className="active selected item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                actual
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                budget
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ui label"
+          onClick={[Function]}
+        >
+          Currency
+        </div>
+        <div
+          aria-busy={undefined}
+          aria-disabled={undefined}
+          aria-expanded={false}
+          aria-multiselectable={undefined}
+          className="ui compact selection dropdown"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            Constant US$
+          </div>
+          <i
+            aria-hidden="true"
+            className="dropdown icon"
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              aria-checked={true}
+              aria-disabled={undefined}
+              aria-selected={true}
+              className="active selected item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                Constant US$
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                Current UGX
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ui grid"
+    >
+      <div
+        className="five wide column"
+        style={
+          Object {
+            "paddingRight": 0,
+          }
+        }
+      >
+        <div
+          className="css-wdotdt"
+          style={
+            Object {
+              "paddingLeft": "30px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "180px",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="eleven wide column"
+        style={
+          Object {
+            "paddingLeft": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "222px",
+              "width": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="ui grid"
+    >
+      <div
+        className="five wide column"
+        style={
+          Object {
+            "paddingRight": 0,
+          }
+        }
+      >
+        <div
+          className="css-wdotdt"
+          style={
+            Object {
+              "paddingLeft": "30px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "180px",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="eleven wide column"
+        style={
+          Object {
+            "paddingLeft": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "222px",
+              "width": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="css-lck8bw"
+    >
+      <h2
+        className="css-o28kwy"
+      >
+        FINANCING 
+        <span>
+          2014
+        </span>
+      </h2>
+    </div>
+    <div
+      className="css-lck8bw"
+    >
+      <h2
+        className="css-o28kwy"
+      >
+        EXPENDITURE 
+        <span>
+          2014
+        </span>
+      </h2>
+    </div>
+    <div
+      className="ui grid"
+    >
+      <div
+        className="five wide column"
+        style={
+          Object {
+            "paddingRight": 0,
+          }
+        }
+      >
+        <div
+          className="css-wdotdt"
+          style={
+            Object {
+              "paddingLeft": "30px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "250px",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="eleven wide column"
+        style={
+          Object {
+            "paddingLeft": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": "292px",
+              "width": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs What is the mix of resources? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": Object {},
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "150px",
+          "width": undefined,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 1`] = `
-<p>
-   Loading ...
-</p>
+<div
+  className="css-h5tlv2"
+/>
 `;
 
 exports[`Storyshots Country Search Country Search With Data 1`] = `
@@ -512,13 +1312,15 @@ exports[`Storyshots Country Search Country Search With Data 1`] = `
   >
     <input
       className="css-drphjz"
+      onBlur={[Function]}
       onChange={[Function]}
+      onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="Type a country name"
       value=""
     />
     <div
-      className="css-13azwyo"
+      className="css-1x2mn3f"
     >
       <ul
         className="css-1jjh1xe"
@@ -6278,13 +7080,15 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 >
                   <input
                     className="css-drphjz"
+                    onBlur={[Function]}
                     onChange={[Function]}
+                    onFocus={[Function]}
                     onKeyDown={[Function]}
                     placeholder="Type a country name"
                     value=""
                   />
                   <div
-                    className="css-13azwyo"
+                    className="css-1x2mn3f"
                   >
                     <ul
                       className="css-1jjh1xe"

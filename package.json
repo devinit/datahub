@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.0",
   "config": {
-    "api": "https://datahub-api-cdkbreklom.now.sh/graphql"
+    "api": "https://datahub-api-pbgycyyvuo.now.sh/graphql"
   },
   "repository": {
     "type": "git",
@@ -106,7 +106,8 @@
   },
   "git-pre-hooks": {
     "pre-push": [
-      "npm run test -- -u"
+      "npm run test -- -u",
+      "npm run lint"
     ]
   },
   "jest": {

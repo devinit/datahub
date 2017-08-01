@@ -4,5 +4,6 @@ exports[`pull api data tests should return countries used in country search inpu
 "Object {
   \\"id\\": \\"afghanistan\\",
   \\"name\\": \\"Afghanistan\\",
+  \\"slug\\": \\"afghanistan\\",
 }"
 `;

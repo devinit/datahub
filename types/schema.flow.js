@@ -5,6 +5,7 @@ export type CountriesQuery = {|
   countries: ? Array< {|
     id: ?string,
     name: ?string,
+    slug: ?string,
   |} >,
 |};
 
