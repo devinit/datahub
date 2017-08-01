@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
 import {big} from 'components/theme';
-import {white} from 'components/theme/semantic';
+import {white, midWhite} from 'components/theme/semantic';
 
 export const List = glamorous.ul({
   borderRadius: '.125em',
@@ -23,6 +23,6 @@ export const List = glamorous.ul({
     backgroundColor: white,
   },
   '& li.active': {
-    backgroundColor: white,
+    backgroundColor: midWhite,
   }
 });
