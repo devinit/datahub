@@ -3,16 +3,18 @@ const path = require('path');
 const { parse } = require('url');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
-const fetch = require('isomorphic-fetch');
+const { fork } = require('child_process');
+const pagesToPreCache = require('./private/lib/precache/pages');
+
 const next = require('next');
-const countriesData = require('./private/components/organisms/CountrySearchInput/data');
+
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
 const handle = app.getRequestHandler();
 
 const PORT = process.env.PORT || 4444;
-const homeLink = `http://localhost:${PORT}`;
+
 
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
@@ -23,7 +25,7 @@ const ssrCache = new LRUCache({
 const renderAndCache = (req, res, pagePath, queryParams) => {
   const key = req.url;
   // If we have a page in the cache, let's serve it
-  if (ssrCache.has(key) && process.env.NODE_ENV === 'production') {
+  if (ssrCache.has(key)) {
     console.log(`CACHE HIT: ${key}`);
     return res.send(ssrCache.get(key));
   }
@@ -40,21 +42,6 @@ const renderAndCache = (req, res, pagePath, queryParams) => {
     });
 };
 
-const pagesToPreCache = ['/', '/spotlight-on-uganda', '/unbundling-aid'];
-
-const preCache = () => {
-  const countrySlugs = countriesData.countries.map(country => `/country?id=${country.id}`);
-  const preCacheList = pagesToPreCache.concat(countrySlugs);
-  preCacheList.forEach((link, index) => {
-    setTimeout(() => {
-      fetch(`${homeLink}${link}`).then(response => {
-        if (response.status === 200) return console.info(`${link} was found and is now cached`);
-        return console.error(`${link} was not found or bad response`);
-      })
-      .catch((error) => console.error(error.message));
-    }, 10000);
-  });
-};
 
 app.prepare().then(_ => {
   const server = express();
@@ -83,7 +70,7 @@ app.prepare().then(_ => {
 
   server.listen(PORT, err => {
     if (err) throw err;
-    console.log(`> App running on ${homeLink}`);
-    if (process.env.NODE_ENV === 'production') preCache();
+    console.log(`> App running on http://localhost:${PORT}`);
+    if (process.env.NODE_ENV === 'production') fork('./private/lib/precache/index.js', [], {silent: true});
   });
 });
