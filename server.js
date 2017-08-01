@@ -55,11 +55,16 @@ app.prepare().then(_ => {
   // serve service worker
   server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
 
-    // Use the `renderAndCache` utility defined below to serve pages
+  // Use the `renderAndCache` utility defined below to serve pages
   server.get('/', (req, res) => {
     renderAndCache(req, res, '/');
   });
-
+  server.get('/spotlight-on-uganda', (req, res) => {
+    renderAndCache(req, res, '/spotlight-on-uganda');
+  });
+  server.get('/unbundling-aid', (req, res) => {
+    renderAndCache(req, res, '/unbundling-aid');
+  });
   server.get('/country/:id', (req, res) => {
     const queryParams = { id: req.params.id };
     renderAndCache(req, res, '/country', queryParams);

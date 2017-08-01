@@ -25,6 +25,9 @@ const MapWrapper = (props: WrapperProps) => {
   if (!props.loading && !props.mapData) {
     return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
   }
+  if (!props.loading && !process.browser) {
+    return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
+  }
   return (<Map {...props} />);
 };
 

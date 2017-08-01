@@ -35,7 +35,7 @@ export default (props: Props) => {
         </Div>
       </Container>
       <GlobalPictureNavTabs />
-      <NoSSR onSSR={<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}><Map pathName={props.pathName} /></NoSSR>
+      <Map pathName={props.pathName} />
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS
