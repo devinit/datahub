@@ -42,7 +42,7 @@ const Government = (props: TabDataQuery) => {
           <Chart
             config={props.config.spendingAllocation}
             // TODO: Remove null data from server side
-            data={props.governmentFinance.spendingAllocation.filter(d => d.name)}
+            data={props.governmentFinance.spendingAllocation}
             height="140px"
           />
         </Grid.Column>

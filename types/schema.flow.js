@@ -57,11 +57,12 @@ export type MapDataQuery = {|
       // countryName derived from entity.csv
       name: ?string,
       color: ?string,
-      slug: ?String
       year: ?number,
       uid: ?string,
       detail: ?string,
       value: ?number,
+      // country slug
+      slug: ?string,
     |} >,
     start_year: ?number,
     end_year: ?number,
@@ -234,6 +235,9 @@ export type TabDataQuery = {|
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
     resourcesOverTime: ? Array< {|
+      year: number,
+      // flow either inflow or outflow
+      flow_type: ?string,
       // Category i.e FDI, ODA
       flow_category: ?string,
       value: number,

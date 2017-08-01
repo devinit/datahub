@@ -108,7 +108,7 @@ class BaseMap extends Component {
     const countryName: string = props.NAME || props.NAME || '';
     const region: string = props.dhsreg ? props.dhsreg : '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
-    return {value, id, name, detail: '', uid: '', year: 2013, color: ''};
+    return {value, id, name, detail: '', uid: '', year: 2013, color: '', slug: ''};
   }
   static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData {
     if (indicator === 'survey_p20') return BaseMap.foldOverSurveyMapFeatures(features);
@@ -119,7 +119,7 @@ class BaseMap extends Component {
     const id: string = properties.ISO || '';
     const region: string = properties.DHSREGEN ? properties.DHSREGEN : '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
-    return { value, id, name, detail: '', uid: '', year: 2013, color: ''};
+    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: ''};
   }
   static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
     const valueStr = BaseMap.tipToolTipValueStr(value, uom);
@@ -178,7 +178,7 @@ class BaseMap extends Component {
     if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) value = pointData.detail;
     if (value === undefined || value === null) console.error('value for tip template is empty');
     const uom: string = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
-    const opts = { id, value, name, uom, country};
+    const opts = {id, value, name, uom, country, };
     return BaseMap.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
