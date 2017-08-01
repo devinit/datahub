@@ -34,8 +34,10 @@ export default (props: Props) => {
           </Grid>
         </Div>
       </Container>
-      <GlobalPictureNavTabs />
-      <Map pathName={props.pathName} />
+      <div style={{position: 'relative'}}>
+        <GlobalPictureNavTabs />
+        <Map pathName={props.pathName} />
+      </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS
