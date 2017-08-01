@@ -12,7 +12,7 @@
     "clean": "rm -rf ./node_modules/.cache ./next",
     "dev": "BABEL_ENV=development NODE_ENV=development && PORT=5555 node server.js",
     "build": "BABEL_ENV=development NODE_ENV=development npm run clean && next build",
-    "start": "NODE_ENV=production PORT=9090 node server.js",
+    "start": "NODE_ENV=production PORT=9999 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",

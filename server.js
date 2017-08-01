@@ -3,7 +3,7 @@ const path = require('path');
 const { parse } = require('url');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
-const { fork } = require('child_process');
+// const { fork } = require('child_process');
 const pagesToPreCache = require('./private/lib/precache/pages');
 
 const next = require('next');
@@ -51,7 +51,7 @@ app.prepare().then(_ => {
   server.use(express.static('public'));
 
   // serve service worker // currently not working
-  server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
+  // server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
 
   pagesToPreCache.forEach(link => {
     server.get(link, (req, res) => {
@@ -71,6 +71,6 @@ app.prepare().then(_ => {
   server.listen(PORT, err => {
     if (err) throw err;
     console.log(`> App running on http://localhost:${PORT}`);
-    if (process.env.NODE_ENV === 'production') fork('./private/lib/precache/index.js', [], {silent: true});
+    // fork('./private/lib/precache/index.js'});
   });
 });

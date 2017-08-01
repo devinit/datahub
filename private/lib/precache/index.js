@@ -17,7 +17,7 @@ const preCache = () => {
         return console.error(`${link} was not found or bad response`);
       })
       .catch((error) => console.error(error.message));
-    }, 5000);
+    }, 10000);
   });
 };
 
