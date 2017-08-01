@@ -4,6 +4,7 @@ import glamorous, {Div} from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import {SocialMediaLink} from 'components/atoms/Link';
 import Link from 'next/link';
+import Router from 'next/router';
 import {List} from 'components/atoms/SearchInput/list';
 import {Input, InputContainer} from '../../atoms/SearchInput/input';
 
@@ -25,14 +26,6 @@ type State = {
 }
 
 class SearchInput extends React.Component {
-  // static onClickHandler(event: any, country: Country): void {
-  //   event.preventDefault();
-  //   const state = Router
-  //     .prefetch(`/country/${country.id}`).then(obj => {
-  //       console.log('prefetched', obj);
-  //       Router.push(`/country/${country.id}`);
-  //     }).catch((error) => console.error('router error', error));
-  // }
   constructor(props: Props) {
     super(props);
     if (!props.countries || !props.countries.length) throw new Error('countries data prop mixing');
@@ -84,9 +77,8 @@ class SearchInput extends React.Component {
     this.setState({value: value.name});
     if (this.props.onSelected) {
       this.props.onSelected(value);
-    } else {
-      // Router.push(`/country/${value.id}`);
     }
+    Router.push(`/country/${value.id}`);
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
@@ -100,8 +92,8 @@ class SearchInput extends React.Component {
           <Input
             value={this.state.value}
             placeholder={this.props.placeholder}
-            // onChange={(e) => this.onChange(e.target.value)}
-            // onKeyDown={(e) => this.onKeyDown(e)}
+            onChange={(e) => this.onChange(e.target.value)}
+            onKeyDown={(e) => this.onKeyDown(e)}
           />
           <Div position="relative">
             <List >
