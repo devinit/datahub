@@ -5,5 +5,5 @@ import NavBarTab from '.';
 
 storiesOf('Navbar tabs with redux', module)
   .addDecorator(withReduxProvider())
-  .add('Navbar with redux', () => <NavBarTab />);
+  .add('Global picture nav bar tab', () => <NavBarTab />);
 

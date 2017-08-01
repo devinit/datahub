@@ -1,6 +1,6 @@
 // @flow
 import {Container, Grid, Header} from 'semantic-ui-react';
-import glamorous, {P, Div} from 'glamorous';
+import glamorous, {P, Div, Ul} from 'glamorous';
 import React from 'react';
 
 
@@ -26,7 +26,7 @@ type LegendItemProps = LegendItemStyleProps & {
 const LegendContainer = glamorous.div({
   position: 'absolute',
   left: '2%',
-  width: '15%',
+  width: '18%',
   display: 'flex',
   flexDirection: 'column'
 },
@@ -34,10 +34,6 @@ const LegendContainer = glamorous.div({
   top: props.length ? `${(110 / props.length)}%` : '25%'
 }));
 
-const LegendKeysContainer = glamorous.ul({
-  display: 'inline-block',
-  padding: 0,
-});
 const LegendKey = glamorous.li({
   fontSize: '.75em',
   padding: '0.5em',
@@ -60,10 +56,10 @@ const legend = (props: Props) => (
       <P justifyContent="center">{props.description}</P>
     </Div>
     <Div>
-      <LegendKeysContainer>
+      <Ul display={'inline-block'} padding={0}>
         {props.legendData
           .map(item => (<LegendKey key={item.label} {...item}>{item.label}</LegendKey>))}
-      </LegendKeysContainer>
+      </Ul>
     </Div>
   </LegendContainer>
 );

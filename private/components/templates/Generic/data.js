@@ -5,7 +5,7 @@ const data = {
       link: '/',
     },
     {
-      name: 'Profile',
+      name: 'Profiles',
       icon: 'pie graph',
       link: '',
       children: [

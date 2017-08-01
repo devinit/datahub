@@ -8,13 +8,19 @@ query MapData($id: String!) {
       uid
       detail
       value
+      slug
     }
     start_year
     end_year
     country
     uom_display
     name
+    theme
+    heading
+    default_year
     description
+    map_style
+    id
     legend {
       label
       color

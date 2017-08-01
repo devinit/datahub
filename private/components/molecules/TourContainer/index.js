@@ -6,6 +6,7 @@ import {Icon} from 'semantic-ui-react';
 
 type Props = {
   visible: boolean,
+  closeHandler?: (event: any) => void,
   children: Element<any>,
 }
 type State = {
@@ -30,32 +31,22 @@ const Overlay = glamorous.div({
   border: '1px solid #000',
   borderRadius: '5px',
   color: '#fff'
-});
+}, (props) => ({
+  display: props.visible ? 'block' : 'none'
+}));
 const Container = glamorous.div({
   padding: '0 20px',
   fontSize: '1.1em'
 });
 
-class TourContainer extends React.Component {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      visible: props.visible
-    };
-  }
-  state: State;
-
-  render() {
-    return (
-      <Overlay>
-        <Container>
-          <CloseIcon>
-            <Icon name="close" />
-          </CloseIcon>
-          {this.props.children}
-        </Container>
-      </Overlay>
-    );
-  }
-}
+const TourContainer = (props: Props) =>
+  (<Overlay visible={props.visible}>
+    <Container>
+      <CloseIcon>
+        <Icon name="close" onClick={event => props.closeHandler ? props.closeHandler(event) : false} />
+      </CloseIcon>
+      {props.children}
+    </Container>
+  </Overlay>
+);
 export default TourContainer;

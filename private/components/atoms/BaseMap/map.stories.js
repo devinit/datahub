@@ -22,5 +22,5 @@ const viewport = {
 };
 
 const paint = {data};
-storiesOf('Base Maps DontTest', module)
+storiesOf('Base Maps', module)
   .add('Base Map Atom', () => <BaseMap paint={paint} viewport={viewport} />);

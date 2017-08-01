@@ -7,7 +7,7 @@ import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
 import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
-import { red, white } from 'components/theme/semantic';
+import { red, white, lighterGrey } from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
 import Generic from '../Generic';
 import data from './data';

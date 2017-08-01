@@ -1,7 +1,8 @@
 // @flow
-import glamorous from 'glamorous';
+import glamorous, {Div, H4} from 'glamorous';
 import {Icon, Button} from 'semantic-ui-react';
 import React from 'react';
+import ToolTip from 'components/molecules/ToolTip';
 import { white } from 'components/theme/semantic';
 
 const Wrapper = glamorous.div({
@@ -9,6 +10,7 @@ const Wrapper = glamorous.div({
   '& i': {
     fontWeight: '700',
     fontSize: '18px',
+    cursor: 'pointer'
   },
   '& .ui.button': {
     paddingTop: '.5em',
@@ -40,17 +42,35 @@ export type Option = {|
 
 export type Props = {
   options: Array<Option>,
-  onChange?: ((event: any) => void)
+  onChange?: ((event: any) => void),
+  showUsingThisViz?: boolean,
+  toolTip?: {heading: string, source: string },
+  onUsingThisVizHandler?: ((event: any) => void),
 }
 
-const Select = ({options, onChange}: Props) => (
-  <Wrapper>
-    <select onChange={event => onChange ? onChange(event) : false}>
-      {options.map(item => <option value={item.key} key={item.key}>{item.value}</option>)}
-    </select>
-    <Icon name="caret down" />
-    <Button size="medium">Using this Visualization</Button>
-  </Wrapper>
+const Select = ({options, onChange, toolTip,
+  onUsingThisVizHandler, showUsingThisViz}: Props) => (
+    <Wrapper>
+      <select onChange={event => onChange ? onChange(event) : false}>
+        {options.map(item => <option value={item.key} key={item.key}>{item.value}</option>)}
+      </select>
+      <Icon name="caret down" />
+      <Div display={showUsingThisViz ? 'inline-block' : 'none'}>
+        <Button
+          size="medium"
+          onClick={event => onUsingThisVizHandler ? onUsingThisVizHandler(event) : false}
+        >Using this Visualization
+      </Button>
+      </Div>
+      <ToolTip trigger={<Icon name="info circle" />}>
+        {toolTip ?
+          <Div textAlign={'center'}>
+            <p>{toolTip.heading}</p>
+            <p><b>source</b>: {toolTip.source}</p>
+          </Div> : ''
+        }
+      </ToolTip>
+    </Wrapper>
 );
 
 export default Select;

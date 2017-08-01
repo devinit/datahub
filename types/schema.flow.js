@@ -8,39 +8,6 @@ export type CountriesQuery = {|
   |} >,
 |};
 
-export type MapDataQueryVariables = {|
-  id: string,
-|};
-
-export type MapDataQuery = {|
-  mapData: ? {|
-    map: ? Array< {|
-      // country code Id in DW this is di_id
-      id: ?string,
-      // countryName derived from entity.csv
-      name: ?string,
-      color: ?string,
-      year: ?number,
-      uid: ?string,
-      detail: ?string,
-      value: ?number,
-    |} >,
-    start_year: ?number,
-    end_year: ?number,
-    country: ?string,
-    // map value unit eg US $ or %
-    uom_display: ?string,
-    // map indicator user friendly label / slug eg Poverty
-    name: ?string,
-    description: ?string,
-    legend: ? Array< {|
-      label: ?string,
-      color: ?string,
-      backgroundColor: ?string,
-    |} >,
-  |},
-|};
-
 export type GlobalPictureThemesQuery = {|
   globalPictureThemes: ? Array< {|
     id: ?string,
@@ -48,6 +15,8 @@ export type GlobalPictureThemesQuery = {|
     indicators: ? Array< {|
       id: ?string,
       name: ?string,
+      heading: ?string,
+      source: ?string,
     |} >,
     default_indicator: ?string,
   |} >,
@@ -72,6 +41,45 @@ export type ResourcesOverTimeQuery = {|
       // in or out
       direction: ?string,
       color: ?string,
+    |} >,
+  |},
+|};
+
+export type MapDataQueryVariables = {|
+  id: string,
+|};
+
+export type MapDataQuery = {|
+  mapData: ? {|
+    map: ? Array< {|
+      // country code Id in DW this is di_id
+      id: ?string,
+      // countryName derived from entity.csv
+      name: ?string,
+      color: ?string,
+      slug: ?String
+      year: ?number,
+      uid: ?string,
+      detail: ?string,
+      value: ?number,
+    |} >,
+    start_year: ?number,
+    end_year: ?number,
+    country: ?string,
+    // map value unit eg US $ or %
+    uom_display: ?string,
+    // map indicator user friendly label / slug eg Poverty
+    name: ?string,
+    theme: ?string,
+    heading: ?string,
+    default_year: ?number,
+    description: ?string,
+    map_style: ?string,
+    id: ?string,
+    legend: ? Array< {|
+      label: ?string,
+      color: ?string,
+      backgroundColor: ?string,
     |} >,
   |},
 |};
