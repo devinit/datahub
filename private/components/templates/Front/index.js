@@ -75,13 +75,13 @@ export default (props: Props) => {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="12">
-              <iframe
+              {/* <iframe
                 src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
                 title="About Datahub"
                 frameBorder="0"
                 height="585"
                 style={{width: '100%'}}
-              />
+              /> */}
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -71,6 +71,6 @@ app.prepare().then(_ => {
   server.listen(PORT, err => {
     if (err) throw err;
     console.log(`> App running on http://localhost:${PORT}`);
-    // fork('./private/lib/precache/index.js'});
+    // fork('./private/lib/precache/index.js', [], {silent: true});
   });
 });
