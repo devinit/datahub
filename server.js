@@ -23,7 +23,7 @@ const ssrCache = new LRUCache({
 const renderAndCache = (req, res, pagePath, queryParams) => {
   const key = req.url;
   // If we have a page in the cache, let's serve it
-  if (ssrCache.has(key)) {
+  if (ssrCache.has(key) && process.env.NODE_ENV === 'production') {
     console.log(`CACHE HIT: ${key}`);
     return res.send(ssrCache.get(key));
   }

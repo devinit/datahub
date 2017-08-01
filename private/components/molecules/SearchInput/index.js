@@ -22,6 +22,7 @@ export type Props = {
 type State = {
   selected: number,
   countries: Country[],
+  showList: boolean,
   value: string
 }
 class SearchInput extends React.Component {
@@ -32,6 +33,7 @@ class SearchInput extends React.Component {
       selected: -1,
       countries: props.countries,
       value: '',
+      showList: false
     };
   }
   state: State;
@@ -47,15 +49,11 @@ class SearchInput extends React.Component {
         break;
       }
       case 38: { // up arrow
-        if (selected !== 0) {
-          selected -= 1;
-        }
+        if (selected !== 0) selected -= 1;
         break;
       }
       case 13: { // enter key code
-        if (selected !== -1) {
-          this.onSubmit(countries[selected]);
-        }
+        this.onSubmit();
         break;
       }
       default: {
@@ -71,12 +69,12 @@ class SearchInput extends React.Component {
       .filter((country: Country) => country.name.toLowerCase().includes(text.toLowerCase()));
     if (filteredCountries.length) this.setState({countries: filteredCountries});
   }
-  onSubmit(value: Object) {
-    this.setState({value: value.name});
-    if (this.props.onSelected) {
-      this.props.onSelected(value);
-    }
-    Router.push(`/country/${value.id}`);
+  onSubmit() {
+    const country: Country | void = this.state.countries[0] || null;
+    if (!country) return false;
+    this.setState({value: country.id});
+    if (this.props.onSelected) return this.props.onSelected(country.id);
+    return Router.push(`/country?id=${country.id}`, `/country/${country.id}`);
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
@@ -90,10 +88,12 @@ class SearchInput extends React.Component {
           <Input
             value={this.state.value}
             placeholder={this.props.placeholder}
+            onBlur={(e) => this.setState({showList: false})}
+            onFocus={(e) => this.setState({showList: true})}
             onChange={(e) => this.onChange(e.target.value)}
             onKeyDown={(e) => this.onKeyDown(e)}
           />
-          <Div position="relative">
+          <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
             <List >
               { this.state.countries ?
                   this.state.countries

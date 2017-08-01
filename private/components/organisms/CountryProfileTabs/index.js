@@ -16,6 +16,8 @@ import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
 import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
+import {Div} from 'glamorous';
+import {lightGrey} from 'components/theme/semantic';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
 
 type TabsProps = {
@@ -24,7 +26,7 @@ type TabsProps = {
 }
 
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<p> Loading ...</p>);
+  if (props.loading) return (<Div backgroundColor={lightGrey} width={'100%'} height={'5em'} />);
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" key={1}>

@@ -4,7 +4,7 @@ import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
 import App from 'components/templates/CountryProfile';
-import 'lib/offline-install'; // Get our service worker on the page
+// import 'lib/offline-install'; // Get our service worker on the page
 
 type Props = {
   url: {
