@@ -2,7 +2,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
 import { renderStatic } from 'glamor/server';
-import 'lib/offline-install'; // Get our service worker on the page
+// import 'lib/offline-install'; // Get our service worker on the page
 
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {

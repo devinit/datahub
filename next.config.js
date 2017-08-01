@@ -6,7 +6,7 @@ module.exports = {
   // changes: configChanges, // for use in storybook webpack config
   webpack: (config, { dev }) => {
     /* Enable only in Production */
-    if (!dev) {
+    if (!dev && false) { // DISABLED Service work untill we set up https / ssl
       // Service Worker
       config.plugins.push(
         new SWPrecacheWebpackPlugin({
