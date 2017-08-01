@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import {SocialMediaLink} from 'components/atoms/Link';
+import Link from 'next/link';
 import Router from 'next/router';
 import {List} from 'components/atoms/SearchInput/list';
 import {Input, InputContainer} from '../../atoms/SearchInput/input';
@@ -23,9 +24,6 @@ type State = {
   countries: Country[],
   value: string
 }
-const Wrapper = glamorous.div({
-  position: 'relative',
-});
 
 class SearchInput extends React.Component {
   constructor(props: Props) {
@@ -43,19 +41,19 @@ class SearchInput extends React.Component {
     const {countries} = this.state;
     const keyCode = e.keyCode;
     switch (keyCode) {
-      case 40: {
+      case 40: { // down arrow
         if ((selected + 1) < countries.length) {
           selected += 1;
         }
         break;
       }
-      case 38: {
+      case 38: { // up arrow
         if (selected !== 0) {
           selected -= 1;
         }
         break;
       }
-      case 13: {
+      case 13: { // enter key code
         if (selected !== -1) {
           this.onSubmit(countries[selected]);
         }
@@ -75,13 +73,12 @@ class SearchInput extends React.Component {
     if (filteredCountries.length) this.setState({countries: filteredCountries});
   }
   onSubmit(value: Object) {
+    console.log('on submit');
     this.setState({value: value.name});
     if (this.props.onSelected) {
       this.props.onSelected(value);
-    } else {
-      console.log('in router');
-      Router.push(`/country/${value.name}`);
     }
+    Router.push(`/country/${value.id}`);
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
@@ -98,20 +95,21 @@ class SearchInput extends React.Component {
             onChange={(e) => this.onChange(e.target.value)}
             onKeyDown={(e) => this.onKeyDown(e)}
           />
-          <Wrapper
-            className="list"
-          >
+          <Div position="relative">
             <List >
               { this.state.countries ?
                   this.state.countries
                   .map((country, i) =>
-                    (<li key={country.id} className={this.state.selected === i ? 'active' : false}>
-                      {country.name}
+                    (<li
+                      key={country.id}
+                      className={this.state.selected === i ? 'active' : false}
+                    >
+                      <Link href={`/country?id=${country.id}`} as={`/country/${country.id}`}><a>{country.name}</a></Link>
                     </li>))
                     : <li> Error getting countries </li>
               }
             </List>
-          </Wrapper>
+          </Div>
         </Container>
       </InputContainer>
     );
