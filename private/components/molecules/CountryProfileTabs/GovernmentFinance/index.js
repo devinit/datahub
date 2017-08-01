@@ -6,7 +6,12 @@ import Chart from 'components/atoms/Chart';
 import {red} from 'components/theme/semantic';
 import {big} from 'components/theme';
 
-const Government = (props: TabDataQuery) => {
+type Props = {
+  ...TabDataQuery,
+  config: any
+}
+
+const Government = (props: Props) => {
   if (!props.governmentFinance) return new Error('No Government Finance data');
   return (
     <Container>

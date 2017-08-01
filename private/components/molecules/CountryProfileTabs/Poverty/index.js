@@ -7,8 +7,14 @@ import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 
-const Poverty = (props: TabDataQuery) => {
+type Props = {
+ ...TabDataQuery,
+ config: any
+}
+
+const Poverty = (props: Props) => {
   if (!props.povertyTab) return new Error('No Poverty data');
+  const povertyTab = props.povertyTab;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -40,16 +46,20 @@ const Poverty = (props: TabDataQuery) => {
           >
             HOW IS INCOME DISTRIBUTED?
           </Header>
-
-          <Chart
-            config={props.config.histogram}
-            // TODO: Add color from server side
-            data={props.povertyTab.incomeDistTrend.map((d, i) => ({...d, color: i ? undefined : '#e8443a'}))}
-            height="120px"
-          />
-          <P fontWeight="bold" textAlign="left" marginTop="1em">
-            Bottom quintile has {props.povertyTab.incomeDistTrend[0].value}% of the income.
-          </P>
+          {
+            povertyTab.incomeDistTrend ?
+              <div>
+                <Chart
+                  config={props.config.histogram}
+                  data={props.povertyTab.incomeDistTrend}
+                  height="120px"
+                />
+                <P fontWeight="bold" textAlign="left" marginTop="1em">
+                  Bottom quintile has {povertyTab.incomeDistTrend[0].value} % of the income.
+                </P>
+              </div>
+              : ''
+          }
         </Grid.Column>
       </Grid>
     </Container>

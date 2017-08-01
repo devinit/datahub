@@ -5,8 +5,11 @@ import spotlightUgandaThemes from 'components/organisms/SpotLightNavTabs/ug-data
 import {GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR} from './actions';
 import type {GlobalIndicator, SpotLightlIndicator} from './actions';
 
-
-export type Action = GlobalIndicator & SpotLightlIndicator & {
+// would have been to use & operator but it wasnt working
+export type Action = {
+  globalIndicator: string,
+  spotlightIndicator: string,
+  type: string,
   payload: {
     apollo: any
   }
@@ -56,7 +59,7 @@ export const apolloWrapper = (apolloReducer: Reducer<Store, Action>) =>
       case REHYDRATE: {
         if (action && action.payload && action.payload.apollo) {
           const data = {...state.data, ...action.payload.apollo.data};
-          const queries = {...state.data, ...action.payload.queries};
+          const queries = {...state.data, ...action.payload.apollo.queries};
           return {...state, data, queries};
         }
         return state;

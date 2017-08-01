@@ -7,39 +7,44 @@ import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 
-const International = (props: TabDataQuery) => {
+type Props = {
+ ...TabDataQuery,
+ config: any
+}
+const getResourcesOverTime = (data) =>
+  [data].map(list => {
+    const years = list
+      .reduce((all, d) => {
+        if (all[d.year]) {
+          return {...all, [d.year]: [d, ...all[d.year]]};
+        }
+
+        return {[d.year]: [d], ...all};
+      }, {});
+
+    const types: any = Object.keys(years)
+      .map(y => {
+        const types = years[y]
+          .reduce((all, d) => {
+            if (all[d.flow_type]) {
+              return {...all, [d.flow_type]: [d, ...all[d.flow_type]]};
+            }
+
+            return {[d.flow_type]: [d], ...all};
+          }, {});
+
+        return Object.keys(types)
+          .map(t => types[t].reduce((s, d) => ({...s, value: s.value + d.value})));
+      });
+    return Object.keys(types).map(t => types[t]).reduce((all, d) => [...all, ...d], []);
+  })
+  .reduce((_, d) => d);
+
+const International = (props: Props) => {
   if (!props.internationalResources) return new Error('No international resources data');
-
-  const resourcesOverTime = [props.internationalResources.resourcesOverTime]
-    .map(list => {
-      const years = list
-        .reduce((all, d) => {
-          if (all[d.year]) {
-            return {...all, [d.year]: [d, ...all[d.year]]};
-          }
-
-          return {[d.year]: [d], ...all};
-        }, {});
-
-      const types = Object.keys(years)
-        .map(y => {
-          const types = years[y]
-            .reduce((all, d) => {
-              if (all[d.flow_type]) {
-                return {...all, [d.flow_type]: [d, ...all[d.flow_type]]};
-              }
-
-              return {[d.flow_type]: [d], ...all};
-            }, {});
-
-          return Object.keys(types)
-            .map(t => types[t].reduce((s, d) => ({...s, value: s.value + d.value})));
-        });
-
-      return Object.keys(types).map(t => types[t]).reduce((all, d) => [...all, ...d], []);
-    })
-    .reduce((_, d) => d);
-
+  const internationalResources = props.internationalResources;
+  const resourcesOverTime = props.internationalResources.resourcesOverTime ?
+    getResourcesOverTime(props.internationalResources.resourcesOverTime) : null;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -50,8 +55,8 @@ const International = (props: TabDataQuery) => {
           >
             AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO UGANDA?
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.internationalResources.netODAOfGNIIn } of GNI</P>
-          <P>Gross national income is {props.internationalResources.GNI}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{internationalResources.netODAOfGNIIn} of GNI</P>
+          <P>Gross national income is {internationalResources.GNI}</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -61,12 +66,13 @@ const International = (props: TabDataQuery) => {
           >
             HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?
           </Header>
-
-          <Chart
-            config={props.config.resourcesOverTime}
-            data={resourcesOverTime}
-            height="140px"
-          />
+          { resourcesOverTime ?
+            <Chart
+              config={props.config.resourcesOverTime}
+              data={resourcesOverTime}
+              height="140px"
+            /> : ''
+          }
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -77,12 +83,15 @@ const International = (props: TabDataQuery) => {
             WHAT’S THE MIX OF RESOURCES?
           </Header>
 
+          {
+            internationalResources.mixOfResources ?
+              <Chart
+                config={props.config.mixOfResources}
+                data={internationalResources.mixOfResources}
+                height="140px"
+              /> : ''
+          }
 
-          <Chart
-            config={props.config.mixOfResources}
-            data={props.internationalResources.mixOfResources}
-            height="140px"
-          />
         </Grid.Column>
       </Grid>
     </Container>
