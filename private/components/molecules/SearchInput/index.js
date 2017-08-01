@@ -93,7 +93,7 @@ class SearchInput extends React.Component {
             onChange={(e) => this.onChange(e.target.value)}
             onKeyDown={(e) => this.onKeyDown(e)}
           />
-          <Div position="relative" className="list">
+          <Div position="relative">
             <List >
               { this.state.countries ?
                   this.state.countries
