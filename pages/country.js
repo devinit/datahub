@@ -9,7 +9,7 @@ import 'lib/offline-install'; // Get our service worker on the page
 type Props = {
   url: {
     pathname: string,
-    query: {slug: string}
+    query: {id: string}
   }
 }
 // Adds server generated styles to glamor cache.
@@ -20,8 +20,8 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  console.log(props);
+  // console.log(props);
   return (
-    <App id={props.url.query.slug} />
+    <App id={props.url.query.id} />
   );
 });

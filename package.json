@@ -54,6 +54,7 @@
     "graphql": "^0.10.3",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
+    "lru-cache": "^4.1.1",
     "mapbox-gl": "^0.39.1",
     "next": "^3.0.1-beta.18",
     "next-routes": "^1.0.40",
