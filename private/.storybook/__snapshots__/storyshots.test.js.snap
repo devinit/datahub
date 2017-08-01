@@ -518,7 +518,7 @@ exports[`Storyshots Country Search Country Search With Data 1`] = `
       value=""
     />
     <div
-      className="css-13azwyo list"
+      className="css-13azwyo"
     >
       <ul
         className="css-1jjh1xe"
@@ -4271,7 +4271,7 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
     </div>
   </div>
   <div
-    className="css-1phz37g"
+    className="css-1jx0u2k"
   >
     <div
       className="css-8ys126"
@@ -4525,7 +4525,7 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
     </div>
   </div>
   <div
-    className="css-1phz37g"
+    className="css-1jx0u2k"
   >
     <div
       className="css-8ys126"
@@ -5320,7 +5320,7 @@ exports[`Storyshots Spotlight Templates Spot Light 1`] = `
         </div>
       </div>
       <div
-        className="css-1phz37g"
+        className="css-1jx0u2k"
       >
         <div
           className="css-8ys126"
@@ -6284,7 +6284,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                     value=""
                   />
                   <div
-                    className="css-13azwyo list"
+                    className="css-13azwyo"
                   >
                     <ul
                       className="css-1jjh1xe"
@@ -11403,7 +11403,7 @@ exports[`Storyshots Tooltip Tooltip Test 1`] = `
 
 exports[`Storyshots Tour Global Viz tour 1`] = `
 <div
-  className="css-1phz37g"
+  className="css-1jx0u2k"
 >
   <div
     className="css-8ys126"
@@ -11527,7 +11527,7 @@ exports[`Storyshots Tour Global Viz tour 1`] = `
 
 exports[`Storyshots Tour UnbundlindAid tour 1`] = `
 <div
-  className="css-1phz37g"
+  className="css-1jx0u2k"
 >
   <div
     className="css-8ys126"

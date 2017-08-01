@@ -90,6 +90,7 @@ class Tabs<T> extends React.Component {
   }
   handleUsingThisViz(event: any) {
     if (!this.state.tourVisibility) return this.setState({tourVisibility: true});
+    window.scrollTo(300, 0);
     return this.setState({tourVisibility: false});
   }
   toolTipinfo() {

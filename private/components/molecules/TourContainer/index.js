@@ -22,7 +22,7 @@ const CloseIcon = glamorous.a({
 });
 const Overlay = glamorous.div({
   position: 'absolute',
-  top: '20px',
+  top: '-50px',
   left: '20px',
   right: '20px',
   bottom: '0',
@@ -30,6 +30,7 @@ const Overlay = glamorous.div({
   background: 'rgba(0,0,0,.65)',
   border: '1px solid #000',
   borderRadius: '5px',
+  maxHeight: '740px',
   color: '#fff'
 }, (props) => ({
   display: props.visible ? 'block' : 'none'
