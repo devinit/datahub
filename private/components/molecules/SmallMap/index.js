@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import BaseMap from 'components/atoms/BaseMap';
-import type {Viewport, PaintMap} from 'components/atoms/BaseMap';
+import type {Viewport, PaintMap, MapData} from 'components/atoms/BaseMap';
 // import config from 'components/molecules/Map';
 import Nossr from 'react-no-ssr';
 import countries from 'components/organisms/CountrySearchInput/data';
@@ -32,7 +32,15 @@ const viewportAndPaint = ({slug, spotlightCountry}: Props): ViewportAndPaint => 
   const zoom = spotlightCountry && spotlightCountry === 'uganda' ? 9 : 5;
   const minZoom = spotlightCountry && spotlightCountry === 'uganda' ? 10 : 1;
   const viewport = { zoom, center, minZoom, scrollZoom: true, bounds};
-  const data = [{id: entity.id, color: red}];
+  const data = [{
+    id: entity.id,
+    color: red,
+    detail: '',
+    uid: '',
+    year: 0,
+    value: 0,
+    slug: entity.slug,
+    name: entity.name }];
   const paint = ({data}: PaintMap);
   return {viewport, paint};
 };
