@@ -6,6 +6,7 @@ import {lighterGrey} from 'components/theme/semantic';
 import {Div} from 'glamorous';
 import {connect} from 'react-redux';
 import type {State, AppState} from 'lib/reducers';
+import {MapBackground} from 'components/atoms/Backgrounds';
 import MAPSQUERY from '../../../graphql/Maps.graphql';
 
 type WrapperProps = {
@@ -19,9 +20,7 @@ type WithApolloProps = {
   app: AppState
 }
 const MapWrapper = (props: WrapperProps) => {
-  if (props.loading || !props.mapData || !props.browser) {
-    return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
-  }
+  if (props.loading || !props.mapData) return (<MapBackground />);
   return (<Map {...props} />);
 };
 

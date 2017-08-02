@@ -5,7 +5,7 @@ import {Container, Grid, Icon, Header, Button} from 'semantic-ui-react';
 import Pane from 'components/atoms/Pane';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
-import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
+import {LightBg, DarkBg, MapBackground} from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
 import { red, white, lighterGrey } from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
@@ -39,8 +39,7 @@ const spotlight = (props: Props) => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      {props.rehydrated ? <Map pathName={'/spotlight'} /> :
-      <Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}
+      {props.rehydrated ? <Map pathName={'/spotlight'} /> : <MapBackground />}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS

@@ -6,7 +6,7 @@ import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import NoSSR from 'react-no-ssr';
 import {HeaderGroup, SectionHeader} from 'components/atoms/Header';
-import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
+import {LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import Map from 'components/organisms/Map';
 import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
@@ -39,8 +39,7 @@ const front = (props: Props) => {
       </Container>
       <div style={{position: 'relative'}}>
         <GlobalPictureNavTabs />
-        {props.rehydrated ? <Map pathName={props.pathName} /> :
-        <Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}
+        {props.rehydrated ? <Map pathName={props.pathName} /> : <MapBackground />}
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
