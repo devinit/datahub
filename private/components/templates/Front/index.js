@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import {Container, Grid, Header, Icon, Table, Button} from 'semantic-ui-react';
-import glamorous, {Div} from 'glamorous';
+import glamorous, {Div, P} from 'glamorous';
 import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import NoSSR from 'react-no-ssr';
@@ -78,13 +78,15 @@ const front = (props: Props) => {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="12">
-              {/* <iframe
-                src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
-                title="About Datahub"
-                frameBorder="0"
-                height="585"
-                style={{width: '100%'}}
-              /> */}
+              <NoSSR loading={<P textAlign={'center'}>Loading...</P>}>
+                <iframe
+                  src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
+                  title="About Datahub"
+                  frameBorder="0"
+                  height="585"
+                  style={{width: '100%'}}
+                />
+              </NoSSR>
             </Grid.Column>
           </Grid.Row>
         </Grid>
