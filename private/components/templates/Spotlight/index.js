@@ -9,14 +9,21 @@ import {LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
 import { red, white, lighterGrey } from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
+import NoSSR from 'react-no-ssr';
+import {connect} from 'react-redux';
+import type {State, AppState} from 'lib/reducers';
 import Generic from '../Generic';
-import data from './data';
 
+
+type Props = {
+  pathName: string;
+  rehydrated: boolean;
+}
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
-export default () => {
+const spotlight = (props: Props) => {
   return (
-    <Generic pathName="/spotlight">
+    <Generic>
       <Container>
         <Div paddingTop={'4em'} paddingBottom={'4em'} >
           <Grid centered>
@@ -32,7 +39,8 @@ export default () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      <Map pathName={'/spotlight'} />
+      {props.rehydrated ? <Map pathName={'/spotlight'} /> :
+      <Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS
@@ -84,3 +92,8 @@ export default () => {
     </Generic>
   );
 };
+const mapStateToProps = ({app: {rehydrated}}: State) => ({rehydrated});
+
+const SpotLightWithRedux = connect(mapStateToProps)(spotlight);
+
+export default SpotLightWithRedux;

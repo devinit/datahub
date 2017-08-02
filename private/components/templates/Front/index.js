@@ -11,13 +11,16 @@ import Map from 'components/organisms/Map';
 import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
 import { red, white, lighterGrey } from 'components/theme/semantic';
+import {connect} from 'react-redux';
+import type {State, AppState} from 'lib/reducers';
 import Generic from '../Generic';
 
 type Props = {
   pathName: string;
+  rehydrated: boolean;
 }
 /* eslint-disable max-len */
-export default (props: Props) => {
+const front = (props: Props) => {
   return (
     <Generic>
       <GlobalPictureCountrySeach>
@@ -36,7 +39,8 @@ export default (props: Props) => {
       </Container>
       <div style={{position: 'relative'}}>
         <GlobalPictureNavTabs />
-        <Map pathName={props.pathName} />
+        {props.rehydrated ? <Map pathName={props.pathName} /> :
+        <Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />}
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
@@ -100,3 +104,8 @@ export default (props: Props) => {
     </Generic>
   );
 };
+const mapStateToProps = ({app: {rehydrated}}: State) => ({rehydrated});
+
+const FrontWithRedux = connect(mapStateToProps)(front);
+
+export default FrontWithRedux;
