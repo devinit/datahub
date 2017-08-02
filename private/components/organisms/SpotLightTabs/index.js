@@ -21,19 +21,19 @@ const spotlightTabs = (props: WrapperProps) => {
   if (props.loading) return (<p> Loading ...</p>);
   return (
     <Tabs selected={0} height="20em">
-      <Pane label="Overview">
+      <Pane label="Overview" id="spotlight-overview">
         <Overview {...props} />
       </Pane>
-      <Pane label="Poverty">
+      <Pane label="Poverty" id="spotlight-poverty">
         <Poverty {...props} />
       </Pane>
-      <Pane label="Population">
+      <Pane label="Population" id="spotlight-poverty">
         <Population {...props} />
       </Pane>
-      <Pane label="Health">
+      <Pane label="Health" id="spotlight-health">
         <Health {...props} />
       </Pane>
-      <Pane label="Education">
+      <Pane label="Education" id="spotlight-education">
         <Education {...props} />
       </Pane>
     </Tabs>

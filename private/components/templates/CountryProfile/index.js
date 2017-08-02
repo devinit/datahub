@@ -68,10 +68,10 @@ export default (props: Props) =>
       </Container>
     </Div>
     <Tabs selected={0} textAlign="center" height="60em">
-      <Pane label="Government Finance">
+      <Pane label="Government Finance" id="government-finance-lower">
         <GovernmentFinanceLower />
       </Pane>
-      <Pane label="International Resources">
+      <Pane label="International Resources" id="government-finance-lower">
         <InternationalResourcesLower />
       </Pane>
     </Tabs>

@@ -246,7 +246,7 @@ class BaseMap extends Component {
       if (!features.length) return false;
       const property = paint.paintProperty || 'ISO2';
       const countryId: string = features[0].properties[property];
-      console.log('feature: ', features[0]);
+      // console.log('feature: ', features[0]);
       if (!paint.data) return false;
       const point: MapData | void = paint.data.find(obj => {
         if (!obj.id) return false;

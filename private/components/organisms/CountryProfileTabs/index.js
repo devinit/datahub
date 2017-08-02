@@ -26,33 +26,34 @@ type TabsProps = {
 }
 
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<Div backgroundColor={lightGrey} width={'100%'} height={'5em'} />);
+  if (props.loading) return (<Div backgroundColor={lightGrey} width={'100%'} height={'20em'} />);
   return (
     <Tabs selected={0} height="20em">
-      <Pane label="Overview" key={1}>
+      <Pane label="Overview" id={'overview-tab'}>
         <Overview {...props} />
       </Pane>
-      <Pane label="Poverty" key={2}>
+      <Pane label="Poverty" id={'poverty-tab'}>
         <Poverty config={povertyConfig} {...props} />
       </Pane>
-      <Pane label="Population" key={3}>
+      <Pane label="Population" id={'population-tab'}>
         <Population config={populationConfig} {...props} />
       </Pane>
-      <Pane label="Government Finance" key={4}>
+      <Pane label="Government Finance" id={'govt-finance-tab'}>
         <GovernmentFinance config={govtFinanceConfig} {...props} />
       </Pane>
-      <Pane label="International Resources" key={5}>
+      <Pane label="International Resources" id={'internantion-reseources-tab'}>
         <InternationalResources config={internationalResourcesConfig} {...props} />
       </Pane>
     </Tabs>
   );
 };
 const withData = graphql(TABS_QUERY, {
-  options: (props) => ({
-    variables: {
-      id: props.id
-    }
-  }),
+  options: (props) => {
+    console.log('with data', props);
+    return {
+      variables: {id: props.id}
+    };
+  },
   props: ({data}) => {
     const {error, loading} = data;
     if (error) throw Error(error);

@@ -23,6 +23,29 @@ exports[`Storyshots Base Maps Base Map Atom 1`] = `
 </div>
 `;
 
+exports[`Storyshots Base Maps world map centered on uganda 1`] = `
+<div
+  className="css-nlcjz6"
+>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": Object {},
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "height": 400,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots BubbleChartWidget Main 1`] = `
 <div
   className="ui container"
@@ -502,13 +525,6 @@ exports[`Storyshots Chart Stubs How have resource in flows changed over time? 1`
   className="ui very padded segment"
 >
   <div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": Object {},
-        }
-      }
-    />
     <div
       style={
         Object {
@@ -526,13 +542,6 @@ exports[`Storyshots Chart Stubs How is income distributed? 1`] = `
   className="ui very padded segment"
 >
   <div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": Object {},
-        }
-      }
-    />
     <div
       style={
         Object {
@@ -598,13 +607,6 @@ exports[`Storyshots Chart Stubs Inflow Vs Outflows 1`] = `
     </div>
   </div>
   <div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": Object {},
-        }
-      }
-    />
     <div
       style={
         Object {
@@ -870,13 +872,6 @@ exports[`Storyshots Chart Stubs International Resources 1`] = `
           42b
         </h2>
         <div>
-          <style
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": Object {},
-              }
-            }
-          />
           <div
             style={
               Object {
@@ -897,13 +892,6 @@ exports[`Storyshots Chart Stubs Is Poverty reducing over time? 1`] = `
   className="ui very padded segment"
 >
   <div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": Object {},
-        }
-      }
-    />
     <div
       style={
         Object {
@@ -1278,13 +1266,6 @@ exports[`Storyshots Chart Stubs What is the mix of resources? 1`] = `
   className="ui very padded segment"
 >
   <div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": Object {},
-        }
-      }
-    />
     <div
       style={
         Object {
