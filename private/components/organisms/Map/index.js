@@ -19,10 +19,7 @@ type WithApolloProps = {
   app: AppState
 }
 const MapWrapper = (props: WrapperProps) => {
-  if (props.loading) {
-    return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
-  }
-  if (!props.mapData || !process.browser) {
+  if (props.loading || !props.mapData || !props.browser) {
     return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
   }
   return (<Map {...props} />);
