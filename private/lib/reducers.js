@@ -58,9 +58,11 @@ export const apolloWrapper = (apolloReducer: Reducer<Store, Action>) =>
     switch (action.type) {
       case REHYDRATE: {
         if (action && action.payload && action.payload.apollo) {
-          const data = {...state.data, ...action.payload.apollo.data};
-          const queries = {...state.data, ...action.payload.apollo.queries};
-          return {...state, data, queries};
+          console.log('state: ', state.data);
+          console.log('cached: ', action.payload.apollo.data);
+          const data = {...action.payload.apollo.data, ...state.data};
+          console.log('merged: ', data);
+          return {...state, data};
         }
         return state;
       }

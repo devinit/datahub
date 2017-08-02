@@ -70,7 +70,7 @@ export default ComposedComponent => {
     }
     async componentDidMount() {
        // dispatches an Hydrate action
-      // makeStorePersist(this.redux);
+      makeStorePersist(this.redux);
     }
     constructor(props) {
       super(props);

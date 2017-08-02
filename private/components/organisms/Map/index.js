@@ -19,15 +19,14 @@ type WithApolloProps = {
   app: AppState
 }
 const MapWrapper = (props: WrapperProps) => {
+  // console.log('map wrapper rendering', ' props.loading: ', props.loading, ' rehydrated', props.app.rehydrated);
   if (props.loading) {
     return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
   }
-  if (!props.loading && !props.mapData) {
+  if (!props.mapData || !process.browser) {
     return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
   }
-  if (!props.loading && !process.browser) {
-    return (<Div width={'100%'} height={'600'} backgroundColor={lighterGrey} />);
-  }
+  // console.log('map data', props.mapData);
   return (<Map {...props} />);
 };
 
