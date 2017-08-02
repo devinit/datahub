@@ -12,7 +12,6 @@ const data = [
 const viewport = {
   zoom: 1,
   center: [25, 20],
-  attributionControl: true,
   minZoom: 0.5,
   bounds: [
       [-179, -61], // Southwest coordinates
@@ -21,6 +20,18 @@ const viewport = {
   scrollZoom: false,
 };
 
+const dataUSA = [
+  {id: 'US', color: red},
+];
+
+const viewportUSA = {
+  zoom: 3,
+  center: [-98.350891, 39.500240],
+  minZoom: 1,
+  scrollZoom: false,
+};
+
 const paint = {data};
+const paintUSA = {dataUSA};
 storiesOf('Base Maps', module)
   .add('Base Map Atom', () => <BaseMap paint={paint} viewport={viewport} />);

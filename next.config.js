@@ -31,6 +31,8 @@ module.exports = {
           ]
         }));
     }
+    // babel loader allows use of webpack loaders by babel. (something like that, I think so.. )
+    // for instance the css loader
     config.module.rules.push({
       test: /\.css$/,
       use: ['babel-loader', 'raw-loader'],

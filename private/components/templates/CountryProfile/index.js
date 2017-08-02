@@ -17,7 +17,7 @@ import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import {CardContainer} from 'components/atoms/Container';
 import Generic from '../Generic';
 import data from './data';
-
+/* eslint-disable react/no-danger */
 type Props = {
   id: string
 }

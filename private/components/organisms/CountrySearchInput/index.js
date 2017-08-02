@@ -8,7 +8,7 @@ type Props = {
 }
 const SearchwithData = (props: Props) =>
   (<SearchInput
-    countries={data.countries}
+    countries={data}
     visible={props.visible}
     placeholder={'Type a country name'}
   />);

@@ -1,391 +1,1358 @@
 /* eslint-disable */
-// this file is auto generated
+// TODO: auto generate this data
 
-module.exports = {
-  countries: [
-    { id: 'afghanistan', name: 'Afghanistan', slug: 'afghanistan' },
-    { id: 'aland-islands', name: 'Aland Islands', slug: 'aland-islands' },
-    { id: 'albania', name: 'Albania', slug: 'albania' },
-    { id: 'algeria', name: 'Algeria', slug: 'algeria' },
-    { id: 'american-samoa', name: 'American Samoa', slug: 'american-samoa' },
-    { id: 'andorra', name: 'Andorra', slug: 'andorra' },
-    { id: 'angola', name: 'Angola', slug: 'angola' },
-    { id: 'anguilla', name: 'Anguilla', slug: 'anguilla' },
-    { id: 'antarctica', name: 'Antarctica', slug: 'antarctica' },
-    {
-      id: 'antigua-and-barbuda',
-      name: 'Antigua & Barbuda',
-      slug: 'antigua-and-barbuda'
-    },
-    { id: 'argentina', name: 'Argentina', slug: 'argentina' },
-    { id: 'armenia', name: 'Armenia', slug: 'armenia' },
-    { id: 'aruba', name: 'Aruba', slug: 'aruba' },
-    { id: 'australia', name: 'Australia', slug: 'australia' },
-    { id: 'austria', name: 'Austria', slug: 'austria' },
-    { id: 'azerbaijan', name: 'Azerbaijan', slug: 'azerbaijan' },
-    { id: 'bahamas', name: 'Bahamas', slug: 'bahamas' },
-    { id: 'bahrain', name: 'Bahrain', slug: 'bahrain' },
-    { id: 'bangladesh', name: 'Bangladesh', slug: 'bangladesh' },
-    { id: 'barbados', name: 'Barbados', slug: 'barbados' },
-    { id: 'belarus', name: 'Belarus', slug: 'belarus' },
-    { id: 'belgium', name: 'Belgium', slug: 'belgium' },
-    { id: 'belize', name: 'Belize', slug: 'belize' },
-    { id: 'benin', name: 'Benin', slug: 'benin' },
-    { id: 'bermuda', name: 'Bermuda', slug: 'bermuda' },
-    { id: 'bhutan', name: 'Bhutan', slug: 'bhutan' },
-    { id: 'bolivia', name: 'Bolivia', slug: 'bolivia' },
-    { id: 'bes-islands', name: 'BES Islands', slug: 'bes-islands' },
-    {
-      id: 'bosnia-and-herzegovina',
-      name: 'Bosnia & Herzegovina',
-      slug: 'bosnia-and-herzegovina'
-    },
-    { id: 'botswana', name: 'Botswana', slug: 'botswana' },
-    { id: 'bouvet-island', name: 'Bouvet Island', slug: 'bouvet-island' },
-    { id: 'brazil', name: 'Brazil', slug: 'brazil' },
-    {
-      id: 'british-indian-ocean-territory',
-      name: 'British Indian Ocean Territory',
-      slug: 'british-indian-ocean-territory'
-    },
-    { id: 'brunei', name: 'Brunei', slug: 'brunei' },
-    { id: 'bulgaria', name: 'Bulgaria', slug: 'bulgaria' },
-    { id: 'burkina-faso', name: 'Burkina Faso', slug: 'burkina-faso' },
-    { id: 'burundi', name: 'Burundi', slug: 'burundi' },
-    { id: 'cambodia', name: 'Cambodia', slug: 'cambodia' },
-    { id: 'cameroon', name: 'Cameroon', slug: 'cameroon' },
-    { id: 'canada', name: 'Canada', slug: 'canada' },
-    { id: 'cape-verde', name: 'Cape Verde', slug: 'cape-verde' },
-    { id: 'cayman-islands', name: 'Cayman Islands', slug: 'cayman-islands' },
-    { id: 'car', name: 'CAR', slug: 'car' },
-    { id: 'chad', name: 'Chad', slug: 'chad' },
-    { id: 'chile', name: 'Chile', slug: 'chile' },
-    { id: 'china', name: 'China', slug: 'china' },
-    {
-      id: 'christmas-island',
-      name: 'Christmas Island',
-      slug: 'christmas-island'
-    },
-    {
-      id: 'cocos-keeling-islands',
-      name: 'Cocos (Keeling) Islands',
-      slug: 'cocos-keeling-islands'
-    },
-    { id: 'colombia', name: 'Colombia', slug: 'colombia' },
-    { id: 'comoros', name: 'Comoros', slug: 'comoros' },
-    { id: 'congo', name: 'Congo', slug: 'congo' },
-    { id: 'drc', name: 'DRC', slug: 'drc' },
-    { id: 'cook-islands', name: 'Cook Islands', slug: 'cook-islands' },
-    { id: 'costa-rica', name: 'Costa Rica', slug: 'costa-rica' },
-    { id: 'cote-divoire', name: "Côte d'Ivoire", slug: 'cote-divoire' },
-    {
-      id: 'country-unspecified',
-      name: 'Country not specified',
-      slug: 'country-unspecified'
-    },
-    { id: 'croatia', name: 'Croatia', slug: 'croatia' },
-    { id: 'cuba', name: 'Cuba', slug: 'cuba' },
-    { id: 'curacao', name: 'Curacao', slug: 'curacao' },
-    { id: 'cyprus', name: 'Cyprus', slug: 'cyprus' },
-    { id: 'czech-republic', name: 'Czech Republic', slug: 'czech-republic' },
-    { id: 'denmark', name: 'Denmark', slug: 'denmark' },
-    { id: 'djibouti', name: 'Djibouti', slug: 'djibouti' },
-    { id: 'dominica', name: 'Dominica', slug: 'dominica' },
-    {
-      id: 'dominican-republic',
-      name: 'Dominican Republic',
-      slug: 'dominican-republic'
-    },
-    { id: 'ecuador', name: 'Ecuador', slug: 'ecuador' },
-    { id: 'egypt', name: 'Egypt', slug: 'egypt' },
-    { id: 'el-salvador', name: 'El Salvador', slug: 'el-salvador' },
-    {
-      id: 'equatorial-guinea',
-      name: 'Equatorial Guinea',
-      slug: 'equatorial-guinea'
-    },
-    { id: 'eritrea', name: 'Eritrea', slug: 'eritrea' },
-    { id: 'estonia', name: 'Estonia', slug: 'estonia' },
-    { id: 'ethiopia', name: 'Ethiopia', slug: 'ethiopia' },
-    {
-      id: 'falkland-islands',
-      name: 'Falkland Islands',
-      slug: 'falkland-islands'
-    },
-    { id: 'faroe-islands', name: 'Faroe Islands', slug: 'faroe-islands' },
-    { id: 'fiji', name: 'Fiji', slug: 'fiji' },
-    { id: 'finland', name: 'Finland', slug: 'finland' },
-    { id: 'france', name: 'France', slug: 'france' },
-    { id: 'french-guiana', name: 'French Guiana', slug: 'french-guiana' },
-    {
-      id: 'french-polynesia',
-      name: 'French Polynesia',
-      slug: 'french-polynesia'
-    },
-    {
-      id: 'french-southern-territories',
-      name: 'French Southern Territories',
-      slug: 'french-southern-territories'
-    },
-    { id: 'gabon', name: 'Gabon', slug: 'gabon' },
-    { id: 'gambia', name: 'Gambia', slug: 'gambia' },
-    { id: 'georgia', name: 'Georgia', slug: 'georgia' },
-    { id: 'germany', name: 'Germany', slug: 'germany' },
-    { id: 'ghana', name: 'Ghana', slug: 'ghana' },
-    { id: 'gibraltar', name: 'Gibraltar', slug: 'gibraltar' },
-    { id: 'greece', name: 'Greece', slug: 'greece' },
-    { id: 'greenland', name: 'Greenland', slug: 'greenland' },
-    { id: 'grenada', name: 'Grenada', slug: 'grenada' },
-    { id: 'guadeloupe', name: 'Guadeloupe', slug: 'guadeloupe' },
-    { id: 'guam', name: 'Guam', slug: 'guam' },
-    { id: 'guatemala', name: 'Guatemala', slug: 'guatemala' },
-    { id: 'guernsey', name: 'Guernsey', slug: 'guernsey' },
-    { id: 'guinea', name: 'Guinea', slug: 'guinea' },
-    { id: 'guinea-bissau', name: 'Guinea-Bissau', slug: 'guinea-bissau' },
-    { id: 'guyana', name: 'Guyana', slug: 'guyana' },
-    { id: 'haiti', name: 'Haiti', slug: 'haiti' },
-    {
-      id: 'heard-island-and-mcdonald-islands',
-      name: 'Heard Island & McDonald Islands',
-      slug: 'heard-island-and-mcdonald-islands'
-    },
-    {
-      id: 'holy-see-vatican-city-state',
-      name: 'Holy See (Vatican City State)',
-      slug: 'holy-see-vatican-city-state'
-    },
-    { id: 'honduras', name: 'Honduras', slug: 'honduras' },
-    { id: 'hong-kong', name: 'Hong Kong', slug: 'hong-kong' },
-    { id: 'hungary', name: 'Hungary', slug: 'hungary' },
-    { id: 'iceland', name: 'Iceland', slug: 'iceland' },
-    { id: 'india', name: 'India', slug: 'india' },
-    { id: 'indonesia', name: 'Indonesia', slug: 'indonesia' },
-    { id: 'iran', name: 'Iran', slug: 'iran' },
-    { id: 'iraq', name: 'Iraq', slug: 'iraq' },
-    { id: 'ireland', name: 'Ireland', slug: 'ireland' },
-    { id: 'isle-of-man', name: 'Isle of Man', slug: 'isle-of-man' },
-    { id: 'israel', name: 'Israel', slug: 'israel' },
-    { id: 'italy', name: 'Italy', slug: 'italy' },
-    { id: 'jamaica', name: 'Jamaica', slug: 'jamaica' },
-    { id: 'japan', name: 'Japan', slug: 'japan' },
-    { id: 'jersey', name: 'Jersey', slug: 'jersey' },
-    { id: 'jordan', name: 'Jordan', slug: 'jordan' },
-    { id: 'kazakhstan', name: 'Kazakhstan', slug: 'kazakhstan' },
-    { id: 'kenya', name: 'Kenya', slug: 'kenya' },
-    { id: 'kiribati', name: 'Kiribati', slug: 'kiribati' },
-    { id: 'north-korea', name: 'North Korea', slug: 'north-korea' },
-    { id: 'south-korea', name: 'Korea', slug: 'south-korea' },
-    { id: 'kosovo', name: 'Kosovo', slug: 'kosovo' },
-    { id: 'kuwait', name: 'Kuwait', slug: 'kuwait' },
-    { id: 'kyrgyzstan', name: 'Kyrgyzstan', slug: 'kyrgyzstan' },
-    { id: 'lao', name: 'Lao', slug: 'lao' },
-    { id: 'latvia', name: 'Latvia', slug: 'latvia' },
-    { id: 'lebanon', name: 'Lebanon', slug: 'lebanon' },
-    { id: 'lesotho', name: 'Lesotho', slug: 'lesotho' },
-    { id: 'liberia', name: 'Liberia', slug: 'liberia' },
-    { id: 'libya', name: 'Libya', slug: 'libya' },
-    { id: 'liechtenstein', name: 'Liechtenstein', slug: 'liechtenstein' },
-    { id: 'lithuania', name: 'Lithuania', slug: 'lithuania' },
-    { id: 'luxembourg', name: 'Luxembourg', slug: 'luxembourg' },
-    { id: 'macao', name: 'Macao', slug: 'macao' },
-    { id: 'macedonia', name: 'Macedonia', slug: 'macedonia' },
-    { id: 'madagascar', name: 'Madagascar', slug: 'madagascar' },
-    { id: 'malawi', name: 'Malawi', slug: 'malawi' },
-    { id: 'malaysia', name: 'Malaysia', slug: 'malaysia' },
-    { id: 'maldives', name: 'Maldives', slug: 'maldives' },
-    { id: 'mali', name: 'Mali', slug: 'mali' },
-    { id: 'malta', name: 'Malta', slug: 'malta' },
-    {
-      id: 'marshall-islands',
-      name: 'Marshall Islands',
-      slug: 'marshall-islands'
-    },
-    { id: 'martinique', name: 'Martinique', slug: 'martinique' },
-    { id: 'mauritania', name: 'Mauritania', slug: 'mauritania' },
-    { id: 'mauritius', name: 'Mauritius', slug: 'mauritius' },
-    { id: 'mayotte', name: 'Mayotte', slug: 'mayotte' },
-    { id: 'mexico', name: 'Mexico', slug: 'mexico' },
-    { id: 'micronesia', name: 'Micronesia', slug: 'micronesia' },
-    { id: 'moldova', name: 'Moldova', slug: 'moldova' },
-    { id: 'monaco', name: 'Monaco', slug: 'monaco' },
-    { id: 'mongolia', name: 'Mongolia', slug: 'mongolia' },
-    { id: 'montenegro', name: 'Montenegro', slug: 'montenegro' },
-    { id: 'montserrat', name: 'Montserrat', slug: 'montserrat' },
-    { id: 'morocco', name: 'Morocco', slug: 'morocco' },
-    { id: 'mozambique', name: 'Mozambique', slug: 'mozambique' },
-    { id: 'myanmar', name: 'Myanmar', slug: 'myanmar' },
-    { id: 'namibia', name: 'Namibia', slug: 'namibia' },
-    { id: 'nauru', name: 'Nauru', slug: 'nauru' },
-    { id: 'nepal', name: 'Nepal', slug: 'nepal' },
-    { id: 'netherlands', name: 'Netherlands', slug: 'netherlands' },
-    {
-      id: 'netherlands-antilles',
-      name: 'Netherlands Antilles',
-      slug: 'netherlands-antilles'
-    },
-    { id: 'new-caledonia', name: 'New Caledonia', slug: 'new-caledonia' },
-    { id: 'new-zealand', name: 'New Zealand', slug: 'new-zealand' },
-    { id: 'nicaragua', name: 'Nicaragua', slug: 'nicaragua' },
-    { id: 'niger', name: 'Niger', slug: 'niger' },
-    { id: 'nigeria', name: 'Nigeria', slug: 'nigeria' },
-    { id: 'niue', name: 'Niue', slug: 'niue' },
-    { id: 'norfolk-island', name: 'Norfolk Island', slug: 'norfolk-island' },
-    {
-      id: 'northern-mariana-islands',
-      name: 'Northern Mariana Islands',
-      slug: 'northern-mariana-islands'
-    },
-    { id: 'norway', name: 'Norway', slug: 'norway' },
-    { id: 'oman', name: 'Oman', slug: 'oman' },
-    { id: 'pakistan', name: 'Pakistan', slug: 'pakistan' },
-    { id: 'palau', name: 'Palau', slug: 'palau' },
-    { id: 'palestine', name: 'Palestine', slug: 'palestine' },
-    { id: 'panama', name: 'Panama', slug: 'panama' },
-    {
-      id: 'papua-new-guinea',
-      name: 'Papua New Guinea',
-      slug: 'papua-new-guinea'
-    },
-    { id: 'paraguay', name: 'Paraguay', slug: 'paraguay' },
-    { id: 'peru', name: 'Peru', slug: 'peru' },
-    { id: 'philippines', name: 'Philippines', slug: 'philippines' },
-    { id: 'pitcairn', name: 'Pitcairn', slug: 'pitcairn' },
-    { id: 'poland', name: 'Poland', slug: 'poland' },
-    { id: 'portugal', name: 'Portugal', slug: 'portugal' },
-    { id: 'puerto-rico', name: 'Puerto Rico', slug: 'puerto-rico' },
-    { id: 'qatar', name: 'Qatar', slug: 'qatar' },
-    { id: 'réunion', name: 'Reunion', slug: 'réunion' },
-    { id: 'romania', name: 'Romania', slug: 'romania' },
-    {
-      id: 'russian-federation',
-      name: 'Russian Federation',
-      slug: 'russian-federation'
-    },
-    { id: 'rwanda', name: 'Rwanda', slug: 'rwanda' },
-    {
-      id: 'saint-barthelemy',
-      name: 'Saint Barthelemy',
-      slug: 'saint-barthelemy'
-    },
-    {
-      id: 'saint-helena-ascension-and-tristan-da-cunha',
-      name: 'Saint Helena, Ascension & Tristan da Cunha',
-      slug: 'saint-helena-ascension-and-tristan-da-cunha'
-    },
-    {
-      id: 'saint-kitts-and-nevis',
-      name: 'Saint Kitts and Nevis',
-      slug: 'saint-kitts-and-nevis'
-    },
-    { id: 'saint-lucia', name: 'Saint Lucia', slug: 'saint-lucia' },
-    { id: 'saint-martin', name: 'Saint Martin', slug: 'saint-martin' },
-    {
-      id: 'saint-pierre-and-miquelon',
-      name: 'Saint Pierre & Miquelon',
-      slug: 'saint-pierre-and-miquelon'
-    },
-    {
-      id: 'saint-vincent-and-the-grenadines',
-      name: 'Saint Vincent & the Grenadines',
-      slug: 'saint-vincent-and-the-grenadines'
-    },
-    { id: 'samoa', name: 'Samoa', slug: 'samoa' },
-    { id: 'san-marino', name: 'San Marino', slug: 'san-marino' },
-    {
-      id: 'sao-tome-and-principe',
-      name: 'Sao Tome & Principe',
-      slug: 'sao-tome-and-principe'
-    },
-    { id: 'saudi-arabia', name: 'Saudi Arabia', slug: 'saudi-arabia' },
-    { id: 'senegal', name: 'Senegal', slug: 'senegal' },
-    { id: 'serbia', name: 'Serbia', slug: 'serbia' },
-    { id: 'seychelles', name: 'Seychelles', slug: 'seychelles' },
-    { id: 'sierra-leone', name: 'Sierra Leone', slug: 'sierra-leone' },
-    { id: 'singapore', name: 'Singapore', slug: 'singapore' },
-    {
-      id: 'sint-maarten-dutch-part',
-      name: 'Sint Maarten (Dutch part)',
-      slug: 'sint-maarten-dutch-part'
-    },
-    { id: 'slovakia', name: 'Slovak Republic', slug: 'slovakia' },
-    { id: 'slovenia', name: 'Slovenia', slug: 'slovenia' },
-    { id: 'solomon-islands', name: 'Solomon Islands', slug: 'solomon-islands' },
-    { id: 'somalia', name: 'Somalia', slug: 'somalia' },
-    { id: 'south-africa', name: 'South Africa', slug: 'south-africa' },
-    {
-      id: 'south-georgia-and-the-south-sandwich-islands',
-      name: 'South Georgia & the South Sandwich Islands',
-      slug: 'south-georgia-and-the-south-sandwich-islands'
-    },
-    { id: 'south-sudan', name: 'South Sudan', slug: 'south-sudan' },
-    { id: 'spain', name: 'Spain', slug: 'spain' },
-    { id: 'sri-lanka', name: 'Sri Lanka', slug: 'sri-lanka' },
-    { id: 'sudan', name: 'Sudan', slug: 'sudan' },
-    { id: 'suriname', name: 'Suriname', slug: 'suriname' },
-    {
-      id: 'svalbard-and-jan-mayen',
-      name: 'Svalbard & Jan Mayen',
-      slug: 'svalbard-and-jan-mayen'
-    },
-    { id: 'swaziland', name: 'Swaziland', slug: 'swaziland' },
-    { id: 'sweden', name: 'Sweden', slug: 'sweden' },
-    { id: 'switzerland', name: 'Switzerland', slug: 'switzerland' },
-    { id: 'syria', name: 'Syria', slug: 'syria' },
-    { id: 'taiwan', name: 'Taiwan', slug: 'taiwan' },
-    { id: 'tajikistan', name: 'Tajikistan', slug: 'tajikistan' },
-    { id: 'tanzania', name: 'Tanzania', slug: 'tanzania' },
-    { id: 'thailand', name: 'Thailand', slug: 'thailand' },
-    { id: 'timor-leste', name: 'Timor-Leste', slug: 'timor-leste' },
-    { id: 'togo', name: 'Togo', slug: 'togo' },
-    { id: 'tokelau', name: 'Tokelau', slug: 'tokelau' },
-    { id: 'tonga', name: 'Tonga', slug: 'tonga' },
-    {
-      id: 'trinidad-and-tobago',
-      name: 'Trinidad & Tobago',
-      slug: 'trinidad-and-tobago'
-    },
-    { id: 'tunisia', name: 'Tunisia', slug: 'tunisia' },
-    { id: 'turkey', name: 'Turkey', slug: 'turkey' },
-    { id: 'turkmenistan', name: 'Turkmenistan', slug: 'turkmenistan' },
-    {
-      id: 'turks-and-caicos-islands',
-      name: 'Turks & Caicos Islands',
-      slug: 'turks-and-caicos-islands'
-    },
-    { id: 'tuvalu', name: 'Tuvalu', slug: 'tuvalu' },
-    { id: 'uganda', name: 'Uganda', slug: 'uganda' },
-    { id: 'united-kingdom', name: 'United Kingdom', slug: 'united-kingdom' },
-    { id: 'ukraine', name: 'Ukraine', slug: 'ukraine' },
-    { id: 'uae', name: 'UAE', slug: 'uae' },
-    { id: 'usa', name: 'United States', slug: 'usa' },
-    {
-      id: 'united-states-minor-outlying-islands',
-      name: 'United States Minor Outlying Islands',
-      slug: 'united-states-minor-outlying-islands'
-    },
-    { id: 'uruguay', name: 'Uruguay', slug: 'uruguay' },
-    { id: 'uzbekistan', name: 'Uzbekistan', slug: 'uzbekistan' },
-    { id: 'vanuatu', name: 'Vanuatu', slug: 'vanuatu' },
-    { id: 'venezuela', name: 'Venezuela', slug: 'venezuela' },
-    { id: 'viet-nam', name: 'Viet Nam', slug: 'viet-nam' },
-    {
-      id: 'virgin-islands-gb',
-      name: 'Virgin Islands (GB)',
-      slug: 'virgin-islands-gb'
-    },
-    {
-      id: 'virgin-islands-us',
-      name: 'Virgin Islands (US)',
-      slug: 'virgin-islands-us'
-    },
-    {
-      id: 'wallis-and-futuna',
-      name: 'Wallis & Futuna',
-      slug: 'wallis-and-futuna'
-    },
-    { id: 'western-sahara', name: 'Western Sahara', slug: 'western-sahara' },
-    { id: 'yemen', name: 'Yemen', slug: 'yemen' },
-    { id: 'zambia', name: 'Zambia', slug: 'zambia' },
-    { id: 'zimbabwe', name: 'Zimbabwe', slug: 'zimbabwe' }
-  ]
-};
+module.exports = [{
+  id: 'AF',
+  name: 'Afghanistan',
+  slug: 'afghanistan',
+  lat: '33.939110',
+  lng: '67.709953'
+}, {
+  id: 'N/A',
+  name: 'Aland Islands',
+  slug: 'aland-islands'
+}, {
+  id: 'AL',
+  name: 'Albania',
+  slug: 'albania',
+  lat: '41.153332',
+  lng: '20.168331'
+}, {
+  id: 'DZ',
+  name: 'Algeria',
+  slug: 'algeria',
+  lat: '28.033886',
+  lng: '1.659626'
+}, {
+  id: 'N/A',
+  name: 'American Samoa',
+  slug: 'american-samoa'
+}, {
+  id: 'AD',
+  name: 'Andorra',
+  slug: 'andorra',
+  lat: '42.506285',
+  lng: '1.521801'
+}, {
+  id: 'AO',
+  name: 'Angola',
+  slug: 'angola',
+  lat: '-11.202692',
+  lng: '17.873887'
+}, {
+  id: 'N/A',
+  name: 'Anguilla',
+  slug: 'anguilla'
+}, {
+  id: 'N/A',
+  name: 'Antarctica',
+  slug: 'antarctica'
+}, {
+  id: 'N/A',
+  name: 'Antigua & Barbuda',
+  slug: 'antigua-and-barbuda'
+}, {
+  id: 'AR',
+  name: 'Argentina',
+  slug: 'argentina',
+  lat: '-38.416097',
+  lng: '-63.616672'
+}, {
+  id: 'AM',
+  name: 'Armenia',
+  slug: 'armenia',
+  lat: '40.069099',
+  lng: '45.038189'
+}, {
+  id: 'N/A',
+  name: 'Aruba',
+  slug: 'aruba'
+}, {
+  id: 'AU',
+  name: 'Australia',
+  slug: 'australia',
+  lat: '-25.274398',
+  lng: '133.775136'
+}, {
+  id: 'AT',
+  name: 'Austria',
+  slug: 'austria',
+  lat: '47.516231',
+  lng: '14.550072'
+}, {
+  id: 'AZ',
+  name: 'Azerbaijan',
+  slug: 'azerbaijan',
+  lat: '40.143105',
+  lng: '47.576927'
+}, {
+  id: 'N/A',
+  name: 'Bahamas',
+  slug: 'bahamas'
+}, {
+  id: 'BH',
+  name: 'Bahrain',
+  slug: 'bahrain',
+  lat: '26.066700',
+  lng: '50.557700'
+}, {
+  id: 'BD',
+  name: 'Bangladesh',
+  slug: 'bangladesh',
+  lat: '23.684994',
+  lng: '90.356331'
+}, {
+  id: 'BB',
+  name: 'Barbados',
+  slug: 'barbados',
+  lat: '13.193887',
+  lng: '-59.543198'
+}, {
+  id: 'BY',
+  name: 'Belarus',
+  slug: 'belarus',
+  lat: '53.709807',
+  lng: '27.953389'
+}, {
+  id: 'BE',
+  name: 'Belgium',
+  slug: 'belgium',
+  lat: '50.503887',
+  lng: '4.469936'
+}, {
+  id: 'BZ',
+  name: 'Belize',
+  slug: 'belize',
+  lat: '17.189877',
+  lng: '-88.497650'
+}, {
+  id: 'BJ',
+  name: 'Benin',
+  slug: 'benin',
+  lat: '9.307690',
+  lng: '2.315834'
+}, {
+  id: 'N/A',
+  name: 'Bermuda',
+  slug: 'bermuda'
+}, {
+  id: 'BT',
+  name: 'Bhutan',
+  slug: 'bhutan',
+  lat: '27.514162',
+  lng: '90.433601'
+}, {
+  id: 'BO',
+  name: 'Bolivia',
+  slug: 'bolivia',
+  lat: '-16.290154',
+  lng: '-63.588653'
+}, {
+  id: 'N/A',
+  name: 'BES Islands',
+  slug: 'bes-islands'
+}, {
+  id: 'N/A',
+  name: 'Bosnia & Herzegovina',
+  slug: 'bosnia-and-herzegovina'
+}, {
+  id: 'BW',
+  name: 'Botswana',
+  slug: 'botswana',
+  lat: '-22.328474',
+  lng: '24.684866'
+}, {
+  id: 'N/A',
+  name: 'Bouvet Island',
+  slug: 'bouvet-island'
+}, {
+  id: 'BR',
+  name: 'Brazil',
+  slug: 'brazil',
+  lat: '-14.235004',
+  lng: '-51.925280'
+}, {
+  id: 'N/A',
+  name: 'British Indian Ocean Territory',
+  slug: 'british-indian-ocean-territory'
+}, {
+  id: 'BN',
+  name: 'Brunei',
+  slug: 'brunei',
+  lat: '4.535277',
+  lng: '114.727669'
+}, {
+  id: 'BG',
+  name: 'Bulgaria',
+  slug: 'bulgaria',
+  lat: '42.733883',
+  lng: '25.485830'
+}, {
+  id: 'BF',
+  name: 'Burkina Faso',
+  slug: 'burkina-faso',
+  lat: '12.238333',
+  lng: '-1.561593'
+}, {
+  id: 'BI',
+  name: 'Burundi',
+  slug: 'burundi',
+  lat: '-3.373056',
+  lng: '29.918886'
+}, {
+  id: 'KH',
+  name: 'Cambodia',
+  slug: 'cambodia',
+  lat: '12.565679',
+  lng: '104.990963'
+}, {
+  id: 'CM',
+  name: 'Cameroon',
+  slug: 'cameroon',
+  lat: '7.369722',
+  lng: '12.354722'
+}, {
+  id: 'CA',
+  name: 'Canada',
+  slug: 'canada',
+  lat: '56.130366',
+  lng: '-106.346771'
+}, {
+  id: 'CV',
+  name: 'Cape Verde',
+  slug: 'cape-verde',
+  lat: '15.120142',
+  lng: '-23.605172'
+}, {
+  id: 'N/A',
+  name: 'Cayman Islands',
+  slug: 'cayman-islands'
+}, {
+  id: 'N/A',
+  name: 'CAR',
+  slug: 'car'
+}, {
+  id: 'TD',
+  name: 'Chad',
+  slug: 'chad',
+  lat: '15.454166',
+  lng: '18.732207'
+}, {
+  id: 'CL',
+  name: 'Chile',
+  slug: 'chile',
+  lat: '-35.675147',
+  lng: '-71.542969'
+}, {
+  id: 'CN',
+  name: 'China',
+  slug: 'china',
+  lat: '35.861660',
+  lng: '104.195397'
+}, {
+  id: 'N/A',
+  name: 'Christmas Island',
+  slug: 'christmas-island'
+}, {
+  id: 'N/A',
+  name: 'Cocos (Keeling) Islands',
+  slug: 'cocos-keeling-islands'
+}, {
+  id: 'CO',
+  name: 'Colombia',
+  slug: 'colombia',
+  lat: '4.570868',
+  lng: '-74.297333'
+}, {
+  id: 'KM',
+  name: 'Comoros',
+  slug: 'comoros',
+  lat: '-11.645500',
+  lng: '43.333300'
+}, {
+  id: 'CG',
+  name: 'Congo',
+  slug: 'congo',
+  lat: '-0.228021',
+  lng: '15.827659'
+}, {
+  id: 'N/A',
+  name: 'DRC',
+  slug: 'drc'
+}, {
+  id: 'N/A',
+  name: 'Cook Islands',
+  slug: 'cook-islands'
+}, {
+  id: 'CR',
+  name: 'Costa Rica',
+  slug: 'costa-rica',
+  lat: '9.748917',
+  lng: '-83.753428'
+}, {
+  id: 'N/A',
+  name: "Côte d'Ivoire",
+  slug: 'cote-divoire'
+}, {
+  id: 'N/A',
+  name: 'Country not specified',
+  slug: 'country-unspecified'
+}, {
+  id: 'HR',
+  name: 'Croatia',
+  slug: 'croatia',
+  lat: '45.100000',
+  lng: '15.200000'
+}, {
+  id: 'CU',
+  name: 'Cuba',
+  slug: 'cuba',
+  lat: '21.521757',
+  lng: '-77.781167'
+}, {
+  id: 'N/A',
+  name: 'Curacao',
+  slug: 'curacao'
+}, {
+  id: 'CY',
+  name: 'Cyprus',
+  slug: 'cyprus',
+  lat: '35.126413',
+  lng: '33.429859'
+}, {
+  id: 'CZ',
+  name: 'Czech Republic',
+  slug: 'czech-republic',
+  lat: '49.817492',
+  lng: '15.472962'
+}, {
+  id: 'DK',
+  name: 'Denmark',
+  slug: 'denmark',
+  lat: '56.1554671',
+  lng: '10.4309955'
+}, {
+  id: 'DJ',
+  name: 'Djibouti',
+  slug: 'djibouti',
+  lat: '11.825138',
+  lng: '42.590275'
+}, {
+  id: 'DM',
+  name: 'Dominica',
+  slug: 'dominica',
+  lat: '15.414999',
+  lng: '-61.370976'
+}, {
+  id: 'N/A',
+  name: 'Dominican Republic',
+  slug: 'dominican-republic'
+}, {
+  id: 'EC',
+  name: 'Ecuador',
+  slug: 'ecuador',
+  lat: '-1.831239',
+  lng: '-78.183406'
+}, {
+  id: 'EG',
+  name: 'Egypt',
+  slug: 'egypt',
+  lat: '26.820553',
+  lng: '30.802498'
+}, {
+  id: 'SV',
+  name: 'El Salvador',
+  slug: 'el-salvador',
+  lat: '13.794185',
+  lng: '-88.896530'
+}, {
+  id: 'N/A',
+  name: 'Equatorial Guinea',
+  slug: 'equatorial-guinea'
+}, {
+  id: 'ER',
+  name: 'Eritrea',
+  slug: 'eritrea',
+  lat: '15.179384',
+  lng: '39.782334'
+}, {
+  id: 'EE',
+  name: 'Estonia',
+  slug: 'estonia',
+  lat: '58.595272',
+  lng: '25.013607'
+}, {
+  id: 'ET',
+  name: 'Ethiopia',
+  slug: 'ethiopia',
+  lat: '9.145000',
+  lng: '40.489673'
+}, {
+  id: 'N/A',
+  name: 'Falkland Islands',
+  slug: 'falkland-islands'
+}, {
+  id: 'N/A',
+  name: 'Faroe Islands',
+  slug: 'faroe-islands'
+}, {
+  id: 'FJ',
+  name: 'Fiji',
+  slug: 'fiji',
+  lat: '-17.713371',
+  lng: '178.065032'
+}, {
+  id: 'FI',
+  name: 'Finland',
+  slug: 'finland',
+  lat: '61.924110',
+  lng: '25.748151'
+}, {
+  id: 'FR',
+  name: 'France',
+  slug: 'france',
+  lat: '46.227638',
+  lng: '2.213749'
+}, {
+  id: 'N/A',
+  name: 'French Guiana',
+  slug: 'french-guiana'
+}, {
+  id: 'N/A',
+  name: 'French Polynesia',
+  slug: 'french-polynesia'
+}, {
+  id: 'N/A',
+  name: 'French Southern Territories',
+  slug: 'french-southern-territories'
+}, {
+  id: 'GA',
+  name: 'Gabon',
+  slug: 'gabon',
+  lat: '-0.803689',
+  lng: '11.609444'
+}, {
+  id: 'N/A',
+  name: 'Gambia',
+  slug: 'gambia'
+}, {
+  id: 'GA',
+  name: 'Georgia',
+  slug: 'georgia',
+  lat: '32.165622',
+  lng: '-82.900075'
+}, {
+  id: 'DE',
+  name: 'Germany',
+  slug: 'germany',
+  lat: '51.165691',
+  lng: '10.451526'
+}, {
+  id: 'GH',
+  name: 'Ghana',
+  slug: 'ghana',
+  lat: '7.946527',
+  lng: '-1.023194'
+}, {
+  id: 'N/A',
+  name: 'Gibraltar',
+  slug: 'gibraltar'
+}, {
+  id: 'GR',
+  name: 'Greece',
+  slug: 'greece',
+  lat: '39.074208',
+  lng: '21.824312'
+}, {
+  id: 'N/A',
+  name: 'Greenland',
+  slug: 'greenland'
+}, {
+  id: 'GD',
+  name: 'Grenada',
+  slug: 'grenada',
+  lat: '12.116500',
+  lng: '-61.679000'
+}, {
+  id: 'N/A',
+  name: 'Guadeloupe',
+  slug: 'guadeloupe'
+}, {
+  id: 'N/A',
+  name: 'Guam',
+  slug: 'guam'
+}, {
+  id: 'GT',
+  name: 'Guatemala',
+  slug: 'guatemala',
+  lat: '15.783471',
+  lng: '-90.230759'
+}, {
+  id: 'N/A',
+  name: 'Guernsey',
+  slug: 'guernsey'
+}, {
+  id: 'GN',
+  name: 'Guinea',
+  slug: 'guinea',
+  lat: '9.945587',
+  lng: '-9.696645'
+}, {
+  id: 'GW',
+  name: 'Guinea-Bissau',
+  slug: 'guinea-bissau',
+  lat: '11.803749',
+  lng: '-15.180413'
+}, {
+  id: 'GY',
+  name: 'Guyana',
+  slug: 'guyana',
+  lat: '4.860416',
+  lng: '-58.930180'
+}, {
+  id: 'HT',
+  name: 'Haiti',
+  slug: 'haiti',
+  lat: '18.971187',
+  lng: '-72.285215'
+}, {
+  id: 'N/A',
+  name: 'Heard Island & McDonald Islands',
+  slug: 'heard-island-and-mcdonald-islands'
+}, {
+  id: 'N/A',
+  name: 'Holy See (Vatican City State)',
+  slug: 'holy-see-vatican-city-state'
+}, {
+  id: 'HN',
+  name: 'Honduras',
+  slug: 'honduras',
+  lat: '15.199999',
+  lng: '-86.241905'
+}, {
+  id: 'N/A',
+  name: 'Hong Kong',
+  slug: 'hong-kong'
+}, {
+  id: 'HU',
+  name: 'Hungary',
+  slug: 'hungary',
+  lat: '47.162494',
+  lng: '19.503304'
+}, {
+  id: 'IS',
+  name: 'Iceland',
+  slug: 'iceland',
+  lat: '64.963051',
+  lng: '-19.020835'
+}, {
+  id: 'IN',
+  name: 'India',
+  slug: 'india',
+  lat: '20.593684',
+  lng: '78.962880'
+}, {
+  id: 'ISO',
+  name: 'Indonesia',
+  slug: 'indonesia',
+  lat: '-0.789275',
+  lng: '113.921327'
+}, {
+  id: 'IR',
+  name: 'Iran',
+  slug: 'iran',
+  lat: '32.427908',
+  lng: '53.688046'
+}, {
+  id: 'IQ',
+  name: 'Iraq',
+  slug: 'iraq',
+  lat: '33.223191',
+  lng: '43.679291'
+}, {
+  id: 'IE',
+  name: 'Ireland',
+  slug: 'ireland',
+  lat: '53.412910',
+  lng: '-8.243890'
+}, {
+  id: 'N/A',
+  name: 'Isle of Man',
+  slug: 'isle-of-man'
+}, {
+  id: 'IL',
+  name: 'Israel',
+  slug: 'israel',
+  lat: '31.046051',
+  lng: '34.851612'
+}, {
+  id: 'IT',
+  name: 'Italy',
+  slug: 'italy',
+  lat: '41.871940',
+  lng: '12.567380'
+}, {
+  id: 'JM',
+  name: 'Jamaica',
+  slug: 'jamaica',
+  lat: '18.109581',
+  lng: '-77.297508'
+}, {
+  id: 'JP',
+  name: 'Japan',
+  slug: 'japan',
+  lat: '36.204824',
+  lng: '138.252924'
+}, {
+  id: 'N/A',
+  name: 'Jersey',
+  slug: 'jersey'
+}, {
+  id: 'JO',
+  name: 'Jordan',
+  slug: 'jordan',
+  lat: '30.585164',
+  lng: '36.238414'
+}, {
+  id: 'KZ',
+  name: 'Kazakhstan',
+  slug: 'kazakhstan',
+  lat: '48.019573',
+  lng: '66.923684'
+}, {
+  id: 'KE',
+  name: 'Kenya',
+  slug: 'kenya',
+  lat: '-0.023559',
+  lng: '37.906193'
+}, {
+  id: 'KI',
+  name: 'Kiribati',
+  slug: 'kiribati',
+  lat: '1.870919',
+  lng: '-157.362601'
+}, {
+  id: 'KP',
+  name: 'North Korea',
+  slug: 'north-korea',
+  lat: '40.339852',
+  lng: '127.510093'
+}, {
+  id: 'N/A',
+  name: 'Korea',
+  slug: 'south-korea'
+}, {
+  id: 'XK',
+  name: 'Kosovo',
+  slug: 'kosovo',
+  lat: '42.581372',
+  lng: '20.889336'
+}, {
+  id: 'KW',
+  name: 'Kuwait',
+  slug: 'kuwait',
+  lat: '29.311660',
+  lng: '47.481766'
+}, {
+  id: 'KG',
+  name: 'Kyrgyzstan',
+  slug: 'kyrgyzstan',
+  lat: '41.204380',
+  lng: '74.766098'
+}, {
+  id: 'N/A',
+  name: 'Lao',
+  slug: 'lao'
+}, {
+  id: 'LV',
+  name: 'Latvia',
+  slug: 'latvia',
+  lat: '56.879635',
+  lng: '24.603189'
+}, {
+  id: 'LB',
+  name: 'Lebanon',
+  slug: 'lebanon',
+  lat: '33.854721',
+  lng: '35.862285'
+}, {
+  id: 'LS',
+  name: 'Lesotho',
+  slug: 'lesotho',
+  lat: '-29.609988',
+  lng: '28.233608'
+}, {
+  id: 'LR',
+  name: 'Liberia',
+  slug: 'liberia',
+  lat: '6.428055',
+  lng: '-9.429499'
+}, {
+  id: 'LY',
+  name: 'Libya',
+  slug: 'libya',
+  lat: '26.335100',
+  lng: '17.228331'
+}, {
+  id: 'LI',
+  name: 'Liechtenstein',
+  slug: 'liechtenstein',
+  lat: '47.166000',
+  lng: '9.555373'
+}, {
+  id: 'LT',
+  name: 'Lithuania',
+  slug: 'lithuania',
+  lat: '55.169438',
+  lng: '23.881275'
+}, {
+  id: 'LU',
+  name: 'Luxembourg',
+  slug: 'luxembourg',
+  lat: '49.815273',
+  lng: '6.129583'
+}, {
+  id: 'N/A',
+  name: 'Macao',
+  slug: 'macao'
+}, {
+  id: 'N/A',
+  name: 'Macedonia',
+  slug: 'macedonia'
+}, {
+  id: 'MG',
+  name: 'Madagascar',
+  slug: 'madagascar',
+  lat: '-18.766947',
+  lng: '46.869107'
+}, {
+  id: 'MW',
+  name: 'Malawi',
+  slug: 'malawi',
+  lat: '-13.254308',
+  lng: '34.301525'
+}, {
+  id: 'MY',
+  name: 'Malaysia',
+  slug: 'malaysia',
+  lat: '4.210484',
+  lng: '101.975766'
+}, {
+  id: 'MV',
+  name: 'Maldives',
+  slug: 'maldives',
+  lat: '1.977247',
+  lng: '73.536103'
+}, {
+  id: 'ML',
+  name: 'Mali',
+  slug: 'mali',
+  lat: '17.570692',
+  lng: '-3.996166'
+}, {
+  id: 'MT',
+  name: 'Malta',
+  slug: 'malta',
+  lat: '35.937496',
+  lng: '14.375416'
+}, {
+  id: 'MH',
+  name: 'Marshall Islands',
+  slug: 'marshall-islands',
+  lat: '7.131474',
+  lng: '171.184478'
+}, {
+  id: 'N/A',
+  name: 'Martinique',
+  slug: 'martinique'
+}, {
+  id: 'MR',
+  name: 'Mauritania',
+  slug: 'mauritania',
+  lat: '21.007890',
+  lng: '-10.940835'
+}, {
+  id: 'MU',
+  name: 'Mauritius',
+  slug: 'mauritius',
+  lat: '-20.348404',
+  lng: '57.552152'
+}, {
+  id: 'N/A',
+  name: 'Mayotte',
+  slug: 'mayotte'
+}, {
+  id: 'MX',
+  name: 'Mexico',
+  slug: 'mexico',
+  lat: '23.634501',
+  lng: '-102.552784'
+}, {
+  id: 'FM',
+  name: 'Micronesia',
+  slug: 'micronesia',
+  lat: '6.887351',
+  lng: '158.215072'
+}, {
+  id: 'MD',
+  name: 'Moldova',
+  slug: 'moldova',
+  lat: '47.411631',
+  lng: '28.369885'
+}, {
+  id: 'MC',
+  name: 'Monaco',
+  slug: 'monaco',
+  lat: '43.738418',
+  lng: '7.424616'
+}, {
+  id: 'MN',
+  name: 'Mongolia',
+  slug: 'mongolia',
+  lat: '46.862496',
+  lng: '103.846656'
+}, {
+  id: 'ME',
+  name: 'Montenegro',
+  slug: 'montenegro',
+  lat: '42.708678',
+  lng: '19.374390'
+}, {
+  id: 'N/A',
+  name: 'Montserrat',
+  slug: 'montserrat'
+}, {
+  id: 'MA',
+  name: 'Morocco',
+  slug: 'morocco',
+  lat: '31.791702',
+  lng: '-7.092620'
+}, {
+  id: 'MZ',
+  name: 'Mozambique',
+  slug: 'mozambique',
+  lat: '-18.665695',
+  lng: '35.529562'
+}, {
+  id: 'N/A',
+  name: 'Myanmar',
+  slug: 'myanmar'
+}, {
+  id: 'NA',
+  name: 'Namibia',
+  slug: 'namibia',
+  lat: '-22.957640',
+  lng: '18.490410'
+}, {
+  id: 'NR',
+  name: 'Nauru',
+  slug: 'nauru',
+  lat: '-0.522778',
+  lng: '166.931503'
+}, {
+  id: 'NP',
+  name: 'Nepal',
+  slug: 'nepal',
+  lat: '28.394857',
+  lng: '84.124008'
+}, {
+  id: 'N/A',
+  name: 'Netherlands',
+  slug: 'netherlands'
+}, {
+  id: 'N/A',
+  name: 'Netherlands Antilles',
+  slug: 'netherlands-antilles'
+}, {
+  id: 'N/A',
+  name: 'New Caledonia',
+  slug: 'new-caledonia'
+}, {
+  id: 'NZ',
+  name: 'New Zealand',
+  slug: 'new-zealand',
+  lat: '-40.900557',
+  lng: '174.885971'
+}, {
+  id: 'NI',
+  name: 'Nicaragua',
+  slug: 'nicaragua',
+  lat: '12.865416',
+  lng: '-85.207229'
+}, {
+  id: 'NE',
+  name: 'Niger',
+  slug: 'niger',
+  lat: '17.607789',
+  lng: '8.081666'
+}, {
+  id: 'NG',
+  name: 'Nigeria',
+  slug: 'nigeria',
+  lat: '9.081999',
+  lng: '8.675277'
+}, {
+  id: 'N/A',
+  name: 'Niue',
+  slug: 'niue'
+}, {
+  id: 'N/A',
+  name: 'Norfolk Island',
+  slug: 'norfolk-island'
+}, {
+  id: 'N/A',
+  name: 'Northern Mariana Islands',
+  slug: 'northern-mariana-islands'
+}, {
+  id: 'NO',
+  name: 'Norway',
+  slug: 'norway',
+  lat: '60.472024',
+  lng: '8.468946'
+}, {
+  id: 'OM',
+  name: 'Oman',
+  slug: 'oman',
+  lat: '21.512583',
+  lng: '55.923255'
+}, {
+  id: 'PK',
+  name: 'Pakistan',
+  slug: 'pakistan',
+  lat: '30.375321',
+  lng: '69.345116'
+}, {
+  id: 'PW',
+  name: 'Palau',
+  slug: 'palau',
+  lat: '7.514980',
+  lng: '134.582520'
+}, {
+  id: 'N/A',
+  name: 'Palestine',
+  slug: 'palestine'
+}, {
+  id: 'PA',
+  name: 'Panama',
+  slug: 'panama',
+  lat: '8.537981',
+  lng: '-80.782127'
+}, {
+  id: 'PG',
+  name: 'Papua New Guinea',
+  slug: 'papua-new-guinea',
+  lat: '-6.314993',
+  lng: '143.955550'
+}, {
+  id: 'PY',
+  name: 'Paraguay',
+  slug: 'paraguay',
+  lat: '-23.442503',
+  lng: '-58.443832'
+}, {
+  id: 'PE',
+  name: 'Peru',
+  slug: 'peru',
+  lat: '-9.189967',
+  lng: '-75.015152'
+}, {
+  id: 'PH',
+  name: 'Philippines',
+  slug: 'philippines',
+  lat: '12.879721',
+  lng: '121.774017'
+}, {
+  id: 'N/A',
+  name: 'Pitcairn',
+  slug: 'pitcairn'
+}, {
+  id: 'PL',
+  name: 'Poland',
+  slug: 'poland',
+  lat: '51.919438',
+  lng: '19.145136'
+}, {
+  id: 'PT',
+  name: 'Portugal',
+  slug: 'portugal',
+  lat: '39.399872',
+  lng: '-8.224454'
+}, {
+  id: 'N/A',
+  name: 'Puerto Rico',
+  slug: 'puerto-rico'
+}, {
+  id: 'QA',
+  name: 'Qatar',
+  slug: 'qatar',
+  lat: '25.354826',
+  lng: '51.183884'
+}, {
+  id: 'N/A',
+  name: 'Reunion',
+  slug: 'réunion'
+}, {
+  id: 'RO',
+  name: 'Romania',
+  slug: 'romania',
+  lat: '45.943161',
+  lng: '24.966760'
+}, {
+  id: 'N/A',
+  name: 'Russian Federation',
+  slug: 'russian-federation'
+}, {
+  id: 'RW',
+  name: 'Rwanda',
+  slug: 'rwanda',
+  lat: '-1.940278',
+  lng: '29.873888'
+}, {
+  id: 'N/A',
+  name: 'Saint Barthelemy',
+  slug: 'saint-barthelemy'
+}, {
+  id: 'N/A',
+  name: 'Saint Helena, Ascension & Tristan da Cunha',
+  slug: 'saint-helena-ascension-and-tristan-da-cunha'
+}, {
+  id: 'N/A',
+  name: 'Saint Kitts and Nevis',
+  slug: 'saint-kitts-and-nevis'
+}, {
+  id: 'LC',
+  name: 'Saint Lucia',
+  slug: 'saint-lucia',
+  lat: '13.909444',
+  lng: '-60.978893'
+}, {
+  id: 'N/A',
+  name: 'Saint Martin',
+  slug: 'saint-martin'
+}, {
+  id: 'N/A',
+  name: 'Saint Pierre & Miquelon',
+  slug: 'saint-pierre-and-miquelon'
+}, {
+  id: 'N/A',
+  name: 'Saint Vincent & the Grenadines',
+  slug: 'saint-vincent-and-the-grenadines'
+}, {
+  id: 'WS',
+  name: 'Samoa',
+  slug: 'samoa',
+  lat: '-13.759029',
+  lng: '-172.104629'
+}, {
+  id: 'SM',
+  name: 'San Marino',
+  slug: 'san-marino',
+  lat: '43.942360',
+  lng: '12.457777'
+}, {
+  id: 'N/A',
+  name: 'Sao Tome & Principe',
+  slug: 'sao-tome-and-principe'
+}, {
+  id: 'SA',
+  name: 'Saudi Arabia',
+  slug: 'saudi-arabia',
+  lat: '23.885942',
+  lng: '45.079162'
+}, {
+  id: 'SN',
+  name: 'Senegal',
+  slug: 'senegal',
+  lat: '14.497401',
+  lng: '-14.452362'
+}, {
+  id: 'RS',
+  name: 'Serbia',
+  slug: 'serbia',
+  lat: '44.016521',
+  lng: '21.005859'
+}, {
+  id: 'SC',
+  name: 'Seychelles',
+  slug: 'seychelles',
+  lat: '-4.679574',
+  lng: '55.491977'
+}, {
+  id: 'SL',
+  name: 'Sierra Leone',
+  slug: 'sierra-leone',
+  lat: '8.460555',
+  lng: '-11.779889'
+}, {
+  id: 'SG',
+  name: 'Singapore',
+  slug: 'singapore',
+  lat: '1.352083',
+  lng: '103.819836'
+}, {
+  id: 'N/A',
+  name: 'Sint Maarten (Dutch part)',
+  slug: 'sint-maarten-dutch-part'
+}, {
+  id: 'N/A',
+  name: 'Slovak Republic',
+  slug: 'slovakia'
+}, {
+  id: 'SI',
+  name: 'Slovenia',
+  slug: 'slovenia',
+  lat: '46.151241',
+  lng: '14.995463'
+}, {
+  id: 'SB',
+  name: 'Solomon Islands',
+  slug: 'solomon-islands',
+  lat: '-9.645710',
+  lng: '160.156194'
+}, {
+  id: 'SO',
+  name: 'Somalia',
+  slug: 'somalia',
+  lat: '5.152149',
+  lng: '46.199616'
+}, {
+  id: 'ZA',
+  name: 'South Africa',
+  slug: 'south-africa',
+  lat: '-30.559482',
+  lng: '22.937506'
+}, {
+  id: 'N/A',
+  name: 'South Georgia & the South Sandwich Islands',
+  slug: 'south-georgia-and-the-south-sandwich-islands'
+}, {
+  id: 'SS',
+  name: 'South Sudan',
+  slug: 'south-sudan',
+  lat: '7.963092',
+  lng: '30.158930'
+}, {
+  id: 'ES',
+  name: 'Spain',
+  slug: 'spain',
+  lat: '40.463667',
+  lng: '-3.749220'
+}, {
+  id: 'LK',
+  name: 'Sri Lanka',
+  slug: 'sri-lanka',
+  lat: '7.873054',
+  lng: '80.771797'
+}, {
+  id: 'SD',
+  name: 'Sudan',
+  slug: 'sudan',
+  lat: '12.862807',
+  lng: '30.217636'
+}, {
+  id: 'SR',
+  name: 'Suriname',
+  slug: 'suriname',
+  lat: '3.919305',
+  lng: '-56.027783'
+}, {
+  id: 'N/A',
+  name: 'Svalbard & Jan Mayen',
+  slug: 'svalbard-and-jan-mayen'
+}, {
+  id: 'SZ',
+  name: 'Swaziland',
+  slug: 'swaziland',
+  lat: '-26.522503',
+  lng: '31.465866'
+}, {
+  id: 'SE',
+  name: 'Sweden',
+  slug: 'sweden',
+  lat: '60.128161',
+  lng: '18.643501'
+}, {
+  id: 'CH',
+  name: 'Switzerland',
+  slug: 'switzerland',
+  lat: '46.818188',
+  lng: '8.227512'
+}, {
+  id: 'SY',
+  name: 'Syria',
+  slug: 'syria',
+  lat: '34.802075',
+  lng: '38.996815'
+}, {
+  id: 'TW',
+  name: 'Taiwan',
+  slug: 'taiwan',
+  lat: '23.697810',
+  lng: '120.960515'
+}, {
+  id: 'TJ',
+  name: 'Tajikistan',
+  slug: 'tajikistan',
+  lat: '38.861034',
+  lng: '71.276093'
+}, {
+  id: 'TZ',
+  name: 'Tanzania',
+  slug: 'tanzania',
+  lat: '-6.369028',
+  lng: '34.888822'
+}, {
+  id: 'TH',
+  name: 'Thailand',
+  slug: 'thailand',
+  lat: '15.870032',
+  lng: '100.992541'
+}, {
+  id: 'TL',
+  name: 'Timor-Leste',
+  slug: 'timor-leste',
+  lat: '-8.874217',
+  lng: '125.727539'
+}, {
+  id: 'TG',
+  name: 'Togo',
+  slug: 'togo',
+  lat: '8.619543',
+  lng: '0.824782'
+}, {
+  id: 'N/A',
+  name: 'Tokelau',
+  slug: 'tokelau'
+}, {
+  id: 'TO',
+  name: 'Tonga',
+  slug: 'tonga',
+  lat: '-21.178986',
+  lng: '-175.198242'
+}, {
+  id: 'N/A',
+  name: 'Trinidad & Tobago',
+  slug: 'trinidad-and-tobago'
+}, {
+  id: 'TN',
+  name: 'Tunisia',
+  slug: 'tunisia',
+  lat: '33.886917',
+  lng: '9.537499'
+}, {
+  id: 'TR',
+  name: 'Turkey',
+  slug: 'turkey',
+  lat: '38.963745',
+  lng: '35.243322'
+}, {
+  id: 'TM',
+  name: 'Turkmenistan',
+  slug: 'turkmenistan',
+  lat: '38.969719',
+  lng: '59.556278'
+}, {
+  id: 'N/A',
+  name: 'Turks & Caicos Islands',
+  slug: 'turks-and-caicos-islands'
+}, {
+  id: 'TV',
+  name: 'Tuvalu',
+  slug: 'tuvalu',
+  lat: '-7.478442',
+  lng: '178.679921'
+}, {
+  id: 'UG',
+  name: 'Uganda',
+  slug: 'uganda',
+  lat: '1.373333',
+  lng: '32.290275'
+}, {
+  id: 'GB',
+  name: 'United Kingdom',
+  slug: 'united-kingdom',
+  lat: '55.378051',
+  lng: '-3.435973'
+}, {
+  id: 'UA',
+  name: 'Ukraine',
+  slug: 'ukraine',
+  lat: '48.379433',
+  lng: '31.165580'
+}, {
+  id: 'N/A',
+  name: 'UAE',
+  slug: 'uae'
+}, {
+  id: 'US',
+  name: 'United States',
+  slug: 'usa',
+  lat: '39.500240',
+  lng: '-98.350891'
+}, {
+  id: 'N/A',
+  name: 'United States Minor Outlying Islands',
+  slug: 'united-states-minor-outlying-islands'
+}, {
+  id: 'UY',
+  name: 'Uruguay',
+  slug: 'uruguay',
+  lat: '-32.522779',
+  lng: '-55.765835'
+}, {
+  id: 'UZ',
+  name: 'Uzbekistan',
+  slug: 'uzbekistan',
+  lat: '41.377491',
+  lng: '64.585262'
+}, {
+  id: 'VU',
+  name: 'Vanuatu',
+  slug: 'vanuatu',
+  lat: '-15.376706',
+  lng: '166.959158'
+}, {
+  id: 'VE',
+  name: 'Venezuela',
+  slug: 'venezuela',
+  lat: '6.423750',
+  lng: '-66.589730'
+}, {
+  id: 'N/A',
+  name: 'Viet Nam',
+  slug: 'viet-nam'
+}, {
+  id: 'N/A',
+  name: 'Virgin Islands (GB)',
+  slug: 'virgin-islands-gb'
+}, {
+  id: 'N/A',
+  name: 'Virgin Islands (US)',
+  slug: 'virgin-islands-us'
+}, {
+  id: 'N/A',
+  name: 'Wallis & Futuna',
+  slug: 'wallis-and-futuna'
+}, {
+  id: 'N/A',
+  name: 'Western Sahara',
+  slug: 'western-sahara'
+}, {
+  id: 'YE',
+  name: 'Yemen',
+  slug: 'yemen',
+  lat: '15.552727',
+  lng: '48.516388'
+}, {
+  id: 'ZM',
+  name: 'Zambia',
+  slug: 'zambia',
+  lat: '-13.133897',
+  lng: '27.849332'
+}, {
+  id: 'ZW',
+  name: 'Zimbabwe',
+  slug: 'zimbabwe',
+  lat: '-19.015438',
+  lng: '29.154857'
+}];

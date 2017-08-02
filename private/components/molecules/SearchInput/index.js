@@ -10,7 +10,7 @@ import {Input, InputContainer} from '../../atoms/SearchInput/input';
 
 
 type Country ={
-  id: string,
+  slug: string,
   name: string
 }
 export type Props = {
@@ -72,9 +72,9 @@ class SearchInput extends React.Component {
   onSubmit() {
     const country: Country | void = this.state.countries[0] || null;
     if (!country) return false;
-    this.setState({value: country.id});
-    if (this.props.onSelected) return this.props.onSelected(country.id);
-    return Router.push(`/country?id=${country.id}`, `/country/${country.id}`);
+    this.setState({value: country.slug});
+    if (this.props.onSelected) return this.props.onSelected(country.slug);
+    return Router.push(`/country?slug=${country.slug}`, `/country/${country.slug}`);
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
@@ -99,10 +99,10 @@ class SearchInput extends React.Component {
                   this.state.countries
                   .map((country, i) =>
                     (<li
-                      key={country.id}
+                      key={country.slug}
                       className={this.state.selected === i ? 'active' : false}
                     >
-                      <Link href={`/country?id=${country.id}`} as={`/country/${country.id}`}><a>{country.name}</a></Link>
+                      <Link href={`/country?slug=${country.slug}`} as={`/country/${country.slug}`}><a>{country.name}</a></Link>
                     </li>))
                     : <li> Error getting countries </li>
               }

@@ -37,7 +37,8 @@ export type PaintMap = {
   baseColor?: string,
   propertyName?: string,
   propertyLayer?: string,
-  paintProperty?: string
+  paintProperty?: string,
+  slug?: string // for only showing a single country
 }
 export type Meta = {
   uom_display: string,
@@ -251,7 +252,6 @@ class BaseMap extends Component {
         if (!obj.id) return false;
         return obj.id === countryId;
       });
-      console.log('point', point);
       if (!point || !point.slug) return false;
       return Router.push(`/country?id=${point.slug}`, `/country/${point.slug}`);
     });

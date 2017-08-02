@@ -46,7 +46,7 @@
     [
       "wrap-in-js",
       {
-        "extensions": ["css$", "less$"]
+        "extensions": ["css$"]
       }
     ]
   ]

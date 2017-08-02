@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4444;
 
 const preCache = () => {
   const homeLink = `http://localhost:${PORT}`;
-  const countrySlugs = countriesData.countries.map(country => `/country?id=${country.id}`);
+  const countrySlugs = countriesData.countries.map(country => `/country?id=${country.slug}`);
   // for batch precaching of country pages
   const preCacheList = pagesToPreCache.concat(countrySlugs);
   preCacheList.forEach((link, index) => {
