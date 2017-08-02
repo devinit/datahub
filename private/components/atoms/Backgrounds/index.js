@@ -17,7 +17,7 @@ export const MapBackground = glamorous.div({
   background: lighterGrey,
   width: '100%',
   height: '600px',
-  '@media(min-width: 600px)': {
+  '@media(max-width: 900px)': {
     height: '400px'
   }
 });
