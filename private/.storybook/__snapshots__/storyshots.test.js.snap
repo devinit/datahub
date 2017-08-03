@@ -1252,7 +1252,13 @@ exports[`Storyshots Chart Stubs What is the mix of resources? 1`] = `
 </div>
 `;
 
-exports[`Storyshots Country Profiles Tabs live Country Profiles tabs 1`] = `
+exports[`Storyshots Country Profiles Tabs live Country Profiles tabs kenya 1`] = `
+<div
+  className="css-x5a8zc"
+/>
+`;
+
+exports[`Storyshots Country Profiles Tabs live Country Profiles tabs uganda 1`] = `
 <div
   className="css-x5a8zc"
 />
