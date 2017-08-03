@@ -18,25 +18,29 @@ const ToolBarContainer = glamorous.div({
 }));
 
 type Props = {
-  compact: boolean, // is in compare mode
+  compact?: boolean, // is in compare mode
   toolBarOptions: Object,
-  position: number,
+  position?: number,
   rightPosition?: number,
-  values: string[],
+  values?: string[],
   rightValues?: string[],
   onChange?: (key: string, value: string) => void,
   onRightChange?: (key: string, value: string) => void
 };
 const InteractiveChartToolBar = (props: Props) => {
-  const {compact} = props;
+  const {
+    compact = false,
+    position = 1,
+    values = [],
+  } = props;
   return (
     <ToolBarContainer compact={compact}>
       <Container>
         <Grid>
           <Grid.Row>
             <ToolBar
-              position={props.position}
-              values={props.values}
+              position={position}
+              values={values}
               onChange={props.onChange}
               data={props.toolBarOptions}
               textAlign={compact ? 'left' : 'right'}
