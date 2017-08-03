@@ -25,22 +25,34 @@ type TabsProps = {
   ...TabDataQuery
 }
 
+const RECIPIENT = 'recipient';
+const DONOR = 'donor';
 const countryProfileTabs = (props: TabsProps) => {
   if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
+  if (!props.overViewTab || !props.overViewTab.countryType) console.error('country type missing in overview tab data');
+  const countryType = props.overViewTab && props.overViewTab.countryType ?
+    props.overViewTab.countryType : RECIPIENT;
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id={'overview-tab'}>
         <Overview {...props} />
       </Pane>
-      <Pane label="Poverty" id={'poverty-tab'}>
-        <Poverty config={povertyConfig} {...props} />
-      </Pane>
+      {
+        countryType === RECIPIENT ?
+          <Pane label="Poverty" id={'poverty-tab'}>
+            <Poverty config={povertyConfig} {...props} />
+          </Pane> : ''
+      }
       <Pane label="Population" id={'population-tab'}>
         <Population config={populationConfig} {...props} />
       </Pane>
-      <Pane label="Government Finance" id={'govt-finance-tab'}>
-        <GovernmentFinance config={govtFinanceConfig} {...props} />
-      </Pane>
+      {
+        countryType === RECIPIENT ?
+          <Pane label="Government Finance" id={'govt-finance-tab'}>
+            <GovernmentFinance config={govtFinanceConfig} {...props} />
+          </Pane> : ''
+      }
+
       <Pane label="International Resources" id={'internantion-reseources-tab'}>
         <InternationalResources config={internationalResourcesConfig} {...props} />
       </Pane>

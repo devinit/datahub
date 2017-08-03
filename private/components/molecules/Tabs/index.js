@@ -81,7 +81,7 @@ class Tabs extends React.Component {
   }
   _renderContent() {
     const content = this.props.children
-      .filter(child => child.props.label && child.props.id)
+      .filter(child => child && child.props.label && child.props.id)
       .map((child, index) => {
         const activeClass = (this.state.selected === index ? 'visible' : '');
         return (
@@ -109,7 +109,7 @@ class Tabs extends React.Component {
     return (
       <TabsContainer>
         {this.props.children
-          .filter(child => child.props.label && child.props.id)
+          .filter(child => child && child.props.label && child.props.id)
           .map(labels)}
       </TabsContainer>
     );
