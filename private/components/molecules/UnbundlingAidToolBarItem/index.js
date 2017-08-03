@@ -12,7 +12,7 @@ type Props = {
   position?: number,
   values: string[],
   textAlign?: string,
-  onChange(key: string, value: string): void,
+  onChange?: (key: string, value: string) => void,
 };
 const ToolBarItem = (props: Props) => {
   const {
@@ -21,7 +21,7 @@ const ToolBarItem = (props: Props) => {
     position = 0,
     values,
     textAlign,
-    onChange = d => {}
+    onChange = (key, value) => {}
   } = props;
 
   const keys = Object.keys(data);

@@ -21,7 +21,7 @@ type FlowData = {
 
 export type Props = {
   country: string,
-  startYear: string,
+  startYear: number,
   data: [], // TODO: should be flowData with API integration
   config: any,
 }

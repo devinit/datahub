@@ -2,23 +2,9 @@
 import React from 'react';
 import { draw } from '@devinit/charts';
 
-export type TreeChartConfig = {
-  title: String,
-  tree: {
-    id: String,
-    levels: [String],
-    parent: String,
-    value: number
-  },
-  coloring: String,
-  legend: {
-    showLegend: boolean
-  }
-}
-
 type Props = {
   data: Object[],
-  config: TreeChartConfig,
+  config: Object,
   width?: string,
   height?: string,
   onClick(d: {id: string, parent: string}): void,

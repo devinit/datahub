@@ -20,7 +20,7 @@ type State = {
   position: number,
   keys: string[],
   values: string[],
-  dimmerColor: string,
+  dimmerColor?: string,
 }
 
 const Container = glamorous.div({
@@ -66,7 +66,7 @@ class UnbundlingTreemap extends React.Component {
     const keys = Object.keys(props.selections);
 
     const values = [
-      props.startYear,
+      props.startYear.toString(),
 
       ...keys.slice(1).map(d => {
         const [selected] = props.selections[d].filter(x => x.active);

@@ -30,6 +30,12 @@ type State = {
   revenueLevel?: string,
   financeLevel?: string,
   expenditureLevel?: string,
+  revenueTrend: Object[],
+  financeTrend: Object[],
+  expenditureTrend: Object[],
+  revenueTree: Object[],
+  financeTree: Object[],
+  expenditureTree: Object[],
 }
 
 const CardContainer = glamorous.div({
@@ -109,7 +115,7 @@ export default class GovtRFE extends React.Component {
     });
   }
 
-  setBudgetType(budgetType: number) {
+  setBudgetType(budgetType: string) {
     const currency = this.state.currency;
     const year = this.state.year;
     this.setState({
@@ -171,7 +177,7 @@ export default class GovtRFE extends React.Component {
     });
   }
 
-  calculateBudgetTypes(year) {
+  calculateBudgetTypes(year: number) {
     return makeUnique(
       [...this.props.finance, ...this.props.revenueAndGrants, ...this.props.expenditure]
         .filter(d => d.year === year)
@@ -183,7 +189,7 @@ export default class GovtRFE extends React.Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  calculateTrend(data, currency = 'US$') {
+  calculateTrend(data: Object[], currency: string = 'US$') {
     return data.map(d => ({
       ...d,
       value: currency === 'US$' ? d.value : d.value_ncu
@@ -191,7 +197,7 @@ export default class GovtRFE extends React.Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  calculateTree(data, year, budgetType, currency = 'US$') {
+  calculateTree(data: Object[], year: number, budgetType: string, currency: string = 'US$') {
     return data
       .filter(d => d.year === year && d.budget_type === budgetType)
       .map(d => {
