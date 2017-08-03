@@ -18,7 +18,7 @@ const TitleWrapper = glamorous.div({
 });
 
 class CountryProfileSearch extends React.Component {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       showSearch: false
@@ -29,7 +29,7 @@ class CountryProfileSearch extends React.Component {
   renderCountry() {
     return (
       <TitleWrapper
-        onClick ={() => this.setState({showSearch: true})}
+        onClick={() => this.setState({showSearch: true})}
       >
         <Header as="h1">
           {this.props.country}
