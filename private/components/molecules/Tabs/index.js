@@ -11,14 +11,14 @@ type Props = {
   height?: string
 }
 const Wrapper = glamorous.div({
-  paddingTop: '1rem',
+  borderTop: '2px solid #ddd9dc',
+  paddingTop: '0.25em',
 });
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
   margin: 0,
   textTransform: 'uppercase',
   padding: 0,
-  paddingBottom: '1em',
   listStyle: 'none',
   color: '#b8b1b6',
   '& .active': {
@@ -34,6 +34,7 @@ const TabLink = glamorous.a({
   padding: '.75em .35em',
   marginRight: '30px',
   cursor: 'pointer',
+  display: 'inline-block',
 });
 const TabsContentWrapper = glamorous.div({
   position: 'relative',
