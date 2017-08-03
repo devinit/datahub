@@ -12,8 +12,8 @@ import {
 import {SectionHeader, Lead} from 'components/atoms/Header';
 import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
+import CountryProfileSearch from 'components/molecules/CountryProfileSearch';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
-import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import {CardContainer} from 'components/atoms/Container';
 import Generic from '../Generic';
 import data from './data';
@@ -34,7 +34,7 @@ export default (props: Props) =>
                   General Picture
                 </Header.Content>
               </Header>
-              <CountrySeachInput visible />
+              <CountryProfileSearch country="Uganda" />
               <Lead>
                 Explore this in-depth profile of Uganda to
                 find out overall levels of poverty, income distribution,
