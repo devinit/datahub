@@ -4,6 +4,13 @@ exports[`Storyshots Base Maps Base Map Atom 1`] = `
 <div
   className="css-nlcjz6"
 >
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": Object {},
+      }
+    }
+  />
   <div
     style={
       Object {
@@ -20,10 +27,17 @@ exports[`Storyshots Base Maps world map centered on uganda 1`] = `
 <div
   className="css-nlcjz6"
 >
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": Object {},
+      }
+    }
+  />
   <div
     style={
       Object {
-        "height": 450,
+        "height": 400,
         "position": "relative",
         "width": "100%",
       }
@@ -510,14 +524,16 @@ exports[`Storyshots Chart Stubs How have resource in flows changed over time? 1`
 <div
   className="ui very padded segment"
 >
-  <div
-    style={
-      Object {
-        "height": "150px",
-        "width": undefined,
+  <div>
+    <div
+      style={
+        Object {
+          "height": "150px",
+          "width": undefined,
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;
 
@@ -525,14 +541,16 @@ exports[`Storyshots Chart Stubs How is income distributed? 1`] = `
 <div
   className="ui very padded segment"
 >
-  <div
-    style={
-      Object {
-        "height": "120px",
-        "width": undefined,
+  <div>
+    <div
+      style={
+        Object {
+          "height": "120px",
+          "width": undefined,
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;
 
@@ -588,14 +606,16 @@ exports[`Storyshots Chart Stubs Inflow Vs Outflows 1`] = `
       </div>
     </div>
   </div>
-  <div
-    style={
-      Object {
-        "height": "400px",
-        "width": undefined,
+  <div>
+    <div
+      style={
+        Object {
+          "height": "400px",
+          "width": undefined,
+        }
       }
-    }
-  />
+    />
+  </div>
   <div
     className="ui centered grid"
   >
@@ -851,14 +871,16 @@ exports[`Storyshots Chart Stubs International Resources 1`] = `
           US$ 
           42b
         </h2>
-        <div
-          style={
-            Object {
-              "height": "360px",
-              "width": undefined,
+        <div>
+          <div
+            style={
+              Object {
+                "height": "360px",
+                "width": undefined,
+              }
             }
-          }
-        />
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -869,14 +891,16 @@ exports[`Storyshots Chart Stubs Is Poverty reducing over time? 1`] = `
 <div
   className="ui very padded segment"
 >
-  <div
-    style={
-      Object {
-        "height": "120px",
-        "width": undefined,
+  <div>
+    <div
+      style={
+        Object {
+          "height": "120px",
+          "width": undefined,
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;
 
@@ -1241,26 +1265,22 @@ exports[`Storyshots Chart Stubs What is the mix of resources? 1`] = `
 <div
   className="ui very padded segment"
 >
-  <div
-    style={
-      Object {
-        "height": "150px",
-        "width": undefined,
+  <div>
+    <div
+      style={
+        Object {
+          "height": "150px",
+          "width": undefined,
+        }
       }
-    }
-  />
+    />
+  </div>
 </div>
 `;
 
-exports[`Storyshots Country Profiles Tabs live Country Profiles tabs kenya 1`] = `
+exports[`Storyshots Country Profiles Tabs live DONOT TEST Country Profiles tabs 1`] = `
 <div
-  className="css-x5a8zc"
-/>
-`;
-
-exports[`Storyshots Country Profiles Tabs live Country Profiles tabs uganda 1`] = `
-<div
-  className="css-x5a8zc"
+  className="css-h5tlv2"
 />
 `;
 
@@ -5411,10 +5431,10 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
 </section>
 `;
 
-exports[`Storyshots Spotlight Tabs live spotlight tabs 1`] = `
-<div
-  className="css-x5a8zc"
-/>
+exports[`Storyshots Spotlight Tabs live DONOT TEST spotlight tabs 1`] = `
+<p>
+   Loading ...
+</p>
 `;
 
 exports[`Storyshots Spotlight Templates Spot Light 1`] = `
@@ -7018,7 +7038,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             className="ten wide column"
           >
             <div
-              className="css-18g9jxc"
+              className="css-69ad9a"
             >
               <div
                 className="ui header"
