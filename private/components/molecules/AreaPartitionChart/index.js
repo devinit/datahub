@@ -58,14 +58,30 @@ class AreaPartitionChart extends React.Component {
 
       flows: [
         {
-          value: null,
+          value: 'all',
           text: 'All',
         },
 
-        ...makeUnique(this.props.data.map(d => d.flow_category)).map(flow => ({
-          value: flow,
-          text: flow,
-        }))
+        ...makeUnique(this.props.data.map(d => d.flow_category))
+          .map(category => {
+            const types = makeUnique(
+              this.props.data
+                .filter(d => d.flow_category === category)
+                .map(d => d.flow_type));
+
+            if (types.length > 1) {
+              return types.map(type => ({
+                text: `${category} (${type})`,
+                value: `${category}-${type}`
+              }));
+            }
+
+            return types.map(type => ({
+              text: category,
+              value: `${category}-${type}`
+            }));
+          })
+          .reduce((all, group) => [...all, ...group], [])
       ]
     };
   }
@@ -85,7 +101,8 @@ class AreaPartitionChart extends React.Component {
 
     const trend = this.props.data
       .filter(d => {
-        return d.direction === direction && (!flow || d.flow_category === flow);
+        return d.direction === direction &&
+          (!flow || flow === 'all' || d.flow_group === flow);
       })
       .map(({year, ...datum}) => ({
         ...datum,
@@ -168,14 +185,15 @@ class AreaPartitionChart extends React.Component {
               height="400px"
               data={this.state.trend}
               config={this.state.trendConfig}
-              onYearChanged={year => this.update({year})}
+              onYearChanged={year => {
+                this.update({year});
+              }}
             />
           </Grid.Column>
 
           <Grid.Column width={10}>
             <SectionHeader color="rgb(238, 238, 238)">
-              <span>{this.props.config.treemapConfig.labeling.prefix} </span>
-              <span>{this.state.sumOfMix}</span>
+              {this.props.config.treemapConfig.labeling.prefix} {this.state.sumOfMix}
             </SectionHeader>
             <Chart
               height="360px"
