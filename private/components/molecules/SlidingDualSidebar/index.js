@@ -19,7 +19,8 @@ type FlowData = {
   color: string
 }
 
-type Props = {
+export type Props = {
+  country: string,
   startYear: string,
   data: [], // TODO: should be flowData with API integration
   config: any,
@@ -33,7 +34,7 @@ type State = {
   outflowSum: number,
 }
 
-class InflowsOutFlows extends React.Component {
+class SlidingDualSidebar extends React.Component {
 
   props: Props;
   state: State;
@@ -87,8 +88,8 @@ class InflowsOutFlows extends React.Component {
           <Grid.Column width={8}>
 
             <Segment basic clearing>
-              <SectionHeader color="#fff" style={{float: 'right', marginRight: '22px'}}>
-                RESOURCE FLOWS TO UNITED KINGDOM <span>{this.state.inflowSum}</span>
+              <SectionHeader color="#fff" style={{float: 'right', marginRight: '47px'}}>
+                RESOURCE FLOWS TO {this.props.country} <span>{this.state.inflowSum}</span>
               </SectionHeader>
             </Segment>
 
@@ -97,8 +98,8 @@ class InflowsOutFlows extends React.Component {
           <Grid.Column width={8}>
 
             <Segment basic clearing>
-              <SectionHeader color="#fff" style={{float: 'left', marginLeft: '20px'}}>
-                RESOURCE FLOWS FROM UNITED KINGDOM <span>{this.state.outflowSum}</span>
+              <SectionHeader color="#fff" style={{float: 'left', marginLeft: '45px'}}>
+                RESOURCE FLOWS FROM {this.props.country} <span>{this.state.outflowSum}</span>
               </SectionHeader>
             </Segment>
 
@@ -135,4 +136,4 @@ class InflowsOutFlows extends React.Component {
   }
 }
 
-export default InflowsOutFlows;
+export default SlidingDualSidebar;
