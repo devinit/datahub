@@ -5,4 +5,5 @@ import TabsWithData from '.';
 
 storiesOf('Country Profiles Tabs live', module)
   .addDecorator(withApolloProvider())
-  .add('Country Profiles tabs', () => <TabsWithData id={'uganda'} />);
+  .add('Country Profiles tabs', () => <TabsWithData id={'uganda'} />)
+  .add('Country Profiles tabs', () => <TabsWithData id={'kenya'} />);

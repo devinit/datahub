@@ -25,7 +25,7 @@ type Props = {
 export default (props: Props) =>
   (<Generic>
     <Div position={'absolute'} top={'0'} width={'100%'} height={'40em'}>
-      <SmallMap slug={'uganda'} />
+      {/* <SmallMap slug={props.id} /> */}
     </Div>
     <Container>
       <Div borderBottom={'2px solid #ddd9dc'} marginBottom={'.2em'}>

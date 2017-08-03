@@ -48,14 +48,19 @@ const Population = (props: Props) => {
         >
           WHAT IS THE AGE PROFILE?
         </Header>
+        {
+          props.populationTab.populationPerAgeBand &&
+          props.populationTab.populationPerAgeBand.length ?
+            <Div paddingRight={'40px'}>
+              <Chart
+                config={props.config.populationPerAgeBand}
+                data={props.populationTab.populationPerAgeBand}
+                height="140px"
+              />
+            </Div>
+            : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
+        }
 
-        <Div paddingRight={'40px'}>
-          <Chart
-            config={props.config.populationPerAgeBand}
-            data={props.populationTab.populationPerAgeBand}
-            height="140px"
-          />
-        </Div>
       </Grid.Column>
     </Grid>
   );
