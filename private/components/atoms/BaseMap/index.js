@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground, orange} from 'components/theme/semantic';
 import Router from 'next/router';
-import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
+// import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
 
@@ -305,7 +305,7 @@ class BaseMap extends Component {
     const mapContainerStyle = {width, height, position: 'relative'};
     return (
       <MapContainer>
-        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
         <div
           key={'map-mapbox'}
           ref={element => { if (element) this.draw(element, this.props.paint); }}

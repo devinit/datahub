@@ -17,7 +17,7 @@ import internationalResourcesConfig from 'visboxConfigs/internationalResourceTab
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {Div} from 'glamorous';
-import {lightGrey} from 'components/theme/semantic';
+import {lighterGrey} from 'components/theme/semantic';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
 
 type TabsProps = {
@@ -26,7 +26,7 @@ type TabsProps = {
 }
 
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<Div backgroundColor={lightGrey} width={'100%'} height={'20em'} />);
+  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id={'overview-tab'}>
@@ -49,7 +49,6 @@ const countryProfileTabs = (props: TabsProps) => {
 };
 const withData = graphql(TABS_QUERY, {
   options: (props) => {
-    console.log('with data', props);
     return {
       variables: {id: props.id}
     };

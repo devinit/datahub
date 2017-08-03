@@ -40,6 +40,7 @@ class Map extends Component {
     this.country = props.mapData.country;
     this.config = mapConfigs[this.country];
     this.init(props);
+    // onLoadCss();
   }
   state: State
   componentWillReceiveProps(nextProps: Props) {

@@ -15,6 +15,7 @@ import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable'
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import {CardContainer} from 'components/atoms/Container';
+import SmallMap from 'components/molecules/SmallMap';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
@@ -23,6 +24,9 @@ type Props = {
 }
 export default (props: Props) =>
   (<Generic>
+    <Div position={'absolute'} top={'0'} width={'100%'} height={'40em'}>
+      <SmallMap slug={'uganda'} />
+    </Div>
     <Container>
       <Div borderBottom={'2px solid #ddd9dc'} marginBottom={'.2em'}>
         <CardContainer >
@@ -71,7 +75,7 @@ export default (props: Props) =>
       <Pane label="Government Finance" id="government-finance-lower">
         <GovernmentFinanceLower />
       </Pane>
-      <Pane label="International Resources" id="government-finance-lower">
+      <Pane label="International Resources" id="international-resources-lower">
         <InternationalResourcesLower />
       </Pane>
     </Tabs>

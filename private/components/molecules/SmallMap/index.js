@@ -28,8 +28,8 @@ const bounds = [
 ];
 const viewportAndPaint = ({slug, spotlightCountry}: Props): ViewportAndPaint => {
   const entity: Country = countries.find(obj => obj.slug === slug);
-  const center = [entity.lng, entity.lat];
-  const zoom = spotlightCountry && spotlightCountry === 'uganda' ? 9 : 5;
+  const center = [entity.lng - 30, entity.lat];
+  const zoom = spotlightCountry && spotlightCountry === 'uganda' ? 9 : 3;
   const minZoom = spotlightCountry && spotlightCountry === 'uganda' ? 10 : 1;
   const viewport = { zoom, center, minZoom, scrollZoom: true, bounds};
   const data = [{
@@ -49,7 +49,7 @@ const smallMap = (props: Props) => {
   const {viewport, paint} = viewportAndPaint(props);
   return (
     <Nossr loading={<p>loading...</p>}>
-      <BaseMap paint={paint} viewport={viewport} height={400} />
+      <BaseMap paint={paint} viewport={viewport} height={450} />
     </Nossr>
   );
 };
