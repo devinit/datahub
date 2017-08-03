@@ -43,13 +43,18 @@ const Government = (props: Props) => {
           >
             HOW IS SPENDING ALLOCATED?
           </Header>
+          {
+            props.governmentFinance.spendingAllocation &&
+            props.governmentFinance.spendingAllocation.length ?
+              <Chart
+                config={props.config.spendingAllocation}
+                // TODO: Remove null data from server side
+                data={props.governmentFinance.spendingAllocation}
+                height="140px"
+              /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
 
-          <Chart
-            config={props.config.spendingAllocation}
-            // TODO: Remove null data from server side
-            data={props.governmentFinance.spendingAllocation}
-            height="140px"
-          />
+          }
+
         </Grid.Column>
       </Grid>
     </Container>

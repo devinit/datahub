@@ -81,21 +81,23 @@ class Tabs extends React.Component {
     });
   }
   _renderContent() {
-    const content = this.props.children.map((child, index) => {
-      const activeClass = (this.state.selected === index ? 'visible' : '');
-      return (
-        <div className={`tabs__content ${activeClass}`}>
-          {this.props.children[index]}
-        </div>
-      );
-    });
+    const content = this.props.children
+      .filter(child => child.props.label && child.props.id)
+      .map((child, index) => {
+        const activeClass = (this.state.selected === index ? 'visible' : '');
+        return (
+          <div className={`tabs__content ${activeClass}`} key={`__${child.props.id}__`} >
+            {child}
+          </div>
+        );
+      });
     return content;
   }
   _renderTitles() {
     const labels = (child, index) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
       return (
-        <li key={index}>
+        <li key={child.props.label}>
           <TabLink
             className={activeClass}
             onClick={(e) => this.handleClick(index, e)}
@@ -107,7 +109,9 @@ class Tabs extends React.Component {
     };
     return (
       <TabsContainer>
-        {this.props.children.map(labels)}
+        {this.props.children
+          .filter(child => child.props.label && child.props.id)
+          .map(labels)}
       </TabsContainer>
     );
   }
