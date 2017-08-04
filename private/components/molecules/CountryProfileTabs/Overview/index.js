@@ -17,16 +17,22 @@ const Overview = (props: Props) => {
   return (
     <Container>
       <Grid textAlign={'center'}>
-        <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
-          HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
-        </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.overViewTab.poorestPeople}</P>
-          <P>out of a population of 39 million people</P>
-        </Grid.Column>
+        {
+         props.countryType === RECIPIENT ?
+
+           <Grid.Column computer={5} tablet={16} mobile={16}>
+             <Header
+               textAlign="center"
+               as="h3"
+             >
+            HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
+          </Header>
+             <P fontSize={big} fontWeight={'bold'} color={red}>{props.overViewTab.poorestPeople}</P>
+             <P>out of a population of 39 million people</P>
+           </Grid.Column>
+          : ''
+        }
+
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header
