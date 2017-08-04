@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.0",
   "config": {
-    "api": "https://datahub-api-nrtckoasvg.now.sh/graphql"
+    "api": "https://datahub-api-pbgycyyvuo.now.sh/graphql"
   },
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "clean": "rm -rf ./node_modules/.cache ./next",
     "dev": "BABEL_ENV=development NODE_ENV=development && PORT=4040 node server.js",
     "build": "BABEL_ENV=development NODE_ENV=development npm run clean && next build",
-    "start": "NODE_ENV=production PORT=9090 node server.js",
+    "start": "NODE_ENV=production PORT=9999 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
@@ -20,7 +20,7 @@
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
-    "coverage": "BABEL_ENV=test jest && codecov",
+    "coverage": "BABEL_ENV=test jest -u && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -s public -o .out",
     "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js && npm run lessToJs",
@@ -34,9 +34,10 @@
     "graphql": "^0.10.3"
   },
   "dependencies": {
-    "@devinit/charts": "^1.3.14",
+    "@devinit/charts": "1.3.20",
+    "plottable": "3.1.1",
     "apollo-client": "^1.9.0-1",
-    "apollo-fetch": "^0.3.0",
+    "apollo-fetch": "^0.6.0",
     "approximate-number": "^2.0.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-inline-import-graphql-ast": "^2.0.0",
@@ -46,6 +47,7 @@
     "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
     "babel-plugin-wrap-in-js": "^1.1.1",
     "compression": "^1.6.2",
+    "css-loader": "^0.28.4",
     "d3": "^4.9.1",
     "dragdealer": "^0.9.9",
     "express": "^4.15.3",
@@ -54,8 +56,9 @@
     "graphql": "^0.10.3",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
-    "mapbox-gl": "^0.38.0",
-    "next": "^3.0.1-beta.18",
+    "lru-cache": "^4.1.1",
+    "mapbox-gl": "^0.39.1",
+    "next": "^3.0.1-beta.20",
     "next-routes": "^1.0.40",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
@@ -105,6 +108,7 @@
   },
   "git-pre-hooks": {
     "pre-push": [
+      "npm run test -- -u",
       "npm run lint"
     ]
   },
