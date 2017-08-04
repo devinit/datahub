@@ -3,10 +3,16 @@ import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {HeaderGroup} from 'components/atoms/Header';
 import {P} from 'glamorous';
+import RECIPIENT from 'lib/utils/constants';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 
-const Overview = (props: TabDataQuery) => {
+type Props = {
+  countryType: string,
+  ...TabDataQuery
+}
+
+const Overview = (props: Props) => {
   if (!props.overViewTab) return new Error('No OverView data');
   return (
     <Container>
