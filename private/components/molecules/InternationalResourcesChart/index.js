@@ -9,9 +9,9 @@ import Chart from '../../atoms/Chart/index';
 import Timeline from '../../atoms/Timeline/index';
 
 export type Props = {
-  data: any, // TODO: reuse FlowData type currently in the inflows outflows file
+  data: any[], // TODO: reuse types in schema.flow.js
   config: any,
-  startYear: string
+  startYear: number
 }
 
 type State = {
@@ -33,13 +33,13 @@ class InternationalResources extends React.Component {
   }
 
   // eslint-disable-next-line react/sort-comp
-  updateCurrentYear(year: string) {
+  updateCurrentYear(year: number) {
     if (year !== this.state.currentYear) {
       this.setState(this.getCurrentYear(year));
     }
   }
 
-  getCurrentYear(year: string) {
+  getCurrentYear(year: number) {
     const currentYearData = this.props.data.filter(d => d.year === year);
     return {
       currentYear: year,

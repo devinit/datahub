@@ -29,20 +29,24 @@ export type ResourcesOverTimeQueryVariables = {|
 
 export type ResourcesOverTimeQuery = {|
   internationalResources: ? {|
+    // TODO: add startyear
+    startYear: ?number,
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
-    resourcesOverTime: ? Array< {|
-      year: number,
-      value: number,
-      flow_name: string,
-      // Category i.e FDI, ODA
-      flow_category: ?string,
-      // flow either inflow or outflow
-      flow_type: ?string,
-      // in or out
-      direction: ?string,
-      color: ?string,
-    |} >,
+    resourcesOverTime: ? {|
+      data: ? Array< {|
+        year: number,
+        value: number,
+        flow_name: string,
+        // Category i.e FDI, ODA
+        flow_category: ?string,
+        // flow either inflow or outflow
+        flow_type: ?string,
+        // in or out
+        direction: ?string,
+        color: ?string,
+      |} >,
+    |},
   |},
 |};
 
@@ -93,62 +97,182 @@ export type SpotLightTabDataQueryVariables = {|
 
 export type SpotLightTabDataQuery = {|
   povertyTabRegional: ? {|
-    poorestPeople: ?string,
+    poorestPeople: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // WHAT IS THE AVERAGE LIFE EXPECTANCY?
-    lifeExpectancy: ?string,
+    lifeExpectancy: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // WHAT IS THE STANDARD OF LIVING SCORE?
-    stdOfLiving: ?string,
+    stdOfLiving: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
   // id is district slug
-  overViewTabRegional: ? {|
+  overviewTabRegional: ? {|
     // WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
     // can be no data or '12%'
-    poorestPeople: ?string,
+    poorestPeople: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO? eg 3.6m or 2.7bn
     // this is a total of local, donor and central government resources
-    regionalResources: ?string,
+    regionalResources: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // IndicatorDataColored is defined in country profile types
     // has local government, donor and central government
     regionalResourcesBreakdown: ? Array< {|
-      id: ?string,
-      year: ?number,
-      value: ?number,
-      name: ?string,
-      color: ?string,
+      data: ? {|
+        id: ?string,
+        year: ?number,
+        value: ?number,
+        name: ?string,
+        color: ?string,
+      |},
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
     |} >,
     // HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
-    localGovernmentSpendPerPerson: ?string,
+    localGovernmentSpendPerPerson: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
   populationTabRegional: ? {|
     // The total population of a given district and the population density in per sq km
-    totalPopulation: ?string,
-    populationDensity: ?string,
+    totalPopulation: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    populationDensity: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // Urban vs Rural population level
-    populationDistribution: ? Array< {|
-      group: ?string,
-      value: ?number,
-      year: ?number,
-    |} >,
-    averageDependencyRatio: ?string,
-    allAverageDependencyRatio: ?string,
+    populationDistribution: ? {|
+      data: ? Array< {|
+        group: ?string,
+        value: ?number,
+        year: ?number,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    averageDependencyRatio: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    allAverageDependencyRatio: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
   educationTabRegional: ? {|
     // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
-    pupilTeacherRatioGovtSchl: ?string,
-    pupilTeacherRatioOtherSchl: ?string,
+    pupilTeacherRatioGovtSchl: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    pupilTeacherRatioOtherSchl: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
-    studentsPassRate: ?string,
-    studentsPassDistrictRank: ?string,
+    studentsPassRate: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    studentsPassDistrictRank: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
-    primaryEducationfunding: ?string,
+    primaryEducationfunding: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
   healthTabRegional: ? {|
     // WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
-    districtPerformance: ?string,
+    districtPerformance: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
-    treatmeantOfTb: ?string,
+    treatmeantOfTb: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
-    healthCareFunding: ?string,
+    healthCareFunding: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
 |};
 
@@ -176,95 +300,221 @@ export type TabDataQuery = {|
   governmentFinance: ? {|
     // Total revenue for a particular year if not available return -1
     // uses gdp
-    totalRevenue: ?string,
-    grantsAsPcOfRevenue: ?string,
+    totalRevenue: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    grantsAsPcOfRevenue: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // for donut chart
-    spendingAllocation: ? Array< {|
-      value: ?number,
-      name: ?string,
-      color: ?string,
-    |} >,
+    spendingAllocation: ? {|
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+      data: ? Array< {|
+        value: ?number,
+        name: ?string,
+        color: ?string,
+      |} >,
+    |},
     // for treemap
     // such as constant 2015 USD for tree map
     currencyCode: ?string,
   |},
   povertyTab: ? {|
     // Poverty reduction over time area chart trend
-    poverty190Trend: ? Array< {|
-      id: ?string,
-      year: ?number,
-      value: ?number,
-      name: ?string,
-    |} >,
+    poverty190Trend: ? {|
+      data: ? Array< {|
+        id: ?string,
+        year: ?number,
+        value: ?number,
+        name: ?string,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // how deep is poverty %
-    depthOfExtremePoverty: ?string,
+    depthOfExtremePoverty: ? {|
+      value: ?string,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
     // Recipients: how income is distributed, % of income received by each quintil
-    incomeDistTrend: ? Array< {|
-      value: ?number,
-      quintileName: ?string,
-    |} >,
+    incomeDistTrend: ? {|
+      data: ? Array< {|
+        value: ?number,
+        quintileName: ?string,
+      |} >,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
   |},
   populationTab: ? {|
     // total population in a country
-    population: ?string,
+    population: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // Urban vs Rural population level
-    populationDistribution: ? Array< {|
-      group: ?string,
-      value: ?number,
-      year: ?number,
-    |} >,
+    populationDistribution: ? {|
+      data: ? Array< {|
+        group: ?string,
+        value: ?number,
+        year: ?number,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // Number of people in 3 age bands (65+, 15- 65, 0 - 14)
-    populationPerAgeBand: ? Array< {|
-      band: ?string,
-      value: ?number,
-      year: ?number,
-    |} >,
+    populationPerAgeBand: ? {|
+      data: ? Array< {|
+        band: ?string,
+        value: ?number,
+        year: ?number,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
   internationalResources: ? {|
     // Gross National Income
-    GNI: ?string,
+    GNI: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // Net ODA received, % of GNI for recipient countries
-    netODAOfGNIIn: ?string,
+    netODAOfGNIIn: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // Net ODA out, % of GNI for recipient countries
-    netODAOfGNIOut: ?string,
+    netODAOfGNIOut: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // Whats the mix of resources can be for donors (out flows) or receipient (in flows)
     // this is for the donut chart
-    mixOfResources: ? Array< {|
-      flow_name: string,
-      value: number,
-    |} >,
+    mixOfResources: ? {|
+      data: ? Array< {|
+        flow_name: string,
+        value: number,
+      |} >,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
-    resourcesOverTime: ? Array< {|
-      year: number,
-      // flow either inflow or outflow
-      flow_type: ?string,
-      // Category i.e FDI, ODA
-      flow_category: ?string,
-      value: number,
-    |} >,
+    resourcesOverTime: ? {|
+      data: ? Array< {|
+        year: number,
+        // flow either inflow or outflow
+        flow_type: ?string,
+        // Category i.e FDI, ODA
+        flow_category: ?string,
+        value: number,
+      |} >,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
   |},
-  overViewTab: ? {|
+  overviewTab: ? {|
     countryType: ?string,
     // how many of the poorest people globally live in a country
-    poorestPeople: ?string,
+    poorestPeople: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // total population for a given country
-    population: ?string,
-    domesticResources: ?string,
-    internationalResources: ?string,
+    population: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    domesticResources: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    internationalResources: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // recipient countries $PPP, both donor and recipient
-    governmentSpendPerPerson: ?string,
+    governmentSpendPerPerson: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // donor: gross nation income per capit GNI
-    averageIncomerPerPerson: ? Array< {|
-      year: ?number,
-      value: ?number,
-      id: ?string,
-      name: ?string,
-    |} >,
+    averageIncomerPerPerson: ? {|
+      data: ? Array< {|
+        year: ?number,
+        value: ?number,
+        id: ?string,
+        name: ?string,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
     // donor: Income share by quintile
-    incomeDistTrend: ? Array< {|
-      value: ?number,
-      quintileName: ?string,
-    |} >,
+    incomeDistTrend: ? {|
+      data: ? Array< {|
+        value: ?number,
+        quintileName: ?string,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
   |},
 |};
