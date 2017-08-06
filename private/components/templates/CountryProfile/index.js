@@ -39,7 +39,7 @@ export default (props: Props) =>
                       General Picture
                     </Header.Content>
                   </Header>
-                  <CountryProfileSearch country="Uganda" />
+                  <CountryProfileSearch country={props.id} />
                   <Lead>
                     Explore this in-depth profile of Uganda to
                     find out overall levels of poverty, income distribution,
