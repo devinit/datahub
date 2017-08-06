@@ -16,7 +16,7 @@ type Props = {
 }
 
 const Overview = (props: Props) => {
-  if (!props.overviewTab) return new Error('No OverView data');
+  if (!props.overViewTab) throw new Error('No OverView data');
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -26,7 +26,7 @@ const Overview = (props: Props) => {
              <Header textAlign="center" as="h3">
               HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
             </Header>
-             <P fontSize={big} fontWeight={'bold'} color={red}>{props.overviewTab.poorestPeople}</P>
+             <P fontSize={big} fontWeight={'bold'} color={red}>{props.overViewTab.poorestPeople}</P>
              <P>out of a population of 39 million people</P>
            </Grid.Column>
           :
@@ -35,11 +35,11 @@ const Overview = (props: Props) => {
               WHAT IS THE AVERAGE INCOME PER PERSON PER YEAR?
             </Header>
              <Div paddingRight={'40px'}>
-               { props.overviewTab.averageIncomerPerPerson &&
-                props.overviewTab.averageIncomerPerPerson.length ?
+               { props.overViewTab.averageIncomerPerPerson &&
+                props.overViewTab.averageIncomerPerPerson.length ?
                   <Chart
                     config={props.config.area}
-                    data={props.overviewTab.averageIncomerPerPerson}
+                    data={props.overViewTab.averageIncomerPerPerson}
                     height="140px"
                   /> : <TabsNoData />
                }
@@ -51,16 +51,16 @@ const Overview = (props: Props) => {
             <Grid.Column computer={5} tablet={16} mobile={16}>
               <Header textAlign="center" as="h3"> WHAT RESOURCES ARE AVAILABLE?</Header>
               <P>Domestic public</P>
-              <P fontSize={big} fontWeight={'bold'} color={red}>{props.overviewTab.domesticResources}</P>
+              <P fontSize={big} fontWeight={'bold'} color={red}>{props.overViewTab.domesticResources}</P>
               <P>International</P>
-              <P fontSize={big} fontWeight={'bold'}>{props.overviewTab.internationalResources}</P>
+              <P fontSize={big} fontWeight={'bold'}>{props.overViewTab.internationalResources}</P>
             </Grid.Column> : ''
         }
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
           HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.overviewTab.governmentSpendPerPerson}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{props.overViewTab.governmentSpendPerPerson}</P>
           <P>out of a population of 39 million people</P>
         </Grid.Column>
         {
@@ -70,15 +70,15 @@ const Overview = (props: Props) => {
               HOW IS INCOME DISTRIBUTED?
             </Header>
             {
-            props.overviewTab.incomeDistTrend && props.overviewTab.incomeDistTrend.length ?
+            props.overViewTab.incomeDistTrend && props.overViewTab.incomeDistTrend.length ?
               <div>
                 <Chart
                   config={props.config.histogram}
-                  data={props.overviewTab.incomeDistTrend}
+                  data={props.overViewTab.incomeDistTrend}
                   height="120px"
                 />
                 <P fontWeight="bold" textAlign="left" marginTop="1em">
-                  Bottom quintile has {props.overviewTab.incomeDistTrend[0].value} % of the income.
+                  Bottom quintile has {props.overViewTab.incomeDistTrend[0].value} % of the income.
                 </P>
               </div>
               : <TabsNoData />

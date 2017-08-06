@@ -5,7 +5,7 @@ import type {Viewport, PaintMap, MapData} from 'components/atoms/BaseMap';
 // import config from 'components/molecules/Map';
 import Nossr from 'react-no-ssr';
 import countries from 'components/organisms/CountrySearchInput/data';
-import {red} from 'components/theme/semantic';
+import {red, white} from 'components/theme/semantic';
 
 type Props = {
   slug: string;
@@ -41,7 +41,7 @@ const viewportAndPaint = ({slug, spotlightCountry}: Props): ViewportAndPaint => 
     value: 0,
     slug: entity.slug,
     name: entity.name }];
-  const paint = ({data}: PaintMap);
+  const paint = ({data, background: white}: PaintMap);
   return {viewport, paint};
 };
 

@@ -38,7 +38,8 @@ export type PaintMap = {
   propertyName?: string,
   propertyLayer?: string,
   paintProperty?: string,
-  slug?: string // for only showing a single country
+  slug?: string, // for only showing a single country
+  background?: string
 }
 export type Meta = {
   uom_display: string,
@@ -285,7 +286,7 @@ class BaseMap extends Component {
     if (!this.map && !this._mapLoaded) {
       this._map.on('load', () => {
         this._mapLoaded = true;
-        this._map.setPaintProperty('background', 'background-color', seaBackground);
+        this._map.setPaintProperty('background', 'background-color', paint.background || seaBackground);
         if (paint.data && paint.data.length) this.colorMap(paint);
         this._map.dragRotate.disable();
         this._map.touchZoomRotate.disableRotation();
