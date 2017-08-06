@@ -4,13 +4,16 @@ import SearchInput from 'components/molecules/SearchInput';
 import data from './data';
 
 type Props = {
-  visible: boolean
+  visible: boolean,
+  profile: boolean,
+  placeholder: string,
 }
 const SearchwithData = (props: Props) =>
   (<SearchInput
     countries={data}
     visible={props.visible}
-    placeholder={'Type a country name'}
+    profile={props.profile}
+    placeholder={props.placeholder}
   />);
 
 

@@ -41,6 +41,7 @@ module.exports = {
     'no-console': 0,
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
+    'no-unused-vars': 2,
     'react/jsx-filename-extension': [
       2,
       {

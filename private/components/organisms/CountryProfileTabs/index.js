@@ -3,8 +3,6 @@ import React from 'react';
 import { graphql} from 'react-apollo';
 import {
   GovernmentFinance,
-  GovernmentFinanceLower,
-  InternationalResourcesLower,
   InternationalResources,
   Overview,
   Population,
@@ -66,7 +64,7 @@ const withData = graphql(TABS_QUERY, {
     };
   },
   props: ({data}) => {
-    const {error, loading} = data;
+    const {error} = data;
     if (error) throw Error(error);
     return data;
   }});

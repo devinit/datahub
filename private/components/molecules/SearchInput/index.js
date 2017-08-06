@@ -1,12 +1,10 @@
 // @flow
 import React from 'react';
-import glamorous, {Div} from 'glamorous';
-import {Container} from 'semantic-ui-react';
-import {SocialMediaLink} from 'components/atoms/Link';
+import {Div, H1} from 'glamorous';
+import {Icon} from 'semantic-ui-react';
 import Link from 'next/link';
 import Router from 'next/router';
-import {List} from 'components/atoms/SearchInput/list';
-import {Input, InputContainer} from '../../atoms/SearchInput/input';
+import {Input, InputContainer, List} from 'components/atoms/SearchInput';
 
 
 type Country ={
@@ -16,6 +14,7 @@ type Country ={
 export type Props = {
   countries: Country[],
   placeholder: string,
+  profile: boolean,
   visible: boolean,
   onSelected?: (any) => void
 };
@@ -35,6 +34,7 @@ class SearchInput extends React.Component {
       value: '',
       showList: false
     };
+    this.isForCountryProfile = props.profile;
   }
   state: State;
   onKeyDown(e: Object) {
@@ -76,26 +76,33 @@ class SearchInput extends React.Component {
     if (this.props.onSelected) return this.props.onSelected(country.slug);
     return Router.push(`/country?slug=${country.slug}`, `/country/${country.slug}`);
   }
+  isForCountryProfile: boolean
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
   }
   render() {
     return (
-      <InputContainer
-        visible={this.props.visible}
-      >
-        <Container>
+      <Div>
+        <InputContainer visible={this.props.visible} profile={this.isForCountryProfile}>
+          {
+              this.isForCountryProfile ?
+                <H1 flex={'0 1'} textTransform="capitalize">{this.props.placeholder}
+                  <Icon name="caret down" />
+                </H1> : ''
+            }
           <Input
             value={this.state.value}
-            placeholder={this.props.placeholder}
-            onBlur={(e) => this.setState({showList: false})}
-            onFocus={(e) => this.setState({showList: true})}
+            profile={this.isForCountryProfile}
+            placeholder={this.isForCountryProfile ? '' : this.props.placeholder}
+            onBlur={() => this.setState({showList: false})}
+            onFocus={() => this.setState({showList: true})}
             onChange={(e) => this.onChange(e.target.value)}
             onKeyDown={(e) => this.onKeyDown(e)}
           />
-          <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
-            <List >
-              { this.state.countries ?
+        </InputContainer>
+        <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
+          <List >
+            { this.state.countries ?
                   this.state.countries
                   .map((country, i) =>
                     (<li
@@ -106,10 +113,9 @@ class SearchInput extends React.Component {
                     </li>))
                     : <li> Error getting countries </li>
               }
-            </List>
-          </Div>
-        </Container>
-      </InputContainer>
+          </List>
+        </Div>
+      </Div>
     );
   }
 }

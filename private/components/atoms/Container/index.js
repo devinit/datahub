@@ -1,6 +1,5 @@
 import glamorous from 'glamorous';
-import theme from 'components/theme';
-import {lightGrey, seaBackground, black, white} from 'components/theme/semantic';
+import {lightGrey, seaBackground, white} from 'components/theme/semantic';
 
 export const Container = glamorous.div({
   width: '100%',
@@ -25,10 +24,10 @@ export const CardContainer = glamorous.div({
   padding: '1.5em',
   overflow: 'visible',
   marginBottom: '0em',
-  height: '400px'
+  height: '480px'
 });
 export const ProfileHeader = glamorous.div({
-  height: '380px',
+  height: '380px', // TODO -- use media queries
   overflow: 'hidden',
   borderBottom: `1px solid ${lightGrey}`,
   background: white,

@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import glamorous, {Div, A, Span, Section} from 'glamorous';
-import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
-import { red, lightBlack, white, lighterGrey} from 'components/theme/semantic';
+import {Div, A, Span} from 'glamorous';
+import { Container, Header, Grid, Icon, Button} from 'semantic-ui-react';
+import { red, white} from 'components/theme/semantic';
 import Pane from 'components/atoms/Pane';
 import Tabs from 'components/molecules/Tabs';
 import {
@@ -10,9 +10,9 @@ import {
   InternationalResourcesLower,
 } from 'components/molecules/CountryProfileTabs';
 import {SectionHeader, Lead} from 'components/atoms/Header';
-import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
+import {DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
-import CountryProfileSearch from 'components/molecules/CountryProfileSearch';
+import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import {CardContainer, ProfileHeader} from 'components/atoms/Container';
 import SmallMap from 'components/molecules/SmallMap';
@@ -39,7 +39,7 @@ export default (props: Props) =>
                       General Picture
                     </Header.Content>
                   </Header>
-                  <CountryProfileSearch country={props.id} />
+                  <CountrySearch visible placeholder={props.id} profile />
                   <Lead>
                     Explore this in-depth profile of Uganda to
                     find out overall levels of poverty, income distribution,
