@@ -19,9 +19,6 @@ type Props = {
 const Overview = (props: Props) => {
   if (!props.overviewTab) return new Error('No OverView data');
   const overviewTab = props.overviewTab;
-  if (overviewTab.poorestPeople && props.countryType === RECIPIENT) {
-
-  }
   return (
     <Container>
       <Grid textAlign={'center'}>
