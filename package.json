@@ -51,7 +51,7 @@
     "dragdealer": "^0.9.9",
     "express": "^4.15.3",
     "glamor": "^2.20.25",
-    "glamorous": "^3.23.4",
+    "glamorous": "^4.1.0",
     "graphql": "^0.10.3",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
@@ -91,7 +91,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "7.0.1",
-    "flow-bin": "^0.51.0",
+    "flow-bin": "^0.52.0",
     "flow-remove-types": "^1.2.1",
     "fs-extra": "^4.0.0",
     "git-pre-hooks": "^1.2.0",
@@ -105,7 +105,7 @@
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10"
   },
-   "git-pre-hooks": {
+  "git-pre-hooks": {
     "pre-push": [
       "npm run lint",
       "npm run test"

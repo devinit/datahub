@@ -15,7 +15,7 @@ export type Props = {
 }
 
 type State = {
-  currentYear: string,
+  currentYear: number,
   currentYearTotal: string,
   currentFlowTypes: any,
   currentYearData: any,
@@ -90,7 +90,7 @@ class InternationalResources extends React.Component {
               height="400px"
               data={this.props.data}
               config={this.state.timeAreaConfig}
-              onYearChanged={year => this.updateCurrentYear(year)}
+              onYearChanged={year => this.updateCurrentYear(Number(year))}
             />
           </Grid.Column>
 

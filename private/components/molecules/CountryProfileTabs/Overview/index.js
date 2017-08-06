@@ -3,9 +3,10 @@ import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import TabsNoData from 'components/atoms/TabsNoData';
 import {P, Div} from 'glamorous';
-import {RECIPIENT, DONOR} from 'lib/utils/constants';
+import {RECIPIENT, DONOR, NoData} from 'lib/utils/constants';
 import {big} from 'components/theme';
 import type {OverviewChartConfigs} from 'visboxConfigs/overviewTabCharts';
+import TabsToolTip from 'components/molecules/TabsToolTip';
 import Chart from 'components/atoms/Chart';
 import {red} from 'components/theme/semantic';
 
@@ -17,16 +18,26 @@ type Props = {
 
 const Overview = (props: Props) => {
   if (!props.overviewTab) return new Error('No OverView data');
+  const overviewTab = props.overviewTab;
+  if (overviewTab.poorestPeople && props.countryType === RECIPIENT) {
+
+  }
   return (
     <Container>
       <Grid textAlign={'center'}>
         {
-         props.countryType === RECIPIENT ?
+         props.countryType === RECIPIENT && overviewTab.poorestPeople ?
            <Grid.Column computer={5} tablet={16} mobile={16}>
              <Header textAlign="center" as="h3">
               HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
             </Header>
-             <P fontSize={big} fontWeight={'bold'} color={red}>{props.overviewTab.poorestPeople}</P>
+             {
+                overviewTab.poorestPeople.toolTip ?
+                  <TabsToolTip {...overviewTab.poorestPeople.toolTip} /> : ''
+              }
+             <P fontSize={big} fontWeight={'bold'} color={red}> {
+               overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData
+               }</P>
              <P>out of a population of 39 million people</P>
            </Grid.Column>
           :
@@ -34,14 +45,17 @@ const Overview = (props: Props) => {
              <Header textAlign="center" as="h3">
               WHAT IS THE AVERAGE INCOME PER PERSON PER YEAR?
             </Header>
+             {
+              overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip ?
+                <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} /> : ''
+            }
              <Div paddingRight={'40px'}>
-               { props.overviewTab.averageIncomerPerPerson &&
-                props.overviewTab.averageIncomerPerPerson.length ?
-                  <Chart
-                    config={props.config.area}
-                    data={props.overviewTab.averageIncomerPerPerson}
-                    height="140px"
-                  /> : <TabsNoData />
+               { overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.data ?
+                 <Chart
+                   config={props.config.area}
+                   data={overviewTab.averageIncomerPerPerson.data}
+                   height="140px"
+                 /> : <TabsNoData />
                }
              </Div>
            </Grid.Column>
@@ -51,16 +65,25 @@ const Overview = (props: Props) => {
             <Grid.Column computer={5} tablet={16} mobile={16}>
               <Header textAlign="center" as="h3"> WHAT RESOURCES ARE AVAILABLE?</Header>
               <P>Domestic public</P>
-              <P fontSize={big} fontWeight={'bold'} color={red}>{props.overviewTab.domesticResources}</P>
+              <P fontSize={big} fontWeight={'bold'} color={red}>{
+                overviewTab.domesticResources && overviewTab.domesticResources.value ?
+                overviewTab.domesticResources.value : NoData
+                }</P>
               <P>International</P>
-              <P fontSize={big} fontWeight={'bold'}>{props.overviewTab.internationalResources}</P>
+              <P fontSize={big} fontWeight={'bold'}>{
+                 overviewTab.internationalResources && overviewTab.internationalResources.value ?
+                  overviewTab.internationalResources.value : NoData
+                }</P>
             </Grid.Column> : ''
         }
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
           HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.overviewTab.governmentSpendPerPerson}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.value ?
+            overviewTab.governmentSpendPerPerson.value : NoData
+            }</P>
           <P>out of a population of 39 million people</P>
         </Grid.Column>
         {
@@ -70,7 +93,8 @@ const Overview = (props: Props) => {
               HOW IS INCOME DISTRIBUTED?
             </Header>
             {
-            props.overviewTab.incomeDistTrend && props.overviewTab.incomeDistTrend.length ?
+            overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.data
+            && overviewTab.incomeDistTrend.data.length ?
               <div>
                 <Chart
                   config={props.config.histogram}
@@ -78,7 +102,7 @@ const Overview = (props: Props) => {
                   height="120px"
                 />
                 <P fontWeight="bold" textAlign="left" marginTop="1em">
-                  Bottom quintile has {props.overviewTab.incomeDistTrend[0].value} % of the income.
+                  Bottom quintile has {overviewTab.incomeDistTrend.data[0].value} % of the income.
                 </P>
               </div>
               : <TabsNoData />

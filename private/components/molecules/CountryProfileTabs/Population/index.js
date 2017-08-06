@@ -5,6 +5,7 @@ import glamorous, {P, Div} from 'glamorous';
 import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
 import {big} from 'components/theme';
+import {NoData} from 'lib/utils/constants';
 import {red} from 'components/theme/semantic';
 
 type Props = {
@@ -23,7 +24,10 @@ const Population = (props: Props) => {
         >
           WHAT IS THE POPULATION
         </Header>
-        <P fontSize={big} fontWeight={'bold'} color={red}>{props.populationTab.population}</P>
+        <P fontSize={big} fontWeight={'bold'} color={red}>{
+          props.populationTab.population && props.populationTab.population.value ?
+          props.populationTab.population.value : NoData
+          }</P>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
