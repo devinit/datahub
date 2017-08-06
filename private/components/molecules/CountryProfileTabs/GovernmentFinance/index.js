@@ -2,6 +2,7 @@
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import {P} from 'glamorous';
+import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
 import {red} from 'components/theme/semantic';
 import {big} from 'components/theme';
@@ -51,8 +52,7 @@ const Government = (props: Props) => {
                 // TODO: Remove null data from server side
                 data={props.governmentFinance.spendingAllocation}
                 height="140px"
-              /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
-
+              /> : <TabsNoData />
           }
 
         </Grid.Column>

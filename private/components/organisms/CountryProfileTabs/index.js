@@ -18,8 +18,9 @@ import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {Div} from 'glamorous';
 import {lighterGrey} from 'components/theme/semantic';
-import RECIPIENT from 'lib/utils/constants';
+import {RECIPIENT} from 'lib/utils/constants';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
+import overviewConfig from '../../../visboxConfigs/overviewTabCharts';
 
 type TabsProps = {
   loading: boolean,
@@ -34,7 +35,7 @@ const countryProfileTabs = (props: TabsProps) => {
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id={'overview-tab'}>
-        <Overview {...props} countryType={countryType} />
+        <Overview {...props} countryType={countryType} config={overviewConfig} />
       </Pane>
       {
         countryType === RECIPIENT ?

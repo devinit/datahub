@@ -2,6 +2,7 @@
 import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
 import React from 'react';
 import glamorous, {P, Div} from 'glamorous';
+import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
@@ -31,14 +32,17 @@ const Population = (props: Props) => {
         >
           WHAT IS THE URBAN VS RURAL SPLIT?
         </Header>
-
-        <Div paddingRight={'40px'}>
-          <Chart
-            config={props.config.populationDistribution}
-            data={props.populationTab.populationDistribution}
-            height="140px"
-          />
-        </Div>
+        {
+          props.populationTab.populationDistribution &&
+          props.populationTab.populationDistribution.length ?
+            <Div paddingRight={'40px'}>
+              <Chart
+                config={props.config.populationDistribution}
+                data={props.populationTab.populationDistribution}
+                height="140px"
+              />
+            </Div> : <TabsNoData />
+        }
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -58,7 +62,7 @@ const Population = (props: Props) => {
                 height="140px"
               />
             </Div>
-            : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
+            : <TabsNoData />
         }
 
       </Grid.Column>
