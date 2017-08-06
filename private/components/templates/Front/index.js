@@ -1,18 +1,17 @@
 // @flow
 import React from 'react';
-import {Container, Grid, Header, Icon, Table, Button} from 'semantic-ui-react';
-import glamorous, {Div, P} from 'glamorous';
+import {Container, Grid, Header, Icon, Button} from 'semantic-ui-react';
+import {Div, P} from 'glamorous';
 import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
-import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import NoSSR from 'react-no-ssr';
-import {HeaderGroup, SectionHeader} from 'components/atoms/Header';
+import {SectionHeader} from 'components/atoms/Header';
 import {LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import Map from 'components/organisms/Map';
 import CountrySeachInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
-import { red, white, lighterGrey } from 'components/theme/semantic';
+import { red, white} from 'components/theme/semantic';
 import {connect} from 'react-redux';
-import type {State, AppState} from 'lib/reducers';
+import type {State} from 'lib/reducers';
 import Generic from '../Generic';
 
 type Props = {
@@ -24,7 +23,7 @@ const front = (props: Props) => {
   return (
     <Generic>
       <GlobalPictureCountrySeach>
-        <CountrySeachInput visible />
+        <CountrySeachInput visible profile={false} />
       </GlobalPictureCountrySeach>
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>

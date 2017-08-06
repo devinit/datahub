@@ -5,4 +5,5 @@ import CountryProfile from '.';
 
 storiesOf('Templates DontTest', module)
   .addDecorator(withApolloProvider())
-  .add('Country Profile', () => <CountryProfile id={'uganda'} />);
+  .add('Country Profile uganda', () => <CountryProfile id={'uganda'} />)
+  .add('Country Profile Austria', () => <CountryProfile id={'austria'} />);

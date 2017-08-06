@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import glamorous, {Div} from 'glamorous';
+import {Div} from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import type { Element } from 'react';
 import Footer from '../../molecules/Footer';

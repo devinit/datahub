@@ -2,9 +2,8 @@
 /* eslint-disable react/no-danger */
 import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
-import {lightGrey, red, seaBackground, orange} from 'components/theme/semantic';
+import {lightGrey, seaBackground, orange} from 'components/theme/semantic';
 import Router from 'next/router';
-// import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
 
@@ -188,6 +187,9 @@ class BaseMap extends Component {
                 .setHTML(this.tipTemplate(obj.pointData))
                 .addTo(this._map);
   }
+  // addSimplePopUp(feature: Feature, pos: Point) {
+  //   if (!feature.properties) throw new Error('Properties missing from map feature');
+  // }
   mouseHoverEvent() {
     this._map.on('mousemove', (e) => {
       const features: Feature[] = this._map.queryRenderedFeatures(e.point);
@@ -291,7 +293,7 @@ class BaseMap extends Component {
         this._map.dragRotate.disable();
         this._map.touchZoomRotate.disableRotation();
         this.zoomListener();
-        if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
+        if (this.props.meta || paint.data) this.mouseHoverEvent(); // TODO turn into a this.meta.
         this.mouseMapClick(paint);
         this.dragListener();
         this.persistZoomAndCenterLevel();
@@ -306,7 +308,6 @@ class BaseMap extends Component {
     const mapContainerStyle = {width, height, position: 'relative'};
     return (
       <MapContainer>
-        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
         <div
           key={'map-mapbox'}
           ref={element => { if (element) this.draw(element, this.props.paint); }}

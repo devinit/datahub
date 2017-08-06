@@ -6,14 +6,14 @@ import data from './data';
 type Props = {
   visible: boolean,
   profile: boolean,
-  placeholder: string,
+  placeholder?: string,
 }
 const SearchwithData = (props: Props) =>
   (<SearchInput
     countries={data}
     visible={props.visible}
     profile={props.profile}
-    placeholder={props.placeholder}
+    placeholder={props.placeholder || 'Type a country name...'}
   />);
 
 

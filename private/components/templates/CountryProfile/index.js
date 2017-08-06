@@ -27,11 +27,11 @@ export default (props: Props) =>
   (<Generic>
     <ProfileHeader>
       <SmallMap slug={props.id} />
-      <Div position="absolute" top="0" width="100%">
+      <Div width="100%" position="absolute" top="0">
         <Container>
           <Grid>
             <Grid.Row>
-              <Grid.Column width={12}>
+              <Grid.Column width={10}>
                 <CardContainer>
                   <H4 color={red}>
                     <Icon name="globe" color={'red'} />General Picture
