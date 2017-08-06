@@ -17,7 +17,7 @@ type Props = {
 }
 
 const Overview = (props: Props) => {
-  if (!props.overviewTab) return new Error('No OverView data');
+  if (!props.overviewTab) throw new Error('No OverView data');
   const overviewTab = props.overviewTab;
   return (
     <Container>

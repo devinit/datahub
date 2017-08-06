@@ -14,7 +14,7 @@ type Props = {
 }
 
 const Population = (props: Props) => {
-  if (!props.populationTab) return new Error('No Population data');
+  if (!props.populationTab) throw new Error('No Population data');
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>

@@ -41,7 +41,7 @@ const getResourcesOverTime = (data) =>
   .reduce((_, d) => d);
 
 const International = (props: Props) => {
-  if (!props.internationalResources) return new Error('No international resources data');
+  if (!props.internationalResources) throw new Error('No international resources data');
   const internationalResources = props.internationalResources;
   const resourcesOverTime = props.internationalResources.resourcesOverTime ?
     getResourcesOverTime(props.internationalResources.resourcesOverTime) : null;

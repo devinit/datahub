@@ -13,7 +13,7 @@ type Props = {
 }
 
 const Government = (props: Props) => {
-  if (!props.governmentFinance) return new Error('No Government Finance data');
+  if (!props.governmentFinance) throw new Error('No Government Finance data');
   return (
     <Container>
       <Grid textAlign={'center'}>
