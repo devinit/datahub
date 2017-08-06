@@ -49,7 +49,7 @@ const smallMap = (props: Props) => {
   const {viewport, paint} = viewportAndPaint(props);
   return (
     <Nossr loading={<p>loading...</p>}>
-      <BaseMap paint={paint} viewport={viewport} height={450} />
+      <BaseMap paint={paint} viewport={viewport} />
     </Nossr>
   );
 };

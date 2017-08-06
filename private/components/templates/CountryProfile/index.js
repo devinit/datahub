@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import glamorous, {Div, A, Span} from 'glamorous';
+import glamorous, {Div, A, Span, Section} from 'glamorous';
 import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
 import { red, lightBlack, white, lighterGrey} from 'components/theme/semantic';
 import Pane from 'components/atoms/Pane';
@@ -14,7 +14,7 @@ import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountryProfileSearch from 'components/molecules/CountryProfileSearch';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
-import {CardContainer} from 'components/atoms/Container';
+import {CardContainer, ProfileHeader} from 'components/atoms/Container';
 import SmallMap from 'components/molecules/SmallMap';
 import Generic from '../Generic';
 import data from './data';
@@ -22,43 +22,46 @@ import data from './data';
 type Props = {
   id: string
 }
+
 export default (props: Props) =>
   (<Generic>
-    <Div position={'absolute'} top={'0'} width={'100%'} height={'40em'}>
-      {/* <SmallMap slug={props.id} /> */}
-    </Div>
-    <Container>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={10}>
-            <CardContainer>
-              <Header>
-                <Icon name="globe" />
-                <Header.Content>
-                  General Picture
-                </Header.Content>
-              </Header>
-              <CountryProfileSearch country="Uganda" />
-              <Lead>
-                Explore this in-depth profile of Uganda to
-                find out overall levels of poverty, income distribution,
-                division of wealth and more. Discover how national
-                and sub-national revenue is generated.
-              </Lead>
-              <Span marginTop={'1.5em'} display={'block'}>
-                Jump to <A color={red}>International resources</A>
-              </Span>
-              <Div marginTop={'1.5em'}>
-                <Button icon="facebook f" />
-                <Button icon="twitter" />
-                <Button icon="google plus" />
-                <Button icon="mail outline" />
-              </Div>
-            </CardContainer>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Container>
+    <ProfileHeader>
+      <SmallMap slug={props.id} />
+      <Div position="absolute" top="0" width="100%">
+        <Container>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column width={12}>
+                <CardContainer>
+                  <Header>
+                    <Icon name="globe" />
+                    <Header.Content>
+                      General Picture
+                    </Header.Content>
+                  </Header>
+                  <CountryProfileSearch country="Uganda" />
+                  <Lead>
+                    Explore this in-depth profile of Uganda to
+                    find out overall levels of poverty, income distribution,
+                    division of wealth and more. Discover how national
+                    and sub-national revenue is generated.
+                  </Lead>
+                  <Span marginTop={'1.5em'} display={'block'}>
+                    Jump to <A color={red}>International resources</A>
+                  </Span>
+                  <Div marginTop={'1.5em'}>
+                    <Button icon="facebook f" />
+                    <Button icon="twitter" />
+                    <Button icon="google plus" />
+                    <Button icon="mail outline" />
+                  </Div>
+                </CardContainer>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </Div>
+    </ProfileHeader>
     <CountryProfileTopTabs id={props.id} />
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">

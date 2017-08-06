@@ -53,8 +53,8 @@ type Props = {
   paint: PaintMap,
   meta?: Meta,
   viewport?: Viewport,
-  width?: number,
-  height?: number
+  width?: number | string,
+  height?: number | string
 }
 
 type MapBoxOptions = {

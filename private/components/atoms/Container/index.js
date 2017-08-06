@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
 import theme from 'components/theme';
-import {lightGrey, seaBackground, black} from 'components/theme/semantic';
+import {lightGrey, seaBackground, black, white} from 'components/theme/semantic';
 
 export const Container = glamorous.div({
   width: '100%',
@@ -24,7 +24,15 @@ export const CardContainer = glamorous.div({
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
   padding: '1.5em',
   overflow: 'visible',
-  marginBottom: '0em'
+  marginBottom: '0em',
+  height: '400px'
 });
-
+export const ProfileHeader = glamorous.div({
+  height: '380px',
+  overflow: 'hidden',
+  borderBottom: `1px solid ${lightGrey}`,
+  background: white,
+  position: 'relative'
+});
+// TODO use media queries
 export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});
