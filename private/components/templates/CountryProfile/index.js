@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import {Div, A, Span} from 'glamorous';
-import { Container, Header, Grid, Icon, Button} from 'semantic-ui-react';
+import {Div, A, Span, H4} from 'glamorous';
+import { Container, Grid, Icon, Button} from 'semantic-ui-react';
 import { red, white} from 'components/theme/semantic';
 import Pane from 'components/atoms/Pane';
 import Tabs from 'components/molecules/Tabs';
@@ -33,12 +33,9 @@ export default (props: Props) =>
             <Grid.Row>
               <Grid.Column width={12}>
                 <CardContainer>
-                  <Header>
-                    <Icon name="globe" />
-                    <Header.Content>
-                      General Picture
-                    </Header.Content>
-                  </Header>
+                  <H4 color={red}>
+                    <Icon name="globe" color={'red'} />General Picture
+                  </H4>
                   <CountrySearch visible placeholder={props.id} profile />
                   <Lead>
                     Explore this in-depth profile of Uganda to
