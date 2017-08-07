@@ -9,18 +9,15 @@ type Props = {
   options?: Array<Object>
 };
 const Wrapper = glamorous.div({
-  width: '440px',
-  top: '30px',
   opacity: '0.9',
-  left: '415px',
   zIndex: '300!important',
   border: '1px solid #e4e4e4',
-  position: 'absolute',
   fontSize: '.9rem',
   backgroundColor: '#fff',
   color: '#666',
   borderRadius: '3px',
-  padding: '10px'
+  padding: '10px',
+  overflow: 'hidden'
 });
 const FloatLeft = glamorous.div({
   float: 'left',

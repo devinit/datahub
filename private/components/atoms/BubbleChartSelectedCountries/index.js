@@ -14,9 +14,10 @@ const selectedCountries = ({ onChange, options, placeholder }: Props) => (
     <Dropdown
       onClick={onChange}
       placeholder={placeholder}
-      fluid
+      floating
       search
       selection
+      multiple
       options={options}
     />
   </Wrapper>

@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
+import { easeLinear } from 'd3';
 import {Grid, Container, Button, Icon} from 'semantic-ui-react';
 import BubbleSize from 'components/atoms/BubbleSizeDropDown';
 import ColorBy from 'components/atoms/BubbleChartColorBy';
@@ -9,15 +10,20 @@ import HighlightByRegions from 'components/atoms/BubbleChartHighlightRegions';
 import SelectedCountries from 'components/atoms/BubbleChartSelectedCountries';
 import BubbleChartPrint from 'components/atoms/BubbleChartPrint';
 import BubbleChartAxisSettings from 'components/atoms/BubbleChartAxisSettings';
-import BubbleChartAnnotation from 'components/atoms/BubbleChartAnnotation';
 import Slider from 'components/molecules/YearSlider';
 import {red} from 'components/theme/semantic';
+import ScatterChart from 'components/atoms/ScatterChart';
 
 const ChartContainer = glamorous.div({
+  margin: '2em 0 3em',
   height: '500px',
+  position: 'relative',
 });
 const AnnotationContainer = glamorous.div({
-  position: 'relative',
+  position: 'absolute',
+  right: 0,
+  top: 0,
+  width: '400px',
 });
 const PlayContainer = glamorous.div({
   marginTop: '-12px',
@@ -28,73 +34,218 @@ const Link = glamorous.a({
   display: 'block',
   marginBottom: '20px'
 });
+
+const createAnimator = (stepFn, startTime, duration, callback) => {
+
+  let animationFrame = null;
+
+  return function animate(timestamp) {
+    const runtime = timestamp - startTime;
+    const progress = Math.min(runtime / duration, 1);
+
+    stepFn(progress);
+
+    if (runtime < duration) {
+      animationFrame = requestAnimationFrame(animate);
+    } else {
+      cancelAnimationFrame(animationFrame);
+      callback();
+    }
+  };
+};
+
+export const createYearAnimator = (duration, initial, final, setState) => {
+  return (position) => new Promise((resolve, reject) => {
+    const diff = final - initial;
+
+    const stepFn = progress => {
+      setState({
+        year: initial + (diff * easeLinear(progress))
+      });
+    };
+
+    requestAnimationFrame(timestamp => {
+      const animate = createYearAnimator(stepFn, timestamp, duration, resolve);
+      animate(timestamp);
+    });
+  });
+};
+
 type Props = {
+  loading: boolean,
+  startYear: number,
+  maxYear: number,
+  minYear: number,
+  points: [Object],
+  annotation: Object,
+  config: Object,
+  indicators: [Object],
+  colorables: [Object],
+  regions: [string],
+  incomeGroups: [string],
+  countries: [string],
   data: Object
 }
 type State = {
   colorBy: string,
-  showMoreOptions: boolean
+  showMoreOptions: boolean,
+  isPlaying: boolean,
 }
 
 class BubbleChartWidget extends React.Component {
   constructor(props: Props) {
     super(props);
+    this.componentWillUpdate(props);
+  }
+  // eslint-disable-next-line react/sort-comp
+  intervalId: number;
+  state: State;
+  componentWillUpdate(props: Props) {
+    const colorBy = this.state ? this.state.colorBy : 'region';
+    const regionColor = this.props.regions.reduce((colors, region) => ({
+      ...colors,
+      [region.name]: region.color
+    }), {});
+    const incomeGroupColor = this.props.incomeGroups.reduce((colors, region) => ({
+      ...colors,
+      [region.name]: region.color
+    }), {});
+    const colorHash = colorBy === 'region' ? regionColor : incomeGroupColor;
+    const pointsPerYear = this.getPointsPerYear(colorBy, colorHash);
     this.state = {
-      colorBy: 'region',
+      year: props.startYear,
+      colorBy,
       showMoreOptions: false,
+      isPlaying: false,
+      incomeGroupColor,
+      regionColor,
+      pointsPerYear,
     };
   }
-  state: State;
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
   onChangeColorBy(colorBy: string) {
-    console.log('color', colorBy);
-    this.setState({colorBy});
+    const colorHash = colorBy === 'region' ?
+      this.state.regionColor :
+      this.state.incomeGroupColor;
+    const pointsPerYear = this.getPointsPerYear(colorBy, colorHash);
+    this.setState({
+      colorBy,
+      pointsPerYear,
+    });
+  }
+  getPointsPerYear(colorBy: string, colorHash: Object) {
+    return this.props.points
+      .map(p => {
+        return {...p, color: colorHash[colorBy]};
+      })
+      .reduce((all, d) => ({
+        ...all,
+        [d.year]: [
+          ...(all[d.year] || []),
+          d
+        ]
+      }), {});
+  }
+  setYear(year: number) {
+    this.setState({
+      year: +year
+    });
   }
   toggleMoreOptions() {
-    if (this.state.showMoreOptions) {
-      this.setState({showMoreOptions: false});
-    } else {
-      this.setState({showMoreOptions: true});
-    }
+    this.setState({
+      showMoreOptions: !this.state.showMoreOptions
+    });
+  }
+  play() {
+    clearInterval(this.intervalId);
+    this.setState({isPlaying: true});
+    let year = this.state.year;
+    this.intervalId = setInterval(() => {
+      if (Math.floor(year) === this.props.maxYear) {
+        clearInterval(this.intervalId);
+        this.setState({isPlaying: true});
+      }
+
+      this.setState({
+        year,
+        ...(Math.floor(year) !== this.state.year ? {
+          pointsPerYear: this.props.points.filter(d => d.year === Math.floor(year))
+        } : {})
+      });
+      year += 0.01;
+    }, 25);
+  }
+  pause() {
+    clearInterval(this.intervalId);
+    this.setState({
+      isPlaying: false,
+      year: Math.floor(this.state.year)
+    });
   }
 
   render() {
-    const {data} = this.props;
-    const {showMoreOptions, colorBy} = this.state;
+    const {
+      loading,
+      minYear,
+      maxYear,
+      config,
+      indicators,
+      incomeGroups,
+      colorables,
+      regions,
+      countries,
+    } = this.props;
     return (
       <Container>
         <Grid>
           <Grid.Row>
             <Grid.Column computer={12} tablet={12} mobile={16}>
               <ChartContainer>
+                <ScatterChart
+                  height="500px"
+                  config={config}
+                  data={this.state.pointsPerYear[Math.floor(+this.state.year)] || []}
+                />
                 <AnnotationContainer>
-                  <BubbleChartAnnotation />
+                  {this.props.annotation}
                 </AnnotationContainer>
               </ChartContainer>
               <Grid>
                 <Grid.Column width={1}>
                   <PlayContainer>
-                    <Button icon="play" />
+                    <Button
+                      icon={this.state.isPlaying ? 'pause' : 'play'}
+                      onClick={() => this.state.isPlaying ? this.pause() : this.play()}
+                    />
                   </PlayContainer>
                 </Grid.Column>
                 <Grid.Column width={15}>
                   <Slider
-                    onChange={() => {}}
-                    minimum={2000}
-                    maximum={2020}
+                    onChange={year => this.setYear(year)}
+                    minimum={minYear}
+                    maximum={maxYear}
                     step={1}
-                    position={2016}
+                    position={this.state.year}
                   />
                 </Grid.Column>
               </Grid>
             </Grid.Column>
             <Grid.Column computer={4} tablet={4} mobile={16}>
-              <BubbleSize options={data.bubbleSize} />
-              <SelectedCountries placeholder="Select Country" onChange={() => {}} options={data.countries} />
-              <ColorBy options={data.colorBy} onChange={(change) => this.onChangeColorBy(change)} />
-              <HighlightByIncomeGroup options={data.highlightIncome} colorBy={colorBy === 'income-group'} />
-              <HighlightByRegions options={data.highlightRegion} colorBy={colorBy === 'region'} />
+              <BubbleSize options={indicators} />
+              <SelectedCountries placeholder="Select Country" onChange={() => {}} options={countries} />
+              <ColorBy options={colorables} onChange={(change) => this.onChangeColorBy(change)} />
+              <HighlightByIncomeGroup
+                options={incomeGroups}
+                colorBy={this.state.colorBy === 'income-group'}
+              />
+              <HighlightByRegions
+                options={regions}
+                colorBy={this.state.colorBy === 'region'}
+              />
               <Link onClick={() => this.toggleMoreOptions()}><Icon name="plus" /> More Info</Link>
-              {showMoreOptions ?
+              {this.state.showMoreOptions ?
                 <div>
                   <BubbleChartAxisSettings title="X-axis settings" />
                   <BubbleChartAxisSettings title="Y-axis settings" />
