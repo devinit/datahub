@@ -1,17 +1,14 @@
 // @flow
 import React from 'react';
-import glamorous, {Div} from 'glamorous';
+import {Div} from 'glamorous';
 import {Container, Grid, Icon, Header, Button} from 'semantic-ui-react';
-import Pane from 'components/atoms/Pane';
-import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
 import {LightBg, DarkBg, MapBackground} from 'components/atoms/Backgrounds';
 import {SectionHeader} from 'components/atoms/Header';
-import { red, white, lighterGrey } from 'components/theme/semantic';
+import { red, white} from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
-import NoSSR from 'react-no-ssr';
 import {connect} from 'react-redux';
-import type {State, AppState} from 'lib/reducers';
+import type {State} from 'lib/reducers';
 import Generic from '../Generic';
 
 
@@ -39,7 +36,7 @@ const spotlight = (props: Props) => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      {props.rehydrated ? <Map pathName={'/spotlight'} /> : <MapBackground />}
+      {props.rehydrated ? <Map pathName={'spotlight'} /> : <MapBackground />}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS

@@ -2,14 +2,14 @@
 import React, {Component} from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type {MapData, PaintMap, Meta} from 'components/atoms/BaseMap';
-import glamorous, {Div, P} from 'glamorous';
-import {lighterGrey, lightGrey} from 'components/theme/semantic';
+import {Div, P} from 'glamorous';
+import {lightGrey} from 'components/theme/semantic';
 import type {LegendField} from 'components/atoms/MapLegend';
 import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
 import {Grid, Container} from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
-import type {Props as RankingsTableProps, Data as RankingsTableData} from 'components/molecules/RankingsTable';
+import type {Props as RankingsTableProps} from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
 import type {MapConfig} from './config';
 import mapConfigs from './config';
@@ -92,9 +92,14 @@ class Map extends Component {
     const uomDisplay = props.mapData.uom_display || '';
     this.description = props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
     if (!props.mapData.theme) throw new Error('theme is missing in map data props');
+    if (!props.mapData.country) throw new Error('country is missing in map data props');
     if (!props.mapData.id) throw new Error('indicator id is missing in map data props');
-    this.meta =
-      {name: this.name, uom_display: uomDisplay, theme: props.mapData.theme, id: props.mapData.id};
+    this.meta = {
+      name: this.name,
+      uom_display: uomDisplay,
+      theme: props.mapData.theme,
+      id: props.mapData.id,
+      country: props.mapData.country};
   }
   init(props: Props) {
     this.initYearSetup(props);

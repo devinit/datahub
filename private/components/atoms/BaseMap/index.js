@@ -43,6 +43,7 @@ export type PaintMap = {
 export type Meta = {
   uom_display: string,
   theme: string,
+  country: string, // global or uganda for spotlight uganda
   id: string,
   // map indicator user friendly label / slug eg Poverty
   name: string
@@ -52,6 +53,7 @@ type Props = {
   paint: PaintMap,
   meta?: Meta,
   viewport?: Viewport,
+  isForProfile?: boolean,
   width?: number | string,
   height?: number | string
 }
@@ -125,11 +127,13 @@ class BaseMap extends Component {
   static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
     const valueStr = BaseMap.tipToolTipValueStr(value, uom);
     const flagUrl: string = this.country === 'global' ? `/flags/svg/${id}.svg` : '';
-    return `<p style="text-align:center;line-height: 1; margin:0">
+    const upperTip = `<p style="text-align:center;line-height: 1; margin:0">
               <img  style="max-width: 20px;max-height: 15px;" src="${flagUrl}">
             </p>
-            <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>
-            <em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>`;
+            <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>`;
+    const lowerTip = name && name.length ?
+      `<em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>` : '';
+    return `${upperTip}${lowerTip}`;
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
     switch (uom) {
@@ -164,7 +168,7 @@ class BaseMap extends Component {
   _mapStyle: string;
 
   tipTemplate(pointData: MapData) {
-    const name = this.props.meta && this.props.meta.name ? this.props.meta.name : 'Base map';
+    const name = this.props.meta && this.props.meta.name ? this.props.meta.name : '';
     if (!pointData.id || !pointData.name || !pointData.id.length || !pointData.name.length) {
       return false;
     }
@@ -172,14 +176,15 @@ class BaseMap extends Component {
     const id: string = pointData.id;
     let value: string = '';
     // TODO: find away of indicating what tooltip should be from concept.csv
-    if (Number(pointData.value)) value = approximate(pointData.value);
-    const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : 'default';
+    if (!isNaN(Number(pointData.value))) value = approximate(pointData.value);
+    const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
+    if (this.props.isForProfile) value = '';
     if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
     if (theme === 'government-finance' && pointData.detail) value = `${value}-[${pointData.detail}]`;
     if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) value = pointData.detail;
     if (value === undefined || value === null) console.error('value for tip template is empty');
     const uom: string = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
-    const opts = {id, value, name, uom, country, };
+    const opts = {id, value, name, uom, country};
     return BaseMap.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
@@ -187,9 +192,7 @@ class BaseMap extends Component {
                 .setHTML(this.tipTemplate(obj.pointData))
                 .addTo(this._map);
   }
-  // addSimplePopUp(feature: Feature, pos: Point) {
-  //   if (!feature.properties) throw new Error('Properties missing from map feature');
-  // }
+
   mouseHoverEvent() {
     this._map.on('mousemove', (e) => {
       const features: Feature[] = this._map.queryRenderedFeatures(e.point);
@@ -197,13 +200,15 @@ class BaseMap extends Component {
       if (!features.length) return false;
       let pointData: MapData | void;
       if (this.props.paint.data && this.props.paint.data.length) {
+        // for regular global picture and spotlight map & the small profile maps
         pointData = this.props.paint.data
           .find(obj => {
             const paintProperty: string = this.props.paint.propertyName || 'ISO2';
             return obj.id === features[0].properties[paintProperty];
           });
       } else {
-        // TODO: add point data from features
+        // TODO: add point data from features contact alex
+        // for pre-styled maps i.e survey & regional map
         if (features.length < 2 && this._popup) return this._popup.remove();
         if (features.length < 2) return false;
         if (this.props.meta && this.props.meta.id) {
@@ -264,7 +269,6 @@ class BaseMap extends Component {
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
-    // console.log('new data', stops[50]);
     this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
       {
         property: propertyName || 'ISO2',
