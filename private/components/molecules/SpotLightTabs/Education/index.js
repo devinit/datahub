@@ -5,6 +5,7 @@ import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import {NoData} from 'lib/utils/constants';
 
 const Educaton = (props: SpotLightTabDataQuery) => {
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
@@ -19,14 +20,22 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
         </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{educationTabRegional.pupilTeacherRatioGovtSchl.value}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            educationTabRegional.pupilTeacherRatioGovtSchl &&
+            educationTabRegional.pupilTeacherRatioGovtSchl.value ?
+            educationTabRegional.pupilTeacherRatioGovtSchl.value : NoData
+            }</P>
           <P >in government schools  and</P>
           {
                 educationTabRegional &&
                 educationTabRegional.pupilTeacherRatioGovtSchl.toolTip ?
                   <TabsToolTip {...educationTabRegional.pupilTeacherRatioGovtSchl.toolTip} /> : ''
               }
-          <P fontSize={big} fontWeight={'bold'}>{educationTabRegional.pupilTeacherRatioOtherSchl.value}</P>
+          <P fontSize={big} fontWeight={'bold'}>{
+           educationTabRegional.pupilTeacherRatioOtherSchl &&
+           educationTabRegional.pupilTeacherRatioOtherSchl.value ?
+           educationTabRegional.pupilTeacherRatioOtherSchl.value : NoData
+            }</P>
           <P>in all schools </P>
           {
                 educationTabRegional &&
@@ -47,9 +56,17 @@ const Educaton = (props: SpotLightTabDataQuery) => {
                 educationTabRegional.studentsPassRate.toolTip ?
                   <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} /> : ''
               }
-          <P fontSize={big} fontWeight={'bold'} color={red}>{educationTabRegional.studentsPassRate.value}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            educationTabRegional.studentsPassRate &&
+            educationTabRegional.studentsPassRate.value ?
+             educationTabRegional.studentsPassRate.value : NoData
+            }</P>
           <P>and is ranked in</P>
-          <P fontSize={big} fontWeight={'bold'}>{educationTabRegional.studentsPassDistrictRank.value}</P>
+          <P fontSize={big} fontWeight={'bold'}>{
+            educationTabRegional.studentsPassDistrictRank &&
+            educationTabRegional.studentsPassDistrictRank.value ?
+            educationTabRegional.studentsPassDistrictRank.value : NoData
+            }</P>
           <P>place overall</P>
         </Grid.Column>
 
@@ -65,7 +82,11 @@ const Educaton = (props: SpotLightTabDataQuery) => {
                 educationTabRegional.primaryEducationfunding.toolTip ?
                   <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} /> : ''
               }
-          <P fontSize={big} fontWeight={'bold'} color={red}>{educationTabRegional.primaryEducationfunding.value}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            educationTabRegional.primaryEducationfunding &&
+            educationTabRegional.primaryEducationfunding.value ?
+            educationTabRegional.primaryEducationfunding.value : NoData
+            }</P>
 
         </Grid.Column>
       </Grid>
