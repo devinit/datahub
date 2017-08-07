@@ -88,7 +88,7 @@ const ListContainer = glamorous.ul({
   margin: 0,
 });
 
-export default ({ children, hasSubMenu, menu, icon, link}: Props) => {
+export default ({ children, hasSubMenu, menu, link}: Props) => {
   return (
     <LocalContainer hasSubMenu={hasSubMenu}>
       {hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : ''}

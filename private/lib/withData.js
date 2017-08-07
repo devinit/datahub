@@ -1,6 +1,5 @@
 import React from 'react';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
-import { compose } from 'redux';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import initApollo from './initApollo';

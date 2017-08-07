@@ -1,5 +1,5 @@
 // @flow
-import {Container, Grid, Header} from 'semantic-ui-react';
+import {Header} from 'semantic-ui-react';
 import glamorous, {P, Div, Ul} from 'glamorous';
 import React from 'react';
 
@@ -20,9 +20,7 @@ type LegendItemStyleProps = {
   color?: string,
   backgroundColor: string,
 }
-type LegendItemProps = LegendItemStyleProps & {
-  rangeLabel: string
-}
+
 const LegendContainer = glamorous.div({
   position: 'absolute',
   left: '2%',
@@ -45,9 +43,6 @@ const LegendKey = glamorous.li({
     backgroundColor: props.backgroundColor
   })
 );
-const pStyles = {
-  textAlign: 'center'
-};
 
 const legend = (props: Props) => (
   <LegendContainer length={props.legendData.length}>

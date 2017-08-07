@@ -1,5 +1,5 @@
 // @flow
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import {Header, Grid} from 'semantic-ui-react';
 import React from 'react';
 import {red} from 'components/theme/semantic';
 import {P} from 'glamorous';

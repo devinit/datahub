@@ -1,6 +1,5 @@
 // @flow
 import glamorous from 'glamorous';
-import {white} from 'components/theme/semantic';
 import {Button, Grid} from 'semantic-ui-react';
 import React from 'react';
 import YearSlider from '../PoorVizYearSlider';
@@ -18,7 +17,6 @@ type Props = {
   onYearChange: (value: number) => void
 };
 const controls = ({
-  year,
   level,
   scenario,
   onLevelChange,

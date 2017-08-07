@@ -9,16 +9,6 @@ import {LightBg} from '../../atoms/Backgrounds';
 import Chart from '../../atoms/Chart/index';
 import YearSlider from '../YearSlider/index';
 
-type FlowData = {
-  direction: string, // in or out
-  year: number,
-  value: number,
-  flowName: string,
-  flowCategory: string, // this is currently flow-group
-  flowType: string,
-  color: string
-}
-
 type Props = {
   startYear: string,
   data: [], // TODO: should be flowData with API integration

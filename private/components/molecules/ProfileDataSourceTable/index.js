@@ -3,7 +3,7 @@ import React from 'react';
 import {Grid, Container, Table, Icon} from 'semantic-ui-react';
 import {LightBg} from 'components/atoms/Backgrounds';
 import { white } from 'components/theme/semantic';
-import {SectionHeader, Lead} from 'components/atoms/Header';
+import {SectionHeader} from 'components/atoms/Header';
 
 type Props = {
   data: Array<Object>,
@@ -33,7 +33,7 @@ const ProfileDataSourceTable = ({title, data}: Props) => (
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {data.map((item, index) => (<Table.Row key={item.name}>
+              {data.map((item) => (<Table.Row key={item.name}>
                 <Table.Cell>{item.name}</Table.Cell>
                 <Table.Cell>{item.description}</Table.Cell>
                 <Table.Cell>{item.methodology}</Table.Cell>

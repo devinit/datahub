@@ -3,7 +3,6 @@ import React from 'react';
 import ExportChart from 'components/molecules/ExportChart';
 import {LightBg} from 'components/atoms/Backgrounds';
 import ChartFilter from 'components/molecules/CountryProfileChartFilter';
-import {SectionHeader} from 'components/atoms/Header';
 import glamorous from 'glamorous';
 
 const Wrapper = glamorous.div({

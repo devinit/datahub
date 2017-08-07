@@ -2,7 +2,6 @@
 import React from 'react';
 import { draw } from '@devinit/charts';
 // import stylesheet from '@devinit/charts/dist/di-charts.min.css';
-import NoSSR from 'react-no-ssr';
 /* eslint-disable react/no-danger */
 
 type Props = {

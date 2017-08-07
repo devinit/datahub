@@ -1,8 +1,7 @@
 // @flow
-import {Button, Container, Grid, Header, Icon} from 'semantic-ui-react';
+import {Container, Grid, Header} from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
-import {HeaderGroup} from 'components/atoms/Header';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';

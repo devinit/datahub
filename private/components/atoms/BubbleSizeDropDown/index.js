@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Dropdown, Header } from 'semantic-ui-react';
+import {Dropdown} from 'semantic-ui-react';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 
 type Props = {

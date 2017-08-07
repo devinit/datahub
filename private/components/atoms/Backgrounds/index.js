@@ -1,4 +1,3 @@
-import React from 'react';
 import glamorous from 'glamorous';
 import {lightBlack, lighterGrey} from 'components/theme/semantic';
 

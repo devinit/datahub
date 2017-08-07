@@ -1,5 +1,5 @@
 // @flow
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import { Container, Header, Grid} from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
 import TabsNoData from 'components/atoms/TabsNoData';

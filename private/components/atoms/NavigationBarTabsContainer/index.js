@@ -1,5 +1,5 @@
 // @flow
-import glamorous, {Div} from 'glamorous';
+import {Div} from 'glamorous';
 import {Container} from 'semantic-ui-react';
 import React from 'react';
 import TabHeader from 'components/atoms/NavigationBarTabsHeader';

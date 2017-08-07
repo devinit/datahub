@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql} from 'react-apollo';
 import config from 'visboxConfigs/areaTreemapChart';
 import InternationalResourcesChart from './wrapper';
@@ -20,6 +19,4 @@ const withData = graphql(RESOURCES_QUERY, {
       config
     };
   }});
-
-
 export default withData(InternationalResourcesChart);

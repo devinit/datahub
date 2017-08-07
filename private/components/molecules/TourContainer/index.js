@@ -9,9 +9,6 @@ type Props = {
   closeHandler?: (event: any) => void,
   children: Element<any>,
 }
-type State = {
-  visible: boolean,
-}
 const CloseIcon = glamorous.a({
   position: 'absolute',
   right: '20px',

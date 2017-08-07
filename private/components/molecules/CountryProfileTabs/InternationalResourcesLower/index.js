@@ -1,11 +1,11 @@
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
 import glamorous from 'glamorous';
 import {white} from 'components/theme/semantic';
 import {Select} from 'components/molecules/CountryProfileChartFilter';
 import ChartShare from 'components/molecules/ChartShare';
 import YearSlider from 'components/molecules/YearSlider';
-import {SectionHeader, Lead} from 'components/atoms/Header';
+import {SectionHeader} from 'components/atoms/Header';
 
 export const TextBlock = glamorous.p({
   fontSize: '1.1em',

@@ -1,6 +1,3 @@
-import React from 'react';
-import Chart from '../../../atoms/Chart/index';
-
 const config = {
   type: 'line',
   groupBy: 'flow-type',

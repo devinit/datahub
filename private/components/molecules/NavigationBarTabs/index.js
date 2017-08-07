@@ -1,19 +1,11 @@
 // @flow
 import React from 'react';
 import glamorous, {Div} from 'glamorous';
-import type { Element } from 'react';
 import { Container } from 'semantic-ui-react';
 import NavigationBarTabsContainer from 'components/atoms/NavigationBarTabsContainer';
 import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
 import TourContainer from 'components/molecules/TourContainer';
 import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
-
-type Indicator = {|
-  id: ?string,
-  name: ?string,
-  heading: ?string,
-  source: ?string,
-|}
 
 type NavItem = GlobalPictureThemesQuery;
 
@@ -88,7 +80,7 @@ class Tabs<T> extends React.Component {
       this.props.changeActiveIndicator(activeIndicator);
     }
   }
-  handleUsingThisViz(event: any) {
+  handleUsingThisViz() {
     if (!this.state.tourVisibility) return this.setState({tourVisibility: true});
     window.scrollTo(300, 0);
     return this.setState({tourVisibility: false});

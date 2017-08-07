@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container} from 'semantic-ui-react';
 import {
   Slider,
   Floor,

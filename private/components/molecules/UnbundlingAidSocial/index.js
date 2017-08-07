@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { white, lightGrey } from 'components/theme/semantic';
+import {lightGrey } from 'components/theme/semantic';
 import { Container, Button} from 'semantic-ui-react';
 import ChartShare from 'components/molecules/ChartShare';
 

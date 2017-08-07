@@ -3,7 +3,6 @@ import glamorous from 'glamorous';
 import React from 'react';
 import { white } from 'components/theme/semantic';
 import ExportChart from 'components/molecules/ExportChart';
-import {LightBg} from 'components/atoms/Backgrounds';
 import ChartFilter from 'components/molecules/CountryProfileChartFilter';
 import {SectionHeader} from 'components/atoms/Header';
 

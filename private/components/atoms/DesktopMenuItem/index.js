@@ -1,7 +1,6 @@
 // @flow
-import glamorous, {Li} from 'glamorous';
-import {white} from 'components/theme/semantic';
-import {Container, Grid, Icon, List} from 'semantic-ui-react';
+import {Li} from 'glamorous';
+import {Icon, List} from 'semantic-ui-react';
 import MenuLink from 'components/atoms/MenuLink';
 import React from 'react';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApolloClient, ApolloProvider } from 'react-apollo';
+import {ApolloProvider } from 'react-apollo';
 import {store} from './redux';
 import {client} from './apollo';
 

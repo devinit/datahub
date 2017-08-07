@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import { Header } from 'semantic-ui-react';
 import {ColorSpan} from 'components/atoms/BubbleChartHighlightRegions';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 

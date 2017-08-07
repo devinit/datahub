@@ -1,5 +1,3 @@
-import React from 'react';
-
 const config = {
   type: 'stacked-bar',
   groupBy: 'group',

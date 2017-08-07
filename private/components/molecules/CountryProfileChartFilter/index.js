@@ -1,6 +1,5 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {after} from 'glamor';
 import { white, lightBlack } from 'components/theme/semantic';
 
 const Wrapper = glamorous.div({

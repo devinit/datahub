@@ -3,7 +3,6 @@ import {REHYDRATE} from 'redux-persist/constants';
 import globalThemes from 'components/organisms/GlobalPictureNavTabs/data';
 import spotlightUgandaThemes from 'components/organisms/SpotLightNavTabs/ug-data';
 import {GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR} from './actions';
-import type {GlobalIndicator, SpotLightlIndicator} from './actions';
 
 // would have been to use & operator but it wasnt working
 export type Action = {

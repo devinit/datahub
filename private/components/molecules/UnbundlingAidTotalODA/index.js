@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { white, red, primaryColor, black, redHeaderColor} from 'components/theme/semantic';
+import { white, primaryColor, black} from 'components/theme/semantic';
 import { Header, Button } from 'semantic-ui-react';
 
 const ParentContainer = glamorous.div({

@@ -10,7 +10,7 @@ const preCache = () => {
   const countrySlugs = countriesData.countries.map(country => `/country?id=${country.slug}`);
   // for batch precaching of country pages
   const preCacheList = pagesToPreCache.concat(countrySlugs);
-  preCacheList.forEach((link, index) => {
+  preCacheList.forEach((link) => {
     setTimeout(() => {
       fetch(`${homeLink}${link}`).then(response => {
         if (response.status === 200) return console.info(`${link} was found and is now cached`);

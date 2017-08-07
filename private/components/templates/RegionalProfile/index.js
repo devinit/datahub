@@ -1,12 +1,9 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
-import { red, lightBlack, white } from 'components/theme/semantic';
+import { Container, Header, Grid, Icon, Button} from 'semantic-ui-react';
+import {red} from 'components/theme/semantic';
 import RegionalProfileLowerSection from 'components/molecules/RegionalProfileLowerSection';
-import Tabs from 'components/molecules/Tabs';
-import Pane from 'components/atoms/Pane';
-import {SectionHeader, Lead} from 'components/atoms/Header';
-import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
+import {Lead} from 'components/atoms/Header';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import {CardContainer} from 'components/atoms/Container';
 import SearchInput from 'components/organisms/CountrySearchInput';

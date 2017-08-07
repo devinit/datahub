@@ -1,6 +1,4 @@
 import glamorous from 'glamorous';
-import {Container, Grid} from 'semantic-ui-react';
-import {MenuLink} from 'components/atoms/Link';
 import React from 'react';
 // https://github.com/zeit/next.js/issues/1825
 // import logoImage from 'logo.png';

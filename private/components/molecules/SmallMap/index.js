@@ -2,10 +2,8 @@
 import React from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type {Viewport, PaintMap, MapData, Meta} from 'components/atoms/BaseMap';
-// import config from 'components/molecules/Map';
 import Nossr from 'react-no-ssr';
 import countries from 'components/organisms/CountrySearchInput/data';
-// import districts from 'components/organisms/SpotLightNavTabs/data';
 import {red, white} from 'components/theme/semantic';
 
 type Props = {

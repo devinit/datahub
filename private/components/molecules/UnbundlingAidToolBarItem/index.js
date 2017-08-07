@@ -1,7 +1,4 @@
-/**
- * @flow
- */
-
+// @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import Select from 'components/molecules/UnbundlingAidSelect';

@@ -1,5 +1,5 @@
 // @flow
-import glamorous, {Div, H4} from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import {Icon, Button} from 'semantic-ui-react';
 import React from 'react';
 import ToolTip from 'components/molecules/ToolTip';

@@ -1,5 +1,5 @@
 import React from 'react';
-import glamorous, {P, Div} from 'glamorous';
+import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
 

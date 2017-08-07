@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => {
   };
 };
 
-const mapStateToProps = ({app}: State): BoundState => ({activeIndicator: app.globalIndicator});
+const mapStateToProps = ({app}: State): BoundState => ({activeIndicator: app.spotlightIndicator});
 
 const spotlightNavBarTab = (props: Props) =>
   (<NavigationBarTabs
@@ -33,4 +33,4 @@ const spotlightNavBarTab = (props: Props) =>
     changeActiveIndicator={props.changeSpotlightIndicator}
   />);
 
-export default connect(null, mapDispatchToProps)(spotlightNavBarTab);
+export default connect(mapStateToProps, mapDispatchToProps)(spotlightNavBarTab);

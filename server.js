@@ -1,6 +1,4 @@
 const express = require('express');
-const path = require('path');
-const { parse } = require('url');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
 // const { fork } = require('child_process');
@@ -41,7 +39,7 @@ const renderAndCache = (req, res, pagePath, queryParams) => {
 };
 
 
-app.prepare().then(_ => {
+app.prepare().then(() => {
   const server = express();
 
   server.use(compression());

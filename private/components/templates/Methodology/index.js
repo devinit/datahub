@@ -1,10 +1,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import {LightBg} from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import {SectionHeader} from 'components/atoms/Header';
-import {white} from 'components/theme/semantic';
 import Generic from '../Generic';
 import data from './data';
 

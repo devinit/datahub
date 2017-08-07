@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Dropdown, Header } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 import type { Element } from 'react';
 import glamorous from 'glamorous';
 

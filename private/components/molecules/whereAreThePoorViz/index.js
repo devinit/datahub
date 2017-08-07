@@ -1,7 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
 import glamarous from 'glamorous';
-import {Container, Grid} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
 import Controls from 'components/molecules/PoorVizControls';
 import * as utils from '../../../lib/utils/poorVizUtils';
 
@@ -27,7 +27,7 @@ class Poor extends React.Component {
   componentDidMount() {
     this.renderVisualization();
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     this.renderVisualization();
   }
   onLevelChange(level) {
@@ -217,12 +217,8 @@ class Poor extends React.Component {
     globalLabel = globalLabel.enter()
       .append('text')
       .attr('class', 'globalLabel')
-      .attr('x', (d) => {
-        return width / 2;
-      })
-      .attr('y', (d) => {
-        return 460;
-      })
+      .attr('x', () => width / 2)
+      .attr('y', () => 460)
       .attr('text-anchor', 'middle')
       .text((d) => {
         return utils.formatNumber(d.value * 1000000);

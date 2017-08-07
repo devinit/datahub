@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import type { Element } from 'react';
 import {white, redHeaderColor, midWhite, lightBlack} from 'components/theme/semantic';
 
 type Props = {

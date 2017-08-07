@@ -4,10 +4,10 @@ import { Header, Button, Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import {red} from 'components/theme/semantic';
 
-type Props = {
-  onChange?: (value: string | void) => void,
-  options?: Array<Object>
-};
+// type Props = {
+//   onChange?: (value: string | void) => void,
+//   options?: Array<Object>
+// };
 const Wrapper = glamorous.div({
   width: '440px',
   top: '30px',
@@ -30,7 +30,7 @@ const FloatLeft = glamorous.div({
   }
 });
 
-const Annotation = ({ onChange, options }: Props) => (
+const Annotation = () => (
   <Wrapper>
     <Header as="h5">
       Since 2000, when the Millennium Development Goals were agreed, the domestic public

@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Icon, List} from 'semantic-ui-react';
-import {white, redHeaderColor, black, lightGrey} from 'components/theme/semantic';
+import {Icon} from 'semantic-ui-react';
+import {white, redHeaderColor} from 'components/theme/semantic';
 import MenuContainer from 'components/atoms/MobileMenuContainer';
 import MenuItem from 'components/atoms/MobileMenuItem';
 

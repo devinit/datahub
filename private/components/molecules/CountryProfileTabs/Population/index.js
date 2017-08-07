@@ -1,7 +1,7 @@
 // @flow
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import {Header, Grid} from 'semantic-ui-react';
 import React from 'react';
-import glamorous, {P, Div} from 'glamorous';
+import {P, Div} from 'glamorous';
 import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
 import {big} from 'components/theme';

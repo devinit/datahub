@@ -2,7 +2,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import {Container, Header} from 'semantic-ui-react';
-import type { Element } from 'react';
 import Generic from '../Generic';
 
 
