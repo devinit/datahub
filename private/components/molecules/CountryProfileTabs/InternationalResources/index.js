@@ -6,6 +6,8 @@ import {HeaderGroup} from 'components/atoms/Header';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
+import TabsToolTip from 'components/molecules/TabsToolTip';
+import {NoData} from 'lib/utils/constants';
 
 type Props = {
  ...TabDataQuery,
@@ -55,6 +57,11 @@ const International = (props: Props) => {
           >
             AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO UGANDA?
           </Header>
+          {
+                internationalResources.netODAOfGNIIn &&
+                internationalResources.netODAOfGNIIn.toolTip ?
+                  <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} /> : ''
+              }
           <P fontSize={big} fontWeight={'bold'} color={red}>{internationalResources.netODAOfGNIIn} of GNI</P>
           <P>Gross national income is {internationalResources.GNI}</P>
         </Grid.Column>
@@ -66,10 +73,15 @@ const International = (props: Props) => {
           >
             HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?
           </Header>
-          { resourcesOverTime && resourcesOverTime.length ?
+          {
+                internationalResources.resourcesOverTime &&
+                internationalResources.resourcesOverTime.toolTip ?
+                  <TabsToolTip {...internationalResources.resourcesOverTime.toolTip} /> : ''
+              }
+          { resourcesOverTime && resourcesOverTime.data ?
             <Chart
               config={props.config.resourcesOverTime}
-              data={resourcesOverTime}
+              data={internationalResources.resourcesOverTime.data}
               height="140px"
             /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
           }
@@ -82,13 +94,17 @@ const International = (props: Props) => {
           >
             WHAT’S THE MIX OF RESOURCES?
           </Header>
-
+          {
+                internationalResources.mixOfResources &&
+                internationalResources.mixOfResources.toolTip ?
+                  <TabsToolTip {...internationalResources.mixOfResources.toolTip} /> : ''
+              }
           {
             internationalResources.mixOfResources &&
-              internationalResources.mixOfResources.length ?
+              internationalResources.mixOfResources.data ?
                 <Chart
                   config={props.config.mixOfResources}
-                  data={internationalResources.mixOfResources}
+                  data={internationalResources.mixOfResources.data}
                   height="140px"
                 /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
           }

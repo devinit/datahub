@@ -2224,7 +2224,7 @@
           "fields": [
             {
               "name": "startYear",
-              "description": "TODO: add startyear",
+              "description": "",
               "args": [],
               "type": {
                 "kind": "SCALAR",

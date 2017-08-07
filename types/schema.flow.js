@@ -29,7 +29,6 @@ export type ResourcesOverTimeQueryVariables = {|
 
 export type ResourcesOverTimeQuery = {|
   internationalResources: ? {|
-    // TODO: add startyear
     startYear: ?number,
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section

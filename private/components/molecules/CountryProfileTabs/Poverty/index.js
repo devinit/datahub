@@ -6,6 +6,7 @@ import TabsNoData from 'components/atoms/TabsNoData';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
+import TabsToolTip from 'components/molecules/TabsToolTip';
 
 type Props = {
  ...TabDataQuery,
@@ -23,8 +24,13 @@ const Poverty = (props: Props) => {
             IS POVERTY REDUCING OVER TIME?
           </Header>
           {
-            povertyTab.poverty190Trend && povertyTab.poverty190Trend.length ?
-              <Chart config={props.config.area} data={props.povertyTab.poverty190Trend} height="120px" /> :
+                povertyTab.poverty190Trend &&
+                povertyTab.poverty190Trend.toolTip ?
+                  <TabsToolTip {...povertyTab.poverty190Trend.toolTip} /> : ''
+              }
+          {
+            povertyTab.poverty190Trend && povertyTab.poverty190Trend.data ?
+              <Chart config={props.config.area} data={povertyTab.poverty190Trend.data} height="120px" /> :
               <TabsNoData />
           }
 
@@ -37,7 +43,12 @@ const Poverty = (props: Props) => {
           >
             HOW DEEP IS POVERTY?
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.povertyTab.depthOfExtremePoverty}%</P>
+          {
+                povertyTab.depthOfExtremePoverty &&
+                povertyTab.depthOfExtremePoverty.toolTip ?
+                  <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} /> : ''
+              }
+          <P fontSize={big} fontWeight={'bold'} color={red}>{povertyTab.depthOfExtremePoverty.value}%</P>
           <P>Depth of extreme poverty</P>
         </Grid.Column>
 
@@ -49,11 +60,16 @@ const Poverty = (props: Props) => {
             HOW IS INCOME DISTRIBUTED?
           </Header>
           {
-            povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.length ?
+                povertyTab.incomeDistTrend &&
+                povertyTab.incomeDistTrend.toolTip ?
+                  <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} /> : ''
+              }
+          {
+            povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.data ?
               <div>
                 <Chart
                   config={props.config.histogram}
-                  data={props.povertyTab.incomeDistTrend}
+                  data={povertyTab.incomeDistTrend.data}
                   height="120px"
                 />
                 <P fontWeight="bold" textAlign="left" marginTop="1em">
