@@ -36,7 +36,6 @@ const Link = glamorous.a({
 });
 
 const createAnimator = (stepFn, startTime, duration, callback) => {
-
   let animationFrame = null;
 
   return function animate(timestamp) {
