@@ -32,6 +32,792 @@ exports[`Storyshots Base Maps world map centered on uganda 1`] = `
 </div>
 `;
 
+exports[`Storyshots Bubble Charts Different Providers, Different Priorities 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="twelve wide computer sixteen wide mobile twelve wide tablet column"
+      >
+        <div
+          className="css-15lmzmt"
+        >
+          <div
+            style={
+              Object {
+                "height": "500px",
+                "width": undefined,
+              }
+            }
+          />
+          <div
+            className="css-1yxh20g"
+          >
+            <div
+              className="css-i3cfar"
+            >
+              <h5
+                className="ui header"
+              >
+                Since 2000, when the Millennium Development Goals were agreed, the domestic public resources available to many countries have grown and extreme poverty rates have fallen.
+              </h5>
+              <p>
+                Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain scarce and poverty rates, although falling slowly in some countries are actually rising in others.
+              </p>
+              <div
+                className="css-3qchb1"
+              >
+                <p>
+                  <a
+                    href=""
+                  >
+                    Click the years to see how countries have progressed
+                  </a>
+                </p>
+              </div>
+              <div
+                className="css-3qchb1"
+              >
+                <div
+                  className="ui buttons"
+                >
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    2000
+                  </button>
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    latest 
+                    <i
+                      aria-hidden="true"
+                      className="info circle icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ui grid"
+        >
+          <div
+            className="one wide column"
+          >
+            <div
+              className="css-1ppdvma"
+            >
+              <button
+                className="ui icon button"
+                disabled={undefined}
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                <i
+                  aria-hidden="true"
+                  className="play icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="fifteen wide column"
+          >
+            <div
+              className="css-1l2vfq4"
+            >
+              <span
+                className="css-1ujcf02 bubble"
+              >
+                1999
+              </span>
+              <div
+                className="css-1whzuw8"
+              >
+                <span
+                  className="css-18n92cq"
+                >
+                  2010
+                </span>
+              </div>
+              <input
+                className="css-13ehj2n input low"
+                max={2015}
+                min={1999}
+                onChange={[Function]}
+                step={1}
+                type="range"
+                value={2010}
+              />
+              <span
+                className="css-2q5yx4 bubble"
+              >
+                2015
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="four wide computer sixteen wide mobile four wide tablet column"
+      >
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Bubble size
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            />
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={undefined}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Selected countries
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating multiple search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <span
+              className="sizer"
+            />
+            <div
+              aria-live="polite"
+              className="default text"
+              role="alert"
+            >
+              Select Country
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={true}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Color By
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui fluid selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            >
+              region
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
+            >
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  region
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  income-group
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Income Group
+          </h4>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Region
+          </h4>
+        </div>
+        <a
+          className="css-n84qqq"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+           More Info
+        </a>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Print and Share
+          </h4>
+          <button
+            className="ui icon button"
+            disabled={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="print icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Bubble Charts Poverty 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="twelve wide computer sixteen wide mobile twelve wide tablet column"
+      >
+        <div
+          className="css-15lmzmt"
+        >
+          <div
+            style={
+              Object {
+                "height": "500px",
+                "width": undefined,
+              }
+            }
+          />
+          <div
+            className="css-1yxh20g"
+          >
+            <div
+              className="css-i3cfar"
+            >
+              <h5
+                className="ui header"
+              >
+                Since 2000, when the Millennium Development Goals were agreed, the domestic public resources available to many countries have grown and extreme poverty rates have fallen.
+              </h5>
+              <p>
+                Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain scarce and poverty rates, although falling slowly in some countries are actually rising in others.
+              </p>
+              <div
+                className="css-3qchb1"
+              >
+                <p>
+                  <a
+                    href=""
+                  >
+                    Click the years to see how countries have progressed
+                  </a>
+                </p>
+              </div>
+              <div
+                className="css-3qchb1"
+              >
+                <div
+                  className="ui buttons"
+                >
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    2000
+                  </button>
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    latest 
+                    <i
+                      aria-hidden="true"
+                      className="info circle icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ui grid"
+        >
+          <div
+            className="one wide column"
+          >
+            <div
+              className="css-1ppdvma"
+            >
+              <button
+                className="ui icon button"
+                disabled={undefined}
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                <i
+                  aria-hidden="true"
+                  className="play icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="fifteen wide column"
+          >
+            <div
+              className="css-1l2vfq4"
+            >
+              <span
+                className="css-1ujcf02 bubble"
+              >
+                1999
+              </span>
+              <div
+                className="css-1whzuw8"
+              >
+                <span
+                  className="css-18n92cq"
+                >
+                  2010
+                </span>
+              </div>
+              <input
+                className="css-13ehj2n input low"
+                max={2015}
+                min={1999}
+                onChange={[Function]}
+                step={1}
+                type="range"
+                value={2010}
+              />
+              <span
+                className="css-2q5yx4 bubble"
+              >
+                2015
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="four wide computer sixteen wide mobile four wide tablet column"
+      >
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Bubble size
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            />
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={undefined}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Selected countries
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating multiple search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <span
+              className="sizer"
+            />
+            <div
+              aria-live="polite"
+              className="default text"
+              role="alert"
+            >
+              Select Country
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={true}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Color By
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui fluid selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            >
+              region
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
+            >
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  region
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  income-group
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Income Group
+          </h4>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Region
+          </h4>
+        </div>
+        <a
+          className="css-n84qqq"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+           More Info
+        </a>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Print and Share
+          </h4>
+          <button
+            className="ui icon button"
+            disabled={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="print icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots BubbleChartWidget Main 1`] = `
 <div
   className="ui container"
@@ -46,13 +832,21 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
         className="twelve wide computer sixteen wide mobile twelve wide tablet column"
       >
         <div
-          className="css-18066sv"
+          className="css-15lmzmt"
         >
           <div
-            className="css-13azwyo"
+            style={
+              Object {
+                "height": "500px",
+                "width": undefined,
+              }
+            }
+          />
+          <div
+            className="css-1yxh20g"
           >
             <div
-              className="css-1kqtbeg"
+              className="css-i3cfar"
             >
               <h5
                 className="ui header"
@@ -141,24 +935,24 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 className="css-1whzuw8"
               >
                 <span
-                  className="css-yav0in"
+                  className="css-yltwl4"
                 >
-                  2016
+                  2010
                 </span>
               </div>
               <input
                 className="css-13ehj2n input low"
-                max={2020}
+                max={2015}
                 min={2000}
                 onChange={[Function]}
                 step={1}
                 type="range"
-                value={2016}
+                value={2010}
               />
               <span
                 className="css-2q5yx4 bubble"
               >
-                2020
+                2015
               </span>
             </div>
           </div>
@@ -179,7 +973,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             aria-busy={undefined}
             aria-disabled={undefined}
             aria-expanded={false}
-            className="ui fluid search selection dropdown"
+            className="ui floating search selection dropdown"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -250,7 +1044,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             aria-busy={undefined}
             aria-disabled={undefined}
             aria-expanded={false}
-            className="ui fluid search selection dropdown"
+            className="ui floating multiple search selection dropdown"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -273,6 +1067,9 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               type="text"
               value=""
             />
+            <span
+              className="sizer"
+            />
             <div
               aria-live="polite"
               className="default text"
@@ -285,7 +1082,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               className="dropdown icon"
             />
             <div
-              aria-multiselectable={undefined}
+              aria-multiselectable={true}
               className="menu transition"
               role="listbox"
             >
@@ -522,6 +1319,12 @@ exports[`Storyshots Country Profile Charts International Resources 1`] = `
 <p>
   Loading
 </p>
+`;
+
+exports[`Storyshots Country Profiles Tabs live Country Profiles tabs austria 1`] = `
+<div
+  className="css-x5a8zc"
+/>
 `;
 
 exports[`Storyshots Country Profiles Tabs live Country Profiles tabs kenya 1`] = `
@@ -6284,7 +7087,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             className="ten wide column"
           >
             <div
-              className="css-18g9jxc"
+              className="css-69ad9a"
             >
               <div
                 className="ui header"
