@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { easeLinear } from 'd3';
 import {Grid, Container, Button, Icon} from 'semantic-ui-react';
 import BubbleSize from 'components/atoms/BubbleSizeDropDown';
 import ColorBy from 'components/atoms/BubbleChartColorBy';
@@ -35,41 +34,6 @@ const Link = glamorous.a({
   marginBottom: '20px'
 });
 
-const createAnimator = (stepFn, startTime, duration, callback) => {
-  let animationFrame = null;
-
-  return function animate(timestamp) {
-    const runtime = timestamp - startTime;
-    const progress = Math.min(runtime / duration, 1);
-
-    stepFn(progress);
-
-    if (runtime < duration) {
-      animationFrame = requestAnimationFrame(animate);
-    } else {
-      cancelAnimationFrame(animationFrame);
-      callback();
-    }
-  };
-};
-
-export const createYearAnimator = (duration, initial, final, setState) => {
-  return (position) => new Promise((resolve, reject) => {
-    const diff = final - initial;
-
-    const stepFn = progress => {
-      setState({
-        year: initial + (diff * easeLinear(progress))
-      });
-    };
-
-    requestAnimationFrame(timestamp => {
-      const animate = createYearAnimator(stepFn, timestamp, duration, resolve);
-      animate(timestamp);
-    });
-  });
-};
-
 type Props = {
   loading: boolean,
   startYear: number,
@@ -78,17 +42,21 @@ type Props = {
   points: [Object],
   annotation: Object,
   config: Object,
-  indicators: [Object],
-  colorables: [Object],
-  regions: [string],
-  incomeGroups: [string],
-  countries: [string],
+  indicators: Object[],
+  colorables: Object[],
+  regions: Object[],
+  incomeGroups: Object[],
+  countries: Object[],
   data: Object
 }
 type State = {
+  year: number,
   colorBy: string,
   showMoreOptions: boolean,
   isPlaying: boolean,
+  pointsPerYear: Object,
+  incomeGroupColor: Object,
+  regionColor: Object,
 }
 
 class BubbleChartWidget extends React.Component {
@@ -170,7 +138,6 @@ class BubbleChartWidget extends React.Component {
       this.setState({
         year,
         ...(Math.floor(year) !== this.state.year ? {
-          pointsPerYear: this.props.points.filter(d => d.year === Math.floor(year))
         } : {})
       });
       year += 0.01;
