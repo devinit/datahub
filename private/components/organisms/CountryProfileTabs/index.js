@@ -14,9 +14,8 @@ import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
 import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import {Div} from 'glamorous';
-import {lighterGrey} from 'components/theme/semantic';
 import {RECIPIENT} from 'lib/utils/constants';
+import TabsPlaceHolder from 'components/molecules/TabsPlaceHolder';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
 import overviewConfig from '../../../visboxConfigs/overviewTabCharts';
 
@@ -26,7 +25,7 @@ type TabsProps = {
 }
 
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
+  if (props.loading) return (<TabsPlaceHolder loading={props.loading} />);
   if (!props.overViewTab || !props.overViewTab.countryType) console.error('country type missing in overview tab data');
   const countryType = props.overViewTab && props.overViewTab.countryType ?
     props.overViewTab.countryType : RECIPIENT;

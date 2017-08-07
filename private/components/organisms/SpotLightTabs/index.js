@@ -10,8 +10,7 @@ import {
 } from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import {Div} from 'glamorous';
-import {lighterGrey} from 'components/theme/semantic';
+import TabsPlaceHolder from 'components/molecules/TabsPlaceHolder';
 import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
 
 type WrapperProps = {
@@ -20,7 +19,7 @@ type WrapperProps = {
 }
 
 const spotlightTabs = (props: WrapperProps) => {
-  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
+  if (props.loading) return (<TabsPlaceHolder loading={props.loading} />);
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id="spotlight-overview">
