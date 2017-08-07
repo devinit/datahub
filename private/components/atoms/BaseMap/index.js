@@ -124,17 +124,6 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: ''};
   }
-  static genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
-    const valueStr = BaseMap.tipToolTipValueStr(value, uom);
-    const flagUrl: string = this.country === 'global' ? `/flags/svg/${id}.svg` : '';
-    const upperTip = `<p style="text-align:center;line-height: 1; margin:0">
-              <img  style="max-width: 20px;max-height: 15px;" src="${flagUrl}">
-            </p>
-            <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>`;
-    const lowerTip = name && name.length ?
-      `<em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>` : '';
-    return `${upperTip}${lowerTip}`;
-  }
   static tipToolTipValueStr(value: string | number, uom: string) {
     switch (uom) {
       case '%':
@@ -167,6 +156,17 @@ class BaseMap extends Component {
   _viewport: Viewport;
   _mapStyle: string;
 
+  genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
+    const valueStr = BaseMap.tipToolTipValueStr(value, uom);
+    const flagUrl: string = this.props.meta && this.props.meta.country === 'global' ? `/flags/svg/${id}.svg` : '';
+    const upperTip = `<p style="text-align:center;line-height: 1; margin:0">
+              <img  style="max-width: 20px;max-height: 15px;" src="${flagUrl}">
+            </p>
+            <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>`;
+    const lowerTip = name && name.length ?
+      `<em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>` : '';
+    return `${upperTip}${lowerTip}`;
+  }
   tipTemplate(pointData: MapData) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : '';
     if (!pointData.id || !pointData.name || !pointData.id.length || !pointData.name.length) {
@@ -185,7 +185,7 @@ class BaseMap extends Component {
     if (value === undefined || value === null) console.error('value for tip template is empty');
     const uom: string = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     const opts = {id, value, name, uom, country};
-    return BaseMap.genericTipHtml(opts);
+    return this.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
     this._popup.setLngLat([obj.pos.lng, obj.pos.lat])
