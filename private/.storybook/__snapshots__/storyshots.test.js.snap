@@ -6576,6 +6576,26 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 </p>
 `;
 
+exports[`Storyshots Loader progress loader 1`] = `
+<div
+  className="css-1n4c5tt"
+>
+  <div
+    className="ui tiny active progress"
+    data-percent={0}
+  >
+    <div
+      className="bar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] = `
 <div
   className="css-1805z6z"

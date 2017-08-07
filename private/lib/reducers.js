@@ -2,22 +2,21 @@
 import {REHYDRATE} from 'redux-persist/constants';
 import globalThemes from 'components/organisms/GlobalPictureNavTabs/data';
 import spotlightUgandaThemes from 'components/organisms/SpotLightNavTabs/ug-data';
-import {GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR} from './actions';
+import {GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR, LOADING_STATUS} from './actions';
 
 // would have been to use & operator but it wasnt working
-export type Action = {
-  globalIndicator: string,
+export type AppState = {
+  rehydrated: boolean,
+  loading: boolean,
   spotlightIndicator: string,
+  globalIndicator: string,
+}
+export type Action = {
+  ...AppState,
   type: string,
   payload: {
     apollo: any
   }
-}
-export type AppState = {
-  rehydrated: boolean,
-  isFirstMapRender: boolean,
-  spotlightIndicator: string,
-  globalIndicator: string,
 }
 export type State = {
   app: AppState,
@@ -30,7 +29,7 @@ export type AppReducers <S, A> = {
 }
 export const initialState: AppState = {
   rehydrated: false,
-  isFirstMapRender: true,
+  loading: true,
   spotlightIndicator: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
   globalIndicator: globalThemes.globalPictureThemes[0].default_indicator
 };
@@ -40,6 +39,9 @@ export const app: AppReducers<AppState, Action> = {
     switch (action.type) {
       case REHYDRATE: {
         return {...state, rehydrated: true};
+      }
+      case LOADING_STATUS: {
+        return {...state, loading: action.loading};
       }
       case GLOBAL_INDICATOR: {
         return {...state, globalIndicator: action.globalIndicator, isFirstMapRender: false};
