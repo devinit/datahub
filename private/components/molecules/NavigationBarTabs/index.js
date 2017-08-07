@@ -107,7 +107,7 @@ class Tabs<T> extends React.Component {
         options={options}
         onChange={(e) => this.handleSelect(e)}
         showUsingThisViz={this.props.showUsingThisViz}
-        onUsingThisVizHandler={e => this.handleUsingThisViz(e)}
+        onUsingThisVizHandler={() => this.handleUsingThisViz()}
         toolTip={this.toolTipinfo()}
       />
     );
@@ -148,7 +148,7 @@ class Tabs<T> extends React.Component {
         </div>
         <TourContainer
           visible={this.state.tourVisibility}
-          closeHandler={event => this.handleUsingThisViz(event)}
+          closeHandler={() => this.handleUsingThisViz()}
         >
           <GlobalVisualizationTour />
         </TourContainer>
