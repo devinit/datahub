@@ -11,8 +11,9 @@ type State = {
   time: number;
 }
 const LoaderContainer = glamorous.div({
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
+  zIndex: 999999,
   opacity: 1,
   width: '100%',
   transition: 'opacity 0.3s ease-in-out',
@@ -29,17 +30,19 @@ export default class LoadingBar extends Component {
     this.timeChange = 1000;
     this.percentChange = 10;
     this.state = {percent: 0, time: 0};
-    if (this.props.loading) this.launch();
   }
   state: State
   componentDidMount() {
+    if (this.props.loading) this.launch();
     this.timeOutInterval = setTimeout(() => {
       if (this.progressInterval) clearInterval(this.progressInterval);
-      console.log('cleared progress');
     }, this.timeChange * 9);
   }
   componentWillReceiveProps(props: Props) {
-    if (!props.loading) this.terminate();
+    if (!props.loading) {
+      console.log('loading false');
+      this.terminate();
+    }
   }
   progressInterval: any
   timeOutInterval: any

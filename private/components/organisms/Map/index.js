@@ -3,11 +3,10 @@ import React from 'react';
 import { graphql} from 'react-apollo';
 import Map from 'components/molecules/Map';
 import {connect} from 'react-redux';
-import {changeLoadingStatus} from 'lib/actions';
 import type {LoadingStatus} from 'lib/actions';
-import { bindActionCreators } from 'redux';
-import type {State, AppState, Action} from 'lib/reducers';
+import type {State, AppState} from 'lib/reducers';
 import {MapBackground} from 'components/atoms/Backgrounds';
+import LoadingBar from 'components/molecules/LoadingBar';
 import MAPSQUERY from '../../../graphql/Maps.graphql';
 
 type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>
@@ -23,12 +22,16 @@ type WithApolloProps = {
   pathName: string,
   app: AppState
 }
-type BoundAction = {
-  changeLoadingStatus: ChangeLoadingStatus
-}
+
 const MapWrapper = (props: WrapperProps) => {
   // props.changeLoadingStatus(props.loading);
-  if (props.loading || !props.mapData) return (<MapBackground />);
+  if (!props.mapData) {
+    return (
+      <div>
+        <LoadingBar loading={props.loading} />
+        <MapBackground />
+      </div>);
+  }
   return (<Map {...props} />);
 };
 
@@ -48,12 +51,6 @@ const MapWithApollo = graphql(MAPSQUERY, {
 
 const mapStateToProps = ({app}: State) => ({app});
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => {
-  return {
-    changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch)
-  };
-};
-
-const MapWithRedux = connect(mapStateToProps, mapDispatchToProps)(MapWithApollo);
+const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
 
 export default MapWithRedux;
