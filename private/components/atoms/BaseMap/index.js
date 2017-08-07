@@ -269,6 +269,8 @@ class BaseMap extends Component {
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
+    const features = this._map.queryRenderedFeatures({layers: ['national']});
+    console.log(features);
     this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
       {
         property: propertyName || 'ISO2',

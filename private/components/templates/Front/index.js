@@ -12,6 +12,7 @@ import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountry
 import { red, white} from 'components/theme/semantic';
 import {connect} from 'react-redux';
 import type {State} from 'lib/reducers';
+// import LoadingBar from 'components/molecules/LoadingBar';
 import Generic from '../Generic';
 
 type Props = {
@@ -22,6 +23,7 @@ type Props = {
 const front = (props: Props) => {
   return (
     <Generic>
+      {/* <LoadingBar /> */}
       <GlobalPictureCountrySeach>
         <CountrySeachInput visible={false} profile={false} />
       </GlobalPictureCountrySeach>
