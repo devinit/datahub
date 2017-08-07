@@ -20,7 +20,7 @@ const TextContainer = glamorous.div({
 
 export default () => {
   return (
-    <Generic pathName="/aid">
+    <Generic>
       <Container>
         <HeaderContainer>
           <Header as="h1" textAlign="center">
