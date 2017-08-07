@@ -45,7 +45,7 @@ export const InputContainer = glamorous.div({
     display: 'inline-flex',
   }},
   (props) => ({
-    height: props.profile ? '5em' : '10em',
+    height: props.visible ? props.height || '10em' : '0em',
     overflow: props.visible ? 'visible' : 'hidden',
     backgroundColor: props.profile ? 'transparent' : lighterGrey,
   }));

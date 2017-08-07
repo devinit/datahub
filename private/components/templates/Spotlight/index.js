@@ -36,7 +36,7 @@ const spotlight = (props: Props) => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      {props.rehydrated ? <Map pathName={'spotlight'} /> : <MapBackground />}
+      {props.rehydrated || process.storybook ? <Map pathName={'spotlight'} /> : <MapBackground />}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALIZATIONS

@@ -5,7 +5,8 @@ import Map from '.';
 
 storiesOf('Maps Live with Apollo and Redux', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('Depth of Poverty % Map with redux', () => <Map pathName={'/'} />)
+  .add('global picture default map', () => <Map pathName={'/'} />)
+  .add('spotlight default map', () => <Map pathName={'spotlight'} />)
   .add('Depth of Poverty % Map', () => <Map id={'data_series.depth_of_extreme_poverty_190'} />)
   .add('Number of Poorest 20%', () => <Map id={'data_series.poorest_20_percent'} />)
   .add('fragile states', () => <Map id={'data_series.fragile_states'} />)

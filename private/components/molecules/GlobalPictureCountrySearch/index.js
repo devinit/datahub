@@ -1,7 +1,9 @@
 // @flow
 import React from 'react';
 import {Container} from 'semantic-ui-react';
-import {SearchTitle} from '../../atoms/SearchInput';
+import glamorous from 'glamorous';
+import {white, black} from 'components/theme/semantic';
+import {big} from 'components/theme';
 
 type Props = {
   children: any
@@ -9,6 +11,20 @@ type Props = {
 type State = {
   showInput: boolean
 }
+const SearchTitle = glamorous.div({
+  backgroundColor: black,
+  fontSize: big,
+  textAlign: 'center',
+  color: white,
+  fontWeight: '700',
+  paddingTop: '1em',
+  paddingBottom: '1em',
+  '& .clickable': {
+    textDecoration: 'underline',
+    cursor: 'pointer',
+  },
+});
+
 class Search extends React.Component {
   constructor(props: Props) {
     super(props);

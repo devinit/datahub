@@ -23,7 +23,7 @@ const front = (props: Props) => {
   return (
     <Generic>
       <GlobalPictureCountrySeach>
-        <CountrySeachInput visible profile={false} />
+        <CountrySeachInput visible={false} profile={false} />
       </GlobalPictureCountrySeach>
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
@@ -38,7 +38,7 @@ const front = (props: Props) => {
       </Container>
       <div style={{position: 'relative'}}>
         <GlobalPictureNavTabs />
-        {props.rehydrated ? <Map pathName={props.pathName} /> : <MapBackground />}
+        {props.rehydrated || process.storybook ? <Map pathName={props.pathName} /> : <MapBackground />}
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>

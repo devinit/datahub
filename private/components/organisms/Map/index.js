@@ -25,7 +25,9 @@ const MapWrapper = (props: WrapperProps) => {
 const MapWithApollo = graphql(MAPSQUERY, {
   options: (props: WithApolloProps) => {
     if (props.id) return {variables: {id: props.id}};
-    if (props.pathName && props.pathName === 'spotlight') return {variables: {id: props.app.spotlightIndicator}};
+    if (props.pathName && props.pathName.includes('spotlight')) {
+      return {variables: {id: props.app.spotlightIndicator}};
+    }
     return {variables: {id: props.app.globalIndicator}};
   },
   props: ({data}) => {

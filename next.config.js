@@ -1,6 +1,5 @@
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = {
   // changes: configChanges, // for use in storybook webpack config
@@ -37,6 +36,9 @@ module.exports = {
       test: /\.css$/,
       use: ['babel-loader', 'raw-loader'],
     });
+    config.plugins.push(new webpack.DefinePlugin({
+      'process.storybook': false
+    }));
     const module = Object.assign(config.module, {noParse: /(mapbox-gl)\.js$/});
     return Object.assign(config, {module});
   }

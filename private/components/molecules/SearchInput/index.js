@@ -83,7 +83,11 @@ class SearchInput extends React.Component {
   render() {
     return (
       <Div>
-        <InputContainer visible={this.props.visible} profile={this.isForCountryProfile}>
+        <InputContainer
+          visible={this.props.visible}
+          profile={this.isForCountryProfile}
+          height={this.isForCountryProfile ? '5em' : '10em'}
+        >
           {
               this.isForCountryProfile ?
                 <H1 flex={'0 1'} textTransform="capitalize">{this.props.placeholder}
