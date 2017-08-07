@@ -238,10 +238,12 @@ class BubbleChartWidget extends React.Component {
               <HighlightByIncomeGroup
                 options={incomeGroups}
                 colorBy={this.state.colorBy === 'income-group'}
+                onChange={d => this.onChangeColorBy('income-group')}
               />
               <HighlightByRegions
                 options={regions}
                 colorBy={this.state.colorBy === 'region'}
+                onChange={d => this.onChangeColorBy('region')}
               />
               <Link onClick={() => this.toggleMoreOptions()}><Icon name="plus" /> More Info</Link>
               {this.state.showMoreOptions ?
