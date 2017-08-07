@@ -24,7 +24,7 @@ type WithApolloProps = {
 }
 
 const MapWrapper = (props: WrapperProps) => {
-  if (!props.mapData) {
+  if (!props.mapData && props.loading) {
     return (
       <div>
         <LoadingBar loading={props.loading} />
