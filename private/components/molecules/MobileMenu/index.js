@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import glamorous from 'glamorous';
 import {Icon} from 'semantic-ui-react';
 import {white, redHeaderColor} from 'components/theme/semantic';
@@ -45,7 +45,7 @@ type Props = {
   menu: Array<any>,
 };
 
-class MobileMenu extends React.Component {
+class MobileMenu extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {
