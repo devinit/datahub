@@ -16,6 +16,38 @@ exports[`Storyshots Base Maps Base Map Atom 1`] = `
 </div>
 `;
 
+exports[`Storyshots Base Maps uganda map centered on wakiso 1`] = `
+<div
+  className="css-nlcjz6"
+>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Base Maps world map centered on inda 1`] = `
+<div
+  className="css-nlcjz6"
+>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots Base Maps world map centered on uganda 1`] = `
 <div
   className="css-nlcjz6"
@@ -1250,24 +1282,6 @@ exports[`Storyshots Chart Stubs What is the mix of resources? 1`] = `
     }
   />
 </div>
-`;
-
-exports[`Storyshots Country Profiles Tabs live Country Profiles tabs austria 1`] = `
-<div
-  className="css-x5a8zc"
-/>
-`;
-
-exports[`Storyshots Country Profiles Tabs live Country Profiles tabs kenya 1`] = `
-<div
-  className="css-x5a8zc"
-/>
-`;
-
-exports[`Storyshots Country Profiles Tabs live Country Profiles tabs uganda 1`] = `
-<div
-  className="css-x5a8zc"
-/>
 `;
 
 exports[`Storyshots Country Search country profile 1`] = `
@@ -6578,7 +6592,7 @@ exports[`Storyshots International Resources chart live DONOT TEST Area treemap C
 
 exports[`Storyshots Loader progress loader 1`] = `
 <div
-  className="css-1n4c5tt"
+  className="css-hu3x4g"
 >
   <div
     className="ui tiny active progress"
@@ -6597,51 +6611,203 @@ exports[`Storyshots Loader progress loader 1`] = `
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux global picture default map 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux spotlight default map 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Maps Live with Apollo and Redux uganda_poverty_headcount 1`] = `
-<div
-  className="css-1805z6z"
-/>
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
 `;
 
 exports[`Storyshots Menu Datahub Logo 1`] = `
@@ -8001,10 +8167,104 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
 </section>
 `;
 
-exports[`Storyshots Spotlight Tabs live spotlight tabs 1`] = `
-<div
-  className="css-x5a8zc"
-/>
+exports[`Storyshots Tabs Country Profiles tabs austria 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-x5a8zc"
+  />
+</div>
+`;
+
+exports[`Storyshots Tabs Country Profiles tabs kenya 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-x5a8zc"
+  />
+</div>
+`;
+
+exports[`Storyshots Tabs Country Profiles tabs uganda 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-x5a8zc"
+  />
+</div>
+`;
+
+exports[`Storyshots Tabs spotlight tabs 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-x5a8zc"
+  />
+</div>
 `;
 
 exports[`Storyshots Templates  Where are the poor 1`] = `
