@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
-import {lightGrey, seaBackground, orange} from 'components/theme/semantic';
+import {lightGrey, seaBackground, orange, red} from 'components/theme/semantic';
 import Router from 'next/router';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
@@ -52,7 +52,7 @@ export type Meta = {
 type Props = {
   paint: PaintMap,
   meta?: Meta,
-  viewport?: Viewport,
+  viewport: Viewport,
   countryProfile?: string,
   width?: number | string,
   height?: number | string
@@ -63,6 +63,9 @@ type MapBoxOptions = {
   ...Viewport,
   ...ViewportDefaults,
   container: HTMLDivElement | string,
+}
+type Geometry = {
+  coordinates: number[][][]
 }
 type Feature = {
   properties: {
@@ -75,12 +78,12 @@ type Feature = {
     p20?: number,
     DHSREGEN ?: string,
     CNTRYNAMEE?: string,
+    'country-slug'?: string,
+    'country-name'?: string,
     NAME?: string,
     dhsreg?: string
-  }
-}
-type Geometry = {
-  coordinates: number[][]
+  },
+  geometry: Geometry
 }
 type Point = {
   lng: number,
@@ -143,10 +146,12 @@ class BaseMap extends Component {
     this._mapStyle = props.paint.mapStyle || '/styles/worldgeojson.json';
     this._isOnMobile = window.innerWidth < 1200;
   }
+  /* eslint-disable react/sort-comp */
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
     scrollZoom: false,
   };
+  _propertyName: string = 'ISO2';
   _mapLoaded: boolean = false;
   _isOnMobile: boolean = false;
   _map: Object;
@@ -194,7 +199,19 @@ class BaseMap extends Component {
                 .setHTML(this.tipTemplate(obj.pointData))
                 .addTo(this._map);
   }
-
+  onFocusRegionData(feature: Feature): MapData {
+    const id = feature.properties[this.props.paint.propertyName || this._propertyName];
+    return {
+      id,
+      slug: feature.properties['country-slug'],
+      name: feature.properties['country-name'],
+      year: 0,
+      value: 0,
+      uid: '',
+      detail: '',
+      color: ''
+    };
+  }
   mouseHoverEvent() {
     this._map.on('mousemove', (e) => {
       const features: Feature[] = this._map.queryRenderedFeatures(e.point);
@@ -205,11 +222,12 @@ class BaseMap extends Component {
         // for regular global picture and spotlight map & the small profile maps
         pointData = this.props.paint.data
           .find(obj => {
-            const paintProperty: string = this.props.paint.propertyName || 'ISO2';
+            const paintProperty: string = this.props.paint.propertyName || this._propertyName;
             return obj.id === features[0].properties[paintProperty];
           });
-      } else {
-        // TODO: add point data from features contact alex
+      }
+      if (this.props.countryProfile) pointData = this.onFocusRegionData(features[0]);
+      if (!this.props.countryProfile && !this.props.paint.data) {
         // for pre-styled maps i.e survey & regional map
         if (features.length < 2 && this._popup) return this._popup.remove();
         if (features.length < 2) return false;
@@ -249,61 +267,76 @@ class BaseMap extends Component {
       this._map.resize();
     });
   }
-  mouseMapClick(paint: PaintMap) {
+  mouseMapClick(meta: Meta) {
     this._map.on('click', (event) => {
-      if (!this.props.meta || this.props.meta.id === 'survey_p20' || this.props.meta.id === 'regional_p20') return false;
+      if (!meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
       const features: Feature = this._map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
-      const property = paint.paintProperty || 'ISO2';
-      const countryId: string = features[0].properties[property];
-      // console.log('feature: ', features[0]);
-      if (!paint.data) return false;
-      const point: MapData | void = paint.data.find(obj => {
-        if (!obj.id) return false;
-        return obj.id === countryId;
-      });
-      if (!point || !point.slug) return false;
-      return Router.push(`/country?id=${point.slug}`, `/country/${point.slug}`);
+      const slug: string | void = features[0].properties.slug;
+      if (!slug) return false;
+      return Router.push(`/country?id=${slug}`, `/country/${slug}`);
     });
   }
-  colorMap({data, baseColor, propertyName, propertyLayer}: PaintMap) {
-    if (!data || !data.length) throw new Error('you have to pass in data to color the map');
-    const stops = data
-      .filter(obj => obj.id && obj.color)
-      .map((obj: MapData) => [obj.id, obj.color]);
-    const features = this._map.queryRenderedFeatures({layers: ['national']});
-    console.log('30', features[30].geometry.coordinates);
-    console.log('40', features[40].geometry.coordinates);
+  setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
     this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
       {
-        property: propertyName || 'ISO2',
+        property: propertyName || this._propertyName,
         type: 'categorical',
-        default: baseColor || lightGrey,
+        default: lightGrey,
         stops,
       });
   }
+  colorMap({data, propertyName, propertyLayer}: PaintMap) {
+    if (!data || !data.length) throw new Error('you have to pass in data to color the map');
+    const stops = data
+      .filter(obj => obj.id && obj.color)
+      .map((obj: MapData) => {
+        if (!obj.id || !obj.color) throw new Error('color and id values missing');
+        return [obj.id, obj.color];
+      });
+    this.setMapPaintProperty(stops, propertyLayer, propertyName);
+  }
+  countryFeature(slug: string, propertyLayer?: string): Feature | void {
+    const features: Feature[] = this._map.queryRenderedFeatures({layers: [propertyLayer || 'national']});
+    const feature: Feature | void = features
+      .find(feature => feature.properties['country-slug'] === slug);
+    return feature;
+  }
   zoomToGeometry(geometry: Geometry) {
-    let bounds: number[][];
+    let bounds: any;
     if (geometry.type === 'Polygon') {
-      const coordinates: number[] = geometry.coordinates[0];
-      console.log('polygon', coordinates);
-      bounds = coordinates.reduce((bounds: number[][], coord) => {
-        return bounds.concat([coord]);
+      const coordinates: number[][] = geometry.coordinates[0];
+      bounds = coordinates.reduce((bounds: any, coord) => {
+        return bounds.extend(coord);
       }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
     }
-    console.log(bounds);
     if (geometry.type === 'MultiPolygon') {
-      const sets = geometry.coordinates[0];
-      console.log('multipolygon', sets);
-      // bounds = sets.map((coordinates: number[]) => {
-      //   return coordinates[0].reduce((bounds, coord) => {
-      //     return bounds.concat([coord]);
-      //   }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
-      // });
+      const sets: number[][][] = geometry.coordinates;
+      bounds = sets.reduce((bounds: any, set) => {
+        const coordinates: number[] = set[0];
+        const innerBounds = coordinates.reduce((inner: any, coord) => {
+          return inner.extend(coord);
+        }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
+        return bounds.extend(innerBounds);
+      }, new mapboxgl.LngLatBounds(sets[0][0][0], sets[0][0][0]));
     }
-    this._map.fitBounds(bounds, {
-      padding: 20
+    if (!bounds) return false;
+    return this._map.fitBounds(bounds, {
+      padding: 0,
+      offset: [200, 0],
+      maxZoom: 3
     });
+  }
+  focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
+    const feature = this.countryFeature(slug, paint.propertyLayer);
+    if (feature) {
+      this.zoomToGeometry(feature.geometry);
+      const propertyId: string = feature.properties[paint.propertyName || this._propertyName] || '';
+      if (propertyId.length) {
+        const stop = [propertyId, red];
+        this.setMapPaintProperty([stop], paint.propertyLayer, paint.propertyName);
+      }
+    }
   }
   draw(domElement: HTMLDivElement, paint: PaintMap) {
     const defaultOpts = {...this._viewport, style: this._mapStyle, container: domElement};
@@ -322,11 +355,14 @@ class BaseMap extends Component {
         this._mapLoaded = true;
         this._map.setPaintProperty('background', 'background-color', paint.background || seaBackground);
         if (paint.data && paint.data.length) this.colorMap(paint);
+        if (this.props.countryProfile) {
+          this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
+        }
         this._map.dragRotate.disable();
         this._map.touchZoomRotate.disableRotation();
         this.zoomListener();
-        if (this.props.meta || paint.data) this.mouseHoverEvent(); // TODO turn into a this.meta.
-        this.mouseMapClick(paint);
+        if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
+        if (this.props.meta) this.mouseMapClick(this.props.meta);
         this.dragListener();
         this.persistZoomAndCenterLevel();
         this.resize();
