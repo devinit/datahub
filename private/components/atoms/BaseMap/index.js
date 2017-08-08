@@ -53,7 +53,7 @@ type Props = {
   paint: PaintMap,
   meta?: Meta,
   viewport?: Viewport,
-  isForProfile?: boolean,
+  countryProfile?: string,
   width?: number | string,
   height?: number | string
 }
@@ -79,7 +79,9 @@ type Feature = {
     dhsreg?: string
   }
 }
-
+type Geometry = {
+  coordinates: number[][]
+}
 type Point = {
   lng: number,
   lat: number,
@@ -178,7 +180,7 @@ class BaseMap extends Component {
     // TODO: find away of indicating what tooltip should be from concept.csv
     if (!isNaN(Number(pointData.value))) value = approximate(pointData.value);
     const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
-    if (this.props.isForProfile) value = '';
+    if (this.props.countryProfile) value = '';
     if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
     if (theme === 'government-finance' && pointData.detail) value = `${value}-[${pointData.detail}]`;
     if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) value = pointData.detail;
@@ -269,8 +271,9 @@ class BaseMap extends Component {
     const stops = data
       .filter(obj => obj.id && obj.color)
       .map((obj: MapData) => [obj.id, obj.color]);
-    // const features = this._map.queryRenderedFeatures({layers: ['national']});
-    // console.log(features);
+    const features = this._map.queryRenderedFeatures({layers: ['national']});
+    console.log('30', features[30].geometry.coordinates);
+    console.log('40', features[40].geometry.coordinates);
     this._map.setPaintProperty(propertyLayer || 'national', 'fill-color',
       {
         property: propertyName || 'ISO2',
@@ -278,6 +281,29 @@ class BaseMap extends Component {
         default: baseColor || lightGrey,
         stops,
       });
+  }
+  zoomToGeometry(geometry: Geometry) {
+    let bounds: number[][];
+    if (geometry.type === 'Polygon') {
+      const coordinates: number[] = geometry.coordinates[0];
+      console.log('polygon', coordinates);
+      bounds = coordinates.reduce((bounds: number[][], coord) => {
+        return bounds.concat([coord]);
+      }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
+    }
+    console.log(bounds);
+    if (geometry.type === 'MultiPolygon') {
+      const sets = geometry.coordinates[0];
+      console.log('multipolygon', sets);
+      // bounds = sets.map((coordinates: number[]) => {
+      //   return coordinates[0].reduce((bounds, coord) => {
+      //     return bounds.concat([coord]);
+      //   }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
+      // });
+    }
+    this._map.fitBounds(bounds, {
+      padding: 20
+    });
   }
   draw(domElement: HTMLDivElement, paint: PaintMap) {
     const defaultOpts = {...this._viewport, style: this._mapStyle, container: domElement};
