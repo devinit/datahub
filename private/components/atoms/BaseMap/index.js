@@ -6,7 +6,7 @@ import {lightGrey, seaBackground, orange, red} from 'components/theme/semantic';
 import Router from 'next/router';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
-import type {Feature, MapData, PaintMap, Props, Point, PopupItem, Viewport,
+import type {Feature, MapData, PaintMap, Props, Point, PopupItem,
   MapBoxOptions, ViewportDefaults, Geometry, GenericTipHtml, Meta} from './types';
 
 class BaseMap extends Component {
@@ -51,8 +51,7 @@ class BaseMap extends Component {
   constructor(props: Props) {
     super(props);
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
-    this._viewport = {...this._viewportDefaults, ...props.viewport};
-    this._mapStyle = props.paint.mapStyle || '/styles/worldgeojson.json';
+    if (!props.paint) throw new Error('viewport prop missing in basemap props');
     this._isOnMobile = window.innerWidth < 1200;
   }
   /* eslint-disable react/sort-comp */
@@ -69,8 +68,6 @@ class BaseMap extends Component {
   _center: Point;
   _zoomLevel: number;
   _element: HTMLDivElement;
-  _viewport: Viewport;
-  _mapStyle: string;
 
   genericTipHtml({id, country, name, value, uom}: GenericTipHtml) {
     const valueStr = BaseMap.tipToolTipValueStr(value, uom);
@@ -110,10 +107,12 @@ class BaseMap extends Component {
   }
   onFocusRegionData(feature: Feature): MapData {
     const id = feature.properties[this.props.paint.propertyName || this._propertyName];
+    const nameProperty = this.props.paint.propertyName === 'national' ? 'country-name' : 'name';
+    const slugProperty = this.props.paint.propertyName === 'national' ? 'country-slug' : 'name';
     return {
       id,
-      slug: feature.properties['country-slug'],
-      name: feature.properties['country-name'],
+      slug: feature.properties[slugProperty],
+      name: feature.properties[nameProperty],
       year: 0,
       value: 0,
       uid: '',
@@ -181,9 +180,20 @@ class BaseMap extends Component {
       if (!meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
       const features: Feature = this._map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
-      const slug: string | void = features[0].properties.slug;
+      const slugProperty = this.props.paint.propertyName === 'national' ? 'country-slug' : 'name';
+      const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
-      return Router.push(`/country?id=${slug}`, `/country/${slug}`);
+      let routePath: string;
+      let routeAsPath: string;
+      if (!this.props.meta || !this.props.meta.country) return false;
+      if (this.props.meta.country === 'global') {
+        routePath = `/country?id=${slug}`;
+        routeAsPath = `/country/${slug}`;
+      } else {
+        routePath = `/spotlight_on_${this.props.meta.country}?id=${slug}`;
+        routeAsPath = `/spotlight_on_${this.props.meta.country}/${slug}`;
+      }
+      return Router.push(routePath, routeAsPath);
     });
   }
   setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
@@ -205,10 +215,17 @@ class BaseMap extends Component {
       });
     this.setMapPaintProperty(stops, propertyLayer, propertyName);
   }
-  countryFeature(slug: string, propertyLayer?: string): Feature | void {
-    const features: Feature[] = this._map.queryRenderedFeatures({layers: [propertyLayer || 'national']});
+  getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
+    const layer = propertyLayer || 'national';
+    const slugProperty = layer === 'national' ? 'country-slug' : 'name';
+    const features: Feature[] = this._map.queryRenderedFeatures({layers: [layer]});
     const feature: Feature | void = features
-      .find(feature => feature.properties['country-slug'] === slug);
+      .find(feature => {
+        if (feature.properties[slugProperty] && slugProperty === 'name') {
+          return feature.properties[slugProperty].toLowerCase() === slug;
+        }
+        return feature.properties[slugProperty] === slug;
+      });
     return feature;
   }
   zoomToGeometry(geometry: Geometry) {
@@ -232,12 +249,12 @@ class BaseMap extends Component {
     if (!bounds) return false;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: [200, 0],
-      maxZoom: 3
+      offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [100, 0],
+      maxZoom: this.props.paint.propertyLayer === 'national' ? 3 : 6
     });
   }
   focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
-    const feature = this.countryFeature(slug, paint.propertyLayer);
+    const feature = this.getRegionFeature(slug, paint.propertyLayer);
     if (feature) {
       this.zoomToGeometry(feature.geometry);
       const propertyId: string = feature.properties[paint.propertyName || this._propertyName] || '';
@@ -248,16 +265,17 @@ class BaseMap extends Component {
     }
   }
   draw(domElement: HTMLDivElement, paint: PaintMap) {
-    const defaultOpts = {...this._viewport, style: this._mapStyle, container: domElement};
+    const viewport = {...this._viewportDefaults, ...this.props.viewport};
+    const mapStyle = this.props.paint.mapStyle || '/styles/worldgeojson.json';
+    const defaultOpts = {...viewport, style: mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
-      {...defaultOpts, maxBounds: this._viewport.bounds} : defaultOpts;
+      {...defaultOpts, maxBounds: viewport.bounds} : defaultOpts;
     if (!this._map) this._map = new mapboxgl.Map(opts);
     if (!this._nav) {
       this._nav = new mapboxgl.NavigationControl();
       this._map.addControl(this._nav, 'top-right');
     }
-    // React creates a new class instance per render
-    // and it recalls them i.e they continue existing
+    // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
     if (!this.map && !this._mapLoaded) {
       this._map.on('load', () => {

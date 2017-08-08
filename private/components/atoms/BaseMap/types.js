@@ -42,8 +42,8 @@ export type Meta = {
 
 export type Props = {
   paint: PaintMap,
-  meta?: Meta,
   viewport: Viewport,
+  meta?: Meta,
   countryProfile?: string,
   width?: number | string,
   height?: number | string
@@ -72,6 +72,7 @@ export type Feature = {
     'country-slug'?: string,
     'country-name'?: string,
     NAME?: string,
+    name?: string,
     dhsreg?: string
   },
   geometry: Geometry
