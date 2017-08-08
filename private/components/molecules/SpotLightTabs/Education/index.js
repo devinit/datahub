@@ -27,7 +27,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
             }</P>
           <P >in government schools  and</P>
           {
-                educationTabRegional &&
+                educationTabRegional.pupilTeacherRatioGovtSchl &&
                 educationTabRegional.pupilTeacherRatioGovtSchl.toolTip ?
                   <TabsToolTip {...educationTabRegional.pupilTeacherRatioGovtSchl.toolTip} /> : ''
               }
@@ -38,7 +38,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
             }</P>
           <P>in all schools </P>
           {
-                educationTabRegional &&
+                educationTabRegional.pupilTeacherRatioOtherSchl &&
                 educationTabRegional.pupilTeacherRatioOtherSchl.toolTip ?
                   <TabsToolTip {...educationTabRegional.pupilTeacherRatioOtherSchl.toolTip} /> : ''
               }
@@ -52,7 +52,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
         </Header>
           {
-                educationTabRegional &&
+                educationTabRegional.educationTabRegional &&
                 educationTabRegional.studentsPassRate.toolTip ?
                   <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} /> : ''
               }
@@ -78,7 +78,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
         </Header>
           {
-                educationTabRegional &&
+                educationTabRegional.primaryEducationfunding &&
                 educationTabRegional.primaryEducationfunding.toolTip ?
                   <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} /> : ''
               }

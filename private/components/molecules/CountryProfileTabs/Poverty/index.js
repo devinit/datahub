@@ -5,6 +5,7 @@ import Chart from 'components/atoms/Chart';
 import TabsNoData from 'components/atoms/TabsNoData';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
+import {NoData} from 'lib/utils/constants';
 import {red} from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 
@@ -48,7 +49,11 @@ const Poverty = (props: Props) => {
                 povertyTab.depthOfExtremePoverty.toolTip ?
                   <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} /> : ''
               }
-          <P fontSize={big} fontWeight={'bold'} color={red}>{povertyTab.depthOfExtremePoverty.value}%</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>
+            {
+            povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.value ?
+            povertyTab.depthOfExtremePoverty.value : NoData}%
+          </P>
           <P>Depth of extreme poverty</P>
         </Grid.Column>
 

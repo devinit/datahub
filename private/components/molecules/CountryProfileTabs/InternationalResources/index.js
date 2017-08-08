@@ -13,7 +13,8 @@ type Props = {
  ...TabDataQuery,
  config: any
 }
-const getResourcesOverTime = (data) =>
+// TODO: move to separate file
+const getResourcesOverTime = (data: any[]) =>
   [data].map(list => {
     const years = list
       .reduce((all, d) => {
@@ -45,8 +46,9 @@ const getResourcesOverTime = (data) =>
 const International = (props: Props) => {
   if (!props.internationalResources) throw new Error('No international resources data');
   const internationalResources = props.internationalResources;
-  const resourcesOverTime = props.internationalResources.resourcesOverTime ?
-    getResourcesOverTime(props.internationalResources.resourcesOverTime) : null;
+  const resourcesOverTime = internationalResources.resourcesOverTime &&
+    internationalResources.resourcesOverTime.data ?
+    getResourcesOverTime(internationalResources.resourcesOverTime.data) : null;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -81,7 +83,7 @@ const International = (props: Props) => {
           { resourcesOverTime && resourcesOverTime.data ?
             <Chart
               config={props.config.resourcesOverTime}
-              data={internationalResources.resourcesOverTime.data}
+              data={resourcesOverTime}
               height="140px"
             /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
           }
