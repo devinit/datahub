@@ -5,7 +5,9 @@ import {P, Div} from 'glamorous';
 import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
 import {big} from 'components/theme';
+import {NoData} from 'lib/utils/constants';
 import {red} from 'components/theme/semantic';
+import TabsToolTip from 'components/molecules/TabsToolTip';
 
 type Props = {
   ...TabDataQuery,
@@ -13,7 +15,8 @@ type Props = {
 }
 
 const Population = (props: Props) => {
-  if (!props.populationTab) return new Error('No Population data');
+  if (!props.populationTab) throw new Error('No Population data');
+  const populationTab = props.populationTab;
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -23,7 +26,15 @@ const Population = (props: Props) => {
         >
           WHAT IS THE POPULATION
         </Header>
-        <P fontSize={big} fontWeight={'bold'} color={red}>{props.populationTab.population}</P>
+        {
+                populationTab.population &&
+                populationTab.population.toolTip ?
+                  <TabsToolTip {...populationTab.population.toolTip} /> : ''
+              }
+        <P fontSize={big} fontWeight={'bold'} color={red}>{
+          populationTab.population && populationTab.population.value ?
+          populationTab.population.value : NoData
+          }</P>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header
@@ -33,12 +44,17 @@ const Population = (props: Props) => {
           WHAT IS THE URBAN VS RURAL SPLIT?
         </Header>
         {
-          props.populationTab.populationDistribution &&
-          props.populationTab.populationDistribution.length ?
+          populationTab.populationDistribution &&
+          populationTab.populationDistribution.toolTip ?
+            <TabsToolTip {...populationTab.populationDistribution.toolTip} /> : ''
+        }
+        {
+          populationTab.populationDistribution &&
+          populationTab.populationDistribution.data ?
             <Div paddingRight={'40px'}>
               <Chart
                 config={props.config.populationDistribution}
-                data={props.populationTab.populationDistribution}
+                data={populationTab.populationDistribution.data}
                 height="140px"
               />
             </Div> : <TabsNoData />
@@ -53,12 +69,17 @@ const Population = (props: Props) => {
           WHAT IS THE AGE PROFILE?
         </Header>
         {
-          props.populationTab.populationPerAgeBand &&
-          props.populationTab.populationPerAgeBand.length ?
+                populationTab.populationPerAgeBand &&
+                populationTab.populationPerAgeBand.toolTip ?
+                  <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} /> : ''
+              }
+        {
+          populationTab.populationPerAgeBand &&
+          populationTab.populationPerAgeBand.data ?
             <Div paddingRight={'40px'}>
               <Chart
                 config={props.config.populationPerAgeBand}
-                data={props.populationTab.populationPerAgeBand}
+                data={populationTab.populationPerAgeBand.data}
                 height="140px"
               />
             </Div>

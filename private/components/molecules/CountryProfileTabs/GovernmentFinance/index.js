@@ -6,6 +6,8 @@ import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
 import {red} from 'components/theme/semantic';
 import {big} from 'components/theme';
+import TabsToolTip from 'components/molecules/TabsToolTip';
+import {NoData} from 'lib/utils/constants';
 
 type Props = {
   ...TabDataQuery,
@@ -13,7 +15,8 @@ type Props = {
 }
 
 const Government = (props: Props) => {
-  if (!props.governmentFinance) return new Error('No Government Finance data');
+  if (!props.governmentFinance) throw new Error('No Government Finance data');
+  const governmentFinance = props.governmentFinance;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -24,7 +27,15 @@ const Government = (props: Props) => {
           >
             WHAT IS THE TOTAL REVENUE OF UGANDA?
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.governmentFinance.totalRevenue}</P>
+          {
+                governmentFinance.totalRevenue &&
+                governmentFinance.totalRevenue.toolTip ?
+                  <TabsToolTip {...governmentFinance.totalRevenue.toolTip} /> : ''
+              }
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+          governmentFinance.totalRevenue &&
+          governmentFinance.totalRevenue.value ? governmentFinance.totalRevenue.value : NoData
+            }</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -34,7 +45,16 @@ const Government = (props: Props) => {
           >
             HOW MUCH GOVERNMENT REVENUE COMES FROM EXTERNAL GRANTS (AID)?
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.governmentFinance.grantsAsPcOfRevenue}%</P>
+          {
+                governmentFinance.grantsAsPcOfRevenue &&
+                governmentFinance.grantsAsPcOfRevenue.toolTip ?
+                  <TabsToolTip {...governmentFinance.grantsAsPcOfRevenue.toolTip} /> : ''
+              }
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            governmentFinance.grantsAsPcOfRevenue &&
+            governmentFinance.grantsAsPcOfRevenue.value ?
+            governmentFinance.grantsAsPcOfRevenue.value : NoData
+            }%</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -45,12 +65,17 @@ const Government = (props: Props) => {
             HOW IS SPENDING ALLOCATED?
           </Header>
           {
-            props.governmentFinance.spendingAllocation &&
-            props.governmentFinance.spendingAllocation.length ?
+               governmentFinance.spendingAllocation &&
+               governmentFinance.spendingAllocation.toolTip ?
+                 <TabsToolTip {...governmentFinance.spendingAllocation.toolTip} /> : ''
+              }
+          {
+            governmentFinance.spendingAllocation &&
+            governmentFinance.spendingAllocation.data ?
               <Chart
                 config={props.config.spendingAllocation}
                 // TODO: Remove null data from server side
-                data={props.governmentFinance.spendingAllocation}
+                data={governmentFinance.spendingAllocation.data}
                 height="140px"
               /> : <TabsNoData />
           }

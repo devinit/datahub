@@ -26,9 +26,8 @@ type TabsProps = {
 
 const countryProfileTabs = (props: TabsProps) => {
   if (props.loading) return (<TabsPlaceHolder loading={props.loading} />);
-  if (!props.overViewTab || !props.overViewTab.countryType) console.error('country type missing in overview tab data');
-  const countryType = props.overViewTab && props.overViewTab.countryType ?
-    props.overViewTab.countryType : RECIPIENT;
+  if (!props.overViewTab || !props.overViewTab.countryType) throw new Error('country type missing in overview tab data');
+  const countryType = props.overViewTab.countryType;
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id={'overview-tab'}>

@@ -1,71 +1,197 @@
 query TabData($id: String!) {
-  governmentFinance(id: $id){
-    totalRevenue
-    grantsAsPcOfRevenue
-    spendingAllocation {
+  governmentFinance(id: $id) {
+    totalRevenue {
       value
-      name
-      color
+      toolTip {
+        source
+        heading
+      }
+    }
+    grantsAsPcOfRevenue {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    spendingAllocation {
+      toolTip {
+        source
+        heading
+      }
+      data {
+        value
+        name
+        color
+      }
     }
     currencyCode
   }
-  povertyTab(id: $id){
+  povertyTab(id: $id) {
     poverty190Trend {
-      id
-      year
-      value
-      name
+      data {
+        id
+        year
+        value
+        name
+      }
+      toolTip {
+        source
+        heading
+      }
     }
-    depthOfExtremePoverty
-    incomeDistTrend {
+    depthOfExtremePoverty {
       value
-      quintileName
+      toolTip {
+        heading
+        source
+      }
+    }
+    incomeDistTrend {
+      data {
+        value
+        quintileName
+      }
+      toolTip {
+        heading
+        source
+      }
     }
   }
   populationTab(id: $id) {
-    population
-    populationDistribution {
-      group
+    population {
       value
-      year
+      toolTip {
+        source
+        heading
+      }
+    }
+    populationDistribution {
+      data {
+        group
+        value
+        year
+      }
+      toolTip {
+        source
+        heading
+      }
     }
     populationPerAgeBand {
-      band
-      value
-      year
+      data {
+        band
+        value
+        year
+      }
+      toolTip {
+        source
+        heading
+      }
     }
   }
   internationalResources(id: $id) {
-    GNI
-    netODAOfGNIIn
-    netODAOfGNIOut
-    mixOfResources {
-      flow_name
+    GNI {
       value
+      toolTip {
+        source
+        heading
+      }
+    }
+    netODAOfGNIIn {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    netODAOfGNIOut {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    mixOfResources {
+      data {
+        flow_name
+        value
+      }
+      toolTip {
+        heading
+        source
+      }
     }
     resourcesOverTime {
-      year
-      flow_type
-      flow_category
-      value
+      data {
+        year
+        flow_type
+        flow_category
+        value
+      }
+      toolTip {
+        heading
+        source
+      }
     }
   }
-  overViewTab(id:$id) {
+  overviewTab(id: $id) {
     countryType
-    poorestPeople
-    population
-    domesticResources
-    internationalResources
-    governmentSpendPerPerson
-    averageIncomerPerPerson {
-      year
+    poorestPeople {
       value
-      id
-      name
+      toolTip {
+        source
+        heading
+      }
     }
-   incomeDistTrend {
-    value
-    quintileName
+    population {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    domesticResources {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    internationalResources {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    governmentSpendPerPerson {
+      value
+      toolTip {
+        source
+        heading
+      }
+    }
+    averageIncomerPerPerson {
+      data {
+        year
+        value
+        id
+        name
+      }
+      toolTip {
+        source
+        heading
+      }
+    }
+    incomeDistTrend {
+      data {
+        value
+        quintileName
+      }
+      toolTip {
+        source
+        heading
+      }
     }
   }
 }

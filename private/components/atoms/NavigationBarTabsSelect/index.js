@@ -2,7 +2,7 @@
 import glamorous, {Div} from 'glamorous';
 import {Icon, Button} from 'semantic-ui-react';
 import React from 'react';
-import ToolTip from 'components/molecules/ToolTip';
+import TabsToolTip from 'components/molecules/TabsToolTip';
 import { white } from 'components/theme/semantic';
 
 const Wrapper = glamorous.div({
@@ -62,14 +62,7 @@ const Select = ({options, onChange, toolTip,
         >Using this Visualization
       </Button>
       </Div>
-      <ToolTip trigger={<Icon name="info circle" />}>
-        {toolTip ?
-          <Div textAlign={'center'}>
-            <p>{toolTip.heading}</p>
-            <p><b>source</b>: {toolTip.source}</p>
-          </Div> : ''
-        }
-      </ToolTip>
+      {toolTip ? <TabsToolTip {...toolTip} /> : '' }
     </Wrapper>
 );
 

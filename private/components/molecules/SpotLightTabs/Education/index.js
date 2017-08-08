@@ -4,9 +4,12 @@ import React from 'react';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
+import TabsToolTip from 'components/molecules/TabsToolTip';
+import {NoData} from 'lib/utils/constants';
 
 const Educaton = (props: SpotLightTabDataQuery) => {
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
+  const educationTabRegional = props.educationTabRegional;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -17,10 +20,28 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
         </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.educationTabRegional.pupilTeacherRatioGovtSchl}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            educationTabRegional.pupilTeacherRatioGovtSchl &&
+            educationTabRegional.pupilTeacherRatioGovtSchl.value ?
+            educationTabRegional.pupilTeacherRatioGovtSchl.value : NoData
+            }</P>
           <P >in government schools  and</P>
-          <P fontSize={big} fontWeight={'bold'}>{props.educationTabRegional.pupilTeacherRatioOtherSchl}</P>
+          {
+                educationTabRegional.pupilTeacherRatioGovtSchl &&
+                educationTabRegional.pupilTeacherRatioGovtSchl.toolTip ?
+                  <TabsToolTip {...educationTabRegional.pupilTeacherRatioGovtSchl.toolTip} /> : ''
+              }
+          <P fontSize={big} fontWeight={'bold'}>{
+           educationTabRegional.pupilTeacherRatioOtherSchl &&
+           educationTabRegional.pupilTeacherRatioOtherSchl.value ?
+           educationTabRegional.pupilTeacherRatioOtherSchl.value : NoData
+            }</P>
           <P>in all schools </P>
+          {
+                educationTabRegional.pupilTeacherRatioOtherSchl &&
+                educationTabRegional.pupilTeacherRatioOtherSchl.toolTip ?
+                  <TabsToolTip {...educationTabRegional.pupilTeacherRatioOtherSchl.toolTip} /> : ''
+              }
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -30,9 +51,23 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
         </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.educationTabRegional.studentsPassRate}</P>
+          {
+                educationTabRegional.educationTabRegional &&
+                educationTabRegional.studentsPassRate.toolTip ?
+                  <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} /> : ''
+              }
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            educationTabRegional.studentsPassRate &&
+            educationTabRegional.studentsPassRate.value ?
+             educationTabRegional.studentsPassRate.value : NoData
+            }</P>
           <P>and is ranked in</P>
-          <P fontSize={big} fontWeight={'bold'}>{props.educationTabRegional.studentsPassDistrictRank}</P>
+          <P fontSize={big} fontWeight={'bold'}>{
+            educationTabRegional.studentsPassDistrictRank &&
+            educationTabRegional.studentsPassDistrictRank.value ?
+            educationTabRegional.studentsPassDistrictRank.value : NoData
+            }</P>
+          <P>place overall</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -42,7 +77,16 @@ const Educaton = (props: SpotLightTabDataQuery) => {
           >
           HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
         </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.educationTabRegional.primaryEducationfunding}</P>
+          {
+                educationTabRegional.primaryEducationfunding &&
+                educationTabRegional.primaryEducationfunding.toolTip ?
+                  <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} /> : ''
+              }
+          <P fontSize={big} fontWeight={'bold'} color={red}>{
+            educationTabRegional.primaryEducationfunding &&
+            educationTabRegional.primaryEducationfunding.value ?
+            educationTabRegional.primaryEducationfunding.value : NoData
+            }</P>
 
         </Grid.Column>
       </Grid>

@@ -270,7 +270,7 @@
               "deprecationReason": null
             },
             {
-              "name": "overViewTab",
+              "name": "overviewTab",
               "description": "",
               "args": [
                 {
@@ -290,7 +290,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "OverViewTab",
+                "name": "OverviewTab",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -499,7 +499,7 @@
               "deprecationReason": null
             },
             {
-              "name": "overViewTabRegional",
+              "name": "overviewTabRegional",
               "description": "id is district slug",
               "args": [
                 {
@@ -533,7 +533,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "OverViewTabRegional",
+                "name": "OverviewTabRegional",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1264,7 +1264,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "OverViewTab",
+          "name": "OverviewTab",
           "description": "",
           "fields": [
             {
@@ -1284,8 +1284,8 @@
               "description": "how many of the poorest people globally live in a country",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1296,8 +1296,8 @@
               "description": "total population for a given country",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1308,8 +1308,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1317,6 +1317,65 @@
             },
             {
               "name": "internationalResources",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "governmentSpendPerPerson",
+              "description": "recipient countries $PPP, both donor and recipient",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "averageIncomerPerPerson",
+              "description": "donor: gross nation income per capit GNI",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorDataWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "incomeDistTrend",
+              "description": "donor: Income share by quintile",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "QuintileDataWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "IndicatorValueWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "value",
               "description": "",
               "args": [],
               "type": {
@@ -1328,8 +1387,31 @@
               "deprecationReason": null
             },
             {
-              "name": "governmentSpendPerPerson",
-              "description": "recipient countries $PPP, both donor and recipient",
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "source",
+              "description": "",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1340,8 +1422,31 @@
               "deprecationReason": null
             },
             {
-              "name": "averageIncomerPerPerson",
-              "description": "donor: gross nation income per capit GNI",
+              "name": "heading",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "IndicatorDataWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -1356,17 +1461,13 @@
               "deprecationReason": null
             },
             {
-              "name": "incomeDistTrend",
-              "description": "donor: Income share by quintile",
+              "name": "toolTip",
+              "description": "",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Quintile",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "ToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1450,6 +1551,45 @@
         },
         {
           "kind": "OBJECT",
+          "name": "QuintileDataWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Quintile",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "Quintile",
           "description": "",
           "fields": [
@@ -1517,13 +1657,9 @@
               "description": "Poverty reduction over time area chart trend",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "IndicatorData",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "IndicatorDataWithToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1533,8 +1669,8 @@
               "description": "how deep is poverty %",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1545,13 +1681,9 @@
               "description": "Recipients: how income is distributed, % of income received by each quintil",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Quintile",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "QuintileDataWithToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1572,8 +1704,8 @@
               "description": "total population in a country",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1582,6 +1714,41 @@
             {
               "name": "populationDistribution",
               "description": "Urban vs Rural population level",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PopulationDistributionWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "populationPerAgeBand",
+              "description": "Number of people in 3 age bands (65+, 15- 65, 0 - 14)",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PopulationPerAgeBandWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PopulationDistributionWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
               "args": [],
               "type": {
                 "kind": "LIST",
@@ -1596,17 +1763,13 @@
               "deprecationReason": null
             },
             {
-              "name": "populationPerAgeBand",
-              "description": "Number of people in 3 age bands (65+, 15- 65, 0 - 14)",
+              "name": "toolTip",
+              "description": "",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PopulationPerAgeBand",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "ToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1653,6 +1816,45 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PopulationPerAgeBandWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PopulationPerAgeBand",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1733,8 +1935,8 @@
               "description": "Total revenue for a particular year if not available return -1 \n uses gdp",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1745,8 +1947,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -1757,13 +1959,9 @@
               "description": "for donut chart ",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "SpendingAllocation",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "SpendingAllocationWithToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1824,6 +2022,45 @@
                   "name": "Domestic",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "SpendingAllocationWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "SpendingAllocation",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1987,7 +2224,7 @@
           "fields": [
             {
               "name": "startYear",
-              "description": "TODO: add startyear",
+              "description": "",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -2002,8 +2239,8 @@
               "description": "Gross National Income",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2014,8 +2251,8 @@
               "description": "Net ODA received, % of GNI for recipient countries",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2026,8 +2263,8 @@
               "description": "Net ODA out, % of GNI for recipient countries",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2038,13 +2275,9 @@
               "description": "for sidebar chart in international resources section & area partition tree chart default data\n& line chart in the  tabs section",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ResourceData",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "ResourceDataWithToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2054,13 +2287,9 @@
               "description": "Whats the mix of resources can be for donors (out flows) or receipient (in flows)\nthis is for the donut chart",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "ResourceData",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "ResourceDataWithToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2093,6 +2322,45 @@
                   "name": "Flow",
                   "ofType": null
                 }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ResourceDataWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ResourceData",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2832,7 +3100,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "OverViewTabRegional",
+          "name": "OverviewTabRegional",
           "description": "",
           "fields": [
             {
@@ -2840,8 +3108,8 @@
               "description": "WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE? \ncan be no data or '12%'",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2852,8 +3120,8 @@
               "description": "WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO? eg 3.6m or 2.7bn\nthis is a total of local, donor and central government resources",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2868,7 +3136,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "IndicatorDataColored",
+                  "name": "IndicatorDataColoredWithToolTip",
                   "ofType": null
                 }
               },
@@ -2880,8 +3148,43 @@
               "description": "HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "IndicatorDataColoredWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "data",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorDataColored",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2986,8 +3289,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2998,8 +3301,8 @@
               "description": "WHAT IS THE AVERAGE LIFE EXPECTANCY? ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3010,8 +3313,8 @@
               "description": "WHAT IS THE STANDARD OF LIVING SCORE? ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3033,8 +3336,8 @@
               "description": "The total population of a given district and the population density in per sq km",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3045,8 +3348,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3057,13 +3360,9 @@
               "description": "Urban vs Rural population level",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "PopulationDistribution",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "PopulationDistributionWithToolTip",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -3073,8 +3372,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3085,8 +3384,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3108,8 +3407,8 @@
               "description": "WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3120,8 +3419,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3132,8 +3431,8 @@
               "description": "WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM? ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3144,8 +3443,8 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3156,8 +3455,8 @@
               "description": "HOW MUCH PRIMARY EDUCATION FUNDING IS THERE? ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3179,8 +3478,8 @@
               "description": "WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3191,8 +3490,8 @@
               "description": "WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED? ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3203,8 +3502,8 @@
               "description": "HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE? ",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -4398,41 +4697,6 @@
               "deprecationReason": null
             }
           ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ToolTip",
-          "description": "",
-          "fields": [
-            {
-              "name": "indicator",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "message",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
           "possibleTypes": null
         }
       ],

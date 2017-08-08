@@ -5,12 +5,14 @@ import Chart from 'components/atoms/Chart';
 import {P} from 'glamorous';
 import {big} from 'components/theme';
 import {red} from 'components/theme/semantic';
+import TabsToolTip from 'components/molecules/TabsToolTip';
 
 type Props = {
  ...TabDataQuery,
  config: any
 }
-const getResourcesOverTime = (data) =>
+// TODO: move to separate file
+const getResourcesOverTime = (data: any[]) =>
   [data].map(list => {
     const years = list
       .reduce((all, d) => {
@@ -40,10 +42,11 @@ const getResourcesOverTime = (data) =>
   .reduce((_, d) => d);
 
 const International = (props: Props) => {
-  if (!props.internationalResources) return new Error('No international resources data');
+  if (!props.internationalResources) throw new Error('No international resources data');
   const internationalResources = props.internationalResources;
-  const resourcesOverTime = props.internationalResources.resourcesOverTime ?
-    getResourcesOverTime(props.internationalResources.resourcesOverTime) : null;
+  const resourcesOverTime = internationalResources.resourcesOverTime &&
+    internationalResources.resourcesOverTime.data ?
+    getResourcesOverTime(internationalResources.resourcesOverTime.data) : null;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -54,6 +57,11 @@ const International = (props: Props) => {
           >
             AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO UGANDA?
           </Header>
+          {
+                internationalResources.netODAOfGNIIn &&
+                internationalResources.netODAOfGNIIn.toolTip ?
+                  <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} /> : ''
+              }
           <P fontSize={big} fontWeight={'bold'} color={red}>{internationalResources.netODAOfGNIIn} of GNI</P>
           <P>Gross national income is {internationalResources.GNI}</P>
         </Grid.Column>
@@ -65,7 +73,12 @@ const International = (props: Props) => {
           >
             HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?
           </Header>
-          { resourcesOverTime && resourcesOverTime.length ?
+          {
+                internationalResources.resourcesOverTime &&
+                internationalResources.resourcesOverTime.toolTip ?
+                  <TabsToolTip {...internationalResources.resourcesOverTime.toolTip} /> : ''
+              }
+          { resourcesOverTime && resourcesOverTime.data ?
             <Chart
               config={props.config.resourcesOverTime}
               data={resourcesOverTime}
@@ -81,13 +94,17 @@ const International = (props: Props) => {
           >
             WHAT’S THE MIX OF RESOURCES?
           </Header>
-
+          {
+                internationalResources.mixOfResources &&
+                internationalResources.mixOfResources.toolTip ?
+                  <TabsToolTip {...internationalResources.mixOfResources.toolTip} /> : ''
+              }
           {
             internationalResources.mixOfResources &&
-              internationalResources.mixOfResources.length ?
+              internationalResources.mixOfResources.data ?
                 <Chart
                   config={props.config.mixOfResources}
-                  data={internationalResources.mixOfResources}
+                  data={internationalResources.mixOfResources.data}
                   height="140px"
                 /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
           }

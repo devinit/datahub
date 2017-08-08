@@ -1,7 +1,23 @@
+// @flow
+import React from 'react';
 import { graphql} from 'react-apollo';
 import config from 'visboxConfigs/areaTreemapChart';
-import InternationalResourcesChart from './wrapper';
+import InternationalResourcesChart from 'components/molecules/InternationalResourcesChart';
+import type {Props} from 'components/molecules/InternationalResourcesChart';
 import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
+
+type WrapperProps = Props & {
+  loading: boolean
+}
+
+const internationalResourcesChartWrapper = (props: WrapperProps) => {
+  if (props.loading) return (<p>Loading..</p>);
+  return (<InternationalResourcesChart
+    startYear={props.startYear}
+    data={props.data}
+    config={config}
+  />);
+};
 
 const withData = graphql(RESOURCES_QUERY, {
   options: (props) => ({
@@ -12,11 +28,16 @@ const withData = graphql(RESOURCES_QUERY, {
   props: ({data}) => {
     const {error, loading} = data;
     if (error) throw new Error(error);
-    // console.log('resourcesOverTime', data.internationalResources);
+    if (!data.internationalResources || !data.internationalResources.startYear
+      || !data.internationalResources.resourcesOverTime) {
+      throw new Error('internation resources data missing start year and resource overtime data');
+    }
+    if (!data.internationalResources.resourcesOverTime.data) throw new Error('international resourcesOverTime data missing');
     return {
       loading,
-      data: data.internationalResources,
-      config
+      startYear: data.internationalResources.startYear,
+      data: data.internationalResources.resourcesOverTime.data
     };
   }});
-export default withData(InternationalResourcesChart);
+
+export default withData(internationalResourcesChartWrapper);
