@@ -6586,7 +6586,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
 
 exports[`Storyshots International Resources chart live DONOT TEST Area treemap Chart 1`] = `
 <p>
-   Loading
+  Loading..
 </p>
 `;
 
@@ -7775,15 +7775,19 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
                 Using this Visualization
               </button>
             </div>
-            <i
-              aria-hidden="true"
-              className="info circle icon"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
+            <div
+              className="css-w0yocm"
+            >
+              <i
+                aria-hidden="true"
+                className="info circle icon"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -8029,15 +8033,19 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
                 Using this Visualization
               </button>
             </div>
-            <i
-              aria-hidden="true"
-              className="info circle icon"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
+            <div
+              className="css-w0yocm"
+            >
+              <i
+                aria-hidden="true"
+                className="info circle icon"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -15753,15 +15761,19 @@ exports[`Storyshots Templates Front Page 1`] = `
                       Using this Visualization
                     </button>
                   </div>
-                  <i
-                    aria-hidden="true"
-                    className="info circle icon"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
-                  />
+                  <div
+                    className="css-w0yocm"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="info circle icon"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -18440,15 +18452,19 @@ exports[`Storyshots Templates Spot Light 1`] = `
                     Using this Visualization
                   </button>
                 </div>
-                <i
-                  aria-hidden="true"
-                  className="info circle icon"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
+                <div
+                  className="css-w0yocm"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="info circle icon"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -19591,6 +19607,22 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Tooltip Tabs Tooltip 1`] = `
+<div
+  className="css-w0yocm"
+>
+  <i
+    aria-hidden="true"
+    className="info circle icon"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
 </div>
 `;
 

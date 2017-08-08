@@ -7,14 +7,19 @@ import type {Props} from 'components/molecules/InternationalResourcesChart';
 import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
 
 type WrapperProps = Props & {
-  loading: boolean
+  loading: boolean,
+  ...ResourcesOverTimeQuery
 }
 
 const internationalResourcesChartWrapper = (props: WrapperProps) => {
-  if (props.loading) return (<p>Loading..</p>);
+  if (props.loading || !props.internationalResources || !props.internationalResources.startYear
+    || !props.internationalResources.resourcesOverTime
+    || !props.internationalResources.resourcesOverTime.data) {
+    return (<p>Loading..</p>);
+  }
   return (<InternationalResourcesChart
-    startYear={props.startYear}
-    data={props.data}
+    startYear={props.internationalResources.startYear}
+    data={props.internationalResources.resourcesOverTime.data}
     config={config}
   />);
 };
@@ -26,18 +31,9 @@ const withData = graphql(RESOURCES_QUERY, {
     }
   }),
   props: ({data}) => {
-    const {error, loading} = data;
-    if (error) throw new Error(error);
-    if (!data.internationalResources || !data.internationalResources.startYear
-      || !data.internationalResources.resourcesOverTime) {
-      throw new Error('internation resources data missing start year and resource overtime data');
-    }
-    if (!data.internationalResources.resourcesOverTime.data) throw new Error('international resourcesOverTime data missing');
-    return {
-      loading,
-      startYear: data.internationalResources.startYear,
-      data: data.internationalResources.resourcesOverTime.data
-    };
+    const {error} = data;
+    if (error) console.error(error);
+    return data;
   }});
 
 export default withData(internationalResourcesChartWrapper);
