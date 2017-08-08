@@ -15,6 +15,7 @@
     "start": "NODE_ENV=production PORT=9999 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
+    "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
@@ -80,6 +81,7 @@
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "css-to-js-object": "^0.0.3",
+    "csso": "^3.1.1",
     "enzyme": "^2.9.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "^15.0.2",
@@ -102,9 +104,10 @@
     "prettier-eslint-cli": "^4.0.3",
     "pretty-format": "^20.0.3",
     "react-test-renderer": "^15.5.4",
-    "semantic-ui": "^2.2.10"
+    "semantic-ui": "^2.2.10",
+    "usus": "^1.6.0"
   },
-   "git-pre-hooks": {
+  "git-pre-hooks": {
     "pre-push": [
       "npm run lint",
       "npm run test"

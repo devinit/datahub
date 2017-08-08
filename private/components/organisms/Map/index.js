@@ -24,7 +24,7 @@ type WithApolloProps = {
 }
 
 const MapWrapper = (props: WrapperProps) => {
-  if (!props.mapData && props.loading) {
+  if (props.loading || !props.mapData) {
     return (
       <div>
         <LoadingBar loading={props.loading} />
@@ -44,7 +44,7 @@ const MapWithApollo = graphql(MAPSQUERY, {
   },
   props: ({data}) => {
     const {error} = data;
-    if (error) throw Error(error);
+    if (error) console.error('map graphql error: ', error);
     return data;
   }})(MapWrapper);
 
