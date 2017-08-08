@@ -34,7 +34,7 @@ const spotlightTabs = (props: WrapperProps) => {
       <Pane label="Health" id="spotlight-health">
         <Health {...props} />
       </Pane>
-       <Pane label="Education" id="spotlight-education">
+      <Pane label="Education" id="spotlight-education">
         <Education {...props} />
       </Pane>
     </Tabs>
