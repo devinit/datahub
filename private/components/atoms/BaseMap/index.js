@@ -107,8 +107,8 @@ class BaseMap extends Component {
   }
   onFocusRegionData(feature: Feature): MapData {
     const id = feature.properties[this.props.paint.propertyName || this._propertyName];
-    const nameProperty = this.props.paint.propertyName === 'national' ? 'country-name' : 'name';
-    const slugProperty = this.props.paint.propertyName === 'national' ? 'country-slug' : 'name';
+    const nameProperty = this.props.paint.propertyLayer === 'national' ? 'country-name' : 'name';
+    const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
     return {
       id,
       slug: feature.properties[slugProperty],

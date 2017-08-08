@@ -30,7 +30,8 @@ const RankingsTable = (props: Props) => (
                 <Table.Row>
                   <Table.HeaderCell textAlign="center" colSpan={props.hasflags ? '4' : '3'}>
                     {props.data[key].length ?
-                    (<Span textTransform={'capitalize'}>{key} {props.data[key].length}</Span>) : ''}
+                    (<Span textTransform={'capitalize'}>{key} {props.data[key].length}</Span>) : ''
+                    }
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -39,9 +40,10 @@ const RankingsTable = (props: Props) => (
                   <Table.Row key={item.uid}>
                     <Table.Cell><b>{index}</b></Table.Cell>
                     {props.hasflags ?
-                    (<Table.Cell>
-                      <Img width={'20px'} maxHeight={'15px'} alt={item.name} src={item.flagUrl} />
-                    </Table.Cell>) : ''}
+                      <Table.Cell>
+                        <Img width={'20px'} maxHeight={'15px'} alt={item.name} src={item.flagUrl} />
+                      </Table.Cell> : <Table.Cell />
+                    }
                     <Table.Cell>{item.name}</Table.Cell>
                     <Table.Cell textAlign="right">{item.value.toLocaleString()}</Table.Cell>
                   </Table.Row>))}
