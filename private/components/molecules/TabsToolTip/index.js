@@ -13,10 +13,10 @@ const TabsToolTip = (props: Props) => {
   return (
     <Div display="inline-block">
       <ToolTip trigger={<Icon name="info circle" />}>
-        <div textAlign={'center'}>
+        <Div textAlign={'center'}>
           <p>{props.heading}</p>
           <p><b>source</b>: {props.source}</p>
-        </div>
+        </Div>
       </ToolTip>
     </Div>
   );

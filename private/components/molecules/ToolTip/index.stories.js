@@ -1,11 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Tooltip from '.';
+import {Icon} from 'semantic-ui-react';
+import TooltipTest from '.';
 
 storiesOf('Tooltip', module)
-  .add('Tabs Tooltip', () => (
-    <Tooltip
-      heading="Indicator heading"
-      source="indicator source"
-    />)
+  .add('Tooltip Test', () => (
+    <TooltipTest
+      trigger={<Icon name="help" />}
+    >
+    Simple Tooltip
+    </TooltipTest>)
   );
