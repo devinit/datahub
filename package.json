@@ -21,7 +21,7 @@
     "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
-    "coverage": "BABEL_ENV=test jest -u && codecov",
+    "coverage": "BABEL_ENV=test jest && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -s public -o .out",
     "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js && npm run lessToJs",
