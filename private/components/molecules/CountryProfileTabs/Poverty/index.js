@@ -78,7 +78,7 @@ const Poverty = (props: Props) => {
                   height="120px"
                 />
                 <P fontWeight="bold" textAlign="left" marginTop="1em">
-                  Bottom quintile has {povertyTab.incomeDistTrend[0].value} % of the income.
+                  Bottom quintile has {povertyTab.incomeDistTrend.data[0].value} % of the income.
                 </P>
               </div>
               : <TabsNoData />
