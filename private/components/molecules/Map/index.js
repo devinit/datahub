@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import BaseMap from 'components/atoms/BaseMap';
-import type {MapData, PaintMap, Meta} from 'components/atoms/BaseMap';
+import type {MapData, PaintMap, Meta} from 'components/atoms/BaseMap/types';
 import {Div, P} from 'glamorous';
 import {lightGrey} from 'components/theme/semantic';
 import type {LegendField} from 'components/atoms/MapLegend';

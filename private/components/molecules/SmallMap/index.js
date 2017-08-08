@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import BaseMap from 'components/atoms/BaseMap';
-import type {PaintMap, Meta, Viewport} from 'components/atoms/BaseMap';
+import type {PaintMap, Meta, Viewport} from 'components/atoms/BaseMap/types';
 import Nossr from 'react-no-ssr';
 import configs from 'components/molecules/Map/config';
 // import countries from 'components/organisms/CountrySearchInput/data';

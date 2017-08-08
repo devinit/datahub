@@ -1,5 +1,5 @@
 // @flow
-import type {Viewport} from 'components/atoms/BaseMap';
+import type {Viewport} from 'components/atoms/BaseMap/types';
 
 export type MapConfig = {
   paint: {

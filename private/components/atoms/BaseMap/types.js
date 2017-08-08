@@ -1,12 +1,11 @@
 // @flow
-// TODO: possibly move types to separate file
 export type Viewport = {
   zoom: number,
   center: number[],
   bounds: number[][],
   minZoom: number,
 }
-type ViewportDefaults = {
+export type ViewportDefaults = {
   attributionControl: boolean,
   scrollZoom: boolean
 }
@@ -41,10 +40,10 @@ export type Meta = {
   name: string
 }
 
-type Props = {
+export type Props = {
   paint: PaintMap,
   meta?: Meta,
-  viewport?: Viewport,
+  viewport: Viewport,
   countryProfile?: string,
   width?: number | string,
   height?: number | string
@@ -55,6 +54,9 @@ export type MapBoxOptions = {
   ...Viewport,
   ...ViewportDefaults,
   container: HTMLDivElement | string,
+}
+export type Geometry = {
+  coordinates: number[][][]
 }
 export type Feature = {
   properties: {
@@ -67,12 +69,12 @@ export type Feature = {
     p20?: number,
     DHSREGEN ?: string,
     CNTRYNAMEE?: string,
+    'country-slug'?: string,
+    'country-name'?: string,
     NAME?: string,
     dhsreg?: string
-  }
-}
-export type Geometry = {
-  coordinates: number[]
+  },
+  geometry: Geometry
 }
 export type Point = {
   lng: number,
