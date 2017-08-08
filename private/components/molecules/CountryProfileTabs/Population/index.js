@@ -20,34 +20,27 @@ const Population = (props: Props) => {
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
-          WHAT IS THE POPULATION
+        <Header textAlign="center" as="h3">
+          WHAT IS THE POPULATION?
+          {
+            populationTab.population && populationTab.population.toolTip ?
+              <TabsToolTip {...populationTab.population.toolTip} /> : ''
+          }
         </Header>
-        {
-                populationTab.population &&
-                populationTab.population.toolTip ?
-                  <TabsToolTip {...populationTab.population.toolTip} /> : ''
-              }
         <P fontSize={big} fontWeight={'bold'} color={red}>{
           populationTab.population && populationTab.population.value ?
           populationTab.population.value : NoData
           }</P>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+        <Header textAlign="center" as="h3">
           WHAT IS THE URBAN VS RURAL SPLIT?
-        </Header>
-        {
+           {
           populationTab.populationDistribution &&
           populationTab.populationDistribution.toolTip ?
             <TabsToolTip {...populationTab.populationDistribution.toolTip} /> : ''
         }
+        </Header>
         {
           populationTab.populationDistribution &&
           populationTab.populationDistribution.data ?
@@ -62,17 +55,14 @@ const Population = (props: Props) => {
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+        <Header textAlign="center" as="h3">
           WHAT IS THE AGE PROFILE?
+          {
+            populationTab.populationPerAgeBand &&
+            populationTab.populationPerAgeBand.toolTip ?
+              <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} /> : ''
+          }
         </Header>
-        {
-                populationTab.populationPerAgeBand &&
-                populationTab.populationPerAgeBand.toolTip ?
-                  <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} /> : ''
-              }
         {
           populationTab.populationPerAgeBand &&
           populationTab.populationPerAgeBand.data ?
@@ -85,7 +75,6 @@ const Population = (props: Props) => {
             </Div>
             : <TabsNoData />
         }
-
       </Grid.Column>
     </Grid>
   );

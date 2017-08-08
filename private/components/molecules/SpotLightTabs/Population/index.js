@@ -13,64 +13,56 @@ const Population = (props: SpotLightTabDataQuery) => {
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+        <Header textAlign="center" as="h3">
         WHAT IS THE POPULATION
       </Header>
         <P color={red}>
         The total population is
-      </P>
+         {
+          populationTabRegional.totalPopulation &&
+          populationTabRegional.totalPopulation.toolTip ?
+            <TabsToolTip {...populationTabRegional.totalPopulation.toolTip} /> : ''
+          }
+        </P>
         <P fontSize={big} fontWeight={'bold'} color={red}>{
           populationTabRegional.totalPopulation &&
           populationTabRegional.totalPopulation.value ?
           populationTabRegional.totalPopulation.value : NoData
           }</P>
+        <P>and the population density is
         {
-                populationTabRegional.totalPopulation &&
-                populationTabRegional.totalPopulation.toolTip ?
-                  <TabsToolTip {...populationTabRegional.totalPopulation.toolTip} /> : ''
-              }
-        <P>and the population density is</P>
+          populationTabRegional.populationDensity &&
+          populationTabRegional.populationDensity.toolTip ?
+            <TabsToolTip {...populationTabRegional.populationDensity.toolTip} /> : ''
+        }
+        </P>
         <P fontSize={big} fontWeight={'bold'}>{
            populationTabRegional.populationDensity &&
            populationTabRegional.populationDensity.value ?
-            populationTabRegional.populationDensity.value : NoData
+            `${populationTabRegional.populationDensity.value}` : NoData
           }</P>
-        {
-                populationTabRegional.populationDensity &&
-                populationTabRegional.populationDensity.toolTip ?
-                  <TabsToolTip {...populationTabRegional.populationDensity.toolTip} /> : ''
-              }
         <P>per sq km</P>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
-        WHAT IS THE URBAN VS RURAL SPLIT?
-      </Header>
-        {
-                populationTabRegional.populationDistribution &&
-                populationTabRegional.populationDistribution.toolTip ?
-                  <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} /> : ''
-              }
+        <Header textAlign="center" as="h3">
+          WHAT IS THE URBAN VS RURAL SPLIT?
+          {
+            populationTabRegional.populationDistribution &&
+            populationTabRegional.populationDistribution.toolTip ?
+              <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} /> : ''
+          }
+        </Header>
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header
-          textAlign="center"
-          as="h3"
-        >
+        <Header textAlign="center" as="h3">
         WHAT IS THE AVERAGE DEPENDENCY RATIO?
-      </Header>
-        {
-                populationTabRegional.averageDependencyRatio &&
-                populationTabRegional.averageDependencyRatio.toolTip ?
-                  <TabsToolTip {...populationTabRegional.averageDependencyRatio.toolTip} /> : ''
-              }
+         {
+            populationTabRegional.averageDependencyRatio &&
+            populationTabRegional.averageDependencyRatio.toolTip ?
+              <TabsToolTip {...populationTabRegional.averageDependencyRatio.toolTip} /> : ''
+          }
+        </Header>
         <P fontSize={big} fontWeight={'bold'} color={red}>{
            populationTabRegional.averageDependencyRatio &&
            populationTabRegional.averageDependencyRatio.value ?

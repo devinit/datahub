@@ -14,17 +14,14 @@ const Health = (props: SpotLightTabDataQuery) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
-          WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
-        </Header>
-          {
-                healthTabRegional.districtPerformance &&
-                healthTabRegional.districtPerformance.toolTip ?
-                  <TabsToolTip {...healthTabRegional.districtPerformance.toolTip} /> : ''
-              }
+          <Header textAlign="center" as="h3">
+            WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
+            {
+              healthTabRegional.districtPerformance &&
+              healthTabRegional.districtPerformance.toolTip ?
+                <TabsToolTip {...healthTabRegional.districtPerformance.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             healthTabRegional.districtPerformance &&
             healthTabRegional.districtPerformance.value ?
@@ -36,17 +33,14 @@ const Health = (props: SpotLightTabDataQuery) => {
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
           WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
-        </Header>
           {
-                healthTabRegional.treatmeantOfTb &&
-                healthTabRegional.treatmeantOfTb.toolTip ?
-                  <TabsToolTip {...healthTabRegional.treatmeantOfTb.toolTip} /> : ''
-              }
+            healthTabRegional.treatmeantOfTb &&
+            healthTabRegional.treatmeantOfTb.toolTip ?
+              <TabsToolTip {...healthTabRegional.treatmeantOfTb.toolTip} /> : ''
+          }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             healthTabRegional.treatmeantOfTb &&
             healthTabRegional.treatmeantOfTb.value ?
@@ -55,23 +49,19 @@ const Health = (props: SpotLightTabDataQuery) => {
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
           HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
-        </Header>
-          {
-                healthTabRegional.healthCareFunding &&
-                healthTabRegional.healthCareFunding.toolTip ?
-                  <TabsToolTip {...healthTabRegional.healthCareFunding.toolTip} /> : ''
-              }
+           {
+            healthTabRegional.healthCareFunding &&
+            healthTabRegional.healthCareFunding.toolTip ?
+              <TabsToolTip {...healthTabRegional.healthCareFunding.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             healthTabRegional.healthCareFunding &&
             healthTabRegional.healthCareFunding.value ?
             healthTabRegional.healthCareFunding.value : NoData
             }</P>
-
         </Grid.Column>
       </Grid>
     </Container>

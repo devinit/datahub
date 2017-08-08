@@ -14,54 +14,49 @@ const Educaton = (props: SpotLightTabDataQuery) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
-          WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
-        </Header>
+          <Header textAlign="center" as="h3">
+            WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             educationTabRegional.pupilTeacherRatioGovtSchl &&
             educationTabRegional.pupilTeacherRatioGovtSchl.value ?
             educationTabRegional.pupilTeacherRatioGovtSchl.value : NoData
             }</P>
-          <P >in government schools  and</P>
-          {
-                educationTabRegional.pupilTeacherRatioGovtSchl &&
-                educationTabRegional.pupilTeacherRatioGovtSchl.toolTip ?
-                  <TabsToolTip {...educationTabRegional.pupilTeacherRatioGovtSchl.toolTip} /> : ''
-              }
+          <p>in government schools  and
+            {
+            educationTabRegional.pupilTeacherRatioGovtSchl &&
+            educationTabRegional.pupilTeacherRatioGovtSchl.toolTip ?
+              <TabsToolTip {...educationTabRegional.pupilTeacherRatioGovtSchl.toolTip} /> : ''
+          }
+          </p>
           <P fontSize={big} fontWeight={'bold'}>{
            educationTabRegional.pupilTeacherRatioOtherSchl &&
            educationTabRegional.pupilTeacherRatioOtherSchl.value ?
            educationTabRegional.pupilTeacherRatioOtherSchl.value : NoData
             }</P>
-          <P>in all schools </P>
-          {
-                educationTabRegional.pupilTeacherRatioOtherSchl &&
-                educationTabRegional.pupilTeacherRatioOtherSchl.toolTip ?
-                  <TabsToolTip {...educationTabRegional.pupilTeacherRatioOtherSchl.toolTip} /> : ''
-              }
+          <p>in all schools
+            {
+              educationTabRegional.pupilTeacherRatioOtherSchl &&
+              educationTabRegional.pupilTeacherRatioOtherSchl.toolTip ?
+                <TabsToolTip {...educationTabRegional.pupilTeacherRatioOtherSchl.toolTip} /> : ''
+            }
+          </p>
         </Grid.Column>
-
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
           WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
-        </Header>
           {
-                educationTabRegional.educationTabRegional &&
-                educationTabRegional.studentsPassRate.toolTip ?
-                  <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} /> : ''
-              }
+            educationTabRegional.educationTabRegional &&
+            educationTabRegional.studentsPassRate.toolTip ?
+              <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             educationTabRegional.studentsPassRate &&
             educationTabRegional.studentsPassRate.value ?
              educationTabRegional.studentsPassRate.value : NoData
             }</P>
-          <P>and is ranked in</P>
+          <p>and is ranked in</p>
           <P fontSize={big} fontWeight={'bold'}>{
             educationTabRegional.studentsPassDistrictRank &&
             educationTabRegional.studentsPassDistrictRank.value ?
@@ -69,25 +64,20 @@ const Educaton = (props: SpotLightTabDataQuery) => {
             }</P>
           <P>place overall</P>
         </Grid.Column>
-
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
-          HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
-        </Header>
-          {
-                educationTabRegional.primaryEducationfunding &&
-                educationTabRegional.primaryEducationfunding.toolTip ?
-                  <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} /> : ''
-              }
+          <Header textAlign="center" as="h3">
+            HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
+            {
+              educationTabRegional.primaryEducationfunding &&
+              educationTabRegional.primaryEducationfunding.toolTip ?
+                <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             educationTabRegional.primaryEducationfunding &&
             educationTabRegional.primaryEducationfunding.value ?
             educationTabRegional.primaryEducationfunding.value : NoData
             }</P>
-
         </Grid.Column>
       </Grid>
     </Container>

@@ -23,12 +23,12 @@ const Poverty = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
             IS POVERTY REDUCING OVER TIME?
-          </Header>
-          {
+            {
                 povertyTab.poverty190Trend &&
                 povertyTab.poverty190Trend.toolTip ?
                   <TabsToolTip {...povertyTab.poverty190Trend.toolTip} /> : ''
               }
+          </Header>
           {
             povertyTab.poverty190Trend && povertyTab.poverty190Trend.data ?
               <Chart config={props.config.area} data={povertyTab.poverty190Trend.data} height="120px" /> :
@@ -38,37 +38,32 @@ const Poverty = (props: Props) => {
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
             HOW DEEP IS POVERTY?
-          </Header>
-          {
+             {
                 povertyTab.depthOfExtremePoverty &&
                 povertyTab.depthOfExtremePoverty.toolTip ?
                   <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} /> : ''
               }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>
             {
             povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.value ?
-            povertyTab.depthOfExtremePoverty.value : NoData}%
+            `${povertyTab.depthOfExtremePoverty.value}%` : NoData
+            }
           </P>
           <P>Depth of extreme poverty</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
             HOW IS INCOME DISTRIBUTED?
-          </Header>
-          {
+             {
                 povertyTab.incomeDistTrend &&
                 povertyTab.incomeDistTrend.toolTip ?
                   <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} /> : ''
               }
+          </Header>
           {
             povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.data ?
               <div>

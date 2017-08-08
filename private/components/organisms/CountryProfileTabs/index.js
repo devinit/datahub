@@ -48,7 +48,6 @@ const countryProfileTabs = (props: TabsProps) => {
             <GovernmentFinance config={govtFinanceConfig} {...props} />
           </Pane> : ''
       }
-
       <Pane label="International Resources" id={'internantion-reseources-tab'}>
         <InternationalResources config={internationalResourcesConfig} {...props} />
       </Pane>

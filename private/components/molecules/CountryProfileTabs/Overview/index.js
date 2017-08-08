@@ -27,11 +27,11 @@ const Overview = (props: Props) => {
            <Grid.Column computer={5} tablet={16} mobile={16}>
              <Header textAlign="center" as="h3">
               HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
-            </Header>
-             {
+              {
                 overviewTab.poorestPeople.toolTip ?
                   <TabsToolTip {...overviewTab.poorestPeople.toolTip} /> : ''
               }
+             </Header>
              <P fontSize={big} fontWeight={'bold'} color={red}> {
                overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData
                }</P>
@@ -61,12 +61,22 @@ const Overview = (props: Props) => {
           props.countryType === RECIPIENT ?
             <Grid.Column computer={5} tablet={16} mobile={16}>
               <Header textAlign="center" as="h3"> WHAT RESOURCES ARE AVAILABLE?</Header>
-              <P>Domestic public</P>
+              <P>Domestic public
+                {
+                overviewTab.domesticResources && overviewTab.domesticResources.toolTip ?
+                  <TabsToolTip {...overviewTab.domesticResources.toolTip} /> : ''
+              }
+              </P>
               <P fontSize={big} fontWeight={'bold'} color={red}>{
                 overviewTab.domesticResources && overviewTab.domesticResources.value ?
                 overviewTab.domesticResources.value : NoData
                 }</P>
-              <P>International</P>
+              <P>International
+                {
+                 overviewTab.internationalResources && overviewTab.internationalResources.toolTip ?
+                   <TabsToolTip {...overviewTab.internationalResources.toolTip} /> : ''
+                }
+              </P>
               <P fontSize={big} fontWeight={'bold'}>{
                  overviewTab.internationalResources && overviewTab.internationalResources.value ?
                   overviewTab.internationalResources.value : NoData
@@ -76,6 +86,10 @@ const Overview = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
           HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
+          {
+            overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip ?
+              <TabsToolTip {...overviewTab.governmentSpendPerPerson.toolTip} /> : ''
+            }
           </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.value ?
@@ -88,6 +102,10 @@ const Overview = (props: Props) => {
           <Grid.Column computer={5} tablet={16} mobile={16}>
             <Header textAlign="center" as="h3">
               HOW IS INCOME DISTRIBUTED?
+            {
+            overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip ?
+              <TabsToolTip {...overviewTab.incomeDistTrend.toolTip} /> : ''
+            }
             </Header>
             {
             overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.data

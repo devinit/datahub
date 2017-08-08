@@ -8,56 +8,56 @@ import TabsToolTip from 'components/molecules/TabsToolTip';
 import {NoData} from 'lib/utils/constants';
 
 const Overview = (props: SpotLightTabDataQuery) => {
-  if (!props.overViewTabRegional) throw new Error('regional overview data is missing');
-  const overViewTabRegional = props.OverViewTabRegional;
+  if (!props.overviewTabRegional) throw new Error('regional overview data is missing');
+  const overviewTabRegional = props.overviewTabRegional;
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
           WHAT PERCENTAGE OF PEOPLE IN BUIKWE LIVE BELOW THE NATIONAL POVERTY LINE?
-        </Header>
-          {
-                overViewTabRegional.poorestPeople &&
-                overViewTabRegional.poorestPeople.toolTip ?
-                  <TabsToolTip {...overViewTabRegional.poorestPeople.toolTip} /> : ''
-              }
-
+           {
+              overviewTabRegional.poorestPeople &&
+              overviewTabRegional.poorestPeople.toolTip ?
+                <TabsToolTip {...overviewTabRegional.poorestPeople.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
-            overViewTabRegional.poorestPeople &&
-            overViewTabRegional.poorestPeople.value ?
-            overViewTabRegional.poorestPeople.value : NoData
+            overviewTabRegional.poorestPeople &&
+            overviewTabRegional.poorestPeople.value ?
+            overviewTabRegional.poorestPeople.value : NoData
             }</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
           WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN BUIKWE?
-        </Header>
+           {
+              overviewTabRegional.regionalResources &&
+              overviewTabRegional.regionalResources.toolTip ?
+                <TabsToolTip {...overviewTabRegional.regionalResources.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>${
-           overViewTabRegional.regionalResources &&
-           overViewTabRegional.regionalResources.value ?
-           overViewTabRegional.regionalResources.value : NoData
+           overviewTabRegional.regionalResources &&
+           overviewTabRegional.regionalResources.value ?
+           overviewTabRegional.regionalResources.value : NoData
             }</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
           HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
-        </Header>
+           {
+              overviewTabRegional.localGovernmentSpendPerPerson &&
+              overviewTabRegional.localGovernmentSpendPerPerson.toolTip ?
+                <TabsToolTip {...overviewTabRegional.localGovernmentSpendPerPerson.toolTip} /> : ''
+            }
+          </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
-           overViewTabRegional.localGovernmentSpendPerPerson &&
-           overViewTabRegional.localGovernmentSpendPerPerson.value ?
-           overViewTabRegional.localGovernmentSpendPerPerson.value : NoData
+           overviewTabRegional.localGovernmentSpendPerPerson &&
+           overviewTabRegional.localGovernmentSpendPerPerson.value ?
+           overviewTabRegional.localGovernmentSpendPerPerson.value : NoData
             }</P>
         </Grid.Column>
       </Grid>
