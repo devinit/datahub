@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.1",
   "config": {
-    "api": "http://localhost:3000/graphql/"
+    "api": "https://datahub-api-qnmmdsuvpn.now.sh/graphql/"
   },
   "repository": {
     "type": "git",
