@@ -1,10 +1,10 @@
 // @flow
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import {Segment, Grid} from 'semantic-ui-react';
+import {Grid, Segment} from 'semantic-ui-react';
 import {SectionHeader} from 'components/atoms/Header';
 // eslint-disable-next-line
-import approximate from 'approximate-number';
+import approximate from "approximate-number";
 import {LightBg} from '../../atoms/Backgrounds';
 import Chart from '../../atoms/Chart/index';
 import YearSlider from '../YearSlider/index';
@@ -46,8 +46,62 @@ class SlidingDualSidebar extends React.Component {
     const exponent = Math.ceil(Math.log10(maximum));
     const scaleMaximum = Math.ceil(maximum / (10 ** (exponent - 1))) * (10 ** (exponent - 1));
 
+    const types = props.data.reduce((map, datum) => {
+      const key = `${datum.direction}~${datum.flow_type}~${datum.flow_category}~${datum.flow_name}`;
+      return {
+        ...map, [key]: [...(map[key] || []), datum]
+      };
+    }, {});
+
+    const expected = Object.keys(types)
+      .map(t => {
+        const [direction, type, category, name] = t.split('~');
+        return {direction, type, category, name};
+      });
+
+    const [data] = props.data
+      .reduce(([map], datum) => {
+        return [{
+          ...map,
+          [datum.year]: [
+            ...(map[datum.year] || []),
+            datum,
+          ]
+        }];
+      }, [{}])
+      .map(years => {
+        return Object
+          .keys(years)
+          .reduce((all, year) => {
+            return {
+              ...all,
+              [year]: expected.map(({name, category, direction, type}) => {
+                const [existing] = years[year]
+                  .filter(d =>
+                    d.year === +year &&
+                    d.direction === direction &&
+                    d.flow_name === name &&
+                    d.flow_category === category &&
+                    d.flow_type === type
+                  );
+
+                return existing || {
+                  year,
+                  direction,
+                  flow_name: name,
+                  flow_category: category,
+                  flow_type: type,
+                  value: 0,
+                  color: '#fff'
+                };
+              })
+            };
+          }, {});
+      });
+
     this.state = {
-      ...this.getYearState(parseInt(props.startYear, 10)),
+      data,
+      ...this.getYearState(data, parseInt(props.startYear, 10)),
 
       config: {
         ...this.props.config,
@@ -62,8 +116,9 @@ class SlidingDualSidebar extends React.Component {
     };
   }
 
-  getYearState(year: number) {
-    const currentYearData = this.props.data.filter(d => d.year === year);
+  // eslint-disable-next-line class-methods-use-this
+  getYearState(data: Object[], year: number) {
+    const currentYearData = data[year];
     const inflowSum = currentYearData.filter(d => d.direction === 'in').reduce((sum, datum) => sum + datum.value, 0);
     const outflowSum = currentYearData.filter(d => d.direction === 'out').reduce((sum, datum) => sum + datum.value, 0);
     return {
@@ -75,7 +130,7 @@ class SlidingDualSidebar extends React.Component {
   }
 
   updateCurrentYear(year: number) {
-    this.setState(this.getYearState(year));
+    this.setState(this.getYearState(this.state.data, year));
   }
 
 
