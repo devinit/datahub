@@ -47,12 +47,13 @@ const Overview = (props: Props) => {
                 <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} /> : ''
             }
              <Div paddingRight={'40px'}>
-               { overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.data ?
-                 <Chart
-                   config={props.config.area}
-                   data={overviewTab.averageIncomerPerPerson.data}
-                   height="140px"
-                 /> : <TabsNoData />
+               { overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.data
+                && overviewTab.averageIncomerPerPerson.data.length ?
+                  <Chart
+                    config={props.config.area}
+                    data={overviewTab.averageIncomerPerPerson.data}
+                    height="140px"
+                  /> : <TabsNoData />
                }
              </Div>
            </Grid.Column>

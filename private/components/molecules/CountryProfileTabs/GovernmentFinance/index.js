@@ -46,8 +46,8 @@ const Government = (props: Props) => {
           </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>{
             governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.value ?
-            governmentFinance.grantsAsPcOfRevenue.value : NoData
-            }%</P>
+            `${governmentFinance.grantsAsPcOfRevenue.value}%` : NoData
+            }</P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -61,7 +61,8 @@ const Government = (props: Props) => {
           </Header>
           {
             governmentFinance.spendingAllocation &&
-            governmentFinance.spendingAllocation.data ?
+            governmentFinance.spendingAllocation.data &&
+            governmentFinance.spendingAllocation.data.length ?
               <Chart
                 config={props.config.spendingAllocation}
                 data={governmentFinance.spendingAllocation.data}

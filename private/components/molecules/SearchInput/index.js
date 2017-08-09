@@ -36,6 +36,7 @@ class SearchInput extends React.Component {
     };
   }
   state: State;
+  onBlurTimer: any;
   onKeyDown(e: Object) {
     let {selected} = this.state;
     const {countries} = this.state;
@@ -69,11 +70,11 @@ class SearchInput extends React.Component {
     if (filteredCountries.length) this.setState({countries: filteredCountries});
   }
   onBlur() {
-    if (!this.setState) return false;
-    return setTimeout(() => {
-      this.setState({showList: false});
-      this.resetState();
-    }, 500);
+    if (!this.setState) {
+      this.onBlurTimer = setTimeout(() => {
+        this.resetState();
+      }, 500);
+    }
   }
   onSubmit() {
     const country: Country | void = this.state.countries[0] || null;
@@ -90,6 +91,7 @@ class SearchInput extends React.Component {
       selected: -1,
       countries: this.props.countries,
     });
+    if (this.onBlurTimer) clearTimeout(this.onBlurTimer);
   }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});

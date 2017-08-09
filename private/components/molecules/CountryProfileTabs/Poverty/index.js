@@ -65,7 +65,8 @@ const Poverty = (props: Props) => {
               }
           </Header>
           {
-            povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.data ?
+            povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.data &&
+            povertyTab.incomeDistTrend.data.length ?
               <div>
                 <Chart
                   config={props.config.histogram}

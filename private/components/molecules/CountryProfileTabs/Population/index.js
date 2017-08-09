@@ -43,7 +43,8 @@ const Population = (props: Props) => {
         </Header>
         {
           populationTab.populationDistribution &&
-          populationTab.populationDistribution.data ?
+          populationTab.populationDistribution.data &&
+          populationTab.populationDistribution.data.length ?
             <Div paddingRight={'40px'}>
               <Chart
                 config={props.config.populationDistribution}
@@ -65,7 +66,8 @@ const Population = (props: Props) => {
         </Header>
         {
           populationTab.populationPerAgeBand &&
-          populationTab.populationPerAgeBand.data ?
+          populationTab.populationPerAgeBand.data &&
+          populationTab.populationPerAgeBand.data.length ?
             <Div paddingRight={'40px'}>
               <Chart
                 config={props.config.populationPerAgeBand}

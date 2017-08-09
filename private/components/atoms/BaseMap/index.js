@@ -6,7 +6,8 @@ import {lightGrey, seaBackground, orange, red} from 'components/theme/semantic';
 import Router from 'next/router';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
-import type {Feature, MapData, PaintMap, Props, Point, PopupItem,
+import LoadingBar from 'components/molecules/LoadingBar';
+import type {Feature, MapData, PaintMap, Props, Point, PopupItem, State,
   MapBoxOptions, ViewportDefaults, Geometry, GenericTipHtml, Meta} from './types';
 
 class BaseMap extends Component {
@@ -53,7 +54,10 @@ class BaseMap extends Component {
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
     if (!props.paint) throw new Error('viewport prop missing in basemap props');
     this._isOnMobile = window.innerWidth < 1200;
+
+    this.state = {profileLoading: false};
   }
+  state: State
   /* eslint-disable react/sort-comp */
   _viewportDefaults: ViewportDefaults = {
     attributionControl: true,
@@ -193,7 +197,7 @@ class BaseMap extends Component {
         routePath = `/spotlight_on_${this.props.meta.country}?id=${slug}`;
         routeAsPath = `/spotlight_on_${this.props.meta.country}/${slug}`;
       }
-      console.log(routePath, routeAsPath);
+      this.setState({profileLoading: true});
       return Router.push(routePath, routeAsPath);
     });
   }
@@ -250,7 +254,7 @@ class BaseMap extends Component {
     if (!bounds) return false;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [100, 0],
+      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [100, 0],
       maxZoom: this.props.paint.propertyLayer === 'national' ? 3 : 6
     });
   }
@@ -271,6 +275,7 @@ class BaseMap extends Component {
     const defaultOpts = {...viewport, style: mapStyle, container: domElement};
     const opts: MapBoxOptions = !this._isOnMobile ?
       {...defaultOpts, maxBounds: viewport.bounds} : defaultOpts;
+    // draw map
     if (!this._map) this._map = new mapboxgl.Map(opts);
     if (!this._nav) {
       this._nav = new mapboxgl.NavigationControl();
@@ -278,6 +283,9 @@ class BaseMap extends Component {
     }
     // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
+    if (this.props.countryProfile && this._map && this._mapLoaded) {
+      this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
+    }
     if (!this.map && !this._mapLoaded) {
       this._map.on('load', () => {
         this._mapLoaded = true;
@@ -304,6 +312,7 @@ class BaseMap extends Component {
     const mapContainerStyle = {width, height, position: 'relative'};
     return (
       <MapContainer>
+        <LoadingBar loading={this.state.profileLoading} />
         <div
           key={'map-mapbox'}
           ref={element => { if (element) this.draw(element, this.props.paint); }}

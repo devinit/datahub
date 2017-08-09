@@ -1,4 +1,7 @@
 // @flow
+export type State = {
+  profileLoading: boolean
+}
 export type Viewport = {
   zoom: number,
   center: number[],
@@ -28,7 +31,6 @@ export type PaintMap = {
   propertyName?: string,
   propertyLayer?: string,
   paintProperty?: string,
-  slug?: string, // for only showing a single country
   background?: string
 }
 export type Meta = {
