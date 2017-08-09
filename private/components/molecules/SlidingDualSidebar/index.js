@@ -27,6 +27,7 @@ export type Props = {
 }
 
 type State = {
+  data: Object,
   config: any,
   currentYear: number,
   currentYearData: any,
@@ -117,7 +118,7 @@ class SlidingDualSidebar extends React.Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  getYearState(data: Object[], year: number) {
+  getYearState(data: Object, year: number) {
     const currentYearData = data[year];
     const inflowSum = currentYearData.filter(d => d.direction === 'in').reduce((sum, datum) => sum + datum.value, 0);
     const outflowSum = currentYearData.filter(d => d.direction === 'out').reduce((sum, datum) => sum + datum.value, 0);

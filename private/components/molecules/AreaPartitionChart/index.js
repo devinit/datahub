@@ -26,7 +26,7 @@ type State = {
   flow?: string,
 
   trend: Object[],
-  mixes: Object[],
+  mixes: Object,
 }
 
 type Determinant = {
@@ -197,12 +197,12 @@ class AreaPartitionChart extends React.Component {
           <Grid.Column width={10}>
             <SectionHeader color="rgb(238, 238, 238)">
               {this.props.config.treemapConfig.labeling.prefix}{' '}
-              {approximate((this.state.mixes[this.state.year] || [])
+              {approximate((this.state.mixes[+this.state.year] || [])
                 .reduce((sum, datum) => sum + datum.value, 0))}
             </SectionHeader>
             <Chart
               height="360px"
-              data={this.state.mixes[this.state.year] || []}
+              data={this.state.mixes[+this.state.year] || []}
               config={this.props.config.treemapConfig}
               onClick={d => {}}
             />

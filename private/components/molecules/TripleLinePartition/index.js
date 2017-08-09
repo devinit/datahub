@@ -27,7 +27,7 @@ type State = {
   budgetTypes: [string],
   budgetType: string,
   currency: string,
-  currencies: [string],
+  currencies: Object[],
   revenueLevel?: string,
   financeLevel?: string,
   expenditureLevel?: string,
