@@ -5,8 +5,8 @@ import mapboxgl from 'mapbox-gl';
 import {lightGrey, seaBackground, orange, red} from 'components/theme/semantic';
 import Router from 'next/router';
 import approximate from 'approximate-number';
-import {MapContainer} from './styledMapContainer';
 import LoadingBar from 'components/molecules/LoadingBar';
+import {MapContainer} from './styledMapContainer';
 import type {Feature, MapData, PaintMap, Props, Point, PopupItem, State,
   MapBoxOptions, ViewportDefaults, Geometry, GenericTipHtml, Meta} from './types';
 
