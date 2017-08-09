@@ -4,6 +4,7 @@ exports[`Storyshots Base Maps Base Map Atom 1`] = `
 <div
   className="css-nlcjz6"
 >
+<<<<<<< HEAD
   <div
     style={
       Object {
@@ -20,6 +21,8 @@ exports[`Storyshots Base Maps uganda map centered on wakiso 1`] = `
 <div
   className="css-nlcjz6"
 >
+=======
+>>>>>>> dev-vis-integration
   <div
     style={
       Object {
@@ -36,6 +39,7 @@ exports[`Storyshots Base Maps world map centered on inda 1`] = `
 <div
   className="css-nlcjz6"
 >
+<<<<<<< HEAD
   <div
     style={
       Object {
@@ -56,11 +60,1085 @@ exports[`Storyshots Base Maps world map centered on uganda 1`] = `
     style={
       Object {
         "height": 600,
+=======
+  <div
+    style={
+      Object {
+        "height": 450,
+>>>>>>> dev-vis-integration
         "position": "relative",
         "width": "100%",
       }
     }
   />
+</div>
+`;
+
+exports[`Storyshots Bubble Charts Different Providers, Different Priorities 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="twelve wide computer sixteen wide mobile twelve wide tablet column"
+      >
+        <div
+          className="css-15lmzmt"
+        >
+          <div
+            style={
+              Object {
+                "height": "500px",
+                "width": undefined,
+              }
+            }
+          />
+          <div
+            className="css-1yxh20g"
+          >
+            <div
+              className="css-i3cfar"
+            >
+              <h5
+                className="ui header"
+              >
+                Since 2000, when the Millennium Development Goals were agreed, the domestic public resources available to many countries have grown and extreme poverty rates have fallen.
+              </h5>
+              <p>
+                Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain scarce and poverty rates, although falling slowly in some countries are actually rising in others.
+              </p>
+              <div
+                className="css-3qchb1"
+              >
+                <p>
+                  <a
+                    href=""
+                  >
+                    Click the years to see how countries have progressed
+                  </a>
+                </p>
+              </div>
+              <div
+                className="css-3qchb1"
+              >
+                <div
+                  className="ui buttons"
+                >
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    2000
+                  </button>
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    latest 
+                    <i
+                      aria-hidden="true"
+                      className="info circle icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ui grid"
+        >
+          <div
+            className="one wide column"
+          >
+            <div
+              className="css-1ppdvma"
+            >
+              <button
+                className="ui icon button"
+                disabled={undefined}
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                <i
+                  aria-hidden="true"
+                  className="play icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="fifteen wide column"
+          >
+            <div
+              className="css-1l2vfq4"
+            >
+              <span
+                className="css-1ujcf02 bubble"
+              >
+                1999
+              </span>
+              <div
+                className="css-1whzuw8"
+              >
+                <span
+                  className="css-18n92cq"
+                >
+                  2010
+                </span>
+              </div>
+              <input
+                className="css-13ehj2n input low"
+                max={2015}
+                min={1999}
+                onChange={[Function]}
+                step={1}
+                type="range"
+                value={2010}
+              />
+              <span
+                className="css-2q5yx4 bubble"
+              >
+                2015
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="four wide computer sixteen wide mobile four wide tablet column"
+      >
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Bubble size
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            />
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={undefined}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Selected countries
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating multiple search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <span
+              className="sizer"
+            />
+            <div
+              aria-live="polite"
+              className="default text"
+              role="alert"
+            >
+              Select Country
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={true}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Color By
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui fluid selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            >
+              region
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
+            >
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  region
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  income-group
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Income Group
+          </h4>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Region
+          </h4>
+        </div>
+        <a
+          className="css-n84qqq"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+           More Info
+        </a>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Print and Share
+          </h4>
+          <button
+            className="ui icon button"
+            disabled={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="print icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+<<<<<<< HEAD
+exports[`Storyshots Button With Primary Color 1`] = `
+<button
+  className="ui primary button"
+  disabled={undefined}
+  onClick={[Function]}
+  tabIndex={undefined}
+>
+   
+  Primary
+   
+</button>
+`;
+
+exports[`Storyshots Button With Secondary Color 1`] = `
+<button
+  className="ui secondary button"
+  disabled={undefined}
+  onClick={[Function]}
+  tabIndex={undefined}
+>
+   
+  Secondary
+   
+</button>
+`;
+
+exports[`Storyshots Chart Stubs How have resource in flows changed over time? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div
+    style={
+      Object {
+        "height": "150px",
+        "width": undefined,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Chart Stubs How is income distributed? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div
+    style={
+      Object {
+        "height": "120px",
+        "width": undefined,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Chart Stubs Inflow Vs Outflows 1`] = `
+<div
+  className="css-13dh4yr"
+=======
+exports[`Storyshots Bubble Charts Poverty 1`] = `
+<div
+  className="ui container"
+>>>>>>> dev-vis-integration
+>
+  <div
+    className="ui grid"
+  >
+    <div
+<<<<<<< HEAD
+      className="eight wide column"
+    >
+      <div
+        className="ui basic clearing segment"
+      >
+        <h2
+          className="css-o28kwy"
+          style={
+            Object {
+              "float": "right",
+              "marginRight": "22px",
+            }
+          }
+        >
+          RESOURCE FLOWS TO UNITED KINGDOM 
+          <span>
+            423m
+          </span>
+        </h2>
+      </div>
+    </div>
+    <div
+      className="eight wide column"
+    >
+      <div
+        className="ui basic clearing segment"
+      >
+        <h2
+          className="css-o28kwy"
+          style={
+            Object {
+              "float": "left",
+              "marginLeft": "20px",
+            }
+          }
+        >
+          RESOURCE FLOWS FROM UNITED KINGDOM 
+          <span>
+            28b
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": "400px",
+        "width": undefined,
+      }
+    }
+  />
+  <div
+    className="ui centered grid"
+  >
+    <div
+      className="eight wide column"
+    >
+      <div
+        className="ui basic very padded segment"
+      >
+        <div
+          className="css-1l2vfq4"
+        >
+          <span
+            className="css-1ujcf02 bubble"
+          >
+            2000
+          </span>
+          <div
+            className="css-1whzuw8"
+          >
+            <span
+              className="css-yltwl4"
+            >
+              2010
+            </span>
+          </div>
+          <input
+            className="css-13ehj2n input low"
+            max={2015}
+            min={2000}
+            onChange={[Function]}
+            step={1}
+            type="range"
+            value={2010}
+          />
+          <span
+            className="css-2q5yx4 bubble"
+          >
+            2015
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs International Resources 1`] = `
+<div
+  className="css-13dh4yr"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui grid"
+=======
+      className="row"
+>>>>>>> dev-vis-integration
+    >
+      <div
+        className="twelve wide computer sixteen wide mobile twelve wide tablet column"
+      >
+        <div
+          className="css-15lmzmt"
+        >
+          <div
+            style={
+              Object {
+                "height": "500px",
+                "width": undefined,
+              }
+            }
+          />
+          <div
+            className="css-1yxh20g"
+          >
+            <div
+              className="css-i3cfar"
+            >
+              <h5
+                className="ui header"
+              >
+                Since 2000, when the Millennium Development Goals were agreed, the domestic public resources available to many countries have grown and extreme poverty rates have fallen.
+              </h5>
+              <p>
+                Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain scarce and poverty rates, although falling slowly in some countries are actually rising in others.
+              </p>
+              <div
+                className="css-3qchb1"
+              >
+                <p>
+                  <a
+                    href=""
+                  >
+                    Click the years to see how countries have progressed
+                  </a>
+                </p>
+              </div>
+              <div
+                className="css-3qchb1"
+              >
+                <div
+                  className="ui buttons"
+                >
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    2000
+                  </button>
+                  <button
+                    className="ui button"
+                    disabled={undefined}
+                    onClick={[Function]}
+                    tabIndex={undefined}
+                  >
+                    latest 
+                    <i
+                      aria-hidden="true"
+                      className="info circle icon"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ui grid"
+        >
+          <div
+            className="one wide column"
+          >
+            <div
+              className="css-1ppdvma"
+            >
+              <button
+                className="ui icon button"
+                disabled={undefined}
+                onClick={[Function]}
+                tabIndex={undefined}
+              >
+                <i
+                  aria-hidden="true"
+                  className="play icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            className="fifteen wide column"
+          >
+            <div
+              className="css-1l2vfq4"
+            >
+              <span
+                className="css-1ujcf02 bubble"
+              >
+                1999
+              </span>
+              <div
+                className="css-1whzuw8"
+              >
+                <span
+                  className="css-18n92cq"
+                >
+                  2010
+                </span>
+              </div>
+              <input
+                className="css-13ehj2n input low"
+                max={2015}
+                min={1999}
+                onChange={[Function]}
+                step={1}
+                type="range"
+                value={2010}
+              />
+              <span
+                className="css-2q5yx4 bubble"
+              >
+                2015
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+<<<<<<< HEAD
+        className="ten wide column"
+      >
+        <h3
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            The mix of resources in 
+            <span>
+              2015
+            </span>
+          </div>
+        </h3>
+      </div>
+    </div>
+    <div
+      className="ui grid"
+    >
+      <div
+        className="six wide column"
+      >
+        <div
+          style={
+            Object {
+              "height": "400px",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="ten wide column"
+      >
+        <h2
+          className="css-11lf0dt"
+        >
+          US$ 
+          42b
+        </h2>
+        <div
+          style={
+            Object {
+              "height": "360px",
+              "width": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Stubs Is Poverty reducing over time? 1`] = `
+<div
+  className="ui very padded segment"
+>
+  <div
+    style={
+      Object {
+        "height": "120px",
+        "width": undefined,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Chart Stubs Revenue, financing and expenditure 1`] = `
+<div
+  className="css-13dh4yr"
+>
+  <div
+    className="ui basic segment"
+  >
+    <div
+      className="ui basic clearing segment"
+      style={
+        Object {
+          "paddingLeft": 0,
+          "paddingRight": 0,
+        }
+      }
+    >
+      <h2
+        className="css-o28kwy"
+        style={
+          Object {
+            "float": "left",
+          }
+        }
+      >
+        REVENUE AND GRANT 
+        <span>
+          2014
+        </span>
+      </h2>
+      <div
+        className="ui basic right floated segment"
+        style={
+          Object {
+            "margin": 0,
+            "padding": 0,
+          }
+        }
+=======
+        className="four wide computer sixteen wide mobile four wide tablet column"
+>>>>>>> dev-vis-integration
+      >
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Bubble size
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            />
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={undefined}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Selected countries
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            className="ui floating multiple search selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={undefined}
+          >
+            <input
+              aria-autocomplete="list"
+              autoComplete="off"
+              className="search"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": undefined,
+                }
+              }
+              tabIndex={0}
+              type="text"
+              value=""
+            />
+            <span
+              className="sizer"
+            />
+            <div
+              aria-live="polite"
+              className="default text"
+              role="alert"
+            >
+              Select Country
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              aria-multiselectable={true}
+              className="menu transition"
+              role="listbox"
+            >
+              <div
+                className="message"
+              >
+                No results found.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Color By
+          </h4>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui fluid selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            >
+              region
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+            />
+            <div
+              className="menu transition"
+            >
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  region
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  income-group
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Income Group
+          </h4>
+        </div>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Highlight by Region
+          </h4>
+        </div>
+        <a
+          className="css-n84qqq"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+           More Info
+        </a>
+        <div
+          className="css-1bgon2a"
+        >
+          <h4
+            className="ui header"
+          >
+            Print and Share
+          </h4>
+          <button
+            className="ui icon button"
+            disabled={undefined}
+            onClick={[Function]}
+            tabIndex={undefined}
+          >
+            <i
+              aria-hidden="true"
+              className="print icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -78,13 +1156,21 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
         className="twelve wide computer sixteen wide mobile twelve wide tablet column"
       >
         <div
-          className="css-18066sv"
+          className="css-15lmzmt"
         >
           <div
-            className="css-13azwyo"
+            style={
+              Object {
+                "height": "500px",
+                "width": undefined,
+              }
+            }
+          />
+          <div
+            className="css-1yxh20g"
           >
             <div
-              className="css-1kqtbeg"
+              className="css-i3cfar"
             >
               <h5
                 className="ui header"
@@ -173,24 +1259,24 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 className="css-1whzuw8"
               >
                 <span
-                  className="css-yav0in"
+                  className="css-yltwl4"
                 >
-                  2016
+                  2010
                 </span>
               </div>
               <input
                 className="css-13ehj2n input low"
-                max={2020}
+                max={2015}
                 min={2000}
                 onChange={[Function]}
                 step={1}
                 type="range"
-                value={2016}
+                value={2010}
               />
               <span
                 className="css-2q5yx4 bubble"
               >
-                2020
+                2015
               </span>
             </div>
           </div>
@@ -211,7 +1297,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             aria-busy={undefined}
             aria-disabled={undefined}
             aria-expanded={false}
-            className="ui fluid search selection dropdown"
+            className="ui floating search selection dropdown"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -282,7 +1368,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             aria-busy={undefined}
             aria-disabled={undefined}
             aria-expanded={false}
-            className="ui fluid search selection dropdown"
+            className="ui floating multiple search selection dropdown"
             onBlur={[Function]}
             onChange={[Function]}
             onClick={[Function]}
@@ -305,6 +1391,9 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               type="text"
               value=""
             />
+            <span
+              className="sizer"
+            />
             <div
               aria-live="polite"
               className="default text"
@@ -317,7 +1406,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               className="dropdown icon"
             />
             <div
-              aria-multiselectable={undefined}
+              aria-multiselectable={true}
               className="menu transition"
               role="listbox"
             >
@@ -519,6 +1608,20 @@ exports[`Storyshots Button With Primary Color 1`] = `
   onClick={[Function]}
   tabIndex={undefined}
 >
+<<<<<<< HEAD
+  <div
+    style={
+      Object {
+        "height": "150px",
+        "width": undefined,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Country Search country profile 1`] = `
+=======
    
   Primary
    
@@ -538,753 +1641,44 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
-exports[`Storyshots Chart Stubs How have resource in flows changed over time? 1`] = `
-<div
-  className="ui very padded segment"
->
-  <div
-    style={
-      Object {
-        "height": "150px",
-        "width": undefined,
-      }
-    }
-  />
+exports[`Storyshots Country Profile Charts Government Finance 1`] = `
+<div>
+  Loading...
 </div>
 `;
 
-exports[`Storyshots Chart Stubs How is income distributed? 1`] = `
-<div
-  className="ui very padded segment"
->
-  <div
-    style={
-      Object {
-        "height": "120px",
-        "width": undefined,
-      }
-    }
-  />
-</div>
+exports[`Storyshots Country Profile Charts Inflows Vs Outflows 1`] = `
+<p>
+   Loading
+</p>
 `;
 
-exports[`Storyshots Chart Stubs Inflow Vs Outflows 1`] = `
-<div
-  className="css-13dh4yr"
->
-  <div
-    className="ui grid"
-  >
-    <div
-      className="eight wide column"
-    >
-      <div
-        className="ui basic clearing segment"
-      >
-        <h2
-          className="css-o28kwy"
-          style={
-            Object {
-              "float": "right",
-              "marginRight": "22px",
-            }
-          }
-        >
-          RESOURCE FLOWS TO UNITED KINGDOM 
-          <span>
-            423m
-          </span>
-        </h2>
-      </div>
-    </div>
-    <div
-      className="eight wide column"
-    >
-      <div
-        className="ui basic clearing segment"
-      >
-        <h2
-          className="css-o28kwy"
-          style={
-            Object {
-              "float": "left",
-              "marginLeft": "20px",
-            }
-          }
-        >
-          RESOURCE FLOWS FROM UNITED KINGDOM 
-          <span>
-            28b
-          </span>
-        </h2>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "height": "400px",
-        "width": undefined,
-      }
-    }
-  />
-  <div
-    className="ui centered grid"
-  >
-    <div
-      className="eight wide column"
-    >
-      <div
-        className="ui basic very padded segment"
-      >
-        <div
-          className="css-1l2vfq4"
-        >
-          <span
-            className="css-1ujcf02 bubble"
-          >
-            2000
-          </span>
-          <div
-            className="css-1whzuw8"
-          >
-            <span
-              className="css-yltwl4"
-            >
-              2010
-            </span>
-          </div>
-          <input
-            className="css-13ehj2n input low"
-            max={2015}
-            min={2000}
-            onChange={[Function]}
-            step={1}
-            type="range"
-            value={2010}
-          />
-          <span
-            className="css-2q5yx4 bubble"
-          >
-            2015
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+exports[`Storyshots Country Profile Charts International Resources 1`] = `
+<p>
+  Loading
+</p>
 `;
 
-exports[`Storyshots Chart Stubs International Resources 1`] = `
+exports[`Storyshots Country Profiles Tabs live Country Profiles tabs austria 1`] = `
 <div
-  className="css-13dh4yr"
->
-  <div
-    className="ui container"
-  >
-    <div
-      className="ui grid"
-    >
-      <div
-        className="six wide column"
-      >
-        <h3
-          className="ui center aligned header"
-        >
-          <div
-            className="content"
-          >
-            Outflows over time
-          </div>
-        </h3>
-        <div
-          aria-busy={undefined}
-          aria-disabled={undefined}
-          aria-expanded={false}
-          aria-multiselectable={undefined}
-          className="ui fluid selection dropdown"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
-          role="listbox"
-          tabIndex={0}
-        >
-          <div
-            aria-live="polite"
-            className="text"
-            role="alert"
-          >
-            Choose a flow for more details
-          </div>
-          <i
-            aria-hidden="true"
-            className="dropdown icon"
-          />
-          <div
-            className="menu transition"
-          >
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={true}
-              className="selected item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                dfis
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                fdi
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                oda
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                oofs
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                pda
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                remittances
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="ten wide column"
-      >
-        <h3
-          className="ui center aligned header"
-        >
-          <div
-            className="content"
-          >
-            The mix of resources in 
-            <span>
-              2015
-            </span>
-          </div>
-        </h3>
-      </div>
-    </div>
-    <div
-      className="ui grid"
-    >
-      <div
-        className="six wide column"
-      >
-        <div
-          style={
-            Object {
-              "height": "400px",
-              "width": "100%",
-            }
-          }
-        />
-      </div>
-      <div
-        className="ten wide column"
-      >
-        <h2
-          className="css-11lf0dt"
-        >
-          US$ 
-          42b
-        </h2>
-        <div
-          style={
-            Object {
-              "height": "360px",
-              "width": undefined,
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-</div>
+  className="css-x5a8zc"
+/>
 `;
 
-exports[`Storyshots Chart Stubs Is Poverty reducing over time? 1`] = `
+exports[`Storyshots Country Profiles Tabs live Country Profiles tabs kenya 1`] = `
 <div
-  className="ui very padded segment"
->
-  <div
-    style={
-      Object {
-        "height": "120px",
-        "width": undefined,
-      }
-    }
-  />
-</div>
+  className="css-x5a8zc"
+/>
 `;
 
-exports[`Storyshots Chart Stubs Revenue, financing and expenditure 1`] = `
+exports[`Storyshots Country Profiles Tabs live Country Profiles tabs uganda 1`] = `
 <div
-  className="css-13dh4yr"
->
-  <div
-    className="ui basic segment"
-  >
-    <div
-      className="ui basic clearing segment"
-      style={
-        Object {
-          "paddingLeft": 0,
-          "paddingRight": 0,
-        }
-      }
-    >
-      <h2
-        className="css-o28kwy"
-        style={
-          Object {
-            "float": "left",
-          }
-        }
-      >
-        REVENUE AND GRANT 
-        <span>
-          2014
-        </span>
-      </h2>
-      <div
-        className="ui basic right floated segment"
-        style={
-          Object {
-            "margin": 0,
-            "padding": 0,
-          }
-        }
-      >
-        <div
-          className="ui label"
-          onClick={[Function]}
-        >
-          Budget Type
-        </div>
-        <div
-          aria-busy={undefined}
-          aria-disabled={undefined}
-          aria-expanded={false}
-          aria-multiselectable={undefined}
-          className="ui selection dropdown"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
-          role="listbox"
-          tabIndex={0}
-        >
-          <div
-            aria-live="polite"
-            className="text"
-            role="alert"
-          >
-            actual
-          </div>
-          <i
-            aria-hidden="true"
-            className="dropdown icon"
-          />
-          <div
-            className="menu transition"
-          >
-            <div
-              aria-checked={true}
-              aria-disabled={undefined}
-              aria-selected={true}
-              className="active selected item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                actual
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                budget
-              </span>
-            </div>
-          </div>
-        </div>
-        <div
-          className="ui label"
-          onClick={[Function]}
-        >
-          Currency
-        </div>
-        <div
-          aria-busy={undefined}
-          aria-disabled={undefined}
-          aria-expanded={false}
-          aria-multiselectable={undefined}
-          className="ui compact selection dropdown"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseDown={[Function]}
-          role="listbox"
-          tabIndex={0}
-        >
-          <div
-            aria-live="polite"
-            className="text"
-            role="alert"
-          >
-            Constant US$
-          </div>
-          <i
-            aria-hidden="true"
-            className="dropdown icon"
-          />
-          <div
-            className="menu transition"
-          >
-            <div
-              aria-checked={true}
-              aria-disabled={undefined}
-              aria-selected={true}
-              className="active selected item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                Constant US$
-              </span>
-            </div>
-            <div
-              aria-checked={false}
-              aria-disabled={undefined}
-              aria-selected={false}
-              className="item"
-              onClick={[Function]}
-              role="option"
-              style={
-                Object {
-                  "pointerEvents": "all",
-                }
-              }
-            >
-              <span
-                className="text"
-              >
-                Current UGX
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="ui grid"
-    >
-      <div
-        className="five wide column"
-        style={
-          Object {
-            "paddingRight": 0,
-          }
-        }
-      >
-        <div
-          className="css-wdotdt"
-          style={
-            Object {
-              "paddingLeft": "30px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "height": "180px",
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="eleven wide column"
-        style={
-          Object {
-            "paddingLeft": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "222px",
-              "width": undefined,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="ui grid"
-    >
-      <div
-        className="five wide column"
-        style={
-          Object {
-            "paddingRight": 0,
-          }
-        }
-      >
-        <div
-          className="css-wdotdt"
-          style={
-            Object {
-              "paddingLeft": "30px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "height": "180px",
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="eleven wide column"
-        style={
-          Object {
-            "paddingLeft": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "222px",
-              "width": undefined,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="css-lck8bw"
-    >
-      <h2
-        className="css-o28kwy"
-      >
-        FINANCING 
-        <span>
-          2014
-        </span>
-      </h2>
-    </div>
-    <div
-      className="css-lck8bw"
-    >
-      <h2
-        className="css-o28kwy"
-      >
-        EXPENDITURE 
-        <span>
-          2014
-        </span>
-      </h2>
-    </div>
-    <div
-      className="ui grid"
-    >
-      <div
-        className="five wide column"
-        style={
-          Object {
-            "paddingRight": 0,
-          }
-        }
-      >
-        <div
-          className="css-wdotdt"
-          style={
-            Object {
-              "paddingLeft": "30px",
-            }
-          }
-        >
-          <div
-            style={
-              Object {
-                "height": "250px",
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="eleven wide column"
-        style={
-          Object {
-            "paddingLeft": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "height": "292px",
-              "width": undefined,
-            }
-          }
-        />
-      </div>
-    </div>
-  </div>
-</div>
+  className="css-x5a8zc"
+/>
 `;
 
-exports[`Storyshots Chart Stubs What is the mix of resources? 1`] = `
-<div
-  className="ui very padded segment"
->
-  <div
-    style={
-      Object {
-        "height": "150px",
-        "width": undefined,
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots Country Search country profile 1`] = `
+exports[`Storyshots Country Search Country Search With Data 1`] = `
+>>>>>>> dev-vis-integration
 <div
   className="css-nil"
 >
@@ -3882,9 +4276,103 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           href="/country/aland-islands"
           onClick={[Function]}
         >
+<<<<<<< HEAD
           Aland Islands
         </a>
       </li>
+=======
+          <p>
+            © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+            <a
+              href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+            >
+              privacy policy
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map with redux 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Maps Live with Apollo and Redux uganda_poverty_headcount 1`] = `
+<div
+  className="css-1805z6z"
+/>
+`;
+
+exports[`Storyshots Menu Datahub Logo 1`] = `
+<div
+  className="css-1v2szk2"
+>
+  <img
+    alt="Development Initiatives"
+    height="32"
+    src="/img/logo.png"
+    width="132"
+  />
+</div>
+`;
+
+exports[`Storyshots Menu Datahub Menu 1`] = `
+<div
+  className="css-1ffx9ig"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="css-1v2szk2"
+    >
+      <img
+        alt="Development Initiatives"
+        height="32"
+        src="/img/logo.png"
+        width="132"
+      />
+    </div>
+    <ul
+      className="css-ks7n51"
+    >
+>>>>>>> dev-vis-integration
       <li
         className={false}
       >
@@ -4352,11 +4840,47 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           href="/country/colombia"
           onClick={[Function]}
         >
+<<<<<<< HEAD
           Colombia
         </a>
       </li>
       <li
         className={false}
+=======
+          Click Share this chart view below to
+          <br />
+          to share the chart youve created
+          <br />
+          <i
+            aria-hidden="true"
+            className="arrow down icon"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Storyshots Spotlight Tabs live spotlight tabs 1`] = `
+<div
+  className="css-x5a8zc"
+/>
+`;
+
+exports[`Storyshots Spotlight Templates Spot Light 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1v2szk2"
+>>>>>>> dev-vis-integration
       >
         <a
           href="/country/comoros"
@@ -19907,6 +20431,354 @@ exports[`Storyshots Tour UnbundlindAid tour 1`] = `
 </div>
 `;
 
+exports[`Storyshots Unbundling Aid Chart 1`] = `
+<div
+  className="css-13azwyo"
+>
+  <div>
+    <div
+      className="css-161obe8"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="right aligned middle aligned ten wide column"
+            >
+              <span>
+                ODA in
+                <span
+                  className="css-1kpemyl"
+                >
+                  <span
+                    className="css-h1cetn"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    />
+                    <span
+                      className="css-chu540"
+                    >
+                      
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-1ecpngs"
+                    >
+                      Select Year
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      value={undefined}
+                    />
+                  </div>
+                </span>
+                <span
+                  className="css-1kpemyl"
+                >
+                  <span
+                    className="css-h1cetn"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    >
+                      to
+                    </span>
+                    <span
+                      className="css-chu540"
+                    >
+                      All
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-1ecpngs"
+                    >
+                      to
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      value={undefined}
+                    >
+                      <option
+                        value=""
+                      >
+                        All
+                      </option>
+                    </select>
+                  </div>
+                </span>
+                <span
+                  className="css-1kpemyl"
+                >
+                  <span
+                    className="css-3voiik"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    >
+                      from
+                    </span>
+                    <span
+                      className="css-chu540"
+                    >
+                      All
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-1sp4mhk"
+                    >
+                      from
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      value={undefined}
+                    >
+                      <option
+                        value=""
+                      >
+                        All
+                      </option>
+                    </select>
+                  </div>
+                </span>
+                <span
+                  className="css-1kpemyl"
+                >
+                  <span
+                    className="css-3voiik"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    >
+                      sector
+                    </span>
+                    <span
+                      className="css-chu540"
+                    >
+                      All
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-1sp4mhk"
+                    >
+                      sector
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      value={undefined}
+                    >
+                      <option
+                        value=""
+                      >
+                        All
+                      </option>
+                    </select>
+                  </div>
+                </span>
+                <span
+                  className="css-1kpemyl"
+                >
+                  <span
+                    className="css-3voiik"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    >
+                      in the form of
+                    </span>
+                    <span
+                      className="css-chu540"
+                    >
+                      All
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-1sp4mhk"
+                    >
+                      in the form of
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      value={undefined}
+                    >
+                      <option
+                        value=""
+                      >
+                        All
+                      </option>
+                    </select>
+                  </div>
+                </span>
+                <span
+                  className="css-1kpemyl"
+                >
+                  <span
+                    className="css-3voiik"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    >
+                      via channel
+                    </span>
+                    <span
+                      className="css-chu540"
+                    >
+                      All
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-1sp4mhk"
+                    >
+                      via channel
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      value={undefined}
+                    >
+                      <option
+                        value=""
+                      >
+                        All
+                      </option>
+                    </select>
+                  </div>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-d10atl"
+    >
+      <div
+        className="ui segment"
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="ui active transition visible dimmer"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+        >
+          <div
+            className="content"
+          >
+            <div
+              className="center"
+            >
+              <div
+                className="ui loader"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <button
+    className="ui button"
+    disabled={undefined}
+    onClick={[Function]}
+    style={
+      Object {
+        "position": "absolute",
+        "right": "1em",
+        "top": "0.3em",
+      }
+    }
+    tabIndex={undefined}
+  >
+    <span>
+      Compare 
+      <i
+        aria-hidden="true"
+        className="plus icon"
+      />
+    </span>
+  </button>
+</div>
+`;
+
 exports[`Storyshots Unbundling Aid Select 1`] = `
 <span
   className="css-1kpemyl"
@@ -19923,7 +20795,7 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
     <span
       className="css-chu540"
     >
-      Test
+      
     </span>
   </span>
   <div
@@ -19935,15 +20807,18 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
       onClick={[Function]}
     />
     <span
-      className="css-tfftgc"
+      className="css-1sp4mhk"
     >
       all
     </span>
     <select
       className="css-14opy7r"
       onChange={[Function]}
+      value={undefined}
     >
-      <option>
+      <option
+        value="test"
+      >
         1
       </option>
     </select>

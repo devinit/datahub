@@ -36,7 +36,6 @@ class Chart extends React.Component {
       this.chart.addData(props.data);
     }
   }
-
   render() {
     return (
       <div

@@ -58,7 +58,7 @@ class YearSlider extends React.Component {
             (this.state.position - this.props.minimum) /
             (this.props.maximum - this.props.minimum)}
         >
-          {this.state.position}
+          {Math.floor(this.state.position)}
         </Pointer>
       </PointerContainer>
       <Input

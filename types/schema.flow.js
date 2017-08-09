@@ -1,6 +1,17 @@
 /* @flow */
 //  This file was automatically generated and should not be edited.
 
+export type UnbundlingAidQuery = {|
+  aidType: string,
+  year: number,
+  groupBy: string,
+  to_di_id?: ?string,
+  from_di_id?: ?string,
+  sector?: ?string,
+  bundle?: ?string,
+  channel?: ?string,
+|};
+
 export type CountriesQuery = {|
   countries: ? Array< {|
     id: ?string,
@@ -515,5 +526,87 @@ export type TabDataQuery = {|
         heading: ?string,
       |},
     |},
+  |},
+|};
+
+export type UnbundlingAidDataQueryVariables = {|
+  args?: ?UnbundlingAidQuery,
+  aidType: string,
+|};
+
+export type UnbundlingAidDataQuery = {|
+  selections: ? {|
+    // unbundling aid selection options
+    to: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    from: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    channels: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    sectors: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    // same as form
+    bundles: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    years: ?Array< ?number >,
+  |},
+  bundles: ? Array< {|
+    uid: ?string,
+    id: ?string,
+    // country or organisation or channel or bundle name
+    name: ?string,
+    // this will usually be a summed up aggregate value
+    value: ?number,
+    color: ?string,
+  |} >,
+|};
+
+export type GovernmentFinanceQueryVariables = {|
+  id: string,
+|};
+
+export type GovernmentFinanceQuery = {|
+  governmentFinance: ? {|
+    // for treemap
+    // such as constant 2015 USD for tree map
+    currencyCode: ?string,
+    // use resourcesRecipient sql
+    expenditure: ? Array< {|
+      uid: ?string,
+      year: ?number,
+      levels: ?Array< ?string >,
+      // eg Actual or budget
+      budget_type: ?string,
+      value: ?number,
+      value_ncu: ?number,
+    |} >,
+    revenueAndGrants: ? Array< {|
+      uid: ?string,
+      year: ?number,
+      levels: ?Array< ?string >,
+      // eg Actual or budget
+      budget_type: ?string,
+      value: ?number,
+      value_ncu: ?number,
+    |} >,
+    finance: ? Array< {|
+      uid: ?string,
+      year: ?number,
+      levels: ?Array< ?string >,
+      // eg Actual or budget
+      budget_type: ?string,
+      value: ?number,
+      value_ncu: ?number,
+    |} >,
   |},
 |};
