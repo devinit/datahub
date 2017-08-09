@@ -124,10 +124,10 @@ this will ensure we dont have the all package.json file in our client code budle
 
 ----------
 
-There is this strange bug where a react component willnot be exported out while using export default if its on one line.
+There is this strange bug where a react component may not be exported out while using export default if its on one line.
 i.e
 ```
-  export default connect(mapStateToProps)(MapWithApollo); // this will not export out your component
+  export default connect(mapStateToProps)(MapWithApollo); // this may not get exported
   // this will work
   const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
   export default MapWithRedux;
