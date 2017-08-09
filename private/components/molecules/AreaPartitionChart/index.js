@@ -26,13 +26,10 @@ type State = {
   flow?: string,
 
   trend: Object[],
-  trendConfig: Object,
-  mix: Object[],
-  sumOfMix: number,
+  mixes: Object[],
 }
 
 type Determinant = {
-  year?: string,
   direction?: string,
   flow?: string,
 }
@@ -46,8 +43,9 @@ class AreaPartitionChart extends React.Component {
     super(props);
 
     this.state = {
+      year: this.props.startYear.toString(),
+
       ...this.calculateState({
-        year: this.props.startYear.toString(),
         direction: 'in',
       }),
 
@@ -86,9 +84,12 @@ class AreaPartitionChart extends React.Component {
     };
   }
 
+  setYear(year: string) {
+    this.setState({year});
+  }
+
   update(determinants: Determinant) {
     const state = this.calculateState({
-      year: determinants.year || this.state.year,
       direction: determinants.direction || this.state.direction,
       flow: determinants.flow || this.state.flow
     });
@@ -97,7 +98,7 @@ class AreaPartitionChart extends React.Component {
   }
 
   calculateState(determinants: Determinant) {
-    const {direction, year, flow} = determinants;
+    const {direction, flow} = determinants;
 
     const trend = this.props.data
       .filter(d => {
@@ -111,27 +112,25 @@ class AreaPartitionChart extends React.Component {
       }))
       .sort((a, b) => a.year - b.year);
 
-    const trendConfig = {
-      ...this.props.config.areaConfig,
+    const mixes = trend.reduce((map, datum) => {
+      return {
+        ...map,
 
-      anchor: {
-        start: year
-      }
-    };
+        [datum.year]: [
+          ...(map[datum.year] || []),
 
-    const mix = trend.filter(d => d.year === year);
-    const sumOfMix = approximate(mix.reduce((sum, datum) => sum + datum.value, 0));
+          datum,
+        ]
+      };
+    }, {});
 
     return {
-      year,
       direction,
       flow,
 
       trend,
-      trendConfig,
 
-      mix,
-      sumOfMix
+      mixes
     };
   }
 
@@ -184,23 +183,28 @@ class AreaPartitionChart extends React.Component {
             <Timeline
               height="400px"
               data={this.state.trend}
-              config={this.state.trendConfig}
-              onYearChanged={year => {
-                this.update({year});
+              config={{
+                ...this.props.config.areaConfig,
+
+                anchor: {
+                  start: this.state.year
+                }
               }}
+              onYearChanged={year => this.setYear(year)}
             />
           </Grid.Column>
 
           <Grid.Column width={10}>
             <SectionHeader color="rgb(238, 238, 238)">
-              {this.props.config.treemapConfig.labeling.prefix} {this.state.sumOfMix}
+              {this.props.config.treemapConfig.labeling.prefix}{' '}
+              {approximate((this.state.mixes[this.state.year] || [])
+                .reduce((sum, datum) => sum + datum.value, 0))}
             </SectionHeader>
             <Chart
               height="360px"
-              data={this.state.mix}
+              data={this.state.mixes[this.state.year] || []}
               config={this.props.config.treemapConfig}
-              onClick={d => {
-              }}
+              onClick={d => {}}
             />
           </Grid.Column>
 
