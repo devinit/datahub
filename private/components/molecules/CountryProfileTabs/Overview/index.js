@@ -57,7 +57,7 @@ const Overview = (props: Props) => {
         {props.countryType === RECIPIENT
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
             <Header textAlign="center" as="h3">
-              {' '}WHAT RESOURCES ARE AVAILABLE?
+              WHAT RESOURCES ARE AVAILABLE?
             </Header>
             <P>
                 Domestic public
