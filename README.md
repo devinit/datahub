@@ -117,6 +117,7 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 ---------
 - [ ] Reduce service worker pre-cache bundle
 - [ ] Make webpack loader for coping over package.json version && api config into a separate config file
+- [ ] Get rid of proptypes in one of the lib folder files 
 this will ensure we dont have the all package.json file in our client code budle
 
 
