@@ -9,12 +9,12 @@ import Timeline from '../../atoms/Timeline/index';
 import {LightBg} from '../../atoms/Backgrounds';
 
 type Props = {
+  currencyCode: string,
   loading: boolean,
   startYear: number,
   revenueAndGrants: Object[],
   finance: Object[],
   expenditure: Object[],
-  currencies: [string],
   data: [],
   config: {
     line: {},
@@ -27,6 +27,7 @@ type State = {
   budgetTypes: [string],
   budgetType: string,
   currency: string,
+  currencies: [string],
   revenueLevel?: string,
   financeLevel?: string,
   expenditureLevel?: string,
@@ -64,13 +65,26 @@ export default class GovtRFE extends React.Component {
   constructor(props: Props) {
     super(props);
 
-    this.componentWillUpdate(props);
+    this.state = this.calculateInitialState(props);
   }
 
-  componentWillUpdate(props: Props) {
+  componentWillReceiveProps(props: Props) {
+    this.setState(this.calculateInitialState(props));
+  }
+
+  // eslint-disable-next-line react/sort-comp
+  calculateInitialState(props: Props) {
     const year = props.startYear;
+    const currencies = [
+      {text: 'Constant 2015 US$', value: 'US$'},
+      {text: `Current ${props.currencyCode}`, value: props.currencyCode},
+    ];
     const currency = 'US$';
-    const budgetTypes = this.calculateBudgetTypes(year);
+    const budgetTypes = this.calculateBudgetTypes([
+      ...props.finance,
+      ...props.revenueAndGrants,
+      ...props.expenditure
+    ], year);
     const budgetType = budgetTypes[0] && budgetTypes[0].value;
 
     const revenueTrend = this.calculateTrend(props.revenueAndGrants, currency);
@@ -81,8 +95,9 @@ export default class GovtRFE extends React.Component {
     const financeTree = this.calculateTree(financeTrend, year, budgetType, currency);
     const expenditureTree = this.calculateTree(expenditureTrend, year, budgetType, currency);
 
-    this.state = {
+    return {
       year,
+      currencies,
       currency,
       budgetTypes,
 
@@ -99,7 +114,11 @@ export default class GovtRFE extends React.Component {
   }
 
   setYear(year: number) {
-    const budgetTypes = this.calculateBudgetTypes(year);
+    const budgetTypes = this.calculateBudgetTypes([
+      ...this.props.finance,
+      ...this.props.revenueAndGrants,
+      ...this.props.expenditure
+    ], year);
     const budgetType = budgetTypes[0] && budgetTypes[0].value;
     const currency = this.state.currency;
 
@@ -177,9 +196,10 @@ export default class GovtRFE extends React.Component {
     });
   }
 
-  calculateBudgetTypes(year: number) {
+// eslint-disable-next-line class-methods-use-this
+  calculateBudgetTypes(data: Object[], year: number) {
     return makeUnique(
-      [...this.props.finance, ...this.props.revenueAndGrants, ...this.props.expenditure]
+      data
         .filter(d => d.year === year)
         .map(d => d.budget_type))
       .sort()
@@ -199,7 +219,9 @@ export default class GovtRFE extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   calculateTree(data: Object[], year: number, budgetType: string, currency: string = 'US$') {
     return data
-      .filter(d => d.year === year && d.budget_type === budgetType)
+      .filter(d => {
+        return d.year === year && d.budget_type === budgetType;
+      })
       .map(d => {
         const value = currency === 'US$' ? d.value : d.value_ncu;
         return {
@@ -238,7 +260,7 @@ export default class GovtRFE extends React.Component {
               compact
               selection
               value={this.state.currency}
-              options={this.props.currencies}
+              options={this.state.currencies}
               onChange={(e, data) => this.setCurrency(data.value)}
             />
           </Segment>
