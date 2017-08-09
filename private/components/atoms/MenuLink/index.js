@@ -84,6 +84,8 @@ const Drawer = glamorous.div({
 });
 const ListContainer = glamorous.ul({
   columnCount: 2,
+  paddingTop: '2em',
+  paddingBottom: '2em',
   listStyleType: 'none',
   margin: 0,
 });

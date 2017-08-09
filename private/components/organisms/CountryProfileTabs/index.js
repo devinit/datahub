@@ -25,7 +25,9 @@ type TabsProps = {
 }
 
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<TabsPlaceHolder loading={props.loading} />);
+  if (props.loading || !props.overviewTab || !props.populationTab) {
+    return (<TabsPlaceHolder loading={props.loading} />);
+  }
   const countryType = props.overviewTab && props.overviewTab.countryType ?
     props.overviewTab.countryType : RECIPIENT;
   return (

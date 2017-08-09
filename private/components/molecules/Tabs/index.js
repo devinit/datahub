@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
+import {medium} from 'components/theme';
 import { Container } from 'semantic-ui-react';
 
 type Props = {
@@ -50,6 +51,9 @@ const TabsContentWrapper = glamorous.div({
     transform: 'translate(0,100%)',
     transition: '.3s cubic-bezier(.215,.61,.355,1)',
     transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
+  },
+  '& .ui.header>.icon': {
+    fontSize: medium,
   },
   '& .visible': {
     visibility: 'visible',

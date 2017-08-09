@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { persistStore } from 'redux-persist';
 import localForage from 'localforage';
-// import type {State, Action} from './reducers';
+import packageJson from 'package.json';
 import {app, apolloWrapper} from './reducers';
 
 let reduxStore = null;
@@ -26,9 +26,9 @@ function create(apollo, initialState) {
     ),
   );
 }
-
-export async function makeStorePersist(store) {
+function makeStorePersist(store) {
   return new Promise((resolve, reject) => {
+    // TODO: Purge store if new install, check local storage
     return persistStore(store, {
       storage: localForage,
       whitelist: ['apollo'] }, (err, cachedStore) => {
@@ -39,6 +39,17 @@ export async function makeStorePersist(store) {
         if (cachedStore) resolve(cachedStore);
       });
   });
+}
+export function clientCachingHandling(store) {
+  if (!localStorage) return false; // we are in an old browser or on server
+  const storedVersion = localStorage.getItem('version');
+  if (!storedVersion || storedVersion !== packageJson.version) {
+    // set new version
+    localStorage.setItem('version', packageJson.version);
+    // we have a new app version lets purge the store
+    return persistStore(store).purge();
+  }
+  return makeStorePersist(store);
 }
 
 export function initRedux(apollo, initialState) {

@@ -16,7 +16,9 @@ const LogoContainer = glamorous.div({
 
 const logo = () => (
   <LogoContainer>
-    <img src="/img/logo.png" alt="Development Initiatives" height="32" width="132" />
+    <a href="http://devinit.org">
+      <img src="/img/logo.png" alt="Development Initiatives" height="32" width="132" />
+    </a>
   </LogoContainer>
 );
 

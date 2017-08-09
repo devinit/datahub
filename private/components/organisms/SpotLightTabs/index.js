@@ -19,7 +19,10 @@ type WrapperProps = {
 }
 
 const spotlightTabs = (props: WrapperProps) => {
-  if (props.loading) return (<TabsPlaceHolder loading={props.loading} />);
+  if (props.loading || !props.overviewTabRegional || !props.populationTabRegional
+  || !props.educationTabRegional || !props.healthTabRegional) {
+    return (<TabsPlaceHolder loading={props.loading} />);
+  }
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id="spotlight-overview">

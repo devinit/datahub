@@ -34,7 +34,6 @@ class SearchInput extends React.Component {
       value: '',
       showList: false
     };
-    this.isForCountryProfile = props.profile;
   }
   state: State;
   onKeyDown(e: Object) {
@@ -69,14 +68,29 @@ class SearchInput extends React.Component {
       .filter((country: Country) => country.name.toLowerCase().includes(text.toLowerCase()));
     if (filteredCountries.length) this.setState({countries: filteredCountries});
   }
+  onBlur() {
+    if (!this.setState) return false;
+    return setTimeout(() => {
+      this.setState({showList: false});
+      this.resetState();
+    }, 500);
+  }
   onSubmit() {
     const country: Country | void = this.state.countries[0] || null;
     if (!country) return false;
-    this.setState({value: country.slug});
+    // reset state
+    this.resetState();
     if (this.props.onSelected) return this.props.onSelected(country.slug);
-    return Router.push(`/country?slug=${country.slug}`, `/country/${country.slug}`);
+    return Router.push(`/country?id=${country.slug}`, `/country/${country.slug}`);
   }
-  isForCountryProfile: boolean
+  resetState() {
+    this.setState({
+      value: '',
+      showList: false,
+      selected: -1,
+      countries: this.props.countries,
+    });
+  }
   componentWillReceive(props: Props) {
     this.setState({countries: props.countries});
   }
@@ -85,20 +99,20 @@ class SearchInput extends React.Component {
       <Div>
         <InputContainer
           visible={this.props.visible}
-          profile={this.isForCountryProfile}
-          height={this.isForCountryProfile ? '5em' : '10em'}
+          profile={this.props.profile}
+          height={this.props.profile ? '5em' : '10em'}
         >
           {
-              this.isForCountryProfile ?
+              this.props.profile ?
                 <H1 flex={'0 1'} textTransform="capitalize">{this.props.placeholder}
                   <Icon name="caret down" />
                 </H1> : ''
             }
           <Input
             value={this.state.value}
-            profile={this.isForCountryProfile}
-            placeholder={this.isForCountryProfile ? '' : this.props.placeholder}
-            onBlur={() => this.setState({showList: false})}
+            profile={this.props.profile}
+            placeholder={this.props.profile ? '' : this.props.placeholder}
+            onBlur={() => this.onBlur()}
             onFocus={() => this.setState({showList: true})}
             onChange={(e) => this.onChange(e.target.value)}
             onKeyDown={(e) => this.onKeyDown(e)}
@@ -113,9 +127,9 @@ class SearchInput extends React.Component {
                       key={country.slug}
                       className={this.state.selected === i ? 'active' : false}
                     >
-                      <Link href={`/country?slug=${country.slug}`} as={`/country/${country.slug}`}><a>{country.name}</a></Link>
+                      <Link href={`/country?id=${country.slug}`} as={`/country/${country.slug}`}><a>{country.name}</a></Link>
                     </li>))
-                    : <li> Error getting countries </li>
+                    : <li>country list is not available</li>
               }
           </List>
         </Div>

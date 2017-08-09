@@ -116,7 +116,8 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 
 ---------
 - [ ] Reduce service worker pre-cache bundle
-- [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
+- [ ] Make webpack loader for coping over package.json version && api config into a separate config file
+this will ensure we dont have the all package.json file in our client code budle
 
 
 ## VERY STRANGE BUG

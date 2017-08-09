@@ -180,7 +180,7 @@ class BaseMap extends Component {
       if (!meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
       const features: Feature = this._map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
-      const slugProperty = this.props.paint.propertyName === 'national' ? 'country-slug' : 'name';
+      const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
       const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
       let routePath: string;
@@ -193,6 +193,7 @@ class BaseMap extends Component {
         routePath = `/spotlight_on_${this.props.meta.country}?id=${slug}`;
         routeAsPath = `/spotlight_on_${this.props.meta.country}/${slug}`;
       }
+      console.log(routePath, routeAsPath);
       return Router.push(routePath, routeAsPath);
     });
   }
