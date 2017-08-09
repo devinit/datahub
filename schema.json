@@ -1899,7 +1899,7 @@
           "description": "",
           "fields": [
             {
-              "name": "budgetType",
+              "name": "budget_type",
               "description": "eg Actual or budget",
               "args": [],
               "type": {
@@ -1951,7 +1951,7 @@
               "deprecationReason": null
             },
             {
-              "name": "valueNcu",
+              "name": "value_ncu",
               "description": "",
               "args": [],
               "type": {

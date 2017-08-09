@@ -47,10 +47,10 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @red;
+@primaryColor        : @blue;
 @secondaryColor      : @black;
 
-@lightPrimaryColor   : @lightRed;
+@lightPrimaryColor   : @lightBlue;
 @lightSecondaryColor : @lightBlack;
 
 /*--------------
@@ -121,7 +121,7 @@
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.4285em;
-@textColor           : @lightBlack;
+@textColor           : rgba(0, 0, 0, 0.87);
 
 /*-------------------
       Paragraph
@@ -134,16 +134,40 @@
        Links
 --------------------*/
 
-@linkColor           : @lightBlack;
+@linkColor           : #4183C4;
 @linkUnderline       : none;
-@linkHoverColor      : @red;
+@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
+
+/*-------------------
+    Scroll Bars
+--------------------*/
+
+@useCustomScrollbars: true;
+
+@customScrollbarWidth: 10px;
+
+@trackBackground: rgba(0, 0, 0, 0.1);
+@trackBorderRadius: 0px;
+
+@thumbBorderRadius: 5px;
+@thumbBackground: rgba(0, 0, 0, 0.25);
+@thumbTransition: color 0.2s ease;
+
+@thumbInactiveBackground: rgba(0, 0, 0, 0.15);
+@thumbHoverBackground: rgba(128, 135, 139, 0.8);
+
+/* Inverted */
+@trackInvertedBackground: rgba(255, 255, 255, 0.1);
+@thumbInvertedBackground: rgba(255, 255, 255, 0.25);
+@thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
+@thumbInvertedHoverBackground: rgba(255, 255, 255, 0.35);
 
 /*-------------------
   Highlighted Text
 --------------------*/
 
-@highlightBackground      : @red;
+@highlightBackground      : #CCE2FF;
 @highlightColor           : @textColor;
 
 @inputHighlightBackground : rgba(100, 100, 100, 0.4);
@@ -191,23 +215,23 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@red              : #e8443a;
-@orange           : #EA7600;
-@yellow           : #FECB2F;
+@red              : #DB2828;
+@orange           : #F2711C;
+@yellow           : #FBBD08;
 @olive            : #B5CC18;
 @green            : #21BA45;
 @teal             : #00B5AD;
-@blue             : #0095CB;
+@blue             : #2185D0;
 @violet           : #6435C9;
-@purple           : #93328E;
+@purple           : #A333C8;
 @pink             : #E03997;
 @brown            : #A5673F;
-@grey             : lighten(#453f43, 10%);
-@black            : darken(#453f43, 10%);
+@grey             : #767676;
+@black            : #1B1C1D;
 
 /*---  Light Colors  ---*/
-@lightRed         : lighten(@red, 20%);
-@lightOrange      : lighten(@orange, 20%);
+@lightRed         : #FF695E;
+@lightOrange      : #FF851B;
 @lightYellow      : #FFE21F;
 @lightOlive       : #D9E778;
 @lightGreen       : #2ECC40;
@@ -217,13 +241,8 @@
 @lightPurple      : #DC73FF;
 @lightPink        : #FF8EDF;
 @lightBrown       : #D67C1C;
-@lightGrey        : lighten(@grey, 45%);
-@lighterGrey      : #e9e7e8;
-@lightBlack       : #453f43;
-
-/*---  Dark Colors  ---*/
-@darkRed         : #bc2629;
-
+@lightGrey        : #DCDDDE;
+@lightBlack       : #545454;
 
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;
@@ -244,7 +263,6 @@
 @purpleBackground : #F6E7FF;
 @pinkBackground   : #FFE3FB;
 @brownBackground  : #F1E2D3;
-@seaBackground    : #d3e0f4;
 
 /*--- Colored Headers ---*/
 @redHeaderColor    : darken(@redTextColor, 5);
@@ -426,8 +444,8 @@
 @invertedSelectedTextColor   : rgba(255, 255, 255, 1);
 @invertedDisabledTextColor   : rgba(255, 255, 255, 0.2);
 
-/*----------------------
-     Social Media Colors
+/*-------------------
+     Brand Colors
 --------------------*/
 
 @facebookColor   : #3B5998;

@@ -2,7 +2,6 @@
 import React from 'react';
 import { draw } from '@devinit/charts';
 // import stylesheet from '@devinit/charts/dist/di-charts.min.css';
-/* eslint-disable react/no-danger */
 
 type Props = {
   data: any,
@@ -36,16 +35,12 @@ class Chart extends React.Component {
       this.chart.addData(props.data);
     }
   }
-
   render() {
     return (
-      <div>
-        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
-        <div
-          ref={element => { this.element = element; }}
-          style={{width: this.props.width, height: this.props.height}}
-        />
-      </div>
+      <div
+        ref={element => { this.element = element; }}
+        style={{width: this.props.width, height: this.props.height}}
+      />
     );
   }
 }

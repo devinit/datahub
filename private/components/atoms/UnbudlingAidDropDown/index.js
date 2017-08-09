@@ -8,6 +8,7 @@ type Props = {
   visible: any,
   text: string,
   items: Array<Object>,
+  selected?: string,
   onClose: any,
   onChange?: any,
   active?: any
@@ -61,29 +62,37 @@ const Text = glamorous.span(
     fontSize: '22px',
     listStyle: 'none',
     padding: '5px',
-    textAlignt: 'center'
+    textAlign: 'center'
   },
   props => ({
     opacity: props.active ? '1' : '.5'
   })
 );
 
+const onDropdownChange = function onChange(e, items, callback) {
+  if (callback) {
+    const [selected = {name: '', value: ''}] = items.filter(d => d.value === e.target.value);
+    callback(selected);
+  }
+};
+
 const DropDown = ({
   visible,
   items,
   text,
+  selected,
   onClose,
   active,
   onChange
 }: Props) => {
   const options = items.map(item =>
-    <option key={item.value}>{item.name}</option>
+    <option key={item.value} value={item.value}>{item.name}</option>
   );
   return (
     <Wrapper visible={visible}>
       <Icon name="close" className="close" onClick={() => onClose()} />
       <Text active={active}>{text}</Text>
-      <Select onChange={e => (onChange ? onChange(e.target.value) : 0)}>
+      <Select value={selected || undefined} onChange={e => onDropdownChange(e, items, onChange)}>
         {options}
       </Select>
     </Wrapper>

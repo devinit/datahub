@@ -6,6 +6,7 @@ import InteractiveChartToolBar from 'components/molecules/UnbundlingAidChartTool
 import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import Social from 'components/molecules/UnbundlingAidSocial';
 import Generic from '../Generic';
+import data from './data';
 
 const headerStyles = {
   paddingTop: '4em',
@@ -33,7 +34,7 @@ export default () => {
           </Header>
         </HeaderContainer>
       </Container>
-      <InteractiveChartToolBar />
+      <InteractiveChartToolBar toolBarOptions={data.toolBar} />
       <TotalODA />
       <Social />
       <TextContainer>

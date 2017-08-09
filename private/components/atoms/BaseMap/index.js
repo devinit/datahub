@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import mapboxgl from 'mapbox-gl';
 import {lightGrey, red, seaBackground, orange} from 'components/theme/semantic';
 import Router from 'next/router';
-import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
+// import stylesheet from 'mapbox-gl/dist/mapbox-gl.css';
 import approximate from 'approximate-number';
 import {MapContainer} from './styledMapContainer';
 
@@ -246,7 +246,7 @@ class BaseMap extends Component {
       if (!features.length) return false;
       const property = paint.paintProperty || 'ISO2';
       const countryId: string = features[0].properties[property];
-      console.log('feature: ', features[0]);
+      // console.log('feature: ', features[0]);
       if (!paint.data) return false;
       const point: MapData | void = paint.data.find(obj => {
         if (!obj.id) return false;
@@ -305,7 +305,7 @@ class BaseMap extends Component {
     const mapContainerStyle = {width, height, position: 'relative'};
     return (
       <MapContainer>
-        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+        {/* <style dangerouslySetInnerHTML={{ __html: stylesheet }} /> */}
         <div
           key={'map-mapbox'}
           ref={element => { if (element) this.draw(element, this.props.paint); }}

@@ -3,8 +3,8 @@ import React from 'react';
 import { draw } from '@devinit/charts';
 
 type Props = {
-  data: any,
-  config: {},
+  data: Object[],
+  config: Object,
   width?: string,
   height?: string,
   onClick(d: {id: string, parent: string}): void,
