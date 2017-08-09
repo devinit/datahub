@@ -10,8 +10,6 @@ import {
 } from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import {Div} from 'glamorous';
-import {lighterGrey} from 'components/theme/semantic';
 import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
 
 type WrapperProps = {
@@ -20,22 +18,22 @@ type WrapperProps = {
 }
 
 const spotlightTabs = (props: WrapperProps) => {
-  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
+  if (props.loading) return (<p> Loading ...</p>);
   return (
     <Tabs selected={0} height="20em">
-      <Pane label="Overview" id="spotlight-overview">
+      <Pane label="Overview">
         <Overview {...props} />
       </Pane>
-      <Pane label="Poverty" id="spotlight-poverty">
+      <Pane label="Poverty">
         <Poverty {...props} />
       </Pane>
-      <Pane label="Population" id="spotlight-poverty">
+      <Pane label="Population">
         <Population {...props} />
       </Pane>
-      <Pane label="Health" id="spotlight-health">
+      <Pane label="Health">
         <Health {...props} />
       </Pane>
-      <Pane label="Education" id="spotlight-education">
+      <Pane label="Education">
         <Education {...props} />
       </Pane>
     </Tabs>

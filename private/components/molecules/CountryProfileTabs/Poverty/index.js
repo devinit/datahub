@@ -47,7 +47,7 @@ const Poverty = (props: Props) => {
             HOW IS INCOME DISTRIBUTED?
           </Header>
           {
-            povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.length ?
+            povertyTab.incomeDistTrend ?
               <div>
                 <Chart
                   config={props.config.histogram}
@@ -58,7 +58,7 @@ const Poverty = (props: Props) => {
                   Bottom quintile has {povertyTab.incomeDistTrend[0].value} % of the income.
                 </P>
               </div>
-              : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
+              : ''
           }
         </Grid.Column>
       </Grid>

@@ -1,7 +1,7 @@
 // @flow
+import InternationalResourcesChart from 'components/molecules/InternationalResourcesChart';
 import React from 'react';
-import InternationalResourcesChart from '../../molecules/AreaPartitionChart';
-import type {Props} from '../../molecules/AreaPartitionChart';
+import type {Props} from 'components/molecules/InternationalResourcesChart';
 
 type WrapperProps = Props & {
   children: any,
@@ -10,11 +10,9 @@ type WrapperProps = Props & {
 }
 
 const InternationalResourcesWrapper = (props: WrapperProps) => {
-  if (props.loading) return (<p>Loading</p>);
-
+  if (props.loading) return (<p> Loading</p>);
   return (<InternationalResourcesChart
-    country="Uganda"
-    startYear={2015}
+    startYear={props.data.startYear}
     data={props.data}
     config={props.config}
   />);

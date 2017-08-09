@@ -28,8 +28,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           {/* <link rel="manifest" href="/manifest.json" /> */}
           <link rel="stylesheet" href="/semantic/semantic.min.css" />
-          <link rel="stylesheet" href="/css/di-charts.min.css" />
-          <link rel="stylesheet" href="/css/mapbox-gl.min.css" />
+          <link rel="stylesheet" href="/di-charts/di-charts.min.css" />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>

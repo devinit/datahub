@@ -55,4 +55,3 @@ config.addDerivedValues(gulpConfig);
 *******************************/
 
 module.exports = gulpConfig;
-

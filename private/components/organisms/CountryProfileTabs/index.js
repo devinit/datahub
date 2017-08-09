@@ -17,7 +17,7 @@ import internationalResourcesConfig from 'visboxConfigs/internationalResourceTab
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {Div} from 'glamorous';
-import {lighterGrey} from 'components/theme/semantic';
+import {lightGrey} from 'components/theme/semantic';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
 
 type TabsProps = {
@@ -25,46 +25,34 @@ type TabsProps = {
   ...TabDataQuery
 }
 
-const RECIPIENT = 'recipient';
-const DONOR = 'donor';
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
-  if (!props.overViewTab || !props.overViewTab.countryType) console.error('country type missing in overview tab data');
-  const countryType = props.overViewTab && props.overViewTab.countryType ?
-    props.overViewTab.countryType : RECIPIENT;
+  if (props.loading) return (<Div backgroundColor={lightGrey} width={'100%'} height={'5em'} />);
   return (
     <Tabs selected={0} height="20em">
-      <Pane label="Overview" id={'overview-tab'}>
+      <Pane label="Overview" key={1}>
         <Overview {...props} />
       </Pane>
-      {
-        countryType === RECIPIENT ?
-          <Pane label="Poverty" id={'poverty-tab'}>
-            <Poverty config={povertyConfig} {...props} />
-          </Pane> : ''
-      }
-      <Pane label="Population" id={'population-tab'}>
+      <Pane label="Poverty" key={2}>
+        <Poverty config={povertyConfig} {...props} />
+      </Pane>
+      <Pane label="Population" key={3}>
         <Population config={populationConfig} {...props} />
       </Pane>
-      {
-        countryType === RECIPIENT ?
-          <Pane label="Government Finance" id={'govt-finance-tab'}>
-            <GovernmentFinance config={govtFinanceConfig} {...props} />
-          </Pane> : ''
-      }
-
-      <Pane label="International Resources" id={'internantion-reseources-tab'}>
+      <Pane label="Government Finance" key={4}>
+        <GovernmentFinance config={govtFinanceConfig} {...props} />
+      </Pane>
+      <Pane label="International Resources" key={5}>
         <InternationalResources config={internationalResourcesConfig} {...props} />
       </Pane>
     </Tabs>
   );
 };
 const withData = graphql(TABS_QUERY, {
-  options: (props) => {
-    return {
-      variables: {id: props.id}
-    };
-  },
+  options: (props) => ({
+    variables: {
+      id: props.id
+    }
+  }),
   props: ({data}) => {
     const {error, loading} = data;
     if (error) throw Error(error);

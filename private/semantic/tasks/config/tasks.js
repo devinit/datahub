@@ -144,8 +144,8 @@ module.exports = {
 
     /* Minified JS Settings */
     uglify: {
-      mangle   : true,
-      comments : 'some'
+      mangle           : true,
+      preserveComments : 'some'
     },
 
     /* Minified Concat CSS Settings */
@@ -158,8 +158,8 @@ module.exports = {
 
     /* Minified Concat JS */
     concatUglify: {
-      mangle   : true,
-      comments : false
+      mangle           : true,
+      preserveComments : false
     }
 
   }
