@@ -134,14 +134,14 @@ i.e
 ```
 
 
-## Known development issues
+## Known development issues / incompartibilities
 
 ----------
 
-- Currently Updating eslint-plugin-react to 7.1.0 will break linting
+- Currently Updating eslint-plugin-react to 7.1.0  &  eslint-plugin-jsx-a11y to 6.0.2 will break linting
 - Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing.
 - Currently dont add react-apollo flow types. They have an issue that need to be corrected
-- Dont upgrade apollo-codegen as it will break liniting --> _Makes inner array types option_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
+- Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types option_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
 
 ## Development environment and notes
 
