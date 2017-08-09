@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Header, Grid} from 'semantic-ui-react';
+import { Container, Header, Grid } from 'semantic-ui-react';
 import InteractiveChartToolBar from 'components/molecules/UnbundlingAidChartToolBar';
 import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import Social from 'components/molecules/UnbundlingAidSocial';
@@ -44,8 +44,10 @@ export default () => {
               <Grid.Column width="10">
                 <Header as="h1">Source</Header>
                 <Header as="h2">Development Initiatives based on OECD DAC data.</Header>
-                <p>Note that figures are rounded: precise data are available for
-                download on the methodology page</p>
+                <p>
+                  Note that figures are rounded: precise data are available for download on the
+                  methodology page
+                </p>
               </Grid.Column>
               <Grid.Column width="6">
                 <Header as="h1">Download the data</Header>

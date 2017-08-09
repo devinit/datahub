@@ -1,32 +1,31 @@
 // @flow
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import BaseMap from 'components/atoms/BaseMap';
-import type {MapData, PaintMap, Meta} from 'components/atoms/BaseMap/types';
-import {Div, P} from 'glamorous';
-import {lightGrey} from 'components/theme/semantic';
-import type {LegendField} from 'components/atoms/MapLegend';
+import type { MapData, PaintMap, Meta } from 'components/atoms/BaseMap/types';
+import { Div, P } from 'glamorous';
+import { lightGrey } from 'components/theme/semantic';
+import type { LegendField } from 'components/atoms/MapLegend';
 import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
-import {Grid, Container} from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
-import type {Props as RankingsTableProps} from 'components/molecules/RankingsTable';
+import type { Props as RankingsTableProps } from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
-import type {MapConfig} from './config';
+import type { MapConfig } from './config';
 import mapConfigs from './config';
 
 type Props = {
-   mapStyle?: string,
-   loading: boolean,
-   ...MapDataQuery
+  mapStyle?: string,
+  loading: boolean,
+  ...MapDataQuery,
 };
 
 type State = {
-   data: MapData[],
-   currentYear: number
-}
+  data: MapData[],
+  currentYear: number,
+};
 
 class Map extends Component {
-
   static setCurrentYearData(currentYear: number, data: MapData[]): MapData[] {
     return data.filter(obj => {
       if (obj.year === undefined) throw new Error('year property is missing in map data obj');
@@ -42,7 +41,7 @@ class Map extends Component {
     this.init(props);
     // onLoadCss();
   }
-  state: State
+  state: State;
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) this.init(nextProps);
   }
@@ -50,8 +49,8 @@ class Map extends Component {
   onYearChange(year: number) {
     if (this.props && this.props.mapData && this.props.mapData.map) {
       const data = Map.setCurrentYearData(year, this.props.mapData.map);
-      this.paint = {data, ...this.config.paint};
-      this.setState({currentYear: year, data});
+      this.paint = { data, ...this.config.paint };
+      this.setState({ currentYear: year, data });
     }
   }
   setCountryRankData(): RankingsTableProps {
@@ -62,7 +61,7 @@ class Map extends Component {
         const flagUrl: string = this.country === 'global' ? `/flags/svg/${obj.id}.svg` : '';
         const name = obj.name ? obj.name : 'N/A';
         if (!obj.value || !obj.uid) throw new Error('value must be defined');
-        return {name, value: obj.value, flagUrl, uid: obj.uid};
+        return { name, value: obj.value, flagUrl, uid: obj.uid };
       })
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined');
@@ -72,7 +71,7 @@ class Map extends Component {
     const bottom = sortedData.slice(-10).reverse();
     return {
       hasflags: this.country === 'global',
-      data: {top, bottom}
+      data: { top, bottom },
     };
   }
   initYearSetup(props: Props) {
@@ -83,14 +82,18 @@ class Map extends Component {
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    this.state = {...this.state, currentYear};
+    this.state = { ...this.state, currentYear };
   }
   initMetaSetup(props: Props) {
     if (!props.mapData || !props.mapData.legend) throw new Error('mapData is missing in props');
     this.legendData = props.mapData.legend;
-    this.name = props.mapData && props.mapData.name ? props.mapData.name : 'Indicator must have a name talk to Allan or Donata';
+    this.name =
+      props.mapData && props.mapData.name
+        ? props.mapData.name
+        : 'Indicator must have a name talk to Allan or Donata';
     const uomDisplay = props.mapData.uom_display || '';
-    this.description = props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
+    this.description =
+      props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
     if (!props.mapData.theme) throw new Error('theme is missing in map data props');
     if (!props.mapData.country) throw new Error('country is missing in map data props');
     if (!props.mapData.id) throw new Error('indicator id is missing in map data props');
@@ -99,21 +102,23 @@ class Map extends Component {
       uom_display: uomDisplay,
       theme: props.mapData.theme,
       id: props.mapData.id,
-      country: props.mapData.country};
+      country: props.mapData.country,
+    };
   }
   init(props: Props) {
     this.initYearSetup(props);
     this.initMetaSetup(props);
     let data = [];
     if (props.mapData && props.mapData.map && props.mapData.map.length) {
-      data = this.yearSliderVisibility ?
-        Map.setCurrentYearData(this.state.currentYear, props.mapData.map) : props.mapData.map;
-      this.paint = {data, ...this.config.paint};
+      data = this.yearSliderVisibility
+        ? Map.setCurrentYearData(this.state.currentYear, props.mapData.map)
+        : props.mapData.map;
+      this.paint = { data, ...this.config.paint };
     }
     if (props.mapData && props.mapData.map_style) {
-      this.paint = {data, ...this.config.paint, mapStyle: props.mapData.map_style};
+      this.paint = { data, ...this.config.paint, mapStyle: props.mapData.map_style };
     }
-    this.state = {...this.state, data};
+    this.state = { ...this.state, data };
   }
   yearSliderVisibility: boolean;
   startYear: number;
@@ -133,11 +138,7 @@ class Map extends Component {
             <Div width={'100%'}>
               <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
             </Div>
-            <Legend
-              title={this.name}
-              description={this.description}
-              legendData={this.legendData}
-            />
+            <Legend title={this.name} description={this.description} legendData={this.legendData} />
             <P
               fontSize={'0.7em'}
               color={lightGrey}
@@ -145,25 +146,25 @@ class Map extends Component {
               right={'2%'}
               position={'absolute'}
             >
-            Country borders do not necessarily reflect Development Initiative&apos;s position.</P>
+              Country borders do not necessarily reflect Development Initiative&apos;s position.
+            </P>
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={4} textAlign="center">
-              {
-            this.yearSliderVisibility ?
-            (<YearSlider
-              minimum={this.startYear}
-              maximum={this.endYear}
-              step={1}
-              position={this.state.currentYear}
-              onChange={year => this.onYearChange(year)}
-            />)
-          :
-          (<Div fontWeight={'bold'}>
-            <P fontSize={'1.2em'}>{this.startYear}</P>
-            <P>(This indicator has data for a single year only.)</P>
-          </Div>)
-          }
+              {this.yearSliderVisibility
+                ? <YearSlider
+                  minimum={this.startYear}
+                  maximum={this.endYear}
+                  step={1}
+                  position={this.state.currentYear}
+                  onChange={year => this.onYearChange(year)}
+                />
+                : <Div fontWeight={'bold'}>
+                  <P fontSize={'1.2em'}>
+                    {this.startYear}
+                  </P>
+                  <P>(This indicator has data for a single year only.)</P>
+                </Div>}
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>

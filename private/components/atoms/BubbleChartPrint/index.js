@@ -7,10 +7,9 @@ import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 //   onClick: () => void,
 // };
 
-const printWidget = () => (
-  <Wrapper title="Print and Share">
+const printWidget = () =>
+  (<Wrapper title="Print and Share">
     <Button icon="print" />
-  </Wrapper>
-);
+  </Wrapper>);
 
 export default printWidget;

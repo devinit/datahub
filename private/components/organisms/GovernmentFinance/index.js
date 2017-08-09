@@ -5,13 +5,13 @@ import config from 'visboxConfigs/linePartition';
 import QUERY from '../../../graphql/governmentFinance.graphql';
 
 const withData = graphql(QUERY, {
-  options: (props) => ({
+  options: props => ({
     variables: {
-      id: props.id
-    }
+      id: props.id,
+    },
   }),
-  props: ({data}) => {
-    const {error, loading} = data;
+  props: ({ data }) => {
+    const { error, loading } = data;
 
     if (error) throw new Error(error);
 
@@ -23,10 +23,10 @@ const withData = graphql(QUERY, {
         expenditure: [],
         finance: [],
         currencyCode: '',
-        startYear: 2015 // got from api
+        startYear: 2015, // got from api
       }),
     };
-  }});
-
+  },
+});
 
 export default withData(Chart);

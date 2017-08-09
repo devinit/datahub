@@ -1,17 +1,17 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { Container, Header, Grid, Icon, Button} from 'semantic-ui-react';
-import {red} from 'components/theme/semantic';
+import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import { red } from 'components/theme/semantic';
 import RegionalProfileLowerSection from 'components/molecules/RegionalProfileLowerSection';
-import {Lead} from 'components/atoms/Header';
+import { Lead } from 'components/atoms/Header';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
-import {CardContainer} from 'components/atoms/Container';
+import { CardContainer } from 'components/atoms/Container';
 import SearchInput from 'components/organisms/CountrySearchInput';
 import Generic from '../Generic';
 import data from './data';
 
 const SocialIconsContainer = glamorous.div({
-  marginTop: '1.5em'
+  marginTop: '1.5em',
 });
 const UpperContainer = glamorous.div({
   borderBottom: '2px solid #ddd9dc',
@@ -22,8 +22,8 @@ const JumpToResource = glamorous.span({
   marginTop: '1.5em',
   display: 'block',
   '& a': {
-    color: red
-  }
+    color: red,
+  },
 });
 
 export default () =>
@@ -36,16 +36,12 @@ export default () =>
               <CardContainer>
                 <Header>
                   <Icon name="globe" />
-                  <Header.Content>
-                    General Picture
-                  </Header.Content>
+                  <Header.Content>General Picture</Header.Content>
                 </Header>
-                <SearchInput
-                  visible
-                  countries={data.regions}
-                  placeholder={data.meta.region}
-                />
-                <Lead>{data.meta.description}</Lead>
+                <SearchInput visible countries={data.regions} placeholder={data.meta.region} />
+                <Lead>
+                  {data.meta.description}
+                </Lead>
                 <JumpToResource>
                   Jump to <a>International resources</a>
                 </JumpToResource>

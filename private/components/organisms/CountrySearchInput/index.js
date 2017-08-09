@@ -7,7 +7,7 @@ type Props = {
   visible: boolean,
   profile: boolean,
   placeholder?: string,
-}
+};
 const SearchwithData = (props: Props) =>
   (<SearchInput
     countries={data.countries}
@@ -15,6 +15,5 @@ const SearchwithData = (props: Props) =>
     profile={props.profile}
     placeholder={props.placeholder || 'Type a country name...'}
   />);
-
 
 export default SearchwithData;

@@ -2,7 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
-import {SectionHeader} from 'components/atoms/Header';
+import { SectionHeader } from 'components/atoms/Header';
 import Generic from '../Generic';
 import data from './data';
 

@@ -18,16 +18,18 @@ const ToolBarItem = (props: Props) => {
     position = 0,
     values,
     textAlign,
-    onChange = (key, value) => { // TOFIX: @ernest why is this here yet its unused
+    onChange = (key, value) => {
+      // TOFIX: @ernest why is this here yet its unused
       console.log(key, value);
-    }
+    },
   } = props;
 
   const keys = Object.keys(data);
 
   return (
     <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
-      <span>ODA in
+      <span>
+        ODA in
         <Select
           active
           value={values[keys.indexOf('years')]}

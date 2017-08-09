@@ -12,14 +12,14 @@ const data = {
         {
           name: 'Country Profiles',
           link: '/country-profiles',
-          icon: 'area graph'
+          icon: 'area graph',
         },
         {
           name: 'Multilateral Profiles',
           link: '/multilateral-profiles',
-          icon: 'area graph'
+          icon: 'area graph',
         },
-      ]
+      ],
     },
     {
       name: 'Unbudling Aid',
@@ -37,32 +37,30 @@ const data = {
         {
           name: 'Unbundling other official flows',
           link: '/unbundling-other-flows',
-          icon: 'barcode'
+          icon: 'barcode',
         },
         {
           name: 'Where are the poor and where will they be?',
           link: '/where-are-the-poor',
-          icon: 'users'
+          icon: 'users',
         },
         {
           name: 'Are domestic public resources able to meet the needs of the poorest people?',
           link: '/methodology',
-          icon: 'area graph'
+          icon: 'area graph',
         },
         {
           name: 'Different providers, different priorities',
           link: '/',
-          icon: 'area graph'
+          icon: 'area graph',
         },
-      ]
+      ],
     },
     {
       name: 'Methodology',
       link: '/methodology',
     },
-  ]
-
-
+  ],
 };
 
 export default data;

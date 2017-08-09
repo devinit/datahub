@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {Icon} from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 const TourPointer = glamorous.span({
   position: 'absolute',
@@ -13,7 +13,7 @@ const TourPointer = glamorous.span({
     top: '100%',
     left: '-7px',
     marginTop: '-10px',
-  }
+  },
 });
 const TourItems = glamorous.ul({
   padding: '0',
@@ -22,11 +22,11 @@ const TourItems = glamorous.ul({
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    position: 'absolute'
+    position: 'absolute',
   },
   '& .item-1': {
     bottom: '80px',
-    left: '20px'
+    left: '20px',
   },
   '& .item-2': {
     width: '580px',
@@ -34,7 +34,7 @@ const TourItems = glamorous.ul({
     top: '45px',
     left: '50%',
     marginLeft: '-320px',
-    border: '2px solid #fff'
+    border: '2px solid #fff',
   },
   '& .item-3': {
     left: '50%',
@@ -45,8 +45,8 @@ const TourItems = glamorous.ul({
       left: '100%',
       top: '50%',
       marginLeft: '10px',
-      marginTop: '-10px'
-    }
+      marginTop: '-10px',
+    },
   },
   '& .item-4': {
     top: '10px',
@@ -62,12 +62,12 @@ const TourItems = glamorous.ul({
       '& i.right': {
         left: '100%',
         marginLeft: '-10px',
-        top: '2px'
+        top: '2px',
       },
       '& i.left': {
         top: '2px',
       },
-    }
+    },
   },
   '& .item-5': {
     top: '110px',
@@ -75,8 +75,8 @@ const TourItems = glamorous.ul({
     marginLeft: '-290px',
     '& i': {
       marginTop: '-10px',
-      position: 'absolute'
-    }
+      position: 'absolute',
+    },
   },
   '& .item-6': {
     top: '260px',
@@ -88,9 +88,9 @@ const TourItems = glamorous.ul({
       bottom: '100%',
       left: '65px',
       '& i': {
-        top: 'auto'
-      }
-    }
+        top: 'auto',
+      },
+    },
   },
   '& .item-7': {
     right: '60px',
@@ -109,10 +109,13 @@ const TourItems = glamorous.ul({
     textAlign: 'center',
   },
 });
-const VisualizationTour = () => (
-  <TourItems>
+const VisualizationTour = () =>
+  (<TourItems>
     <li className="item-1">
-      <b>How to read this<br />visualistion</b><br />
+      <b>
+        How to read this<br />visualistion
+      </b>
+      <br />
       Each cell in the tree map<br />
       is sized by the volume of<br />ODA it represents. The<br />
       total amount of ODA<br />
@@ -136,7 +139,8 @@ const VisualizationTour = () => (
       </TourPointer>
     </li>
     <li className="item-5 text-center">
-      <Icon name="arrow up" /><br />
+      <Icon name="arrow up" />
+      <br />
       Change the<br />
       year here
     </li>
@@ -150,7 +154,8 @@ const VisualizationTour = () => (
       above to open a drop-down menu
     </li>
     <li className="item-7 text-right">
-      <Icon name="arrow up" /><br />
+      <Icon name="arrow up" />
+      <br />
       Click <b>Compare</b> to view two<br />
       tree maps side by side
     </li>
@@ -159,7 +164,6 @@ const VisualizationTour = () => (
       share the chart you’ve created<br />
       <Icon name="arrow down" />
     </li>
-  </TourItems>
-);
+  </TourItems>);
 
 export default VisualizationTour;

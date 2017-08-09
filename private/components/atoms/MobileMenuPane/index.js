@@ -3,12 +3,11 @@ import React from 'react';
 import type { Element } from 'react';
 
 type Props = {
-  children: Element<any>
+  children: Element<any>,
 };
-const MobileMenuItem = ({ children}: Props) => (
-  <div className="nav-children">
+const MobileMenuItem = ({ children }: Props) =>
+  (<div className="nav-children">
     {children}
-  </div>
-);
+  </div>);
 
 export default MobileMenuItem;

@@ -15,8 +15,8 @@ export const populationDistribution = {
     // Every 30 years
     tickingStep: 20,
     axisMinimum: 1960,
-    axisMaximum: 2015
-  }
+    axisMaximum: 2015,
+  },
 };
 
 export const populationPerAgeBand = {
@@ -36,9 +36,8 @@ export const populationPerAgeBand = {
     // Every 30 years
     tickingStep: 20,
     axisMinimum: 1960,
-    axisMaximum: 2015
-  }
+    axisMaximum: 2015,
+  },
 };
 
-
-export default {populationDistribution, populationPerAgeBand};
+export default { populationDistribution, populationPerAgeBand };

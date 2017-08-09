@@ -1,12 +1,12 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Dropdown, Grid, Label, Segment} from 'semantic-ui-react';
-import {SectionHeader} from 'components/atoms/Header';
-import {makeUnique} from '@devinit/charts/lib/factories/createDataset';
+import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
+import { SectionHeader } from 'components/atoms/Header';
+import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import TreeChart from '../../atoms/TreeChart/index';
 import Timeline from '../../atoms/Timeline/index';
-import {LightBg} from '../../atoms/Backgrounds';
+import { LightBg } from '../../atoms/Backgrounds';
 
 type Props = {
   currencyCode: string,
@@ -18,9 +18,9 @@ type Props = {
   data: [],
   config: {
     line: {},
-    partition: {}
-  }
-}
+    partition: {},
+  },
+};
 
 type State = {
   year: number,
@@ -37,7 +37,7 @@ type State = {
   revenueTree: Object[],
   financeTree: Object[],
   expenditureTree: Object[],
-}
+};
 
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
@@ -58,7 +58,6 @@ const HeadingContainer = glamorous.div({
 });
 
 export default class GovtRFE extends React.Component {
-
   // eslint-disable-next-line react/sort-comp
   state: State;
 
@@ -76,15 +75,14 @@ export default class GovtRFE extends React.Component {
   calculateInitialState(props: Props) {
     const year = props.startYear;
     const currencies = [
-      {text: 'Constant 2015 US$', value: 'US$'},
-      {text: `Current ${props.currencyCode}`, value: props.currencyCode},
+      { text: 'Constant 2015 US$', value: 'US$' },
+      { text: `Current ${props.currencyCode}`, value: props.currencyCode },
     ];
     const currency = 'US$';
-    const budgetTypes = this.calculateBudgetTypes([
-      ...props.finance,
-      ...props.revenueAndGrants,
-      ...props.expenditure
-    ], year);
+    const budgetTypes = this.calculateBudgetTypes(
+      [...props.finance, ...props.revenueAndGrants, ...props.expenditure],
+      year,
+    );
     const budgetType = budgetTypes[0] && budgetTypes[0].value;
 
     const revenueTrend = this.calculateTrend(props.revenueAndGrants, currency);
@@ -114,11 +112,10 @@ export default class GovtRFE extends React.Component {
   }
 
   setYear(year: number) {
-    const budgetTypes = this.calculateBudgetTypes([
-      ...this.props.finance,
-      ...this.props.revenueAndGrants,
-      ...this.props.expenditure
-    ], year);
+    const budgetTypes = this.calculateBudgetTypes(
+      [...this.props.finance, ...this.props.revenueAndGrants, ...this.props.expenditure],
+      year,
+    );
     const budgetType = budgetTypes[0] && budgetTypes[0].value;
     const currency = this.state.currency;
 
@@ -130,7 +127,7 @@ export default class GovtRFE extends React.Component {
       year,
       revenueTree: this.calculateTree(revenueTrend, year, budgetType, currency),
       financeTree: this.calculateTree(financeTrend, year, budgetType, currency),
-      expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency)
+      expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency),
     });
   }
 
@@ -141,7 +138,7 @@ export default class GovtRFE extends React.Component {
       budgetType,
       revenueTree: this.calculateTree(this.state.revenueTrend, year, budgetType, currency),
       financeTree: this.calculateTree(this.state.financeTrend, year, budgetType, currency),
-      expenditureTree: this.calculateTree(this.state.expenditureTrend, year, budgetType, currency)
+      expenditureTree: this.calculateTree(this.state.expenditureTrend, year, budgetType, currency),
     });
   }
 
@@ -159,52 +156,46 @@ export default class GovtRFE extends React.Component {
       expenditureTrend,
       revenueTree: this.calculateTree(revenueTrend, year, budgetType, currency),
       financeTree: this.calculateTree(financeTrend, year, budgetType, currency),
-      expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency)
+      expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency),
     });
   }
 
   setRevenueLevel(revenueLevel: string) {
-    const leveled = this.props.revenueAndGrants
-      .filter(d => {
-        return d.levels.indexOf(revenueLevel) > -1;
-      });
+    const leveled = this.props.revenueAndGrants.filter(d => {
+      return d.levels.indexOf(revenueLevel) > -1;
+    });
     this.setState({
       revenueLevel,
-      revenueTrend: this.calculateTrend(leveled, this.state.currency)
+      revenueTrend: this.calculateTrend(leveled, this.state.currency),
     });
   }
 
   setFinanceLevel(financeLevel: string) {
-    const leveled = this.props.finance
-      .filter(d => {
-        return d.levels.indexOf(financeLevel) > -1;
-      });
+    const leveled = this.props.finance.filter(d => {
+      return d.levels.indexOf(financeLevel) > -1;
+    });
     this.setState({
       financeLevel,
-      financeTrend: this.calculateTrend(leveled, this.state.currency)
+      financeTrend: this.calculateTrend(leveled, this.state.currency),
     });
   }
 
   setExpenditureLevel(expenditureLevel: string) {
-    const leveled = this.props.expenditure
-      .filter(d => {
-        return d.levels.indexOf(expenditureLevel) > -1;
-      });
+    const leveled = this.props.expenditure.filter(d => {
+      return d.levels.indexOf(expenditureLevel) > -1;
+    });
     this.setState({
       expenditureLevel,
-      expenditureTrend: this.calculateTrend(leveled, this.state.currency)
+      expenditureTrend: this.calculateTrend(leveled, this.state.currency),
     });
   }
 
-// eslint-disable-next-line class-methods-use-this
+  // eslint-disable-next-line class-methods-use-this
   calculateBudgetTypes(data: Object[], year: number) {
-    return makeUnique(
-      data
-        .filter(d => d.year === year)
-        .map(d => d.budget_type))
+    return makeUnique(data.filter(d => d.year === year).map(d => d.budget_type))
       .sort()
       .map(text => {
-        return {text: text.slice(0, 1).toUpperCase() + text.slice(1), value: text, key: text};
+        return { text: text.slice(0, 1).toUpperCase() + text.slice(1), value: text, key: text };
       });
   }
 
@@ -212,7 +203,7 @@ export default class GovtRFE extends React.Component {
   calculateTrend(data: Object[], currency: string = 'US$') {
     return data.map(d => ({
       ...d,
-      value: currency === 'US$' ? d.value : d.value_ncu
+      value: currency === 'US$' ? d.value : d.value_ncu,
     }));
   }
 
@@ -238,123 +229,130 @@ export default class GovtRFE extends React.Component {
     if (this.props.loading) {
       return <div>Loading...</div>;
     }
-    return (<LightBg>
-      <Segment basic>
+    return (
+      <LightBg>
+        <Segment basic>
+          <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
+            <SectionHeader color="#fff" style={{ float: 'left' }}>
+              REVENUE AND GRANT <span>{this.state.year}</span>
+            </SectionHeader>
 
-        <Segment basic clearing style={{paddingRight: 0, paddingLeft: 0}}>
-
-          <SectionHeader color="#fff" style={{float: 'left'}}>
-            REVENUE AND GRANT <span>{this.state.year}</span>
-          </SectionHeader>
-
-          <Segment basic floated={'right'} style={{padding: 0, margin: 0}}>
-            <Label>Budget Type</Label>
-            <Dropdown
-              selection
-              value={this.state.budgetType}
-              options={this.state.budgetTypes}
-              onChange={(e, data) => this.setBudgetType(data.value)}
-            />
-            <Label>Currency</Label>
-            <Dropdown
-              compact
-              selection
-              value={this.state.currency}
-              options={this.state.currencies}
-              onChange={(e, data) => this.setCurrency(data.value)}
-            />
+            <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
+              <Label>Budget Type</Label>
+              <Dropdown
+                selection
+                value={this.state.budgetType}
+                options={this.state.budgetTypes}
+                onChange={(e, data) => this.setBudgetType(data.value)}
+              />
+              <Label>Currency</Label>
+              <Dropdown
+                compact
+                selection
+                value={this.state.currency}
+                options={this.state.currencies}
+                onChange={(e, data) => this.setCurrency(data.value)}
+              />
+            </Segment>
           </Segment>
-        </Segment>
 
-        <Grid>
+          <Grid>
+            <Grid.Column width={5} style={{ paddingRight: 0 }}>
+              <CardContainer style={{ paddingLeft: '30px' }}>
+                <Timeline
+                  onYearChanged={year => this.setYear(+year)}
+                  height="180px"
+                  config={{
+                    ...this.props.config.line,
+                    anchor: { start: this.state.year.toString() },
+                  }}
+                  data={this.state.revenueTrend}
+                />
+              </CardContainer>
+            </Grid.Column>
 
-          <Grid.Column width={5} style={{paddingRight: 0}}>
-            <CardContainer style={{paddingLeft: '30px'}}>
-              <Timeline
-                onYearChanged={year => this.setYear(+year)}
-                height="180px"
+            <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+              <TreeChart
+                height="222px"
                 config={{
-                  ...this.props.config.line, anchor: {start: this.state.year.toString()}}}
-                data={this.state.revenueTrend}
+                  ...this.props.config.partition,
+                  labeling: { prefix: this.state.currency },
+                }}
+                onClick={(d: { id: string }) => this.setRevenueLevel(d.id)}
+                data={this.state.revenueTree}
               />
-            </CardContainer>
-          </Grid.Column>
+            </Grid.Column>
+          </Grid>
 
-          <Grid.Column width={11} style={{paddingLeft: 0}}>
-            <TreeChart
-              height="222px"
-              config={{...this.props.config.partition, labeling: {prefix: this.state.currency}}}
-              onClick={(d: {id: string}) => this.setRevenueLevel(d.id)}
-              data={this.state.revenueTree}
-            />
-          </Grid.Column>
+          <Grid>
+            <Grid.Column width={5} style={{ paddingRight: 0 }}>
+              <CardContainer style={{ paddingLeft: '30px' }}>
+                <Timeline
+                  onYearChanged={year => this.setYear(+year)}
+                  height="180px"
+                  config={{
+                    ...this.props.config.line,
+                    anchor: { start: this.state.year.toString() },
+                  }}
+                  data={this.state.financeTrend}
+                />
+              </CardContainer>
+            </Grid.Column>
 
-        </Grid>
-
-        <Grid>
-
-          <Grid.Column width={5} style={{paddingRight: 0}}>
-            <CardContainer style={{paddingLeft: '30px'}}>
-              <Timeline
-                onYearChanged={year => this.setYear(+year)}
-                height="180px"
-                config={{...this.props.config.line, anchor: {start: this.state.year.toString()}}}
-                data={this.state.financeTrend}
+            <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+              <TreeChart
+                height="222px"
+                config={{
+                  ...this.props.config.partition,
+                  labeling: { prefix: this.state.currency },
+                }}
+                onClick={(d: { id: string }) => this.setFinanceLevel(d.id)}
+                data={this.state.financeTree}
               />
-            </CardContainer>
-          </Grid.Column>
+            </Grid.Column>
+          </Grid>
 
-          <Grid.Column width={11} style={{paddingLeft: 0}}>
-            <TreeChart
-              height="222px"
-              config={{...this.props.config.partition, labeling: {prefix: this.state.currency}}}
-              onClick={(d: {id: string}) => this.setFinanceLevel(d.id)}
-              data={this.state.financeTree}
-            />
-          </Grid.Column>
+          <HeadingContainer>
+            <SectionHeader color="#fff">
+              FINANCING <span>{this.state.year}</span>
+            </SectionHeader>
+          </HeadingContainer>
 
-        </Grid>
+          <HeadingContainer>
+            <SectionHeader color="#fff">
+              EXPENDITURE <span>{this.state.year}</span>
+            </SectionHeader>
+          </HeadingContainer>
 
-        <HeadingContainer>
-          <SectionHeader color="#fff">
-            FINANCING <span>{this.state.year}</span>
-          </SectionHeader>
-        </HeadingContainer>
+          <Grid>
+            <Grid.Column width={5} style={{ paddingRight: 0 }}>
+              <CardContainer style={{ paddingLeft: '30px' }}>
+                <Timeline
+                  onYearChanged={year => this.setYear(+year)}
+                  height="250px"
+                  config={{
+                    ...this.props.config.line,
+                    anchor: { start: this.state.year.toString() },
+                  }}
+                  data={this.state.expenditureTrend}
+                />
+              </CardContainer>
+            </Grid.Column>
 
-        <HeadingContainer>
-          <SectionHeader color="#fff">
-            EXPENDITURE <span>{this.state.year}</span>
-          </SectionHeader>
-        </HeadingContainer>
-
-        <Grid>
-
-          <Grid.Column width={5} style={{paddingRight: 0}}>
-            <CardContainer style={{paddingLeft: '30px'}}>
-              <Timeline
-                onYearChanged={year => this.setYear(+year)}
-                height="250px"
-                config={{...this.props.config.line, anchor: {start: this.state.year.toString()}}}
-                data={this.state.expenditureTrend}
+            <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+              <TreeChart
+                height="292px"
+                config={{
+                  ...this.props.config.partition,
+                  labeling: { prefix: this.state.currency },
+                }}
+                onClick={(d: { id: string }) => this.setExpenditureLevel(d.id)}
+                data={this.state.expenditureTree}
               />
-            </CardContainer>
-          </Grid.Column>
-
-          <Grid.Column width={11} style={{paddingLeft: 0}}>
-            <TreeChart
-              height="292px"
-              config={{...this.props.config.partition, labeling: {prefix: this.state.currency}}}
-              onClick={(d: {id: string}) => this.setExpenditureLevel(d.id)}
-              data={this.state.expenditureTree}
-            />
-          </Grid.Column>
-
-        </Grid>
-
-      </Segment>
-
-    </LightBg>);
+            </Grid.Column>
+          </Grid>
+        </Segment>
+      </LightBg>
+    );
   }
-
 }
-

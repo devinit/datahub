@@ -1,5 +1,5 @@
-import {Container, Grid} from 'semantic-ui-react';
-import {FooterLink} from 'components/atoms/Link';
+import { Container, Grid } from 'semantic-ui-react';
+import { FooterLink } from 'components/atoms/Link';
 import SocialMedia from 'components/molecules/SocialMedia';
 import React from 'react';
 import {
@@ -8,12 +8,12 @@ import {
   TopFooter,
   FooterHeader,
   WhiteContainer,
-  FooterDisclaimer
+  FooterDisclaimer,
 } from '../../atoms/Footer';
 
 /* eslint-disable max-len */
-const footer = () => (
-  <FooterDiv>
+const footer = () =>
+  (<FooterDiv>
     <BlackContainer>
       <TopFooter>
         <Container>
@@ -30,19 +30,25 @@ const footer = () => (
                 <FooterHeader>Quick Links</FooterHeader>
                 <FooterLink href="http://devinit.org/#!/blog"> Contact us </FooterLink>
                 <FooterLink href="http://devinit.org/#!/blog"> Topics</FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Our consultancy services </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Open DI - publishing to IATI </FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog">
+                  {' '}Our consultancy services{' '}
+                </FooterLink>
+                <FooterLink href="http://devinit.org/#!/blog">
+                  {' '}Open DI - publishing to IATI{' '}
+                </FooterLink>
               </Grid.Column>
               <Grid.Column mobile={16} computer={4} tablet={8}>
                 <FooterHeader>Newsletter</FooterHeader>
                 <p>
-                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                  Sign up for the Development Initiatives newsletter to receive regular news and
+                  updates from DI.
                 </p>
               </Grid.Column>
               <Grid.Column mobile={16} computer={4} tablet={8}>
                 <FooterHeader>Creative Commons</FooterHeader>
                 <p>
-                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                  This sites content is licensed under a Creative Commons
+                  Attribution-NonCommercial-ShareAlike 4.0 International license .
                 </p>
               </Grid.Column>
             </Grid.Row>
@@ -67,19 +73,18 @@ const footer = () => (
         <Container>
           <FooterDisclaimer>
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd.
-              Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI
-              International Ltd. Registered in England and Wales No. 06368740. Read our
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI
+              International Ltd. Registered in England and Wales No. 05802543. Development
+              Initiatives Poverty Research is the not-for-profit partner of DI International Ltd.
+              Registered in England and Wales No. 06368740. Read our
               <a href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf">
-                privacy
-                policy
+                privacy policy
               </a>.
             </p>
           </FooterDisclaimer>
         </Container>
       </Grid.Row>
     </BlackContainer>
-  </FooterDiv>
-);
+  </FooterDiv>);
 
 export default footer;

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { graphql} from 'react-apollo';
+import { graphql } from 'react-apollo';
 import {
   Education,
   Health,
@@ -15,13 +15,18 @@ import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
 
 type WrapperProps = {
   loading: boolean,
-  ...SpotLightTabDataQuery
-}
+  ...SpotLightTabDataQuery,
+};
 
 const spotlightTabs = (props: WrapperProps) => {
-  if (props.loading || !props.overviewTabRegional || !props.populationTabRegional
-  || !props.educationTabRegional || !props.healthTabRegional) {
-    return (<TabsPlaceHolder loading={props.loading} />);
+  if (
+    props.loading ||
+    !props.overviewTabRegional ||
+    !props.populationTabRegional ||
+    !props.educationTabRegional ||
+    !props.healthTabRegional
+  ) {
+    return <TabsPlaceHolder loading={props.loading} />;
   }
   return (
     <Tabs selected={0} height="20em">
@@ -45,16 +50,17 @@ const spotlightTabs = (props: WrapperProps) => {
 };
 
 const withData = graphql(TABS_QUERY, {
-  options: (props) => ({
+  options: props => ({
     variables: {
       id: props.id,
-      country: props.country
-    }
+      country: props.country,
+    },
   }),
-  props: ({data}) => {
-    const {error} = data;
+  props: ({ data }) => {
+    const { error } = data;
     if (error) throw Error(error);
     return data;
-  }});
+  },
+});
 
 export default withData(spotlightTabs);

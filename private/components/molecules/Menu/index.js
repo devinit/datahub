@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
-import {white, red} from 'components/theme/semantic';
-import {Container} from 'semantic-ui-react';
+import { white, red } from 'components/theme/semantic';
+import { Container } from 'semantic-ui-react';
 import Logo from 'components/atoms/Logo';
 import DesktopMenu from 'components/molecules/DesktopMenu';
 import MobileMenu from 'components/molecules/MobileMenu';
@@ -19,14 +19,13 @@ const MenuContainer = glamorous.div({
   boxShadow: '0 0 16px rgba(0,0,0,.3)', // TODO:add to color variables
 });
 
-const menu = (props) => (
-  <MenuContainer>
+const menu = props =>
+  (<MenuContainer>
     <Container>
       <Logo />
       <DesktopMenu {...props} />
       <MobileMenu {...props} />
     </Container>
-  </MenuContainer>
-);
+  </MenuContainer>);
 
 export default menu;

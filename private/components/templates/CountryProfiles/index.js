@@ -1,15 +1,14 @@
 // @flow
 import React from 'react';
-import glamorous, {H4} from 'glamorous';
+import glamorous, { H4 } from 'glamorous';
 import { Container, Grid, Icon, Button } from 'semantic-ui-react';
 import { red } from 'components/theme/semantic';
-import {CardContainer} from 'components/atoms/Container';
+import { CardContainer } from 'components/atoms/Container';
 import SearchInput from 'components/organisms/CountrySearchInput';
 import Generic from '../Generic';
 
-
 const SocialIconsContainer = glamorous.div({
-  marginTop: '1.5em'
+  marginTop: '1.5em',
 });
 export default () =>
   (<Generic>

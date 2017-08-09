@@ -1,6 +1,5 @@
 import glamorous from 'glamorous';
-import {white, red, lighterGrey, grey} from 'components/theme/semantic';
-
+import { white, red, lighterGrey, grey } from 'components/theme/semantic';
 
 export const Slider = glamorous.div({
   display: 'inline-block',
@@ -18,7 +17,7 @@ export const Slider = glamorous.div({
     padding: '0',
     fontSize: '.9em',
     color: grey,
-  }
+  },
 });
 export const Input = glamorous.input({
   whiteSpace: 'nowrap',
@@ -34,22 +33,25 @@ export const Input = glamorous.input({
   cursor: 'pointer',
 });
 
-export const Pointer = glamorous.span({
-  position: 'absolute',
-  cursor: 'pointer',
-  width: '2.65em',
-  height: '2.65em',
-  borderRadius: '50%',
-  border: '0.012em solid #666',
-  top: '-0.8em',
-  color: white,
-  paddingTop: '.6em',
-  textAlign: 'center',
-  backgroundColor: red,
-  userSelect: 'none',
-  // transition: '1s left',
-  zIndex: 1},
-  (props) => ({left: `${100 * props.left}%`}));
+export const Pointer = glamorous.span(
+  {
+    position: 'absolute',
+    cursor: 'pointer',
+    width: '2.65em',
+    height: '2.65em',
+    borderRadius: '50%',
+    border: '0.012em solid #666',
+    top: '-0.8em',
+    color: white,
+    paddingTop: '.6em',
+    textAlign: 'center',
+    backgroundColor: red,
+    userSelect: 'none',
+    // transition: '1s left',
+    zIndex: 1,
+  },
+  props => ({ left: `${100 * props.left}%` }),
+);
 
 export const Floor = glamorous.span({
   whiteSpace: 'nowrap',

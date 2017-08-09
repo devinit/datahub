@@ -1,9 +1,8 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Header} from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import Generic from '../Generic';
-
 
 export default () => {
   const headerStyles = {

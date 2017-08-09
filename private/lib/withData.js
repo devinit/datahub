@@ -12,10 +12,10 @@ function getComponentDisplayName(Component) {
 
 export default ComposedComponent => {
   return class WithData extends React.Component {
-    static displayName = `WithData(${getComponentDisplayName(ComposedComponent)})`
+    static displayName = `WithData(${getComponentDisplayName(ComposedComponent)})`;
     static propTypes = {
-      serverState: PropTypes.object.isRequired
-    }
+      serverState: PropTypes.object.isRequired,
+    };
 
     static async getInitialProps(ctx) {
       let serverState = {};
@@ -31,7 +31,7 @@ export default ComposedComponent => {
         const apollo = initApollo();
         const redux = initRedux(apollo);
         // Provide the `url` prop data in case a GraphQL query uses it
-        const url = {query: ctx.query, pathname: ctx.pathname};
+        const url = { query: ctx.query, pathname: ctx.pathname };
 
         try {
           // Run all GraphQL queries
@@ -40,7 +40,7 @@ export default ComposedComponent => {
             // because Apollo sets up the store for us
             <ApolloProvider client={apollo} store={redux}>
               <ComposedComponent url={url} {...composedInitialProps} />
-            </ApolloProvider>
+            </ApolloProvider>,
           );
         } catch (error) {
           // Prevent Apollo Client GraphQL errors from crashing SSR.
@@ -57,18 +57,19 @@ export default ComposedComponent => {
         // No need to include other initial Redux state because when it
         // initialises on the client-side it'll create it again anyway
         serverState = {
-          apollo: { // Only include the Apollo data state
-            data: state.apollo.data
-          }
+          apollo: {
+            // Only include the Apollo data state
+            data: state.apollo.data,
+          },
         };
       }
       return {
         serverState,
-        ...composedInitialProps
+        ...composedInitialProps,
       };
     }
     async componentWillMount() {
-       // dispatches an Hydrate action
+      // dispatches an Hydrate action
       if (process.browser) clientCachingHandling(this.redux);
     }
     constructor(props) {

@@ -12,4 +12,6 @@ storiesOf('Maps Live with Apollo and Redux', module)
   .add('fragile states', () => <Map id={'data_series.fragile_states'} />)
   .add('latest_census', () => <Map id={'data_series.latest_census'} />)
   .add('largest_intl_flow', () => <Map id={'data_series.largest_intl_flow'} />)
-  .add('uganda_poverty_headcount', () => <Map id={'spotlight_on_uganda.uganda_poverty_headcount'} />);
+  .add('uganda_poverty_headcount', () =>
+    <Map id={'spotlight_on_uganda.uganda_poverty_headcount'} />,
+  );

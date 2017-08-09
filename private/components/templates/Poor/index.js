@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Header, Grid} from 'semantic-ui-react';
+import { Container, Header, Grid } from 'semantic-ui-react';
 import Visualization from 'components/molecules/whereAreThePoorViz';
 import Generic from '../Generic';
 import data from './data';
@@ -10,11 +10,11 @@ const HeaderContainer = glamorous.div({
   paddingTop: '4em',
   paddingBottom: '0em',
   '& h1.ui.header': {
-    fontSize: '3em'
+    fontSize: '3em',
   },
   '& .sub.header': {
-    fontSize: '0.55em !important'
-  }
+    fontSize: '0.55em !important',
+  },
 });
 export default () => {
   return (
@@ -24,9 +24,7 @@ export default () => {
           <Header as="h1">
             <Header.Content>
               Where are the poor and where will they be?
-              <Header.Subheader>
-                {data.subHeader}
-              </Header.Subheader>
+              <Header.Subheader>{data.subHeader}</Header.Subheader>
             </Header.Content>
           </Header>
         </HeaderContainer>

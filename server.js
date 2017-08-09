@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 4444;
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 200,
-  maxAge: 1000 * 60 * 60 * 24 * 30  // 30 days
+  maxAge: 1000 * 60 * 60 * 24 * 30 // 30 days
 });
 
 const renderAndCache = (req, res, pagePath, queryParams) => {

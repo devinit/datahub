@@ -3,15 +3,15 @@ const config = {
   orientation: 'horizontal',
   coloring: 'color',
   labeling: {
-    prefix: 'US$ '
+    prefix: 'US$ ',
   },
   tree: {
     id: 'name',
-    value: 'value'
+    value: 'value',
   },
   treemap: {
-    tile: 'binary'
-  }
+    tile: 'binary',
+  },
 };
 
 export default config;

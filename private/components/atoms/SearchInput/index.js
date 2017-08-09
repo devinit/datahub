@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
-import {white, lighterGrey, midWhite} from 'components/theme/semantic';
-import {big} from 'components/theme';
+import { white, lighterGrey, midWhite } from 'components/theme/semantic';
+import { big } from 'components/theme';
 
 export const List = glamorous.ul({
   borderRadius: '.125em',
@@ -25,30 +25,33 @@ export const List = glamorous.ul({
   },
   '& li.active': {
     backgroundColor: midWhite,
-  }
+  },
 });
-export const InputContainer = glamorous.div({
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'nowrap',
-  alignContent: 'stretch',
-  transition: 'all .3s ease-in-out',
-  '& .icon': {
-    display: 'inline',
-    marginLeft: '0.25em'
+export const InputContainer = glamorous.div(
+  {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    alignContent: 'stretch',
+    transition: 'all .3s ease-in-out',
+    '& .icon': {
+      display: 'inline',
+      marginLeft: '0.25em',
+    },
+    '& .list': {
+      display: 'none',
+    },
+    '& input:focus + .list': {
+      display: 'inline-flex',
+    },
   },
-  '& .list': {
-    display: 'none',
-  },
-  '& input:focus + .list': {
-    display: 'inline-flex',
-  }},
-  (props) => ({
+  props => ({
     height: props.visible ? props.height || '10em' : '0em',
     overflow: props.visible ? 'visible' : 'hidden',
     backgroundColor: props.profile ? 'transparent' : lighterGrey,
-  }));
+  }),
+);
 
 export const Input = glamorous.input({
   fontSize: big,
@@ -64,6 +67,5 @@ export const Input = glamorous.input({
     backgroundColor: white,
     borderRadius: '.125em',
     // boxShadow: '0 .125em .125em 0 rgba(0,0,0,.2)',
-  }}
-);
-
+  },
+});

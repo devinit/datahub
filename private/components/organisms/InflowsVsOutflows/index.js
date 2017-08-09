@@ -4,19 +4,21 @@ import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.gra
 import config from '../../../visboxConfigs/dualbarChart';
 
 const withData = graphql(RESOURCES_QUERY, {
-  options: (props) => ({
+  options: props => ({
     variables: {
-      id: props.id
-    }
+      id: props.id,
+    },
   }),
-  props: ({data}) => {
-    const {error, loading} = data;
+  props: ({ data }) => {
+    const { error, loading } = data;
     if (error) throw new Error(error);
-    return loading || !data.internationalResources ? {loading, config} : {
-      data: data.internationalResources.resourcesOverTime.data,
-      config
-    };
-  }});
-
+    return loading || !data.internationalResources
+      ? { loading, config }
+      : {
+        data: data.internationalResources.resourcesOverTime.data,
+        config,
+      };
+  },
+});
 
 export default withData(Chart);

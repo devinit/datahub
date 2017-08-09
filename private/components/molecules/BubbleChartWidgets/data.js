@@ -2,24 +2,14 @@ const data = {
   startYear: 2010,
   maxYear: 2015,
   minYear: 2000,
-  countries: [
-    {text: 'Uganda', value: 'Uganda'}
-  ],
-  indicators: [
-    {text: 'Small', value: 'Small'}
-  ],
+  countries: [{ text: 'Uganda', value: 'Uganda' }],
+  indicators: [{ text: 'Small', value: 'Small' }],
   colorables: [
-    {text: 'region', value: 'region'},
-    {text: 'income-group', value: 'income-group'}
+    { text: 'region', value: 'region' },
+    { text: 'income-group', value: 'income-group' },
   ],
-  incomeGroups: [
-    {name: 'LDCs', color: '#ba0c2f'},
-    {name: 'LMICs', color: '#b7bf10'},
-  ],
-  regions: [
-    {name: 'Europe', color: '#1b365d'},
-    {name: 'Far East Asia', color: '#ea7600'},
-  ],
+  incomeGroups: [{ name: 'LDCs', color: '#ba0c2f' }, { name: 'LMICs', color: '#b7bf10' }],
+  regions: [{ name: 'Europe', color: '#1b365d' }, { name: 'Far East Asia', color: '#ea7600' }],
   points: [],
   config: {
     type: 'bubble',
@@ -57,8 +47,7 @@ const data = {
       minimum: 0,
       maximum: 100,
     },
-  }
+  },
 };
 
 export default data;
-

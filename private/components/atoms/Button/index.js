@@ -12,8 +12,9 @@ type Props = {
   extra?: any,
 };
 
-const button = ({ onClick, children, content, primary, secondary }: Props) => (
-  <Button primary={primary} secondary={secondary} onClick={onClick}> {children || content} </Button>
-);
+const button = ({ onClick, children, content, primary, secondary }: Props) =>
+  (<Button primary={primary} secondary={secondary} onClick={onClick}>
+    {' '}{children || content}{' '}
+  </Button>);
 
 export default button;

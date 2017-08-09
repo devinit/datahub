@@ -4,8 +4,7 @@ import React from 'react';
 import { white } from 'components/theme/semantic';
 import ExportChart from 'components/molecules/ExportChart';
 import ChartFilter from 'components/molecules/CountryProfileChartFilter';
-import {SectionHeader} from 'components/atoms/Header';
-
+import { SectionHeader } from 'components/atoms/Header';
 
 const Lead = glamorous.span({
   fontSize: '1.5rem',
@@ -15,22 +14,22 @@ const Lead = glamorous.span({
     paddingRight: '2px',
     paddingLeft: '2px',
     fontWeight: '600',
-  }
+  },
 });
 
 const ChartSection = glamorous.div({
   paddingTop: '2em',
-  paddingBottom: '2em'
+  paddingBottom: '2em',
 });
 
-const Government = () => (
-  <Container>
-    <Grid centered >
+const Government = () =>
+  (<Container>
+    <Grid centered>
       <Grid.Row>
         <Grid.Column width={8} textAlign="center">
           <Lead>
             How does Uganda finance and spend its budget?
-              <span>Move the year slider</span>or <span>click a box</span> to drill down.
+            <span>Move the year slider</span>or <span>click a box</span> to drill down.
           </Lead>
         </Grid.Column>
       </Grid.Row>
@@ -63,7 +62,9 @@ const Government = () => (
         </Grid.Row>
       </Grid>
     </ChartSection>
-    <Header as="h2" textAlign="center">Expenditure</Header>
+    <Header as="h2" textAlign="center">
+      Expenditure
+    </Header>
     <Divider />
     <ChartSection>
       <ExportChart />
@@ -80,7 +81,6 @@ const Government = () => (
         </Grid.Row>
       </Grid>
     </ChartSection>
-  </Container>
-);
+  </Container>);
 
 export default Government;

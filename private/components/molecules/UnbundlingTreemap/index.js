@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Dimmer, Icon, Loader, Segment} from 'semantic-ui-react';
+import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
 import TreeChart from '../../atoms/TreeChart';
 import InteractiveChartToolBar from '../UnbundlingAidChartToolBar/index';
 
@@ -14,19 +14,19 @@ export type Props = {
   selections: Object,
   bundles: Object[],
   refetch: (variables: Object) => any,
-}
+};
 
 type State = {
   position: number,
   keys: string[],
   values: string[],
   dimmerColor?: string,
-}
+};
 
 const Container = glamorous.div({
   margin: '1em',
   height: '32em',
-  position: 'relative'
+  position: 'relative',
 });
 
 const Up = glamorous.a({
@@ -40,12 +40,11 @@ const Up = glamorous.a({
   zIndex: 1000,
 
   '&:hover': {
-    background: 'rgba(0, 0, 0, 0.6)'
-  }
+    background: 'rgba(0, 0, 0, 0.6)',
+  },
 });
 
 class UnbundlingTreemap extends React.Component {
-
   static groupers = {
     years: 'year',
     to: 'to_di_id',
@@ -71,10 +70,10 @@ class UnbundlingTreemap extends React.Component {
       ...keys.slice(1).map(d => {
         const [selected] = props.selections[d].filter(x => x.active);
         return selected ? selected.value : '';
-      })
+      }),
     ];
 
-    this.state = {position, keys, values};
+    this.state = { position, keys, values };
   }
 
   zoomIn(selected: Object) {
@@ -82,7 +81,7 @@ class UnbundlingTreemap extends React.Component {
 
     const values = this.updateValueByPosition(position, selected.id);
 
-    this.setState({position: position + 1, values, dimmerColor: selected.color});
+    this.setState({ position: position + 1, values, dimmerColor: selected.color });
 
     this.fetch(position + 1, this.state.keys, this.state.values);
   }
@@ -92,7 +91,7 @@ class UnbundlingTreemap extends React.Component {
 
     const values = this.updateValueByPosition(position, '');
 
-    this.setState({position, values});
+    this.setState({ position, values });
 
     this.fetch(position, this.state.keys, values);
   }
@@ -102,7 +101,7 @@ class UnbundlingTreemap extends React.Component {
 
     const values = this.updateValueByPosition(position, value);
 
-    this.setState({values});
+    this.setState({ values });
 
     this.fetch(this.state.position, this.state.keys, values);
   }
@@ -124,55 +123,56 @@ class UnbundlingTreemap extends React.Component {
 
         ...values
           .map((value, index) => {
-            return {key: UnbundlingTreemap.groupers[keys[index]], value};
+            return { key: UnbundlingTreemap.groupers[keys[index]], value };
           })
           .filter(d => d.value)
-          .reduce((all, {key, value}) => ({...all, [key]: value}), {})
-      }
+          .reduce((all, { key, value }) => ({ ...all, [key]: value }), {}),
+      },
     };
     this.props.refetch(parameters);
   }
 
   render() {
-    return (<div>
-      <InteractiveChartToolBar
-        compact={this.props.compact}
-        position={this.state.position}
-        values={this.state.values}
-        toolBarOptions={this.props.selections}
-        onChange={(key, value) => this.updateValue(key, value)}
-      />
+    return (
+      <div>
+        <InteractiveChartToolBar
+          compact={this.props.compact}
+          position={this.state.position}
+          values={this.state.values}
+          toolBarOptions={this.props.selections}
+          onChange={(key, value) => this.updateValue(key, value)}
+        />
 
-      <Container>
-
-        {this.props.loading ?
-          <Segment
-            style={{
-              position: 'absolute',
-              width: '100%',
-              left: 0,
-              right: 0,
-              height: '100%'
-            }}
-          >
-            <Dimmer style={{backgroundColor: this.state.dimmerColor}} active><Loader /></Dimmer>
-          </Segment> :
-          <TreeChart
-            config={this.props.config}
-            data={this.props.bundles}
-            height="32em"
-            onClick={d => this.zoomIn(d)}
-          />
-        }
-        {this.state.position <= 1 ? '' :
-        <Up onClick={() => this.zoomOut()}>
-          <Icon name={'chevron left'} size="big" inverted />
-        </Up>
-        }
-      </Container>
-    </div>);
+        <Container>
+          {this.props.loading
+            ? <Segment
+              style={{
+                position: 'absolute',
+                width: '100%',
+                left: 0,
+                right: 0,
+                height: '100%',
+              }}
+            >
+              <Dimmer style={{ backgroundColor: this.state.dimmerColor }} active>
+                <Loader />
+              </Dimmer>
+            </Segment>
+            : <TreeChart
+              config={this.props.config}
+              data={this.props.bundles}
+              height="32em"
+              onClick={d => this.zoomIn(d)}
+            />}
+          {this.state.position <= 1
+            ? ''
+            : <Up onClick={() => this.zoomOut()}>
+              <Icon name={'chevron left'} size="big" inverted />
+            </Up>}
+        </Container>
+      </div>
+    );
   }
-
 }
 
 export default UnbundlingTreemap;

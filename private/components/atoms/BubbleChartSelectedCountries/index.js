@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Dropdown} from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 
 type Props = {
@@ -9,8 +9,8 @@ type Props = {
   placeholder: string,
 };
 
-const selectedCountries = ({ onChange, options, placeholder }: Props) => (
-  <Wrapper title="Selected countries">
+const selectedCountries = ({ onChange, options, placeholder }: Props) =>
+  (<Wrapper title="Selected countries">
     <Dropdown
       onClick={onChange}
       placeholder={placeholder}
@@ -20,7 +20,6 @@ const selectedCountries = ({ onChange, options, placeholder }: Props) => (
       multiple
       options={options}
     />
-  </Wrapper>
-);
+  </Wrapper>);
 
 export default selectedCountries;

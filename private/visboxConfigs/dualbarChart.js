@@ -9,7 +9,7 @@ const config = {
   linearAxis: {
     showAxis: true,
     indicator: 'value',
-    ticking: 'odd'
+    ticking: 'odd',
   },
   categoryAxis: {
     showAxis: true,
@@ -18,8 +18,8 @@ const config = {
     outerPadding: 1,
   },
   dualSidebar: {
-    gutter: 150
-  }
+    gutter: 150,
+  },
 };
 
 export default config;

@@ -1,6 +1,6 @@
 // @flow
-import {render} from 'usus';
-import {minify} from 'csso';
+import { render } from 'usus';
+import { minify } from 'csso';
 import fs from 'fs-extra';
 
 const getCss = (url: string): Promise<string> => {
@@ -8,7 +8,7 @@ const getCss = (url: string): Promise<string> => {
     formatStyles: (styles: string): Promise<string> => {
       return minify(styles).css;
     },
-    extractStyles: true
+    extractStyles: true,
   });
 };
 const cssModule = (css: string): string =>

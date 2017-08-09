@@ -8,7 +8,7 @@ export default {
     'rgb(214, 39, 40)',
     'rgb(27, 54, 93)',
     'rgb(190, 132, 187)',
-    'rgb(0, 149, 200)'
+    'rgb(0, 149, 200)',
   ],
 
   coloring: 'color',

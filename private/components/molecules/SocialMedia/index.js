@@ -5,12 +5,11 @@ import { Icon } from 'semantic-ui-react';
 
 type Props = {
   type: string,
-  href: string
+  href: string,
 };
 
-const SocialMedia = ({ type, href }: Props) => (
-  <SocialMediaLink href={href}>
+const SocialMedia = ({ type, href }: Props) =>
+  (<SocialMediaLink href={href}>
     <Icon name={type} />
-  </SocialMediaLink>
-);
+  </SocialMediaLink>);
 export default SocialMedia;

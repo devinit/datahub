@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import {red, lightBlack} from 'components/theme/semantic';
+import { red, lightBlack } from 'components/theme/semantic';
 
 export const Lead = glamorous.p({
   marginTop: '1rem',
@@ -11,21 +11,23 @@ export const HeaderGroup = glamorous.div({
   '& .header': {
     marginBottom: 0,
     marginTop: 0,
-  }
+  },
 });
-export const SectionHeader = glamorous.h2({
-  padding: '1em 1em 1em 1em',
-  display: 'inline-block',
-  margin: 0,
-  letterSpacing: '1px',
-  lineHeight: 1,
-  textTransform: 'uppercase',
-  fontSize: '1.0rem',
-  '& span': {
-    color: red
-  }
-},
-  (props) => ({
+export const SectionHeader = glamorous.h2(
+  {
+    padding: '1em 1em 1em 1em',
+    display: 'inline-block',
+    margin: 0,
+    letterSpacing: '1px',
+    lineHeight: 1,
+    textTransform: 'uppercase',
+    fontSize: '1.0rem',
+    '& span': {
+      color: red,
+    },
+  },
+  props => ({
     background: props.color || '#e9e7e8',
-    color: props.fontColor || lightBlack
-  }));
+    color: props.fontColor || lightBlack,
+  }),
+);

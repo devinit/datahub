@@ -1,16 +1,16 @@
 // @flow
 import React from 'react';
-import {Div, A, Span, H4} from 'glamorous';
-import { Container, Grid, Icon, Button} from 'semantic-ui-react';
-import { red, white} from 'components/theme/semantic';
+import { Div, A, Span, H4 } from 'glamorous';
+import { Container, Grid, Icon, Button } from 'semantic-ui-react';
+import { red, white } from 'components/theme/semantic';
 // import Pane from 'components/atoms/Pane';
 // import Tabs from 'components/molecules/Tabs';
-import {SectionHeader, Lead} from 'components/atoms/Header';
-import {DarkBg} from 'components/atoms/Backgrounds';
+import { SectionHeader, Lead } from 'components/atoms/Header';
+import { DarkBg } from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
-import {CardContainer, ProfileHeader} from 'components/atoms/Container';
+import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import SmallMap from 'components/molecules/SmallMap';
 import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
@@ -18,8 +18,8 @@ import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
 type Props = {
-  id: string
-}
+  id: string,
+};
 
 export default (props: Props) =>
   (<Generic>
@@ -36,10 +36,9 @@ export default (props: Props) =>
                   </H4>
                   <CountrySearch visible placeholder={props.id} profile />
                   <Lead>
-                    Explore this in-depth profile of Uganda to
-                    find out overall levels of poverty, income distribution,
-                    division of wealth and more. Discover how national
-                    and sub-national revenue is generated.
+                    Explore this in-depth profile of Uganda to find out overall levels of poverty,
+                    income distribution, division of wealth and more. Discover how national and
+                    sub-national revenue is generated.
                   </Lead>
                   <Span marginTop={'1.5em'} display={'block'}>
                     Jump to <A color={red}>International resources</A>

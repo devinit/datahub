@@ -15,7 +15,7 @@ module.exports = {
     {
       id: 'antigua-and-barbuda',
       name: 'Antigua & Barbuda',
-      slug: 'antigua-and-barbuda'
+      slug: 'antigua-and-barbuda',
     },
     { id: 'argentina', name: 'Argentina', slug: 'argentina' },
     { id: 'armenia', name: 'Armenia', slug: 'armenia' },
@@ -38,7 +38,7 @@ module.exports = {
     {
       id: 'bosnia-and-herzegovina',
       name: 'Bosnia & Herzegovina',
-      slug: 'bosnia-and-herzegovina'
+      slug: 'bosnia-and-herzegovina',
     },
     { id: 'botswana', name: 'Botswana', slug: 'botswana' },
     { id: 'bouvet-island', name: 'Bouvet Island', slug: 'bouvet-island' },
@@ -46,7 +46,7 @@ module.exports = {
     {
       id: 'british-indian-ocean-territory',
       name: 'British Indian Ocean Territory',
-      slug: 'british-indian-ocean-territory'
+      slug: 'british-indian-ocean-territory',
     },
     { id: 'brunei', name: 'Brunei', slug: 'brunei' },
     { id: 'bulgaria', name: 'Bulgaria', slug: 'bulgaria' },
@@ -64,12 +64,12 @@ module.exports = {
     {
       id: 'christmas-island',
       name: 'Christmas Island',
-      slug: 'christmas-island'
+      slug: 'christmas-island',
     },
     {
       id: 'cocos-keeling-islands',
       name: 'Cocos (Keeling) Islands',
-      slug: 'cocos-keeling-islands'
+      slug: 'cocos-keeling-islands',
     },
     { id: 'colombia', name: 'Colombia', slug: 'colombia' },
     { id: 'comoros', name: 'Comoros', slug: 'comoros' },
@@ -81,7 +81,7 @@ module.exports = {
     {
       id: 'country-unspecified',
       name: 'Country not specified',
-      slug: 'country-unspecified'
+      slug: 'country-unspecified',
     },
     { id: 'croatia', name: 'Croatia', slug: 'croatia' },
     { id: 'cuba', name: 'Cuba', slug: 'cuba' },
@@ -94,7 +94,7 @@ module.exports = {
     {
       id: 'dominican-republic',
       name: 'Dominican Republic',
-      slug: 'dominican-republic'
+      slug: 'dominican-republic',
     },
     { id: 'ecuador', name: 'Ecuador', slug: 'ecuador' },
     { id: 'egypt', name: 'Egypt', slug: 'egypt' },
@@ -102,7 +102,7 @@ module.exports = {
     {
       id: 'equatorial-guinea',
       name: 'Equatorial Guinea',
-      slug: 'equatorial-guinea'
+      slug: 'equatorial-guinea',
     },
     { id: 'eritrea', name: 'Eritrea', slug: 'eritrea' },
     { id: 'estonia', name: 'Estonia', slug: 'estonia' },
@@ -110,7 +110,7 @@ module.exports = {
     {
       id: 'falkland-islands',
       name: 'Falkland Islands',
-      slug: 'falkland-islands'
+      slug: 'falkland-islands',
     },
     { id: 'faroe-islands', name: 'Faroe Islands', slug: 'faroe-islands' },
     { id: 'fiji', name: 'Fiji', slug: 'fiji' },
@@ -120,12 +120,12 @@ module.exports = {
     {
       id: 'french-polynesia',
       name: 'French Polynesia',
-      slug: 'french-polynesia'
+      slug: 'french-polynesia',
     },
     {
       id: 'french-southern-territories',
       name: 'French Southern Territories',
-      slug: 'french-southern-territories'
+      slug: 'french-southern-territories',
     },
     { id: 'gabon', name: 'Gabon', slug: 'gabon' },
     { id: 'gambia', name: 'Gambia', slug: 'gambia' },
@@ -147,12 +147,12 @@ module.exports = {
     {
       id: 'heard-island-and-mcdonald-islands',
       name: 'Heard Island & McDonald Islands',
-      slug: 'heard-island-and-mcdonald-islands'
+      slug: 'heard-island-and-mcdonald-islands',
     },
     {
       id: 'holy-see-vatican-city-state',
       name: 'Holy See (Vatican City State)',
-      slug: 'holy-see-vatican-city-state'
+      slug: 'holy-see-vatican-city-state',
     },
     { id: 'honduras', name: 'Honduras', slug: 'honduras' },
     { id: 'hong-kong', name: 'Hong Kong', slug: 'hong-kong' },
@@ -198,7 +198,7 @@ module.exports = {
     {
       id: 'marshall-islands',
       name: 'Marshall Islands',
-      slug: 'marshall-islands'
+      slug: 'marshall-islands',
     },
     { id: 'martinique', name: 'Martinique', slug: 'martinique' },
     { id: 'mauritania', name: 'Mauritania', slug: 'mauritania' },
@@ -221,7 +221,7 @@ module.exports = {
     {
       id: 'netherlands-antilles',
       name: 'Netherlands Antilles',
-      slug: 'netherlands-antilles'
+      slug: 'netherlands-antilles',
     },
     { id: 'new-caledonia', name: 'New Caledonia', slug: 'new-caledonia' },
     { id: 'new-zealand', name: 'New Zealand', slug: 'new-zealand' },
@@ -233,7 +233,7 @@ module.exports = {
     {
       id: 'northern-mariana-islands',
       name: 'Northern Mariana Islands',
-      slug: 'northern-mariana-islands'
+      slug: 'northern-mariana-islands',
     },
     { id: 'norway', name: 'Norway', slug: 'norway' },
     { id: 'oman', name: 'Oman', slug: 'oman' },
@@ -244,7 +244,7 @@ module.exports = {
     {
       id: 'papua-new-guinea',
       name: 'Papua New Guinea',
-      slug: 'papua-new-guinea'
+      slug: 'papua-new-guinea',
     },
     { id: 'paraguay', name: 'Paraguay', slug: 'paraguay' },
     { id: 'peru', name: 'Peru', slug: 'peru' },
@@ -259,42 +259,42 @@ module.exports = {
     {
       id: 'russian-federation',
       name: 'Russian Federation',
-      slug: 'russian-federation'
+      slug: 'russian-federation',
     },
     { id: 'rwanda', name: 'Rwanda', slug: 'rwanda' },
     {
       id: 'saint-barthelemy',
       name: 'Saint Barthelemy',
-      slug: 'saint-barthelemy'
+      slug: 'saint-barthelemy',
     },
     {
       id: 'saint-helena-ascension-and-tristan-da-cunha',
       name: 'Saint Helena, Ascension & Tristan da Cunha',
-      slug: 'saint-helena-ascension-and-tristan-da-cunha'
+      slug: 'saint-helena-ascension-and-tristan-da-cunha',
     },
     {
       id: 'saint-kitts-and-nevis',
       name: 'Saint Kitts and Nevis',
-      slug: 'saint-kitts-and-nevis'
+      slug: 'saint-kitts-and-nevis',
     },
     { id: 'saint-lucia', name: 'Saint Lucia', slug: 'saint-lucia' },
     { id: 'saint-martin', name: 'Saint Martin', slug: 'saint-martin' },
     {
       id: 'saint-pierre-and-miquelon',
       name: 'Saint Pierre & Miquelon',
-      slug: 'saint-pierre-and-miquelon'
+      slug: 'saint-pierre-and-miquelon',
     },
     {
       id: 'saint-vincent-and-the-grenadines',
       name: 'Saint Vincent & the Grenadines',
-      slug: 'saint-vincent-and-the-grenadines'
+      slug: 'saint-vincent-and-the-grenadines',
     },
     { id: 'samoa', name: 'Samoa', slug: 'samoa' },
     { id: 'san-marino', name: 'San Marino', slug: 'san-marino' },
     {
       id: 'sao-tome-and-principe',
       name: 'Sao Tome & Principe',
-      slug: 'sao-tome-and-principe'
+      slug: 'sao-tome-and-principe',
     },
     { id: 'saudi-arabia', name: 'Saudi Arabia', slug: 'saudi-arabia' },
     { id: 'senegal', name: 'Senegal', slug: 'senegal' },
@@ -305,7 +305,7 @@ module.exports = {
     {
       id: 'sint-maarten-dutch-part',
       name: 'Sint Maarten (Dutch part)',
-      slug: 'sint-maarten-dutch-part'
+      slug: 'sint-maarten-dutch-part',
     },
     { id: 'slovakia', name: 'Slovak Republic', slug: 'slovakia' },
     { id: 'slovenia', name: 'Slovenia', slug: 'slovenia' },
@@ -315,7 +315,7 @@ module.exports = {
     {
       id: 'south-georgia-and-the-south-sandwich-islands',
       name: 'South Georgia & the South Sandwich Islands',
-      slug: 'south-georgia-and-the-south-sandwich-islands'
+      slug: 'south-georgia-and-the-south-sandwich-islands',
     },
     { id: 'south-sudan', name: 'South Sudan', slug: 'south-sudan' },
     { id: 'spain', name: 'Spain', slug: 'spain' },
@@ -325,7 +325,7 @@ module.exports = {
     {
       id: 'svalbard-and-jan-mayen',
       name: 'Svalbard & Jan Mayen',
-      slug: 'svalbard-and-jan-mayen'
+      slug: 'svalbard-and-jan-mayen',
     },
     { id: 'swaziland', name: 'Swaziland', slug: 'swaziland' },
     { id: 'sweden', name: 'Sweden', slug: 'sweden' },
@@ -342,7 +342,7 @@ module.exports = {
     {
       id: 'trinidad-and-tobago',
       name: 'Trinidad & Tobago',
-      slug: 'trinidad-and-tobago'
+      slug: 'trinidad-and-tobago',
     },
     { id: 'tunisia', name: 'Tunisia', slug: 'tunisia' },
     { id: 'turkey', name: 'Turkey', slug: 'turkey' },
@@ -350,7 +350,7 @@ module.exports = {
     {
       id: 'turks-and-caicos-islands',
       name: 'Turks & Caicos Islands',
-      slug: 'turks-and-caicos-islands'
+      slug: 'turks-and-caicos-islands',
     },
     { id: 'tuvalu', name: 'Tuvalu', slug: 'tuvalu' },
     { id: 'uganda', name: 'Uganda', slug: 'uganda' },
@@ -361,7 +361,7 @@ module.exports = {
     {
       id: 'united-states-minor-outlying-islands',
       name: 'United States Minor Outlying Islands',
-      slug: 'united-states-minor-outlying-islands'
+      slug: 'united-states-minor-outlying-islands',
     },
     { id: 'uruguay', name: 'Uruguay', slug: 'uruguay' },
     { id: 'uzbekistan', name: 'Uzbekistan', slug: 'uzbekistan' },
@@ -371,21 +371,21 @@ module.exports = {
     {
       id: 'virgin-islands-gb',
       name: 'Virgin Islands (GB)',
-      slug: 'virgin-islands-gb'
+      slug: 'virgin-islands-gb',
     },
     {
       id: 'virgin-islands-us',
       name: 'Virgin Islands (US)',
-      slug: 'virgin-islands-us'
+      slug: 'virgin-islands-us',
     },
     {
       id: 'wallis-and-futuna',
       name: 'Wallis & Futuna',
-      slug: 'wallis-and-futuna'
+      slug: 'wallis-and-futuna',
     },
     { id: 'western-sahara', name: 'Western Sahara', slug: 'western-sahara' },
     { id: 'yemen', name: 'Yemen', slug: 'yemen' },
     { id: 'zambia', name: 'Zambia', slug: 'zambia' },
-    { id: 'zimbabwe', name: 'Zimbabwe', slug: 'zimbabwe' }
-  ]
+    { id: 'zimbabwe', name: 'Zimbabwe', slug: 'zimbabwe' },
+  ],
 };

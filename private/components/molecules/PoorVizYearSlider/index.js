@@ -1,23 +1,23 @@
 // @flow
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // import Dragdealer from 'dragdealer';
 
 type Props = {
-  onYearChange: (year: number) => void
-}
+  onYearChange: (year: number) => void,
+};
 
 type State = {
-  year: number;
-}
+  year: number,
+};
 
 class YearSlider extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {
-      year: 2013
+      year: 2013,
     };
   }
-  state: State
+  state: State;
 
   componentDidMount() {
     // const firstYear = 1990;
@@ -44,9 +44,12 @@ class YearSlider extends Component {
     return (
       <div>
         <div id="year-slider" className="dragdealer">
-          <div className="handle red-bar">{this.state.year}</div>
+          <div className="handle red-bar">
+            {this.state.year}
+          </div>
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 

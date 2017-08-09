@@ -1,18 +1,18 @@
 // @flow
-import {Header, Grid} from 'semantic-ui-react';
+import { Header, Grid } from 'semantic-ui-react';
 import React from 'react';
-import {P, Div} from 'glamorous';
+import { P, Div } from 'glamorous';
 import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
-import {big} from 'components/theme';
-import {NoData} from 'lib/utils/constants';
-import {red} from 'components/theme/semantic';
+import { big } from 'components/theme';
+import { NoData } from 'lib/utils/constants';
+import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 
 type Props = {
   ...TabDataQuery,
-  config: any
-}
+  config: any,
+};
 
 const Population = (props: Props) => {
   if (!props.populationTab) throw new Error('No Population data');
@@ -22,61 +22,54 @@ const Population = (props: Props) => {
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header textAlign="center" as="h3">
           WHAT IS THE POPULATION?
-          {
-            populationTab.population && populationTab.population.toolTip ?
-              <TabsToolTip {...populationTab.population.toolTip} /> : ''
-          }
+          {populationTab.population && populationTab.population.toolTip
+            ? <TabsToolTip {...populationTab.population.toolTip} />
+            : ''}
         </Header>
-        <P fontSize={big} fontWeight={'bold'} color={red}>{
-          populationTab.population && populationTab.population.value ?
-          populationTab.population.value : NoData
-          }</P>
+        <P fontSize={big} fontWeight={'bold'} color={red}>
+          {populationTab.population && populationTab.population.value
+            ? populationTab.population.value
+            : NoData}
+        </P>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header textAlign="center" as="h3">
           WHAT IS THE URBAN VS RURAL SPLIT?
-           {
-          populationTab.populationDistribution &&
-          populationTab.populationDistribution.toolTip ?
-            <TabsToolTip {...populationTab.populationDistribution.toolTip} /> : ''
-        }
+          {populationTab.populationDistribution && populationTab.populationDistribution.toolTip
+            ? <TabsToolTip {...populationTab.populationDistribution.toolTip} />
+            : ''}
         </Header>
-        {
-          populationTab.populationDistribution &&
-          populationTab.populationDistribution.data &&
-          populationTab.populationDistribution.data.length ?
-            <Div paddingRight={'40px'}>
-              <Chart
-                config={props.config.populationDistribution}
-                data={populationTab.populationDistribution.data}
-                height="140px"
-              />
-            </Div> : <TabsNoData />
-        }
+        {populationTab.populationDistribution &&
+        populationTab.populationDistribution.data &&
+        populationTab.populationDistribution.data.length
+          ? <Div paddingRight={'40px'}>
+            <Chart
+              config={props.config.populationDistribution}
+              data={populationTab.populationDistribution.data}
+              height="140px"
+            />
+          </Div>
+          : <TabsNoData />}
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header textAlign="center" as="h3">
           WHAT IS THE AGE PROFILE?
-          {
-            populationTab.populationPerAgeBand &&
-            populationTab.populationPerAgeBand.toolTip ?
-              <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} /> : ''
-          }
+          {populationTab.populationPerAgeBand && populationTab.populationPerAgeBand.toolTip
+            ? <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} />
+            : ''}
         </Header>
-        {
-          populationTab.populationPerAgeBand &&
-          populationTab.populationPerAgeBand.data &&
-          populationTab.populationPerAgeBand.data.length ?
-            <Div paddingRight={'40px'}>
-              <Chart
-                config={props.config.populationPerAgeBand}
-                data={populationTab.populationPerAgeBand.data}
-                height="140px"
-              />
-            </Div>
-            : <TabsNoData />
-        }
+        {populationTab.populationPerAgeBand &&
+        populationTab.populationPerAgeBand.data &&
+        populationTab.populationPerAgeBand.data.length
+          ? <Div paddingRight={'40px'}>
+            <Chart
+              config={props.config.populationPerAgeBand}
+              data={populationTab.populationPerAgeBand.data}
+              height="140px"
+            />
+          </Div>
+          : <TabsNoData />}
       </Grid.Column>
     </Grid>
   );

@@ -1,8 +1,8 @@
 // @flow
 export type OverviewChartConfigs = {
   area: any,
-  histogram: any
-}
+  histogram: any,
+};
 export const area = {
   type: 'timearea',
   colors: ['rgb(186, 12, 47)'],
@@ -18,8 +18,8 @@ export const area = {
     ticking: 'years',
     tickingStep: 20,
     axisMinimum: 1980,
-    axisMaximum: 2015
-  }
+    axisMaximum: 2015,
+  },
 };
 
 export const histogram = {
@@ -28,7 +28,7 @@ export const histogram = {
   coloring: 'color',
   labeling: {
     showLabels: true,
-    suffix: '%'
+    suffix: '%',
   },
   linearAxis: {
     showAxis: false,
@@ -38,7 +38,7 @@ export const histogram = {
     indicator: 'quintileName',
     ticking: 'end',
     innerPadding: 0.2,
-  }
+  },
 };
 
 export default { area, histogram };

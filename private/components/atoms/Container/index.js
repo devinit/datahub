@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import {lightGrey, seaBackground, white} from 'components/theme/semantic';
+import { lightGrey, seaBackground, white } from 'components/theme/semantic';
 
 export const Container = glamorous.div({
   width: '100%',
@@ -32,11 +32,11 @@ export const ProfileHeader = glamorous.div({
   background: white,
   position: 'relative',
   ' & .ui.grid': {
-    height: 0
+    height: 0,
   },
   '& .ui.container': {
-    height: 0
+    height: 0,
   },
 });
 // TODO use media queries
-export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});
+export const MapPlaceholder = glamorous(GreyContainer)({ height: '600px' });

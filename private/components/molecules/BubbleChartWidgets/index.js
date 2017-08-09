@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Grid, Container, Button, Icon} from 'semantic-ui-react';
+import { Grid, Container, Button, Icon } from 'semantic-ui-react';
 import BubbleSize from 'components/atoms/BubbleSizeDropDown';
 import ColorBy from 'components/atoms/BubbleChartColorBy';
 import HighlightByIncomeGroup from 'components/atoms/BubbleChartHighlightByIncomeGroup';
@@ -10,7 +10,7 @@ import SelectedCountries from 'components/atoms/BubbleChartSelectedCountries';
 import BubbleChartPrint from 'components/atoms/BubbleChartPrint';
 import BubbleChartAxisSettings from 'components/atoms/BubbleChartAxisSettings';
 import Slider from 'components/molecules/YearSlider';
-import {red} from 'components/theme/semantic';
+import { red } from 'components/theme/semantic';
 import ScatterChart from 'components/atoms/ScatterChart';
 
 const ChartContainer = glamorous.div({
@@ -31,7 +31,7 @@ const Link = glamorous.a({
   color: red,
   marginTop: '25px',
   display: 'block',
-  marginBottom: '20px'
+  marginBottom: '20px',
 });
 
 type Props = {
@@ -47,8 +47,8 @@ type Props = {
   regions: Object[],
   incomeGroups: Object[],
   countries: Object[],
-  data: Object
-}
+  data: Object,
+};
 type State = {
   year: number,
   colorBy: string,
@@ -57,7 +57,7 @@ type State = {
   pointsPerYear: Object,
   incomeGroupColor: Object,
   regionColor: Object,
-}
+};
 
 class BubbleChartWidget extends React.Component {
   constructor(props: Props) {
@@ -69,14 +69,20 @@ class BubbleChartWidget extends React.Component {
   state: State;
   componentWillUpdate(props: Props) {
     const colorBy = this.state ? this.state.colorBy : 'region';
-    const regionColor = this.props.regions.reduce((colors, region) => ({
-      ...colors,
-      [region.name]: region.color
-    }), {});
-    const incomeGroupColor = this.props.incomeGroups.reduce((colors, region) => ({
-      ...colors,
-      [region.name]: region.color
-    }), {});
+    const regionColor = this.props.regions.reduce(
+      (colors, region) => ({
+        ...colors,
+        [region.name]: region.color,
+      }),
+      {},
+    );
+    const incomeGroupColor = this.props.incomeGroups.reduce(
+      (colors, region) => ({
+        ...colors,
+        [region.name]: region.color,
+      }),
+      {},
+    );
     const colorHash = colorBy === 'region' ? regionColor : incomeGroupColor;
     const pointsPerYear = this.getPointsPerYear(colorBy, colorHash);
     this.state = {
@@ -93,9 +99,7 @@ class BubbleChartWidget extends React.Component {
     clearInterval(this.intervalId);
   }
   onChangeColorBy(colorBy: string) {
-    const colorHash = colorBy === 'region' ?
-      this.state.regionColor :
-      this.state.incomeGroupColor;
+    const colorHash = colorBy === 'region' ? this.state.regionColor : this.state.incomeGroupColor;
     const pointsPerYear = this.getPointsPerYear(colorBy, colorHash);
     this.setState({
       colorBy,
@@ -105,40 +109,39 @@ class BubbleChartWidget extends React.Component {
   getPointsPerYear(colorBy: string, colorHash: Object) {
     return this.props.points
       .map(p => {
-        return {...p, color: colorHash[colorBy]};
+        return { ...p, color: colorHash[colorBy] };
       })
-      .reduce((all, d) => ({
-        ...all,
-        [d.year]: [
-          ...(all[d.year] || []),
-          d
-        ]
-      }), {});
+      .reduce(
+        (all, d) => ({
+          ...all,
+          [d.year]: [...(all[d.year] || []), d],
+        }),
+        {},
+      );
   }
   setYear(year: number) {
     this.setState({
-      year: +year
+      year: +year,
     });
   }
   toggleMoreOptions() {
     this.setState({
-      showMoreOptions: !this.state.showMoreOptions
+      showMoreOptions: !this.state.showMoreOptions,
     });
   }
   play() {
     clearInterval(this.intervalId);
-    this.setState({isPlaying: true});
+    this.setState({ isPlaying: true });
     let year = this.state.year;
     this.intervalId = setInterval(() => {
       if (Math.floor(year) === this.props.maxYear) {
         clearInterval(this.intervalId);
-        this.setState({isPlaying: true});
+        this.setState({ isPlaying: true });
       }
 
       this.setState({
         year,
-        ...(Math.floor(year) !== this.state.year ? {
-        } : {})
+        ...(Math.floor(year) !== this.state.year ? {} : {}),
       });
       year += 0.01;
     }, 25);
@@ -147,7 +150,7 @@ class BubbleChartWidget extends React.Component {
     clearInterval(this.intervalId);
     this.setState({
       isPlaying: false,
-      year: Math.floor(this.state.year)
+      year: Math.floor(this.state.year),
     });
   }
 
@@ -182,7 +185,7 @@ class BubbleChartWidget extends React.Component {
                   <PlayContainer>
                     <Button
                       icon={this.state.isPlaying ? 'pause' : 'play'}
-                      onClick={() => this.state.isPlaying ? this.pause() : this.play()}
+                      onClick={() => (this.state.isPlaying ? this.pause() : this.play())}
                     />
                   </PlayContainer>
                 </Grid.Column>
@@ -199,8 +202,12 @@ class BubbleChartWidget extends React.Component {
             </Grid.Column>
             <Grid.Column computer={4} tablet={4} mobile={16}>
               <BubbleSize options={indicators} />
-              <SelectedCountries placeholder="Select Country" onChange={() => {}} options={countries} />
-              <ColorBy options={colorables} onChange={(change) => this.onChangeColorBy(change)} />
+              <SelectedCountries
+                placeholder="Select Country"
+                onChange={() => {}}
+                options={countries}
+              />
+              <ColorBy options={colorables} onChange={change => this.onChangeColorBy(change)} />
               <HighlightByIncomeGroup
                 options={incomeGroups}
                 colorBy={this.state.colorBy === 'income-group'}
@@ -211,18 +218,21 @@ class BubbleChartWidget extends React.Component {
                 colorBy={this.state.colorBy === 'region'}
                 onChange={() => this.onChangeColorBy('region')}
               />
-              <Link onClick={() => this.toggleMoreOptions()}><Icon name="plus" /> More Info</Link>
-              {this.state.showMoreOptions ?
-                <div>
+              <Link onClick={() => this.toggleMoreOptions()}>
+                <Icon name="plus" /> More Info
+              </Link>
+              {this.state.showMoreOptions
+                ? <div>
                   <BubbleChartAxisSettings title="X-axis settings" />
                   <BubbleChartAxisSettings title="Y-axis settings" />
                 </div>
-              : false}
+                : false}
               <BubbleChartPrint onClick={() => {}} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Container>);
+      </Container>
+    );
   }
 }
 

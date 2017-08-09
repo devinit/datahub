@@ -12,7 +12,7 @@ const config = {
     indicator: 'year',
     showAxis: true,
     ticking: 'all',
-  }
+  },
 };
 
 const data = [
@@ -255,7 +255,7 @@ const data = [
     year: '2015',
     'flow-type': 'private',
     value: 1049033152,
-  }
+  },
 ];
 
 export default { config, data };

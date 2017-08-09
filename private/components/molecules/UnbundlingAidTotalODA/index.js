@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { white, primaryColor, black} from 'components/theme/semantic';
+import { white, primaryColor, black } from 'components/theme/semantic';
 import { Header, Button } from 'semantic-ui-react';
 
 const ParentContainer = glamorous.div({
@@ -19,7 +19,7 @@ const Container = glamorous.div({
   display: 'block',
   textAlign: 'center',
   '& h1.ui.header': {
-    fontSize: '4em'
+    fontSize: '4em',
   },
   '& h5.ui.header': {
     fontSize: '1.2rem',
@@ -31,26 +31,29 @@ const Container = glamorous.div({
     opacity: 0.6,
   },
   '& h1.ui.header span.small': {
-    fontSize: '.5em'
+    fontSize: '.5em',
   },
   '& .ui.header': {
     color: white,
   },
   '& .ui.white.button': {
     color: black,
-  }
+  },
 });
 
-const UnbundlingAidTotalODA = () => (
-  <ParentContainer>
-    <div style={{position: 'relative'}}>
+const UnbundlingAidTotalODA = () =>
+  (<ParentContainer>
+    <div style={{ position: 'relative' }}>
       <Container>
-        <Header as="h1"><span className="red"> 2015</span> US$ 174.1 <span className="small">bn</span></Header>
-        <Header as="h5">Official development assistance (total gross disbursements, 2015 prices)</Header>
+        <Header as="h1">
+          <span className="red"> 2015</span> US$ 174.1 <span className="small">bn</span>
+        </Header>
+        <Header as="h5">
+          Official development assistance (total gross disbursements, 2015 prices)
+        </Header>
         <Button>Explore</Button>
       </Container>
     </div>
-  </ParentContainer>
-);
+  </ParentContainer>);
 
 export default UnbundlingAidTotalODA;

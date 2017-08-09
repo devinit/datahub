@@ -6,11 +6,10 @@ type Props = {
   data: any,
   config: {},
   width?: string,
-  height?: string
-}
+  height?: string,
+};
 
 class ScatterChart extends React.Component {
-
   // eslint-disable-next-line react/sort-comp
   props: Props;
   element: Element;
@@ -26,7 +25,9 @@ class ScatterChart extends React.Component {
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
-    draw({element, data, config}).then(chart => { this.chart = chart; });
+    draw({ element, data, config }).then(chart => {
+      this.chart = chart;
+    });
   }
 
   componentWillReceiveProps(props: Props) {
@@ -38,8 +39,10 @@ class ScatterChart extends React.Component {
   render() {
     return (
       <div
-        ref={element => { this.element = element; }}
-        style={{width: this.props.width, height: this.props.height}}
+        ref={element => {
+          this.element = element;
+        }}
+        style={{ width: this.props.width, height: this.props.height }}
       />
     );
   }

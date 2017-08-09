@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {Icon} from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 const TourPointer = glamorous.span({
   position: 'absolute',
@@ -13,7 +13,7 @@ const TourPointer = glamorous.span({
     top: '100%',
     left: '-7px',
     marginTop: '-10px',
-  }
+  },
 });
 const TourItems = glamorous.ul({
   padding: '0',
@@ -22,7 +22,7 @@ const TourItems = glamorous.ul({
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    position: 'absolute'
+    position: 'absolute',
   },
   '& .item-1': {
     top: '10px',
@@ -31,11 +31,11 @@ const TourItems = glamorous.ul({
       height: '470px',
       top: '100%',
       left: '10px',
-    }
+    },
   },
   '& .item-2': {
     top: '100px',
-    left: '50px'
+    left: '50px',
   },
   '& .item-3': {
     top: '60px',
@@ -77,8 +77,8 @@ const TourItems = glamorous.ul({
     textAlign: 'center',
   },
 });
-const VisualizationTour = () => (
-  <TourItems>
+const VisualizationTour = () =>
+  (<TourItems>
     <li className="item-1">
       Compare the colour<br />
       of each country<br />
@@ -93,18 +93,33 @@ const VisualizationTour = () => (
       country will adapt to that<br />
       indicator
     </li>
-    <li className="item-3"><Icon name="arrow left" /> Change theme</li>
-    <li className="item-4">Change indicator <Icon name="arrow right" /></li>
-    <li className="item-5"><Icon name="arrow left" /> Find source information</li>
-    <li className="item-6">Zoom in and out <Icon name="arrow up" /></li>
-    <li className="item-7">Hover over a country<br />to see data snapshot</li>
-    <li className="item-8">Click a country to go<br />to country profile</li>
-    <li className="item-9">Scroll down to see country rankings<br /><Icon name="arrow down" /></li>
-    <li className="item-10">Click Share this chart view below to<br />
+    <li className="item-3">
+      <Icon name="arrow left" /> Change theme
+    </li>
+    <li className="item-4">
+      Change indicator <Icon name="arrow right" />
+    </li>
+    <li className="item-5">
+      <Icon name="arrow left" /> Find source information
+    </li>
+    <li className="item-6">
+      Zoom in and out <Icon name="arrow up" />
+    </li>
+    <li className="item-7">
+      Hover over a country<br />to see data snapshot
+    </li>
+    <li className="item-8">
+      Click a country to go<br />to country profile
+    </li>
+    <li className="item-9">
+      Scroll down to see country rankings<br />
+      <Icon name="arrow down" />
+    </li>
+    <li className="item-10">
+      Click Share this chart view below to<br />
       to share the chart youve created<br />
       <Icon name="arrow down" />
     </li>
-  </TourItems>
-);
+  </TourItems>);
 
 export default VisualizationTour;
