@@ -6,7 +6,7 @@ import {makeUnique} from '@devinit/charts/lib/factories/createDataset';
 import {SectionHeader} from 'components/atoms/Header';
 import {Container, Dropdown, Grid, Header} from 'semantic-ui-react';
 import {LightBg} from '../../atoms/Backgrounds';
-import Chart from '../../atoms/TreeChart';
+import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
 export type Props = {
@@ -199,7 +199,7 @@ class AreaPartitionChart extends React.Component {
               {approximate((this.state.mixes[+this.state.year] || [])
                 .reduce((sum, datum) => sum + datum.value, 0))}
             </SectionHeader>
-            <Chart
+            <TreeChart
               height="360px"
               data={this.state.mixes[+this.state.year] || []}
               config={this.props.config.treemapConfig}

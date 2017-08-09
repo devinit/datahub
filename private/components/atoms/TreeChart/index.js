@@ -7,7 +7,7 @@ type Props = {
   config: Object,
   width?: string,
   height?: string,
-  onClick(d: {id: string, parent: string}): void,
+  onClick?: (d: {id: string, parent: string}) => void,
 }
 
 class Chart extends React.Component {
