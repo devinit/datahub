@@ -13,7 +13,7 @@ const withData = graphql(RESOURCES_QUERY, {
     const {error, loading} = data;
     if (error) throw new Error(error);
     return loading || !data.internationalResources ? {loading, config} : {
-      data: data.internationalResources.resourcesOverTime,
+      data: data.internationalResources.resourcesOverTime.data,
       config
     };
   }});

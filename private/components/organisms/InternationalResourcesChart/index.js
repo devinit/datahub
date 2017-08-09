@@ -14,7 +14,7 @@ type WrapperProps = Props & {
 const internationalResourcesChartWrapper = (props: WrapperProps) => {
   if (props.loading) return (<LoadingBar loading={props.loading} />);
   return (<InternationalResourcesChart
-    startYear={props.internationalResources.startYear}
+    startYear={props.startYear}
     data={props.data}
     config={config}
   />);
@@ -29,7 +29,8 @@ const withData = graphql(RESOURCES_QUERY, {
   props: ({data}) => {
     const {error, loading} = data;
     if (error) throw new Error(error);
-    return loading || !data.internationalResources ? {loading, config} : {
+    return loading || !data.internationalResources ? {loading} : {
+      startYear: data.internationalResources.startYear,
       data: data.internationalResources.resourcesOverTime.data
         .map(d => ({
           ...d,
