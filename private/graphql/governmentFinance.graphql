@@ -1,6 +1,6 @@
 query GovernmentFinance($id: String!) {
-
   governmentFinance(id: $id) {
+    startYear,
     currencyCode,
     expenditure {
       uid,

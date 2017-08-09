@@ -1991,8 +1991,20 @@
           "description": "",
           "fields": [
             {
+              "name": "startYear",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "totalRevenue",
-              "description": "Total revenue for a particular year if not available return -1 \n uses gdp",
+              "description": "Total revenue for a particular",
               "args": [],
               "type": {
                 "kind": "OBJECT",

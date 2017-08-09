@@ -20,6 +20,15 @@ export type CountriesQuery = {|
   |} >,
 |};
 
+export type DifferentProvidersDifferentPriotitiesQuery = {|
+  // IdNamePair is defined in unbundling aid types
+  // this list feeds off oda table from countries and global/concept file
+  bubbleChartIndicatorsList: ? Array< {|
+    id: ?string,
+    name: ?string,
+  |} >,
+|};
+
 export type GlobalPictureThemesQuery = {|
   globalPictureThemes: ? Array< {|
     id: ?string,
@@ -308,8 +317,7 @@ export type TabDataQueryVariables = {|
 
 export type TabDataQuery = {|
   governmentFinance: ? {|
-    // Total revenue for a particular year if not available return -1
-    // uses gdp
+    // Total revenue for a particular
     totalRevenue: ? {|
       value: ?string,
       toolTip: ? {|
@@ -577,6 +585,7 @@ export type GovernmentFinanceQueryVariables = {|
 
 export type GovernmentFinanceQuery = {|
   governmentFinance: ? {|
+    startYear: ?number,
     // for treemap
     // such as constant 2015 USD for tree map
     currencyCode: ?string,
@@ -609,4 +618,13 @@ export type GovernmentFinanceQuery = {|
       value_ncu: ?number,
     |} >,
   |},
+|};
+
+export type PovertyQuery = {|
+  // IdNamePair is defined in unbundling aid types
+  // this list feeds off oda table from countries and global/concept file
+  bubbleChartIndicatorsList: ? Array< {|
+    id: ?string,
+    name: ?string,
+  |} >,
 |};
