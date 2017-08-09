@@ -47,8 +47,7 @@ export const Pointer = glamorous.span({
   textAlign: 'center',
   backgroundColor: red,
   userSelect: 'none',
-  // transition: '1s left',
-  zIndex: 1},
+  zIndex: 1 },
   (props) => ({left: `${100 * props.left}%`}));
 
 export const Floor = glamorous.span({

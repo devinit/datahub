@@ -7,5 +7,5 @@ describe('pull api data tests', () => {
     const data = await getData(COUNTRIES_QUERY);
     expect(data.countries.length).toBeGreaterThan(2);
     expect(prettyFormat(data.countries[0])).toMatchSnapshot();
-  }, 20000);
+  }, 10000);
 });

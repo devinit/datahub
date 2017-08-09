@@ -9,6 +9,7 @@ const moduleResolver = {
     modules: ['node_modules',
       path.resolve(__dirname, 'private'),
       path.resolve(__dirname, 'public/semantic'),
+      path.resolve(__dirname, 'public/di-charts'),
       path.resolve(__dirname, 'public/img')
     ],
     alias: {

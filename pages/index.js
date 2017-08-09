@@ -1,6 +1,6 @@
 // @flow
 /* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
-import React, {Component} from 'react';
+import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
 import App from 'components/templates/Front';

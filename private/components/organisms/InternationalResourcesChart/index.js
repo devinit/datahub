@@ -1,10 +1,10 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
-import Chart from './wrapper';
-import QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
-import config from '../../../visboxConfigs/areaTreemapChart';
+import { graphql} from 'react-apollo';
+import config from 'visboxConfigs/areaTreemapChart';
+import InternationalResourcesChart from './wrapper';
+import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
 
-const withData = graphql(QUERY, {
+const withData = graphql(RESOURCES_QUERY, {
   options: (props) => ({
     variables: {
       id: props.id
@@ -12,18 +12,14 @@ const withData = graphql(QUERY, {
   }),
   props: ({data}) => {
     const {error, loading} = data;
-
     if (error) throw new Error(error);
-
-    return loading || !data.internationalResources ? {loading, config} : {
-      data: data.internationalResources.resourcesOverTime
-        .map(d => ({
-          ...d,
-          flow_group: `${d.flow_category}-${d.flow_type}`
-        })),
+    // console.log('resourcesOverTime', data.internationalResources);
+    return {
+      loading,
+      data: data.internationalResources,
       config
     };
   }});
 
 
-export default withData(Chart);
+export default withData(InternationalResourcesChart);

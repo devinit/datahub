@@ -41,7 +41,7 @@ const Container = glamorous.div({
   }
 });
 
-const UnbundlingAidTotalODA = () => (
+const InteractiveChartToolBar = () => (
   <ParentContainer>
     <div style={{position: 'relative'}}>
       <Container>
@@ -53,4 +53,4 @@ const UnbundlingAidTotalODA = () => (
   </ParentContainer>
 );
 
-export default UnbundlingAidTotalODA;
+export default InteractiveChartToolBar;

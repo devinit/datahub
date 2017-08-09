@@ -11,14 +11,14 @@ type Props = {
   height?: string
 }
 const Wrapper = glamorous.div({
-  borderTop: '2px solid #ddd9dc',
-  paddingTop: '0.25em',
+  paddingTop: '1rem',
 });
 const TabsContainer = glamorous.ul({
   listStyleType: 'none',
   margin: 0,
   textTransform: 'uppercase',
   padding: 0,
+  paddingBottom: '1em',
   listStyle: 'none',
   color: '#b8b1b6',
   '& .active': {
@@ -34,7 +34,6 @@ const TabLink = glamorous.a({
   padding: '.75em .35em',
   marginRight: '30px',
   cursor: 'pointer',
-  display: 'inline-block',
 });
 const TabsContentWrapper = glamorous.div({
   position: 'relative',
@@ -81,23 +80,21 @@ class Tabs extends React.Component {
     });
   }
   _renderContent() {
-    const content = this.props.children
-      .filter(child => child && child.props.label && child.props.id)
-      .map((child, index) => {
-        const activeClass = (this.state.selected === index ? 'visible' : '');
-        return (
-          <div className={`tabs__content ${activeClass}`} key={`__${child.props.id}__`} >
-            {child}
-          </div>
-        );
-      });
+    const content = this.props.children.map((child, index) => {
+      const activeClass = (this.state.selected === index ? 'visible' : '');
+      return (
+        <div className={`tabs__content ${activeClass}`}>
+          {this.props.children[index]}
+        </div>
+      );
+    });
     return content;
   }
   _renderTitles() {
     const labels = (child, index) => {
       const activeClass = (this.state.selected === index ? 'active' : '');
       return (
-        <li key={child.props.label}>
+        <li key={index}>
           <TabLink
             className={activeClass}
             onClick={(e) => this.handleClick(index, e)}
@@ -109,9 +106,7 @@ class Tabs extends React.Component {
     };
     return (
       <TabsContainer>
-        {this.props.children
-          .filter(child => child && child.props.label && child.props.id)
-          .map(labels)}
+        {this.props.children.map(labels)}
       </TabsContainer>
     );
   }

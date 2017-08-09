@@ -24,7 +24,7 @@ export const CardContainer = glamorous.div({
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
   padding: '1.5em',
   overflow: 'visible',
-  marginBottom: '0em'
+  marginBottom: '4em'
 });
 
 export const MapPlaceholder = glamorous(GreyContainer)({height: '600px'});

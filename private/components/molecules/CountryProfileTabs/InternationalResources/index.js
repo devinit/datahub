@@ -66,12 +66,12 @@ const International = (props: Props) => {
           >
             HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?
           </Header>
-          { resourcesOverTime && resourcesOverTime.length ?
+          { resourcesOverTime ?
             <Chart
               config={props.config.resourcesOverTime}
               data={resourcesOverTime}
               height="140px"
-            /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
+            /> : ''
           }
         </Grid.Column>
 
@@ -84,13 +84,12 @@ const International = (props: Props) => {
           </Header>
 
           {
-            internationalResources.mixOfResources &&
-              internationalResources.mixOfResources.length ?
-                <Chart
-                  config={props.config.mixOfResources}
-                  data={internationalResources.mixOfResources}
-                  height="140px"
-                /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
+            internationalResources.mixOfResources ?
+              <Chart
+                config={props.config.mixOfResources}
+                data={internationalResources.mixOfResources}
+                height="140px"
+              /> : ''
           }
 
         </Grid.Column>

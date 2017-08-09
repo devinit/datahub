@@ -10,7 +10,7 @@ type Props = {
 
 const bubbleChartSize = ({ onChange, options }: Props) => (
   <Wrapper title="Bubble size">
-    <Dropdown onClick={onChange} search selection floating options={options} />
+    <Dropdown onClick={onChange} search selection fluid options={options} />
   </Wrapper>
 );
 
