@@ -4,6 +4,7 @@ import glamorous from 'glamorous';
 import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
+import LoadingBar from 'components/molecules/LoadingBar';
 import TreeChart from '../../atoms/TreeChart/index';
 import Timeline from '../../atoms/Timeline/index';
 import { LightBg } from '../../atoms/Backgrounds';
@@ -227,7 +228,7 @@ export default class GovtRFE extends React.Component {
 
   render() {
     if (this.props.loading) {
-      return <div>Loading...</div>;
+      return <LoadingBar loading={this.props.loading} />;
     }
     return (
       <LightBg>

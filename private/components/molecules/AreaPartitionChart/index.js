@@ -11,7 +11,7 @@ import Timeline from '../../atoms/Timeline';
 
 export type Props = {
   country: string,
-  data: any, // TODO: reuse FlowData type currently in the inflows outflows file
+  data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
   config: any,
   startYear: number,
 };
