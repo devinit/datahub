@@ -16,22 +16,15 @@ const withData = graphql(QUERY, {
 
     if (error) throw new Error(error);
 
-    return loading || !data.governmentFinance ? {
+    return {
       loading,
       config,
-      currencies: [],
-      revenueAndGrants: [],
-      expenditure: [],
-      finance: [],
-    } : {
-      currencies: [
-        {text: 'Constant 2015 US$', value: 'US$'},
-        {text: `Current ${data.governmentFinance.currencyCode}`, value: data.governmentFinance.currencyCode},
-      ],
-      revenueAndGrants: data.governmentFinance.revenueAndGrants,
-      expenditure: data.governmentFinance.expenditure,
-      finance: data.governmentFinance.finance,
-      config
+      ...(data.governmentFinance || {
+        revenueAndGrants: [],
+        expenditure: [],
+        finance: [],
+        currencyCode: '',
+      }),
     };
   }});
 
