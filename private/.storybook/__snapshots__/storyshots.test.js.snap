@@ -6617,13 +6617,17 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
                 className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
-                 Our consultancy services 
+                 
+                Our consultancy services
+                 
               </a>
               <a
                 className="css-k88r7w"
                 href="http://devinit.org/#!/blog"
               >
-                 Open DI - publishing to IATI 
+                 
+                Open DI - publishing to IATI
+                 
               </a>
             </div>
             <div
@@ -9194,13 +9198,17 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
@@ -12528,13 +12536,17 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
@@ -13177,7 +13189,8 @@ exports[`Storyshots Templates Front Page 1`] = `
               onClick={[Function]}
               role="button"
             >
-               country
+               
+              country
             </span>
           </h2>
         </div>
@@ -15746,9 +15759,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                 aria-hidden="true"
                 className="pie graph icon"
               />
-              The Development Data Hub 
+              The Development Data Hub
+               
             </b>
-             is the most comprehensive source for financial resource flow data alongside poverty, social and vulnerability indicators. Read more about the data hub.
+             
+            is the most comprehensive source for financial resource flow data alongside poverty, social and vulnerability indicators. Read more about the data hub.
           </div>
         </div>
       </div>
@@ -16244,13 +16259,17 @@ exports[`Storyshots Templates Front Page 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
@@ -16954,13 +16973,17 @@ exports[`Storyshots Templates Main Generic 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
@@ -17843,13 +17866,17 @@ exports[`Storyshots Templates Methodology 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
@@ -18497,7 +18524,8 @@ exports[`Storyshots Templates Spot Light 1`] = `
               />
               Spotlight
             </b>
-             on Uganda is a comprehensive source of Uganda's financial resource flow data at the sub-national (district) level, alongside indicators on poverty, population, education, health, water, hygiene and sanitation. It highlights the geographical variance in sector performance and financial resources, and seeks to answer whether resources are allocated according to need. Explore the country picture by selecting topics and click on a district for an in-depth profile.
+             
+            on Uganda is a comprehensive source of Uganda's financial resource flow data at the sub-national (district) level, alongside indicators on poverty, population, education, health, water, hygiene and sanitation. It highlights the geographical variance in sector performance and financial resources, and seeks to answer whether resources are allocated according to need. Explore the country picture by selecting topics and click on a district for an in-depth profile.
           </div>
         </div>
       </div>
@@ -18923,13 +18951,17 @@ exports[`Storyshots Templates Spot Light 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
@@ -19656,13 +19688,17 @@ exports[`Storyshots Templates Unbundling other official flows 1`] = `
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Our consultancy services 
+                   
+                  Our consultancy services
+                   
                 </a>
                 <a
                   className="css-k88r7w"
                   href="http://devinit.org/#!/blog"
                 >
-                   Open DI - publishing to IATI 
+                   
+                  Open DI - publishing to IATI
+                   
                 </a>
               </div>
               <div
