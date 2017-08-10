@@ -1,3 +1,4 @@
+#!/bin/bash
 ## gets run on host server
 mkdir -p ~/datahub-2
 cd ~/datahub-2 || exit

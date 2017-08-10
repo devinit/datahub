@@ -4,7 +4,7 @@ RUN mkdir /src
 
 # Provides cached layer for node_modules
 
-ADD package.json /tmp/
+COPY package.json /tmp/
 RUN cd /tmp && npm install --production --silent
 RUN cp -a /tmp/node_modules /src/
 
