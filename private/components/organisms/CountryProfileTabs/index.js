@@ -13,7 +13,6 @@ import populationConfig from 'visboxConfigs/populationTabCharts';
 import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
 import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
-import {Section} from 'glamorous';
 import Pane from 'components/atoms/Pane';
 import { RECIPIENT } from 'lib/utils/constants';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';

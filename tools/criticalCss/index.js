@@ -6,7 +6,7 @@ import fs from 'fs-extra';
 const getCss = (url: string): Promise<string> => {
   return render(url, {
     formatStyles: (styles: string): Promise<string> => {
-      return minify(styles).css;
+      return minify(styles).css; // TODO filter out mapbox styles automatically
     },
     extractStyles: true,
   });
