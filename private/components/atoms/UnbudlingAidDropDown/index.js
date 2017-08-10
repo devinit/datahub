@@ -11,7 +11,7 @@ type Props = {
   selected?: string,
   onClose: any,
   onChange?: any,
-  active?: any
+  active?: any,
 };
 const Wrapper = glamorous.div(
   {
@@ -25,8 +25,8 @@ const Wrapper = glamorous.div(
       position: 'absolute',
       top: '5px',
       right: '5px',
-      cursor: 'pointer'
-    }
+      cursor: 'pointer',
+    },
   },
   props => ({
     display: props.visible ? 'block' : 'none'
@@ -53,7 +53,7 @@ const Select = glamorous.select({
   backgroundImage: 'none',
   boxSizing: 'border-box',
   boxShadow: 'none',
-  fontSize: '18px'
+  fontSize: '18px',
 });
 const Text = glamorous.span(
   {
@@ -62,37 +62,33 @@ const Text = glamorous.span(
     fontSize: '22px',
     listStyle: 'none',
     padding: '5px',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   props => ({
-    opacity: props.active ? '1' : '.5'
-  })
+    opacity: props.active ? '1' : '.5',
+  }),
 );
 
 const onDropdownChange = function onChange(e, items, callback) {
   if (callback) {
     // eslint-disable-next-line eqeqeq
-    const [selected = {name: '', value: ''}] = items.filter(d => d.value == e.target.value);
+    const [selected = { name: '', value: '' }] = items.filter(d => d.value == e.target.value);
     callback(selected);
   }
 };
 
-const DropDown = ({
-  visible,
-  items,
-  text,
-  selected,
-  onClose,
-  active,
-  onChange
-}: Props) => {
+const DropDown = ({ visible, items, text, selected, onClose, active, onChange }: Props) => {
   const options = items.map(item =>
-    <option key={item.value} value={item.value}>{item.name}</option>
+    (<option key={item.value} value={item.value}>
+      {item.name}
+    </option>),
   );
   return (
     <Wrapper visible={visible}>
       <Icon name="close" className="close" onClick={() => onClose()} />
-      <Text active={active}>{text}</Text>
+      <Text active={active}>
+        {text}
+      </Text>
       <Select value={selected || undefined} onChange={e => onDropdownChange(e, items, onChange)}>
         {options}
       </Select>

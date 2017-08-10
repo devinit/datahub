@@ -1,18 +1,17 @@
 // @flow
-import React from 'react';
 import { graphql } from 'react-apollo';
 import Chart from 'components/molecules/TripleLinePartition';
+import config from 'visboxConfigs/linePartition';
 import QUERY from './query.graphql';
-import config from '../../../visboxConfigs/linePartition';
 
 const withData = graphql(QUERY, {
-  options: (props) => ({
+  options: props => ({
     variables: {
-      id: props.id
-    }
+      id: props.id,
+    },
   }),
-  props: ({data}) => {
-    const {error, loading} = data;
+  props: ({ data }) => {
+    const { error, loading } = data;
 
     if (error) throw new Error(error);
 
@@ -24,9 +23,10 @@ const withData = graphql(QUERY, {
         expenditure: [],
         finance: [],
         currencyCode: '',
+        startYear: 2015, // got from api
       }),
     };
-  }});
-
+  },
+});
 
 export default withData(Chart);

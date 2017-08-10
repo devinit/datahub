@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import withApolloProvider from 'lib/storybook-addon/apollo';
+import config from 'visboxConfigs/unbundlingTreemapChart';
 import Chart from '.';
-import config from '../../../visboxConfigs/unbundlingTreemapChart';
 
 // Let's see
 storiesOf('Unbundling Aid', module)

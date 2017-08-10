@@ -116,37 +116,39 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 
 ---------
 - [ ] Reduce service worker pre-cache bundle
-- [ ] [Reduce the amount of data we cache with redux persist](https://github.com/apollographql/apollo-client/issues/1600)
+- [ ] Make webpack loader for coping over package.json version && api config into a separate config file
+- [ ] Get rid of proptypes in one of the lib folder files 
+this will ensure we dont have the all package.json file in our client code budle
 
 
 ## VERY STRANGE BUG
 
 ----------
 
-There is this strange bug where a react component willnot be exported out while using export default if its on one line.
+There is this strange bug where a react component may not be exported out while using export default if its on one line.
 i.e
 ```
-  export default connect(mapStateToProps)(MapWithApollo); // this will not export out your component
+  export default connect(mapStateToProps)(MapWithApollo); // this may not get exported
   // this will work
   const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
   export default MapWithRedux;
 ```
 
 
-## Known development issues
+## Known development issues / incompartibilities
 
 ----------
 
-- Currently Updating eslint-plugin-react to 7.1.0 will break linting
-- eslint@4 is currently not supported, we are wainting for [airbnb eslint config to support it](https://github.com/airbnb/javascript/issues/1447)
-- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing.
+- Currently Updating eslint-plugin-react to 7.1.0  &  eslint-plugin-jsx-a11y to 6.0.2 will break linting
+- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing / over writing our custom changes.
 - Currently dont add react-apollo flow types. They have an issue that need to be corrected
-- Dont upgrade apollo codegen as it will break liniting --> _Makes inner array types option_
+- Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types option_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
 
-## Development environment and notes
+## Development environment / notes / guidelines
 
 --------
 - we use package.json for some configs, for instance the api link is in package.json's config key.
+- the version number in package.json is used to determine whether to destroy the client cache or reuse it. Bump it up if you want users to start on a clean slate
 - module resolution is handled by babel not webpack this is a next.js constraint
 - storybook has its own webpack config file you may need to update it where required. It also has a module resolution config.
 - Advised to use any modern linux OS or MacOS

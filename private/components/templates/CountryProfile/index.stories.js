@@ -1,8 +1,10 @@
 import React from 'react';
-import withApolloProvider from 'lib/storybook-addon/apollo';
+import withApolloAndReduxProvider from 'lib/storybook-addon/apolloAndRedux';
 import { storiesOf } from '@storybook/react';
 import CountryProfile from '.';
 
 storiesOf('Templates DontTest', module)
-  .addDecorator(withApolloProvider())
-  .add('Country Profile', () => <CountryProfile id={'uganda'} />);
+  .addDecorator(withApolloAndReduxProvider())
+  .add('Country Profile uganda', () => <CountryProfile id={'uganda'} />)
+  .add('Country Profile rwanda', () => <CountryProfile id={'rwanda'} />)
+  .add('Country Profile Austria', () => <CountryProfile id={'austria'} />);

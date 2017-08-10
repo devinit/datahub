@@ -8,9 +8,9 @@ import App from 'components/templates/CountryProfile';
 type Props = {
   url: {
     pathname: string,
-    query: {id: string}
-  }
-}
+    query: { id: string },
+  },
+};
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -20,7 +20,5 @@ if (typeof window !== 'undefined') {
 
 export default withData((props: Props) => {
   // console.log(props);
-  return (
-    <App id={props.url.query.id} />
-  );
+  return <App id={props.url.query.id} />;
 });

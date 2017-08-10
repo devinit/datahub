@@ -14,4 +14,5 @@ storiesOf('Bubble Charts', module)
       maxYear={2015}
       config={config}
       annotation={<BubbleChartAnnotation />}
-    />));
+    />),
+  );

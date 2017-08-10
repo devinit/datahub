@@ -16,21 +16,20 @@ const Wrapper = glamorous.span({
   paddingLeft: '.2em',
 });
 
-const TextWrapper = glamorous.span({
-}, (props) => ({
-  opacity: props.active ? '1' : '.5'
+const TextWrapper = glamorous.span({}, props => ({
+  opacity: props.active ? '1' : '.5',
 }));
 
 const BoldText = glamorous.span({
   cursor: 'pointer',
   textDecoration: 'underline',
   fontWeight: '900',
-  paddingLeft: '.15em'
+  paddingLeft: '.15em',
 });
 const SmallText = glamorous.span({
   cursor: 'pointer',
   fontSize: '.55em',
-  paddingLeft: '.15em'
+  paddingLeft: '.15em',
 });
 
 class Select extends React.Component {
@@ -39,7 +38,7 @@ class Select extends React.Component {
     this.state = {
       visible: false,
       bigText: '',
-      value: ''
+      value: '',
     };
   }
 
@@ -50,37 +49,43 @@ class Select extends React.Component {
   };
 
   onChanged(selected: Object) {
-    this.setState({bigText: selected.name, visible: false});
+    this.setState({ bigText: selected.name, visible: false });
     this.props.onChange(selected.value);
   }
 
   toggleDropDown() {
     if (this.state.visible) {
-      this.setState({visible: false});
+      this.setState({ visible: false });
     } else {
-      this.setState({visible: true});
+      this.setState({ visible: true });
     }
   }
 
   render() {
     // eslint-disable-next-line eqeqeq
     const [selected = {}] = this.props.options.filter(d => d.value == this.props.value);
-    const {name = ''} = selected;
+    const { name = '' } = selected;
 
-    return (<Wrapper >
-      <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
-        <SmallText>{this.props.smallText}</SmallText>
-        <BoldText>{name}</BoldText>
-      </TextWrapper>
-      <DropDown
-        onChange={(selected) => this.onChanged && this.onChanged(selected)}
-        active={this.props.active}
-        onClose={() => this.toggleDropDown()}
-        visible={this.state.visible}
-        text={this.props.smallText || ''}
-        items={this.props.options}
-      />
-    </Wrapper>);
+    return (
+      <Wrapper>
+        <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
+          <SmallText>
+            {this.props.smallText}
+          </SmallText>
+          <BoldText>
+            {name}
+          </BoldText>
+        </TextWrapper>
+        <DropDown
+          onChange={selected => this.onChanged && this.onChanged(selected)}
+          active={this.props.active}
+          onClose={() => this.toggleDropDown()}
+          visible={this.state.visible}
+          text={this.props.smallText || ''}
+          items={this.props.options}
+        />
+      </Wrapper>
+    );
   }
 }
 

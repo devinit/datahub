@@ -1,0 +1,77 @@
+// @flow
+const data = {
+  toolBar: {
+    years: [
+      { name: '2015', value: '2015' },
+      { name: '2014', value: '2014' },
+      { name: '2013', value: '2013' },
+      { name: '2012', value: '2012' },
+      { name: '2011', value: '2011' },
+      { name: '2010', value: '2010' },
+      { name: '2009', value: '2009' },
+      { name: '2008', value: '2008' },
+      { name: '2007', value: '2007' },
+      { name: '2006', value: '2006' },
+    ],
+    forms: [
+      { name: 'all', value: 'all' },
+      { name: 'Cash (loans/equity)', value: 'Cash (loans/equity)' },
+      {
+        name: 'Global initiatives and northern non-governmental organisations',
+        value: 'Global initiatives and northern non-governmental organisations',
+      },
+      { name: 'Mixed project aid', value: 'Mixed project aid' },
+      { name: 'Non-transfer', value: 'Non-transfer' },
+      { name: 'Technical cooperation', value: 'Technical cooperation' },
+    ],
+    channels: [
+      { name: 'all', value: 'all' },
+      { name: 'Multilateral', value: 'Multilateral' },
+      { name: 'NGO (donor-country based)', value: 'NGO (donor-country based)' },
+      { name: 'NGO (recipient-country based)', value: 'NGO (recipient-country based)' },
+      {
+        name: 'Other (private sector, think-tank, etc.)',
+        value: 'Other (private sector, think-tank, etc.)',
+      },
+      { name: 'Public private partnership', value: 'Public private partnership' },
+      { name: 'Public sector (donor government)', value: 'Public sector (donor government)' },
+      {
+        name: 'Public sector (recipient government)',
+        value: 'Public sector (recipient government)',
+      },
+      { name: 'Public sector (unknown country)', value: 'Public sector (unknown country)' },
+      { name: 'Unspecified', value: 'Unspecified' },
+    ],
+    sectors: [
+      { name: 'all', value: 'all' },
+      { name: 'Agriculture and food security', value: 'Agriculture and food security' },
+      { name: 'Banking and business', value: 'Banking and business' },
+      { name: 'Debt relief', value: 'Debt relief' },
+      { name: 'Education', value: 'Education' },
+      { name: 'Environment', value: 'Environment' },
+      { name: 'General budget support', value: 'General budget support' },
+      { name: 'Governance and security', value: 'Governance and security' },
+      { name: 'Health', value: 'Health' },
+      { name: 'Humanitarian', value: 'Humanitarian' },
+      { name: 'Industry and trade', value: 'Industry and trade' },
+      { name: 'Infrastructure', value: 'Infrastructure' },
+      { name: 'Other', value: 'Other' },
+      { name: 'Other social services', value: 'Other social services' },
+      { name: 'Water and sanitation', value: 'Water and sanitation' },
+      { name: 'Other sectors (grouped)', value: 'Other sectors (grouped)' },
+    ],
+    to: [
+      { name: 'all', value: 'all' },
+      { name: 'Uganda', value: 'Uganda' },
+      { name: 'Kenya', value: 'Kenya' },
+      { name: 'Tanzania', value: 'Tanzania' },
+    ],
+    from: [
+      { name: 'all', value: 'all' },
+      { name: 'Uganda', value: 'Uganda' },
+      { name: 'Kenya', value: 'Kenya' },
+      { name: 'Tanzania', value: 'Tanzania' },
+    ],
+  },
+};
+export default data;

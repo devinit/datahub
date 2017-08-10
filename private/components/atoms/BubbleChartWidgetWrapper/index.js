@@ -1,14 +1,14 @@
 // @flow
 import React from 'react';
-import { Dropdown, Header } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 import type { Element } from 'react';
 import glamorous from 'glamorous';
 
 const Wrapper = glamorous.div({
   marginTop: '1em',
   '& h4': {
-    marginBottom: '.5em !important'
-  }
+    marginBottom: '.5em !important',
+  },
 });
 
 type Props = {
@@ -16,11 +16,12 @@ type Props = {
   title: string,
 };
 
-const bubbleWrapper = ({ title, children }: Props) => (
-  <Wrapper>
-    <Header as="h4">{title}</Header>
+const bubbleWrapper = ({ title, children }: Props) =>
+  (<Wrapper>
+    <Header as="h4">
+      {title}
+    </Header>
     {children}
-  </Wrapper>
-);
+  </Wrapper>);
 
 export default bubbleWrapper;

@@ -7,11 +7,10 @@ type Props = {
   config: any,
   width?: string,
   height?: string,
-  onYearChanged(year: string): void
-}
+  onYearChanged(year: string): void,
+};
 
 class Timeline extends React.Component {
-
   // eslint-disable-next-line react/sort-comp
   chart: any;
   props: Props;
@@ -31,7 +30,7 @@ class Timeline extends React.Component {
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
-    const chart = draw({element, data, config});
+    const chart = draw({ element, data, config });
 
     chart.then(chart => {
       this.chart = chart;
@@ -55,8 +54,10 @@ class Timeline extends React.Component {
   render() {
     return (
       <div
-        ref={element => { this.element = element; }}
-        style={{width: this.props.width || '100%', height: this.props.height}}
+        ref={element => {
+          this.element = element;
+        }}
+        style={{ width: this.props.width || '100%', height: this.props.height }}
       />
     );
   }

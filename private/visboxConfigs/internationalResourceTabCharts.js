@@ -7,7 +7,7 @@ export const resourcesOverTime = {
     'rgb(214, 39, 40)',
     'rgb(27, 54, 93)',
     'rgb(190, 132, 187)',
-    'rgb(0, 149, 200)'
+    'rgb(0, 149, 200)',
   ],
   groupBy: 'flow_type',
   linearAxis: {
@@ -23,11 +23,11 @@ export const resourcesOverTime = {
     ticking: 'years',
     tickingStep: 20,
     axisMinimum: 2000,
-    axisMaximum: 2015
+    axisMaximum: 2015,
   },
   legend: {
     showLegend: true,
-  }
+  },
 };
 
 export const mixOfResources = {
@@ -39,7 +39,7 @@ export const mixOfResources = {
     'rgb(214, 39, 40)',
     'rgb(27, 54, 93)',
     'rgb(190, 132, 187)',
-    'rgb(0, 149, 200)'
+    'rgb(0, 149, 200)',
   ],
   circular: {
     label: 'flow_name',
@@ -53,7 +53,7 @@ export const mixOfResources = {
     position: 'bottom',
     alignment: 'center',
     symbol: 'circle',
-  }
+  },
 };
 
-export default {resourcesOverTime, mixOfResources};
+export default { resourcesOverTime, mixOfResources };

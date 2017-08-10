@@ -1,6 +1,4 @@
 import glamorous from 'glamorous';
-import {Icon} from 'semantic-ui-react';
-import React from 'react';
 import { lightBlack } from 'components/theme/semantic';
 
 const TabHeader = glamorous.div({

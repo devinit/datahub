@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
-import { Dropdown, Header } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 import glamorous from 'glamorous';
 
 const Input = glamorous.input({
-  width: '30%;'
+  width: '30%;',
 });
 
 const Link = glamorous.a({
@@ -28,7 +28,8 @@ type Props = {
   max?: number,
 };
 
-const ColorBy = ({ min,
+const ColorBy = ({
+  min,
   max,
   title,
   onMaxChanged,
@@ -36,16 +37,18 @@ const ColorBy = ({ min,
   onScaleTypesChange,
   onLatestChecked,
   onReset,
-  scaleTypes}: Props) => (
-    <Wrapper title={title}>
-      <Dropdown onClick={onScaleTypesChange} selection fluid options={scaleTypes} />
-      <RangeWrapper>
-        Min <Input type="number" value={min} onChange={onMinChanged} />
-        Max <Input type="number" value={max} onChange={onMaxChanged} />
-      </RangeWrapper>
-      <div><Link onClick={onReset}>reset</Link></div>
-      <input type="checkbox" onChange={onLatestChecked} /> Latest
-    </Wrapper>
-);
+  scaleTypes,
+}: Props) =>
+  (<Wrapper title={title}>
+    <Dropdown onClick={onScaleTypesChange} selection fluid options={scaleTypes} />
+    <RangeWrapper>
+      Min <Input type="number" value={min} onChange={onMinChanged} />
+      Max <Input type="number" value={max} onChange={onMaxChanged} />
+    </RangeWrapper>
+    <div>
+      <Link onClick={onReset}>reset</Link>
+    </div>
+    <input type="checkbox" onChange={onLatestChecked} /> Latest
+  </Wrapper>);
 
 export default ColorBy;

@@ -17,8 +17,8 @@ const line = {
     tickingStep: 10,
   },
   anchor: {
-    start: '2015'
-  }
+    start: '2015',
+  },
 };
 
 const partition = {
@@ -30,8 +30,8 @@ const partition = {
   tree: {
     id: 'nodeId',
     parent: 'nodeParent',
-    value: 'value'
-  }
+    value: 'value',
+  },
 };
 
 export default { line, partition };

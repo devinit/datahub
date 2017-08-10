@@ -1,55 +1,43 @@
 // @flow
 import React from 'react';
 import BaseMap from 'components/atoms/BaseMap';
-import type {Viewport, PaintMap, MapData} from 'components/atoms/BaseMap';
-// import config from 'components/molecules/Map';
+import type { PaintMap, Meta, Viewport } from 'components/atoms/BaseMap/types';
 import Nossr from 'react-no-ssr';
-import countries from 'components/organisms/CountrySearchInput/data';
-import {red} from 'components/theme/semantic';
+import configs from 'components/molecules/Map/config';
+// import countries from 'components/organisms/CountrySearchInput/data';
+import { white } from 'components/theme/semantic';
 
 type Props = {
-  slug: string;
-  spotlightCountry?: string;
-}
-type ViewportAndPaint = {
-  viewport: Viewport,
-  paint: PaintMap
-}
-type Country = {
-  slug: string;
-  id: string;
-  name: string;
-  lng: number;
-  lat: number;
-}
-const bounds = [
-  [-179, -61], // TODO: change to correct values Southwest coordinates
-  [188, 75]  // Northeast coordinates
-];
-const viewportAndPaint = ({slug, spotlightCountry}: Props): ViewportAndPaint => {
-  const entity: Country = countries.find(obj => obj.slug === slug);
-  const center = [entity.lng - 30, entity.lat];
-  const zoom = spotlightCountry && spotlightCountry === 'uganda' ? 9 : 3;
-  const minZoom = spotlightCountry && spotlightCountry === 'uganda' ? 10 : 1;
-  const viewport = { zoom, center, minZoom, scrollZoom: true, bounds};
-  const data = [{
-    id: entity.id,
-    color: red,
-    detail: '',
-    uid: '',
-    year: 0,
-    value: 0,
-    slug: entity.slug,
-    name: entity.name }];
-  const paint = ({data}: PaintMap);
-  return {viewport, paint};
+  slug: string,
+  spotlightCountry?: string,
 };
+type MapProps = {
+  paint: PaintMap,
+  meta: Meta,
+  viewport: Viewport,
+  countryProfile: string,
+  spotlightCountry?: string,
+};
+const getMeta = (spotlightCountry?: string): Meta => ({
+  name: '',
+  uom_display: '',
+  theme: '',
+  id: '',
+  country: spotlightCountry || 'global',
+});
 
+const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
+  const paintProps = spotlightCountry ? configs[spotlightCountry].paint : configs.global.paint;
+  const paint = ({ background: white, ...paintProps }: PaintMap);
+  const meta = getMeta(spotlightCountry);
+  const viewport = { ...configs.global.viewport };
+  return { paint, meta, countryProfile: slug, viewport };
+};
 const smallMap = (props: Props) => {
-  const {viewport, paint} = viewportAndPaint(props);
+  const baseMapProps = mapProps(props);
   return (
     <Nossr loading={<p>loading...</p>}>
-      <BaseMap paint={paint} viewport={viewport} height={450} />
+      <BaseMap {...baseMapProps} />
     </Nossr>
   );
 };

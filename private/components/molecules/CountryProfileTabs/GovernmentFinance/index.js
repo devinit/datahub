@@ -1,60 +1,69 @@
 // @flow
-import { Container, Header, Grid, Icon, Button } from 'semantic-ui-react';
+import { Container, Header, Grid } from 'semantic-ui-react';
 import React from 'react';
-import {P} from 'glamorous';
+import { P } from 'glamorous';
+import TabsNoData from 'components/atoms/TabsNoData';
 import Chart from 'components/atoms/Chart';
-import {red} from 'components/theme/semantic';
-import {big} from 'components/theme';
+import { red } from 'components/theme/semantic';
+import { big } from 'components/theme';
+import TabsToolTip from 'components/molecules/TabsToolTip';
+import { NoData } from 'lib/utils/constants';
 
 type Props = {
   ...TabDataQuery,
-  config: any
-}
+  config: any,
+};
 
 const Government = (props: Props) => {
-  if (!props.governmentFinance) return new Error('No Government Finance data');
+  if (!props.governmentFinance) throw new Error('No Government Finance data');
+  const governmentFinance = props.governmentFinance;
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
             WHAT IS THE TOTAL REVENUE OF UGANDA?
+            {governmentFinance.totalRevenue && governmentFinance.totalRevenue.toolTip
+              ? <TabsToolTip {...governmentFinance.totalRevenue.toolTip} />
+              : ''}
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.governmentFinance.totalRevenue}</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>
+            {governmentFinance.totalRevenue && governmentFinance.totalRevenue.value
+              ? governmentFinance.totalRevenue.value
+              : NoData}
+          </P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
             HOW MUCH GOVERNMENT REVENUE COMES FROM EXTERNAL GRANTS (AID)?
+            {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.toolTip
+              ? <TabsToolTip {...governmentFinance.grantsAsPcOfRevenue.toolTip} />
+              : ''}
           </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>{props.governmentFinance.grantsAsPcOfRevenue}%</P>
+          <P fontSize={big} fontWeight={'bold'} color={red}>
+            {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.value
+              ? `${governmentFinance.grantsAsPcOfRevenue.value}%`
+              : NoData}
+          </P>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header
-            textAlign="center"
-            as="h3"
-          >
+          <Header textAlign="center" as="h3">
             HOW IS SPENDING ALLOCATED?
+            {governmentFinance.spendingAllocation && governmentFinance.spendingAllocation.toolTip
+              ? <TabsToolTip {...governmentFinance.spendingAllocation.toolTip} />
+              : ''}
           </Header>
-          {
-            props.governmentFinance.spendingAllocation &&
-            props.governmentFinance.spendingAllocation.length ?
-              <Chart
-                config={props.config.spendingAllocation}
-                // TODO: Remove null data from server side
-                data={props.governmentFinance.spendingAllocation}
-                height="140px"
-              /> : <P fontSize={big} fontWeight={'bold'} color={red}>No data</P>
-
-          }
-
+          {governmentFinance.spendingAllocation &&
+          governmentFinance.spendingAllocation.data &&
+          governmentFinance.spendingAllocation.data.length
+            ? <Chart
+              config={props.config.spendingAllocation}
+              data={governmentFinance.spendingAllocation.data}
+              height="140px"
+            />
+            : <TabsNoData />}
         </Grid.Column>
       </Grid>
     </Container>

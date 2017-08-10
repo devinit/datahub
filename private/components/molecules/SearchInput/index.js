@@ -1,30 +1,28 @@
 // @flow
 import React from 'react';
-import glamorous, {Div} from 'glamorous';
-import {Container} from 'semantic-ui-react';
-import {SocialMediaLink} from 'components/atoms/Link';
+import { Div, H1 } from 'glamorous';
+import { Icon } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router from 'next/router';
-import {List} from 'components/atoms/SearchInput/list';
-import {Input, InputContainer} from '../../atoms/SearchInput/input';
+import { Input, InputContainer, List } from 'components/atoms/SearchInput';
 
-
-type Country ={
+type Country = {
   slug: string,
-  name: string
-}
+  name: string,
+};
 export type Props = {
   countries: Country[],
   placeholder: string,
+  profile: boolean,
   visible: boolean,
-  onSelected?: (any) => void
+  onSelected?: any => void,
 };
 type State = {
   selected: number,
   countries: Country[],
   showList: boolean,
-  value: string
-}
+  value: string,
+};
 class SearchInput extends React.Component {
   constructor(props: Props) {
     super(props);
@@ -33,26 +31,30 @@ class SearchInput extends React.Component {
       selected: -1,
       countries: props.countries,
       value: '',
-      showList: false
+      showList: false,
     };
   }
   state: State;
+  onBlurTimer: any;
   onKeyDown(e: Object) {
-    let {selected} = this.state;
-    const {countries} = this.state;
+    let { selected } = this.state;
+    const { countries } = this.state;
     const keyCode = e.keyCode;
     switch (keyCode) {
-      case 40: { // down arrow
-        if ((selected + 1) < countries.length) {
+      case 40: {
+        // down arrow
+        if (selected + 1 < countries.length) {
           selected += 1;
         }
         break;
       }
-      case 38: { // up arrow
+      case 38: {
+        // up arrow
         if (selected !== 0) selected -= 1;
         break;
       }
-      case 13: { // enter key code
+      case 13: {
+        // enter key code
         this.onSubmit();
         break;
       }
@@ -61,55 +63,82 @@ class SearchInput extends React.Component {
         break;
       }
     }
-    this.setState({selected});
+    this.setState({ selected });
   }
   onChange(text: string) {
-    this.setState({value: text});
-    const filteredCountries: Country[] = this.props.countries
-      .filter((country: Country) => country.name.toLowerCase().includes(text.toLowerCase()));
-    if (filteredCountries.length) this.setState({countries: filteredCountries});
+    this.setState({ value: text });
+    const filteredCountries: Country[] = this.props.countries.filter((country: Country) =>
+      country.name.toLowerCase().includes(text.toLowerCase()),
+    );
+    if (filteredCountries.length) this.setState({ countries: filteredCountries });
+  }
+  onBlur() {
+    if (!this.setState) {
+      this.onBlurTimer = setTimeout(() => {
+        this.resetState();
+      }, 500);
+    }
   }
   onSubmit() {
     const country: Country | void = this.state.countries[0] || null;
     if (!country) return false;
-    this.setState({value: country.slug});
+    // reset state
+    this.resetState();
     if (this.props.onSelected) return this.props.onSelected(country.slug);
-    return Router.push(`/country?slug=${country.slug}`, `/country/${country.slug}`);
+    return Router.push(`/country?id=${country.slug}`, `/country/${country.slug}`);
+  }
+  resetState() {
+    this.setState({
+      value: '',
+      showList: false,
+      selected: -1,
+      countries: this.props.countries,
+    });
+    if (this.onBlurTimer) clearTimeout(this.onBlurTimer);
   }
   componentWillReceive(props: Props) {
-    this.setState({countries: props.countries});
+    this.setState({ countries: props.countries });
   }
   render() {
     return (
-      <InputContainer
-        visible={this.props.visible}
-      >
-        <Container>
+      <Div>
+        <InputContainer
+          visible={this.props.visible}
+          profile={this.props.profile}
+          height={this.props.profile ? '5em' : '10em'}
+        >
+          {this.props.profile
+            ? <H1 flex={'0 1'} textTransform="capitalize">
+              {this.props.placeholder}
+              <Icon name="caret down" />
+            </H1>
+            : ''}
           <Input
             value={this.state.value}
-            placeholder={this.props.placeholder}
-            onBlur={(e) => this.setState({showList: false})}
-            onFocus={(e) => this.setState({showList: true})}
-            onChange={(e) => this.onChange(e.target.value)}
-            onKeyDown={(e) => this.onKeyDown(e)}
+            profile={this.props.profile}
+            placeholder={this.props.profile ? '' : this.props.placeholder}
+            onBlur={() => this.onBlur()}
+            onFocus={() => this.setState({ showList: true })}
+            onChange={e => this.onChange(e.target.value)}
+            onKeyDown={e => this.onKeyDown(e)}
           />
-          <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
-            <List >
-              { this.state.countries ?
-                  this.state.countries
-                  .map((country, i) =>
-                    (<li
-                      key={country.slug}
-                      className={this.state.selected === i ? 'active' : false}
-                    >
-                      <Link href={`/country?slug=${country.slug}`} as={`/country/${country.slug}`}><a>{country.name}</a></Link>
-                    </li>))
-                    : <li> Error getting countries </li>
-              }
-            </List>
-          </Div>
-        </Container>
-      </InputContainer>
+        </InputContainer>
+        <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
+          <List>
+            {this.state.countries
+              ? this.state.countries.map((country, i) =>
+                (<li key={country.slug} className={this.state.selected === i ? 'active' : false}>
+                  <Link href={`/country?id=${country.slug}`} as={`/country/${country.slug}`}>
+                    <a>
+                      {country.name}
+                    </a>
+                  </Link>
+                </li>),
+              )
+              : <li>country list is not available</li>}
+          </List>
+        </Div>
+      </Div>
     );
   }
 }

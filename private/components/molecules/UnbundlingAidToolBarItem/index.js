@@ -1,7 +1,4 @@
-/**
- * @flow
- */
-
+// @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import Select from 'components/molecules/UnbundlingAidSelect';
@@ -21,18 +18,21 @@ const ToolBarItem = (props: Props) => {
     position = 0,
     values,
     textAlign,
-    onChange = (key, value) => {}
+    onChange = (key, value) => {
+      // TOFIX: @ernest why is this here yet its unused
+      console.log(key, value);
+    },
   } = props;
 
   const keys = Object.keys(data);
 
   return (
     <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
-      <span>ODA
+      <span>
+        ODA
         <Select
           active
           value={values[keys.indexOf('years')]}
-          smallText=" in"
           options={data.years}
           onChange={d => onChange('years', d)}
         />

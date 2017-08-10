@@ -1,20 +1,31 @@
 // @flow
 export const GLOBAL_INDICATOR = 'GLOBAL_INDICATOR';
 export const SPOTLIGHT_INDICATOR = 'SPOTLIGHT_INDICATOR';
+export const LOADING_STATUS = 'LOADING_STATUS';
 
 type ActionBase = {
-  type: string
-}
+  type: string,
+};
 export type GlobalIndicator = ActionBase & {
-  globalIndicator: string
-}
+  globalIndicator: string,
+};
 export type SpotLightlIndicator = ActionBase & {
-  spotlightIndicator: string
-}
+  spotlightIndicator: string,
+};
+export type LoadingStatus = ActionBase & {
+  loading: boolean,
+};
 
-export const changeGlobalIndicator = (globalIndicator: string): Dispatch<GlobalIndicator> =>
-  ({ type: GLOBAL_INDICATOR, globalIndicator});
+export const changeLoadingStatus = (loading: boolean): Dispatch<LoadingStatus> => ({
+  type: LOADING_STATUS,
+  loading,
+});
 
-export const changeSpotlightIndicator =
-  (spotlightIndicator: string): Dispatch<SpotLightlIndicator> =>
-    ({ type: SPOTLIGHT_INDICATOR, spotlightIndicator});
+export const changeGlobalIndicator = (globalIndicator: string): Dispatch<GlobalIndicator> => ({
+  type: GLOBAL_INDICATOR,
+  globalIndicator,
+});
+
+export const changeSpotlightIndicator = (
+  spotlightIndicator: string,
+): Dispatch<SpotLightlIndicator> => ({ type: SPOTLIGHT_INDICATOR, spotlightIndicator });

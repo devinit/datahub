@@ -1,13 +1,12 @@
 // @flow
 import glamorous from 'glamorous';
-import {white} from 'components/theme/semantic';
-import {Button, Grid} from 'semantic-ui-react';
+import { Button, Grid } from 'semantic-ui-react';
 import React from 'react';
 import YearSlider from '../PoorVizYearSlider';
 
 const LabelFilter = glamorous.div({
   fontStyle: 'italic',
-  fontSize: '12px'
+  fontSize: '12px',
 });
 type Props = {
   year: string,
@@ -15,31 +14,18 @@ type Props = {
   scenario: string,
   onLevelChange: (value: string | void) => void,
   onScenarioChange: (value: string | void) => void,
-  onYearChange: (value: number) => void
+  onYearChange: (value: number) => void,
 };
-const controls = ({
-  year,
-  level,
-  scenario,
-  onLevelChange,
-  onYearChange,
-  onScenarioChange
-}: Props) =>
+const controls = ({ level, scenario, onLevelChange, onYearChange, onScenarioChange }: Props) =>
   (<Grid>
     <Grid.Row>
       <Grid.Column width="5">
         <LabelFilter>Level</LabelFilter>
         <Button.Group basic>
-          <Button
-            onClick={() => onLevelChange('global')}
-            active={level === 'global'}
-          >
+          <Button onClick={() => onLevelChange('global')} active={level === 'global'}>
             Global
           </Button>
-          <Button
-            onClick={() => onLevelChange('regional')}
-            active={level === 'regional'}
-          >
+          <Button onClick={() => onLevelChange('regional')} active={level === 'regional'}>
             Regional
           </Button>
         </Button.Group>
@@ -47,29 +33,20 @@ const controls = ({
       <Grid.Column width="5">
         <LabelFilter>Scenario</LabelFilter>
         <Button.Group basic>
-          <Button
-            onClick={() => onScenarioChange('Worst case')}
-            active={scenario === 'Worst case'}
-          >
+          <Button onClick={() => onScenarioChange('Worst case')} active={scenario === 'Worst case'}>
             Worst case
           </Button>
-          <Button
-            onClick={() => onScenarioChange('Baseline')}
-            active={scenario === 'Baseline'}
-          >
+          <Button onClick={() => onScenarioChange('Baseline')} active={scenario === 'Baseline'}>
             Baseline
           </Button>
-          <Button
-            onClick={() => onScenarioChange('Best case')}
-            active={scenario === 'Best case'}
-          >
+          <Button onClick={() => onScenarioChange('Best case')} active={scenario === 'Best case'}>
             Best case
           </Button>
         </Button.Group>
       </Grid.Column>
       <Grid.Column width="5">
         <LabelFilter>Year</LabelFilter>
-        <YearSlider onYearChange={(year) => onYearChange(year)} />
+        <YearSlider onYearChange={year => onYearChange(year)} />
       </Grid.Column>
     </Grid.Row>
   </Grid>);

@@ -9,6 +9,39 @@
  *    IE on Windows Phone and in iOS.
  */
 
+<<<<<<< HEAD
+
+ @font-face {
+     font-family: 'geomanist';
+     src: url('./themes/default/assets/fonts/geomanist-regular-webfont.woff2') format('woff2'),
+          url('./themes/default/assets/fonts/geomanist-regular-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+ @font-face {
+     font-family: 'geomanist';
+     src: url('./themes/default/assets/fonts/geomanist-light-webfont.woff2') format('woff2'),
+          url('./themes/default/assets/fonts/geomanist-light-webfont.woff') format('woff');
+     font-weight: 300;
+     font-style: normal;
+
+ }
+
+ @font-face {
+     font-family: 'geomanist';
+     src: url('./themes/default/assets/fonts/geomanist-bold-webfont.woff2') format('woff2'),
+          url('./themes/default/assets/fonts/geomanist-bold-webfont.woff') format('woff');
+     font-weight: bold;
+     font-style: normal;
+
+ }
+
+
+
+=======
+>>>>>>> dev-vis-integration
 html {
   line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */

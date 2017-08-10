@@ -24,16 +24,15 @@ const treemapConfig = {
   coloring: 'color',
   colors: [],
   labeling: {
-    prefix: 'US$ '
+    prefix: 'US$ ',
   },
   tree: {
     id: 'flow_category',
-    value: 'value'
+    value: 'value',
   },
   treemap: {
-    tile: 'binary'
-  }
+    tile: 'binary',
+  },
 };
 
-
-export default {areaConfig, treemapConfig};
+export default { areaConfig, treemapConfig };

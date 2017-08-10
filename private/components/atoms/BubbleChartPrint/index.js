@@ -3,14 +3,13 @@ import React from 'react';
 import { Button } from 'semantic-ui-react';
 import Wrapper from 'components/atoms/BubbleChartWidgetWrapper';
 
-type Props = {
-  onClick: () => void,
-};
+// type Props = {
+//   onClick: () => void,
+// };
 
-const printWidget = ({ onClick }: Props) => (
-  <Wrapper title="Print and Share">
+const printWidget = () =>
+  (<Wrapper title="Print and Share">
     <Button icon="print" />
-  </Wrapper>
-);
+  </Wrapper>);
 
 export default printWidget;

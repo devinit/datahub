@@ -13,8 +13,8 @@ export const area = {
     ticking: 'years',
     tickingStep: 20,
     axisMinimum: 2000,
-    axisMaximum: 2013
-  }
+    axisMaximum: 2013,
+  },
 };
 
 export const histogram = {
@@ -23,7 +23,7 @@ export const histogram = {
   coloring: 'color',
   labeling: {
     showLabels: true,
-    suffix: '%'
+    suffix: '%',
   },
   linearAxis: {
     showAxis: false,
@@ -33,7 +33,7 @@ export const histogram = {
     indicator: 'quintileName',
     ticking: 'end',
     innerPadding: 0.2,
-  }
+  },
 };
 
 export default { area, histogram };

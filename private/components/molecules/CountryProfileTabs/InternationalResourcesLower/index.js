@@ -1,11 +1,11 @@
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
 import glamorous from 'glamorous';
-import {white} from 'components/theme/semantic';
-import {Select} from 'components/molecules/CountryProfileChartFilter';
+import { white } from 'components/theme/semantic';
+import { Select } from 'components/molecules/CountryProfileChartFilter';
 import ChartShare from 'components/molecules/ChartShare';
 import YearSlider from 'components/molecules/YearSlider';
-import {SectionHeader, Lead} from 'components/atoms/Header';
+import { SectionHeader } from 'components/atoms/Header';
 
 export const TextBlock = glamorous.p({
   fontSize: '1.1em',
@@ -18,10 +18,10 @@ export const TextBlock = glamorous.p({
 const FlexSpace = glamorous.div({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
 });
-const InternationalResources = () => (
-  <Container textAlign="center">
+const InternationalResources = () =>
+  (<Container textAlign="center">
     <Grid centered>
       <Grid.Row>
         <Grid.Column width={12} textAlign="center">
@@ -29,17 +29,15 @@ const InternationalResources = () => (
             INFLOWS <span>VS</span> OUTFLOWS
           </SectionHeader>
           <TextBlock>
-              A dynamic mix of resources flow to and from Uganda.
-              All resources can play a role in ending poverty,
-              though different resources impact poverty directly and indirectly
-              through different mechanisms and flow for wide-ranging objectives.
-            </TextBlock>
+            A dynamic mix of resources flow to and from Uganda. All resources can play a role in
+            ending poverty, though different resources impact poverty directly and indirectly
+            through different mechanisms and flow for wide-ranging objectives.
+          </TextBlock>
           <TextBlock>
-              To understand the value of different resources for poverty
-              reduction we must start by understanding the volumes - move the slider
-              to explore how official, commercial, private and illicit
-              resources flow to and from Uganda
-            </TextBlock>
+            To understand the value of different resources for poverty reduction we must start by
+            understanding the volumes - move the slider to explore how official, commercial, private
+            and illicit resources flow to and from Uganda
+          </TextBlock>
           <FlexSpace>
             <SectionHeader color={white}>
               RESOURCE FLOWS TO UGANDA <span>4.4BN</span>
@@ -62,9 +60,9 @@ const InternationalResources = () => (
             <span>IN DETAIL</span> INTERNATIONAL RESOURCES
           </SectionHeader>
           <TextBlock>
-              Where are international resources originating and where are they destined?
-              Start by selecting inflows or outflows:
-            </TextBlock>
+            Where are international resources originating and where are they destined? Start by
+            selecting inflows or outflows:
+          </TextBlock>
           <Select>
             <option>Inflows in Uganda</option>
             <option>Outflows in Uganda</option>
@@ -72,7 +70,6 @@ const InternationalResources = () => (
         </Grid.Column>
       </Grid.Row>
     </Grid>
-  </Container>
-);
+  </Container>);
 
 export default InternationalResources;

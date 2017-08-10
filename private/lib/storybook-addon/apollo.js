@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { ApolloClient, ApolloProvider, createBatchingNetworkInterface } from 'react-apollo';
-import {config} from 'package.json';
+import { config } from 'package.json';
 
 function create() {
   return new ApolloClient({
@@ -16,7 +16,6 @@ function create() {
     dataIdFromObject: object => object.uid,
   });
 }
-
 
 export const client = create();
 

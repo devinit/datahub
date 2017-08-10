@@ -1,8 +1,8 @@
 {
   "name": "datahub",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "config": {
-    "api": "https://datahub-api-oxvcvwlsig.now.sh/graphql/"
+    "api": "https://datahub-api-zqipxntyzn.now.sh/graphql"
   },
   "repository": {
     "type": "git",
@@ -15,9 +15,10 @@
     "start": "NODE_ENV=production PORT=9999 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
+    "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
-    "format": "prettier-eslint --write \"components/**/*.js\" \"lib/*.js\" \"pages/*.js\"",
+    "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
     "coverage": "BABEL_ENV=test jest -u && codecov",
@@ -44,21 +45,18 @@
     "babel-plugin-transform-async-generator-functions": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
-    "babel-plugin-wrap-in-js": "^1.1.1",
     "compression": "^1.6.2",
     "css-loader": "^0.28.4",
     "d3": "^4.9.1",
-    "dragdealer": "^0.9.9",
     "express": "^4.15.3",
     "glamor": "^2.20.25",
-    "glamorous": "^3.23.4",
+    "glamorous": "^4.1.0",
     "graphql": "^0.10.3",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
     "lru-cache": "^4.1.1",
     "mapbox-gl": "^0.39.1",
-    "next": "^3.0.1-beta.20",
-    "next-routes": "^1.0.40",
+    "next": "^3.0.1",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
     "raw-loader": "^0.5.1",
@@ -81,17 +79,17 @@
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
     "css-to-js-object": "^0.0.3",
+    "csso": "^3.1.1",
     "enzyme": "^2.9.1",
-    "eslint": "3.19.0",
-    "eslint-config-airbnb": "^15.0.2",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.1.0",
     "eslint-import-resolver-babel-module": "^3.0.0",
-    "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-graphql": "^1.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "7.0.1",
-    "flow-bin": "^0.51.0",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.52.0",
     "flow-remove-types": "^1.2.1",
     "fs-extra": "^4.0.0",
     "git-pre-hooks": "^1.2.0",
@@ -103,12 +101,13 @@
     "prettier-eslint-cli": "^4.0.3",
     "pretty-format": "^20.0.3",
     "react-test-renderer": "^15.5.4",
-    "semantic-ui": "^2.2.10"
+    "semantic-ui": "^2.2.10",
+    "usus": "^1.6.0"
   },
   "git-pre-hooks": {
-    "pre-push": [
-      "npm run test -- -u",
-      "npm run lint"
+     "pre-push": [
+      "npm run lint",
+      "npm run test -- -u"
     ]
   },
   "jest": {

@@ -1,4 +1,3 @@
-# docker file for the app, currently set up for storybooks
 FROM node:8
 
 RUN mkdir /src

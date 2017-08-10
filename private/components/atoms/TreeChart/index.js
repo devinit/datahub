@@ -7,11 +7,10 @@ type Props = {
   config: Object,
   width?: string,
   height?: string,
-  onClick(d: {id: string, parent: string}): void,
-}
+  onClick?: (d: { id: string, parent: string }) => void,
+};
 
 class Chart extends React.Component {
-
   // eslint-disable-next-line react/sort-comp
   props: Props;
   element: Element;
@@ -28,11 +27,10 @@ class Chart extends React.Component {
     const data = this.props.data;
     const config = this.props.config;
 
-    draw({element, data, config})
-      .then(chart => {
-        this.chart = chart;
-        this.chart.onClick(this.props.onClick);
-      });
+    draw({ element, data, config }).then(chart => {
+      this.chart = chart;
+      this.chart.onClick(this.props.onClick);
+    });
   }
 
   componentWillUpdate(props: Props) {
@@ -44,8 +42,10 @@ class Chart extends React.Component {
   render() {
     return (
       <div
-        ref={element => { this.element = element; }}
-        style={{width: this.props.width, height: this.props.height}}
+        ref={element => {
+          this.element = element;
+        }}
+        style={{ width: this.props.width, height: this.props.height }}
       />
     );
   }

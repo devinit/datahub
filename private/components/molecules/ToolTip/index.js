@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import type {Element} from 'react';
+import type { Element } from 'react';
 import { Icon, Popup } from 'semantic-ui-react';
 import glamourous from 'glamorous';
 
@@ -10,10 +10,10 @@ const HeaderContainer = glamourous.div({
 type Props = {
   children: any,
   trigger: Element<any>,
-}
-type State ={
-  isOpen: boolean
-}
+};
+type State = {
+  isOpen: boolean,
+};
 class ToolTip extends React.Component {
   constructor(props: Props) {
     super(props);
@@ -45,9 +45,10 @@ class ToolTip extends React.Component {
             <Icon name="close" onClick={this.handleClose} />
           </HeaderContainer>
         </Popup.Header>
-        <Popup.Content>{this.props.children}</Popup.Content>
+        <Popup.Content>
+          {this.props.children}
+        </Popup.Content>
       </Popup>
-
     );
   }
 }

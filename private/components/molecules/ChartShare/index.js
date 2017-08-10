@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
-import {white, black} from 'components/theme/semantic';
-import glamorous, {Div} from 'glamorous';
+import { white, black } from 'components/theme/semantic';
+import glamorous, { Div } from 'glamorous';
 
 const Container = glamorous.div({
   padding: '5em',
@@ -20,28 +20,30 @@ const Container = glamorous.div({
     borderRadius: '.25em',
     outline: 0,
     border: `2px solid ${black}`,
-  }
+  },
 });
 
 type Props = {
   size: string,
   color: string,
 };
-const ChartShare = ({size, color}: Props) => (
-  <Modal
+const ChartShare = ({ size, color }: Props) =>
+  (<Modal
     trigger={
       <Button size={size} color={color}>
-        <Icon name="share alternate" />Share Chart</Button>}
+        <Icon name="share alternate" />Share Chart
+      </Button>
+    }
     closeIcon="close"
   >
     <Modal.Content>
       <Modal.Description>
         <Container>
           <h4>Share this Visualization</h4>
-          <input type="radio"value="default" /> in default view <br />
-          <input type="radio"value="default" />  as I configured it<br />
+          <input type="radio" value="default" /> in default view <br />
+          <input type="radio" value="default" /> as I configured it<br />
           <input className="link" />
-          <Div marginTop={'1.5em'} >
+          <Div marginTop={'1.5em'}>
             <Button icon="facebook f" />
             <Button icon="twitter" />
             <Button icon="mail outline" />
@@ -49,8 +51,6 @@ const ChartShare = ({size, color}: Props) => (
         </Container>
       </Modal.Description>
     </Modal.Content>
-  </Modal>
-);
+  </Modal>);
 
 export default ChartShare;
-

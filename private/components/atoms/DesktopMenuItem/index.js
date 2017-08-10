@@ -1,7 +1,6 @@
 // @flow
-import glamorous, {Li} from 'glamorous';
-import {white} from 'components/theme/semantic';
-import {Container, Grid, Icon, List} from 'semantic-ui-react';
+import { Li } from 'glamorous';
+import { Icon, List } from 'semantic-ui-react';
 import MenuLink from 'components/atoms/MenuLink';
 import React from 'react';
 
@@ -9,16 +8,21 @@ const menuItem = (props: Object) => {
   let children = {};
   let hasSubMenu = false;
   if ('children' in props.menu) {
-    children = props.menu.children.map(item => (
-      <List.Item key={item.name}>
+    children = props.menu.children.map(item =>
+      (<List.Item key={item.name}>
         <List.Content>
           <a href={item.link}>
             <Icon name={item.icon} />
             {item.name}
           </a>
         </List.Content>
-      </List.Item>));
-    children = <List>{children}</List>;
+      </List.Item>),
+    );
+    children = (
+      <List>
+        {children}
+      </List>
+    );
     hasSubMenu = true;
   }
   return (
@@ -26,7 +30,8 @@ const menuItem = (props: Object) => {
       <MenuLink menu={props.menu.name} link={props.menu.link} hasSubMenu={hasSubMenu}>
         {children}
       </MenuLink>
-    </Li>);
+    </Li>
+  );
 };
 
 export default menuItem;

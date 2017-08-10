@@ -1,7 +1,7 @@
 import React from 'react';
-import { ApolloClient, ApolloProvider } from 'react-apollo';
-import {store} from './redux';
-import {client} from './apollo';
+import { ApolloProvider } from 'react-apollo';
+import { store } from './redux';
+import { client } from './apollo';
 
 // APollo provide comes with redux provider
 const withApolloAndReduxProvider = () => {

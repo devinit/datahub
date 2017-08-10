@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { graphql} from 'react-apollo';
+import { graphql } from 'react-apollo';
 import {
   Education,
   Health,
@@ -10,17 +10,24 @@ import {
 } from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import {Div} from 'glamorous';
-import {lighterGrey} from 'components/theme/semantic';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import TABS_QUERY from './query.graphql';
 
 type WrapperProps = {
   loading: boolean,
-  ...SpotLightTabDataQuery
-}
+  ...SpotLightTabDataQuery,
+};
 
 const spotlightTabs = (props: WrapperProps) => {
-  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
+  if (
+    props.loading ||
+    !props.overviewTabRegional ||
+    !props.populationTabRegional ||
+    !props.educationTabRegional ||
+    !props.healthTabRegional
+  ) {
+    return <LoadingPlaceholder loading={props.loading} />;
+  }
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id="spotlight-overview">
@@ -29,7 +36,7 @@ const spotlightTabs = (props: WrapperProps) => {
       <Pane label="Poverty" id="spotlight-poverty">
         <Poverty {...props} />
       </Pane>
-      <Pane label="Population" id="spotlight-poverty">
+      <Pane label="Population" id="spotlight-population">
         <Population {...props} />
       </Pane>
       <Pane label="Health" id="spotlight-health">
@@ -43,16 +50,17 @@ const spotlightTabs = (props: WrapperProps) => {
 };
 
 const withData = graphql(TABS_QUERY, {
-  options: (props) => ({
+  options: props => ({
     variables: {
       id: props.id,
-      country: props.country
-    }
+      country: props.country,
+    },
   }),
-  props: ({data}) => {
-    const {error, loading} = data;
+  props: ({ data }) => {
+    const { error } = data;
     if (error) throw Error(error);
     return data;
-  }});
+  },
+});
 
 export default withData(spotlightTabs);

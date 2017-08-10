@@ -3,4 +3,5 @@ import { storiesOf } from '@storybook/react';
 import CountrySearch from '.';
 
 storiesOf('Country Search', module)
-  .add('Country Search With Data', () => <CountrySearch />);
+  .add('globalPicture', () => <CountrySearch visible placeholder="Type a country" />)
+  .add('country profile', () => <CountrySearch visible placeholder="Uganda" profile />);

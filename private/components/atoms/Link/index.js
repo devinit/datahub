@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
-import {white, lighterGrey, grey, black} from 'components/theme/semantic';
-import {medium} from 'components/theme';
+import { white, lighterGrey, grey, black } from 'components/theme/semantic';
+import { medium } from 'components/theme';
 
 export const FooterLink = glamorous.a({
   fontSize: medium,
@@ -10,7 +10,6 @@ export const FooterLink = glamorous.a({
   paddingTop: '.5em',
 });
 
-
 export const NavLink = glamorous.a({
   color: white,
   fontWeight: '700',
@@ -18,9 +17,8 @@ export const NavLink = glamorous.a({
   transition: 'all .3s',
   ':hover': {
     color: white,
-  }
+  },
 });
-
 
 // social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({

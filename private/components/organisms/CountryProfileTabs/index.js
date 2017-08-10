@@ -1,10 +1,8 @@
 // @flow
 import React from 'react';
-import { graphql} from 'react-apollo';
+import { graphql } from 'react-apollo';
 import {
   GovernmentFinance,
-  GovernmentFinanceLower,
-  InternationalResourcesLower,
   InternationalResources,
   Overview,
   Population,
@@ -16,43 +14,40 @@ import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
 import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import {Div} from 'glamorous';
-import {lighterGrey} from 'components/theme/semantic';
+import { RECIPIENT } from 'lib/utils/constants';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import TABS_QUERY from './query.graphql';
+import overviewConfig from '../../../visboxConfigs/overviewTabCharts';
 
 type TabsProps = {
   loading: boolean,
-  ...TabDataQuery
-}
+  ...TabDataQuery,
+};
 
-const RECIPIENT = 'recipient';
-const DONOR = 'donor';
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading) return (<Div backgroundColor={lighterGrey} width={'100%'} height={'20em'} />);
-  if (!props.overViewTab || !props.overViewTab.countryType) console.error('country type missing in overview tab data');
-  const countryType = props.overViewTab && props.overViewTab.countryType ?
-    props.overViewTab.countryType : RECIPIENT;
+  if (props.loading || !props.overviewTab || !props.populationTab) {
+    return <LoadingPlaceholder loading={props.loading} />;
+  }
+  const countryType =
+    props.overviewTab && props.overviewTab.countryType ? props.overviewTab.countryType : RECIPIENT;
   return (
-    <Tabs selected={0} height="20em">
+    <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
-        <Overview {...props} />
+        <Overview {...props} countryType={countryType} config={overviewConfig} />
       </Pane>
-      {
-        countryType === RECIPIENT ?
-          <Pane label="Poverty" id={'poverty-tab'}>
-            <Poverty config={povertyConfig} {...props} />
-          </Pane> : ''
-      }
+      {countryType === RECIPIENT
+        ? <Pane label="Poverty" id={'poverty-tab'}>
+          <Poverty config={povertyConfig} {...props} />
+        </Pane>
+        : ''}
       <Pane label="Population" id={'population-tab'}>
         <Population config={populationConfig} {...props} />
       </Pane>
-      {
-        countryType === RECIPIENT ?
-          <Pane label="Government Finance" id={'govt-finance-tab'}>
-            <GovernmentFinance config={govtFinanceConfig} {...props} />
-          </Pane> : ''
-      }
-
+      {countryType === RECIPIENT
+        ? <Pane label="Government Finance" id={'govt-finance-tab'}>
+          <GovernmentFinance config={govtFinanceConfig} {...props} />
+        </Pane>
+        : ''}
       <Pane label="International Resources" id={'internantion-reseources-tab'}>
         <InternationalResources config={internationalResourcesConfig} {...props} />
       </Pane>
@@ -60,15 +55,16 @@ const countryProfileTabs = (props: TabsProps) => {
   );
 };
 const withData = graphql(TABS_QUERY, {
-  options: (props) => {
+  options: props => {
     return {
-      variables: {id: props.id}
+      variables: { id: props.id },
     };
   },
-  props: ({data}) => {
-    const {error, loading} = data;
+  props: ({ data }) => {
+    const { error } = data;
     if (error) throw Error(error);
     return data;
-  }});
+  },
+});
 
 export default withData(countryProfileTabs);

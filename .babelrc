@@ -42,12 +42,6 @@
       "strict": false,
       "loose": true,
       "excludeNodeBuiltins": true
-    }],
-    [
-      "wrap-in-js",
-      {
-        "extensions": ["css$"]
-      }
-    ]
+    }]
   ]
 }

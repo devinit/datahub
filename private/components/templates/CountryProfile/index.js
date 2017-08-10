@@ -1,65 +1,68 @@
 // @flow
 import React from 'react';
-import glamorous, {Div, A, Span} from 'glamorous';
-import { Container, Header, Grid, Icon, Button, Table } from 'semantic-ui-react';
-import { red, lightBlack, white, lighterGrey} from 'components/theme/semantic';
-import Pane from 'components/atoms/Pane';
-import Tabs from 'components/molecules/Tabs';
-import {
-  GovernmentFinanceLower,
-  InternationalResourcesLower,
-} from 'components/molecules/CountryProfileTabs';
-import {SectionHeader, Lead} from 'components/atoms/Header';
-import {LightBg, DarkBg} from 'components/atoms/Backgrounds';
+import { Div, A, Span, H4 } from 'glamorous';
+import { Container, Grid, Icon, Button } from 'semantic-ui-react';
+import { red, white } from 'components/theme/semantic';
+import { SectionHeader, Lead } from 'components/atoms/Header';
+import { DarkBg } from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
-import CountryProfileSearch from 'components/molecules/CountryProfileSearch';
+import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
-import {CardContainer} from 'components/atoms/Container';
+import { CardContainer, ProfileHeader } from 'components/atoms/Container';
+import NoSSR from 'react-no-ssr';
 import SmallMap from 'components/molecules/SmallMap';
+import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
+import {getCountryName} from 'lib/utils';
+import { connect } from 'react-redux';
+import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
+/* eslint-disable max-len */
 type Props = {
-  id: string
-}
-export default (props: Props) =>
+  id: string,
+  rehydrated: boolean,
+};
+
+const profile = (props: Props) =>
   (<Generic>
-    <Div position={'absolute'} top={'0'} width={'100%'} height={'40em'}>
-      {/* <SmallMap slug={props.id} /> */}
-    </Div>
-    <Container>
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={10}>
-            <CardContainer>
-              <Header>
-                <Icon name="globe" />
-                <Header.Content>
-                  General Picture
-                </Header.Content>
-              </Header>
-              <CountryProfileSearch country="Uganda" />
-              <Lead>
-                Explore this in-depth profile of Uganda to
-                find out overall levels of poverty, income distribution,
-                division of wealth and more. Discover how national
-                and sub-national revenue is generated.
-              </Lead>
-              <Span marginTop={'1.5em'} display={'block'}>
-                Jump to <A color={red}>International resources</A>
-              </Span>
-              <Div marginTop={'1.5em'}>
-                <Button icon="facebook f" />
-                <Button icon="twitter" />
-                <Button icon="google plus" />
-                <Button icon="mail outline" />
-              </Div>
-            </CardContainer>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Container>
-    <CountryProfileTopTabs id={props.id} />
+    <ProfileHeader>
+      <SmallMap slug={props.id} />
+      <Div width="100%" position="absolute" top="0">
+        <Container>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column width={10}>
+                <CardContainer>
+                  <H4 color={red}>
+                    <Icon name="globe" color={'red'} />General Picture
+                  </H4>
+                  <CountrySearch visible placeholder={props.id} profile />
+                  <Lead>
+                    Explore this in-depth profile of {getCountryName(props.id)} to find out overall levels of poverty,
+                    income distribution, division of wealth and more. Discover how national and
+                    sub-national revenue is generated.
+                  </Lead>
+                  <Span marginTop={'1.5em'} display={'block'}>
+                    Jump to <A color={red}>International resources</A>
+                  </Span>
+                  <Div marginTop={'1.5em'}>
+                    <Button icon="facebook f" />
+                    <Button icon="twitter" />
+                    <Button icon="google plus" />
+                    <Button icon="mail outline" />
+                  </Div>
+                </CardContainer>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </Div>
+    </ProfileHeader>
+    <NoSSR loading={<LoadingPlaceholder height="20em" loading />} >
+      <CountryProfileTopTabs id={props.id} />
+    </NoSSR>
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">
         <SectionHeader>
@@ -67,18 +70,18 @@ export default (props: Props) =>
         </SectionHeader>
       </Container>
     </Div>
-    <Tabs selected={0} textAlign="center" height="60em">
-      <Pane label="Government Finance" id="government-finance-lower">
-        <GovernmentFinanceLower />
-      </Pane>
-      <Pane label="International Resources" id="international-resources-lower">
-        <InternationalResourcesLower />
-      </Pane>
-    </Tabs>
+    <NoSSR loading={<LoadingPlaceholder height="40em" loading />} >
+      <CountryProfileLowerTabs id={props.id} />
+    </NoSSR>
     <DarkBg>
       <SectionHeader color={red} fontColor={white}>
-        MORE FROM DI ON UGANDA
+        MORE FROM DI ON {getCountryName(props.id).toUpperCase()}
       </SectionHeader>
     </DarkBg>
     <ProfileDataSourceTable data={data.dataSources} />
   </Generic>);
+
+const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
+const ProfileWithRedux = connect(mapStateToProps)(profile);
+
+export default ProfileWithRedux;

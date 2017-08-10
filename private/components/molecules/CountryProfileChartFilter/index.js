@@ -1,6 +1,5 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import {after} from 'glamor';
 import { white, lightBlack } from 'components/theme/semantic';
 
 const Wrapper = glamorous.div({
@@ -35,12 +34,11 @@ export const Select = glamorous.select({
     borderRight: '.35em solid transparent',
     borderBottom: '.35em solid transparent',
     borderLeft: '.35em solid transparent',
-    transform: 'scale(1.2,1.2)'
-  }
-},
-  );
-const ChartFilter = () => (
-  <Wrapper>
+    transform: 'scale(1.2,1.2)',
+  },
+});
+const ChartFilter = () =>
+  (<Wrapper>
     <span>Budget Type</span>
     <Select>
       <option>Actual</option>
@@ -51,7 +49,6 @@ const ChartFilter = () => (
       <option>constant 2015 US$</option>
       <option>currency UGX</option>
     </Select>
-  </Wrapper>
-);
+  </Wrapper>);
 
 export default ChartFilter;

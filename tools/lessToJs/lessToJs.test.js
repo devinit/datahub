@@ -26,13 +26,18 @@ describe('semantic global less to ES6', () => {
   });
   it('should get all themes and sites global variables', () => {
     const groupNames = lessToJs.getGroupsNames(lines);
-    const siteAndThemeGroupVars =
-      lessToJs.getSiteAndThemeGroupVars(groupNames)([lessTheme, lessSite]);
+    const siteAndThemeGroupVars = lessToJs.getSiteAndThemeGroupVars(groupNames)([
+      lessTheme,
+      lessSite,
+    ]);
     expect(siteAndThemeGroupVars.length).toBe(2);
     expect(siteAndThemeGroupVars[1].Fonts.length).toBeGreaterThan(2);
   });
   it('should get required whiteListed variable lines', () => {
-    const wantedLines = lessToJs.getWantedVariableLines(lessTheme, lessSite, ['Border Radius', 'Brand Colors']);
+    const wantedLines = lessToJs.getWantedVariableLines(lessTheme, lessSite, [
+      'Border Radius',
+      'Brand Colors',
+    ]);
     const wantedAllLines = lessToJs.getWantedVariableLines(lessTheme, lessSite, []);
     expect(wantedLines).toBeDefined();
     expect(wantedAllLines).toBeDefined();

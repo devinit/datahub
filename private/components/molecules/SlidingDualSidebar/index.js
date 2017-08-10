@@ -1,30 +1,19 @@
 // @flow
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import {Grid, Segment} from 'semantic-ui-react';
-import {SectionHeader} from 'components/atoms/Header';
-// eslint-disable-next-line
-import approximate from "approximate-number";
-import {LightBg} from '../../atoms/Backgrounds';
-import Chart from '../../atoms/Chart/index';
-import YearSlider from '../YearSlider/index';
-
-type FlowData = {
-  direction: string, // in or out
-  year: number,
-  value: number,
-  flowName: string,
-  flowCategory: string, // this is currently flow-group
-  flowType: string,
-  color: string
-}
+import { Grid, Segment } from 'semantic-ui-react';
+import { SectionHeader } from 'components/atoms/Header';
+import approximate from 'approximate-number';
+import { LightBg } from 'components/atoms/Backgrounds';
+import Chart from 'components/atoms/Chart';
+import YearSlider from '../YearSlider';
 
 export type Props = {
   country: string,
   startYear: number,
   data: [], // TODO: should be flowData with API integration
   config: any,
-}
+};
 
 type State = {
   data: Object,
@@ -33,10 +22,9 @@ type State = {
   currentYearData: any,
   inflowSum: number,
   outflowSum: number,
-}
+};
 
 class SlidingDualSidebar extends React.Component {
-
   props: Props;
   state: State;
 
@@ -50,54 +38,56 @@ class SlidingDualSidebar extends React.Component {
     const types = props.data.reduce((map, datum) => {
       const key = `${datum.direction}~${datum.flow_type}~${datum.flow_category}~${datum.flow_name}`;
       return {
-        ...map, [key]: [...(map[key] || []), datum]
+        ...map,
+        [key]: [...(map[key] || []), datum],
       };
     }, {});
 
-    const expected = Object.keys(types)
-      .map(t => {
-        const [direction, type, category, name] = t.split('~');
-        return {direction, type, category, name};
-      });
+    const expected = Object.keys(types).map(t => {
+      const [direction, type, category, name] = t.split('~');
+      return { direction, type, category, name };
+    });
 
     const [data] = props.data
-      .reduce(([map], datum) => {
-        return [{
-          ...map,
-          [datum.year]: [
-            ...(map[datum.year] || []),
-            datum,
-          ]
-        }];
-      }, [{}])
+      .reduce(
+        ([map], datum) => {
+          return [
+            {
+              ...map,
+              [datum.year]: [...(map[datum.year] || []), datum],
+            },
+          ];
+        },
+        [{}],
+      )
       .map(years => {
-        return Object
-          .keys(years)
-          .reduce((all, year) => {
-            return {
-              ...all,
-              [year]: expected.map(({name, category, direction, type}) => {
-                const [existing] = years[year]
-                  .filter(d =>
-                    d.year === +year &&
-                    d.direction === direction &&
-                    d.flow_name === name &&
-                    d.flow_category === category &&
-                    d.flow_type === type
-                  );
+        return Object.keys(years).reduce((all, year) => {
+          return {
+            ...all,
+            [year]: expected.map(({ name, category, direction, type }) => {
+              const [existing] = years[year].filter(
+                d =>
+                  d.year === +year &&
+                  d.direction === direction &&
+                  d.flow_name === name &&
+                  d.flow_category === category &&
+                  d.flow_type === type,
+              );
 
-                return existing || {
+              return (
+                existing || {
                   year,
                   direction,
                   flow_name: name,
                   flow_category: category,
                   flow_type: type,
                   value: 0,
-                  color: '#fff'
-                };
-              })
-            };
-          }, {});
+                  color: '#fff',
+                }
+              );
+            }),
+          };
+        }, {});
       });
 
     this.state = {
@@ -111,17 +101,21 @@ class SlidingDualSidebar extends React.Component {
           ...this.props.config.linearAxis,
 
           axisMinimum: 0,
-          axisMaximum: scaleMaximum
-        }
-      }
+          axisMaximum: scaleMaximum,
+        },
+      },
     };
   }
 
   // eslint-disable-next-line class-methods-use-this
   getYearState(data: Object, year: number) {
     const currentYearData = data[year];
-    const inflowSum = currentYearData.filter(d => d.direction === 'in').reduce((sum, datum) => sum + datum.value, 0);
-    const outflowSum = currentYearData.filter(d => d.direction === 'out').reduce((sum, datum) => sum + datum.value, 0);
+    const inflowSum = currentYearData
+      .filter(d => d.direction === 'in')
+      .reduce((sum, datum) => sum + datum.value, 0);
+    const outflowSum = currentYearData
+      .filter(d => d.direction === 'out')
+      .reduce((sum, datum) => sum + datum.value, 0);
     return {
       currentYear: year,
       currentYearData,
@@ -134,59 +128,43 @@ class SlidingDualSidebar extends React.Component {
     this.setState(this.getYearState(this.state.data, year));
   }
 
-
   render() {
     return (
       <LightBg>
-
         <Grid>
-
           <Grid.Column width={8}>
-
             <Segment basic clearing>
-              <SectionHeader color="#fff" style={{float: 'right', marginRight: '47px'}}>
+              <SectionHeader color="#fff" style={{ float: 'right', marginRight: '47px' }}>
                 RESOURCE FLOWS TO {this.props.country} <span>{this.state.inflowSum}</span>
               </SectionHeader>
             </Segment>
-
           </Grid.Column>
 
           <Grid.Column width={8}>
-
             <Segment basic clearing>
-              <SectionHeader color="#fff" style={{float: 'left', marginLeft: '45px'}}>
+              <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
                 RESOURCE FLOWS FROM {this.props.country} <span>{this.state.outflowSum}</span>
               </SectionHeader>
             </Segment>
-
           </Grid.Column>
-
         </Grid>
 
-        <Chart
-          height="400px"
-          config={this.state.config}
-          data={this.state.currentYearData}
-        />
+        <Chart height="400px" config={this.state.config} data={this.state.currentYearData} />
 
         <Grid centered>
-
           <Grid.Column width={8}>
-
             <Segment padded={'very'} basic>
               <YearSlider
                 minimum={2000}
                 maximum={2015}
+                backgroundColor="white"
                 step={1}
                 position={this.state.currentYear}
                 onChange={year => this.updateCurrentYear(year)}
               />
             </Segment>
-
           </Grid.Column>
-
         </Grid>
-
       </LightBg>
     );
   }

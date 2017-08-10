@@ -6,8 +6,8 @@ import withData from 'lib/withData';
 import App from 'components/templates/Spotlight';
 
 type Props = {
-  url: {pathname: string}
-}
+  url: { pathname: string },
+};
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
 // '__NEXT_DATA__.ids' is set in '_document.js'
@@ -16,7 +16,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return (
-    <App pathName={props.url.pathname} />
-  );
+  return <App pathName={props.url.pathname} />;
 });

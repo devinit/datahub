@@ -1,12 +1,15 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import {Container, Header, Grid} from 'semantic-ui-react';
-import InteractiveChartToolBar from 'components/molecules/UnbundlingAidChartToolBar';
-import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
+import { Container, Header, Grid } from 'semantic-ui-react';
+// import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
+import config from 'visboxConfigs/unbundlingTreemapChart';
+import UnbundlingAid from 'components/organisms/UnbundlingAid';
 import Social from 'components/molecules/UnbundlingAidSocial';
+// import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
+// import { connect } from 'react-redux';
+// import type { State } from 'lib/reducers';
 import Generic from '../Generic';
-import data from './data';
 
 const headerStyles = {
   paddingTop: '4em',
@@ -18,10 +21,14 @@ const TextContainer = glamorous.div({
   marginTop: '2em',
   marginBottom: '2em',
 });
+type Props = {
+  // rehydrated: boolean,
+  aidType: string
+};
 
-export default () => {
-  return (
-    <Generic pathName="/aid">
+export default (props: Props) =>
+  (
+    <Generic>
       <Container>
         <HeaderContainer>
           <Header as="h1" textAlign="center">
@@ -34,8 +41,8 @@ export default () => {
           </Header>
         </HeaderContainer>
       </Container>
-      <InteractiveChartToolBar toolBarOptions={data.toolBar} />
-      <TotalODA />
+      {/* <TotalODA /> */}
+      <UnbundlingAid aidType={props.aidType} startYear={2010} config={config} />
       <Social />
       <TextContainer>
         <Container>
@@ -44,8 +51,10 @@ export default () => {
               <Grid.Column width="10">
                 <Header as="h1">Source</Header>
                 <Header as="h2">Development Initiatives based on OECD DAC data.</Header>
-                <p>Note that figures are rounded: precise data are available for
-                download on the methodology page</p>
+                <p>
+                  Note that figures are rounded: precise data are available for download on the
+                  methodology page
+                </p>
               </Grid.Column>
               <Grid.Column width="6">
                 <Header as="h1">Download the data</Header>
@@ -57,4 +66,8 @@ export default () => {
       </TextContainer>
     </Generic>
   );
-};
+
+// const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
+// const UnbundlingAidWithRedux = connect(mapStateToProps)(unbundlingAid);
+// export default UnbundlingAidWithRedux;
+

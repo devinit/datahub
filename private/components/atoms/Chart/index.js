@@ -2,16 +2,16 @@
 import React from 'react';
 import { draw } from '@devinit/charts';
 // import stylesheet from '@devinit/charts/dist/di-charts.min.css';
+/* eslint-disable react/no-danger */
 
 type Props = {
   data: any,
   config: {},
   width?: string,
-  height?: string
-}
+  height?: string,
+};
 
 class Chart extends React.Component {
-
   // eslint-disable-next-line react/sort-comp
   props: Props;
   element: Element;
@@ -27,7 +27,9 @@ class Chart extends React.Component {
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
-    draw({element, data, config}).then(chart => { this.chart = chart; });
+    draw({ element, data, config }).then(chart => {
+      this.chart = chart;
+    });
   }
 
   componentWillReceiveProps(props: Props) {
@@ -38,8 +40,10 @@ class Chart extends React.Component {
   render() {
     return (
       <div
-        ref={element => { this.element = element; }}
-        style={{width: this.props.width, height: this.props.height}}
+        ref={element => {
+          this.element = element;
+        }}
+        style={{ width: this.props.width, height: this.props.height }}
       />
     );
   }
