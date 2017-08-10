@@ -1,8 +1,8 @@
 {
   "name": "datahub",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "config": {
-    "api": "http://localhost:3000/graphql/"
+    "api": "https://datahub-api-iitdcnnozk.now.sh/graphql/"
   },
   "repository": {
     "type": "git",
