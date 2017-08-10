@@ -31,7 +31,7 @@ const countryProfileTabs = (props: TabsProps) => {
   const countryType =
     props.overviewTab && props.overviewTab.countryType ? props.overviewTab.countryType : RECIPIENT;
   return (
-    <Tabs selected={0} height="20em">
+    <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
         <Overview {...props} countryType={countryType} config={overviewConfig} />
       </Pane>
