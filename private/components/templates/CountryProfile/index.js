@@ -3,8 +3,6 @@ import React from 'react';
 import { Div, A, Span, H4 } from 'glamorous';
 import { Container, Grid, Icon, Button } from 'semantic-ui-react';
 import { red, white } from 'components/theme/semantic';
-// import Pane from 'components/atoms/Pane';
-// import Tabs from 'components/molecules/Tabs';
 import { SectionHeader, Lead } from 'components/atoms/Header';
 import { DarkBg } from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
@@ -12,8 +10,8 @@ import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import SmallMap from 'components/molecules/SmallMap';
-import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';
-import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
+import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
+import NoSSR from 'react-no-ssr';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
@@ -64,8 +62,9 @@ export default (props: Props) =>
         </SectionHeader>
       </Container>
     </Div>
-    <GovernmentFinanceChart id={props.id} startYear={2015} />
-    <InternationalResourcesChart id={props.id} />
+    <NoSSR loading={<p>loading ...</p>}>
+      <CountryProfileLowerTabs id={props.id} />
+    </NoSSR>
     <DarkBg>
       <SectionHeader color={red} fontColor={white}>
         MORE FROM DI ON UGANDA
