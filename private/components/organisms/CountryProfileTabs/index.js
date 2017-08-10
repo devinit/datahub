@@ -16,7 +16,7 @@ import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import { RECIPIENT } from 'lib/utils/constants';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
-import TABS_QUERY from '../../../graphql/TabData.graphql';
+import TABS_QUERY from './query.graphql';
 import overviewConfig from '../../../visboxConfigs/overviewTabCharts';
 
 type TabsProps = {

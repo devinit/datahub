@@ -29,8 +29,8 @@ const Wrapper = glamorous.div(
     },
   },
   props => ({
-    display: props.visible ? 'block' : 'none',
-  }),
+    display: props.visible ? 'block' : 'none'
+  })
 );
 const Select = glamorous.select({
   display: 'inline-block',
@@ -71,7 +71,8 @@ const Text = glamorous.span(
 
 const onDropdownChange = function onChange(e, items, callback) {
   if (callback) {
-    const [selected = { name: '', value: '' }] = items.filter(d => d.value === e.target.value);
+    // eslint-disable-next-line eqeqeq
+    const [selected = { name: '', value: '' }] = items.filter(d => d.value == e.target.value);
     callback(selected);
   }
 };

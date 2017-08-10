@@ -7,7 +7,7 @@ import type { LoadingStatus } from 'lib/actions';
 import type { State, AppState } from 'lib/reducers';
 import { MapBackground } from 'components/atoms/Backgrounds';
 import LoadingBar from 'components/molecules/LoadingBar';
-import MAPSQUERY from '../../../graphql/Maps.graphql';
+import MAPSQUERY from './Maps.graphql';
 
 type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>;
 

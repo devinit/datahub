@@ -38,7 +38,7 @@ class Select extends React.Component {
     this.state = {
       visible: false,
       bigText: '',
-      value: 'all',
+      value: '',
     };
   }
 
@@ -62,7 +62,8 @@ class Select extends React.Component {
   }
 
   render() {
-    const [selected = {}] = this.props.options.filter(d => d.value === this.props.value);
+    // eslint-disable-next-line eqeqeq
+    const [selected = {}] = this.props.options.filter(d => d.value == this.props.value);
     const { name = '' } = selected;
 
     return (
@@ -80,7 +81,7 @@ class Select extends React.Component {
           active={this.props.active}
           onClose={() => this.toggleDropDown()}
           visible={this.state.visible}
-          text={this.props.smallText || 'Select Year'}
+          text={this.props.smallText || ''}
           items={this.props.options}
         />
       </Wrapper>

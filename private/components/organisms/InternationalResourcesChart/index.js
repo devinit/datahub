@@ -6,7 +6,7 @@ import InternationalResourcesChart from 'components/molecules/AreaPartitionChart
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
 import {getCountryName} from 'lib/utils';
-import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
+import QUERY from './query.graphql';
 
 type WrapperProps = Props & {
   loading: boolean,
@@ -25,7 +25,7 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
   );
 };
 
-const withData = graphql(RESOURCES_QUERY, {
+const withData = graphql(QUERY, {
   options: props => ({
     variables: {
       id: props.id,
