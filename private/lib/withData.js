@@ -3,7 +3,7 @@ import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import initApollo from './initApollo';
-import { initRedux, clientCachingHandling } from './initRedux';
+import { initRedux} from './initRedux';
 
 // Gets the display name of a JSX component for dev tools
 function getComponentDisplayName(Component) {

@@ -11,13 +11,13 @@ import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 
-type Props = {
-  pathName: string,
-  rehydrated: boolean,
-};
+// type Props = {
+//   pathName: string,
+//   rehydrated: boolean,
+// };
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
-const spotlight = (props: Props) => {
+const spotlight = () => {
   return (
     <Generic>
       <Container>

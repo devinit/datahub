@@ -41,7 +41,9 @@ const front = (props: Props) => {
       </Container>
       <div style={{ position: 'relative' }}>
         <GlobalPictureNavTabs />
-        <Map pathName={props.pathName} />
+        <NoSSR loading={<MapBackground />} >
+          <Map pathName={props.pathName} />
+        </NoSSR>
         {/* {props.rehydrated || process.storybook
           ? <Map pathName={props.pathName} />
           : <MapBackground />} */}

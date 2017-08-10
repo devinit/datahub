@@ -17,6 +17,7 @@ export type CountriesQuery = {|
     id: ?string,
     name: ?string,
     slug: ?string,
+    countryType: ?string,
   |} >,
 |};
 
@@ -61,6 +62,8 @@ export type ResourcesOverTimeQuery = {|
         flow_category: ?string,
         // flow either inflow or outflow
         flow_type: ?string,
+        // i.e contains flow type as 1st level, flow category as second and flow name as 3rd
+        // levels: [String]
         // in or out
         direction: ?string,
         color: ?string,
