@@ -14,12 +14,12 @@ type Props = {
 // TODO: get rid of start year in props
 export default (props: Props) =>
   (<Tabs textAlign="center" selected={0} >
-    <Pane label="GOVERNMENT FINANCE" id={'government-finance'}>
+    <Pane label="GOVERNMENT FINANCE" id={'government-finance-lower'}>
       <Container>
         <GovernmentFinanceChart startYear={2015} id={props.id} />
       </Container>
     </Pane>
-    <Pane label="INTERNATIONAL RESOURCES" id={'government-finance'}>
+    <Pane label="INTERNATIONAL RESOURCES" id={'international-resources-lower'}>
       <Container>
         <InflowsVsOutflows id={props.id} />
         <InternationalResourcesChart id={props.id} startYear={2015} />
