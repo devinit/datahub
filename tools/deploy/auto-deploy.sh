@@ -20,7 +20,7 @@ docker stop datahub-app
 
 docker rm datahub-app
 
-docker run -it -d -p 9090:9090 --name datahub-app datahub
+docker run -it -d -p 9999:9999 --name datahub-app datahub
 
 
 

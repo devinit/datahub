@@ -1,5 +1,7 @@
 FROM node:8
 
+LABEL maintainer="epicallan.al@gmail.com"
+
 RUN mkdir /src
 
 # Provides cached layer for node_modules
@@ -16,6 +18,6 @@ WORKDIR /src
 ENV NODE_ENV production
 RUN npm run build && npm run pull
 
-EXPOSE 9090
+EXPOSE 9999
 
 CMD npm run start
