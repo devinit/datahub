@@ -1,6 +1,6 @@
 {
   "name": "datahub",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "config": {
     "api": "https://datahub-api-iitdcnnozk.now.sh/graphql/"
   },
