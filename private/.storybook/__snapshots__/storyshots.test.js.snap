@@ -1404,8 +1404,22 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 `;
 
 exports[`Storyshots Country Profile Charts Government Finance 1`] = `
-<div>
-  Loading...
+<div
+  className="css-hu3x4g"
+>
+  <div
+    className="ui tiny active progress"
+    data-percent={0}
+  >
+    <div
+      className="bar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+  </div>
 </div>
 `;
 

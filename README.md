@@ -144,10 +144,11 @@ i.e
 - Currently dont add react-apollo flow types. They have an issue that need to be corrected
 - Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types option_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
 
-## Development environment and notes
+## Development environment / notes / guidelines
 
 --------
 - we use package.json for some configs, for instance the api link is in package.json's config key.
+- the version number in package.json is used to determine whether to destroy the client cache or reuse it. Bump it up if you want users to start on a clean slate
 - module resolution is handled by babel not webpack this is a next.js constraint
 - storybook has its own webpack config file you may need to update it where required. It also has a module resolution config.
 - Advised to use any modern linux OS or MacOS

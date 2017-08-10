@@ -13,7 +13,8 @@ type Props = {
   link: string,
   icon?: string,
 };
-const LocalContainer = glamorous.span(
+
+const LocalContainer = glamorous.div(
   {
     height: '4em',
     color: white,
@@ -92,6 +93,7 @@ const ListContainer = glamorous.ul({
   paddingBottom: '2em',
   listStyleType: 'none',
   margin: 0,
+  fontSize: '1.1em'
 });
 
 export default ({ children, hasSubMenu, menu, link }: Props) => {

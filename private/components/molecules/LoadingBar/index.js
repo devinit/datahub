@@ -30,7 +30,7 @@ const LoaderContainer = glamorous.div(
 export default class LoadingBar extends Component {
   constructor(props: Props) {
     super(props);
-    this.timeChange = 1000;
+    this.timeChange = 500;
     this.percentChange = 10;
     this.state = { percent: 0, time: 0 };
   }
@@ -43,7 +43,6 @@ export default class LoadingBar extends Component {
   }
   componentWillReceiveProps(props: Props) {
     if (!props.loading) {
-      console.log('loading false');
       this.terminate();
     }
   }
