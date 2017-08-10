@@ -2,6 +2,7 @@
 import React from 'react';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
+import {Container} from 'semantic-ui-react';
 import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';
 import InflowsVsOutflows from 'components/organisms/InflowsVsOutflows';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
@@ -11,19 +12,18 @@ type Props = {
 };
 
 // TODO: get rid of start year in props
-const InflowAndInternational = (props: Props) => (
-  <div>
-    <InflowsVsOutflows id={props.id} />
-    <InternationalResourcesChart id={props.id} startYear={2015} />
-  </div>
-);
 export default (props: Props) =>
   (<Tabs textAlign="center" selected={0} >
     <Pane label="GOVERNMENT FINANCE" id={'government-finance'}>
-      <GovernmentFinanceChart startYear={2015} id={props.id} />
+      <Container>
+        <GovernmentFinanceChart startYear={2015} id={props.id} />
+      </Container>
     </Pane>
     <Pane label="INTERNATIONAL RESOURCES" id={'government-finance'}>
-      <InflowAndInternational id={props.id} />
+      <Container>
+        <InflowsVsOutflows id={props.id} />
+        <InternationalResourcesChart id={props.id} startYear={2015} />
+      </Container>
     </Pane>
   </Tabs>
   );
