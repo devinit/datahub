@@ -58,7 +58,9 @@ const profile = (props: Props) =>
         </Container>
       </Div>
     </ProfileHeader>
-    <CountryProfileTopTabs id={props.id} />
+    <NoSSR loading={<LoadingPlaceholder height="20em" loading />} >
+      <CountryProfileTopTabs id={props.id} />
+    </NoSSR>
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">
         <SectionHeader>
