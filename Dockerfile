@@ -16,7 +16,8 @@ COPY . /src
 WORKDIR /src
 
 ENV NODE_ENV production
-RUN npm run build && npm run pull
+
+RUN npm run build
 
 EXPOSE 9999
 
