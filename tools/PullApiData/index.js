@@ -4,9 +4,9 @@ import { createApolloFetch } from 'apollo-fetch';
 import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
-import COUNTRIES_QUERY from '../../private/graphql/Countries.graphql';
-import GLOBAL_PICTURE_THEMES_QUERY from '../../private/graphql/GlobalPictureThemes.graphql';
-import SPOTLIGHT_THEMES_QUERY from '../../private/graphql/SpotlightThemes.graphql';
+import COUNTRIES_QUERY from './queries/Countries.graphql';
+import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
+import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 
 const baseOrganismsPath = 'private/components/organisms';
 const uri = config.api;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import { graphql } from 'react-apollo';
-import QUERY from '../../../graphql/UnbundlingAid.graphql';
+import QUERY from './query.graphql';
 import UnbundlingTreemap from '../../molecules/UnbundlingTreemap';
 
 const toDropDownOptions = list => [

@@ -11,7 +11,7 @@ import {
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
-import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
+import TABS_QUERY from './query.graphql';
 
 type WrapperProps = {
   loading: boolean,

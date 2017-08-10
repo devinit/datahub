@@ -2,7 +2,7 @@
 import { graphql } from 'react-apollo';
 import Chart from 'components/molecules/TripleLinePartition';
 import config from 'visboxConfigs/linePartition';
-import QUERY from '../../../graphql/governmentFinance.graphql';
+import QUERY from './query.graphql';
 
 const withData = graphql(QUERY, {
   options: props => ({

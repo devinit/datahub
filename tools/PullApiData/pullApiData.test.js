@@ -1,5 +1,5 @@
 import prettyFormat from 'pretty-format';
-import COUNTRIES_QUERY from '../../private/graphql/Countries.graphql';
+import COUNTRIES_QUERY from './queries/Countries.graphql';
 import { getData } from '.';
 
 describe('pull api data tests', () => {

@@ -1,6 +1,6 @@
 import { graphql } from 'react-apollo';
 import Chart from './wrapper';
-import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
+import RESOURCES_QUERY from '../InternationalResourcesChart/query.graphql';
 import config from '../../../visboxConfigs/dualbarChart';
 
 const withData = graphql(RESOURCES_QUERY, {
