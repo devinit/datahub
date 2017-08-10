@@ -12,7 +12,7 @@ import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import {Div} from 'glamorous';
 import {lighterGrey} from 'components/theme/semantic';
-import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
+import TABS_QUERY from './query.graphql';
 
 type WrapperProps = {
   loading: boolean,

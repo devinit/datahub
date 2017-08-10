@@ -7,7 +7,7 @@ import {Div} from 'glamorous';
 import {connect} from 'react-redux';
 import type {State, AppState} from 'lib/reducers';
 import {MapBackground} from 'components/atoms/Backgrounds';
-import MAPSQUERY from '../../../graphql/Maps.graphql';
+import MAPSQUERY from './Maps.graphql';
 
 type WrapperProps = {
   loading: boolean,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import Chart from './wrapper';
-import QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
+import QUERY from './query.graphql';
 import config from '../../../visboxConfigs/areaTreemapChart';
 
 const withData = graphql(QUERY, {
