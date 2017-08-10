@@ -48,7 +48,7 @@ const TabsContentWrapper = glamorous.div(
       visibility: 'hidden',
       height: 0,
       transform: 'translate(0,100%)',
-      transition: 'opacity .3s cubic-bezier(.215,.61,.355,1)',
+      transition: 'opacity, transform .3s cubic-bezier(.215,.61,.355,1)',
       transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)',
     },
     '& .ui.header>.icon': {
