@@ -8,8 +8,7 @@ import { Container } from 'semantic-ui-react';
 type Props = {
   children: any,
   selected?: number,
-  textAlign?: string,
-  height?: string,
+  textAlign?: string
 };
 const Wrapper = glamorous.div({
   borderTop: '2px solid #ddd9dc',
@@ -49,25 +48,26 @@ const TabsContentWrapper = glamorous.div(
       left: 0,
       width: '100%',
       opacity: 0,
-      paddingTop: '4em',
-      lineHeight: '1em',
       visibility: 'hidden',
+      height: 0,
       transform: 'translate(0,100%)',
-      transition: '.3s cubic-bezier(.215,.61,.355,1)',
+      transition: 'opacity, transform .3s cubic-bezier(.215,.61,.355,1)',
       transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)',
     },
     '& .ui.header>.icon': {
       fontSize: medium,
     },
     '& .visible': {
+      position: 'relative',
       visibility: 'visible',
+      height: 'auto',
       opacity: 1,
+      paddingTop: '3em',
+      paddingBottom: '3em',
+      lineHeight: '1em',
       transform: 'none',
     },
-  },
-  props => ({
-    height: props.height,
-  }),
+  }
 );
 class Tabs extends React.Component {
   static defaultProps = {
@@ -127,7 +127,7 @@ class Tabs extends React.Component {
         <Container textAlign={this.props.textAlign || 'left'}>
           {this._renderTitles()}
         </Container>
-        <TabsContentWrapper height={this.props.height}>
+        <TabsContentWrapper>
           {this._renderContent()}
         </TabsContentWrapper>
       </Wrapper>
