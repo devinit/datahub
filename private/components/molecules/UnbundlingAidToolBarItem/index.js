@@ -28,10 +28,11 @@ const ToolBarItem = (props: Props) => {
 
   return (
     <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
-      <span>ODA in
+      <span>ODA
         <Select
           active
           value={values[keys.indexOf('years')]}
+          smallText=" in"
           options={data.years}
           onChange={d => onChange('years', d)}
         />
