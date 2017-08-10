@@ -3,7 +3,7 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
-import App from 'components/templates/Aid';
+import App from 'components/templates/UnbundlingAid';
 
 type Props = {
   url: { pathname: string },
@@ -16,5 +16,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App pathName={props.url.pathname} />;
+  return <App pathName={props.url.pathname} aidType="oda" />;
 });

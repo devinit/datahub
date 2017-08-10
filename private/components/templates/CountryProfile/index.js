@@ -11,7 +11,7 @@ import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import SmallMap from 'components/molecules/SmallMap';
 import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
-import TabsPlaceHolder from 'components/molecules/TabsPlaceHolder';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
@@ -59,7 +59,7 @@ const profile = (props: Props) =>
     </ProfileHeader>
     {props.rehydrated || process.storybook ?
       <CountryProfileTopTabs id={props.id} /> :
-      <TabsPlaceHolder loading />
+      <LoadingPlaceholder loading />
     }
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">

@@ -10,7 +10,7 @@ import {
 } from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import TabsPlaceHolder from 'components/molecules/TabsPlaceHolder';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import TABS_QUERY from '../../../graphql/SpotlightTabData.graphql';
 
 type WrapperProps = {
@@ -26,7 +26,7 @@ const spotlightTabs = (props: WrapperProps) => {
     !props.educationTabRegional ||
     !props.healthTabRegional
   ) {
-    return <TabsPlaceHolder loading={props.loading} />;
+    return <LoadingPlaceholder loading={props.loading} />;
   }
   return (
     <Tabs selected={0} height="20em">

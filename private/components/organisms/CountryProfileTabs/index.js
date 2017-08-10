@@ -16,7 +16,7 @@ import Tabs from 'components/molecules/Tabs';
 import {Section} from 'glamorous';
 import Pane from 'components/atoms/Pane';
 import { RECIPIENT } from 'lib/utils/constants';
-import TabsPlaceHolder from 'components/molecules/TabsPlaceHolder';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import TABS_QUERY from '../../../graphql/TabData.graphql';
 import overviewConfig from '../../../visboxConfigs/overviewTabCharts';
 
@@ -27,7 +27,7 @@ type TabsProps = {
 
 const countryProfileTabs = (props: TabsProps) => {
   if (props.loading || !props.overviewTab || !props.populationTab) {
-    return <TabsPlaceHolder loading={props.loading} />;
+    return <LoadingPlaceholder loading={props.loading} />;
   }
   const countryType =
     props.overviewTab && props.overviewTab.countryType ? props.overviewTab.countryType : RECIPIENT;
