@@ -11,15 +11,18 @@ import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import SmallMap from 'components/molecules/SmallMap';
 import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
-import NoSSR from 'react-no-ssr';
+import TabsPlaceHolder from 'components/molecules/TabsPlaceHolder';
+import { connect } from 'react-redux';
+import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
 type Props = {
   id: string,
+  rehydrated: boolean,
 };
 
-export default (props: Props) =>
+const profile = (props: Props) =>
   (<Generic>
     <ProfileHeader>
       <SmallMap slug={props.id} />
@@ -54,7 +57,10 @@ export default (props: Props) =>
         </Container>
       </Div>
     </ProfileHeader>
-    <CountryProfileTopTabs id={props.id} />
+    {props.rehydrated || process.storybook ?
+      <CountryProfileTopTabs id={props.id} /> :
+      <TabsPlaceHolder loading />
+    }
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">
         <SectionHeader>
@@ -62,9 +68,9 @@ export default (props: Props) =>
         </SectionHeader>
       </Container>
     </Div>
-    <NoSSR loading={<p>loading ...</p>}>
-      <CountryProfileLowerTabs id={props.id} />
-    </NoSSR>
+    {props.rehydrated || process.storybook ?
+      <CountryProfileLowerTabs id={props.id} /> : ''
+    }
     <DarkBg>
       <SectionHeader color={red} fontColor={white}>
         MORE FROM DI ON UGANDA
@@ -72,3 +78,8 @@ export default (props: Props) =>
     </DarkBg>
     <ProfileDataSourceTable data={data.dataSources} />
   </Generic>);
+
+const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
+const ProfileWithRedux = connect(mapStateToProps)(profile);
+
+export default ProfileWithRedux;

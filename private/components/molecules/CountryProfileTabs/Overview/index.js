@@ -33,7 +33,11 @@ const Overview = (props: Props) => {
             <P fontSize={big} fontWeight={'bold'} color={red}>
               {' '}{overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData}
             </P>
-            <P>out of a population of 39 million people</P>
+            <p>out of a population of {
+              props.populationTab && props.populationTab.population &&
+                        props.populationTab.population.value ?
+                props.populationTab.population.value : NoData
+            } million people </p>
           </Grid.Column>
           : <Grid.Column computer={5} tablet={16} mobile={16}>
             <Header textAlign="center" as="h3">
@@ -67,7 +71,7 @@ const Overview = (props: Props) => {
             </P>
             <P fontSize={big} fontWeight={'bold'} color={red}>
               {overviewTab.domesticResources && overviewTab.domesticResources.value
-                ? overviewTab.domesticResources.value
+                ? `US$ ${overviewTab.domesticResources.value}`
                 : NoData}
             </P>
             <P>
@@ -78,7 +82,7 @@ const Overview = (props: Props) => {
             </P>
             <P fontSize={big} fontWeight={'bold'}>
               {overviewTab.internationalResources && overviewTab.internationalResources.value
-                ? overviewTab.internationalResources.value
+                ? `US$ ${overviewTab.internationalResources.value}`
                 : NoData}
             </P>
           </Grid.Column>
@@ -92,10 +96,10 @@ const Overview = (props: Props) => {
           </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>
             {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.value
-              ? overviewTab.governmentSpendPerPerson.value
+              ? `PPP$ ${overviewTab.governmentSpendPerPerson.value}`
               : NoData}
           </P>
-          <P>out of a population of 39 million people</P>
+          <p>Government spending per person per annum</p>
         </Grid.Column>
         {props.countryType === DONOR
           ? <Grid.Column computer={5} tablet={16} mobile={16}>

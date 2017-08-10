@@ -2,6 +2,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { medium } from 'components/theme';
+import { lightGrey } from 'components/theme/semantic';
 import { Container } from 'semantic-ui-react';
 
 type Props = {
@@ -34,12 +35,14 @@ const TabLink = glamorous.a({
   padding: '.75em .35em',
   marginRight: '30px',
   cursor: 'pointer',
+  color: lightGrey,
   display: 'inline-block',
 });
 const TabsContentWrapper = glamorous.div(
   {
     position: 'relative',
     background: '#e9e7e8',
+    fontWeight: 'bold',
     '& .tabs__content': {
       position: 'absolute',
       top: 0,

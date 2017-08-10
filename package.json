@@ -1,8 +1,8 @@
 {
   "name": "datahub",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "config": {
-    "api": "https://datahub-api-bwaafejoyv.now.sh/graphql/"
+    "api": "http://localhost:3000/graphql/"
   },
   "repository": {
     "type": "git",
