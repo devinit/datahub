@@ -70,7 +70,7 @@ export default ComposedComponent => {
     }
     async componentWillMount() {
       // dispatches an Hydrate action
-      if (process.browser) clientCachingHandling(this.redux);
+      // if (process.browser) clientCachingHandling(this.redux);
     }
     constructor(props) {
       super(props);

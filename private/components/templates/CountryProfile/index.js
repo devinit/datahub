@@ -9,9 +9,10 @@ import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable'
 import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
+import NoSSR from 'react-no-ssr';
 import SmallMap from 'components/molecules/SmallMap';
 import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
-// import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
+import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
@@ -65,9 +66,9 @@ const profile = (props: Props) =>
         </SectionHeader>
       </Container>
     </Div>
-    {props.rehydrated || process.storybook ?
-      <CountryProfileLowerTabs id={props.id} /> : ''
-    }
+    <NoSSR loading={<LoadingPlaceholder height="40em" loading />} >
+      <CountryProfileLowerTabs id={props.id} />
+    </NoSSR>
     <DarkBg>
       <SectionHeader color={red} fontColor={white}>
         MORE FROM DI ON UGANDA

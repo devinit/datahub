@@ -41,9 +41,10 @@ const front = (props: Props) => {
       </Container>
       <div style={{ position: 'relative' }}>
         <GlobalPictureNavTabs />
-        {props.rehydrated || process.storybook
+        <Map pathName={props.pathName} />
+        {/* {props.rehydrated || process.storybook
           ? <Map pathName={props.pathName} />
-          : <MapBackground />}
+          : <MapBackground />} */}
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>

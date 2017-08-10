@@ -1,8 +1,8 @@
 {
   "name": "datahub",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "config": {
-    "api": "https://datahub-api-iitdcnnozk.now.sh/graphql/"
+    "api": "http://localhost:3000/graphql/"
   },
   "repository": {
     "type": "git",
@@ -105,6 +105,10 @@
     "usus": "^1.6.0"
   },
   "git-pre-hooks": {
+     "pre-push": [
+      "npm run lint",
+      "npm run test"
+    ]
   },
   "jest": {
     "coverageDirectory": "./coverage/",
