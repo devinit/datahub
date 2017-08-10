@@ -19092,10 +19092,6 @@ exports[`Storyshots Templates Spot Light 1`] = `
         className="css-1805z6z"
       />
     </div>
-     : 
-    <div
-      className="css-1805z6z"
-    />
     <div
       className="css-7q1pau"
     >
@@ -19700,7 +19696,7 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
               className="right aligned middle aligned ten wide column"
             >
               <span>
-                ODA in
+                ODA
                 <span
                   className="css-1kpemyl"
                 >
@@ -19728,7 +19724,7 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
                     <span
                       className="css-1ecpngs"
                     >
-                      Select Year
+                      
                     </span>
                     <select
                       className="css-14opy7r"
