@@ -8497,53 +8497,101 @@ exports[`Storyshots Tabs Country Profiles Lower tabs rwanda 1`] = `
 `;
 
 exports[`Storyshots Tabs Country Profiles Lower tabs uganda 1`] = `
-<section
-  className="css-1gz0phu"
+<div
+  className="css-n8e9wl"
 >
   <div
-    className="ui container"
+    className="ui center aligned container"
   >
-    <div>
-      <div
-        className="ui attached tabular menu"
-      >
+    <ul
+      className="css-bn0gvo"
+    >
+      <li>
         <a
-          className="active item"
+          className="css-67ayt6 active"
           onClick={[Function]}
         >
           GOVERNMENT FINANCE
         </a>
+      </li>
+      <li>
         <a
-          className="item"
+          className="css-67ayt6"
           onClick={[Function]}
         >
           INTERNATIONAL RESOURCES
         </a>
-      </div>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="css-8lcazk"
+  >
+    <div
+      className="tabs__content visible"
+    >
       <div
-        className="ui bottom attached segment active tab"
+        id="government-finance-lower"
+        label="GOVERNMENT FINANCE"
       >
         <div
-          className="css-hu3x4g"
+          className="ui container"
         >
           <div
-            className="ui tiny active progress"
-            data-percent={0}
+            className="css-hu3x4g"
           >
             <div
-              className="bar"
-              style={
-                Object {
-                  "width": "0%",
+              className="ui tiny active progress"
+              data-percent={0}
+            >
+              <div
+                className="bar"
+                style={
+                  Object {
+                    "width": "0%",
+                  }
                 }
-              }
-            />
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs__content "
+    >
+      <div
+        id="international-resources-lower"
+        label="INTERNATIONAL RESOURCES"
+      >
+        <div
+          className="ui container"
+        >
+          <p>
+             Loading
+          </p>
+          <div
+            className="css-hu3x4g"
+          >
+            <div
+              className="ui tiny active progress"
+              data-percent={0}
+            >
+              <div
+                className="bar"
+                style={
+                  Object {
+                    "width": "0%",
+                  }
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 `;
 
 exports[`Storyshots Tabs Country Profiles tabs austria 1`] = `
@@ -16291,9 +16339,28 @@ exports[`Storyshots Templates Front Page 1`] = `
           </div>
         </div>
       </section>
-      <div
-        className="css-1805z6z"
-      />
+      <div>
+        <div
+          className="css-hu3x4g"
+        >
+          <div
+            className="ui tiny active progress"
+            data-percent={0}
+          >
+            <div
+              className="bar"
+              style={
+                Object {
+                  "width": "0%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="css-1805z6z"
+        />
+      </div>
     </div>
     <div
       className="css-7q1pau"
@@ -19003,6 +19070,29 @@ exports[`Storyshots Templates Spot Light 1`] = `
         </div>
       </div>
     </section>
+    <div>
+      <div
+        className="css-hu3x4g"
+      >
+        <div
+          className="ui tiny active progress"
+          data-percent={0}
+        >
+          <div
+            className="bar"
+            style={
+              Object {
+                "width": "0%",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="css-1805z6z"
+      />
+    </div>
+     : 
     <div
       className="css-1805z6z"
     />
