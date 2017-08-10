@@ -10,7 +10,6 @@ export const Slider = glamorous.div({
   padding: '0 2em 0 0',
   verticalAlign: 'middle',
   cursor: 'pointer',
-  backgroundColor: lighterGrey,
   '& .bubble': {
     cursor: 'default',
     top: '-2em',
@@ -18,7 +17,9 @@ export const Slider = glamorous.div({
     fontSize: '.9em',
     color: grey,
   },
-});
+}, (props) => ({
+  backgroundColor: props.backgroundColor || lighterGrey,
+}));
 export const Input = glamorous.input({
   whiteSpace: 'nowrap',
   position: 'absolute',

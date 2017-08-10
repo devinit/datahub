@@ -157,6 +157,7 @@ class SlidingDualSidebar extends React.Component {
               <YearSlider
                 minimum={2000}
                 maximum={2015}
+                backgroundColor="white"
                 step={1}
                 position={this.state.currentYear}
                 onChange={year => this.updateCurrentYear(year)}

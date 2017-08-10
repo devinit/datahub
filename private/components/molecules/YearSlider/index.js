@@ -14,6 +14,7 @@ type Props = {
   maximum: number,
   step: number,
   position: number,
+  backgroundColor?: string,
   onChange(year: number): void,
 };
 
@@ -44,7 +45,7 @@ class YearSlider extends React.Component {
 
   render() {
     return (
-      <Slider>
+      <Slider backgroundColor={this.props.backgroundColor}>
         <Floor className="bubble">
           {this.props.minimum}
         </Floor>
