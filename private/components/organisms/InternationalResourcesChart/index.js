@@ -5,7 +5,7 @@ import config from 'visboxConfigs/areaTreemapChart';
 import InternationalResourcesChart from 'components/molecules/AreaPartitionChart';
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
-import countriesData from 'components/organisms/CountrySearchInput/data';
+import {getCountryName} from 'lib/utils';
 import RESOURCES_QUERY from '../../../graphql/InternationalResourcesOverTime.graphql';
 
 type WrapperProps = Props & {
@@ -24,11 +24,7 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
     />
   );
 };
-const getCountryName = (slug: string): string => {
-  const country = countriesData.countries.find(country => country.slug === slug);
-  if (country && country.name) return country.name;
-  return slug;
-};
+
 const withData = graphql(RESOURCES_QUERY, {
   options: props => ({
     variables: {

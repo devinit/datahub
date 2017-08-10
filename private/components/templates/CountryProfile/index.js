@@ -13,11 +13,13 @@ import NoSSR from 'react-no-ssr';
 import SmallMap from 'components/molecules/SmallMap';
 import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
+import {getCountryName} from 'lib/utils';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
+/* eslint-disable max-len */
 type Props = {
   id: string,
   rehydrated: boolean,
@@ -38,7 +40,7 @@ const profile = (props: Props) =>
                   </H4>
                   <CountrySearch visible placeholder={props.id} profile />
                   <Lead>
-                    Explore this in-depth profile of Uganda to find out overall levels of poverty,
+                    Explore this in-depth profile of {getCountryName(props.id)} to find out overall levels of poverty,
                     income distribution, division of wealth and more. Discover how national and
                     sub-national revenue is generated.
                   </Lead>
@@ -73,7 +75,7 @@ const profile = (props: Props) =>
     </NoSSR>
     <DarkBg>
       <SectionHeader color={red} fontColor={white}>
-        MORE FROM DI ON UGANDA
+        MORE FROM DI ON {getCountryName(props.id).toUpperCase()}
       </SectionHeader>
     </DarkBg>
     <ProfileDataSourceTable data={data.dataSources} />

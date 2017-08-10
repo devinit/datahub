@@ -1,7 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
-const { fork } = require('child_process');
+// const { fork } = require('child_process');
 const pagesToPreCache = require('./private/lib/precache/pages');
 const next = require('next');
 
