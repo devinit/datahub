@@ -69,7 +69,8 @@
     "redux": "^3.7.0",
     "redux-persist": "^4.8.1",
     "semantic-ui-react": "^0.71.1",
-    "sw-precache-webpack-plugin": "^0.11.4"
+    "sw-precache-webpack-plugin": "^0.11.4",
+    "webpack-bundle-analyzer": "^2.9.0"
   },
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
@@ -103,8 +104,7 @@
     "pretty-format": "^20.0.3",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
-    "usus": "^1.6.0",
-    "webpack-bundle-analyzer": "^2.9.0"
+    "usus": "^1.6.0"
   },
   "git-pre-hooks": {
     "pre-push": [
