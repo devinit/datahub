@@ -21,6 +21,7 @@
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
+    "analyze": "ANALYZE=1 next build",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -s public -o .out",
@@ -104,7 +105,8 @@
     "pretty-format": "^20.0.3",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
-    "usus": "^1.6.0"
+    "usus": "^1.6.0",
+    "webpack-bundle-analyzer": "^2.9.0"
   },
   "git-pre-hooks": {
     "pre-push": [
