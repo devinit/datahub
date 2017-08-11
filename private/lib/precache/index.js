@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 4444;
 
 const preCache = () => {
   const homeLink = `http://localhost:${PORT}`;
+  pagesToPreCache.push('/country/tanzania');
   pagesToPreCache.forEach(link => {
     setTimeout(() => {
       fetch(`${homeLink}${link}`)
@@ -15,7 +16,7 @@ const preCache = () => {
           return console.error(`${link} was not found or bad response`);
         })
         .catch(error => console.error(error.message));
-    }, 20000);
+    }, 10000);
   });
 };
 
