@@ -48,6 +48,7 @@
     "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
     "compression": "^1.6.2",
     "d3": "^4.9.1",
+    "dragdealer": "^0.9.9",
     "express": "^4.15.3",
     "glamor": "^2.20.25",
     "glamorous": "^4.1.0",
