@@ -60,10 +60,10 @@ const profile = (props: Props) =>
         </Container>
       </Div>
     </ProfileHeader>
-    {/* <NoSSR onSSR={<LoadingPlaceholder height="20em" loading />} >
+    <NoSSR onSSR={<LoadingPlaceholder height="20em" loading />} >
       <CountryProfileTopTabs id={props.id} />
-    </NoSSR> */}
-    <CountryProfileTopTabs id={props.id} />
+    </NoSSR>
+    {/* <CountryProfileTopTabs id={props.id} /> */}
     <Div paddingTop={'4em'} paddingBottom={'4em'}>
       <Container textAlign="center">
         <SectionHeader>
