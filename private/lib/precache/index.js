@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 4444;
 
 const preCache = () => {
   const homeLink = `http://localhost:${PORT}`;
-  pagesToPreCache.push('/country/tanzania');
   pagesToPreCache.forEach(link => {
     setTimeout(() => {
       fetch(`${homeLink}${link}`)
