@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
-import glamorous from 'glamorous';
+import {Div} from 'glamorous';
 import { graphql } from 'react-apollo';
+import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import QUERY from './query.graphql';
 import UnbundlingTreemap from '../../molecules/UnbundlingTreemap';
 
@@ -64,10 +65,6 @@ const withData = graphql(QUERY, {
 // eslint-disable-next-line flowtype-errors/show-errors
 const WithData = withData(UnbundlingTreemap);
 
-const Relative = glamorous.div({
-  position: 'relative',
-});
-
 const buttonStyle = {
   position: 'absolute',
   right: '1em',
@@ -78,6 +75,7 @@ class Chart extends React.Component {
   // eslint-disable-next-line react/sort-comp
   state: {
     compare: boolean,
+    showTreemap: boolean
   };
 
   constructor(props: Object) {
@@ -85,28 +83,36 @@ class Chart extends React.Component {
 
     this.state = {
       compare: false,
+      showTreemap: false
     };
   }
-
+  showTreemapHandler() {
+    this.setState({showTreemap: true});
+  }
   toggleCompare() {
     this.setState({ compare: !this.state.compare });
   }
 
   render() {
+  /* eslint-disable no-nested-ternary */
     return (
-      <Relative>
-        {!this.state.compare
-          ? <WithData {...this.props} />
-          : <Grid style={{ margin: 0 }}>
-            <Grid.Row style={{ padding: 0 }}>
-              <Grid.Column width={8} style={{ padding: 0 }}>
-                <WithData compact {...this.props} />
-              </Grid.Column>
-              <Grid.Column width={8} style={{ padding: 0 }}>
-                <WithData compact {...this.props} />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>}
+      <Div position="relative">
+        {
+          !this.state.showTreemap ?
+            <TotalODA onClickHandler={() => this.showTreemapHandler()} /> :
+            !this.state.compare
+              ? <WithData {...this.props} />
+              : <Grid style={{ margin: 0 }}>
+                <Grid.Row style={{ padding: 0 }}>
+                  <Grid.Column width={8} style={{ padding: 0 }}>
+                    <WithData compact {...this.props} />
+                  </Grid.Column>
+                  <Grid.Column width={8} style={{ padding: 0 }}>
+                    <WithData compact {...this.props} />
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+        }
         <Button style={buttonStyle} onClick={() => this.toggleCompare()}>
           {this.state.compare
             ? <span>
@@ -116,7 +122,7 @@ class Chart extends React.Component {
                 Compare <Icon name="plus" />
             </span>}
         </Button>
-      </Relative>
+      </Div>
     );
   }
 }

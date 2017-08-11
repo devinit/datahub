@@ -2,7 +2,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-// import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import config from 'visboxConfigs/unbundlingTreemapChart';
 import UnbundlingAid from 'components/organisms/UnbundlingAid';
 import Social from 'components/molecules/UnbundlingAidSocial';
@@ -41,7 +40,6 @@ export default (props: Props) =>
           </Header>
         </HeaderContainer>
       </Container>
-      {/* <TotalODA /> */}
       <UnbundlingAid aidType={props.aidType} startYear={2010} config={config} />
       <Social />
       <TextContainer>
