@@ -1,12 +1,18 @@
 const webpack = require('webpack');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const {
+  BundleAnalyzerPlugin
+} = require('webpack-bundle-analyzer');
 
-const { ANALYZE } = process.env;
+const {
+  ANALYZE
+} = process.env;
 
 module.exports = {
   // changes: configChanges, // for use in storybook webpack config
-  webpack: (config, { dev }) => {
+  webpack: (config, {
+    dev
+  }) => {
     /* Enable only in Production */
     if (!dev && false) { // DISABLED Service work untill we set up https / ssl
       // Service Worker
@@ -40,16 +46,12 @@ module.exports = {
         openAnalyzer: true
       }));
     }
-    // babel loader allows use of webpack loaders by babel. (something like that, I think so.. )
-    // for instance the css loader
-    config.module.rules.push({
-      test: /\.css$/,
-      use: ['babel-loader', 'raw-loader'],
-    });
     config.plugins.push(new webpack.DefinePlugin({
       'process.storybook': false
     }));
-    const module = Object.assign(config.module, {noParse: /(mapbox-gl)\.js$/});
-    return Object.assign(config, {module});
+    const module = Object.assign(config.module, {
+      noParse: /(mapbox-gl)\.js$/
+    });
+    return Object.assign(config, { module });
   }
 };
