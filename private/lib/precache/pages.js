@@ -4,5 +4,6 @@ module.exports = [
   '/unbundling-aid',
   '/unbundling-other-flows',
   '/country-profiles',
+  '/country/uganda',
   '/where-are-the-poor'
 ];
