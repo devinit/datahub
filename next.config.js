@@ -1,5 +1,8 @@
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const webpack = require('webpack');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const { ANALYZE } = process.env;
 
 module.exports = {
   // changes: configChanges, // for use in storybook webpack config
@@ -18,7 +21,7 @@ module.exports = {
           forceDelete: true,
           stripPrefix: 'public',
           runtimeCaching: [
-              // Example with different handlers
+            // Example with different handlers
             {
               handler: 'fastest',
               urlPattern: /^http.*/ // TODO refactor to have more specific matches
@@ -29,6 +32,13 @@ module.exports = {
             }
           ]
         }));
+    }
+    if (ANALYZE) {
+      config.plugins.push(new BundleAnalyzerPlugin({
+        analyzerMode: 'server',
+        analyzerPort: 8888,
+        openAnalyzer: true
+      }));
     }
     // babel loader allows use of webpack loaders by babel. (something like that, I think so.. )
     // for instance the css loader
