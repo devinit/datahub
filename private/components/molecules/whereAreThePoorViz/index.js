@@ -311,7 +311,7 @@ class Poor extends React.Component {
     this.createGlobalLabels(globalLabelData);
     this.createIcons(iconData);
   }
-/* eslint-disable react/no-string-refs */
+  /* eslint-disable react/no-string-refs */
   render() {
     return (
       <Container textAlign="center">
