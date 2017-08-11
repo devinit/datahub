@@ -39,7 +39,7 @@ const spotlight = () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      <NoSSR loading={<MapBackground />} >
+      <NoSSR onSSR={<MapBackground />} >
         <Map pathName="spotlight" />
       </NoSSR>
       {/* {props.rehydrated || process.storybook ? <Map pathName={'spotlight'} /> : <MapBackground />} */}

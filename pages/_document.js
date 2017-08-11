@@ -6,6 +6,7 @@ import criticalCss from 'criticalCss'; // in private/criticalCss
 import { renderStatic } from 'glamor/server';
 // import 'lib/offline-install'; // Get our service worker on the page
 
+
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
     const page = renderPage();
@@ -44,6 +45,7 @@ export default class MyDocument extends Document {
               loadCSS('/semantic/semantic.min.css'); // eslint-disable-line
               loadCSS('/css/di-charts.min.css'); // eslint-disable-line
               loadCSS('/css/mapbox-gl.min.css'); // eslint-disable-line
+              // loading intersection obsever
             }}
           </Script>
         </Head>

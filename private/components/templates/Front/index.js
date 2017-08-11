@@ -41,7 +41,7 @@ const front = (props: Props) => {
       </Container>
       <div style={{ position: 'relative' }}>
         <GlobalPictureNavTabs />
-        <NoSSR loading={<MapBackground />} >
+        <NoSSR onSSR={<MapBackground />} >
           <Map pathName={props.pathName} />
         </NoSSR>
         {/* {props.rehydrated || process.storybook
@@ -85,7 +85,7 @@ const front = (props: Props) => {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="12">
-              <NoSSR loading={<P textAlign={'center'}>Loading...</P>}>
+              <NoSSR onSSR={<P textAlign={'center'}>Loading...</P>}>
                 <iframe
                   src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
                   title="About Datahub"

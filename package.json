@@ -52,6 +52,7 @@
     "glamor": "^2.20.25",
     "glamorous": "^4.1.0",
     "graphql": "^0.10.3",
+    "intersection-observer": "^0.4.0",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
     "lru-cache": "^4.1.1",
@@ -63,6 +64,7 @@
     "react": "^15.6.1",
     "react-apollo": "^1.4.8",
     "react-dom": "^15.6.1",
+    "react-intersection-observer": "^1.0.0",
     "react-no-ssr": "^1.1.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
@@ -105,7 +107,7 @@
     "usus": "^1.6.0"
   },
   "git-pre-hooks": {
-     "pre-push": [
+    "pre-push": [
       "npm run lint",
       "npm run test -- -u"
     ]
