@@ -8,15 +8,20 @@ import { big } from 'components/theme';
 import type { OverviewChartConfigs } from 'visboxConfigs/overviewTabCharts';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import Chart from 'components/atoms/Chart';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 import { red } from 'components/theme/semantic';
 
 type Props = {
   countryType: string,
   config: OverviewChartConfigs,
+  pagesData: PageUnit[],
   ...TabDataQuery,
 };
 
 const Overview = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pagesData);
+  const overviewCtryPoorestPeople = getPageLine('overview-ctry-poorest-people');
   if (!props.overviewTab) throw new Error('No OverView data');
   const overviewTab = props.overviewTab;
   return (
@@ -25,7 +30,7 @@ const Overview = (props: Props) => {
         {props.countryType === RECIPIENT && overviewTab.poorestPeople
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
             <Header textAlign="center" as="h3">
-                HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN UGANDA?
+              {overviewCtryPoorestPeople.title ? overviewCtryPoorestPeople.title.toUpperCase() : ''}
               {overviewTab.poorestPeople.toolTip
                 ? <TabsToolTip {...overviewTab.poorestPeople.toolTip} />
                 : ''}

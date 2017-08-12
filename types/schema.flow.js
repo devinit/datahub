@@ -12,36 +12,271 @@ export type UnbundlingAidQuery = {|
   channel?: ?string,
 |};
 
-export type CountriesQuery = {|
-  countries: ? Array< {|
-    id: ?string,
-    name: ?string,
-    slug: ?string,
+export type TabDataQueryVariables = {|
+  id: string,
+|};
+
+export type TabDataQuery = {|
+  governmentFinance: ? {|
+    // Total revenue for a particular
+    totalRevenue: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    grantsAsPcOfRevenue: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // for donut chart
+    spendingAllocation: ? {|
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+      data: ? Array< {|
+        value: ?number,
+        name: ?string,
+        color: ?string,
+      |} >,
+    |},
+    // for treemap
+    // such as constant 2015 USD for tree map
+    currencyCode: ?string,
+  |},
+  povertyTab: ? {|
+    // Poverty reduction over time area chart trend
+    poverty190Trend: ? {|
+      data: ? Array< {|
+        id: ?string,
+        year: ?number,
+        value: ?number,
+        name: ?string,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // how deep is poverty %
+    depthOfExtremePoverty: ? {|
+      value: ?string,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
+    // Recipients: how income is distributed, % of income received by each quintil
+    incomeDistTrend: ? {|
+      data: ? Array< {|
+        value: ?number,
+        quintileName: ?string,
+      |} >,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
+  |},
+  populationTab: ? {|
+    // total population in a country
+    population: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // Urban vs Rural population level
+    populationDistribution: ? {|
+      data: ? Array< {|
+        group: ?string,
+        value: ?number,
+        year: ?number,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // Number of people in 3 age bands (65+, 15- 65, 0 - 14)
+    populationPerAgeBand: ? {|
+      data: ? Array< {|
+        band: ?string,
+        value: ?number,
+        year: ?number,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+  |},
+  internationalResources: ? {|
+    // Gross National Income
+    GNI: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // Net ODA received, % of GNI for recipient countries
+    netODAOfGNIIn: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // Net ODA out, % of GNI for recipient countries
+    netODAOfGNIOut: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // Whats the mix of resources can be for donors (out flows) or receipient (in flows)
+    // this is for the donut chart
+    mixOfResources: ? {|
+      data: ? Array< {|
+        flow_name: string,
+        value: number,
+      |} >,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
+    // for sidebar chart in international resources section & area partition tree chart default data
+    // & line chart in the  tabs section
+    resourcesOverTime: ? {|
+      data: ? Array< {|
+        year: number,
+        // flow either inflow or outflow
+        flow_type: ?string,
+        // Category i.e FDI, ODA
+        flow_category: ?string,
+        value: number,
+      |} >,
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
+  |},
+  overviewTab: ? {|
     countryType: ?string,
-  |} >,
+    // how many of the poorest people globally live in a country
+    poorestPeople: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // total population for a given country
+    population: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    domesticResources: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    internationalResources: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // recipient countries $PPP, both donor and recipient
+    governmentSpendPerPerson: ? {|
+      value: ?string,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // donor: gross nation income per capit GNI
+    averageIncomerPerPerson: ? {|
+      data: ? Array< {|
+        year: ?number,
+        value: ?number,
+        id: ?string,
+        name: ?string,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+    // donor: Income share by quintile
+    incomeDistTrend: ? {|
+      data: ? Array< {|
+        value: ?number,
+        quintileName: ?string,
+      |} >,
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
+    |},
+  |},
 |};
 
-export type DifferentProvidersDifferentPriotitiesQuery = {|
-  // IdNamePair is defined in unbundling aid types
-  // this list feeds off oda table from countries and global/concept file
-  bubbleChartIndicatorsList: ? Array< {|
-    id: ?string,
-    name: ?string,
-  |} >,
+export type GovernmentFinanceQueryVariables = {|
+  id: string,
 |};
 
-export type GlobalPictureThemesQuery = {|
-  globalPictureThemes: ? Array< {|
-    id: ?string,
-    name: ?string,
-    indicators: ? Array< {|
-      id: ?string,
-      name: ?string,
-      heading: ?string,
-      source: ?string,
+export type GovernmentFinanceQuery = {|
+  governmentFinance: ? {|
+    startYear: ?number,
+    // for treemap
+    // such as constant 2015 USD for tree map
+    currencyCode: ?string,
+    // use resourcesRecipient sql
+    expenditure: ? Array< {|
+      uid: ?string,
+      year: ?number,
+      levels: ?Array< ?string >,
+      // eg Actual or budget
+      budget_type: ?string,
+      value: ?number,
+      value_ncu: ?number,
     |} >,
-    default_indicator: ?string,
-  |} >,
+    revenueAndGrants: ? Array< {|
+      uid: ?string,
+      year: ?number,
+      levels: ?Array< ?string >,
+      // eg Actual or budget
+      budget_type: ?string,
+      value: ?number,
+      value_ncu: ?number,
+    |} >,
+    finance: ? Array< {|
+      uid: ?string,
+      year: ?number,
+      levels: ?Array< ?string >,
+      // eg Actual or budget
+      budget_type: ?string,
+      value: ?number,
+      value_ncu: ?number,
+    |} >,
+  |},
 |};
 
 export type ResourcesOverTimeQueryVariables = {|
@@ -298,248 +533,6 @@ export type SpotLightTabDataQuery = {|
   |},
 |};
 
-export type SpotlightThemesQueryVariables = {|
-  country: string,
-|};
-
-export type SpotlightThemesQuery = {|
-  spotlightThemes: ? Array< {|
-    id: ?string,
-    name: ?string,
-    indicators: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    default_indicator: ?string,
-  |} >,
-|};
-
-export type TabDataQueryVariables = {|
-  id: string,
-|};
-
-export type TabDataQuery = {|
-  governmentFinance: ? {|
-    // Total revenue for a particular
-    totalRevenue: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    grantsAsPcOfRevenue: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // for donut chart
-    spendingAllocation: ? {|
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-      data: ? Array< {|
-        value: ?number,
-        name: ?string,
-        color: ?string,
-      |} >,
-    |},
-    // for treemap
-    // such as constant 2015 USD for tree map
-    currencyCode: ?string,
-  |},
-  povertyTab: ? {|
-    // Poverty reduction over time area chart trend
-    poverty190Trend: ? {|
-      data: ? Array< {|
-        id: ?string,
-        year: ?number,
-        value: ?number,
-        name: ?string,
-      |} >,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // how deep is poverty %
-    depthOfExtremePoverty: ? {|
-      value: ?string,
-      toolTip: ? {|
-        heading: ?string,
-        source: ?string,
-      |},
-    |},
-    // Recipients: how income is distributed, % of income received by each quintil
-    incomeDistTrend: ? {|
-      data: ? Array< {|
-        value: ?number,
-        quintileName: ?string,
-      |} >,
-      toolTip: ? {|
-        heading: ?string,
-        source: ?string,
-      |},
-    |},
-  |},
-  populationTab: ? {|
-    // total population in a country
-    population: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // Urban vs Rural population level
-    populationDistribution: ? {|
-      data: ? Array< {|
-        group: ?string,
-        value: ?number,
-        year: ?number,
-      |} >,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // Number of people in 3 age bands (65+, 15- 65, 0 - 14)
-    populationPerAgeBand: ? {|
-      data: ? Array< {|
-        band: ?string,
-        value: ?number,
-        year: ?number,
-      |} >,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-  |},
-  internationalResources: ? {|
-    // Gross National Income
-    GNI: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // Net ODA received, % of GNI for recipient countries
-    netODAOfGNIIn: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // Net ODA out, % of GNI for recipient countries
-    netODAOfGNIOut: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // Whats the mix of resources can be for donors (out flows) or receipient (in flows)
-    // this is for the donut chart
-    mixOfResources: ? {|
-      data: ? Array< {|
-        flow_name: string,
-        value: number,
-      |} >,
-      toolTip: ? {|
-        heading: ?string,
-        source: ?string,
-      |},
-    |},
-    // for sidebar chart in international resources section & area partition tree chart default data
-    // & line chart in the  tabs section
-    resourcesOverTime: ? {|
-      data: ? Array< {|
-        year: number,
-        // flow either inflow or outflow
-        flow_type: ?string,
-        // Category i.e FDI, ODA
-        flow_category: ?string,
-        value: number,
-      |} >,
-      toolTip: ? {|
-        heading: ?string,
-        source: ?string,
-      |},
-    |},
-  |},
-  overviewTab: ? {|
-    countryType: ?string,
-    // how many of the poorest people globally live in a country
-    poorestPeople: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // total population for a given country
-    population: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    domesticResources: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    internationalResources: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // recipient countries $PPP, both donor and recipient
-    governmentSpendPerPerson: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // donor: gross nation income per capit GNI
-    averageIncomerPerPerson: ? {|
-      data: ? Array< {|
-        year: ?number,
-        value: ?number,
-        id: ?string,
-        name: ?string,
-      |} >,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-    // donor: Income share by quintile
-    incomeDistTrend: ? {|
-      data: ? Array< {|
-        value: ?number,
-        quintileName: ?string,
-      |} >,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
-      |},
-    |},
-  |},
-|};
-
 export type UnbundlingAidDataQueryVariables = {|
   args?: ?UnbundlingAidQuery,
   aidType: string,
@@ -582,45 +575,13 @@ export type UnbundlingAidDataQuery = {|
   |} >,
 |};
 
-export type GovernmentFinanceQueryVariables = {|
-  id: string,
-|};
-
-export type GovernmentFinanceQuery = {|
-  governmentFinance: ? {|
-    startYear: ?number,
-    // for treemap
-    // such as constant 2015 USD for tree map
-    currencyCode: ?string,
-    // use resourcesRecipient sql
-    expenditure: ? Array< {|
-      uid: ?string,
-      year: ?number,
-      levels: ?Array< ?string >,
-      // eg Actual or budget
-      budget_type: ?string,
-      value: ?number,
-      value_ncu: ?number,
-    |} >,
-    revenueAndGrants: ? Array< {|
-      uid: ?string,
-      year: ?number,
-      levels: ?Array< ?string >,
-      // eg Actual or budget
-      budget_type: ?string,
-      value: ?number,
-      value_ncu: ?number,
-    |} >,
-    finance: ? Array< {|
-      uid: ?string,
-      year: ?number,
-      levels: ?Array< ?string >,
-      // eg Actual or budget
-      budget_type: ?string,
-      value: ?number,
-      value_ncu: ?number,
-    |} >,
-  |},
+export type DifferentProvidersDifferentPriotitiesQuery = {|
+  // IdNamePair is defined in unbundling aid types
+  // this list feeds off oda table from countries and global/concept file
+  bubbleChartIndicatorsList: ? Array< {|
+    id: ?string,
+    name: ?string,
+  |} >,
 |};
 
 export type PovertyQuery = {|
@@ -629,5 +590,57 @@ export type PovertyQuery = {|
   bubbleChartIndicatorsList: ? Array< {|
     id: ?string,
     name: ?string,
+  |} >,
+|};
+
+export type CountriesQuery = {|
+  countries: ? Array< {|
+    id: ?string,
+    name: ?string,
+    slug: ?string,
+    countryType: ?string,
+  |} >,
+|};
+
+export type GlobalPictureThemesQuery = {|
+  globalPictureThemes: ? Array< {|
+    id: ?string,
+    name: ?string,
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+      heading: ?string,
+      source: ?string,
+    |} >,
+    default_indicator: ?string,
+  |} >,
+|};
+
+export type PageDataQuery = {|
+  countryProfile: ? Array< {|
+    id: ?string,
+    title: ?string,
+    narrative: ?string,
+  |} >,
+  spotlightDistrict: ? Array< {|
+    id: ?string,
+    title: ?string,
+    narrative: ?string,
+  |} >,
+|};
+
+export type SpotlightThemesQueryVariables = {|
+  country: string,
+|};
+
+export type SpotlightThemesQuery = {|
+  spotlightThemes: ? Array< {|
+    id: ?string,
+    name: ?string,
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    default_indicator: ?string,
   |} >,
 |};

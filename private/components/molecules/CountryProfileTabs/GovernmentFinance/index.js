@@ -7,14 +7,19 @@ import Chart from 'components/atoms/Chart';
 import { red } from 'components/theme/semantic';
 import { big } from 'components/theme';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 import { NoData } from 'lib/utils/constants';
 
 type Props = {
   ...TabDataQuery,
   config: any,
+  pagesData: PageUnit[],
 };
 
 const Government = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pagesData);
+  const totalrevenueCtry = getPageLine('totalrevenue-ctry');
   if (!props.governmentFinance) throw new Error('No Government Finance data');
   const governmentFinance = props.governmentFinance;
   return (
@@ -22,7 +27,7 @@ const Government = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT IS THE TOTAL REVENUE OF UGANDA?
+            {totalrevenueCtry.title ? totalrevenueCtry.title.toUpperCase() : ''}
             {governmentFinance.totalRevenue && governmentFinance.totalRevenue.toolTip
               ? <TabsToolTip {...governmentFinance.totalRevenue.toolTip} />
               : ''}

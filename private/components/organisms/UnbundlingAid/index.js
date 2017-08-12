@@ -7,6 +7,10 @@ import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import QUERY from './query.graphql';
 import UnbundlingTreemap from '../../molecules/UnbundlingTreemap';
 
+type Props = {
+  aidType: string
+}
+
 const toDropDownOptions = list => [
   { name: 'All', value: '', key: 'all', active: true },
 
@@ -70,6 +74,8 @@ const buttonStyle = {
   right: '1em',
   top: '0.3em',
 };
+// TODO: supply year oda and oof totals via a pull API
+// TODO: supply selection options via pull API
 
 class Chart extends React.Component {
   // eslint-disable-next-line react/sort-comp
@@ -78,7 +84,7 @@ class Chart extends React.Component {
     showTreemap: boolean
   };
 
-  constructor(props: Object) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -94,12 +100,16 @@ class Chart extends React.Component {
   }
 
   render() {
-  /* eslint-disable no-nested-ternary */
+    console.log('props', this.props);
+    /* eslint-disable no-nested-ternary */
     return (
       <Div position="relative">
         {
           !this.state.showTreemap ?
-            <TotalODA onClickHandler={() => this.showTreemapHandler()} /> :
+            <TotalODA
+              onClickHandler={() => this.showTreemapHandler()}
+              type={this.props.aidType}
+            /> :
             !this.state.compare
               ? <WithData {...this.props} />
               : <Grid style={{ margin: 0 }}>

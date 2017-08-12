@@ -1,8 +1,8 @@
 {
   "name": "datahub",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "config": {
-    "api": "https://datahub-api-kcjxnuswwp.now.sh/graphql"
+    "api": "https://datahub-api-gzdooabvaz.now.sh/graphql"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js && npm run lessToJs",
     "build-theme-w": "gulp watch --gulpfile ./private/semantic/gulpfile.js",
     "qql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
-    "gql-flow": "apollo-codegen generate private/**/*.graphql --schema schema.json --target flow --output types/schema.flow.js",
+    "gql-flow": "apollo-codegen generate **/*.graphql --schema schema.json --target flow --output types/schema.flow.js",
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },
   "peerDependencies": {
