@@ -72,9 +72,21 @@ module.exports = {
       narrative: ''
     },
     {
-      id: 'intl-resources-lower',
+      id: 'intl-resources-lower-A1',
       title:
-        'A dynamic mix of resources flow to and from ${country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.<br>To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}.',
+        'A dynamic mix of resources flow to and from {country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.',
+      narrative: ''
+    },
+    {
+      id: 'intl-resources-lower-A2',
+      title:
+        'To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}',
+      narrative: ''
+    },
+    {
+      id: 'intl-resources-lower-B1',
+      title:
+        'Where are international resources originating and where are they destined? Start by selecting inflows or outflows:',
       narrative: ''
     }
   ],
@@ -148,9 +160,21 @@ module.exports = {
       narrative: ''
     },
     {
-      id: 'intl-resources-lower',
+      id: 'intl-resources-lower-A1',
       title:
-        'A dynamic mix of resources flow to and from ${country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.<br>To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}.',
+        'A dynamic mix of resources flow to and from {country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.',
+      narrative: ''
+    },
+    {
+      id: 'intl-resources-lower-A2',
+      title:
+        'To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}',
+      narrative: ''
+    },
+    {
+      id: 'intl-resources-lower-B1',
+      title:
+        'Where are international resources originating and where are they destined? Start by selecting inflows or outflows:',
       narrative: ''
     }
   ]
