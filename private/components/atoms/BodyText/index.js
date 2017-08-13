@@ -11,3 +11,11 @@ export const Lead = glamorous.p({
   },
 });
 
+export const TextBlock = glamorous.p({
+  fontSize: '1.1em',
+  paddingLeft: '1em',
+  paddingRight: '1em',
+  paddingTop: '1.1em',
+  lineHeight: '1.5',
+  fontWeight: 300,
+});

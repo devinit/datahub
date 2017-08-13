@@ -18,39 +18,43 @@ const InternationalResources = (props: Props) => {
   const textBlockA1 = getPageLine('intl-resources-lower-A1');
   const textBlockA2 = getPageLine('intl-resources-lower-A2');
   const textBlockB1 = getPageLine('intl-resources-lower-B1');
-  return (<Container textAlign="center">
-    <Grid centered>
-      <Grid.Row>
-        <Grid.Column width={12} textAlign="center">
-          <SectionHeader color={white}>
-            INFLOWS <span>VS</span> OUTFLOWS
-          </SectionHeader>
-          <TextBlock>{textBlockA1 ? textBlockA1.title : ''}</TextBlock>
-          <TextBlock>{textBlockA2 ? textBlockA2.title : ''}</TextBlock>
-          {props.children[0]}
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={6} textAlign="center">
-          <ChartShare color="grey" size="medium" />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={12} textAlign="center">
-          <SectionHeader color={white}>
-            <span>IN DETAIL</span> INTERNATIONAL RESOURCES
-          </SectionHeader>
-          <TextBlock>{textBlockB1 ? textBlockB1.title : ''}</TextBlock>
+  return (
+    <Container textAlign="center">
+      <Grid centered>
+        <Grid.Row>
+          <Grid.Column width={12} textAlign="center">
+            <SectionHeader color={white}>
+              INFLOWS <span>VS</span> OUTFLOWS
+            </SectionHeader>
+            <TextBlock>{textBlockA1 ? textBlockA1.title : ''}</TextBlock>
+            <TextBlock>{textBlockA2 ? textBlockA2.title : ''}</TextBlock>
+            {props.children[0]}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={6} textAlign="center">
+            <ChartShare color="grey" size="medium" />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={12} textAlign="center">
+            <SectionHeader color={white}>
+              <span>IN DETAIL</span> INTERNATIONAL RESOURCES
+            </SectionHeader>
+            <TextBlock>{textBlockB1 ? textBlockB1.title : ''}</TextBlock>
+            {props.children[1]}
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
           {props.children[1]}
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={6} textAlign="center">
-          <ChartShare color="grey" size="medium" />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-  </Container>);
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={6} textAlign="center">
+            <ChartShare color="grey" size="medium" />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Container>);
 };
 
 export default InternationalResources;
