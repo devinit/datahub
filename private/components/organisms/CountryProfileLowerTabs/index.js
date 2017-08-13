@@ -16,8 +16,6 @@ type Props = {
 };
 const getCountry = (slug): Country | void =>
   countriesData.countries.find(country => country.slug === slug);
-
-
 // TODO: get rid of start year in props
 export default (props: Props) => {
   const country = getCountry(props.id);
