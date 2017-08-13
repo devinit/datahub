@@ -1,12 +1,9 @@
 // @flow
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
-import TabsNoData from 'components/atoms/TabsNoData';
-import { P } from 'glamorous';
-import { big } from 'components/theme';
+import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import { NoData } from 'lib/utils/constants';
-import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 
 type Props = {
@@ -21,12 +18,12 @@ const Poverty = (props: Props) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             IS POVERTY REDUCING OVER TIME?
             {povertyTab.poverty190Trend && povertyTab.poverty190Trend.toolTip
               ? <TabsToolTip {...povertyTab.poverty190Trend.toolTip} />
               : ''}
-          </Header>
+          </HeaderTitle>
           {povertyTab.poverty190Trend && povertyTab.poverty190Trend.data
             ? <Chart
               config={props.config.area}
@@ -37,27 +34,27 @@ const Poverty = (props: Props) => {
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             HOW DEEP IS POVERTY?
             {povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.toolTip
               ? <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.value
               ? `${povertyTab.depthOfExtremePoverty.value}%`
               : NoData}
-          </P>
-          <P>Depth of extreme poverty</P>
+          </TabsP>
+          <TabsFootNote>Depth of extreme poverty</TabsFootNote>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             HOW IS INCOME DISTRIBUTED?
             {povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.toolTip
               ? <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} />
               : ''}
-          </Header>
+          </HeaderTitle>
           {povertyTab.incomeDistTrend &&
           povertyTab.incomeDistTrend.data &&
           povertyTab.incomeDistTrend.data.length
@@ -67,9 +64,9 @@ const Poverty = (props: Props) => {
                 data={povertyTab.incomeDistTrend.data}
                 height="120px"
               />
-              <P fontWeight="bold" textAlign="left" marginTop="1em">
+              <TabsFootNote textAlign="left">
                   Bottom quintile has {povertyTab.incomeDistTrend.data[0].value} % of the income.
-              </P>
+              </TabsFootNote>
             </div>
             : <TabsNoData />}
         </Grid.Column>

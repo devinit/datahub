@@ -1,11 +1,8 @@
 // @flow
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
-import { P } from 'glamorous';
-import TabsNoData from 'components/atoms/TabsNoData';
+import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import Chart from 'components/atoms/Chart';
-import { red } from 'components/theme/semantic';
-import { big } from 'components/theme';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
@@ -26,40 +23,40 @@ const Government = (props: Props) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             {totalrevenueCtry.title ? totalrevenueCtry.title.toUpperCase() : ''}
             {governmentFinance.totalRevenue && governmentFinance.totalRevenue.toolTip
               ? <TabsToolTip {...governmentFinance.totalRevenue.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {governmentFinance.totalRevenue && governmentFinance.totalRevenue.value
               ? governmentFinance.totalRevenue.value
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             HOW MUCH GOVERNMENT REVENUE COMES FROM EXTERNAL GRANTS (AID)?
             {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.toolTip
               ? <TabsToolTip {...governmentFinance.grantsAsPcOfRevenue.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.value
               ? `${governmentFinance.grantsAsPcOfRevenue.value}%`
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             HOW IS SPENDING ALLOCATED?
             {governmentFinance.spendingAllocation && governmentFinance.spendingAllocation.toolTip
               ? <TabsToolTip {...governmentFinance.spendingAllocation.toolTip} />
               : ''}
-          </Header>
+          </HeaderTitle>
           {governmentFinance.spendingAllocation &&
           governmentFinance.spendingAllocation.data &&
           governmentFinance.spendingAllocation.data.length

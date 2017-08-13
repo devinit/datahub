@@ -1,16 +1,15 @@
 // @flow
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
-import TabsNoData from 'components/atoms/TabsNoData';
+import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import { P, Div } from 'glamorous';
 import { RECIPIENT, DONOR, NoData } from 'lib/utils/constants';
-import { big } from 'components/theme';
 import type { OverviewChartConfigs } from 'visboxConfigs/overviewTabCharts';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import Chart from 'components/atoms/Chart';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
-import { red } from 'components/theme/semantic';
+import { red} from 'components/theme/semantic';
 
 type Props = {
   countryType: string,
@@ -29,25 +28,25 @@ const Overview = (props: Props) => {
       <Grid textAlign={'center'}>
         {props.countryType === RECIPIENT && overviewTab.poorestPeople
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
-            <Header textAlign="center" as="h3">
+            <HeaderTitle>
               {overviewCtryPoorestPeople.title ? overviewCtryPoorestPeople.title.toUpperCase() : ''}
               {overviewTab.poorestPeople.toolTip
                 ? <TabsToolTip {...overviewTab.poorestPeople.toolTip} />
                 : ''}
-            </Header>
-            <P fontSize={big} fontWeight={'bold'} color={red}>
+            </HeaderTitle>
+            <TabsP>
               {' '}{overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData}
-            </P>
-            <p>out of a population of {
+            </TabsP>
+            <TabsFootNote>out of a population of {
               props.populationTab && props.populationTab.population &&
                         props.populationTab.population.value ?
                 props.populationTab.population.value : NoData
-            } million people </p>
+            } million people </TabsFootNote>
           </Grid.Column>
           : <Grid.Column computer={5} tablet={16} mobile={16}>
-            <Header textAlign="center" as="h3">
+            <HeaderTitle>
                 WHAT IS THE AVERAGE INCOME PER PERSON PER YEAR?
-            </Header>
+            </HeaderTitle>
             {overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
               ? <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} />
               : ''}
@@ -65,55 +64,55 @@ const Overview = (props: Props) => {
           </Grid.Column>}
         {props.countryType === RECIPIENT
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
-            <Header textAlign="center" as="h3">
+            <HeaderTitle>
               WHAT RESOURCES ARE AVAILABLE?
-            </Header>
-            <P>
+            </HeaderTitle>
+            <P color={red} fontWeight={'bold'} marginBottom={0}>
                 Domestic public
               {overviewTab.domesticResources && overviewTab.domesticResources.toolTip
                 ? <TabsToolTip {...overviewTab.domesticResources.toolTip} />
                 : ''}
             </P>
-            <P fontSize={big} fontWeight={'bold'} color={red}>
+            <TabsP fontSize={'1.6em'}>
               {overviewTab.domesticResources && overviewTab.domesticResources.value
                 ? `US$ ${overviewTab.domesticResources.value}`
                 : NoData}
-            </P>
-            <P>
+            </TabsP>
+            <P fontWeight={'bold'} marginBottom={0}>
                 International
               {overviewTab.internationalResources && overviewTab.internationalResources.toolTip
                 ? <TabsToolTip {...overviewTab.internationalResources.toolTip} />
                 : ''}
             </P>
-            <P fontSize={big} fontWeight={'bold'}>
+            <TabsP fontSize={'1.6em'}>
               {overviewTab.internationalResources && overviewTab.internationalResources.value
                 ? `US$ ${overviewTab.internationalResources.value}`
                 : NoData}
-            </P>
+            </TabsP>
           </Grid.Column>
           : ''}
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
             {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip
               ? <TabsToolTip {...overviewTab.governmentSpendPerPerson.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.value
               ? `PPP$ ${overviewTab.governmentSpendPerPerson.value}`
               : NoData}
-          </P>
-          <p>Government spending per person per annum</p>
+          </TabsP>
+          <TabsFootNote>Government spending per person per annum</TabsFootNote>
         </Grid.Column>
         {props.countryType === DONOR
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
-            <Header textAlign="center" as="h3">
+            <HeaderTitle>
                 HOW IS INCOME DISTRIBUTED?
               {overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip
                 ? <TabsToolTip {...overviewTab.incomeDistTrend.toolTip} />
                 : ''}
-            </Header>
+            </HeaderTitle>
             {overviewTab.incomeDistTrend &&
               overviewTab.incomeDistTrend.data &&
               overviewTab.incomeDistTrend.data.length
@@ -123,10 +122,10 @@ const Overview = (props: Props) => {
                   data={overviewTab.incomeDistTrend.data}
                   height="120px"
                 />
-                <P fontWeight="bold" textAlign="left" marginTop="1em">
+                <TabsFootNote textAlign="left">
                       Bottom quintile has {overviewTab.incomeDistTrend.data[0].value} % of the
                       income.
-                </P>
+                </TabsFootNote>
               </div>
               : <TabsNoData />}
           </Grid.Column>

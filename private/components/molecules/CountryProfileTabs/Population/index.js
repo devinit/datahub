@@ -1,12 +1,10 @@
 // @flow
-import { Header, Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import React from 'react';
-import { P, Div } from 'glamorous';
-import TabsNoData from 'components/atoms/TabsNoData';
+import { Div } from 'glamorous';
+import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import Chart from 'components/atoms/Chart';
-import { big } from 'components/theme';
 import { NoData } from 'lib/utils/constants';
-import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 
 type Props = {
@@ -20,25 +18,25 @@ const Population = (props: Props) => {
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header textAlign="center" as="h3">
+        <HeaderTitle>
           WHAT IS THE POPULATION?
           {populationTab.population && populationTab.population.toolTip
             ? <TabsToolTip {...populationTab.population.toolTip} />
             : ''}
-        </Header>
-        <P fontSize={big} fontWeight={'bold'} color={red}>
+        </HeaderTitle>
+        <TabsP>
           {populationTab.population && populationTab.population.value
             ? populationTab.population.value
             : NoData}
-        </P>
+        </TabsP>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header textAlign="center" as="h3">
+        <HeaderTitle>
           WHAT IS THE URBAN VS RURAL SPLIT?
           {populationTab.populationDistribution && populationTab.populationDistribution.toolTip
             ? <TabsToolTip {...populationTab.populationDistribution.toolTip} />
             : ''}
-        </Header>
+        </HeaderTitle>
         {populationTab.populationDistribution &&
         populationTab.populationDistribution.data &&
         populationTab.populationDistribution.data.length
@@ -53,12 +51,12 @@ const Population = (props: Props) => {
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header textAlign="center" as="h3">
+        <HeaderTitle>
           WHAT IS THE AGE PROFILE?
           {populationTab.populationPerAgeBand && populationTab.populationPerAgeBand.toolTip
             ? <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} />
             : ''}
-        </Header>
+        </HeaderTitle>
         {populationTab.populationPerAgeBand &&
         populationTab.populationPerAgeBand.data &&
         populationTab.populationPerAgeBand.data.length
