@@ -59,30 +59,6 @@ module.exports = {
     {
       id: 'ctry-expenditure',
       title: 'HOW IS SPENDING ALLOCATED?',
-      narrative: 'Capital Expenditure'
-    },
-    {
-      id: 'diff-providers-priorities',
-      title: 'Different providers, different priorities',
-      narrative:
-        'How effectively are donors targeting the countries with the highest numbers of people in poverty and the least domestic public resources to address it? This chart allows you to select a provider of aid to see how it allocates aid across countries'
-    },
-    {
-      id: 'resources-able-to-meet-needs',
-      title:
-        'Are domestic public resources able to meet the needs of the poorest people?',
-      narrative:
-        'The proportion of people living in extreme poverty worldwide has more than halved since 2000, yet progress is varied across countries. Although domestic public resources are an important resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high'
-    },
-    {
-      id: 'Unbundling aid',
-      title: 'Unbundling aid',
-      narrative:
-        'Explore and compare funding priorities for official development assistance'
-    },
-    {
-      id: 'aid-allocated-ctry',
-      title: 'AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO {country}?',
       narrative: ''
     },
     {
@@ -91,10 +67,15 @@ module.exports = {
       narrative: ''
     },
     {
-      id: 'Unbundling aid',
-      title: 'Unbundling aid',
-      narrative:
-        'Explore and compare funding priorities for official development assistance  Using this visualisation'
+      id: 'govt-finance-lower',
+      title: 'How does {country} finance and spend its budget?',
+      narrative: ''
+    },
+    {
+      id: 'intl-resources-lower',
+      title:
+        'A dynamic mix of resources flow to and from ${country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.<br>To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}.',
+      narrative: ''
     }
   ],
   spotlightDistrict: [
@@ -143,7 +124,7 @@ module.exports = {
     },
     {
       id: 'totalrevenue-ctry',
-      title: 'WHAT IS THE TOTAL REVENUE OF CTRY?',
+      title: 'WHAT IS THE TOTAL REVENUE OF {country}?',
       narrative: ''
     },
     {
@@ -154,30 +135,6 @@ module.exports = {
     {
       id: 'ctry-expenditure',
       title: 'HOW IS SPENDING ALLOCATED?',
-      narrative: 'Capital Expenditure'
-    },
-    {
-      id: 'diff-providers-priorities',
-      title: 'Different providers, different priorities',
-      narrative:
-        'How effectively are donors targeting the countries with the highest numbers of people in poverty and the least domestic public resources to address it? This chart allows you to select a provider of aid to see how it allocates aid across countries'
-    },
-    {
-      id: 'resources-able-to-meet-needs',
-      title:
-        'Are domestic public resources able to meet the needs of the poorest people?',
-      narrative:
-        'The proportion of people living in extreme poverty worldwide has more than halved since 2000, yet progress is varied across countries. Although domestic public resources are an important resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high'
-    },
-    {
-      id: 'Unbundling aid',
-      title: 'Unbundling aid',
-      narrative:
-        'Explore and compare funding priorities for official development assistance'
-    },
-    {
-      id: 'aid-allocated-ctry',
-      title: 'AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO Country?',
       narrative: ''
     },
     {
@@ -186,10 +143,15 @@ module.exports = {
       narrative: ''
     },
     {
-      id: 'Unbundling aid',
-      title: 'Unbundling aid',
-      narrative:
-        'Explore and compare funding priorities for official development assistance  Using this visualisation'
+      id: 'govt-finance-lower',
+      title: 'How does {country} finance and spend its budget?',
+      narrative: ''
+    },
+    {
+      id: 'intl-resources-lower',
+      title:
+        'A dynamic mix of resources flow to and from ${country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.<br>To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}.',
+      narrative: ''
     }
   ]
 };
