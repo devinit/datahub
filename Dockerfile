@@ -19,9 +19,6 @@ ENV NODE_ENV production
 
 RUN npm run build
 
-# pulls in new static api data
-RUN npm run pull
-
 EXPOSE 9999
 
 CMD npm run start

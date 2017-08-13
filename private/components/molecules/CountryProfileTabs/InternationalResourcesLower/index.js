@@ -42,7 +42,6 @@ const InternationalResources = (props: Props) => {
               <span>IN DETAIL</span> INTERNATIONAL RESOURCES
             </SectionHeader>
             <TextBlock>{textBlockB1 ? textBlockB1.title : ''}</TextBlock>
-            {props.children[1]}
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
