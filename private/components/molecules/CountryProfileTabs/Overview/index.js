@@ -122,9 +122,8 @@ const Overview = (props: Props) => {
                   data={overviewTab.incomeDistTrend.data}
                   height="120px"
                 />
-                <TabsFootNote textAlign="left">
-                      Bottom quintile has {overviewTab.incomeDistTrend.data[0].value} % of the
-                      income.
+                <TabsFootNote textAlign="left" lineHeight={2}>
+                  Bottom quintile has {overviewTab.incomeDistTrend.data[0].value} % of the income.
                 </TabsFootNote>
               </div>
               : <TabsNoData />}
