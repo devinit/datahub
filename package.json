@@ -4,6 +4,12 @@
   "config": {
     "api": "https://datahub-api-fjvbfspguw.now.sh/graphql"
   },
+  "now": {
+    "name": "datahub",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/devinit/datahub"
@@ -41,6 +47,7 @@
     "apollo-fetch": "^0.6.0",
     "approximate-number": "^2.0.0",
     "babel-cli": "^6.24.1",
+    "babel-plugin-glamorous-displayname": "^1.1.3",
     "babel-plugin-inline-import-graphql-ast": "^2.0.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-async-generator-functions": "^6.24.1",

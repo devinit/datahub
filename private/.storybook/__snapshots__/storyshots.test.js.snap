@@ -18782,324 +18782,48 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
 <div
   className="css-13azwyo"
 >
-  <div>
+  <div
+    className="css-av36pi"
+  >
     <div
-      className="css-161obe8"
-    >
-      <div
-        className="ui container"
-      >
-        <div
-          className="ui grid"
-        >
-          <div
-            className="row"
-          >
-            <div
-              className="right aligned middle aligned ten wide column"
-            >
-              <span>
-                ODA
-                <span
-                  className="css-1kpemyl"
-                >
-                  <span
-                    className="css-h1cetn"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="css-yi8hno"
-                    />
-                    <span
-                      className="css-chu540"
-                    >
-                      
-                    </span>
-                  </span>
-                  <div
-                    className="css-1ik49x5"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="close icon close"
-                      onClick={[Function]}
-                    />
-                    <span
-                      className="css-1ecpngs"
-                    >
-                      
-                    </span>
-                    <select
-                      className="css-14opy7r"
-                      onChange={[Function]}
-                      value={undefined}
-                    />
-                  </div>
-                </span>
-                <span
-                  className="css-1kpemyl"
-                >
-                  <span
-                    className="css-h1cetn"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="css-yi8hno"
-                    >
-                      to
-                    </span>
-                    <span
-                      className="css-chu540"
-                    >
-                      All
-                    </span>
-                  </span>
-                  <div
-                    className="css-1ik49x5"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="close icon close"
-                      onClick={[Function]}
-                    />
-                    <span
-                      className="css-1ecpngs"
-                    >
-                      to
-                    </span>
-                    <select
-                      className="css-14opy7r"
-                      onChange={[Function]}
-                      value={undefined}
-                    >
-                      <option
-                        value=""
-                      >
-                        All
-                      </option>
-                    </select>
-                  </div>
-                </span>
-                <span
-                  className="css-1kpemyl"
-                >
-                  <span
-                    className="css-3voiik"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="css-yi8hno"
-                    >
-                      from
-                    </span>
-                    <span
-                      className="css-chu540"
-                    >
-                      All
-                    </span>
-                  </span>
-                  <div
-                    className="css-1ik49x5"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="close icon close"
-                      onClick={[Function]}
-                    />
-                    <span
-                      className="css-1sp4mhk"
-                    >
-                      from
-                    </span>
-                    <select
-                      className="css-14opy7r"
-                      onChange={[Function]}
-                      value={undefined}
-                    >
-                      <option
-                        value=""
-                      >
-                        All
-                      </option>
-                    </select>
-                  </div>
-                </span>
-                <span
-                  className="css-1kpemyl"
-                >
-                  <span
-                    className="css-3voiik"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="css-yi8hno"
-                    >
-                      sector
-                    </span>
-                    <span
-                      className="css-chu540"
-                    >
-                      All
-                    </span>
-                  </span>
-                  <div
-                    className="css-1ik49x5"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="close icon close"
-                      onClick={[Function]}
-                    />
-                    <span
-                      className="css-1sp4mhk"
-                    >
-                      sector
-                    </span>
-                    <select
-                      className="css-14opy7r"
-                      onChange={[Function]}
-                      value={undefined}
-                    >
-                      <option
-                        value=""
-                      >
-                        All
-                      </option>
-                    </select>
-                  </div>
-                </span>
-                <span
-                  className="css-1kpemyl"
-                >
-                  <span
-                    className="css-3voiik"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="css-yi8hno"
-                    >
-                      in the form of
-                    </span>
-                    <span
-                      className="css-chu540"
-                    >
-                      All
-                    </span>
-                  </span>
-                  <div
-                    className="css-1ik49x5"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="close icon close"
-                      onClick={[Function]}
-                    />
-                    <span
-                      className="css-1sp4mhk"
-                    >
-                      in the form of
-                    </span>
-                    <select
-                      className="css-14opy7r"
-                      onChange={[Function]}
-                      value={undefined}
-                    >
-                      <option
-                        value=""
-                      >
-                        All
-                      </option>
-                    </select>
-                  </div>
-                </span>
-                <span
-                  className="css-1kpemyl"
-                >
-                  <span
-                    className="css-3voiik"
-                    onClick={[Function]}
-                  >
-                    <span
-                      className="css-yi8hno"
-                    >
-                      via channel
-                    </span>
-                    <span
-                      className="css-chu540"
-                    >
-                      All
-                    </span>
-                  </span>
-                  <div
-                    className="css-1ik49x5"
-                  >
-                    <i
-                      aria-hidden="true"
-                      className="close icon close"
-                      onClick={[Function]}
-                    />
-                    <span
-                      className="css-1sp4mhk"
-                    >
-                      via channel
-                    </span>
-                    <select
-                      className="css-14opy7r"
-                      onChange={[Function]}
-                      value={undefined}
-                    >
-                      <option
-                        value=""
-                      >
-                        All
-                      </option>
-                    </select>
-                  </div>
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-d10atl"
-    >
-      <div
-        className="ui segment"
-        style={
-          Object {
-            "height": "100%",
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "width": "100%",
-          }
+      style={
+        Object {
+          "position": "relative",
         }
+      }
+    >
+      <div
+        className="css-m210fh"
       >
-        <div
-          className="ui active transition visible dimmer"
-          onClick={[Function]}
-          style={
-            Object {
-              "backgroundColor": undefined,
-            }
-          }
+        <h1
+          className="ui header"
         >
-          <div
-            className="content"
+          <span
+            className="red"
           >
-            <div
-              className="center"
-            >
-              <div
-                className="ui loader"
-              />
-            </div>
-          </div>
-        </div>
+             2015
+          </span>
+           US$ 174.1 
+          <span
+            className="small"
+          >
+            bn
+          </span>
+        </h1>
+        <h5
+          className="ui header"
+        >
+          Official development assistance (total gross disbursements, 2015 prices)
+        </h5>
+        <button
+          className="ui button"
+          disabled={undefined}
+          onClick={[Function]}
+          tabIndex={undefined}
+        >
+          Explore
+        </button>
       </div>
-      
     </div>
   </div>
   <button
