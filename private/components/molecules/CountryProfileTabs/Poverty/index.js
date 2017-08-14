@@ -5,13 +5,20 @@ import Chart from 'components/atoms/Chart';
 import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import { NoData } from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
 type Props = {
   ...TabDataQuery,
   config: any,
+  pagesData: PageUnit[],
 };
 
 const Poverty = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pagesData);
+  const povertyReductionCtry = getPageLine('poverty-reduction-ctry');
+  const povertyDepthCtry = getPageLine('poverty-depth-ctry');
+  const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.povertyTab) return new Error('No Poverty data');
   const povertyTab = props.povertyTab;
   return (
@@ -19,7 +26,7 @@ const Poverty = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            IS POVERTY REDUCING OVER TIME?
+            {povertyReductionCtry.title ? povertyReductionCtry.title : ''}
             {povertyTab.poverty190Trend && povertyTab.poverty190Trend.toolTip
               ? <TabsToolTip {...povertyTab.poverty190Trend.toolTip} />
               : ''}
@@ -35,7 +42,7 @@ const Poverty = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            HOW DEEP IS POVERTY?
+            {povertyDepthCtry.title ? povertyDepthCtry.title : ''}
             {povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.toolTip
               ? <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} />
               : ''}
@@ -50,7 +57,7 @@ const Poverty = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            HOW IS INCOME DISTRIBUTED?
+            {incomeDistributionCtry.title ? incomeDistributionCtry.title : ''}
             {povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.toolTip
               ? <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} />
               : ''}

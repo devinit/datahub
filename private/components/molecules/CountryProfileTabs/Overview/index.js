@@ -22,6 +22,9 @@ const Overview = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
   const overviewCtryPoorestPeople = getPageLine('overview-ctry-poorest-people');
   const overviewCtryResources = getPageLine('overview-ctry-resources');
+  const avgIncomePerPerson = getPageLine('avg-income-per-person');
+  const overviewGovtSpentPerPerson = getPageLine('overview-govt-spentperperson');
+  const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.overviewTab) throw new Error('No OverView data');
   const overviewTab = props.overviewTab;
   return (
@@ -46,7 +49,7 @@ const Overview = (props: Props) => {
           </Grid.Column>
           : <Grid.Column computer={5} tablet={16} mobile={16}>
             <HeaderTitle>
-                WHAT IS THE AVERAGE INCOME PER PERSON PER YEAR?
+              {avgIncomePerPerson.title ? avgIncomePerPerson.title : '' }
             </HeaderTitle>
             {overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
               ? <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} />
@@ -94,7 +97,7 @@ const Overview = (props: Props) => {
           : ''}
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?
+            {overviewGovtSpentPerPerson.title ? overviewGovtSpentPerPerson.title : ''}
             {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip
               ? <TabsToolTip {...overviewTab.governmentSpendPerPerson.toolTip} />
               : ''}
@@ -109,7 +112,7 @@ const Overview = (props: Props) => {
         {props.countryType === DONOR
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
             <HeaderTitle>
-                HOW IS INCOME DISTRIBUTED?
+              {incomeDistributionCtry.title ? incomeDistributionCtry.title : ''}
               {overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip
                 ? <TabsToolTip {...overviewTab.incomeDistTrend.toolTip} />
                 : ''}

@@ -5,10 +5,13 @@ import Chart from 'components/atoms/Chart';
 import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import { NoData } from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
 type Props = {
   ...TabDataQuery,
   config: any,
+  pagesData: PageUnit[],
 };
 // TODO: move to separate file
 const getResourcesOverTime = (data: any[]) =>
@@ -40,6 +43,10 @@ const getResourcesOverTime = (data: any[]) =>
     .reduce((_, d) => d);
 
 const International = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pagesData);
+  const shareGniAllocatedToCtry = getPageLine('share-gni-allocated-to-ctry');
+  const resourceInflow = getPageLine('resource-inflow');
+  const mixtureOfResources = getPageLine('mixture-of-resources');
   if (!props.internationalResources) throw new Error('No international resources data');
   const internationalResources = props.internationalResources;
   const resourcesOverTime =
@@ -51,7 +58,7 @@ const International = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO UGANDA?
+            {shareGniAllocatedToCtry.title ? shareGniAllocatedToCtry.title : ''}
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.toolTip
               ? <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} />
               : ''}
@@ -71,7 +78,7 @@ const International = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?
+            {resourceInflow.title ? resourceInflow.title : ''}
             {internationalResources.resourcesOverTime &&
             internationalResources.resourcesOverTime.toolTip
               ? <TabsToolTip {...internationalResources.resourcesOverTime.toolTip} />
@@ -88,7 +95,7 @@ const International = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            WHAT’S THE MIX OF RESOURCES?
+            {mixtureOfResources.title ? mixtureOfResources.title : ''}
             {internationalResources.mixOfResources && internationalResources.mixOfResources.toolTip
               ? <TabsToolTip {...internationalResources.mixOfResources.toolTip} />
               : ''}
