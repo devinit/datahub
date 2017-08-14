@@ -21,6 +21,7 @@ type Props = {
 const Overview = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
   const overviewCtryPoorestPeople = getPageLine('overview-ctry-poorest-people');
+  const overviewCtryResources = getPageLine('overview-ctry-resources');
   if (!props.overviewTab) throw new Error('No OverView data');
   const overviewTab = props.overviewTab;
   return (
@@ -65,7 +66,7 @@ const Overview = (props: Props) => {
         {props.countryType === RECIPIENT
           ? <Grid.Column computer={5} tablet={16} mobile={16}>
             <HeaderTitle>
-              WHAT RESOURCES ARE AVAILABLE?
+              {overviewCtryResources.title ? overviewCtryResources.title : '' }
             </HeaderTitle>
             <P color={red} fontWeight={'bold'} marginBottom={0}>
                 Domestic public

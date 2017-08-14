@@ -34,7 +34,7 @@ export const getCountryProfileData = (slug: string): PageUnit[] => {
   const pageData: PageUnit[] = pagesData.countryProfile;
   return replaceFields({pageData, toReplace: '{country}', replacement: countryName});
 };
-
+// this is a curried function, it returns another function awaiting an argument
 export const getPageUnitById = (data: PageUnit[]) =>
   (id: string): PageUnit => {
     const pageUnit: PageUnit | void = data.find(obj => obj.id === id);
