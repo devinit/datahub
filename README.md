@@ -120,7 +120,7 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - [ ] Get rid of proptypes in one of the lib folder files
 - [ ] re-add service worker
 - [ ] enable http2
-- [ ] fix broken less to Js script (we use it to get color values from semantic site globals)
+- [ ] fix broken less to Js script(```npm run lessToJs```) (we use it to get color values from semantic site globals)
 
 
 
