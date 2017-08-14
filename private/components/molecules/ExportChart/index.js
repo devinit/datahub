@@ -1,5 +1,5 @@
 import { Grid, Button, Icon } from 'semantic-ui-react';
-import { lighterGrey} from 'components/theme/semantic';
+// import { lighterGrey} from 'components/theme/semantic';
 import React from 'react';
 import ChartShare from '../ChartShare';
 
@@ -7,7 +7,7 @@ const ExportChart = () =>
   (<Grid>
     <Grid.Row textAlign="right">
       <Grid.Column>
-        <ChartShare color="black" size="medium" backgroundColor={lighterGrey} />
+        <ChartShare color="grey" size="medium" />
         <Button size="medium"color="grey">
           <Icon name="print" />
         </Button>
