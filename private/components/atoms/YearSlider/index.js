@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { white, red, lighterGrey, grey } from 'components/theme/semantic';
+import { white, red, lighterGrey, grey, lightGrey} from 'components/theme/semantic';
 
 export const Slider = glamorous.div({
   display: 'inline-block',
@@ -10,6 +10,7 @@ export const Slider = glamorous.div({
   padding: '0 2em 0 0',
   verticalAlign: 'middle',
   cursor: 'pointer',
+  border: `solid 1px ${lightGrey}`,
   '& .bubble': {
     cursor: 'default',
     top: '-2em',
