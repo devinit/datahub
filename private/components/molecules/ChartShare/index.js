@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
-import { white, black } from 'components/theme/semantic';
-import glamorous, { Div } from 'glamorous';
+import { white, black} from 'components/theme/semantic';
+import glamorous, { Div, Span } from 'glamorous';
 
 const Container = glamorous.div({
   padding: '5em',
@@ -26,12 +26,19 @@ const Container = glamorous.div({
 type Props = {
   size: string,
   color: string,
+  backgroundColor?: string,
+  label?: string
 };
-const ChartShare = ({ size, color }: Props) =>
+const buttonStyles = (backgroundColor) => ({
+  backgroundColor: backgroundColor || ''
+});
+
+const ChartShare = ({ size, color, backgroundColor, label }: Props) =>
   (<Modal
     trigger={
-      <Button size={size} color={color}>
-        <Icon name="share alternate" />Share Chart
+      <Button size={size} color={color} style={buttonStyles(backgroundColor)}>
+        <Icon name="share alternate" />
+        <Span fontSize={'1.2em'}>{label || 'Share'}</Span>
       </Button>
     }
     closeIcon="close"
