@@ -2,7 +2,7 @@
 /**
  * exports out page data for various pages after doing any necessary modifications
  */
-import {getCountryName} from 'lib/utils';
+import {getCountryName, getDistrictName} from 'lib/utils';
 import data from './data';
 
 const pagesData = (data: PageDataQuery);
@@ -26,6 +26,13 @@ const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
       obj.narrative.replace(toReplace, replacement) : obj.narrative;
     return {id: obj.id, title, narrative};
   });
+};
+
+export const getDistrictProfileData = (slug: string, country: string): PageUnit[] => {
+  const districtName = getDistrictName(slug, country);
+  if (!pagesData.spotlightDistrict) throw new Error('District profile page data missing');
+  const pageData: PageUnit[] = pagesData.spotlightDistrict;
+  return replaceFields({pageData, toReplace: '{disrict}', replacement: districtName});
 };
 
 export const getCountryProfileData = (slug: string): PageUnit[] => {

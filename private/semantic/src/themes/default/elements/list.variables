@@ -35,7 +35,7 @@
 
 /* Icon */
 @iconDistance: @relative4px;
-@iconOffset: 0em;
+@iconOffset: ((@itemLineHeight - 1rem) / 2);
 @iconTransition: color @defaultDuration @defaultEasing;
 @iconVerticalAlign: top;
 @iconContentVerticalAlign: top;
