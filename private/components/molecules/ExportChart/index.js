@@ -10,6 +10,9 @@ const Wrapper = glamorous.div({
   '& i': {
     fontSize: '1.48em'
   },
+  '& .no-background:hover': {
+    boxShadow: '0 1px 6px rgba(0,0,0,.3)'
+  },
   '& .no-background': {
     backgroundColor: 'transparent !important',
     color: `${lightSecondaryColor} !important`,
