@@ -17,6 +17,8 @@ type Props = {
 const Government = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
   const totalrevenueCtry = getPageLine('totalrevenue-ctry');
+  const govtRevenueExternal = getPageLine('govt-revenue-external');
+  const ctryExpenditure = getPageLine('ctry-expenditure');
   if (!props.governmentFinance) throw new Error('No Government Finance data');
   const governmentFinance = props.governmentFinance;
   return (
@@ -38,7 +40,7 @@ const Government = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            HOW MUCH GOVERNMENT REVENUE COMES FROM EXTERNAL GRANTS (AID)?
+            {govtRevenueExternal.title}
             {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.toolTip
               ? <TabsToolTip {...governmentFinance.grantsAsPcOfRevenue.toolTip} />
               : ''}
@@ -52,7 +54,7 @@ const Government = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            HOW IS SPENDING ALLOCATED?
+            {ctryExpenditure.title}
             {governmentFinance.spendingAllocation && governmentFinance.spendingAllocation.toolTip
               ? <TabsToolTip {...governmentFinance.spendingAllocation.toolTip} />
               : ''}

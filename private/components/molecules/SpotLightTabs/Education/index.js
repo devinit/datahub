@@ -6,8 +6,19 @@ import { big } from 'components/theme';
 import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
-const Educaton = (props: SpotLightTabDataQuery) => {
+type Props = {
+  ...SpotLightTabDataQuery,
+  pageData: PageUnit[]
+}
+
+const Educaton = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pageData);
+  const teacherRatio = getPageLine('teacher-ratio');
+  const stdPassRatio = getPageLine('std-pass-ratio');
+  const educationFunding = getPageLine('education-funding');
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
   const educationTabRegional = props.educationTabRegional;
   return (
@@ -15,7 +26,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?
+            {teacherRatio.title}
           </Header>
           <P fontSize={big} fontWeight={'bold'} color={red}>
             {educationTabRegional.pupilTeacherRatioGovtSchl &&
@@ -46,7 +57,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
+            {stdPassRatio.title}
             {educationTabRegional.educationTabRegional &&
             educationTabRegional.studentsPassRate.toolTip
               ? <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} />
@@ -68,7 +79,7 @@ const Educaton = (props: SpotLightTabDataQuery) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
+            {educationFunding.title}
             {educationTabRegional.primaryEducationfunding &&
             educationTabRegional.primaryEducationfunding.toolTip
               ? <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} />

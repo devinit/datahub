@@ -6,15 +6,26 @@ import { P } from 'glamorous';
 import { big } from 'components/theme';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
-const Population = (props: SpotLightTabDataQuery) => {
+type Props = {
+  ...SpotLightTabDataQuery,
+  pageData: PageUnit[]
+}
+
+const Population = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pageData);
+  const popnDistrict = getPageLine('popn-district');
+  const popnDistribution = getPageLine('popn-distribution');
+  const dependencyRatio = getPageLine('dependency-ratio');
   if (!props.populationTabRegional) throw new Error('regional population data is missing');
   const populationTabRegional = props.populationTabRegional;
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header textAlign="center" as="h3">
-          WHAT IS THE POPULATION
+          {popnDistrict.title}
         </Header>
         <P color={red}>
           The total population is
@@ -43,7 +54,7 @@ const Population = (props: SpotLightTabDataQuery) => {
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header textAlign="center" as="h3">
-          WHAT IS THE URBAN VS RURAL SPLIT?
+          {popnDistribution.title}
           {populationTabRegional.populationDistribution &&
           populationTabRegional.populationDistribution.toolTip
             ? <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} />
@@ -53,7 +64,7 @@ const Population = (props: SpotLightTabDataQuery) => {
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <Header textAlign="center" as="h3">
-          WHAT IS THE AVERAGE DEPENDENCY RATIO?
+          {dependencyRatio.title}
           {populationTabRegional.averageDependencyRatio &&
           populationTabRegional.averageDependencyRatio.toolTip
             ? <TabsToolTip {...populationTabRegional.averageDependencyRatio.toolTip} />
