@@ -27,13 +27,14 @@ type Props = {
   size: string,
   color: string,
   backgroundColor?: string,
-  label?: string
+  label?: string,
+  className?: string
 };
 
-const ChartShare = ({ size, color, label }: Props) =>
+const ChartShare = ({className, size, color, label }: Props) =>
   (<Modal
     trigger={
-      <Button size={size} color={color}>
+      <Button className={className} size={size} color={color}>
         <Icon name="share alternate" />
         <Span fontSize={'1.2em'}>{label || 'Share'}</Span>
       </Button>
