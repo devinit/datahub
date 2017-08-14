@@ -1,6 +1,6 @@
 /* @flow */
 type Process = {
-    browser: string,
+    browser: boolean,
     env: {
       MapboxAccessToken: string,
       NODE_ENV: string
