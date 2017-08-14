@@ -26,7 +26,7 @@ const Poverty = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {povertyReductionCtry.title ? povertyReductionCtry.title : ''}
+            {povertyReductionCtry.title }
             {povertyTab.poverty190Trend && povertyTab.poverty190Trend.toolTip
               ? <TabsToolTip {...povertyTab.poverty190Trend.toolTip} />
               : ''}
@@ -42,7 +42,7 @@ const Poverty = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {povertyDepthCtry.title ? povertyDepthCtry.title : ''}
+            {povertyDepthCtry.title }
             {povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.toolTip
               ? <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} />
               : ''}
@@ -57,7 +57,7 @@ const Poverty = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {incomeDistributionCtry.title ? incomeDistributionCtry.title : ''}
+            {incomeDistributionCtry.title }
             {povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.toolTip
               ? <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} />
               : ''}

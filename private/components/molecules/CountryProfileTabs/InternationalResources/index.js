@@ -58,7 +58,7 @@ const International = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {shareGniAllocatedToCtry.title ? shareGniAllocatedToCtry.title : ''}
+            {shareGniAllocatedToCtry.title}
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.toolTip
               ? <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} />
               : ''}
@@ -78,7 +78,7 @@ const International = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {resourceInflow.title ? resourceInflow.title : ''}
+            {resourceInflow.title }
             {internationalResources.resourcesOverTime &&
             internationalResources.resourcesOverTime.toolTip
               ? <TabsToolTip {...internationalResources.resourcesOverTime.toolTip} />
@@ -95,7 +95,7 @@ const International = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {mixtureOfResources.title ? mixtureOfResources.title : ''}
+            {mixtureOfResources.title}
             {internationalResources.mixOfResources && internationalResources.mixOfResources.toolTip
               ? <TabsToolTip {...internationalResources.mixOfResources.toolTip} />
               : ''}

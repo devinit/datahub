@@ -6,8 +6,19 @@ import { big } from 'components/theme';
 import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
-const Poverty = (props: SpotLightTabDataQuery) => {
+type Props = {
+  ...SpotLightTabDataQuery,
+  pageData: PageUnit[]
+}
+
+const Poverty = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pageData);
+  const povertyLevels = getPageLine('poverty-levels');
+  const lifeExpectancy = getPageLine('life-expectancy');
+  const stdOfLiving = getPageLine('std-of-living');
   if (!props.povertyTabRegional) throw new Error('regional poverty data is missing');
   const povertyTabRegional = props.povertyTabRegional;
   return (
@@ -15,7 +26,7 @@ const Poverty = (props: SpotLightTabDataQuery) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT PERCENTAGE OF PEOPLE IN BUIKWE LIVE BELOW THE NATIONAL POVERTY LINE?
+            {povertyLevels.title}
             {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.toolTip
               ? <TabsToolTip {...povertyTabRegional.poorestPeople.toolTip} />
               : ''}
@@ -28,7 +39,7 @@ const Poverty = (props: SpotLightTabDataQuery) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT IS THE AVERAGE LIFE EXPECTANCY?
+            {lifeExpectancy.title}
             {povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.toolTip
               ? <TabsToolTip {...povertyTabRegional.lifeExpectancy.toolTip} />
               : ''}
@@ -42,7 +53,7 @@ const Poverty = (props: SpotLightTabDataQuery) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT IS THE STANDARD OF LIVING SCORE?
+            {stdOfLiving.title}
             {povertyTabRegional.stdOfLiving && povertyTabRegional.stdOfLiving.toolTip
               ? <TabsToolTip {...povertyTabRegional.stdOfLiving.toolTip} />
               : ''}

@@ -40,7 +40,7 @@ const Government = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {govtRevenueExternal.title ? govtRevenueExternal.title : ''}
+            {govtRevenueExternal.title}
             {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.toolTip
               ? <TabsToolTip {...governmentFinance.grantsAsPcOfRevenue.toolTip} />
               : ''}
@@ -54,7 +54,7 @@ const Government = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {ctryExpenditure.title ? ctryExpenditure.title : ''}
+            {ctryExpenditure.title}
             {governmentFinance.spendingAllocation && governmentFinance.spendingAllocation.toolTip
               ? <TabsToolTip {...governmentFinance.spendingAllocation.toolTip} />
               : ''}
