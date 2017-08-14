@@ -117,10 +117,10 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 ---------
 - [ ] Reduce service worker pre-cache bundle
 - [ ] Make webpack loader for coping over package.json version && api config into a separate config file
-- [ ] Get rid of proptypes in one of the lib folder files 
-- [ ] Fix semantic css build command
-- [ ] readd service worker
+- [ ] Get rid of proptypes in one of the lib folder files
+- [ ] re-add service worker
 - [ ] enable http2
+- [ ] fix broken less to Js script (we use it to get color values from semantic site globals)
 this will ensure we dont have the all package.json file in our client code budle
 
 

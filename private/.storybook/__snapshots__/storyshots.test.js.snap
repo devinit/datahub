@@ -238,7 +238,7 @@ exports[`Storyshots Bubble Charts Different Providers, Different Priorities 1`] 
             className="fifteen wide column"
           >
             <div
-              className="css-wew4w"
+              className="css-dnegyn"
             >
               <span
                 className="css-1ujcf02 bubble"
@@ -631,7 +631,7 @@ exports[`Storyshots Bubble Charts Poverty 1`] = `
             className="fifteen wide column"
           >
             <div
-              className="css-wew4w"
+              className="css-dnegyn"
             >
               <span
                 className="css-1ujcf02 bubble"
@@ -1024,7 +1024,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
             className="fifteen wide column"
           >
             <div
-              className="css-wew4w"
+              className="css-dnegyn"
             >
               <span
                 className="css-1ujcf02 bubble"
@@ -18644,7 +18644,7 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
 
 exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
 <div
-  className="css-wew4w"
+  className="css-dnegyn"
 >
   <span
     className="css-1ujcf02 bubble"
