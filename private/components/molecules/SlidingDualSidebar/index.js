@@ -8,20 +8,22 @@ import { LightBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/atoms/Chart';
 import YearSlider from '../YearSlider';
 
-export type Props = {
-  country: string,
-  startYear: number,
-  data: [], // TODO: should be flowData with API integration
-  config: any,
-};
 
-type State = {
+export type State = {
   data: Object,
   config: any,
   currentYear: number,
   currentYearData: any,
   inflowSum: number,
   outflowSum: number,
+};
+
+export type Props = {
+  country: string,
+  startYear: number,
+  data: [], // TODO: should be flowData with API integration
+  config: any,
+  cached?: State
 };
 
 class SlidingDualSidebar extends React.Component {
@@ -36,6 +38,8 @@ class SlidingDualSidebar extends React.Component {
     const scaleMaximum = Math.ceil(maximum / (10 ** (exponent - 1))) * (10 ** (exponent - 1));
 
     const types = props.data.reduce((map, datum) => {
+      // TODO: @ernest write some comments about what ~ does
+      // Lots of people dont know
       const key = `${datum.direction}~${datum.flow_type}~${datum.flow_category}~${datum.flow_name}`;
       return {
         ...map,
