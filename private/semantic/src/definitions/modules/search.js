@@ -143,17 +143,8 @@ $.fn.search = function(parameters) {
 
         event: {
           input: function() {
-            if(settings.searchDelay) {
-              clearTimeout(module.timer);
-              module.timer = setTimeout(function() {
-                if(module.is.focused()) {
-                  module.query();
-                }
-              }, settings.searchDelay);
-            }
-            else {
-              module.query();
-            }
+            clearTimeout(module.timer);
+            module.timer = setTimeout(module.query, settings.searchDelay);
           },
           focus: function() {
             module.set.focus();

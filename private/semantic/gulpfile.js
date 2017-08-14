@@ -42,7 +42,7 @@ gulp.task('default', false, [
 gulp.task('watch', 'Watch for site/theme changes', watch);
 
 gulp.task('build', 'Builds all files from source', build);
-gulp.task('build-javascript', 'Builds all javascript from source', buildJS);
+gulp.task('build-javascript', 'Builds all javascript from source', buildJS); // we dont need to build JS
 gulp.task('build-css', 'Builds all css from source', buildCSS);
 gulp.task('build-assets', 'Copies all assets from source', buildAssets);
 
@@ -51,6 +51,7 @@ gulp.task('version', 'Displays current version of Semantic', version);
 
 /*--------------
       Docs
+      we dont need to serve Docs
 ---------------*/
 
 /*
@@ -58,8 +59,8 @@ gulp.task('version', 'Displays current version of Semantic', version);
   https://github.com/Semantic-Org/Semantic-UI-Docs/
 */
 
-gulp.task('serve-docs', 'Serve file changes to SUI Docs', serveDocs);
-gulp.task('build-docs', 'Build all files and add to SUI Docs', buildDocs);
+// gulp.task('serve-docs', 'Serve file changes to SUI Docs', serveDocs);
+// gulp.task('build-docs', 'Build all files and add to SUI Docs', buildDocs);
 
 
 /*--------------

@@ -2,14 +2,3 @@
     User Variable Overrides
 *******************************/
 @fontWeight: 300;
-
-/* Button */
-@backgroundColor: #E0E1E2;
-
-
-/* Button defaults to using same height as input globally */
-@verticalPadding: @inputVerticalPadding;
-@horizontalPadding: 1.5em;
-
-/* Text */
-@textColor: rgba(0, 0, 0, 0.6);
