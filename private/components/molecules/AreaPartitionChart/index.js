@@ -39,7 +39,7 @@ class AreaPartitionChart extends React.Component {
 
   constructor(props: Props) {
     super(props);
-    this.state = props.cached ? props.cached : this.initState(props);
+    this.state = this.initState(props);
   }
   initState(props: Props) {
     return {
