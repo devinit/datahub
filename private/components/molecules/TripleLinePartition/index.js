@@ -65,7 +65,7 @@ export default class GovtRFE extends React.Component {
   constructor(props: Props) {
     super(props);
 
-    this.state = props.cached ? props.cached : this.calculateInitialState(props);
+    this.state = this.calculateInitialState(props);
   }
 
   componentWillReceiveProps(props: Props) {

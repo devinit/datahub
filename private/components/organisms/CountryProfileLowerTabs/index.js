@@ -14,6 +14,8 @@ import data from './data';
 
 type Props = {
   id: string,
+  startYear?: number,
+  flowId?: string
 };
 const getCountry = (slug): Country | void =>
   countriesData.countries.find(country => country.slug === slug);
@@ -28,7 +30,7 @@ export default (props: Props) => {
           pageData={pageData}
           countryName={country && country.name ? country.name : props.id}
         >
-          <GovernmentFinanceChart id={props.id} />
+          <GovernmentFinanceChart id={props.id} startYear={props.startYear} />
         </GovernmentFinance>
       </Pane>
       : ''
@@ -38,8 +40,8 @@ export default (props: Props) => {
         pageData={pageData}
         toolTip={data.internationalResources.resourcesOverTime.toolTip}
       >
-        <InflowsVsOutflows id={props.id} />
-        <InternationalResourcesChart id={props.id} />
+        <InflowsVsOutflows id={props.id} startYear={props.startYear} />
+        <InternationalResourcesChart id={props.id} flowId={props.flowId} />
       </InternationalResourcesLower>
     </Pane>
   </Tabs>
