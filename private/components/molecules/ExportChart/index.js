@@ -23,7 +23,7 @@ const ExportChart = () =>
     <Grid>
       <Grid.Row textAlign="right">
         <Grid.Column>
-          <ChartShare className="no-background" color="grey" size="medium" />
+          <ChartShare className="no-background" label="Share" color="grey" size="medium" />
           <Button className="no-background" size="medium"color="grey">
             <Icon name="print" />
           </Button>

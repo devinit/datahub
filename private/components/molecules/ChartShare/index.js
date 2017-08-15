@@ -36,7 +36,7 @@ const ChartShare = ({className, size, color, label }: Props) =>
     trigger={
       <Button className={className} size={size} color={color}>
         <Icon name="share alternate" />
-        <Span fontSize={'1.2em'}>{label || 'Share'}</Span>
+        <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
       </Button>
     }
     closeIcon="close"

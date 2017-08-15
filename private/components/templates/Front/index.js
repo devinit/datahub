@@ -7,8 +7,8 @@ import NoSSR from 'react-no-ssr';
 import { SectionHeader } from 'components/atoms/Header';
 import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import Map from 'components/organisms/Map';
-import CountrySeachInput from 'components/organisms/CountrySearchInput';
-import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
+import CountrySearchInput from 'components/organisms/CountrySearchInput';
+import GlobalPictureCountrySearch from 'components/molecules/GlobalPictureCountrySearch';
 import { red, white } from 'components/theme/semantic';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
@@ -23,9 +23,9 @@ type Props = {
 const front = (props: Props) => {
   return (
     <Generic>
-      <GlobalPictureCountrySeach>
-        <CountrySeachInput visible={false} profile={false} />
-      </GlobalPictureCountrySeach>
+      <GlobalPictureCountrySearch>
+        <CountrySearchInput visible={false} profile={false} />
+      </GlobalPictureCountrySearch>
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
           <Grid centered>
