@@ -65,7 +65,8 @@ const International = (props: Props) => {
           </HeaderTitle>
           <TabsP>
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.value
-              ? `${internationalResources.netODAOfGNIIn.value} of GNI`
+              && Number(internationalResources.netODAOfGNIIn.value)
+              ? `${internationalResources.netODAOfGNIIn.value}% of GNI`
               : NoData}
           </TabsP>
           <TabsFootNote>

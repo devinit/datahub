@@ -28,7 +28,7 @@ type TabsProps = {
 };
 
 const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading || !props.overviewTab || !props.populationTab) {
+  if (props.loading || !props.overviewTab) {
     return <LoadingPlaceholder loading={props.loading} />;
   }
   const pagesData = getCountryProfileData(props.variables.id);
@@ -49,21 +49,28 @@ const countryProfileTabs = (props: TabsProps) => {
           <Poverty pagesData={pagesData} config={povertyConfig} {...props} />
         </Pane>
         : ''}
-      <Pane label="Population" id={'population-tab'}>
-        <Population pagesData={pagesData} config={populationConfig} {...props} />
-      </Pane>
-      {countryType === RECIPIENT
-        ? <Pane label="Government Finance" id={'govt-finance-tab'}>
+      {
+        props.populationTab ?
+          <Pane label="Population" id={'population-tab'}>
+            <Population pagesData={pagesData} config={populationConfig} {...props} />
+          </Pane> : ''
+      }
+
+      {countryType === RECIPIENT && props.governmentFinance ?
+        <Pane label="Government Finance" id={'govt-finance-tab'}>
           <GovernmentFinance pagesData={pagesData} config={govtFinanceConfig} {...props} />
         </Pane>
         : ''}
-      <Pane label="International Resources" id={'internantion-reseources-tab'}>
-        <InternationalResources
-          pagesData={pagesData}
-          config={internationalResourcesConfig}
-          {...props}
-        />
-      </Pane>
+      {
+        props.internationalResources ?
+          <Pane label="International Resources" id={'internantion-reseources-tab'}>
+            <InternationalResources
+              pagesData={pagesData}
+              config={internationalResourcesConfig}
+              {...props}
+            />
+          </Pane> : ''
+      }
     </Tabs>
   );
 };
