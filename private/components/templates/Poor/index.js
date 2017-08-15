@@ -6,6 +6,11 @@ import Visualization from 'components/molecules/whereAreThePoorViz';
 import Generic from '../Generic';
 import data from './data';
 
+const StyledPre = glamorous.pre({
+  fontFamily: 'inherit',
+  fontSize: '1em',
+  overflow: 'hidden'
+});
 const HeaderContainer = glamorous.div({
   paddingTop: '4em',
   paddingBottom: '0em',
@@ -24,7 +29,7 @@ export default () => {
           <Header as="h1">
             <Header.Content>
               Where are the poor and where will they be?
-              <Header.Subheader>{data.subHeader}</Header.Subheader>
+              <Header.Subheader><StyledPre>{data.subHeader}</StyledPre></Header.Subheader>
             </Header.Content>
           </Header>
         </HeaderContainer>
@@ -38,6 +43,7 @@ export default () => {
               <p>
                 {data.abtVisualization}
               </p>
+              {data.dateAccessed}
               <Header as="h3">Scenario details</Header>
               <p>
                 {data.scenarioDetails}
@@ -46,6 +52,7 @@ export default () => {
               <p>
                 {data.aboutData}
               </p>
+              <br />
             </Grid.Column>
             <Grid.Column computer="4" tablet="16" mobile="16">
               <Header as="h3">Download the data</Header>
