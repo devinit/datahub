@@ -289,6 +289,10 @@ export type ResourcesOverTimeQuery = {|
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
     resourcesOverTime: ? {|
+      toolTip: ? {|
+        source: ?string,
+        heading: ?string,
+      |},
       data: ? Array< {|
         year: number,
         value: number,
@@ -599,6 +603,18 @@ export type CountriesQuery = {|
     name: ?string,
     slug: ?string,
     countryType: ?string,
+  |} >,
+|};
+
+export type DistrictsQueryVariables = {|
+  country: string,
+|};
+
+export type DistrictsQuery = {|
+  districts: ? Array< {|
+    id: ?string,
+    name: ?string,
+    slug: ?string,
   |} >,
 |};
 

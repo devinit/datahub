@@ -9,8 +9,7 @@ import {getCountryName} from 'lib/utils';
 import QUERY from './query.graphql';
 
 type WrapperProps = Props & {
-  loading: boolean,
-  name: string
+  loading: boolean
 };
 
 const internationalResourcesChartWrapper = (props: WrapperProps) => {
@@ -20,7 +19,7 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
       startYear={props.startYear}
       data={props.data}
       config={config}
-      country={props.name}
+      country={props.country}
     />
   );
 };
@@ -37,7 +36,7 @@ const withData = graphql(QUERY, {
     return loading || !data.internationalResources
       ? { loading }
       : {
-        name: getCountryName(data.variables.id),
+        country: getCountryName(data.variables.id),
         startYear: data.internationalResources.startYear,
         data: data.internationalResources.resourcesOverTime.data.map(d => ({
           ...d,
