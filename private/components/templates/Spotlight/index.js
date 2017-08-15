@@ -8,6 +8,7 @@ import { SectionHeader } from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
 import Map from 'components/organisms/Map';
 import { connect } from 'react-redux';
+import NoSSR from 'react-no-ssr';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 
@@ -38,7 +39,9 @@ const spotlight = () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      <Map pathName={'spotlight'} /> : <MapBackground />
+      <NoSSR onSSR={<MapBackground />} >
+        <Map pathName="spotlight" />
+      </NoSSR>
       {/* {props.rehydrated || process.storybook ? <Map pathName={'spotlight'} /> : <MapBackground />} */}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>

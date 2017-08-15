@@ -1,44 +1,49 @@
 // @flow
-import { Header, Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import React from 'react';
-import { P, Div } from 'glamorous';
-import TabsNoData from 'components/atoms/TabsNoData';
+import { Div } from 'glamorous';
+import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import Chart from 'components/atoms/Chart';
-import { big } from 'components/theme';
 import { NoData } from 'lib/utils/constants';
-import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
 type Props = {
   ...TabDataQuery,
   config: any,
+  pagesData: PageUnit[],
 };
 
 const Population = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pagesData);
+  const popnCtry = getPageLine('popn-ctry');
+  const popnDistribution = getPageLine('popn-distribution');
+  const popnDistributionAgeCtry = getPageLine('popn-distribution-age-ctry');
   if (!props.populationTab) throw new Error('No Population data');
   const populationTab = props.populationTab;
   return (
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header textAlign="center" as="h3">
-          WHAT IS THE POPULATION?
+        <HeaderTitle>
+          {popnCtry.title }
           {populationTab.population && populationTab.population.toolTip
             ? <TabsToolTip {...populationTab.population.toolTip} />
             : ''}
-        </Header>
-        <P fontSize={big} fontWeight={'bold'} color={red}>
+        </HeaderTitle>
+        <TabsP>
           {populationTab.population && populationTab.population.value
             ? populationTab.population.value
             : NoData}
-        </P>
+        </TabsP>
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header textAlign="center" as="h3">
-          WHAT IS THE URBAN VS RURAL SPLIT?
+        <HeaderTitle>
+          {popnDistribution.title }
           {populationTab.populationDistribution && populationTab.populationDistribution.toolTip
             ? <TabsToolTip {...populationTab.populationDistribution.toolTip} />
             : ''}
-        </Header>
+        </HeaderTitle>
         {populationTab.populationDistribution &&
         populationTab.populationDistribution.data &&
         populationTab.populationDistribution.data.length
@@ -53,12 +58,12 @@ const Population = (props: Props) => {
       </Grid.Column>
 
       <Grid.Column computer={5} tablet={16} mobile={16}>
-        <Header textAlign="center" as="h3">
-          WHAT IS THE AGE PROFILE?
+        <HeaderTitle>
+          {popnDistributionAgeCtry.title }
           {populationTab.populationPerAgeBand && populationTab.populationPerAgeBand.toolTip
             ? <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} />
             : ''}
-        </Header>
+        </HeaderTitle>
         {populationTab.populationPerAgeBand &&
         populationTab.populationPerAgeBand.data &&
         populationTab.populationPerAgeBand.data.length

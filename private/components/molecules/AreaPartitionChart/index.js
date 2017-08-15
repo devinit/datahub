@@ -9,14 +9,7 @@ import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
-export type Props = {
-  country: string,
-  data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
-  config: any,
-  startYear: number,
-};
-
-type State = {
+export type State = {
   directions: Object[],
   flows: Object[],
 
@@ -26,6 +19,13 @@ type State = {
 
   trend: Object[],
   mixes: Object,
+};
+export type Props = {
+  country: string,
+  data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
+  config: any,
+  startYear: number,
+  cached?: State
 };
 
 type Determinant = {
@@ -39,8 +39,10 @@ class AreaPartitionChart extends React.Component {
 
   constructor(props: Props) {
     super(props);
-
-    this.state = {
+    this.state = props.cached ? props.cached : this.initState(props);
+  }
+  initState(props: Props) {
+    return {
       year: this.props.startYear.toString(),
 
       ...this.calculateState({
@@ -80,7 +82,6 @@ class AreaPartitionChart extends React.Component {
       ],
     };
   }
-
   setYear(year: string) {
     this.setState({ year });
   }

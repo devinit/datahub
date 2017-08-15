@@ -1,0 +1,12 @@
+query PageData {
+  countryProfile: countryProfilePageData {
+    id
+    title
+    narrative
+  }
+  spotlightDistrict: districtPageData {
+    id
+    title
+    narrative
+  }
+}

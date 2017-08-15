@@ -73,20 +73,27 @@ class SearchInput extends React.Component {
     if (filteredCountries.length) this.setState({ countries: filteredCountries });
   }
   onBlur() {
-    if (!this.setState) {
+    if (this.setState) {
       this.onBlurTimer = setTimeout(() => {
         this.resetState();
-      }, 500);
+      }, 200);
     }
+  }
+  onCaretDownClick() {
+    this.setState({...this.resetState(), showList: true});
+    this.textInput.focus();
+    // console.log(this.textInput);
   }
   onSubmit() {
     const country: Country | void = this.state.countries[0] || null;
     if (!country) return false;
     // reset state
     this.resetState();
+    this.textInput.blur();
     if (this.props.onSelected) return this.props.onSelected(country.slug);
     return Router.push(`/country?id=${country.slug}`, `/country/${country.slug}`);
   }
+  textInput: HTMLInputElement
   resetState() {
     this.setState({
       value: '',
@@ -110,7 +117,7 @@ class SearchInput extends React.Component {
           {this.props.profile
             ? <H1 flex={'0 1'} textTransform="capitalize">
               {this.props.placeholder}
-              <Icon name="caret down" />
+              <Icon name="caret down" onClick={() => this.onCaretDownClick()} />
             </H1>
             : ''}
           <Input
@@ -118,6 +125,7 @@ class SearchInput extends React.Component {
             profile={this.props.profile}
             placeholder={this.props.profile ? '' : this.props.placeholder}
             onBlur={() => this.onBlur()}
+            innerRef={input => { this.textInput = input; }}
             onFocus={() => this.setState({ showList: true })}
             onChange={e => this.onChange(e.target.value)}
             onKeyDown={e => this.onKeyDown(e)}

@@ -2,6 +2,7 @@
 
 exports[`pull api data tests should return countries used in country search input 1`] = `
 "Object {
+  \\"countryType\\": \\"recipient\\",
   \\"id\\": \\"afghanistan\\",
   \\"name\\": \\"Afghanistan\\",
   \\"slug\\": \\"afghanistan\\",

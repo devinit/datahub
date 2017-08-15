@@ -5,9 +5,20 @@ import { P } from 'glamorous';
 import { big } from 'components/theme';
 import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 import { NoData } from 'lib/utils/constants';
 
-const Overview = (props: SpotLightTabDataQuery) => {
+type Props = {
+  ...SpotLightTabDataQuery,
+  pageData: PageUnit[]
+}
+
+const Overview = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pageData);
+  const overviewDistrictPoverty = getPageLine('overview-district-poverty');
+  const overviewResources = getPageLine('overview-resources');
+  const govtSpendPerPerson = getPageLine('govt-spend-per-person');
   if (!props.overviewTabRegional) throw new Error('regional overview data is missing');
   const overviewTabRegional = props.overviewTabRegional;
   return (
@@ -15,7 +26,7 @@ const Overview = (props: SpotLightTabDataQuery) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT PERCENTAGE OF PEOPLE IN BUIKWE LIVE BELOW THE NATIONAL POVERTY LINE?
+            {overviewDistrictPoverty.title}
             {overviewTabRegional.poorestPeople && overviewTabRegional.poorestPeople.toolTip
               ? <TabsToolTip {...overviewTabRegional.poorestPeople.toolTip} />
               : ''}
@@ -29,7 +40,7 @@ const Overview = (props: SpotLightTabDataQuery) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN BUIKWE?
+            {overviewResources.title}
             {overviewTabRegional.regionalResources && overviewTabRegional.regionalResources.toolTip
               ? <TabsToolTip {...overviewTabRegional.regionalResources.toolTip} />
               : ''}
@@ -43,7 +54,7 @@ const Overview = (props: SpotLightTabDataQuery) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
+            {govtSpendPerPerson.title}
             {overviewTabRegional.localGovernmentSpendPerPerson &&
             overviewTabRegional.localGovernmentSpendPerPerson.toolTip
               ? <TabsToolTip {...overviewTabRegional.localGovernmentSpendPerPerson.toolTip} />

@@ -1,10 +1,12 @@
 FROM node:8
 
+LABEL maintainer="epicallan.al@gmail.com"
+
 RUN mkdir /src
 
 # Provides cached layer for node_modules
 
-ADD package.json /tmp/
+COPY package.json /tmp/
 RUN cd /tmp && npm install --production --silent
 RUN cp -a /tmp/node_modules /src/
 
@@ -14,8 +16,9 @@ COPY . /src
 WORKDIR /src
 
 ENV NODE_ENV production
-RUN npm run build && npm run pull
 
-EXPOSE 9090
+RUN npm run build
+
+EXPOSE 9999
 
 CMD npm run start

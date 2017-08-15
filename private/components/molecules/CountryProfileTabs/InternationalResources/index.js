@@ -1,17 +1,17 @@
 // @flow
-import { Container, Grid, Header } from 'semantic-ui-react';
+import { Container, Grid} from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
-import { P } from 'glamorous';
-import { big } from 'components/theme';
-import { red } from 'components/theme/semantic';
-import TabsNoData from 'components/atoms/TabsNoData';
+import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import { NoData } from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
 type Props = {
   ...TabDataQuery,
   config: any,
+  pagesData: PageUnit[],
 };
 // TODO: move to separate file
 const getResourcesOverTime = (data: any[]) =>
@@ -43,6 +43,10 @@ const getResourcesOverTime = (data: any[]) =>
     .reduce((_, d) => d);
 
 const International = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pagesData);
+  const shareGniAllocatedToCtry = getPageLine('share-gni-allocated-to-ctry');
+  const resourceInflow = getPageLine('resource-inflow');
+  const mixtureOfResources = getPageLine('mixture-of-resources');
   if (!props.internationalResources) throw new Error('No international resources data');
   const internationalResources = props.internationalResources;
   const resourcesOverTime =
@@ -53,33 +57,34 @@ const International = (props: Props) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
-            AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO UGANDA?
+          <HeaderTitle>
+            {shareGniAllocatedToCtry.title}
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.toolTip
               ? <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.value
-              ? `${internationalResources.netODAOfGNIIn.value} of GNI`
+              && Number(internationalResources.netODAOfGNIIn.value)
+              ? `${internationalResources.netODAOfGNIIn.value}% of GNI`
               : NoData}
-          </P>
-          <p>
+          </TabsP>
+          <TabsFootNote>
             Gross national income is{' '}
             {internationalResources.GNI && internationalResources.GNI.value
               ? internationalResources.GNI.value
               : NoData}
-          </p>
+          </TabsFootNote>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
-            HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?
+          <HeaderTitle>
+            {resourceInflow.title }
             {internationalResources.resourcesOverTime &&
             internationalResources.resourcesOverTime.toolTip
               ? <TabsToolTip {...internationalResources.resourcesOverTime.toolTip} />
               : ''}
-          </Header>
+          </HeaderTitle>
           {resourcesOverTime
             ? <Chart
               config={props.config.resourcesOverTime}
@@ -90,12 +95,12 @@ const International = (props: Props) => {
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
-            WHAT’S THE MIX OF RESOURCES?
+          <HeaderTitle>
+            {mixtureOfResources.title}
             {internationalResources.mixOfResources && internationalResources.mixOfResources.toolTip
               ? <TabsToolTip {...internationalResources.mixOfResources.toolTip} />
               : ''}
-          </Header>
+          </HeaderTitle>
           {internationalResources.mixOfResources && internationalResources.mixOfResources.data
             ? <Chart
               config={props.config.mixOfResources}

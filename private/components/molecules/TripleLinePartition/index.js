@@ -9,20 +9,6 @@ import TreeChart from '../../atoms/TreeChart/index';
 import Timeline from '../../atoms/Timeline/index';
 import { LightBg } from '../../atoms/Backgrounds';
 
-type Props = {
-  currencyCode: string,
-  loading: boolean,
-  startYear: number,
-  revenueAndGrants: Object[],
-  finance: Object[],
-  expenditure: Object[],
-  data: [],
-  config: {
-    line: {},
-    partition: {},
-  },
-};
-
 type State = {
   year: number,
   budgetTypes: [string],
@@ -38,6 +24,20 @@ type State = {
   revenueTree: Object[],
   financeTree: Object[],
   expenditureTree: Object[],
+};
+type Props = {
+  currencyCode: string,
+  loading: boolean,
+  startYear: number,
+  revenueAndGrants: Object[],
+  finance: Object[],
+  expenditure: Object[],
+  data: [],
+  config: {
+    line: {},
+    partition: {},
+  },
+  cached?: State
 };
 
 const CardContainer = glamorous.div({
@@ -65,7 +65,7 @@ export default class GovtRFE extends React.Component {
   constructor(props: Props) {
     super(props);
 
-    this.state = this.calculateInitialState(props);
+    this.state = props.cached ? props.cached : this.calculateInitialState(props);
   }
 
   componentWillReceiveProps(props: Props) {

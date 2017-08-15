@@ -34,7 +34,7 @@ const getGroupsVariables = R.curry((groupNames, lines) => {
     });
     return acc;
   }, {});
-}); // [ {font: []}, {brand: []}]
+});
 
 const getSiteAndThemeGroupVars = groups =>
   R.compose(R.map(getGroupsVariables(groups)), R.map(R.split('\n')));
@@ -113,7 +113,7 @@ const evaluateToCssClasses = styles =>
   new Promise((resolve, reject) => {
     less.render(styles, { fileName: 'logs.less' }, (err, output) => {
       output ? resolve(output.css) : resolve('output error');
-      if (err) console.log(err);
+      if (err) console.log('less evaluation error: ', err);
       reject(err);
     });
   });
@@ -154,16 +154,15 @@ const main = async ({ theme = 'default', whiteList = [], blackList = [] }) => {
   const siteVarsRaw = await fs.readFile(path.resolve(sitePath, 'globals/site.variables'), 'utf8');
   const variableLines = getWantedVariableLines(themeVarsRaw, siteVarsRaw, whiteList, blackList);
   const lessStyles = processToUnevalutedCss(variableLines);
-  const newCss = await evaluateToCssClasses(lessStyles);
   // console.log(lessStyles);
   return run(lessStyles).then(() => console.log('success!')).catch(error => console.error(error));
 };
 // TODO: make CLI
 // pass in a theme and the types of global variables you want to capture
-// The typle of global variables we are capturing by default
+// The type of global variables we are capturing by default
 if (process.env.NODE_ENV !== 'test') {
   main({
-    whiteList: ['Site Colors', 'Brand Colors', 'Sizes'],
+    whiteList: ['Site Colors', 'Brand Colors'],
   });
 }
 

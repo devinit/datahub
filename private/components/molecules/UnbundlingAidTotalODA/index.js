@@ -1,8 +1,12 @@
+// @flow
 import React from 'react';
 import glamorous from 'glamorous';
 import { white, primaryColor, black } from 'components/theme/semantic';
 import { Header, Button } from 'semantic-ui-react';
 
+type Props = {
+  onClickHandler: () => void
+}
 const ParentContainer = glamorous.div({
   height: '32em',
   padding: '1em',
@@ -41,7 +45,7 @@ const Container = glamorous.div({
   },
 });
 
-const UnbundlingAidTotalODA = () =>
+const UnbundlingAidTotalODA = (props: Props) =>
   (<ParentContainer>
     <div style={{ position: 'relative' }}>
       <Container>
@@ -51,7 +55,7 @@ const UnbundlingAidTotalODA = () =>
         <Header as="h5">
           Official development assistance (total gross disbursements, 2015 prices)
         </Header>
-        <Button>Explore</Button>
+        <Button onClick={() => props.onClickHandler()}>Explore</Button>
       </Container>
     </div>
   </ParentContainer>);

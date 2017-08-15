@@ -5,6 +5,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
 import COUNTRIES_QUERY from './queries/Countries.graphql';
+import DISTRICT_QUERY from './queries/Districts.graphql';
+import PAGES_DATA_QUERY from './queries/PageData.graphql';
 import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 
@@ -72,6 +74,16 @@ export const getCountries = async () => {
   }
 };
 
+export const getDistricts = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'CountrySearchInput/ug-data.js');
+    const variables = { country: 'uganda' };
+    await getAndWriteData({ query: DISTRICT_QUERY, filePath, variables});
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const getGlobalPictureThemes = async () => {
   try {
     const filePath = path.join(baseOrganismsPath, 'GlobalPictureNavTabs/data.js');
@@ -90,9 +102,18 @@ export const getSpotlightThemes = async () => {
     console.error(error);
   }
 };
-
+export const getPagesData = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'pagesData/data.js');
+    await getAndWriteData({ query: PAGES_DATA_QUERY, filePath});
+  } catch (error) {
+    console.error(error);
+  }
+};
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
+  getDistricts();
   getGlobalPictureThemes();
   getSpotlightThemes();
+  getPagesData();
 }

@@ -30,8 +30,8 @@ const LoaderContainer = glamorous.div(
 export default class LoadingBar extends Component {
   constructor(props: Props) {
     super(props);
-    this.timeChange = 500;
-    this.percentChange = 10;
+    this.timeChange = 1000;
+    this.percentChange = 20;
     this.state = { percent: 0, time: 0 };
   }
   state: State;
@@ -39,7 +39,7 @@ export default class LoadingBar extends Component {
     if (this.props.loading && this.setState) this.launch();
     this.timeOutInterval = setTimeout(() => {
       if (this.progressInterval) clearInterval(this.progressInterval);
-    }, this.timeChange * 9);
+    }, this.timeChange * 4);
   }
   componentWillReceiveProps(props: Props) {
     if (!props.loading) {

@@ -1,8 +1,14 @@
 {
   "name": "datahub",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "config": {
-    "api": "https://datahub-api-zqipxntyzn.now.sh/graphql"
+    "api": "https://datahub-api-tjhathcygt.now.sh/graphql"
+  },
+  "now": {
+    "name": "datahub",
+    "env": {
+      "NODE_ENV": "production"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,13 +27,14 @@
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
+    "analyze": "ANALYZE=1 next build",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",
     "build-storybook": "BABEL_ENV=production build-storybook -c private/.storybook -s public -o .out",
-    "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js && npm run lessToJs",
+    "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js",
     "build-theme-w": "gulp watch --gulpfile ./private/semantic/gulpfile.js",
     "qql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
-    "gql-flow": "apollo-codegen generate private/**/*.graphql --schema schema.json --target flow --output types/schema.flow.js",
+    "gql-flow": "apollo-codegen generate **/*.graphql --schema schema.json --target flow --output types/schema.flow.js",
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },
   "peerDependencies": {
@@ -40,18 +47,20 @@
     "apollo-fetch": "^0.6.0",
     "approximate-number": "^2.0.0",
     "babel-cli": "^6.24.1",
+    "babel-plugin-glamorous-displayname": "^1.1.3",
     "babel-plugin-inline-import-graphql-ast": "^2.0.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-async-generator-functions": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
     "compression": "^1.6.2",
-    "css-loader": "^0.28.4",
     "d3": "^4.9.1",
+    "dragdealer": "^0.9.9",
     "express": "^4.15.3",
     "glamor": "^2.20.25",
     "glamorous": "^4.1.0",
     "graphql": "^0.10.3",
+    "intersection-observer": "^0.4.0",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
     "lru-cache": "^4.1.1",
@@ -59,16 +68,17 @@
     "next": "^3.0.1",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
-    "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-apollo": "^1.4.8",
     "react-dom": "^15.6.1",
+    "react-intersection-observer": "^1.0.0",
     "react-no-ssr": "^1.1.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
     "redux-persist": "^4.8.1",
     "semantic-ui-react": "^0.71.1",
-    "sw-precache-webpack-plugin": "^0.11.4"
+    "sw-precache-webpack-plugin": "^0.11.4",
+    "webpack-bundle-analyzer": "^2.9.0"
   },
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
@@ -105,7 +115,7 @@
     "usus": "^1.6.0"
   },
   "git-pre-hooks": {
-     "pre-push": [
+    "pre-push": [
       "npm run lint",
       "npm run test -- -u"
     ]

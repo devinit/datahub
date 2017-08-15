@@ -7,8 +7,8 @@ import NoSSR from 'react-no-ssr';
 import { SectionHeader } from 'components/atoms/Header';
 import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import Map from 'components/organisms/Map';
-import CountrySeachInput from 'components/organisms/CountrySearchInput';
-import GlobalPictureCountrySeach from 'components/molecules/GlobalPictureCountrySearch';
+import CountrySearchInput from 'components/organisms/CountrySearchInput';
+import GlobalPictureCountrySearch from 'components/molecules/GlobalPictureCountrySearch';
 import { red, white } from 'components/theme/semantic';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
@@ -23,9 +23,9 @@ type Props = {
 const front = (props: Props) => {
   return (
     <Generic>
-      <GlobalPictureCountrySeach>
-        <CountrySeachInput visible={false} profile={false} />
-      </GlobalPictureCountrySeach>
+      <GlobalPictureCountrySearch>
+        <CountrySearchInput visible={false} profile={false} />
+      </GlobalPictureCountrySearch>
       <Container>
         <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
           <Grid centered>
@@ -41,7 +41,7 @@ const front = (props: Props) => {
       </Container>
       <div style={{ position: 'relative' }}>
         <GlobalPictureNavTabs />
-        <NoSSR loading={<MapBackground />} >
+        <NoSSR onSSR={<MapBackground />} >
           <Map pathName={props.pathName} />
         </NoSSR>
         {/* {props.rehydrated || process.storybook
@@ -85,7 +85,7 @@ const front = (props: Props) => {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="12">
-              <NoSSR loading={<P textAlign={'center'}>Loading...</P>}>
+              <NoSSR onSSR={<P textAlign={'center'}>Loading...</P>}>
                 <iframe
                   src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
                   title="About Datahub"

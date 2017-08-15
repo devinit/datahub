@@ -1,5 +1,4 @@
 // server precache module
-const countriesData = require('../../components/organisms/CountrySearchInput/data');
 const fetch = require('isomorphic-fetch');
 const pagesToPreCache = require('./pages');
 
@@ -7,10 +6,7 @@ const PORT = process.env.PORT || 4444;
 
 const preCache = () => {
   const homeLink = `http://localhost:${PORT}`;
-  const countrySlugs = countriesData.countries.map(country => `/country/${country.slug}`);
-  // for batch precaching of country pages
-  const preCacheList = pagesToPreCache.concat(countrySlugs);
-  preCacheList.forEach(link => {
+  pagesToPreCache.concat(['/country/uganda']).forEach(link => {
     setTimeout(() => {
       fetch(`${homeLink}${link}`)
         .then(response => {
@@ -19,7 +15,7 @@ const preCache = () => {
           return console.error(`${link} was not found or bad response`);
         })
         .catch(error => console.error(error.message));
-    }, 20000);
+    }, 10000);
   });
 };
 

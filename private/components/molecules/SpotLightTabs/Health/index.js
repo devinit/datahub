@@ -6,8 +6,19 @@ import { big } from 'components/theme';
 import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
 
-const Health = (props: SpotLightTabDataQuery) => {
+type Props = {
+  ...SpotLightTabDataQuery,
+  pageData: PageUnit[]
+}
+
+const Health = (props: Props) => {
+  const getPageLine = getPageUnitById(props.pageData);
+  const healthPerformance = getPageLine('health-performance');
+  const caseOfTb = getPageLine('case-of-tb');
+  const healthCareFunding = getPageLine('health-care-funding');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   const healthTabRegional = props.healthTabRegional;
   return (
@@ -15,7 +26,7 @@ const Health = (props: SpotLightTabDataQuery) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
+            {healthPerformance.title}
             {healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.toolTip
               ? <TabsToolTip {...healthTabRegional.districtPerformance.toolTip} />
               : ''}
@@ -34,7 +45,7 @@ const Health = (props: SpotLightTabDataQuery) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
+            {caseOfTb.title}
             {healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.toolTip
               ? <TabsToolTip {...healthTabRegional.treatmeantOfTb.toolTip} />
               : ''}
@@ -48,7 +59,7 @@ const Health = (props: SpotLightTabDataQuery) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <Header textAlign="center" as="h3">
-            HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
+            {healthCareFunding.title}
             {healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.toolTip
               ? <TabsToolTip {...healthTabRegional.healthCareFunding.toolTip} />
               : ''}
