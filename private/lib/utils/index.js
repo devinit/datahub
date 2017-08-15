@@ -15,3 +15,11 @@ export const getDistrictName = (slug: string, country: string): string => {
   if (district && district.name) return district.name;
   return slug;
 };
+
+export const printDiv = (divId: string) => {
+  const printContents = document.getElementById(divId).innerHTML;
+  const originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.print();
+  document.body.innerHTML = originalContents;
+};
