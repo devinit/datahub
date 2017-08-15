@@ -9,6 +9,8 @@ import type { Element } from 'react';
 type Props = {
   children: Element<any>,
   label: string,
+  // tab to focus on i.e scroll to
+  'data-focus'?: boolean, // why weird name: read https://facebook.github.io/react/warnings/unknown-prop.html
   id: string, // for id prop. react requirement
 };
 

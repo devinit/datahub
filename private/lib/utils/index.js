@@ -8,6 +8,9 @@ export const getCountryName = (slug: string): string => {
   return slug;
 };
 
+export const getCountry = (slug: string): Country | void =>
+  countriesData.countries.find(country => country.slug === slug);
+
 export const getDistrictName = (slug: string, country: string): string => {
   // TODO: handle spotlight kenya
   if (country !== 'uganda') throw new Error('we are only dealing with spotlight uganda for now');
