@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
-import { white, black} from 'components/theme/semantic';
+import { white, black, lightSecondaryColor} from 'components/theme/semantic';
 import glamorous, { Div, Span } from 'glamorous';
 
 const Container = glamorous.div({
@@ -22,22 +22,31 @@ const Container = glamorous.div({
     border: `2px solid ${black}`,
   },
 });
-
+const ButtonWrapper = glamorous.span({
+}, (props) => ({
+  '& button': {
+    backgroundColor: props.background ? 'inherit' : 'transparent !important',
+    color: props.background ? 'inherit' : `${lightSecondaryColor} !important`,
+  }
+}));
 type Props = {
   size: string,
   color: string,
   backgroundColor?: string,
   label?: string,
-  className?: string
+  className?: string,
+  background?: boolean,
 };
 
-const ChartShare = ({className, size, color, label }: Props) =>
+const ChartShare = ({className, size, color, label, background }: Props) =>
   (<Modal
     trigger={
-      <Button className={className} size={size} color={color}>
-        <Icon name="share alternate" />
-        <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
-      </Button>
+      <ButtonWrapper background={background}>
+        <Button className={className} size={size} color={color}>
+          <Icon name="share alternate" />
+          <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
+        </Button>
+      </ButtonWrapper>
     }
     closeIcon="close"
   >
@@ -57,5 +66,9 @@ const ChartShare = ({className, size, color, label }: Props) =>
       </Modal.Description>
     </Modal.Content>
   </Modal>);
+
+ChartShare.defaultProps = {
+  background: true
+};
 
 export default ChartShare;
