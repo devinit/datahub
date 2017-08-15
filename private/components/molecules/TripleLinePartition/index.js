@@ -126,6 +126,8 @@ export default class GovtRFE extends React.Component {
 
     this.setState({
       year,
+      budgetType,
+      budgetTypes,
       revenueTree: this.calculateTree(revenueTrend, year, budgetType, currency),
       financeTree: this.calculateTree(financeTrend, year, budgetType, currency),
       expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency),
