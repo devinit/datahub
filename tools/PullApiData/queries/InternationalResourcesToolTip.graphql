@@ -1,0 +1,10 @@
+query ResourcesOverTime($id: String!) {
+  internationalResources(id: $id) {
+    resourcesOverTime {
+      toolTip {
+        heading
+        source
+      }
+    }
+  }
+}
