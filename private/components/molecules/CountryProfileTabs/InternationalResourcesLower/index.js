@@ -6,11 +6,13 @@ import { white } from 'components/theme/semantic';
 import ChartShare from 'components/molecules/ChartShare';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
+import TabsToolTip from 'components/molecules/TabsToolTip';
 import { SectionHeader } from 'components/atoms/Header';
 
 type Props = {
   children: any[],
-  pageData: PageUnit[]
+  pageData: PageUnit[],
+  toolTip: { source?: string, heading?: string}
 }
 
 const InternationalResources = (props: Props) => {
@@ -27,7 +29,10 @@ const InternationalResources = (props: Props) => {
               INFLOWS <span>VS</span> OUTFLOWS
             </SectionHeader>
             <TextBlock>{textBlockA1 ? textBlockA1.title : ''}</TextBlock>
-            <TextBlock>{textBlockA2 ? textBlockA2.title : ''}</TextBlock>
+            <TextBlock>
+              {textBlockA2 ? textBlockA2.title : ''}
+              <TabsToolTip {...props.toolTip} color="grey" />
+            </TextBlock>
             {props.children[0]}
           </Grid.Column>
         </Grid.Row>

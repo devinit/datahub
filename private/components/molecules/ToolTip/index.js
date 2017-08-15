@@ -9,6 +9,7 @@ const HeaderContainer = glamourous.div({
 });
 type Props = {
   children: any,
+  color?: string,
   trigger: Element<any>,
 };
 type State = {
@@ -42,7 +43,7 @@ class ToolTip extends React.Component {
       >
         <Popup.Header>
           <HeaderContainer>
-            <Icon name="close" onClick={this.handleClose} />
+            <Icon name="close" onClick={this.handleClose} color={this.props.color || 'black'} />
           </HeaderContainer>
         </Popup.Header>
         <Popup.Content>

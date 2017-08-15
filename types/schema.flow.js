@@ -285,28 +285,13 @@ export type ResourcesOverTimeQueryVariables = {|
 
 export type ResourcesOverTimeQuery = {|
   internationalResources: ? {|
-    startYear: ?number,
     // for sidebar chart in international resources section & area partition tree chart default data
     // & line chart in the  tabs section
     resourcesOverTime: ? {|
       toolTip: ? {|
-        source: ?string,
         heading: ?string,
+        source: ?string,
       |},
-      data: ? Array< {|
-        year: number,
-        value: number,
-        flow_name: string,
-        // Category i.e FDI, ODA
-        flow_category: ?string,
-        // flow either inflow or outflow
-        flow_type: ?string,
-        // i.e contains flow type as 1st level, flow category as second and flow name as 3rd
-        // levels: [String]
-        // in or out
-        direction: ?string,
-        color: ?string,
-      |} >,
     |},
   |},
 |};

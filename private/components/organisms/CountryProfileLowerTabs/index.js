@@ -10,6 +10,7 @@ import countriesData from 'components/organisms/CountrySearchInput/data';
 import InternationalResourcesLower from 'components/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
 import {getCountryProfileData} from 'components/organisms/PagesData';
+import data from './data';
 
 type Props = {
   id: string,
@@ -27,15 +28,18 @@ export default (props: Props) => {
           pageData={pageData}
           countryName={country && country.name ? country.name : props.id}
         >
-          <GovernmentFinanceChart startYear={2015} id={props.id} />
+          <GovernmentFinanceChart id={props.id} />
         </GovernmentFinance>
       </Pane>
       : ''
     }
     <Pane label="INTERNATIONAL RESOURCES" id={'international-resources-lower'}>
-      <InternationalResourcesLower pageData={pageData}>
+      <InternationalResourcesLower
+        pageData={pageData}
+        toolTip={data.internationalResources.resourcesOverTime.toolTip}
+      >
         <InflowsVsOutflows id={props.id} />
-        <InternationalResourcesChart id={props.id} startYear={2015} />
+        <InternationalResourcesChart id={props.id} />
       </InternationalResourcesLower>
     </Pane>
   </Tabs>
