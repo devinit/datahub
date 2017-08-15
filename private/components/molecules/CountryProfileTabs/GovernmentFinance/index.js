@@ -47,7 +47,8 @@ const Government = (props: Props) => {
           </HeaderTitle>
           <TabsP>
             {governmentFinance.grantsAsPcOfRevenue && governmentFinance.grantsAsPcOfRevenue.value
-              ? `${governmentFinance.grantsAsPcOfRevenue.value}%`
+            && Number(governmentFinance.grantsAsPcOfRevenue.value) ?
+              `${governmentFinance.grantsAsPcOfRevenue.value}%`
               : NoData}
           </TabsP>
         </Grid.Column>

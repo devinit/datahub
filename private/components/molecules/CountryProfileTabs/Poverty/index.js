@@ -32,6 +32,7 @@ const Poverty = (props: Props) => {
               : ''}
           </HeaderTitle>
           {povertyTab.poverty190Trend && povertyTab.poverty190Trend.data
+            && povertyTab.poverty190Trend.data.length
             ? <Chart
               config={props.config.area}
               data={povertyTab.poverty190Trend.data}
