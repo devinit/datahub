@@ -16,7 +16,7 @@ const Chart = (props: WrapperProps) => {
   return (
     <SlidingDualSidebar
       country={props.country}
-      startYear={2015}
+      startYear={props.startYear}
       data={props.data}
       config={props.config}
     />
@@ -37,6 +37,7 @@ const withData = graphql(RESOURCES_QUERY, {
       ? { loading, config }
       : {
         country: getCountryName(data.variables.id),
+        startYear: data.internationalResources.startYear,
         data: data.internationalResources.resourcesOverTime.data,
         config,
       };
