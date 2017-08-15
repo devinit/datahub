@@ -34,8 +34,8 @@ const Government = (props: Props) => {
     </Grid>
     <Divider />
     <Div paddingTop="2em" paddingBottom="2em" >
-      <ExportChart />
-      <Container>
+      <ExportChart printDiv="print-chart" />
+      <Container id="print-chart">
         {props.children}
       </Container>
     </Div>
