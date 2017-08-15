@@ -33,7 +33,7 @@ const InternationalResources = (props: Props) => {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={6} textAlign="center">
-            <ChartShare color="grey" size="medium" />
+            <ChartShare background={false} color="grey" size="medium" />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -49,7 +49,7 @@ const InternationalResources = (props: Props) => {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={6} textAlign="center">
-            <ChartShare color="grey" size="medium" />
+            <ChartShare background={false} color="grey" size="medium" />
           </Grid.Column>
         </Grid.Row>
       </Grid>
