@@ -115,7 +115,6 @@
     "usus": "^1.6.0"
   },
   "git-pre-hooks": {
-
   },
   "jest": {
     "coverageDirectory": "./coverage/",
