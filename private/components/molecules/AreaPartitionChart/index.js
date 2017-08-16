@@ -51,7 +51,7 @@ class AreaPartitionChart extends React.Component {
 
       directions: [
         { value: 'in', text: `Inflows to ${props.country}` },
-        { value: 'out', text: `Outflows from ${props.country}` },
+        { value: 'out', text: `Outflows leaving ${props.country}` },
       ],
 
       flows: [
@@ -137,14 +137,14 @@ class AreaPartitionChart extends React.Component {
                 selection
                 fluid
                 onChange={(e, data) => this.update({ direction: data.value })}
-                value={'in'}
+                value={this.state.direction}
                 options={this.state.directions}
               />
             </Grid.Column>
           </Grid>
 
           <Grid>
-            <Grid.Column width={6}>
+            <Grid.Column width={7}>
               <Header as="h3" textAlign="center">
                 <Header.Content>Outflows over time</Header.Content>
               </Header>
@@ -153,11 +153,14 @@ class AreaPartitionChart extends React.Component {
                 fluid
                 text="Choose a flow for more details"
                 onChange={(e, data) => this.update({ flow: data.value })}
+                value={this.state.flow}
                 options={this.state.flows}
               />
             </Grid.Column>
 
-            <Grid.Column width={10}>
+            <Grid.Column width={1} />
+
+            <Grid.Column width={8}>
               <Header as="h3" textAlign="center">
                 <Header.Content>
                   The mix of resources in <span>{this.state.year}</span>
@@ -167,7 +170,7 @@ class AreaPartitionChart extends React.Component {
           </Grid>
 
           <Grid>
-            <Grid.Column width={6}>
+            <Grid.Column width={7}>
               <Timeline
                 height="400px"
                 data={this.state.trend}
@@ -182,7 +185,9 @@ class AreaPartitionChart extends React.Component {
               />
             </Grid.Column>
 
-            <Grid.Column width={10}>
+            <Grid.Column width={1} />
+
+            <Grid.Column width={8}>
               <SectionHeader color="rgb(238, 238, 238)">
                 {this.props.config.treemapConfig.labeling.prefix}{' '}
                 {approximate(
@@ -194,6 +199,7 @@ class AreaPartitionChart extends React.Component {
                 height="360px"
                 data={this.state.mixes[+this.state.year] || []}
                 config={this.props.config.treemapConfig}
+                onClick={d => this.update({ flow: d.flow_group })}
               />
             </Grid.Column>
           </Grid>

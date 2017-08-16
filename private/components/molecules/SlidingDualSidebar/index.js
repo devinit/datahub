@@ -26,6 +26,18 @@ export type Props = {
   cached?: State
 };
 
+const groupBy = (list, groupFn) => {
+  return list.reduce((map, datum) => {
+    // TODO: @ernest write some comments about what ~ does
+    // Lots of people dont know
+    const key = groupFn(datum);
+    return {
+      ...map,
+      [key]: [...(map[key] || []), datum],
+    };
+  }, {});
+};
+
 class SlidingDualSidebar extends React.Component {
   props: Props;
   state: State;
@@ -37,62 +49,7 @@ class SlidingDualSidebar extends React.Component {
     const exponent = Math.ceil(Math.log10(maximum));
     const scaleMaximum = Math.ceil(maximum / (10 ** (exponent - 1))) * (10 ** (exponent - 1));
 
-    const types = props.data.reduce((map, datum) => {
-      // TODO: @ernest write some comments about what ~ does
-      // Lots of people dont know
-      const key = `${datum.direction}~${datum.flow_type}~${datum.flow_category}~${datum.flow_name}`;
-      return {
-        ...map,
-        [key]: [...(map[key] || []), datum],
-      };
-    }, {});
-
-    const expected = Object.keys(types).map(t => {
-      const [direction, type, category, name] = t.split('~');
-      return { direction, type, category, name };
-    });
-
-    const [data] = props.data
-      .reduce(
-        ([map], datum) => {
-          return [
-            {
-              ...map,
-              [datum.year]: [...(map[datum.year] || []), datum],
-            },
-          ];
-        },
-        [{}],
-      )
-      .map(years => {
-        return Object.keys(years).reduce((all, year) => {
-          return {
-            ...all,
-            [year]: expected.map(({ name, category, direction, type }) => {
-              const [existing] = years[year].filter(
-                d =>
-                  d.year === +year &&
-                  d.direction === direction &&
-                  d.flow_name === name &&
-                  d.flow_category === category &&
-                  d.flow_type === type,
-              );
-
-              return (
-                existing || {
-                  year,
-                  direction,
-                  flow_name: name,
-                  flow_category: category,
-                  flow_type: type,
-                  value: 0,
-                  color: '#fff',
-                }
-              );
-            }),
-          };
-        }, {});
-      });
+    const data = SlidingDualSidebar.normalizeDataset(props.data);
 
     this.state = {
       data,
@@ -109,6 +66,49 @@ class SlidingDualSidebar extends React.Component {
         },
       },
     };
+  }
+
+  /**
+   * Makes every year has all flows unique flows in the data set
+   * @param data
+   */
+  static normalizeDataset(data) {
+    // Group by unique flow-name
+    const types = groupBy(data, d => `${d.direction}~${d.flow_type}~${d.flow_category}~${d.flow_name}`);
+
+    const expected = Object.keys(types).map(t => {
+      const [direction, type, category, name] = t.split('~');
+      return { direction, type, category, name };
+    });
+
+    const groupedByYear = groupBy(data, d => d.year);
+
+    return Object.keys(groupedByYear).reduce((all, year) => {
+      return {
+        ...all,
+        [year]: expected.map(({name, category, direction, type}) => {
+          const [existing] = groupedByYear[year].filter(
+            d =>
+              d.year === +year && d.direction === direction &&
+              d.flow_name === name &&
+              d.flow_category === category &&
+              d.flow_type === type,
+          );
+
+          return (
+            existing || {
+              year,
+              direction,
+              flow_name: name,
+              flow_category: category,
+              flow_type: type,
+              value: 0,
+              color: '#fff',
+            }
+          );
+        }),
+      };
+    }, {});
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -147,7 +147,7 @@ class SlidingDualSidebar extends React.Component {
           <Grid.Column width={8}>
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
-                RESOURCE FLOWS FROM {this.props.country} <span>{this.state.outflowSum}</span>
+                RESOURCE FLOWS LEAVING {this.props.country} <span>{this.state.outflowSum}</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>

@@ -9,11 +9,12 @@ import DISTRICT_QUERY from './queries/Districts.graphql';
 import PAGES_DATA_QUERY from './queries/PageData.graphql';
 import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
+import INDICATOR_LIST_QUERY from './queries/BubbleChartIndicatorList.graphql';
 
 const baseOrganismsPath = 'private/components/organisms';
 const uri = config.api;
 
-const apolloFetch = createApolloFetch({ uri });
+export const apolloFetch = createApolloFetch({ uri });
 
 type ApolloResponse<T> = {
   errors: string,
@@ -110,10 +111,20 @@ export const getPagesData = async () => {
     console.error(error);
   }
 };
+
+export const getBubbleChartIndicatorList = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'Poverty/data.js');
+    await getAndWriteData({ query: INDICATOR_LIST_QUERY, filePath });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
-  getDistricts();
   getGlobalPictureThemes();
   getSpotlightThemes();
   getPagesData();
+  getBubbleChartIndicatorList();
 }

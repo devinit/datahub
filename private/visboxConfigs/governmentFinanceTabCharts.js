@@ -16,12 +16,6 @@ export const spendingAllocation = {
     strokeWidth: 0,
     strokeColor: '#fff',
   },
-  legend: {
-    showLegend: true,
-    position: 'bottom',
-    alignment: 'center',
-    symbol: 'circle',
-  },
 };
 
 export default { spendingAllocation };
