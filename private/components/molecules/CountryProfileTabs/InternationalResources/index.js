@@ -1,12 +1,13 @@
 // @flow
-import { Container, Grid} from 'semantic-ui-react';
-import React from 'react';
-import Chart from 'components/atoms/Chart';
-import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
-import { NoData } from 'lib/utils/constants';
-import TabsToolTip from 'components/molecules/TabsToolTip';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
+import {Container, Grid} from "semantic-ui-react";
+import React from "react";
+import Chart from "components/atoms/Chart";
+import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from "components/atoms/TabsText";
+import {NoData} from "lib/utils/constants";
+import TabsToolTip from "components/molecules/TabsToolTip";
+import type {PageUnit} from "components/organisms/PagesData";
+import {getPageUnitById} from "components/organisms/PagesData";
+import {Legend} from "../GovernmentFinance";
 
 type Props = {
   ...TabDataQuery,
@@ -14,30 +15,32 @@ type Props = {
   pagesData: PageUnit[],
 };
 // TODO: move to separate file
-const getResourcesOverTime = (data: any[]) =>
+const groupBy = (list, field) => {
+  return list.reduce((all, d) => ({
+    ...all,
+    [d[field]]: [
+      ...(all[d[field]] || []),
+      d,
+    ],
+  }), {});
+};
+
+const getAggregatedSumOfResourcesOverTime = (data: any[]) =>
   [data]
     .map(list => {
-      const years = list.reduce((all, d) => {
-        if (all[d.year]) {
-          return { ...all, [d.year]: [d, ...all[d.year]] };
-        }
+      const groupedByYear = groupBy(list, 'year');
 
-        return { [d.year]: [d], ...all };
-      }, {});
+      const types: any = Object.keys(groupedByYear)
+        .map(y => {
+          const groupedByType = groupBy(groupedByYear[y], 'flow_type');
 
-      const types: any = Object.keys(years).map(y => {
-        const types = years[y].reduce((all, d) => {
-          if (all[d.flow_type]) {
-            return { ...all, [d.flow_type]: [d, ...all[d.flow_type]] };
-          }
-
-          return { [d.flow_type]: [d], ...all };
-        }, {});
-
-        return Object.keys(types).map(t =>
-          types[t].reduce((s, d) => ({ ...s, value: s.value + d.value })),
-        );
-      });
+          return Object.keys(groupedByType).map(t =>
+            groupedByType[t].reduce((s, d) => ({
+              ...s,
+              value: s.value + d.value
+            }))
+          );
+        });
       return Object.keys(types).map(t => types[t]).reduce((all, d) => [...all, ...d], []);
     })
     .reduce((_, d) => d);
@@ -51,7 +54,7 @@ const International = (props: Props) => {
   const internationalResources = props.internationalResources;
   const resourcesOverTime =
     internationalResources.resourcesOverTime && internationalResources.resourcesOverTime.data
-      ? getResourcesOverTime(internationalResources.resourcesOverTime.data)
+      ? getAggregatedSumOfResourcesOverTime(internationalResources.resourcesOverTime.data)
       : null;
   return (
     <Container>
@@ -65,7 +68,7 @@ const International = (props: Props) => {
           </HeaderTitle>
           <TabsP>
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.value
-              && Number(internationalResources.netODAOfGNIIn.value)
+            && Number(internationalResources.netODAOfGNIIn.value)
               ? `${internationalResources.netODAOfGNIIn.value}% of GNI`
               : NoData}
           </TabsP>
@@ -101,12 +104,26 @@ const International = (props: Props) => {
               ? <TabsToolTip {...internationalResources.mixOfResources.toolTip} />
               : ''}
           </HeaderTitle>
-          {internationalResources.mixOfResources && internationalResources.mixOfResources.data
-            ? <Chart
-              config={props.config.mixOfResources}
-              data={internationalResources.mixOfResources.data}
-              height="140px"
-            />
+          {internationalResources.mixOfResources && internationalResources.mixOfResources.data ?
+            <Grid>
+              <Grid.Column width="6">
+                <Chart
+                  config={props.config.mixOfResources}
+                  data={internationalResources.mixOfResources.data}
+                  height="140px"
+                />
+              </Grid.Column>
+              <Grid.Column width="10">
+                <div>
+                  {internationalResources.mixOfResources.data.map((d, i) =>
+                    (<Legend color={props.config.mixOfResources.colors[i]}>
+                      <span><span /></span>
+                      <span>{d[props.config.mixOfResources.circular.label]}</span>
+                    </Legend>)
+                  )}
+                </div>
+              </Grid.Column>
+            </Grid>
             : <TabsNoData />}
         </Grid.Column>
       </Grid>

@@ -1,7 +1,7 @@
 // @flow
 import { graphql } from 'react-apollo';
 import BubbleChart from 'components/molecules/BubbleChartWidgets';
-import QUERY from '../../../graphql/DPDP.graphql';
+import QUERY from './DPDP.graphql';
 
 const objectify = (list, groupFn) => {
   return list.reduce(
