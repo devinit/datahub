@@ -22,7 +22,6 @@ type Props = {
 };
 
 export default function CountryProfileLowerTabs(props: Props) {
-  console.log('props', props);
   const country = getCountry(props.id);
   const pageData = getCountryProfileData(props.id);
   return (

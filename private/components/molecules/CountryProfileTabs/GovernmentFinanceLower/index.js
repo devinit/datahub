@@ -5,7 +5,6 @@ import React from 'react';
 import {Lead} from 'components/atoms/BodyText';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
-import ExportChart from 'components/molecules/ExportChart';
 
 type Props = {
   children: any,
@@ -34,7 +33,6 @@ const Government = (props: Props) => {
     </Grid>
     <Divider />
     <Div paddingTop="2em" paddingBottom="2em" >
-      <ExportChart printDiv="print-chart" />
       <Container id="print-chart">
         {props.children}
       </Container>

@@ -116,7 +116,7 @@ const International = (props: Props) => {
               <Grid.Column width="10">
                 <div>
                   {internationalResources.mixOfResources.data.map((d, i) =>
-                    (<Legend color={props.config.mixOfResources.colors[i]}>
+                    (<Legend color={props.config.mixOfResources.colors[i]} key={props.config.mixOfResources.colors[i]}>
                       <span><span /></span>
                       <span>{d[props.config.mixOfResources.circular.label]}</span>
                     </Legend>)

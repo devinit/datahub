@@ -7,6 +7,7 @@ import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import LoadingBar from 'components/molecules/LoadingBar';
 import TreeChart from '../../atoms/TreeChart/index';
 import Timeline from '../../atoms/Timeline/index';
+import ExportChart from 'components/molecules/ExportChart';
 import { LightBg } from '../../atoms/Backgrounds';
 
 type State = {
@@ -111,7 +112,6 @@ export default class GovtRFE extends React.Component {
       expenditureTree,
     };
   }
-
   setYear(year: number) {
     const budgetTypes = this.calculateBudgetTypes(
       [...this.props.finance, ...this.props.revenueAndGrants, ...this.props.expenditure],
@@ -227,13 +227,16 @@ export default class GovtRFE extends React.Component {
         };
       });
   }
-
   render() {
     if (this.props.loading) {
       return <LoadingBar loading={this.props.loading} />;
     }
     return (
       <LightBg>
+        <ExportChart
+          printDiv="print-chart"
+          stateToShare={{year: this.state.year, budgetType: this.state.budgetType}}
+        />
         <Segment basic>
           <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
             <SectionHeader color="#fff" style={{ float: 'left' }}>

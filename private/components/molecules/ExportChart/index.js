@@ -5,10 +5,12 @@ import {printDiv as print} from 'lib/utils';
 import React from 'react';
 import glamorous from 'glamorous';
 import {lightSecondaryColor} from 'components/theme/semantic';
+import type {StateToShare} from '../ChartShare';
 import ChartShare from '../ChartShare';
 
 type Props = {
-  printDiv: string
+  printDiv: string,
+  stateToShare?: StateToShare // state to serialise
 }
 const Wrapper = glamorous.div({
   '& i': {
@@ -22,12 +24,12 @@ const Wrapper = glamorous.div({
     color: `${lightSecondaryColor} !important`,
   }
 });
-const ExportChart = ({printDiv}: Props) =>
+const ExportChart = ({printDiv, stateToShare}: Props) =>
   (<Wrapper>
     <Grid>
       <Grid.Row textAlign="right">
         <Grid.Column>
-          <ChartShare className="no-background" label="Share" color="grey" size="medium" />
+          <ChartShare className="no-background" label="Share" color="grey" stateToShare={stateToShare} size="medium" />
           <Button onClick={() => print(printDiv)} className="no-background" size="medium"color="grey">
             <Icon name="print" />
           </Button>
