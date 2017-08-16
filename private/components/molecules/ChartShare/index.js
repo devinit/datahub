@@ -24,6 +24,9 @@ const Container = glamorous.div({
 });
 const ButtonWrapper = glamorous.span({
 }, (props) => ({
+  '& button:hover': {
+    boxShadow: props.hover ? '0 1px 6px rgba(0,0,0,.3) !important' : false
+  },
   '& button': {
     backgroundColor: props.background ? 'inherit' : 'transparent !important',
     color: props.background ? 'inherit' : `${lightSecondaryColor} !important`,
@@ -36,12 +39,13 @@ type Props = {
   label?: string,
   className?: string,
   background?: boolean,
+  hover?: boolean,
 };
 
-const ChartShare = ({className, size, color, label, background }: Props) =>
+const ChartShare = ({className, size, color, label, background, hover }: Props) =>
   (<Modal
     trigger={
-      <ButtonWrapper background={background}>
+      <ButtonWrapper background={background} hover={hover}>
         <Button className={className} size={size} color={color}>
           <Icon name="share alternate" />
           <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
@@ -68,7 +72,8 @@ const ChartShare = ({className, size, color, label, background }: Props) =>
   </Modal>);
 
 ChartShare.defaultProps = {
-  background: true
+  background: true,
+  hover: false
 };
 
 export default ChartShare;

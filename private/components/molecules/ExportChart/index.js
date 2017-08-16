@@ -1,11 +1,15 @@
+// @flow
 import { Grid, Button, Icon } from 'semantic-ui-react';
+import {printDiv as print} from 'lib/utils';
 // import { lighterGrey} from 'components/theme/semantic';
 import React from 'react';
 import glamorous from 'glamorous';
 import {lightSecondaryColor} from 'components/theme/semantic';
 import ChartShare from '../ChartShare';
 
-
+type Props = {
+  printDiv: string
+}
 const Wrapper = glamorous.div({
   '& i': {
     fontSize: '1.48em'
@@ -18,13 +22,13 @@ const Wrapper = glamorous.div({
     color: `${lightSecondaryColor} !important`,
   }
 });
-const ExportChart = () =>
+const ExportChart = ({printDiv}: Props) =>
   (<Wrapper>
     <Grid>
       <Grid.Row textAlign="right">
         <Grid.Column>
           <ChartShare className="no-background" label="Share" color="grey" size="medium" />
-          <Button className="no-background" size="medium"color="grey">
+          <Button onClick={() => print(printDiv)} className="no-background" size="medium"color="grey">
             <Icon name="print" />
           </Button>
           <Button size="medium" color="grey">

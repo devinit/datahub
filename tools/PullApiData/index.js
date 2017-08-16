@@ -9,12 +9,12 @@ import DISTRICT_QUERY from './queries/Districts.graphql';
 import PAGES_DATA_QUERY from './queries/PageData.graphql';
 import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
-import INDICATOR_LIST_QUERY from './queries/BubbleChartIndicatorList.graphql';
+import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
 
 const baseOrganismsPath = 'private/components/organisms';
 const uri = config.api;
 
-export const apolloFetch = createApolloFetch({ uri });
+const apolloFetch = createApolloFetch({ uri });
 
 type ApolloResponse<T> = {
   errors: string,
@@ -84,7 +84,15 @@ export const getDistricts = async () => {
     console.error(error);
   }
 };
-
+export const getInternationalResourcesToolTip = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'CountryProfileLowerTabs/data.js');
+    const variables = { id: 'uganda' }; // any country will do
+    await getAndWriteData({ query: INTL_RESOURCES_TOOLTIP_QUERY, filePath, variables });
+  } catch (error) {
+    console.error(error);
+  }
+};
 export const getGlobalPictureThemes = async () => {
   try {
     const filePath = path.join(baseOrganismsPath, 'GlobalPictureNavTabs/data.js');
@@ -111,20 +119,11 @@ export const getPagesData = async () => {
     console.error(error);
   }
 };
-
-export const getBubbleChartIndicatorList = async () => {
-  try {
-    const filePath = path.join(baseOrganismsPath, 'Poverty/data.js');
-    await getAndWriteData({ query: INDICATOR_LIST_QUERY, filePath });
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
+  getDistricts();
   getGlobalPictureThemes();
+  getInternationalResourcesToolTip();
   getSpotlightThemes();
   getPagesData();
-  getBubbleChartIndicatorList();
 }

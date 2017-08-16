@@ -10,9 +10,12 @@ import countriesData from 'components/organisms/CountrySearchInput/data';
 import InternationalResourcesLower from 'components/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
 import {getCountryProfileData} from 'components/organisms/PagesData';
+import data from './data';
 
 type Props = {
   id: string,
+  startYear?: number,
+  flowId?: string
 };
 const getCountry = (slug): Country | void =>
   countriesData.countries.find(country => country.slug === slug);
@@ -27,15 +30,18 @@ export default (props: Props) => {
           pageData={pageData}
           countryName={country && country.name ? country.name : props.id}
         >
-          <GovernmentFinanceChart startYear={2015} id={props.id} />
+          <GovernmentFinanceChart id={props.id} startYear={props.startYear} />
         </GovernmentFinance>
       </Pane>
       : ''
     }
     <Pane label="INTERNATIONAL RESOURCES" id={'international-resources-lower'}>
-      <InternationalResourcesLower pageData={pageData}>
-        <InflowsVsOutflows id={props.id} />
-        <InternationalResourcesChart id={props.id} startYear={2015} />
+      <InternationalResourcesLower
+        pageData={pageData}
+        toolTip={data.internationalResources.resourcesOverTime.toolTip}
+      >
+        <InflowsVsOutflows id={props.id} startYear={props.startYear} />
+        <InternationalResourcesChart id={props.id} flowId={props.flowId} />
       </InternationalResourcesLower>
     </Pane>
   </Tabs>

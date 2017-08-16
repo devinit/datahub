@@ -8,7 +8,7 @@ import config from 'visboxConfigs/dualbarChart';
 import RESOURCES_QUERY from '../InternationalResourcesChart/query.graphql';
 
 type WrapperProps = Props & {
-  loading: boolean,
+  loading: boolean
 };
 
 const Chart = (props: WrapperProps) => {
@@ -18,7 +18,7 @@ const Chart = (props: WrapperProps) => {
       country={props.country}
       startYear={props.startYear}
       data={props.data}
-      config={props.config}
+      config={config}
     />
   );
 };
@@ -38,8 +38,7 @@ const withData = graphql(RESOURCES_QUERY, {
       : {
         country: getCountryName(data.variables.id),
         startYear: data.internationalResources.startYear,
-        data: data.internationalResources.resourcesOverTime.data,
-        config,
+        data: data.internationalResources.resourcesOverTime.data
       };
   },
 });
