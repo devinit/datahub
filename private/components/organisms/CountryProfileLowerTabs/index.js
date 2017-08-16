@@ -8,17 +8,14 @@ import InflowsVsOutflows from 'components/organisms/InflowsVsOutflows';
 import {RECIPIENT} from 'lib/utils/constants';
 import InternationalResourcesLower from 'components/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import {getCountryProfileData} from 'components/organisms/PagesData';
 
 import {getCountry} from 'lib/utils';
 import data from './data';
 
-type Props = {
+type Props = StateToShare & {
   id: string,
-  startYear?: number,
-  chartId?: string,
-  flowId?: string,
-  selected?: number
 };
 
 export default function CountryProfileLowerTabs(props: Props) {
@@ -34,9 +31,15 @@ export default function CountryProfileLowerTabs(props: Props) {
         >
           <GovernmentFinance
             pageData={pageData}
+            chartId="government-finance-lower"
             countryName={country && country.name ? country.name : props.id}
           >
-            <GovernmentFinanceChart id={props.id} startYear={props.startYear} />
+            <GovernmentFinanceChart
+              budgetType={props.budgetType}
+              id={props.id}
+              year={props.startYear}
+              chartId="government-finance-lower"
+            />
           </GovernmentFinance>
         </Pane>
         : ''
@@ -51,7 +54,7 @@ export default function CountryProfileLowerTabs(props: Props) {
           toolTip={data.internationalResources.resourcesOverTime.toolTip}
         >
           <InflowsVsOutflows id={props.id} startYear={props.startYear} />
-          <InternationalResourcesChart id={props.id} flowId={props.flowId} />
+          <InternationalResourcesChart id={props.id} />
         </InternationalResourcesLower>
       </Pane>
     </Tabs>

@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import glamorous from 'glamorous';
 import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
@@ -29,9 +29,12 @@ type State = {
 type Props = {
   currencyCode: string,
   loading: boolean,
+  year?: number,
   startYear: number,
   revenueAndGrants: Object[],
   finance: Object[],
+  // for scrolling to this chart, think of it has the chart container ID
+  chartId?: string,
   expenditure: Object[],
   data: [],
   config: {
@@ -59,13 +62,12 @@ const HeadingContainer = glamorous.div({
   overflow: 'visible',
 });
 
-export default class GovtRFE extends React.Component {
+export default class GovtRFE extends Component {
   // eslint-disable-next-line react/sort-comp
   state: State;
 
   constructor(props: Props) {
     super(props);
-
     this.state = this.calculateInitialState(props);
   }
 
@@ -75,7 +77,7 @@ export default class GovtRFE extends React.Component {
 
   // eslint-disable-next-line react/sort-comp
   calculateInitialState(props: Props) {
-    const year = props.startYear;
+    const year = props.year || props.startYear;
     const currencies = [
       { text: 'Constant 2015 US$', value: 'US$' },
       { text: `Current ${props.currencyCode}`, value: props.currencyCode },
@@ -85,8 +87,7 @@ export default class GovtRFE extends React.Component {
       [...props.finance, ...props.revenueAndGrants, ...props.expenditure],
       year,
     );
-    const budgetType = budgetTypes[0] && budgetTypes[0].value;
-
+    const budgetType = props.budgetType ? props.budgetType : budgetTypes[0] && budgetTypes[0].value;
     const revenueTrend = this.calculateTrend(props.revenueAndGrants, currency);
     const financeTrend = this.calculateTrend(props.finance, currency);
     const expenditureTrend = this.calculateTrend(props.expenditure, currency);
@@ -235,7 +236,11 @@ export default class GovtRFE extends React.Component {
       <LightBg>
         <ExportChart
           printDiv="print-chart"
-          stateToShare={{year: this.state.year, budgetType: this.state.budgetType}}
+          stateToShare={{
+            startYear: this.state.year,
+            budgetType: this.state.budgetType,
+            chartId: this.props.chartId
+          }}
         />
         <Segment basic>
           <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>

@@ -72,6 +72,9 @@ export default class ChartShare extends Component {
   componentDidMount() {
     this.createLink();
   }
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps !== this.props) this.createLink();
+  }
   onLinkChange = () => this.createLink();
 
   handleChange = (value: number) => this.setState({value});
@@ -79,7 +82,7 @@ export default class ChartShare extends Component {
   createLink() {
     if (!this.props.stateToShare) return this.state;
     const currentUrl = window.location.href;
-    const link = `${currentUrl}&state=${JSON.stringify(this.props.stateToShare)}`;
+    const link = `${currentUrl}?state=${JSON.stringify(this.props.stateToShare)}`;
     return this.setState({link});
   }
   render() {

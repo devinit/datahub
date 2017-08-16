@@ -56,7 +56,8 @@ app.prepare().then(() => {
   });
 
   server.get('/country/:id', (req, res) => {
-    const queryParams = { id: req.params.id };
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const queryParams = { id: req.params.id, state};
     renderAndCache(req, res, '/country', queryParams);
   });
 

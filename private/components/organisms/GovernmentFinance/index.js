@@ -23,7 +23,7 @@ const withData = graphql(QUERY, {
         expenditure: [],
         finance: [],
         currencyCode: '',
-        startYear: 2015, // got from api
+        startYear: 2015,
       }),
     };
   },

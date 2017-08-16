@@ -15,6 +15,7 @@ import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTab
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import {getCountryName} from 'lib/utils';
 import { connect } from 'react-redux';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 import data from './data';
@@ -23,6 +24,7 @@ import data from './data';
 type Props = {
   id: string,
   rehydrated: boolean,
+  state: StateToShare,
 };
 
 const profile = (props: Props) =>
@@ -69,7 +71,10 @@ const profile = (props: Props) =>
       </Container>
     </Div>
     <NoSSR onSSR={<LoadingPlaceholder height="40em" loading />} >
-      <CountryProfileLowerTabs id={props.id} />
+      <CountryProfileLowerTabs
+        id={props.id}
+        {...props.state}
+      />
     </NoSSR>
     <DarkBg>
       <SectionHeader color={red} fontColor={white}>
