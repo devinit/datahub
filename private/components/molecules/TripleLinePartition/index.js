@@ -29,7 +29,10 @@ type State = {
 type Props = {
   currencyCode: string,
   loading: boolean,
+   // from cached shared state
   year?: number,
+    // from cached shared state
+  budgetType: string,
   startYear: number,
   revenueAndGrants: Object[],
   finance: Object[],
