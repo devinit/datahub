@@ -321,11 +321,30 @@ export default class GovtRFE extends React.Component {
             </SectionHeader>
           </HeadingContainer>
 
-          <HeadingContainer>
-            <SectionHeader color="#fff">
+
+          <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
+            <SectionHeader color="#fff" style={{ float: 'left' }}>
               EXPENDITURE <span>{this.state.year}</span>
             </SectionHeader>
-          </HeadingContainer>
+
+            <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
+              <Label>Budget Type</Label>
+              <Dropdown
+                selection
+                value={this.state.budgetType}
+                options={this.state.budgetTypes}
+                onChange={(e, data) => this.setBudgetType(data.value)}
+              />
+              <Label>Currency</Label>
+              <Dropdown
+                compact
+                selection
+                value={this.state.currency}
+                options={this.state.currencies}
+                onChange={(e, data) => this.setCurrency(data.value)}
+              />
+            </Segment>
+          </Segment>
 
           <Grid>
             <Grid.Column width={5} style={{ paddingRight: 0 }}>
