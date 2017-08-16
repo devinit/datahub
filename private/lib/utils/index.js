@@ -20,9 +20,14 @@ export const getDistrictName = (slug: string, country: string): string => {
 };
 
 export const printDiv = (divId: string) => {
-  const printContents = document.getElementById(divId).innerHTML;
-  const originalContents = document.body.innerHTML;
-  document.body.innerHTML = printContents;
+  const divElem = document.getElementById(divId);
+  const printContents = divElem && divElem.innerHTML ? divElem.innerHTML : 'Inavlid div id';
+  const originalContents = document.body && document.body.innerHTML ? document.body.innerHTML : '';
+  if (document.body && document.body.innerHTML) {
+    document.body.innerHTML = printContents;
+  }
   window.print();
-  document.body.innerHTML = originalContents;
+  if (document.body && document.body.innerHTML) {
+    document.body.innerHTML = originalContents;
+  }
 };

@@ -5,9 +5,9 @@ import approximate from 'approximate-number';
 import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import { SectionHeader } from 'components/atoms/Header';
 import { Container, Dropdown, Grid, Header } from 'semantic-ui-react';
-import { LightBg } from '../../atoms/Backgrounds';
-import TreeChart from '../../atoms/TreeChart';
-import Timeline from '../../atoms/Timeline';
+import { LightBg } from 'components/atoms/Backgrounds';
+import TreeChart from 'components/atoms/TreeChart';
+import Timeline from 'components/atoms/Timeline';
 
 export type State = {
   directions: Object[],

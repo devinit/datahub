@@ -5,10 +5,10 @@ import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import LoadingBar from 'components/molecules/LoadingBar';
-import TreeChart from '../../atoms/TreeChart/index';
-import Timeline from '../../atoms/Timeline/index';
 import ExportChart from 'components/molecules/ExportChart';
-import { LightBg } from '../../atoms/Backgrounds';
+import TreeChart from 'components/atoms/TreeChart/index';
+import Timeline from 'components/atoms/Timeline/index';
+import { LightBg } from 'components/atoms/Backgrounds';
 
 type State = {
   year: number,
