@@ -1,4 +1,5 @@
 // @flow
+import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
 
@@ -30,4 +31,13 @@ export const printDiv = (divId: string) => {
   if (document.body && document.body.innerHTML) {
     document.body.innerHTML = originalContents;
   }
+};
+
+export const getShortURL = async (longUrl: string): Promise<string> => {
+  // TODO: add access token to sever env virables
+  const apiToken = '43c76f9ad7b4a259615aba8f682b55493477e467';
+  const apiUrl = `https://api-ssl.bitly.com/v3/shorten?access_token=${apiToken}`;
+  const response = await fetch(`${apiUrl}&longUrl=${longUrl}`);
+  const json = await response.json();
+  return json.data.url;
 };

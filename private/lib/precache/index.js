@@ -1,10 +1,11 @@
+// @flow
 // server precache module
 const fetch = require('isomorphic-fetch');
 const pagesToPreCache = require('./pages');
 
 const PORT = process.env.PORT || 4444;
 
-const preCache = () => {
+const preCache = (): void => {
   const homeLink = `http://localhost:${PORT}`;
   pagesToPreCache.concat(['/country/uganda']).forEach(link => {
     setTimeout(() => {
