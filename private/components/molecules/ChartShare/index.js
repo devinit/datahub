@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from 'components/theme/semantic';
+import {getShortURL} from 'lib/utils';
 import glamorous, { Div, Span } from 'glamorous';
 
 const Container = glamorous.div({
@@ -79,11 +80,12 @@ export default class ChartShare extends Component {
 
   handleChange = (value: number) => this.setState({value});
 
-  createLink() {
+  async createLink() {
     if (!this.props.stateToShare) return this.state;
     const currentUrl = window.location.href;
     const link = `${currentUrl}?state=${JSON.stringify(this.props.stateToShare)}`;
-    return this.setState({link});
+    const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
+    return this.setState({link: shortURL});
   }
   render() {
     const {className, size, color, label, background, hover} = this.props;
