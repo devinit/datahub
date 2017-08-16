@@ -1,5 +1,6 @@
 // @flow
 import { Container, Grid } from 'semantic-ui-react';
+import glamorous from 'glamorous';
 import React from 'react';
 import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import Chart from 'components/atoms/Chart';
@@ -13,6 +14,35 @@ type Props = {
   config: any,
   pagesData: PageUnit[],
 };
+
+export const Legend = glamorous.div({
+  textAlign: 'left',
+  fontWeight: 100,
+
+  '& span': {
+    display: 'table-cell',
+    valign: 'middle',
+    margin: '2px 0',
+  },
+
+  '& span:first-child': {
+    padding: '0 2px',
+    width: '16px',
+  },
+
+  '& span:first-child > span': {
+    width: '12px',
+    height: '12px',
+    borderRadius: '50%'
+  },
+
+}, (props) => {
+  return ({
+    '& span:first-child > span': {
+      backgroundColor: props.color || '#abc'
+    },
+  });
+});
 
 const Government = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
@@ -62,12 +92,26 @@ const Government = (props: Props) => {
           </HeaderTitle>
           {governmentFinance.spendingAllocation &&
           governmentFinance.spendingAllocation.data &&
-          governmentFinance.spendingAllocation.data.length
-            ? <Chart
-              config={props.config.spendingAllocation}
-              data={governmentFinance.spendingAllocation.data}
-              height="140px"
-            />
+          governmentFinance.spendingAllocation.data.length ?
+            <Grid>
+              <Grid.Column width="6">
+                <Chart
+                  config={props.config.spendingAllocation}
+                  data={governmentFinance.spendingAllocation.data}
+                  height="140px"
+                />
+              </Grid.Column>
+              <Grid.Column width="10">
+                <div>
+                  {governmentFinance.spendingAllocation.data.map((d, i) =>
+                    (<Legend color={props.config.spendingAllocation.colors[i]}>
+                      <span><span /></span>
+                      <span>{d[props.config.spendingAllocation.circular.label]}</span>
+                    </Legend>)
+                  )}
+                </div>
+              </Grid.Column>
+            </Grid>
             : <TabsNoData />}
         </Grid.Column>
       </Grid>
