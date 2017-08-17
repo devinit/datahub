@@ -250,15 +250,6 @@ export default class GovtRFE extends Component {
     }
     return (
       <LightBg innerRef={node => this.props.shouldScrollIntoView ? node.scrollIntoView() : null}>
-        <ExportChart
-          onViewVisualization={() => this.toogleRevenueTour()}
-          printDiv="print-chart"
-          stateToShare={{
-            year: this.state.year,
-            budgetType: this.state.budgetType,
-            chartId: this.props.chartId
-          }}
-        />
         <Segment basic>
           <section>
             <Container id="print-chart">
