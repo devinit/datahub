@@ -2,6 +2,7 @@
 import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
+import {RECIPIENT} from './constants';
 
 export const getCountryName = (slug: string): string => {
   const country = countriesData.countries.find(country => country.slug === slug);
@@ -9,8 +10,11 @@ export const getCountryName = (slug: string): string => {
   return slug;
 };
 
-export const getCountry = (slug: string): Country | void =>
-  countriesData.countries.find(country => country.slug === slug);
+export const getCountry = (slug: string): Country => {
+  const country = countriesData.countries.find(country => country.slug === slug);
+  if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A'};
+  return country;
+};
 
 export const getDistrictName = (slug: string, country: string): string => {
   // TODO: handle spotlight kenya

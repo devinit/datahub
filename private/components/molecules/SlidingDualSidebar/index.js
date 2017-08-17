@@ -140,7 +140,9 @@ class SlidingDualSidebar extends React.Component {
 
   render() {
     return (
-      <LightBg innerRef={node => this.props.shouldScrollIntoView ? node.scrollIntoView() : null}>
+      <LightBg
+        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
+      >
         <Grid>
           <Grid.Column width={8}>
             <Segment basic clearing>

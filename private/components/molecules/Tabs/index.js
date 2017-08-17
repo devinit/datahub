@@ -82,7 +82,11 @@ class Tabs extends Component {
   state: {
     selected?: number,
   };
-
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps.selected !== this.props.selected) {
+      this.setState({selected: nextProps.selected});
+    }
+  }
   handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({

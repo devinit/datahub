@@ -134,7 +134,9 @@ class AreaPartitionChart extends React.Component {
 
   render() {
     return (
-      <LightBg innerRef={node => this.props.shouldScrollIntoView ? node.scrollIntoView() : null}>
+      <LightBg
+        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
+      >
         <Container>
           <Grid centered>
             <Grid.Column width={6}>

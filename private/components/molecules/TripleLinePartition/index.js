@@ -249,7 +249,9 @@ export default class GovtRFE extends Component {
       return <LoadingBar loading={this.props.loading} />;
     }
     return (
-      <LightBg innerRef={node => this.props.shouldScrollIntoView ? node.scrollIntoView() : null}>
+      <LightBg
+        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
+      >
         <Segment basic>
           <section>
             <Container id="print-chart">

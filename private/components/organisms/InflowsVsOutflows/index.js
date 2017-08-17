@@ -18,6 +18,7 @@ const Chart = (props: WrapperProps) => {
       country={props.country}
       startYear={props.startYear}
       year={props.year}
+      shouldScrollIntoView={props.shouldScrollIntoView}
       chartId={props.chartId}
       data={props.data}
       config={config}

@@ -20,6 +20,7 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
       data={props.data}
       config={config}
       year={props.year} // look in countryProfile lower tabs
+      shouldScrollIntoView={props.shouldScrollIntoView}
       chartId={props.chartId}
       country={props.country}
     />

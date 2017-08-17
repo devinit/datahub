@@ -19,7 +19,12 @@ export const NavLink = glamorous.a({
     color: white,
   },
 });
+// type Props = {
+//   hfref
+// }
+// export const InboundLinks = (props: Props) => {
 
+// };
 // social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({
   display: 'inline-block',

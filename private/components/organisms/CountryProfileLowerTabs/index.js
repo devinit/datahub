@@ -5,7 +5,7 @@ import Pane from 'components/atoms/Pane';
 import GovernmentFinance from 'components/molecules/CountryProfileTabs/GovernmentFinanceLower';
 import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';
 import InflowsVsOutflows from 'components/organisms/InflowsVsOutflows';
-import {RECIPIENT} from 'lib/utils/constants';
+import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from 'lib/utils/constants';
 import InternationalResourcesLower from 'components/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
 import type {StateToShare} from 'components/molecules/ChartShare';
@@ -16,19 +16,17 @@ import data from './data';
 
 type Props = StateToShare & {
   id: string,
+  selectedTab?: number,
 };
-// chart IDs
-const GOVERNMENT_FINANCE_LOWER = 'government-finance-lower';
-const INFLOWS_VS_OUTFLOWS = 'inflows-vs-outflows';
-const INTERNATIONAL_RESOURCES = 'international-resources';
 
 export default function CountryProfileLowerTabs(props: Props) {
   const country = getCountry(props.id);
   const pageData = getCountryProfileData(props.id);
+  const selectedTab = props.selectedTab ? props.selectedTab : 0;
   return (
     <Tabs
       textAlign="center"
-      selected={!props.chartId || props.chartId === GOVERNMENT_FINANCE_LOWER ? 0 : 1}
+      selected={selectedTab}
     >
       { country && country.countryType === RECIPIENT ?
         <Pane
