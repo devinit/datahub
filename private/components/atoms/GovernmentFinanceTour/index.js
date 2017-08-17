@@ -7,14 +7,21 @@ const TourPointer = glamorous.span({
   left: '50%',
   marginLeft: '-2px',
   width: '4px',
+  height: '50px',
   background: '#fff',
   '& i': {
     position: 'absolute',
     top: '100%',
     left: '-7px',
     marginTop: '-10px',
+  }
+}, (props) => ({
+  '& i': {
+    top: props.top ? 'auto' : '100%',
   },
-});
+  bottom: props.top ? '100%' : false,
+  top: props.top ? false : '100%',
+}));
 const TourItems = glamorous.ul({
   padding: '0',
   margin: '0',
@@ -91,11 +98,9 @@ const GovernmentFinanceTour = () =>
       <Icon name="arrow down" />
     </li>
     <li className="item-4 text-center">
-      Drag and drop dimensions to view in a customised order
-      <TourPointer className="tour-item-pointer">
-        <Icon name="arrow left" />
-        <Icon name="arrow right" />
-      </TourPointer>
+      <Icon name="arrow left" />
+      This sentence shows how you’ve drilled down into the main<br />
+      visualisation: higher levels can be selected to go back
     </li>
     <li className="item-5 text-center">
       Click through the<br />
@@ -104,7 +109,7 @@ const GovernmentFinanceTour = () =>
       of the hierarchy
     </li>
     <li className="item-6 text-center">
-      <TourPointer className="tour-item-pointer">
+      <TourPointer className="tour-item-pointer" top>
         <Icon name="arrow up" />
       </TourPointer>
       Drag the time<br />
