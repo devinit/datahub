@@ -282,7 +282,13 @@ module.exports = {
         type    : 'list',
         name    : 'useRoot',
         message :
-          '{packageMessage} Is this your project folder? {root}',
+          '    \n' +
+          '    {packageMessage} \n' +
+          '    \n' +
+          '    Is this your project folder?\n' +
+          '    \x1b[92m{root}\x1b[0m \n' +
+          '    \n ' +
+          '\n',
         choices: [
           {
             name  : 'Yes',
@@ -333,7 +339,7 @@ module.exports = {
         when: when.allowOverwrite,
         choices: [
           {
-            name: 'Automatic (Use default locations and all components)',
+            name: 'Automatic (Use defaults locations and all components)',
             value: 'auto'
           },
           {
