@@ -15,6 +15,7 @@ import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 
 type State = {
   year: number,
+  revenueTourVisible: boolean,
   budgetTypes: [string],
   budgetType: string,
   currency: string,
@@ -103,6 +104,7 @@ export default class GovtRFE extends Component {
     const expenditureTree = this.calculateTree(expenditureTrend, year, budgetType, currency);
 
     return {
+      revenueTourVisible: false,
       year,
       currencies,
       currency,
@@ -118,6 +120,13 @@ export default class GovtRFE extends Component {
       financeTree,
       expenditureTree,
     };
+  }
+  toogleRevenueTour() {
+    if (this.state.revenueTourVisible) {
+      this.setState({revenueTourVisible: false});
+    } else {
+      this.setState({revenueTourVisible: true});
+    }
   }
   setYear(year: number) {
     const budgetTypes = this.calculateBudgetTypes(
@@ -254,6 +263,7 @@ export default class GovtRFE extends Component {
                 </Segment>
               </PrintContainer>
               <ExportChart
+                onViewVisualization={() => this.toogleRevenueTour()}
                 printDiv="print-chart"
                 stateToShare={{
                   startYear: this.state.year,
@@ -343,8 +353,8 @@ export default class GovtRFE extends Component {
               </Grid>
             </Container>
             <TourContainer
-              visible
-              closeHandler={() => console.log('test')}
+              visible={this.state.revenueTourVisible}
+              closeHandler={() => this.toogleRevenueTour()}
             >
               <GovernmentFinanceTour />
             </TourContainer>
