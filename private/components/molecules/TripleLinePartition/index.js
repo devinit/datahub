@@ -37,6 +37,7 @@ type Props = {
   year?: number,
     // from cached shared state
   budgetType: string,
+  shouldScrollIntoView?: boolean,
   startYear: number,
   revenueAndGrants: Object[],
   finance: Object[],
@@ -248,7 +249,16 @@ export default class GovtRFE extends Component {
       return <LoadingBar loading={this.props.loading} />;
     }
     return (
-      <LightBg>
+      <LightBg innerRef={node => this.props.shouldScrollIntoView ? node.scrollIntoView() : null}>
+        <ExportChart
+          onViewVisualization={() => this.toogleRevenueTour()}
+          printDiv="print-chart"
+          stateToShare={{
+            year: this.state.year,
+            budgetType: this.state.budgetType,
+            chartId: this.props.chartId
+          }}
+        />
         <Segment basic>
           <section>
             <Container id="print-chart">

@@ -19,6 +19,8 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
       startYear={props.startYear}
       data={props.data}
       config={config}
+      year={props.year} // look in countryProfile lower tabs
+      chartId={props.chartId}
       country={props.country}
     />
   );

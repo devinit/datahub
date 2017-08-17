@@ -4,6 +4,7 @@ import React from 'react';
 import approximate from 'approximate-number';
 import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import { SectionHeader } from 'components/atoms/Header';
+import ChartShare from 'components/molecules/ChartShare';
 import { Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { LightBg } from 'components/atoms/Backgrounds';
 import TreeChart from 'components/atoms/TreeChart';
@@ -25,6 +26,10 @@ export type Props = {
   data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
   config: any,
   startYear: number,
+  // for scrolling to this chart, think of it has the chart container ID
+  chartId?: string,
+  year?: number, // think cacehed state. this value becomes start year if available
+  shouldScrollIntoView?: boolean,
   cached?: State
 };
 
@@ -43,7 +48,7 @@ class AreaPartitionChart extends React.Component {
   }
   initState(props: Props) {
     return {
-      year: this.props.startYear.toString(),
+      year: props.year ? props.year.toString() : props.startYear.toString(),
 
       ...this.calculateState({
         direction: 'in',
@@ -60,7 +65,7 @@ class AreaPartitionChart extends React.Component {
           text: 'All',
         },
 
-        ...makeUnique(this.props.data.map(d => d.flow_category))
+        ...makeUnique(props.data.map(d => d.flow_category))
           .map(category => {
             const types = makeUnique(
               this.props.data.filter(d => d.flow_category === category).map(d => d.flow_type),
@@ -129,7 +134,7 @@ class AreaPartitionChart extends React.Component {
 
   render() {
     return (
-      <LightBg>
+      <LightBg innerRef={node => this.props.shouldScrollIntoView ? node.scrollIntoView() : null}>
         <Container>
           <Grid centered>
             <Grid.Column width={6}>
@@ -202,6 +207,23 @@ class AreaPartitionChart extends React.Component {
                 onClick={d => this.update({ flow: d.flow_group })}
               />
             </Grid.Column>
+          </Grid>
+          <Grid centered>
+            <Grid.Row>
+              <Grid.Column width={6} textAlign="center">
+                <ChartShare
+                  background={false}
+                  stateToShare={{
+                    year: Number(this.state.year),
+                    flow: this.state.flow,
+                    chartId: this.props.chartId
+                  }}
+                  hover
+                  color="grey"
+                  size="medium"
+                />
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </Container>
       </LightBg>
