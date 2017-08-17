@@ -17,6 +17,8 @@ WORKDIR /src
 
 ENV NODE_ENV production
 
+# stattic data files
+RUN npm run pull
 RUN npm run build
 
 EXPOSE 9999
