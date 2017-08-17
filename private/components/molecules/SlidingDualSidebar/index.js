@@ -25,7 +25,7 @@ export type Props = {
   // for scrolling to this chart, think of it has the chart container ID
   chartId?: string,
   // from share url, cached state
-  year: number,
+  year?: number,
   shouldScrollIntoView?: boolean,
   data: [], // TODO: should be flowData with API integration
   config: any,

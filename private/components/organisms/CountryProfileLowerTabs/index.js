@@ -65,7 +65,7 @@ export default function CountryProfileLowerTabs(props: Props) {
             year={props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : null}
           />
           <InternationalResourcesChart
-            shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES }
+            shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES}
             year={props.chartId === INTERNATIONAL_RESOURCES ? props.year : null}
             chartId={INTERNATIONAL_RESOURCES}
             id={props.id}

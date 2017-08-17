@@ -3,7 +3,6 @@ import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
 import {TextBlock} from 'components/atoms/BodyText';
 import { white } from 'components/theme/semantic';
-import ChartShare from 'components/molecules/ChartShare';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
 import TabsToolTip from 'components/molecules/TabsToolTip';

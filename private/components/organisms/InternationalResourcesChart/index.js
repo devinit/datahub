@@ -16,8 +16,12 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
   if (props.loading) return <LoadingBar loading={props.loading} />;
   return (
     <InternationalResourcesChart
-      {...props}
+      startYear={props.startYear}
+      data={props.data}
       config={config}
+      year={props.year} // look in countryProfile lower tabs
+      chartId={props.chartId}
+      country={props.country}
     />
   );
 };

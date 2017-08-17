@@ -15,7 +15,11 @@ const Chart = (props: WrapperProps) => {
   if (props.loading) return <p>Loading...</p>;
   return (
     <SlidingDualSidebar
-      {...props}
+      country={props.country}
+      startYear={props.startYear}
+      year={props.year}
+      chartId={props.chartId}
+      data={props.data}
       config={config}
     />
   );
