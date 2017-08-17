@@ -37,17 +37,17 @@ const TourItems = glamorous.ul({
     marginLeft: '-200px',
   },
   '& .item-2': {
-    top: '105px',
+    top: '70px',
     right: '50%',
     marginRight: '-230px'
   },
   '& .item-3': {
     right: '50%',
-    top: '50px',
-    marginRight: '-435px'
+    top: '40px',
+    marginRight: '-400px'
   },
   '& .item-4': {
-    top: '170px',
+    top: '140px',
     left: '50%',
     marginLeft: '-320px'
   },

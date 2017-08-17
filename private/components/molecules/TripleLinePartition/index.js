@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import glamorous from 'glamorous';
-import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
+import { Dropdown, Grid, Label, Segment, Container, Header } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import LoadingBar from 'components/molecules/LoadingBar';
@@ -9,6 +9,9 @@ import ExportChart from 'components/molecules/ExportChart';
 import TreeChart from 'components/atoms/TreeChart/index';
 import Timeline from 'components/atoms/Timeline/index';
 import { LightBg } from 'components/atoms/Backgrounds';
+import TourContainer from 'components/molecules/TourContainer';
+import {PrintContainer} from 'components/atoms/Container';
+import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 
 type State = {
   year: number,
@@ -237,153 +240,175 @@ export default class GovtRFE extends Component {
     }
     return (
       <LightBg>
-        <ExportChart
-          printDiv="print-chart"
-          stateToShare={{
-            startYear: this.state.year,
-            budgetType: this.state.budgetType,
-            chartId: this.props.chartId
-          }}
-        />
         <Segment basic>
-          <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
-            <SectionHeader color="#fff" style={{ float: 'left' }}>
-              REVENUE AND GRANT <span>{this.state.year}</span>
-            </SectionHeader>
+          <section>
+            <Container id="print-chart">
+              <PrintContainer>
+                <Segment textAlign="center" vertical>
+                  <img src="/img/print-logo.jpg" alt="Development Initiatives" height="50" width="132" />
+                  <Header>
+                    <Header.Content as="h2">Domestic public resources in Uganda</Header.Content>
+                    <Header.Subheader as="h3">www.devinit.org</Header.Subheader>
+                  </Header>
+                  <Header as="h2">Government revenue, financing and expenditure</Header>
+                </Segment>
+              </PrintContainer>
+              <ExportChart
+                printDiv="print-chart"
+                stateToShare={{
+                  startYear: this.state.year,
+                  budgetType: this.state.budgetType,
+                  chartId: this.props.chartId
+                }}
+              />
+              <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
+                <SectionHeader color="#fff" style={{ float: 'left' }}>
+                  REVENUE AND GRANT <span>{this.state.year}</span>
+                </SectionHeader>
 
-            <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
-              <Label>Budget Type</Label>
-              <Dropdown
-                selection
-                value={this.state.budgetType}
-                options={this.state.budgetTypes}
-                onChange={(e, data) => this.setBudgetType(data.value)}
-              />
-              <Label>Currency</Label>
-              <Dropdown
-                compact
-                selection
-                value={this.state.currency}
-                options={this.state.currencies}
-                onChange={(e, data) => this.setCurrency(data.value)}
-              />
+                <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
+                  <Label>Budget Type</Label>
+                  <Dropdown
+                    selection
+                    value={this.state.budgetType}
+                    options={this.state.budgetTypes}
+                    onChange={(e, data) => this.setBudgetType(data.value)}
+                  />
+                  <Label>Currency</Label>
+                  <Dropdown
+                    compact
+                    selection
+                    value={this.state.currency}
+                    options={this.state.currencies}
+                    onChange={(e, data) => this.setCurrency(data.value)}
+                  />
+                </Segment>
+              </Segment>
+
+              <Grid>
+                <Grid.Column width={5} style={{ paddingRight: 0 }}>
+                  <CardContainer style={{ paddingLeft: '30px' }}>
+                    <Timeline
+                      onYearChanged={year => this.setYear(+year)}
+                      height="180px"
+                      config={{
+                        ...this.props.config.line,
+                        anchor: { start: this.state.year.toString() },
+                      }}
+                      data={this.state.revenueTrend}
+                    />
+                  </CardContainer>
+                </Grid.Column>
+
+                <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+                  <TreeChart
+                    height="222px"
+                    config={{
+                      ...this.props.config.partition,
+                      labeling: { prefix: this.state.currency },
+                    }}
+                    onClick={(d: { id: string }) => this.setRevenueLevel(d.id)}
+                    data={this.state.revenueTree}
+                  />
+                </Grid.Column>
+              </Grid>
+
+              <Grid>
+                <Grid.Column width={5} style={{ paddingRight: 0 }}>
+                  <CardContainer style={{ paddingLeft: '30px' }}>
+                    <Timeline
+                      onYearChanged={year => this.setYear(+year)}
+                      height="180px"
+                      config={{
+                        ...this.props.config.line,
+                        anchor: { start: this.state.year.toString() },
+                      }}
+                      data={this.state.financeTrend}
+                    />
+                  </CardContainer>
+                </Grid.Column>
+
+                <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+                  <TreeChart
+                    height="222px"
+                    config={{
+                      ...this.props.config.partition,
+                      labeling: { prefix: this.state.currency },
+                    }}
+                    onClick={(d: { id: string }) => this.setFinanceLevel(d.id)}
+                    data={this.state.financeTree}
+                  />
+                </Grid.Column>
+
+              </Grid>
+            </Container>
+            <TourContainer
+              visible
+              closeHandler={() => console.log('test')}
+            >
+              <GovernmentFinanceTour />
+            </TourContainer>
+          </section>
+          <Container>
+            <HeadingContainer>
+              <SectionHeader color="#fff">
+                FINANCING <span>{this.state.year}</span>
+              </SectionHeader>
+            </HeadingContainer>
+          </Container>
+          <Container>
+            <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
+              <SectionHeader color="#fff" style={{ float: 'left' }}>
+                EXPENDITURE <span>{this.state.year}</span>
+              </SectionHeader>
+
+              <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
+                <Label>Budget Type</Label>
+                <Dropdown
+                  selection
+                  value={this.state.budgetType}
+                  options={this.state.budgetTypes}
+                  onChange={(e, data) => this.setBudgetType(data.value)}
+                />
+                <Label>Currency</Label>
+                <Dropdown
+                  compact
+                  selection
+                  value={this.state.currency}
+                  options={this.state.currencies}
+                  onChange={(e, data) => this.setCurrency(data.value)}
+                />
+              </Segment>
             </Segment>
-          </Segment>
 
-          <Grid>
-            <Grid.Column width={5} style={{ paddingRight: 0 }}>
-              <CardContainer style={{ paddingLeft: '30px' }}>
-                <Timeline
-                  onYearChanged={year => this.setYear(+year)}
-                  height="180px"
+            <Grid>
+              <Grid.Column width={5} style={{ paddingRight: 0 }}>
+                <CardContainer style={{ paddingLeft: '30px' }}>
+                  <Timeline
+                    onYearChanged={year => this.setYear(+year)}
+                    height="250px"
+                    config={{
+                      ...this.props.config.line,
+                      anchor: { start: this.state.year.toString() },
+                    }}
+                    data={this.state.expenditureTrend}
+                  />
+                </CardContainer>
+              </Grid.Column>
+
+              <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+                <TreeChart
+                  height="292px"
                   config={{
-                    ...this.props.config.line,
-                    anchor: { start: this.state.year.toString() },
+                    ...this.props.config.partition,
+                    labeling: { prefix: this.state.currency },
                   }}
-                  data={this.state.revenueTrend}
+                  onClick={(d: { id: string }) => this.setExpenditureLevel(d.id)}
+                  data={this.state.expenditureTree}
                 />
-              </CardContainer>
-            </Grid.Column>
-
-            <Grid.Column width={11} style={{ paddingLeft: 0 }}>
-              <TreeChart
-                height="222px"
-                config={{
-                  ...this.props.config.partition,
-                  labeling: { prefix: this.state.currency },
-                }}
-                onClick={(d: { id: string }) => this.setRevenueLevel(d.id)}
-                data={this.state.revenueTree}
-              />
-            </Grid.Column>
-          </Grid>
-
-          <Grid>
-            <Grid.Column width={5} style={{ paddingRight: 0 }}>
-              <CardContainer style={{ paddingLeft: '30px' }}>
-                <Timeline
-                  onYearChanged={year => this.setYear(+year)}
-                  height="180px"
-                  config={{
-                    ...this.props.config.line,
-                    anchor: { start: this.state.year.toString() },
-                  }}
-                  data={this.state.financeTrend}
-                />
-              </CardContainer>
-            </Grid.Column>
-
-            <Grid.Column width={11} style={{ paddingLeft: 0 }}>
-              <TreeChart
-                height="222px"
-                config={{
-                  ...this.props.config.partition,
-                  labeling: { prefix: this.state.currency },
-                }}
-                onClick={(d: { id: string }) => this.setFinanceLevel(d.id)}
-                data={this.state.financeTree}
-              />
-            </Grid.Column>
-          </Grid>
-
-          <HeadingContainer>
-            <SectionHeader color="#fff">
-              FINANCING <span>{this.state.year}</span>
-            </SectionHeader>
-          </HeadingContainer>
-
-
-          <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
-            <SectionHeader color="#fff" style={{ float: 'left' }}>
-              EXPENDITURE <span>{this.state.year}</span>
-            </SectionHeader>
-
-            <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
-              <Label>Budget Type</Label>
-              <Dropdown
-                selection
-                value={this.state.budgetType}
-                options={this.state.budgetTypes}
-                onChange={(e, data) => this.setBudgetType(data.value)}
-              />
-              <Label>Currency</Label>
-              <Dropdown
-                compact
-                selection
-                value={this.state.currency}
-                options={this.state.currencies}
-                onChange={(e, data) => this.setCurrency(data.value)}
-              />
-            </Segment>
-          </Segment>
-
-          <Grid>
-            <Grid.Column width={5} style={{ paddingRight: 0 }}>
-              <CardContainer style={{ paddingLeft: '30px' }}>
-                <Timeline
-                  onYearChanged={year => this.setYear(+year)}
-                  height="250px"
-                  config={{
-                    ...this.props.config.line,
-                    anchor: { start: this.state.year.toString() },
-                  }}
-                  data={this.state.expenditureTrend}
-                />
-              </CardContainer>
-            </Grid.Column>
-
-            <Grid.Column width={11} style={{ paddingLeft: 0 }}>
-              <TreeChart
-                height="292px"
-                config={{
-                  ...this.props.config.partition,
-                  labeling: { prefix: this.state.currency },
-                }}
-                onClick={(d: { id: string }) => this.setExpenditureLevel(d.id)}
-                data={this.state.expenditureTree}
-              />
-            </Grid.Column>
-          </Grid>
+              </Grid.Column>
+            </Grid>
+          </Container>
         </Segment>
       </LightBg>
     );
