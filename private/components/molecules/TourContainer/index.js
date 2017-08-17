@@ -31,6 +31,7 @@ const Overlay = glamorous.div(
     borderRadius: '5px',
     maxHeight: '740px',
     color: '#fff',
+    lineHeight: '1.5'
   },
   props => ({
     display: props.visible ? 'block' : 'none',
