@@ -21,6 +21,7 @@ const Overlay = glamorous.div(
   {
     position: 'absolute',
     top: '-50px',
+    fontWeight: 'normal',
     left: '20px',
     right: '20px',
     bottom: '0',

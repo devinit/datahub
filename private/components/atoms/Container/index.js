@@ -17,7 +17,12 @@ export const RankingsTableContainer = glamorous.div({
   paddingLeft: '1em',
   paddingRight: '1em',
 });
-
+export const PrintContainer = glamorous.div({
+  display: 'none',
+  '@media print': {
+    display: 'block !important'
+  }
+});
 export const CardContainer = glamorous.div({
   background: 'rgba(255,255,255,.6)',
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
