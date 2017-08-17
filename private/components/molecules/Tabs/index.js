@@ -106,10 +106,7 @@ class Tabs extends Component {
     const createTitleElms = (child, index) => {
       const activeClass = this.state.selected === index ? 'active' : '';
       return (
-        <li
-          key={child.props.label}
-          ref={node => child.props['data-focus'] ? node.scrollIntoView() : node}
-        >
+        <li key={child.props.label}>
           <TabLink className={activeClass} onClick={e => this.handleClick(index, e)}>
             {child.props.label}
           </TabLink>

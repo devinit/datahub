@@ -17,28 +17,34 @@ import data from './data';
 type Props = StateToShare & {
   id: string,
 };
+// chart IDs
+const GOVERNMENT_FINANCE_LOWER = 'government-finance-lower';
+const INFLOWS_VS_OUTFLOWS = 'inflows-vs-outflows';
+const INTERNATIONAL_RESOURCES = 'international-resources';
 
 export default function CountryProfileLowerTabs(props: Props) {
   const country = getCountry(props.id);
   const pageData = getCountryProfileData(props.id);
   return (
-    <Tabs textAlign="center" selected={0} >
+    <Tabs
+      textAlign="center"
+      selected={!props.chartId || props.chartId === GOVERNMENT_FINANCE_LOWER ? 0 : 1}
+    >
       { country && country.countryType === RECIPIENT ?
         <Pane
           label="GOVERNMENT FINANCE"
-          data-focus={props.chartId === 'government-finance-lower'}
-          id={'government-finance-lower'}
+          id={GOVERNMENT_FINANCE_LOWER}
         >
           <GovernmentFinance
             pageData={pageData}
-            chartId="government-finance-lower"
             countryName={country && country.name ? country.name : props.id}
           >
             <GovernmentFinanceChart
               budgetType={props.budgetType}
+              shouldScrollIntoView={props.chartId === GOVERNMENT_FINANCE_LOWER}
               id={props.id}
-              year={props.startYear}
-              chartId="government-finance-lower"
+              year={props.chartId === GOVERNMENT_FINANCE_LOWER ? props.year : null}
+              chartId={GOVERNMENT_FINANCE_LOWER}
             />
           </GovernmentFinance>
         </Pane>
@@ -46,15 +52,24 @@ export default function CountryProfileLowerTabs(props: Props) {
       }
       <Pane
         label="INTERNATIONAL RESOURCES"
-        data-focus={props.chartId === 'international-resources-lower'}
-        id={'international-resources-lower'}
+        id={INTERNATIONAL_RESOURCES}
       >
         <InternationalResourcesLower
           pageData={pageData}
           toolTip={data.internationalResources.resourcesOverTime.toolTip}
         >
-          <InflowsVsOutflows id={props.id} startYear={props.startYear} />
-          <InternationalResourcesChart id={props.id} />
+          <InflowsVsOutflows
+            id={props.id}
+            shouldScrollIntoView={props.chartId === INFLOWS_VS_OUTFLOWS}
+            chartId={INFLOWS_VS_OUTFLOWS}
+            year={props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : null}
+          />
+          <InternationalResourcesChart
+            shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES }
+            year={props.chartId === INTERNATIONAL_RESOURCES ? props.year : null}
+            chartId={INTERNATIONAL_RESOURCES}
+            id={props.id}
+          />
         </InternationalResourcesLower>
       </Pane>
     </Tabs>

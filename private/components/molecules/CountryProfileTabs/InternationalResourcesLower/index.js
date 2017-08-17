@@ -37,11 +37,6 @@ const InternationalResources = (props: Props) => {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width={6} textAlign="center">
-            <ChartShare background={false} hover color="grey" size="medium" />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
           <Grid.Column width={12} textAlign="center">
             <SectionHeader color={white}>
               <span>IN DETAIL</span> INTERNATIONAL RESOURCES
@@ -51,11 +46,6 @@ const InternationalResources = (props: Props) => {
         </Grid.Row>
         <Grid.Row>
           {props.children[1]}
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={6} textAlign="center">
-            <ChartShare background={false} hover color="grey" size="medium" />
-          </Grid.Column>
         </Grid.Row>
       </Grid>
     </Container>);

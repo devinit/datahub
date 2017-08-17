@@ -34,7 +34,6 @@ const ButtonWrapper = glamorous.span({
   }
 }));
 export type StateToShare = {
-  startYear?: number,
   year?: number,
   budgetType?: string,
   currency?: string,
@@ -67,7 +66,7 @@ export default class ChartShare extends Component {
   }
   state = {
     link: '',
-    value: 1
+    value: 2
   }
   state: State
   componentDidMount() {
@@ -78,12 +77,18 @@ export default class ChartShare extends Component {
   }
   onLinkChange = () => this.createLink();
 
-  handleChange = (value: number) => this.setState({value});
+  handleChange = (value: number) => {
+    this.setState({value});
+    this.createLink(value);
+  };
 
-  async createLink() {
+  async createLink(checkedOption: number = 2) {
     if (!this.props.stateToShare) return this.state;
     const currentUrl = window.location.href;
-    const link = `${currentUrl}?state=${JSON.stringify(this.props.stateToShare)}`;
+    const chartState =
+      checkedOption === 1 && this.props.stateToShare && this.props.stateToShare.chartId ?
+        {chartId: this.props.stateToShare.chartId} : this.props.stateToShare;
+    const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
     return this.setState({link: shortURL});
   }
