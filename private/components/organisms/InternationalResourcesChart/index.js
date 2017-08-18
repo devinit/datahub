@@ -18,7 +18,6 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
   if (props.loading) return <LoadingBar loading={props.loading} />;
   return (
     <InternationalResourcesChart
-      id={props.id}
       startYear={props.startYear}
       data={props.data}
       config={config}
