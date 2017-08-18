@@ -81,6 +81,10 @@ const UnbundlingTreemap = (props: Props) => {
               ...props.config,
               colors: [props.color],
               coloring: null,
+              tree: {
+                ...props.config.tree,
+                id: 'name',
+              }
             }}
             data={props.bundles[props.year] || []}
             height="360px"
