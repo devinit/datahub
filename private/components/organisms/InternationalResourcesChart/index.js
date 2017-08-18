@@ -6,6 +6,8 @@ import InternationalResourcesChart from 'components/molecules/AreaPartitionChart
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
 import {getCountryName} from 'lib/utils';
+import flowCache from './data';
+import countryCache from '../CountrySearchInput/data';
 import QUERY from './query.graphql';
 
 type WrapperProps = Props & {
@@ -16,10 +18,13 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
   if (props.loading) return <LoadingBar loading={props.loading} />;
   return (
     <InternationalResourcesChart
+      id={props.id}
       startYear={props.startYear}
       data={props.data}
       config={config}
       country={props.country}
+      inflows={props.inflows}
+      outflows={props.outflows}
     />
   );
 };
@@ -27,21 +32,27 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
 const withData = graphql(QUERY, {
   options: props => ({
     variables: {
-      id: props.id,
+      id: props.id
     },
   }),
-  props: ({ data }) => {
+  props: ({ data, ownProps }) => {
+    const [countryType = 'recipient'] = countryCache.countries
+      .filter(country => country.id === ownProps.id)
+      .map(country => country.countryType);
+
+    const { inflows, outflows } = flowCache[countryType];
+
     const { error, loading } = data;
     if (error) throw new Error(error);
-    return loading || !data.internationalResources
-      ? { loading }
-      : {
+    return loading || !data.internationalResources ?
+      { loading } :
+      {
+        id: data.variables.id,
         country: getCountryName(data.variables.id),
         startYear: data.internationalResources.startYear,
-        data: data.internationalResources.resourcesOverTime.data.map(d => ({
-          ...d,
-          flow_group: `${d.flow_category}-${d.flow_type}`,
-        }))
+        data: data.internationalResources.resourcesOverTime.data,
+        inflows,
+        outflows,
       };
   },
 });
