@@ -1,6 +1,6 @@
 const areaConfig = {
   type: 'stacked-timearea',
-  groupBy: 'flow_category',
+  groupBy: 'flow_name',
   coloring: 'color',
   showLabels: true,
   linearAxis: {
@@ -27,7 +27,7 @@ const treemapConfig = {
     prefix: 'US$ ',
   },
   tree: {
-    id: 'flow_category',
+    id: 'flow_name',
     value: 'value',
   },
   treemap: {

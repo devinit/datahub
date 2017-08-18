@@ -238,6 +238,15 @@ export type TabDataQuery = {|
   |},
 |};
 
+export type DifferentProvidersDifferentPriotitiesQuery = {|
+  // IdNamePair is defined in unbundling aid types
+  // this list feeds off oda table from countries and global/concept file
+  bubbleChartIndicatorsList: ? Array< {|
+    id: ?string,
+    name: ?string,
+  |} >,
+|};
+
 export type GovernmentFinanceQueryVariables = {|
   id: string,
 |};
@@ -334,6 +343,15 @@ export type MapDataQuery = {|
       backgroundColor: ?string,
     |} >,
   |},
+|};
+
+export type PovertyQuery = {|
+  // IdNamePair is defined in unbundling aid types
+  // this list feeds off oda table from countries and global/concept file
+  bubbleChartIndicatorsList: ? Array< {|
+    id: ?string,
+    name: ?string,
+  |} >,
 |};
 
 export type SpotLightTabDataQueryVariables = {|
@@ -564,16 +582,26 @@ export type UnbundlingAidDataQuery = {|
   |} >,
 |};
 
-export type DifferentProvidersDifferentPriotitiesQuery = {|
-  // IdNamePair is defined in unbundling aid types
-  // this list feeds off oda table from countries and global/concept file
-  bubbleChartIndicatorsList: ? Array< {|
-    id: ?string,
-    name: ?string,
-  |} >,
+export type UnbundlingInternationalResourcesQueryVariables = {|
+  resourceId: string,
+  countryId: string,
+  groupById: string,
 |};
 
-export type PovertyQuery = {|
+export type UnbundlingInternationalResourcesQuery = {|
+  // for area tree map chart dropdown selectoion
+  singleResource: ? {|
+    color: ?string,
+    resources: ? Array< {|
+      id: ?string,
+      name: ?string,
+      value: ?number,
+      year: ?number,
+    |} >,
+  |},
+|};
+
+export type BubbleChartIndicatorListQuery = {|
   // IdNamePair is defined in unbundling aid types
   // this list feeds off oda table from countries and global/concept file
   bubbleChartIndicatorsList: ? Array< {|
@@ -615,6 +643,60 @@ export type GlobalPictureThemesQuery = {|
     |} >,
     default_indicator: ?string,
   |} >,
+|};
+
+export type InfowsVsOutflowsQueryVariables = {|
+  donor: string,
+  recipient: string,
+|};
+
+export type InfowsVsOutflowsQuery = {|
+  // eg recipient or donor
+  donor: ? {|
+    // an array of inflows for a particular countryType for area & partition chart
+    inflows: ? Array< {|
+      id: ?string,
+      name: ?string,
+      selections: ? Array< {|
+        // this is the group ID
+        id: ?string,
+        name: ?string,
+      |} >,
+    |} >,
+    // an array of outflows for a particular countryType
+    outflows: ? Array< {|
+      id: ?string,
+      name: ?string,
+      selections: ? Array< {|
+        // this is the group ID
+        id: ?string,
+        name: ?string,
+      |} >,
+    |} >,
+  |},
+  // eg recipient or donor
+  recipient: ? {|
+    // an array of inflows for a particular countryType for area & partition chart
+    inflows: ? Array< {|
+      id: ?string,
+      name: ?string,
+      selections: ? Array< {|
+        // this is the group ID
+        id: ?string,
+        name: ?string,
+      |} >,
+    |} >,
+    // an array of outflows for a particular countryType
+    outflows: ? Array< {|
+      id: ?string,
+      name: ?string,
+      selections: ? Array< {|
+        // this is the group ID
+        id: ?string,
+        name: ?string,
+      |} >,
+    |} >,
+  |},
 |};
 
 export type PageDataQuery = {|

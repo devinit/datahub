@@ -45,7 +45,6 @@ class Profile extends Component {
   lowerTabs: HTMLElement
   jumpToSection = (sectionId: string) => {
     const selectedTab = sectionId === GOVERNMENT_FINANCE_LOWER ? 0 : 1;
-    console.log('lower tabs', this.lowerTabs);
     this.setState({selectedTab});
     if (this.lowerTabs) this.lowerTabs.scrollIntoView();
   }

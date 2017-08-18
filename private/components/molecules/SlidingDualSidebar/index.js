@@ -1,6 +1,7 @@
 // @flow
 /* eslint-disable react/sort-comp */
 import React from 'react';
+import { groupBy } from 'ramda';
 import { Grid, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import approximate from 'approximate-number';
@@ -27,21 +28,9 @@ export type Props = {
   // from share url, cached state
   year?: number,
   shouldScrollIntoView?: boolean,
-  data: [], // TODO: should be flowData with API integration
+  data: Object[], // TODO: should be flowData with API integration
   config: any,
   cached?: State
-};
-
-const groupBy = (list, groupFn) => {
-  return list.reduce((map, datum) => {
-    // TODO: @ernest write some comments about what ~ does
-    // Lots of people dont know
-    const key = groupFn(datum);
-    return {
-      ...map,
-      [key]: [...(map[key] || []), datum],
-    };
-  }, {});
 };
 
 class SlidingDualSidebar extends React.Component {
@@ -78,16 +67,19 @@ class SlidingDualSidebar extends React.Component {
    * Makes every year has all flows unique flows in the data set
    * @param data
    */
-  static normalizeDataset(data) {
+  static normalizeDataset(data: Object[]) {
     // Group by unique flow-name
-    const types = groupBy(data, d => `${d.direction}~${d.flow_type}~${d.flow_category}~${d.flow_name}`);
+    const types = groupBy(
+      d => `${d.direction}~${d.flow_type}~${d.flow_category}~${d.flow_name}`,
+      data
+    );
+    const groupedByYear = groupBy(d => d.year, data);
+
 
     const expected = Object.keys(types).map(t => {
       const [direction, type, category, name] = t.split('~');
       return { direction, type, category, name };
     });
-
-    const groupedByYear = groupBy(data, d => d.year);
 
     return Object.keys(groupedByYear).reduce((all, year) => {
       return {

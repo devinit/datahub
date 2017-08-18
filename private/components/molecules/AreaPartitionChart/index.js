@@ -2,40 +2,37 @@
 /* eslint-disable react/sort-comp */
 import React from 'react';
 import approximate from 'approximate-number';
-import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
-import { SectionHeader } from 'components/atoms/Header';
-import ChartShare from 'components/molecules/ChartShare';
-import { Container, Dropdown, Grid, Header } from 'semantic-ui-react';
-import { LightBg } from 'components/atoms/Backgrounds';
-import TreeChart from 'components/atoms/TreeChart';
-import Timeline from 'components/atoms/Timeline';
+import {groupBy} from 'ramda';
+import {SectionHeader} from 'components/atoms/Header';
+import UnbundlingInternationalResources from 'components/organisms/UnbundlingInternationalResources';
+import {Container, Dropdown, Grid, Header} from 'semantic-ui-react';
+import {LightBg} from '../../atoms/Backgrounds';
+import TreeChart from '../../atoms/TreeChart';
+import Timeline from '../../atoms/Timeline';
 
 export type State = {
   directions: Object[],
   flows: Object[],
 
-  year: string,
+  year: number,
   direction: string,
   flow?: string,
+  flowName?: string,
+  detailSelections?: Object[],
+  detailGroup?: string,
 
   trend: Object[],
   mixes: Object,
 };
 export type Props = {
+  id: string,
   country: string,
   data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
   config: any,
   startYear: number,
-  // for scrolling to this chart, think of it has the chart container ID
-  chartId?: string,
-  year?: number, // think cacehed state. this value becomes start year if available
-  shouldScrollIntoView?: boolean,
+  inflows: any[],
+  outflows: any[],
   cached?: State
-};
-
-type Determinant = {
-  direction?: string,
-  flow?: string,
 };
 
 class AreaPartitionChart extends React.Component {
@@ -46,104 +43,111 @@ class AreaPartitionChart extends React.Component {
     super(props);
     this.state = this.initState(props);
   }
+
   initState(props: Props) {
+    const year = this.props.startYear;
+    const direction = 'in';
+    const directions = [
+      {value: 'in', text: `Inflows to ${props.country}`},
+      {value: 'out', text: `Outflows leaving ${props.country}`},
+    ];
+
     return {
-      year: props.year ? props.year.toString() : props.startYear.toString(),
+      year,
+      direction,
+      directions,
 
-      ...this.calculateState({
-        direction: 'in',
-      }),
-
-      directions: [
-        { value: 'in', text: `Inflows to ${props.country}` },
-        { value: 'out', text: `Outflows leaving ${props.country}` },
-      ],
-
-      flows: [
-        {
-          value: 'all',
-          text: 'All',
-        },
-
-        ...makeUnique(props.data.map(d => d.flow_category))
-          .map(category => {
-            const types = makeUnique(
-              this.props.data.filter(d => d.flow_category === category).map(d => d.flow_type),
-            );
-
-            if (types.length > 1) {
-              return types.map(type => ({
-                text: `${category} (${type})`,
-                value: `${category}-${type}`,
-              }));
-            }
-
-            return types.map(type => ({
-              text: category,
-              value: `${category}-${type}`,
-            }));
-          })
-          .reduce((all, group) => [...all, ...group], []),
-      ],
+      ...this.getDirectionState(direction)
     };
   }
-  setYear(year: string) {
-    this.setState({ year });
-  }
 
-  update(determinants: Determinant) {
-    const state = this.calculateState({
-      direction: determinants.direction || this.state.direction,
-      flow: determinants.flow || this.state.flow,
+  setYear(year: number) {
+    this.setState({
+      year,
     });
-
-    this.setState(state);
   }
 
-  calculateState(determinants: Determinant) {
-    const { direction, flow } = determinants;
+  setDirection(direction: string) {
+    this.setState(this.getDirectionState(direction));
+  }
 
-    const trend = this.props.data
-      .filter(d => {
-        return d.direction === direction && (!flow || flow === 'all' || d.flow_group === flow);
-      })
-      .map(({ year, ...datum }) => ({
-        ...datum,
+  setFlow(id: string) {
+    this.setState(this.getFlowState(this.state.direction, id));
+  }
 
-        year: year.toString(),
-      }))
-      .sort((a, b) => a.year - b.year);
+  setFlowDetailGroup(id: string) {
+    this.setState({
+      detailGroup: id,
+    });
+  }
 
-    const mixes = trend.reduce((map, datum) => {
-      return {
-        ...map,
+  getDirectionState(direction: string) {
+    const flows = [
+      {
+        key: 'all',
+        text: 'Choose a flow for more details',
+        value: 'all',
+      },
 
-        [datum.year]: [...(map[datum.year] || []), datum],
-      };
-    }, {});
+      ...(direction === 'in' ? this.props.inflows : this.props.outflows)
+        .map(flow => ({
+          key: flow.id,
+          text: flow.name,
+          value: flow.id,
+        })),
+    ];
+
+    const flow = 'all';
 
     return {
       direction,
       flow,
+      flows,
+      ...this.getFlowState(direction, flow)
+    };
+  }
 
+  getFlowState(direction: string, flow?: string) {
+    const trend = this.props.data
+      .filter(d =>
+        d.direction === direction &&
+        (flow === 'all' || d.flow_id === flow)
+      )
+      .sort((a, b) => b.value - a.value);
+
+    const flows = direction === 'in' ? this.props.inflows : this.props.outflows;
+
+    const [flowDetails = {}] = flows.filter(f => f.id === flow);
+
+    const detailSelections = (flowDetails.selections || [])
+      .map(({id, name}, i) => ({
+        text: name,
+        value: id,
+        key: i,
+      }));
+
+    const detailGroup = (detailSelections[0] || {}).value;
+
+    return {
+      flow,
+      flowName: flowDetails.name,
       trend,
-
-      mixes,
+      detailSelections,
+      detailGroup,
+      mixes: groupBy(d => d.year, trend),
     };
   }
 
   render() {
     return (
-      <LightBg
-        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
-      >
+      <LightBg>
         <Container>
           <Grid centered>
             <Grid.Column width={6}>
               <Dropdown
                 selection
                 fluid
-                onChange={(e, data) => this.update({ direction: data.value })}
+                onChange={(e, data) => this.setDirection(data.value)}
                 value={this.state.direction}
                 options={this.state.directions}
               />
@@ -158,8 +162,7 @@ class AreaPartitionChart extends React.Component {
               <Dropdown
                 selection
                 fluid
-                text="Choose a flow for more details"
-                onChange={(e, data) => this.update({ flow: data.value })}
+                onChange={(e, data) => this.setFlow(data.value)}
                 value={this.state.flow}
                 options={this.state.flows}
               />
@@ -167,13 +170,30 @@ class AreaPartitionChart extends React.Component {
 
             <Grid.Column width={1} />
 
-            <Grid.Column width={8}>
-              <Header as="h3" textAlign="center">
-                <Header.Content>
-                  The mix of resources in <span>{this.state.year}</span>
-                </Header.Content>
-              </Header>
-            </Grid.Column>
+            {this.state.flow === 'all' ?
+              <Grid.Column width={8}>
+                <Header as="h3" textAlign="center">
+                  <Header.Content>
+                    The mix of resources in <span>{this.state.year}</span>
+                  </Header.Content>
+                </Header>
+              </Grid.Column> :
+              <Grid.Column width={8}>
+                <Header as="h3" textAlign="center">
+                  <Header.Content>
+                    <span>What we know about {this.state.flowName} by </span>
+                    {<Dropdown
+                      selection
+                      compact
+                      onChange={(e, data) => this.setFlowDetailGroup(data.value)}
+                      value={this.state.detailGroup}
+                      options={this.state.detailSelections}
+                    />}
+                    <span> in {this.state.year}</span>
+                  </Header.Content>
+                </Header>
+              </Grid.Column>
+            }
           </Grid>
 
           <Grid>
@@ -185,10 +205,10 @@ class AreaPartitionChart extends React.Component {
                   ...this.props.config.areaConfig,
 
                   anchor: {
-                    start: this.state.year,
+                    start: this.state.year.toString(),
                   },
                 }}
-                onYearChanged={year => this.setYear(year)}
+                onYearChanged={year => this.setYear(+year)}
               />
             </Grid.Column>
 
@@ -202,30 +222,22 @@ class AreaPartitionChart extends React.Component {
                     .reduce((sum, datum) => sum + datum.value, 0),
                 )}
               </SectionHeader>
-              <TreeChart
-                height="360px"
-                data={this.state.mixes[+this.state.year] || []}
-                config={this.props.config.treemapConfig}
-                onClick={d => this.update({ flow: d.flow_group })}
-              />
-            </Grid.Column>
-          </Grid>
-          <Grid centered>
-            <Grid.Row>
-              <Grid.Column width={6} textAlign="center">
-                <ChartShare
-                  background={false}
-                  stateToShare={{
-                    year: Number(this.state.year),
-                    flow: this.state.flow,
-                    chartId: this.props.chartId
-                  }}
-                  hover
-                  color="grey"
-                  size="medium"
+              {this.state.flow === 'all' ?
+                <TreeChart
+                  height="360px"
+                  data={this.state.mixes[+this.state.year] || []}
+                  config={this.props.config.treemapConfig}
+                  onClick={(d: {flow_id: string}) => this.setFlow(d.flow_id)}
+                /> :
+                <UnbundlingInternationalResources
+                  country={this.props.id}
+                  year={this.state.year}
+                  groupBy={this.state.detailGroup}
+                  flow={this.state.flow}
+                  config={this.props.config.treemapConfig}
                 />
-              </Grid.Column>
-            </Grid.Row>
+              }
+            </Grid.Column>
           </Grid>
         </Container>
       </LightBg>
