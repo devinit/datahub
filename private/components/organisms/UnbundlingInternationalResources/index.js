@@ -25,7 +25,7 @@ const NoDataAvailableContainer = glamorous.div({
 });
 
 const withData = graphql(QUERY, {
-  options: (props) => {
+  options: props => {
     return {
       variables: {
         groupById: props.groupBy,
@@ -41,13 +41,13 @@ const withData = graphql(QUERY, {
       console.error(error);
     }
 
-    const { color = '#abc', resources = [] } = (data.singleResource || {});
+    const { color = '#abc', resources = [] } = data.singleResource || {};
 
-    return loading ?
-      { loading } :
-      {
+    return loading
+      ? { loading }
+      : {
         color,
-        bundles: groupBy(d => d.year, resources)
+        bundles: groupBy(d => d.year, resources),
       };
   },
 });
@@ -55,10 +55,9 @@ const withData = graphql(QUERY, {
 const UnbundlingTreemap = (props: Props) => {
   return (
     <div>
-
       <Container>
-        {props.loading || !(props.bundles[props.year] || []).length ?
-          <Segment
+        {props.loading || !(props.bundles[props.year] || []).length
+          ? <Segment
             basic
             style={{
               position: 'absolute',
@@ -69,15 +68,14 @@ const UnbundlingTreemap = (props: Props) => {
             }}
           >
             <Dimmer style={{ backgroundColor: props.color || '#888', zIndex: 1 }} active>
-              {props.loading ?
-                <Loader /> :
-                <NoDataAvailableContainer>
-                  Detailed data is not available for this year
-                </NoDataAvailableContainer>
-              }
+              {props.loading
+                  ? <Loader />
+                  : <NoDataAvailableContainer>
+                      Detailed data is not available for this year
+                    </NoDataAvailableContainer>}
             </Dimmer>
-          </Segment> :
-          <TreeChart
+          </Segment>
+          : <TreeChart
             config={{
               ...props.config,
               colors: [props.color],
@@ -85,7 +83,7 @@ const UnbundlingTreemap = (props: Props) => {
               tree: {
                 ...props.config.tree,
                 id: 'name',
-              }
+              },
             }}
             data={props.bundles[props.year] || []}
             height="360px"
@@ -97,4 +95,3 @@ const UnbundlingTreemap = (props: Props) => {
 };
 
 export default withData(UnbundlingTreemap);
-
