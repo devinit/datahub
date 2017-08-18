@@ -34,7 +34,7 @@ class Profile extends Component {
   constructor(props: Props) {
     super(props);
     this.country = getCountry(props.id);
-    const selectedTab = props.state.chartId && props.state.chartId !== GOVERNMENT_FINANCE_LOWER ? 1 : 0;
+    const selectedTab = props.state && props.state.chartId && props.state.chartId !== GOVERNMENT_FINANCE_LOWER ? 1 : 0;
     this.state = {selectedTab};
   }
   state: {
@@ -69,7 +69,8 @@ class Profile extends Component {
 
                       {this.country.slug === 'uganda' ?
                         <Span marginTop={'0.5em'} display={'inline-block'} fontSize={small}>
-                          Visit our new <Link href="/spotlight-on-uganda">Spotlight on Uganda </Link> to explore data by district.</Span> : ''
+                          Visit our new <A color={red} href="/spotlight-on-uganda">
+                            Spotlight on Uganda</A> to explore data by district.</Span> : ''
                       }
                     </Lead>
                     <Span marginTop={'1em'} display={'inline-block'}>

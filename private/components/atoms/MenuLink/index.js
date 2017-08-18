@@ -4,6 +4,7 @@ import glamorous from 'glamorous';
 import type { Element } from 'react';
 import { Container, Icon } from 'semantic-ui-react';
 import { white, redHeaderColor, black } from 'components/theme/semantic';
+import Link from 'next/link';
 import { NavLink } from '../Link';
 
 type Props = {
@@ -100,11 +101,13 @@ export default ({ children, hasSubMenu, menu, link }: Props) => {
   return (
     <LocalContainer hasSubMenu={hasSubMenu}>
       {hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : ''}
-      <NavLink href={link}>
-        <div className="menu-text">
-          {menu}
-        </div>
-      </NavLink>
+      <Link href={link}>
+        <NavLink>
+          <div className="menu-text">
+            {menu}
+          </div>
+        </NavLink>
+      </Link>
       {hasSubMenu
         ? <Drawer>
           <Container>

@@ -1,5 +1,6 @@
 import glamorous from 'glamorous';
-import { white, lighterGrey, grey, black } from 'components/theme/semantic';
+import { white, lighterGrey, grey, black, red } from 'components/theme/semantic';
+// import Link from 'next/link';
 import { medium } from 'components/theme';
 
 export const FooterLink = glamorous.a({
@@ -19,13 +20,6 @@ export const NavLink = glamorous.a({
     color: white,
   },
 });
-// type Props = {
-//   hfref
-// }
-// export const InboundLinks = (props: Props) => {
-
-// };
-// social-media_circle-icon style as circular icon
 export const SocialMediaLink = glamorous.a({
   display: 'inline-block',
   color: black,
