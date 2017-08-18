@@ -2,7 +2,6 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import config from 'visboxConfigs/areaTreemapChart';
-import { RECIPIENT } from 'lib/utils/constants';
 import InternationalResourcesChart from 'components/molecules/AreaPartitionChart';
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
@@ -47,7 +46,7 @@ const withData = graphql(QUERY, {
       .filter(country => country.id === ownProps.id);
 
     const countryType = country
-      .map(country => country.countryType || RECIPIENT);
+      .map(country => country.countryType || 'recipient');
 
     const { inflows, outflows } = flowCache[countryType];
 
