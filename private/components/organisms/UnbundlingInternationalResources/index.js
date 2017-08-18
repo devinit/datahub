@@ -24,7 +24,7 @@ const NoDataAvailableContainer = glamorous.div({
 });
 
 const withData = graphql(QUERY, {
-  options: (props, a, b) => {
+  options: (props) => {
     return {
       variables: {
         groupById: props.groupBy,

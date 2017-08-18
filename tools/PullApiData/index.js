@@ -4,7 +4,6 @@ import { createApolloFetch } from 'apollo-fetch';
 import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
-import {DONOR, RECIPIENT} from 'lib/utils/constants';
 import COUNTRIES_QUERY from './queries/Countries.graphql';
 import DISTRICT_QUERY from './queries/Districts.graphql';
 import PAGES_DATA_QUERY from './queries/PageData.graphql';
@@ -13,6 +12,8 @@ import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
 import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
 
+const RECIPIENT = 'recipient';
+const DONOR = 'donor';
 const baseOrganismsPath = 'private/components/organisms';
 const uri = config.api;
 
