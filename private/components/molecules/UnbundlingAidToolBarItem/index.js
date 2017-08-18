@@ -20,7 +20,6 @@ const ToolBarItem = (props: Props) => {
     textAlign,
     onChange = (key, value) => {
       // TOFIX: @ernest why is this here yet its unused
-      console.log(key, value);
     },
   } = props;
 

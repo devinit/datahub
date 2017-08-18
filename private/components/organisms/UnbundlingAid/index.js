@@ -100,7 +100,6 @@ class Chart extends React.Component {
   }
 
   render() {
-    // console.log('props', this.props);
     /* eslint-disable no-nested-ternary */
     return (
       <Div position="relative">

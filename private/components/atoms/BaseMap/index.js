@@ -32,7 +32,7 @@ class BaseMap extends Component {
       const total = acc.total + 1;
       return { ...acc, sum, total, ...feature.properties };
     }, { total: 0, sum: 0 });
-    // console.log('props', props, features);
+
     const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
     const id: string = props.ISO2 || '';
     const countryName: string = props.NAME || props.NAME || '';

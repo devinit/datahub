@@ -45,10 +45,6 @@ const withData = graphql(QUERY, {
     const [country = {}] = countryCache.countries
       .filter(country => country.slug === ownProps.id);
 
-    // ...
-    // ...
-    console.log(country);
-
     const countryType = country.countryType || 'recipient';
 
     const { inflows, outflows } = flowCache[countryType];
