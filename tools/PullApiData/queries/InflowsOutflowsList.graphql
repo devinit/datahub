@@ -1,0 +1,39 @@
+query InfowsVsOutflows($donor: String!, $recipient: String!) {
+  donor: flows(countryType: $donor) {
+    inflows {
+      id
+      name
+      selections {
+        id
+        name
+      }
+    }
+    outflows {
+      id
+      name
+      selections {
+        id
+        name
+      }
+    }
+  }
+
+  recipient: flows(countryType: $recipient) {
+    inflows {
+      id
+      name
+      selections {
+        id
+        name
+      }
+    }
+    outflows {
+      id
+      name
+      selections {
+        id
+        name
+      }
+    }
+  }
+}

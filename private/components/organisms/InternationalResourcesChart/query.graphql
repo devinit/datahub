@@ -3,8 +3,10 @@ query ResourcesOverTime($id: String!) {
     startYear
     resourcesOverTime {
       data {
+        uid
         year
         value
+        flow_id
         flow_name
         flow_category
         flow_type

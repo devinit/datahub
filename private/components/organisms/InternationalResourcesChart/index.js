@@ -6,16 +6,22 @@ import InternationalResourcesChart from 'components/molecules/AreaPartitionChart
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
 import {getCountryName} from 'lib/utils';
+import flowCache from './data';
+import countryCache from '../CountrySearchInput/data';
 import QUERY from './query.graphql';
 
 type WrapperProps = Props & {
-  loading: boolean
+  loading: boolean,
+  year: number,
+  shouldScrollIntoView: boolean,
+  chartId: string,
 };
 
 const internationalResourcesChartWrapper = (props: WrapperProps) => {
   if (props.loading) return <LoadingBar loading={props.loading} />;
   return (
     <InternationalResourcesChart
+      id={props.id}
       startYear={props.startYear}
       data={props.data}
       config={config}
@@ -23,6 +29,8 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
       shouldScrollIntoView={props.shouldScrollIntoView}
       chartId={props.chartId}
       country={props.country}
+      inflows={props.inflows}
+      outflows={props.outflows}
     />
   );
 };
@@ -30,21 +38,30 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
 const withData = graphql(QUERY, {
   options: props => ({
     variables: {
-      id: props.id,
+      id: props.id
     },
   }),
-  props: ({ data }) => {
+  props: ({ data, ownProps }) => {
+    const [country = {}] = countryCache.countries
+      .filter(country => country.slug === ownProps.id);
+
+    const countryType = country.countryType || 'recipient';
+
+    const { inflows, outflows } = flowCache[countryType];
+
     const { error, loading } = data;
+
     if (error) throw new Error(error);
-    return loading || !data.internationalResources
-      ? { loading }
-      : {
+
+    return loading || !data.internationalResources ?
+      { loading } :
+      {
+        id: country.id,
         country: getCountryName(data.variables.id),
         startYear: data.internationalResources.startYear,
-        data: data.internationalResources.resourcesOverTime.data.map(d => ({
-          ...d,
-          flow_group: `${d.flow_category}-${d.flow_type}`,
-        }))
+        data: data.internationalResources.resourcesOverTime.data,
+        inflows,
+        outflows,
       };
   },
 });

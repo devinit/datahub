@@ -26,7 +26,7 @@
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "flow": "flow",
-    "test": "BABEL_ENV=test jest private/lib/utils/utils.test.js",
+    "test": "BABEL_ENV=test jest",
     "analyze": "ANALYZE=1 next build",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",
