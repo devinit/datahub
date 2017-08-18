@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.12",
   "config": {
-    "api": "https://datahub-api-emzvudhhhk.now.sh/graphql"
+    "api": "https://datahub-api-irsozxhxxz.now.sh/graphql"
   },
   "now": {
     "name": "datahub",
@@ -43,7 +43,6 @@
   },
   "dependencies": {
     "@devinit/charts": "^1.3.22",
-    "@std/esm": "^0.5.1",
     "apollo-client": "^1.9.0-1",
     "apollo-fetch": "^0.6.0",
     "approximate-number": "^2.0.0",

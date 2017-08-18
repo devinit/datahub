@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { white, lighterGrey, grey, black, red } from 'components/theme/semantic';
+import { white, lighterGrey, grey, black} from 'components/theme/semantic';
 // import Link from 'next/link';
 import { medium } from 'components/theme';
 
