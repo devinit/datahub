@@ -73,12 +73,12 @@ class Profile extends Component {
                       }
                       <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.country.id}.svg`} />
                       {this.country.slug === 'uganda' ?
-                        <Span marginTop={'0.5em'} display={'inline-block'} fontSize={small}>
+                        <Span fontSize={small} display={'inline-block'} fontWeight={500} >
                           Visit our new <A color={red} href="/spotlight-on-uganda">
                             Spotlight on Uganda</A> to explore data by district.</Span> : ''
                       }
                     </Lead>
-                    <Span marginTop={'1em'} display={'inline-block'}>
+                    <Span>
                       Jump to {
                         this.country.countryType === RECIPIENT ?
                           <span>
@@ -97,6 +97,7 @@ class Profile extends Component {
                       <Button icon="twitter" />
                       <Button icon="google plus" />
                       <Button icon="mail outline" />
+                      <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
                     </Div>
                   </CardContainer>
                 </Grid.Column>
