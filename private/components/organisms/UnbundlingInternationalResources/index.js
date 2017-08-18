@@ -10,8 +10,9 @@ import QUERY from './query.graphql';
 export type Props = {
   loading: boolean,
   color: string,
+  year: number,
   config: Object,
-  bundles: Object[],
+  bundles: any[],
 };
 
 const Container = glamorous.div({

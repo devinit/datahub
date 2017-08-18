@@ -28,7 +28,7 @@ export type Props = {
   // from share url, cached state
   year?: number,
   shouldScrollIntoView?: boolean,
-  data: [], // TODO: should be flowData with API integration
+  data: Object[], // TODO: should be flowData with API integration
   config: any,
   cached?: State
 };
@@ -67,7 +67,7 @@ class SlidingDualSidebar extends React.Component {
    * Makes every year has all flows unique flows in the data set
    * @param data
    */
-  static normalizeDataset(data) {
+  static normalizeDataset(data: Object[]) {
     // Group by unique flow-name
     const types = groupBy(
       d => `${d.direction}~${d.flow_type}~${d.flow_category}~${d.flow_name}`,

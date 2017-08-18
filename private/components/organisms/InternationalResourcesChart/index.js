@@ -2,6 +2,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import config from 'visboxConfigs/areaTreemapChart';
+import { RECIPIENT } from 'lib/utils/constants';
 import InternationalResourcesChart from 'components/molecules/AreaPartitionChart';
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
@@ -11,13 +12,17 @@ import countryCache from '../CountrySearchInput/data';
 import QUERY from './query.graphql';
 
 type WrapperProps = Props & {
-  loading: boolean
+  loading: boolean,
+  year: number,
+  shouldScrollIntoView: boolean,
+  chartId: string,
 };
 
 const internationalResourcesChartWrapper = (props: WrapperProps) => {
   if (props.loading) return <LoadingBar loading={props.loading} />;
   return (
     <InternationalResourcesChart
+      id={props.id}
       startYear={props.startYear}
       data={props.data}
       config={config}
@@ -38,9 +43,11 @@ const withData = graphql(QUERY, {
     },
   }),
   props: ({ data, ownProps }) => {
-    const [countryType = 'recipient'] = countryCache.countries
-      .filter(country => country.id === ownProps.id)
-      .map(country => country.countryType);
+    const [country] = countryCache.countries
+      .filter(country => country.id === ownProps.id);
+
+    const countryType = country
+      .map(country => country.countryType || RECIPIENT);
 
     const { inflows, outflows } = flowCache[countryType];
 
@@ -49,7 +56,7 @@ const withData = graphql(QUERY, {
     return loading || !data.internationalResources ?
       { loading } :
       {
-        id: data.variables.id,
+        id: country.id,
         country: getCountryName(data.variables.id),
         startYear: data.internationalResources.startYear,
         data: data.internationalResources.resourcesOverTime.data,

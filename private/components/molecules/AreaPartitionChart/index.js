@@ -14,9 +14,12 @@ export type State = {
   directions: Object[],
   flows: Object[],
 
-  year: string,
+  year: number,
   direction: string,
   flow?: string,
+  flowName?: string,
+  detailSelections?: Object[],
+  detailGroup?: string,
 
   trend: Object[],
   mixes: Object,
@@ -39,7 +42,6 @@ class AreaPartitionChart extends React.Component {
   constructor(props: Props) {
     super(props);
     this.state = this.initState(props);
-    console.log(props.id);
   }
 
   initState(props: Props) {
@@ -206,7 +208,7 @@ class AreaPartitionChart extends React.Component {
                     start: this.state.year.toString(),
                   },
                 }}
-                onYearChanged={year => this.setYear(year)}
+                onYearChanged={year => this.setYear(+year)}
               />
             </Grid.Column>
 
@@ -225,7 +227,7 @@ class AreaPartitionChart extends React.Component {
                   height="360px"
                   data={this.state.mixes[+this.state.year] || []}
                   config={this.props.config.treemapConfig}
-                  onClick={d => this.setFlow(d.flow_id)}
+                  onClick={(d: {flow_id: string}) => this.setFlow(d.flow_id)}
                 /> :
                 <UnbundlingInternationalResources
                   country={this.props.id}
