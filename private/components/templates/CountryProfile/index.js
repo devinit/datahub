@@ -1,6 +1,6 @@
 // @flow
 import React, {Component} from 'react';
-import { Div, A, Span, H4 } from 'glamorous';
+import { Div, A, Span, H4, Img} from 'glamorous';
 import { Container, Grid, Icon, Button } from 'semantic-ui-react';
 import { red, white } from 'components/theme/semantic';
 import { SectionHeader, Lead } from 'components/atoms/Header';
@@ -18,7 +18,6 @@ import { connect } from 'react-redux';
 import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import {small} from 'components/theme';
-import Link from 'next/link';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 import data from './data';
@@ -41,6 +40,8 @@ class Profile extends Component {
     selectedTab: number,
   }
   country: Country
+  countryId: string
+  countryName: string
   lowerTabs: HTMLElement
   jumpToSection = (sectionId: string) => {
     const selectedTab = sectionId === GOVERNMENT_FINANCE_LOWER ? 0 : 1;
@@ -63,10 +64,14 @@ class Profile extends Component {
                     </H4>
                     <CountrySearch visible placeholder={this.props.id} profile />
                     <Lead>
-                      Explore this in-depth profile of {this.country.name} to find out overall levels of poverty,
-                      income distribution, division of wealth and more. Discover how national and
-                      sub-national revenue is generated.
-
+                      {this.country.countryType === RECIPIENT ?
+                        `Explore this in-depth profile of ${this.country.name} to find out overall levels of poverty,
+                        income distribution, division of wealth and more. Discover how national and
+                        sub-national revenue is generated.` :
+                        `Explore this in-depth profile of ${this.country.name} to see the international resources it directs to developing countries.
+                        Get an overview of government spending, population and income distribution.`
+                      }
+                      <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.country.id}.svg`} />
                       {this.country.slug === 'uganda' ?
                         <Span marginTop={'0.5em'} display={'inline-block'} fontSize={small}>
                           Visit our new <A color={red} href="/spotlight-on-uganda">

@@ -12,8 +12,8 @@ type Process = {
 declare var process: Process;
 
 export type Country = {|
-    id: ?string,
-    name: ?string,
-    slug: ?string,
-    countryType: ?string,
+    id: string,
+    name: string,
+    slug: string,
+    countryType: string,
 |}
