@@ -23,7 +23,7 @@ const InternationalResources = (props: Props) => {
     <Container textAlign="center">
       <Grid centered>
         <Grid.Row>
-          <Grid.Column width={12} textAlign="center">
+          <Grid.Column width={16} textAlign="center">
             <SectionHeader color={white}>
               INFLOWS <span>VS</span> OUTFLOWS
             </SectionHeader>
