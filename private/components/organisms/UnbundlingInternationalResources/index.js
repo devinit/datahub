@@ -41,13 +41,13 @@ const withData = graphql(QUERY, {
       console.error(error);
     }
 
-    const { color = '#abc', bundles = [] } = (data.singleResource || {});
+    const { color = '#abc', resources = [] } = (data.singleResource || {});
 
     return loading ?
       { loading } :
       {
         color,
-        bundles: groupBy(d => d.year, bundles)
+        bundles: groupBy(d => d.year, resources)
       };
   },
 });

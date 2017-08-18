@@ -42,16 +42,21 @@ const withData = graphql(QUERY, {
     },
   }),
   props: ({ data, ownProps }) => {
-    const [country] = countryCache.countries
-      .filter(country => country.id === ownProps.id);
+    const [country = {}] = countryCache.countries
+      .filter(country => country.slug === ownProps.id);
 
-    const countryType = country
-      .map(country => country.countryType || 'recipient');
+    // ...
+    // ...
+    console.log(country);
+
+    const countryType = country.countryType || 'recipient';
 
     const { inflows, outflows } = flowCache[countryType];
 
     const { error, loading } = data;
+
     if (error) throw new Error(error);
+
     return loading || !data.internationalResources ?
       { loading } :
       {

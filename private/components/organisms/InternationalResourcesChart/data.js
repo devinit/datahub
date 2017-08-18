@@ -117,7 +117,7 @@ module.exports = {
       {
         id: 'remittances-in',
         name: 'Remittances',
-        selections: [{ id: 'fom_di_id', name: 'Source' }]
+        selections: [{ id: 'from_di_id', name: 'Source' }]
       },
       {
         id: 'short-debt-net-flow-in',
