@@ -23,3 +23,6 @@ test/**/out
 
 #editors
 .idea
+
+# cache data
+private/components/organisms/**/data.js
