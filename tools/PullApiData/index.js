@@ -4,12 +4,14 @@ import { createApolloFetch } from 'apollo-fetch';
 import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
+import {DONOR, RECIPIENT} from 'lib/utils/constants';
 import COUNTRIES_QUERY from './queries/Countries.graphql';
 import DISTRICT_QUERY from './queries/Districts.graphql';
 import PAGES_DATA_QUERY from './queries/PageData.graphql';
 import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
+import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
 
 const baseOrganismsPath = 'private/components/organisms';
 const uri = config.api;
@@ -104,7 +106,7 @@ export const getGlobalPictureThemes = async () => {
 export const getSpotlightThemes = async () => {
   // currently only getting spotlight uganda theme data
   try {
-    const filePath = path.join(baseOrganismsPath, 'SpotlightNavTabs/ug-data.js');
+    const filePath = path.join(baseOrganismsPath, 'SpotLightNavTabs/ug-data.js');
     const variables = { country: 'uganda' };
     await getAndWriteData({ query: SPOTLIGHT_THEMES_QUERY, filePath, variables });
   } catch (error) {
@@ -113,17 +115,29 @@ export const getSpotlightThemes = async () => {
 };
 export const getPagesData = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'pagesData/data.js');
+    const filePath = path.join(baseOrganismsPath, 'PagesData/data.js');
     await getAndWriteData({ query: PAGES_DATA_QUERY, filePath});
   } catch (error) {
     console.error(error);
   }
 };
+
+export const getInflowsAndOutflows = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'InternationalResourcesChart/data.js');
+    const variables = { donor: DONOR, recipient: RECIPIENT };
+    await getAndWriteData({query: INFLOWS_OUTFLOWS_QUERY, filePath, variables});
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
   getDistricts();
   getGlobalPictureThemes();
   getInternationalResourcesToolTip();
+  getInflowsAndOutflows();
   getSpotlightThemes();
   getPagesData();
 }
