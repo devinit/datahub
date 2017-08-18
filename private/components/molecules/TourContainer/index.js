@@ -21,6 +21,7 @@ const Overlay = glamorous.div(
   {
     position: 'absolute',
     top: '-50px',
+    fontWeight: 'normal',
     left: '20px',
     right: '20px',
     bottom: '0',
@@ -30,6 +31,7 @@ const Overlay = glamorous.div(
     borderRadius: '5px',
     maxHeight: '740px',
     color: '#fff',
+    lineHeight: '1.5'
   },
   props => ({
     display: props.visible ? 'block' : 'none',

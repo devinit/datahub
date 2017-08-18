@@ -5,6 +5,7 @@ import { groupBy } from 'ramda';
 import { Grid, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import approximate from 'approximate-number';
+import ChartShare from 'components/molecules/ChartShare';
 import { LightBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/atoms/Chart';
 import YearSlider from '../YearSlider';
@@ -22,6 +23,11 @@ export type State = {
 export type Props = {
   country: string,
   startYear: number,
+  // for scrolling to this chart, think of it has the chart container ID
+  chartId?: string,
+  // from share url, cached state
+  year?: number,
+  shouldScrollIntoView?: boolean,
   data: [], // TODO: should be flowData with API integration
   config: any,
   cached?: State
@@ -42,7 +48,7 @@ class SlidingDualSidebar extends React.Component {
 
     this.state = {
       data,
-      ...this.getYearState(data, parseInt(props.startYear, 10)),
+      ...this.getYearState(data, parseInt(props.year || props.startYear, 10)),
 
       config: {
         ...this.props.config,
@@ -126,7 +132,9 @@ class SlidingDualSidebar extends React.Component {
 
   render() {
     return (
-      <LightBg>
+      <LightBg
+        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
+      >
         <Grid>
           <Grid.Column width={8}>
             <Segment basic clearing>
@@ -159,6 +167,20 @@ class SlidingDualSidebar extends React.Component {
               />
             </Segment>
           </Grid.Column>
+          <Grid.Row>
+            <Grid.Column width={6} textAlign="center">
+              <ChartShare
+                background={false}
+                hover
+                color="grey"
+                size="medium"
+                stateToShare={{
+                  year: this.state.currentYear,
+                  chartId: this.props.chartId
+                }}
+              />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
       </LightBg>
     );

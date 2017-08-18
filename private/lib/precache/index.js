@@ -2,7 +2,7 @@
 const fetch = require('isomorphic-fetch');
 const pagesToPreCache = require('./pages');
 
-const PORT = process.env.PORT || 4444;
+const PORT = process.env.PORT || 9999;
 
 const preCache = () => {
   const homeLink = `http://localhost:${PORT}`;

@@ -82,7 +82,6 @@ class SearchInput extends React.Component {
   onCaretDownClick() {
     this.setState({...this.resetState(), showList: true});
     this.textInput.focus();
-    // console.log(this.textInput);
   }
   onSubmit() {
     const country: Country | void = this.state.countries[0] || null;

@@ -1,4 +1,5 @@
 /* eslint-disable */
+//TODO: enable eslint
 import * as d3 from 'd3';
 import rawdata from '../../components/molecules/whereAreThePoorViz/data';
 export const shape =

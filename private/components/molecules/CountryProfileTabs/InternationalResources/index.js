@@ -1,13 +1,13 @@
 // @flow
-import {Container, Grid} from "semantic-ui-react";
-import React from "react";
-import Chart from "components/atoms/Chart";
-import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from "components/atoms/TabsText";
-import {NoData} from "lib/utils/constants";
-import TabsToolTip from "components/molecules/TabsToolTip";
-import type {PageUnit} from "components/organisms/PagesData";
-import {getPageUnitById} from "components/organisms/PagesData";
-import {Legend} from "../GovernmentFinance";
+import {Container, Grid} from 'semantic-ui-react';
+import React from 'react';
+import Chart from 'components/atoms/Chart';
+import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from 'components/atoms/TabsText';
+import {NoData} from 'lib/utils/constants';
+import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {PageUnit} from 'components/organisms/PagesData';
+import {getPageUnitById} from 'components/organisms/PagesData';
+import {Legend} from '../GovernmentFinance';
 
 type Props = {
   ...TabDataQuery,
@@ -116,7 +116,10 @@ const International = (props: Props) => {
               <Grid.Column width="10">
                 <div>
                   {internationalResources.mixOfResources.data.map((d, i) =>
-                    (<Legend color={props.config.mixOfResources.colors[i]}>
+                    (<Legend
+                      color={props.config.mixOfResources.colors[i]}
+                      key={props.config.mixOfResources.colors[i]}
+                    >
                       <span><span /></span>
                       <span>{d[props.config.mixOfResources.circular.label]}</span>
                     </Legend>)

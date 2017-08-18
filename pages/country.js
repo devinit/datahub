@@ -3,12 +3,13 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import App from 'components/templates/CountryProfile';
 
 type Props = {
   url: {
     pathname: string,
-    query: { id: string },
+    query: { id: string, state: StateToShare},
   },
 };
 // Adds server generated styles to glamor cache.
@@ -19,6 +20,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  // console.log(props);
-  return <App id={props.url.query.id} />;
+  return <App id={props.url.query.id} state={props.url.query.state} />;
 });

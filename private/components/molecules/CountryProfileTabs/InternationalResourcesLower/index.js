@@ -3,7 +3,6 @@ import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
 import {TextBlock} from 'components/atoms/BodyText';
 import { white } from 'components/theme/semantic';
-import ChartShare from 'components/molecules/ChartShare';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
 import TabsToolTip from 'components/molecules/TabsToolTip';
@@ -37,11 +36,6 @@ const InternationalResources = (props: Props) => {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width={6} textAlign="center">
-            <ChartShare background={false} hover color="grey" size="medium" />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
           <Grid.Column width={12} textAlign="center">
             <SectionHeader color={white}>
               <span>IN DETAIL</span> INTERNATIONAL RESOURCES
@@ -51,11 +45,6 @@ const InternationalResources = (props: Props) => {
         </Grid.Row>
         <Grid.Row>
           {props.children[1]}
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column width={6} textAlign="center">
-            <ChartShare background={false} hover color="grey" size="medium" />
-          </Grid.Column>
         </Grid.Row>
       </Grid>
     </Container>);

@@ -1,7 +1,8 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from 'components/theme/semantic';
+import {getShortURL} from 'lib/utils';
 import glamorous, { Div, Span } from 'glamorous';
 
 const Container = glamorous.div({
@@ -32,6 +33,12 @@ const ButtonWrapper = glamorous.span({
     color: props.background ? 'inherit' : `${lightSecondaryColor} !important`,
   }
 }));
+export type StateToShare = {
+  year?: number,
+  budgetType?: string,
+  currency?: string,
+  chartId?: string
+}
 type Props = {
   size: string,
   color: string,
@@ -40,40 +47,93 @@ type Props = {
   className?: string,
   background?: boolean,
   hover?: boolean,
+  stateToShare?: StateToShare
 };
 
-const ChartShare = ({className, size, color, label, background, hover }: Props) =>
-  (<Modal
-    trigger={
-      <ButtonWrapper background={background} hover={hover}>
-        <Button className={className} size={size} color={color}>
-          <Icon name="share alternate" />
-          <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
-        </Button>
-      </ButtonWrapper>
-    }
-    closeIcon="close"
-  >
-    <Modal.Content>
-      <Modal.Description>
-        <Container>
-          <h4>Share this Visualization</h4>
-          <input type="radio" value="default" /> in default view <br />
-          <input type="radio" value="default" /> as I configured it<br />
-          <input className="link" />
-          <Div marginTop={'1.5em'}>
-            <Button icon="facebook f" />
-            <Button icon="twitter" />
-            <Button icon="mail outline" />
-          </Div>
-        </Container>
-      </Modal.Description>
-    </Modal.Content>
-  </Modal>);
+type State = {
+  link: string,
+  value: number
+}
 
-ChartShare.defaultProps = {
-  background: true,
-  hover: false
-};
+export default class ChartShare extends Component {
+  static defaultProps = {
+    background: true,
+    hover: false
+  };
+  /* eslint-disable no-useless-constructor */
+  constructor(props: Props) {
+    super(props);
+  }
+  state = {
+    link: '',
+    value: 2
+  }
+  state: State
+  componentDidMount() {
+    this.createLink();
+  }
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps !== this.props) this.createLink();
+  }
+  onLinkChange = () => this.createLink();
 
-export default ChartShare;
+  handleChange = (value: number) => {
+    this.setState({value});
+    this.createLink(value);
+  };
+
+  async createLink(checkedOption: number = 2) {
+    if (!this.props.stateToShare) return this.state;
+    const currentUrl = window.location.href;
+    const chartState =
+      checkedOption === 1 && this.props.stateToShare && this.props.stateToShare.chartId ?
+        {chartId: this.props.stateToShare.chartId} : this.props.stateToShare;
+    const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
+    const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
+    return this.setState({link: shortURL});
+  }
+  render() {
+    const {className, size, color, label, background, hover} = this.props;
+    return (<Modal
+      trigger={
+        <ButtonWrapper background={background} hover={hover}>
+          <Button
+            className={className}
+            size={size}
+            color={color}
+          >
+            <Icon name="share alternate" />
+            <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
+          </Button>
+        </ButtonWrapper>
+      }
+      closeIcon="close"
+    >
+      <Modal.Content>
+        <Modal.Description>
+          <Container>
+            <h4>Share this Visualization</h4>
+            <input
+              type="radio"
+              value={1}
+              checked={this.state.value === 1}
+              onChange={() => this.handleChange(1)}
+            /> in default view <br />
+            <input
+              type="radio"
+              value={2}
+              checked={this.state.value === 2}
+              onChange={() => this.handleChange(2)}
+            /> as I configured it<br />
+            <input className="link" value={this.state.link} onChange={this.onLinkChange} />
+            <Div marginTop={'1.5em'}>
+              <Button icon="facebook f" />
+              <Button icon="twitter" />
+              <Button icon="mail outline" />
+            </Div>
+          </Container>
+        </Modal.Description>
+      </Modal.Content>
+    </Modal>);
+  }
+}

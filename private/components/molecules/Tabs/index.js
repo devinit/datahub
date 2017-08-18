@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import glamorous from 'glamorous';
 import { medium } from 'components/theme';
 import { lightGrey } from 'components/theme/semantic';
@@ -69,7 +69,7 @@ const TabsContentWrapper = glamorous.div(
     },
   }
 );
-class Tabs extends React.Component {
+class Tabs extends Component {
   static defaultProps = {
     selected: 0,
   };
@@ -82,6 +82,11 @@ class Tabs extends React.Component {
   state: {
     selected?: number,
   };
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps.selected !== this.props.selected) {
+      this.setState({selected: nextProps.selected});
+    }
+  }
   handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({
@@ -102,7 +107,7 @@ class Tabs extends React.Component {
     return content;
   }
   _renderTitles() {
-    const labels = (child, index) => {
+    const createTitleElms = (child, index) => {
       const activeClass = this.state.selected === index ? 'active' : '';
       return (
         <li key={child.props.label}>
@@ -116,7 +121,7 @@ class Tabs extends React.Component {
       <TabsContainer>
         {this.props.children
           .filter(child => child && child.props.label && child.props.id)
-          .map(labels)}
+          .map(createTitleElms)}
       </TabsContainer>
     );
   }

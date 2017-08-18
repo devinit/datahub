@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, {Component} from 'react';
 import { Div, A, Span, H4 } from 'glamorous';
 import { Container, Grid, Icon, Button } from 'semantic-ui-react';
 import { red, white } from 'components/theme/semantic';
@@ -13,73 +13,118 @@ import NoSSR from 'react-no-ssr';
 import SmallMap from 'components/molecules/SmallMap';
 import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
-import {getCountryName} from 'lib/utils';
+import {getCountry} from 'lib/utils';
 import { connect } from 'react-redux';
+import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
+import type {StateToShare} from 'components/molecules/ChartShare';
+import {small} from 'components/theme';
+import Link from 'next/link';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
 /* eslint-disable max-len */
+/* eslint-disable no-useless-constructor */
 type Props = {
   id: string,
   rehydrated: boolean,
+  state: StateToShare,
 };
+class Profile extends Component {
+  constructor(props: Props) {
+    super(props);
+    this.country = getCountry(props.id);
+    const selectedTab = props.state.chartId && props.state.chartId !== GOVERNMENT_FINANCE_LOWER ? 1 : 0;
+    this.state = {selectedTab};
+  }
+  state: {
+    selectedTab: number,
+  }
+  country: Country
+  lowerTabs: HTMLElement
+  jumpToSection = (sectionId: string) => {
+    const selectedTab = sectionId === GOVERNMENT_FINANCE_LOWER ? 0 : 1;
+    console.log('lower tabs', this.lowerTabs);
+    this.setState({selectedTab});
+    if (this.lowerTabs) this.lowerTabs.scrollIntoView();
+  }
+  render() {
+    return (<Generic>
+      <ProfileHeader>
+        <SmallMap slug={this.props.id} />
+        <Div width="100%" position="absolute" top="0">
+          <Container>
+            <Grid>
+              <Grid.Row>
+                <Grid.Column width={10}>
+                  <CardContainer>
+                    <H4 color={red}>
+                      <Icon name="globe" color={'red'} />General Picture
+                    </H4>
+                    <CountrySearch visible placeholder={this.props.id} profile />
+                    <Lead>
+                      Explore this in-depth profile of {this.country.name} to find out overall levels of poverty,
+                      income distribution, division of wealth and more. Discover how national and
+                      sub-national revenue is generated.
 
-const profile = (props: Props) =>
-  (<Generic>
-    <ProfileHeader>
-      <SmallMap slug={props.id} />
-      <Div width="100%" position="absolute" top="0">
-        <Container>
-          <Grid>
-            <Grid.Row>
-              <Grid.Column width={10}>
-                <CardContainer>
-                  <H4 color={red}>
-                    <Icon name="globe" color={'red'} />General Picture
-                  </H4>
-                  <CountrySearch visible placeholder={props.id} profile />
-                  <Lead>
-                    Explore this in-depth profile of {getCountryName(props.id)} to find out overall levels of poverty,
-                    income distribution, division of wealth and more. Discover how national and
-                    sub-national revenue is generated.
-                  </Lead>
-                  <Span marginTop={'1.5em'} display={'block'}>
-                    Jump to <A color={red}>International resources</A>
-                  </Span>
-                  <Div marginTop={'1.5em'}>
-                    <Button icon="facebook f" />
-                    <Button icon="twitter" />
-                    <Button icon="google plus" />
-                    <Button icon="mail outline" />
-                  </Div>
-                </CardContainer>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+                      {this.country.slug === 'uganda' ?
+                        <Span marginTop={'0.5em'} display={'inline-block'} fontSize={small}>
+                          Visit our new <Link href="/spotlight-on-uganda">Spotlight on Uganda </Link> to explore data by district.</Span> : ''
+                      }
+                    </Lead>
+                    <Span marginTop={'1em'} display={'inline-block'}>
+                      Jump to {
+                        this.country.countryType === RECIPIENT ?
+                          <span>
+                            <A
+                              onClick={() => this.jumpToSection(GOVERNMENT_FINANCE_LOWER)}
+                              color={red}
+                            >governement finance </A> or </span> : ''
+                      }
+                      <A
+                        color={red}
+                        onClick={() => this.jumpToSection(INFLOWS_VS_OUTFLOWS)}
+                      >International resources</A>
+                    </Span>
+                    <Div marginTop={'1.5em'}>
+                      <Button icon="facebook f" />
+                      <Button icon="twitter" />
+                      <Button icon="google plus" />
+                      <Button icon="mail outline" />
+                    </Div>
+                  </CardContainer>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </Container>
+        </Div>
+      </ProfileHeader>
+      <CountryProfileTopTabs id={this.props.id} />
+      <Div paddingTop={'4em'} paddingBottom={'4em'}>
+        <Container textAlign="center">
+          <SectionHeader innerRef={node => { this.lowerTabs = node; }}>
+            EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
+          </SectionHeader>
         </Container>
       </Div>
-    </ProfileHeader>
-    <CountryProfileTopTabs id={props.id} />
-    <Div paddingTop={'4em'} paddingBottom={'4em'}>
-      <Container textAlign="center">
-        <SectionHeader>
-          EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
+      <NoSSR onSSR={<LoadingPlaceholder height="40em" loading />} >
+        <CountryProfileLowerTabs
+          id={this.props.id}
+          selectedTab={this.state.selectedTab}
+          {...this.props.state}
+        />
+      </NoSSR>
+      <DarkBg>
+        <SectionHeader color={red} fontColor={white}>
+          MORE FROM DI ON {this.country.name && this.country.name.toUpperCase()}
         </SectionHeader>
-      </Container>
-    </Div>
-    <NoSSR onSSR={<LoadingPlaceholder height="40em" loading />} >
-      <CountryProfileLowerTabs id={props.id} />
-    </NoSSR>
-    <DarkBg>
-      <SectionHeader color={red} fontColor={white}>
-        MORE FROM DI ON {getCountryName(props.id).toUpperCase()}
-      </SectionHeader>
-    </DarkBg>
-    <ProfileDataSourceTable data={data.dataSources} />
-  </Generic>);
+      </DarkBg>
+      <ProfileDataSourceTable data={data.dataSources} />
+    </Generic>);
+  }
+}
 
 const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
-const ProfileWithRedux = connect(mapStateToProps)(profile);
+const ProfileWithRedux = connect(mapStateToProps)(Profile);
 
 export default ProfileWithRedux;

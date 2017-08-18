@@ -104,7 +104,10 @@ const Government = (props: Props) => {
               <Grid.Column width="10">
                 <div>
                   {governmentFinance.spendingAllocation.data.map((d, i) =>
-                    (<Legend color={props.config.spendingAllocation.colors[i]}>
+                    (<Legend
+                      key={props.config.spendingAllocation.colors[i]}
+                      color={props.config.spendingAllocation.colors[i]}
+                    >
                       <span><span /></span>
                       <span>{d[props.config.spendingAllocation.circular.label]}</span>
                     </Legend>)
