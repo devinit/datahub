@@ -113,7 +113,12 @@
     "semantic-ui": "^2.2.10",
     "usus": "^1.6.0"
   },
-  "git-pre-hooks": {},
+  "git-pre-hooks": {
+    "pre-push": [
+      "npm run lint",
+      "npm run test"
+    ]
+  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
