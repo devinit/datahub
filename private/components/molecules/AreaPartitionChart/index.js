@@ -11,18 +11,18 @@ import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
 export type State = {
-  directions: Object[],
-  flows: Object[],
+  directions: Object[], // TOFIX: @ernest add proper types
+  flows: Object[], // TOFIX: @ernest add proper types
 
   year: number,
   direction: string,
   flow?: string,
   flowName?: string,
-  detailSelections?: Object[],
+  detailSelections?: Object[],  // TOFIX: @ernest add proper types
   detailGroup?: string,
 
-  trend: Object[],
-  mixes: Object,
+  trend: Object[],  // TOFIX: @ernest add proper types
+  mixes: Object,  // TOFIX: @ernest add proper types
 };
 export type Props = {
   id: string,
