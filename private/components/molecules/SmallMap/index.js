@@ -2,9 +2,7 @@
 import React from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type { PaintMap, Meta, Viewport } from 'components/atoms/BaseMap/types';
-import NoSSR from 'react-no-ssr';
 import configs from 'components/molecules/Map/config';
-// import countries from 'components/organisms/CountrySearchInput/data';
 import { white } from 'components/theme/semantic';
 
 type Props = {
@@ -35,11 +33,7 @@ const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
 };
 const smallMap = (props: Props) => {
   const baseMapProps = mapProps(props);
-  return (
-    <NoSSR onSSR={<p>loading...</p>}>
-      <BaseMap {...baseMapProps} />
-    </NoSSR>
-  );
+  return (<BaseMap {...baseMapProps} />);
 };
 
 export default smallMap;
