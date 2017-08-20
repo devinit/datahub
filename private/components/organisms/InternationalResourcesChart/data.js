@@ -76,18 +76,12 @@ module.exports = {
       {
         id: 'long-debt-disbursement-in',
         name: 'Long-term debt (commercial sources)',
-        selections: [
-          { id: 'destination_institution_type', name: 'Type of borrower' },
-          { id: 'financing_type', name: 'Financing Instrument' }
-        ]
+        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
       },
       {
         id: 'long-debt-net-official-in',
         name: 'Long-term debt (official sources)',
-        selections: [
-          { id: 'destination_institution_type', name: 'Type of borrower' },
-          { id: 'financing_type', name: 'Financing Instrument' }
-        ]
+        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
       },
       {
         id: 'net-portfolio-equity-in',
