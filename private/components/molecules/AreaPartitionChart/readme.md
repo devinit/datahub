@@ -1,1 +1,1 @@
-this is the area tree map chart
+this is for the international resources area tree map chart
