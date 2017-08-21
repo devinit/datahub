@@ -98,10 +98,22 @@ class Profile extends Component {
                       >International resources</BodyLink>
                     </Span>
                     <Div marginTop={'1.5em'}>
-                      <Button icon="facebook f" />
-                      <Button icon="twitter" />
-                      <Button icon="google plus" />
-                      <Button icon="mail outline" />
+                      <a href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
+                        <Button icon="facebook f" />
+                      </a>
+                      <a
+                        href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}
+                      >
+                        <Button icon="twitter" />
+                      </a>
+                      <a href={`https://plus.google.com/share?url=${window.location.href}`}>
+                        <Button icon="google plus" />
+                      </a>
+                      <a
+                        href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
+                      >
+                        <Button icon="mail outline" />
+                      </a>
                       <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
                     </Div>
                   </CardContainer>
