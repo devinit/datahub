@@ -1,7 +1,7 @@
 // @flow
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import glamorous from 'glamorous';
-import { Dropdown, Grid, Label, Segment, Container, Header } from 'semantic-ui-react';
+import { Container, Dropdown, Grid, Header, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
 import LoadingBar from 'components/molecules/LoadingBar';
@@ -10,7 +10,7 @@ import TreeChart from 'components/atoms/TreeChart/index';
 import Timeline from 'components/atoms/Timeline/index';
 import { LightBg } from 'components/atoms/Backgrounds';
 import TourContainer from 'components/molecules/TourContainer';
-import {PrintContainer} from 'components/atoms/Container';
+import { PrintContainer } from 'components/atoms/Container';
 import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 
 type State = {
@@ -33,9 +33,9 @@ type State = {
 type Props = {
   currencyCode: string,
   loading: boolean,
-   // from cached shared state
+  // from cached shared state
   year?: number,
-    // from cached shared state
+  // from cached shared state
   budgetType: string,
   shouldScrollIntoView?: boolean,
   startYear: number,
@@ -49,7 +49,7 @@ type Props = {
     line: {},
     partition: {},
   },
-  cached?: State
+  cached?: State,
 };
 
 const CardContainer = glamorous.div({
@@ -70,7 +70,7 @@ const HeadingContainer = glamorous.div({
   overflow: 'visible',
 });
 
-export default class GovtRFE extends Component {
+export default class TripleLinePartition extends Component {
   // eslint-disable-next-line react/sort-comp
   state: State;
 
@@ -100,9 +100,9 @@ export default class GovtRFE extends Component {
     const financeTrend = this.calculateTrend(props.finance, currency);
     const expenditureTrend = this.calculateTrend(props.expenditure, currency);
 
-    const revenueTree = this.calculateTree(revenueTrend, year, budgetType, currency);
-    const financeTree = this.calculateTree(financeTrend, year, budgetType, currency);
-    const expenditureTree = this.calculateTree(expenditureTrend, year, budgetType, currency);
+    const revenueTree = this.calculateTree(props.revenueAndGrants, year, budgetType, currency);
+    const financeTree = this.calculateTree(props.finance, year, budgetType, currency);
+    const expenditureTree = this.calculateTree(props.expenditure, year, budgetType, currency);
 
     return {
       revenueTourVisible: false,
@@ -122,13 +122,15 @@ export default class GovtRFE extends Component {
       expenditureTree,
     };
   }
+
   toogleRevenueTour() {
     if (this.state.revenueTourVisible) {
-      this.setState({revenueTourVisible: false});
+      this.setState({ revenueTourVisible: false });
     } else {
-      this.setState({revenueTourVisible: true});
+      this.setState({ revenueTourVisible: true });
     }
   }
+
   setYear(year: number) {
     const budgetTypes = this.calculateBudgetTypes(
       [...this.props.finance, ...this.props.revenueAndGrants, ...this.props.expenditure],
@@ -137,28 +139,28 @@ export default class GovtRFE extends Component {
     const budgetType = budgetTypes[0] && budgetTypes[0].value;
     const currency = this.state.currency;
 
-    const revenueTrend = this.calculateTrend(this.props.revenueAndGrants, currency);
-    const financeTrend = this.calculateTrend(this.props.finance, currency);
-    const expenditureTrend = this.calculateTrend(this.props.expenditure, currency);
-
     this.setState({
       year,
       budgetType,
       budgetTypes,
-      revenueTree: this.calculateTree(revenueTrend, year, budgetType, currency),
-      financeTree: this.calculateTree(financeTrend, year, budgetType, currency),
-      expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency),
+      revenueTree: this.calculateTree(this.props.revenueAndGrants, year, budgetType, currency),
+      financeTree: this.calculateTree(this.props.finance, year, budgetType, currency),
+      expenditureTree: this.calculateTree(this.props.expenditure, year, budgetType, currency),
     });
   }
 
   setBudgetType(budgetType: string) {
     const currency = this.state.currency;
     const year = this.state.year;
+    const revenueTree = this.calculateTree(this.props.revenueAndGrants, year, budgetType, currency);
+    const financeTree = this.calculateTree(this.props.finance, year, budgetType, currency);
+    const expenditureTree = this.calculateTree(this.props.expenditure, year, budgetType, currency);
+
     this.setState({
       budgetType,
-      revenueTree: this.calculateTree(this.state.revenueTrend, year, budgetType, currency),
-      financeTree: this.calculateTree(this.state.financeTrend, year, budgetType, currency),
-      expenditureTree: this.calculateTree(this.state.expenditureTrend, year, budgetType, currency),
+      revenueTree,
+      financeTree,
+      expenditureTree,
     });
   }
 
@@ -168,45 +170,54 @@ export default class GovtRFE extends Component {
     const revenueTrend = this.calculateTrend(this.props.revenueAndGrants, currency);
     const financeTrend = this.calculateTrend(this.props.finance, currency);
     const expenditureTrend = this.calculateTrend(this.props.expenditure, currency);
+    const revenueTree = this.calculateTree(this.props.revenueAndGrants, year, budgetType, currency);
+    const financeTree = this.calculateTree(this.props.finance, year, budgetType, currency);
+    const expenditureTree = this.calculateTree(this.props.expenditure, year, budgetType, currency);
+
     this.setState({
       currency,
       budgetType,
       revenueTrend,
       financeTrend,
       expenditureTrend,
-      revenueTree: this.calculateTree(revenueTrend, year, budgetType, currency),
-      financeTree: this.calculateTree(financeTrend, year, budgetType, currency),
-      expenditureTree: this.calculateTree(expenditureTrend, year, budgetType, currency),
+      revenueTree,
+      financeTree,
+      expenditureTree,
     });
   }
 
   setRevenueLevel(revenueLevel: string) {
-    const leveled = this.props.revenueAndGrants.filter(d => {
-      return d.levels.indexOf(revenueLevel) > -1;
-    });
+    const revenueTrend = this.calculateTrend(
+      this.props.revenueAndGrants,
+      this.state.currency,
+      revenueLevel,
+    );
+
     this.setState({
       revenueLevel,
-      revenueTrend: this.calculateTrend(leveled, this.state.currency),
+      revenueTrend,
     });
   }
 
   setFinanceLevel(financeLevel: string) {
-    const leveled = this.props.finance.filter(d => {
-      return d.levels.indexOf(financeLevel) > -1;
-    });
+    const financeTrend = this.calculateTrend(this.props.finance, this.state.currency, financeLevel);
+
     this.setState({
       financeLevel,
-      financeTrend: this.calculateTrend(leveled, this.state.currency),
+      financeTrend,
     });
   }
 
   setExpenditureLevel(expenditureLevel: string) {
-    const leveled = this.props.expenditure.filter(d => {
-      return d.levels.indexOf(expenditureLevel) > -1;
-    });
+    const expenditureTrend = this.calculateTrend(
+      this.props.expenditure,
+      this.state.currency,
+      expenditureLevel,
+    );
+
     this.setState({
       expenditureLevel,
-      expenditureTrend: this.calculateTrend(leveled, this.state.currency),
+      expenditureTrend,
     });
   }
 
@@ -220,11 +231,21 @@ export default class GovtRFE extends Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  calculateTrend(data: Object[], currency: string = 'US$') {
-    return data.map(d => ({
-      ...d,
-      value: currency === 'US$' ? d.value : d.value_ncu,
-    }));
+  calculateTrend(data: Object[], currency: string = 'US$', level?: string) {
+    const trend = data
+      .filter(d => {
+        const isActualOrProjected = d.budget_type.match(/(actual|proj)/gi);
+        const isAtSelectedLevel = level
+          ? d.levels.length - 1 === d.levels.indexOf(level)
+          : d.levels.length === 1;
+
+        return isActualOrProjected && isAtSelectedLevel;
+      })
+      .map(d => ({
+        ...d,
+        value: currency === 'US$' ? d.value : d.value_ncu,
+      }));
+    return trend;
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -244,20 +265,26 @@ export default class GovtRFE extends Component {
         };
       });
   }
+
   render() {
     if (this.props.loading) {
       return <LoadingBar loading={this.props.loading} />;
     }
     return (
       <LightBg
-        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
+        innerRef={node => (this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null)}
       >
         <Segment basic>
           <section>
             <Container id="print-chart">
               <PrintContainer>
                 <Segment textAlign="center" vertical>
-                  <img src="/img/print-logo.jpg" alt="Development Initiatives" height="50" width="132" />
+                  <img
+                    src="/img/print-logo.jpg"
+                    alt="Development Initiatives"
+                    height="50"
+                    width="132"
+                  />
                   <Header>
                     <Header.Content as="h2">Domestic public resources in Uganda</Header.Content>
                     <Header.Subheader as="h3">www.devinit.org</Header.Subheader>
@@ -271,7 +298,7 @@ export default class GovtRFE extends Component {
                 stateToShare={{
                   startYear: this.state.year,
                   budgetType: this.state.budgetType,
-                  chartId: this.props.chartId
+                  chartId: this.props.chartId,
                 }}
               />
               <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
@@ -352,7 +379,6 @@ export default class GovtRFE extends Component {
                     data={this.state.financeTree}
                   />
                 </Grid.Column>
-
               </Grid>
             </Container>
             <TourContainer
