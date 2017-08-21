@@ -70,7 +70,7 @@ const HeadingContainer = glamorous.div({
   overflow: 'visible',
 });
 
-export default class GovtRFE extends Component {
+export default class TripleLinePartition extends Component {
   // eslint-disable-next-line react/sort-comp
   state: State;
 
@@ -227,7 +227,7 @@ export default class GovtRFE extends Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  calculateTrend(data: Object[], currency: string = 'US$', level = null) {
+  calculateTrend(data: Object[], currency: string = 'US$', level?: string) {
     const trend = data
       .filter(d => {
         const isActualOrProjected = d.budget_type.match(/(actual|proj)/gi);
