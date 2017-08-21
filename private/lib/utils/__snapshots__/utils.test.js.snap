@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`utils tests should create human friendly numbers i.e 1.5k for 1500 1`] = `
+"Object {
+  \\"formattedA\\": Array [
+    \\"150\\",
+    \\"2k\\",
+    \\"15k\\",
+    \\"200m\\",
+  ],
+  \\"formattedB\\": Array [
+    \\"150\\",
+    \\"1.5k\\",
+    \\"15k\\",
+    \\"200m\\",
+  ],
+}"
+`;
+
 exports[`utils tests should return country object 1`] = `
 "Object {
   \\"countryType\\": \\"recipient\\",
