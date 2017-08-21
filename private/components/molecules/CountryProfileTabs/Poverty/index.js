@@ -21,7 +21,7 @@ const Poverty = (props: Props) => {
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.povertyTab) return new Error('No Poverty data');
   const povertyTab = props.povertyTab;
-  //noinspection JSUnresolvedVariable
+  // noinspection JSUnresolvedVariable
   return (
     <Container>
       <Grid textAlign={'center'}>
