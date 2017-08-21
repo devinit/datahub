@@ -12,6 +12,7 @@ import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import {getCountry} from 'lib/utils';
 import { connect } from 'react-redux';
+import NoSSR from 'react-no-ssr';
 import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
@@ -97,30 +98,32 @@ class Profile extends Component {
                         onClick={() => this.jumpToSection(INFLOWS_VS_OUTFLOWS)}
                       >International resources</BodyLink>
                     </Span>
-                    <Div marginTop={'1.5em'}>
-                      <a href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
-                        <Button icon="facebook f" />
-                      </a>
-                      <a
-                        href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}
-                      >
-                        <Button icon="twitter" />
-                      </a>
-                      <a href={`https://plus.google.com/share?url=${window.location.href}`}>
-                        <Button icon="google plus" />
-                      </a>
-                      <a
-                        href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
-                      >
-                        <Button icon="mail outline" />
-                      </a>
-                      <a
-                        href={`/pdf/20170331/${this.country.name}.pdf`}
-                        target="__blank"
-                      >
-                        <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
-                      </a>
-                    </Div>
+                    <NoSSR>
+                      <Div marginTop={'1.5em'}>
+                        <a href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
+                          <Button icon="facebook f" />
+                        </a>
+                        <a
+                          href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}
+                        >
+                          <Button icon="twitter" />
+                        </a>
+                        <a href={`https://plus.google.com/share?url=${window.location.href}`}>
+                          <Button icon="google plus" />
+                        </a>
+                        <a
+                          href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
+                        >
+                          <Button icon="mail outline" />
+                        </a>
+                        <a
+                          href={`/pdf/20170331/${this.country.name}.pdf`}
+                          target="__blank"
+                        >
+                          <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
+                        </a>
+                      </Div>
+                    </NoSSR>
                   </CardContainer>
                 </Grid.Column>
               </Grid.Row>
