@@ -21,6 +21,7 @@ const Poverty = (props: Props) => {
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.povertyTab) return new Error('No Poverty data');
   const povertyTab = props.povertyTab;
+  //noinspection JSUnresolvedVariable
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -75,7 +76,11 @@ const Poverty = (props: Props) => {
               <TabsFootNote textAlign="left" lineHeight={2}>
                 <span>Bottom quintile has </span>
                 <span>
-                  {povertyTab.incomeDistTrend.data[0].value ?
+                  {povertyTab &&
+                  povertyTab.incomeDistTrend &&
+                  povertyTab.incomeDistTrend.data &&
+                  povertyTab.incomeDistTrend.data[0] &&
+                  povertyTab.incomeDistTrend.data[0].value ?
                     `${povertyTab.incomeDistTrend.data[0].value.toFixed(1)}% of the income.` : NoData
                   }
                 </span>
