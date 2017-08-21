@@ -41,7 +41,7 @@ const TabsContentWrapper = glamorous.div(
   {
     position: 'relative',
     background: '#e9e7e8',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     '& .tabs__content': {
       position: 'absolute',
       top: 0,
