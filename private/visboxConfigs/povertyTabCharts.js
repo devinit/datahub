@@ -28,6 +28,7 @@ export const histogram = {
   linearAxis: {
     showAxis: false,
     indicator: 'value',
+    axisMaximum: 65
   },
   categoryAxis: {
     indicator: 'quintileName',
