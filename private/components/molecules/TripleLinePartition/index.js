@@ -1,17 +1,17 @@
 // @flow
-import React, {Component} from "react";
-import glamorous from "glamorous";
-import {Container, Dropdown, Grid, Header, Label, Segment} from "semantic-ui-react";
-import {SectionHeader} from "components/atoms/Header";
-import {makeUnique} from "@devinit/charts/lib/factories/createDataset";
-import LoadingBar from "components/molecules/LoadingBar";
-import ExportChart from "components/molecules/ExportChart";
-import TreeChart from "components/atoms/TreeChart/index";
-import Timeline from "components/atoms/Timeline/index";
-import {LightBg} from "components/atoms/Backgrounds";
-import TourContainer from "components/molecules/TourContainer";
-import {PrintContainer} from "components/atoms/Container";
-import GovernmentFinanceTour from "components/atoms/GovernmentFinanceTour";
+import React, {Component} from 'react';
+import glamorous from 'glamorous';
+import {Container, Dropdown, Grid, Header, Label, Segment} from 'semantic-ui-react';
+import {SectionHeader} from 'components/atoms/Header';
+import {makeUnique} from '@devinit/charts/lib/factories/createDataset';
+import LoadingBar from 'components/molecules/LoadingBar';
+import ExportChart from 'components/molecules/ExportChart';
+import TreeChart from 'components/atoms/TreeChart/index';
+import Timeline from 'components/atoms/Timeline/index';
+import {LightBg} from 'components/atoms/Backgrounds';
+import TourContainer from 'components/molecules/TourContainer';
+import {PrintContainer} from 'components/atoms/Container';
+import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 
 type State = {
   year: number,
@@ -264,7 +264,7 @@ export default class TripleLinePartition extends Component {
 
   render() {
     if (this.props.loading) {
-      return <LoadingBar loading={this.props.loading}/>;
+      return <LoadingBar loading={this.props.loading} />;
     }
     return (
       <LightBg
@@ -275,7 +275,7 @@ export default class TripleLinePartition extends Component {
             <Container id="print-chart">
               <PrintContainer>
                 <Segment textAlign="center" vertical>
-                  <img src="/img/print-logo.jpg" alt="Development Initiatives" height="50" width="132"/>
+                  <img src="/img/print-logo.jpg" alt="Development Initiatives" height="50" width="132" />
                   <Header>
                     <Header.Content as="h2">Domestic public resources in Uganda</Header.Content>
                     <Header.Subheader as="h3">www.devinit.org</Header.Subheader>
