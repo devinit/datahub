@@ -12,7 +12,7 @@ import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import {getCountry} from 'lib/utils';
 import { connect } from 'react-redux';
-import NoSSR from 'react-no-ssr';
+// import NoSSR from 'react-no-ssr';
 import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
@@ -98,7 +98,7 @@ class Profile extends Component {
                         onClick={() => this.jumpToSection(INFLOWS_VS_OUTFLOWS)}
                       >International resources</BodyLink>
                     </Span>
-                    <NoSSR>
+                    {process.browser ?
                       <Div marginTop={'1.5em'}>
                         <a href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
                           <Button icon="facebook f" />
@@ -123,7 +123,8 @@ class Profile extends Component {
                           <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
                         </a>
                       </Div>
-                    </NoSSR>
+                      : ''
+                    }
                   </CardContainer>
                 </Grid.Column>
               </Grid.Row>
