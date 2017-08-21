@@ -35,7 +35,7 @@ const InternationalResources = (props: Props) => {
             {props.children[0]}
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
+        <Grid.Row centered>
           <Grid.Column width={12} textAlign="center">
             <SectionHeader color={white}>
               <span>IN DETAIL</span> INTERNATIONAL RESOURCES

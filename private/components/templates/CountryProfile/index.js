@@ -115,7 +115,11 @@ class Profile extends Component {
       <Div paddingTop={'4em'} paddingBottom={'4em'}>
         <Container textAlign="center">
           <SectionHeader innerRef={node => { this.lowerTabs = node; }}>
-            EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
+            <Img
+              width="32px"
+              verticalAlign="middle"
+              src={`/flags/svg/${this.country.id}.svg`}
+            /> EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
           </SectionHeader>
         </Container>
       </Div>

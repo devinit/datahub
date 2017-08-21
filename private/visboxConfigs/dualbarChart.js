@@ -13,7 +13,7 @@ const config = {
   },
   categoryAxis: {
     showAxis: true,
-    indicator: 'flow_name',
+    indicator: 'short_name',
     innerPadding: 1.5,
     outerPadding: 1,
   },

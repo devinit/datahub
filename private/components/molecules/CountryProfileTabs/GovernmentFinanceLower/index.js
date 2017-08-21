@@ -34,9 +34,7 @@ const Government = (props: Props) => {
       </Grid>
       <Divider />
     </Container>
-    <Div paddingTop="2em" paddingBottom="2em" >
-      {props.children}
-    </Div>
+    {props.children}
   </div>);
 };
 

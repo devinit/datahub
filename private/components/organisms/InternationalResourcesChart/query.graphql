@@ -8,6 +8,7 @@ query ResourcesOverTime($id: String!) {
         value
         flow_id
         flow_name
+        short_name
         flow_category
         flow_type
         direction

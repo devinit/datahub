@@ -95,28 +95,27 @@ const Government = (props: Props) => {
           governmentFinance.spendingAllocation.data &&
           governmentFinance.spendingAllocation.data.length ?
             <Grid>
-              <Grid.Row centered columns={2}>
-                <Grid.Column>
-                  <Chart
-                    config={props.config.spendingAllocation}
-                    data={governmentFinance.spendingAllocation.data}
-                    height="140px"
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <Div fontSize={small}>
-                    {governmentFinance.spendingAllocation.data.map((d, i) =>
-                      (<Legend
-                        key={props.config.spendingAllocation.colors[i]}
-                        color={props.config.spendingAllocation.colors[i]}
-                      >
-                        <span><span /></span>
-                        <span>{d[props.config.spendingAllocation.circular.label]}</span>
-                      </Legend>)
-                    )}
-                  </Div>
-                </Grid.Column>
-              </Grid.Row>
+              <Grid.Column width="2" />
+              <Grid.Column width="6">
+                <Chart
+                  config={props.config.spendingAllocation}
+                  data={governmentFinance.spendingAllocation.data}
+                  height="140px"
+                />
+              </Grid.Column>
+              <Grid.Column width="8">
+                <Div fontSize={small}>
+                  {governmentFinance.spendingAllocation.data.map((d, i) =>
+                    (<Legend
+                      key={props.config.spendingAllocation.colors[i]}
+                      color={props.config.spendingAllocation.colors[i]}
+                    >
+                      <span><span /></span>
+                      <span>{d[props.config.spendingAllocation.circular.label]}</span>
+                    </Legend>)
+                  )}
+                </Div>
+              </Grid.Column>
             </Grid>
             : <TabsNoData />}
         </Grid.Column>

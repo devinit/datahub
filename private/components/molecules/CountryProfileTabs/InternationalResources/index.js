@@ -2,6 +2,8 @@
 import {Container, Grid} from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
+import {Span} from 'glamorous';
+import {small} from 'components/theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from 'components/atoms/TabsText';
 import {NoData} from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
@@ -106,6 +108,7 @@ const International = (props: Props) => {
           </HeaderTitle>
           {internationalResources.mixOfResources && internationalResources.mixOfResources.data ?
             <Grid>
+              <Grid.Column width="2" />
               <Grid.Column width="6">
                 <Chart
                   config={props.config.mixOfResources}
@@ -113,7 +116,7 @@ const International = (props: Props) => {
                   height="140px"
                 />
               </Grid.Column>
-              <Grid.Column width="10">
+              <Grid.Column width="8">
                 <div>
                   {internationalResources.mixOfResources.data.map((d, i) =>
                     (<Legend
@@ -121,7 +124,7 @@ const International = (props: Props) => {
                       key={`${d[props.config.mixOfResources.circular.label]}_${props.config.mixOfResources.colors[i]}`}
                     >
                       <span><span /></span>
-                      <span>{d[props.config.mixOfResources.circular.label]}</span>
+                      <Span fontSize={small}>{d[props.config.mixOfResources.circular.label]}</Span>
                     </Legend>)
                   )}
                 </div>
