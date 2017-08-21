@@ -114,7 +114,12 @@ class Profile extends Component {
                       >
                         <Button icon="mail outline" />
                       </a>
-                      <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
+                      <a
+                        href={`/pdf/20170331/${this.country.name}.pdf`}
+                        target="__blank"
+                      >
+                        <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
+                      </a>
                     </Div>
                   </CardContainer>
                 </Grid.Column>
