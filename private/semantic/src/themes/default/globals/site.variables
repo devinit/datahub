@@ -92,7 +92,7 @@
 @focusedFormBorderColor: #85B7D9;
 
 /* Used on dropdowns, other larger blocks */
-@focusedFormMutedBorderColor: #96C8DA;
+@focusedFormMutedBorderColor: @borderColor;
 
 /*-------------------
         Sizes
