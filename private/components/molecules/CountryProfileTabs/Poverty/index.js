@@ -69,7 +69,7 @@ const Poverty = (props: Props) => {
             ? <div>
               <Chart
                 config={props.config.histogram}
-                data={povertyTab.incomeDistTrend.data}
+                data={povertyTab.incomeDistTrend.data.map((d, i) => i ? d : {...d, color: '#e84439'})}
                 height="120px"
               />
               <TabsFootNote textAlign="left" lineHeight={2}>

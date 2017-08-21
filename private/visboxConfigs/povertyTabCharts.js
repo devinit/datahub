@@ -22,7 +22,7 @@ export const histogram = {
   colors: ['#a0979d'],
   coloring: 'color',
   labeling: {
-    showLabels: true,
+    showLabels: false,
     suffix: '%',
   },
   linearAxis: {
@@ -32,8 +32,11 @@ export const histogram = {
   categoryAxis: {
     indicator: 'quintileName',
     ticking: 'end',
-    innerPadding: 0.2,
+    innerPadding: 0.5,
   },
+  interactions: {
+    enable: true,
+  }
 };
 
 export default { area, histogram };
