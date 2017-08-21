@@ -1,17 +1,17 @@
 // @flow
-import React, {Component} from "react";
-import glamorous from "glamorous";
-import {Container, Dropdown, Grid, Header, Label, Segment} from "semantic-ui-react";
-import {SectionHeader} from "components/atoms/Header";
-import {makeUnique} from "@devinit/charts/lib/factories/createDataset";
-import LoadingBar from "components/molecules/LoadingBar";
-import ExportChart from "components/molecules/ExportChart";
-import TreeChart from "components/atoms/TreeChart/index";
-import Timeline from "components/atoms/Timeline/index";
-import {LightBg} from "components/atoms/Backgrounds";
-import TourContainer from "components/molecules/TourContainer";
-import {PrintContainer} from "components/atoms/Container";
-import GovernmentFinanceTour from "components/atoms/GovernmentFinanceTour";
+import React, { Component } from 'react';
+import glamorous from 'glamorous';
+import { Container, Dropdown, Grid, Header, Label, Segment } from 'semantic-ui-react';
+import { SectionHeader } from 'components/atoms/Header';
+import { makeUnique } from '@devinit/charts/lib/factories/createDataset';
+import LoadingBar from 'components/molecules/LoadingBar';
+import ExportChart from 'components/molecules/ExportChart';
+import TreeChart from 'components/atoms/TreeChart/index';
+import Timeline from 'components/atoms/Timeline/index';
+import { LightBg } from 'components/atoms/Backgrounds';
+import TourContainer from 'components/molecules/TourContainer';
+import { PrintContainer } from 'components/atoms/Container';
+import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 
 type State = {
   year: number,
@@ -49,7 +49,7 @@ type Props = {
     line: {},
     partition: {},
   },
-  cached?: State
+  cached?: State,
 };
 
 const CardContainer = glamorous.div({
@@ -87,8 +87,8 @@ export default class TripleLinePartition extends Component {
   calculateInitialState(props: Props) {
     const year = props.year || props.startYear;
     const currencies = [
-      {text: 'Constant 2015 US$', value: 'US$'},
-      {text: `Current ${props.currencyCode}`, value: props.currencyCode},
+      { text: 'Constant 2015 US$', value: 'US$' },
+      { text: `Current ${props.currencyCode}`, value: props.currencyCode },
     ];
     const currency = 'US$';
     const budgetTypes = this.calculateBudgetTypes(
@@ -125,9 +125,9 @@ export default class TripleLinePartition extends Component {
 
   toogleRevenueTour() {
     if (this.state.revenueTourVisible) {
-      this.setState({revenueTourVisible: false});
+      this.setState({ revenueTourVisible: false });
     } else {
-      this.setState({revenueTourVisible: true});
+      this.setState({ revenueTourVisible: true });
     }
   }
 
@@ -154,8 +154,7 @@ export default class TripleLinePartition extends Component {
     const year = this.state.year;
     const revenueTree = this.calculateTree(this.props.revenueAndGrants, year, budgetType, currency);
     const financeTree = this.calculateTree(this.props.finance, year, budgetType, currency);
-    const expenditureTree =
-      this.calculateTree(this.props.expenditure, year, budgetType, currency);
+    const expenditureTree = this.calculateTree(this.props.expenditure, year, budgetType, currency);
 
     this.setState({
       budgetType,
@@ -188,8 +187,11 @@ export default class TripleLinePartition extends Component {
   }
 
   setRevenueLevel(revenueLevel: string) {
-    const revenueTrend =
-      this.calculateTrend(this.props.revenueAndGrants, this.state.currency, revenueLevel);
+    const revenueTrend = this.calculateTrend(
+      this.props.revenueAndGrants,
+      this.state.currency,
+      revenueLevel,
+    );
 
     this.setState({
       revenueLevel,
@@ -198,8 +200,7 @@ export default class TripleLinePartition extends Component {
   }
 
   setFinanceLevel(financeLevel: string) {
-    const financeTrend =
-      this.calculateTrend(this.props.finance, this.state.currency, financeLevel);
+    const financeTrend = this.calculateTrend(this.props.finance, this.state.currency, financeLevel);
 
     this.setState({
       financeLevel,
@@ -208,8 +209,11 @@ export default class TripleLinePartition extends Component {
   }
 
   setExpenditureLevel(expenditureLevel: string) {
-    const expenditureTrend =
-      this.calculateTrend(this.props.expenditure, this.state.currency, expenditureLevel);
+    const expenditureTrend = this.calculateTrend(
+      this.props.expenditure,
+      this.state.currency,
+      expenditureLevel,
+    );
 
     this.setState({
       expenditureLevel,
@@ -222,7 +226,7 @@ export default class TripleLinePartition extends Component {
     return makeUnique(data.filter(d => d.year === year).map(d => d.budget_type))
       .sort()
       .map(text => {
-        return {text: text.slice(0, 1).toUpperCase() + text.slice(1), value: text, key: text};
+        return { text: text.slice(0, 1).toUpperCase() + text.slice(1), value: text, key: text };
       });
   }
 
@@ -231,9 +235,9 @@ export default class TripleLinePartition extends Component {
     const trend = data
       .filter(d => {
         const isActualOrProjected = d.budget_type.match(/(actual|proj)/gi);
-        const isAtSelectedLevel = level ?
-          d.levels.length - 1 === d.levels.indexOf(level) :
-          d.levels.length === 1;
+        const isAtSelectedLevel = level
+          ? d.levels.length - 1 === d.levels.indexOf(level)
+          : d.levels.length === 1;
 
         return isActualOrProjected && isAtSelectedLevel;
       })
@@ -264,18 +268,23 @@ export default class TripleLinePartition extends Component {
 
   render() {
     if (this.props.loading) {
-      return <LoadingBar loading={this.props.loading}/>;
+      return <LoadingBar loading={this.props.loading} />;
     }
     return (
       <LightBg
-        innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
+        innerRef={node => (this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null)}
       >
         <Segment basic>
           <section>
             <Container id="print-chart">
               <PrintContainer>
                 <Segment textAlign="center" vertical>
-                  <img src="/img/print-logo.jpg" alt="Development Initiatives" height="50" width="132"/>
+                  <img
+                    src="/img/print-logo.jpg"
+                    alt="Development Initiatives"
+                    height="50"
+                    width="132"
+                  />
                   <Header>
                     <Header.Content as="h2">Domestic public resources in Uganda</Header.Content>
                     <Header.Subheader as="h3">www.devinit.org</Header.Subheader>
@@ -289,15 +298,15 @@ export default class TripleLinePartition extends Component {
                 stateToShare={{
                   startYear: this.state.year,
                   budgetType: this.state.budgetType,
-                  chartId: this.props.chartId
+                  chartId: this.props.chartId,
                 }}
               />
-              <Segment basic clearing style={{paddingRight: 0, paddingLeft: 0}}>
-                <SectionHeader color="#fff" style={{float: 'left'}}>
+              <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
+                <SectionHeader color="#fff" style={{ float: 'left' }}>
                   REVENUE AND GRANT <span>{this.state.year}</span>
                 </SectionHeader>
 
-                <Segment basic floated={'right'} style={{padding: 0, margin: 0}}>
+                <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
                   <Label>Budget Type</Label>
                   <Dropdown
                     selection
@@ -317,26 +326,26 @@ export default class TripleLinePartition extends Component {
               </Segment>
 
               <Grid>
-                <Grid.Column width={5} style={{paddingRight: 0}}>
-                  <CardContainer style={{paddingLeft: '30px'}}>
+                <Grid.Column width={5} style={{ paddingRight: 0 }}>
+                  <CardContainer style={{ paddingLeft: '30px' }}>
                     <Timeline
                       onYearChanged={year => this.setYear(+year)}
                       height="180px"
                       config={{
                         ...this.props.config.line,
-                        anchor: {start: this.state.year.toString()},
+                        anchor: { start: this.state.year.toString() },
                       }}
                       data={this.state.revenueTrend}
                     />
                   </CardContainer>
                 </Grid.Column>
 
-                <Grid.Column width={11} style={{paddingLeft: 0}}>
+                <Grid.Column width={11} style={{ paddingLeft: 0 }}>
                   <TreeChart
                     height="222px"
                     config={{
                       ...this.props.config.partition,
-                      labeling: {prefix: this.state.currency},
+                      labeling: { prefix: this.state.currency },
                     }}
                     onClick={(d: { id: string }) => this.setRevenueLevel(d.id)}
                     data={this.state.revenueTree}
@@ -345,32 +354,31 @@ export default class TripleLinePartition extends Component {
               </Grid>
 
               <Grid>
-                <Grid.Column width={5} style={{paddingRight: 0}}>
-                  <CardContainer style={{paddingLeft: '30px'}}>
+                <Grid.Column width={5} style={{ paddingRight: 0 }}>
+                  <CardContainer style={{ paddingLeft: '30px' }}>
                     <Timeline
                       onYearChanged={year => this.setYear(+year)}
                       height="180px"
                       config={{
                         ...this.props.config.line,
-                        anchor: {start: this.state.year.toString()},
+                        anchor: { start: this.state.year.toString() },
                       }}
                       data={this.state.financeTrend}
                     />
                   </CardContainer>
                 </Grid.Column>
 
-                <Grid.Column width={11} style={{paddingLeft: 0}}>
+                <Grid.Column width={11} style={{ paddingLeft: 0 }}>
                   <TreeChart
                     height="222px"
                     config={{
                       ...this.props.config.partition,
-                      labeling: {prefix: this.state.currency},
+                      labeling: { prefix: this.state.currency },
                     }}
                     onClick={(d: { id: string }) => this.setFinanceLevel(d.id)}
                     data={this.state.financeTree}
                   />
                 </Grid.Column>
-
               </Grid>
             </Container>
             <TourContainer
@@ -388,12 +396,12 @@ export default class TripleLinePartition extends Component {
             </HeadingContainer>
           </Container>
           <Container>
-            <Segment basic clearing style={{paddingRight: 0, paddingLeft: 0}}>
-              <SectionHeader color="#fff" style={{float: 'left'}}>
+            <Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
+              <SectionHeader color="#fff" style={{ float: 'left' }}>
                 EXPENDITURE <span>{this.state.year}</span>
               </SectionHeader>
 
-              <Segment basic floated={'right'} style={{padding: 0, margin: 0}}>
+              <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
                 <Label>Budget Type</Label>
                 <Dropdown
                   selection
@@ -413,26 +421,26 @@ export default class TripleLinePartition extends Component {
             </Segment>
 
             <Grid>
-              <Grid.Column width={5} style={{paddingRight: 0}}>
-                <CardContainer style={{paddingLeft: '30px'}}>
+              <Grid.Column width={5} style={{ paddingRight: 0 }}>
+                <CardContainer style={{ paddingLeft: '30px' }}>
                   <Timeline
                     onYearChanged={year => this.setYear(+year)}
                     height="250px"
                     config={{
                       ...this.props.config.line,
-                      anchor: {start: this.state.year.toString()},
+                      anchor: { start: this.state.year.toString() },
                     }}
                     data={this.state.expenditureTrend}
                   />
                 </CardContainer>
               </Grid.Column>
 
-              <Grid.Column width={11} style={{paddingLeft: 0}}>
+              <Grid.Column width={11} style={{ paddingLeft: 0 }}>
                 <TreeChart
                   height="292px"
                   config={{
                     ...this.props.config.partition,
-                    labeling: {prefix: this.state.currency},
+                    labeling: { prefix: this.state.currency },
                   }}
                   onClick={(d: { id: string }) => this.setExpenditureLevel(d.id)}
                   data={this.state.expenditureTree}
