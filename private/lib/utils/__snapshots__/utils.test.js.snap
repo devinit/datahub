@@ -3,7 +3,7 @@
 exports[`utils tests should return country object 1`] = `
 "Object {
   \\"countryType\\": \\"recipient\\",
-  \\"id\\": \\"drc\\",
+  \\"id\\": \\"CD\\",
   \\"name\\": \\"DRC\\",
   \\"slug\\": \\"drc\\",
 }"

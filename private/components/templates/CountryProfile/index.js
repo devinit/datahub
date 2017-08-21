@@ -1,29 +1,35 @@
 // @flow
 import React, {Component} from 'react';
-import { Div, A, Span, H4, Img} from 'glamorous';
+import { Div, Span, H4, Img} from 'glamorous';
 import { Container, Grid, Icon, Button } from 'semantic-ui-react';
 import { red, white } from 'components/theme/semantic';
 import { SectionHeader, Lead } from 'components/atoms/Header';
+import { BodyLink } from 'components/atoms/Link';
 import { DarkBg } from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
-import NoSSR from 'react-no-ssr';
-import SmallMap from 'components/molecules/SmallMap';
-import CountryProfileLowerTabs from 'components/organisms/CountryProfileLowerTabs';
-import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import {getCountry} from 'lib/utils';
 import { connect } from 'react-redux';
 import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
-import {small} from 'components/theme';
 import type { State } from 'lib/reducers';
+import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 import data from './data';
 /* eslint-disable react/no-danger */
 /* eslint-disable max-len */
 /* eslint-disable no-useless-constructor */
+
+const DynamicMapComponent = dynamic(
+  import('components/molecules/SmallMap'), {
+    ssr: false,
+    loading: () => (<p>Loading...</p>)
+  });
+const DynamicCountryProfileLowerTabs = dynamic(
+  import('components/organisms/CountryProfileLowerTabs'), { ssr: false });
+
 type Props = {
   id: string,
   rehydrated: boolean,
@@ -51,7 +57,7 @@ class Profile extends Component {
   render() {
     return (<Generic>
       <ProfileHeader>
-        <SmallMap slug={this.props.id} />
+        <DynamicMapComponent slug={this.props.id} />
         <Div width="100%" position="absolute" top="0">
           <Container>
             <Grid>
@@ -72,24 +78,24 @@ class Profile extends Component {
                       }
                       <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.country.id}.svg`} />
                       {this.country.slug === 'uganda' ?
-                        <Span fontSize={small} display={'inline-block'} fontWeight={500} >
-                          Visit our new <A color={red} href="/spotlight-on-uganda">
-                            Spotlight on Uganda</A> to explore data by district.</Span> : ''
+                        <Span fontSize="0.7em" display={'inline-block'} fontWeight={500} >
+                          Visit our new <BodyLink href="/spotlight-on-uganda">
+                            Spotlight on Uganda</BodyLink> to explore data by district.</Span> : ''
                       }
                     </Lead>
                     <Span>
                       Jump to {
                         this.country.countryType === RECIPIENT ?
                           <span>
-                            <A
+                            <BodyLink
                               onClick={() => this.jumpToSection(GOVERNMENT_FINANCE_LOWER)}
                               color={red}
-                            >governement finance </A> or </span> : ''
+                            >governement finance </BodyLink> or </span> : ''
                       }
-                      <A
+                      <BodyLink
                         color={red}
                         onClick={() => this.jumpToSection(INFLOWS_VS_OUTFLOWS)}
-                      >International resources</A>
+                      >International resources</BodyLink>
                     </Span>
                     <Div marginTop={'1.5em'}>
                       <Button icon="facebook f" />
@@ -113,13 +119,11 @@ class Profile extends Component {
           </SectionHeader>
         </Container>
       </Div>
-      <NoSSR onSSR={<LoadingPlaceholder height="40em" loading />} >
-        <CountryProfileLowerTabs
-          id={this.props.id}
-          selectedTab={this.state.selectedTab}
-          {...this.props.state}
-        />
-      </NoSSR>
+      <DynamicCountryProfileLowerTabs
+        id={this.props.id}
+        selectedTab={this.state.selectedTab}
+        {...this.props.state}
+      />
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           MORE FROM DI ON {this.country.name && this.country.name.toUpperCase()}

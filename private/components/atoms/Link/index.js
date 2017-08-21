@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { white, lighterGrey, grey, black} from 'components/theme/semantic';
+import { white, lighterGrey, grey, black, red} from 'components/theme/semantic';
 // import Link from 'next/link';
 import { medium } from 'components/theme';
 
@@ -18,6 +18,14 @@ export const NavLink = glamorous.a({
   transition: 'all .3s',
   ':hover': {
     color: white,
+  },
+});
+export const BodyLink = glamorous.a({
+  color: red,
+  fontWeight: '500',
+  cursor: 'pointer',
+  ':hover': {
+    color: red,
   },
 });
 export const SocialMediaLink = glamorous.a({

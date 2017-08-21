@@ -118,7 +118,7 @@ const International = (props: Props) => {
                   {internationalResources.mixOfResources.data.map((d, i) =>
                     (<Legend
                       color={props.config.mixOfResources.colors[i]}
-                      key={props.config.mixOfResources.colors[i]}
+                      key={`${d[props.config.mixOfResources.circular.label]}_${props.config.mixOfResources.colors[i]}`}
                     >
                       <span><span /></span>
                       <span>{d[props.config.mixOfResources.circular.label]}</span>

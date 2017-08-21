@@ -31,6 +31,8 @@
     "transform-flow-strip-types",
     "transform-async-generator-functions",
     "babel-plugin-inline-import-graphql-ast",
+    "ramda",
+    "lodash",
     ["module-resolver", {
       "root": ["private", "public/semantic", "public/img", "public/di-charts"],
       "alias": {

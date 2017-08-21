@@ -11,6 +11,7 @@ type Props = {
   textAlign?: string,
   onChange?: (key: string, value: string) => void,
 };
+/* eslint-disable no-unused-vars */
 const ToolBarItem = (props: Props) => {
   const {
     width,

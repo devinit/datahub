@@ -6,14 +6,19 @@ import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
 import NoSSR from 'react-no-ssr';
 import { SectionHeader } from 'components/atoms/Header';
 import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
-import Map from 'components/organisms/Map';
 import CountrySearchInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from 'components/molecules/GlobalPictureCountrySearch';
 import { red, white } from 'components/theme/semantic';
+import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
-
 import Generic from '../Generic';
+
+const DynamicMapComponent = dynamic(
+  import('components/organisms/Map'), {
+    ssr: false,
+    loading: () => <MapBackground />
+  });
 
 type Props = {
   pathName: string,
@@ -41,12 +46,7 @@ const front = (props: Props) => {
       </Container>
       <div style={{ position: 'relative' }}>
         <GlobalPictureNavTabs />
-        <NoSSR onSSR={<MapBackground />} >
-          <Map pathName={props.pathName} />
-        </NoSSR>
-        {/* {props.rehydrated || process.storybook
-          ? <Map pathName={props.pathName} />
-          : <MapBackground />} */}
+        <DynamicMapComponent pathName={props.pathName} />
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>

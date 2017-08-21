@@ -3,6 +3,6 @@ import withApolloAndReduxProvider from 'lib/storybook-addon/apolloAndRedux';
 import { storiesOf } from '@storybook/react';
 import Spotlight from '.';
 
-storiesOf('Templates', module)
+storiesOf('Templates DontTest', module)
   .addDecorator(withApolloAndReduxProvider())
   .add('Spot Light', () => <Spotlight />);
