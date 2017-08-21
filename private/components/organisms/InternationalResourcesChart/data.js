@@ -7,62 +7,68 @@ module.exports = {
       {
         id: 'oda-capital-repay',
         name: 'Capital repayments on ODA loans',
-        selections: [{ id: 'to_di_id', name: 'Source' }]
+        selections: [{ id: 'to_di_id', name: 'Source', unbundle: false }]
       },
       {
         id: 'oda-interest',
         name: 'Interest payments on ODA loans',
-        selections: [{ id: 'to_di_id', name: 'Source' }]
+        selections: [{ id: 'to_di_id', name: 'Source', unbundle: false }]
       },
       {
         id: 'oofs-capital-repay',
         name: 'Capital repayments on OOFs loans',
-        selections: [{ id: 'to_di_id', name: 'Recipients' }]
+        selections: [{ id: 'to_di_id', name: 'Recipients', unbundle: false }]
       },
       {
         id: 'oofs-interest',
         name: 'Interest payments on OOFs loans',
-        selections: [{ id: 'to_di_id', name: 'Recipients' }]
+        selections: [{ id: 'to_di_id', name: 'Recipients', unbundle: false }]
       }
     ],
     outflows: [
       {
         id: 'dfis-out',
         name: 'Development Finance Institutions',
-        selections: [{ id: 'financing_type', name: 'Finance modalities' }]
+        selections: [
+          { id: 'financing_type', name: 'Finance modalities', unbundle: false }
+        ]
       },
       {
         id: 'fdi-devcountries',
         name: 'Foreign Direct Investment in developing countries',
         selections: [
-          { id: 'to_di_id', name: 'Destination' },
-          { id: 'financing_type', name: 'Financing Instrument' }
+          { id: 'to_di_id', name: 'Destination', unbundle: false },
+          {
+            id: 'financing_type',
+            name: 'Financing Instrument',
+            unbundle: false
+          }
         ]
       },
       {
         id: 'oda-out',
         name: 'Official development assistance',
         selections: [
-          { id: 'to_di_id', name: 'Recipients' },
-          { id: 'channel', name: 'Channels of delivery' },
-          { id: 'sector', name: 'Sector' },
-          { id: 'bundle', name: 'Finance modalities' }
+          { id: 'to_di_id', name: 'Recipients', unbundle: true },
+          { id: 'channel', name: 'Channels of delivery', unbundle: true },
+          { id: 'sector', name: 'Sector', unbundle: true },
+          { id: 'bundle', name: 'Finance modalities', unbundle: true }
         ]
       },
       {
         id: 'oofs-out',
         name: 'Other official flows',
         selections: [
-          { id: 'to_di_id', name: 'Recipents' },
-          { id: 'channel', name: 'Channels of delivery' },
-          { id: 'sector', name: 'Sector' },
-          { id: 'bundle', name: 'Finance modalities' }
+          { id: 'to_di_id', name: 'Recipents', unbundle: true },
+          { id: 'channel', name: 'Channels of delivery', unbundle: true },
+          { id: 'sector', name: 'Sector', unbundle: true },
+          { id: 'bundle', name: 'Finance modalities', unbundle: true }
         ]
       },
       {
         id: 'remittances-devcountries',
         name: 'Remittances to developing countries',
-        selections: [{ id: 'to_di_id', name: 'Destination' }]
+        selections: [{ id: 'to_di_id', name: 'Destination', unbundle: false }]
       }
     ]
   },
@@ -71,97 +77,134 @@ module.exports = {
       {
         id: 'fdi-in',
         name: 'Foreign Direct Investment',
-        selections: [{ id: 'from_di_id', name: 'Source(OECD countries only)' }]
+        selections: [
+          {
+            id: 'from_di_id',
+            name: 'Source(OECD countries only)',
+            unbundle: false
+          }
+        ]
       },
       {
         id: 'long-debt-disbursement-in',
         name: 'Long-term debt (commercial sources)',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: [
+          {
+            id: 'destination_institution_type',
+            name: 'Type of borrower',
+            unbundle: false
+          },
+          {
+            id: 'financing_type',
+            name: 'Financing Instrument',
+            unbundle: false
+          }
+        ]
       },
       {
         id: 'long-debt-net-official-in',
         name: 'Long-term debt (official sources)',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: [
+          {
+            id: 'destination_institution_type',
+            name: 'Type of borrower',
+            unbundle: false
+          },
+          {
+            id: 'destination_institution_type',
+            name: 'Financing Instrument',
+            unbundle: false
+          }
+        ]
       },
       {
         id: 'net-portfolio-equity-in',
         name: 'Portfolio equity',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: [{ id: 'from_di_id', name: 'Providers', unbundle: false }]
       },
       {
         id: 'oda-in',
         name: 'Official development assistance',
         selections: [
-          { id: 'from_di_id', name: 'Providers' },
-          { id: 'channel', name: 'Channels of delivery' },
-          { id: 'sector', name: 'Sector' },
-          { id: 'bundle', name: 'Finance modalities' }
+          { id: 'from_di_id', name: 'Providers', unbundle: true },
+          { id: 'channel', name: 'Channels of delivery', unbundle: true },
+          { id: 'sector', name: 'Sector', unbundle: true },
+          { id: 'bundle', name: 'Finance modalities', unbundle: true }
         ]
       },
       {
         id: 'oofs-in',
         name: 'Other official flows',
         selections: [
-          { id: 'from_di_id', name: 'Providers' },
-          { id: 'channel', name: 'Channels of delivery' },
-          { id: 'sector', name: 'Sector' },
-          { id: 'bundle', name: 'Finance modalities' }
+          { id: 'from_di_id', name: 'Providers', unbundle: true },
+          { id: 'channel', name: 'Channels of delivery', unbundle: true },
+          { id: 'sector', name: 'Sector', unbundle: true },
+          { id: 'bundle', name: 'Finance modalities', unbundle: true }
         ]
       },
       {
         id: 'remittances-in',
         name: 'Remittances',
-        selections: [{ id: 'from_di_id', name: 'Source' }]
+        selections: [{ id: 'from_di_id', name: 'Source', unbundle: false }]
       },
       {
         id: 'short-debt-net-flow-in',
         name: 'Short-term debt',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: [
+          {
+            id: 'destination_institution_type',
+            name: 'Type of borrower',
+            unbundle: false
+          },
+          {
+            id: 'financing_type',
+            name: 'Financing Instrument',
+            unbundle: false
+          }
+        ]
       }
     ],
     outflows: [
-      {
-        id: 'fdi-in-profits-out',
-        name: 'Profits on FDI',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
-      },
+      { id: 'fdi-in-profits-out', name: 'Profits on FDI', selections: [] },
       {
         id: 'fdi-out',
         name: 'Foreign Direct Investment',
-        selections: [{ id: 'from_di_id', name: 'Source(OECD countries only)' }]
+        selections: [
+          {
+            id: 'from_di_id',
+            name: 'Source(OECD countries only)',
+            unbundle: false
+          }
+        ]
       },
       {
         id: 'oda-capital-payments-out',
         name: 'Capital repayments on ODA loans',
         selections: [
-          { id: 'from_di_id', name: 'Destination' },
-          { id: 'from_di_id', name: 'Providers' }
+          { id: 'from_di_id', name: 'Destination', unbundle: false },
+          { id: 'from_di_id', name: 'Providers', unbundle: false }
         ]
       },
       {
         id: 'oda-interest-payments-out',
         name: 'Interest payments on ODA loans',
-        selections: [{ id: 'from_di_id', name: 'Destination' }]
+        selections: [{ id: 'from_di_id', name: 'Destination', unbundle: false }]
       },
       {
         id: 'oofs-capital-payments-out',
         name: 'Capital repayments on OOFs loans',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: []
       },
       {
         id: 'oofs-interest-payments-out',
         name: 'Interest payments on OOFs loans',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: [{ id: 'from_di_id', name: 'Providers', unbundle: false }]
       },
-      {
-        id: 'remittances-out',
-        name: 'Remittances',
-        selections: [{ id: 'from_di_id', name: 'Source(OECD countries only)' }]
-      },
+      { id: 'remittances-out', name: 'Remittances', selections: [] },
       {
         id: 'short-debt-interest-out',
         name: 'Interest payments on short-term debt',
-        selections: [{ id: 'flow_type', name: 'Type of Flow' }]
+        selections: []
       }
     ]
   }

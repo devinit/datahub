@@ -6,6 +6,7 @@ query InfowsVsOutflows($donor: String!, $recipient: String!) {
       selections {
         id
         name
+        unbundle
       }
     }
     outflows {
@@ -14,6 +15,7 @@ query InfowsVsOutflows($donor: String!, $recipient: String!) {
       selections {
         id
         name
+        unbundle
       }
     }
   }
@@ -25,6 +27,7 @@ query InfowsVsOutflows($donor: String!, $recipient: String!) {
       selections {
         id
         name
+         unbundle
       }
     }
     outflows {
@@ -33,6 +36,7 @@ query InfowsVsOutflows($donor: String!, $recipient: String!) {
       selections {
         id
         name
+        unbundle
       }
     }
   }
