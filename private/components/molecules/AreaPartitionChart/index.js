@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import approximate from 'approximate-number';
+import {approximate} from 'lib/utils';
 import {groupBy} from 'ramda';
 import {SectionHeader} from 'components/atoms/Header';
 import UnbundlingInternationalResources from 'components/organisms/UnbundlingInternationalResources';

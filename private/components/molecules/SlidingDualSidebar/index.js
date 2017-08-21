@@ -4,7 +4,7 @@ import React from 'react';
 import { groupBy } from 'ramda';
 import { Grid, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
-import approximate from 'approximate-number';
+import {approximate} from 'lib/utils';
 import ChartShare from 'components/molecules/ChartShare';
 import { LightBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/atoms/Chart';
@@ -16,8 +16,8 @@ export type State = {
   config: any,
   currentYear: number,
   currentYearData: any,
-  inflowSum: number,
-  outflowSum: number,
+  inflowSum: string,
+  outflowSum: string,
 };
 
 export type Props = {

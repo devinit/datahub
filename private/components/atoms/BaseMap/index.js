@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from 'components/theme/semantic';
 import Router from 'next/router';
-import approximate from 'approximate-number';
+import {approximate} from 'lib/utils';
 import LoadingBar from 'components/molecules/LoadingBar';
 import { MapContainer } from './styledMapContainer';
 import type {
@@ -108,7 +108,7 @@ class BaseMap extends Component {
     const id: string = pointData.id;
     let value: string = '';
     // TODO: find away of indicating what tooltip should be from concept.csv
-    if (!isNaN(Number(pointData.value))) value = approximate(pointData.value);
+    if (!isNaN(Number(pointData.value))) value = approximate(Number(pointData.value));
     const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
     if (this.props.countryProfile) value = '';
     if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
