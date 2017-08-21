@@ -1,6 +1,7 @@
 // @flow
 import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
+import {Div} from 'glamorous';
 import Chart from 'components/atoms/Chart';
 import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import { NoData } from 'lib/utils/constants';
@@ -67,7 +68,7 @@ const Poverty = (props: Props) => {
           {povertyTab.incomeDistTrend &&
           povertyTab.incomeDistTrend.data &&
           povertyTab.incomeDistTrend.data.length
-            ? <div>
+            ? <Div width="70%" margin={'0 auto'}>
               <Chart
                 config={props.config.histogram}
                 data={povertyTab.incomeDistTrend.data.map((d, i) => i ? d : {...d, color: '#e84439'})}
@@ -85,7 +86,7 @@ const Poverty = (props: Props) => {
                   }
                 </span>
               </TabsFootNote>
-            </div>
+            </Div>
             : <TabsNoData />}
         </Grid.Column>
       </Grid>
