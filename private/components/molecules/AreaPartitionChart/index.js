@@ -77,7 +77,8 @@ class AreaPartitionChart extends React.Component {
   }
 
   setFlowDetailGroup(id: string) {
-    const [selection] = this.state.detailSelections.filter(d => d.value === id);
+    const selections = this.state.detailSelections || {};
+    const [selection = {}] = selections.filter(d => d.value === id);
 
     this.setState({
       detailGroup: id,
