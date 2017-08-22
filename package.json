@@ -23,7 +23,7 @@
     "pull": "npm run build-tools && node dist/PullApiData/index.js",
     "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
-    "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
+    "lint": "npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
