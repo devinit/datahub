@@ -8369,7 +8369,11 @@ exports[`Storyshots Tabs Country Profiles tabs austria 1`] = `
   </div>
   <div
     className="css-x5a8zc"
-  />
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
 </div>
 `;
 
@@ -8394,7 +8398,11 @@ exports[`Storyshots Tabs Country Profiles tabs kenya 1`] = `
   </div>
   <div
     className="css-x5a8zc"
-  />
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
 </div>
 `;
 
@@ -8419,7 +8427,11 @@ exports[`Storyshots Tabs Country Profiles tabs uganda 1`] = `
   </div>
   <div
     className="css-x5a8zc"
-  />
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
 </div>
 `;
 
@@ -8444,7 +8456,11 @@ exports[`Storyshots Tabs spotlight tabs 1`] = `
   </div>
   <div
     className="css-x5a8zc"
-  />
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
 </div>
 `;
 
