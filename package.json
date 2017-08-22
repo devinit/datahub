@@ -23,7 +23,7 @@
     "pull": "npm run build-tools && node dist/PullApiData/index.js",
     "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
-    "lint": "npm run flow",
+    "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
@@ -90,6 +90,7 @@
     "apollo-codegen": "^0.15.2",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
+    "css-to-js-object": "0.0.3",
     "csso": "^3.1.1",
     "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
@@ -115,7 +116,7 @@
   },
   "git-pre-hooks": {
     "pre-push": [
-      "npm run lint",
+      "npm run flow",
       "npm run test -- -u"
     ]
   },
