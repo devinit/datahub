@@ -34,6 +34,7 @@ const withData = graphql(QUERY, {
       },
     };
   },
+  skip: props => !props.shouldFetch,
   props: ({ data }) => {
     const { error, loading } = data;
 
@@ -56,7 +57,7 @@ const UnbundlingTreemap = (props: Props) => {
   return (
     <div>
       <Container>
-        {props.loading || !(props.bundles[props.year] || []).length
+        {props.loading || !((props.bundles || {})[props.year] || []).length
           ? <Segment
             basic
             style={{
