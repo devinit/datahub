@@ -4,11 +4,7 @@ LABEL maintainer="epicallan.al@gmail.com"
 
 RUN mkdir /src
 
-# Provides cached layer for node_modules
-
-COPY package.json /tmp/
-RUN cd /tmp && npm install --production --silent
-RUN cp -a /tmp/node_modules /src/
+RUN npm install --production --silent
 
 # copy app files into
 COPY . /src
