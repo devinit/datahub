@@ -21,6 +21,6 @@ ENV NODE_ENV production
 RUN npm run pull
 RUN npm run build
 
-EXPOSE 9999
+EXPOSE 8888
 
 CMD npm run start

@@ -20,7 +20,7 @@ docker stop datahub-app
 
 docker rm datahub-app
 
-docker run -it -d -p 9999:9999 --name datahub-app datahub
+docker run -it -d -p 8888:8888 --name datahub-app datahub
 
 # add pdf folder.
 bash ~/pdf-prints/deploy.sh
