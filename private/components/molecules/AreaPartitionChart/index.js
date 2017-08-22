@@ -20,6 +20,7 @@ export type State = {
   flowName?: string,
   detailSelections?: Object[],  // TOFIX: @ernest add proper types
   detailGroup?: string,
+  shouldUnbundle?: boolean,
 
   trend: Object[],  // TOFIX: @ernest add proper types
   mixes: Object,  // TOFIX: @ernest add proper types
@@ -76,8 +77,11 @@ class AreaPartitionChart extends React.Component {
   }
 
   setFlowDetailGroup(id: string) {
+    const [selection] = this.state.detailSelections.filter(d => d.value === id);
+
     this.setState({
       detailGroup: id,
+      shouldUnbundle: selection.unbundle
     });
   }
 
@@ -120,20 +124,22 @@ class AreaPartitionChart extends React.Component {
     const [flowDetails = {}] = flows.filter(f => f.id === flow);
 
     const detailSelections = (flowDetails.selections || [])
-      .map(({id, name}, i) => ({
+      .map(({id, name, unbundle}, i) => ({
         text: name,
         value: id,
         key: i,
+        unbundle,
       }));
 
-    const detailGroup = (detailSelections[0] || {}).value;
+    const selection = (detailSelections[0] || {});
 
     return {
       flow,
       flowName: flowDetails.name,
       trend,
       detailSelections,
-      detailGroup,
+      detailGroup: selection.value,
+      shouldUnbundle: selection.unbundle,
       mixes: groupBy(d => d.year, trend),
     };
   }
@@ -230,6 +236,7 @@ class AreaPartitionChart extends React.Component {
                   onClick={(d: {flow_id: string}) => this.setFlow(d.flow_id)}
                 /> :
                 <UnbundlingInternationalResources
+                  shouldFetch={this.state.shouldUnbundle}
                   country={this.props.id}
                   year={this.state.year}
                   groupBy={this.state.detailGroup}
