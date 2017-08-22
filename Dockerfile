@@ -4,10 +4,10 @@ LABEL maintainer="epicallan.al@gmail.com"
 
 RUN mkdir /src
 
-RUN npm install --production --silent
-
 # copy app files into
 COPY . /src
+
+RUN npm install --production --silent
 
 WORKDIR /src
 
