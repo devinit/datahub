@@ -12,7 +12,6 @@ import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import {getCountry} from 'lib/utils';
 import { connect } from 'react-redux';
-// import NoSSR from 'react-no-ssr';
 import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
@@ -37,19 +36,28 @@ type Props = {
   state: StateToShare,
 };
 class Profile extends Component {
+  static init(props) {
+    const country = getCountry(props.id);
+    const selectedTab = props.state && props.state.chartId &&
+      props.state.chartId !== GOVERNMENT_FINANCE_LOWER ? 1 : 0;
+    return {selectedTab, country};
+  }
   constructor(props: Props) {
     super(props);
-    this.country = getCountry(props.id);
-    const selectedTab = props.state && props.state.chartId && props.state.chartId !== GOVERNMENT_FINANCE_LOWER ? 1 : 0;
-    this.state = {selectedTab};
+    this.state = Profile.init(props);
   }
+
   state: {
     selectedTab: number,
+    country: Country
   }
-  country: Country
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps !== this.props) this.setState(Profile.init(nextProps));
+  }
   countryId: string
   countryName: string
   lowerTabs: HTMLElement
+
   jumpToSection = (sectionId: string) => {
     const selectedTab = sectionId === GOVERNMENT_FINANCE_LOWER ? 0 : 1;
     this.setState({selectedTab});
@@ -70,15 +78,15 @@ class Profile extends Component {
                     </H4>
                     <CountrySearch visible placeholder={this.props.id} profile />
                     <Lead>
-                      {this.country.countryType === RECIPIENT ?
-                        `Explore this in-depth profile of ${this.country.name} to find out overall levels of poverty,
+                      {this.state.country.countryType === RECIPIENT ?
+                        `Explore this in-depth profile of ${this.state.country.name} to find out overall levels of poverty,
                         income distribution, division of wealth and more. Discover how national and
                         sub-national revenue is generated.` :
-                        `Explore this in-depth profile of ${this.country.name} to see the international resources it directs to developing countries.
+                        `Explore this in-depth profile of ${this.state.country.name} to see the international resources it directs to developing countries.
                         Get an overview of government spending, population and income distribution.`
                       }
-                      <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.country.id}.svg`} />
-                      {this.country.slug === 'uganda' ?
+                      <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.state.country.id}.svg`} />
+                      {this.state.country.slug === 'uganda' ?
                         <Span fontSize="0.7em" display={'inline-block'} fontWeight={500} >
                           Visit our new <BodyLink href="/spotlight-on-uganda">
                             Spotlight on Uganda</BodyLink> to explore data by district.</Span> : ''
@@ -86,7 +94,7 @@ class Profile extends Component {
                     </Lead>
                     <Span>
                       Jump to {
-                        this.country.countryType === RECIPIENT ?
+                        this.state.country.countryType === RECIPIENT ?
                           <span>
                             <BodyLink
                               onClick={() => this.jumpToSection(GOVERNMENT_FINANCE_LOWER)}
@@ -117,7 +125,7 @@ class Profile extends Component {
                           <Button icon="mail outline" />
                         </a>
                         <a
-                          href={`/pdf/20170331/${this.country.name}.pdf`}
+                          href={`/pdf/20170331/${this.state.country.name}.pdf`}
                           target="__blank"
                         >
                           <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
@@ -139,7 +147,7 @@ class Profile extends Component {
             <Img
               width="32px"
               verticalAlign="middle"
-              src={`/flags/svg/${this.country.id}.svg`}
+              src={`/flags/svg/${this.state.country.id}.svg`}
             /> EXPLORE <span>DOMESTIC AND INTERNATIONAL RESOURCES</span>
           </SectionHeader>
         </Container>
@@ -151,7 +159,7 @@ class Profile extends Component {
       />
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
-          MORE FROM DI ON {this.country.name && this.country.name.toUpperCase()}
+          MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}
         </SectionHeader>
       </DarkBg>
       <ProfileDataSourceTable data={data.dataSources} />
