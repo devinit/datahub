@@ -1,7 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
-const { fork } = require('child_process');
+// const { fork } = require('child_process');
 const pagesToPreCache = require('./private/lib/precache/pages');
 const next = require('next');
 
@@ -69,7 +69,7 @@ app.prepare().then(() => {
     if (err) throw err;
     console.log(`> App running on http://localhost:${PORT}`);
     if (process.env.NODE_ENV === 'production') {
-      fork('./private/lib/precache/index.js');
+      // fork('./private/lib/precache/index.js');
     }
   });
 });
