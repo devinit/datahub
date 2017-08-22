@@ -27,7 +27,27 @@ query InfowsVsOutflows($donor: String!, $recipient: String!) {
       selections {
         id
         name
-         unbundle
+        unbundle
+      }
+    }
+    outflows {
+      id
+      name
+      selections {
+        id
+        name
+        unbundle
+      }
+    }
+  }
+  crossover: flows(countryType: $recipient) {
+    inflows {
+      id
+      name
+      selections {
+        id
+        name
+        unbundle
       }
     }
     outflows {

@@ -5,7 +5,7 @@ import Pane from 'components/atoms/Pane';
 import GovernmentFinance from 'components/molecules/CountryProfileTabs/GovernmentFinanceLower';
 import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';
 import InflowsVsOutflows from 'components/organisms/InflowsVsOutflows';
-import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from 'lib/utils/constants';
+import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, CROSSOVER, INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from 'lib/utils/constants';
 import InternationalResourcesLower from 'components/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
 import type {StateToShare} from 'components/molecules/ChartShare';
@@ -28,7 +28,7 @@ export default function CountryProfileLowerTabs(props: Props) {
       textAlign="center"
       selected={selectedTab}
     >
-      { country && country.countryType === RECIPIENT ?
+      { country.countryType === RECIPIENT || country.countryType === CROSSOVER ?
         <Pane
           label="GOVERNMENT FINANCE"
           id={GOVERNMENT_FINANCE_LOWER}
