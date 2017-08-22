@@ -7,9 +7,9 @@ RUN mkdir /src
 # copy app files into
 COPY . /src
 
-RUN npm install --production --silent
-
 WORKDIR /src
+
+RUN npm install --production --silent
 
 ENV NODE_ENV production
 
