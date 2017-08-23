@@ -164,7 +164,7 @@ class AreaPartitionChart extends React.Component {
           <Grid>
             <Grid.Column width={7}>
               <Header as="h3" textAlign="center">
-                <Header.Content>Outflows over time</Header.Content>
+                <Header.Content>{this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time</Header.Content>
               </Header>
               <Dropdown
                 selection

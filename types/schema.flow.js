@@ -291,12 +291,26 @@ export type ResourcesOverTimeQueryVariables = {|
 
 export type ResourcesOverTimeQuery = {|
   internationalResources: ? {|
+    startYear: ?number,
     // for sidebar chart in international resources section & area partition tree chart default data
     resourcesOverTime: ? {|
-      toolTip: ? {|
-        heading: ?string,
-        source: ?string,
-      |},
+      data: ? Array< {|
+        uid: ?string,
+        year: number,
+        value: number,
+        flow_id: string,
+        flow_name: string,
+        short_name: ?string,
+        // Category i.e FDI, ODA
+        flow_category: ?string,
+        // flow either inflow or outflow
+        flow_type: ?string,
+        // i.e contains flow type as 1st level, flow category as second and flow name as 3rd
+        // levels: [String]
+        // in or out
+        direction: ?string,
+        color: ?string,
+      |} >,
     |},
   |},
 |};
@@ -721,6 +735,22 @@ export type InfowsVsOutflowsQuery = {|
         unbundle: ?boolean,
       |} >,
     |} >,
+  |},
+|};
+
+export type ResourcesOverTimeToolTipQueryVariables = {|
+  id: string,
+|};
+
+export type ResourcesOverTimeToolTipQuery = {|
+  internationalResources: ? {|
+    // for sidebar chart in international resources section & area partition tree chart default data
+    resourcesOverTime: ? {|
+      toolTip: ? {|
+        heading: ?string,
+        source: ?string,
+      |},
+    |},
   |},
 |};
 
