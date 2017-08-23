@@ -144,11 +144,11 @@ i.e
 ----------
 
 - Currently Updating eslint-plugin-react to 7.1.0  &  eslint-plugin-jsx-a11y to 6.0.2 will break linting
-- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing / over writing our custom changes.
-- Currently dont add react-apollo flow types. They have an issue that need to be corrected
+- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing / over writing our custom changes. If you are to use yarn, make use of the ```--ignore-scripts``` flags
+- Currently dont add react-apollo flow types. They have an issue that needs to be corrected
 - Pre-caching pages wont work with dynamic imported components, thats why its disabled.
 - Flow > 0.52 has quite a number of breaking changes, dont upgrade yet.
-- Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types option_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
+- Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types optional_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
 
 ## Development environment / notes / guidelines
 
