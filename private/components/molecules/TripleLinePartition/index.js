@@ -70,6 +70,16 @@ const HeadingContainer = glamorous.div({
   overflow: 'visible',
 });
 
+const TreeChartContainer = glamorous.div({
+  '& .plot-label-header': {
+    fontSize: '1em !important',
+  },
+  '& .plot-label-value': {
+    fontSize: '1.15em !important',
+    fontWeight: '500 !important'
+  },
+});
+
 export default class TripleLinePartition extends Component {
   // eslint-disable-next-line react/sort-comp
   state: State;
@@ -345,15 +355,17 @@ export default class TripleLinePartition extends Component {
                 </Grid.Column>
 
                 <Grid.Column width={11} style={{ paddingLeft: 0 }}>
-                  <TreeChart
-                    height="222px"
-                    config={{
-                      ...this.props.config.partition,
-                      labeling: { prefix: this.state.currency },
-                    }}
-                    onClick={(d: { id: string }) => this.setRevenueLevel(d.id)}
-                    data={this.state.revenueTree}
-                  />
+                  <TreeChartContainer>
+                    <TreeChart
+                      height="222px"
+                      config={{
+                        ...this.props.config.partition,
+                        labeling: { prefix: this.state.currency },
+                      }}
+                      onClick={(d: { id: string }) => this.setRevenueLevel(d.id)}
+                      data={this.state.revenueTree}
+                    />
+                  </TreeChartContainer>
                 </Grid.Column>
               </Grid>
 
@@ -373,15 +385,17 @@ export default class TripleLinePartition extends Component {
                 </Grid.Column>
 
                 <Grid.Column width={11} style={{ paddingLeft: 0 }}>
-                  <TreeChart
-                    height="222px"
-                    config={{
-                      ...this.props.config.partition,
-                      labeling: { prefix: this.state.currency },
-                    }}
-                    onClick={(d: { id: string }) => this.setFinanceLevel(d.id)}
-                    data={this.state.financeTree}
-                  />
+                  <TreeChartContainer>
+                    <TreeChart
+                      height="222px"
+                      config={{
+                        ...this.props.config.partition,
+                        labeling: { prefix: this.state.currency },
+                      }}
+                      onClick={(d: { id: string }) => this.setFinanceLevel(d.id)}
+                      data={this.state.financeTree}
+                    />
+                  </TreeChartContainer>
                 </Grid.Column>
               </Grid>
             </Container>
@@ -440,15 +454,17 @@ export default class TripleLinePartition extends Component {
               </Grid.Column>
 
               <Grid.Column width={11} style={{ paddingLeft: 0 }}>
-                <TreeChart
-                  height="292px"
-                  config={{
-                    ...this.props.config.partition,
-                    labeling: { prefix: this.state.currency },
-                  }}
-                  onClick={(d: { id: string }) => this.setExpenditureLevel(d.id)}
-                  data={this.state.expenditureTree}
-                />
+                <TreeChartContainer>
+                  <TreeChart
+                    height="292px"
+                    config={{
+                      ...this.props.config.partition,
+                      labeling: { prefix: this.state.currency },
+                    }}
+                    onClick={(d: { id: string }) => this.setExpenditureLevel(d.id)}
+                    data={this.state.expenditureTree}
+                  />
+                </TreeChartContainer>
               </Grid.Column>
             </Grid>
           </Container>
