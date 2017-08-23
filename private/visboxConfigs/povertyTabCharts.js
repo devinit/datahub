@@ -37,7 +37,8 @@ export const histogram = {
   },
   interactions: {
     enable: true,
-  }
+  },
+  highlight: ['value_bottom_20pc']
 };
 
 export default { area, histogram };
