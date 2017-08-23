@@ -11,6 +11,7 @@ import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
 import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
+import BUBBLE_INDICATORS_QUERY from './queries/BubbleChartIndicatorList.graphql'
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';
@@ -133,12 +134,22 @@ export const getInflowsAndOutflows = async () => {
   }
 };
 
+export const getBubbleIndicatorList = async () => {
+  try {
+    const filePath = path.join(baseOrganismsPath, 'DPDP/data.js');
+    await getAndWriteData({query: BUBBLE_INDICATORS_QUERY, filePath});
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
   getDistricts();
   getGlobalPictureThemes();
   getInternationalResourcesToolTip();
   getInflowsAndOutflows();
+  getBubbleIndicatorList();
   getSpotlightThemes();
   getPagesData();
 }
