@@ -56,6 +56,7 @@ export const Pointer = glamorous.span(
 );
 
 export const Floor = glamorous.span({
+  userSelect: 'none',
   whiteSpace: 'nowrap',
   position: 'absolute',
   display: 'block',
@@ -65,6 +66,7 @@ export const Floor = glamorous.span({
 });
 
 export const Ceiling = glamorous.span({
+  userSelect: 'none',
   whiteSpace: 'nowrap',
   position: 'absolute',
   display: 'block',
