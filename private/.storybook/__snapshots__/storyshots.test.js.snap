@@ -241,7 +241,7 @@ exports[`Storyshots Bubble Charts Different Providers, Different Priorities 1`] 
               className="css-dnegyn"
             >
               <span
-                className="css-1ujcf02 bubble"
+                className="css-77k8q4 bubble"
               >
                 1999
               </span>
@@ -264,7 +264,7 @@ exports[`Storyshots Bubble Charts Different Providers, Different Priorities 1`] 
                 value={2010}
               />
               <span
-                className="css-2q5yx4 bubble"
+                className="css-yc6k31 bubble"
               >
                 2015
               </span>
@@ -637,7 +637,7 @@ exports[`Storyshots Bubble Charts Poverty 1`] = `
               className="css-dnegyn"
             >
               <span
-                className="css-1ujcf02 bubble"
+                className="css-77k8q4 bubble"
               >
                 1999
               </span>
@@ -660,7 +660,7 @@ exports[`Storyshots Bubble Charts Poverty 1`] = `
                 value={2010}
               />
               <span
-                className="css-2q5yx4 bubble"
+                className="css-yc6k31 bubble"
               >
                 2015
               </span>
@@ -1033,7 +1033,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
               className="css-dnegyn"
             >
               <span
-                className="css-1ujcf02 bubble"
+                className="css-77k8q4 bubble"
               >
                 2000
               </span>
@@ -1056,7 +1056,7 @@ exports[`Storyshots BubbleChartWidget Main 1`] = `
                 value={2010}
               />
               <span
-                className="css-2q5yx4 bubble"
+                className="css-yc6k31 bubble"
               >
                 2015
               </span>
@@ -13975,7 +13975,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
   className="css-dnegyn"
 >
   <span
-    className="css-1ujcf02 bubble"
+    className="css-77k8q4 bubble"
   >
     2000
   </span>
@@ -13998,7 +13998,7 @@ exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
     value={2016}
   />
   <span
-    className="css-2q5yx4 bubble"
+    className="css-yc6k31 bubble"
   >
     2020
   </span>
