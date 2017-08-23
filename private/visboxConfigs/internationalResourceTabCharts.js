@@ -9,6 +9,7 @@ export const resourcesOverTime = {
     'rgb(190, 132, 187)',
     'rgb(0, 149, 200)',
   ],
+  coloring: 'color',
   groupBy: 'name',
   linearAxis: {
     showAxis: true,

@@ -85,14 +85,13 @@ class SlidingDualSidebar extends React.Component {
       return {
         ...all,
         [year]: expected.map(({name, category, direction, type}) => {
-          const [existing] = groupedByYear[year].filter(
+          const existing = groupedByYear[year].find(
             d =>
               d.year === +year && d.direction === direction &&
               d.flow_name === name &&
               d.flow_category === category &&
               d.flow_type === type,
           );
-
           return (
             existing || {
               year,

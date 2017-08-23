@@ -1,4 +1,4 @@
-query ResourcesOverTime($id: String!) {
+query ResourcesOverTimeToolTip($id: String!) {
   internationalResources(id: $id) {
     resourcesOverTime {
       toolTip {
