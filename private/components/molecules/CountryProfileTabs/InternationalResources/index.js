@@ -16,48 +16,14 @@ type Props = {
   config: any,
   pagesData: PageUnit[],
 };
-// TODO: move to separate file
-const groupBy = (list, field) => {
-  return list.reduce((all, d) => ({
-    ...all,
-    [d[field]]: [
-      ...(all[d[field]] || []),
-      d,
-    ],
-  }), {});
-};
-
-const getAggregatedSumOfResourcesOverTime = (data: any[]) =>
-  [data]
-    .map(list => {
-      const groupedByYear = groupBy(list, 'year');
-
-      const types: any = Object.keys(groupedByYear)
-        .map(y => {
-          const groupedByType = groupBy(groupedByYear[y], 'flow_type');
-
-          return Object.keys(groupedByType).map(t =>
-            groupedByType[t].reduce((s, d) => ({
-              ...s,
-              value: s.value + d.value
-            }))
-          );
-        });
-      return Object.keys(types).map(t => types[t]).reduce((all, d) => [...all, ...d], []);
-    })
-    .reduce((_, d) => d);
 
 const International = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
   const shareGniAllocatedToCtry = getPageLine('share-gni-allocated-to-ctry');
   const resourceInflow = getPageLine('resource-inflow');
   const mixtureOfResources = getPageLine('mixture-of-resources');
-  if (!props.internationalResources) throw new Error('No international resources data');
   const internationalResources = props.internationalResources;
-  const resourcesOverTime =
-    internationalResources.resourcesOverTime && internationalResources.resourcesOverTime.data
-      ? getAggregatedSumOfResourcesOverTime(internationalResources.resourcesOverTime.data)
-      : null;
+  if (!internationalResources) throw new Error('Internationa resources missing');
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -85,15 +51,16 @@ const International = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {resourceInflow.title }
-            {internationalResources.resourcesOverTime &&
-            internationalResources.resourcesOverTime.toolTip
-              ? <TabsToolTip {...internationalResources.resourcesOverTime.toolTip} />
+            {internationalResources.resourceInflowsOverTime &&
+            internationalResources.resourceInflowsOverTime.toolTip
+              ? <TabsToolTip {...internationalResources.resourceInflowsOverTime.toolTip} />
               : ''}
           </HeaderTitle>
-          {resourcesOverTime
+          {internationalResources.resourceInflowsOverTime &&
+            internationalResources.resourceInflowsOverTime.data
             ? <Chart
               config={props.config.resourcesOverTime}
-              data={resourcesOverTime}
+              data={internationalResources.resourceInflowsOverTime.data}
               height="140px"
             />
             : <TabsNoData />}

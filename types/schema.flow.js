@@ -154,16 +154,14 @@ export type TabDataQuery = {|
         source: ?string,
       |},
     |},
-    // for sidebar chart in international resources section & area partition tree chart default data
-    // & line chart in the  tabs section
-    resourcesOverTime: ? {|
+    // for line chart in the  international resources tabs section,
+    // IndicatorDataColoredWithToolTip  is defined in spotlight types
+    resourceInflowsOverTime: ? {|
       data: ? Array< {|
-        year: number,
-        // flow either inflow or outflow
-        flow_type: ?string,
-        // Category i.e FDI, ODA
-        flow_category: ?string,
-        value: number,
+        year: ?number,
+        name: ?string,
+        color: ?string,
+        value: ?number,
       |} >,
       toolTip: ? {|
         heading: ?string,
@@ -172,7 +170,6 @@ export type TabDataQuery = {|
     |},
   |},
   overviewTab: ? {|
-    countryType: ?string,
     // how many of the poorest people globally live in a country
     poorestPeople: ? {|
       value: ?string,
@@ -295,7 +292,6 @@ export type ResourcesOverTimeQueryVariables = {|
 export type ResourcesOverTimeQuery = {|
   internationalResources: ? {|
     // for sidebar chart in international resources section & area partition tree chart default data
-    // & line chart in the  tabs section
     resourcesOverTime: ? {|
       toolTip: ? {|
         heading: ?string,
@@ -661,6 +657,7 @@ export type InfowsVsOutflowsQuery = {|
         // this is the group ID
         id: ?string,
         name: ?string,
+        unbundle: ?boolean,
       |} >,
     |} >,
     // an array of outflows for a particular countryType
@@ -671,6 +668,7 @@ export type InfowsVsOutflowsQuery = {|
         // this is the group ID
         id: ?string,
         name: ?string,
+        unbundle: ?boolean,
       |} >,
     |} >,
   |},
@@ -684,6 +682,7 @@ export type InfowsVsOutflowsQuery = {|
         // this is the group ID
         id: ?string,
         name: ?string,
+        unbundle: ?boolean,
       |} >,
     |} >,
     // an array of outflows for a particular countryType
@@ -694,6 +693,32 @@ export type InfowsVsOutflowsQuery = {|
         // this is the group ID
         id: ?string,
         name: ?string,
+        unbundle: ?boolean,
+      |} >,
+    |} >,
+  |},
+  // eg recipient or donor
+  crossover: ? {|
+    // an array of inflows for a particular countryType for area & partition chart
+    inflows: ? Array< {|
+      id: ?string,
+      name: ?string,
+      selections: ? Array< {|
+        // this is the group ID
+        id: ?string,
+        name: ?string,
+        unbundle: ?boolean,
+      |} >,
+    |} >,
+    // an array of outflows for a particular countryType
+    outflows: ? Array< {|
+      id: ?string,
+      name: ?string,
+      selections: ? Array< {|
+        // this is the group ID
+        id: ?string,
+        name: ?string,
+        unbundle: ?boolean,
       |} >,
     |} >,
   |},

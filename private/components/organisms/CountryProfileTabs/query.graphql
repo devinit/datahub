@@ -121,11 +121,11 @@ query TabData($id: String!) {
         source
       }
     }
-    resourcesOverTime {
+    resourceInflowsOverTime {
       data {
         year
-        flow_type
-        flow_category
+        name
+        color
         value
       }
       toolTip {
@@ -135,7 +135,6 @@ query TabData($id: String!) {
     }
   }
   overviewTab(id: $id) {
-    countryType
     poorestPeople {
       value
       toolTip {
