@@ -104,8 +104,6 @@ export default class TripleLinePartition extends Component {
     const financeTree = this.calculateTree(props.finance, year, budgetType, currency);
     const expenditureTree = this.calculateTree(props.expenditure, year, budgetType, currency);
 
-    console.log(expenditureTree.map(d => d.levels.join()));
-
     return {
       revenueTourVisible: false,
       year,
