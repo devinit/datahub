@@ -21,7 +21,7 @@ export const SectionHeader = glamorous.h2(
     letterSpacing: '1px',
     lineHeight: 1,
     textTransform: 'uppercase',
-    fontSize: '1.0rem',
+    fontSize: '1em',
     '& span': {
       color: red,
     },

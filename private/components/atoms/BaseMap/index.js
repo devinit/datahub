@@ -309,7 +309,7 @@ class BaseMap extends Component {
     if (this.props.countryProfile && this._map && this._mapLoaded) {
       this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
     }
-    if (!this.map && !this._mapLoaded) {
+    if (!this._mapLoaded) {
       this._map.on('load', () => {
         this._mapLoaded = true;
         this._map.setPaintProperty(
