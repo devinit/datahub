@@ -33,6 +33,9 @@ const Wrapper = glamorous.div({
     outline: 0,
     appearance: 'none',
   },
+  '& option': {
+    color: '#333'
+  },
 });
 
 export type Option = {|
