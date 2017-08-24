@@ -7919,7 +7919,7 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
           className="ui center aligned container"
         >
           <div
-            className="css-moli5b"
+            className="css-phjvd6"
           >
             <select
               onChange={[Function]}
@@ -8198,7 +8198,7 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
           className="ui center aligned container"
         >
           <div
-            className="css-moli5b"
+            className="css-phjvd6"
           >
             <select
               onChange={[Function]}
