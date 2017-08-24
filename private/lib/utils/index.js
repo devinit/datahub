@@ -1,6 +1,5 @@
 // @flow
 import fetch from 'isomorphic-fetch';
-import { groupBy } from 'ramda';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
 import {RECIPIENT} from './constants';

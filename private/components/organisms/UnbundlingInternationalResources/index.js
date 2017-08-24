@@ -70,10 +70,10 @@ const UnbundlingTreemap = (props: Props) => {
           >
             <Dimmer style={{ backgroundColor: props.color || '#888', zIndex: 1 }} active>
               {props.loading
-                  ? <Loader />
-                  : <NoDataAvailableContainer>
+                ? <Loader />
+                : <NoDataAvailableContainer>
                       Detailed data is not available for this year
-                    </NoDataAvailableContainer>}
+                </NoDataAvailableContainer>}
             </Dimmer>
           </Segment>
           : <TreeChart

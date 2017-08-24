@@ -38,7 +38,7 @@ const ColorBy = ({
   onLatestChecked,
   onReset,
   scaleTypes,
-}: Props) =>
+  }: Props) =>
   (<Wrapper title={title}>
     <Dropdown onClick={onScaleTypesChange} selection fluid options={scaleTypes} />
     <RangeWrapper>

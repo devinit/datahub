@@ -1,12 +1,12 @@
 // @flow
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import {approximate} from 'lib/utils';
-import {groupBy} from 'ramda';
-import {SectionHeader} from 'components/atoms/Header';
+import { approximate } from 'lib/utils';
+import { groupBy } from 'ramda';
+import { SectionHeader } from 'components/atoms/Header';
 import UnbundlingInternationalResources from 'components/organisms/UnbundlingInternationalResources';
-import {Container, Dropdown, Grid, Header} from 'semantic-ui-react';
-import {LightBg} from '../../atoms/Backgrounds';
+import { Container, Dropdown, Grid, Header } from 'semantic-ui-react';
+import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
@@ -18,12 +18,12 @@ export type State = {
   direction: string,
   flow?: string,
   flowName?: string,
-  detailSelections?: Object[],  // TOFIX: @ernest add proper types
+  detailSelections?: Object[], // TOFIX: @ernest add proper types
   detailGroup?: string,
   shouldUnbundle?: boolean,
 
-  trend: Object[],  // TOFIX: @ernest add proper types
-  mixes: Object,  // TOFIX: @ernest add proper types
+  trend: Object[], // TOFIX: @ernest add proper types
+  mixes: Object, // TOFIX: @ernest add proper types
 };
 export type Props = {
   id: string,
@@ -33,7 +33,7 @@ export type Props = {
   startYear: number,
   inflows: any[],
   outflows: any[],
-  cached?: State
+  cached?: State,
 };
 
 class AreaPartitionChart extends React.Component {
@@ -49,8 +49,8 @@ class AreaPartitionChart extends React.Component {
     const year = this.props.startYear;
     const direction = 'in';
     const directions = [
-      {value: 'in', text: `Inflows to ${props.country}`},
-      {value: 'out', text: `Outflows leaving ${props.country}`},
+      { value: 'in', text: `Inflows to ${props.country}` },
+      { value: 'out', text: `Outflows leaving ${props.country}` },
     ];
 
     return {
@@ -58,7 +58,7 @@ class AreaPartitionChart extends React.Component {
       direction,
       directions,
 
-      ...this.getDirectionState(direction)
+      ...this.getDirectionState(direction),
     };
   }
 
@@ -82,7 +82,7 @@ class AreaPartitionChart extends React.Component {
 
     this.setState({
       detailGroup: id,
-      shouldUnbundle: selection.unbundle
+      shouldUnbundle: selection.unbundle,
     });
   }
 
@@ -94,12 +94,11 @@ class AreaPartitionChart extends React.Component {
         value: 'all',
       },
 
-      ...(direction === 'in' ? this.props.inflows : this.props.outflows)
-        .map(flow => ({
-          key: flow.id,
-          text: flow.name,
-          value: flow.id,
-        })),
+      ...(direction === 'in' ? this.props.inflows : this.props.outflows).map(flow => ({
+        key: flow.id,
+        text: flow.name,
+        value: flow.id,
+      })),
     ];
 
     const flow = 'all';
@@ -108,31 +107,27 @@ class AreaPartitionChart extends React.Component {
       direction,
       flow,
       flows,
-      ...this.getFlowState(direction, flow)
+      ...this.getFlowState(direction, flow),
     };
   }
 
   getFlowState(direction: string, flow?: string) {
     const trend = this.props.data
-      .filter(d =>
-        d.direction === direction &&
-        (flow === 'all' || d.flow_id === flow)
-      )
+      .filter(d => d.direction === direction && (flow === 'all' || d.flow_id === flow))
       .sort((a, b) => b.value - a.value);
 
     const flows = direction === 'in' ? this.props.inflows : this.props.outflows;
 
     const [flowDetails = {}] = flows.filter(f => f.id === flow);
 
-    const detailSelections = (flowDetails.selections || [])
-      .map(({id, name, unbundle}, i) => ({
-        text: name,
-        value: id,
-        key: i,
-        unbundle,
-      }));
+    const detailSelections = (flowDetails.selections || []).map(({ id, name, unbundle }, i) => ({
+      text: name,
+      value: id,
+      key: i,
+      unbundle,
+    }));
 
-    const selection = (detailSelections[0] || {});
+    const selection = detailSelections[0] || {};
 
     return {
       flow,
@@ -164,7 +159,9 @@ class AreaPartitionChart extends React.Component {
           <Grid>
             <Grid.Column width={7}>
               <Header as="h3" textAlign="center">
-                <Header.Content>{this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time</Header.Content>
+                <Header.Content>
+                  {this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time
+                </Header.Content>
               </Header>
               <Dropdown
                 selection
@@ -177,30 +174,35 @@ class AreaPartitionChart extends React.Component {
 
             <Grid.Column width={1} />
 
-            {this.state.flow === 'all' ?
-              <Grid.Column width={8}>
+            {this.state.flow === 'all'
+              ? <Grid.Column width={8}>
                 <Header as="h3" textAlign="center">
                   <Header.Content>
-                    The mix of resources in <span>{this.state.year}</span>
-                  </Header.Content>
-                </Header>
-              </Grid.Column> :
-              <Grid.Column width={8}>
-                <Header as="h3" textAlign="center">
-                  <Header.Content>
-                    <span>What we know about {this.state.flowName} by </span>
-                    {<Dropdown
-                      selection
-                      compact
-                      onChange={(e, data) => this.setFlowDetailGroup(data.value)}
-                      value={this.state.detailGroup}
-                      options={this.state.detailSelections}
-                    />}
-                    <span> in {this.state.year}</span>
+                      The mix of resources in <span>{this.state.year}</span>
                   </Header.Content>
                 </Header>
               </Grid.Column>
-            }
+              : <Grid.Column width={8}>
+                <Header as="h3" textAlign="center">
+                  <Header.Content>
+                    <span>
+                        What we know about {this.state.flowName} by{' '}
+                    </span>
+                    {
+                      <Dropdown
+                        selection
+                        compact
+                        onChange={(e, data) => this.setFlowDetailGroup(data.value)}
+                        value={this.state.detailGroup}
+                        options={this.state.detailSelections}
+                      />
+                    }
+                    <span>
+                      {' '}in {this.state.year}
+                    </span>
+                  </Header.Content>
+                </Header>
+              </Grid.Column>}
           </Grid>
 
           <Grid>
@@ -229,22 +231,21 @@ class AreaPartitionChart extends React.Component {
                     .reduce((sum, datum) => sum + datum.value, 0),
                 )}
               </SectionHeader>
-              {this.state.flow === 'all' ?
-                <TreeChart
+              {this.state.flow === 'all'
+                ? <TreeChart
                   height="360px"
                   data={this.state.mixes[+this.state.year] || []}
                   config={this.props.config.treemapConfig}
-                  onClick={(d: {flow_id: string}) => this.setFlow(d.flow_id)}
-                /> :
-                <UnbundlingInternationalResources
+                  onClick={(d: { flow_id: string }) => this.setFlow(d.flow_id)}
+                />
+                : <UnbundlingInternationalResources
                   shouldFetch={this.state.shouldUnbundle}
                   country={this.props.id}
                   year={this.state.year}
                   groupBy={this.state.detailGroup}
                   flow={this.state.flow}
                   config={this.props.config.treemapConfig}
-                />
-              }
+                />}
             </Grid.Column>
           </Grid>
         </Container>
