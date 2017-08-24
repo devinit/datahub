@@ -1,6 +1,7 @@
 // @flow
 export type State = {
-  profileLoading: boolean,
+  profileLoading: boolean, // think loading new country on map click
+  shouldForceRedraw: boolean
 };
 export type Viewport = {
   zoom: number,
@@ -39,7 +40,7 @@ export type Meta = {
   country: string, // global or uganda for spotlight uganda
   id: string,
   // map indicator user friendly label / slug eg Poverty
-  name: string,
+  name: string
 };
 
 export type Props = {

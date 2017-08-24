@@ -66,8 +66,10 @@ class BaseMap extends Component {
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
     if (!props.paint) throw new Error('viewport prop missing in basemap props');
     this._isOnMobile = window.innerWidth < 1200;
-
-    this.state = { profileLoading: false };
+    this.state = {
+      profileLoading: false,
+      shouldForceRedraw: false
+    };
   }
   state: State;
   /* eslint-disable react/sort-comp */
@@ -85,6 +87,11 @@ class BaseMap extends Component {
   _zoomLevel: number;
   _element: HTMLDivElement;
 
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle) {
+      this.setState({shouldForceRedraw: true});
+    }
+  }
   genericTipHtml({ id, country, name, value, uom }: GenericTipHtml) {
     const valueStr = BaseMap.tipToolTipValueStr(value, uom);
     const flagUrl: string =
@@ -289,7 +296,10 @@ class BaseMap extends Component {
       ? { ...defaultOpts, maxBounds: viewport.bounds }
       : defaultOpts;
     // draw map
-    if (!this._map) this._map = new mapboxgl.Map(opts);
+    if (!this._map || this.state.shouldForceRedraw) {
+      this._mapLoaded = false; // feels abit dirty
+      this._map = new mapboxgl.Map(opts);
+    }
     if (!this._nav) {
       this._nav = new mapboxgl.NavigationControl();
       this._map.addControl(this._nav, 'top-right');
