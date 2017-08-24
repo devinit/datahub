@@ -6833,6 +6833,31 @@ exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = 
 </div>
 `;
 
+exports[`Storyshots Maps Live with Apollo and Redux Subnational 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-1805z6z"
+  />
+</div>
+`;
+
 exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
 <div>
   <div
@@ -13048,7 +13073,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               className="center aligned sixteen wide column"
             >
               <h2
-                className="css-1xcno2j"
+                className="css-13as1vq"
               >
                 ABOUT THE DEVELOPMENT DATA HUB: 
                 <span>
@@ -13104,7 +13129,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               className="center aligned sixteen wide column"
             >
               <h2
-                className="css-m4q7p6"
+                className="css-24kshr"
               >
                 Data Sources
               </h2>
