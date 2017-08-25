@@ -55,8 +55,8 @@ type Props = {
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
-  paddingLeft: '0em',
-  paddingRight: '1.5em',
+  paddingLeft: '2em',
+  paddingRight: '3em',
   paddingBottom: '1.5em',
   paddingTop: '1.5em',
   overflow: 'visible',
@@ -341,7 +341,7 @@ export default class TripleLinePartition extends Component {
 
               <Grid>
                 <Grid.Column width={5} style={{ paddingRight: 0 }}>
-                  <CardContainer style={{ paddingLeft: '30px' }}>
+                  <CardContainer>
                     <Timeline
                       onYearChanged={year => this.setYear(+year)}
                       height="180px"
@@ -371,7 +371,7 @@ export default class TripleLinePartition extends Component {
 
               <Grid>
                 <Grid.Column width={5} style={{ paddingRight: 0 }}>
-                  <CardContainer style={{ paddingLeft: '30px' }}>
+                  <CardContainer>
                     <Timeline
                       onYearChanged={year => this.setYear(+year)}
                       height="180px"
@@ -440,7 +440,7 @@ export default class TripleLinePartition extends Component {
 
             <Grid>
               <Grid.Column width={5} style={{ paddingRight: 0 }}>
-                <CardContainer style={{ paddingLeft: '30px' }}>
+                <CardContainer>
                   <Timeline
                     onYearChanged={year => this.setYear(+year)}
                     height="250px"
