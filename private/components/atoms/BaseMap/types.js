@@ -78,6 +78,9 @@ export type Feature = {
     name?: string,
     dhsreg?: string,
   },
+  layer: {
+    type: string
+  },
   geometry: Geometry,
 };
 export type Point = {

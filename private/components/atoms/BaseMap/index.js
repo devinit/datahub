@@ -40,16 +40,18 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
-  static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData {
+  static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
     if (indicator === 'survey_p20') return BaseMap.foldOverSurveyMapFeatures(features);
     if (!features[0].properties) throw new Error('Properties missing from map style');
+    if (features[0].layer.type === 'line') return null;
     const properties = features[0].properties;
     const value: number = properties.P20 ? Math.round(properties.P20 * 100) : 0;
-    const countryName: string = properties.CNTRYNAMEE || '';
+    const countryName: string = properties['country-name'] || '';
+    const slug: string = properties['country-slug'] || '';
     const id: string = properties.ISO || '';
     const region: string = properties.DHSREGEN ? properties.DHSREGEN : '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
-    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
+    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug};
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
     switch (uom) {
@@ -125,6 +127,7 @@ class BaseMap extends Component {
     const uom: string =
       this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     const opts = { id, value, name, uom, country };
+    if (!id || !country) return false;
     return this.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
@@ -148,28 +151,30 @@ class BaseMap extends Component {
       color: '',
     };
   }
+  getMouseHoverPointData(features: Feature[]): MapData | null {
+    if (!features) return null;
+    if (this.props.paint.data && this.props.paint.data.length) {
+      // for regular global picture and spotlight map & the small profile maps
+      const point: MapData | void = this.props.paint.data.find(obj => {
+        const paintProperty: string = this.props.paint.propertyName || this._propertyName;
+        return obj.id === features[0].properties[paintProperty];
+      });
+      return point || null;
+    }
+    if (this.props.countryProfile) return this.onFocusRegionData(features[0]);
+    if (!this.props.countryProfile && features.length > 1 && this.props.meta) {
+      // for pre-styled maps i.e survey & regional map
+      if (this.props.meta.id) return BaseMap.pointDataForPreStyledMap(features, this.props.meta.id);
+      return null;
+    }
+    return null;
+  }
   mouseHoverEvent() {
     this._map.on('mousemove', e => {
       const features: Feature[] = this._map.queryRenderedFeatures(e.point);
       if (!features.length && this._popup) return this._popup.remove();
       if (!features.length) return false;
-      let pointData: MapData | void;
-      if (this.props.paint.data && this.props.paint.data.length) {
-        // for regular global picture and spotlight map & the small profile maps
-        pointData = this.props.paint.data.find(obj => {
-          const paintProperty: string = this.props.paint.propertyName || this._propertyName;
-          return obj.id === features[0].properties[paintProperty];
-        });
-      }
-      if (this.props.countryProfile) pointData = this.onFocusRegionData(features[0]);
-      if (!this.props.countryProfile && !this.props.paint.data) {
-        // for pre-styled maps i.e survey & regional map
-        if (features.length < 2 && this._popup) return this._popup.remove();
-        if (features.length < 2) return false;
-        if (this.props.meta && this.props.meta.id) {
-          pointData = BaseMap.pointDataForPreStyledMap(features, this.props.meta.id);
-        }
-      }
+      const pointData: MapData | null = this.getMouseHoverPointData(features);
       if (!pointData && this._popup) return this._popup.remove();
       if (!pointData) return false;
       if (pointData && !this._popup) this._popup = new mapboxgl.Popup({ offset: 10 });
@@ -204,7 +209,7 @@ class BaseMap extends Component {
   }
   mouseMapClick(meta: Meta) {
     this._map.on('click', event => {
-      if (!meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
+      if (meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
       const features: Feature = this._map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
       const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
