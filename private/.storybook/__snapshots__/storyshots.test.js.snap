@@ -7969,6 +7969,15 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
               aria-hidden="true"
               className="caret down icon"
             />
+            <i
+              aria-hidden="true"
+              className="info circle icon"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            />
             <div
               className="css-w0yocm"
             >
@@ -7981,15 +7990,6 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
                 Using this Visualization
               </button>
             </div>
-            <i
-              aria-hidden="true"
-              className="info circle icon"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
           </div>
         </div>
       </div>
@@ -8223,6 +8223,15 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
               aria-hidden="true"
               className="caret down icon"
             />
+            <i
+              aria-hidden="true"
+              className="info circle icon"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            />
             <div
               className="css-gyrv08"
             >
@@ -8235,15 +8244,6 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
                 Using this Visualization
               </button>
             </div>
-            <i
-              aria-hidden="true"
-              className="info circle icon"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-            />
           </div>
         </div>
       </div>
