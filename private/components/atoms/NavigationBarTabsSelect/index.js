@@ -61,6 +61,7 @@ const Select = ({ options, onChange, toolTip, onUsingThisVizHandler, showUsingTh
       )}
     </select>
     <Icon name="caret down" />
+    {toolTip ? <TabsToolTip {...toolTip} /> : ''}
     <Div display={showUsingThisViz ? 'inline-block' : 'none'}>
       <Button
         size="medium"
@@ -69,7 +70,6 @@ const Select = ({ options, onChange, toolTip, onUsingThisVizHandler, showUsingTh
         Using this Visualization
       </Button>
     </Div>
-    {toolTip ? <TabsToolTip {...toolTip} /> : ''}
   </Wrapper>);
 
 export default Select;

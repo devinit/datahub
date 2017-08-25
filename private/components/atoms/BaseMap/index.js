@@ -22,6 +22,7 @@ import type {
   Meta,
 } from './types';
 
+const NO_DATA = 'No data';
 class BaseMap extends Component {
   static foldOverSurveyMapFeatures(features: Feature[]): MapData {
     const props = features.reverse().reduce((acc, feature) => {
@@ -95,7 +96,7 @@ class BaseMap extends Component {
     }
   }
   genericTipHtml({ id, country, name, value, uom }: GenericTipHtml) {
-    const valueStr = BaseMap.tipToolTipValueStr(value, uom);
+    const valueStr = value === NO_DATA ? value : BaseMap.tipToolTipValueStr(value, uom);
     const flagUrl: string =
       this.props.meta && this.props.meta.country === 'global' ? `/flags/svg/${id}.svg` : '';
     const upperTip = `<p style="text-align:center;line-height: 1; margin:0">
@@ -115,19 +116,18 @@ class BaseMap extends Component {
     }
     const country: string = pointData.name;
     const id: string = pointData.id;
+    const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
+    const uom: string =
+      this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     let value: string = '';
     // TODO: find away of indicating what tooltip should be from concept.csv
-    if (!isNaN(Number(pointData.value))) value = approximate(Number(pointData.value));
-    const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
+    value = pointData.value !== null ? approximate(Number(pointData.value)) : NO_DATA;
     if (this.props.countryProfile) value = '';
     if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
     if (theme === 'government-finance' && pointData.detail) { value = `${value}-[${pointData.detail}]`; }
     if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) { value = pointData.detail; }
-    if (value === undefined || value === null) console.error('value for tip template is empty');
-    const uom: string =
-      this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     const opts = { id, value, name, uom, country };
-    if (!id || !country) return false;
+    if (!id || !country || !name) return false;
     return this.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
@@ -135,6 +135,21 @@ class BaseMap extends Component {
       .setLngLat([obj.pos.lng, obj.pos.lat])
       .setHTML(this.tipTemplate(obj.pointData))
       .addTo(this._map);
+  }
+  setMinimalMapDataPoint(feature: Feature, value: null | number): MapData {
+    const id = feature.properties[this.props.paint.propertyName || this._propertyName];
+    const nameProperty = this.props.paint.propertyLayer === 'national' ? 'country-name' : 'name';
+    const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
+    return {
+      id,
+      slug: feature.properties[slugProperty],
+      name: feature.properties[nameProperty],
+      year: 0,
+      value,
+      uid: '',
+      detail: '',
+      color: '',
+    };
   }
   onFocusRegionData(feature: Feature): MapData {
     const id = feature.properties[this.props.paint.propertyName || this._propertyName];
@@ -152,22 +167,21 @@ class BaseMap extends Component {
     };
   }
   getMouseHoverPointData(features: Feature[]): MapData | null {
-    if (!features) return null;
     if (this.props.paint.data && this.props.paint.data.length) {
       // for regular global picture and spotlight map & the small profile maps
       const point: MapData | void = this.props.paint.data.find(obj => {
         const paintProperty: string = this.props.paint.propertyName || this._propertyName;
         return obj.id === features[0].properties[paintProperty];
       });
-      return point || null;
+      return point || this.setMinimalMapDataPoint(features[0], null);
     }
-    if (this.props.countryProfile) return this.onFocusRegionData(features[0]);
+    if (this.props.countryProfile) return this.setMinimalMapDataPoint(features[0], 0);
     if (!this.props.countryProfile && features.length > 1 && this.props.meta) {
       // for pre-styled maps i.e survey & regional map
       if (this.props.meta.id) return BaseMap.pointDataForPreStyledMap(features, this.props.meta.id);
-      return null;
+      return this.setMinimalMapDataPoint(features[0], null);
     }
-    return null;
+    return this.setMinimalMapDataPoint(features[0], null);
   }
   mouseHoverEvent() {
     this._map.on('mousemove', e => {
