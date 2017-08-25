@@ -127,7 +127,7 @@ class BaseMap extends Component {
     if (theme === 'government-finance' && pointData.detail) { value = `${value}-[${pointData.detail}]`; }
     if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) { value = pointData.detail; }
     const opts = { id, value, name, uom, country };
-    if (!id || !country || !name) return false;
+    if (!id) return false;
     return this.genericTipHtml(opts);
   }
   addPopupContent(obj: PopupItem) {
