@@ -6,6 +6,7 @@ query GlobalPictureThemes {
       id
       name
       heading
+      tooltip
       source
     }
     default_indicator

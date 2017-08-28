@@ -11,6 +11,9 @@ export const MapContainer = glamorous.div({
     fontFamily: 'geomanist, sans-serif',
     WebkitTtapHighlightColor: 'black',
   },
+  '& .mapboxgl-canvas-container': {
+    cursor: 'pointer',
+  },
   '& .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip': {
     borderTopColor: 'rgba(0, 0, 0, 0.9)',
   },

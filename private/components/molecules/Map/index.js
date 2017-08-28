@@ -11,6 +11,7 @@ import { Grid, Container } from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
 import type { Props as RankingsTableProps } from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
+import {approximate} from 'lib/utils';
 import type { MapConfig } from './config';
 import mapConfigs from './config';
 
@@ -31,6 +32,15 @@ class Map extends Component {
       if (obj.year === undefined) throw new Error('year property is missing in map data obj');
       return obj.year === currentYear;
     });
+  }
+  static setCountryRankValue(mapPoint: MapData, meta: Meta): string | number {
+    const uom = meta.uom_display;
+    const {value} = mapPoint;
+    if (value === undefined || value === null) throw new Error('country rank value should be defined');
+    if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
+    if (uom === '%') return approximate(value, 2);
+    if (meta.theme === 'vulnerability' || meta.theme === 'government-finance') return value.toFixed(1);
+    return value;
   }
   constructor(props: Props) {
     super(props);
@@ -56,19 +66,22 @@ class Map extends Component {
   setCountryRankData(): RankingsTableProps {
     const sortedData = this.state.data
       .filter(obj => obj.value && obj.id)
-      .map((obj: MapData) => {
+      .sort((a, b) => {
+        if (!a.value || !b.value) throw new Error('value must be defined'); // make flow happy
+        return b.value - a.value;
+      })
+      .map((obj: MapData, index: number) => {
         if (!obj.id) throw new Error('data point id missing for country rank data');
         const flagUrl: string = this.country === 'global' ? `/flags/svg/${obj.id}.svg` : '';
         const name = obj.name ? obj.name : 'N/A';
-        if (!obj.value || !obj.uid) throw new Error('value must be defined');
-        return { name, value: obj.value, flagUrl, uid: obj.uid };
-      })
-      .sort((a, b) => {
-        if (!a.value || !b.value) throw new Error('value must be defined');
-        return a.value - b.value;
+        // make flow happy
+        if (!obj.value || !obj.uid) throw new Error('value must be defined for country rank data');
+        const value = this.meta ? Map.setCountryRankValue(obj, this.meta) : obj.value;
+        const valueWithUom = this.meta && this.meta.uom_display ? `${value} ${this.meta.uom_display}` : value;
+        return { name, value: valueWithUom, flagUrl, uid: obj.uid, position: index };
       });
-    const top = sortedData.slice(0, 10).reverse();
-    const bottom = sortedData.slice(-10).reverse();
+    const top = sortedData.slice(0, 10);
+    const bottom = sortedData.slice(-10);
     return {
       hasflags: this.country === 'global',
       data: { top, bottom },
@@ -87,7 +100,9 @@ class Map extends Component {
   initMetaSetup(props: Props) {
     if (!props.mapData || !props.mapData.legend) throw new Error('mapData is missing in props');
     this.legendData = props.mapData.legend;
-    this.name =
+    this.heading = props.mapData && props.mapData.heading ?
+      props.mapData.heading : 'Indicator must have a heading talk to Allan or Donata';
+    const name: string =
       props.mapData && props.mapData.name
         ? props.mapData.name
         : 'Indicator must have a name talk to Allan or Donata';
@@ -98,7 +113,7 @@ class Map extends Component {
     if (!props.mapData.country) throw new Error('country is missing in map data props');
     if (!props.mapData.id) throw new Error('indicator id is missing in map data props');
     this.meta = {
-      name: this.name,
+      name,
       uom_display: uomDisplay,
       theme: props.mapData.theme,
       id: props.mapData.id,
@@ -127,8 +142,9 @@ class Map extends Component {
   meta: Meta;
   country: string;
   config: MapConfig;
-  name: string;
+  heading: string;
   description: string;
+  noRankTableList: string[] =['data_series.largest_intl_flow'];
   legendData: LegendField[];
   render() {
     return (
@@ -138,7 +154,11 @@ class Map extends Component {
             <Div width={'100%'}>
               <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
             </Div>
-            <Legend title={this.name} description={this.description} legendData={this.legendData} />
+            <Legend
+              title={this.heading}
+              description={this.description}
+              legendData={this.legendData}
+            />
             <P
               fontSize={'0.7em'}
               color={lightGrey}
@@ -172,7 +192,9 @@ class Map extends Component {
               <ChartShare size="big" color="black" />
             </Grid.Column>
           </Grid.Row>
-          <RankingsTable {...this.setCountryRankData()} />
+          {!this.noRankTableList.includes(this.meta.id) ?
+            <RankingsTable {...this.setCountryRankData()} /> : ''
+          }
         </Grid>
       </Container>
     );

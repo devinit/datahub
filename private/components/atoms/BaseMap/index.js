@@ -54,12 +54,15 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug};
   }
+  static setPointDataValue(value: number, uom?: string, indicator?: string): string {
+    if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
+    if (uom === '%') return approximate(value, 2);
+    return approximate(value);
+  }
   static tipToolTipValueStr(value: string | number, uom: string) {
     switch (uom) {
       case '%':
         return `${value}${uom}`;
-      case 'US$':
-        return `${uom}:${value}`;
       default:
         return value;
     }
@@ -116,16 +119,25 @@ class BaseMap extends Component {
     }
     const country: string = pointData.name;
     const id: string = pointData.id;
-    const theme = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
+    const theme: string = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
+    const indicator: string = this.props.meta && this.props.meta.id ? this.props.meta.id : '';
+    const detail: string = pointData.detail || NO_DATA;
     const uom: string =
       this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
-    let value: string = '';
-    // TODO: find away of indicating what tooltip should be from concept.csv
-    value = pointData.value !== null ? approximate(Number(pointData.value)) : NO_DATA;
+    let value: string = NO_DATA;
+    if (pointData.value !== null && pointData.value !== undefined &&
+      this.props.meta && this.props.meta.id) {
+      value = BaseMap.setPointDataValue(pointData.value, uom, this.props.meta.id);
+    }
+    if (pointData.value === null) value = NO_DATA;
     if (this.props.countryProfile) value = '';
-    if (theme === 'data-revolution' && pointData.detail) value = pointData.detail;
-    if (theme === 'government-finance' && pointData.detail) { value = `${value}-[${pointData.detail}]`; }
-    if (this.props.meta && this.props.meta.id === 'data_series.fragile_states' && pointData.detail) { value = pointData.detail; }
+    if (theme === 'data-revolution' || indicator === 'data_series.fragile_states'
+      || indicator === 'data_series.largest_intl_flow') {
+      value = detail;
+    }
+    if (theme === 'government-finance' && pointData.detail) {
+      value = `${value} <span style="color: white">[ ${pointData.detail} ]</span>`;
+    }
     const opts = { id, value, name, uom, country };
     if (!id) return false;
     return this.genericTipHtml(opts);
@@ -146,21 +158,6 @@ class BaseMap extends Component {
       name: feature.properties[nameProperty],
       year: 0,
       value,
-      uid: '',
-      detail: '',
-      color: '',
-    };
-  }
-  onFocusRegionData(feature: Feature): MapData {
-    const id = feature.properties[this.props.paint.propertyName || this._propertyName];
-    const nameProperty = this.props.paint.propertyLayer === 'national' ? 'country-name' : 'name';
-    const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
-    return {
-      id,
-      slug: feature.properties[slugProperty],
-      name: feature.properties[nameProperty],
-      year: 0,
-      value: 0,
       uid: '',
       detail: '',
       color: '',
@@ -191,7 +188,7 @@ class BaseMap extends Component {
       const pointData: MapData | null = this.getMouseHoverPointData(features);
       if (!pointData && this._popup) return this._popup.remove();
       if (!pointData) return false;
-      if (pointData && !this._popup) this._popup = new mapboxgl.Popup({ offset: 10 });
+      if (pointData && !this._popup) this._popup = new mapboxgl.Popup({ offset: 5 });
       return this.addPopupContent({ pointData, pos: e.lngLat });
     });
   }

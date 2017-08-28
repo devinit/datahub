@@ -614,7 +614,7 @@ export type UnbundlingInternationalResourcesQuery = {|
 export type BubbleChartIndicatorListQuery = {|
   // IdNamePair is defined in unbundling aid types
   // this list feeds off oda table from countries and global/concept file
-  bubbleChartIndicatorsList: ? Array< {|
+  indicators: ? Array< {|
     id: ?string,
     name: ?string,
   |} >,
@@ -649,6 +649,7 @@ export type GlobalPictureThemesQuery = {|
       id: ?string,
       name: ?string,
       heading: ?string,
+      tooltip: ?string,
       source: ?string,
     |} >,
     default_indicator: ?string,

@@ -89,7 +89,7 @@ class Tabs<T> extends React.Component {
     this.navBarItems.forEach((navItem: NavItem) => {
       if (navItem.indicators) {
         const item = navItem.indicators.find(obj => obj.id === this.state.activeIndicator);
-        if (item) active = item;
+        if (item && item.tooltip) active = {...item, heading: item.tooltip};
       }
     });
     return active;

@@ -7,8 +7,9 @@ import Observer from 'react-intersection-observer';
 import { RankingsTableContainer } from 'components/atoms/Container';
 
 export type Data = {
-  value: number,
+  value: string | number,
   name: string,
+  position: number,
   flagUrl: string,
   uid: string,
 };
@@ -40,11 +41,11 @@ const RankingsTable = (props: Props) =>
                 </Table.Row>
               </Table.Header>
               <Table.Body>
-                {props.data[key].map((item, index) =>
+                {props.data[key].map((item) =>
                   (<Table.Row key={item.uid}>
                     <Table.Cell>
                       <b>
-                        {index}
+                        {item.position}
                       </b>
                     </Table.Cell>
                     {props.hasflags
