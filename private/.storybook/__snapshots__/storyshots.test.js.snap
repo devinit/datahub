@@ -2,7 +2,7 @@
 
 exports[`Storyshots Base Maps Base Map Atom 1`] = `
 <div
-  className="css-nlcjz6"
+  className="css-gfqs4w"
 >
   <div
     className="css-17y8yls"
@@ -35,7 +35,7 @@ exports[`Storyshots Base Maps Base Map Atom 1`] = `
 
 exports[`Storyshots Base Maps uganda map centered on wakiso 1`] = `
 <div
-  className="css-nlcjz6"
+  className="css-gfqs4w"
 >
   <div
     className="css-17y8yls"
@@ -68,7 +68,7 @@ exports[`Storyshots Base Maps uganda map centered on wakiso 1`] = `
 
 exports[`Storyshots Base Maps world map centered on inda 1`] = `
 <div
-  className="css-nlcjz6"
+  className="css-gfqs4w"
 >
   <div
     className="css-17y8yls"
@@ -101,7 +101,7 @@ exports[`Storyshots Base Maps world map centered on inda 1`] = `
 
 exports[`Storyshots Base Maps world map centered on uganda 1`] = `
 <div
-  className="css-nlcjz6"
+  className="css-gfqs4w"
 >
   <div
     className="css-17y8yls"
@@ -7947,12 +7947,12 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
               <option
                 value="data_series.poorest_20_percent"
               >
-                Population in the global P20
+                Number of people in the P20
               </option>
               <option
                 value="data_series.percent_in_p20_national"
               >
-                % of population in the global P20
+                % of people in the P20
               </option>
               <option
                 value="subnational_p20"
