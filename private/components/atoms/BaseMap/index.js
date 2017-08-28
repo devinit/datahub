@@ -3,9 +3,10 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from 'components/theme/semantic';
-import Router from 'next/router';
-import {approximate} from 'lib/utils';
+import type {Route} from 'lib/utils';
+import {approximate, countryOrDistrictLink} from 'lib/utils';
 import LoadingBar from 'components/molecules/LoadingBar';
+import Router from 'next/router';
 import { MapContainer } from './styledMapContainer';
 import type {
   Feature,
@@ -226,18 +227,10 @@ class BaseMap extends Component {
       const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
       const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
-      let routePath: string;
-      let routeAsPath: string;
       if (!this.props.meta || !this.props.meta.country) return false;
-      if (this.props.meta.country === 'global') {
-        routePath = `/country?id=${slug}`;
-        routeAsPath = `/country/${slug}`;
-      } else {
-        routePath = `/spotlight_on_${this.props.meta.country}?id=${slug}`;
-        routeAsPath = `/spotlight_on_${this.props.meta.country}/${slug}`;
-      }
+      const route: Route = countryOrDistrictLink(this.props.meta.country, slug);
       this.setState({ profileLoading: true });
-      return Router.push(routePath, routeAsPath);
+      return Router.push(route.routePath, route.routeAsPath);
     });
   }
   setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
