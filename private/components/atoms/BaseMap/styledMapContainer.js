@@ -4,6 +4,9 @@ export const MapContainer = glamorous.div({
   '& .mapboxgl-map': {
     fontFamily: 'geomanist, sans-serif',
   },
+  '& .mapboxgl-ctrl-top-righ': {
+    right: '0.5em'
+  },
   '& .mapboxgl-popup-content': {
     backgroundColor: 'rgba(0,0,0,0.9) !important',
     boxShadow: 'none !important',
