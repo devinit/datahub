@@ -79,8 +79,8 @@ class Map extends Component {
         if (!obj.value || !obj.slug) throw new Error('value must be defined for country rank data');
         const value = this.meta ? Map.setCountryRankValue(obj, this.meta) : obj.value;
         const route: Route = countryOrDistrictLink(this.meta.country, obj.slug);
-        const valueWithUom = this.meta && this.meta.uom_display ? `${value} ${this.meta.uom_display}` : value;
-        return { name, value: valueWithUom, flagUrl, uid: obj.uid || '', position: index, route};
+        const uom: string = this.meta && this.meta.uom_display ? this.meta.uom_display : '';
+        return { name, value, flagUrl, uid: obj.uid || '', position: index, route, uom};
       });
     const top = sortedData.slice(0, 10);
     const bottom = sortedData.slice(-10);

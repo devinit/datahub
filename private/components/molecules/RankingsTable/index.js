@@ -11,6 +11,7 @@ import { RankingsTableContainer } from 'components/atoms/Container';
 
 export type Data = {
   value: string | number,
+  uom: string,
   name: string,
   route: Route,
   position: number,
@@ -76,7 +77,7 @@ export default class RankingsTable extends React.Component {
                           </a>
                         </Table.Cell>
                         <Table.Cell textAlign="right">
-                          {item.value.toLocaleString()}
+                          {`${item.value.toLocaleString()} ${item.uom}`}
                         </Table.Cell>
                       </Table.Row>),
                     )}
