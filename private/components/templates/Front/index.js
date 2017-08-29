@@ -9,6 +9,7 @@ import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import CountrySearchInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from 'components/molecules/GlobalPictureCountrySearch';
 import { red, white } from 'components/theme/semantic';
+import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
@@ -104,7 +105,7 @@ const front = (props: Props) => {
           <Div paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
           </Div>
-          <Button color="grey" size="large">
+          <Button color="grey" size="large" onClick={() => Router.push('/methodology')}>
             Methodology and Data <Icon name="chevron right" />
           </Button>
         </Container>
