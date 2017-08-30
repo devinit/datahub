@@ -40,15 +40,15 @@ const footer = () =>
               <Grid.Column mobile={16} computer={4} tablet={8}>
                 <FooterHeader>Newsletter</FooterHeader>
                 <p>
-                  Sign up for the Development Initiatives newsletter to receive regular news and
+                  Sign up for the <a href="http://devinit.org/#!/about/newsletter-sign-up">Development Initiatives newsletter</a> to receive regular news and
                   updates from DI.
                 </p>
               </Grid.Column>
               <Grid.Column mobile={16} computer={4} tablet={8}>
                 <FooterHeader>Creative Commons</FooterHeader>
                 <p>
-                  This sites content is licensed under a Creative Commons
-                  Attribution-NonCommercial-ShareAlike 4.0 International license .
+                  This sites content is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons
+                  Attribution-NonCommercial-ShareAlike 4.0 International license.</a>
                 </p>
               </Grid.Column>
             </Grid.Row>
