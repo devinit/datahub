@@ -6584,7 +6584,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
   className="css-xtq3xk"
 >
   <div
-    className="css-omymer"
+    className="css-aam2ax"
   >
     <div
       className="css-1tfdju4"
@@ -6677,7 +6677,15 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
                 Newsletter
               </h3>
               <p>
-                Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                Sign up for the
+                 
+                <a
+                  href="http://devinit.org/#!/about/newsletter-sign-up"
+                >
+                  Development Initiatives newsletter
+                </a>
+                 
+                to receive regular news and updates from DI.
               </p>
             </div>
             <div
@@ -6689,7 +6697,14 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
                 Creative Commons
               </h3>
               <p>
-                This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                This sites content is licensed under a
+                 
+                <a
+                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                >
+                   
+                  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                </a>
               </p>
             </div>
           </div>
@@ -6720,7 +6735,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
           </a>
           <a
             className="css-11jszci"
-            href="https://twitter.com/devinitorg"
+            href="https://www.facebook.com/Development.Initiatives"
           >
             <i
               aria-hidden="true"
@@ -6729,7 +6744,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
           </a>
           <a
             className="css-11jszci"
-            href="https://twitter.com/devinitorg"
+            href="https://www.youtube.com/user/devinitorg"
           >
             <i
               aria-hidden="true"
@@ -6738,7 +6753,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
           </a>
           <a
             className="css-11jszci"
-            href="https://twitter.com/devinitorg"
+            href="https://www.flickr.com/people/development_initiatives/"
           >
             <i
               aria-hidden="true"
@@ -6750,7 +6765,7 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
     </div>
   </div>
   <div
-    className="css-omymer lightBlack"
+    className="css-aam2ax lightBlack"
   >
     <div
       className="row"
@@ -6759,10 +6774,11 @@ exports[`Storyshots Footer Datahub Footer 1`] = `
         className="ui container"
       >
         <div
-          className="css-10kx4dn"
+          className="css-f051qe"
         >
           <p>
-            © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+            © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+             
             <a
               href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
             >
@@ -6817,7 +6833,7 @@ exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] =
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6842,7 +6858,7 @@ exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = 
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6867,7 +6883,7 @@ exports[`Storyshots Maps Live with Apollo and Redux Subnational 1`] = `
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6892,7 +6908,7 @@ exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6917,7 +6933,7 @@ exports[`Storyshots Maps Live with Apollo and Redux global picture default map 1
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6942,7 +6958,7 @@ exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6967,7 +6983,7 @@ exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -6992,7 +7008,7 @@ exports[`Storyshots Maps Live with Apollo and Redux spotlight default map 1`] = 
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
@@ -7017,14 +7033,14 @@ exports[`Storyshots Maps Live with Apollo and Redux uganda_poverty_headcount 1`]
     </div>
   </div>
   <div
-    className="css-1805z6z"
+    className="css-1a1papz"
   />
 </div>
 `;
 
 exports[`Storyshots Menu Datahub Logo 1`] = `
 <div
-  className="css-1v2szk2"
+  className="css-1qsy4y1"
 >
   <a
     href="http://devinit.org"
@@ -7047,7 +7063,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
     className="ui container"
   >
     <div
-      className="css-1v2szk2"
+      className="css-1qsy4y1"
     >
       <a
         href="http://devinit.org"
@@ -7061,13 +7077,13 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
       </a>
     </div>
     <ul
-      className="css-ks7n51"
+      className="css-snu02m"
     >
       <li
         className="css-1dps91a"
       >
         <div
-          className="css-gpblex"
+          className="css-1tajbdq"
         >
           
           <a
@@ -7087,7 +7103,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-1dps91a"
       >
         <div
-          className="css-9k8qug"
+          className="css-9jpsqc"
         >
           <i
             aria-hidden="true"
@@ -7166,7 +7182,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-1dps91a"
       >
         <div
-          className="css-gpblex"
+          className="css-1tajbdq"
         >
           
           <a
@@ -7176,7 +7192,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <div
               className="menu-text"
             >
-              Unbudling Aid
+              Unbundling Aid
             </div>
           </a>
           
@@ -7186,7 +7202,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-1dps91a"
       >
         <div
-          className="css-gpblex"
+          className="css-1tajbdq"
         >
           
           <a
@@ -7206,7 +7222,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-1dps91a"
       >
         <div
-          className="css-9k8qug"
+          className="css-9jpsqc"
         >
           <i
             aria-hidden="true"
@@ -7219,7 +7235,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <div
               className="menu-text"
             >
-              Other Visualizations
+              Other Visualisations
             </div>
           </a>
           <div
@@ -7325,7 +7341,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         className="css-1dps91a"
       >
         <div
-          className="css-gpblex"
+          className="css-1tajbdq"
         >
           
           <a
@@ -7344,7 +7360,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
     </ul>
     <div>
       <button
-        className="css-js0rgg"
+        className="css-16yuken"
         onClick={[Function]}
       >
         <i
@@ -7432,7 +7448,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <a
               href="/unbundling-aid"
             >
-              Unbudling Aid
+              Unbundling Aid
             </a>
           </span>
           <div
@@ -7470,7 +7486,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
             <a
               href=""
             >
-              Other Visualizations
+              Other Visualisations
             </a>
           </span>
           <div
@@ -7553,13 +7569,13 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
 
 exports[`Storyshots Menu Desktop Menu 1`] = `
 <ul
-  className="css-ks7n51"
+  className="css-snu02m"
 >
   <li
     className="css-1dps91a"
   >
     <div
-      className="css-gpblex"
+      className="css-1tajbdq"
     >
       
       <a
@@ -7579,7 +7595,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     className="css-1dps91a"
   >
     <div
-      className="css-9k8qug"
+      className="css-9jpsqc"
     >
       <i
         aria-hidden="true"
@@ -7658,7 +7674,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     className="css-1dps91a"
   >
     <div
-      className="css-gpblex"
+      className="css-1tajbdq"
     >
       
       <a
@@ -7668,7 +7684,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
         <div
           className="menu-text"
         >
-          Unbudling Aid
+          Unbundling Aid
         </div>
       </a>
       
@@ -7678,7 +7694,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     className="css-1dps91a"
   >
     <div
-      className="css-gpblex"
+      className="css-1tajbdq"
     >
       
       <a
@@ -7698,7 +7714,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     className="css-1dps91a"
   >
     <div
-      className="css-9k8qug"
+      className="css-9jpsqc"
     >
       <i
         aria-hidden="true"
@@ -7711,7 +7727,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
         <div
           className="menu-text"
         >
-          Other Visualizations
+          Other Visualisations
         </div>
       </a>
       <div
@@ -7817,7 +7833,7 @@ exports[`Storyshots Menu Desktop Menu 1`] = `
     className="css-1dps91a"
   >
     <div
-      className="css-gpblex"
+      className="css-1tajbdq"
     >
       
       <a
@@ -7933,9 +7949,10 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
           className="ui center aligned container"
         >
           <div
-            className="css-phjvd6"
+            className="css-1bf0moq"
           >
             <select
+              className="css-jfk35p"
               onChange={[Function]}
             >
               <option
@@ -7979,10 +7996,6 @@ exports[`Storyshots Navbar tabs with redux Global picture nav bar tab 1`] = `
                 % of people in the P20 (survey level)
               </option>
             </select>
-            <i
-              aria-hidden="true"
-              className="caret down icon"
-            />
             <i
               aria-hidden="true"
               className="info circle icon"
@@ -8213,9 +8226,10 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
           className="ui center aligned container"
         >
           <div
-            className="css-phjvd6"
+            className="css-1bf0moq"
           >
             <select
+              className="css-jfk35p"
               onChange={[Function]}
             >
               <option
@@ -8234,10 +8248,6 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar with redux 1`] = `
                 Life expectancy
               </option>
             </select>
-            <i
-              aria-hidden="true"
-              className="caret down icon"
-            />
             <i
               aria-hidden="true"
               className="info circle icon"
@@ -8516,7 +8526,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       className="ui container"
     >
       <div
-        className="css-1v2szk2"
+        className="css-1qsy4y1"
       >
         <a
           href="http://devinit.org"
@@ -8530,13 +8540,13 @@ exports[`Storyshots Templates Country Profiles 1`] = `
         </a>
       </div>
       <ul
-        className="css-ks7n51"
+        className="css-snu02m"
       >
         <li
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -8556,7 +8566,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-9k8qug"
+            className="css-9jpsqc"
           >
             <i
               aria-hidden="true"
@@ -8635,7 +8645,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -8645,7 +8655,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="menu-text"
               >
-                Unbudling Aid
+                Unbundling Aid
               </div>
             </a>
             
@@ -8655,7 +8665,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -8675,7 +8685,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-9k8qug"
+            className="css-9jpsqc"
           >
             <i
               aria-hidden="true"
@@ -8688,7 +8698,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <div
                 className="menu-text"
               >
-                Other Visualizations
+                Other Visualisations
               </div>
             </a>
             <div
@@ -8794,7 +8804,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -8813,7 +8823,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </ul>
       <div>
         <button
-          className="css-js0rgg"
+          className="css-16yuken"
           onClick={[Function]}
         >
           <i
@@ -8901,7 +8911,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <a
                 href="/unbundling-aid"
               >
-                Unbudling Aid
+                Unbundling Aid
               </a>
             </span>
             <div
@@ -8939,7 +8949,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
               <a
                 href=""
               >
-                Other Visualizations
+                Other Visualisations
               </a>
             </span>
             <div
@@ -11653,7 +11663,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
     className="css-xtq3xk"
   >
     <div
-      className="css-omymer"
+      className="css-aam2ax"
     >
       <div
         className="css-1tfdju4"
@@ -11746,7 +11756,15 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   Newsletter
                 </h3>
                 <p>
-                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/#!/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
                 </p>
               </div>
               <div
@@ -11758,7 +11776,14 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   Creative Commons
                 </h3>
                 <p>
-                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
                 </p>
               </div>
             </div>
@@ -11789,7 +11814,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.facebook.com/Development.Initiatives"
             >
               <i
                 aria-hidden="true"
@@ -11798,7 +11823,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.youtube.com/user/devinitorg"
             >
               <i
                 aria-hidden="true"
@@ -11807,7 +11832,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.flickr.com/people/development_initiatives/"
             >
               <i
                 aria-hidden="true"
@@ -11819,7 +11844,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="css-aam2ax lightBlack"
     >
       <div
         className="row"
@@ -11828,10 +11853,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           className="ui container"
         >
           <div
-            className="css-10kx4dn"
+            className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
               >
@@ -11858,7 +11884,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       className="ui container"
     >
       <div
-        className="css-1v2szk2"
+        className="css-1qsy4y1"
       >
         <a
           href="http://devinit.org"
@@ -11872,13 +11898,13 @@ exports[`Storyshots Templates Main Generic 1`] = `
         </a>
       </div>
       <ul
-        className="css-ks7n51"
+        className="css-snu02m"
       >
         <li
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -11898,7 +11924,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-9k8qug"
+            className="css-9jpsqc"
           >
             <i
               aria-hidden="true"
@@ -11977,7 +12003,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -11987,7 +12013,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="menu-text"
               >
-                Unbudling Aid
+                Unbundling Aid
               </div>
             </a>
             
@@ -11997,7 +12023,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -12017,7 +12043,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-9k8qug"
+            className="css-9jpsqc"
           >
             <i
               aria-hidden="true"
@@ -12030,7 +12056,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <div
                 className="menu-text"
               >
-                Other Visualizations
+                Other Visualisations
               </div>
             </a>
             <div
@@ -12136,7 +12162,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -12155,7 +12181,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </ul>
       <div>
         <button
-          className="css-js0rgg"
+          className="css-16yuken"
           onClick={[Function]}
         >
           <i
@@ -12243,7 +12269,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <a
                 href="/unbundling-aid"
               >
-                Unbudling Aid
+                Unbundling Aid
               </a>
             </span>
             <div
@@ -12281,7 +12307,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
               <a
                 href=""
               >
-                Other Visualizations
+                Other Visualisations
               </a>
             </span>
             <div
@@ -12367,7 +12393,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
     className="css-xtq3xk"
   >
     <div
-      className="css-omymer"
+      className="css-aam2ax"
     >
       <div
         className="css-1tfdju4"
@@ -12460,7 +12486,15 @@ exports[`Storyshots Templates Main Generic 1`] = `
                   Newsletter
                 </h3>
                 <p>
-                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/#!/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
                 </p>
               </div>
               <div
@@ -12472,7 +12506,14 @@ exports[`Storyshots Templates Main Generic 1`] = `
                   Creative Commons
                 </h3>
                 <p>
-                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
                 </p>
               </div>
             </div>
@@ -12503,7 +12544,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.facebook.com/Development.Initiatives"
             >
               <i
                 aria-hidden="true"
@@ -12512,7 +12553,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.youtube.com/user/devinitorg"
             >
               <i
                 aria-hidden="true"
@@ -12521,7 +12562,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.flickr.com/people/development_initiatives/"
             >
               <i
                 aria-hidden="true"
@@ -12533,7 +12574,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="css-aam2ax lightBlack"
     >
       <div
         className="row"
@@ -12542,10 +12583,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
           className="ui container"
         >
           <div
-            className="css-10kx4dn"
+            className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
               >
@@ -12572,7 +12614,7 @@ exports[`Storyshots Templates Methodology 1`] = `
       className="ui container"
     >
       <div
-        className="css-1v2szk2"
+        className="css-1qsy4y1"
       >
         <a
           href="http://devinit.org"
@@ -12586,13 +12628,13 @@ exports[`Storyshots Templates Methodology 1`] = `
         </a>
       </div>
       <ul
-        className="css-ks7n51"
+        className="css-snu02m"
       >
         <li
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -12612,7 +12654,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-9k8qug"
+            className="css-9jpsqc"
           >
             <i
               aria-hidden="true"
@@ -12691,7 +12733,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -12701,7 +12743,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="menu-text"
               >
-                Unbudling Aid
+                Unbundling Aid
               </div>
             </a>
             
@@ -12711,7 +12753,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -12731,7 +12773,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-9k8qug"
+            className="css-9jpsqc"
           >
             <i
               aria-hidden="true"
@@ -12744,7 +12786,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               <div
                 className="menu-text"
               >
-                Other Visualizations
+                Other Visualisations
               </div>
             </a>
             <div
@@ -12850,7 +12892,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           className="css-1dps91a"
         >
           <div
-            className="css-gpblex"
+            className="css-1tajbdq"
           >
             
             <a
@@ -12869,7 +12911,7 @@ exports[`Storyshots Templates Methodology 1`] = `
       </ul>
       <div>
         <button
-          className="css-js0rgg"
+          className="css-16yuken"
           onClick={[Function]}
         >
           <i
@@ -12957,7 +12999,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               <a
                 href="/unbundling-aid"
               >
-                Unbudling Aid
+                Unbundling Aid
               </a>
             </span>
             <div
@@ -12995,7 +13037,7 @@ exports[`Storyshots Templates Methodology 1`] = `
               <a
                 href=""
               >
-                Other Visualizations
+                Other Visualisations
               </a>
             </span>
             <div
@@ -13260,7 +13302,7 @@ exports[`Storyshots Templates Methodology 1`] = `
     className="css-xtq3xk"
   >
     <div
-      className="css-omymer"
+      className="css-aam2ax"
     >
       <div
         className="css-1tfdju4"
@@ -13353,7 +13395,15 @@ exports[`Storyshots Templates Methodology 1`] = `
                   Newsletter
                 </h3>
                 <p>
-                  Sign up for the Development Initiatives newsletter to receive regular news and updates from DI.
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/#!/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
                 </p>
               </div>
               <div
@@ -13365,7 +13415,14 @@ exports[`Storyshots Templates Methodology 1`] = `
                   Creative Commons
                 </h3>
                 <p>
-                  This sites content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license .
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
                 </p>
               </div>
             </div>
@@ -13396,7 +13453,7 @@ exports[`Storyshots Templates Methodology 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.facebook.com/Development.Initiatives"
             >
               <i
                 aria-hidden="true"
@@ -13405,7 +13462,7 @@ exports[`Storyshots Templates Methodology 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.youtube.com/user/devinitorg"
             >
               <i
                 aria-hidden="true"
@@ -13414,7 +13471,7 @@ exports[`Storyshots Templates Methodology 1`] = `
             </a>
             <a
               className="css-11jszci"
-              href="https://twitter.com/devinitorg"
+              href="https://www.flickr.com/people/development_initiatives/"
             >
               <i
                 aria-hidden="true"
@@ -13426,7 +13483,7 @@ exports[`Storyshots Templates Methodology 1`] = `
       </div>
     </div>
     <div
-      className="css-omymer lightBlack"
+      className="css-aam2ax lightBlack"
     >
       <div
         className="row"
@@ -13435,10 +13492,11 @@ exports[`Storyshots Templates Methodology 1`] = `
           className="ui container"
         >
           <div
-            className="css-10kx4dn"
+            className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
               >
