@@ -10,6 +10,7 @@ const ListContainer = glamorous.ul({
   alignSelf: 'flex-end',
   listStyleType: 'none',
   float: 'right',
+  paddingTop: '0.2em',
   margin: '0',
   '@media(max-width: 960px)': {
     display: 'none',

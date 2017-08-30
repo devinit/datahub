@@ -34,7 +34,7 @@ const LocalContainer = glamorous.div(
       margin: '0',
       zIndex: '2',
       position: 'absolute',
-      bottom: '102%',
+      bottom: '108%',
       width: '100%',
       left: '0%',
       textAlign: 'center',
