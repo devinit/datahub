@@ -61,9 +61,9 @@ const footer = () =>
         <Container textAlign="center">
           <Grid.Column width={16}>
             <SocialMedia href="https://twitter.com/devinitorg" type="twitter" />
-            <SocialMedia href="https://twitter.com/devinitorg" type="facebook f" />
-            <SocialMedia href="https://twitter.com/devinitorg" type="youtube play" />
-            <SocialMedia href="https://twitter.com/devinitorg" type="flickr" />
+            <SocialMedia href="https://www.facebook.com/Development.Initiatives" type="facebook f" />
+            <SocialMedia href="https://www.youtube.com/user/devinitorg" type="youtube play" />
+            <SocialMedia href="https://www.flickr.com/people/development_initiatives/" type="flickr" />
           </Grid.Column>
         </Container>
       </Grid.Row>
