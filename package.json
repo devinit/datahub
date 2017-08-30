@@ -25,6 +25,7 @@
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
+    "format-p": "prettier-eslint --write \"private/components/templates/Front/index.js\"",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
     "analyze": "ANALYZE=1 next build",

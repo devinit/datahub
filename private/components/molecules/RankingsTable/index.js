@@ -5,7 +5,7 @@ import { Span, Img } from 'glamorous';
 import 'intersection-observer';
 import Router from 'next/router';
 import LoadingBar from 'components/molecules/LoadingBar';
-import type {Route} from 'lib/utils';
+import type { Route } from 'lib/utils';
 import Observer from 'react-intersection-observer';
 import { RankingsTableContainer } from 'components/atoms/Container';
 
@@ -29,15 +29,15 @@ export type Props = {
 export default class RankingsTable extends React.Component {
   constructor(props: Props) {
     super(props);
-    this.state = { profileLoading: false};
+    this.state = { profileLoading: false };
   }
   state: {
-    profileLoading: boolean
-  }
+    profileLoading: boolean,
+  };
   onClick = (item: Data) => {
-    this.setState({ profileLoading: true});
+    this.setState({ profileLoading: true });
     return Router.push(item.route.routePath, item.route.routeAsPath);
-  }
+  };
   render() {
     return (
       <Grid.Row centered className={'computer tablet only grid'}>
@@ -49,7 +49,10 @@ export default class RankingsTable extends React.Component {
                 <Table basic="very">
                   <Table.Header>
                     <Table.Row>
-                      <Table.HeaderCell textAlign="center" colSpan={this.props.hasflags ? '4' : '3'}>
+                      <Table.HeaderCell
+                        textAlign="center"
+                        colSpan={this.props.hasflags ? '4' : '3'}
+                      >
                         {this.props.data[key].length
                           ? <Span textTransform={'capitalize'}>
                             {key} {this.props.data[key].length}
@@ -59,7 +62,7 @@ export default class RankingsTable extends React.Component {
                     </Table.Row>
                   </Table.Header>
                   <Table.Body>
-                    {this.props.data[key].map((item) =>
+                    {this.props.data[key].map(item =>
                       (<Table.Row key={item.uid}>
                         <Table.Cell>
                           <b>
@@ -68,7 +71,12 @@ export default class RankingsTable extends React.Component {
                         </Table.Cell>
                         {this.props.hasflags
                           ? <Table.Cell>
-                            <Img width={'20px'} maxHeight={'15px'} alt={item.name} src={item.flagUrl} />
+                            <Img
+                              width={'20px'}
+                              maxHeight={'15px'}
+                              alt={item.name}
+                              src={item.flagUrl}
+                            />
                           </Table.Cell>
                           : <Table.Cell />}
                         <Table.Cell>
@@ -87,6 +95,7 @@ export default class RankingsTable extends React.Component {
             </Observer>
           </Grid.Column>),
         )}
-      </Grid.Row>);
+      </Grid.Row>
+    );
   }
 }

@@ -16,15 +16,15 @@ export const GreyContainer = glamorous.div({
 export const RankingsTableContainer = glamorous.div({
   paddingLeft: '4em',
   paddingRight: '4em',
-  '& td':{
-	padding: '0.5em 0.75em !important',
-  }
+  '& td': {
+    padding: '0.5em 0.75em !important',
+  },
 });
 export const PrintContainer = glamorous.div({
   display: 'none',
   '@media print': {
-    display: 'block !important'
-  }
+    display: 'block !important',
+  },
 });
 export const CardContainer = glamorous.div({
   background: 'rgba(255,255,255,.6)',
