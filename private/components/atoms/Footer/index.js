@@ -18,6 +18,9 @@ export const FooterDisclaimer = glamorous.div({
   color: white,
   paddingTop: '2em',
   paddingBottom: '2em',
+  '& a':{
+  color: white
+  }
 });
 export const TopFooter = glamorous.div({
   paddingTop: '2em',

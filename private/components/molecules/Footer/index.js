@@ -77,7 +77,7 @@ const footer = () =>
               International Ltd. Registered in England and Wales No. 05802543. Development
               Initiatives Poverty Research is the not-for-profit partner of DI International Ltd.
               Registered in England and Wales No. 06368740. Read our
-              <a href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf">
+             {' '} <a href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf">
                 privacy policy
               </a>.
             </p>
