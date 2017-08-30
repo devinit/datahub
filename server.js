@@ -55,6 +55,12 @@ app.prepare().then(() => {
     });
   });
 
+  server.get('/', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const queryParams = { state };
+    renderAndCache(req, res, '/', queryParams);
+  });
+
   server.get('/country/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
     const queryParams = { id: req.params.id, state};
@@ -68,8 +74,8 @@ app.prepare().then(() => {
   server.listen(PORT, err => {
     if (err) throw err;
     console.log(`> App running on http://localhost:${PORT}`);
-    if (process.env.NODE_ENV === 'production') {
-      // fork('./private/lib/precache/index.js');
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   // fork('./private/lib/precache/index.js');
+    // }
   });
 });

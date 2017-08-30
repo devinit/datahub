@@ -37,7 +37,8 @@ export type StateToShare = {
   year?: number,
   budgetType?: string,
   currency?: string,
-  chartId?: string
+  chartId?: string,
+  indicator?: string
 }
 type Props = {
   size: string,

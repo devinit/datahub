@@ -10,7 +10,7 @@ type Props = {
   url: {
     pathname: string,
     query: { id: string, state: StateToShare},
-  },
+  }
 };
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls

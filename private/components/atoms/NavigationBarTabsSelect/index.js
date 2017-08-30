@@ -12,15 +12,21 @@ export type Option = {|
 
 export type Props = {
   options: Array<Option>,
+  activeIndicator: string,
   onChange?: (event: any) => void,
   showUsingThisViz?: boolean,
   toolTip?: { heading: string, source: string },
   onUsingThisVizHandler?: (event: any) => void,
 };
 
-const Select = ({ options, onChange, toolTip, onUsingThisVizHandler, showUsingThisViz }: Props) =>
-  (<Wrapper>
-    <StyledSelect onChange={event => (onChange ? onChange(event) : false)}>
+const Select = (props: Props) => {
+  const { options, onChange, toolTip, onUsingThisVizHandler,
+    showUsingThisViz, activeIndicator } = props;
+  return (<Wrapper>
+    <StyledSelect
+      value={activeIndicator}
+      onChange={event => (onChange ? onChange(event) : false)}
+    >
       {options.map(item =>
         (<option value={item.key} key={item.key}>
           {item.value}
@@ -37,5 +43,6 @@ const Select = ({ options, onChange, toolTip, onUsingThisVizHandler, showUsingTh
       </Button>
     </Div>
   </Wrapper>);
+};
 
 export default Select;

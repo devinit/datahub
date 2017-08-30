@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { changeGlobalIndicator } from 'lib/actions';
 import type { GlobalIndicator } from 'lib/actions';
 import type { State, Action } from 'lib/reducers';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import data from './data';
 
 type BoundAction = {
@@ -16,7 +17,9 @@ type BoundState = {
   activeIndicator: string,
 };
 
-type Props = BoundAction & BoundState;
+type Props = BoundAction & BoundState & {
+  state: StateToShare,
+};
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => {
   return {
@@ -30,7 +33,7 @@ const globalPictureNavBarTab = (props: Props) =>
     showUsingThisViz
     navBarItems={data.globalPictureThemes}
     changeActiveIndicator={props.changeIndicator}
-    activeIndicator={props.activeIndicator}
+    activeIndicator={props.state.indicator || props.activeIndicator}
   />);
 
 export default connect(mapStateToProps, mapDispatchToProps)(globalPictureNavBarTab);

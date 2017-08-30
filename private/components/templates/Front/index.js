@@ -13,6 +13,7 @@ import Router from 'next/router';
 import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import Generic from '../Generic';
 
 const DynamicMapComponent = dynamic(import('components/organisms/Map'), {
@@ -23,6 +24,7 @@ const DynamicMapComponent = dynamic(import('components/organisms/Map'), {
 type Props = {
   pathName: string,
   rehydrated: boolean,
+  state: StateToShare
 };
 /* eslint-disable max-len */
 const front = (props: Props) => {
@@ -46,8 +48,8 @@ const front = (props: Props) => {
         </Div>
       </Container>
       <div style={{ position: 'relative' }}>
-        <GlobalPictureNavTabs />
-        <DynamicMapComponent pathName={props.pathName} />
+        <GlobalPictureNavTabs state={props.state} />
+        <DynamicMapComponent pathName={props.pathName} state={props.state} />
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>

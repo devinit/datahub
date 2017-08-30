@@ -13,11 +13,12 @@ import type { Props as RankingsTableProps } from 'components/molecules/RankingsT
 import ChartShare from 'components/molecules/ChartShare';
 import type {Route} from 'lib/utils';
 import {approximate, countryOrDistrictLink} from 'lib/utils';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import type { MapConfig } from './config';
 import mapConfigs from './config';
 
 type Props = {
-  mapStyle?: string,
+  state: StateToShare,
   loading: boolean,
   ...MapDataQuery,
 };
@@ -93,7 +94,7 @@ class Map extends Component {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('start_year is missing in props');
     if (!props.mapData.default_year) throw new Error('default_year is missing in props');
-    const currentYear = props.mapData.default_year;
+    const currentYear = props.state.year || props.mapData.default_year;
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
@@ -191,7 +192,14 @@ class Map extends Component {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={5} textAlign="center">
-              <ChartShare size="big" color="black" />
+              <ChartShare
+                size="big"
+                color="black"
+                stateToShare={{
+                  year: this.state.currentYear,
+                  indicator: this.meta.id
+                }}
+              />
             </Grid.Column>
           </Grid.Row>
           {!this.noRankTableList.includes(this.meta.id) ?
