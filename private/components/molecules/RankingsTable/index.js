@@ -25,7 +25,7 @@ export type Props = {
 const RankingsTable = (props: Props) =>
   (<Grid.Row centered className={'computer tablet only grid'}>
     {Object.keys(props.data).map(key =>
-      (<Grid.Column computer={6} tablet={6} key={key}>
+      (<Grid.Column className="rankings-table" computer={6} tablet={6} key={key}>
         <Observer>
           <RankingsTableContainer>
             <Table basic="very">
