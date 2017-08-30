@@ -19,6 +19,7 @@ export const RankingsTableContainer = glamorous.div({
   '& td': {
     padding: '0.5em 0.75em !important',
   },
+  marginBottom: '2em'
 });
 export const PrintContainer = glamorous.div({
   display: 'none',

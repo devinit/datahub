@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type { MapData, PaintMap, Meta } from 'components/atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
-import { lightGrey } from 'components/theme/semantic';
+import { grey } from 'components/theme/semantic';
 import type { LegendField } from 'components/atoms/MapLegend';
 import Legend from 'components/atoms/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
@@ -164,8 +164,8 @@ class Map extends Component {
             />
             <P
               fontSize={'0.7em'}
-              color={lightGrey}
-              bottom={'15%'}
+              color={grey}
+              bottom={'5%'}
               right={'2%'}
               position={'absolute'}
             >

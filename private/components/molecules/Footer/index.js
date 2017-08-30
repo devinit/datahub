@@ -21,19 +21,19 @@ const footer = () =>
             <Grid.Row columns={4}>
               <Grid.Column mobile={16} computer={4} tablet={8}>
                 <FooterHeader>Sections</FooterHeader>
-                <FooterLink href="http://devinit.org/#!/blog"> Data blog </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Publications</FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Events</FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Working with us </FooterLink>
+                <FooterLink href="http://devinit.org/data-blog"> Data blog </FooterLink>
+                <FooterLink href="http://devinit.org/publications"> Publications</FooterLink>
+                <FooterLink href="http://devinit.org/events"> Events</FooterLink>
+                <FooterLink href="http://devinit.org/working-with-us"> Working with us </FooterLink>
               </Grid.Column>
               <Grid.Column mobile={16} computer={4} tablet={8}>
                 <FooterHeader>Quick Links</FooterHeader>
-                <FooterLink href="http://devinit.org/#!/blog"> Contact us </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog"> Topics</FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog">
+                <FooterLink href="http://devinit.org/about/contact-us/"> Contact us </FooterLink>
+                <FooterLink href="http://devinit.org/topics"> Topics</FooterLink>
+                <FooterLink href="http://devinit.org/about/consultancy">
                   {' '}Our consultancy services{' '}
                 </FooterLink>
-                <FooterLink href="http://devinit.org/#!/blog">
+                <FooterLink href="http://devinit.org/about/open-di-publishing-to-iati">
                   {' '}Open DI - publishing to IATI{' '}
                 </FooterLink>
               </Grid.Column>
@@ -41,7 +41,7 @@ const footer = () =>
                 <FooterHeader>Newsletter</FooterHeader>
                 <p>
                   Sign up for the{' '}
-                  <a href="http://devinit.org/#!/about/newsletter-sign-up">
+                  <a href="http://devinit.org/about/newsletter-sign-up">
                     Development Initiatives newsletter
                   </a>{' '}
                   to receive regular news and updates from DI.
