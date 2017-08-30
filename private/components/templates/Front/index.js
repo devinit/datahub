@@ -51,7 +51,7 @@ const front = (props: Props) => {
       </div>
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
-          DATA VISUALIZATIONS
+          DATA VISUALISATIONS
         </SectionHeader>
       </DarkBg>
       <Container>

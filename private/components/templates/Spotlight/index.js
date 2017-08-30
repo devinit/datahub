@@ -48,7 +48,7 @@ const spotlight = () => {
       {/* {props.rehydrated || process.storybook ? <Map pathName={'spotlight'} /> : <MapBackground />} */}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
-          DATA VISUALIZATIONS
+          DATA VISUALISATIONS
         </SectionHeader>
       </DarkBg>
       <Container>

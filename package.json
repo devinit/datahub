@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.12",
   "config": {
-    "api": "https://datahub-api-vemssfeslj.now.sh/graphql"
+    "api": "https://datahub-api-icpsufzpud.now.sh/graphql"
   },
   "now": {
     "name": "datahub",
@@ -61,7 +61,7 @@
     "fs-extra": "^4.0.0",
     "glamor": "^2.20.25",
     "glamorous": "^4.1.0",
-    "graphql": "^0.10.3",
+    "graphql": "^0.11.1",
     "intersection-observer": "^0.4.0",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
@@ -79,7 +79,7 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
     "redux-persist": "^4.8.1",
-    "semantic-ui-react": "0.71.4",
+    "semantic-ui-react": "^0.72.0",
     "sw-precache-webpack-plugin": "^0.11.4",
     "webpack-bundle-analyzer": "^2.9.0"
   },

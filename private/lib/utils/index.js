@@ -45,6 +45,23 @@ export const getShortURL = async (longUrl: string): Promise<string> => {
   const json = await response.json();
   return json.data.url;
 };
+// country is global or uganda or kenya etc
+export type Route = {
+  routeAsPath: string,
+  routePath: string
+}
+export const countryOrDistrictLink = (country: string, slug: string): Route => {
+  let routePath: string;
+  let routeAsPath: string;
+  if (country === 'global') {
+    routePath = `/country?id=${slug}`;
+    routeAsPath = `/country/${slug}`;
+  } else {
+    routePath = `/spotlight_on_${country}?id=${slug}`;
+    routeAsPath = `/spotlight_on_${country}/${slug}`;
+  }
+  return {routePath, routeAsPath};
+};
 
 const removeTrailingZero = (value: string): string => {
   const val = Number(value);
