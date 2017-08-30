@@ -1,4 +1,5 @@
 import glamorous from 'glamorous';
+import {mediaQueries} from 'components/theme';
 import { lightBlack, lighterGrey } from 'components/theme/semantic';
 
 export const LightBg = glamorous.div({
@@ -16,7 +17,7 @@ export const MapBackground = glamorous.div({
   background: lighterGrey,
   width: '100%',
   height: '600px',
-  '@media(max-width: 1000px)': {
+  [mediaQueries.tabs]: {
     height: '480px',
   },
 });

@@ -1,6 +1,7 @@
 // @flow
 import glamorous from 'glamorous';
 import { white } from 'components/theme/semantic';
+import {mediaQueries} from 'components/theme';
 import MenuItem from 'components/atoms/DesktopMenuItem';
 import React from 'react';
 
@@ -11,7 +12,7 @@ const ListContainer = glamorous.ul({
   listStyleType: 'none',
   float: 'right',
   margin: '0',
-  '@media(max-width: 960px)': {
+  [mediaQueries.phone]: {
     display: 'none',
   },
 });

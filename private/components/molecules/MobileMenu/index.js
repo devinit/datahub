@@ -4,6 +4,7 @@ import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import { white, redHeaderColor } from 'components/theme/semantic';
 import MenuContainer from 'components/atoms/MobileMenuContainer';
+import {mediaQueries} from 'components/theme';
 import MenuItem from 'components/atoms/MobileMenuItem';
 
 export const ToggleButton = glamorous.button({
@@ -15,7 +16,6 @@ export const ToggleButton = glamorous.button({
   border: 0,
   right: 0,
   textAlign: 'center',
-
   color: white,
   background: redHeaderColor,
   outline: 0,
@@ -23,7 +23,7 @@ export const ToggleButton = glamorous.button({
     fontSize: '1.2rem',
     margin: '.28rem 0.25rem 0 0',
   },
-  '@media(max-width: 960px)': {
+  [mediaQueries.tabs]: {
     display: 'block',
   },
 });

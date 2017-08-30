@@ -1,42 +1,9 @@
 // @flow
-import glamorous, { Div } from 'glamorous';
-import { Icon, Button } from 'semantic-ui-react';
 import React from 'react';
+import { Button } from 'semantic-ui-react';
+import { Div } from 'glamorous';
 import TabsToolTip from 'components/molecules/TabsToolTip';
-import { white } from 'components/theme/semantic';
-
-const Wrapper = glamorous.div({
-  color: white,
-  '& i': {
-    fontWeight: '700',
-    fontSize: '18px',
-    cursor: 'pointer',
-  },
-  '& .ui.button': {
-    paddingTop: '.5em',
-    paddingBottom: '.5em',
-    paddingRight: '.85em',
-    paddingLeft: '0.75em',
-  },
-  '& select': {
-    fontWeight: '700',
-    fontSize: '18px',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    margin: 0,
-    padding: '.25em 0em .25em .25em',
-    lineHeight: '1.5',
-    transition: 'all .25s',
-    background: 'transparent',
-    border: 0,
-    cursor: 'pointer',
-    outline: 0,
-    appearance: 'none',
-  },
-  '& option': {
-    color: '#333'
-  },
-});
+import {Wrapper, StyledSelect} from './styled';
 
 export type Option = {|
   key: string,
@@ -53,14 +20,13 @@ export type Props = {
 
 const Select = ({ options, onChange, toolTip, onUsingThisVizHandler, showUsingThisViz }: Props) =>
   (<Wrapper>
-    <select onChange={event => (onChange ? onChange(event) : false)}>
+    <StyledSelect onChange={event => (onChange ? onChange(event) : false)}>
       {options.map(item =>
         (<option value={item.key} key={item.key}>
           {item.value}
         </option>),
       )}
-    </select>
-    <Icon name="caret down" />
+    </StyledSelect>
     {toolTip ? <TabsToolTip {...toolTip} /> : ''}
     <Div display={showUsingThisViz ? 'inline-block' : 'none'}>
       <Button
