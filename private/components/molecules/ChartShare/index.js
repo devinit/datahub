@@ -128,9 +128,19 @@ export default class ChartShare extends Component {
             /> as I configured it<br />
             <input className="link" value={this.state.link} onChange={this.onLinkChange} />
             <Div marginTop={'1.5em'}>
-              <Button icon="facebook f" />
-              <Button icon="twitter" />
-              <Button icon="mail outline" />
+              <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
+                <Button icon="facebook f" />
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"`}
+              >
+                <Button icon="twitter" />
+              </a>
+              <a
+                href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${this.state.link}`}
+              >
+                <Button icon="mail outline" />
+              </a>
             </Div>
           </Container>
         </Modal.Description>
