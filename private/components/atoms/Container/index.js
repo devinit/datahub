@@ -14,8 +14,11 @@ export const GreyContainer = glamorous.div({
 });
 
 export const RankingsTableContainer = glamorous.div({
-  paddingLeft: '1em',
-  paddingRight: '1em',
+  paddingLeft: '4em',
+  paddingRight: '4em',
+  '& td':{
+	padding: '0.5em 0.75em !important',
+  }
 });
 export const PrintContainer = glamorous.div({
   display: 'none',

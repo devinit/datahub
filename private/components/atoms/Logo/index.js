@@ -7,7 +7,7 @@ const LogoContainer = glamorous.div({
   display: 'flex',
   float: 'left',
   '& img': {
-    height: '2em',
+    height: '2.3em',
     width: 'auto',
     marginTop: '1em',
     marginBottom: '1em',
