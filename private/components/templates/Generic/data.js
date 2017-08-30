@@ -22,7 +22,7 @@ const data = {
       ],
     },
     {
-      name: 'Unbudling Aid',
+      name: 'Unbundling Aid',
       link: '/unbundling-aid',
     },
     {
@@ -30,7 +30,7 @@ const data = {
       link: '/spotlight-on-uganda',
     },
     {
-      name: 'Other Visualizations',
+      name: 'Other Visualisations',
       icon: 'pie graph',
       link: '',
       children: [
