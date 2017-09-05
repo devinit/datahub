@@ -39,7 +39,7 @@ const Overview = (props: Props) => {
                 : ''}
             </HeaderTitle>
             <TabsP>
-              {' '}{overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData}
+              {overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData}
             </TabsP>
             <TabsFootNote>out of a population of {
               props.populationTab && props.populationTab.population &&

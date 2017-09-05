@@ -115,7 +115,7 @@ module.exports = {
     {
       id: 'overview-resources',
       title:
-        'WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN ${district}?',
+        'WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN {district}?',
       narrative: ''
     },
     {

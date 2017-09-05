@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react';
 import withApolloProvider from 'lib/storybook-addon/apollo';
 import GovernmentFinanceChart from '.';
 
-storiesOf('tabs', module)
+storiesOf('Tabs', module)
   .addDecorator(withApolloProvider())
   .add('local government Finance', () => <GovernmentFinanceChart country="uganda" id="wakiso" />);

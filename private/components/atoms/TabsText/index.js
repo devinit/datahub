@@ -8,6 +8,7 @@ export const TabsP = glamorous.p({
   fontSize: massive,
   fontWeight: 'bold',
   color: red,
+  lineHeight: 1.1,
   marginBottom: '0.2em',
 }, (props) => ({
   fontSize: props.fontSize || massive
@@ -24,5 +25,9 @@ export const HeaderTitle = glamorous.h3({
   textAlign: 'center',
   fontSize: '1.2em',
   color: grey
+});
+export const TabWrapper = glamorous.div({
+  fontWeight: 'bold',
+  textAlign: 'center'
 });
 export const TabsNoData = () => (<TabsP>No data</TabsP>);

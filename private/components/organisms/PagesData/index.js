@@ -32,7 +32,7 @@ export const getDistrictProfileData = (slug: string, country: string): PageUnit[
   const districtName = getDistrictName(slug, country);
   if (!pagesData.spotlightDistrict) throw new Error('District profile page data missing');
   const pageData: PageUnit[] = pagesData.spotlightDistrict;
-  return replaceFields({pageData, toReplace: '{disrict}', replacement: districtName});
+  return replaceFields({pageData, toReplace: '{district}', replacement: districtName});
 };
 
 export const getCountryProfileData = (slug: string): PageUnit[] => {
