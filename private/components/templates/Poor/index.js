@@ -8,8 +8,11 @@ import data from './data';
 
 const StyledPre = glamorous.pre({
   fontFamily: 'inherit',
-  fontSize: '1em',
-  overflow: 'hidden'
+  fontSize: '22px',
+  overflow: 'hidden',
+  fontWeight: '300',
+  lineHeight: '33px',
+  color: '#453f43'
 });
 const HeaderContainer = glamorous.div({
   paddingTop: '4em',
@@ -39,7 +42,7 @@ export default () => {
         <Grid>
           <Grid.Row>
             <Grid.Column computer="12" tablet="16" mobile="16">
-              <Header as="h3">About this visualization</Header>
+              <Header as="h3">About this visualisation</Header>
               <p>
                 {data.abtVisualization}
               </p>
