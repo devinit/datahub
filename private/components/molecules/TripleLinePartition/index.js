@@ -91,7 +91,6 @@ export default class TripleLinePartition extends Component {
   }
 
   componentWillReceiveProps(props: Props) {
-    this.props.finance = props.finance || [];
     this.setState(this.calculateInitialState(props));
   }
 
