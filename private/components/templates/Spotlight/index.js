@@ -8,6 +8,7 @@ import { SectionHeader } from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
 import { connect } from 'react-redux';
 import dynamic from 'next/dynamic';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 
@@ -17,13 +18,14 @@ const DynamicMapComponent = dynamic(
     loading: () => <MapBackground />
   });
 
-// type Props = {
-//   pathName: string,
-//   rehydrated: boolean,
-// };
+type Props = {
+  // pathName: string,
+  state: StateToShare
+  // rehydrated: boolean,
+};
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
-const spotlight = () => {
+const spotlight = (props: Props) => {
   return (
     <Generic>
       <Container>
@@ -44,7 +46,7 @@ const spotlight = () => {
         </Div>
       </Container>
       <SpotLightNavTabs />
-      <DynamicMapComponent pathName="spotlight" />
+      <DynamicMapComponent pathName="spotlight" state={props.state} />
       {/* {props.rehydrated || process.storybook ? <Map pathName={'spotlight'} /> : <MapBackground />} */}
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>

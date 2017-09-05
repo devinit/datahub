@@ -1,8 +1,6 @@
 const express = require('express');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
-// const { fork } = require('child_process');
-const pagesToPreCache = require('./private/lib/precache/pages');
 const next = require('next');
 
 
@@ -48,17 +46,23 @@ app.prepare().then(() => {
 
   // serve service worker // currently not working
   // server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
-
-  pagesToPreCache.forEach(link => {
+  [
+    '/unbundling-aid',
+    '/unbundling-other-flows',
+    '/country-profiles',
+    '/where-are-the-poor'
+  ].forEach(link => {
     server.get(link, (req, res) => {
       renderAndCache(req, res, link);
     });
   });
 
-  server.get('/', (req, res) => {
-    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
-    const queryParams = { state };
-    renderAndCache(req, res, '/', queryParams);
+  ['/', 'spotlight-on-uganda'].forEach(link => {
+    server.get(link, (req, res) => {
+      const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+      const queryParams = { state };
+      renderAndCache(req, res, link, queryParams);
+    });
   });
 
   server.get('/country/:id', (req, res) => {
@@ -74,8 +78,5 @@ app.prepare().then(() => {
   server.listen(PORT, err => {
     if (err) throw err;
     console.log(`> App running on http://localhost:${PORT}`);
-    // if (process.env.NODE_ENV === 'production') {
-    //   // fork('./private/lib/precache/index.js');
-    // }
   });
 });
