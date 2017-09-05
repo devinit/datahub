@@ -5,4 +5,4 @@ import Profile from '.';
 
 storiesOf('Templates DontTest', module)
   .addDecorator(withApolloProvider())
-  .add('Regional Profiles', () => <Profile />);
+  .add('Regional Profiles', () => <Profile id="wakiso" country="uganda" />);

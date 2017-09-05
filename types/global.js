@@ -11,12 +11,17 @@ type Process = {
 }
 declare var process: Process;
 
+export type District = {|
+  id: string,
+  name: string,
+  slug: string
+|}
+
 export type Country = {|
-    id: string,
-    name: string,
-    slug: string,
+    ...District,
     countryType: string,
 |}
+
 
 // TODO: allan improvise to remove at some point in future
 // in favour of auto generated types
