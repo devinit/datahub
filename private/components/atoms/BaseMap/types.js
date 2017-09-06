@@ -96,5 +96,6 @@ export type GenericTipHtml = {
   country: string,
   name: string,
   uom: string,
+  year: string | number,
   value: string | number,
 };

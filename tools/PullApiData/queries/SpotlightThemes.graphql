@@ -5,6 +5,9 @@ query SpotlightThemes($country: String!) {
     indicators {
       id
       name
+      heading
+      tooltip
+      source
     }
     default_indicator
   }

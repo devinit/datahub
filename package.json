@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.12",
   "config": {
-    "api": "https://datahub-api-jqeuoaovnv.now.sh/graphql"
+    "api": "http://localhost:3000/graphql"
   },
   "now": {
     "name": "datahub",

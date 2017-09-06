@@ -57,7 +57,6 @@ class BaseMap extends Component {
   }
   static setPointDataValue(value: number, uom?: string, indicator?: string): string {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
-    if (uom === '%') return approximate(value, 2);
     return approximate(value);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
@@ -99,8 +98,10 @@ class BaseMap extends Component {
       this.setState({shouldForceRedraw: true});
     }
   }
-  genericTipHtml({ id, country, name, value, uom }: GenericTipHtml) {
+  genericTipHtml({ id, country, name, value, uom, year }: GenericTipHtml) {
     const valueStr = value === NO_DATA ? value : BaseMap.tipToolTipValueStr(value, uom);
+    const valueWithYear = year ?
+      `${valueStr}<span style="color: white;font-weight: 500;"> in ${year}</span>` : valueStr;
     const flagUrl: string =
       this.props.meta && this.props.meta.country === 'global' ? `/flags/svg/${id}.svg` : '';
     const upperTip = `<p style="text-align:center;line-height: 1; margin:0">
@@ -109,7 +110,7 @@ class BaseMap extends Component {
             <p style="text-align:center;line-height: 2; margin:0; font-size: 1.2em"> ${country} </p>`;
     const lowerTip =
       name && name.length
-        ? `<em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueStr}</span></em>`
+        ? `<em>${name}:<span style="font-size: 1em; font-weight: 700; color:${orange}"> ${valueWithYear}</span></em>`
         : '';
     return `${upperTip}${lowerTip}`;
   }
@@ -139,7 +140,7 @@ class BaseMap extends Component {
     if (theme === 'government-finance' && pointData.detail) {
       value = `${value} <span style="color: white">[ ${pointData.detail} ]</span>`;
     }
-    const opts = { id, value, name, uom, country };
+    const opts = { id, value, name, uom, country, year: pointData.year || 0 };
     if (!id) return false;
     return this.genericTipHtml(opts);
   }
@@ -282,8 +283,8 @@ class BaseMap extends Component {
     if (!bounds) return false;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [100, 0],
-      maxZoom: this.props.paint.propertyLayer === 'national' ? 3 : 6,
+      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, 0],
+      maxZoom: this.props.paint.propertyLayer === 'national' ? 3 : 5.5,
     });
   }
   focusOnCountryOrDistrict(slug: string, paint: PaintMap) {

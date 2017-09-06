@@ -36,12 +36,15 @@ class Map extends Component {
     });
   }
   static setCountryRankValue(mapPoint: MapData, meta: Meta): string | number {
-    const uom = meta.uom_display;
     const {value} = mapPoint;
     if (value === undefined || value === null) throw new Error('country rank value should be defined');
     if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
-    if (uom === '%') return approximate(value, 2);
-    if (meta.theme === 'vulnerability' || meta.theme === 'government-finance') return value.toFixed(1);
+    const ThemesWith1dp = ['vulnerability', 'government-finance', 'uganda-poverty', 'uganda-health'];
+    const indicatorsWith1dp = ['spotlight_on_uganda.uganda_dependency_ratio'];
+    if (ThemesWith1dp.includes(meta.theme) || indicatorsWith1dp.includes(meta.id)) {
+      return value.toFixed(1);
+    }
+    if (meta.uom === '%' || meta.uom === 'US$') return value.toFixed(1);
     return value;
   }
   constructor(props: Props) {
@@ -94,7 +97,7 @@ class Map extends Component {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('start_year is missing in props');
     if (!props.mapData.default_year) throw new Error('default_year is missing in props');
-    const currentYear = props.state.year || props.mapData.default_year;
+    const currentYear = props.state && props.state.year ? props.state.year.year : props.mapData.default_year;
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;

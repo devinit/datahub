@@ -1,8 +1,8 @@
 import React from 'react';
-import withApolloProvider from 'lib/storybook-addon/apollo';
+import withApolloAndReduxProvider from 'lib/storybook-addon/apolloAndRedux';
 import { storiesOf } from '@storybook/react';
 import Profile from '.';
 
 storiesOf('Templates DontTest', module)
-  .addDecorator(withApolloProvider())
+  .addDecorator(withApolloAndReduxProvider())
   .add('Regional Profiles', () => <Profile id="wakiso" country="uganda" />);

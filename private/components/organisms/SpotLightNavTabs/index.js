@@ -5,6 +5,7 @@ import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
 import type { ChangeActiveIndicator } from 'components/molecules/NavigationBarTabs';
 import type { State, Action } from 'lib/reducers';
 import { bindActionCreators } from 'redux';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import { changeSpotlightIndicator } from 'lib/actions';
 import type { SpotLightlIndicator } from 'lib/actions';
 import data from './ug-data';
@@ -16,7 +17,9 @@ type BoundState = {
   activeIndicator: string,
 };
 
-type Props = BoundAction & BoundState;
+type Props = BoundAction & BoundState & {
+  state: StateToShare,
+};
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => {
   return {
@@ -31,7 +34,8 @@ const mapStateToProps = ({ app }: State): BoundState => ({
 const spotlightNavBarTab = (props: Props) =>
   (<NavigationBarTabs
     navBarItems={data.spotlightThemes}
-    activeIndicator={props.activeIndicator}
+    activeIndicator={props.state && props.state.indicator ?
+      props.state.indicator : props.activeIndicator}
     changeActiveIndicator={props.changeSpotlightIndicator}
   />);
 

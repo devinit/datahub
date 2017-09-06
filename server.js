@@ -64,6 +64,12 @@ app.prepare().then(() => {
       renderAndCache(req, res, link, queryParams);
     });
   });
+  // TODO: fix me, add this to country route
+  server.get('/uganda/:id', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const queryParams = { id: req.params.id, state};
+    renderAndCache(req, res, '/uganda', queryParams);
+  });
 
   server.get('/country/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
