@@ -69,6 +69,18 @@ export default class LinePartition extends Component {
     this.setState(this.createInitialState(props));
   }
 
+  onChangeYear(year: number) {
+    this.props.onChangeYear(+year);
+  }
+
+  onChangeBudgetType(budgetType: string) {
+    this.props.onChangeBudgetType(budgetType);
+  }
+
+  onChangeCurrency(currency: string) {
+    this.props.onChangeCurrency(currency);
+  }
+
   setLevel(level: string) {
     const trend = this.createTrendState(level, this.props.currency);
 
@@ -135,20 +147,7 @@ export default class LinePartition extends Component {
       }));
   }
 
-  onChangeYear(year: number) {
-    this.props.onChangeYear(+year);
-  }
-
-  onChangeBudgetType(budgetType: string) {
-    this.props.onChangeBudgetType(budgetType);
-  }
-
-  onChangeCurrency(currency: string) {
-    this.props.onChangeCurrency(currency);
-  }
-
   render() {
-    console.log(this.state.treesByYear[this.props.year][this.props.budgetType])
     return (<Container>
 
       {!this.props.inverted ? '' :
