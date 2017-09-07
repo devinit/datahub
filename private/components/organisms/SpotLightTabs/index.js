@@ -42,11 +42,11 @@ const spotlightTabs = (props: WrapperProps) => {
       <Pane label="Population" id="spotlight-population">
         <Population {...props} pageData={pageData} />
       </Pane>
-      <Pane label="Health" id="spotlight-health">
-        <Health {...props} pageData={pageData} />
-      </Pane>
       <Pane label="Education" id="spotlight-education">
         <Education {...props} pageData={pageData} />
+      </Pane>
+      <Pane label="Health" id="spotlight-health">
+        <Health {...props} pageData={pageData} />
       </Pane>
     </Tabs>
   );
