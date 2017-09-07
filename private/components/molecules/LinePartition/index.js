@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
-import groupBy from 'ramda/src/groupBy';
+import { groupBy } from 'ramda';
 import { Container, Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import TreeChart from 'components/atoms/TreeChart/index';
@@ -87,8 +87,7 @@ export default class LinePartition extends Component {
     const level = root.levels[0];
 
     const trend = this.createTrendState(level, this.props.currency);
-    const treesByYear = this.createTreeState();
-    console.log(trend);
+    const treesByYear = this.createTreeState(this.props.currency);
 
     return {
       level,
@@ -99,7 +98,7 @@ export default class LinePartition extends Component {
     };
   }
 
-  createTreeState(currency) {
+  createTreeState(currency: string) {
     const groupedByYear = groupByYear(this.props.data.map(d => {
       const value = currency === 'US$' ? d.value : d.value_ncu;
       return {
@@ -111,11 +110,13 @@ export default class LinePartition extends Component {
       };
     }));
 
+    const groupedByYearAndBudgetType = {};
+
     Object.keys(groupedByYear)
       .forEach(year => {
-        groupedByYear[year] = groupByBudgetType(groupedByYear[year]);
+        groupedByYearAndBudgetType[year] = groupByBudgetType(groupedByYear[year]);
       });
-    return groupedByYear;
+    return groupedByYearAndBudgetType;
   }
 
   createTrendState(level: string, currency: string) {
@@ -134,19 +135,33 @@ export default class LinePartition extends Component {
       }));
   }
 
+  onChangeYear(year: number) {
+    this.props.onChangeYear(+year);
+  }
+
+  onChangeBudgetType(budgetType: string) {
+    this.props.onChangeBudgetType(budgetType);
+  }
+
+  onChangeCurrency(currency: string) {
+    this.props.onChangeCurrency(currency);
+  }
+
   render() {
+    console.log(this.state.treesByYear[this.props.year][this.props.budgetType])
     return (<Container>
 
       {!this.props.inverted ? '' :
+        // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.props.title}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={this.props.onChangeBudgetType}
+          onChangeBudgetType={budgetType => this.onChangeBudgetType(budgetType)}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={this.props.onChangeCurrency}
+          onChangeCurrency={currency => this.onChangeCurrency(currency)}
         />}
 
       <Grid>
@@ -185,15 +200,16 @@ export default class LinePartition extends Component {
       </Grid>
 
       {this.props.inverted ? '' :
+        // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.props.title}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={this.props.onChangeBudgetType}
+          onChangeBudgetType={budgetType => this.onChangeBudgetType(budgetType)}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={this.props.onChangeCurrency}
+          onChangeCurrency={currency => this.onChangeCurrency(currency)}
         />}
 
     </Container>);

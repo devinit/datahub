@@ -31,7 +31,10 @@ type State = {
   currency: string,
   currencyOptions: Object[],
   budgetType: string,
-  budgetTypeOptions: Object[],
+  budgetTypeOptions: {
+    [year: number]: Object[]
+  },
+  revenueTourVisible: boolean,
 };
 
 export default class MultiLinePartition extends Component {
@@ -44,12 +47,9 @@ export default class MultiLinePartition extends Component {
   constructor(props: Props) {
     super(props);
     this.state = this.createInitialState(props);
-    this.setYear = this.setYear.bind(this);
-    this.setCurrency = this.setCurrency.bind(this);
-    this.setBudgetType = this.setBudgetType.bind(this);
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps(props: Props) {
     this.setState(this.createInitialState(props));
   }
 
@@ -73,6 +73,7 @@ export default class MultiLinePartition extends Component {
       currencyOptions,
       budgetType,
       budgetTypeOptions,
+      revenueTourVisible: false,
     };
   }
 
@@ -113,7 +114,6 @@ export default class MultiLinePartition extends Component {
   setYear(year: number) {
     const budgetTypeOptions = this.state.budgetTypeOptions[year];
     const budgetType = budgetTypeOptions && budgetTypeOptions[0].value;
-    console.log(budgetTypeOptions);
     this.setState({
       year,
       budgetType,
