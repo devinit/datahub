@@ -174,7 +174,7 @@ exports[`page data tests should return district page data 1`] = `
   },
   Object {
     \\"id\\": \\"health-performance\\",
-    \\"narrative\\": \\"out of 100, and is ranked in \${position} place overall\\",
+    \\"narrative\\": \\"out of 100, and is ranked in {position} place overall\\",
     \\"title\\": \\"WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?\\",
   },
   Object {
