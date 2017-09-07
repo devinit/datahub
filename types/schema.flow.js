@@ -236,25 +236,25 @@ export type TabDataQuery = {|
 |};
 
 export type DifferentProvidersDifferentPriotitiesQuery = {|
-  // IdNamePair is defined in unbundling aid types
-  // this list feeds off oda table from countries and global/concept file
-  bubbleChartIndicatorsList: ? Array< {|
-    id: ?string,
-    name: ?string,
-  |} >,
+  bubbleChartOptions: ? {|
+    // this list feeds off oda table from countries and global/concept file
+    // IdNamePair is defined in unbundling aid types
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+  |},
 |};
 
 export type GovernmentFinanceQueryVariables = {|
   id: string,
+  country: string,
 |};
 
 export type GovernmentFinanceQuery = {|
-  governmentFinance: ? {|
+  localGovernmentFinance: ? {|
     startYear: ?number,
-    // for treemap
-    // such as constant 2015 USD for tree map
     currencyCode: ?string,
-    // use resourcesRecipient sql
     expenditure: ? Array< {|
       uid: ?string,
       year: ?number,
@@ -264,16 +264,8 @@ export type GovernmentFinanceQuery = {|
       value: ?number,
       value_ncu: ?number,
     |} >,
+    // come from finance file
     revenueAndGrants: ? Array< {|
-      uid: ?string,
-      year: ?number,
-      levels: ?Array< ?string >,
-      // eg Actual or budget
-      budget_type: ?string,
-      value: ?number,
-      value_ncu: ?number,
-    |} >,
-    finance: ? Array< {|
       uid: ?string,
       year: ?number,
       levels: ?Array< ?string >,
@@ -356,12 +348,14 @@ export type MapDataQuery = {|
 |};
 
 export type PovertyQuery = {|
-  // IdNamePair is defined in unbundling aid types
-  // this list feeds off oda table from countries and global/concept file
-  bubbleChartIndicatorsList: ? Array< {|
-    id: ?string,
-    name: ?string,
-  |} >,
+  bubbleChartOptions: ? {|
+    // this list feeds off oda table from countries and global/concept file
+    // IdNamePair is defined in unbundling aid types
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+  |},
 |};
 
 export type SpotLightTabDataQueryVariables = {|
@@ -612,12 +606,14 @@ export type UnbundlingInternationalResourcesQuery = {|
 |};
 
 export type BubbleChartIndicatorListQuery = {|
-  // IdNamePair is defined in unbundling aid types
-  // this list feeds off oda table from countries and global/concept file
-  indicators: ? Array< {|
-    id: ?string,
-    name: ?string,
-  |} >,
+  indicators: ? {|
+    // this list feeds off oda table from countries and global/concept file
+    // IdNamePair is defined in unbundling aid types
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+  |},
 |};
 
 export type CountriesQuery = {|
@@ -779,6 +775,9 @@ export type SpotlightThemesQuery = {|
     indicators: ? Array< {|
       id: ?string,
       name: ?string,
+      heading: ?string,
+      tooltip: ?string,
+      source: ?string,
     |} >,
     default_indicator: ?string,
   |} >,

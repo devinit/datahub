@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.12",
   "config": {
-    "api": "http://localhost:3000/graphql"
+    "api": "https://datahub-api-rtliuzpeor.now.sh/graphql"
   },
   "now": {
     "name": "datahub",
@@ -20,7 +20,8 @@
     "build": "BABEL_ENV=development NODE_ENV=development npm run clean && next build",
     "start": "NODE_ENV=production PORT=8080 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
-    "pull": "npm run build-tools && node dist/PullApiData/index.js",
+    "pull": "npm run build-tools && node dist/pullApiData/index.js",
+    "precache": "npm run build-tools && node dist/precache/index.js",
     "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
@@ -114,6 +115,11 @@
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
     "usus": "^1.6.0"
+  },
+  "git-pre-hooks": {
+    "pre-push": [
+      "npm run lint"
+    ]
   },
   "jest": {
     "coverageDirectory": "./coverage/",

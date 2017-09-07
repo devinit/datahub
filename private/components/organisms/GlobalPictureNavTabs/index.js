@@ -33,7 +33,8 @@ const globalPictureNavBarTab = (props: Props) =>
     showUsingThisViz
     navBarItems={data.globalPictureThemes}
     changeActiveIndicator={props.changeIndicator}
-    activeIndicator={props.state.indicator || props.activeIndicator}
+    activeIndicator={props.state && props.state.indicator ?
+      props.state.indicator : props.activeIndicator}
   />);
 
 export default connect(mapStateToProps, mapDispatchToProps)(globalPictureNavBarTab);

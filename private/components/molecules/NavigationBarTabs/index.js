@@ -7,12 +7,10 @@ import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
 import TourContainer from 'components/molecules/TourContainer';
 import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
 
-type NavItem = GlobalPictureThemesQuery;
-
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => Dispatch<T>;
 
 type Props<T> = {
-  navBarItems: NavItem[],
+  navBarItems: NavBarItem[], // defined in global types
   activeIndicator: string,
   changeActiveIndicator?: ChangeActiveIndicator<T>,
   showUsingThisViz?: boolean,
@@ -47,9 +45,9 @@ const TabLink = glamorous.a({
 });
 
 class Tabs<T> extends React.Component {
-  static selectedNavBarThemeIndex(activeIndicator: string, navBarItems: NavItem[]): number {
+  static selectedNavBarThemeIndex(activeIndicator: string, navBarItems: NavBarItem[]): number {
     let themeIndex = 0;
-    navBarItems.forEach((current: NavItem, index: number) => {
+    navBarItems.forEach((current: NavBarItem, index: number) => {
       if (!current.indicators) throw new Error('indicators missing in nav bar props');
       const indicator = current.indicators.find(obj => obj.id === activeIndicator);
       if (indicator) themeIndex = index;
@@ -69,7 +67,7 @@ class Tabs<T> extends React.Component {
     this.navBarItems = props.navBarItems;
   }
   state: State
-  navBarItems: NavItem[];
+  navBarItems: NavBarItem[];
   handleClick(index: number, event: any) {
     event.preventDefault();
     this.setState({
@@ -97,7 +95,7 @@ class Tabs<T> extends React.Component {
   }
   toolTipinfo() {
     let active = { heading: 'N/A', source: 'N/A' };
-    this.navBarItems.forEach((navItem: NavItem) => {
+    this.navBarItems.forEach((navItem: NavBarItem) => {
       if (navItem.indicators) {
         const item = navItem.indicators.find(obj => obj.id === this.state.activeIndicator);
         if (item && item.tooltip) active = {...item, heading: item.tooltip};
@@ -126,7 +124,7 @@ class Tabs<T> extends React.Component {
   _renderTitles() {
     return (
       <TabsContainer>
-        {this.navBarItems.map((navItem: NavItem, index: number) => {
+        {this.navBarItems.map((navItem: NavBarItem, index: number) => {
           const activeClass = this.state.selected === index ? 'active' : '';
           if (!navItem.id || !navItem.name) throw new Error('navbar id and name missing');
           return (

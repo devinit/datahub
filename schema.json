@@ -320,17 +320,13 @@
               "deprecationReason": null
             },
             {
-              "name": "bubbleChartIndicatorsList",
-              "description": "IdNamePair is defined in unbundling aid types \nthis list feeds off oda table from countries and global/concept file",
+              "name": "bubbleChartOptions",
+              "description": "",
               "args": [],
               "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "IdNamePair",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "BubbleChartOptions",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -1520,6 +1516,65 @@
         },
         {
           "kind": "OBJECT",
+          "name": "BubbleChartOptions",
+          "description": "",
+          "fields": [
+            {
+              "name": "indicators",
+              "description": "this list feeds off oda table from countries and global/concept file\nIdNamePair is defined in unbundling aid types ",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "IdNamePair",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "incomeGroups",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "IdNamePair",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "regions",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Region",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
           "name": "IdNamePair",
           "description": "",
           "fields": [
@@ -1537,6 +1592,53 @@
             },
             {
               "name": "name",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Region",
+          "description": "",
+          "fields": [
+            {
+              "name": "name",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "id",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "color",
               "description": "",
               "args": [],
               "type": {
@@ -3805,6 +3907,30 @@
           "name": "LocalGovernmentFinance",
           "description": "",
           "fields": [
+            {
+              "name": "startYear",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "currencyCode",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
             {
               "name": "revenueAndGrants",
               "description": "come from finance file",

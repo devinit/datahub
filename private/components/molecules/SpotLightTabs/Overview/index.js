@@ -1,10 +1,8 @@
 // @flow
-import { Container, Header, Grid } from 'semantic-ui-react';
 import React from 'react';
-import { P } from 'glamorous';
-import { big } from 'components/theme';
-import { red } from 'components/theme/semantic';
+import { Container, Grid } from 'semantic-ui-react';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import {TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
 import { NoData } from 'lib/utils/constants';
@@ -25,47 +23,47 @@ const Overview = (props: Props) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
-            {overviewDistrictPoverty.title}
+          <HeaderTitle>
+            {overviewDistrictPoverty.title ? overviewDistrictPoverty.title.toUpperCase() : ''}
             {overviewTabRegional.poorestPeople && overviewTabRegional.poorestPeople.toolTip
               ? <TabsToolTip {...overviewTabRegional.poorestPeople.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {overviewTabRegional.poorestPeople && overviewTabRegional.poorestPeople.value
-              ? overviewTabRegional.poorestPeople.value
+              ? `${overviewTabRegional.poorestPeople.value} %`
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
-            {overviewResources.title}
+          <HeaderTitle>
+            {overviewResources.title ? overviewResources.title.toUpperCase() : '' }
             {overviewTabRegional.regionalResources && overviewTabRegional.regionalResources.toolTip
               ? <TabsToolTip {...overviewTabRegional.regionalResources.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             ${overviewTabRegional.regionalResources && overviewTabRegional.regionalResources.value
               ? overviewTabRegional.regionalResources.value
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle>
             {govtSpendPerPerson.title}
             {overviewTabRegional.localGovernmentSpendPerPerson &&
             overviewTabRegional.localGovernmentSpendPerPerson.toolTip
               ? <TabsToolTip {...overviewTabRegional.localGovernmentSpendPerPerson.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {overviewTabRegional.localGovernmentSpendPerPerson &&
             overviewTabRegional.localGovernmentSpendPerPerson.value
               ? overviewTabRegional.localGovernmentSpendPerPerson.value
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
       </Grid>
     </Container>
