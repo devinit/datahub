@@ -1,8 +1,8 @@
 // @flow
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
-import { groupBy } from 'ramda/src/groupBy';
-import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
+import groupBy from 'ramda/src/groupBy';
+import { Container, Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import TreeChart from 'components/atoms/TreeChart/index';
 import Timeline from 'components/atoms/Timeline/index';
@@ -28,39 +28,41 @@ const TreeChartContainer = glamorous.div({
 });
 
 const groupByYear = groupBy(d => d.year);
+const groupByBudgetType = groupBy(d => d.budget_type);
 
 type Props = {
-  headerTitle: string,
-  headerPosition: 'top' | 'bottom',
-  showHeaderOptions: boolean,
+  title: string,
+  inverted?: boolean,
+  year: number,
+  data: Object[],
+  currency: string,
+  currencyOptions: Object[],
+  budgetType: string,
+  budgetTypeOptions: Object[],
   config: {
     line: Object,
     partition: Object,
   },
-  data: Object[],
-  currency: string,
-  currencies: Object[],
-  year: string,
-  budgetType: string,
-  budgetTypes: Object[],
-  setBudgetType(budgetType: string): void,
-  setYear(year: number): void,
-  setCurrency(currency: string): void,
+  onChangeYear(year: number): void,
+  onChangeCurrency(currency: string): void,
+  onChangeBudgetType(budgetType: string): void,
 }
 
 type State = {
   treesByYear: Object,
   trend: Object[],
   level: string,
+  lowestYear: number,
+  highestYear: number,
 }
 
-export default class TripleLinePartition extends Component {
+export default class LinePartition extends Component {
   // eslint-disable-next-line react/sort-comp
   state: State;
 
   constructor(props: Props) {
     super(props);
-    this.setState(this.createInitialState(props));
+    this.state = this.createInitialState(props);
   }
 
   componentWillReceiveProps(props: Props) {
@@ -78,32 +80,42 @@ export default class TripleLinePartition extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   createInitialState(props: Props) {
-    const level = props.data.find(d => d.levels.length === 1).levels[0];
+    const years = props.data.map(d => d.year);
+    const lowestYear = Math.min.apply(null, years);
+    const highestYear = Math.max.apply(null, years);
+    const [root = {levels: []}] = props.data;
+    const level = root.levels[0];
 
     const trend = this.createTrendState(level, this.props.currency);
-    const treesByYear = this.createTreeState(this.props.budgetType, this.props.currency);
+    const treesByYear = this.createTreeState();
+    console.log(trend);
 
     return {
       level,
       trend,
       treesByYear,
+      lowestYear,
+      highestYear,
     };
   }
 
-  createTreeState(budgetType: string, currency: string) {
-    return groupByYear(this.props.data
-      .filter(d => d.budget_type === budgetType)
-      .map(d => {
-        const value = currency === 'US$' ? d.value : d.value_ncu;
-        return {
-          ...d,
-          value,
-          color: value > 0 ? null : 'rgb(240, 122, 146)',
-          nodeParent: d.levels[d.levels.length - 2],
-          nodeId: d.levels[d.levels.length - 1],
-        };
-      })
-    );
+  createTreeState(currency) {
+    const groupedByYear = groupByYear(this.props.data.map(d => {
+      const value = currency === 'US$' ? d.value : d.value_ncu;
+      return {
+        ...d,
+        value,
+        color: d.value > 0 ? null : 'rgb(240, 122, 146)',
+        nodeParent: d.levels[d.levels.length - 2],
+        nodeId: d.levels[d.levels.length - 1],
+      };
+    }));
+
+    Object.keys(groupedByYear)
+      .forEach(year => {
+        groupedByYear[year] = groupByBudgetType(groupedByYear[year]);
+      });
+    return groupedByYear;
   }
 
   createTrendState(level: string, currency: string) {
@@ -123,27 +135,33 @@ export default class TripleLinePartition extends Component {
   }
 
   render() {
-    return (<div>
-      {this.props.headerPosition !== 'top' ? '' :
+    return (<Container>
+
+      {!this.props.inverted ? '' :
         <LinePartitionHeader
-          title={this.props.headerTitle}
+          title={this.props.title}
           year={this.props.year}
           budgetType={this.props.budgetType}
-          budgetTypeOptions={this.props.budgetTypes}
-          onChangeBudgetType={this.props.setBudgetType}
+          budgetTypeOptions={this.props.budgetTypeOptions}
+          onChangeBudgetType={this.props.onChangeBudgetType}
           currency={this.props.currency}
-          currencyOptions={this.props.currencies}
-          onChangeCurrency={this.props.setCurrency}
+          currencyOptions={this.props.currencyOptions}
+          onChangeCurrency={this.props.onChangeCurrency}
         />}
 
       <Grid>
         <Grid.Column width={5} style={{ paddingRight: 0 }}>
           <CardContainer>
             <Timeline
-              onYearChanged={year => this.props.setYear(+year)}
+              onYearChanged={year => this.props.onChangeYear(+year)}
               height="180px"
               config={{
                 ...this.props.config.line,
+                timeAxis: {
+                  ...this.props.config.line.timeAxis,
+                  axisMinimum: this.state.lowestYear.toString(),
+                  axisMaximum: this.state.highestYear.toString(),
+                },
                 anchor: { start: this.props.year.toString() },
               }}
               data={this.state.trend}
@@ -157,28 +175,28 @@ export default class TripleLinePartition extends Component {
               height="222px"
               config={{
                 ...this.props.config.partition,
-                labeling: { prefix: this.state.currency },
+                labeling: { prefix: this.props.currency },
               }}
               onClick={(d: { id: string }) => this.setLevel(d.id)}
-              data={this.state.treesByYear[this.props.year]}
+              data={this.state.treesByYear[this.props.year][this.props.budgetType]}
             />
           </TreeChartContainer>
         </Grid.Column>
       </Grid>
 
-      {this.props.headerPosition !== 'bottom' ? '' :
+      {this.props.inverted ? '' :
         <LinePartitionHeader
-          title={this.props.headerTitle}
+          title={this.props.title}
           year={this.props.year}
           budgetType={this.props.budgetType}
-          budgetTypeOptions={this.props.budgetTypes}
-          onChangeBudgetType={this.props.setBudgetType}
+          budgetTypeOptions={this.props.budgetTypeOptions}
+          onChangeBudgetType={this.props.onChangeBudgetType}
           currency={this.props.currency}
-          currencyOptions={this.props.currencies}
-          onChangeCurrency={this.props.setCurrency}
+          currencyOptions={this.props.currencyOptions}
+          onChangeCurrency={this.props.onChangeCurrency}
         />}
 
-    </div>);
+    </Container>);
   }
 }
 
