@@ -1,9 +1,8 @@
 // @flow
-import { config } from 'package.json';
-import { createApolloFetch } from 'apollo-fetch';
 import fs from 'fs-extra';
 import path from 'path';
 import prettier from 'prettier';
+import { getData } from '../utils';
 import COUNTRIES_QUERY from './queries/Countries.graphql';
 import DISTRICT_QUERY from './queries/Districts.graphql';
 import PAGES_DATA_QUERY from './queries/PageData.graphql';
@@ -11,20 +10,12 @@ import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
 import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
-import BUBBLE_INDICATORS_QUERY from './queries/BubbleChartIndicatorList.graphql'
+import BUBBLE_INDICATORS_QUERY from './queries/BubbleChartIndicatorList.graphql';
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';
 const baseOrganismsPath = 'private/components/organisms';
-const uri = config.api;
 
-const apolloFetch = createApolloFetch({ uri });
-
-type ApolloResponse<T> = {
-  errors: string,
-  data: T,
-  extensions: string,
-};
 type CallBack<T> = {
   (data: T): string,
 };
@@ -36,17 +27,6 @@ type GetAndWriteDataOpts<T> = {
   cb?: CallBack<T>,
 };
 
-export async function getData<T>(query: string, variables?: Object): Promise<T> {
-  try {
-    const response: ApolloResponse<T> = variables
-      ? await apolloFetch({ query, variables })
-      : await apolloFetch({ query });
-    if (response.error) throw response.errors;
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-}
 
 const jsonToJs = (json: string): string =>
   `/* eslint-disable */

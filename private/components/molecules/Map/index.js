@@ -12,7 +12,7 @@ import RankingsTable from 'components/molecules/RankingsTable';
 import type { Props as RankingsTableProps } from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
 import type {Route} from 'lib/utils';
-import {approximate, countryOrDistrictLink} from 'lib/utils';
+import {countryOrDistrictLink} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { MapConfig } from './config';
 import mapConfigs from './config';
@@ -97,7 +97,8 @@ class Map extends Component {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('start_year is missing in props');
     if (!props.mapData.default_year) throw new Error('default_year is missing in props');
-    const currentYear = props.state && props.state.year ? props.state.year.year : props.mapData.default_year;
+    const currentYear = props.state && props.state.year ?
+      props.state.year : props.mapData.default_year;
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;

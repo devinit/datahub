@@ -1,7 +1,8 @@
 query Poverty {
-  bubbleChartIndicatorsList {
-    id
-    name
-  }
-
+  bubbleChartOptions {
+      indicators {
+        id
+        name
+      }
+    }
 }

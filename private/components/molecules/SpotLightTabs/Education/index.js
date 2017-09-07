@@ -3,8 +3,6 @@ import React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import {TabsP, HeaderTitle, TabWrapper} from 'components/atoms/TabsText';
 import { P } from 'glamorous';
-import { big } from 'components/theme';
-import { red } from 'components/theme/semantic';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';

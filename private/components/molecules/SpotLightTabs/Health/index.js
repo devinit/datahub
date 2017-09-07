@@ -26,7 +26,8 @@ const Health = (props: Props) => {
           <Grid.Column computer={5} tablet={16} mobile={16}>
             <HeaderTitle>
               {healthPerformance.title}
-              {healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.toolTip
+              {healthTabRegional.districtPerformance &&
+                healthTabRegional.districtPerformance.toolTip
                 ? <TabsToolTip {...healthTabRegional.districtPerformance.toolTip} />
                 : ''}
             </HeaderTitle>

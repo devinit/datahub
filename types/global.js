@@ -22,7 +22,6 @@ export type Country = {|
     countryType: string,
 |}
 
-
 // TODO: allan improvise to remove at some point in future
 // in favour of auto generated types
 export type Resource = {|
@@ -42,3 +41,18 @@ export type Resource = {|
   direction: ?string,
   color: ?string,
 |};
+
+export type NavIndicator = {
+    id: ?string,
+    name: ?string,
+    heading: ?string,
+    tooltip: ?string,
+    source: ?string,
+}
+
+export type NavBarItem = {|
+  id: ?string,
+  name: ?string,
+  indicators: ? Array<NavIndicator>,
+  default_indicator: ?string,
+|}

@@ -47,7 +47,8 @@ const Population = (props: Props) => {
               : ''}
           </P>
           <TabsP>
-            {populationTabRegional.populationDensity && populationTabRegional.populationDensity.value
+            {populationTabRegional.populationDensity &&
+              populationTabRegional.populationDensity.value
               ? `${populationTabRegional.populationDensity.value}`
               : NoData}
           </TabsP>
