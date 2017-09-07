@@ -1,6 +1,6 @@
 // @flow
 import { graphql } from 'react-apollo';
-import Chart from 'components/molecules/TripleLinePartition';
+import Chart from 'components/molecules/MultiLinePartition';
 import config from 'visboxConfigs/linePartition';
 import QUERY from './query.graphql';
 
@@ -15,16 +15,30 @@ const withData = graphql(QUERY, {
 
     if (error) throw new Error(error);
 
+    const {
+      currencyCode,
+      expenditure = [],
+      revenueAndGrants = [],
+      finance = [],
+    } = data.governmentFinance || {};
     return {
       loading,
       config,
-      ...(data.governmentFinance || {
-        revenueAndGrants: [],
-        expenditure: [],
-        finance: [],
-        currencyCode: '',
-        startYear: 2015,
-      }),
+      currencyCode,
+      items: [
+        {
+          title: 'Revenue And Grants',
+          data: revenueAndGrants,
+        },
+        {
+          title: 'Financing',
+          data: finance,
+        },
+        {
+          title: 'Expenditure',
+          data: expenditure,
+        },
+      ]
     };
   },
 });

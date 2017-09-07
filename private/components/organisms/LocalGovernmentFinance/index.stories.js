@@ -5,4 +5,4 @@ import GovernmentFinanceChart from '.';
 
 storiesOf('Tabs', module)
   .addDecorator(withApolloProvider())
-  .add('local government Finance', () => <GovernmentFinanceChart country="uganda" id="wakiso" />);
+  .add('local government Finance', () => <GovernmentFinanceChart country="uganda" id="wakiso" startYear={2015} />);
