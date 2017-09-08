@@ -13,7 +13,7 @@ module.exports = {
     'import/resolver': {
       'babel-module': {
         'extensions': ['.js', '.graphql', '.jsx', '.gql'],
-        'root': ['private', 'public/semantic', 'public/img'],
+        'root': ['private', 'tools', 'public/semantic', 'public/img'],
         'alias': {
           "package.json": "./package.json"
         }

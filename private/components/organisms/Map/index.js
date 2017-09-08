@@ -1,57 +1,74 @@
 // @flow
-import React from 'react';
-import { graphql } from 'react-apollo';
+import React, {Component} from 'react';
 import Map from 'components/molecules/Map';
 import { connect } from 'react-redux';
 import type { State, AppState } from 'lib/reducers';
-import { MapBackground } from 'components/atoms/Backgrounds';
 import LoadingBar from 'components/molecules/LoadingBar';
+import { MapBackground } from 'components/atoms/Backgrounds';
+import {getData} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import MAPSQUERY from './Maps.graphql';
 
-type WrapperProps = {
-  loading: boolean,
+type Props = {
   app: AppState,
+  id: string,
   state: StateToShare,
-  ...MapDataQuery,
+  pathName: string
 };
+class MapOrganism extends Component {
+  static getIndicatorId(props: Props): string {
+    if (props.id) return props.id;
+    if (props.state && props.state.indicator) return props.state.indicator;
+    if (props.pathName && props.pathName.includes('spotlight')) {
+      return props.app.spotlightIndicator;
+    }
+    return props.app.globalIndicator;
+  }
+  static getIndicatorData(props: Props): Promise<MapDataQuery> {
+    const id = MapOrganism.getIndicatorId(props);
+    const variables = { id };
+    return getData(MAPSQUERY, variables);
+  }
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      loading: true,
+      firstLoad: true,
+      data: null
+    };
+  }
+  state: {
+    loading: boolean,
+    firstLoad: boolean,
+    data: MapDataQuery | null
+  }
+  /* eslint react/no-did-mount-set-state: 0 */
+  async componentDidMount() {
+    const data = await MapOrganism.getIndicatorData(this.props);
+    this.setState({data, firstLoad: false, loading: false});
+  }
+  async componentWillReceiveProps(nextProps: Props) {
+    if (nextProps !== this.props) {
+      const data = await MapOrganism.getIndicatorData(nextProps);
+      this.setState({data, firstLoad: false, loading: false});
+    }
+  }
 
-type WithApolloProps = {
-  pathName: string,
-  state?: StateToShare,
-  app: AppState,
-};
-
-const MapWrapper = (props: WrapperProps) => {
-  if (props.loading || !props.mapData) {
+  render() {
     return (
       <div>
-        <LoadingBar loading={props.loading} />
-        <MapBackground />
+        {this.state.loading ? <LoadingBar loading={this.state.loading} /> : ''}
+        {this.state.data && this.state.data.mapData ?
+          <Map state={this.props.state} mapData={this.state.data.mapData} /> :
+          <MapBackground />
+        }
       </div>
     );
   }
-  return <Map {...props} />;
-};
-
-const MapWithApollo = graphql(MAPSQUERY, {
-  options: (props: WithApolloProps) => {
-    if (props.id) return { variables: { id: props.id } };
-    if (props.state && props.state.indicator) return { variables: { id: props.state.indicator } };
-    if (props.pathName && props.pathName.includes('spotlight')) {
-      return { variables: { id: props.app.spotlightIndicator } };
-    }
-    return { variables: { id: props.app.globalIndicator } };
-  },
-  props: ({ data }) => {
-    const { error } = data;
-    if (error) console.error('map graphql error: ', error);
-    return data;
-  },
-})(MapWrapper);
+}
 
 const mapStateToProps = ({ app }: State) => ({ app });
 
-const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
+const MapWithRedux = connect(mapStateToProps)(MapOrganism);
 
 export default MapWithRedux;
