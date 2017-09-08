@@ -43,17 +43,18 @@ class MapOrganism extends Component {
     data: MapDataQuery | null
   }
   /* eslint react/no-did-mount-set-state: 0 */
-  async componentDidMount() {
-    const data = await MapOrganism.getIndicatorData(this.props);
-    this.setState({data, firstLoad: false, loading: false});
+  componentDidMount() {
+    this.initState(this.props);
   }
-  async componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) {
-      const data = await MapOrganism.getIndicatorData(nextProps);
-      this.setState({data, firstLoad: false, loading: false});
+      this.initState(nextProps);
     }
   }
-
+  async initState(props: Props) {
+    const data = await MapOrganism.getIndicatorData(props);
+    this.setState({data, firstLoad: false, loading: false});
+  }
   render() {
     return (
       <div>
