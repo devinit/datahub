@@ -19,6 +19,7 @@ const Health = (props: Props) => {
   const healthCareFunding = getPageLine('health-care-funding');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   const healthTabRegional = props.healthTabRegional;
+  console.log('ranks', healthTabRegional);
   return (
     <Container>
       <TabWrapper>
@@ -38,7 +39,9 @@ const Health = (props: Props) => {
             </TabsP>
             <p>out of 100, and is ranked in</p>
             <TabsP>
-              ...
+              {healthTabRegional.districtHealthRank && healthTabRegional.districtHealthRank.value
+                ? healthTabRegional.districtHealthRank.value
+                : NoData}
             </TabsP>
             <p>place overall</p>
           </Grid.Column>
@@ -52,7 +55,7 @@ const Health = (props: Props) => {
             </HeaderTitle>
             <TabsP>
               {healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.value
-                ? healthTabRegional.treatmeantOfTb.value
+                ? `${healthTabRegional.treatmeantOfTb.value} %`
                 : NoData}
             </TabsP>
           </Grid.Column>
@@ -66,7 +69,7 @@ const Health = (props: Props) => {
             </HeaderTitle>
             <TabsP>
               {healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.value
-                ? healthTabRegional.healthCareFunding.value
+                ? `US$ ${healthTabRegional.healthCareFunding.value}`
                 : NoData}
             </TabsP>
           </Grid.Column>

@@ -3885,6 +3885,18 @@
               "deprecationReason": null
             },
             {
+              "name": "districtHealthRank",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "healthCareFunding",
               "description": "HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE? ",
               "args": [],

@@ -94,7 +94,7 @@ const Educaton = (props: Props) => {
             <TabsP>
               {educationTabRegional.primaryEducationfunding &&
               educationTabRegional.primaryEducationfunding.value
-                ? `${educationTabRegional.primaryEducationfunding.value} US$`
+                ? `US$ ${educationTabRegional.primaryEducationfunding.value}`
                 : NoData}
             </TabsP>
           </Grid.Column>

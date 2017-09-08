@@ -44,8 +44,8 @@ const Overview = (props: Props) => {
               : ''}
           </HeaderTitle>
           <TabsP>
-            ${overviewTabRegional.regionalResources && overviewTabRegional.regionalResources.value
-              ? overviewTabRegional.regionalResources.value
+            {overviewTabRegional.regionalResources && overviewTabRegional.regionalResources.value
+              ? `US$ ${overviewTabRegional.regionalResources.value}`
               : NoData}
           </TabsP>
         </Grid.Column>
