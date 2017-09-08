@@ -51,9 +51,10 @@ class MapOrganism extends Component {
       this.initState(nextProps);
     }
   }
-  async initState(props: Props) {
-    const data = await MapOrganism.getIndicatorData(props);
-    this.setState({data, firstLoad: false, loading: false});
+  initState(props: Props) {
+    MapOrganism.getIndicatorData(props)
+      .then(data => this.setState({data, firstLoad: false, loading: false}))
+      .catch(console.error);
   }
   render() {
     return (
