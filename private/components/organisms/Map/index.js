@@ -17,8 +17,9 @@ type BoundAction = {
 
 type Props = BoundAction & {
   app: AppState,
+  id: string,
   state: StateToShare,
-  ...MapDataQuery,
+  pathName: string
 };
 class MapOrganism extends Component {
   static getIndicatorId(props: Props): string {
