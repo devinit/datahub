@@ -15,7 +15,7 @@ export type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>
 type Props<T> = {
   navBarItems: NavBarItem[], // defined in global types
   activeIndicator: string,
-  changeActiveIndicator: ChangeActiveIndicator<T>,
+  changeActiveIndicator?: ChangeActiveIndicator<T>, // made optional to make flow happy!!!
   changeLoadingStatus: ChangeLoadingStatus,
   showUsingThisViz?: boolean,
   loading: boolean,
@@ -82,7 +82,9 @@ class Tabs<T> extends React.Component {
   navBarItems: NavBarItem[];
 
   fireReduxActions(activeIndicator: string) {
-    this.props.changeActiveIndicator(activeIndicator);
+    if (this.props.changeActiveIndicator) {
+      this.props.changeActiveIndicator(activeIndicator);
+    }
     this.props.changeLoadingStatus(true);
   }
   handleClick(index: number, event: any) {
