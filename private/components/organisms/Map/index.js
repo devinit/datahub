@@ -2,14 +2,20 @@
 import React, {Component} from 'react';
 import Map from 'components/molecules/Map';
 import { connect } from 'react-redux';
-import type { State, AppState } from 'lib/reducers';
-import LoadingBar from 'components/molecules/LoadingBar';
+import type { State, AppState, Action } from 'lib/reducers';
 import { MapBackground } from 'components/atoms/Backgrounds';
 import {getData} from 'lib/utils';
+import { bindActionCreators } from 'redux';
+import { changeLoadingStatus } from 'lib/actions';
+import type { LoadingStatus } from 'lib/actions';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import MAPSQUERY from './Maps.graphql';
 
-type Props = {
+type BoundAction = {
+  changeLoadingStatus: (loading: boolean) => Dispatch<LoadingStatus>,
+};
+
+type Props = BoundAction & {
   app: AppState,
   id: string,
   state: StateToShare,
@@ -32,14 +38,10 @@ class MapOrganism extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {
-      loading: true,
-      firstLoad: true,
       data: null
     };
   }
   state: {
-    loading: boolean,
-    firstLoad: boolean,
     data: MapDataQuery | null
   }
   /* eslint react/no-did-mount-set-state: 0 */
@@ -47,19 +49,22 @@ class MapOrganism extends Component {
     this.initState(this.props);
   }
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) {
+    if (nextProps.app.globalIndicator !== this.props.app.globalIndicator ||
+      nextProps.app.spotlightIndicator !== this.props.app.spotlightIndicator) {
       this.initState(nextProps);
     }
   }
   initState(props: Props) {
     MapOrganism.getIndicatorData(props)
-      .then(data => this.setState({data, firstLoad: false, loading: false}))
+      .then(data => {
+        this.setState({data});
+        props.changeLoadingStatus(false);
+      })
       .catch(console.error);
   }
   render() {
     return (
       <div>
-        {this.state.loading ? <LoadingBar loading={this.state.loading} /> : ''}
         {this.state.data && this.state.data.mapData ?
           <Map state={this.props.state} mapData={this.state.data.mapData} /> :
           <MapBackground />
@@ -68,9 +73,13 @@ class MapOrganism extends Component {
     );
   }
 }
-
+const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => {
+  return {
+    changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
+  };
+};
 const mapStateToProps = ({ app }: State) => ({ app });
 
-const MapWithRedux = connect(mapStateToProps)(MapOrganism);
+const MapWithRedux = connect(mapStateToProps, mapDispatchToProps)(MapOrganism);
 
 export default MapWithRedux;

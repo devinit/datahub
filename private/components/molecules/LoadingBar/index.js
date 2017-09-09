@@ -37,13 +37,15 @@ export default class LoadingBar extends Component {
   state: State;
   componentDidMount() {
     if (this.props.loading && this.setState) this.launch();
-    this.timeOutInterval = setTimeout(() => {
-      if (this.progressInterval) clearInterval(this.progressInterval);
-    }, this.timeChange * 4);
+    this.timeOutProgress();
   }
   componentWillReceiveProps(props: Props) {
     if (!props.loading) {
       this.terminate();
+    } else {
+      this.setState({percent: 0, time: 0});
+      this.launch();
+      this.timeOutProgress();
     }
   }
   componentWillUnmount() {
@@ -59,6 +61,11 @@ export default class LoadingBar extends Component {
       const time = this.timeChange + this.state.time;
       this.setState({ percent, time });
     }, this.timeChange);
+  }
+  timeOutProgress() {
+    this.timeOutInterval = setTimeout(() => {
+      if (this.progressInterval) clearInterval(this.progressInterval);
+    }, this.timeChange * 4);
   }
   terminate() {
     clearInterval(this.progressInterval);
