@@ -5,21 +5,27 @@ import { Container } from 'semantic-ui-react';
 import NavigationBarTabsContainer from 'components/atoms/NavigationBarTabsContainer';
 import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
 import TourContainer from 'components/molecules/TourContainer';
+import type { LoadingStatus } from 'lib/actions';
+import LoadingBar from 'components/molecules/LoadingBar';
 import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
 
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => Dispatch<T>;
+export type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>
 
 type Props<T> = {
   navBarItems: NavBarItem[], // defined in global types
   activeIndicator: string,
-  changeActiveIndicator?: ChangeActiveIndicator<T>,
+  changeActiveIndicator: ChangeActiveIndicator<T>,
+  changeLoadingStatus: ChangeLoadingStatus,
   showUsingThisViz?: boolean,
+  loading: boolean,
   selected?: number,
   textAlign?: string,
 };
 type State = {
   selected: number,
   info: string,
+  loading: boolean,
   activeIndicator: string,
   tourVisibility: boolean,
 };
@@ -60,6 +66,7 @@ class Tabs<T> extends React.Component {
     const selected = Tabs.selectedNavBarThemeIndex(props.activeIndicator, props.navBarItems);
     this.state = {
       selected,
+      loading: true,
       tourVisibility: false,
       activeIndicator: props.activeIndicator,
       info: '',
@@ -67,26 +74,29 @@ class Tabs<T> extends React.Component {
     this.navBarItems = props.navBarItems;
   }
   state: State
+  componentWillReceiveProps(nextProps: Props<T>) {
+    if (nextProps !== this.props) {
+      this.setState({loading: nextProps.loading});
+    }
+  }
   navBarItems: NavBarItem[];
+
+  fireReduxActions(activeIndicator: string) {
+    this.props.changeActiveIndicator(activeIndicator);
+    this.props.changeLoadingStatus(true);
+  }
   handleClick(index: number, event: any) {
     event.preventDefault();
-    this.setState({
-      selected: index,
-    });
     if (!this.navBarItems[index].default_indicator) { throw new Error('default indicator missing in nav items'); }
     const activeIndicator: string = this.navBarItems[index].default_indicator;
-    this.setState({ activeIndicator });
-    if (activeIndicator && this.props.changeActiveIndicator) {
-      this.props.changeActiveIndicator(activeIndicator);
-    }
+    this.fireReduxActions(activeIndicator);
+    this.setState({ selected: index, activeIndicator, loading: true });
   }
   handleSelect(event: any) {
     event.preventDefault();
     const activeIndicator = event.target.value;
-    this.setState({ activeIndicator });
-    if (activeIndicator && this.props.changeActiveIndicator) {
-      this.props.changeActiveIndicator(activeIndicator);
-    }
+    this.fireReduxActions(activeIndicator);
+    this.setState({ activeIndicator, loading: true });
   }
   handleUsingThisViz() {
     if (!this.state.tourVisibility) return this.setState({ tourVisibility: true });
@@ -146,6 +156,7 @@ class Tabs<T> extends React.Component {
   render() {
     return (
       <section>
+        <LoadingBar loading={this.state.loading} />
         <div>
           <Div background={lighterGrey}>
             <Container textAlign={this.props.textAlign || 'left'}>
