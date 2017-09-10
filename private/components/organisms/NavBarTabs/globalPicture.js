@@ -4,9 +4,10 @@ import { changeGlobalIndicator, changeLoadingStatus } from 'lib/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import type { GlobalIndicator} from 'lib/actions';
+import type { Props } from 'components/molecules/NavigationBarTabs';
 import type { State, Action } from 'lib/reducers';
-import type {BoundAction, BoundState} from '.';
-import NavBarTabs from '.';
+import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
+import type {BoundAction, BoundState} from './types';
 import data from './data';
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<GlobalIndicator> =>
@@ -18,8 +19,15 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<GlobalIndic
 const mapStateToProps = ({ app }: State): BoundState =>
   ({ activeIndicator: app.globalIndicator, loading: app.loading });
 
-
-const gloalPictureNavBarTabs = (props) =>
-  <NavBarTabs navBarItems={data.globalPictureThemes} showUsingThisViz {...props} />;
+const gloalPictureNavBarTabs = (props: Props<GlobalIndicator>) =>
+  (<NavigationBarTabs
+    navBarItems={data.globalPictureThemes}
+    showUsingThisViz
+    loading={props.loading}
+    changeActiveIndicator={props.changeActiveIndicator}
+    changeLoadingStatus={props.changeLoadingStatus}
+    activeIndicator={props.state && props.state.indicator ?
+      props.state.indicator : props.activeIndicator}
+  />);
 
 export default connect(mapStateToProps, mapDispatchToProps)(gloalPictureNavBarTabs);

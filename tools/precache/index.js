@@ -1,8 +1,8 @@
 // @flow
 // run as an npm command to get the map & tabs data cached on the api server
 import { getData } from '../utils';
-import globalNavTabsData from '../../private/components/organisms/GlobalPictureNavTabs/data';
-import ugNavTabsData from '../../private/components/organisms/SpotLightNavTabs/ug-data';
+import globalNavTabsData from '../../private/components/organisms/NavBarTabs/data';
+import ugNavTabsData from '../../private/components/organisms/NavBarTabs/ug-data';
 import MapsQuery from '../../private/components/organisms/Map/Maps.graphql';
 import countriesData from '../../private/components/organisms/CountrySearchInput/data';
 import TabsQuery from '../../private/components/organisms/CountryProfileTabs/query.graphql';
