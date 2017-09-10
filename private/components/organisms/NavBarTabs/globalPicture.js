@@ -12,7 +12,7 @@ import data from './data';
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<GlobalIndicator> =>
   ({
-    changeIndicator: bindActionCreators(changeGlobalIndicator, dispatch),
+    changeActiveIndicator: bindActionCreators(changeGlobalIndicator, dispatch),
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 

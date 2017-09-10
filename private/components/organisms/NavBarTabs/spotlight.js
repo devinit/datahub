@@ -12,7 +12,7 @@ import data from './ug-data';
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<SpotLightlIndicator> =>
   ({
-    changeIndicator: bindActionCreators(changeSpotlightIndicator, dispatch),
+    changeActiveIndicator: bindActionCreators(changeSpotlightIndicator, dispatch),
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 
