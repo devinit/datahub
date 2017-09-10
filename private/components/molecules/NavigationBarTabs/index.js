@@ -16,7 +16,7 @@ export type Props<T> = {
   navBarItems: NavBarItem[], // defined in global types
   activeIndicator: string,
   changeActiveIndicator?: ChangeActiveIndicator<T>, // made optional to make flow happy!!!
-  changeLoadingStatus: ChangeLoadingStatus,
+  changeLoadingStatus?: ChangeLoadingStatus,
   showUsingThisViz?: boolean,
   loading: boolean,
   selected?: number,
@@ -82,9 +82,10 @@ class Tabs<T> extends React.Component {
   navBarItems: NavBarItem[];
 
   fireReduxActions(activeIndicator: string) {
-    if (this.props.changeActiveIndicator) {
-      this.props.changeActiveIndicator(activeIndicator);
-    }
+    // these weird ifs are for flow to be happy
+    if (!this.props.changeActiveIndicator) throw new Error('missing redux action creator changeActiveIndicator');
+    this.props.changeActiveIndicator(activeIndicator);
+    if (!this.props.changeLoadingStatus) throw new Error('missing redux action creator changeLoadingStatus');
     this.props.changeLoadingStatus(true);
   }
   handleClick(index: number, event: any) {
