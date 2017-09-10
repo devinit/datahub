@@ -1,7 +1,7 @@
 #!/bin/bash
 ## gets run on host server
-mkdir -p ~/datahub-2
-cd ~/datahub-2 || exit
+mkdir -p ~/datahub
+cd ~/datahub || exit
 
 rm -rf datahub.git && \
   git clone --depth 1 -b master --single-branch git@github.com:devinit/datahub.git datahub.git

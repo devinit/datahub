@@ -7,16 +7,13 @@ LABEL maintainer="epicallan.al@gmail.com"
 RUN mkdir /src
 # This way, dependnecies are cached without the need of cacheing all files.
 ADD package.json /tmp/
-RUN cd /tmp && npm install --silent
+RUN cd /tmp && npm install --production --silent
 RUN cp -a /tmp/node_modules /src/
 
 WORKDIR /src
 
 # Copy the rest of the files to the container workdir
 COPY . /src
-
-
-RUN npm install --production --silent
 
 ENV NODE_ENV production
 
