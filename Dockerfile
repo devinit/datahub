@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:8.4-alpine
 
 LABEL maintainer="epicallan.al@gmail.com"
 

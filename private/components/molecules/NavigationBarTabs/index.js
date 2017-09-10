@@ -12,7 +12,7 @@ import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => Dispatch<T>;
 export type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>
 
-type Props<T> = {
+export type Props<T> = {
   navBarItems: NavBarItem[], // defined in global types
   activeIndicator: string,
   changeActiveIndicator?: ChangeActiveIndicator<T>, // made optional to make flow happy!!!

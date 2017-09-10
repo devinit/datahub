@@ -2,7 +2,7 @@
 import React from 'react';
 import { Div, P } from 'glamorous';
 import { Container, Grid, Icon, Header, Button } from 'semantic-ui-react';
-import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
+import SpotLightNavTabs from 'components/organisms/NavBarTabs/spotlight';
 import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import { SectionHeader } from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';

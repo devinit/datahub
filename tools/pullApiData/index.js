@@ -79,7 +79,7 @@ export const getInternationalResourcesToolTip = async () => {
 };
 export const getGlobalPictureThemes = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'GlobalPictureNavTabs/data.js');
+    const filePath = path.join(baseOrganismsPath, 'NavBarTabs/data.js');
     await getAndWriteData({ query: GLOBAL_PICTURE_THEMES_QUERY, filePath });
   } catch (error) {
     console.error(error);
@@ -88,7 +88,7 @@ export const getGlobalPictureThemes = async () => {
 export const getSpotlightThemes = async () => {
   // currently only getting spotlight uganda theme data
   try {
-    const filePath = path.join(baseOrganismsPath, 'SpotLightNavTabs/ug-data.js');
+    const filePath = path.join(baseOrganismsPath, 'NavBarTabs/ug-data.js');
     const variables = { country: 'uganda' };
     await getAndWriteData({ query: SPOTLIGHT_THEMES_QUERY, filePath, variables });
   } catch (error) {
