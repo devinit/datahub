@@ -19,7 +19,6 @@ const Health = (props: Props) => {
   const healthCareFunding = getPageLine('health-care-funding');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   const healthTabRegional = props.healthTabRegional;
-  console.log('ranks', healthTabRegional);
   return (
     <Container>
       <TabWrapper>
