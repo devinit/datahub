@@ -126,15 +126,15 @@ export default class LinePartition extends Component {
   createTrendState(level: string) {
     const allBudgetTypes = Object.keys(
       this.props.data
-        .reduce((acc, datum) => ({[datum.budget_type]: true}), {})
+        .reduce((acc, datum) => ({...acc, [datum.budget_type]: true}), {})
     );
     const regexString = allBudgetTypes.length > 2 ?
-      allBudgetTypes.filter(d => d.match('budget')).join('|') :
+      allBudgetTypes.filter(d => !d.match(/budget/gi)).join('|') :
       allBudgetTypes.join('|');
     const regex = new RegExp(`(${regexString})`, 'gi');
     return this.props.data
       .filter(d => {
-        const isActualOrProjected = !!d.budget_type.match(regex).length;
+        const isActualOrProjected = d.budget_type.match(regex);
         const isAtSelectedLevel = level
           ? d.levels.length - 1 === d.levels.indexOf(level)
           : d.levels.length === 1;
