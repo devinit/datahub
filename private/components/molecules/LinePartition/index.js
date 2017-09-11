@@ -67,11 +67,6 @@ export default class LinePartition extends Component {
     this.state = this.createInitialState(props);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.currency !== this.props.currency) {
-    }
-  }
-
   setLevel(level: string) {
     const trend = this.createTrendState(level, this.props.currency);
 
@@ -127,9 +122,17 @@ export default class LinePartition extends Component {
   }
 
   createTrendState(level: string) {
+    const allBudgetTypes = Object.keys(
+      this.props.data
+        .reduce((acc, datum) => ({[datum.budget_type]: true}), {})
+    );
+    const regexString = allBudgetTypes.length > 2 ?
+      allBudgetTypes.filter(d => d.match('budget')).join('|') :
+      allBudgetTypes.join('|');
+    const regex = new RegExp(`(${regexString})`, 'gi');
     return this.props.data
       .filter(d => {
-        const isActualOrProjected = d.budget_type.match(/(actual|proj)/gi);
+        const isActualOrProjected = !!d.budget_type.match(regex).length;
         const isAtSelectedLevel = level
           ? d.levels.length - 1 === d.levels.indexOf(level)
           : d.levels.length === 1;
@@ -139,8 +142,9 @@ export default class LinePartition extends Component {
   }
 
   render() {
-    const tree = this.state
-      .treesByYear[this.props.year][this.props.budgetType]
+    const treeOfYear = this.state.treesByYear[this.props.year] || [];
+    const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
+    const tree = treeOfBudgetType
       .map(datum => {
         const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
         return {
