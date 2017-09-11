@@ -12,7 +12,8 @@ import Chart from 'components/atoms/Chart';
 
 type Props = {
   ...SpotLightTabDataQuery,
-  pageData: PageUnit[]
+  pageData: PageUnit[],
+  config: Object,
 }
 
 const Population = (props: Props) => {
