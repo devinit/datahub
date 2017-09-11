@@ -8,8 +8,21 @@ import data from './data';
 
 const StyledPre = glamorous.pre({
   fontFamily: 'inherit',
-  fontSize: '1em',
-  overflow: 'hidden'
+  fontSize: '22px',
+  overflow: 'hidden',
+  fontWeight: '300',
+  lineHeight: '33px',
+  color: '#453f43'
+});
+const BottomWrapper = glamorous.div({
+  '& h3': {
+    lineHeight: '30px !important',
+    fontSize: '24px !important',
+  }
+});
+const TextContainer = glamorous.p({
+  lineHeight: '24px',
+  fontSize: '16px',
 });
 const HeaderContainer = glamorous.div({
   paddingTop: '4em',
@@ -36,30 +49,32 @@ export default () => {
         <Visualization />
       </Container>
       <Container>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column computer="12" tablet="16" mobile="16">
-              <Header as="h3">About this visualization</Header>
-              <p>
-                {data.abtVisualization}
-              </p>
-              {data.dateAccessed}
-              <Header as="h3">Scenario details</Header>
-              <p>
-                {data.scenarioDetails}
-              </p>
-              <Header as="h3">About the data</Header>
-              <p>
-                {data.aboutData}
-              </p>
-              <br />
-            </Grid.Column>
-            <Grid.Column computer="4" tablet="16" mobile="16">
-              <Header as="h3">Download the data</Header>
-              <p>Not yet available</p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <BottomWrapper>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column computer="12" tablet="16" mobile="16">
+                <Header as="h3">About this visualisation</Header>
+                <TextContainer>
+                  {data.abtVisualization}
+                </TextContainer>
+                <TextContainer>{data.dateAccessed}</TextContainer>
+                <Header as="h3">Scenario details</Header>
+                <TextContainer>
+                  {data.scenarioDetails}
+                </TextContainer>
+                <Header as="h3">About the data</Header>
+                <TextContainer>
+                  {data.aboutData}
+                </TextContainer>
+                <br />
+              </Grid.Column>
+              <Grid.Column computer="4" tablet="16" mobile="16">
+                <Header as="h3">Download the data</Header>
+                <TextContainer>Not yet available</TextContainer>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </BottomWrapper>
       </Container>
     </Generic>
   );
