@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import BaseMap from 'components/atoms/BaseMap';
+import BaseMap, {indicatorsWith0dp} from 'components/atoms/BaseMap';
 import type { MapData, PaintMap, Meta } from 'components/atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
 import { grey } from 'components/theme/semantic';
@@ -40,10 +40,11 @@ class Map extends Component {
     if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
     const ThemesWith1dp = ['vulnerability', 'government-finance', 'uganda-poverty', 'uganda-health'];
     const indicatorsWith1dp = ['spotlight_on_uganda.uganda_dependency_ratio'];
+    if (indicatorsWith0dp.includes(meta.id)) return value.toFixed(0);
     if (ThemesWith1dp.includes(meta.theme) || indicatorsWith1dp.includes(meta.id)) {
       return value.toFixed(1);
     }
-    if (meta.uom === '%' || meta.uom === 'US$') return value.toFixed(1);
+    if (meta.uom_display === '%' || meta.uom_display === 'US$') return value.toFixed(1);
     return value;
   }
   constructor(props: Props) {

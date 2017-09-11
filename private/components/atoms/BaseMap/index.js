@@ -24,6 +24,10 @@ import type {
 } from './types';
 
 const NO_DATA = 'No data';
+export const indicatorsWith0dp = [
+  'data_series.natural_hazard',
+  'data_series.number_of_un_appeals',
+  'data_series.forgotten_crisis'];
 class BaseMap extends Component {
   static foldOverSurveyMapFeatures(features: Feature[]): MapData {
     const props = features.reverse().reduce((acc, feature) => {
@@ -57,6 +61,7 @@ class BaseMap extends Component {
   }
   static setPointDataValue(value: number, uom?: string, indicator?: string): string {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
+    if (indicatorsWith0dp.includes(indicator)) return value.toFixed(0);
     return approximate(value);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
