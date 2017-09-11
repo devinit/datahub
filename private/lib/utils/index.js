@@ -28,7 +28,7 @@ export type CallBack<T> = {
   (data: T): string,
 };
 export function getLocalStorageInstance(): LocalStorage | null {
-  if (!localStorage) return null; // we are in an old browser or on server
+  if (!process.browser || !localStorage) return null; // we are in an old browser or on server
   const storedVersion = localStorage.getItem('version');
   if (!storedVersion || storedVersion !== version) {
     // set new version
