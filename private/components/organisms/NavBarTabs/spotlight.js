@@ -17,12 +17,12 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<SpotLightlI
   });
 
 const mapStateToProps = ({ app }: State): BoundState =>
-  ({ activeIndicator: app.globalIndicator, loading: app.loading });
+  ({ activeIndicator: app.spotlightIndicator, loading: app.loading });
 
 
 const spotlightNavBarTabs = (props: Props<SpotLightlIndicator>) =>
   (<NavigationBarTabs
-    navBarItems={data.globalPictureThemes}
+    navBarItems={data.spotlightThemes}
     showUsingThisViz
     loading={props.loading}
     changeActiveIndicator={props.changeActiveIndicator}
