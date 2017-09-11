@@ -19,7 +19,6 @@ import mapConfigs from './config';
 
 type Props = {
   state: StateToShare,
-  loading: boolean,
   ...MapDataQuery,
 };
 
@@ -49,6 +48,7 @@ class Map extends Component {
   }
   constructor(props: Props) {
     super(props);
+    console.log('map props', props);
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.country) throw new Error('country is missing in props');
     this.country = props.mapData.country;

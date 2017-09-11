@@ -2,7 +2,35 @@
 import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
+import { config } from 'package.json';
+import { createApolloFetch } from 'apollo-fetch';
 import {RECIPIENT} from './constants';
+
+const uri = config.api;
+
+const apolloFetch = createApolloFetch({ uri });
+
+export type ApolloResponse<T> = {
+  errors: string,
+  data: T,
+  extensions: string,
+};
+
+export type CallBack<T> = {
+  (data: T): string,
+};
+
+export async function getData<T>(query: string, variables?: Object): Promise<T> {
+  try {
+    const response: ApolloResponse<T> = variables
+      ? await apolloFetch({ query, variables })
+      : await apolloFetch({ query });
+    if (response.error) throw response.errors;
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
 
 export const getCountryName = (slug: string): string => {
   const country = countriesData.countries.find(country => country.slug === slug);

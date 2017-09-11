@@ -525,6 +525,9 @@ export type SpotLightTabDataQuery = {|
         heading: ?string,
       |},
     |},
+    districtHealthRank: ? {|
+      value: ?string,
+    |},
     // WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
     treatmeantOfTb: ? {|
       value: ?string,

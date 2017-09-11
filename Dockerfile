@@ -15,6 +15,8 @@ ENV NODE_ENV production
 
 # stattic data files
 RUN npm run pull
+# makes api calls that get cached on the API server
+RUN npm run precache
 RUN npm run build
 
 EXPOSE 8080

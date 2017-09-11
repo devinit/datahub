@@ -58,24 +58,30 @@ const Educaton = (props: Props) => {
           <Grid.Column computer={5} tablet={16} mobile={16}>
             <HeaderTitle>
               {stdPassRatio.title}
-              {educationTabRegional.educationTabRegional &&
-              educationTabRegional.studentsPassRate.toolTip
-                ? <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} />
-                : ''}
             </HeaderTitle>
             <TabsP>
               {educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.value
-                ? educationTabRegional.studentsPassRate.value
+                ? `${educationTabRegional.studentsPassRate.value} %`
                 : NoData}
             </TabsP>
-            <p>and is ranked in</p>
+            <p>and is ranked in
+              {educationTabRegional.studentsPassRate &&
+              educationTabRegional.studentsPassRate.toolTip
+                ? <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} />
+                : ''}
+            </p>
             <TabsP>
               {educationTabRegional.studentsPassDistrictRank &&
               educationTabRegional.studentsPassDistrictRank.value
                 ? educationTabRegional.studentsPassDistrictRank.value
                 : NoData}
             </TabsP>
-            <P>place overall</P>
+            <P>place overall
+              { educationTabRegional.studentsPassDistrictRank &&
+                educationTabRegional.studentsPassDistrictRank.toolTip
+                ? <TabsToolTip {...educationTabRegional.studentsPassDistrictRank.toolTip} />
+                : ''}
+            </P>
           </Grid.Column>
           <Grid.Column computer={5} tablet={16} mobile={16}>
             <HeaderTitle>
@@ -88,7 +94,7 @@ const Educaton = (props: Props) => {
             <TabsP>
               {educationTabRegional.primaryEducationfunding &&
               educationTabRegional.primaryEducationfunding.value
-                ? educationTabRegional.primaryEducationfunding.value
+                ? `US$ ${educationTabRegional.primaryEducationfunding.value}`
                 : NoData}
             </TabsP>
           </Grid.Column>

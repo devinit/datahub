@@ -7,7 +7,7 @@ import MapsQuery from '../../private/components/organisms/Map/Maps.graphql';
 import countriesData from '../../private/components/organisms/CountrySearchInput/data';
 import TabsQuery from '../../private/components/organisms/CountryProfileTabs/query.graphql';
 
-const getMapsData = (navData: NavBarItem[]): void => {
+export const getMapsData = (navData: NavBarItem[]): void => {
   navData.forEach(item => {
     if (!item.indicators) throw Error('indicators missing in navItem');
     item.indicators.forEach((indicator: NavIndicator) => {
@@ -21,7 +21,7 @@ const getMapsData = (navData: NavBarItem[]): void => {
   });
 };
 
-const getCountryProfileTabsData = (): void => {
+export const getCountryProfileTabsData = (): void => {
   countriesData.countries.forEach((obj: Country) => {
     setTimeout(() => {
       const variables = { id: obj.slug };
@@ -36,7 +36,7 @@ const preCache = () => {
   [globalNavTabsData.globalPictureThemes,
     ugNavTabsData.spotlightThemes]
     .forEach((data) => getMapsData(data));
-  getCountryProfileTabsData();
+  // getCountryProfileTabsData();
 };
 
 if (process.env.NODE_ENV !== 'test') {
