@@ -34,7 +34,7 @@
     "ramda",
     "lodash",
     ["module-resolver", {
-      "root": ["private", "tools", "public/semantic", "public/img", "public/di-charts"],
+      "root": ["private", "public/semantic", "public/img", "public/di-charts"],
       "alias": {
         "package.json": "./package.json"
       }

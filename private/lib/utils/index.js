@@ -17,12 +17,12 @@ export type ApolloResponse<T> = {
 };
 
 export type LocalStorage = {
-  set: (value: string) => void,
-  get: <T>(value: string) => T | void | null,
+  setItem: (key: string, value: string) => void,
+  getItem: <T>(value: string) => T | void | null,
   clear: () => void
 }
 
-type localStorage = LocalStorage;
+declare var localStorage: LocalStorage;
 
 export type CallBack<T> = {
   (data: T): string,
