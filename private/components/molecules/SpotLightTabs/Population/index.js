@@ -1,13 +1,14 @@
 // @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import {TabsP, HeaderTitle, TabWrapper} from 'components/atoms/TabsText';
+import {TabsNoData, TabsP, HeaderTitle, TabWrapper} from 'components/atoms/TabsText';
 import { red } from 'components/theme/semantic';
-import { P } from 'glamorous';
+import { Div, P } from 'glamorous';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
+import Chart from 'components/atoms/Chart';
 
 type Props = {
   ...SpotLightTabDataQuery,
@@ -62,6 +63,18 @@ const Population = (props: Props) => {
               ? <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} />
               : ''}
           </HeaderTitle>
+
+          {populationTabRegional.populationDistribution &&
+          populationTabRegional.populationDistribution.data &&
+          populationTabRegional.populationDistribution.data.length
+            ? <Div paddingRight={'40px'}>
+              <Chart
+                config={props.config.populationDistribution}
+                data={populationTabRegional.populationDistribution.data}
+                height="140px"
+              />
+            </Div>
+            : <TabsNoData />}
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
