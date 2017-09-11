@@ -41,7 +41,7 @@ export default function CountryProfileLowerTabs(props: Props) {
               budgetType={props.budgetType}
               shouldScrollIntoView={props.chartId === GOVERNMENT_FINANCE_LOWER}
               id={props.id}
-              year={props.chartId === GOVERNMENT_FINANCE_LOWER ? props.year : null}
+              startYear={props.year}
               chartId={GOVERNMENT_FINANCE_LOWER}
             />
           </GovernmentFinance>

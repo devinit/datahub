@@ -10,12 +10,13 @@ const withData = graphql(QUERY, {
       id: props.id,
     },
   }),
-  props: ({ data }) => {
+  props: ({ data, ownProps }) => {
     const { error, loading } = data;
 
     if (error) throw new Error(error);
 
     const {
+      startYear,
       currencyCode,
       expenditure = [],
       revenueAndGrants = [],
@@ -25,6 +26,7 @@ const withData = graphql(QUERY, {
       loading,
       config,
       currencyCode,
+      startYear: ownProps.startYear || startYear,
       items: [
         {
           title: 'Revenue And Grants',
