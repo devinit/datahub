@@ -51,11 +51,13 @@ type Props = {
 }
 
 type State = {
-  treesByYear: Object,
+  treesByYear: {
+    [year: number]: {
+      [budgetType: string]: Object[]
+    }
+  },
   trend: Object[],
-  level: string,
-  lowestYear: number,
-  highestYear: number,
+  level: string
 }
 
 export default class LinePartition extends Component {
@@ -68,7 +70,7 @@ export default class LinePartition extends Component {
   }
 
   setLevel(level: string) {
-    const trend = this.createTrendState(level, this.props.currency);
+    const trend = this.createTrendState(level);
 
     this.setState({
       level,
@@ -142,7 +144,7 @@ export default class LinePartition extends Component {
   }
 
   render() {
-    const treeOfYear = this.state.treesByYear[this.props.year] || [];
+    const treeOfYear = this.state.treesByYear[this.props.year] || {};
     const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
     const tree = treeOfBudgetType
       .map(datum => {

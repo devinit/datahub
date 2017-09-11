@@ -95,22 +95,24 @@ export default class MultiLinePartition extends Component {
   }
 
   // eslint-disable-next-line react/sort-comp
-  state: State;
-  // eslint-disable-next-line react/sort-comp
-  props: Props;
-
-  // eslint-disable-next-line react/sort-comp
   constructor(props: Props) {
     super(props);
     this.state = MultiLinePartition.createInitialState(props);
-    this.setCurrency = this.setCurrency.bind(this);
-    this.setBudgetType = this.setBudgetType.bind(this);
-    this.setYear = this.setYear.bind(this);
+    this.setCurrencyBound = this.setCurrency.bind(this);
+    this.setBudgetTypeBound = this.setBudgetType.bind(this);
+    this.setYearBound = this.setYear.bind(this);
   }
+
+  state: State;
 
   componentWillReceiveProps(props: Props) {
     this.setState(MultiLinePartition.createInitialState(props));
   }
+
+  setCurrencyBound: (currency: string) => void;
+  setBudgetTypeBound: (budgetType: string) => void;
+  setYearBound: (year: number) => void;
+  props: Props;
 
   toggleRevenueTour() {
     if (this.state.revenueTourVisible) {
@@ -184,9 +186,9 @@ export default class MultiLinePartition extends Component {
                 budgetType={this.state.budgetType}
                 budgetTypeOptions={this.state.budgetTypeOptions[this.state.year]}
                 config={this.props.config}
-                onChangeYear={this.setYear}
-                onChangeCurrency={this.setCurrency}
-                onChangeBudgetType={this.setBudgetType}
+                onChangeYear={this.setYearBound}
+                onChangeCurrency={this.setCurrencyBound}
+                onChangeBudgetType={this.setBudgetTypeBound}
               />
             ))}
           </div>

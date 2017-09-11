@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.0.12",
   "config": {
-    "api": "https://datahub-api-rtliuzpeor.now.sh/graphql"
+    "api": "http://212.111.41.68:3000/graphql"
   },
   "now": {
     "name": "datahub",
