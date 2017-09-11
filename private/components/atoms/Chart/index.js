@@ -32,9 +32,10 @@ class Chart extends React.Component {
     });
   }
 
-  componentWillReceiveProps(props: Props) {
-    if (props.data !== this.props.data && this.chart) {
-      this.chart.addData(props.data);
+  componentWillUpdate(props: Props) {
+    if (this.chart) {
+      console.log('draw');
+      this.chart.update(props.data);
     }
   }
   render() {
