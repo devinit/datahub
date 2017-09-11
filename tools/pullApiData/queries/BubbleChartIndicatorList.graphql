@@ -1,0 +1,8 @@
+query BubbleChartIndicatorList {
+  indicators: bubbleChartOptions {
+      indicators {
+        id
+        name
+      }
+    }
+}

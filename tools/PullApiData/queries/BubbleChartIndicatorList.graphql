@@ -1,6 +1,0 @@
-query BubbleChartIndicatorList {
-  indicators: bubbleChartIndicatorsList {
-    id
-    name
-  }
-}

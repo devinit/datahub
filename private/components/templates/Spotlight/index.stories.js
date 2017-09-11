@@ -5,4 +5,4 @@ import Spotlight from '.';
 
 storiesOf('Templates DontTest', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('Spot Light', () => <Spotlight />);
+  .add('Spot Light', () => <Spotlight state={{}} />);

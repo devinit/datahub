@@ -11,10 +11,14 @@ type Process = {
 }
 declare var process: Process;
 
+export type District = {|
+  id: string,
+  name: string,
+  slug: string
+|}
+
 export type Country = {|
-    id: string,
-    name: string,
-    slug: string,
+    ...District,
     countryType: string,
 |}
 
@@ -37,3 +41,18 @@ export type Resource = {|
   direction: ?string,
   color: ?string,
 |};
+
+export type NavIndicator = {
+    id: ?string,
+    name: ?string,
+    heading: ?string,
+    tooltip: ?string,
+    source: ?string,
+}
+
+export type NavBarItem = {|
+  id: ?string,
+  name: ?string,
+  indicators: ? Array<NavIndicator>,
+  default_indicator: ?string,
+|}

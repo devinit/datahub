@@ -1,7 +1,7 @@
 // @flow
 import { REHYDRATE } from 'redux-persist/constants';
-import globalThemes from 'components/organisms/GlobalPictureNavTabs/data';
-import spotlightUgandaThemes from 'components/organisms/SpotLightNavTabs/ug-data';
+import globalThemes from 'components/organisms/NavBarTabs/data';
+import spotlightUgandaThemes from 'components/organisms/NavBarTabs/ug-data';
 import { GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR, LOADING_STATUS } from './actions';
 
 // would have been to use & operator but it wasnt working

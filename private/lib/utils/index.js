@@ -2,7 +2,57 @@
 import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
+import { config, version } from 'package.json';
+import { createApolloFetch } from 'apollo-fetch';
 import {RECIPIENT} from './constants';
+
+const uri = config.api;
+
+const apolloFetch = createApolloFetch({ uri });
+
+export type ApolloResponse<T> = {
+  errors: string,
+  data: T,
+  extensions: string,
+};
+
+export type LocalStorage = {
+  setItem: (key: string, value: string) => void,
+  getItem: <T>(value: string) => T | void | null,
+  clear: () => void
+}
+
+declare var localStorage: LocalStorage;
+
+export type CallBack<T> = {
+  (data: T): string,
+};
+export function getLocalStorageInstance(): LocalStorage | null {
+  if (!localStorage) return null; // we are in an old browser or on server
+  const storedVersion = localStorage.getItem('version');
+  if (!storedVersion || storedVersion !== version) {
+    // set new version
+    localStorage.clear();
+    localStorage.setItem('version', version);
+  }
+  return localStorage;
+}
+export async function getData<T>(query: string, variables: Object): Promise<T> {
+  try {
+    const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
+    const storage = getLocalStorageInstance();
+    const cached = storage ? storage.getItem(key) : null;
+    if (cached) return JSON.parse(cached);
+    const response: ApolloResponse<T> = variables
+      ? await apolloFetch({ query, variables })
+      : await apolloFetch({ query });
+    if (response.error) throw response.errors;
+    if (storage) storage.setItem(key, JSON.stringify(response.data));
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
 
 export const getCountryName = (slug: string): string => {
   const country = countriesData.countries.find(country => country.slug === slug);
@@ -14,6 +64,15 @@ export const getCountry = (slug: string): Country => {
   const country = countriesData.countries.find(country => country.slug === slug);
   if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A'};
   return country;
+};
+
+export const getDistrict = (slug: string, country: string): District => {
+  // TODO: handle spotlight kenya
+  if (country !== 'uganda') throw new Error('we are only dealing with spotlight uganda for now');
+  const district: District | void =
+    ugDistrictData.districts.find(district => district.slug === slug);
+  if (district) return district;
+  return {name: slug, slug, id: ''};
 };
 
 export const getDistrictName = (slug: string, country: string): string => {

@@ -1,5 +1,6 @@
 // @flow
-import { ApolloClient, createBatchingNetworkInterface } from 'react-apollo';
+import { ApolloClient } from 'react-apollo';
+import { createApolloFetch } from 'apollo-fetch';
 import fetch from 'isomorphic-fetch';
 import { config } from 'package.json';
 
@@ -11,13 +12,14 @@ if (!process.browser) {
 }
 
 function create(): ApolloClient {
+  const apolloFetch = createApolloFetch({ uri: config.api });
+  const networkInterface = {
+    query: (req) => apolloFetch({...req})
+  };
   return new ApolloClient({
     // Disables forceFetch on the server (so queries are only run once)
     ssrMode: !process.browser,
-    networkInterface: createBatchingNetworkInterface({
-      uri: config.api,
-      batchInterval: 10,
-    }),
+    networkInterface,
     queryDeduplication: true,
     dataIdFromObject: object => object.uid,
   });

@@ -3,10 +3,14 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import App from 'components/templates/Spotlight';
 
 type Props = {
-  url: { pathname: string },
+  url: {
+    pathname: string,
+    query: { state: StateToShare},
+  }
 };
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls

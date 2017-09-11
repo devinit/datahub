@@ -31,8 +31,9 @@ module.exports = {
           heading:
             'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap.',
           tooltip:
-            'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
-          source: 'Development Initiatives based on World Bank PovcalNet.'
+            'The approximate number of people in each country who are in the global poorest 20%',
+          source:
+            ' Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS'
         },
         {
           id: 'data_series.poverty_310',
@@ -47,24 +48,29 @@ module.exports = {
           id: 'data_series.poorest_20_percent',
           name: 'Number of people in the P20',
           heading:
-            'Number of people in each country that are part of the poorest 20% of people worldwide',
-          tooltip: '',
-          source: 'Development Initiatives based on World Bank PovcalNet'
+            'The approximate number of people in each country who are in the global poorest 20%',
+          tooltip:
+            'The approximate number of people in each country who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         },
         {
           id: 'data_series.percent_in_p20_national',
           name: '% of people in the P20',
           heading:
             'The percentage of population of each country who are in the global poorest 20%',
-          tooltip: '',
-          source: 'Development Initiatives based on World Bank PovcalNet.'
+          tooltip:
+            'The percentage of population of each country who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         },
         {
           id: 'subnational_p20',
           name: '% of people in the P20 (subnational level)',
           heading:
             'The percentage of people in each subnational area who are in the global poorest 20%',
-          tooltip: '',
+          tooltip:
+            'The percentage of people in each subnational area who are in the global poorest 20%',
           source:
             'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         },
@@ -73,7 +79,8 @@ module.exports = {
           name: '% of people in the P20 (survey level)',
           heading:
             'The percentage of people in each household survey region who are in the global poorest 20%',
-          tooltip: '',
+          tooltip:
+            'The percentage of people in each household survey region who are in the global poorest 20%',
           source:
             'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         }
@@ -107,7 +114,7 @@ module.exports = {
           id: 'data_series.human_hazard',
           name: 'Human hazard and exposure score',
           heading:
-            'Index for risk management score for exposure to human hazards (10 = high exposure)',
+            'Countries that are at risk of conflict or have high current conflict intensity (Inform index component).',
           tooltip:
             'Index for risk management score for exposure to human hazards (10 = high exposure).',
           source: 'Inform (Index for Risk Management) v 3.0.5.'
@@ -164,7 +171,8 @@ module.exports = {
             'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip:
             'Government revenue per person (excluding grants), 2015 PPP$.',
-          source: ''
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
         },
         {
           id: 'data_series.total_revenue_ppp_pc',
@@ -173,7 +181,8 @@ module.exports = {
             'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip:
             'Government revenue per person (including grants), 2015 PPP$.',
-          source: ''
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
         },
         {
           id: 'data_series.govt_revenue_pc_gdp',
@@ -244,7 +253,7 @@ module.exports = {
           heading:
             'ODA received by each developing country, expressed as a percentage of all official, commercial and private international resource inflows.',
           tooltip:
-            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of GDP of the same country, each year.',
+            "Total international resource flows received by each country divided by the country's GDP, for each year.",
           source:
             'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
         },
@@ -311,7 +320,7 @@ module.exports = {
           id: 'recipient_profile.oda_per_poor_person_2015',
           name: 'ODA per person living on under $1.90 a day, US$',
           heading:
-            'Net south-south development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC). Data is in constant 2015 prices.',
+            'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2015 prices.',
           tooltip: 'ODA per person living on under $1.90 a day, US$.',
           source:
             'Development Initiatives based on OECD DAC and World Bank PovcalNet.'
@@ -375,7 +384,7 @@ module.exports = {
       indicators: [
         {
           id: 'data_series.in_ha',
-          name: 'Humanitarian assistance',
+          name: 'Humanitarian assistance, US$',
           heading:
             'Humanitarian assistance refers to the financial resources for humanitarian action. It is delivered during and in the aftermath of man-made crises and disasters caused by natural hazards.',
           tooltip:
@@ -393,7 +402,7 @@ module.exports = {
         {
           id: 'data_series.latest_census',
           name: 'Latest (planned) population census',
-          heading: 'Latest (planned) population census',
+          heading: 'The year of the last population census.',
           tooltip: 'The year of the last population census.',
           source:
             'UNDESA Population and Vital Statistics Report. Data as available at January 2014.'
@@ -483,7 +492,7 @@ module.exports = {
       indicators: [
         {
           id: 'data_series.iati_budgets_gb',
-          name: 'UK, DFID planned budgets',
+          name: 'UK, DFID planned budgets, US$',
           heading:
             'UK DFID forward-looking budgets for each country based on activities reported through IATI.',
           tooltip:
@@ -493,7 +502,7 @@ module.exports = {
         },
         {
           id: 'data_series.iati_budgets_ca',
-          name: 'Canada, Global Affairs planned budgets',
+          name: 'Canada, Global Affairs planned budgets, US$',
           heading:
             'Canada Global Affairs forward-looking budgets for each country based on activities reported through IATI.',
           tooltip:
@@ -503,7 +512,7 @@ module.exports = {
         },
         {
           id: 'data_series.iati_budgets_dk',
-          name: 'Denmark, DANIDA and Foreign Affairs planned budgets',
+          name: 'Denmark, DANIDA and Foreign Affairs planned budgets, US$',
           heading:
             'Denmark DANIDA and Foreign Affairs forward-looking budgets for each country based on activities reported through IATI.',
           tooltip:
@@ -513,7 +522,7 @@ module.exports = {
         },
         {
           id: 'data_series.iati_budgets_nl',
-          name: 'Netherlands, Foreign Affairs planned budgets',
+          name: 'Netherlands, Foreign Affairs planned budgets, US$',
           heading:
             'Netherlands Foreign Affairs forward-looking budgets for each country based on activities reported through IATI.',
           tooltip:
@@ -523,7 +532,7 @@ module.exports = {
         },
         {
           id: 'data_series.iati_budgets_be',
-          name: 'Belgian Development Cooperation planned budgets',
+          name: 'Belgian Development Cooperation planned budgets, US$',
           heading:
             'Belgian Development Cooperation forward-looking budgets for each country based on activities reported through IATI.',
           tooltip:

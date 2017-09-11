@@ -144,6 +144,9 @@ query SpotLightTabData($id: String!, $country: String!) {
         heading
       }
     }
+    districtHealthRank {
+      value
+    }
     treatmeantOfTb {
       value
       toolTip {

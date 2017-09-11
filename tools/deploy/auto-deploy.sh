@@ -1,7 +1,7 @@
 #!/bin/bash
 ## gets run on host server
-mkdir -p ~/datahub-2
-cd ~/datahub-2 || exit
+mkdir -p ~/datahub
+cd ~/datahub || exit
 
 rm -rf datahub.git && \
   git clone --depth 1 -b master --single-branch git@github.com:devinit/datahub.git datahub.git
@@ -20,7 +20,7 @@ docker stop datahub-app
 
 docker rm datahub-app
 
-docker run -it -d -p 8888:8888 --name datahub-app datahub
+docker run -it -d -p 8080:8080 --name datahub-app datahub
 
 # add pdf folder.
 bash ~/pdf-prints/deploy.sh

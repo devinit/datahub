@@ -86,6 +86,7 @@ export default class TripleLinePartition extends Component {
 
   constructor(props: Props) {
     super(props);
+    this.props.finance = props.finance || [];
     this.state = this.calculateInitialState(props);
   }
 
@@ -102,16 +103,16 @@ export default class TripleLinePartition extends Component {
     ];
     const currency = 'US$';
     const budgetTypes = this.calculateBudgetTypes(
-      [...props.finance, ...props.revenueAndGrants, ...props.expenditure],
+      [...props.finance || [], ...props.revenueAndGrants, ...props.expenditure],
       year,
     );
     const budgetType = props.budgetType ? props.budgetType : budgetTypes[0] && budgetTypes[0].value;
     const revenueTrend = this.calculateTrend(props.revenueAndGrants, currency);
-    const financeTrend = this.calculateTrend(props.finance, currency);
+    const financeTrend = this.calculateTrend(props.finance || [], currency);
     const expenditureTrend = this.calculateTrend(props.expenditure, currency);
 
     const revenueTree = this.calculateTree(props.revenueAndGrants, year, budgetType, currency);
-    const financeTree = this.calculateTree(props.finance, year, budgetType, currency);
+    const financeTree = this.calculateTree(props.finance || [], year, budgetType, currency);
     const expenditureTree = this.calculateTree(props.expenditure, year, budgetType, currency);
 
     return {

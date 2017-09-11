@@ -38,13 +38,10 @@ class Timeline extends React.Component {
     });
   }
 
-  componentWillReceiveProps(props: Props) {
+  componentWillUpdate(props: Props) {
     if (this.chart) {
-      const newSum = props.data.reduce((sum, d) => sum + d.value, 0);
-      const oldSum = this.props.data.reduce((sum, d) => sum + d.value, 0);
-      if (newSum !== oldSum) {
-        this.chart.addData(props.data);
-      }
+      this.chart.update(props.data);
+
       if (props.config.anchor.start !== this.props.config.anchor.start) {
         this.chart.moveAnchor(props.config.anchor.start.toString());
       }

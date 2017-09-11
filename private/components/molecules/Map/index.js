@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import BaseMap from 'components/atoms/BaseMap';
+import BaseMap, {indicatorsWith0dp} from 'components/atoms/BaseMap';
 import type { MapData, PaintMap, Meta } from 'components/atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
 import { grey } from 'components/theme/semantic';
@@ -12,14 +12,13 @@ import RankingsTable from 'components/molecules/RankingsTable';
 import type { Props as RankingsTableProps } from 'components/molecules/RankingsTable';
 import ChartShare from 'components/molecules/ChartShare';
 import type {Route} from 'lib/utils';
-import {approximate, countryOrDistrictLink} from 'lib/utils';
+import {countryOrDistrictLink} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { MapConfig } from './config';
 import mapConfigs from './config';
 
 type Props = {
   state: StateToShare,
-  loading: boolean,
   ...MapDataQuery,
 };
 
@@ -36,12 +35,16 @@ class Map extends Component {
     });
   }
   static setCountryRankValue(mapPoint: MapData, meta: Meta): string | number {
-    const uom = meta.uom_display;
     const {value} = mapPoint;
     if (value === undefined || value === null) throw new Error('country rank value should be defined');
     if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
-    if (uom === '%') return approximate(value, 2);
-    if (meta.theme === 'vulnerability' || meta.theme === 'government-finance') return value.toFixed(1);
+    const ThemesWith1dp = ['vulnerability', 'government-finance', 'uganda-poverty', 'uganda-health'];
+    const indicatorsWith1dp = ['spotlight_on_uganda.uganda_dependency_ratio'];
+    if (indicatorsWith0dp.includes(meta.id)) return value.toFixed(0);
+    if (ThemesWith1dp.includes(meta.theme) || indicatorsWith1dp.includes(meta.id)) {
+      return value.toFixed(1);
+    }
+    if (meta.uom_display === '%' || meta.uom_display === 'US$') return value.toFixed(1);
     return value;
   }
   constructor(props: Props) {
@@ -94,7 +97,8 @@ class Map extends Component {
     if (!props.mapData) throw new Error('mapData is missing in props');
     if (!props.mapData.start_year) throw new Error('start_year is missing in props');
     if (!props.mapData.default_year) throw new Error('default_year is missing in props');
-    const currentYear = props.state.year || props.mapData.default_year;
+    const currentYear = props.state && props.state.year ?
+      props.state.year : props.mapData.default_year;
     this.startYear = props.mapData.start_year;
     this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;

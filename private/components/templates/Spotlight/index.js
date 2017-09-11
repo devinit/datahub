@@ -1,13 +1,15 @@
 // @flow
 import React from 'react';
-import { Div } from 'glamorous';
+import { Div, P } from 'glamorous';
 import { Container, Grid, Icon, Header, Button } from 'semantic-ui-react';
-import SpotLightNavTabs from 'components/organisms/SpotLightNavTabs';
+import SpotLightNavTabs from 'components/organisms/NavBarTabs/spotlight';
 import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';
 import { SectionHeader } from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
+import NoSSR from 'react-no-ssr';
 import { connect } from 'react-redux';
 import dynamic from 'next/dynamic';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 
@@ -17,13 +19,14 @@ const DynamicMapComponent = dynamic(
     loading: () => <MapBackground />
   });
 
-// type Props = {
-//   pathName: string,
-//   rehydrated: boolean,
-// };
+type Props = {
+  // pathName: string,
+  state: StateToShare
+  // rehydrated: boolean,
+};
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
-const spotlight = () => {
+const spotlight = (props: Props) => {
   return (
     <Generic>
       <Container>
@@ -32,7 +35,7 @@ const spotlight = () => {
             <Grid.Column width={12} textAlign="center">
               <b>
                 <Icon name="pie graph" />Spotlight
-              </b>{' '}
+              </b>
               on Uganda is a comprehensive source of Uganda's financial resource flow data at the
               sub-national (district) level, alongside indicators on poverty, population, education,
               health, water, hygiene and sanitation. It highlights the geographical variance in
@@ -43,9 +46,8 @@ const spotlight = () => {
           </Grid>
         </Div>
       </Container>
-      <SpotLightNavTabs />
-      <DynamicMapComponent pathName="spotlight" />
-      {/* {props.rehydrated || process.storybook ? <Map pathName={'spotlight'} /> : <MapBackground />} */}
+      <SpotLightNavTabs state={props.state} />
+      <DynamicMapComponent pathName="spotlight" state={props.state} />
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALISATIONS
@@ -79,6 +81,19 @@ const spotlight = () => {
                 what is really going on. The Data Hub is an accessible and easy to use tool for
                 anyone wanting to know more about how resources for development are spent.
               </p>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column width="12">
+              <NoSSR onSSR={<P textAlign={'center'}>Loading...</P>}>
+                <iframe
+                  src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
+                  title="About Datahub"
+                  frameBorder="0"
+                  height="585"
+                  style={{ width: '100%' }}
+                />
+              </NoSSR>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -34,8 +34,8 @@ class Chart extends React.Component {
   }
 
   componentWillUpdate(props: Props) {
-    if (props.data !== this.props.data && this.chart) {
-      this.chart.addData(props.data);
+    if (this.chart) {
+      this.chart.update(props.data);
     }
   }
 

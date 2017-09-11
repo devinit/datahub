@@ -32,8 +32,8 @@ const DynamicCountryProfileLowerTabs = dynamic(
 
 type Props = {
   id: string,
-  rehydrated: boolean,
-  state: StateToShare,
+  rehydrated?: boolean,
+  state?: StateToShare,
 };
 class Profile extends Component {
   static init(props) {
@@ -54,8 +54,6 @@ class Profile extends Component {
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) this.setState(Profile.init(nextProps));
   }
-  countryId: string
-  countryName: string
   lowerTabs: HTMLElement
 
   jumpToSection = (sectionId: string) => {

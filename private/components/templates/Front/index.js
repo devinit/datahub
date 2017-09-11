@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { Div, P } from 'glamorous';
-import GlobalPictureNavTabs from 'components/organisms/GlobalPictureNavTabs';
+import GlobalPictureNavTabs from 'components/organisms/NavBarTabs/globalPicture';
 import NoSSR from 'react-no-ssr';
 import { SectionHeader } from 'components/atoms/Header';
 import { LightBg, DarkBg, MapBackground } from 'components/atoms/Backgrounds';

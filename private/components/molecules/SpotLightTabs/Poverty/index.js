@@ -1,9 +1,7 @@
 // @flow
-import { Container, Header, Grid } from 'semantic-ui-react';
 import React from 'react';
-import { P } from 'glamorous';
-import { big } from 'components/theme';
-import { red } from 'components/theme/semantic';
+import { Container, Grid } from 'semantic-ui-react';
+import {TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
@@ -25,44 +23,44 @@ const Poverty = (props: Props) => {
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle >
             {povertyLevels.title}
             {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.toolTip
               ? <TabsToolTip {...povertyTabRegional.poorestPeople.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.value
-              ? povertyTabRegional.poorestPeople.value
+              ? `${povertyTabRegional.poorestPeople.value} %`
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle >
             {lifeExpectancy.title}
             {povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.toolTip
               ? <TabsToolTip {...povertyTabRegional.lifeExpectancy.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.value
               ? povertyTabRegional.lifeExpectancy.value
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
-          <Header textAlign="center" as="h3">
+          <HeaderTitle >
             {stdOfLiving.title}
             {povertyTabRegional.stdOfLiving && povertyTabRegional.stdOfLiving.toolTip
               ? <TabsToolTip {...povertyTabRegional.stdOfLiving.toolTip} />
               : ''}
-          </Header>
-          <P fontSize={big} fontWeight={'bold'} color={red}>
+          </HeaderTitle>
+          <TabsP>
             {povertyTabRegional.stdOfLiving && povertyTabRegional.stdOfLiving.value
               ? povertyTabRegional.stdOfLiving.value
               : NoData}
-          </P>
+          </TabsP>
         </Grid.Column>
       </Grid>
     </Container>

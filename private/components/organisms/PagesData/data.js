@@ -114,8 +114,7 @@ module.exports = {
     },
     {
       id: 'overview-resources',
-      title:
-        'WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN ${district}?',
+      title: 'WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN {district}?',
       narrative: ''
     },
     {
@@ -173,7 +172,7 @@ module.exports = {
     {
       id: 'health-performance',
       title: 'WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?',
-      narrative: 'out of 100, and is ranked in ${position} place overall'
+      narrative: 'out of 100, and is ranked in {position} place overall'
     },
     {
       id: 'case-of-tb',

@@ -1,0 +1,22 @@
+query GovernmentFinance($id: String!, $country: String!) {
+  localGovernmentFinance(id: $id, country: $country) {
+    startYear,
+    currencyCode,
+    expenditure {
+      uid,
+      year,
+      levels,
+      budget_type,
+      value,
+      value_ncu
+    },
+    revenueAndGrants {
+      uid,
+      year,
+      levels,
+      budget_type,
+      value,
+      value_ncu
+    },
+  }
+}
