@@ -112,15 +112,6 @@ export default class MultiLinePartition extends Component {
   setCurrencyBound: (currency: string) => void;
   setBudgetTypeBound: (budgetType: string) => void;
   setYearBound: (year: number) => void;
-  props: Props;
-
-  toggleRevenueTour() {
-    if (this.state.revenueTourVisible) {
-      this.setState({ revenueTourVisible: false });
-    } else {
-      this.setState({ revenueTourVisible: true });
-    }
-  }
 
   setCurrency(currency: string) {
     this.setState({ currency });
@@ -138,7 +129,13 @@ export default class MultiLinePartition extends Component {
       budgetType,
     });
   }
-
+  toggleRevenueTour() {
+    if (this.state.revenueTourVisible) {
+      this.setState({ revenueTourVisible: false });
+    } else {
+      this.setState({ revenueTourVisible: true });
+    }
+  }
   render() {
     if (this.props.loading) {
       return <LoadingBar loading={this.props.loading} />;
