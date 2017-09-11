@@ -34,7 +34,6 @@ class Chart extends React.Component {
 
   componentWillUpdate(props: Props) {
     if (this.chart) {
-      console.log('draw');
       this.chart.update(props.data);
     }
   }
