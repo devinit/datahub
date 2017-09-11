@@ -34,6 +34,8 @@ type Props = {
   title: string,
   inverted?: boolean,
   year: number,
+  lowestYear: number,
+  highestYear: number,
   data: Object[],
   currency: string,
   currencyOptions: Object[],
@@ -49,11 +51,13 @@ type Props = {
 }
 
 type State = {
-  treesByYear: Object,
+  treesByYear: {
+    [year: number]: {
+      [budgetType: string]: Object[]
+    }
+  },
   trend: Object[],
-  level: string,
-  lowestYear: number,
-  highestYear: number,
+  level: string
 }
 
 export default class LinePartition extends Component {
@@ -65,24 +69,8 @@ export default class LinePartition extends Component {
     this.state = this.createInitialState(props);
   }
 
-  componentWillReceiveProps(props: Props) {
-    this.setState(this.createInitialState(props));
-  }
-
-  onChangeYear(year: number) {
-    this.props.onChangeYear(+year);
-  }
-
-  onChangeBudgetType(budgetType: string) {
-    this.props.onChangeBudgetType(budgetType);
-  }
-
-  onChangeCurrency(currency: string) {
-    this.props.onChangeCurrency(currency);
-  }
-
   setLevel(level: string) {
-    const trend = this.createTrendState(level, this.props.currency);
+    const trend = this.createTrendState(level);
 
     this.setState({
       level,
@@ -92,35 +80,39 @@ export default class LinePartition extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   createInitialState(props: Props) {
-    const years = props.data.map(d => d.year);
-    const lowestYear = Math.min.apply(null, years);
-    const highestYear = Math.max.apply(null, years);
     const [root = {levels: []}] = props.data;
     const level = root.levels[0];
 
-    const trend = this.createTrendState(level, this.props.currency);
-    const treesByYear = this.createTreeState(this.props.currency);
+    const trend = this.createTrendState(level);
+    const treesByYear = this.createTreeStateByYearAndBudgetType();
 
     return {
       level,
       trend,
       treesByYear,
-      lowestYear,
-      highestYear,
     };
   }
 
-  createTreeState(currency: string) {
-    const groupedByYear = groupByYear(this.props.data.map(d => {
-      const value = currency === 'US$' ? d.value : d.value_ncu;
-      return {
-        ...d,
-        value,
-        color: d.value > 0 ? null : 'rgb(240, 122, 146)',
-        nodeParent: d.levels[d.levels.length - 2],
-        nodeId: d.levels[d.levels.length - 1],
-      };
-    }));
+  /**
+   * Creates a three-dimensional map of data
+   * {
+   *  [year]: {
+   *    [budgetType]: [...]
+   *  }
+   * }
+   * @returns {{}}
+   */
+  createTreeStateByYearAndBudgetType() {
+    const groupedByYear = groupByYear(this.props.data
+      .map(d => {
+        return {
+          ...d,
+          // Hack: Coloring red nodes with negative values
+          color: d.value > 0 ? null : 'rgb(240, 122, 146)',
+          nodeParent: d.levels[d.levels.length - 2],
+          nodeId: d.levels[d.levels.length - 1],
+        };
+      }));
 
     const groupedByYearAndBudgetType = {};
 
@@ -131,23 +123,46 @@ export default class LinePartition extends Component {
     return groupedByYearAndBudgetType;
   }
 
-  createTrendState(level: string, currency: string) {
+  createTrendState(level: string) {
+    const allBudgetTypes = Object.keys(
+      this.props.data
+        .reduce((acc, datum) => ({[datum.budget_type]: true}), {})
+    );
+    const regexString = allBudgetTypes.length > 2 ?
+      allBudgetTypes.filter(d => d.match('budget')).join('|') :
+      allBudgetTypes.join('|');
+    const regex = new RegExp(`(${regexString})`, 'gi');
     return this.props.data
       .filter(d => {
-        const isActualOrProjected = d.budget_type.match(/(actual|proj)/gi);
+        const isActualOrProjected = !!d.budget_type.match(regex).length;
         const isAtSelectedLevel = level
           ? d.levels.length - 1 === d.levels.indexOf(level)
           : d.levels.length === 1;
 
         return isActualOrProjected && isAtSelectedLevel;
-      })
-      .map(d => ({
-        ...d,
-        value: currency === 'US$' ? d.value : d.value_ncu,
-      }));
+      });
   }
 
   render() {
+    const treeOfYear = this.state.treesByYear[this.props.year] || {};
+    const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
+    const tree = treeOfBudgetType
+      .map(datum => {
+        const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
+        return {
+          ...datum,
+          value,
+        };
+      });
+    const trend = this.state.trend
+      .map(datum => {
+        const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
+        return {
+          ...datum,
+          value,
+        };
+      });
+
     return (<Container>
 
       {!this.props.inverted ? '' :
@@ -157,10 +172,10 @@ export default class LinePartition extends Component {
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={budgetType => this.onChangeBudgetType(budgetType)}
+          onChangeBudgetType={budgetType => this.props.onChangeBudgetType(budgetType)}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={currency => this.onChangeCurrency(currency)}
+          onChangeCurrency={currency => this.props.onChangeCurrency(currency)}
         />}
 
       <Grid>
@@ -173,12 +188,12 @@ export default class LinePartition extends Component {
                 ...this.props.config.line,
                 timeAxis: {
                   ...this.props.config.line.timeAxis,
-                  axisMinimum: this.state.lowestYear.toString(),
-                  axisMaximum: this.state.highestYear.toString(),
+                  axisMinimum: this.props.lowestYear.toString(),
+                  axisMaximum: this.props.highestYear.toString(),
                 },
                 anchor: { start: this.props.year.toString() },
               }}
-              data={this.state.trend}
+              data={trend}
             />
           </CardContainer>
         </Grid.Column>
@@ -192,7 +207,7 @@ export default class LinePartition extends Component {
                 labeling: { prefix: this.props.currency },
               }}
               onClick={(d: { id: string }) => this.setLevel(d.id)}
-              data={this.state.treesByYear[this.props.year][this.props.budgetType]}
+              data={tree}
             />
           </TreeChartContainer>
         </Grid.Column>
@@ -205,10 +220,10 @@ export default class LinePartition extends Component {
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={budgetType => this.onChangeBudgetType(budgetType)}
+          onChangeBudgetType={budgetType => this.props.onChangeBudgetType(budgetType)}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={currency => this.onChangeCurrency(currency)}
+          onChangeCurrency={currency => this.props.onChangeCurrency(currency)}
         />}
 
     </Container>);

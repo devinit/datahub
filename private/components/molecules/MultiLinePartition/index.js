@@ -34,61 +34,31 @@ type State = {
   budgetTypeOptions: {
     [year: number]: Object[]
   },
+  lowestYear: number,
+  highestYear: number,
   revenueTourVisible: boolean,
 };
 
 export default class MultiLinePartition extends Component {
-  // eslint-disable-next-line react/sort-comp
-  state: State;
-  // eslint-disable-next-line react/sort-comp
-  props: Props;
-
-  // eslint-disable-next-line react/sort-comp
-  constructor(props: Props) {
-    super(props);
-    this.state = this.createInitialState(props);
-  }
-
-  componentWillReceiveProps(props: Props) {
-    this.setState(this.createInitialState(props));
-  }
-
-  toggleRevenueTour() {
-    if (this.state.revenueTourVisible) {
-      this.setState({ revenueTourVisible: false });
-    } else {
-      this.setState({ revenueTourVisible: true });
-    }
-  }
-
-  createInitialState(props: Props) {
-    const year = props.startYear;
-    const currencyOptions = this.createCurrencyOptions(props.currencyCode);
-    const currency = currencyOptions[0] && currencyOptions[0].value;
-    const budgetTypeOptions = this.createBudgetTypeOptions(props.items);
-    const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
+  static createTimeLimits(data: Object[]) {
+    const years = data.map(datum => datum.year);
+    const lowestYear = Math.min.apply(null, years);
+    const highestYear = Math.max.apply(null, years);
     return {
-      year,
-      currency,
-      currencyOptions,
-      budgetType,
-      budgetTypeOptions,
-      revenueTourVisible: false,
+      lowestYear,
+      highestYear,
     };
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  createCurrencyOptions(currencyCode: string) {
+  static createCurrencyOptions(currencyCode: string) {
     return [
       { text: 'Constant 2015 US$', value: 'US$' },
       { text: `Current ${currencyCode}`, value: currencyCode },
     ];
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  createBudgetTypeOptions(items: LinePartitionItem[]) {
-    return Array.prototype.concat
-      .apply([], items.map(item => item.data))
+  static createBudgetTypeOptions(data: Object[]) {
+    return data
       .reduce((acc, d) => {
         if (!acc[d.year]) {
           acc[d.year] = [];
@@ -101,6 +71,55 @@ export default class MultiLinePartition extends Component {
 
         return acc;
       }, {});
+  }
+
+  static createInitialState(props: Props) {
+    const year = props.startYear;
+    const everything = Array.prototype.concat.apply([], props.items.map(item => item.data));
+    const currencyOptions = MultiLinePartition.createCurrencyOptions(props.currencyCode);
+    const budgetTypeOptions = MultiLinePartition.createBudgetTypeOptions(everything);
+    const {lowestYear, highestYear} = MultiLinePartition.createTimeLimits(everything);
+    const currency = currencyOptions[0] && currencyOptions[0].value;
+    const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
+    const revenueTourVisible = false;
+    return {
+      year,
+      currency,
+      currencyOptions,
+      budgetType,
+      budgetTypeOptions,
+      lowestYear,
+      highestYear,
+      revenueTourVisible,
+    };
+  }
+
+  // eslint-disable-next-line react/sort-comp
+  constructor(props: Props) {
+    super(props);
+    this.state = MultiLinePartition.createInitialState(props);
+    this.setCurrencyBound = this.setCurrency.bind(this);
+    this.setBudgetTypeBound = this.setBudgetType.bind(this);
+    this.setYearBound = this.setYear.bind(this);
+  }
+
+  state: State;
+
+  componentWillReceiveProps(props: Props) {
+    this.setState(MultiLinePartition.createInitialState(props));
+  }
+
+  setCurrencyBound: (currency: string) => void;
+  setBudgetTypeBound: (budgetType: string) => void;
+  setYearBound: (year: number) => void;
+  props: Props;
+
+  toggleRevenueTour() {
+    if (this.state.revenueTourVisible) {
+      this.setState({ revenueTourVisible: false });
+    } else {
+      this.setState({ revenueTourVisible: true });
+    }
   }
 
   setCurrency(currency: string) {
@@ -159,15 +178,17 @@ export default class MultiLinePartition extends Component {
                 title={item.title}
                 inverted={i % 2 !== 1}
                 year={this.state.year}
+                highestYear={this.state.highestYear}
+                lowestYear={this.state.lowestYear}
                 data={item.data}
                 currency={this.state.currency}
                 currencyOptions={this.state.currencyOptions}
-                budgetType={this.state.budgetTypeOptions[this.state.year][0].value}
+                budgetType={this.state.budgetType}
                 budgetTypeOptions={this.state.budgetTypeOptions[this.state.year]}
                 config={this.props.config}
-                onChangeYear={this.setYear}
-                onChangeCurrency={this.setCurrency}
-                onChangeBudgetType={this.setBudgetType}
+                onChangeYear={this.setYearBound}
+                onChangeCurrency={this.setCurrencyBound}
+                onChangeBudgetType={this.setBudgetTypeBound}
               />
             ))}
           </div>

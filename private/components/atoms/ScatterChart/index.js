@@ -20,7 +20,7 @@ class ScatterChart extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     // eslint-disable-next-line react/no-find-dom-node
     const element = this.element;
     const data = this.props.data;
@@ -31,8 +31,8 @@ class ScatterChart extends React.Component {
   }
 
   componentWillReceiveProps(props: Props) {
-    if (props.data !== this.props.data && this.chart) {
-      this.chart.addData(props.data);
+    if (this.chart) {
+      this.chart.update(props.data);
     }
   }
 

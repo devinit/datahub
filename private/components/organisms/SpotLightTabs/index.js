@@ -12,6 +12,7 @@ import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import {getDistrictProfileData} from 'components/organisms/PagesData';
+import populationConfig from 'visboxConfigs/spotlightPopulationTabCharts';
 import TABS_QUERY from './query.graphql';
 
 type WrapperProps = {
@@ -40,7 +41,7 @@ const spotlightTabs = (props: WrapperProps) => {
         <Poverty {...props} pageData={pageData} />
       </Pane>
       <Pane label="Population" id="spotlight-population">
-        <Population {...props} pageData={pageData} />
+        <Population {...props} pageData={pageData} config={populationConfig} />
       </Pane>
       <Pane label="Education" id="spotlight-education">
         <Education {...props} pageData={pageData} />
