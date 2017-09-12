@@ -19,6 +19,11 @@ if (typeof window !== 'undefined') {
   rehydrate(window.__NEXT_DATA__.ids);
 }
 
-export default withData((props: Props) => {
-  return <App id={props.url.query.id} state={props.url.query.state} country="uganda" />;
-});
+export default withData((props: Props) =>
+  (<App
+    id={props.url.query.id}
+    state={props.url.query.state}
+    currencyCode="UGX"
+    currencyUSD="constant 2012 USD"
+    country="uganda"
+  />));

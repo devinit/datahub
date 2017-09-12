@@ -53,6 +53,16 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
     throw error;
   }
 }
+export type CurrencyOption = {
+  text: string,
+  value: string
+}
+export const createCurrencyOptions =
+  (currencyCode: string, currencyUSD: string): CurrencyOption[] =>
+    [
+      { text: currencyUSD, value: 'US$' },
+      { text: `Current ${currencyCode}`, value: currencyCode },
+    ];
 
 export const getCountryName = (slug: string): string => {
   const country = countriesData.countries.find(country => country.slug === slug);

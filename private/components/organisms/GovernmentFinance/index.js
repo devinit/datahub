@@ -18,6 +18,7 @@ const withData = graphql(QUERY, {
     const {
       startYear,
       currencyCode,
+      currencyUSD,
       expenditure = [],
       revenueAndGrants = [],
       finance = [],
@@ -26,6 +27,7 @@ const withData = graphql(QUERY, {
       loading,
       config,
       currencyCode,
+      currencyUSD,
       startYear,
       items: [
         {

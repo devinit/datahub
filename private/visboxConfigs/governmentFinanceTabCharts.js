@@ -9,6 +9,7 @@ export const spendingAllocation = {
     'rgb(190, 132, 187)',
     'rgb(0, 149, 200)',
   ],
+  coloring: 'color',
   circular: {
     label: 'name',
     value: 'value',

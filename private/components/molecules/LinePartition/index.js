@@ -229,7 +229,7 @@ export default class LinePartition extends Component {
     </Container>);
   }
 }
-
+// @ernest why did you put the linepartionHeader in same file as LinePartion
 type LinePartitionHeaderProps = {
   title: string,
   year: number,

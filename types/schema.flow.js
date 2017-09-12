@@ -255,6 +255,7 @@ export type GovernmentFinanceQuery = {|
   localGovernmentFinance: ? {|
     startYear: ?number,
     currencyCode: ?string,
+    currencyUSD: ?string,
     expenditure: ? Array< {|
       uid: ?string,
       year: ?number,

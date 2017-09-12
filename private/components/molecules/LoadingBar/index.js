@@ -32,6 +32,7 @@ export default class LoadingBar extends Component {
     super(props);
     this.timeChange = 1000;
     this.percentChange = 20;
+    this.mounted = true;
     this.state = { percent: 0, time: 0 };
   }
   state: State;
@@ -40,7 +41,7 @@ export default class LoadingBar extends Component {
     this.timeOutProgress();
   }
   componentWillReceiveProps(props: Props) {
-    if (!props.loading) {
+    if (!props.loading || !this.setState) {
       return this.terminate();
     }
     this.setState({percent: 0, time: 0});
@@ -48,20 +49,24 @@ export default class LoadingBar extends Component {
     return this.timeOutProgress();
   }
   componentWillUnmount() {
+    this.mounted = false;
     this.terminate();
   }
   progressInterval: any;
   timeOutInterval: any;
   timeChange: number;
   percentChange: number;
+  mounted: boolean;
   launch() {
-    this.progressInterval = setInterval(() => {
-      const percent = this.state.percent + this.percentChange;
-      const time = this.timeChange + this.state.time;
-      // check if mounted
-      if (this.setState) return this.setState({ percent, time });
-      return this.terminate();
-    }, this.timeChange);
+    if (this.setState && this.mounted) {
+      this.progressInterval = setInterval(() => {
+        const percent = this.state.percent + this.percentChange;
+        const time = this.timeChange + this.state.time;
+        // check if mounted
+        if (this.mounted) return this.setState({ percent, time });
+        return this.terminate();
+      }, this.timeChange);
+    }
   }
   timeOutProgress() {
     this.timeOutInterval = setTimeout(() => {
@@ -71,7 +76,6 @@ export default class LoadingBar extends Component {
   terminate() {
     clearInterval(this.progressInterval);
     clearInterval(this.timeOutInterval);
-    this.setState({ percent: 100 });
   }
   render() {
     return (

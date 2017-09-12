@@ -5,6 +5,9 @@ import LoadingBar from 'components/molecules/LoadingBar';
 import ExportChart from 'components/molecules/ExportChart';
 import { LightBg } from 'components/atoms/Backgrounds';
 import TourContainer from 'components/molecules/TourContainer';
+import {createCurrencyOptions} from 'lib/utils';
+import type {StateToShare} from 'components/molecules/ChartShare';
+import type {CurrencyOption} from 'lib/utils';
 import { PrintContainer } from 'components/atoms/Container';
 import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 import LinePartition from 'components/molecules/LinePartition';
@@ -16,9 +19,14 @@ type LinePartitionItem = {
 
 type Props = {
   chartId: string,
+  year?: number, // from cached url state
   loading: boolean,
   startYear: number,
+  // for regional profiles. They have a feature that allows to
+  // set currency type from another component
+  currency?: string,
   currencyCode: string,
+  currencyUSD: string,
   config: {
     line: Object,
     partition: Object,
@@ -29,7 +37,7 @@ type Props = {
 type State = {
   year: number,
   currency: string,
-  currencyOptions: Object[],
+  currencyOptions: CurrencyOption[],
   budgetType: string,
   budgetTypeOptions: {
     [year: number]: Object[]
@@ -50,13 +58,6 @@ export default class MultiLinePartition extends Component {
     };
   }
 
-  static createCurrencyOptions(currencyCode: string) {
-    return [
-      { text: 'Constant 2015 US$', value: 'US$' },
-      { text: `Current ${currencyCode}`, value: currencyCode },
-    ];
-  }
-
   static createBudgetTypeOptions(data: Object[]) {
     return data
       .reduce((acc, d) => {
@@ -74,12 +75,15 @@ export default class MultiLinePartition extends Component {
   }
 
   static createInitialState(props: Props) {
-    const year = props.startYear;
+    const year = props.year || props.startYear;
+    // @ernest seems ambiguos and increases code complexity
+    // why not simplify it to return only the things you need from props
     const everything = Array.prototype.concat.apply([], props.items.map(item => item.data));
-    const currencyOptions = MultiLinePartition.createCurrencyOptions(props.currencyCode);
+    const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
     const budgetTypeOptions = MultiLinePartition.createBudgetTypeOptions(everything);
     const {lowestYear, highestYear} = MultiLinePartition.createTimeLimits(everything);
-    const currency = currencyOptions[0] && currencyOptions[0].value;
+    const currency = props.currency ?
+      props.currency : currencyOptions[0] && currencyOptions[0].value;
     const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
     const revenueTourVisible = false;
     return {
@@ -163,7 +167,7 @@ export default class MultiLinePartition extends Component {
               onViewVisualization={() => this.toggleRevenueTour()}
               printDiv="print-chart"
               stateToShare={{
-                startYear: this.state.year,
+                year: this.state.year,
                 budgetType: this.state.budgetType,
                 chartId: this.props.chartId,
               }}

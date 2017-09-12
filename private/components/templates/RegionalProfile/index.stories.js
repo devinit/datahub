@@ -5,4 +5,10 @@ import Profile from '.';
 
 storiesOf('Templates DontTest', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('Regional Profiles', () => <Profile id="wakiso" country="uganda" />);
+  .add('Regional Profiles', () =>
+    (<Profile
+      id="wakiso"
+      country="uganda"
+      currencyCode="UGX"
+      currencyUSD="constant 2012 USD"
+    />));
