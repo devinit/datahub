@@ -126,11 +126,15 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
     routePath = `/country?id=${slug}`;
     routeAsPath = `/country/${slug}`;
   } else {
-    routePath = `/spotlight_on_${country}?id=${slug}`;
-    routeAsPath = `/spotlight_on_${country}/${slug}`;
+    routePath = `/${country}?id=${slug}`;
+    routeAsPath = `/${country}/${slug}`;
   }
   return {routePath, routeAsPath};
 };
+
+// TODO: export const getPageMeta = (pathname: string, query?: string): string => {
+
+// };
 
 const removeTrailingZero = (value: string): string => {
   const val = Number(value);
