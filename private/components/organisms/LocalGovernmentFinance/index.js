@@ -18,6 +18,7 @@ const withData = graphql(QUERY, {
 
     const {
       currencyCode = '',
+      startYear = 2015,
       expenditure = [],
       revenueAndGrants = [],
     } = data.localGovernmentFinance || {};
@@ -25,6 +26,7 @@ const withData = graphql(QUERY, {
       loading,
       config,
       currencyCode,
+      startYear,
       items: [
         {
           title: 'Revenue And Grants',
