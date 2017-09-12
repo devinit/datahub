@@ -6,7 +6,6 @@ import ExportChart from 'components/molecules/ExportChart';
 import { LightBg } from 'components/atoms/Backgrounds';
 import TourContainer from 'components/molecules/TourContainer';
 import {createCurrencyOptions} from 'lib/utils';
-import type {StateToShare} from 'components/molecules/ChartShare';
 import type {CurrencyOption} from 'lib/utils';
 import { PrintContainer } from 'components/atoms/Container';
 import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
