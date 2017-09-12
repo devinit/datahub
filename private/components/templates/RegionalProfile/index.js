@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
-import { Div, Span, H4} from 'glamorous';
-import { Container, Grid, Icon, Button, Dropdown, Label } from 'semantic-ui-react';
+import { Div, P, H4} from 'glamorous';
+import { Container, Grid, Icon, Button, Dropdown, Segment, Header} from 'semantic-ui-react';
 import { red, white } from 'components/theme/semantic';
 import { SectionHeader, Lead } from 'components/atoms/Header';
 import { BodyLink } from 'components/atoms/Link';
@@ -12,6 +12,7 @@ import SpotLightTabs from 'components/organisms/SpotLightTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import {getDistrict, getCountry, createCurrencyOptions} from 'lib/utils';
 import type {CurrencyOption} from 'lib/utils';
+import Link from 'next/link';
 import { connect } from 'react-redux';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State as ReduxState } from 'lib/reducers';
@@ -78,21 +79,24 @@ class RegionalProfile extends Component {
                 <Grid.Column width={10}>
                   <CardContainer>
                     <H4 color={red}>
-                      <Icon name="globe" color={'red'} />General Picture
+                      <Icon name="globe" color={'red'} />
+                      <Link href="/spotlight-on-uganda">
+                        <a role="link" style={{color: red}}>Spotlight on uganda</a>
+                      </Link>
                     </H4>
-                    <CountrySearch visible placeholder={this.props.id} profile />
+                    <CountrySearch visible placeholder={this.props.id} profile country="uganda" />
                     <Lead>
                       Explore this in-depth profile to find out about poverty, population, education, health, water,
                       sanitation and hygiene, and district public resources in {this.state.district.name}.
-                      <Span fontSize="0.7em" display={'inline-block'} fontWeight={500} >
-                          Visit the
+                      <P fontWeight={500} lineHeight="3" fontSize="0.7em">
+                          Visit the {' '}
                         <BodyLink href={`/country/${this.state.country.slug}`}>
                           {this.state.country.name} country Profile
                         </BodyLink>
-                          to explore national-level data.
-                      </Span>
+                        {' '}to explore national-level data.
+                      </P>
                     </Lead>
-                    <Label>View all financial data in: </Label>
+                    <P fontWeight={500} fontSize="1.2em" lineHeight="0">View all financial data in: </P>
                     <Dropdown
                       compact
                       selection
@@ -129,11 +133,13 @@ class RegionalProfile extends Component {
         </Div>
       </ProfileHeader>
       <SpotLightTabs id={this.state.district.slug} country={this.state.country.slug} />
-      <Div paddingTop={'4em'} paddingBottom={'4em'}>
+      <Div paddingTop={'4em'} paddingBottom={'1em'}>
         <Container textAlign="center">
-          <SectionHeader innerRef={node => { this.lowerTabs = node; }}>
-           Revenue
-          </SectionHeader>
+          <Segment basic ref={node => { this.lowerTabs = node; }}>
+            <Header>
+              <Header.Content as="h2">Revenue</Header.Content>
+            </Header>
+          </Segment>
         </Container>
       </Div>
       <DynamicRegionalLowerTabs

@@ -11,6 +11,7 @@ import CountrySearch from 'components/organisms/CountrySearchInput';
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import {getCountry} from 'lib/utils';
+import Link from 'next/link';
 import { connect } from 'react-redux';
 import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
@@ -72,7 +73,10 @@ class Profile extends Component {
                 <Grid.Column width={10}>
                   <CardContainer>
                     <H4 color={red}>
-                      <Icon name="globe" color={'red'} />General Picture
+                      <Icon name="globe" color={'red'} />
+                      <Link href="/spotlight-on-uganda">
+                        <a role="link" style={{color: red}}>General Picturea</a>
+                      </Link>
                     </H4>
                     <CountrySearch visible placeholder={this.props.id} profile />
                     <Lead>

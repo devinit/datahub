@@ -38,7 +38,7 @@ export const CardContainer = glamorous.div({
   height: '480px',
 });
 export const ProfileHeader = glamorous.div({
-  height: '380px', // TODO -- use media queries
+  height: '420px', // TODO -- use media queries
   overflow: 'hidden',
   borderBottom: `1px solid ${lightGrey}`,
   background: white,

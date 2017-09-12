@@ -12,8 +12,9 @@ type Country = {
 };
 export type Props = {
   countries: Country[],
+  routePath: string,
   placeholder: string,
-  profile: boolean,
+  profile: boolean, // whether appears on a country profile page or on the front landing page
   visible: boolean,
   onSelected?: any => void,
 };
@@ -90,7 +91,7 @@ class SearchInput extends React.Component {
     this.resetState();
     this.textInput.blur();
     if (this.props.onSelected) return this.props.onSelected(country.slug);
-    return Router.push(`/country?id=${country.slug}`, `/country/${country.slug}`);
+    return Router.push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}y/${country.slug}`);
   }
   textInput: HTMLInputElement
   resetState() {
@@ -135,7 +136,7 @@ class SearchInput extends React.Component {
             {this.state.countries
               ? this.state.countries.map((country, i) =>
                 (<li key={country.slug} className={this.state.selected === i ? 'active' : false}>
-                  <Link href={`/country?id=${country.slug}`} as={`/country/${country.slug}`}>
+                  <Link href={`/${this.props.routePath}?id=${country.slug}`} as={`/${this.props.routePath}/${country.slug}`}>
                     <a>
                       {country.name}
                     </a>

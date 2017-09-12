@@ -2,10 +2,10 @@ import glamorous from 'glamorous';
 import { red, lightBlack } from 'components/theme/semantic';
 
 export const Lead = glamorous.p({
-  // marginTop: '1rem',
   fontSize: '1.6em',
   fontWeight: 300,
 });
+
 export const HeaderGroup = glamorous.div({
   marginTop: '2em',
   '& .header': {
