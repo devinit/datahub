@@ -7,6 +7,7 @@ query GovernmentFinance($id: String!) {
       uid,
       year,
       levels,
+      color,
       budget_type,
       value,
       value_ncu
@@ -15,12 +16,14 @@ query GovernmentFinance($id: String!) {
       uid,
       year,
       levels,
+      color,
       budget_type,
       value,
       value_ncu
     },
     finance {
       uid,
+      color,
       year,
       levels,
       budget_type,

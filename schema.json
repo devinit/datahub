@@ -2615,6 +2615,18 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "color",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
@@ -4013,7 +4025,7 @@
           "inputFields": [
             {
               "name": "aidType",
-              "description": "",
+              "description": "oda or oof ",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4083,7 +4095,7 @@
           "inputFields": [
             {
               "name": "aidType",
-              "description": "",
+              "description": "oda or oof ",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4111,7 +4123,7 @@
             },
             {
               "name": "groupBy",
-              "description": "",
+              "description": "eg channel, bundle",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4155,7 +4167,7 @@
             },
             {
               "name": "bundle",
-              "description": "",
+              "description": "form is same as buddle",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",

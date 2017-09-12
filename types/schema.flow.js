@@ -2,12 +2,15 @@
 //  This file was automatically generated and should not be edited.
 
 export type UnbundlingAidQuery = {|
+  // oda or oof
   aidType: string,
   year: number,
+  // eg channel, bundle
   groupBy: string,
   to_di_id?: ?string,
   from_di_id?: ?string,
   sector?: ?string,
+  // form is same as buddle
   bundle?: ?string,
   channel?: ?string,
 |};
@@ -259,6 +262,7 @@ export type GovernmentFinanceQuery = {|
     expenditure: ? Array< {|
       uid: ?string,
       year: ?number,
+      color: ?string,
       levels: ?Array< ?string >,
       // eg Actual or budget
       budget_type: ?string,
@@ -268,6 +272,7 @@ export type GovernmentFinanceQuery = {|
     // come from finance file
     revenueAndGrants: ? Array< {|
       uid: ?string,
+      color: ?string,
       year: ?number,
       levels: ?Array< ?string >,
       // eg Actual or budget
