@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';
-import Legend from "components/atoms/Legend";
+import Legend from 'components/atoms/Legend';
 import {small} from 'components/theme';
 import Chart from 'components/atoms/Chart';
 import TabsToolTip from 'components/molecules/TabsToolTip';
@@ -67,13 +67,15 @@ const Overview = (props: Props) => {
               </Grid.Column>
               <Grid.Column width="10">
                 <Div fontSize={small}>
-                  {overviewTabRegional.regionalResourcesBreakdown.map((datum) =>
+                  {overviewTabRegional.regionalResourcesBreakdown
+                  && overviewTabRegional.regionalResourcesBreakdown.map((datum) =>
                     (<Legend
-                      key={datum.data.name}
-                      color={datum.data.color}
+                      key={datum.data && datum.data.name ? datum.data.name : ''}
+                      color={datum.data && datum.data.color ? datum.data.color : ''}
                     >
                       <span><span /></span>
-                      <span>{datum.data.name} <TabsToolTip {...datum.toolTip} /></span>
+                      <span>{datum.data && datum.data.name ? datum.data.name : ''}
+                        <TabsToolTip {...datum.toolTip} /></span>
                     </Legend>)
                   )}
                 </Div>

@@ -5,7 +5,7 @@ import { groupBy } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from 'components/atoms/TreeChart/index';
 import Timeline from 'components/atoms/Timeline/index';
-import LinePartitionHeader from "components/atoms/LinePartitionHeader";
+import LinePartitionHeader from 'components/atoms/LinePartitionHeader';
 
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
