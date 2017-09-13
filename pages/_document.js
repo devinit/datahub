@@ -9,9 +9,6 @@ import criticalCss from 'criticalCss'; // in private/criticalCss
 import { renderStatic } from 'glamor/server';
 // import 'lib/offline-install'; // Get our service worker on the page
 
-// type PageMeta {query: string, pathname: string}
-// PageMeta {title: string, image: '', width: '', height: ''}
-// getPageMeta(args: PageMetaArgs): PageMeta
 declare var loadCSS: any;
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage, query, pathname }) {

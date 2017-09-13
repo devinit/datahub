@@ -4,7 +4,6 @@ export const regionalResourcesBreakdown = {
   circular: {
     label: 'name',
     value: 'value',
-    innerRadius: 70,
     strokeWidth: 0,
     strokeColor: '#fff',
   },
