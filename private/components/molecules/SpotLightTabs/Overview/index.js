@@ -70,12 +70,13 @@ const Overview = (props: Props) => {
                   {overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
                     const sum = all.reduce((sum, datum) => sum + datum.data.value, 0) / 100;
                     return (<Legend
-                      key={datum.data.name}
-                      color={datum.data.color}
+                      key={datum.data && datum.data.name ? datum.data.name : ''}
+                      color={datum.data && datum.data.color ? datum.data.color : ''}
                     >
                       <span><span /></span>
                       <span>
-                        {Math.round(datum.data.value / sum)}% {datum.data.name}
+                        {`${Math.round((datum.data ? datum.data.value : 0) / sum)} `}%
+                        {datum.data && datum.data.name ? datum.data.name : ''}
                         <TabsToolTip {...datum.toolTip} />
                       </span>
                     </Legend>);
