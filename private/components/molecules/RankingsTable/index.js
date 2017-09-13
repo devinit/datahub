@@ -85,7 +85,7 @@ export default class RankingsTable extends React.Component {
                           </a>
                         </Table.Cell>
                         <Table.Cell textAlign="right">
-                          {`${item.value.toLocaleString()} ${item.uom}`}
+                          {`${Number(item.value) && item.uom !== '%' ? Number(item.value).toLocaleString() : item.value} ${item.uom}`}
                         </Table.Cell>
                       </Table.Row>),
                     )}

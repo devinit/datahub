@@ -95,56 +95,58 @@ export default class ChartShare extends Component {
   }
   render() {
     const {className, size, color, label, background, hover} = this.props;
-    return (<Modal
-      trigger={
-        <ButtonWrapper background={background} hover={hover}>
-          <Button
-            className={className}
-            size={size}
-            color={color}
-          >
-            <Icon name="share alternate" />
-            <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
-          </Button>
-        </ButtonWrapper>
-      }
-      closeIcon="close"
-    >
-      <Modal.Content>
-        <Modal.Description>
-          <Container>
-            <h4>Share this Visualization</h4>
-            <input
-              type="radio"
-              value={1}
-              checked={this.state.value === 1}
-              onChange={() => this.handleChange(1)}
-            /> in default view <br />
-            <input
-              type="radio"
-              value={2}
-              checked={this.state.value === 2}
-              onChange={() => this.handleChange(2)}
-            /> as I configured it<br />
-            <input className="link" value={this.state.link} onChange={this.onLinkChange} />
-            <Div marginTop={'1.5em'}>
-              <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
-                <Button icon="facebook f" />
-              </a>
-              <a
-                href={`https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"`}
-              >
-                <Button icon="twitter" />
-              </a>
-              <a
-                href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${this.state.link}`}
-              >
-                <Button icon="mail outline" />
-              </a>
-            </Div>
-          </Container>
-        </Modal.Description>
-      </Modal.Content>
-    </Modal>);
+    return (
+      <Modal
+        trigger={
+          <ButtonWrapper background={background} hover={hover}>
+            <Button
+              className={className}
+              size={size}
+              color={color}
+            >
+              <Icon name="share alternate" />
+              <Span fontSize={'0.85em'}>{label || 'Share this chart'}</Span>
+            </Button>
+          </ButtonWrapper>
+        }
+        size="tiny"
+        closeIcon="close"
+      >
+        <Modal.Content>
+          <Modal.Description>
+            <Container>
+              <h4>Share this Visualization</h4>
+              <input
+                type="radio"
+                value={1}
+                checked={this.state.value === 1}
+                onChange={() => this.handleChange(1)}
+              /> in default view <br />
+              <input
+                type="radio"
+                value={2}
+                checked={this.state.value === 2}
+                onChange={() => this.handleChange(2)}
+              /> as I configured it<br />
+              <input className="link" value={this.state.link} onChange={this.onLinkChange} />
+              <Div marginTop={'1.5em'}>
+                <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
+                  <Button icon="facebook f" />
+                </a>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"`}
+                >
+                  <Button icon="twitter" />
+                </a>
+                <a
+                  href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${this.state.link}`}
+                >
+                  <Button icon="mail outline" />
+                </a>
+              </Div>
+            </Container>
+          </Modal.Description>
+        </Modal.Content>
+      </Modal>);
   }
 }

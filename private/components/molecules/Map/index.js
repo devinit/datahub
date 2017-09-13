@@ -41,10 +41,12 @@ class Map extends Component {
     const ThemesWith1dp = ['vulnerability', 'government-finance', 'uganda-poverty', 'uganda-health'];
     const indicatorsWith1dp = ['spotlight_on_uganda.uganda_dependency_ratio'];
     if (indicatorsWith0dp.includes(meta.id)) return value.toFixed(0);
+    // if (indicatorsWith2dp.includes(meta.id)) return value.toFixed(2);
     if (ThemesWith1dp.includes(meta.theme) || indicatorsWith1dp.includes(meta.id)) {
       return value.toFixed(1);
     }
-    if (meta.uom_display === '%' || meta.uom_display === 'US$') return value.toFixed(1);
+    if (meta.uom_display === '%') return value.toFixed(2);
+    if (meta.uom_display === 'US$') return value.toFixed(1);
     return value;
   }
   constructor(props: Props) {
@@ -86,7 +88,11 @@ class Map extends Component {
         const uom: string = this.meta && this.meta.uom_display ? this.meta.uom_display : '';
         return { name, value, flagUrl, uid: obj.uid || '', position: index, route, uom};
       });
-    const top = sortedData.slice(0, 10);
+    const top = sortedData.slice(0, 10).map(obj => {
+      if (Number(obj.value) > 1000) return {...obj, value: Number(obj.value).toFixed(0)};
+      if (this.meta.id === 'data_series.fdi_pp') return {...obj, value: Number(obj.value).toFixed(0)};
+      return obj;
+    });
     const bottom = sortedData.slice(-10);
     return {
       hasflags: this.country === 'global',
@@ -173,7 +179,7 @@ class Map extends Component {
               right={'2%'}
               position={'absolute'}
             >
-              Country borders do not necessarily reflect Development Initiative&apos;s position.
+              Country borders do not necessarily reflect Development Initiatives&apos; position.
             </P>
           </Grid.Row>
           <Grid.Row centered>

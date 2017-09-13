@@ -24,10 +24,12 @@ import type {
 } from './types';
 
 const NO_DATA = 'No data';
+
 export const indicatorsWith0dp = [
   'data_series.natural_hazard',
   'data_series.number_of_un_appeals',
   'data_series.forgotten_crisis'];
+
 class BaseMap extends Component {
   static foldOverSurveyMapFeatures(features: Feature[]): MapData {
     const props = features.reverse().reduce((acc, feature) => {
@@ -41,9 +43,10 @@ class BaseMap extends Component {
 
     const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
     const id: string = props.ISO2 || '';
-    const countryName: string = props.NAME || props.NAME || '';
-    const region: string = props.dhsreg ? props.dhsreg : '';
+    const countryName: string = props.NAME || '';
+    const region: string = props.DHSREGNA || '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
+    console.log(props);
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
   static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
@@ -61,6 +64,7 @@ class BaseMap extends Component {
   }
   static setPointDataValue(value: number, uom?: string, indicator?: string): string {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
+    if (uom === '%') return value.toFixed(2);
     if (indicatorsWith0dp.includes(indicator)) return value.toFixed(0);
     return approximate(value);
   }
