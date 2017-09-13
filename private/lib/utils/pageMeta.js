@@ -21,13 +21,13 @@ const metaMapping = (args: PageMetaArgs): MetaMapping => ({
     width: '',
     height: '',
   },
-  country: {
+  '/country': {
     title: getCountryName(args.query),
     image: '',
     width: '',
     height: '',
   },
-  uganda: {
+  '/uganda': {
     title: getDistrictName(args.query, 'uganda'),
     image: '',
     width: '',

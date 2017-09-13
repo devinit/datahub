@@ -147,11 +147,15 @@ class RegionalProfile extends Component {
         country={this.state.country.slug}
         {...this.props.state}
       />
-      <DarkBg>
+      {/* <DarkBg>
         <SectionHeader color={red} fontColor={white}>
-          MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}
+          <Link href={`/country/${this.state.country.slug}`}>
+            <a role="link">
+              MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}
+            </a>
+          </Link>
         </SectionHeader>
-      </DarkBg>
+      </DarkBg> */}
       <ProfileDataSourceTable data={data.dataSources} />
     </Generic>);
   }
