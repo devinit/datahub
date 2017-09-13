@@ -1,6 +1,10 @@
 // @flow
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
+import {Div} from 'glamorous';
+import Legend from "components/atoms/Legend";
+import {small} from 'components/theme';
+import Chart from 'components/atoms/Chart';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import {TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import type {PageUnit} from 'components/organisms/PagesData';
@@ -9,7 +13,8 @@ import { NoData } from 'lib/utils/constants';
 
 type Props = {
   ...SpotLightTabDataQuery,
-  pageData: PageUnit[]
+  pageData: PageUnit[],
+  config: Object,
 }
 
 const Overview = (props: Props) => {
@@ -48,6 +53,33 @@ const Overview = (props: Props) => {
               ? `US$ ${overviewTabRegional.regionalResources.value}`
               : NoData}
           </TabsP>
+
+          {overviewTabRegional.regionalResourcesBreakdown &&
+          overviewTabRegional.regionalResourcesBreakdown &&
+          overviewTabRegional.regionalResourcesBreakdown.length ?
+            <Grid>
+              <Grid.Column width="6">
+                <Chart
+                  config={props.config.regionalResourcesBreakdown}
+                  data={overviewTabRegional.regionalResourcesBreakdown.map(d => d.data)}
+                  height="140px"
+                />
+              </Grid.Column>
+              <Grid.Column width="10">
+                <Div fontSize={small}>
+                  {overviewTabRegional.regionalResourcesBreakdown.map((datum) =>
+                    (<Legend
+                      key={datum.data.name}
+                      color={datum.data.color}
+                    >
+                      <span><span /></span>
+                      <span>{datum.data.name} <TabsToolTip {...datum.toolTip} /></span>
+                    </Legend>)
+                  )}
+                </Div>
+              </Grid.Column>
+            </Grid> : ''
+          }
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>

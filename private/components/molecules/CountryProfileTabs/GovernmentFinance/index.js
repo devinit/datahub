@@ -1,10 +1,11 @@
 // @flow
+import React from "react";
 import { Container, Grid } from 'semantic-ui-react';
-import glamorous, {Div} from 'glamorous';
+import {Div} from 'glamorous';
 import {small} from 'components/theme';
-import React from 'react';
-import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
+import Legend from "components/atoms/Legend";
 import Chart from 'components/atoms/Chart';
+import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
@@ -15,35 +16,6 @@ type Props = {
   config: any,
   pagesData: PageUnit[],
 };
-
-export const Legend = glamorous.div({
-  textAlign: 'left',
-  fontWeight: 100,
-
-  '& span': {
-    display: 'table-cell',
-    valign: 'middle',
-    margin: '2px 0',
-  },
-
-  '& span:first-child': {
-    padding: '0 2px',
-    width: '16px',
-  },
-
-  '& span:first-child > span': {
-    width: '12px',
-    height: '12px',
-    borderRadius: '50%'
-  },
-
-}, (props) => {
-  return ({
-    '& span:first-child > span': {
-      backgroundColor: props.color || '#abc'
-    },
-  });
-});
 
 const Government = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
