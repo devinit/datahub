@@ -19,7 +19,8 @@ export default class MyDocument extends Document {
 
   constructor(props: any) {
     super(props);
-    this.pageMeta = getPageMeta({query: this.props.query.id, pathname: this.props.pathname});
+    const query = this.props.query && this.props.query.id ? this.props.query.id : '';
+    this.pageMeta = getPageMeta({query, pathname: this.props.pathname});
     const { __NEXT_DATA__, ids } = props;
     if (ids) {
       __NEXT_DATA__.ids = this.props.ids;
