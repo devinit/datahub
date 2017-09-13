@@ -13,7 +13,8 @@ import { NoData } from 'lib/utils/constants';
 
 type Props = {
   ...SpotLightTabDataQuery,
-  pageData: PageUnit[]
+  pageData: PageUnit[],
+  config: Object,
 }
 
 const Overview = (props: Props) => {
@@ -23,7 +24,6 @@ const Overview = (props: Props) => {
   const govtSpendPerPerson = getPageLine('govt-spend-per-person');
   if (!props.overviewTabRegional) throw new Error('regional overview data is missing');
   const overviewTabRegional = props.overviewTabRegional;
-  console.log(overviewTabRegional.regionalResourcesBreakdown);
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -73,8 +73,7 @@ const Overview = (props: Props) => {
                       color={datum.data.color}
                     >
                       <span><span /></span>
-                      <span>{datum.data.name}</span>
-                      <TabsToolTip {...datum.toolTip} />
+                      <span>{datum.data.name} <TabsToolTip {...datum.toolTip} /></span>
                     </Legend>)
                   )}
                 </Div>
