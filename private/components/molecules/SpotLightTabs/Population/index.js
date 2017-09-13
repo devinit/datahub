@@ -72,7 +72,7 @@ const Population = (props: Props) => {
               <Chart
                 config={props.config.populationDistribution}
                 data={populationTabRegional.populationDistribution.data}
-                height="140px"
+                height="160px"
               />
             </Div>
             : <TabsNoData />}
