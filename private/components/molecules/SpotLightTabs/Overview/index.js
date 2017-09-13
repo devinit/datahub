@@ -67,14 +67,19 @@ const Overview = (props: Props) => {
               </Grid.Column>
               <Grid.Column width="10">
                 <Div fontSize={small}>
-                  {overviewTabRegional.regionalResourcesBreakdown.map((datum) =>
-                    (<Legend
+                  {overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
+                    const sum = all.reduce((sum, datum) => sum + datum.data.value, 0) / 100;
+                    return (<Legend
                       key={datum.data.name}
                       color={datum.data.color}
                     >
                       <span><span /></span>
-                      <span>{datum.data.name} <TabsToolTip {...datum.toolTip} /></span>
-                    </Legend>)
+                      <span>
+                        {Math.round(datum.data.value / sum)}% {datum.data.name}
+                        <TabsToolTip {...datum.toolTip} />
+                      </span>
+                    </Legend>);
+                  }
                   )}
                 </Div>
               </Grid.Column>
