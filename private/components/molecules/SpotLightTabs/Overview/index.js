@@ -69,15 +69,21 @@ const Overview = (props: Props) => {
                 <Div fontSize={small}>
                   {overviewTabRegional.regionalResourcesBreakdown
                   && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
-                    const sum = all.reduce((sum, datum) => sum + datum.data.value, 0) / 100;
+                    const sum = all.reduce((sum, datum) => {
+                      const value = datum.data && datum.data.value ? datum.data.value : 0;
+                      return sum + value;
+                    }, 0);
+                    console.log(sum);
+
                     return (<Legend
                       key={datum.data && datum.data.name ? datum.data.name : ''}
                       color={datum.data && datum.data.color ? datum.data.color : ''}
                     >
                       <span><span /></span>
                       <span>
-                        {`${Math.round((datum.data ? datum.data.value : 0) / sum)} `}%
-                        {datum.data && datum.data.name ? datum.data.name : ''}
+                        {`${datum.data && datum.data.value ?
+                          Math.round(100 * datum.data.value / sum) : '0'}`}%
+                        {` ${datum.data && datum.data.name ? datum.data.name : ''}`}
                         <TabsToolTip {...datum.toolTip} />
                       </span>
                     </Legend>);
