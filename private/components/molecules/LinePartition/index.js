@@ -2,14 +2,13 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
 import { groupBy } from 'ramda';
-import { Container, Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
-import { SectionHeader } from 'components/atoms/Header';
+import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from 'components/atoms/TreeChart/index';
 import Timeline from 'components/atoms/Timeline/index';
+import LinePartitionHeader from "components/atoms/LinePartitionHeader";
 
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
-  boxShadow: '0 1px 4px rgba(0,0,0,.1)',
   paddingLeft: '2em',
   paddingRight: '3em',
   paddingBottom: '1.5em',
@@ -104,13 +103,13 @@ export default class LinePartition extends Component {
    */
   createTreeStateByYearAndBudgetType() {
     const groupedByYear = groupByYear(this.props.data
-      .map(d => {
+      .map(datum => {
         return {
-          ...d,
-          // Hack: Coloring red nodes with negative values
-          color: d.value > 0 ? null : 'rgb(240, 122, 146)',
-          nodeParent: d.levels[d.levels.length - 2],
-          nodeId: d.levels[d.levels.length - 1],
+          ...datum,
+          // Hack: Coloring nodes with negative values to red
+          color: datum.value > 0 ? datum.color : 'rgb(240, 122, 146)',
+          nodeParent: datum.levels[datum.levels.length - 2],
+          nodeId: datum.levels[datum.levels.length - 1],
         };
       }));
 
@@ -165,7 +164,7 @@ export default class LinePartition extends Component {
 
     return (<Container>
 
-      {!this.props.inverted ? '' :
+      {this.props.inverted ? '' :
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.props.title}
@@ -183,7 +182,7 @@ export default class LinePartition extends Component {
           <CardContainer>
             <Timeline
               onYearChanged={year => this.props.onChangeYear(+year)}
-              height="180px"
+              height={this.props.config.partition.showLegend ? '180px' : '250px'}
               config={{
                 ...this.props.config.line,
                 timeAxis: {
@@ -201,7 +200,7 @@ export default class LinePartition extends Component {
         <Grid.Column width={11} style={{ paddingLeft: 0 }}>
           <TreeChartContainer>
             <TreeChart
-              height="222px"
+              height={this.props.config.partition.showLegend ? '222px' : '380px'}
               config={{
                 ...this.props.config.partition,
                 labeling: { prefix: this.props.currency },
@@ -213,7 +212,7 @@ export default class LinePartition extends Component {
         </Grid.Column>
       </Grid>
 
-      {this.props.inverted ? '' :
+      {!this.props.inverted ? '' :
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.props.title}
@@ -229,40 +228,3 @@ export default class LinePartition extends Component {
     </Container>);
   }
 }
-// @ernest why did you put the linepartionHeader in same file as LinePartion
-type LinePartitionHeaderProps = {
-  title: string,
-  year: number,
-  budgetType: string,
-  budgetTypeOptions: Object[],
-  currency: string,
-  currencyOptions: Object[],
-  onChangeCurrency(currency: string): void,
-  onChangeBudgetType(budgetType: string): void,
-};
-
-const LinePartitionHeader = (props: LinePartitionHeaderProps) => {
-  return (<Segment basic clearing style={{ paddingRight: 0, paddingLeft: 0 }}>
-    <SectionHeader color="#fff" style={{ float: 'left' }}>
-      {props.title} <span>{props.year}</span>
-    </SectionHeader>
-
-    <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
-      <Label>Budget Type</Label>
-      <Dropdown
-        selection
-        value={props.budgetType}
-        options={props.budgetTypeOptions}
-        onChange={(e, data) => props.onChangeBudgetType(data.value)}
-      />
-      <Label>Currency</Label>
-      <Dropdown
-        compact
-        selection
-        value={props.currency}
-        options={props.currencyOptions}
-        onChange={(e, data) => props.onChangeCurrency(data.value)}
-      />
-    </Segment>
-  </Segment>);
-};

@@ -1,7 +1,9 @@
 // @flow
+import React from 'react';
 import { graphql } from 'react-apollo';
+import { WhiteBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/molecules/MultiLinePartition';
-import config from 'visboxConfigs/linePartition';
+import config from 'visboxConfigs/localLinePartition';
 import QUERY from './query.graphql';
 
 const withData = graphql(QUERY, {
@@ -31,7 +33,7 @@ const withData = graphql(QUERY, {
       startYear,
       items: [
         {
-          title: 'Revenue And Grants',
+          title: 'Revenue',
           data: revenueAndGrants,
         },
         {
@@ -43,4 +45,4 @@ const withData = graphql(QUERY, {
   },
 });
 
-export default withData(Chart);
+export default withData(props => <WhiteBg><Chart {...props} /></WhiteBg>);

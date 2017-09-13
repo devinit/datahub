@@ -1,4 +1,6 @@
 // @flow
+import React from 'react';
+import { LightBg } from 'components/atoms/Backgrounds';
 import { graphql } from 'react-apollo';
 import Chart from 'components/molecules/MultiLinePartition';
 import config from 'visboxConfigs/linePartition';
@@ -47,4 +49,4 @@ const withData = graphql(QUERY, {
   },
 });
 
-export default withData(Chart);
+export default withData(props => <LightBg><Chart {...props} /></LightBg>);

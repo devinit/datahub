@@ -36,6 +36,7 @@ class Chart extends React.Component {
   componentWillUpdate(props: Props) {
     if (this.chart) {
       this.chart.update(props.data);
+      this.chart.setLabeling(props.config.labeling);
     }
   }
 
