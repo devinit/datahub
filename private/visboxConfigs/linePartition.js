@@ -22,10 +22,8 @@ const line = {
 };
 
 const partition = {
-  title: '',
   type: 'partition',
   colors: ['#0095cb'],
-  coloring: 'color',
   orientation: 'horizontal',
   tree: {
     id: 'nodeId',
