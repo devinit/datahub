@@ -74,8 +74,12 @@ const Overview = (props: Props) => {
                       color={datum.data && datum.data.color ? datum.data.color : ''}
                     >
                       <span><span /></span>
-                      <span>{datum.data && datum.data.name ? datum.data.name : ''}
-                        <TabsToolTip {...datum.toolTip} /></span>
+                      <span>{datum.data && datum.data.name ? datum.data.name.toLowerCase() : ''}
+                        <TabsToolTip
+                          source={datum.toolTip && datum.toolTip.source}
+                          heading={datum.data && datum.data.name}
+                        />
+                      </span>
                     </Legend>)
                   )}
                 </Div>
