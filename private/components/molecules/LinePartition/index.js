@@ -162,6 +162,9 @@ export default class LinePartition extends Component {
         };
       });
 
+    const showLegend = this.props.config.partition.legend &&
+      this.props.config.partition.legend.showLegend;
+
     return (<Container>
 
       {this.props.inverted ? '' :
@@ -182,7 +185,7 @@ export default class LinePartition extends Component {
           <CardContainer>
             <Timeline
               onYearChanged={year => this.props.onChangeYear(+year)}
-              height={this.props.config.partition.showLegend ? '180px' : '250px'}
+              height={showLegend ? '250px' : '180px'}
               config={{
                 ...this.props.config.line,
                 timeAxis: {
@@ -200,7 +203,7 @@ export default class LinePartition extends Component {
         <Grid.Column width={11} style={{ paddingLeft: 0 }}>
           <TreeChartContainer>
             <TreeChart
-              height={this.props.config.partition.showLegend ? '222px' : '380px'}
+              height={showLegend ? '380px' : '222px'}
               config={{
                 ...this.props.config.partition,
                 labeling: { prefix: this.props.currency },
