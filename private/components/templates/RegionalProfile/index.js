@@ -2,10 +2,10 @@
 import React, {Component} from 'react';
 import { Div, P, H4, Span, Hr} from 'glamorous';
 import { Container, Grid, Icon, Button, Dropdown, Header} from 'semantic-ui-react';
-import { red, white, lighterGrey } from 'components/theme/semantic';
-import { SectionHeader, Lead } from 'components/atoms/Header';
+import { red, lighterGrey } from 'components/theme/semantic';
+import { Lead } from 'components/atoms/Header';
 import { BodyLink } from 'components/atoms/Link';
-import { DarkBg } from 'components/atoms/Backgrounds';
+// import { DarkBg } from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountrySearch from 'components/organisms/CountrySearchInput';
 import SpotLightTabs from 'components/organisms/SpotLightTabs';
