@@ -91,7 +91,7 @@ class SearchInput extends React.Component {
     this.resetState();
     this.textInput.blur();
     if (this.props.onSelected) return this.props.onSelected(country.slug);
-    return Router.push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}y/${country.slug}`);
+    return Router.push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}/${country.slug}`);
   }
   textInput: HTMLInputElement
   resetState() {

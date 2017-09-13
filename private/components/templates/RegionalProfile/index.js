@@ -1,6 +1,6 @@
 // @flow
 import React, {Component} from 'react';
-import { Div, P, H4} from 'glamorous';
+import { Div, P, H4, Span} from 'glamorous';
 import { Container, Grid, Icon, Button, Dropdown, Segment, Header} from 'semantic-ui-react';
 import { red, white } from 'components/theme/semantic';
 import { SectionHeader, Lead } from 'components/atoms/Header';
@@ -88,13 +88,13 @@ class RegionalProfile extends Component {
                     <Lead>
                       Explore this in-depth profile to find out about poverty, population, education, health, water,
                       sanitation and hygiene, and district public resources in {this.state.district.name}.
-                      <P fontWeight={500} lineHeight="3" fontSize="0.7em">
+                      <Span fontWeight={500} lineHeight="3" fontSize="0.7em" display="block">
                           Visit the {' '}
                         <BodyLink href={`/country/${this.state.country.slug}`}>
                           {this.state.country.name} country Profile
                         </BodyLink>
                         {' '}to explore national-level data.
-                      </P>
+                      </Span>
                     </Lead>
                     <P fontWeight={500} fontSize="1.2em" lineHeight="0">View all financial data in: </P>
                     <Dropdown
