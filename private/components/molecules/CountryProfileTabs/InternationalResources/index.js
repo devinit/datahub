@@ -9,7 +9,7 @@ import {NoData} from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
-import {Legend} from '../GovernmentFinance';
+import Legend from 'components/atoms/Legend';
 
 type Props = {
   ...TabDataQuery,

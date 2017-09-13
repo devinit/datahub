@@ -46,7 +46,7 @@ const LegendKey = glamorous.li(
   }),
 );
 
-const legend = (props: Props) =>
+const Legend = (props: Props) =>
   (<LegendContainer length={props.legendData.length}>
     <Div>
       <Header as="h3">
@@ -67,4 +67,4 @@ const legend = (props: Props) =>
     </Div>
   </LegendContainer>);
 
-export default legend;
+export default Legend;

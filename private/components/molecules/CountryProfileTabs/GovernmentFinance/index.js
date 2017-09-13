@@ -1,9 +1,9 @@
 // @flow
-import React from "react";
+import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';
 import {small} from 'components/theme';
-import Legend from "components/atoms/Legend";
+import Legend from 'components/atoms/Legend';
 import Chart from 'components/atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
 import TabsToolTip from 'components/molecules/TabsToolTip';

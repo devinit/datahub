@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';
-import Legend from "components/atoms/Legend";
+import Legend from 'components/atoms/Legend';
 import {small} from 'components/theme';
 import Chart from 'components/atoms/Chart';
 import TabsToolTip from 'components/molecules/TabsToolTip';
@@ -67,7 +67,8 @@ const Overview = (props: Props) => {
               </Grid.Column>
               <Grid.Column width="10">
                 <Div fontSize={small}>
-                  {overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
+                  {overviewTabRegional.regionalResourcesBreakdown
+                  && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
                     const sum = all.reduce((sum, datum) => sum + datum.data.value, 0) / 100;
                     return (<Legend
                       key={datum.data && datum.data.name ? datum.data.name : ''}
