@@ -234,7 +234,7 @@ class BaseMap extends Component {
       const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
       if (!this.props.meta || !this.props.meta.country) return false;
-      const route: Route = countryOrDistrictLink(this.props.meta.country, slug);
+      const route: Route = countryOrDistrictLink(this.props.meta.country, slug.toLowerCase());
       this.setState({ profileLoading: true });
       return Router.push(route.routePath, route.routeAsPath);
     });
