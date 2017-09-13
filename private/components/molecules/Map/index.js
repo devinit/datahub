@@ -204,7 +204,7 @@ class Map extends Component {
             <Grid.Column width={5} textAlign="center">
               <ChartShare
                 size="big"
-                color="black"
+                color="grey"
                 stateToShare={{
                   year: this.state.currentYear,
                   indicator: this.meta.id

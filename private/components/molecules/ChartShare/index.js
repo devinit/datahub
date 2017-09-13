@@ -71,24 +71,24 @@ export default class ChartShare extends Component {
   }
   state: State
   componentDidMount() {
-    this.createLink();
+    this.createLink(this.props);
   }
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) this.createLink();
+    if (nextProps !== this.props) this.createLink(nextProps);
   }
-  onLinkChange = () => this.createLink();
+  onLinkChange = () => this.createLink(this.props);
 
   handleChange = (value: number) => {
     this.setState({value});
-    this.createLink(value);
+    this.createLink(this.props, value);
   };
-
-  async createLink(checkedOption: number = 2) {
-    if (!this.props.stateToShare) return this.state;
+  // checkedoption i.e 1 is default 2 is as configured
+  async createLink(props: Props, checkedOption?: number = 2) {
+    if (!props.stateToShare) return this.state;
     const currentUrl = window.location.href;
     const chartState =
-      checkedOption === 1 && this.props.stateToShare && this.props.stateToShare.chartId ?
-        {chartId: this.props.stateToShare.chartId} : this.props.stateToShare;
+      checkedOption === 1 && props.stateToShare ?
+        {...props.stateToShare, year: null} : props.stateToShare;
     const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
     return this.setState({link: shortURL});
