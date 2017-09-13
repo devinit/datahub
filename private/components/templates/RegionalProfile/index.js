@@ -1,8 +1,8 @@
 // @flow
 import React, {Component} from 'react';
-import { Div, P, H4, Span} from 'glamorous';
-import { Container, Grid, Icon, Button, Dropdown, Segment, Header} from 'semantic-ui-react';
-import { red, white } from 'components/theme/semantic';
+import { Div, P, H4, Span, Hr} from 'glamorous';
+import { Container, Grid, Icon, Button, Dropdown, Header} from 'semantic-ui-react';
+import { red, white, lighterGrey } from 'components/theme/semantic';
 import { SectionHeader, Lead } from 'components/atoms/Header';
 import { BodyLink } from 'components/atoms/Link';
 import { DarkBg } from 'components/atoms/Backgrounds';
@@ -135,11 +135,10 @@ class RegionalProfile extends Component {
       <SpotLightTabs id={this.state.district.slug} country={this.state.country.slug} />
       <Div paddingTop={'4em'} paddingBottom={'1em'}>
         <Container textAlign="center">
-          <Segment basic ref={node => { this.lowerTabs = node; }}>
-            <Header>
-              <Header.Content as="h2">Revenue</Header.Content>
-            </Header>
-          </Segment>
+          <Header ref={node => { this.lowerTabs = node; }} >
+            <Header.Content as="h2">Revenue</Header.Content>
+          </Header>
+          <Hr borderTop={`2px solid ${lighterGrey}`} />
         </Container>
       </Div>
       <DynamicRegionalLowerTabs
