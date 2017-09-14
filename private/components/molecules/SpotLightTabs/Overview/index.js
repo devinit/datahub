@@ -73,7 +73,6 @@ const Overview = (props: Props) => {
                       const value = datum.data && datum.data.value ? datum.data.value : 0;
                       return sum + value;
                     }, 0);
-                    console.log(sum);
 
                     return (<Legend
                       key={datum.data && datum.data.name ? datum.data.name : ''}
