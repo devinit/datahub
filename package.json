@@ -27,6 +27,7 @@
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "format-p": "prettier-eslint --write \"private/components/templates/Front/index.js\"",
+    "git-master": "git checkout master && git rebase dev && git push origin master && git push origin dev && git checkout dev",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
     "analyze": "ANALYZE=1 next build",
