@@ -44,7 +44,6 @@
     "graphql": "^0.10.3"
   },
   "dependencies": {
-    "@devinit/charts": "^1.4.4",
     "apollo-client": "^1.9.0-1",
     "apollo-fetch": "^0.6.0",
     "babel-cli": "^6.26.0",
@@ -68,7 +67,7 @@
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.0",
     "lru-cache": "^4.1.1",
-    "mapbox-gl": "^0.39.1",
+    "mapbox-gl": "^0.40.0",
     "next": "^3.0.6",
     "prettier": "^1.5.3",
     "prop-types": "^15.5.10",
@@ -88,6 +87,7 @@
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@devinit/charts": "^1.4.6",
     "@storybook/addon-storyshots": "^3.1.9",
     "@storybook/react": "^3.1.9",
     "apollo-codegen": "^0.15.2",
@@ -107,11 +107,11 @@
     "flow-remove-types": "^1.2.1",
     "git-pre-hooks": "^1.2.0",
     "gulp": "^3.9.1",
-    "jest": "^20.0.4",
-    "jest-cli": "^20.0.4",
+    "jest": "^21.1.0",
+    "jest-cli": "^21.1.0",
     "less": "^2.7.2",
     "prettier-eslint-cli": "^4.0.3",
-    "pretty-format": "^20.0.3",
+    "pretty-format": "^21.1.0",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
     "usus": "^1.6.0"
