@@ -19,7 +19,7 @@ const Container = glamorous.div({
   position: 'relative',
 });
 
-const NoDataAvailableContainer = glamorous.div({
+export const NoDataAvailableContainer = glamorous.div({
   padding: '2em',
   fontSize: '1.4em',
 });
