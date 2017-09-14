@@ -1,11 +1,11 @@
 // @flow
 import React, {Component} from 'react';
-import { Div, P, H4, Span} from 'glamorous';
-import { Container, Grid, Icon, Button, Dropdown, Segment, Header} from 'semantic-ui-react';
-import { red, white } from 'components/theme/semantic';
-import { SectionHeader, Lead } from 'components/atoms/Header';
+import { Div, P, H4, Span, Hr} from 'glamorous';
+import { Container, Grid, Icon, Button, Dropdown, Header} from 'semantic-ui-react';
+import { red, lighterGrey } from 'components/theme/semantic';
+import { Lead } from 'components/atoms/Header';
 import { BodyLink } from 'components/atoms/Link';
-import { DarkBg } from 'components/atoms/Backgrounds';
+// import { DarkBg } from 'components/atoms/Backgrounds';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import CountrySearch from 'components/organisms/CountrySearchInput';
 import SpotLightTabs from 'components/organisms/SpotLightTabs';
@@ -135,11 +135,10 @@ class RegionalProfile extends Component {
       <SpotLightTabs id={this.state.district.slug} country={this.state.country.slug} />
       <Div paddingTop={'4em'} paddingBottom={'1em'}>
         <Container textAlign="center">
-          <Segment basic ref={node => { this.lowerTabs = node; }}>
-            <Header>
-              <Header.Content as="h2">Revenue</Header.Content>
-            </Header>
-          </Segment>
+          <Header ref={node => { this.lowerTabs = node; }} >
+            <Header.Content as="h2">Revenue</Header.Content>
+          </Header>
+          <Hr borderTop={`2px solid ${lighterGrey}`} />
         </Container>
       </Div>
       <DynamicRegionalLowerTabs
@@ -148,11 +147,15 @@ class RegionalProfile extends Component {
         country={this.state.country.slug}
         {...this.props.state}
       />
-      <DarkBg>
+      {/* <DarkBg>
         <SectionHeader color={red} fontColor={white}>
-          MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}
+          <Link href={`/country/${this.state.country.slug}`}>
+            <a role="link">
+              MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}
+            </a>
+          </Link>
         </SectionHeader>
-      </DarkBg>
+      </DarkBg> */}
       <ProfileDataSourceTable data={data.dataSources} />
     </Generic>);
   }

@@ -16,8 +16,8 @@ const TabsToolTip = (props: Props) => {
       <P textAlign={'center'}>
         {props.heading}
       </P>
-      <P>
-        <b>source</b>: {props.source}
+      <P fontSize="0.8em">
+        <b>Source</b>: {props.source}
       </P>
     </ToolTip>
   );

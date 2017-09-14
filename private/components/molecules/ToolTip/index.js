@@ -1,12 +1,9 @@
 // @flow
 import React from 'react';
 import type { Element } from 'react';
+import { Div } from 'glamorous';
 import { Icon, Popup } from 'semantic-ui-react';
-import glamourous from 'glamorous';
 
-const HeaderContainer = glamourous.div({
-  textAlign: 'right',
-});
 type Props = {
   children: any,
   color?: string,
@@ -42,9 +39,9 @@ class ToolTip extends React.Component {
         position="top right"
       >
         <Popup.Header>
-          <HeaderContainer>
+          <Div textAlign="right">
             <Icon name="close" onClick={this.handleClose} color={this.props.color || 'black'} />
-          </HeaderContainer>
+          </Div>
         </Popup.Header>
         <Popup.Content>
           {this.props.children}

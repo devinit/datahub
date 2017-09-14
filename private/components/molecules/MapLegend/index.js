@@ -29,7 +29,7 @@ const LegendContainer = glamorous.div(
     flexDirection: 'column',
   },
   props => ({
-    top: props.length ? `${150 / props.length}%` : '25%',
+    top: props.length ? `${140 / props.length}%` : '25%',
   }),
 );
 

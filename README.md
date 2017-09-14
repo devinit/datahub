@@ -16,7 +16,9 @@ This is just primarily the frontend part of the DataHub, to keep things modular 
 Install it and run:
 
 ```bash
-npm install --ignore-scripts & npm install -g flow-typed # dont install with yarn see  Known development issues below
+npm install --ignore-scripts & npm install -g flow-typed
+or
+yarn  --ignore-scripts & npm install -g flow-typed
 npm run dev
 ```
 
@@ -24,12 +26,14 @@ npm run dev
 
 -----------
 
-Create a branch for which ever issue you are working on. After you are done create and submit a pull request to the master branch.
+Create a branch for which ever issue you are working on. After you are done create and submit a pull request to the dev branch.
 Before merging your pull request make sure the build passes on travis-ci
 if you have linting errors consider running
 
 ```
-npm run format
+npm run format // formats entire project
+or
+npm run format-p  // formats singele page; with the correct filename in the command
 ```
 
 ## [Buiding on top of next.js](https://github.com/zeit/next.js)

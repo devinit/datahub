@@ -34,9 +34,9 @@ const spotlight = (props: Props) => {
           <Grid centered>
             <Grid.Column width={12} textAlign="center">
               <b>
-                <Icon name="pie graph" />Spotlight
+                <Icon name="pie graph" />Spotlight on Uganda {' '}
               </b>
-              on Uganda is a comprehensive source of Uganda's financial resource flow data at the
+              is a comprehensive source of Uganda's financial resource flow data at the
               sub-national (district) level, alongside indicators on poverty, population, education,
               health, water, hygiene and sanitation. It highlights the geographical variance in
               sector performance and financial resources, and seeks to answer whether resources are
@@ -101,9 +101,9 @@ const spotlight = (props: Props) => {
       <LightBg>
         <Container textAlign="center">
           <SectionHeader color={white}>DATA SOURCES</SectionHeader>
-          <Div paddingTop={'4em'} paddingBottom={'4em'}>
+          <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
-          </Div>
+          </P>
           <Button color="grey" size="large">
             Methodology and Data <Icon name="chevron right" />
           </Button>

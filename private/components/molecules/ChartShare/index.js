@@ -71,80 +71,82 @@ export default class ChartShare extends Component {
   }
   state: State
   componentDidMount() {
-    this.createLink();
+    this.createLink(this.props);
   }
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) this.createLink();
+    if (nextProps !== this.props) this.createLink(nextProps);
   }
-  onLinkChange = () => this.createLink();
+  onLinkChange = () => this.createLink(this.props);
 
   handleChange = (value: number) => {
     this.setState({value});
-    this.createLink(value);
+    this.createLink(this.props, value);
   };
-
-  async createLink(checkedOption: number = 2) {
-    if (!this.props.stateToShare) return this.state;
+  // checkedoption i.e 1 is default 2 is as configured
+  async createLink(props: Props, checkedOption?: number = 2) {
+    if (!props.stateToShare) return this.state;
     const currentUrl = window.location.href;
     const chartState =
-      checkedOption === 1 && this.props.stateToShare && this.props.stateToShare.chartId ?
-        {chartId: this.props.stateToShare.chartId} : this.props.stateToShare;
+      checkedOption === 1 && props.stateToShare ?
+        {...props.stateToShare, year: null} : props.stateToShare;
     const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
     return this.setState({link: shortURL});
   }
   render() {
     const {className, size, color, label, background, hover} = this.props;
-    return (<Modal
-      trigger={
-        <ButtonWrapper background={background} hover={hover}>
-          <Button
-            className={className}
-            size={size}
-            color={color}
-          >
-            <Icon name="share alternate" />
-            <Span fontSize={'0.85em'}>{label || 'Share this Chart'}</Span>
-          </Button>
-        </ButtonWrapper>
-      }
-      closeIcon="close"
-    >
-      <Modal.Content>
-        <Modal.Description>
-          <Container>
-            <h4>Share this Visualization</h4>
-            <input
-              type="radio"
-              value={1}
-              checked={this.state.value === 1}
-              onChange={() => this.handleChange(1)}
-            /> in default view <br />
-            <input
-              type="radio"
-              value={2}
-              checked={this.state.value === 2}
-              onChange={() => this.handleChange(2)}
-            /> as I configured it<br />
-            <input className="link" value={this.state.link} onChange={this.onLinkChange} />
-            <Div marginTop={'1.5em'}>
-              <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
-                <Button icon="facebook f" />
-              </a>
-              <a
-                href={`https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"`}
-              >
-                <Button icon="twitter" />
-              </a>
-              <a
-                href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${this.state.link}`}
-              >
-                <Button icon="mail outline" />
-              </a>
-            </Div>
-          </Container>
-        </Modal.Description>
-      </Modal.Content>
-    </Modal>);
+    return (
+      <Modal
+        trigger={
+          <ButtonWrapper background={background} hover={hover}>
+            <Button
+              className={className}
+              size={size}
+              color={color}
+            >
+              <Icon name="share alternate" />
+              <Span fontSize={'0.85em'}>{label || 'Share this chart'}</Span>
+            </Button>
+          </ButtonWrapper>
+        }
+        size="tiny"
+        closeIcon="close"
+      >
+        <Modal.Content>
+          <Modal.Description>
+            <Container>
+              <h4>Share this Visualization</h4>
+              <input
+                type="radio"
+                value={1}
+                checked={this.state.value === 1}
+                onChange={() => this.handleChange(1)}
+              /> in default view <br />
+              <input
+                type="radio"
+                value={2}
+                checked={this.state.value === 2}
+                onChange={() => this.handleChange(2)}
+              /> as I configured it<br />
+              <input className="link" value={this.state.link} onChange={this.onLinkChange} />
+              <Div marginTop={'1.5em'}>
+                <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
+                  <Button icon="facebook f" />
+                </a>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"`}
+                >
+                  <Button icon="twitter" />
+                </a>
+                <a
+                  href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${this.state.link}`}
+                >
+                  <Button icon="mail outline" />
+                </a>
+              </Div>
+            </Container>
+          </Modal.Description>
+        </Modal.Content>
+      </Modal>);
   }
 }

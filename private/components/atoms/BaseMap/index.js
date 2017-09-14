@@ -24,10 +24,18 @@ import type {
 } from './types';
 
 const NO_DATA = 'No data';
+
 export const indicatorsWith0dp = [
   'data_series.natural_hazard',
+  'spotlight_on_uganda.uganda_urban_pop',
+  'spotlight_on_uganda.uganda_rural_safe_water',
+  'spotlight_on_uganda.uganda_rural_water_func',
+  'spotlight_on_uganda.uganda_water_source_comm_func',
+  'spotlight_on_uganda.uganda_wash_perf_score',
   'data_series.number_of_un_appeals',
+  'spotlight_on_uganda.uganda_health_posts',
   'data_series.forgotten_crisis'];
+
 class BaseMap extends Component {
   static foldOverSurveyMapFeatures(features: Feature[]): MapData {
     const props = features.reverse().reduce((acc, feature) => {
@@ -41,9 +49,10 @@ class BaseMap extends Component {
 
     const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
     const id: string = props.ISO2 || '';
-    const countryName: string = props.NAME || props.NAME || '';
-    const region: string = props.dhsreg ? props.dhsreg : '';
+    const countryName: string = props.NAME || '';
+    const region: string = props.DHSREGNA || '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
+    console.log(props);
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
   static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
@@ -59,9 +68,12 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug};
   }
-  static setPointDataValue(value: number, uom?: string, indicator?: string): string {
+  static setPointDataValue(
+    value: number, uom?: string, indicator?: string): string {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
     if (indicatorsWith0dp.includes(indicator)) return value.toFixed(0);
+    if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
+    if (uom === '%') return value.toFixed(2);
     return approximate(value);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
@@ -129,7 +141,7 @@ class BaseMap extends Component {
     const theme: string = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
     const indicator: string = this.props.meta && this.props.meta.id ? this.props.meta.id : '';
     const detail: string = pointData.detail || NO_DATA;
-    const uom: string =
+    let uom: string =
       this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     let value: string = NO_DATA;
     if (pointData.value !== null && pointData.value !== undefined &&
@@ -145,6 +157,7 @@ class BaseMap extends Component {
     if (theme === 'government-finance' && pointData.detail) {
       value = `${value} <span style="color: white">[ ${pointData.detail} ]</span>`;
     }
+    if (theme === 'government-finance' && pointData.detail && uom === '%') uom = '';
     const opts = { id, value, name, uom, country, year: pointData.year || 0 };
     if (!id) return false;
     return this.genericTipHtml(opts);
@@ -234,7 +247,7 @@ class BaseMap extends Component {
       const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
       if (!this.props.meta || !this.props.meta.country) return false;
-      const route: Route = countryOrDistrictLink(this.props.meta.country, slug);
+      const route: Route = countryOrDistrictLink(this.props.meta.country, slug.toLowerCase());
       this.setState({ profileLoading: true });
       return Router.push(route.routePath, route.routeAsPath);
     });

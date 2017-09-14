@@ -4,8 +4,8 @@ import BaseMap, {indicatorsWith0dp} from 'components/atoms/BaseMap';
 import type { MapData, PaintMap, Meta } from 'components/atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
 import { grey } from 'components/theme/semantic';
-import type { LegendField } from 'components/atoms/MapLegend';
-import Legend from 'components/atoms/MapLegend';
+import type { LegendField } from 'components/molecules/MapLegend';
+import Legend from 'components/molecules/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';
 import { Grid, Container } from 'semantic-ui-react';
 import RankingsTable from 'components/molecules/RankingsTable';
@@ -38,13 +38,14 @@ class Map extends Component {
     const {value} = mapPoint;
     if (value === undefined || value === null) throw new Error('country rank value should be defined');
     if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
-    const ThemesWith1dp = ['vulnerability', 'government-finance', 'uganda-poverty', 'uganda-health'];
-    const indicatorsWith1dp = ['spotlight_on_uganda.uganda_dependency_ratio'];
+    const ThemesWith1dp = ['vulnerability', 'government-finance'];
     if (indicatorsWith0dp.includes(meta.id)) return value.toFixed(0);
-    if (ThemesWith1dp.includes(meta.theme) || indicatorsWith1dp.includes(meta.id)) {
+    if (meta.uom_display === '%' && meta.theme.includes('uganda')) return value.toFixed(1);
+    if (ThemesWith1dp.includes(meta.theme) || meta.theme.includes('uganda')) {
       return value.toFixed(1);
     }
-    if (meta.uom_display === '%' || meta.uom_display === 'US$') return value.toFixed(1);
+    if (meta.uom_display === '%') return value.toFixed(2);
+    if (meta.uom_display === 'US$') return value.toFixed(1);
     return value;
   }
   constructor(props: Props) {
@@ -84,9 +85,13 @@ class Map extends Component {
         const value = this.meta ? Map.setCountryRankValue(obj, this.meta) : obj.value;
         const route: Route = countryOrDistrictLink(this.meta.country, obj.slug);
         const uom: string = this.meta && this.meta.uom_display ? this.meta.uom_display : '';
-        return { name, value, flagUrl, uid: obj.uid || '', position: index, route, uom};
+        return { name, value, flagUrl, uid: obj.uid || '', position: (index + 1), route, uom};
       });
-    const top = sortedData.slice(0, 10);
+    const top = sortedData.slice(0, 10).map(obj => {
+      if (Number(obj.value) > 10000) return {...obj, value: Number(obj.value).toFixed(0)};
+      if (this.meta.id === 'data_series.fdi_pp') return {...obj, value: Number(obj.value).toFixed(0)};
+      return obj;
+    });
     const bottom = sortedData.slice(-10);
     return {
       hasflags: this.country === 'global',
@@ -173,7 +178,7 @@ class Map extends Component {
               right={'2%'}
               position={'absolute'}
             >
-              Country borders do not necessarily reflect Development Initiative&apos;s position.
+              Country borders do not necessarily reflect Development Initiatives&apos; position.
             </P>
           </Grid.Row>
           <Grid.Row centered>
@@ -196,14 +201,16 @@ class Map extends Component {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={5} textAlign="center">
-              <ChartShare
-                size="big"
-                color="black"
-                stateToShare={{
-                  year: this.state.currentYear,
-                  indicator: this.meta.id
-                }}
-              />
+              <Div paddingBottom="2em">
+                <ChartShare
+                  size="big"
+                  color="black"
+                  stateToShare={{
+                    year: this.state.currentYear,
+                    indicator: this.meta.id
+                  }}
+                />
+              </Div>
             </Grid.Column>
           </Grid.Row>
           {!this.noRankTableList.includes(this.meta.id) ?

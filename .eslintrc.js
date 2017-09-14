@@ -4,6 +4,9 @@ module.exports = {
   parser: 'babel-eslint',
   extends: ['airbnb', 'plugin:flowtype/recommended'],
   plugins: ['flowtype', 'react', 'jsx-a11y', 'import', 'graphql'],
+  globals: {
+    loadCSS: true
+  },
   env: {
     browser: true,
     jest: true,
