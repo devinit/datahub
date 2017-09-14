@@ -38,11 +38,10 @@ class Map extends Component {
     const {value} = mapPoint;
     if (value === undefined || value === null) throw new Error('country rank value should be defined');
     if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
-    const ThemesWith1dp = ['vulnerability', 'government-finance', 'uganda-poverty', 'uganda-health'];
-    const indicatorsWith1dp = ['spotlight_on_uganda.uganda_dependency_ratio'];
+    const ThemesWith1dp = ['vulnerability', 'government-finance'];
     if (indicatorsWith0dp.includes(meta.id)) return value.toFixed(0);
-    // if (indicatorsWith2dp.includes(meta.id)) return value.toFixed(2);
-    if (ThemesWith1dp.includes(meta.theme) || indicatorsWith1dp.includes(meta.id)) {
+    if (meta.uom_display === '%' && meta.theme.includes('uganda')) return value.toFixed(1);
+    if (ThemesWith1dp.includes(meta.theme) || meta.theme.includes('uganda')) {
       return value.toFixed(1);
     }
     if (meta.uom_display === '%') return value.toFixed(2);

@@ -101,9 +101,9 @@ const spotlight = (props: Props) => {
       <LightBg>
         <Container textAlign="center">
           <SectionHeader color={white}>DATA SOURCES</SectionHeader>
-          <Div paddingTop={'4em'} paddingBottom={'4em'}>
+          <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
-          </Div>
+          </P>
           <Button color="grey" size="large">
             Methodology and Data <Icon name="chevron right" />
           </Button>

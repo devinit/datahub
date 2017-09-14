@@ -27,7 +27,13 @@ const NO_DATA = 'No data';
 
 export const indicatorsWith0dp = [
   'data_series.natural_hazard',
+  'spotlight_on_uganda.uganda_urban_pop',
+  'spotlight_on_uganda.uganda_rural_safe_water',
+  'spotlight_on_uganda.uganda_rural_water_func',
+  'spotlight_on_uganda.uganda_water_source_comm_func',
+  'spotlight_on_uganda.uganda_wash_perf_score',
   'data_series.number_of_un_appeals',
+  'spotlight_on_uganda.uganda_health_posts',
   'data_series.forgotten_crisis'];
 
 class BaseMap extends Component {
@@ -62,10 +68,12 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug};
   }
-  static setPointDataValue(value: number, uom?: string, indicator?: string): string {
+  static setPointDataValue(
+    value: number, uom?: string, indicator?: string): string {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
-    if (uom === '%') return value.toFixed(2);
     if (indicatorsWith0dp.includes(indicator)) return value.toFixed(0);
+    if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
+    if (uom === '%') return value.toFixed(2);
     return approximate(value);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
