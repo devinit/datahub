@@ -34,7 +34,7 @@ const spotlight = (props: Props) => {
           <Grid centered>
             <Grid.Column width={12} textAlign="center">
               <b>
-                <Icon name="pie graph" />Spotlight
+                <Icon name="pie graph" />Spotlight {' '}
               </b>
               on Uganda is a comprehensive source of Uganda's financial resource flow data at the
               sub-national (district) level, alongside indicators on poverty, population, education,
