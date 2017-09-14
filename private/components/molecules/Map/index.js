@@ -86,10 +86,10 @@ class Map extends Component {
         const value = this.meta ? Map.setCountryRankValue(obj, this.meta) : obj.value;
         const route: Route = countryOrDistrictLink(this.meta.country, obj.slug);
         const uom: string = this.meta && this.meta.uom_display ? this.meta.uom_display : '';
-        return { name, value, flagUrl, uid: obj.uid || '', position: index, route, uom};
+        return { name, value, flagUrl, uid: obj.uid || '', position: (index + 1), route, uom};
       });
     const top = sortedData.slice(0, 10).map(obj => {
-      if (Number(obj.value) > 1000) return {...obj, value: Number(obj.value).toFixed(0)};
+      if (Number(obj.value) > 10000) return {...obj, value: Number(obj.value).toFixed(0)};
       if (this.meta.id === 'data_series.fdi_pp') return {...obj, value: Number(obj.value).toFixed(0)};
       return obj;
     });
@@ -202,14 +202,16 @@ class Map extends Component {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={5} textAlign="center">
-              <ChartShare
-                size="big"
-                color="grey"
-                stateToShare={{
-                  year: this.state.currentYear,
-                  indicator: this.meta.id
-                }}
-              />
+              <Div paddingBottom="2em">
+                <ChartShare
+                  size="big"
+                  color="black"
+                  stateToShare={{
+                    year: this.state.currentYear,
+                    indicator: this.meta.id
+                  }}
+                />
+              </Div>
             </Grid.Column>
           </Grid.Row>
           {!this.noRankTableList.includes(this.meta.id) ?

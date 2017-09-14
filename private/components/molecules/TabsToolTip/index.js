@@ -17,7 +17,7 @@ const TabsToolTip = (props: Props) => {
         {props.heading}
       </P>
       <P>
-        <b>source</b>: {props.source}
+        <b>Source</b>: {props.source}
       </P>
     </ToolTip>
   );

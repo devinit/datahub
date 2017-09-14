@@ -133,7 +133,7 @@ class BaseMap extends Component {
     const theme: string = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
     const indicator: string = this.props.meta && this.props.meta.id ? this.props.meta.id : '';
     const detail: string = pointData.detail || NO_DATA;
-    const uom: string =
+    let uom: string =
       this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     let value: string = NO_DATA;
     if (pointData.value !== null && pointData.value !== undefined &&
@@ -149,6 +149,7 @@ class BaseMap extends Component {
     if (theme === 'government-finance' && pointData.detail) {
       value = `${value} <span style="color: white">[ ${pointData.detail} ]</span>`;
     }
+    if (theme === 'government-finance' && pointData.detail && uom === '%') uom = '';
     const opts = { id, value, name, uom, country, year: pointData.year || 0 };
     if (!id) return false;
     return this.genericTipHtml(opts);
