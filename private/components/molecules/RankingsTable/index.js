@@ -36,6 +36,7 @@ export default class RankingsTable extends React.Component {
   };
   onClick = (item: Data) => {
     this.setState({ profileLoading: true });
+    console.log(item);
     return Router.push(item.route.routePath, item.route.routeAsPath);
   };
   render() {
@@ -80,7 +81,7 @@ export default class RankingsTable extends React.Component {
                           </Table.Cell>
                           : <Table.Cell />}
                         <Table.Cell>
-                          <a onClick={() => this.onClick} role="link">
+                          <a onClick={() => this.onClick(item)} role="link">
                             {item.name}
                           </a>
                         </Table.Cell>

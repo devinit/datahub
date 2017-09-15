@@ -7,6 +7,7 @@ export type Viewport = {
   zoom: number,
   center: number[],
   bounds: number[][],
+  maxBounds?: number[][],
   minZoom: number,
 };
 export type ViewportDefaults = {

@@ -52,7 +52,6 @@ class BaseMap extends Component {
     const countryName: string = props.NAME || '';
     const region: string = props.DHSREGNA || '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
-    console.log(props);
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
   static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
@@ -111,7 +110,8 @@ class BaseMap extends Component {
   _element: HTMLDivElement;
 
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle) {
+    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle
+      || nextProps.countryProfile !== this.props.countryProfile) {
       this.setState({shouldForceRedraw: true});
     }
   }
@@ -299,10 +299,14 @@ class BaseMap extends Component {
       }, new mapboxgl.LngLatBounds(sets[0][0][0], sets[0][0][0]));
     }
     if (!bounds) return false;
+    const dx = (bounds._ne.lat - bounds._sw.lat);
+    const dy = (bounds._ne.lng - bounds._sw.lng);
+    const distance = Math.sqrt((dx * dx) + (dy * dy));
+    const maxZoom = distance > 20 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, 0],
-      maxZoom: this.props.paint.propertyLayer === 'national' ? 3 : 5.5,
+      offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [400, 0],
+      maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : 5.5,
     });
   }
   focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
@@ -316,49 +320,51 @@ class BaseMap extends Component {
       }
     }
   }
+
   draw(domElement: HTMLDivElement, paint: PaintMap) {
     const viewport = { ...this._viewportDefaults, ...this.props.viewport };
     const mapStyle = this.props.paint.mapStyle || '/styles/worldgeojson.json';
     const defaultOpts = { ...viewport, style: mapStyle, container: domElement };
-    const opts: MapBoxOptions = !this._isOnMobile
+    const opts: MapBoxOptions = !this._isOnMobile && !this.props.countryProfile
       ? { ...defaultOpts, maxBounds: viewport.bounds }
       : defaultOpts;
     // draw map
     if (!this._map || this.state.shouldForceRedraw) {
+      if (this._map) this._map.remove();
       this._mapLoaded = false; // feels abit dirty
       this._map = new mapboxgl.Map(opts);
     }
-    if (!this._nav) {
-      this._nav = new mapboxgl.NavigationControl();
-      this._map.addControl(this._nav, 'top-right');
-    }
+    if (!this._nav && !this._map) this.addMapNav();
     // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
-    if (this.props.countryProfile && this._map && this._mapLoaded) {
-      this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
-    }
-    if (!this._mapLoaded) {
-      this._map.on('load', () => {
-        this._mapLoaded = true;
-        this._map.setPaintProperty(
-          'background',
-          'background-color',
-          paint.background || seaBackground,
-        );
-        if (paint.data && paint.data.length) this.colorMap(paint);
-        if (this.props.countryProfile) {
-          this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
-        }
-        this._map.dragRotate.disable();
-        this._map.touchZoomRotate.disableRotation();
-        this.zoomListener();
-        if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
-        if (this.props.meta) this.mouseMapClick(this.props.meta);
-        this.dragListener();
-        this.persistZoomAndCenterLevel();
-        this.resize();
-      });
-    }
+
+    if (!this._mapLoaded) this.onMapLoad(paint);
+  }
+  addMapNav = () => {
+    this._nav = new mapboxgl.NavigationControl();
+    this._map.addControl(this._nav, 'top-right');
+  }
+  onMapLoad = (paint: PaintMap) => {
+    this._map.on('load', () => {
+      this._mapLoaded = true;
+      this._map.setPaintProperty(
+        'background',
+        'background-color',
+        paint.background || seaBackground,
+      );
+      if (paint.data && paint.data.length) this.colorMap(paint);
+      if (this.props.countryProfile) {
+        this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
+      }
+      this._map.dragRotate.disable();
+      this._map.touchZoomRotate.disableRotation();
+      if (!this.props.countryProfile) this.zoomListener();
+      if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
+      if (this.props.meta) this.mouseMapClick(this.props.meta);
+      if (!this.props.countryProfile) this.dragListener();
+      if (!this.props.countryProfile) this.persistZoomAndCenterLevel();
+      this.resize();
+    });
   }
   render() {
     let { width, height } = this.props;
