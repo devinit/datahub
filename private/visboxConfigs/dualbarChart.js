@@ -10,6 +10,7 @@ const config = {
     showAxis: true,
     indicator: 'value',
     ticking: 'odd',
+    absolute: true,
   },
   categoryAxis: {
     showAxis: true,

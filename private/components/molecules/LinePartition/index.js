@@ -56,7 +56,8 @@ type State = {
     }
   },
   trend: Object[],
-  level: string
+  level: string,
+  heading: string,
 }
 
 export default class LinePartition extends Component {
@@ -68,12 +69,15 @@ export default class LinePartition extends Component {
     this.state = this.createInitialState(props);
   }
 
-  setLevel(level: string) {
+  setLevel(levels: string[]) {
+    const level = levels[levels.length - 1];
     const trend = this.createTrendState(level);
+    const heading = levels.map(level => level.replace(/Total\s*/gi, '')).join(' > ');
 
     this.setState({
       level,
       trend,
+      heading,
     });
   }
 
@@ -81,12 +85,14 @@ export default class LinePartition extends Component {
   createInitialState(props: Props) {
     const [root = {levels: []}] = props.data;
     const level = root.levels[0];
+    const heading = level.replace(/Total\s*/gi, '');
 
     const trend = this.createTrendState(level);
     const treesByYear = this.createTreeStateByYearAndBudgetType();
 
     return {
       level,
+      heading,
       trend,
       treesByYear,
     };
@@ -170,7 +176,7 @@ export default class LinePartition extends Component {
       {this.props.inverted ? '' :
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
-          title={this.props.title}
+          title={this.state.heading}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
@@ -208,7 +214,10 @@ export default class LinePartition extends Component {
                 ...this.props.config.partition,
                 labeling: { prefix: this.props.currency },
               }}
-              onClick={(d: { id: string }) => this.setLevel(d.id)}
+              onClick={(d: { data: {levels: string[]} }) => {
+                console.log(d.data.levels);
+                this.setLevel(d.data.levels);
+              }}
               data={tree}
             />
           </TreeChartContainer>
@@ -218,7 +227,7 @@ export default class LinePartition extends Component {
       {!this.props.inverted ? '' :
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
-          title={this.props.title}
+          title={this.state.heading}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}

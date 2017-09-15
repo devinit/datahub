@@ -4,8 +4,8 @@ import React from 'react';
 import { approximate } from 'lib/utils';
 import { groupBy } from 'ramda';
 import { SectionHeader } from 'components/atoms/Header';
-import UnbundlingInternationalResources from 'components/organisms/UnbundlingInternationalResources';
-import { Container, Dropdown, Grid, Header } from 'semantic-ui-react';
+import UnbundlingInternationalResources, {NoDataAvailableContainer} from 'components/organisms/UnbundlingInternationalResources';
+import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
@@ -231,14 +231,20 @@ class AreaPartitionChart extends React.Component {
                     .reduce((sum, datum) => sum + datum.value, 0),
                 )}
               </SectionHeader>
-              {this.state.flow === 'all'
-                ? <TreeChart
-                  height="360px"
-                  data={this.state.mixes[+this.state.year] || []}
-                  config={this.props.config.treemapConfig}
-                  onClick={(d: { flow_id: string }) => this.setFlow(d.flow_id)}
-                />
-                : <UnbundlingInternationalResources
+              {this.state.flow === 'all' ?
+                (!this.state.mixes[+this.state.year] || !this.state.mixes[+this.state.year].length ?
+                  <Dimmer style={{ backgroundColor: '#888', zIndex: 1, height: '360px', position: 'relative'}} active>
+                    <NoDataAvailableContainer>
+                      Detailed data is not available for this year
+                    </NoDataAvailableContainer>
+                  </Dimmer> :
+                  <TreeChart
+                    height="360px"
+                    data={this.state.mixes[+this.state.year] || []}
+                    config={this.props.config.treemapConfig}
+                    onClick={(d: { flow_id: string }) => this.setFlow(d.flow_id)}
+                  />) :
+                <UnbundlingInternationalResources
                   shouldFetch={this.state.shouldUnbundle}
                   country={this.props.id}
                   year={this.state.year}

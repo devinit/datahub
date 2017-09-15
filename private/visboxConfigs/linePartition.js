@@ -22,7 +22,6 @@ const line = {
 };
 
 const partition = {
-  title: '',
   type: 'partition',
   colors: ['#0095cb'],
   orientation: 'horizontal',
