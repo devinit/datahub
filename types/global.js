@@ -19,6 +19,7 @@ export type District = {|
 
 export type Country = {|
     ...District,
+    has_domestic_data: string,
     countryType: string,
 |}
 

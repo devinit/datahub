@@ -2,15 +2,12 @@
 //  This file was automatically generated and should not be edited.
 
 export type UnbundlingAidQuery = {|
-  // oda or oof
   aidType: string,
   year: number,
-  // eg channel, bundle
   groupBy: string,
   to_di_id?: ?string,
   from_di_id?: ?string,
   sector?: ?string,
-  // form is same as buddle
   bundle?: ?string,
   channel?: ?string,
 |};
@@ -630,6 +627,7 @@ export type CountriesQuery = {|
     id: ?string,
     name: ?string,
     slug: ?string,
+    has_domestic_data: ?string,
     countryType: ?string,
   |} >,
 |};

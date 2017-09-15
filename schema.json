@@ -1058,6 +1058,18 @@
               "deprecationReason": null
             },
             {
+              "name": "has_domestic_data",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "countryType",
               "description": "",
               "args": [],
@@ -4025,7 +4037,7 @@
           "inputFields": [
             {
               "name": "aidType",
-              "description": "oda or oof ",
+              "description": "",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4095,7 +4107,7 @@
           "inputFields": [
             {
               "name": "aidType",
-              "description": "oda or oof ",
+              "description": "",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4123,7 +4135,7 @@
             },
             {
               "name": "groupBy",
-              "description": "eg channel, bundle",
+              "description": "",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4167,7 +4179,7 @@
             },
             {
               "name": "bundle",
-              "description": "form is same as buddle",
+              "description": "",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",

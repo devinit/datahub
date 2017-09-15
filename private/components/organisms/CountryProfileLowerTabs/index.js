@@ -28,7 +28,7 @@ export default function CountryProfileLowerTabs(props: Props) {
       textAlign="center"
       selected={selectedTab}
     >
-      { country.countryType === RECIPIENT || country.countryType === CROSSOVER ?
+      { country.has_domestic_data ?
         <Pane
           label="GOVERNMENT FINANCE"
           id={GOVERNMENT_FINANCE_LOWER}

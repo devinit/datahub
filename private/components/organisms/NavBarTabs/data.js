@@ -31,9 +31,8 @@ module.exports = {
           heading:
             'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap.',
           tooltip:
-            'The approximate number of people in each country who are in the global poorest 20%',
-          source:
-            ' Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS'
+            'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
         },
         {
           id: 'data_series.poverty_310',
@@ -235,7 +234,8 @@ module.exports = {
             'Largest source of international financing to each developing country',
           tooltip:
             'The largest international resource flow to each country in each year.',
-          source: 'Development Initiatives based on OECD DAC.'
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
         },
         {
           id: 'data_series.intl_resources_total_percent_gdp',
@@ -258,22 +258,22 @@ module.exports = {
             'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
         },
         {
-          id: 'data_series.fdi_pp',
-          name: 'Foreign direct investment per person, US$',
-          heading:
-            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2015 prices.",
-          tooltip:
-            'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
-          source:
-            'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
-        },
-        {
           id: 'data_series.fdi_percent_gdp',
           name: 'Foreign direct investment, % of GDP',
           heading:
             "Inflows of foreign direct investment expressed as a percentage of the country's GDP.",
           tooltip:
             'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
+          source:
+            'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
+        },
+        {
+          id: 'data_series.fdi_pp',
+          name: 'Foreign direct investment per person, US$',
+          heading:
+            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2015 prices.",
+          tooltip:
+            'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
           source:
             'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
         },

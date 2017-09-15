@@ -77,7 +77,7 @@ class SearchInput extends React.Component {
     if (this.setState) {
       this.onBlurTimer = setTimeout(() => {
         this.resetState();
-      }, 200);
+      }, 300);
     }
   }
   onCaretDownClick() {

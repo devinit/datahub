@@ -3,6 +3,7 @@ query Countries {
     id
     name
     slug
+    has_domestic_data
     countryType
   }
 }
