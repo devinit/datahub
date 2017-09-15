@@ -24,7 +24,7 @@ const Poverty = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
-            {povertyLevels.title}
+            {povertyLevels.title ? povertyLevels.title.toUpperCase() : '' }
             {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.toolTip
               ? <TabsToolTip {...povertyTabRegional.poorestPeople.toolTip} />
               : ''}
