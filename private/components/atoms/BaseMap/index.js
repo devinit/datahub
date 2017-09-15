@@ -302,7 +302,8 @@ class BaseMap extends Component {
     const dx = (bounds._ne.lat - bounds._sw.lat);
     const dy = (bounds._ne.lng - bounds._sw.lng);
     const distance = Math.sqrt((dx * dx) + (dy * dy));
-    const maxZoom = distance > 20 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
+    const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
+    console.log(distance, maxZoom, bounds);
     return this._map.fitBounds(bounds, {
       padding: 0,
       offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [400, 0],
