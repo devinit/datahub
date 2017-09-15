@@ -15,6 +15,7 @@ import internationalResourcesConfig from 'visboxConfigs/internationalResourceTab
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import { RECIPIENT } from 'lib/utils/constants';
+import { getCountry } from 'lib/utils';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import overviewConfig from 'visboxConfigs/overviewTabCharts';
 import {getCountryProfileData} from 'components/organisms/PagesData';
@@ -32,19 +33,18 @@ const countryProfileTabs = (props: TabsProps) => {
     return <LoadingPlaceholder loading={props.loading} />;
   }
   const pagesData = getCountryProfileData(props.variables.id);
-  const countryType =
-    props.overviewTab && props.overviewTab.countryType ? props.overviewTab.countryType : RECIPIENT;
+  const country = getCountry(props.variables.id);
   return (
     <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
         <Overview
           {...props}
           pagesData={pagesData}
-          countryType={countryType}
+          countryType={country.countryType}
           config={overviewConfig}
         />
       </Pane>
-      {countryType === RECIPIENT
+      {country.countryType === RECIPIENT
         ? <Pane label="Poverty" id={'poverty-tab'}>
           <Poverty pagesData={pagesData} config={povertyConfig} {...props} />
         </Pane>
@@ -56,7 +56,7 @@ const countryProfileTabs = (props: TabsProps) => {
           </Pane> : ''
       }
 
-      {countryType === RECIPIENT && props.governmentFinance ?
+      {Number(country.has_domestic_data) ?
         <Pane label="Government Finance" id={'govt-finance-tab'}>
           <GovernmentFinance pagesData={pagesData} config={govtFinanceConfig} {...props} />
         </Pane>

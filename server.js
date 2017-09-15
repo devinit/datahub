@@ -1,6 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
+const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
 const next = require('next');
 
 
@@ -73,8 +74,10 @@ app.prepare().then(() => {
 
   server.get('/country/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const isValidCountry = countriesData.countries.some(country => country.slug === req.params.id);
     const queryParams = { id: req.params.id, state};
-    renderAndCache(req, res, '/country', queryParams);
+    return isValidCountry ? renderAndCache(req, res, '/country', queryParams) :
+      renderAndCache(req, res, '/country-profiles');
   });
 
   server.get('*', (req, res) => {

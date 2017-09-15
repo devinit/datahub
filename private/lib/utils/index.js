@@ -72,7 +72,7 @@ export const getCountryName = (slug: string): string => {
 
 export const getCountry = (slug: string): Country => {
   const country = countriesData.countries.find(country => country.slug === slug);
-  if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A'};
+  if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A', has_domestic_data: ''};
   return country;
 };
 
