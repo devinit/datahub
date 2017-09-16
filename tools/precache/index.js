@@ -15,7 +15,7 @@ export const getMapsData = (navData: NavBarItem[]): void => {
       setTimeout(() => {
         getData(MapsQuery, variables)
           .then(() => console.log(`precached map data for ${indicator.id || 'nothing'}`))
-          .catch(() => console.error(`error precaching ${indicator.id || 'nothing'}`));
+          .catch((error) => console.error(`error precaching ${indicator.id || 'nothing'}`, error));
       }, 5000);
     });
   });

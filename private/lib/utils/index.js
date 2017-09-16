@@ -3,6 +3,7 @@ import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
 import { config, version } from 'package.json';
+import localforage from 'localforage';
 import { createApolloFetch } from 'apollo-fetch';
 import {RECIPIENT} from './constants';
 
@@ -16,38 +17,30 @@ export type ApolloResponse<T> = {
   extensions: string,
 };
 
-export type LocalStorage = {
-  setItem: (key: string, value: string) => void,
-  getItem: <T>(value: string) => T | void | null,
-  clear: () => void
-}
-
-declare var localStorage: LocalStorage;
-
 export type CallBack<T> = {
   (data: T): string,
 };
-export function getLocalStorageInstance(): LocalStorage | null {
-  if (!process.browser || !localStorage) return null; // we are in an old browser or on server
-  const storedVersion = localStorage.getItem('version');
+
+export async function getLocalStorageInstance(): Promise<any> {
+  if (!process.browser) return Promise.resolve(null);
+  const storedVersion = await localforage.getItem('version');
   if (!storedVersion || storedVersion !== version) {
-    // set new version
-    localStorage.clear();
-    localStorage.setItem('version', version);
+    await localforage.clear();
+    await localforage.setItem('version', version);
   }
-  return localStorage;
+  return localforage;
 }
 export async function getData<T>(query: string, variables: Object): Promise<T> {
   try {
     const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
-    const storage = getLocalStorageInstance();
-    const cached = storage ? storage.getItem(key) : null;
+    const storage = await getLocalStorageInstance();
+    const cached = storage ? await storage.getItem(key) : null;
     if (cached) return JSON.parse(cached);
     const response: ApolloResponse<T> = variables
       ? await apolloFetch({ query, variables })
       : await apolloFetch({ query });
     if (response.error) throw response.errors;
-    if (storage) storage.setItem(key, JSON.stringify(response.data));
+    if (storage) await storage.setItem(key, JSON.stringify(response.data));
     return response.data;
   } catch (error) {
     throw error;
