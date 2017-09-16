@@ -16,7 +16,7 @@ const data = {
         },
         {
           name: 'Multilateral Profiles',
-          link: '/multilateral-profiles',
+          link: '/',
           icon: 'area graph',
         },
       ],
