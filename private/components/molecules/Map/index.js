@@ -57,7 +57,9 @@ class Map extends Component {
     this.init(props);
     // onLoadCss();
   }
+
   state: State;
+
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) this.init(nextProps);
   }

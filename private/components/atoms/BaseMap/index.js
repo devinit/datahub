@@ -110,8 +110,7 @@ class BaseMap extends Component {
   _element: HTMLDivElement;
 
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle
-      || nextProps.countryProfile !== this.props.countryProfile) {
+    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle) {
       this.setState({shouldForceRedraw: true});
     }
   }
@@ -335,9 +334,13 @@ class BaseMap extends Component {
       this._mapLoaded = false; // feels abit dirty
       this._map = new mapboxgl.Map(opts);
     }
-    if (!this._nav && !this._map) this.addMapNav();
+    if (!this._nav || !this._mapLoaded) this.addMapNav();
     // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
+
+    if (this.props.countryProfile && this._map && this._mapLoaded) {
+      this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
+    }
 
     if (!this._mapLoaded) this.onMapLoad(paint);
   }
