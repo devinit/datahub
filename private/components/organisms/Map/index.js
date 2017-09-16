@@ -37,27 +37,29 @@ class MapOrganism extends Component {
   }
   constructor(props: Props) {
     super(props);
-    this.state = {
-      data: null
-    };
+    this.state = {loading: true };
   }
   state: {
-    data: MapDataQuery | null
+    loading: boolean
   }
   /* eslint react/no-did-mount-set-state: 0 */
   componentDidMount() {
-    this.initState(this.props);
+    this.initData(this.props);
   }
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.app.globalIndicator !== this.props.app.globalIndicator ||
       nextProps.app.spotlightIndicator !== this.props.app.spotlightIndicator) {
-      this.initState(nextProps);
+      this.initData(nextProps);
     }
   }
-  initState(props: Props) {
+
+  data: MapDataQuery
+
+  initData(props: Props) {
     MapOrganism.getIndicatorData(props)
       .then(data => {
-        this.setState({data});
+        this.data = data;
+        this.setState({loading: false});
         props.changeLoadingStatus(false);
       })
       .catch(console.error);
@@ -65,8 +67,8 @@ class MapOrganism extends Component {
   render() {
     return (
       <div>
-        {this.state.data && this.state.data.mapData ?
-          <Map state={this.props.state} mapData={this.state.data.mapData} /> :
+        {!this.state.loading && this.data.mapData ?
+          <Map state={this.props.state} mapData={this.data.mapData} /> :
           <MapBackground />
         }
       </div>
