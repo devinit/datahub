@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
+import Link from 'next/link';
 import { white, redHeaderColor, midWhite, lightBlack } from 'components/theme/semantic';
 
 type Props = {
@@ -84,9 +85,11 @@ class MobileMenu extends React.Component {
           }}
         >
           <span className="navigation__item-title small">
-            <a href={child.props.url}>
-              {child.props.label}
-            </a>
+            <Link href={child.props.url} prefetch>
+              <a role="link">
+                {child.props.label}
+              </a>
+            </Link>
           </span>
           {child}
         </li>

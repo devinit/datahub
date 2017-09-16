@@ -3,6 +3,7 @@ import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import Pane from 'components/atoms/MobileMenuPane';
 import React from 'react';
+import Link from 'next/link';
 import { lightGrey, black } from 'components/theme/semantic';
 
 const SubMenuContainer = glamorous.ul({
@@ -21,10 +22,12 @@ const menuItem = (props: Object) => {
   if ('children' in props.menu) {
     children = props.menu.children.map(item =>
       (<li key={item.name}>
-        <a href={item.link}>
-          <Icon name={item.icon} />
-          {item.name}
-        </a>
+        <Link href={item.link} prefetch>
+          <a role="link">
+            <Icon name={item.icon} />
+            {item.name}
+          </a>
+        </Link>
       </li>),
     );
     children = (

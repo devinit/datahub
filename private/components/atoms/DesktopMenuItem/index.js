@@ -2,6 +2,7 @@
 import { Li } from 'glamorous';
 import { Icon, List } from 'semantic-ui-react';
 import MenuLink from 'components/atoms/MenuLink';
+import Link from 'next/link';
 import React from 'react';
 
 const menuItem = (props: Object) => {
@@ -11,10 +12,12 @@ const menuItem = (props: Object) => {
     children = props.menu.children.map(item =>
       (<List.Item key={item.name}>
         <List.Content>
-          <a href={item.link}>
-            <Icon name={item.icon} />
-            {item.name}
-          </a>
+          <Link href={item.link} prefetch>
+            <a role="link">
+              <Icon name={item.icon} />
+              {item.name}
+            </a>
+          </Link>
         </List.Content>
       </List.Item>),
     );

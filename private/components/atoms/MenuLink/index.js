@@ -101,7 +101,7 @@ export default ({ children, hasSubMenu, menu, link }: Props) => {
   return (
     <LocalContainer hasSubMenu={hasSubMenu}>
       {hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : ''}
-      <Link href={link}>
+      <Link href={link} prefetch>
         <NavLink>
           <div className="menu-text">
             {menu}
