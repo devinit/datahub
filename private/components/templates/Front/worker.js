@@ -1,6 +1,6 @@
 /*
   eslint-disable
 */
-const MyWorker = require('worker-loader!../../../lib/workers/globalPicture.js');
+const MyWorker = require('worker-loader!../../../lib/worker');
 
 export default MyWorker;

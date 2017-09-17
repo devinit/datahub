@@ -15,7 +15,7 @@ import Observer from 'react-intersection-observer';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
 import type {StateToShare} from 'components/molecules/ChartShare';
-import MyWorker from './worker';
+// import MyWorker from './worker';
 import Generic from '../Generic';
 
 
@@ -36,8 +36,8 @@ class Front extends Component {
     super(props);
   }
   componentDidMount() {
-    if (process.browser) {
-      const worker = new MyWorker(); // caches global picture map data
+    if (process.browser && window.Worker) {
+      const worker = new Worker('/worker.js'); // caches global picture map data
       worker.postMessage({a: 1});
       worker.onmessage = (event) => console.log(event);
     }

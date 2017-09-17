@@ -7,6 +7,8 @@ install:
 script:
 - npm run pull
 - npm run precache
+- npm run vendor-css
+- npm run build-worker
 - npm run lint
 - npm run coverage
 cache:

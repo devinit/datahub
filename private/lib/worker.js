@@ -1,6 +1,6 @@
 import {getData} from 'lib/utils';
 import navData from 'components/organisms/NavBarTabs/data';
-import MapsQuery from '../../components/organisms/Map/Maps.graphql';
+import MapsQuery from '../components/organisms/Map/Maps.graphql';
 
 const cacheGlobalPicData = () => {
   navData.globalPictureThemes.forEach(item => {
@@ -14,4 +14,4 @@ const cacheGlobalPicData = () => {
   });
 };
 
-if (process.env.NODE_ENV !== 'test') cacheGlobalPicData();
+cacheGlobalPicData();
