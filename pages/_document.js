@@ -22,7 +22,6 @@ export default class MyDocument extends Document {
       __NEXT_DATA__.ids = this.props.ids;
     }
   }
-  pageMeta: PageMeta
   render() {
     return (
       <html lang="en">

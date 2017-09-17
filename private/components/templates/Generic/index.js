@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default ({ children, pathname, query }: Props) => {
-  const pageMeta: PageMeta = getPageMeta({query, pathname});
+  const pageMeta: PageMeta = getPageMeta({query: query || '', pathname});
   return (<Container fluid>
     <Head>
       <title>{pageMeta.title}</title>

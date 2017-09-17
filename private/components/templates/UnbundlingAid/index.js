@@ -27,7 +27,7 @@ type Props = {
 
 export default (props: Props) =>
   (
-    <Generic>
+    <Generic pathname="/unbundling-aid">
       <Container>
         <HeaderContainer>
           <Header as="h1" textAlign="center">

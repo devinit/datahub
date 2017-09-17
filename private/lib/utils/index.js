@@ -2,6 +2,7 @@
 import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import navData from 'components/templates/Generic/data';
+import type {MenueItem} from 'components/templates/Generic/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
 import { config, version } from 'package.json';
 import localforage from 'localforage';
@@ -110,7 +111,7 @@ export const getShortURL = async (longUrl: string): Promise<string> => {
   return json.data.url;
 };
 // country is global or uganda or kenya etc
-export interface Router {
+export interface Route {
   routeAsPath: string,
   routePath: string
 }
