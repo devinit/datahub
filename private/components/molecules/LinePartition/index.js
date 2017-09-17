@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import glamorous from 'glamorous';
 import { groupBy } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
-import TreeChart from 'components/atoms/TreeChart/index';
-import Timeline from 'components/atoms/Timeline/index';
+import TreeChart from 'components/atoms/TreeChart';
+import Timeline from 'components/atoms/Timeline';
 import LinePartitionHeader from 'components/atoms/LinePartitionHeader';
 
 const CardContainer = glamorous.div({

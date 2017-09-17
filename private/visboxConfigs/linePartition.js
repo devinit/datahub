@@ -14,7 +14,7 @@ const line = {
     axisMinimum: '2000',
     axisMaximum: '2018',
     ticking: 'years',
-    tickingStep: 10,
+    tickingStep: 5,
   },
   anchor: {
     start: '2015',
