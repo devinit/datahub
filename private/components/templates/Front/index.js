@@ -36,10 +36,9 @@ class Front extends Component {
     super(props);
   }
   componentDidMount() {
-    if (process.browser && window.Worker) {
+    if (process.browser && window.Worker && !process.storybook) {
       const worker = new Worker('/worker.js'); // caches global picture map data
-      worker.postMessage({a: 1});
-      worker.onmessage = (event) => console.log(event);
+      if (process.env === 'development') worker.onmessage = (event) => console.log(event);
     }
   }
   render() {

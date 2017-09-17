@@ -20,6 +20,7 @@ exports[`utils tests should create human friendly numbers i.e 1.5k for 1500 1`] 
 exports[`utils tests should return country object 1`] = `
 "Object {
   \\"countryType\\": \\"recipient\\",
+  \\"has_domestic_data\\": \\"1\\",
   \\"id\\": \\"CD\\",
   \\"name\\": \\"DRC\\",
   \\"slug\\": \\"drc\\",
