@@ -12,15 +12,15 @@ const uri = config.api;
 
 const apolloFetch = createApolloFetch({ uri });
 
-export type ApolloResponse<T> = {
+export interface ApolloResponse<T> {
   errors: string,
   data: T,
   extensions: string,
-};
+}
 
-export type CallBack<T> = {
+export interface CallBack<T> {
   (data: T): string,
-};
+}
 
 export async function getLocalStorageInstance(): Promise<any> {
   if (!process.browser) return Promise.resolve(null);
@@ -47,10 +47,11 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
     throw error;
   }
 }
-export type CurrencyOption = {
+export interface CurrencyOption {
   text: string,
   value: string
 }
+
 export const createCurrencyOptions =
   (currencyCode: string, currencyUSD: string): CurrencyOption[] =>
     [
@@ -109,10 +110,11 @@ export const getShortURL = async (longUrl: string): Promise<string> => {
   return json.data.url;
 };
 // country is global or uganda or kenya etc
-export type Route = {
+export interface Router {
   routeAsPath: string,
   routePath: string
 }
+
 export const countryOrDistrictLink = (country: string, slug: string): Route => {
   let routePath: string;
   let routeAsPath: string;
@@ -126,12 +128,12 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
   return {routePath, routeAsPath};
 };
 
-export type PageMetaArgs = {
+export interface PageMetaArgs {
   query?: string,
   pathname: string
 }
 
-export type PageMeta = {
+export interface PageMeta {
   title: string,
   image?: string,
   width?: string,
@@ -147,12 +149,12 @@ const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
 };
 
 export const getPageMeta = (args: PageMetaArgs): PageMeta => {
-  const items: MenuItem | void = navData.mainMenu.reduce((acc, obj: MenueItem) => {
+  const item: MenuItem | void = navData.mainMenu.reduce((acc, obj: MenueItem) => {
     if (obj.children) return [...acc, ...obj.children];
     return [...acc, obj];
-  }, []).concat([{link: '/country'}, {link: '/uganda'}]);
-
-  const item = items.find(obj => obj.link === args.pathname);
+  }, [])
+    .concat([{link: '/country'}, {link: '/uganda'}])
+    .find(obj => obj.link === args.pathname);
 
   if (!item) return {title: 'Development Data Hub'};
   const linkMeta = createLinkMeta(args, item);
