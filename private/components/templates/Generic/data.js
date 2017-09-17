@@ -9,7 +9,7 @@ export type Menue = {
   mainMenu: MenueItem[]
 }
 
-const data: Menue = {
+export const menueData: Menue = {
   mainMenu: [
     {
       name: 'Global Picture',
@@ -74,4 +74,3 @@ const data: Menue = {
   ],
 };
 
-export default data;

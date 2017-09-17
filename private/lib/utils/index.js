@@ -1,7 +1,7 @@
 // @flow
 import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
-import navData from 'components/templates/Generic/data';
+import {menueData} from 'components/templates/Generic/data';
 import type {MenueItem} from 'components/templates/Generic/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
 import { config, version } from 'package.json';
@@ -13,13 +13,13 @@ const uri = config.api;
 
 const apolloFetch = createApolloFetch({ uri });
 
-export interface ApolloResponse<T> {
+export type ApolloResponse<T> = {
   errors: string,
   data: T,
   extensions: string,
 }
 
-export interface CallBack<T> {
+export type CallBack<T> = {
   (data: T): string,
 }
 
@@ -48,7 +48,7 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
     throw error;
   }
 }
-export interface CurrencyOption {
+export type CurrencyOption = {
   text: string,
   value: string
 }
@@ -111,7 +111,7 @@ export const getShortURL = async (longUrl: string): Promise<string> => {
   return json.data.url;
 };
 // country is global or uganda or kenya etc
-export interface Route {
+export type Route = {
   routeAsPath: string,
   routePath: string
 }
@@ -129,19 +129,19 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
   return {routePath, routeAsPath};
 };
 
-export interface PageMetaArgs {
+export type PageMetaArgs = {
   query?: string,
   pathname: string
 }
 
-export interface PageMeta {
+export type PageMeta = {
   title: string,
   image?: string,
   width?: string,
   height?: string,
 }
 
-const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
+export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
   let title = obj.name;
   if (obj.link === '/uganda') title = getDistrictName(args.query || '', 'uganda');
   if (obj.link === '/') title = 'Development Data Hub';
@@ -150,11 +150,11 @@ const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
 };
 
 export const getPageMeta = (args: PageMetaArgs): PageMeta => {
-  const item: MenuItem | void = navData.mainMenu.reduce((acc, obj: MenueItem) => {
+  const item: ? MenueItem = menueData.mainMenu.reduce((acc: MenueItem[], obj: MenueItem) => {
     if (obj.children) return [...acc, ...obj.children];
     return [...acc, obj];
   }, [])
-    .concat([{link: '/country'}, {link: '/uganda'}])
+    .concat([{link: '/country', name: ''}, {link: '/uganda', name: ''}])
     .find(obj => obj.link === args.pathname);
 
   if (!item) return {title: 'Development Data Hub'};

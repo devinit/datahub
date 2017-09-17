@@ -8,7 +8,7 @@ import type {PageMeta} from 'lib/utils';
 import {getPageMeta} from 'lib/utils';
 import Footer from 'components/molecules/Footer';
 import Menu from 'components/molecules/Menu';
-import data from './data';
+import {menueData} from './data';
 
 type Props = {
   children?: Element<any>,
@@ -16,13 +16,13 @@ type Props = {
   query?: string
 };
 
-export default ({ children, pathname, query }: Props) => {
+export default ({ children, query, pathname}: Props) => {
   const pageMeta: PageMeta = getPageMeta({query: query || '', pathname});
   return (<Container fluid>
     <Head>
       <title>{pageMeta.title}</title>
     </Head>
-    <Menu menu={data.mainMenu} />
+    <Menu menu={menueData.mainMenu} />
     <Div marginTop={'4em'}>
       {children}
     </Div>
