@@ -36,7 +36,7 @@ const HeaderContainer = glamorous.div({
 });
 export default () => {
   return (
-    <Generic pathName="/aid">
+    <Generic pathname="/where-are-the-poor">
       <Container>
         <HeaderContainer>
           <Header as="h1">

@@ -19,13 +19,13 @@ type Props = BoundAction & {
   app: AppState,
   id: string,
   state: StateToShare,
-  pathName: string
+  pathname: string
 };
 class MapOrganism extends Component {
   static getIndicatorId(props: Props): string {
     if (props.id) return props.id;
     if (props.state && props.state.indicator) return props.state.indicator;
-    if (props.pathName && props.pathName.includes('spotlight')) {
+    if (props.pathname && props.pathname.includes('spotlight')) {
       return props.app.spotlightIndicator;
     }
     return props.app.globalIndicator;

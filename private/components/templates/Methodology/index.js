@@ -12,7 +12,7 @@ const Upper = glamorous.div({
 });
 
 export default () =>
-  (<Generic pathName="/aid">
+  (<Generic pathname="/methodology">
     <Upper>
       <Container>
         <Grid>

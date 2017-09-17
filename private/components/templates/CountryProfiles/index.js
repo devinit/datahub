@@ -11,7 +11,7 @@ const SocialIconsContainer = glamorous.div({
   marginTop: '1.5em',
 });
 export default () =>
-  (<Generic>
+  (<Generic pathname="/country-profiles">
     <Container>
       <Grid>
         <Grid.Row>

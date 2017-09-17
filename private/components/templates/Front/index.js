@@ -27,7 +27,6 @@ const DynamicMapComponent = dynamic(import('components/organisms/Map'), {
 });
 
 type Props = {
-  pathName: string,
   rehydrated: boolean,
   state: StateToShare
 };
@@ -43,7 +42,7 @@ class Front extends Component {
   }
   render() {
     return (
-      <Generic>
+      <Generic pathname="/">
         <GlobalPictureCountrySearch>
           <CountrySearchInput visible={false} profile={false} />
         </GlobalPictureCountrySearch>
@@ -63,7 +62,7 @@ class Front extends Component {
         </Container>
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs state={this.props.state} />
-          <DynamicMapComponent pathName={this.props.pathName} state={this.props.state} />
+          <DynamicMapComponent pathname="/" state={this.props.state} />
         </div>
         <DarkBg>
           <SectionHeader color={red} fontColor={white}>

@@ -5,4 +5,4 @@ import Front from '.';
 
 storiesOf('Templates DontTest', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('Front Page', () => <Front pathName={'/'} state={{}} />);
+  .add('Front Page', () => <Front state={{}} />);

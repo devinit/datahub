@@ -28,7 +28,7 @@ type Props = {
 /* eslint-disable max-len */
 const spotlight = (props: Props) => {
   return (
-    <Generic>
+    <Generic pathname="/spotlight-on-uganda" >
       <Container>
         <Div paddingTop={'4em'} paddingBottom={'4em'}>
           <Grid centered>
@@ -47,7 +47,7 @@ const spotlight = (props: Props) => {
         </Div>
       </Container>
       <SpotLightNavTabs state={props.state} />
-      <DynamicMapComponent pathName="spotlight" state={props.state} />
+      <DynamicMapComponent pathname="/spotlight-on-uganda" state={props.state} />
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALISATIONS

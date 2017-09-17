@@ -1,5 +1,5 @@
 import prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName, getDistrictName, getCountry, approximate} from '.';
+import { getShortURL, getCountryName, getDistrictName, getCountry, approximate, getPageMeta} from '.';
 
 describe('utils tests', () => {
   it(
@@ -26,5 +26,9 @@ describe('utils tests', () => {
   it('should return district name', () => {
     const name = getDistrictName('wakiso', 'uganda');
     expect(name).toBe('Wakiso');
+  });
+  it('should return pageMeta for a given page', () => {
+    const meta = getPageMeta({query: 'wakiso', pathname: '/uganda'});
+    expect(meta.title).toBe('Wakiso');
   });
 });

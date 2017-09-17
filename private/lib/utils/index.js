@@ -1,6 +1,7 @@
 // @flow
 import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
+import navData from 'components/templates/Generic/data';
 import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
 import { config, version } from 'package.json';
 import localforage from 'localforage';
@@ -125,9 +126,38 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
   return {routePath, routeAsPath};
 };
 
-// TODO: export const getPageMeta = (pathname: string, query?: string): string => {
+export type PageMetaArgs = {
+  query?: string,
+  pathname: string
+}
 
-// };
+export type PageMeta = {
+  title: string,
+  image?: string,
+  width?: string,
+  height?: string,
+}
+
+const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
+  let title = obj.name;
+  if (obj.link === '/uganda') title = getDistrictName(args.query || '', 'uganda');
+  if (obj.link === '/') title = 'Development Data Hub';
+  if (obj.link === '/country') title = getCountryName(args.query || '');
+  return {title, image: '/img/logo.jpg'};
+};
+
+export const getPageMeta = (args: PageMetaArgs): PageMeta => {
+  const items: MenuItem | void = navData.mainMenu.reduce((acc, obj: MenueItem) => {
+    if (obj.children) return [...acc, ...obj.children];
+    return [...acc, obj];
+  }, []).concat([{link: '/country'}, {link: '/uganda'}]);
+
+  const item = items.find(obj => obj.link === args.pathname);
+
+  if (!item) return {title: 'Development Data Hub'};
+  const linkMeta = createLinkMeta(args, item);
+  return linkMeta;
+};
 
 const removeTrailingZero = (value: string): string => {
   const val = Number(value);

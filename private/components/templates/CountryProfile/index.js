@@ -63,7 +63,7 @@ class Profile extends Component {
     if (this.lowerTabs) this.lowerTabs.scrollIntoView();
   }
   render() {
-    return (<Generic>
+    return (<Generic pathname="/country" query={this.props.id}>
       <ProfileHeader>
         <DynamicMapComponent slug={this.props.id} />
         <Div width="100%" position="absolute" top="0">

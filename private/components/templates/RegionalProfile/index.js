@@ -66,7 +66,7 @@ class RegionalProfile extends Component {
   lowerTabs: HTMLElement
 
   render() {
-    return (<Generic>
+    return (<Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
       <ProfileHeader>
         <DynamicMapComponent
           slug={this.state.district.slug}

@@ -20,5 +20,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App pathName={props.url.pathname} state={props.url.query.state} />;
+  return <App state={props.url.query.state} />;
 });

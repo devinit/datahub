@@ -3,8 +3,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
 import Script from 'lib/utils/Script';
-import getPageMeta from 'lib/utils/pageMeta';
-import type {PageMeta} from 'lib/utils/pageMeta';
 import criticalCss from 'criticalCss'; // in private/criticalCss
 import { renderStatic } from 'glamor/server';
 // import 'lib/offline-install'; // Get our service worker on the page
@@ -19,8 +17,6 @@ export default class MyDocument extends Document {
 
   constructor(props: any) {
     super(props);
-    const query = this.props.query && this.props.query.id ? this.props.query.id : '';
-    this.pageMeta = getPageMeta({query, pathname: this.props.pathname});
     const { __NEXT_DATA__, ids } = props;
     if (ids) {
       __NEXT_DATA__.ids = this.props.ids;
@@ -31,7 +27,6 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>{this.pageMeta.title}</title>
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           {/* <link rel="manifest" href="/manifest.json" /> */}

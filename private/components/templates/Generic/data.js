@@ -1,4 +1,15 @@
-const data = {
+// @flow
+export type MenueItem = {
+  name: string,
+  link: string,
+  icon?: string,
+  children?: MenueItem[]
+}
+export type Menue = {
+  mainMenu: MenueItem[]
+}
+
+const data: Menue = {
   mainMenu: [
     {
       name: 'Global Picture',
