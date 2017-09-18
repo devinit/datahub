@@ -643,7 +643,6 @@ export type DistrictsQuery = {|
   districts: ? Array< {|
     id: ?string,
     name: ?string,
-    slug: ?string,
   |} >,
 |};
 

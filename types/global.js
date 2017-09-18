@@ -17,11 +17,10 @@ export type District = {
   slug: string
 }
 
-export type Country = {|
-    ...District,
-    has_domestic_data?: string,
-    countryType: string,
-|}
+export type Country = District & {
+  has_domestic_data?: string,
+  countryType: string,
+}
 
 // TODO: allan improvise to remove at some point in future
 // in favour of auto generated types

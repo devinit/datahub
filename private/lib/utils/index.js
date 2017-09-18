@@ -89,7 +89,7 @@ export const getCountryName = (slug: string): string => {
 export const getDistrict = (slug: string, country: string): District => {
   // TODO: handle spotlight kenya
   if (country !== 'uganda') throw new Error('we are only dealing with spotlight uganda for now');
-  const district: District | void =
+  const district: {|name: string, id: string|} | void =
     ugDistrictData.districts.find(district => district.slug === slug);
   if (district) return {...district, slug};
   return {name: slug, slug, id: ''};

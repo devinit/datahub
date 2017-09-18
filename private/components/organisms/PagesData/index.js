@@ -5,12 +5,16 @@
 import {getCountryName, getDistrictName} from 'lib/utils';
 import data from './data';
 
-export type PageUnit = {|
+
+export type PageUnit = {
   id: ?string,
   title: ?string,
   narrative: ?string,
-|}
-const pagesData = (data: PageDataQuery);
+  donor_title: ?string
+}
+
+const pagesData = (data: {spotlightDistrict: PageUnit[], countryProfile: PageUnit[]});
+
 type ReplaceFieldsArgs = {
   pageData: PageUnit[],
   toReplace: string,
@@ -43,9 +47,9 @@ export const getCountryProfileData = (slug: string): PageUnit[] => {
   return replaceFields({pageData, toReplace: '{country}', replacement: countryName});
 };
 // this is a curried function, it returns another function awaiting an argument
-export const getPageUnitById = (data: PageUnit[]) =>
-  (id: string): PageUnit => {
-    const pageUnit: PageUnit | void = data.find(obj => obj.id === id);
-    if (!pageUnit) return { title: 'Error getting title', narrative: 'Error getting narrative for', id};
-    return pageUnit;
-  };
+
+export const getPageUnitById = (data: PageUnit[]) => (id: string): PageUnit => {
+  const pageUnit: PageUnit | void = data.find(obj => obj.id === id);
+  if (!pageUnit) return { title: 'Error getting title', narrative: 'Error getting narrative for', id, donor_title: ''};
+  return pageUnit;
+};
