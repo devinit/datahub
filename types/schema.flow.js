@@ -2,12 +2,15 @@
 //  This file was automatically generated and should not be edited.
 
 export type UnbundlingAidQuery = {|
+  // oda or oof
   aidType: string,
   year: number,
+  // eg channel, bundle
   groupBy: string,
   to_di_id?: ?string,
   from_di_id?: ?string,
   sector?: ?string,
+  // form is same as buddle
   bundle?: ?string,
   channel?: ?string,
 |};
@@ -156,7 +159,7 @@ export type TabDataQuery = {|
     |},
     // for line chart in the  international resources tabs section,
     // IndicatorDataColoredWithToolTip  is defined in spotlight types
-    resourceInflowsOverTime: ? {|
+    resourceflowsOverTime: ? {|
       data: ? Array< {|
         year: ?number,
         name: ?string,
@@ -763,6 +766,7 @@ export type PageDataQuery = {|
     id: ?string,
     title: ?string,
     narrative: ?string,
+    donor_title: ?string,
   |} >,
   spotlightDistrict: ? Array< {|
     id: ?string,

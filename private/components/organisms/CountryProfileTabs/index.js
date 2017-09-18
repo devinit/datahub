@@ -66,6 +66,7 @@ const countryProfileTabs = (props: TabsProps) => {
           <Pane label="International Resources" id={'internantion-reseources-tab'}>
             <InternationalResources
               pagesData={pagesData}
+              countryType={country.countryType}
               config={internationalResourcesConfig}
               {...props}
             />

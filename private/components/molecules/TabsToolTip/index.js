@@ -4,7 +4,7 @@ import { P } from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import ToolTip from 'components/molecules/ToolTip';
 
-type Props = {
+export type Props = {
   source: ?string,
   heading: ?string,
   color?: string

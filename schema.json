@@ -1127,6 +1127,18 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "donor_title",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
@@ -2700,12 +2712,12 @@
               "deprecationReason": null
             },
             {
-              "name": "resourceInflowsOverTime",
+              "name": "resourceflowsOverTime",
               "description": "for line chart in the  international resources tabs section,\nIndicatorDataColoredWithToolTip  is defined in spotlight types",
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "InflowsOverTimeWithToolTip",
+                "name": "FlowsOverTimeWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -2743,7 +2755,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "InflowsOverTimeWithToolTip",
+          "name": "FlowsOverTimeWithToolTip",
           "description": "",
           "fields": [
             {
@@ -4037,7 +4049,7 @@
           "inputFields": [
             {
               "name": "aidType",
-              "description": "",
+              "description": "oda or oof ",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4107,7 +4119,7 @@
           "inputFields": [
             {
               "name": "aidType",
-              "description": "",
+              "description": "oda or oof ",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4135,7 +4147,7 @@
             },
             {
               "name": "groupBy",
-              "description": "",
+              "description": "eg channel, bundle",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -4179,7 +4191,7 @@
             },
             {
               "name": "bundle",
-              "description": "",
+              "description": "form is same as buddle",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",

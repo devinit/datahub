@@ -7,102 +7,131 @@ module.exports = {
       id: 'introduction',
       title:
         'Explore this in-depth profile of {country} to find out overall levels of poverty, income distribution, division of wealth and more. Discover how national and sub-national revenue is generated',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'overview-ctry-poorest-people',
       title: 'HOW MANY OF THE POOREST PEOPLE GLOBALLY LIVE IN {country}?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'overview-ctry-resources',
       title: 'WHAT RESOURCES ARE AVAILABLE?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'overview-govt-spentperperson',
       title: 'HOW MUCH DOES THE GOVERNMENT SPEND PER PERSON?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'poverty-reduction-ctry',
       title: 'IS POVERTY REDUCING OVER TIME?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
-    { id: 'poverty-depth-ctry', title: 'HOW DEEP IS POVERTY?', narrative: '' },
+    {
+      id: 'poverty-depth-ctry',
+      title: 'HOW DEEP IS POVERTY?',
+      narrative: '',
+      donor_title: ''
+    },
     {
       id: 'income-distribution-ctry',
       title: 'HOW IS INCOME DISTRIBUTED?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
-    { id: 'popn-ctry', title: 'WHAT IS THE POPULATION?', narrative: '' },
+    {
+      id: 'popn-ctry',
+      title: 'WHAT IS THE POPULATION?',
+      narrative: '',
+      donor_title: ''
+    },
     {
       id: 'popn-distribution',
       title: 'WHAT IS THE URBAN VS RURAL SPLIT?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'popn-distribution-age-ctry',
       title: 'WHAT IS THE AGE PROFILE?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'totalrevenue-ctry',
       title: 'WHAT IS THE TOTAL REVENUE OF {country}?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'govt-revenue-external',
       title: 'HOW MUCH GOVERNMENT REVENUE COMES FROM EXTERNAL GRANTS (AID)?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'ctry-expenditure',
       title: 'HOW IS SPENDING ALLOCATED?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'mixture-of-resources',
       title: 'WHAT’S THE MIX OF RESOURCES?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'govt-finance-lower',
       title: 'How does {country} finance and spend its budget?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'intl-resources-lower-A1',
       title:
         'A dynamic mix of resources flow to and from {country}. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'intl-resources-lower-A2',
       title:
         'To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from {country}',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'intl-resources-lower-B1',
       title:
         'Where are international resources originating and where are they destined? Start by selecting inflows or outflows:',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'avg-income-per-person',
       title: 'WHAT IS THE AVERAGE INCOME PER PERSON PER YEAR?',
-      narrative: ''
+      narrative: '',
+      donor_title: ''
     },
     {
       id: 'share-gni-allocated-to-ctry',
       title: 'AS A SHARE OF GNI, HOW MUCH AID IS ALLOCATED TO {country}?',
-      narrative: ''
+      narrative: '',
+      donor_title: 'AS A SHARE OF GNI, HOW MUCH AID DOES {country} ALLOCATE?'
     },
     {
       id: 'resource-inflow',
       title: 'HOW HAVE RESOURCE INFLOWS CHANGED OVER TIME?',
-      narrative: ''
+      narrative: '',
+      donor_title: 'HOW HAVE RESOURCE OUTFLOWS CHANGED OVER TIME?'
     }
   ],
   spotlightDistrict: [

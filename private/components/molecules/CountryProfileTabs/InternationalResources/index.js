@@ -5,8 +5,9 @@ import Chart from 'components/atoms/Chart';
 import {Span} from 'glamorous';
 import {small} from 'components/theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from 'components/atoms/TabsText';
-import {NoData} from 'lib/utils/constants';
+import {NoData, DONOR} from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
+import type {Props as TabsToolTipProps} from 'components/molecules/TabsToolTip';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
 import Legend from 'components/atoms/Legend';
@@ -14,6 +15,7 @@ import Legend from 'components/atoms/Legend';
 type Props = {
   ...TabDataQuery,
   config: any,
+  countryType: string,
   pagesData: PageUnit[],
 };
 
@@ -24,20 +26,30 @@ const International = (props: Props) => {
   const mixtureOfResources = getPageLine('mixture-of-resources');
   const internationalResources = props.internationalResources;
   if (!internationalResources) throw new Error('International resources tabd data missing');
+  let shareOfGNITitle = shareGniAllocatedToCtry.title;
+  let shareOfGNITitleToolTip = { source: '', heading: ''};
+  let shareOfGNIValue = NoData;
+  if (props.countryType === DONOR && internationalResources.netODAOfGNIOut) {
+    shareOfGNITitleToolTip =
+      internationalResources.netODAOfGNIOut.toolTip || shareOfGNITitleToolTip;
+    shareOfGNITitle = shareGniAllocatedToCtry.donor_title;
+    shareOfGNIValue = internationalResources.netODAOfGNIOut.value || shareOfGNIValue;
+  }
+  if (props.countryType !== DONOR && internationalResources.netODAOfGNIIn) {
+    shareOfGNITitleToolTip = internationalResources.netODAOfGNIIn.toolTip || shareOfGNITitleToolTip;
+    shareOfGNIValue = internationalResources.netODAOfGNIIn.value || shareOfGNIValue;
+  }
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {shareGniAllocatedToCtry.title ? shareGniAllocatedToCtry.title.toUpperCase() : ''}
-            {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.toolTip
-              ? <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} />
-              : ''}
+            {shareOfGNITitle ? shareOfGNITitle.toUpperCase() : ''}
+            <TabsToolTip {...shareOfGNITitleToolTip} />
           </HeaderTitle>
           <TabsP>
-            {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.value
-            && Number(internationalResources.netODAOfGNIIn.value)
-              ? `${internationalResources.netODAOfGNIIn.value}% of GNI`
+            { Number(shareOfGNIValue)
+              ? `${shareOfGNIValue}% of GNI`
               : NoData}
           </TabsP>
           <TabsFootNote>
@@ -51,16 +63,16 @@ const International = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {resourceInflow.title }
-            {internationalResources.resourceInflowsOverTime &&
-            internationalResources.resourceInflowsOverTime.toolTip
-              ? <TabsToolTip {...internationalResources.resourceInflowsOverTime.toolTip} />
+            {internationalResources.resourceflowsOverTime &&
+            internationalResources.resourceflowsOverTime.toolTip
+              ? <TabsToolTip {...internationalResources.resourceflowsOverTime.toolTip} />
               : ''}
           </HeaderTitle>
-          {internationalResources.resourceInflowsOverTime &&
-            internationalResources.resourceInflowsOverTime.data
+          {internationalResources.resourceflowsOverTime &&
+            internationalResources.resourceflowsOverTime.data
             ? <Chart
               config={props.config.resourcesOverTime}
-              data={internationalResources.resourceInflowsOverTime.data}
+              data={internationalResources.resourceflowsOverTime.data}
               height="140px"
             />
             : <TabsNoData />}

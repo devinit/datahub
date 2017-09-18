@@ -175,6 +175,10 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
   return linkMeta;
 };
 
+// (10 ** length) == Math.pow(10, length);
+const roundNum = (num, length): string =>
+  (Math.round(num * (10 ** length)) / (10 ** length)).toFixed(length);
+
 const removeTrailingZero = (value: string): string => {
   const val = Number(value);
   return Math.round(val) === val ? val.toString() : value;
@@ -188,18 +192,18 @@ export const approximate =
     const val = Number(value);
     const absValue = Math.abs(val);
     if (absValue < 1e3) {
-      const fixed = val.toFixed(precision);
+      const fixed = roundNum(val, precision);
       return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}` : fixed;
     } else if (absValue >= 1e3 && absValue < 1e6) {
       const newValue = val / 1e3;
-      const fixed = newValue.toFixed(precision);
+      const fixed = roundNum(newValue, precision);
       return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}k` : `${fixed}k`;
     } else if (absValue >= 1e6 && absValue < 1e9) {
       const newValue = val / 1e6;
-      const fixed = newValue.toFixed(precision);
+      const fixed = roundNum(newValue, precision);
       return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}m` : `${fixed}m`;
     }
     const newValue = val / 1e9;
-    const fixed = newValue.toFixed(precision);
+    const fixed = roundNum(newValue, precision);
     return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}bn` : `${fixed}bn`;
   };

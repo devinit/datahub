@@ -121,7 +121,7 @@ query TabData($id: String!) {
         source
       }
     }
-    resourceInflowsOverTime {
+    resourceflowsOverTime {
       data {
         year
         name

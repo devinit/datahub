@@ -3,6 +3,7 @@ query PageData {
     id
     title
     narrative
+    donor_title
   }
   spotlightDistrict: districtPageData {
     id
