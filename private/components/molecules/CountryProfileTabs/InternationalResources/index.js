@@ -23,13 +23,13 @@ const International = (props: Props) => {
   const resourceInflow = getPageLine('resource-inflow');
   const mixtureOfResources = getPageLine('mixture-of-resources');
   const internationalResources = props.internationalResources;
-  if (!internationalResources) throw new Error('Internationa resources missing');
+  if (!internationalResources) throw new Error('International resources tabd data missing');
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {shareGniAllocatedToCtry.title}
+            {shareGniAllocatedToCtry.title ? shareGniAllocatedToCtry.title.toUpperCase() : ''}
             {internationalResources.netODAOfGNIIn && internationalResources.netODAOfGNIIn.toolTip
               ? <TabsToolTip {...internationalResources.netODAOfGNIIn.toolTip} />
               : ''}

@@ -5,26 +5,27 @@
 import {getCountryName, getDistrictName} from 'lib/utils';
 import data from './data';
 
-const pagesData = (data: PageDataQuery);
-
 export type PageUnit = {|
   id: ?string,
   title: ?string,
   narrative: ?string,
 |}
+const pagesData = (data: PageDataQuery);
 type ReplaceFieldsArgs = {
   pageData: PageUnit[],
   toReplace: string,
   replacement: string
 }
+
 const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
   const {pageData, toReplace, replacement} = args;
   return pageData.map((obj: PageUnit) => {
-    const title = obj.title && obj.title.includes(toReplace) ?
-      obj.title.replace(toReplace, replacement) : obj.title;
-    const narrative = obj.narrative && obj.narrative.includes(toReplace) ?
-      obj.narrative.replace(toReplace, replacement) : obj.narrative;
-    return {id: obj.id, title, narrative};
+    // $FlowFixMe: this type is correct, flow just has issues!!! dahh
+    return Object.keys(obj).reduce((acc: PageUnit, key: string): PageUnit => {
+      const replaced: string = obj[key] && obj[key].includes(toReplace) ?
+        obj[key].replace(toReplace, replacement) : obj[key];
+      return replaced ? {...acc, [key]: replaced} : {...acc, [key]: replaced};
+    }, {});
   });
 };
 
