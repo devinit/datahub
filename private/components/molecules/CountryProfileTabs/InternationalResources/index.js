@@ -7,7 +7,6 @@ import {small} from 'components/theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from 'components/atoms/TabsText';
 import {NoData, DONOR} from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';
-import type {Props as TabsToolTipProps} from 'components/molecules/TabsToolTip';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
 import Legend from 'components/atoms/Legend';
