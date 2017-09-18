@@ -70,12 +70,12 @@ class Profile extends Component {
           <Container>
             <Grid>
               <Grid.Row>
-                <Grid.Column width={10}>
+                <Grid.Column width={10} tablet={16} mobile={16}>
                   <CardContainer>
                     <H4 color={red}>
                       <Icon name="globe" color={'red'} />
                       <Link href="/spotlight-on-uganda">
-                        <a role="link" style={{color: red}}>General Picturea</a>
+                        <a role="link" style={{color: red}}>Global Picture</a>
                       </Link>
                     </H4>
                     <CountrySearch visible placeholder={this.props.id} profile />

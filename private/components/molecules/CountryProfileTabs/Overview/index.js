@@ -31,7 +31,7 @@ const Overview = (props: Props) => {
     <Container>
       <Grid textAlign={'center'}>
         {props.countryType === RECIPIENT && overviewTab.poorestPeople
-          ? <Grid.Column computer={5} tablet={16} mobile={16}>
+          ? <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
               {overviewCtryPoorestPeople.title ? overviewCtryPoorestPeople.title.toUpperCase() : ''}
               {overviewTab.poorestPeople.toolTip
@@ -47,7 +47,7 @@ const Overview = (props: Props) => {
                 props.populationTab.population.value : NoData
             } million people </TabsFootNote>
           </Grid.Column>
-          : <Grid.Column computer={5} tablet={16} mobile={16}>
+          : <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
               {avgIncomePerPerson.title }
             </HeaderTitle>
@@ -67,7 +67,7 @@ const Overview = (props: Props) => {
             </Div>
           </Grid.Column>}
         {props.countryType === RECIPIENT
-          ? <Grid.Column computer={5} tablet={16} mobile={16}>
+          ? <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
               {overviewCtryResources.title }
             </HeaderTitle>
@@ -95,7 +95,7 @@ const Overview = (props: Props) => {
             </TabsP>
           </Grid.Column>
           : ''}
-        <Grid.Column computer={5} tablet={16} mobile={16}>
+        <Grid.Column computer={5} tablet={12} mobile={12}>
           <HeaderTitle>
             {overviewGovtSpentPerPerson.title }
             {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip
@@ -110,7 +110,7 @@ const Overview = (props: Props) => {
           <TabsFootNote>Government spending per person per annum</TabsFootNote>
         </Grid.Column>
         {props.countryType === DONOR
-          ? <Grid.Column computer={5} tablet={16} mobile={16}>
+          ? <Grid.Column computer={5} tablet={12} mobile={1}>
             <HeaderTitle>
               {incomeDistributionCtry.title }
               {overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip
