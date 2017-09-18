@@ -86,7 +86,7 @@ class BaseMap extends Component {
   constructor(props: Props) {
     super(props);
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
-    if (!props.paint) throw new Error('viewport prop missing in basemap props');
+    if (!props.paint) throw new Error('paint prop missing in basemap props');
     this._isOnMobile = window.innerWidth < 1200;
     this.state = {
       profileLoading: false,
@@ -339,10 +339,12 @@ class BaseMap extends Component {
 
     if (!this._mapLoaded) this.onMapLoad(paint);
   }
+
   addMapNav = () => {
     this._nav = new mapboxgl.NavigationControl();
     this._map.addControl(this._nav, 'top-right');
   }
+
   onMapLoad = (paint: PaintMap) => {
     this._map.on('load', () => {
       this._mapLoaded = true;

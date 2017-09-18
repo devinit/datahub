@@ -6,7 +6,7 @@ import Map from '.';
 storiesOf('Maps Live with Apollo and Redux', module)
   .addDecorator(withApolloAndReduxProvider())
   .add('global picture default map', () => <Map pathname={'/'} />)
-  .add('spotlight default map', () => <Map pathname={'spotlight'} />)
+  .add('spotlight default map', () => <Map pathname={'/spotlight-on-uganda'} />)
   .add('Depth of Poverty % Map', () => <Map id={'data_series.depth_of_extreme_poverty_190'} />)
   .add('Number of Poorest 20%', () => <Map id={'data_series.poorest_20_percent'} />)
   .add('Subnational', () => <Map id={'subnational_p20'} />)
