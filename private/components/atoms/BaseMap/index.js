@@ -110,7 +110,7 @@ class BaseMap extends Component {
   _element: HTMLDivElement;
 
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle) {
+    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle || this.props.countryProfile) {
       this.setState({shouldForceRedraw: true});
     }
   }
@@ -302,7 +302,6 @@ class BaseMap extends Component {
     const dy = (bounds._ne.lng - bounds._sw.lng);
     const distance = Math.sqrt((dx * dx) + (dy * dy));
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
-    console.log(distance, maxZoom, bounds);
     return this._map.fitBounds(bounds, {
       padding: 0,
       offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [400, 0],
@@ -337,10 +336,6 @@ class BaseMap extends Component {
     if (!this._nav || !this._mapLoaded) this.addMapNav();
     // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
-
-    if (this.props.countryProfile && this._map && this._mapLoaded) {
-      this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
-    }
 
     if (!this._mapLoaded) this.onMapLoad(paint);
   }

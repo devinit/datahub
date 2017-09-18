@@ -115,7 +115,7 @@ class SearchInput extends React.Component {
           height={this.props.profile ? '5em' : '10em'}
         >
           {this.props.profile
-            ? <H1 flex={'0 1'} textTransform="capitalize">
+            ? <H1 flex={'0 1'} textTransform="capitalize" backgroundColor={this.state.showList ? 'white' : 'none'}>
               {this.props.placeholder}
               <Icon name="caret down" onClick={() => this.onCaretDownClick()} />
             </H1>

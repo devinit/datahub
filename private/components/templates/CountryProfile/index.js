@@ -101,12 +101,12 @@ class Profile extends Component {
                             <BodyLink
                               onClick={() => this.jumpToSection(GOVERNMENT_FINANCE_LOWER)}
                               color={red}
-                            >governement finance </BodyLink> or </span> : ''
+                            >government finance </BodyLink> or </span> : ''
                       }
                       <BodyLink
                         color={red}
                         onClick={() => this.jumpToSection(INFLOWS_VS_OUTFLOWS)}
-                      >International resources</BodyLink>
+                      >international resources</BodyLink>
                     </Span>
                     {process.browser ?
                       <Div marginTop={'1.5em'}>

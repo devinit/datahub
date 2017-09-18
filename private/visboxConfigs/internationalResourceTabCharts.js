@@ -27,7 +27,7 @@ export const resourcesOverTime = {
     axisMaximum: 2015,
   },
   legend: {
-    showLegend: true,
+    showLegend: false,
   },
 };
 

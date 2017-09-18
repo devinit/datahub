@@ -7,7 +7,7 @@ export const List = glamorous.ul({
   boxShadow: '0 .125em .125em 0 rgba(0,0,0,.2)',
   listStyleType: 'none',
   position: 'absolute',
-  top: '-1.23em',
+  top: '-2em',
   width: '100%',
   paddingLeft: '0px',
   backgroundColor: white,
