@@ -70,7 +70,7 @@ class Profile extends Component {
           <Container>
             <Grid>
               <Grid.Row>
-                <Grid.Column width={10} tablet={11} mobile={11}>
+                <Grid.Column width={10} tablet={16} mobile={16}>
                   <CardContainer>
                     <H4 color={red}>
                       <Icon name="globe" color={'red'} />

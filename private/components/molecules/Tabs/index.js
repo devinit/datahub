@@ -36,6 +36,9 @@ const TabLink = glamorous.a({
   cursor: 'pointer',
   color: lightGrey,
   display: 'inline-block',
+  '@media(max-width: 700px)': {
+    width: '100%',
+  }
 });
 const TabsContentWrapper = glamorous.div(
   {
