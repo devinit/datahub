@@ -11,11 +11,11 @@ type Process = {
 }
 declare var process: Process;
 
-export type District = {|
+export type District = {
   id: string,
   name: string,
   slug: string
-|}
+}
 
 export type Country = {|
     ...District,
