@@ -38,6 +38,7 @@ const TabLink = glamorous.a({
   display: 'inline-block',
   '@media(max-width: 700px)': {
     width: '100%',
+    textAlign: 'center'
   }
 });
 const TabsContentWrapper = glamorous.div(
