@@ -123,9 +123,6 @@
     "webpack": "^3.6.0"
   },
   "git-pre-hooks": {
-    "pre-push": [
-      "npm run lint"
-    ]
   },
   "jest": {
     "coverageDirectory": "./coverage/",
