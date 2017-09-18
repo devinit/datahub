@@ -11,13 +11,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'AX',
-      name: 'Aland Islands',
-      slug: 'aland-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'AL',
       name: 'Albania',
       slug: 'albania',
@@ -30,13 +23,6 @@ module.exports = {
       slug: 'algeria',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'AS',
-      name: 'American Samoa',
-      slug: 'american-samoa',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'AD',
@@ -60,13 +46,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'AQ',
-      name: 'Antarctica',
-      slug: 'antarctica',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'AG',
       name: 'Antigua & Barbuda',
       slug: 'antigua-and-barbuda',
@@ -88,13 +67,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'AW',
-      name: 'Aruba',
-      slug: 'aruba',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'AU',
       name: 'Australia',
       slug: 'australia',
@@ -114,13 +86,6 @@ module.exports = {
       slug: 'azerbaijan',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'BS',
-      name: 'Bahamas',
-      slug: 'bahamas',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'BH',
@@ -172,13 +137,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'BM',
-      name: 'Bermuda',
-      slug: 'bermuda',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'BT',
       name: 'Bhutan',
       slug: 'bhutan',
@@ -226,20 +184,6 @@ module.exports = {
       slug: 'brazil',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'IO',
-      name: 'British Indian Ocean Territory',
-      slug: 'british-indian-ocean-territory',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'BN',
-      name: 'Brunei',
-      slug: 'brunei',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'BG',
@@ -291,13 +235,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'KY',
-      name: 'Cayman Islands',
-      slug: 'cayman-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'CF',
       name: 'CAR',
       slug: 'car',
@@ -324,20 +261,6 @@ module.exports = {
       slug: 'china',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'CX',
-      name: 'Christmas Island',
-      slug: 'christmas-island',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'CC',
-      name: 'Cocos (Keeling) Islands',
-      slug: 'cocos-keeling-islands',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'CO',
@@ -389,13 +312,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'country-unspecified',
-      name: 'Country not specified',
-      slug: 'country-unspecified',
-      has_domestic_data: '',
-      countryType: 'crossover'
-    },
-    {
       id: 'HR',
       name: 'Croatia',
       slug: 'croatia',
@@ -408,13 +324,6 @@ module.exports = {
       slug: 'cuba',
       has_domestic_data: '',
       countryType: 'recipient'
-    },
-    {
-      id: 'CW',
-      name: 'Curacao',
-      slug: 'curacao',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'CY',
@@ -508,20 +417,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'FK',
-      name: 'Falkland Islands',
-      slug: 'falkland-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'FO',
-      name: 'Faroe Islands',
-      slug: 'faroe-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'FJ',
       name: 'Fiji',
       slug: 'fiji',
@@ -541,27 +436,6 @@ module.exports = {
       slug: 'france',
       has_domestic_data: '',
       countryType: 'donor'
-    },
-    {
-      id: 'GF',
-      name: 'French Guiana',
-      slug: 'french-guiana',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'PF',
-      name: 'French Polynesia',
-      slug: 'french-polynesia',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'TF',
-      name: 'French Southern Territories',
-      slug: 'french-southern-territories',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'GA',
@@ -599,25 +473,11 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'GI',
-      name: 'Gibraltar',
-      slug: 'gibraltar',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'GR',
       name: 'Greece',
       slug: 'greece',
       has_domestic_data: '',
       countryType: 'donor'
-    },
-    {
-      id: 'GL',
-      name: 'Greenland',
-      slug: 'greenland',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'GD',
@@ -627,32 +487,11 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'GP',
-      name: 'Guadeloupe',
-      slug: 'guadeloupe',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'GU',
-      name: 'Guam',
-      slug: 'guam',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'GT',
       name: 'Guatemala',
       slug: 'guatemala',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'GG',
-      name: 'Guernsey',
-      slug: 'guernsey',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'GN',
@@ -683,32 +522,11 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'HM',
-      name: 'Heard Island & McDonald Islands',
-      slug: 'heard-island-and-mcdonald-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'VA',
-      name: 'Holy See (Vatican City State)',
-      slug: 'holy-see-vatican-city-state',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'HN',
       name: 'Honduras',
       slug: 'honduras',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'HK',
-      name: 'Hong Kong',
-      slug: 'hong-kong',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'HU',
@@ -760,13 +578,6 @@ module.exports = {
       countryType: 'donor'
     },
     {
-      id: 'IM',
-      name: 'Isle of Man',
-      slug: 'isle-of-man',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'IL',
       name: 'Israel',
       slug: 'israel',
@@ -793,13 +604,6 @@ module.exports = {
       slug: 'japan',
       has_domestic_data: '',
       countryType: 'donor'
-    },
-    {
-      id: 'JE',
-      name: 'Jersey',
-      slug: 'jersey',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'JO',
@@ -928,13 +732,6 @@ module.exports = {
       countryType: 'donor'
     },
     {
-      id: 'MO',
-      name: 'Macao',
-      slug: 'macao',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'MK',
       name: 'Macedonia',
       slug: 'macedonia',
@@ -991,13 +788,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'MQ',
-      name: 'Martinique',
-      slug: 'martinique',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'MR',
       name: 'Mauritania',
       slug: 'mauritania',
@@ -1038,13 +828,6 @@ module.exports = {
       slug: 'moldova',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'MC',
-      name: 'Monaco',
-      slug: 'monaco',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'MN',
@@ -1117,20 +900,6 @@ module.exports = {
       countryType: 'donor'
     },
     {
-      id: 'ANHH',
-      name: 'Netherlands Antilles',
-      slug: 'netherlands-antilles',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'NC',
-      name: 'New Caledonia',
-      slug: 'new-caledonia',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'NZ',
       name: 'New Zealand',
       slug: 'new-zealand',
@@ -1164,20 +933,6 @@ module.exports = {
       slug: 'niue',
       has_domestic_data: '',
       countryType: 'recipient'
-    },
-    {
-      id: 'NF',
-      name: 'Norfolk Island',
-      slug: 'norfolk-island',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'MP',
-      name: 'Northern Mariana Islands',
-      slug: 'northern-mariana-islands',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'NO',
@@ -1250,13 +1005,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'PN',
-      name: 'Pitcairn',
-      slug: 'pitcairn',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'PL',
       name: 'Poland',
       slug: 'poland',
@@ -1269,27 +1017,6 @@ module.exports = {
       slug: 'portugal',
       has_domestic_data: '',
       countryType: 'donor'
-    },
-    {
-      id: 'PR',
-      name: 'Puerto Rico',
-      slug: 'puerto-rico',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'QA',
-      name: 'Qatar',
-      slug: 'qatar',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'RE',
-      name: 'Reunion',
-      slug: 'réunion',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'RO',
@@ -1313,13 +1040,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'BL',
-      name: 'Saint Barthelemy',
-      slug: 'saint-barthelemy',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'SH',
       name: 'Saint Helena, Ascension & Tristan da Cunha',
       slug: 'saint-helena-ascension-and-tristan-da-cunha',
@@ -1341,20 +1061,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'MF',
-      name: 'Saint Martin',
-      slug: 'saint-martin',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'PM',
-      name: 'Saint Pierre & Miquelon',
-      slug: 'saint-pierre-and-miquelon',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'VC',
       name: 'Saint Vincent & the Grenadines',
       slug: 'saint-vincent-and-the-grenadines',
@@ -1367,13 +1073,6 @@ module.exports = {
       slug: 'samoa',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'SM',
-      name: 'San Marino',
-      slug: 'san-marino',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'ST',
@@ -1418,20 +1117,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'SG',
-      name: 'Singapore',
-      slug: 'singapore',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'SX',
-      name: 'Sint Maarten (Dutch part)',
-      slug: 'sint-maarten-dutch-part',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'SK',
       name: 'Slovak Republic',
       slug: 'slovakia',
@@ -1467,13 +1152,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'GS',
-      name: 'South Georgia & the South Sandwich Islands',
-      slug: 'south-georgia-and-the-south-sandwich-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'SS',
       name: 'South Sudan',
       slug: 'south-sudan',
@@ -1507,13 +1185,6 @@ module.exports = {
       slug: 'suriname',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'SJ',
-      name: 'Svalbard & Jan Mayen',
-      slug: 'svalbard-and-jan-mayen',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'SZ',
@@ -1677,13 +1348,6 @@ module.exports = {
       countryType: 'donor'
     },
     {
-      id: 'UM',
-      name: 'United States Minor Outlying Islands',
-      slug: 'united-states-minor-outlying-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'UY',
       name: 'Uruguay',
       slug: 'uruguay',
@@ -1717,20 +1381,6 @@ module.exports = {
       slug: 'viet-nam',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'VG',
-      name: 'Virgin Islands (GB)',
-      slug: 'virgin-islands-gb',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
-      id: 'VI',
-      name: 'Virgin Islands (US)',
-      slug: 'virgin-islands-us',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'WF',
