@@ -14,6 +14,7 @@ import dynamic from 'next/dynamic';
 import Observer from 'react-intersection-observer';
 import { connect } from 'react-redux';
 import type { State } from 'lib/reducers';
+import {shouldCacheData} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 // import MyWorker from './worker';
 import Generic from '../Generic';
@@ -36,8 +37,12 @@ class Front extends Component {
   }
   componentDidMount() {
     if (process.browser && window.Worker && !process.storybook) {
-      const worker = new Worker('/worker.js'); // caches global picture map data
-      if (process.env === 'development') worker.onmessage = (event) => console.log(event);
+      shouldCacheData().then((shouldRunWorker) => {
+        if (!shouldRunWorker) return false;
+        const worker = new Worker('/worker.js'); // caches global picture map data
+        worker.onmessage = (event) => console.log(event);
+        return true;
+      }).catch(console.error);
     }
   }
   render() {

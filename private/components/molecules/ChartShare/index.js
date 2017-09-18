@@ -115,7 +115,7 @@ export default class ChartShare extends Component {
         <Modal.Content>
           <Modal.Description>
             <Container>
-              <h4>Share this Visualization</h4>
+              <h4>Share this visualisation</h4>
               <input
                 type="radio"
                 value={1}

@@ -115,7 +115,7 @@ class BaseMap extends Component {
     }
   }
   genericTipHtml({ id, country, name, value, uom, year }: GenericTipHtml) {
-    const valueStr = value === NO_DATA ? value : BaseMap.tipToolTipValueStr(value, uom);
+    const valueStr = value === NO_DATA ? NO_DATA : BaseMap.tipToolTipValueStr(value, uom);
     const valueWithYear = year ?
       `${valueStr}<span style="color: white;font-weight: 500;"> in ${year}</span>` : valueStr;
     const flagUrl: string =
@@ -154,7 +154,7 @@ class BaseMap extends Component {
       value = detail;
     }
     if (theme === 'government-finance' && pointData.detail) {
-      value = `${value} <span style="color: white">[ ${pointData.detail} ]</span>`;
+      value = `${value} <span style="color: white; font-weight: 400;">[ ${pointData.detail} ]</span>`;
     }
     if (theme === 'government-finance' && pointData.detail && uom === '%') uom = '';
     const opts = { id, value, name, uom, country, year: pointData.year || 0 };

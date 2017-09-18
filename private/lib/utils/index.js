@@ -22,15 +22,23 @@ export type ApolloResponse<T> = {
 export type CallBack<T> = {
   (data: T): string,
 }
+export async function shouldCacheData(): Promise<boolean> {
+  const storedVersion = await localforage.getItem('version');
+  return !storedVersion || storedVersion !== version;
+}
 
 export async function getLocalStorageInstance(): Promise<any> {
   if (!process.browser) return Promise.resolve(null);
-  const storedVersion = await localforage.getItem('version');
-  if (!storedVersion || storedVersion !== version) {
+  try {
+    const shouldCache = await shouldCacheData();
+    if (!shouldCache) return localforage;
     await localforage.clear();
     await localforage.setItem('version', version);
+    return localforage;
+  } catch (error) {
+    console.error(error);
+    return localforage;
   }
-  return localforage;
 }
 export async function getData<T>(query: string, variables: Object): Promise<T> {
   try {
@@ -42,7 +50,13 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
       ? await apolloFetch({ query, variables })
       : await apolloFetch({ query });
     if (response.error) throw response.errors;
-    if (storage) await storage.setItem(key, JSON.stringify(response.data));
+    if (storage) {
+      try {
+        await storage.setItem(key, JSON.stringify(response.data));
+      } catch (error) {
+        console.error(error);
+      }
+    }
     return response.data;
   } catch (error) {
     throw error;
