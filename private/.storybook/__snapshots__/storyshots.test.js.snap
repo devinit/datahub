@@ -1,5 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots About Global picture && spotlight on uganda 1`] = `
+<section>
+  <div
+    className="css-7q1pau"
+  >
+    <h2
+      className="css-1yuuuwn"
+    >
+      DATA VISUALISATIONS
+    </h2>
+  </div>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui grid"
+    >
+      <div
+        className="centered row"
+      >
+        <div
+          className="css-1tfdju4"
+        >
+          <h2
+            className="css-3wzwh7"
+          >
+            ABOUT THE 
+            <span>
+              DEVELOPMENT DATA HUB
+            </span>
+          </h2>
+        </div>
+      </div>
+      <div
+        className="centered row"
+      >
+        <div
+          className="eight wide column"
+        >
+          <h3
+            className="ui header"
+          >
+            The Development Data Hub
+          </h3>
+          <p>
+            The Development Data Hub is the most comprehensive online resource for financial and resource flow data alongside poverty, social and vulnerability indicators. It combines an extensive data store with interactive visualisations enabling you to chart, map and compare data at the global, national and local level.
+          </p>
+        </div>
+        <div
+          className="eight wide column"
+        >
+          <h3
+            className="ui header"
+          >
+            How does it work?
+          </h3>
+          <p>
+            It brings together many data sets, enabling you to dig into these through interactive maps, charts and visualisations. It turns complex data around poverty and resource flows into easy to understand robust information and evidence about what is really going on. The Data Hub is an accessible and easy to use tool for anyone wanting to know more about how resources for development are spent.
+          </p>
+        </div>
+      </div>
+      <div
+        className="centered row"
+      >
+        <div
+          className="twelve wide column"
+        >
+          <div>
+            <iframe
+              frameBorder="0"
+              height="585"
+              src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&showinfo=0"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+              title="About Datahub"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-h7jsub"
+  >
+    <div
+      className="ui center aligned container"
+    >
+      <h2
+        className="css-1my7te0"
+      >
+        DATA SOURCES
+      </h2>
+      <p
+        className="css-1tfdju4"
+      >
+        For documentation and data downloads, navigate to the methodology page.
+      </p>
+      <button
+        className="ui grey large button"
+        disabled={undefined}
+        onClick={[Function]}
+        role="button"
+        tabIndex={undefined}
+      >
+        Methodology and Data 
+        <i
+          aria-hidden="true"
+          className="chevron right icon"
+        />
+      </button>
+    </div>
+  </div>
+</section>
+`;
+
 exports[`Storyshots Base Maps Base Map Atom 1`] = `
 <div
   className="css-12lsrhb"
@@ -1464,7 +1582,7 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
     className="css-3qegu8"
   >
     <h1
-      className="css-1jhiwme"
+      className="css-14b5oan"
     >
       Wakiso
       <i
@@ -1487,398 +1605,8 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
     className="css-1x2mn3f"
   >
     <ul
-      className="css-1o3anry"
+      className="css-dk1683"
     >
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/abim"
-          onClick={[Function]}
-        >
-          Abim
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/adjumani"
-          onClick={[Function]}
-        >
-          Adjumani
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/agago"
-          onClick={[Function]}
-        >
-          Agago
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/alebtong"
-          onClick={[Function]}
-        >
-          Alebtong
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/amolatar"
-          onClick={[Function]}
-        >
-          Amolatar
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/amudat"
-          onClick={[Function]}
-        >
-          Amudat
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/amuria"
-          onClick={[Function]}
-        >
-          Amuria
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/amuru"
-          onClick={[Function]}
-        >
-          Amuru
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/apac"
-          onClick={[Function]}
-        >
-          Apac
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/arua"
-          onClick={[Function]}
-        >
-          Arua
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/budaka"
-          onClick={[Function]}
-        >
-          Budaka
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bududa"
-          onClick={[Function]}
-        >
-          Bududa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bugiri"
-          onClick={[Function]}
-        >
-          Bugiri
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/buhweju"
-          onClick={[Function]}
-        >
-          Buhweju
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/buikwe"
-          onClick={[Function]}
-        >
-          Buikwe
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bukedea"
-          onClick={[Function]}
-        >
-          Bukedea
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bukomansimbi"
-          onClick={[Function]}
-        >
-          Bukomansimbi
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bukwo"
-          onClick={[Function]}
-        >
-          Bukwo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bulambuli"
-          onClick={[Function]}
-        >
-          Bulambuli
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/buliisa"
-          onClick={[Function]}
-        >
-          Buliisa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bundibugyo"
-          onClick={[Function]}
-        >
-          Bundibugyo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/bushenyi"
-          onClick={[Function]}
-        >
-          Bushenyi
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/busia"
-          onClick={[Function]}
-        >
-          Busia
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/butaleja"
-          onClick={[Function]}
-        >
-          Butaleja
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/butambala"
-          onClick={[Function]}
-        >
-          Butambala
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/buvuma"
-          onClick={[Function]}
-        >
-          Buvuma
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/buyende"
-          onClick={[Function]}
-        >
-          Buyende
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/dokolo"
-          onClick={[Function]}
-        >
-          Dokolo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/gomba"
-          onClick={[Function]}
-        >
-          Gomba
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/gulu"
-          onClick={[Function]}
-        >
-          Gulu
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/hoima"
-          onClick={[Function]}
-        >
-          Hoima
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/ibanda"
-          onClick={[Function]}
-        >
-          Ibanda
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/iganga"
-          onClick={[Function]}
-        >
-          Iganga
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/isingiro"
-          onClick={[Function]}
-        >
-          Isingiro
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/jinja"
-          onClick={[Function]}
-        >
-          Jinja
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kaabong"
-          onClick={[Function]}
-        >
-          Kaabong
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kabale"
-          onClick={[Function]}
-        >
-          Kabale
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kabarole"
-          onClick={[Function]}
-        >
-          Kabarole
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kaberamaido"
-          onClick={[Function]}
-        >
-          Kaberamaido
-        </a>
-      </li>
       <li
         className={false}
       >
@@ -1887,26 +1615,6 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
           onClick={[Function]}
         >
           Kalangala
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kaliro"
-          onClick={[Function]}
-        >
-          Kaliro
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kalungu"
-          onClick={[Function]}
-        >
-          Kalungu
         </a>
       </li>
       <li
@@ -1923,250 +1631,10 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/kamuli"
-          onClick={[Function]}
-        >
-          Kamuli
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kamwenge"
-          onClick={[Function]}
-        >
-          Kamwenge
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kanungu"
-          onClick={[Function]}
-        >
-          Kanungu
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kapchorwa"
-          onClick={[Function]}
-        >
-          Kapchorwa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kasese"
-          onClick={[Function]}
-        >
-          Kasese
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/katakwi"
-          onClick={[Function]}
-        >
-          Katakwi
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kayunga"
-          onClick={[Function]}
-        >
-          Kayunga
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kibaale"
-          onClick={[Function]}
-        >
-          Kibaale
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/uganda/kiboga"
           onClick={[Function]}
         >
           Kiboga
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kibuku"
-          onClick={[Function]}
-        >
-          Kibuku
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kiruhura"
-          onClick={[Function]}
-        >
-          Kiruhura
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kiryandongo"
-          onClick={[Function]}
-        >
-          Kiryandongo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kisoro"
-          onClick={[Function]}
-        >
-          Kisoro
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kitgum"
-          onClick={[Function]}
-        >
-          Kitgum
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/koboko"
-          onClick={[Function]}
-        >
-          Koboko
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kole"
-          onClick={[Function]}
-        >
-          Kole
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kotido"
-          onClick={[Function]}
-        >
-          Kotido
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kumi"
-          onClick={[Function]}
-        >
-          Kumi
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kween"
-          onClick={[Function]}
-        >
-          Kween
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kyankwanzi"
-          onClick={[Function]}
-        >
-          Kyankwanzi
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kyegegwa"
-          onClick={[Function]}
-        >
-          Kyegegwa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/kyenjojo"
-          onClick={[Function]}
-        >
-          Kyenjojo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/lamwo"
-          onClick={[Function]}
-        >
-          Lamwo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/lira"
-          onClick={[Function]}
-        >
-          Lira
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/luuka"
-          onClick={[Function]}
-        >
-          Luuka
         </a>
       </li>
       <li
@@ -2183,130 +1651,10 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/lwengo"
-          onClick={[Function]}
-        >
-          Lwengo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/lyantonde"
-          onClick={[Function]}
-        >
-          Lyantonde
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/manafwa"
-          onClick={[Function]}
-        >
-          Manafwa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/maracha"
-          onClick={[Function]}
-        >
-          Maracha
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/uganda/masaka"
           onClick={[Function]}
         >
           Masaka
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/masindi"
-          onClick={[Function]}
-        >
-          Masindi
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/mayuge"
-          onClick={[Function]}
-        >
-          Mayuge
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/mbale"
-          onClick={[Function]}
-        >
-          Mbale
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/mbarara"
-          onClick={[Function]}
-        >
-          Mbarara
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/mitooma"
-          onClick={[Function]}
-        >
-          Mitooma
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/mityana"
-          onClick={[Function]}
-        >
-          Mityana
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/moroto"
-          onClick={[Function]}
-        >
-          Moroto
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/moyo"
-          onClick={[Function]}
-        >
-          Moyo
         </a>
       </li>
       <li
@@ -2343,10 +1691,70 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/nakapiripirit"
+          href="/uganda/nakasongola"
           onClick={[Function]}
         >
-          Nakapiripirit
+          Nakasongola
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/rakai"
+          onClick={[Function]}
+        >
+          Rakai
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/ssembabule"
+          onClick={[Function]}
+        >
+          Ssembabule
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kayunga"
+          onClick={[Function]}
+        >
+          Kayunga
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/wakiso"
+          onClick={[Function]}
+        >
+          Wakiso
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/lyantonde"
+          onClick={[Function]}
+        >
+          Lyantonde
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/mityana"
+          onClick={[Function]}
+        >
+          Mityana
         </a>
       </li>
       <li
@@ -2363,20 +1771,310 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/nakasongola"
+          href="/uganda/buikwe"
           onClick={[Function]}
         >
-          Nakasongola
+          Buikwe
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/namayingo"
+          href="/uganda/bukomansimbi"
           onClick={[Function]}
         >
-          Namayingo
+          Bukomansimbi
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/butambala"
+          onClick={[Function]}
+        >
+          Butambala
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/buvuma"
+          onClick={[Function]}
+        >
+          Buvuma
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/gomba"
+          onClick={[Function]}
+        >
+          Gomba
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kalungu"
+          onClick={[Function]}
+        >
+          Kalungu
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kyankwanzi"
+          onClick={[Function]}
+        >
+          Kyankwanzi
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/lwengo"
+          onClick={[Function]}
+        >
+          Lwengo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/bugiri"
+          onClick={[Function]}
+        >
+          Bugiri
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/busia"
+          onClick={[Function]}
+        >
+          Busia
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/iganga"
+          onClick={[Function]}
+        >
+          Iganga
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/jinja"
+          onClick={[Function]}
+        >
+          Jinja
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kamuli"
+          onClick={[Function]}
+        >
+          Kamuli
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kapchorwa"
+          onClick={[Function]}
+        >
+          Kapchorwa
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/katakwi"
+          onClick={[Function]}
+        >
+          Katakwi
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kumi"
+          onClick={[Function]}
+        >
+          Kumi
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/mbale"
+          onClick={[Function]}
+        >
+          Mbale
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/pallisa"
+          onClick={[Function]}
+        >
+          Pallisa
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/soroti"
+          onClick={[Function]}
+        >
+          Soroti
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/tororo"
+          onClick={[Function]}
+        >
+          Tororo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kaberamaido"
+          onClick={[Function]}
+        >
+          Kaberamaido
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/mayuge"
+          onClick={[Function]}
+        >
+          Mayuge
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/sironko"
+          onClick={[Function]}
+        >
+          Sironko
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/amuria"
+          onClick={[Function]}
+        >
+          Amuria
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/budaka"
+          onClick={[Function]}
+        >
+          Budaka
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/bududa"
+          onClick={[Function]}
+        >
+          Bududa
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/bukedea"
+          onClick={[Function]}
+        >
+          Bukedea
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/bukwo"
+          onClick={[Function]}
+        >
+          Bukwo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/butaleja"
+          onClick={[Function]}
+        >
+          Butaleja
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kaliro"
+          onClick={[Function]}
+        >
+          Kaliro
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/manafwa"
+          onClick={[Function]}
+        >
+          Manafwa
         </a>
       </li>
       <li
@@ -2393,20 +2091,60 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/napak"
+          href="/uganda/bulambuli"
           onClick={[Function]}
         >
-          Napak
+          Bulambuli
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/nebbi"
+          href="/uganda/buyende"
           onClick={[Function]}
         >
-          Nebbi
+          Buyende
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kibuku"
+          onClick={[Function]}
+        >
+          Kibuku
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kween"
+          onClick={[Function]}
+        >
+          Kween
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/luuka"
+          onClick={[Function]}
+        >
+          Luuka
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/namayingo"
+          onClick={[Function]}
+        >
+          Namayingo
         </a>
       </li>
       <li
@@ -2423,20 +2161,280 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/ntoroko"
+          href="/uganda/serere"
           onClick={[Function]}
         >
-          Ntoroko
+          Serere
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/ntungamo"
+          href="/uganda/adjumani"
           onClick={[Function]}
         >
-          Ntungamo
+          Adjumani
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/apac"
+          onClick={[Function]}
+        >
+          Apac
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/arua"
+          onClick={[Function]}
+        >
+          Arua
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/gulu"
+          onClick={[Function]}
+        >
+          Gulu
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kitgum"
+          onClick={[Function]}
+        >
+          Kitgum
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kotido"
+          onClick={[Function]}
+        >
+          Kotido
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/lira"
+          onClick={[Function]}
+        >
+          Lira
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/moroto"
+          onClick={[Function]}
+        >
+          Moroto
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/moyo"
+          onClick={[Function]}
+        >
+          Moyo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/nebbi"
+          onClick={[Function]}
+        >
+          Nebbi
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/nakapiripirit"
+          onClick={[Function]}
+        >
+          Nakapiripirit
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/pader"
+          onClick={[Function]}
+        >
+          Pader
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/yumbe"
+          onClick={[Function]}
+        >
+          Yumbe
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/abim"
+          onClick={[Function]}
+        >
+          Abim
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/amolatar"
+          onClick={[Function]}
+        >
+          Amolatar
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/amuru"
+          onClick={[Function]}
+        >
+          Amuru
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/dokolo"
+          onClick={[Function]}
+        >
+          Dokolo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kaabong"
+          onClick={[Function]}
+        >
+          Kaabong
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/koboko"
+          onClick={[Function]}
+        >
+          Koboko
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/maracha"
+          onClick={[Function]}
+        >
+          Maracha
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/oyam"
+          onClick={[Function]}
+        >
+          Oyam
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/agago"
+          onClick={[Function]}
+        >
+          Agago
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/alebtong"
+          onClick={[Function]}
+        >
+          Alebtong
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/amudat"
+          onClick={[Function]}
+        >
+          Amudat
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kole"
+          onClick={[Function]}
+        >
+          Kole
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/lamwo"
+          onClick={[Function]}
+        >
+          Lamwo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/napak"
+          onClick={[Function]}
+        >
+          Napak
         </a>
       </li>
       <li
@@ -2463,50 +2461,120 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/oyam"
+          href="/uganda/zombo"
           onClick={[Function]}
         >
-          Oyam
+          Zombo
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/pader"
+          href="/uganda/bundibugyo"
           onClick={[Function]}
         >
-          Pader
+          Bundibugyo
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/pallisa"
+          href="/uganda/bushenyi"
           onClick={[Function]}
         >
-          Pallisa
+          Bushenyi
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/rakai"
+          href="/uganda/hoima"
           onClick={[Function]}
         >
-          Rakai
+          Hoima
         </a>
       </li>
       <li
         className={false}
       >
         <a
-          href="/uganda/rubirizi"
+          href="/uganda/kabale"
           onClick={[Function]}
         >
-          Rubirizi
+          Kabale
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kabarole"
+          onClick={[Function]}
+        >
+          Kabarole
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kasese"
+          onClick={[Function]}
+        >
+          Kasese
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kibaale"
+          onClick={[Function]}
+        >
+          Kibaale
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kisoro"
+          onClick={[Function]}
+        >
+          Kisoro
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/masindi"
+          onClick={[Function]}
+        >
+          Masindi
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/mbarara"
+          onClick={[Function]}
+        >
+          Mbarara
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/ntungamo"
+          onClick={[Function]}
+        >
+          Ntungamo
         </a>
       </li>
       <li
@@ -2523,10 +2591,130 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
         className={false}
       >
         <a
-          href="/uganda/serere"
+          href="/uganda/kamwenge"
           onClick={[Function]}
         >
-          Serere
+          Kamwenge
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kanungu"
+          onClick={[Function]}
+        >
+          Kanungu
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kyenjojo"
+          onClick={[Function]}
+        >
+          Kyenjojo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/buliisa"
+          onClick={[Function]}
+        >
+          Buliisa
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/ibanda"
+          onClick={[Function]}
+        >
+          Ibanda
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/isingiro"
+          onClick={[Function]}
+        >
+          Isingiro
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kiruhura"
+          onClick={[Function]}
+        >
+          Kiruhura
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/buhweju"
+          onClick={[Function]}
+        >
+          Buhweju
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kiryandongo"
+          onClick={[Function]}
+        >
+          Kiryandongo
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/kyegegwa"
+          onClick={[Function]}
+        >
+          Kyegegwa
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/mitooma"
+          onClick={[Function]}
+        >
+          Mitooma
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/ntoroko"
+          onClick={[Function]}
+        >
+          Ntoroko
+        </a>
+      </li>
+      <li
+        className={false}
+      >
+        <a
+          href="/uganda/rubirizi"
+          onClick={[Function]}
+        >
+          Rubirizi
         </a>
       </li>
       <li
@@ -2537,76 +2725,6 @@ exports[`Storyshots Country Search Uganda regional profile 1`] = `
           onClick={[Function]}
         >
           Sheema
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/sironko"
-          onClick={[Function]}
-        >
-          Sironko
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/soroti"
-          onClick={[Function]}
-        >
-          Soroti
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/ssembabule"
-          onClick={[Function]}
-        >
-          Ssembabule
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/tororo"
-          onClick={[Function]}
-        >
-          Tororo
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/wakiso"
-          onClick={[Function]}
-        >
-          Wakiso
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/yumbe"
-          onClick={[Function]}
-        >
-          Yumbe
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/uganda/zombo"
-          onClick={[Function]}
-        >
-          Zombo
         </a>
       </li>
     </ul>
@@ -2622,7 +2740,7 @@ exports[`Storyshots Country Search country profile 1`] = `
     className="css-3qegu8"
   >
     <h1
-      className="css-1jhiwme"
+      className="css-14b5oan"
     >
       Uganda
       <i
@@ -2645,7 +2763,7 @@ exports[`Storyshots Country Search country profile 1`] = `
     className="css-1x2mn3f"
   >
     <ul
-      className="css-1o3anry"
+      className="css-dk1683"
     >
       <li
         className={false}
@@ -2655,16 +2773,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Afghanistan
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/aland-islands"
-          onClick={[Function]}
-        >
-          Aland Islands
         </a>
       </li>
       <li
@@ -2685,16 +2793,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Algeria
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/american-samoa"
-          onClick={[Function]}
-        >
-          American Samoa
         </a>
       </li>
       <li
@@ -2731,16 +2829,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/antarctica"
-          onClick={[Function]}
-        >
-          Antarctica
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/antigua-and-barbuda"
           onClick={[Function]}
         >
@@ -2771,16 +2859,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/aruba"
-          onClick={[Function]}
-        >
-          Aruba
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/australia"
           onClick={[Function]}
         >
@@ -2805,16 +2883,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Azerbaijan
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/bahamas"
-          onClick={[Function]}
-        >
-          Bahamas
         </a>
       </li>
       <li
@@ -2891,16 +2959,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/bermuda"
-          onClick={[Function]}
-        >
-          Bermuda
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/bhutan"
           onClick={[Function]}
         >
@@ -2965,26 +3023,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Brazil
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/british-indian-ocean-territory"
-          onClick={[Function]}
-        >
-          British Indian Ocean Territory
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/brunei"
-          onClick={[Function]}
-        >
-          Brunei
         </a>
       </li>
       <li
@@ -3061,16 +3099,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/cayman-islands"
-          onClick={[Function]}
-        >
-          Cayman Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/car"
           onClick={[Function]}
         >
@@ -3105,26 +3133,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           China
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/christmas-island"
-          onClick={[Function]}
-        >
-          Christmas Island
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/cocos-keeling-islands"
-          onClick={[Function]}
-        >
-          Cocos (Keeling) Islands
         </a>
       </li>
       <li
@@ -3201,16 +3209,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/country-unspecified"
-          onClick={[Function]}
-        >
-          Country not specified
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/croatia"
           onClick={[Function]}
         >
@@ -3225,16 +3223,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Cuba
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/curacao"
-          onClick={[Function]}
-        >
-          Curacao
         </a>
       </li>
       <li
@@ -3371,26 +3359,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/falkland-islands"
-          onClick={[Function]}
-        >
-          Falkland Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/faroe-islands"
-          onClick={[Function]}
-        >
-          Faroe Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/fiji"
           onClick={[Function]}
         >
@@ -3415,36 +3383,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           France
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/french-guiana"
-          onClick={[Function]}
-        >
-          French Guiana
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/french-polynesia"
-          onClick={[Function]}
-        >
-          French Polynesia
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/french-southern-territories"
-          onClick={[Function]}
-        >
-          French Southern Territories
         </a>
       </li>
       <li
@@ -3501,30 +3439,10 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/gibraltar"
-          onClick={[Function]}
-        >
-          Gibraltar
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/greece"
           onClick={[Function]}
         >
           Greece
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/greenland"
-          onClick={[Function]}
-        >
-          Greenland
         </a>
       </li>
       <li
@@ -3541,40 +3459,10 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/guadeloupe"
-          onClick={[Function]}
-        >
-          Guadeloupe
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/guam"
-          onClick={[Function]}
-        >
-          Guam
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/guatemala"
           onClick={[Function]}
         >
           Guatemala
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/guernsey"
-          onClick={[Function]}
-        >
-          Guernsey
         </a>
       </li>
       <li
@@ -3621,40 +3509,10 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/heard-island-and-mcdonald-islands"
-          onClick={[Function]}
-        >
-          Heard Island & McDonald Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/holy-see-vatican-city-state"
-          onClick={[Function]}
-        >
-          Holy See (Vatican City State)
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/honduras"
           onClick={[Function]}
         >
           Honduras
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/hong-kong"
-          onClick={[Function]}
-        >
-          Hong Kong
         </a>
       </li>
       <li
@@ -3731,16 +3589,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/isle-of-man"
-          onClick={[Function]}
-        >
-          Isle of Man
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/israel"
           onClick={[Function]}
         >
@@ -3775,16 +3623,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Japan
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/jersey"
-          onClick={[Function]}
-        >
-          Jersey
         </a>
       </li>
       <li
@@ -3971,16 +3809,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/macao"
-          onClick={[Function]}
-        >
-          Macao
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/macedonia"
           onClick={[Function]}
         >
@@ -4061,16 +3889,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/martinique"
-          onClick={[Function]}
-        >
-          Martinique
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/mauritania"
           onClick={[Function]}
         >
@@ -4125,16 +3943,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Moldova
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/monaco"
-          onClick={[Function]}
-        >
-          Monaco
         </a>
       </li>
       <li
@@ -4241,26 +4049,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/netherlands-antilles"
-          onClick={[Function]}
-        >
-          Netherlands Antilles
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/new-caledonia"
-          onClick={[Function]}
-        >
-          New Caledonia
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/new-zealand"
           onClick={[Function]}
         >
@@ -4305,26 +4093,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Niue
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/norfolk-island"
-          onClick={[Function]}
-        >
-          Norfolk Island
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/northern-mariana-islands"
-          onClick={[Function]}
-        >
-          Northern Mariana Islands
         </a>
       </li>
       <li
@@ -4431,16 +4199,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/pitcairn"
-          onClick={[Function]}
-        >
-          Pitcairn
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/poland"
           onClick={[Function]}
         >
@@ -4455,36 +4213,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Portugal
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/puerto-rico"
-          onClick={[Function]}
-        >
-          Puerto Rico
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/qatar"
-          onClick={[Function]}
-        >
-          Qatar
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/réunion"
-          onClick={[Function]}
-        >
-          Reunion
         </a>
       </li>
       <li
@@ -4521,16 +4249,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/saint-barthelemy"
-          onClick={[Function]}
-        >
-          Saint Barthelemy
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/saint-helena-ascension-and-tristan-da-cunha"
           onClick={[Function]}
         >
@@ -4561,26 +4279,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/saint-martin"
-          onClick={[Function]}
-        >
-          Saint Martin
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/saint-pierre-and-miquelon"
-          onClick={[Function]}
-        >
-          Saint Pierre & Miquelon
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/saint-vincent-and-the-grenadines"
           onClick={[Function]}
         >
@@ -4595,16 +4293,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Samoa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/san-marino"
-          onClick={[Function]}
-        >
-          San Marino
         </a>
       </li>
       <li
@@ -4671,26 +4359,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/singapore"
-          onClick={[Function]}
-        >
-          Singapore
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/sint-maarten-dutch-part"
-          onClick={[Function]}
-        >
-          Sint Maarten (Dutch part)
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/slovakia"
           onClick={[Function]}
         >
@@ -4741,16 +4409,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/south-georgia-and-the-south-sandwich-islands"
-          onClick={[Function]}
-        >
-          South Georgia & the South Sandwich Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/south-sudan"
           onClick={[Function]}
         >
@@ -4795,16 +4453,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Suriname
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/svalbard-and-jan-mayen"
-          onClick={[Function]}
-        >
-          Svalbard & Jan Mayen
         </a>
       </li>
       <li
@@ -5041,16 +4689,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/united-states-minor-outlying-islands"
-          onClick={[Function]}
-        >
-          United States Minor Outlying Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/uruguay"
           onClick={[Function]}
         >
@@ -5095,26 +4733,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Viet Nam
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/virgin-islands-gb"
-          onClick={[Function]}
-        >
-          Virgin Islands (GB)
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/virgin-islands-us"
-          onClick={[Function]}
-        >
-          Virgin Islands (US)
         </a>
       </li>
       <li
@@ -5194,7 +4812,7 @@ exports[`Storyshots Country Search globalPicture 1`] = `
     className="css-1x2mn3f"
   >
     <ul
-      className="css-1o3anry"
+      className="css-dk1683"
     >
       <li
         className={false}
@@ -5204,16 +4822,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Afghanistan
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/aland-islands"
-          onClick={[Function]}
-        >
-          Aland Islands
         </a>
       </li>
       <li
@@ -5234,16 +4842,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Algeria
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/american-samoa"
-          onClick={[Function]}
-        >
-          American Samoa
         </a>
       </li>
       <li
@@ -5280,16 +4878,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/antarctica"
-          onClick={[Function]}
-        >
-          Antarctica
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/antigua-and-barbuda"
           onClick={[Function]}
         >
@@ -5320,16 +4908,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/aruba"
-          onClick={[Function]}
-        >
-          Aruba
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/australia"
           onClick={[Function]}
         >
@@ -5354,16 +4932,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Azerbaijan
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/bahamas"
-          onClick={[Function]}
-        >
-          Bahamas
         </a>
       </li>
       <li
@@ -5440,16 +5008,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/bermuda"
-          onClick={[Function]}
-        >
-          Bermuda
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/bhutan"
           onClick={[Function]}
         >
@@ -5514,26 +5072,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Brazil
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/british-indian-ocean-territory"
-          onClick={[Function]}
-        >
-          British Indian Ocean Territory
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/brunei"
-          onClick={[Function]}
-        >
-          Brunei
         </a>
       </li>
       <li
@@ -5610,16 +5148,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/cayman-islands"
-          onClick={[Function]}
-        >
-          Cayman Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/car"
           onClick={[Function]}
         >
@@ -5654,26 +5182,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           China
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/christmas-island"
-          onClick={[Function]}
-        >
-          Christmas Island
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/cocos-keeling-islands"
-          onClick={[Function]}
-        >
-          Cocos (Keeling) Islands
         </a>
       </li>
       <li
@@ -5750,16 +5258,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/country-unspecified"
-          onClick={[Function]}
-        >
-          Country not specified
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/croatia"
           onClick={[Function]}
         >
@@ -5774,16 +5272,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Cuba
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/curacao"
-          onClick={[Function]}
-        >
-          Curacao
         </a>
       </li>
       <li
@@ -5920,26 +5408,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/falkland-islands"
-          onClick={[Function]}
-        >
-          Falkland Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/faroe-islands"
-          onClick={[Function]}
-        >
-          Faroe Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/fiji"
           onClick={[Function]}
         >
@@ -5964,36 +5432,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           France
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/french-guiana"
-          onClick={[Function]}
-        >
-          French Guiana
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/french-polynesia"
-          onClick={[Function]}
-        >
-          French Polynesia
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/french-southern-territories"
-          onClick={[Function]}
-        >
-          French Southern Territories
         </a>
       </li>
       <li
@@ -6050,30 +5488,10 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/gibraltar"
-          onClick={[Function]}
-        >
-          Gibraltar
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/greece"
           onClick={[Function]}
         >
           Greece
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/greenland"
-          onClick={[Function]}
-        >
-          Greenland
         </a>
       </li>
       <li
@@ -6090,40 +5508,10 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/guadeloupe"
-          onClick={[Function]}
-        >
-          Guadeloupe
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/guam"
-          onClick={[Function]}
-        >
-          Guam
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/guatemala"
           onClick={[Function]}
         >
           Guatemala
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/guernsey"
-          onClick={[Function]}
-        >
-          Guernsey
         </a>
       </li>
       <li
@@ -6170,40 +5558,10 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/heard-island-and-mcdonald-islands"
-          onClick={[Function]}
-        >
-          Heard Island & McDonald Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/holy-see-vatican-city-state"
-          onClick={[Function]}
-        >
-          Holy See (Vatican City State)
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/honduras"
           onClick={[Function]}
         >
           Honduras
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/hong-kong"
-          onClick={[Function]}
-        >
-          Hong Kong
         </a>
       </li>
       <li
@@ -6280,16 +5638,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/isle-of-man"
-          onClick={[Function]}
-        >
-          Isle of Man
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/israel"
           onClick={[Function]}
         >
@@ -6324,16 +5672,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Japan
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/jersey"
-          onClick={[Function]}
-        >
-          Jersey
         </a>
       </li>
       <li
@@ -6520,16 +5858,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/macao"
-          onClick={[Function]}
-        >
-          Macao
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/macedonia"
           onClick={[Function]}
         >
@@ -6610,16 +5938,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/martinique"
-          onClick={[Function]}
-        >
-          Martinique
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/mauritania"
           onClick={[Function]}
         >
@@ -6674,16 +5992,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Moldova
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/monaco"
-          onClick={[Function]}
-        >
-          Monaco
         </a>
       </li>
       <li
@@ -6790,26 +6098,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/netherlands-antilles"
-          onClick={[Function]}
-        >
-          Netherlands Antilles
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/new-caledonia"
-          onClick={[Function]}
-        >
-          New Caledonia
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/new-zealand"
           onClick={[Function]}
         >
@@ -6854,26 +6142,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Niue
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/norfolk-island"
-          onClick={[Function]}
-        >
-          Norfolk Island
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/northern-mariana-islands"
-          onClick={[Function]}
-        >
-          Northern Mariana Islands
         </a>
       </li>
       <li
@@ -6980,16 +6248,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/pitcairn"
-          onClick={[Function]}
-        >
-          Pitcairn
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/poland"
           onClick={[Function]}
         >
@@ -7004,36 +6262,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Portugal
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/puerto-rico"
-          onClick={[Function]}
-        >
-          Puerto Rico
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/qatar"
-          onClick={[Function]}
-        >
-          Qatar
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/réunion"
-          onClick={[Function]}
-        >
-          Reunion
         </a>
       </li>
       <li
@@ -7070,16 +6298,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/saint-barthelemy"
-          onClick={[Function]}
-        >
-          Saint Barthelemy
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/saint-helena-ascension-and-tristan-da-cunha"
           onClick={[Function]}
         >
@@ -7110,26 +6328,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/saint-martin"
-          onClick={[Function]}
-        >
-          Saint Martin
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/saint-pierre-and-miquelon"
-          onClick={[Function]}
-        >
-          Saint Pierre & Miquelon
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/saint-vincent-and-the-grenadines"
           onClick={[Function]}
         >
@@ -7144,16 +6342,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Samoa
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/san-marino"
-          onClick={[Function]}
-        >
-          San Marino
         </a>
       </li>
       <li
@@ -7220,26 +6408,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/singapore"
-          onClick={[Function]}
-        >
-          Singapore
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/sint-maarten-dutch-part"
-          onClick={[Function]}
-        >
-          Sint Maarten (Dutch part)
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/slovakia"
           onClick={[Function]}
         >
@@ -7290,16 +6458,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/south-georgia-and-the-south-sandwich-islands"
-          onClick={[Function]}
-        >
-          South Georgia & the South Sandwich Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/south-sudan"
           onClick={[Function]}
         >
@@ -7344,16 +6502,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Suriname
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/svalbard-and-jan-mayen"
-          onClick={[Function]}
-        >
-          Svalbard & Jan Mayen
         </a>
       </li>
       <li
@@ -7590,16 +6738,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/united-states-minor-outlying-islands"
-          onClick={[Function]}
-        >
-          United States Minor Outlying Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/uruguay"
           onClick={[Function]}
         >
@@ -7644,26 +6782,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Viet Nam
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/virgin-islands-gb"
-          onClick={[Function]}
-        >
-          Virgin Islands (GB)
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/virgin-islands-us"
-          onClick={[Function]}
-        >
-          Virgin Islands (US)
         </a>
       </li>
       <li
@@ -9006,7 +8124,7 @@ exports[`Storyshots Navbar tabs with redux GlobalPicture Navbar 1`] = `
             className="css-1bf0moq"
           >
             <select
-              className="css-jfk35p"
+              className="css-5glz5k"
               onChange={[Function]}
               value="data_series.poor_people_190"
             >
@@ -9319,7 +8437,7 @@ exports[`Storyshots Navbar tabs with redux Globalpicture Navbar with state 1`] =
             className="css-1bf0moq"
           >
             <select
-              className="css-jfk35p"
+              className="css-5glz5k"
               onChange={[Function]}
               value="data_series.poor_people_190"
             >
@@ -9614,7 +8732,7 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar 1`] = `
             className="css-1bf0moq"
           >
             <select
-              className="css-jfk35p"
+              className="css-5glz5k"
               onChange={[Function]}
               value="spotlight_on_uganda.uganda_poverty_headcount"
             >
@@ -10542,7 +9660,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                   className="css-1x2mn3f"
                 >
                   <ul
-                    className="css-1o3anry"
+                    className="css-dk1683"
                   >
                     <li
                       className={false}
@@ -10552,16 +9670,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Afghanistan
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/aland-islands"
-                        onClick={[Function]}
-                      >
-                        Aland Islands
                       </a>
                     </li>
                     <li
@@ -10582,16 +9690,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Algeria
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/american-samoa"
-                        onClick={[Function]}
-                      >
-                        American Samoa
                       </a>
                     </li>
                     <li
@@ -10628,16 +9726,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/antarctica"
-                        onClick={[Function]}
-                      >
-                        Antarctica
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/antigua-and-barbuda"
                         onClick={[Function]}
                       >
@@ -10668,16 +9756,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/aruba"
-                        onClick={[Function]}
-                      >
-                        Aruba
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/australia"
                         onClick={[Function]}
                       >
@@ -10702,16 +9780,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Azerbaijan
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/bahamas"
-                        onClick={[Function]}
-                      >
-                        Bahamas
                       </a>
                     </li>
                     <li
@@ -10788,16 +9856,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/bermuda"
-                        onClick={[Function]}
-                      >
-                        Bermuda
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/bhutan"
                         onClick={[Function]}
                       >
@@ -10862,26 +9920,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Brazil
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/british-indian-ocean-territory"
-                        onClick={[Function]}
-                      >
-                        British Indian Ocean Territory
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/brunei"
-                        onClick={[Function]}
-                      >
-                        Brunei
                       </a>
                     </li>
                     <li
@@ -10958,16 +9996,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/cayman-islands"
-                        onClick={[Function]}
-                      >
-                        Cayman Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/car"
                         onClick={[Function]}
                       >
@@ -11002,26 +10030,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         China
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/christmas-island"
-                        onClick={[Function]}
-                      >
-                        Christmas Island
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/cocos-keeling-islands"
-                        onClick={[Function]}
-                      >
-                        Cocos (Keeling) Islands
                       </a>
                     </li>
                     <li
@@ -11098,16 +10106,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/country-unspecified"
-                        onClick={[Function]}
-                      >
-                        Country not specified
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/croatia"
                         onClick={[Function]}
                       >
@@ -11122,16 +10120,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Cuba
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/curacao"
-                        onClick={[Function]}
-                      >
-                        Curacao
                       </a>
                     </li>
                     <li
@@ -11268,26 +10256,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/falkland-islands"
-                        onClick={[Function]}
-                      >
-                        Falkland Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/faroe-islands"
-                        onClick={[Function]}
-                      >
-                        Faroe Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/fiji"
                         onClick={[Function]}
                       >
@@ -11312,36 +10280,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         France
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/french-guiana"
-                        onClick={[Function]}
-                      >
-                        French Guiana
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/french-polynesia"
-                        onClick={[Function]}
-                      >
-                        French Polynesia
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/french-southern-territories"
-                        onClick={[Function]}
-                      >
-                        French Southern Territories
                       </a>
                     </li>
                     <li
@@ -11398,30 +10336,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/gibraltar"
-                        onClick={[Function]}
-                      >
-                        Gibraltar
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/greece"
                         onClick={[Function]}
                       >
                         Greece
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/greenland"
-                        onClick={[Function]}
-                      >
-                        Greenland
                       </a>
                     </li>
                     <li
@@ -11438,40 +10356,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/guadeloupe"
-                        onClick={[Function]}
-                      >
-                        Guadeloupe
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/guam"
-                        onClick={[Function]}
-                      >
-                        Guam
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/guatemala"
                         onClick={[Function]}
                       >
                         Guatemala
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/guernsey"
-                        onClick={[Function]}
-                      >
-                        Guernsey
                       </a>
                     </li>
                     <li
@@ -11518,40 +10406,10 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/heard-island-and-mcdonald-islands"
-                        onClick={[Function]}
-                      >
-                        Heard Island & McDonald Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/holy-see-vatican-city-state"
-                        onClick={[Function]}
-                      >
-                        Holy See (Vatican City State)
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/honduras"
                         onClick={[Function]}
                       >
                         Honduras
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/hong-kong"
-                        onClick={[Function]}
-                      >
-                        Hong Kong
                       </a>
                     </li>
                     <li
@@ -11628,16 +10486,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/isle-of-man"
-                        onClick={[Function]}
-                      >
-                        Isle of Man
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/israel"
                         onClick={[Function]}
                       >
@@ -11672,16 +10520,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Japan
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/jersey"
-                        onClick={[Function]}
-                      >
-                        Jersey
                       </a>
                     </li>
                     <li
@@ -11868,16 +10706,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/macao"
-                        onClick={[Function]}
-                      >
-                        Macao
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/macedonia"
                         onClick={[Function]}
                       >
@@ -11958,16 +10786,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/martinique"
-                        onClick={[Function]}
-                      >
-                        Martinique
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/mauritania"
                         onClick={[Function]}
                       >
@@ -12022,16 +10840,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Moldova
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/monaco"
-                        onClick={[Function]}
-                      >
-                        Monaco
                       </a>
                     </li>
                     <li
@@ -12138,26 +10946,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/netherlands-antilles"
-                        onClick={[Function]}
-                      >
-                        Netherlands Antilles
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/new-caledonia"
-                        onClick={[Function]}
-                      >
-                        New Caledonia
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/new-zealand"
                         onClick={[Function]}
                       >
@@ -12202,26 +10990,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Niue
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/norfolk-island"
-                        onClick={[Function]}
-                      >
-                        Norfolk Island
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/northern-mariana-islands"
-                        onClick={[Function]}
-                      >
-                        Northern Mariana Islands
                       </a>
                     </li>
                     <li
@@ -12328,16 +11096,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/pitcairn"
-                        onClick={[Function]}
-                      >
-                        Pitcairn
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/poland"
                         onClick={[Function]}
                       >
@@ -12352,36 +11110,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Portugal
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/puerto-rico"
-                        onClick={[Function]}
-                      >
-                        Puerto Rico
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/qatar"
-                        onClick={[Function]}
-                      >
-                        Qatar
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/réunion"
-                        onClick={[Function]}
-                      >
-                        Reunion
                       </a>
                     </li>
                     <li
@@ -12418,16 +11146,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/saint-barthelemy"
-                        onClick={[Function]}
-                      >
-                        Saint Barthelemy
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/saint-helena-ascension-and-tristan-da-cunha"
                         onClick={[Function]}
                       >
@@ -12458,26 +11176,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/saint-martin"
-                        onClick={[Function]}
-                      >
-                        Saint Martin
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/saint-pierre-and-miquelon"
-                        onClick={[Function]}
-                      >
-                        Saint Pierre & Miquelon
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/saint-vincent-and-the-grenadines"
                         onClick={[Function]}
                       >
@@ -12492,16 +11190,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Samoa
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/san-marino"
-                        onClick={[Function]}
-                      >
-                        San Marino
                       </a>
                     </li>
                     <li
@@ -12568,26 +11256,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/singapore"
-                        onClick={[Function]}
-                      >
-                        Singapore
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/sint-maarten-dutch-part"
-                        onClick={[Function]}
-                      >
-                        Sint Maarten (Dutch part)
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/slovakia"
                         onClick={[Function]}
                       >
@@ -12638,16 +11306,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/south-georgia-and-the-south-sandwich-islands"
-                        onClick={[Function]}
-                      >
-                        South Georgia & the South Sandwich Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/south-sudan"
                         onClick={[Function]}
                       >
@@ -12692,16 +11350,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Suriname
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/svalbard-and-jan-mayen"
-                        onClick={[Function]}
-                      >
-                        Svalbard & Jan Mayen
                       </a>
                     </li>
                     <li
@@ -12938,16 +11586,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/united-states-minor-outlying-islands"
-                        onClick={[Function]}
-                      >
-                        United States Minor Outlying Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/uruguay"
                         onClick={[Function]}
                       >
@@ -12992,26 +11630,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Viet Nam
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/virgin-islands-gb"
-                        onClick={[Function]}
-                      >
-                        Virgin Islands (GB)
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/virgin-islands-us"
-                        onClick={[Function]}
-                      >
-                        Virgin Islands (US)
                       </a>
                     </li>
                     <li
@@ -14738,99 +13356,103 @@ exports[`Storyshots Templates Methodology 1`] = `
           <div
             className="row"
           >
-            <table
-              className="ui very basic table"
+            <div
+              className="css-evvm0j"
             >
-              <thead
-                className=""
+              <table
+                className="ui very basic table"
               >
-                <tr
+                <thead
                   className=""
                 >
-                  <th
+                  <tr
                     className=""
                   >
-                    Name
-                  </th>
-                  <th
-                    className=""
-                  >
-                    Description
-                  </th>
-                  <th
-                    className=""
-                  >
-                    Methodology
-                  </th>
-                  <th
-                    className=""
-                  >
-                    Unit
-                  </th>
-                  <th
-                    className=""
-                  >
-                    Source
-                  </th>
-                  <th
-                    className=""
-                  >
-                    Download
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                className=""
-              >
-                <tr
-                  className=""
-                >
-                  <td
-                    className=""
-                  >
-                    Latest (planned) agricultural census
-                  </td>
-                  <td
-                    className=""
-                  >
-                    The year of the last agricultural (crop and/or livestock) census or survey.
-                  </td>
-                  <td
-                    className=""
-                  >
-                    
-                  </td>
-                  <td
-                    className=""
-                  >
-                    
-                  </td>
-                  <td
-                    className=""
-                  >
-                    <a
-                      href="http://data.devinit.org/www.fao.org/economic/ess/ess-wca/en/"
+                    <th
+                      className=""
                     >
-                      http://data.devinit.org/www.fao.org/economic/ess/ess-wca/en/
-                    </a>
-                  </td>
-                  <td
+                      Name
+                    </th>
+                    <th
+                      className=""
+                    >
+                      Description
+                    </th>
+                    <th
+                      className=""
+                    >
+                      Methodology
+                    </th>
+                    <th
+                      className=""
+                    >
+                      Unit
+                    </th>
+                    <th
+                      className=""
+                    >
+                      Source
+                    </th>
+                    <th
+                      className=""
+                    >
+                      Download
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  className=""
+                >
+                  <tr
                     className=""
                   >
-                    <i
-                      aria-hidden="true"
-                      className="file icon"
-                    />
-                    ZIP 
-                    <i
-                      aria-hidden="true"
-                      className="file icon"
-                    />
-                    CSV
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    <td
+                      className=""
+                    >
+                      Latest (planned) agricultural census
+                    </td>
+                    <td
+                      className=""
+                    >
+                      The year of the last agricultural (crop and/or livestock) census or survey.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://data.devinit.org/www.fao.org/economic/ess/ess-wca/en/"
+                      >
+                        http://data.devinit.org/www.fao.org/economic/ess/ess-wca/en/
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="file icon"
+                      />
+                      ZIP 
+                      <i
+                        aria-hidden="true"
+                        className="file icon"
+                      />
+                      CSV
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

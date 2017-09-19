@@ -129,22 +129,6 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - [ ] enable http2
 - [ ] clean up our semantic build / customisation workflow in relation to semantic upgrades
 
-
-
-## VERY STRANGE BUG
-
-----------
-
-There is this strange bug where a react component may not be exported out while using export default if its on one line.
-i.e
-```
-  export default connect(mapStateToProps)(MapWithApollo); // this may not get exported
-  // this will work
-  const MapWithRedux = connect(mapStateToProps)(MapWithApollo);
-  export default MapWithRedux;
-```
-
-
 ## Known development issues / incompartibilities
 
 ----------
@@ -154,6 +138,7 @@ i.e
 - Currently dont add react-apollo flow types. They have an issue that needs to be corrected
 - Pre-caching pages wont work with dynamic imported components, thats why its disabled.
 - Flow > 0.52 has quite a number of breaking changes, dont upgrade yet.
+- latest react-semantic ui lib breaks tooltip tests.
 - Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types optional_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
 
 ## Development environment / notes / guidelines
