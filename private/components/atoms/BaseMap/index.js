@@ -304,7 +304,7 @@ class BaseMap extends Component {
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [400, 0],
+      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, 0],
       maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : 5.5,
     });
   }
