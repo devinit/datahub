@@ -103,7 +103,7 @@ class BaseMap extends Component {
   _mapLoaded: boolean = false;
   _isOnMobile: boolean = false;
   _map: Object;
-  _nav: Object;
+  _nav: ? Object;
   _popup: Object & { remove: any };
   _center: Point;
   _zoomLevel: number;
@@ -329,11 +329,14 @@ class BaseMap extends Component {
       : defaultOpts;
     // draw map
     if (!this._map || this.state.shouldForceRedraw) {
-      if (this._map) this._map.remove();
+      if (this._map) {
+        this._map.remove();
+        this._nav = undefined;
+      }
       this._mapLoaded = false; // feels abit dirty
       this._map = new mapboxgl.Map(opts);
     }
-    if (!this._nav || !this._mapLoaded) this.addMapNav();
+    if (!this._nav && !this._mapLoaded) this.addMapNav();
     // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
 
