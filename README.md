@@ -36,7 +36,7 @@ or
 npm run format-p  // formats singele page; with the correct filename in the command
 ```
 
-## [Buiding on top of next.js](https://github.com/zeit/next.js)
+## [Building on top of next.js](https://github.com/zeit/next.js)
 
 
 - The file system is your routes. Drop a new file in pages and it becomes a route
@@ -85,17 +85,6 @@ flow-typed create-stub @devinit/charts@1.1.4
 
 We use a mapbox-gl 
 
-## Deployments handled by Now for staging and test previews
-
---------
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download)):
-
-``` bash
-now
-```
-Ask Allan for latest staging url
-
 ## Deployment for production
 cd into root of the project
 ``` bash
@@ -112,8 +101,8 @@ in ```private/types/schema.flow.js```
 
 In order to reduce on unnecessary API calls of data that rarelly changes, we have a tool that queries APIs and dumps their data into the project.
 > ```npm run pull``` will return page data and some refrence data eg global map themes and place it in various files in the project </br>
-> ```npm run visbox``` will get you all visbox data for chart configurations</br>
- These commands should be run at new deployments.
+> TODO: ```npm run visbox``` will get you all visbox data for chart configurations</br>
+ These commands are run at new deployments by docker.
 
 
 ## TODO
@@ -134,11 +123,9 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 ----------
 
 - Currently Updating eslint-plugin-react to 7.1.0  &  eslint-plugin-jsx-a11y to 6.0.2 will break linting
-- Dont install all project wide dependencies with ```yarn``` use ```npm install```. This is because ```yarn``` doesnt care about our semantic.json config that should prevent semantic-ui from auto installing / over writing our custom changes. If you are to use yarn, make use of the ```--ignore-scripts``` flags
 - Currently dont add react-apollo flow types. They have an issue that needs to be corrected
-- Pre-caching pages wont work with dynamic imported components, thats why its disabled.
 - Flow > 0.52 has quite a number of breaking changes, dont upgrade yet.
-- latest react-semantic ui lib breaks tooltip tests.
+- latest react-semantic ui lib breaks tooltip tests coz it uses a modal which has testing issues.
 - Dont upgrade apollo-codegen to 0.16 it will break liniting --> _Makes inner array types optional_ [submitted an issue about it](https://github.com/apollographql/apollo-codegen/issues/225)
 
 ## Development environment / notes / guidelines
