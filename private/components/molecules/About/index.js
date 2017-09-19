@@ -4,9 +4,10 @@ import { SectionHeader } from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { LightBg, DarkBg } from 'components/atoms/Backgrounds';
-import 'intersection-observer';
 import Observer from 'react-intersection-observer';
 import NoSSR from 'react-no-ssr';
+
+if (process.browser) require('intersection-observer');
 
 export default () => {
   return (
