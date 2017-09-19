@@ -89,7 +89,7 @@ class Profile extends Component {
                       }
                       <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.state.country.id}.svg`} />
                       {this.state.country.slug === 'uganda' ?
-                        <Span fontSize="0.7em" display={'inline-block'} fontWeight={500} >
+                        <Span fontSize="0.7em" display={'block'} fontWeight={500} >
                           Visit our new <BodyLink href="/spotlight-on-uganda">
                             Spotlight on Uganda</BodyLink> to explore data by district.</Span> : ''
                       }
