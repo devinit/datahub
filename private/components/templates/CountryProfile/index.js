@@ -127,6 +127,7 @@ class Profile extends Component {
                           <Button icon="mail outline" />
                         </a>
                         <a
+                          rel="noopener"
                           href={`/pdf/20170331/${this.state.country.name}.pdf`}
                           target="__blank"
                         >
