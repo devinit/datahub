@@ -178,7 +178,7 @@ export default class LinePartition extends Component {
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
-          hideOptions={this.props.withoutOptions}
+          hideOptions={this.props.withoutOptions || false}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
@@ -229,7 +229,7 @@ export default class LinePartition extends Component {
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
-          hideOptions={this.props.withoutOptions}
+          hideOptions={this.props.withoutOptions || false}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}

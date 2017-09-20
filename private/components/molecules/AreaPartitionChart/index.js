@@ -203,25 +203,28 @@ class AreaPartitionChart extends React.Component {
                   </Header>
                   : <Header as="h3" textAlign="center">
                     <Header.Content>
-                    <span>
-                        What we know about {this.state.flowName} by{' '}
-                    </span>
+                      <span>
+                          What we know about {this.state.flowName} by{' '}
+                      </span>
                       {
                         <Dropdown
                           selection
                           compact
                           onChange={(e, data) => this.setFlowDetailGroup(data.value)}
                           value={this.state.detailGroup}
-                          options={this.state.detailSelections.map(d => ({
-                            text: d.text,
-                            value: d.value,
-                            key: d.key,
-                          }))}
+                          options={
+                            this.state.detailSelections &&
+                            this.state.detailSelections.map(d => ({
+                              text: d.text,
+                              value: d.value,
+                              key: d.key,
+                            }))
+                          }
                         />
                       }
                       <span>
-                      {' '}in {this.state.year}
-                    </span>
+                        {' '}in {this.state.year}
+                      </span>
                     </Header.Content>
                   </Header>
                 }
