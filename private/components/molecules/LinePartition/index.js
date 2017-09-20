@@ -32,6 +32,7 @@ const groupByBudgetType = groupBy(d => d.budget_type);
 type Props = {
   title: string,
   inverted?: boolean,
+  withoutOptions?: boolean,
   year: number,
   lowestYear: number,
   highestYear: number,
@@ -177,6 +178,7 @@ export default class LinePartition extends Component {
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
+          hideOptions={this.props.withoutOptions || false}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
@@ -186,8 +188,8 @@ export default class LinePartition extends Component {
           onChangeCurrency={currency => this.props.onChangeCurrency(currency)}
         />}
 
-      <Grid>
-        <Grid.Column width={5} style={{ paddingRight: 0 }}>
+      <Grid style={{paddingBottom: '40px'}}>
+        <Grid.Column mobile={16} computer={5} width={5} style={{ padding: 0 }}>
           <CardContainer>
             <Timeline
               onYearChanged={year => this.props.onChangeYear(+year)}
@@ -206,7 +208,7 @@ export default class LinePartition extends Component {
           </CardContainer>
         </Grid.Column>
 
-        <Grid.Column width={11} style={{ paddingLeft: 0 }}>
+        <Grid.Column mobile={16} computer={11} width={11} style={{ padding: 0 }}>
           <TreeChartContainer>
             <TreeChart
               height={showLegend ? '380px' : '222px'}
@@ -215,7 +217,6 @@ export default class LinePartition extends Component {
                 labeling: { prefix: this.props.currency },
               }}
               onClick={(d: { data: {levels: string[]} }) => {
-                console.log(d.data.levels);
                 this.setLevel(d.data.levels);
               }}
               data={tree}
@@ -228,6 +229,7 @@ export default class LinePartition extends Component {
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
+          hideOptions={this.props.withoutOptions || false}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}

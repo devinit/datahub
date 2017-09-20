@@ -238,15 +238,23 @@ export type TabDataQuery = {|
   |},
 |};
 
+export type DifferentProvidersDifferentPriotitiesQueryVariables = {|
+  indicatorId?: ?string,
+|};
+
 export type DifferentProvidersDifferentPriotitiesQuery = {|
-  bubbleChartOptions: ? {|
-    // this list feeds off oda table from countries and global/concept file
-    // IdNamePair is defined in unbundling aid types
-    indicators: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-  |},
+  bubbleChartOda: ? Array< {|
+    year: ?number,
+    // country id
+    id: ?string,
+    // country name
+    name: ?string,
+    income_group: ?string,
+    region: ?string,
+    revenuePerPerson: ?number,
+    numberInExtremePoverty: ?number,
+    value: ?number,
+  |} >,
 |};
 
 export type GovernmentFinanceQueryVariables = {|
