@@ -148,7 +148,7 @@ class AreaPartitionChart extends React.Component {
       <LightBg>
         <Container>
           <Grid centered>
-            <Grid.Column width={6}>
+            <Grid.Column mobile={16} computer={8}>
               <Dropdown
                 selection
                 fluid
@@ -160,7 +160,7 @@ class AreaPartitionChart extends React.Component {
           </Grid>
 
           <Grid>
-            <Grid.Column width={7}>
+            <Grid.Column mobile={16} computer={8}>
               <Header as="h3" textAlign="center">
                 <Header.Content>
                   {this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time
@@ -175,17 +175,15 @@ class AreaPartitionChart extends React.Component {
               />
             </Grid.Column>
 
-            <Grid.Column width={1} />
-
             {this.state.flow === 'all'
-              ? <Grid.Column width={8}>
+              ? <Grid.Column mobile={16} computer={8}>
                 <Header as="h3" textAlign="center">
                   <Header.Content>
                       The mix of resources in <span>{this.state.year}</span>
                   </Header.Content>
                 </Header>
               </Grid.Column>
-              : <Grid.Column width={8}>
+              : <Grid.Column mobile={16} computer={8}>
                 <Header as="h3" textAlign="center">
                   <Header.Content>
                     <span>
@@ -197,7 +195,11 @@ class AreaPartitionChart extends React.Component {
                         compact
                         onChange={(e, data) => this.setFlowDetailGroup(data.value)}
                         value={this.state.detailGroup}
-                        options={this.state.detailSelections}
+                        options={this.state.detailSelections.map(d => ({
+                          text: d.text,
+                          value: d.value,
+                          key: d.key,
+                        }))}
                       />
                     }
                     <span>
@@ -209,7 +211,7 @@ class AreaPartitionChart extends React.Component {
           </Grid>
 
           <Grid>
-            <Grid.Column width={7}>
+            <Grid.Column mobile={16} computer={8}>
               <Timeline
                 height="400px"
                 data={this.state.trend}
@@ -224,9 +226,7 @@ class AreaPartitionChart extends React.Component {
               />
             </Grid.Column>
 
-            <Grid.Column width={1} />
-
-            <Grid.Column width={8}>
+            <Grid.Column mobile={16} computer={8}>
               <SectionHeader color="rgb(238, 238, 238)">
                 {this.props.config.treemapConfig.labeling.prefix}{' '}
                 {approximate(
