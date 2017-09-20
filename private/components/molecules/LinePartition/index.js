@@ -32,6 +32,7 @@ const groupByBudgetType = groupBy(d => d.budget_type);
 type Props = {
   title: string,
   inverted?: boolean,
+  withoutOptions?: boolean,
   year: number,
   lowestYear: number,
   highestYear: number,
@@ -177,6 +178,7 @@ export default class LinePartition extends Component {
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
+          hideOptions={this.props.withoutOptions}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
@@ -227,6 +229,7 @@ export default class LinePartition extends Component {
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
+          hideOptions={this.props.withoutOptions}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
