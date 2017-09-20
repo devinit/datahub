@@ -10,7 +10,6 @@ query ResourcesOverTime($id: String!) {
         flow_name
         short_name
         flow_category
-        position
         flow_type
         direction
         color

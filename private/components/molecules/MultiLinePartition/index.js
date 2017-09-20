@@ -172,7 +172,7 @@ export default class MultiLinePartition extends Component {
             }}
           />
 
-          {this.props.items.map((item: LinePartitionItem, i: number, all: LinePartitionItem[]) => (
+          {this.props.items.map((item: LinePartitionItem) => (
             <LinePartition
               key={item.title}
               title={item.title}

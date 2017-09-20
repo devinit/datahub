@@ -19,7 +19,6 @@ type Props = {
 const Population = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
   const popnCtry = getPageLine('popn-ctry');
-  const popnDistribution = getPageLine('popn-distribution');
   const popnDistributionAgeCtry = getPageLine('popn-distribution-age-ctry');
   if (!props.populationTab) throw new Error('No Population data');
   const populationTab = props.populationTab;

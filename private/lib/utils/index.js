@@ -182,7 +182,7 @@ export const getMaxAndMin = (data: Array<{year: number}>): number[] => {
   return [max, min];
 };
 
-export function addMinAndMaxYear(config: Object, data: Array<{year: number}>): Object {
+export function addMinAndMaxYear(config: Object, data: any[]): Object {
   const [axisMaximum, axisMinimum] = getMaxAndMin(data);
   const timeAxis = {...config.timeAxis, axisMinimum, axisMaximum};
   return {...config, timeAxis};
