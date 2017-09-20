@@ -7,6 +7,8 @@ import { LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import Observer from 'react-intersection-observer';
 import NoSSR from 'react-no-ssr';
 
+if (process.browser) require('intersection-observer');
+
 export default () => {
   return (
     <section>

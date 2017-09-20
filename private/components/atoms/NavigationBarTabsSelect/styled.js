@@ -31,7 +31,7 @@ export const StyledSelect = glamorous.select({
   outline: 0,
   // boxSizing: 'border-box',
   // appearance: 'none',
-  ':after': {
-    content: '"💎"',
-  }
+  // ':after': {
+  //   content: '"💎"',
+  // }
 });

@@ -103,7 +103,7 @@ class BaseMap extends Component {
   _mapLoaded: boolean = false;
   _isOnMobile: boolean = false;
   _map: Object;
-  _nav: Object;
+  _nav: ? Object;
   _popup: Object & { remove: any };
   _center: Point;
   _zoomLevel: number;
@@ -304,7 +304,7 @@ class BaseMap extends Component {
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: this.props.paint.propertyLayer === 'national' ? [200, 0] : [400, 0],
+      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, 0],
       maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : 5.5,
     });
   }
@@ -329,11 +329,14 @@ class BaseMap extends Component {
       : defaultOpts;
     // draw map
     if (!this._map || this.state.shouldForceRedraw) {
-      if (this._map) this._map.remove();
+      if (this._map) {
+        this._map.remove();
+        this._nav = undefined;
+      }
       this._mapLoaded = false; // feels abit dirty
       this._map = new mapboxgl.Map(opts);
     }
-    if (!this._nav || !this._mapLoaded) this.addMapNav();
+    if (!this._nav && !this._mapLoaded) this.addMapNav();
     // React creates a new class instance per render which gets memoized
     if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
 

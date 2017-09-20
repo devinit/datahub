@@ -6,12 +6,12 @@ import Link from 'next/link';
 import Router from 'next/router';
 import { Input, InputContainer, List } from 'components/atoms/SearchInput';
 
-type Country = {
+type Entity = {
   slug: string,
   name: string,
 };
 export type Props = {
-  countries: Country[],
+  entities: Entity[],
   routePath: string,
   placeholder: string,
   profile: boolean, // whether appears on a country profile page or on the front landing page
@@ -20,17 +20,17 @@ export type Props = {
 };
 type State = {
   selected: number,
-  countries: Country[],
+  entities: Entity[],
   showList: boolean,
   value: string,
 };
 class SearchInput extends React.Component {
   constructor(props: Props) {
     super(props);
-    if (!props.countries || !props.countries.length) throw new Error('countries data prop mixing');
+    if (!props.entities || !props.entities.length) throw new Error('entities data prop mixing');
     this.state = {
       selected: -1,
-      countries: props.countries,
+      entities: props.entities,
       value: '',
       showList: false,
     };
@@ -39,12 +39,12 @@ class SearchInput extends React.Component {
   onBlurTimer: any;
   onKeyDown(e: Object) {
     let { selected } = this.state;
-    const { countries } = this.state;
+    const { entities } = this.state;
     const keyCode = e.keyCode;
     switch (keyCode) {
       case 40: {
         // down arrow
-        if (selected + 1 < countries.length) {
+        if (selected + 1 < entities.length) {
           selected += 1;
         }
         break;
@@ -68,10 +68,10 @@ class SearchInput extends React.Component {
   }
   onChange(text: string) {
     this.setState({ value: text });
-    const filteredCountries: Country[] = this.props.countries.filter((country: Country) =>
+    const filteredCountries: Entity[] = this.props.entities.filter((country: Entity) =>
       country.name.toLowerCase().includes(text.toLowerCase()),
     );
-    if (filteredCountries.length) this.setState({ countries: filteredCountries });
+    if (filteredCountries.length) this.setState({ entities: filteredCountries });
   }
   onBlur() {
     if (this.setState) {
@@ -85,7 +85,7 @@ class SearchInput extends React.Component {
     this.textInput.focus();
   }
   onSubmit() {
-    const country: Country | void = this.state.countries[0] || null;
+    const country: Entity | void = this.state.entities[0] || null;
     if (!country) return false;
     // reset state
     this.resetState();
@@ -99,12 +99,12 @@ class SearchInput extends React.Component {
       value: '',
       showList: false,
       selected: -1,
-      countries: this.props.countries,
+      entities: this.props.entities,
     });
     if (this.onBlurTimer) clearTimeout(this.onBlurTimer);
   }
   componentWillReceive(props: Props) {
-    this.setState({ countries: props.countries });
+    this.setState({ entities: props.entities });
   }
   render() {
     return (
@@ -133,8 +133,8 @@ class SearchInput extends React.Component {
         </InputContainer>
         <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
           <List>
-            {this.state.countries
-              ? this.state.countries.map((country, i) =>
+            {this.state.entities
+              ? this.state.entities.map((country, i) =>
                 (<li key={country.slug} className={this.state.selected === i ? 'active' : false}>
                   <Link href={`/${this.props.routePath}?id=${country.slug}`} as={`/${this.props.routePath}/${country.slug}`}>
                     <a>

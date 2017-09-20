@@ -70,7 +70,7 @@ class Profile extends Component {
           <Container>
             <Grid>
               <Grid.Row>
-                <Grid.Column computer={10} tablet={16} mobile={16}>
+                <Grid.Column computer={12} tablet={16} mobile={16}>
                   <CardContainer>
                     <H4 color={red}>
                       <Icon name="globe" color={'red'} />
@@ -89,7 +89,7 @@ class Profile extends Component {
                       }
                       <Img marginLeft="10px" width="32px" src={`/flags/svg/${this.state.country.id}.svg`} />
                       {this.state.country.slug === 'uganda' ?
-                        <Span fontSize="0.7em" display={'inline-block'} fontWeight={500} >
+                        <Span fontSize="0.7em" display={'block'} fontWeight={500} >
                           Visit our new <BodyLink href="/spotlight-on-uganda">
                             Spotlight on Uganda</BodyLink> to explore data by district.</Span> : ''
                       }

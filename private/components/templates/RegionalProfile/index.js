@@ -76,7 +76,7 @@ class RegionalProfile extends Component {
           <Container>
             <Grid>
               <Grid.Row>
-                <Grid.Column width={10}>
+                <Grid.Column width={12} tablet={16} mobile={16}>
                   <CardContainer>
                     <H4 color={red}>
                       <Icon name="globe" color={'red'} />

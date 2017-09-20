@@ -99,7 +99,7 @@ export const getDistrictName = (slug: string, country?: string): string => {
   // TODO: handle spotlight kenya
   if (country !== 'uganda') throw new Error('we are only dealing with spotlight uganda for now');
   // const district = getDistrict(slug, country);
-  return slug.toString();
+  return `${slug[0].toUpperCase()}${slug.substr(1)}`;
 };
 
 export const printDiv = (divId: string) => {
