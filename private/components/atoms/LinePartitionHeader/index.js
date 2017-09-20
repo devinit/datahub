@@ -5,6 +5,7 @@ import { SectionHeader } from 'components/atoms/Header/index';
 
 type Props = {
   title: string,
+  hideOptions: boolean,
   year: number,
   budgetType: string,
   budgetTypeOptions: Object[],
@@ -21,7 +22,7 @@ const LinePartitionHeader = (props: Props) => {
         <SectionHeader color="#fff" style={{ float: 'left' }}>
           {props.title} <span>{props.year}</span>
         </SectionHeader>
-        <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
+        {props.hideOptions ? '' : <Segment basic floated={'right'} style={{ padding: 0, margin: 0 }}>
           <Label style={{background: 'transparent'}}>Budget Type</Label>
           <Dropdown
             selection
@@ -37,7 +38,7 @@ const LinePartitionHeader = (props: Props) => {
             options={props.currencyOptions}
             onChange={(e, data) => props.onChangeCurrency(data.value)}
           />
-        </Segment>
+        </Segment>}
       </Segment>
     </Grid.Column>
   </Grid>);
