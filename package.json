@@ -29,7 +29,7 @@
     "format-p": "prettier-eslint --write \"private/components/molecules/AreaPartitionChart/index.js\"",
     "deploy": "git checkout master && git rebase dev && git push origin master && git push origin dev && git checkout dev",
     "flow": "flow",
-    "test": "BABEL_ENV=test jest",
+    "test": "BABEL_ENV=test jest private/lib/utils/utils.test.js",
     "analyze": "ANALYZE=1 next build",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",

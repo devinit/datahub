@@ -1,5 +1,6 @@
 import prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName, getDistrictName, getCountry, approximate} from '.';
+import { getShortURL, getCountryName, getDistrictName,
+  getCountry, approximate, getPageMeta, shouldShowTabData} from '.';
 
 describe('utils tests', () => {
   it(
@@ -27,8 +28,40 @@ describe('utils tests', () => {
     const name = getDistrictName('wakiso', 'uganda');
     expect(name).toBe('Wakiso');
   });
-  // it('should return pageMeta for a given page', () => {
-  //   const meta = getPageMeta({query: 'wakiso', pathname: '/uganda'});
-  //   expect(meta.title).toBe('Wakiso');
-  // });
+  it('should return pageMeta for a given page', () => {
+    const meta = getPageMeta({query: 'wakiso', pathname: '/uganda'});
+    expect(meta.title).toBe('Wakiso');
+  });
+  it('should show government finance tab data or not', () => {
+    const dataA = {
+      totalRevenue: {
+        value: 'No data',
+      },
+      spendingAllocation: {
+        data: []
+      }
+    };
+    const dataB = {
+      totalRevenue: {
+        value: '3.5bn',
+      },
+      spendingAllocation: {
+        data: [{a: 1, b: 2}]
+      }
+    };
+    const dataC = {
+      totalRevenue: {
+        value: 'No data',
+      },
+      spendingAllocation: {
+        data: [{a: 1, b: 2}]
+      }
+    };
+    const toShowA = shouldShowTabData(dataA);
+    const toShowB = shouldShowTabData(dataB);
+    const toShowC = shouldShowTabData(dataC);
+    expect(toShowA).toBe(false);
+    expect(toShowB).toBe(true);
+    expect(toShowC).toBe(true);
+  });
 });

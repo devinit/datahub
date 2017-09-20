@@ -175,6 +175,17 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
   return linkMeta;
 };
 
+// type GovernmentFinance = $PropertyType<TabDataQuery, 'governmentFinance'>
+
+export const shouldShowTabData = (data: Object): boolean => {
+  if (!data) return false;
+  return !Object.keys(data)
+    .every(key => {
+      const value = data[key].value || data[key].data;
+      if (!value) return true;
+      return value === 'No data' || !value.length;
+    });
+};
 // (10 ** length) == Math.pow(10, length);
 const roundNum = (num, length): string =>
   (Math.round(num * (10 ** length)) / (10 ** length)).toFixed(length);

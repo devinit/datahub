@@ -15,7 +15,7 @@ import internationalResourcesConfig from 'visboxConfigs/internationalResourceTab
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import { RECIPIENT } from 'lib/utils/constants';
-import { getCountry } from 'lib/utils';
+import { getCountry, shouldShowTabData } from 'lib/utils';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import overviewConfig from 'visboxConfigs/overviewTabCharts';
 import {getCountryProfileData} from 'components/organisms/PagesData';
@@ -50,19 +50,20 @@ const countryProfileTabs = (props: TabsProps) => {
         </Pane>
         : ''}
       {
-        props.populationTab ?
+        props.populationTab && shouldShowTabData(props.populationTab) ?
           <Pane label="Population" id={'population-tab'}>
             <Population pagesData={pagesData} config={populationConfig} {...props} />
           </Pane> : ''
       }
 
-      {Number(country.has_domestic_data) ?
+      {Number(country.has_domestic_data) && props.governmentFinance
+      && shouldShowTabData(props.governmentFinance) ?
         <Pane label="Government Finance" id={'govt-finance-tab'}>
           <GovernmentFinance pagesData={pagesData} config={govtFinanceConfig} {...props} />
         </Pane>
         : ''}
       {
-        props.internationalResources ?
+        props.internationalResources && shouldShowTabData(props.internationalResources) ?
           <Pane label="International Resources" id={'internantion-reseources-tab'}>
             <InternationalResources
               pagesData={pagesData}
