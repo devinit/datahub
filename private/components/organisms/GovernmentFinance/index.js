@@ -38,6 +38,8 @@ const withData = graphql(QUERY, {
         },
         {
           title: 'Financing',
+          inverted: true,
+          withoutOptions: true,
           data: finance,
         },
         {

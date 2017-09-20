@@ -13,6 +13,8 @@ import LinePartition from 'components/molecules/LinePartition';
 type LinePartitionItem = {
   title: string,
   data: Object[],
+  inverted?: boolean,
+  withoutOptions?: boolean,
 }
 
 type Props = {
@@ -174,7 +176,8 @@ export default class MultiLinePartition extends Component {
             <LinePartition
               key={item.title}
               title={item.title}
-              inverted={all.length > 2 && i % 2 === 1}
+              inverted={item.inverted}
+              withoutOptions={item.withoutOptions}
               year={this.state.year}
               highestYear={this.state.highestYear}
               lowestYear={this.state.lowestYear}
