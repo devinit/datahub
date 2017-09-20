@@ -47,7 +47,7 @@
     "graphql": "^0.10.3"
   },
   "dependencies": {
-    "@devinit/charts": "^1.4.5",
+    "@devinit/charts": "^1.5.3",
     "apollo-client": "^1.9.0-1",
     "apollo-fetch": "^0.6.0",
     "babel-cli": "^6.26.0",
@@ -90,7 +90,6 @@
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "@devinit/charts": "^1.4.6",
     "@storybook/addon-storyshots": "^3.1.9",
     "@storybook/react": "^3.1.9",
     "apollo-codegen": "^0.15.2",
@@ -123,6 +122,9 @@
     "webpack": "^3.6.0"
   },
   "git-pre-hooks": {
+    "pre-push": [
+      "npm run lint"
+    ]
   },
   "jest": {
     "coverageDirectory": "./coverage/",
