@@ -7,6 +7,7 @@ import { RECIPIENT, DONOR, NoData } from 'lib/utils/constants';
 import type { OverviewChartConfigs } from 'visboxConfigs/overviewTabCharts';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import Chart from 'components/atoms/Chart';
+import {addMinAndMaxYear} from 'lib/utils';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
 import { red} from 'components/theme/semantic';
@@ -29,8 +30,8 @@ const Overview = (props: Props) => {
   const overviewTab = props.overviewTab;
   return (
     <Container>
-      <Grid textAlign={'center'}>
-        {props.countryType === RECIPIENT && overviewTab.poorestPeople
+      <Grid>
+        {props.countryType !== DONOR && overviewTab.poorestPeople
           ? <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
               {overviewCtryPoorestPeople.title ? overviewCtryPoorestPeople.title.toUpperCase() : ''}
@@ -50,18 +51,19 @@ const Overview = (props: Props) => {
           : <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
               {avgIncomePerPerson.title }
+              {overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
+                ? <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} />
+                : ''}
             </HeaderTitle>
-            {overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
-              ? <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} />
-              : ''}
             <Div paddingRight={'40px'}>
               {overviewTab.averageIncomerPerPerson &&
                 overviewTab.averageIncomerPerPerson.data &&
                 overviewTab.averageIncomerPerPerson.data.length
                 ? <Chart
-                  config={props.config.area}
                   data={overviewTab.averageIncomerPerPerson.data}
                   height="140px"
+                  config={
+                    addMinAndMaxYear(props.config.area, overviewTab.averageIncomerPerPerson.data)}
                 />
                 : <TabsNoData />}
             </Div>
@@ -71,7 +73,7 @@ const Overview = (props: Props) => {
             <HeaderTitle>
               {overviewCtryResources.title }
             </HeaderTitle>
-            <P color={red} fontWeight={'bold'} marginBottom={0}>
+            <P color={red} fontWeight={'bold'} marginBottom={0} textAlign="center">
                 Domestic public
               {overviewTab.domesticResources && overviewTab.domesticResources.toolTip
                 ? <TabsToolTip {...overviewTab.domesticResources.toolTip} />
@@ -82,7 +84,7 @@ const Overview = (props: Props) => {
                 ? `US$ ${overviewTab.domesticResources.value}`
                 : NoData}
             </TabsP>
-            <P fontWeight={'bold'} marginBottom={0}>
+            <P fontWeight={'bold'} marginBottom={0} textAlign="center">
                 International
               {overviewTab.internationalResources && overviewTab.internationalResources.toolTip
                 ? <TabsToolTip {...overviewTab.internationalResources.toolTip} />
@@ -103,7 +105,9 @@ const Overview = (props: Props) => {
               : ''}
           </HeaderTitle>
           <TabsP>
-            {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.value
+            {overviewTab.governmentSpendPerPerson &&
+              overviewTab.governmentSpendPerPerson.value &&
+              overviewTab.governmentSpendPerPerson.value !== NoData
               ? `PPP$ ${overviewTab.governmentSpendPerPerson.value}`
               : NoData}
           </TabsP>
@@ -120,7 +124,7 @@ const Overview = (props: Props) => {
             {overviewTab.incomeDistTrend &&
               overviewTab.incomeDistTrend.data &&
               overviewTab.incomeDistTrend.data.length
-              ? <div>
+              ? <div style={{width: '80%', margin: '0 auto'}}>
                 <Chart
                   config={props.config.histogram}
                   data={overviewTab.incomeDistTrend.data}

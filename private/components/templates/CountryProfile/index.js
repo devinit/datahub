@@ -13,7 +13,7 @@ import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import {getCountry} from 'lib/utils';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import {RECIPIENT, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
+import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
 import dynamic from 'next/dynamic';
@@ -78,9 +78,9 @@ class Profile extends Component {
                         <a role="link" style={{color: red}}>Global Picture</a>
                       </Link>
                     </H4>
-                    <CountrySearch visible placeholder={this.props.id} profile />
+                    <CountrySearch visible placeholder={this.state.country.name} profile />
                     <Lead>
-                      {this.state.country.countryType === RECIPIENT ?
+                      {this.state.country.countryType !== DONOR ?
                         `Explore this in-depth profile of ${this.state.country.name} to find out overall levels of poverty,
                         income distribution, division of wealth and more. Discover how national and
                         sub-national revenue is generated.` :
@@ -96,7 +96,7 @@ class Profile extends Component {
                     </Lead>
                     <Span>
                       Jump to {
-                        this.state.country.countryType === RECIPIENT ?
+                        this.state.country.countryType !== DONOR ?
                           <span>
                             <BodyLink
                               onClick={() => this.jumpToSection(GOVERNMENT_FINANCE_LOWER)}

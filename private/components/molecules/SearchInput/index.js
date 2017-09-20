@@ -77,7 +77,7 @@ class SearchInput extends React.Component {
     if (this.setState) {
       this.onBlurTimer = setTimeout(() => {
         this.resetState();
-      }, 300);
+      }, 200);
     }
   }
   onCaretDownClick() {
@@ -107,6 +107,7 @@ class SearchInput extends React.Component {
     this.setState({ entities: props.entities });
   }
   render() {
+    console.log('this.props.profile', this.props.placeholder);
     return (
       <Div>
         <InputContainer
@@ -115,7 +116,7 @@ class SearchInput extends React.Component {
           height={this.props.profile ? '5em' : '10em'}
         >
           {this.props.profile
-            ? <H1 flex={'0 1'} textTransform="capitalize" backgroundColor={this.state.showList ? 'white' : 'none'}>
+            ? <H1 textTransform="capitalize" backgroundColor={this.state.showList ? 'white' : 'none'}>
               {this.props.placeholder}
               <Icon name="caret down" onClick={() => this.onCaretDownClick()} />
             </H1>

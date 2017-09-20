@@ -1,5 +1,5 @@
 import prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName, getDistrictName,
+import { getShortURL, getCountryName, getDistrictName, getMaxAndMin,
   getCountry, approximate, getPageMeta, shouldShowTabData} from '.';
 
 describe('utils tests', () => {
@@ -31,6 +31,12 @@ describe('utils tests', () => {
   it('should return pageMeta for a given page', () => {
     const meta = getPageMeta({query: 'wakiso', pathname: '/uganda'});
     expect(meta.title).toBe('Wakiso');
+  });
+  it('should return max and min year of a dataset', () => {
+    const data = [{year: 2000}, {year: 2010}];
+    const [max, min] = getMaxAndMin(data);
+    expect(min).toBe(2000);
+    expect(max).toBe(2010);
   });
   it('should show government finance tab data or not', () => {
     const dataA = {

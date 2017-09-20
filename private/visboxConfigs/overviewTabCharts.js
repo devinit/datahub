@@ -33,6 +33,7 @@ export const histogram = {
   linearAxis: {
     showAxis: false,
     indicator: 'value',
+    // suffix: '%',
   },
   categoryAxis: {
     indicator: 'quintileName',

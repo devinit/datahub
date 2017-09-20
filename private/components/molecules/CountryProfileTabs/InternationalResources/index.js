@@ -13,6 +13,7 @@ import Legend from 'components/atoms/Legend';
 
 type Props = {
   ...TabDataQuery,
+  countryType: string,
   config: any,
   countryType: string,
   pagesData: PageUnit[],
@@ -47,9 +48,7 @@ const International = (props: Props) => {
             <TabsToolTip {...shareOfGNITitleToolTip} />
           </HeaderTitle>
           <TabsP>
-            { Number(shareOfGNIValue)
-              ? `${shareOfGNIValue}% of GNI`
-              : NoData}
+            {shareOfGNIValue}% of GNI
           </TabsP>
           <TabsFootNote>
             Gross national income is{' '}
@@ -61,7 +60,7 @@ const International = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {resourceInflow.title }
+            {props.countryType === DONOR ? resourceInflow.donor_title : resourceInflow.title}
             {internationalResources.resourceflowsOverTime &&
             internationalResources.resourceflowsOverTime.toolTip
               ? <TabsToolTip {...internationalResources.resourceflowsOverTime.toolTip} />

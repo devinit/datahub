@@ -7,6 +7,7 @@ import { red, grey} from 'components/theme/semantic';
 export const TabsP = glamorous.p({
   fontSize: massive,
   fontWeight: 'bold',
+  textAlign: 'center',
   color: red,
   lineHeight: 1.1,
   marginBottom: '0.2em',

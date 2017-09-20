@@ -175,6 +175,19 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
   return linkMeta;
 };
 
+export const getMaxAndMin = (data: Array<{year: number}>): number[] => {
+  const years = data.map(obj => Number(obj.year));
+  const max: number = Math.max.apply(null, years);
+  const min: number = Math.min.apply(null, years);
+  return [max, min];
+};
+
+export function addMinAndMaxYear(config: Object, data: Array<{year: number}>): Object {
+  const [axisMaximum, axisMinimum] = getMaxAndMin(data);
+  const timeAxis = {...config.timeAxis, axisMinimum, axisMaximum};
+  return {...config, timeAxis};
+}
+
 // type GovernmentFinance = $PropertyType<TabDataQuery, 'governmentFinance'>
 
 export const shouldShowTabData = (data: Object): boolean => {
