@@ -160,58 +160,22 @@ class AreaPartitionChart extends React.Component {
           </Grid>
 
           <Grid>
-            <Grid.Column mobile={16} computer={8}>
-              <Header as="h3" textAlign="center">
-                <Header.Content>
-                  {this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time
-                </Header.Content>
-              </Header>
-              <Dropdown
-                selection
-                fluid
-                onChange={(e, data) => this.setFlow(data.value)}
-                value={this.state.flow}
-                options={this.state.flows}
-              />
-            </Grid.Column>
-
-            {this.state.flow === 'all'
-              ? <Grid.Column mobile={16} computer={8}>
+            <Grid.Column mobile={16} computer={7}>
+              <div style={{minHeight: '85px'}}>
                 <Header as="h3" textAlign="center">
                   <Header.Content>
-                      The mix of resources in <span>{this.state.year}</span>
+                    {this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time
                   </Header.Content>
                 </Header>
-              </Grid.Column>
-              : <Grid.Column mobile={16} computer={8}>
-                <Header as="h3" textAlign="center">
-                  <Header.Content>
-                    <span>
-                        What we know about {this.state.flowName} by{' '}
-                    </span>
-                    {
-                      <Dropdown
-                        selection
-                        compact
-                        onChange={(e, data) => this.setFlowDetailGroup(data.value)}
-                        value={this.state.detailGroup}
-                        options={this.state.detailSelections.map(d => ({
-                          text: d.text,
-                          value: d.value,
-                          key: d.key,
-                        }))}
-                      />
-                    }
-                    <span>
-                      {' '}in {this.state.year}
-                    </span>
-                  </Header.Content>
-                </Header>
-              </Grid.Column>}
-          </Grid>
+                <Dropdown
+                  selection
+                  fluid
+                  onChange={(e, data) => this.setFlow(data.value)}
+                  value={this.state.flow}
+                  options={this.state.flows}
+                />
+              </div>
 
-          <Grid>
-            <Grid.Column mobile={16} computer={8}>
               <Timeline
                 height="400px"
                 data={this.state.trend}
@@ -226,7 +190,42 @@ class AreaPartitionChart extends React.Component {
               />
             </Grid.Column>
 
+
+            <Grid.Column mobile={1} computer={1} />
+
             <Grid.Column mobile={16} computer={8}>
+              <div style={{minHeight: '85px'}}>
+                {this.state.flow === 'all'
+                  ? <Header as="h3" textAlign="center">
+                    <Header.Content>
+                      The mix of resources in <span>{this.state.year}</span>
+                    </Header.Content>
+                  </Header>
+                  : <Header as="h3" textAlign="center">
+                    <Header.Content>
+                    <span>
+                        What we know about {this.state.flowName} by{' '}
+                    </span>
+                      {
+                        <Dropdown
+                          selection
+                          compact
+                          onChange={(e, data) => this.setFlowDetailGroup(data.value)}
+                          value={this.state.detailGroup}
+                          options={this.state.detailSelections.map(d => ({
+                            text: d.text,
+                            value: d.value,
+                            key: d.key,
+                          }))}
+                        />
+                      }
+                      <span>
+                      {' '}in {this.state.year}
+                    </span>
+                    </Header.Content>
+                  </Header>
+                }
+              </div>
               <SectionHeader color="rgb(238, 238, 238)">
                 {this.props.config.treemapConfig.labeling.prefix}{' '}
                 {approximate(
