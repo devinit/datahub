@@ -16,6 +16,7 @@ const Chart = (props: WrapperProps) => {
   return (
     <SlidingDualSidebar
       country={props.country}
+      countryType={props.countryType}
       startYear={props.startYear}
       year={props.year}
       shouldScrollIntoView={props.shouldScrollIntoView}

@@ -108,7 +108,7 @@ const Overview = (props: Props) => {
             {overviewTab.governmentSpendPerPerson &&
               overviewTab.governmentSpendPerPerson.value &&
               overviewTab.governmentSpendPerPerson.value !== NoData
-              ? `PPP$ ${overviewTab.governmentSpendPerPerson.value}`
+              ? `PPP$ ${Number(overviewTab.governmentSpendPerPerson.value).toLocaleString()}`
               : NoData}
           </TabsP>
           <TabsFootNote>Government spending per person per annum</TabsFootNote>

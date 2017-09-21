@@ -6,6 +6,7 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { SectionHeader } from 'components/atoms/Header';
 import {approximate} from 'lib/utils';
 import ChartShare from 'components/molecules/ChartShare';
+import { RECIPIENT } from 'lib/utils/constants';
 import { LightBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/atoms/Chart';
 import YearSlider from '../YearSlider';
@@ -22,6 +23,7 @@ export type State = {
 
 export type Props = {
   country: string,
+  countryType?: string,
   startYear: number,
   // for scrolling to this chart, think of it has the chart container ID
   chartId?: string,
@@ -74,7 +76,6 @@ class SlidingDualSidebar extends React.Component {
       data
     );
     const groupedByYear = groupBy(d => d.year, data);
-
 
     const expected = Object.keys(types).map(t => {
       const [direction, type, category, name] = t.split('~');
@@ -130,6 +131,7 @@ class SlidingDualSidebar extends React.Component {
   }
 
   render() {
+    const {countryType, country} = this.props;
     return (
       <LightBg
         innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
@@ -138,7 +140,9 @@ class SlidingDualSidebar extends React.Component {
           <Grid.Column width={8}>
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'right', marginRight: '47px' }}>
-                RESOURCE FLOWS TO {this.props.country} <span>{this.state.inflowSum}</span>
+                {countryType !== RECIPIENT ?
+                  'RESOURCE FLOWS FROM DEVELOPING COUNTRIES ' : `RESOURCE FLOWS TO ${country} `}
+                <span>{this.state.inflowSum}</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>
@@ -146,7 +150,9 @@ class SlidingDualSidebar extends React.Component {
           <Grid.Column width={8}>
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
-                RESOURCE FLOWS LEAVING {this.props.country} <span>{this.state.outflowSum}</span>
+                {countryType !== RECIPIENT ?
+                  'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' : `RESOURCE FLOWS LEAVING ${country} `}
+                <span>{this.state.outflowSum}</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>
