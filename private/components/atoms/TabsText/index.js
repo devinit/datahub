@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { massive, small} from 'components/theme';
+import { massive } from 'components/theme';
 import { red, grey} from 'components/theme/semantic';
 
 export const TabsP = glamorous.p({
@@ -19,7 +19,7 @@ export const TabsFootNote = glamorous.p({
   color: grey,
 }, (props) => ({
   textAlign: props.textAlign || 'center',
-  fontSize: props.fontSize || small,
+  fontSize: props.fontSize || '0.9em',
   lineHeight: props.lineHeight || 0,
 }));
 export const HeaderTitle = glamorous.h3({

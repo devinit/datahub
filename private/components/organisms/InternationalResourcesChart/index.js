@@ -22,6 +22,7 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
   return (
     <InternationalResourcesChart
       id={props.id}
+      countryType={props.countryType}
       startYear={props.startYear}
       data={props.data}
       config={config}
@@ -56,6 +57,7 @@ const withData = graphql(QUERY, {
       ? { loading }
       : {
         id: country.id,
+        countryType,
         country: getCountryName(data.variables.id),
         startYear: data.internationalResources.startYear,
         data: data.internationalResources.resourcesOverTime.data,

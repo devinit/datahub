@@ -9,6 +9,8 @@ import UnbundlingInternationalResources, {
   NoDataAvailableContainer,
 } from 'components/organisms/UnbundlingInternationalResources';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
+import { DONOR } from 'lib/utils/constants';
+import { red } from 'components/theme/semantic';
 import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
@@ -30,6 +32,7 @@ export type State = {
 };
 export type Props = {
   id: string,
+  countryType: string,
   country: string,
   data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
   config: any,
@@ -50,10 +53,12 @@ class AreaPartitionChart extends React.Component {
 
   initState(props: Props) {
     const year = this.props.startYear;
-    const direction = 'in';
+    const direction = this.props.countryType !== DONOR ? 'in' : 'out';
     const directions = [
       { value: 'in', text: `Inflows to ${props.country}` },
-      { value: 'out', text: `Outflows leaving ${props.country}` },
+      { value: 'out',
+        text: this.props.countryType !== DONOR ?
+          `Outflows leaving ${props.country}` : `Outflows from ${props.country}` },
     ];
 
     return {
@@ -198,7 +203,7 @@ class AreaPartitionChart extends React.Component {
                 {this.state.flow === 'all'
                   ? <Header as="h3" textAlign="center">
                     <Header.Content>
-                      The mix of resources in <span>{this.state.year}</span>
+                      The mix of resources in <span style={{color: red}}>{this.state.year}</span>
                     </Header.Content>
                   </Header>
                   : <Header as="h3" textAlign="center">

@@ -1,6 +1,8 @@
+import { red } from 'components/theme/semantic';
+
 export const area = {
   type: 'timearea',
-  colors: ['rgb(186, 12, 47)'],
+  colors: [red],
   linearAxis: {
     showAxis: true,
     indicator: 'value',
@@ -38,7 +40,7 @@ export const histogram = {
   interactions: {
     enable: true,
   },
-  highlight: ['value_bottom_20pc']
+  highlight: ['value bottom 20%']
 };
 
 export default { area, histogram };

@@ -1,11 +1,13 @@
 // @flow
+import {red } from 'components/theme/semantic';
+
 export type OverviewChartConfigs = {
   area: any,
   histogram: any,
 };
 export const area = {
   type: 'timearea',
-  colors: ['rgb(186, 12, 47)'],
+  colors: [red],
   linearAxis: {
     showAxis: true,
     indicator: 'value',

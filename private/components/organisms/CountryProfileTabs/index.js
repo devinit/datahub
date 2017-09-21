@@ -14,7 +14,7 @@ import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
 import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import { RECIPIENT } from 'lib/utils/constants';
+import { RECIPIENT, DONOR } from 'lib/utils/constants';
 import { getCountry, shouldShowTabData } from 'lib/utils';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import overviewConfig from 'visboxConfigs/overviewTabCharts';
@@ -44,7 +44,7 @@ const countryProfileTabs = (props: TabsProps) => {
           config={overviewConfig}
         />
       </Pane>
-      {country.countryType === RECIPIENT
+      {country.countryType !== DONOR && props.povertyTab && shouldShowTabData(props.povertyTab)
         ? <Pane label="Poverty" id={'poverty-tab'}>
           <Poverty pagesData={pagesData} config={povertyConfig} {...props} />
         </Pane>
