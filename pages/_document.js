@@ -3,7 +3,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
 import Script from 'lib/utils/Script';
-import criticalCss from 'criticalCss/unbundling'; // in private/criticalCss
 import { renderStatic } from 'glamor/server';
 // import 'lib/offline-install'; // Get our service worker on the page
 
@@ -29,7 +28,6 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           {/* <link rel="manifest" href="/manifest.json" /> */}
-          <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
           {/* onload polyfill */}
           <script
