@@ -154,7 +154,7 @@ const main = async ({ theme = 'default', whiteList = [], blackList = [] }) => {
   const siteVarsRaw = await fs.readFile(path.resolve(sitePath, 'globals/site.variables'), 'utf8');
   const variableLines = getWantedVariableLines(themeVarsRaw, siteVarsRaw, whiteList, blackList);
   const lessStyles = processToUnevalutedCss(variableLines);
-  // console.log(lessStyles);
+  (lessStyles);
   return run(lessStyles).then(() => console.log('success!')).catch(error => console.error(error));
 };
 // TODO: make CLI

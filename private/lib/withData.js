@@ -53,7 +53,7 @@ export default ComposedComponent => {
 
         // Extract query data from the store
         const state = redux.getState();
-        // console.log('redux state', state);
+        ('redux state', state);
         // No need to include other initial Redux state because when it
         // initialises on the client-side it'll create it again anyway
         serverState = {

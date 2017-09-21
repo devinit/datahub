@@ -107,7 +107,6 @@ class SearchInput extends React.Component {
     this.setState({ entities: props.entities });
   }
   render() {
-    console.log('this.props.profile', this.props.placeholder);
     return (
       <Div>
         <InputContainer

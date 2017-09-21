@@ -114,6 +114,7 @@ query TabData($id: String!) {
     mixOfResources {
       data {
         flow_name
+        color
         value
       }
       toolTip {

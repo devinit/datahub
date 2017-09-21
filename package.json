@@ -85,6 +85,9 @@
     "redux": "^3.7.0",
     "redux-persist": "^4.8.1",
     "semantic-ui-react": "^0.72.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.6.0",
+    "babel-loader": "^7.1.2",
     "webpack-bundle-analyzer": "^2.9.0"
   },
   "author": "epicallan.al@gmail.com",
@@ -94,7 +97,6 @@
     "@storybook/react": "^3.1.9",
     "apollo-codegen": "^0.15.2",
     "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.1.2",
     "css-to-js-object": "0.0.3",
     "csso": "^3.1.1",
     "enzyme": "^2.9.1",
@@ -117,9 +119,7 @@
     "pretty-format": "^21.1.0",
     "react-test-renderer": "^15.5.4",
     "semantic-ui": "^2.2.10",
-    "uglifyjs-webpack-plugin": "^0.4.6",
-    "usus": "^1.6.0",
-    "webpack": "^3.6.0"
+    "usus": "^1.6.0"
   },
   "git-pre-hooks": {
     "pre-push": [

@@ -36,7 +36,6 @@ export default class RankingsTable extends React.Component {
   };
   onClick = (item: Data) => {
     this.setState({ profileLoading: true });
-    console.log(item);
     return Router.push(item.route.routePath, item.route.routeAsPath);
   };
   render() {

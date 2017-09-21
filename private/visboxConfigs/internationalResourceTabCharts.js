@@ -33,6 +33,7 @@ export const resourcesOverTime = {
 
 export const mixOfResources = {
   type: 'pie',
+  coloring: 'color',
   colors: [
     'rgb(44, 160, 44)',
     'rgb(31, 119, 180)',
