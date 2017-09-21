@@ -95,10 +95,10 @@ const International = (props: Props) => {
               </Grid.Column>
               <Grid.Column width="8">
                 <div>
-                  {internationalResources.mixOfResources.data.map((d, i) =>
+                  {internationalResources.mixOfResources.data.map((d: Object) =>
                     (<Legend
-                      color={props.config.mixOfResources.colors[i]}
-                      key={`${d[props.config.mixOfResources.circular.label]}_${props.config.mixOfResources.colors[i]}`}
+                      color={d.color}
+                      key={`${d[props.config.mixOfResources.circular.label]}_${d.color}`}
                     >
                       <span><span /></span>
                       <Span fontSize={small}>{d[props.config.mixOfResources.circular.label]}</Span>
