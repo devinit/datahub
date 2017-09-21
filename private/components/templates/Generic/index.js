@@ -19,7 +19,8 @@ type Props = {
   pathname: string,
   query?: string
 };
-const setCriticalCss = (path: string) => {
+const setCriticalCss = (path?: string) => {
+  if (!path) return indexCss;
   if (path.includes('unbundling')) return unbundlingCss;
   if (path === '/country') return profileCss;
   return indexCss;
