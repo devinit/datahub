@@ -14,7 +14,7 @@ import govtFinanceConfig from 'visboxConfigs/governmentFinanceTabCharts';
 import internationalResourcesConfig from 'visboxConfigs/internationalResourceTabCharts';
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
-import { RECIPIENT, DONOR } from 'lib/utils/constants';
+import { DONOR } from 'lib/utils/constants';
 import { getCountry, shouldShowTabData } from 'lib/utils';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import overviewConfig from 'visboxConfigs/overviewTabCharts';
