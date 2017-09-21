@@ -76,7 +76,7 @@ const Government = (props: Props) => {
                 />
               </Grid.Column>
               <Grid.Column width="8">
-                <Div fontSize={small}>
+                <Div fontSize={small} marginTop="2em">
                   {governmentFinance.spendingAllocation.data.map((d: Object) =>
                     (<Legend
                       key={d.color}
