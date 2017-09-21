@@ -20,7 +20,7 @@ export const TabsFootNote = glamorous.p({
 }, (props) => ({
   textAlign: props.textAlign || 'center',
   fontSize: props.fontSize || '0.9em',
-  lineHeight: props.lineHeight || 0,
+  lineHeight: props.lineHeight || 1
 }));
 export const HeaderTitle = glamorous.h3({
   textAlign: 'center',
