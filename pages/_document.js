@@ -3,7 +3,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
 import Script from 'lib/utils/Script';
-import criticalCss from 'criticalCss'; // in private/criticalCss
+import criticalCss from 'criticalCss/unbundling'; // in private/criticalCss
 import { renderStatic } from 'glamor/server';
 // import 'lib/offline-install'; // Get our service worker on the page
 

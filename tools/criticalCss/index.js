@@ -24,9 +24,15 @@ const cssModule = (css: string): string =>
 const main = async (siteUrl: string, filePath) => {
   const css = await getCss(siteUrl);
   const content = cssModule(css);
-  fs.writeFile(filePath, content);
+  await fs.writeFile(filePath, content);
+  console.log('success');
 };
 // Make sure the site is running and accessible at that provided site url
 if (process.env.NODE_ENV !== 'test') {
-  main('http://212.71.254.23:9999', 'private/criticalCss/index.js');
+  [{path: '/', file: 'index'},
+    {path: '/country/uganda', file: 'countryProfile'},
+    {path: '/unbundling-aid', file: 'unbundling'}
+  ].forEach(({path, file}) => {
+    main(`http://212.111.41.68:8080${path}`, `private/criticalCss/${file}.js`);
+  });
 }
