@@ -11,6 +11,7 @@ export type AppState = {
   spotlightIndicator: string,
   globalIndicator: string,
 };
+
 export type Action = {
   ...AppState,
   type: string,
@@ -18,10 +19,12 @@ export type Action = {
     apollo: any,
   },
 };
+
 export type State = {
   app: AppState,
   apollo: Store, // from apollo client flow type definition
 };
+
 type Reducer<S, A> = (state: S, action: A) => S;
 
 export type AppReducers<S, A> = {

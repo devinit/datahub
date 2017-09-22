@@ -40,6 +40,7 @@ export async function getLocalStorageInstance(): Promise<any> {
     return localforage;
   }
 }
+
 export async function getData<T>(query: string, variables: Object): Promise<T> {
   try {
     const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
@@ -62,6 +63,7 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
     throw error;
   }
 }
+
 export type CurrencyOption = {
   text: string,
   value: string

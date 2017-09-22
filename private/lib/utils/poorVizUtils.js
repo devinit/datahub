@@ -1,4 +1,5 @@
 /* eslint-disable */
+// adopted from old datahub code
 //TODO: enable eslint
 import * as d3 from 'd3';
 import rawdata from '../../components/molecules/whereAreThePoorViz/data';
