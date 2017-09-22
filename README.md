@@ -116,6 +116,7 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - [ ] Get rid of proptypes in one of the lib folder files
 - [ ] re-add service worker
 - [ ] enable http2
+- [ ] move d3 charts visual in the datahub repo to charts eg the poor people viz
 - [ ] clean up our semantic build / customisation workflow in relation to semantic upgrades
 
 ## Known development issues / incompartibilities

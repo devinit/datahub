@@ -2,8 +2,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import {TabsNoData, TabsP, HeaderTitle, TabWrapper} from 'components/atoms/TabsText';
-import { red } from 'components/theme/semantic';
-import { Div, P } from 'glamorous';
+import { red, blue } from 'components/theme/semantic';
+import { Div, P, Span } from 'glamorous';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
@@ -19,7 +19,6 @@ type Props = {
 const Population = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
   const popnDistrict = getPageLine('popn-district');
-  const popnDistribution = getPageLine('popn-distribution');
   const dependencyRatio = getPageLine('dependency-ratio');
   if (!props.populationTabRegional) throw new Error('regional population data is missing');
   const populationTabRegional = props.populationTabRegional;
@@ -58,7 +57,7 @@ const Population = (props: Props) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {popnDistribution.title}
+            WHAT IS THE <Span color={red}>URBAN</Span> VS <Span color={blue}>RURAL</Span> SPLIT?
             {populationTabRegional.populationDistribution &&
             populationTabRegional.populationDistribution.toolTip
               ? <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} />
