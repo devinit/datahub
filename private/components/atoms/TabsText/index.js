@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {Span} from 'glamorous';
 import { massive } from 'components/theme';
-import { red, grey} from 'components/theme/semantic';
+import { red, grey, blue} from 'components/theme/semantic';
 
 export const TabsP = glamorous.p({
   fontSize: massive,
@@ -31,4 +31,9 @@ export const TabWrapper = glamorous.div({
   fontWeight: 'bold',
   textAlign: 'center'
 });
+export const RuralUrbanPopnText = () =>
+  (<span>
+   WHAT IS THE <Span color={red}>URBAN</Span> VS <Span color={blue}>RURAL</Span> SPLIT?
+  </span>);
+
 export const TabsNoData = () => (<TabsP>No data</TabsP>);

@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import {TabsNoData, TabsP, HeaderTitle, TabWrapper} from 'components/atoms/TabsText';
-import { red, blue } from 'components/theme/semantic';
-import { Div, P, Span } from 'glamorous';
+import {TabsNoData, TabsP, HeaderTitle, TabWrapper, RuralUrbanPopnText} from 'components/atoms/TabsText';
+import { red } from 'components/theme/semantic';
+import { Div, P} from 'glamorous';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
@@ -57,7 +57,7 @@ const Population = (props: Props) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            WHAT IS THE <Span color={red}>URBAN</Span> VS <Span color={blue}>RURAL</Span> SPLIT?
+            <RuralUrbanPopnText />
             {populationTabRegional.populationDistribution &&
             populationTabRegional.populationDistribution.toolTip
               ? <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} />
