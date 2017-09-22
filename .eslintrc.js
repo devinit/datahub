@@ -31,7 +31,6 @@ module.exports = {
     'object-curly-spacing': 0,
     'no-unused-expressions': 0,
     'no-confusing-arrow': 0,
-    'no-unused-vars': 0,
     'jsx-a11y/interactive-supports-focus': 0,
     'no-constant-condition': 0,
     'import/no-dynamic-require': 0,

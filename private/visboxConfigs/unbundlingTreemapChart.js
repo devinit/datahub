@@ -1,6 +1,5 @@
 const config = {
   type: 'treemap',
-  orientation: 'horizontal',
   coloring: 'color',
   labeling: {
     prefix: 'US$ ',
