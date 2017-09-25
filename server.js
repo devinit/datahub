@@ -1,9 +1,9 @@
 const express = require('express');
 const compression = require('compression');
 const LRUCache = require('lru-cache');
-const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
+const path = require('path');
 const next = require('next');
-
+const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -44,6 +44,10 @@ app.prepare().then(() => {
   server.use(compression());
 
   server.use(express.static('public'));
+
+  server.use('/public', express.static(path.resolve(__dirname, '/public'), {
+    maxAge: '365d'
+  }));
 
   // serve service worker // currently not working
   // server.get('/sw.js', (req, res) => res.sendFile(path.resolve('./.next/sw.js')));
