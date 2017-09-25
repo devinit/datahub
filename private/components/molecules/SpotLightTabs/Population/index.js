@@ -67,7 +67,7 @@ const Population = (props: Props) => {
           {populationTabRegional.populationDistribution &&
           populationTabRegional.populationDistribution.data &&
           populationTabRegional.populationDistribution.data.length
-            ? <Div paddingRight={'40px'}>
+            ? <Div paddingRight={'40px'} paddingTop={'2.5em'}>
               <Chart
                 config={props.config.populationDistribution}
                 data={populationTabRegional.populationDistribution.data}
