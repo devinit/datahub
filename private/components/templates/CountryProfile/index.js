@@ -71,11 +71,12 @@ class Profile extends Component {
             </SectionHeader>
           </Container>
         </Div>
-        <DynamicCountryProfileLowerTabs
-          id={this.props.id}
-          selectedTab={this.state.selectedTab}
-          {...this.props.state}
-        />
+        {process.env.NODE_ENV !== 'test' ?
+          <DynamicCountryProfileLowerTabs
+            id={this.props.id}
+            selectedTab={this.state.selectedTab}
+            {...this.props.state}
+          /> : ''}
         <DarkBg>
           <SectionHeader color={red} fontColor={white}>
           MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}

@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 import ProfileHeader from '.';
 
 storiesOf('Profile Headers', module)
-  .add('uganda', () =>
+  .add('Uganda Profile header', () =>
     (<ProfileHeader
       entity={{name: 'Uganda', id: 'UG', slug: 'uganda'}}
       jumpToSection={console.info}
     />))
-  .add('Wakiso', () =>
+  .add('Wakiso Profile header', () =>
     (<ProfileHeader
       currency="UGX"
       spotlightCountry={{name: 'Uganda', id: 'UG', slug: 'uganda'}}

@@ -76,12 +76,14 @@ class RegionalProfile extends Component {
             <Hr borderTop={`2px solid ${lighterGrey}`} />
           </Container>
         </Div>
-        <DynamicRegionalLowerTabs
-          id={this.props.id}
-          currency={this.state.currency}
-          country={this.state.country.slug}
-          {...this.props.state}
-        />
+        {process.env.NODE_ENV !== 'test' ?
+          <DynamicRegionalLowerTabs
+            id={this.props.id}
+            currency={this.state.currency}
+            country={this.state.country.slug}
+            {...this.props.state}
+          /> : ''
+        }
         <ProfileDataSourceTable data={data.dataSources} />
       </Generic>);
   }

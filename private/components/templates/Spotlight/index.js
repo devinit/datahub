@@ -45,7 +45,10 @@ const spotlight = (props: Props) => {
         </Div>
       </Container>
       <SpotLightNavTabs state={props.state} />
-      <DynamicMapComponent pathname={props.pathname} state={props.state} />
+      {
+        process.env.NODE_ENV !== 'test' ?
+          <DynamicMapComponent pathname={props.pathname} state={props.state} /> : ''
+      }
       <About />
     </Generic>
   );

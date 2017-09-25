@@ -3,7 +3,7 @@ import withApolloAndReduxProvider from 'lib/storybook-addon/apolloAndRedux';
 import { storiesOf } from '@storybook/react';
 import CountryProfile from '.';
 
-storiesOf('Templates DontTest', module)
+storiesOf('Templates', module)
   .addDecorator(withApolloAndReduxProvider())
   .add('Country Profile uganda', () => <CountryProfile id={'uganda'} />)
   .add('Country Profile rwanda', () => <CountryProfile id={'rwanda'} />)
