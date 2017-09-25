@@ -59,7 +59,7 @@ const Legend = (props: Props) =>
     <Div>
       <Ul display={'inline-block'} padding={0}>
         {props.legendData.map(item =>
-          (<LegendKey key={item.label} {...item}>
+          (<LegendKey key={item.backgroundColor} {...item}>
             {item.label}
           </LegendKey>),
         )}
