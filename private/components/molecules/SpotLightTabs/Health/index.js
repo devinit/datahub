@@ -9,6 +9,7 @@ import {getPageUnitById} from 'components/organisms/PagesData';
 
 type Props = {
   ...SpotLightTabDataQuery,
+  currency: string,
   pageData: PageUnit[]
 }
 
@@ -19,6 +20,11 @@ const Health = (props: Props) => {
   const healthCareFunding = getPageLine('health-care-funding');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   const healthTabRegional = props.healthTabRegional;
+  const fundingNCU = healthTabRegional.healthCareFunding &&
+    healthTabRegional.healthCareFunding.value_ncu;
+  const fundingUSD = healthTabRegional.healthCareFunding &&
+    healthTabRegional.healthCareFunding.value;
+  const fundingValue = props.currency === 'US$' ? fundingUSD : fundingNCU;
   return (
     <Container>
       <TabWrapper>
@@ -67,9 +73,7 @@ const Health = (props: Props) => {
                 : ''}
             </HeaderTitle>
             <TabsP>
-              {healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.value
-                ? `US$ ${healthTabRegional.healthCareFunding.value}`
-                : NoData}
+              {fundingValue ? `${props.currency} ${fundingValue}` : NoData}
             </TabsP>
           </Grid.Column>
         </Grid>

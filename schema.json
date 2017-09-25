@@ -1556,6 +1556,18 @@
               "deprecationReason": null
             },
             {
+              "name": "numberInExtremePoverty",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "percentageInExtremePoverty",
               "description": "",
               "args": [],
@@ -3019,8 +3031,8 @@
               "deprecationReason": null
             },
             {
-              "name": "order",
-              "description": "",
+              "name": "position",
+              "description": "a position value for a flow generated from flow_type, flow_category and flow name order",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -3674,7 +3686,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "IndicatorValueWithToolTip",
+                "name": "IndicatorValueNCUWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3703,6 +3715,53 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "IndicatorValueNCUWithToolTip",
+          "description": "",
+          "fields": [
+            {
+              "name": "value",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "value_ncu",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "toolTip",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3926,7 +3985,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "IndicatorValueWithToolTip",
+                "name": "IndicatorValueNCUWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3985,7 +4044,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "IndicatorValueWithToolTip",
+                "name": "IndicatorValueNCUWithToolTip",
                 "ofType": null
               },
               "isDeprecated": false,

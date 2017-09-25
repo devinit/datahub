@@ -150,6 +150,7 @@ export type TabDataQuery = {|
     mixOfResources: ? {|
       data: ? Array< {|
         flow_name: string,
+        color: ?string,
         value: number,
       |} >,
       toolTip: ? {|
@@ -238,23 +239,15 @@ export type TabDataQuery = {|
   |},
 |};
 
-export type DifferentProvidersDifferentPriotitiesQueryVariables = {|
-  indicatorId?: ?string,
-|};
-
 export type DifferentProvidersDifferentPriotitiesQuery = {|
-  bubbleChartOda: ? Array< {|
-    year: ?number,
-    // country id
-    id: ?string,
-    // country name
-    name: ?string,
-    income_group: ?string,
-    region: ?string,
-    revenuePerPerson: ?number,
-    numberInExtremePoverty: ?number,
-    value: ?number,
-  |} >,
+  bubbleChartOptions: ? {|
+    // this list feeds off oda table from countries and global/concept file
+    // IdNamePair is defined in unbundling aid types
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+  |},
 |};
 
 export type GovernmentFinanceQueryVariables = {|
@@ -418,6 +411,7 @@ export type SpotLightTabDataQuery = {|
     // this is a total of local, donor and central government resources
     regionalResources: ? {|
       value: ?string,
+      value_ncu: ?string,
       toolTip: ? {|
         source: ?string,
         heading: ?string,
@@ -524,6 +518,7 @@ export type SpotLightTabDataQuery = {|
     // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
     primaryEducationfunding: ? {|
       value: ?string,
+      value_ncu: ?string,
       toolTip: ? {|
         source: ?string,
         heading: ?string,
@@ -553,6 +548,7 @@ export type SpotLightTabDataQuery = {|
     // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
     healthCareFunding: ? {|
       value: ?string,
+      value_ncu: ?string,
       toolTip: ? {|
         source: ?string,
         heading: ?string,
@@ -623,10 +619,18 @@ export type UnbundlingInternationalResourcesQuery = {|
 |};
 
 export type BubbleChartIndicatorListQuery = {|
-  indicators: ? {|
+  bubbleChartOptions: ? {|
     // this list feeds off oda table from countries and global/concept file
     // IdNamePair is defined in unbundling aid types
     indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    incomeGroups: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    regions: ? Array< {|
       id: ?string,
       name: ?string,
     |} >,

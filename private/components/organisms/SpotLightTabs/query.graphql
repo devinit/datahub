@@ -32,6 +32,7 @@ query SpotLightTabData($id: String!, $country: String!) {
     }
     regionalResources {
       value
+      value_ncu
       toolTip {
         source
         heading
@@ -130,6 +131,7 @@ query SpotLightTabData($id: String!, $country: String!) {
     }
     primaryEducationfunding {
       value
+      value_ncu
       toolTip {
         source
         heading
@@ -156,6 +158,7 @@ query SpotLightTabData($id: String!, $country: String!) {
     }
     healthCareFunding {
       value
+      value_ncu
       toolTip {
         source
         heading

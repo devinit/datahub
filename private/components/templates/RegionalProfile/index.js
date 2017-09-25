@@ -14,8 +14,6 @@ import type { State as ReduxState } from 'lib/reducers';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 import data from './data';
-/* eslint-disable react/no-danger */
-/* eslint-disable max-len */
 
 const DynamicRegionalLowerTabs = dynamic(
   import('components/organisms/LocalGovernmentFinance'), { ssr: false });
@@ -67,7 +65,11 @@ class RegionalProfile extends Component {
           spotlightCountry={this.state.country}
           onChangeCurrency={(currency) => this.onChangeCurrency(currency)}
         />
-        <SpotLightTabs id={this.state.district.slug} country={this.state.country.slug} />
+        <SpotLightTabs
+          id={this.state.district.slug}
+          currency={this.state.currency}
+          country={this.state.country.slug}
+        />
         <Div paddingTop={'4em'} paddingBottom={'1em'}>
           <Container textAlign="center">
             <Header ref={node => { this.lowerTabs = node; }} >
