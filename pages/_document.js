@@ -18,11 +18,9 @@ export default class MyDocument extends Document {
     `
     () => {
       // loading styles async
-      // TODO: load on a per page basis eg we dont need di-chart.min.css on index page
       loadCSS('/semantic/semantic.min.css?v=${version}');
       loadCSS('/css/di-charts.min.css?v=${version}');
       loadCSS('/css/mapbox-gl.min.css?v=${version}');
-      // loading intersection obsever
     }
     `
   constructor(props: any) {
