@@ -4,6 +4,9 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import React from 'react';
 import { renderStatic } from 'glamor/server';
 import {version} from 'package.json';
+import indexCss from 'criticalCss';
+import unbundlingCss from 'criticalCss/unbundling'; // in private/criticalCss
+import profileCss from 'criticalCss/countryProfile';
 // import 'lib/offline-install'; // Get our service worker on the page
 
 declare var loadCSS: any;
@@ -13,7 +16,15 @@ export default class MyDocument extends Document {
     const styles = renderStatic(() => page.html);
     return { ...page, ...styles, query, pathname };
   }
-
+  static setCriticalCss = (path?: string) => {
+    if (!path) return indexCss;
+    if (path.includes('unbundling')) return unbundlingCss;
+    if (path.includes('country')) {
+      console.log('profile styles');
+      return profileCss;
+    }
+    return indexCss;
+  };
   static addVersionedCss = () =>
     `
     () => {
@@ -33,14 +44,14 @@ export default class MyDocument extends Document {
 
   render() {
     const cssWithVersion = MyDocument.addVersionedCss();
+    const criticalCss = MyDocument.setCriticalCss(this.props.pathname);
     return (
       <html lang="en">
         <Head>
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          {/* <link rel="manifest" href="/manifest.json" /> */}
+          <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
-          {/* onload polyfill */}
           <script
             dangerouslySetInnerHTML={{
               __html:
