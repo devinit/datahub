@@ -30,7 +30,7 @@ const Overview = (props: Props) => {
   const overviewTab = props.overviewTab;
   return (
     <Container>
-      <Grid centered>
+      <Grid>
         {props.countryType !== DONOR && overviewTab.poorestPeople
           ? <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
