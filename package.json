@@ -47,8 +47,8 @@
     "graphql": "^0.10.3"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.7",
-    "apollo-client": "^1.9.0-1",
+    "@devinit/charts": "^1.6.0",
+    "apollo-client": "^1.9.3",
     "apollo-fetch": "^0.6.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -78,7 +78,7 @@
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
     "react": "^15.6.1",
-    "react-apollo": "^1.4.8",
+    "react-apollo": "^1.4.15",
     "react-dom": "^15.6.1",
     "react-intersection-observer": "^1.0.1",
     "react-no-ssr": "^1.1.0",
