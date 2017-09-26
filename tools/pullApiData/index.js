@@ -11,7 +11,7 @@ import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
 import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
 import BUBBLE_INDICATORS_QUERY from './queries/BubbleChartOptions.graphql';
-import UNBUNDLING_QUERY from './queries/UnbundlingAid.graphql';
+import UNBUNDLING_QUERY from './queries/UnbundlingAidCache.graphql';
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';

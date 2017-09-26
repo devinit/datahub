@@ -565,35 +565,9 @@ export type SpotLightTabDataQuery = {|
 
 export type UnbundlingAidDataQueryVariables = {|
   args?: ?UnbundlingAidQuery,
-  aidType: string,
 |};
 
 export type UnbundlingAidDataQuery = {|
-  selections: ? {|
-    // unbundling aid selection options
-    to: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    from: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    channels: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    sectors: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    // same as form
-    bundles: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    years: ?Array< ?number >,
-  |},
   bundles: ? Array< {|
     uid: ?string,
     id: ?string,
@@ -811,12 +785,12 @@ export type SpotlightThemesQuery = {|
   |} >,
 |};
 
-export type UnbundlingAidQueryVariables = {|
+export type UnbundlingAidCacheQueryVariables = {|
   aidType: string,
   args?: ?UnbundlingAidToTalQuery,
 |};
 
-export type UnbundlingAidQuery = {|
+export type UnbundlingAidCacheQuery = {|
   selections: ? {|
     // unbundling aid selection options
     to: ? Array< {|
@@ -842,7 +816,7 @@ export type UnbundlingAidQuery = {|
     |} >,
     years: ?Array< ?number >,
   |},
-  total: ? {|
+  yearTotal: ? {|
     year: ?number,
     total: ?string,
   |},

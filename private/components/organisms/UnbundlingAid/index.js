@@ -108,7 +108,7 @@ class Chart extends React.Component {
             <TotalODA
               onClickHandler={() => this.showTreemapHandler()}
               yearTotal={this.props.aidType === 'oda' ? dataODA.yearTotal : dataOOF.yearTotal}
-              type={this.props.aidType}
+              aidType={this.props.aidType}
             /> :
             !this.state.compare
               ? <WithData {...this.props} />
