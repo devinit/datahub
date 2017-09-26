@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
     `
     () => {
       // loading styles async
-      loadCSS('/semantic/semantic.min.css?v=${version}');
+      // loadCSS('/semantic/semantic.min.css?v=${version}');
       loadCSS('/css/di-charts.min.css?v=${version}');
       loadCSS('/css/mapbox-gl.min.css?v=${version}');
     }
@@ -44,13 +44,13 @@ export default class MyDocument extends Document {
 
   render() {
     const cssWithVersion = MyDocument.addVersionedCss();
-    const criticalCss = MyDocument.setCriticalCss(this.props.pathname);
+    // const criticalCss = MyDocument.setCriticalCss(this.props.pathname);
     return (
       <html lang="en">
         <Head>
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
+          <link rel="stylesheet" href={`/semantic/semantic.min.css?v=${version}`} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
           <script
             dangerouslySetInnerHTML={{
