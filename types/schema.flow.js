@@ -15,6 +15,12 @@ export type UnbundlingAidQuery = {|
   channel?: ?string,
 |};
 
+export type UnbundlingAidToTalQuery = {|
+  // oda or oof
+  aidType: string,
+  year?: ?number,
+|};
+
 export type TabDataQueryVariables = {|
   id: string,
 |};
@@ -150,6 +156,7 @@ export type TabDataQuery = {|
     mixOfResources: ? {|
       data: ? Array< {|
         flow_name: string,
+        color: ?string,
         value: number,
       |} >,
       toolTip: ? {|
@@ -238,23 +245,15 @@ export type TabDataQuery = {|
   |},
 |};
 
-export type DifferentProvidersDifferentPriotitiesQueryVariables = {|
-  indicatorId?: ?string,
-|};
-
 export type DifferentProvidersDifferentPriotitiesQuery = {|
-  bubbleChartOda: ? Array< {|
-    year: ?number,
-    // country id
-    id: ?string,
-    // country name
-    name: ?string,
-    income_group: ?string,
-    region: ?string,
-    revenuePerPerson: ?number,
-    numberInExtremePoverty: ?number,
-    value: ?number,
-  |} >,
+  bubbleChartOptions: ? {|
+    // this list feeds off oda table from countries and global/concept file
+    // IdNamePair is defined in unbundling aid types
+    indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+  |},
 |};
 
 export type GovernmentFinanceQueryVariables = {|
@@ -418,6 +417,7 @@ export type SpotLightTabDataQuery = {|
     // this is a total of local, donor and central government resources
     regionalResources: ? {|
       value: ?string,
+      value_ncu: ?string,
       toolTip: ? {|
         source: ?string,
         heading: ?string,
@@ -524,6 +524,7 @@ export type SpotLightTabDataQuery = {|
     // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
     primaryEducationfunding: ? {|
       value: ?string,
+      value_ncu: ?string,
       toolTip: ? {|
         source: ?string,
         heading: ?string,
@@ -553,6 +554,7 @@ export type SpotLightTabDataQuery = {|
     // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
     healthCareFunding: ? {|
       value: ?string,
+      value_ncu: ?string,
       toolTip: ? {|
         source: ?string,
         heading: ?string,
@@ -563,35 +565,9 @@ export type SpotLightTabDataQuery = {|
 
 export type UnbundlingAidDataQueryVariables = {|
   args?: ?UnbundlingAidQuery,
-  aidType: string,
 |};
 
 export type UnbundlingAidDataQuery = {|
-  selections: ? {|
-    // unbundling aid selection options
-    to: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    from: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    channels: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    sectors: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    // same as form
-    bundles: ? Array< {|
-      id: ?string,
-      name: ?string,
-    |} >,
-    years: ?Array< ?number >,
-  |},
   bundles: ? Array< {|
     uid: ?string,
     id: ?string,
@@ -623,10 +599,18 @@ export type UnbundlingInternationalResourcesQuery = {|
 |};
 
 export type BubbleChartIndicatorListQuery = {|
-  indicators: ? {|
+  bubbleChartOptions: ? {|
     // this list feeds off oda table from countries and global/concept file
     // IdNamePair is defined in unbundling aid types
     indicators: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    incomeGroups: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    regions: ? Array< {|
       id: ?string,
       name: ?string,
     |} >,
@@ -799,4 +783,41 @@ export type SpotlightThemesQuery = {|
     |} >,
     default_indicator: ?string,
   |} >,
+|};
+
+export type UnbundlingAidCacheQueryVariables = {|
+  aidType: string,
+  args?: ?UnbundlingAidToTalQuery,
+|};
+
+export type UnbundlingAidCacheQuery = {|
+  selections: ? {|
+    // unbundling aid selection options
+    to: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    from: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    channels: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    sectors: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    // same as form
+    bundles: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    years: ?Array< ?number >,
+  |},
+  yearTotal: ? {|
+    year: ?number,
+    total: ?string,
+  |},
 |};

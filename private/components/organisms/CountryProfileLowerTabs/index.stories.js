@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import withApolloProvider from 'lib/storybook-addon/apollo';
 import CountryProfileLowerTabs from '.';
 
-storiesOf('Tabs DontTest', module)
+storiesOf('Tabs', module)
   .addDecorator(withApolloProvider())
   .add('Country Profiles Lower tabs uganda', () =>
     (<CountryProfileLowerTabs

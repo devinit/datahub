@@ -18,6 +18,7 @@ import TABS_QUERY from './query.graphql';
 
 type WrapperProps = {
   loading: boolean,
+  currency: string,
   variables: { id: string},
   ...SpotLightTabDataQuery,
 };
@@ -36,7 +37,12 @@ const spotlightTabs = (props: WrapperProps) => {
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id="spotlight-overview">
-        <Overview {...props} pageData={pageData} config={overviewConfig} />
+        <Overview
+          {...props}
+          pageData={pageData}
+          currency={props.currency}
+          config={overviewConfig}
+        />
       </Pane>
       <Pane label="Poverty" id="spotlight-poverty">
         <Poverty {...props} pageData={pageData} />
@@ -45,10 +51,10 @@ const spotlightTabs = (props: WrapperProps) => {
         <Population {...props} pageData={pageData} config={populationConfig} />
       </Pane>
       <Pane label="Education" id="spotlight-education">
-        <Education {...props} pageData={pageData} />
+        <Education {...props} pageData={pageData} currency={props.currency} />
       </Pane>
       <Pane label="Health" id="spotlight-health">
-        <Health {...props} pageData={pageData} />
+        <Health {...props} pageData={pageData} currency={props.currency} />
       </Pane>
     </Tabs>
   );

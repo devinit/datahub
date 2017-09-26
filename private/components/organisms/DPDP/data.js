@@ -2,7 +2,7 @@
 // this file is auto generated
 
 module.exports = {
-  indicators: {
+  bubbleChartOptions: {
     indicators: [
       {
         id: 'data_series.fdi_pp',
@@ -42,6 +42,27 @@ module.exports = {
         name: 'Denmark, DANIDA and Foreign Affairs planned budgets, US$'
       },
       { id: null, name: null }
+    ],
+    incomeGroups: [
+      { id: 'ldcs', name: 'LDCs' },
+      { id: 'lmics', name: 'LMICs' },
+      { id: 'other-lics', name: 'Other LICs' },
+      { id: 'umics', name: 'UMICs' }
+    ],
+    regions: [
+      { id: 'afica', name: 'Africa' },
+      { id: 'america', name: 'America' },
+      { id: 'asia', name: 'Asia' },
+      { id: 'europe', name: 'Europe' },
+      { id: 'far-east-asia', name: 'Far East Asia' },
+      { id: 'middle-east', name: 'Middle East' },
+      { id: 'north-central-america', name: 'North & Central America' },
+      { id: 'north-of-sahara', name: 'North Africa' },
+      { id: 'oceania', name: 'Oceania' },
+      { id: 'south-america', name: 'South America' },
+      { id: 'south-central-asia', name: 'South & Central Asia' },
+      { id: 'south-of-sahara', name: 'Sub-Saharan Africa' },
+      { id: 'unspecified', name: 'Unspecified' }
     ]
   }
 };

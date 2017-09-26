@@ -5,7 +5,9 @@ import { white, primaryColor, black } from 'components/theme/semantic';
 import { Header, Button } from 'semantic-ui-react';
 
 type Props = {
-  onClickHandler: () => void
+  onClickHandler: () => void,
+  yearTotal: { year: number, total: number},
+  aidType: string
 }
 const ParentContainer = glamorous.div({
   height: '32em',
@@ -50,10 +52,15 @@ const UnbundlingAidTotalODA = (props: Props) =>
     <div style={{ position: 'relative' }}>
       <Container>
         <Header as="h1">
-          <span className="red"> 2015</span> US$ 174.1 <span className="small">bn</span>
+          <span className="red"> {props.yearTotal.year}</span> US$ {props.yearTotal.total} <span className="small">bn</span>
         </Header>
         <Header as="h5">
-          Official development assistance (total gross disbursements, 2015 prices)
+          {
+            props.aidType === 'oda' ?
+              'Official development assistance (total gross disbursements, 2015 prices)'
+              :
+              'Total other official flows (total gross disbursements, 2012 prices)'
+          }
         </Header>
         <Button onClick={() => props.onClickHandler()}>Explore</Button>
       </Container>

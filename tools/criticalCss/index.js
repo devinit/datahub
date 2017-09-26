@@ -5,6 +5,9 @@ import fs from 'fs-extra';
 
 const getCss = (url: string): Promise<string> => {
   return render(url, {
+    deviceMetricsOverride: {
+      mobile: true,
+    },
     formatStyles: (styles: string): Promise<string> => {
       return minify(styles).css; // TODO filter out mapbox styles automatically
     },

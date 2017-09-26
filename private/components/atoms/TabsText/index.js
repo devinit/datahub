@@ -28,7 +28,7 @@ export const HeaderTitle = glamorous.h3({
   color: grey
 });
 export const TabWrapper = glamorous.div({
-  fontWeight: 'bold',
+  // fontWeight: 'bold',
   textAlign: 'center'
 });
 export const RuralUrbanPopnText = () =>

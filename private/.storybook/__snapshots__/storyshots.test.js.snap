@@ -12362,6 +12362,551 @@ exports[`Storyshots Profile Headers Wakiso Profile header 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tabs Country Profiles Lower tabs austria 1`] = `
+<div
+  className="css-n8e9wl"
+>
+  <div
+    className="ui center aligned container"
+  >
+    <ul
+      className="css-bn0gvo"
+    >
+      <li>
+        <a
+          className="css-tmvz0d active"
+          onClick={[Function]}
+        >
+          INTERNATIONAL RESOURCES
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="css-ayw3dp"
+  >
+    <div
+      className="tabs__content visible"
+    >
+      <div
+        id="international-resources"
+        label="INTERNATIONAL RESOURCES"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="center aligned sixteen wide column"
+              >
+                <h2
+                  className="css-1my7te0"
+                >
+                  INFLOWS 
+                  <span>
+                    VS
+                  </span>
+                   OUTFLOWS
+                </h2>
+                <p
+                  className="css-vhd3m3"
+                >
+                  A dynamic mix of resources flow to and from Austria. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.
+                </p>
+                <p
+                  className="css-vhd3m3"
+                >
+                  To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from Austria
+                  <i
+                    aria-hidden="true"
+                    className="info circle icon"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  />
+                </p>
+                <p>
+                  Loading...
+                </p>
+              </div>
+            </div>
+            <div
+              className="centered row"
+            >
+              <div
+                className="center aligned twelve wide column"
+              >
+                <h2
+                  className="css-1my7te0"
+                >
+                  <span>
+                    IN DETAIL
+                  </span>
+                   INTERNATIONAL RESOURCES
+                </h2>
+                <p
+                  className="css-vhd3m3"
+                >
+                  Where are international resources originating and where are they destined? Start by selecting inflows or outflows:
+                </p>
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="css-hu3x4g"
+              >
+                <div
+                  className="ui tiny active progress"
+                  data-percent={0}
+                >
+                  <div
+                    className="bar"
+                    style={
+                      Object {
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Country Profiles Lower tabs rwanda 1`] = `
+<div
+  className="css-n8e9wl"
+>
+  <div
+    className="ui center aligned container"
+  >
+    <ul
+      className="css-bn0gvo"
+    >
+      <li>
+        <a
+          className="css-tmvz0d active"
+          onClick={[Function]}
+        >
+          GOVERNMENT FINANCE
+        </a>
+      </li>
+      <li>
+        <a
+          className="css-tmvz0d"
+          onClick={[Function]}
+        >
+          INTERNATIONAL RESOURCES
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="css-ayw3dp"
+  >
+    <div
+      className="tabs__content visible"
+    >
+      <div
+        id="government-finance-lower"
+        label="GOVERNMENT FINANCE"
+      >
+        <div>
+          <div
+            className="ui container"
+          >
+            <div
+              className="ui centered grid"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="center aligned eight wide column"
+                >
+                  <p
+                    className="css-1f0r1mf"
+                  >
+                    How does Rwanda finance and spend its budget?
+                    <span>
+                      Move the year slider
+                    </span>
+                    or 
+                    <span>
+                      click a box
+                    </span>
+                     to drill down.
+                  </p>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="center aligned eight wide column"
+                >
+                  <h2
+                    className="ui header"
+                  >
+                    Government revenue, financing and expenditure
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              className="ui divider"
+            />
+          </div>
+          <div
+            className="css-h7jsub"
+          >
+            <div
+              className="css-hu3x4g"
+            >
+              <div
+                className="ui tiny active progress"
+                data-percent={0}
+              >
+                <div
+                  className="bar"
+                  style={
+                    Object {
+                      "width": "0%",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs__content "
+    >
+      <div
+        id="international-resources"
+        label="INTERNATIONAL RESOURCES"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="center aligned sixteen wide column"
+              >
+                <h2
+                  className="css-1my7te0"
+                >
+                  INFLOWS 
+                  <span>
+                    VS
+                  </span>
+                   OUTFLOWS
+                </h2>
+                <p
+                  className="css-vhd3m3"
+                >
+                  A dynamic mix of resources flow to and from Rwanda. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.
+                </p>
+                <p
+                  className="css-vhd3m3"
+                >
+                  To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from Rwanda
+                  <i
+                    aria-hidden="true"
+                    className="info circle icon"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  />
+                </p>
+                <p>
+                  Loading...
+                </p>
+              </div>
+            </div>
+            <div
+              className="centered row"
+            >
+              <div
+                className="center aligned twelve wide column"
+              >
+                <h2
+                  className="css-1my7te0"
+                >
+                  <span>
+                    IN DETAIL
+                  </span>
+                   INTERNATIONAL RESOURCES
+                </h2>
+                <p
+                  className="css-vhd3m3"
+                >
+                  Where are international resources originating and where are they destined? Start by selecting inflows or outflows:
+                </p>
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="css-hu3x4g"
+              >
+                <div
+                  className="ui tiny active progress"
+                  data-percent={0}
+                >
+                  <div
+                    className="bar"
+                    style={
+                      Object {
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Country Profiles Lower tabs uganda 1`] = `
+<div
+  className="css-n8e9wl"
+>
+  <div
+    className="ui center aligned container"
+  >
+    <ul
+      className="css-bn0gvo"
+    >
+      <li>
+        <a
+          className="css-tmvz0d active"
+          onClick={[Function]}
+        >
+          GOVERNMENT FINANCE
+        </a>
+      </li>
+      <li>
+        <a
+          className="css-tmvz0d"
+          onClick={[Function]}
+        >
+          INTERNATIONAL RESOURCES
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="css-ayw3dp"
+  >
+    <div
+      className="tabs__content visible"
+    >
+      <div
+        id="government-finance-lower"
+        label="GOVERNMENT FINANCE"
+      >
+        <div>
+          <div
+            className="ui container"
+          >
+            <div
+              className="ui centered grid"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="center aligned eight wide column"
+                >
+                  <p
+                    className="css-1f0r1mf"
+                  >
+                    How does Uganda finance and spend its budget?
+                    <span>
+                      Move the year slider
+                    </span>
+                    or 
+                    <span>
+                      click a box
+                    </span>
+                     to drill down.
+                  </p>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="center aligned eight wide column"
+                >
+                  <h2
+                    className="ui header"
+                  >
+                    Government revenue, financing and expenditure
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              className="ui divider"
+            />
+          </div>
+          <div
+            className="css-h7jsub"
+          >
+            <div
+              className="css-hu3x4g"
+            >
+              <div
+                className="ui tiny active progress"
+                data-percent={0}
+              >
+                <div
+                  className="bar"
+                  style={
+                    Object {
+                      "width": "0%",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="tabs__content "
+    >
+      <div
+        id="international-resources"
+        label="INTERNATIONAL RESOURCES"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="center aligned sixteen wide column"
+              >
+                <h2
+                  className="css-1my7te0"
+                >
+                  INFLOWS 
+                  <span>
+                    VS
+                  </span>
+                   OUTFLOWS
+                </h2>
+                <p
+                  className="css-vhd3m3"
+                >
+                  A dynamic mix of resources flow to and from Uganda. All resources can play a role in ending poverty, though different resources impact poverty directly and indirectly through different mechanisms and flow for wide-ranging objectives.
+                </p>
+                <p
+                  className="css-vhd3m3"
+                >
+                  To understand the value of different resources for poverty reduction we must start by understanding the volumes - move the slider to explore how official, commercial, private and illicit resources flow to and from Uganda
+                  <i
+                    aria-hidden="true"
+                    className="info circle icon"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  />
+                </p>
+                <p>
+                  Loading...
+                </p>
+              </div>
+            </div>
+            <div
+              className="centered row"
+            >
+              <div
+                className="center aligned twelve wide column"
+              >
+                <h2
+                  className="css-1my7te0"
+                >
+                  <span>
+                    IN DETAIL
+                  </span>
+                   INTERNATIONAL RESOURCES
+                </h2>
+                <p
+                  className="css-vhd3m3"
+                >
+                  Where are international resources originating and where are they destined? Start by selecting inflows or outflows:
+                </p>
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="css-hu3x4g"
+              >
+                <div
+                  className="ui tiny active progress"
+                  data-percent={0}
+                >
+                  <div
+                    className="bar"
+                    style={
+                      Object {
+                        "width": "0%",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Tabs Country Profiles tabs austria 1`] = `
 <div>
   <div

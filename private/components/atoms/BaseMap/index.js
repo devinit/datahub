@@ -110,7 +110,8 @@ class BaseMap extends Component {
   _element: HTMLDivElement;
 
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle || this.props.countryProfile) {
+    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle ||
+      this.props.countryProfile !== nextProps.countryProfile) {
       this.setState({shouldForceRedraw: true});
     }
   }

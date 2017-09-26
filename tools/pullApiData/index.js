@@ -11,6 +11,7 @@ import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';
 import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
 import BUBBLE_INDICATORS_QUERY from './queries/BubbleChartOptions.graphql';
+import UNBUNDLING_QUERY from './queries/UnbundlingAidCache.graphql';
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';
@@ -114,6 +115,22 @@ export const getInflowsAndOutflows = async () => {
   }
 };
 
+export const getUnbundlingData = async (aidType: string, year: number) => {
+  try {
+    const filePath = path.join(baseOrganismsPath, `UnbundlingAid/data-${aidType}.js`);
+    const variables = {
+      aidType,
+      args: {
+        aidType,
+        year // TODO: shouldnt be hardcoded
+      }
+    };
+    await getAndWriteData({query: UNBUNDLING_QUERY, filePath, variables});
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getBubbleOptions = async () => {
   try {
     const filePath = path.join(baseOrganismsPath, 'DPDP/data.js');
@@ -130,6 +147,8 @@ if (process.env.NODE_ENV !== 'test') {
   getInternationalResourcesToolTip();
   getInflowsAndOutflows();
   getBubbleOptions();
+  getUnbundlingData('oda', 2015);
+  getUnbundlingData('oof', 2013);
   getSpotlightThemes();
   getPagesData();
 }
