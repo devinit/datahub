@@ -15,6 +15,12 @@ export type UnbundlingAidQuery = {|
   channel?: ?string,
 |};
 
+export type UnbundlingAidToTalQuery = {|
+  // oda or oof
+  aidType: string,
+  year?: ?number,
+|};
+
 export type TabDataQueryVariables = {|
   id: string,
 |};
@@ -803,4 +809,41 @@ export type SpotlightThemesQuery = {|
     |} >,
     default_indicator: ?string,
   |} >,
+|};
+
+export type UnbundlingAidQueryVariables = {|
+  aidType: string,
+  args?: ?UnbundlingAidToTalQuery,
+|};
+
+export type UnbundlingAidQuery = {|
+  selections: ? {|
+    // unbundling aid selection options
+    to: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    from: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    channels: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    sectors: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    // same as form
+    bundles: ? Array< {|
+      id: ?string,
+      name: ?string,
+    |} >,
+    years: ?Array< ?number >,
+  |},
+  total: ? {|
+    year: ?number,
+    total: ?string,
+  |},
 |};

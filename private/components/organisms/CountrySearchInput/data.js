@@ -151,13 +151,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'BQ',
-      name: 'BES Islands',
-      slug: 'bes-islands',
-      has_domestic_data: '',
-      countryType: ''
-    },
-    {
       id: 'BA',
       name: 'Bosnia & Herzegovina',
       slug: 'bosnia-and-herzegovina',
@@ -170,13 +163,6 @@ module.exports = {
       slug: 'botswana',
       has_domestic_data: '1',
       countryType: 'recipient'
-    },
-    {
-      id: 'BV',
-      name: 'Bouvet Island',
-      slug: 'bouvet-island',
-      has_domestic_data: '',
-      countryType: ''
     },
     {
       id: 'BR',
@@ -1037,13 +1023,6 @@ module.exports = {
       name: 'Rwanda',
       slug: 'rwanda',
       has_domestic_data: '1',
-      countryType: 'recipient'
-    },
-    {
-      id: 'SH',
-      name: 'Saint Helena, Ascension & Tristan da Cunha',
-      slug: 'saint-helena-ascension-and-tristan-da-cunha',
-      has_domestic_data: '',
       countryType: 'recipient'
     },
     {

@@ -6,6 +6,8 @@ import { graphql } from 'react-apollo';
 import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import QUERY from './query.graphql';
 import UnbundlingTreemap from '../../molecules/UnbundlingTreemap';
+import dataODA from './data-oda';
+import dataOOF from './data-oof';
 
 type Props = {
   aidType: string
@@ -20,7 +22,6 @@ const toDropDownOptions = list => [
 const withData = graphql(QUERY, {
   options: props => ({
     variables: {
-      aidType: props.aidType,
       args: {
         aidType: props.aidType,
         year: props.startYear,
@@ -33,9 +34,8 @@ const withData = graphql(QUERY, {
     const { error, loading } = data;
 
     if (error) throw new Error(error);
-
     const { channels = [], bundles = [], to = [], from = [], sectors = [], years = [] } =
-      data.selections || {};
+      ownProps.aidType === 'oda' ? dataODA.selections : dataOOF.selections;
 
     return {
       loading,
@@ -107,6 +107,7 @@ class Chart extends React.Component {
           !this.state.showTreemap ?
             <TotalODA
               onClickHandler={() => this.showTreemapHandler()}
+              yearTotal={this.props.aidType === 'oda' ? dataODA.yearTotal : dataOOF.yearTotal}
               type={this.props.aidType}
             /> :
             !this.state.compare

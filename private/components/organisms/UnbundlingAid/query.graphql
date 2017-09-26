@@ -1,14 +1,4 @@
-query UnbundlingAidData($args: UnbundlingAidQuery, $aidType: String!) {
-
-  selections: unbundlingSelectionData(aidType: $aidType) {
-    to {id, name},
-    from {id, name},
-    channels {id, name},
-    sectors {id, name},
-    bundles {id, name},
-    years,
-  }
-
+query UnbundlingAidData($args: UnbundlingAidQuery) {
   bundles: unbundlingAidData(args: $args) {
     uid,
     id,
