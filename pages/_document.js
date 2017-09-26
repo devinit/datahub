@@ -16,24 +16,35 @@ export default class MyDocument extends Document {
     const styles = renderStatic(() => page.html);
     return { ...page, ...styles, query, pathname };
   }
+  static shouldHaveCriticalCss = (pathname: string): boolean => {
+    if (pathname.includes('country') || pathname.includes('uganda')) return false;
+    return true;
+  }
+
   static setCriticalCss = (path?: string) => {
     if (!path) return indexCss;
     if (path.includes('unbundling')) return unbundlingCss;
     if (path.includes('country')) {
-      console.log('profile styles');
       return profileCss;
     }
     return indexCss;
   };
-  static addVersionedCss = () =>
-    `
+  static addVersionedCss = (pathname: string) =>
+    MyDocument.shouldHaveCriticalCss(pathname) ?
+      `
     () => {
       // loading styles async
-      // loadCSS('/semantic/semantic.min.css?v=${version}');
+      loadCSS('/semantic/semantic.min.css?v=${version}');
       loadCSS('/css/di-charts.min.css?v=${version}');
       loadCSS('/css/mapbox-gl.min.css?v=${version}');
-    }
-    `
+    }` :
+      `
+    () => {
+      // loading styles async
+      loadCSS('/css/di-charts.min.css?v=${version}');
+      loadCSS('/css/mapbox-gl.min.css?v=${version}');
+    }`;
+
   constructor(props: any) {
     super(props);
     const { __NEXT_DATA__, ids } = props;
@@ -43,14 +54,17 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const cssWithVersion = MyDocument.addVersionedCss();
-    // const criticalCss = MyDocument.setCriticalCss(this.props.pathname);
+    const cssWithVersion = MyDocument.addVersionedCss(this.props.pathname);
+    const criticalCss = MyDocument.setCriticalCss(this.props.pathname);
     return (
       <html lang="en">
         <Head>
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="stylesheet" href={`/semantic/semantic.min.css?v=${version}`} />
+          {!MyDocument.shouldHaveCriticalCss(this.props.pathname) ?
+            <link rel="stylesheet" href={`/semantic/semantic.min.css?v=${version}`} /> :
+            <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
+          }
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
           <script
             dangerouslySetInnerHTML={{
