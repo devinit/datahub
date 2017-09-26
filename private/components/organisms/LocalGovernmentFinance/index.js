@@ -3,7 +3,6 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import { WhiteBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/molecules/MultiLinePartition';
-import config from 'visboxConfigs/localLinePartition';
 import QUERY from './query.graphql';
 
 const withData = graphql(QUERY, {
@@ -20,14 +19,13 @@ const withData = graphql(QUERY, {
 
     const {
       currencyCode = '',
-      startYear = 2015,
+      startYear = data.startYear,
       currencyUSD,
       expenditure = [],
       revenueAndGrants = [],
     } = data.localGovernmentFinance || {};
     return {
       loading,
-      config,
       currencyUSD,
       currencyCode,
       startYear,
