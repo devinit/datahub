@@ -10,8 +10,8 @@ script:
 - npm run vendor-css
 - npm run build-worker
 - npm run lint
-- npm run coverage
 - npm run build
+- npm run coverage
 cache:
 - node_modules
 env:
