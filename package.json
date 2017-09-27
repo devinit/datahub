@@ -47,7 +47,7 @@
     "graphql": "^0.10.3"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.9",
+    "@devinit/charts": "^1.6.11",
     "apollo-client": "^1.9.3",
     "apollo-fetch": "^0.6.0",
     "babel-cli": "^6.26.0",

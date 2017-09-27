@@ -22,6 +22,9 @@ export const area = {
     axisMinimum: 1980,
     axisMaximum: 2015,
   },
+  time: {
+    interpolate: true,
+  }
 };
 
 export const histogram = {

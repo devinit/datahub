@@ -3,11 +3,15 @@ import { red } from 'components/theme/semantic';
 export const area = {
   type: 'timearea',
   colors: [red],
+  labeling: {
+    suffix: '%',
+  },
   linearAxis: {
     showAxis: true,
     indicator: 'value',
     axisMargin: 0,
     ticking: 'sparse',
+    suffix: '%',
   },
   timeAxis: {
     showAxis: true,
@@ -17,6 +21,9 @@ export const area = {
     axisMinimum: 2000,
     axisMaximum: 2013,
   },
+  time: {
+    interpolate: true,
+  }
 };
 
 export const histogram = {
@@ -30,7 +37,7 @@ export const histogram = {
   linearAxis: {
     showAxis: false,
     indicator: 'value',
-    axisMaximum: 65
+    suffix: '%',
   },
   categoryAxis: {
     indicator: 'quintileName',
@@ -39,6 +46,9 @@ export const histogram = {
   },
   interactions: {
     enable: true,
+  },
+  tooltips: {
+    enable: false,
   },
   highlight: ['value bottom 20%']
 };

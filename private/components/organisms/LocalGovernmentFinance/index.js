@@ -20,17 +20,17 @@ const withData = graphql(QUERY, {
 
     const {
       currencyCode = '',
-      startYear = 2015,
+      startYear = data.startYear,
       currencyUSD,
       expenditure = [],
       revenueAndGrants = [],
     } = data.localGovernmentFinance || {};
     return {
       loading,
-      config,
       currencyUSD,
       currencyCode,
       startYear,
+      config,
       items: [
         {
           title: 'Revenue',
@@ -46,4 +46,7 @@ const withData = graphql(QUERY, {
   },
 });
 
-export default withData(props => <WhiteBg><Chart {...props} /></WhiteBg>);
+export default withData(props => {
+  console.log(props);
+  return <WhiteBg><Chart {...props} /></WhiteBg>;
+});

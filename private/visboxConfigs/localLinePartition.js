@@ -6,7 +6,6 @@ const line = {
     showAxis: true,
     showGridlines: true,
     ticking: 'sparse',
-    axisMinimum: 0,
   },
   timeAxis: {
     indicator: 'year',
@@ -14,7 +13,7 @@ const line = {
     axisMinimum: '2000',
     axisMaximum: '2018',
     ticking: 'years',
-    tickingStep: 10,
+    tickingStep: 1,
   },
   anchor: {
     start: '2015',
