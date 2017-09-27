@@ -27,7 +27,9 @@
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "format-p": "prettier-eslint --write \"private/components/molecules/AreaPartitionChart/index.js\"",
-    "deploy": "git checkout master && git rebase dev && git push origin master && git push origin dev && git checkout dev",
+    "patch": "release-it -i patch -n",
+    "feature": "release-it -i minor -n",
+    "breaking": "release-it -i major -n",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
     "analyze": "ANALYZE=1 next build",
@@ -118,7 +120,6 @@
     "prettier-eslint-cli": "^4.0.3",
     "pretty-format": "^21.1.0",
     "react-test-renderer": "^15.5.4",
-    "release-it": "^3.0.0",
     "semantic-ui": "^2.2.10",
     "usus": "^1.6.0"
   },
