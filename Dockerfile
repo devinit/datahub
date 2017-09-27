@@ -17,14 +17,6 @@ COPY . /src
 
 ENV NODE_ENV production
 
-# stattic data files
-RUN npm run pull
-# makes api calls that get cached on the API server
-RUN npm run precache
-RUN npm run vendor-css
-RUN npm run build-worker
-RUN npm run build
-
 EXPOSE 8080
 
 CMD npm run start
