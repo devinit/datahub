@@ -8,9 +8,6 @@ const config = {
     id: 'name',
     value: 'value',
   },
-  treemap: {
-    tile: 'binary',
-  },
 };
 
 export default config;
