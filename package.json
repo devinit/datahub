@@ -118,6 +118,7 @@
     "prettier-eslint-cli": "^4.0.3",
     "pretty-format": "^21.1.0",
     "react-test-renderer": "^15.5.4",
+    "release-it": "^3.0.0",
     "semantic-ui": "^2.2.10",
     "usus": "^1.6.0"
   },
