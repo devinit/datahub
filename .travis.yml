@@ -10,7 +10,19 @@ script:
 - npm run vendor-css
 - npm run build-worker
 - npm run lint
+- npm run build
 - npm run coverage
+deploy:
+  - provider: releases
+    api_key: GITHUB_KEY
+      secure: "git describe --tags"
+    file_glob: true
+    file: '.next/*'
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: devinit/datahub
+      branch: master
 cache:
 - node_modules
 env:
