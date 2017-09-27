@@ -20,7 +20,9 @@ deploy:
   file: './next/**'
   skip_cleanup: true
   on:
+    tags: true
     repo: devinit/datahub
+    branch: 'master'
 cache:
 - node_modules
 env:
