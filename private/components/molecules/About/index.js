@@ -11,7 +11,7 @@ if (process.browser) require('intersection-observer');
 
 export default () => {
   return (
-    <section>
+    <section id="about">
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
           DATA VISUALISATIONS

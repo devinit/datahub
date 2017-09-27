@@ -8,6 +8,7 @@ import CountrySearchInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from 'components/molecules/GlobalPictureCountrySearch';
 import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
+import {red} from 'components/theme/semantic';
 import type { State } from 'lib/reducers';
 import {shouldCacheData} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
@@ -54,7 +55,7 @@ class Front extends Component {
                 </b>{' '}
                 is the most comprehensive source for financial resource flow data alongside poverty,
                 social and vulnerability indicators.{' '}
-                <a href="#about">Read more about the data hub.</a>
+                <a href="#about" style={{color: red}}>Read more about the data hub.</a>
               </Grid.Column>
             </Grid>
           </Div>
