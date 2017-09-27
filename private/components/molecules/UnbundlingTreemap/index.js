@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
 import TreeChart from '../../atoms/TreeChart';
-import InteractiveChartToolBar from '../UnbundlingAidChartToolBar/index';
+import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
 
 export type Props = {
   loading: boolean,
@@ -25,7 +25,7 @@ type State = {
 
 const Container = glamorous.div({
   margin: '1em',
-  height: '32em',
+  height: '40em',
   position: 'relative',
 });
 
@@ -161,7 +161,7 @@ class UnbundlingTreemap extends React.Component {
             : <TreeChart
               config={this.props.config}
               data={this.props.bundles}
-              height="32em"
+              height="36em"
               onClick={d => this.zoomIn(d)}
             />}
           {this.state.position <= 1

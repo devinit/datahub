@@ -73,7 +73,7 @@ class RegionalProfile extends Component {
         <Div paddingTop={'4em'} paddingBottom={'1em'}>
           <Container textAlign="center">
             <Header ref={node => { this.lowerTabs = node; }} >
-              <Header.Content as="h2">Revenue</Header.Content>
+              <Header.Content as="h2">Revenue and Expenditure</Header.Content>
             </Header>
             <Hr borderTop={`2px solid ${lighterGrey}`} />
           </Container>

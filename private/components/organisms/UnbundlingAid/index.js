@@ -117,7 +117,7 @@ class Chart extends React.Component {
                   <Grid.Column width={8} style={{ padding: 0 }}>
                     <WithData compact {...this.props} />
                   </Grid.Column>
-                  <Grid.Column width={8} style={{ padding: 0 }}>
+                  <Grid.Column width={8} style={{ padding: 0}}>
                     <WithData compact {...this.props} />
                   </Grid.Column>
                 </Grid.Row>

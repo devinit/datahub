@@ -39,7 +39,7 @@ const withData = graphql(QUERY, {
         {
           title: 'Expenditure',
           data: expenditure,
-          inverted: true,
+          inverted: false
         },
       ]
     };

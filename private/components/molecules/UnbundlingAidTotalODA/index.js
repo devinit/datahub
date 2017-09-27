@@ -10,13 +10,13 @@ type Props = {
   aidType: string
 }
 const ParentContainer = glamorous.div({
-  height: '32em',
+  height: '36em',
   padding: '1em',
 });
 const Container = glamorous.div({
   position: 'absolute',
   zIndex: '2',
-  height: '30em',
+  height: '36em',
   backgroundColor: primaryColor,
   width: '100%',
   paddingTop: '8em',

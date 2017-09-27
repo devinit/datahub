@@ -1,0 +1,432 @@
+<!DOCTYPE html><html lang="en-US" ng-app="diApp" id="ng-app" ng-controller="AppController" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- <meta name="fragment" content="!"> -->
+
+	<title ng-bind="meta.title" class="ng-binding"></title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+
+	<meta property="og:title" content="">
+	<meta property="og:site_name" content="Development Initiatives">
+	<meta property="og:url " content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="">
+	<meta name="twitter:site" content="@devinitorg">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:creator" content="@devinitorg">
+	<meta name="twitter:image" content="">
+	
+	
+	<link rel="icon" href="/favicon.ico?v=2">
+
+<link rel="preload" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.css" as="style">
+<link rel="preload" href="diConcept/dist/styles.css?ver=0.1.1" as="style"><link rel="preload" href="/diConcept/dist/webfonts/geomanist/geomanist-bold-webfont.woff2" as="font">
+<link rel="preload" href="/diConcept/dist/webfonts/ss-pika/ss-pika.woff" as="font">
+<link rel="preload" href="/diConcept/dist/webfonts/geomanist/geomanist-regular-webfont.woff2" as="font">
+<link rel="preload" href="/diConcept/dist/webfonts/icomoon/fonts/icomoon.woff?-m5idaf" as="font"><style>*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-family:geomanist,sans-serif;font-size:62.5%;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body{margin:60px 0 0;font-size:1.6rem;line-height:1.5;color:#453f43;background:#fff}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}.site-header{position:fixed;top:0;left:0;width:100%;height:60px;background:#e8443a;z-index:450;overflow:visible;-webkit-box-shadow:0 0 16px rgba(0,0,0,.3);box-shadow:0 0 16px rgba(0,0,0,.3)}.ui-view-content{overflow:hidden}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}input{line-height:normal}input[type=range]{display:block;width:100%}#loading-bar,#loading-bar-spinner{pointer-events:none;-webkit-pointer-events:none;-webkit-transition:350ms linear all;-moz-transition:350ms linear all;-o-transition:350ms linear all;transition:350ms linear all}#loading-bar .bar{-webkit-transition:width 350ms;-moz-transition:width 350ms;-o-transition:width 350ms;transition:width 350ms;background:#fff;position:fixed;z-index:10002;top:0;left:0;width:100%;height:5px;border-bottom-right-radius:1px;border-top-right-radius:1px}.bg--blue,.bg--green,.bg--orange,.bg--purple,.bg--red,.bg--yellow{color:#fff}.bg--red{color:#fff;background:#e8443a}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}.container{width:750px}.container{width:970px}.container{width:1170px}.container:after,.container:before{content:" ";display:table}.header-logo{float:left}a{color:inherit;background-color:transparent;text-decoration:none}img{height:auto;border:0;vertical-align:middle}.header-logo img{height:2em;width:auto;margin-top:10px;-ms-interpolation-mode:bicubic}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}.header-btn--toggle{position:absolute;display:block;top:0;height:60px;width:60px;border:0;color:#fff;background:#e52e23;outline:0}.header-btn--toggle{position:relative;top:0;left:0;float:right}.navigation-toggle{right:0}.navigation-toggle{display:none}.navigation{position:fixed;top:60px;right:0;width:320px;height:100%;border-top:10px solid #e52e23;padding-bottom:4em;overflow:scroll;background:#fff;-webkit-box-shadow:0 4px 6px rgba(0,0,0,.3);box-shadow:0 4px 6px rgba(0,0,0,.3)}.navigation{float:right;position:relative;top:0;left:0;width:auto;border-top:0;padding-bottom:0;background:0 0;overflow:hidden;-webkit-box-shadow:none;box-shadow:none}ul{list-style-type:square}.navigation ul{margin:0;padding-left:0}.navigation__item{position:relative;display:block;margin-bottom:2px;height:60px;overflow:hidden}.navigation__item{float:left;height:60px;margin-bottom:0;color:#fff;overflow:visible}.navigation li{display:block}.small,small{font-size:1.4rem;font-weight:400}.navigation__item-title{display:block;height:60px;padding:1.8rem;font-weight:700;background:#e9e7e8;cursor:pointer;color:#453f43}.navigation__item-title{height:60px;padding:1.8rem 1rem;color:#fff;background:0 0}.navigation__item .navigation__item-title{-webkit-transition:-webkit-transform .3s cubic-bezier(.215,.61,.355,1);-moz-transition:-moz-transform .3s cubic-bezier(.215,.61,.355,1);-o-transition:-o-transform .3s cubic-bezier(.215,.61,.355,1);transition:transform .3s cubic-bezier(.215,.61,.355,1);-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1);-moz-transition-timing-function:cubic-bezier(.215,.61,.355,1);-o-transition-timing-function:cubic-bezier(.215,.61,.355,1);transition-timing-function:cubic-bezier(.215,.61,.355,1)}.navigation__item .navigation__item-title-icon{z-index:2;position:absolute;display:block;bottom:100%;width:100%;text-align:center;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);-o-transform:translate(0,0);transform:translate(0,0);-webkit-transition:-webkit-transform .3s cubic-bezier(.215,.61,.355,1);-moz-transition:-moz-transform .3s cubic-bezier(.215,.61,.355,1);-o-transition:-o-transform .3s cubic-bezier(.215,.61,.355,1);transition:transform .3s cubic-bezier(.215,.61,.355,1);-webkit-transition-timing-function:cubic-bezier(.215,.61,.355,1);-moz-transition-timing-function:cubic-bezier(.215,.61,.355,1);-o-transition-timing-function:cubic-bezier(.215,.61,.355,1);transition-timing-function:cubic-bezier(.215,.61,.355,1)}.ss-icon,.ss-icon.ss-pika,[class*=" ss-"].right:after,[class*=" ss-"].ss-pika.right:after,[class*=" ss-"].ss-pika:before,[class*=" ss-"]:before,[class^=ss-].right:after,[class^=ss-].ss-pika.right:after,[class^=ss-].ss-pika:before,[class^=ss-]:before{font-family:SSPika;font-style:normal;font-weight:400;text-decoration:none;text-rendering:optimizeLegibility;white-space:nowrap;-moz-font-feature-settings:"liga=1";-moz-font-feature-settings:"liga";-ms-font-feature-settings:"liga" 1;-o-font-feature-settings:"liga";font-feature-settings:"liga";-webkit-font-smoothing:antialiased}.ss-piechart.right:after,.ss-piechart:before{content:''}.navigation-drawer{overflow:hidden;position:relative}.navigation-drawer{position:fixed;top:60px;left:0;width:100%;height:auto;border-top:10px solid #e52e23;padding-top:1em;padding-bottom:2em;background:#fff;opacity:0;visibility:hidden;transition:all .3s;-webkit-transform:translate(0,10px);-ms-transform:translate(0,10px);-o-transform:translate(0,10px);transform:translate(0,10px);-webkit-box-shadow:0 4px 6px rgba(0,0,0,.3);box-shadow:0 4px 6px rgba(0,0,0,.3)}.row{margin-left:-15px;margin-right:-15px}.row--cards{margin-left:-2px;margin-right:-2px}.row-col-eq{overflow:hidden}.row:after,.row:before{content:" ";display:table}.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9{float:left}.col-md-6{width:50%}.col-md-offset-3{margin-left:25%}.card{display:block;padding-left:2px;padding-right:2px;margin-bottom:4px}.navigation .card{margin-bottom:0}.bg--light,.bg--white{color:#453f43}.bg--white{background:#fff}.col-eq{position:relative}.navigation-drawer__item{padding:.4rem 1.6rem}.navigation-drawer__item li{padding:1rem 1.6rem;border-bottom:2px solid #eeeced}.navigation-drawer__item li{padding:.8rem 1.6rem;border-bottom:0}.ss-scatterchart.right:after,.ss-scatterchart:before{content:''}.row:after{clear:both}.col-eq:after{position:absolute;content:"";top:100%;left:0;width:100%;height:400px;background:#fff}.container:after{clear:both}.bg--light{background:#e9e7e8}.col-md-12{width:100%}.navigation-drawer__item .two-columns{-webkit-column-count:2;-moz-column-count:2;column-count:2}.navigation-drawer__item .two-columns li{display:inline-block;width:100%}.ss-searchbarcode.right:after,.ss-searchbarcode:before{content:''}.ss-usergroup.right:after,.ss-usergroup:before{content:''}.bg--dark,.bg--darker{color:#e9e7e8}.bg--dark{background:#453f43}.p-t--1{padding-top:1em}.p-b--2{padding-bottom:2em}.m-b--1{margin-bottom:1em}.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{float:left}.col-sm-6{width:50%}.col-md-3{width:25%}.li-group{margin-top:0;margin-bottom:1em;padding-left:0}.m-b--0{margin-bottom:0}.li-group__header,.li-group__item{position:relative;padding-left:2em;padding-right:3.5em;border-bottom:2px solid #e9e7e8}.li-group__item{display:block;padding-top:.88em;padding-bottom:.88em}.p-b--0{padding-bottom:0}.site-footer .li-group__item{border-bottom:0}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-top:1em;margin-bottom:1em;line-height:1.25;font-weight:700;text-transform:none}.h4,h4{font-size:2rem}.p-b--05{padding-bottom:.5em}.p-t--05{padding-top:.5em}p{margin-top:0;margin-bottom:1.5em}.p-t--0{padding-top:0}.p-b--1{padding-bottom:1em}.col-sm-offset-3{margin-left:25%}.text--center,.text-center{text-align:center}.site-footer .social-media_circle-icon{display:inline-block;border:2px solid #d0cccf;border-radius:50%;font-size:1.5em;height:2.5em;width:2.5em;line-height:2.5em;text-align:center;background:0 0}[class*=" icon-"],[class^=icon-]{font-family:icomoon;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-twitter:before{content:"\f243"}.icon-facebook:before{content:"\f231"}.icon-youtube:before{content:"\f24d"}.icon-flickr-box:before{content:"\f16e"}.p-t--2{padding-top:2em}.h3,h3{font-size:2.4rem}.color-accent{color:#e8443a}.m-b--05{margin-bottom:.5em}.m-t--2{margin-top:2em}.col-md-10{width:83.33333333%}.col-md-offset-1{margin-left:8.33333333%}.KeyStat p,.text--muted{color:#60575d}.where-are-the-global-p20 .selectBar{font-size:20px;color:#60575d;background:#e9e7e8;width:100%;text-align:center;font-weight:700}.where-are-the-global-p20 .selectBar select{color:#60575d;text-align:center;font-weight:700;border-radius:.25em}.where-are-the-global-p20 select#isoSelect{font-size:1em;margin:.67em;-webkit-margin-before:.67em;-webkit-margin-after:.67em;-webkit-margin-start:0;-webkit-margin-end:0}.where-are-the-global-p20 #indicatorBar{width:100%;padding-top:15px;padding-bottom:15px}.where-are-the-global-p20 #indicatorBar #wrapper{text-align:center}.where-are-the-global-p20 #indicatorBar #tableWrap{display:inline-block}table{border-collapse:collapse;border-spacing:0}table{background-color:transparent}td,th{padding:0}b,strong{font-weight:700}.where-are-the-global-p20 .indicator{border-radius:.25em}.where-are-the-global-p20 .bg--dark select{color:#453f43}.where-are-the-global-p20 .indicator option:not(.disabled){color:#000}.where-are-the-global-p20 .info-button{cursor:pointer;display:inline-block;margin-left:15px}.ss-info.right:after,.ss-info:before{content:'ℹ'}.tooltip{position:absolute;color:#453f43;z-index:100000;padding-left:1em;padding-right:1em;background:#fff;text-align:center;opacity:1;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);-o-transform:translate(-50%,0);transform:translate(-50%,0);-webkit-box-shadow:0 2px 14px rgba(0,0,0,.3);box-shadow:0 2px 14px rgba(0,0,0,.3)}.where-are-the-global-p20 #helpTooltip{display:none}.btn{-webkit-box-sizing:border-box;display:inline-block;line-height:inherit;padding:.75em 1.25em;margin-bottom:0;font-weight:inherit;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:2px solid transparent;-webkit-border-radius:.25em;-moz-border-radius:.25em;border-radius:.25em;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-transition:all .25s;-o-transition:all .25s;transition:all .25s}.btn--small{padding:.25em .625em;font-size:.9em}.btn--light{color:#453f43;background:#e9e7e8;border-color:transparent}.tour-overlay-toggle{font-weight:400;color:#453f43;background:#d0cccf;border-color:transparent}.h1,.h2,h1,h2{font-size:3.2rem}.h1,.h2,h1,h2{font-size:4rem}.where-are-the-global-p20 #subtitle,.where-are-the-global-p20 #visTitle{text-align:center}.where-are-the-global-p20 #subtitle{font-size:16px}.where-are-the-global-p20 div#err,.where-are-the-global-p20 div#venn{min-width:500px;max-width:800px;width:100%;margin-left:auto;margin-right:auto;text-align:center}.text--left,.text-left{text-align:left}.tour-overlay{position:absolute;top:-50px;left:20px;right:20px;bottom:0;z-index:200;background:rgba(0,0,0,.65);border:1px solid #000;border-radius:5px;color:#fff}.where-are-the-global-p20 .tour-overlay{top:-150px;bottom:-80px}.btn-group{position:relative;overflow:hidden}.where-are-the-global-p20 .btn-group{display:flex;justify-content:center;padding:0}.btn.active,.btn:active{outline:0;background-image:none;-webkit-box-shadow:none;box-shadow:none}.btn-group .btn{display:block;float:left;border-radius:0}.btn-group .btn:first-child{border-top-left-radius:4px;border-bottom-left-radius:4px}.btn-group .btn--light.active{background:#d0cccf}.btn--dark{color:#fff;background:#453f43;border-color:transparent}.btn-group .btn:last-child{border-top-right-radius:4px;border-bottom-right-radius:4px}.where-are-the-global-p20 #share{position:absolute;bottom:0;right:5%}.ss-share{position:relative;top:2px;left:-3px}.ss-share.right:after,.ss-share:before{content:''}.world-map-tooltip{position:absolute;background-color:rgba(0,0,0,.85);color:#fff;padding:5px 10px;font-size:.8em;border-radius:3px;text-align:center}.where-are-the-global-p20 #tooltip{font-style:italic;max-width:200px;display:none}.where-are-the-global-p20 #narrative{padding-left:15px}.where-are-the-global-p20 #narrative h3{color:#e8443a}.where-are-the-global-p20 #embededVideo{display:flex;justify-content:center}.beta-message{position:fixed;bottom:0;left:0;width:100%;z-index:2000;-webkit-transform:translate(0,100%);-ms-transform:translate(0,100%);-o-transform:translate(0,100%);transform:translate(0,100%);-webkit-transition:all .5s;-o-transition:all .5s;transition:all .5s}.show-message{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);-o-transform:translate(0,0);transform:translate(0,0)}.where-are-the-global-p20 .beta-message{font-weight:700}.beta-message p{display:inline-block}.where-are-the-global-p20 .beta-message p{margin-top:10px;margin-bottom:10px}.where-are-the-global-p20 .tooltip-close{font-style:normal}.where-are-the-global-p20 .tooltip-close{position:absolute;right:10px;top:5px;cursor:pointer}svg:not(:root){overflow:hidden}#loading-bar-spinner.ng-enter.ng-enter-active,#loading-bar-spinner.ng-leave,#loading-bar.ng-enter.ng-enter-active,#loading-bar.ng-leave{opacity:1}#loading-bar-spinner.ng-enter,#loading-bar-spinner.ng-leave.ng-leave-active,#loading-bar.ng-enter,#loading-bar.ng-leave.ng-leave-active{opacity:0}</style></head>
+<body class="home blog" ng-class="{'body-block-scroll':siteNav.bodyScrollBlock}">
+	<header class="site-header" site-navigation=""><div class="bg--red" style="position:relative;z-index:2;height:60px;">
+<div class="container">
+
+  <div class="header-logo">
+    <a href="http://devinit.org/" tabindex="1"><img ng-src="diConcept/img/logo.png" alt="Development Initiatives" height="32" width="132" src="diConcept/img/logo.png"></a>
+  </div>
+
+  <!-- Navigation toggle for mobile -->
+  <button class="header-btn--toggle navigation-toggle" ng-click="toggleDrawer();searchState=false">
+    <i ng-class="{'ss-rows':!siteNav.drawer,'ss-delete':siteNav.drawer}" class="ss-rows"></i>
+  </button>
+
+  <!-- Search input toggle -->
+
+
+  <!-- Site navigation -->
+  <nav class="navigation" ng-class="{'navigation--open':siteNav.drawer}">
+    <ul>
+
+    <!-- Global Picture -->
+      <li class="navigation__item" tabindex="1" ng-class="{'navigation__item--open':siteNav.drawers[0], 'navigation__item--active':siteNav.drawers[0]}">
+        <span class="navigation__item-title small">
+          <a href="#!/">Global Picture</a>
+        </span>
+      </li>
+      <!-- Country profiles -->
+     <li class="navigation__item" tabindex="2" ng-mouseenter="openDrawer(3)" ng-mouseleave="closeDrawer()" ng-click="clickToggleDrawer(3)" ng-class="{'navigation__item--open':siteNav.drawers[3], 'navigation__item--active':siteNav.drawers[3]}">
+       <i class="ss-piechart navigation__item-title-icon"></i>
+       <span class="navigation__item-title small"><a href="#!/country/">Profiles</a></span>
+
+       <ul class="navigation-drawer">
+         <div class="container">
+           <div>
+             <div class="row row--cards row-col-eq">
+               <div class="col-md-6 col-md-offset-3 card">
+                 <div class="bg--white col-eq">
+
+                   <li class="navigation-drawer__item">
+                      <ul class="row">
+                        <li class="col-md-6">
+                            <a href="#!/country/">
+                                <i class="ss ss-scatterchart"></i>
+                                Country Profiles
+                            </a>
+                        </li>
+                        <li class="col-md-6">
+                            <a href="#!/multilaterals">
+                                <i class="ss ss-scatterchart"></i>
+                                Multilateral Profiles
+                            </a>
+                        </li>
+                      </ul>
+                   </li>
+
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </ul>
+     </li>
+
+
+     <!-- unbundling aid -->
+      <li class="navigation__item" tabindex="3" ng-class="{'navigation__item--open':siteNav.drawers[0], 'navigation__item--active':siteNav.drawers[0]}">
+        <span class="navigation__item-title small">
+          <a href="#!/post/unbundling-aid">Unbundling aid</a>
+        </span>
+      </li>
+
+      <!-- spotlight on uganda -->
+      <li class="navigation__item" tabindex="4" ng-class="{'navigation__item--open':siteNav.drawers[0], 'navigation__item--active':siteNav.drawers[0]}">
+        <span class="navigation__item-title small">
+          <a href="#!/spotlight-on-uganda">Spotlight on Uganda</a>
+        </span>
+      </li>
+
+    <!-- other visualisations-->
+      <li class="navigation__item" tabindex="5" ng-mouseenter="openDrawer(1)" ng-mouseleave="closeDrawer()" ng-click="clickToggleDrawer(1)" ng-class="{'navigation__item--open':siteNav.drawers[1], 'navigation__item--active':siteNav.drawers[1]}">
+        <i class="ss-piechart navigation__item-title-icon"></i>
+        <span class="navigation__item-title small">Other Visualisations</span>
+        <!-- <i class="navigation__item-title-caret"></i> -->
+
+        <ul class="navigation-drawer">
+          <div class="container">
+            <div class="bg--light">
+
+              <div class="row row--cards row-col-eq">
+
+                <div class="col-md-12 card">
+                  <div class="bg--white col-eq">
+                    <li class="navigation-drawer__item">
+                      <ul class="two-columns">
+
+                        <li><a href="#!/post/unbundling-other-official-flows" ng-click="toggleDrawer()"><i class="ss ss-searchbarcode"></i> Unbundling other official flows</a></li>
+                        <li><a href="#!/post/where-are-the-poor" ng-click="toggleDrawer()"><i class="ss ss-usergroup"></i> Where are the poor and where will they be?</a></li>
+                         <li><a href="#!/who-are-the-global-p20" ng-click="toggleDrawer()"><i class="ss ss-usergroup"></i>Who are the global P20</a></li>
+                        <li>
+                            <a href="#!/post/poverty">
+                                <i class="ss ss-scatterchart"></i>
+                                Are domestic public resources able to meet the needs of the poorest people?
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#!/post/oda-donor" ng-click="toggleDrawer()">
+                            <i class="ss ss-scatterchart"></i>
+                            Different providers, different priorities
+                            </a>
+                        </li>
+                      </ul>
+
+                    </li>
+                  </div>
+                </div>
+
+                <!-- <div class="col-md-4 card">
+                  <div class="bg--white col-eq">
+                    <li class="navigation-drawer__item">
+                      <a href="#!/" class="navigation-drawer__item-title" ng-click="toggleDrawer()">Country profiles</a>
+                      <ul>
+                        <li><a href="#!/country/kenya" ng-click="toggleDrawer()">Kenya</a></li>
+                        <li><a href="#!/country/nigeria" ng-click="toggleDrawer()">Nigeria</a></li>
+                        <li><a href="#!/country/uganda" ng-click="toggleDrawer()">Uganda</a></li>
+                        <li><a href="#!/country/united-kingdom" ng-click="toggleDrawer()">United Kingdom</a></li>
+
+                        <li><a href="/" class="btn btn--seeAll small" ng-click="toggleDrawer()">See all profiles</a></li>
+
+                      </ul>
+                    </li>
+                  </div>
+                </div> -->
+
+              </div>
+            </div>
+          </div>
+        </ul>
+      </li>
+
+      <!-- methodology -->
+      <li class="navigation__item" tabindex="6" ng-class="{'navigation__item--open':siteNav.drawers[0], 'navigation__item--active':siteNav.drawers[0]}">
+        <span class="navigation__item-title small">
+          <a href="#!/data/methodology/"> Methodology </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+</header>
+
+    <!-- uiView:  --><div class="ui-view-content ng-scope" ng-class="{'content-fade': siteNav.bodyScrollBlock}" ng-click="bodyCloseNavigation()" ui-view=""><div class="where-are-the-global-p20 ng-scope" ng-controller="WhereAreTheGlobalP20">
+    <div class="interactive">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="interactive-title">
+                        <h3 class="h3 m-t--2 m-b--05 color-accent" data-step="2" data-intro="Hello step two!">Who are the global P20?</h3>
+                        <p class="col-md-10 col-md-offset-1 text--muted">
+                            The P20 are the 1.4 billion men, women and children living in over 100 countries who are the poorest 20% of the global population.
+                            People in the P20 often experience multiple and intersecting deprivations, disadvantages and
+                            discrimination based on identity, circumstances and life events. The below visualisation enables
+                            you to explore how these experiences and identities intersect for the P20 across different countries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="selectBar">
+                Who are the global P20 in <select id="isoSelect"><option class="iso" value="AL">Albania (2008)</option><option class="iso" value="AO">Angola (2011)</option><option class="iso" value="AM">Armenia (2010)</option><option class="iso" value="AZ">Azerbaijan (2006)</option><option class="iso" value="BD">Bangladesh (2014)</option><option class="iso" value="BB">Barbados (2012)</option><option class="iso" value="BY">Belarus (2012)</option><option class="iso" value="BZ">Belize (2011)</option><option class="iso" value="BJ">Benin (2012)</option><option class="iso" value="BT">Bhutan (2010)</option><option class="iso" value="BO">Bolivia  (2008)</option><option class="iso" value="BA">Bosnia &amp; Herzegovina (2011)</option><option class="iso" value="BW">Botswana (2009)</option><option class="iso" value="BR">Brazil (2006)</option><option class="iso" value="BF">Burkina Faso (2014)</option><option class="iso" value="BI">Burundi (2010)</option><option class="iso" value="KH">Cambodia (2014)</option><option class="iso" value="CM">Cameroon (2011)</option><option class="iso" value="CV">Cape Verde (2007)</option><option class="iso" value="CF">Central African Republic (2010)</option><option class="iso" value="TD">Chad (2014)</option><option class="iso" value="CL">Chile (2013)</option><option class="iso" value="CN">China (2012)</option><option class="iso" value="CO">Colombia (2010)</option><option class="iso" value="KM">Comoros (2012)</option><option class="iso" value="CG">Congo (2011)</option><option class="iso" value="CR">Costa Rica (2011)</option><option class="iso" value="HR">Croatia (2012)</option><option class="iso" value="CI">Côte d'Ivoire (2012)</option><option class="iso" value="CD">Democratic Republic of the Congo (2013)</option><option class="iso" value="DJ">Djibouti (2013)</option><option class="iso" value="DO">Dominican Republic (2013)</option><option class="iso" value="EC">Ecuador (2013)</option><option class="iso" value="SV">El Salvador (2013)</option><option class="iso" value="EE">Estonia (2012)</option><option class="iso" value="ET">Ethiopia (2011)</option><option class="iso" value="FJ">Fiji (2008)</option><option class="iso" value="GA">Gabon (2012)</option><option class="iso" value="GM">Gambia (2013)</option><option class="iso" value="GE">Georgia (2005)</option><option class="iso" value="GH">Ghana (2014)</option><option class="iso" value="GT">Guatemala (multiple)</option><option class="iso" value="GN">Guinea (2012)</option><option class="iso" value="GW">Guinea-Bissau (2006)</option><option class="iso" value="GY">Guyana (2009)</option><option class="iso" value="HT">Haiti (2012)</option><option class="iso" value="HN">Honduras (2012)</option><option class="iso" value="HU">Hungary (2012)</option><option class="iso" value="IN">India (2006)</option><option class="iso" value="ID">Indonesia (2012)</option><option class="iso" value="IR">Iran (2013)</option><option class="iso" value="JM">Jamaica (2011)</option><option class="iso" value="KZ">Kazakhstan (2010)</option><option class="iso" value="KE">Kenya (2015)</option><option class="iso" value="KI">Kiribati (2006)</option><option class="iso" value="XK">Kosovo (2014)</option><option class="iso" value="KG">Kyrgyzstan (2014)</option><option class="iso" value="LA">Lao (2011)</option><option class="iso" value="LV">Latvia (2012)</option><option class="iso" value="LS">Lesotho (2014)</option><option class="iso" value="LR">Liberia (2013)</option><option class="iso" value="LT">Lithuania (2012)</option><option class="iso" value="MK">Macedonia (2011)</option><option class="iso" value="MG">Madagascar (2013)</option><option class="iso" value="MW">Malawi (2014)</option><option class="iso" value="MY">Malaysia (2009)</option><option class="iso" value="MV">Maldives (2009)</option><option class="iso" value="ML">Mali (2012)</option><option class="iso" value="MR">Mauritania (2011)</option><option class="iso" value="MX">Mexico (multiple)</option><option class="iso" value="FM">Micronesia (2013)</option><option class="iso" value="MD">Moldova (2012)</option><option class="iso" value="MN">Mongolia (2013)</option><option class="iso" value="ME">Montenegro (2013)</option><option class="iso" value="MA">Morocco (2006)</option><option class="iso" value="MZ">Mozambique (2011)</option><option class="iso" value="NA">Namibia (2013)</option><option class="iso" value="NP">Nepal (2014)</option><option class="iso" value="NI">Nicaragua (multiple)</option><option class="iso" value="NE">Niger (2012)</option><option class="iso" value="NG">Nigeria (2013)</option><option class="iso" value="PK">Pakistan (2012)</option><option class="iso" value="PS">Palestine (2014)</option><option class="iso" value="PA">Panama (2013)</option><option class="iso" value="PG">Papua New Guinea (2009)</option><option class="iso" value="PY">Paraguay (2013)</option><option class="iso" value="PE">Peru (2012)</option><option class="iso" value="PH">Philippines (2013)</option><option class="iso" value="PL">Poland (2013)</option><option class="iso" value="RO">Romania (2013)</option><option class="iso" value="RU">Russian Federation (2012)</option><option class="iso" value="RW">Rwanda (2015)</option><option class="iso" value="LC">Saint Lucia (2012)</option><option class="iso" value="WS">Samoa (2008)</option><option class="iso" value="SN">Senegal (2014)</option><option class="iso" value="RS">Serbia (2014)</option><option class="iso" value="SC">Seychelles (2013)</option><option class="iso" value="SL">Sierra Leone (2013)</option><option class="iso" value="SK">Slovakia (2012)</option><option class="iso" value="SI">Slovenia (2012)</option><option class="iso" value="SB">Solomon Islands (2005)</option><option class="iso" value="ZA">South Africa (2011)</option><option class="iso" value="SS">South Sudan (2010)</option><option class="iso" value="LK">Sri Lanka (2012)</option><option class="iso" value="SD">Sudan (2014)</option><option class="iso" value="SR">Suriname (2010)</option><option class="iso" value="SZ">Swaziland (2010)</option><option class="iso" value="ST">São Tomé and Príncipe (2008)</option><option class="iso" value="TJ">Tajikistan (2012)</option><option class="iso" value="TZ">Tanzania (2012)</option><option class="iso" value="TH">Thailand (2012)</option><option class="iso" value="TL">Timor-Leste (2009)</option><option class="iso" value="TG">Togo (2014)</option><option class="iso" value="TO">Tonga (2009)</option><option class="iso" value="TT">Trinidad &amp; Tobago (2006)</option><option class="iso" value="TN">Tunisia (2012)</option><option class="iso" value="TR">Turkey (2013)</option><option class="iso" value="TM">Turkmenistan (2006)</option><option class="iso" value="TV">Tuvalu (2010)</option><option class="iso" value="UG">Uganda (2014)</option><option class="iso" value="UA">Ukraine (2012)</option><option class="iso" value="UY">Uruguay (2013)</option><option class="iso" value="UZ">Uzbekistan (2006)</option><option class="iso" value="VU">Vanuatu (2007)</option><option class="iso" value="VE">Venezuela (2006)</option><option class="iso" value="VN">Viet Nam (2014)</option><option class="iso" value="ZM">Zambia (2013)</option><option class="iso" value="ZW">Zimbabwe (2014)</option><option class="iso" disabled="disabled" value="AF">No data - Afghanistan</option><option class="iso" disabled="disabled" value="DZ">No data - Algeria</option><option class="iso" disabled="disabled" value="AR">No data - Argentina</option><option class="iso" disabled="disabled" value="AU">No data - Australia</option><option class="iso" disabled="disabled" value="AT">No data - Austria</option><option class="iso" disabled="disabled" value="BE">No data - Belgium</option><option class="iso" disabled="disabled" value="BG">No data - Bulgaria</option><option class="iso" disabled="disabled" value="CA">No data - Canada</option><option class="iso" disabled="disabled" value="CU">No data - Cuba</option><option class="iso" disabled="disabled" value="CY">No data - Cyprus</option><option class="iso" disabled="disabled" value="CZ">No data - Czech Republic</option><option class="iso" disabled="disabled" value="DK">No data - Denmark</option><option class="iso" disabled="disabled" value="EG">No data - Egypt</option><option class="iso" disabled="disabled" value="ER">No data - Eritrea</option><option class="iso" disabled="disabled" value="FI">No data - Finland</option><option class="iso" disabled="disabled" value="FR">No data - France</option><option class="iso" disabled="disabled" value="DE">No data - Germany</option><option class="iso" disabled="disabled" value="GR">No data - Greece</option><option class="iso" disabled="disabled" value="IS">No data - Iceland</option><option class="iso" disabled="disabled" value="IQ">No data - Iraq</option><option class="iso" disabled="disabled" value="IE">No data - Ireland</option><option class="iso" disabled="disabled" value="IL">No data - Israel</option><option class="iso" disabled="disabled" value="IT">No data - Italy</option><option class="iso" disabled="disabled" value="JP">No data - Japan</option><option class="iso" disabled="disabled" value="JO">No data - Jordan</option><option class="iso" disabled="disabled" value="KW">No data - Kuwait</option><option class="iso" disabled="disabled" value="LB">No data - Lebanon</option><option class="iso" disabled="disabled" value="LY">No data - Libya</option><option class="iso" disabled="disabled" value="LU">No data - Luxembourg</option><option class="iso" disabled="disabled" value="MU">No data - Mauritius</option><option class="iso" disabled="disabled" value="MM">No data - Myanmar</option><option class="iso" disabled="disabled" value="NL">No data - Netherlands</option><option class="iso" disabled="disabled" value="NZ">No data - New Zealand</option><option class="iso" disabled="disabled" value="KP">No data - North Korea</option><option class="iso" disabled="disabled" value="NO">No data - Norway</option><option class="iso" disabled="disabled" value="OM">No data - Oman</option><option class="iso" disabled="disabled" value="PT">No data - Portugal</option><option class="iso" disabled="disabled" value="QA">No data - Qatar</option><option class="iso" disabled="disabled" value="SA">No data - Saudi Arabia</option><option class="iso" disabled="disabled" value="SO">No data - Somalia</option><option class="iso" disabled="disabled" value="KR">No data - South Korea</option><option class="iso" disabled="disabled" value="ES">No data - Spain</option><option class="iso" disabled="disabled" value="SE">No data - Sweden</option><option class="iso" disabled="disabled" value="CH">No data - Switzerland</option><option class="iso" disabled="disabled" value="SY">No data - Syria</option><option class="iso" disabled="disabled" value="AE">No data - UAE</option><option class="iso" disabled="disabled" value="GB">No data - UK</option><option class="iso" disabled="disabled" value="US">No data - USA</option><option class="iso" disabled="disabled" value="YE">No data - Yemen</option></select>?
+            </div>
+    
+            <div id="indicatorBar" class="bg--dark">
+                <div id="wrapper">
+                    <div id="tableWrap">
+                        <table>
+                            <tbody><tr>
+                                <td><b>Poverty status</b></td>
+                            </tr>
+                            <tr>
+                                <td><select id="Xselect" class="indicator"><option value="p20" class="indicator">P20</option><option value="non.p20" class="indicator">The rest of the population (not in the P20)</option><option value="ext" class="indicator">Extreme poverty &lt; $1.90 per day</option></select></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+
+                    <div id="tableWrap">
+                        <table>
+                            <tbody><tr>
+                                <td><b>Indicator 2</b></td>
+                            </tr>
+                            <tr>
+                                <td><select id="Yselect" class="indicator"><option value="blank1" class="indicator">None selected</option><option value="p20" class="indicator">P20</option><option value="non.p20" class="indicator">The rest of the population (not in the P20)</option><option value="ext" class="indicator">Living in extreme poverty (&lt;$1.90 per day)</option><option value="stunted" class="indicator">Experiencing stunting (under 5)</option><option value="no.birth.reg" class="indicator">Birth not registered (under 5)</option><option value="urban" class="indicator">Urban</option><option value="rural" class="indicator">Rural</option><option value="female" class="indicator">Female</option><option value="male" class="indicator">Male</option><option value="under5" class="indicator">Younger than 5 years of age</option><option value="fiveto14" class="indicator">Aged 5 to 14 years</option><option value="fifteento49" class="indicator">Aged 15 to 49 years</option><option value="gt49" class="indicator">Older than 49 years</option><option value="no.educ" class="indicator">No education or preschool only (over 25)</option><option value="primary" class="indicator">Primary education (over 25)</option><option value="secondary" class="indicator">Secondary education (over 25)</option><option value="higher" class="indicator">Higher education (over 25)</option><option value="no.skilled.attendant" class="indicator">Had no skilled attendant at birth (girls and women 15 to 49)</option></select></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+
+                    <div id="tableWrap">
+                        <table>
+                            <tbody><tr>
+                                <td><b>Indicator 3</b></td>
+                            </tr>
+                            <tr>
+                                <td><select id="Zselect" class="indicator"><option value="blank2" class="indicator">None selected</option><option value="p20" class="indicator">P20</option><option value="non.p20" class="indicator">The rest of the population (not in the P20)</option><option value="ext" class="indicator">Living in extreme poverty (&lt;$1.90 per day)</option><option value="stunted" class="indicator">Experiencing stunting (under 5)</option><option value="no.birth.reg" class="indicator">Birth not registered (under 5)</option><option value="urban" class="indicator">Urban</option><option value="rural" class="indicator">Rural</option><option value="female" class="indicator">Female</option><option value="male" class="indicator">Male</option><option value="under5" class="indicator">Younger than 5 years of age</option><option value="fiveto14" class="indicator">Aged 5 to 14 years</option><option value="fifteento49" class="indicator">Aged 15 to 49 years</option><option value="gt49" class="indicator">Older than 49 years</option><option value="no.educ" class="indicator">No education or preschool (over 25)</option><option value="primary" class="indicator">Primary education (over 25)</option><option value="secondary" class="indicator">Secondary education (over 25)</option><option value="higher" class="indicator">Higher education (over 25)</option><option value="no.skilled.attendant" class="indicator">Had no skilled attendant at birth (girls and women 15 to 49)</option></select></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="info-button" id="showHelp">
+                        <i class="ss-info"></i>
+                    </div>
+                    <div id="helpTooltip" class="tooltip" style="top: 400px; left: 610px; opacity: 1; transform: translateY(-110%) translateX(-50%);">
+                        <div class="select-tooltip"><strong>Note: </strong>Some indicators are only measured for certain population groups. Selecting
+                            'Experience stunting' or 'Birth not registered' limits the selected population to children aged
+                            under 5 years. Selecting the education level limits the selected population to adults aged 25
+                            years and older. Selecting 'Had no skilled attendant at birth' limits the selected population
+                            to girls and women aged 15 to 49 years.</div><i class="tooltip-close">✖</i></div>
+                    <a id="tour" class="btn btn--small btn--light tour-overlay-toggle">Using this visualisation</a>
+                </div>
+            </div>
+            <h2 id="subtitle"></h2>
+            <div style="position:relative;">
+                <div id="venn"><svg viewBox="0 0 800 300"><g class="venn-area venn-circle" data-venn-sets="P20: 3%"><path d="
+M 537.6999999999999 150 
+m -23.741520461302244 0 
+a 23.741520461302244 23.741520461302244 0 1 0 47.48304092260449 0 
+a 23.741520461302244 23.741520461302244 0 1 0 -47.48304092260449 0" style="fill-opacity: 0.65; fill: rgb(232, 68, 57); stroke-width: 1; stroke-opacity: 1; stroke: rgb(162, 48, 40);"></path><text class="label" text-anchor="middle" dy=".35em" x="537" y="150" style="fill: black; font-size: 15px; display: none;"><tspan x="537" y="150" dy="-0.20000000000000007em">P20:</tspan><tspan x="537" y="150" dy="0.9em">3%</tspan></text></g><g class="venn-area venn-circle" data-venn-sets="Not in the P20: 97%"><path d="
+M 373.5584795386977 150 
+m -135 0 
+a 135 135 0 1 0 270 0 
+a 135 135 0 1 0 -270 0" style="fill-opacity: 0.65; fill: rgb(248, 193, 178); stroke-width: 1; stroke-opacity: 1; stroke: rgb(174, 135, 125);"></path><text class="label" text-anchor="middle" dy=".35em" x="373" y="150" style="fill: black; font-size: 15px; display: none;"><tspan x="373" y="150" dy="-0.20000000000000007em">Not in the P20:</tspan><tspan x="373" y="150" dy="0.9em">97%</tspan></text></g><g class="venn-area venn-intersection" data-venn-sets="P20: 3%_Not in the P20: 97%"><path d="M 0 0" style="fill-opacity: 0;"></path><text class="label" text-anchor="middle" dy=".35em" x="0" y="-1000" style="fill: rgb(68, 68, 68); font-size: 15px; display: none;"><tspan x="0" y="-1000" dy="0.35em"></tspan></text></g><text class="clone" text-anchor="middle" dy=".35em" x="537" y="150" style="fill: black; font-size: 15px;">P20: 3%</text><text class="clone" text-anchor="middle" dy=".35em" x="373" y="150" style="fill: black; font-size: 15px;">Not in the P20: 97%</text></svg></div>
+                <div class="tour-overlay tour-datahub text-left" onclick="$('.tour-overlay').toggle()" style="display:none;">
+                    <div class="tour-overlay-content">
+                        <h3 class="h3 m-t--0">
+                            <a class="tour-overlay-close"><i class="ss-delete"></i></a>
+                        </h3>
+                        <ul class="tour-items">
+                            <li class="tour-item-2"> <i class="ss-up"></i><br>Change poverty status</li>
+                            <li class="tour-item-3"><i class="ss-left"></i> Change country</li>
+                            <li class="tour-item-4"> <i class="ss-up"></i><br>Change indicators</li>
+                            <li class="tour-item-5"><i class="ss-left"></i> Find more information</li>
+                            <li class="tour-item-7">Hover over area to<br>to see data snapshot</li>
+                            <li class="tour-item-9">Switch between percentages and absolute numbers <i class="ss-right"></i></li>
+                            <li class="tour-item-10">Share the chart you've created<br><i class="ss-down"></i></li>
+                            <li class="tour-item-11">Scroll down for more<br>information and data download<br><i class="ss-down"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="err" style="display:none;">
+                <b>Sorry, cannot display this combination of variables.</b>
+            </div>
+            <div class="btn-group" id="popToggle">
+                <a class="button btn btn--light active" id="perc">Population percentage</a>
+                <a class="button btn btn--light" id="pop">Population number</a>
+                <div id="share" class="btn btn--dark" url="http://data.devinit.org/#!/who-are-the-global-p20?id=AL&amp;t=perc&amp;i1=p20&amp;i2=non.p20" onclick="prompt('Press Ctrl + C to copy to clipboard',$(this).attr('url'))" style="margin-top: 0.3em;"><i class="ss-share"></i> Share this chart</div>
+            </div>
+            <div id="tooltip" class="world-map-tooltip">
+                <img style="max-width: 20px;max-height: 15px;" src="http://data.devinit.org/diConcept/img/flags/svg/AL.svg">
+                <p></p>
+            </div>
+            <div id="narrative" class="container">
+                <h3>About the P20 Initiative</h3>
+                <p>The <a class="color-accent" href="http://devinit.org/p20i/">P20 Initiative</a> focuses on the people who
+                    are the poorest 20% of the global population. It aims to track their progress and improve information
+                    about their lives in order to ensure no one is left behind in efforts to tackle poverty.</p>
+                <p><a class="color-accent" href="https://sustainabledevelopment.un.org/post2015/transformingourworld" target="_blank">Agenda 2030</a>                    and the <a class="color-accent" href="http://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="_blank">Sustainable Development Goals</a> have brought us a global commitment to end extreme
+                    poverty and ensure no one is left behind. For this ambition to be met, we need to know who the poorest
+                    people in the world are, understand their lives, and ensure they are included in progress.</p>
+                <div id="embededVideo">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DhGv6Dh_jCc" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+                <h3>Methodology</h3>
+                <p>This visualisation is powered by data from Development Initiatives based on PovcalNet as well as selected DHS and MICS surveys. For detailed methodology notes please consult the methodology papers available <a href="http://devinit.org/p20i/" class="color-accent">here</a>.</p>
+                <p>This visualisation uses the most up to date data available from PovcalNet, DHS, MICS, China Family Panel Studies and Brazil’s Continuous National Household Sample Survey (PNAD) and therefore isn't directly comparably with country data in the P20 baseline report, 2017.</p>
+                <p>The P20 Initiative promotes the production and use of disaggregated data. As a minimum standard, data should be disaggregated by quintile, geography, gender, age and disability (QGGAD) to ensure sufficient granularity to include everyone in progress. Of the data sources used to power this visualisation, there is no disability data available from PovcalNet. Only 11 of the 56 DHS surveys and 5 of the 41 MICS surveys in our sample have some questions about disability.  Categories of people that are relatively small such as those experiencing a particular disability are not represented well by this type of visualisation. Consequently, we have omitted disability data from this visualisation.</p>
+                <p>An unintentional overlap may appear when comparing binary indicators, such as male and female, urban and rural, or more than one age range. This is due to geometric constraints of the visualisation.</p>
+                <p>Due to data and geometric constraints, some combinations of indicators cannot be compared against each other and data isn't available for all indicators for all countries.</p>
+                <p>Some indicators are only measured for certain population groups. Selecting 'Experience stunting' or 'Birth not registered' will limit the selected population to children under 5. Selecting education levels will limit the selected population to adults 25 and older. Selecting 'Had no skilled birth attendant' will limit the selected population to women aged 15 to 49.</p>
+                <p>Download the data behind the visualisation <a href="/p20-data/all.venn.joined.csv" class="color-accent">here</a>.</p>
+            </div>
+            <div id="beta-message" class="beta-message show-message text-center bg--dark">
+                <p>BETA: This visualisation is currently a beta version; please share your <a href="mailto:info@devinit.org" class="color-accent">feedback</a> to help us provide the best possible experience.</p>
+                <i class="tooltip-close" onclick="$('#beta-message').removeClass('show-message');">✖</i>
+            </div>
+        </div>
+    </div></div></div>
+
+    <!-- <div class="beta-message bg--dark p-t--0 p-b--0 b-t--2 text--center"  ng-class="{ 'show-message' : showBetaMessage == true}">
+			<p style="margin:10px;">
+			The Development Data Hub is live in Beta version – we apologise for any issues that may occur.</p>&nbsp;&nbsp;&nbsp;
+			<btn style="padding:1px 7px" class="btn btn--white close-beta-message" ng-click="closeBetaMessage()">Ok</btn>
+		    </p>
+		</div> -->
+	<!-- <survey></survey> -->
+	<!-- ngInclude: 'diConcept/components/Footer/footer.html' --><div ng-include="'diConcept/components/Footer/footer.html'" class="ng-scope"><footer class="site-footer ng-scope">
+
+	<div class="bg--dark p-t--1 p-b--2">
+		<div class="container">
+
+			<div class="row m-b--1">
+
+				<div class="col-sm-6 col-md-3">
+					<div class="li-group small m-b--0">
+						<span class="li-group__item p-b--0">
+							 <h4>Sections</h4>
+						</span>
+						<a href="http://devinit.org/#!/blog" class="li-group__item p-t--05 p-b--05">Data blog</a>
+						<a href="http://devinit.org/#!/publications" class="li-group__item p-t--05 p-b--05">Publications</a>
+						<a href="http://devinit.org/#!/events" class="li-group__item p-t--05 p-b--05">Events</a>
+						<a href="http://devinit.org/#!/working-with-us" class="li-group__item p-t--05 p-b--05">Working with us</a>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="li-group small">
+						<span class="li-group__item p-b--0">
+							 <h4>Quick links</h4>
+						</span>
+						<a href="http://devinit.org/about/contact-us/" class="li-group__item p-t--05 p-b--05">Contact us</a>
+						<a href="http://devinit.org/topics" class="li-group__item p-t--05 p-b--05">Topics</a>
+						<a href="http://devinit.org/about/consultancy" class="li-group__item p-t--05 p-b--05">Our consultancy services</a>
+						<a href="http://devinit.org/about/open-di-publishing-to-iati" class="li-group__item p-t--05 p-b--05">Open DI — publishing to IATI</a>
+
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="li-group small">
+						<span class="li-group__item p-b--0">
+							 <h4>Newsletter</h4>
+						</span>
+						<span class="li-group__item">
+							<p class="small">Sign up for the <a href="http://devinit.org/#!/about/newsletter-sign-up">Development Initiatives newsletter</a> to receive regular news and updates from DI.</p>
+						</span>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="li-group small">
+						<span class="li-group__item p-b--0">
+							 <h4 class="p-t--0">Creative Commons</h4>
+						</span>
+						<span class="li-group__item">
+							<p class="small">This site's content is licensed under a
+								<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+									Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license
+								</a>.</p>
+						</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="bg--white p-t--1 p-b--1">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-offset-3 col-sm-6 text--center p-t--1 p-b--1">
+					<a href="https://twitter.com/devinitorg" class="social-media_circle-icon" target="_blank"><i class="icon-twitter"></i></a>
+					<a href="https://www.facebook.com/Development.Initiatives" class="social-media_circle-icon" target="_blank"><i class="icon-facebook"></i></a>
+					<a href="https://www.youtube.com/user/devinitorg" class="social-media_circle-icon" target="_blank"><i class="icon-youtube"></i></a>
+					<a href="https://www.flickr.com/people/development_initiatives/" class="social-media_circle-icon" target="_blank"><i class="icon-flickr-box"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="bg--dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 p-t--2 p-b--2">
+					<p class="small m-b--0">© Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd.
+					Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI
+					International Ltd. Registered in England and Wales No. 06368740. Read our
+					<a href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf">privacy
+					policy</a>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</footer>
+</div>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="diConcept/dist/vendor.js"></script>
+	<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js"></script>
+<script type="text/javascript" src="diConcept/dist/app.js"></script>
+<!-- <script src="wp-content/plugins/searchwp-live-ajax-search/assets/javascript/vendor/spin.js"></script> -->
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-80274731-1', 'auto');
+</script>
+
+<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.css" rel="stylesheet">
+<link rel="stylesheet" id="styles-admin-css" href="diConcept/dist/styles.css?ver=0.1.1" type="text/css" media="all"></body></html>
