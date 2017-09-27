@@ -1,6 +1,6 @@
 {
   "name": "datahub",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "config": {
     "api": "http://212.111.41.68:3000/graphql"
   },
