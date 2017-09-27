@@ -84,7 +84,9 @@ const withData = graphql(TABS_QUERY, {
   },
   props: ({ data }) => {
     const { error } = data;
-    if (error) throw Error(error);
+    if (error) {
+      throw Error(error);
+    }
     return data;
   },
 });
