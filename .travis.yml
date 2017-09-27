@@ -12,7 +12,7 @@ script:
 - npm run lint
 - npm run build
 - npm run coverage
-- mkdir build && mv .next build/ && mv server.js build/ &&  && mv package.json build/ && mv private build/
+- mkdir build && mv .next build/ && mv server.js build/ && mv package.json build/ && mv private build/
 - zip -q -r build.zip build
 deploy:
   provider: releases
