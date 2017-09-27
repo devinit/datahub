@@ -18,7 +18,7 @@ deploy:
     secure: bszwAE9uRsIRqH080Ca7PWi+CH0VzLxkFVA/7ERcVFNau8mhMkhjR6oy/7zSXFtNIIKuVnQbJGfL7dTHpDB48c9Qp6TSJz4fnl2V9tuPfQzq5ytdtm51aXsP7BwWRwDfQ9RUgnP0O7vCYs4CbgJFmsJSHBlSkYZDpTQGpzgN6vIIlNtHvlihD93UivTnyiZra09vchzeAMjbc6rVUhwV9jdWDPGWM9khvl3pRYt2dgzRZWhS5SwO9kK3Y/a/AOAlXL7/lZGHA1J0b4sqMnZHNhEG/rL44h6LQuyrJD7lrLUhwlUKVjDksXLP2p6uAQvQWrRxsDa7nsThjP8SWV3pe4o1Hj/6DIhgd7vmVVWgyvVEJlxrqW43yfwp7BfJ/RL+qnFyYCIQ6v8hxMlNEBTd+wNJSvyaI9oNZbmyAJ6XbGPznX9TNdhqFgifZSH57s1iiXXLyo5q/70T2a5qoVPgNK8l/tzy2Kh0ohgnvcg4J5L0/XDVGIXmjCKsf9PDZZMKOMfvcEr369zKEzlGp5ZOGN0zXfQHm44Di1+Wgyd1IlZ0wBGycbYa56Ab5xtfVU4ZrzWAXJMrlRrHvTNnnlUJRCGxsTnKEcNiue3hgXu4rgDJzZ+QSCWTr/mWfJsmejl3iMExERSbg1RwcYCafbNpERNADILmHQfJjJgKQPk2duk=
   file_glob: true
   file:
-    - '.next/*'
+    - '.next/**/*'
     - 'server.js'
   skip_cleanup: true
   on:
