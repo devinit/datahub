@@ -25,6 +25,7 @@ type Props = {
   aidType: string
 };
 
+// TODO: start year shouldnt be hardcoded @allan
 export default (props: Props) =>
   (
     <Generic pathname="/unbundling-aid">
@@ -40,7 +41,7 @@ export default (props: Props) =>
           </Header>
         </HeaderContainer>
       </Container>
-      <UnbundlingAid aidType={props.aidType} startYear={2010} config={config} />
+      <UnbundlingAid aidType={props.aidType} startYear={props.aidType === 'oda' ? 2015 : 2013} config={config} />
       <Social />
       <TextContainer>
         <Container>
