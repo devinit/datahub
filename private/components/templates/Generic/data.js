@@ -27,7 +27,7 @@ export const menueData: Menue = {
         },
         {
           name: 'Multilateral Profiles',
-          link: '/',
+          link: '/multilaterals',
           icon: 'area graph',
         },
       ],
@@ -56,13 +56,18 @@ export const menueData: Menue = {
           icon: 'users',
         },
         {
-          name: 'Are domestic public resources able to meet the needs of the poorest people?',
-          link: '/methodology',
-          icon: 'area graph',
+          name: 'Who are the global P20',
+          link: '/who-are-the-global-p20',
+          icon: 'users',
         },
         {
           name: 'Different providers, different priorities',
-          link: '/',
+          link: '/oda-donor',
+          icon: 'area graph',
+        },
+        {
+          name: 'Are domestic public resources able to meet the needs of the poorest people?',
+          link: '/poverty',
           icon: 'area graph',
         },
       ],
