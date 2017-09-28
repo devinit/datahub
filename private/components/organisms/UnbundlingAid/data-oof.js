@@ -357,7 +357,7 @@ module.exports = {
       { id: 'technical-ooperation', name: 'Technical cooperation' },
       { id: 'export-credit', name: 'Export credit' }
     ],
-    years: [2006, 2007, 2008, 2009, 2010, 2011, 2012]
+    years: [2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
   yearTotal: { year: 2013, total: '73.1bn' }
 };
