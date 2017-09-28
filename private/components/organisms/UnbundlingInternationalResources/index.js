@@ -66,9 +66,13 @@ const UnbundlingTreemap = (props: Props) => {
               left: 0,
               right: 0,
               height: '360px',
+              padding: 0,
             }}
           >
-            <Dimmer style={{ backgroundColor: props.color || '#888', zIndex: 1 }} active>
+            <Dimmer
+              style={{ backgroundColor: props.color || '#888', zIndex: 1, height: '100%' }}
+              active
+            >
               {props.loading
                 ? <Loader />
                 : <NoDataAvailableContainer>
