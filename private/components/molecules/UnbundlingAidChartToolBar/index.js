@@ -42,8 +42,8 @@ const InteractiveChartToolBar = (props: Props) => {
               values={values}
               onChange={props.onChange}
               data={props.toolBarOptions}
-              textAlign={compact ? 'left' : 'right'}
-              width={compact ? 16 : 10}
+              textAlign={compact ? 'left' : 'center'}
+              width={16}
             />
           </Grid.Row>
         </Grid>
