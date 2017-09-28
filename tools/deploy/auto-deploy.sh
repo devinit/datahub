@@ -3,13 +3,13 @@
 mkdir -p ~/datahub
 cd ~/datahub || exit
 
-rm -rf build.zip
+rm -rf build.zip build
 
-tag=`git describe`
-
-wget https://github.com/devinit/datahub/releases/download/$tag/build.zip
+wget https://github.com/devinit/datahub/releases/download/$1/build.zip
 
 echo 'finished downloading tag: $tag'
+
+unzip build.zip
 
 cd build || exit
 
