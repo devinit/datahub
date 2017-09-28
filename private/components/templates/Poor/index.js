@@ -2,7 +2,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import Visualization from 'components/molecules/whereAreThePoorViz';
 import Generic from '../Generic';
 import data from './data';
 

@@ -6,15 +6,15 @@ import Generic from '../Generic';
 /* eslint-disable max-len */
 
 type Props = {
-  pathname: string
+  id: string
 }
-export default ({pathname}: Props) =>
+export default ({id}: Props) =>
   (<Generic pathname="/oda-donor">
     <Div paddingTop="5em">
       <Container>
         <iframe
           title="oda-donor"
-          src={pathname === '/oda-donor' ?
+          src={id === '/oda-donor' ?
             'http://localhost:5000/#!/post/oda-donor' :
             'http://localhost:5000/#!/post/poverty'
           }
