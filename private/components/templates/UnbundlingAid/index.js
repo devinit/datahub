@@ -5,6 +5,7 @@ import { Container, Button, Header, Grid } from 'semantic-ui-react';
 import config from 'visboxConfigs/unbundlingTreemapChart';
 import UnbundlingAid from 'components/organisms/UnbundlingAid';
 import Social from 'components/molecules/UnbundlingAidSocial';
+import Tooltip from 'components/molecules/TabsToolTip';
 // import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 // import { connect } from 'react-redux';
 // import type { State } from 'lib/reducers';
@@ -23,6 +24,9 @@ const BottomHeader = glamorous.div({
   fontSize: '1.4em',
   '& .button': {
     marginLeft: '1em'
+  },
+  '& i': {
+    fontSize: '0.8em'
   }
 });
 const TextContainer = glamorous.div({
@@ -45,7 +49,7 @@ export default (props: Props) =>
               <TopHeader>Unbundling aid</TopHeader>
               <Header.Subheader>
                 <BottomHeader>
-                  Explore and compare funding priorities for official development assistance <Button content="Using This Visualization" />
+                  Explore and compare funding priorities for official development assistance <Tooltip heading="Indicator heading" source="indicator source" /> <Button content="Using This Visualization" />
                 </BottomHeader>
               </Header.Subheader>
             </Header.Content>
