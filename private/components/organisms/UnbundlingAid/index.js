@@ -37,6 +37,8 @@ const withData = graphql(QUERY, {
     const { channels = [], bundles = [], to = [], from = [], sectors = [], years = [] } =
       ownProps.aidType === 'oda' ? dataODA.selections : dataOOF.selections;
 
+    const safeBundles = data.bundles && data.bundles.length ? data.bundles : [];
+    const bundleSum = safeBundles.reduce((sum, datum) => sum + datum.value, 0);
     return {
       loading,
 
@@ -58,8 +60,9 @@ const withData = graphql(QUERY, {
         channels: toDropDownOptions(channels),
       },
 
-      bundles:
-        data.bundles && data.bundles.length ? data.bundles : [{ name: 'No Results', value: 0 }],
+      bundles: safeBundles,
+
+      bundleSum,
 
       refetch: data.refetch,
     };
