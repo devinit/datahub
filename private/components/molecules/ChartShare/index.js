@@ -59,7 +59,7 @@ type Props = {
   color: string,
   iconName?: string,
   fontWeight?: string | number,
-  fontSize?: string | number,
+  fontSize?: string,
   backgroundColor?: string,
   label?: string,
   className?: string,
