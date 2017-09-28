@@ -4,9 +4,9 @@ import {printDiv as print} from 'lib/utils';
 // import { lighterGrey} from 'components/theme/semantic';
 import React from 'react';
 import glamorous from 'glamorous';
-import {lightSecondaryColor} from 'components/theme/semantic';
+import ChartShare, {NoBackground} from '../ChartShare';
 import type {StateToShare} from '../ChartShare';
-import ChartShare from '../ChartShare';
+
 
 type Props = {
   printDiv: string,
@@ -17,13 +17,7 @@ const Wrapper = glamorous.div({
   '& i': {
     fontSize: '1.48em'
   },
-  '& .no-background:hover': {
-    boxShadow: '0 1px 6px rgba(0,0,0,.3)'
-  },
-  '& .no-background': {
-    backgroundColor: 'transparent !important',
-    color: `${lightSecondaryColor} !important`,
-  }
+  ...NoBackground,
 });
 const ExportChart = ({printDiv, stateToShare, onViewVisualization}: Props) =>
   (<Wrapper>

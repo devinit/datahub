@@ -8,7 +8,7 @@ export const WhiteBg = glamorous.div({
   paddingBottom: '2em',
 });
 export const LightBg = glamorous.div({
-  background: '#e9e7e8',
+  background: lighterGrey,
   paddingTop: '1em',
   paddingBottom: '2em',
 });

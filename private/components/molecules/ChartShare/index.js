@@ -5,6 +5,16 @@ import { white, black, lightSecondaryColor} from 'components/theme/semantic';
 import {getShortURL} from 'lib/utils';
 import glamorous, { Div, Span } from 'glamorous';
 
+export const NoBackground = {
+  '& .no-background:hover': {
+    boxShadow: '0 1px 6px rgba(0,0,0,.3)'
+  },
+  '& .no-background': {
+    backgroundColor: 'transparent !important',
+    color: `${lightSecondaryColor} !important`,
+  }
+};
+
 const Container = glamorous.div({
   padding: '5em',
   '& input.link': {
@@ -23,7 +33,9 @@ const Container = glamorous.div({
     border: `2px solid ${black}`,
   },
 });
+
 const ButtonWrapper = glamorous.span({
+  ...NoBackground,
 }, (props) => ({
   '& button:hover': {
     boxShadow: props.hover ? '0 1px 6px rgba(0,0,0,.3) !important' : false
@@ -33,6 +45,8 @@ const ButtonWrapper = glamorous.span({
     color: props.background ? 'inherit' : `${lightSecondaryColor} !important`,
   }
 }));
+
+
 export type StateToShare = {
   year?: number,
   budgetType?: string,
@@ -43,6 +57,9 @@ export type StateToShare = {
 type Props = {
   size: string,
   color: string,
+  iconName?: string,
+  fontWeight?: string | number,
+  fontSize?: String,
   backgroundColor?: string,
   label?: string,
   className?: string,
@@ -94,7 +111,8 @@ export default class ChartShare extends Component {
     return this.setState({link: shortURL});
   }
   render() {
-    const {className, size, color, label, background, hover} = this.props;
+    const {className, size, color, label, background,
+      hover, fontSize, iconName, fontWeight} = this.props;
     return (
       <Modal
         trigger={
@@ -104,8 +122,12 @@ export default class ChartShare extends Component {
               size={size}
               color={color}
             >
-              <Icon name="share alternate" />
-              <Span fontSize={'0.85em'}>{label || 'Share this chart'}</Span>
+              <Icon name={iconName || 'share alternate'} />
+              <Span
+                fontWeight={fontWeight || 'normal'}
+                fontSize={fontSize || '0.85em'}
+              >
+                {label || 'Share this chart'}</Span>
             </Button>
           </ButtonWrapper>
         }

@@ -5,7 +5,7 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 // import { SectionHeader } from 'components/atoms/Header';
 import Generic from '../Generic';
 
-
+/* eslint-disable max-len */
 export default () =>
   (<Generic pathname="/oda-donor">
     <Div paddingTop="5em">
@@ -33,4 +33,5 @@ export default () =>
         style={{ width: '100%', height: '850px' }}
       />
     </Div>
+
   </Generic>);

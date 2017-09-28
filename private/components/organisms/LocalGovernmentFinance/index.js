@@ -47,6 +47,5 @@ const withData = graphql(QUERY, {
 });
 
 export default withData(props => {
-  console.log(props);
   return <WhiteBg><Chart {...props} /></WhiteBg>;
 });

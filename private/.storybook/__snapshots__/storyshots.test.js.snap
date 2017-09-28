@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots About Global picture && spotlight on uganda 1`] = `
-<section>
+<section
+  id="about"
+>
   <div
     className="css-7q1pau"
   >
@@ -1544,30 +1546,6 @@ exports[`Storyshots Button With Secondary Color 1`] = `
 </button>
 `;
 
-exports[`Storyshots Country Profile Charts Government Finance 1`] = `
-<div
-  className="css-h7jsub"
->
-  <div
-    className="css-hu3x4g"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Country Profile Charts Inflows Vs Outflows 1`] = `
 <p>
   Loading...
@@ -2979,16 +2957,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/bes-islands"
-          onClick={[Function]}
-        >
-          BES Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/bosnia-and-herzegovina"
           onClick={[Function]}
         >
@@ -3003,16 +2971,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Botswana
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/bouvet-island"
-          onClick={[Function]}
-        >
-          Bouvet Island
         </a>
       </li>
       <li
@@ -4243,16 +4201,6 @@ exports[`Storyshots Country Search country profile 1`] = `
           onClick={[Function]}
         >
           Rwanda
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/saint-helena-ascension-and-tristan-da-cunha"
-          onClick={[Function]}
-        >
-          Saint Helena, Ascension & Tristan da Cunha
         </a>
       </li>
       <li
@@ -5028,16 +4976,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/bes-islands"
-          onClick={[Function]}
-        >
-          BES Islands
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/bosnia-and-herzegovina"
           onClick={[Function]}
         >
@@ -5052,16 +4990,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Botswana
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/bouvet-island"
-          onClick={[Function]}
-        >
-          Bouvet Island
         </a>
       </li>
       <li
@@ -6292,16 +6220,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
           onClick={[Function]}
         >
           Rwanda
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
-          href="/country/saint-helena-ascension-and-tristan-da-cunha"
-          onClick={[Function]}
-        >
-          Saint Helena, Ascension & Tristan da Cunha
         </a>
       </li>
       <li
@@ -9192,16 +9110,6 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/bes-islands"
-                        onClick={[Function]}
-                      >
-                        BES Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/bosnia-and-herzegovina"
                         onClick={[Function]}
                       >
@@ -9216,16 +9124,6 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
                         onClick={[Function]}
                       >
                         Botswana
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/bouvet-island"
-                        onClick={[Function]}
-                      >
-                        Bouvet Island
                       </a>
                     </li>
                     <li
@@ -10456,16 +10354,6 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
                         onClick={[Function]}
                       >
                         Rwanda
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/saint-helena-ascension-and-tristan-da-cunha"
-                        onClick={[Function]}
-                      >
-                        Saint Helena, Ascension & Tristan da Cunha
                       </a>
                     </li>
                     <li
@@ -12994,6 +12882,30 @@ exports[`Storyshots Tabs Country Profiles tabs uganda 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tabs Government Finance ghana 1`] = `
+<div
+  className="css-h7jsub"
+>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Tabs International Resources 1`] = `
 <div
   className="css-hu3x4g"
@@ -13907,16 +13819,6 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           className={false}
                         >
                           <a
-                            href="/country/bes-islands"
-                            onClick={[Function]}
-                          >
-                            BES Islands
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
                             href="/country/bosnia-and-herzegovina"
                             onClick={[Function]}
                           >
@@ -13931,16 +13833,6 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                             onClick={[Function]}
                           >
                             Botswana
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
-                            href="/country/bouvet-island"
-                            onClick={[Function]}
-                          >
-                            Bouvet Island
                           </a>
                         </li>
                         <li
@@ -15171,16 +15063,6 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                             onClick={[Function]}
                           >
                             Rwanda
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
-                            href="/country/saint-helena-ascension-and-tristan-da-cunha"
-                            onClick={[Function]}
-                          >
-                            Saint Helena, Ascension & Tristan da Cunha
                           </a>
                         </li>
                         <li
@@ -16986,16 +16868,6 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           className={false}
                         >
                           <a
-                            href="/country/bes-islands"
-                            onClick={[Function]}
-                          >
-                            BES Islands
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
                             href="/country/bosnia-and-herzegovina"
                             onClick={[Function]}
                           >
@@ -17010,16 +16882,6 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                             onClick={[Function]}
                           >
                             Botswana
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
-                            href="/country/bouvet-island"
-                            onClick={[Function]}
-                          >
-                            Bouvet Island
                           </a>
                         </li>
                         <li
@@ -18250,16 +18112,6 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                             onClick={[Function]}
                           >
                             Rwanda
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
-                            href="/country/saint-helena-ascension-and-tristan-da-cunha"
-                            onClick={[Function]}
-                          >
-                            Saint Helena, Ascension & Tristan da Cunha
                           </a>
                         </li>
                         <li
@@ -20074,16 +19926,6 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           className={false}
                         >
                           <a
-                            href="/country/bes-islands"
-                            onClick={[Function]}
-                          >
-                            BES Islands
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
                             href="/country/bosnia-and-herzegovina"
                             onClick={[Function]}
                           >
@@ -20098,16 +19940,6 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                             onClick={[Function]}
                           >
                             Botswana
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
-                            href="/country/bouvet-island"
-                            onClick={[Function]}
-                          >
-                            Bouvet Island
                           </a>
                         </li>
                         <li
@@ -21338,16 +21170,6 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                             onClick={[Function]}
                           >
                             Rwanda
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
-                            href="/country/saint-helena-ascension-and-tristan-da-cunha"
-                            onClick={[Function]}
-                          >
-                            Saint Helena, Ascension & Tristan da Cunha
                           </a>
                         </li>
                         <li
@@ -23146,16 +22968,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/bes-islands"
-                        onClick={[Function]}
-                      >
-                        BES Islands
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/bosnia-and-herzegovina"
                         onClick={[Function]}
                       >
@@ -23170,16 +22982,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Botswana
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/bouvet-island"
-                        onClick={[Function]}
-                      >
-                        Bouvet Island
                       </a>
                     </li>
                     <li
@@ -24410,16 +24212,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                         onClick={[Function]}
                       >
                         Rwanda
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
-                        href="/country/saint-helena-ascension-and-tristan-da-cunha"
-                        onClick={[Function]}
-                      >
-                        Saint Helena, Ascension & Tristan da Cunha
                       </a>
                     </li>
                     <li
@@ -25781,7 +25573,7 @@ exports[`Storyshots Templates Front Page 1`] = `
   >
     <div>
       <div
-        className="css-za1qlj"
+        className="css-1w84lx8"
       >
         <div
           className="ui container"
@@ -26036,16 +25828,6 @@ exports[`Storyshots Templates Front Page 1`] = `
               className={false}
             >
               <a
-                href="/country/bes-islands"
-                onClick={[Function]}
-              >
-                BES Islands
-              </a>
-            </li>
-            <li
-              className={false}
-            >
-              <a
                 href="/country/bosnia-and-herzegovina"
                 onClick={[Function]}
               >
@@ -26060,16 +25842,6 @@ exports[`Storyshots Templates Front Page 1`] = `
                 onClick={[Function]}
               >
                 Botswana
-              </a>
-            </li>
-            <li
-              className={false}
-            >
-              <a
-                href="/country/bouvet-island"
-                onClick={[Function]}
-              >
-                Bouvet Island
               </a>
             </li>
             <li
@@ -27306,16 +27078,6 @@ exports[`Storyshots Templates Front Page 1`] = `
               className={false}
             >
               <a
-                href="/country/saint-helena-ascension-and-tristan-da-cunha"
-                onClick={[Function]}
-              >
-                Saint Helena, Ascension & Tristan da Cunha
-              </a>
-            </li>
-            <li
-              className={false}
-            >
-              <a
                 href="/country/saint-kitts-and-nevis"
                 onClick={[Function]}
               >
@@ -27871,6 +27633,11 @@ exports[`Storyshots Templates Front Page 1`] = `
              
             <a
               href="#about"
+              style={
+                Object {
+                  "color": "#e8443a",
+                }
+              }
             >
               Read more about the data hub.
             </a>
@@ -28197,7 +27964,9 @@ exports[`Storyshots Templates Front Page 1`] = `
       </section>
       
     </div>
-    <section>
+    <section
+      id="about"
+    >
       <div
         className="css-7q1pau"
       >
@@ -30026,6 +29795,817 @@ exports[`Storyshots Templates Methodology 1`] = `
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div
+    className="css-xtq3xk"
+  >
+    <div
+      className="css-aam2ax"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Sections
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/data-blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/publications"
+                >
+                   Publications
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/events"
+                >
+                   Events
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/working-with-us"
+                >
+                   Working with us 
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Quick Links
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/contact-us/"
+                >
+                   Contact us 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/topics"
+                >
+                   Topics
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/consultancy"
+                >
+                   
+                  Our consultancy services
+                   
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/open-di-publishing-to-iati"
+                >
+                   
+                  Open DI - publishing to IATI
+                   
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Newsletter
+                </h3>
+                <p>
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
+                </p>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Creative Commons
+                </h3>
+                <p>
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-11jszci"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.facebook.com/Development.Initiatives"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.youtube.com/user/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.flickr.com/people/development_initiatives/"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-aam2ax lightBlack"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-f051qe"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qsy4y1"
+      >
+        <a
+          href="http://devinit.org"
+        >
+          <img
+            alt="Development Initiatives"
+            height="32"
+            src="/img/logo.png"
+            width="132"
+          />
+        </a>
+      </div>
+      <ul
+        className="css-snu02m"
+      >
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Global Picture
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Profiles
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/country-profiles"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Unbundling Aid
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Spotlight on Uganda
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Other Visualisations
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/unbundling-other-flows"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/where-are-the-poor"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/methodology"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Methodology
+              </div>
+            </a>
+            
+          </div>
+        </li>
+      </ul>
+      <div>
+        <button
+          className="css-16yuken"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="align justify icon"
+          />
+        </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
+        <nav
+          className="css-1hpbsc1"
+        >
+          <li
+            className="navigation__item active"
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+                role="link"
+              >
+                Global Picture
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Profiles
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/country-profiles"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Country Profiles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Multilateral Profiles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/unbundling-aid"
+                onClick={[Function]}
+                role="link"
+              >
+                Unbundling Aid
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/spotlight-on-uganda"
+                onClick={[Function]}
+                role="link"
+              >
+                Spotlight on Uganda
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Other Visualisations
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/unbundling-other-flows"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    Unbundling other official flows
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/where-are-the-poor"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    Where are the poor and where will they be?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/methodology"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Are domestic public resources able to meet the needs of the poorest people?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Different providers, different priorities
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/methodology"
+                onClick={[Function]}
+                role="link"
+              >
+                Methodology
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="css-wm5i31"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="sixteen wide computer sixteen wide mobile sixteen wide tablet column"
+            >
+              <h2
+                className="ui red center aligned header"
+              >
+                Different providers, different priorities
+              </h2>
+              <p
+                className="css-boquj"
+              >
+                How effectively are donors targeting the countries with the highest numbers of people in poverty
+                and the least domestic public resources to address it? This chart allows you to select
+                a provider of aid to see how it allocates aid across countries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <iframe
+        frameBorder="0"
+        scrolling="no"
+        src="http://localhost:5000/#!/post/oda-donor"
+        style={
+          Object {
+            "height": "850px",
+            "width": "100%",
+          }
+        }
+        title="oda-donor"
+      />
     </div>
   </div>
   <div
@@ -32136,7 +32716,7 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
           <h2
             className="content"
           >
-            Revenue
+            Revenue and Expenditure
           </h2>
         </div>
         <hr
@@ -33331,7 +33911,9 @@ exports[`Storyshots Templates Spot Light 1`] = `
       </div>
     </section>
     
-    <section>
+    <section
+      id="about"
+    >
       <div
         className="css-7q1pau"
       >
@@ -34122,7 +34704,7 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
   className="css-13azwyo"
 >
   <div
-    className="css-av36pi"
+    className="css-epg9t9"
   >
     <div
       style={
@@ -34132,7 +34714,7 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
       }
     >
       <div
-        className="css-m210fh"
+        className="css-1w255sy"
       >
         <h1
           className="ui header"
@@ -34140,9 +34722,12 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
           <span
             className="red"
           >
-             2015
+             
+            2015
           </span>
-           US$ 174.1 
+           US$ 
+          174.3bn
+           
           <span
             className="small"
           >

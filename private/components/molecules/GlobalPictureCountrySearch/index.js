@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import { white, black } from 'components/theme/semantic';
+import { white, lightBlack } from 'components/theme/semantic';
 import { big } from 'components/theme';
 
 type Props = {
@@ -12,7 +12,7 @@ type State = {
   showInput: boolean,
 };
 const SearchTitle = glamorous.div({
-  backgroundColor: black,
+  backgroundColor: lightBlack,
   fontSize: big,
   textAlign: 'center',
   color: white,
