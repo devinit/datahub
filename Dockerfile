@@ -1,13 +1,9 @@
-FROM node:8.5-alpine
+FROM node:8.6-alpine
 
 LABEL maintainer="epicallan.al@gmail.com"
 # Copy package.json only to temp folder, install its dependencies,
 # set workdir and copy the dependnecies there
 RUN mkdir /src
-# This way, dependnecies are cached without the need of cacheing all files.
-ADD package.json /tmp/
-RUN cd /tmp && npm install --production --silent
-RUN cp -a /tmp/node_modules /src/
 
 WORKDIR /src
 
@@ -15,14 +11,6 @@ WORKDIR /src
 COPY . /src
 
 ENV NODE_ENV production
-
-# stattic data files
-RUN npm run pull
-# makes api calls that get cached on the API server
-RUN npm run precache
-RUN npm run vendor-css
-RUN npm run build-worker
-RUN npm run build
 
 EXPOSE 8080
 
