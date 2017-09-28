@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { Container, Header, Grid } from 'semantic-ui-react';
+import { Container, Button, Header, Grid } from 'semantic-ui-react';
 import config from 'visboxConfigs/unbundlingTreemapChart';
 import UnbundlingAid from 'components/organisms/UnbundlingAid';
 import Social from 'components/molecules/UnbundlingAidSocial';
@@ -12,10 +12,19 @@ import Generic from '../Generic';
 
 const headerStyles = {
   paddingTop: '4em',
-  paddingBottom: '4em',
+  paddingBottom: '4em'
 };
 const HeaderContainer = glamorous.div(headerStyles);
-
+const TopHeader = glamorous.div({
+  fontSize: '1.4em',
+  marginBottom: '0.5em',
+});
+const BottomHeader = glamorous.div({
+  fontSize: '1.4em',
+  '& .button': {
+    marginLeft: '1em'
+  }
+});
 const TextContainer = glamorous.div({
   marginTop: '2em',
   marginBottom: '2em',
@@ -33,9 +42,11 @@ export default (props: Props) =>
         <HeaderContainer>
           <Header as="h1" textAlign="center">
             <Header.Content>
-              Unbundling aid
+              <TopHeader>Unbundling aid</TopHeader>
               <Header.Subheader>
-                Explore and compare funding priorities for official development assistance
+                <BottomHeader>
+                  Explore and compare funding priorities for official development assistance <Button content="Using This Visualization" />
+                </BottomHeader>
               </Header.Subheader>
             </Header.Content>
           </Header>
