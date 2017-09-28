@@ -46,7 +46,13 @@ export default () => {
             </Header.Content>
           </Header>
         </HeaderContainer>
-        <Visualization />
+        <iframe
+          title="where are the poor"
+          src="http://localhost:5000/#!/post/where-are-the-poor"
+          frameBorder="0"
+          scrolling="no"
+          style={{ width: '100%', height: '650px' }}
+        />
       </Container>
       <Container>
         <BottomWrapper>
