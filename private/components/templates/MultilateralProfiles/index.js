@@ -36,7 +36,7 @@ export default () =>
                 <List size="large">
                   {
                     multilaterals.map(obj =>
-                      (<List.Item>
+                      (<List.Item key={obj.id}>
                         <Link href={`/multilateral?id=${obj.id}`} as={`/multilateral/${obj.id}`}>
                           <a role="link">{obj.name}</a>
                         </Link>
