@@ -27,10 +27,7 @@ export const HeaderTitle = glamorous.h3({
   fontSize: '1.2em',
   color: grey
 });
-export const TabWrapper = glamorous.div({
-  // fontWeight: 'bold',
-  textAlign: 'center'
-});
+
 export const RuralUrbanPopnText = () =>
   (<span>
    WHAT IS THE <Span color={red}>URBAN</Span> VS <Span color={blue}>RURAL</Span> SPLIT?

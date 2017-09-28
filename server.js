@@ -33,6 +33,7 @@ const renderAndCache = (req, res, pagePath, queryParams) => {
       res.send(html);
     })
     .catch((err) => {
+      console.error('ssr render issue: ', err);
       app.renderError(err, req, res, pagePath, queryParams);
     });
 };

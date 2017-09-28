@@ -23,7 +23,11 @@ export default ComposedComponent => {
       // Evaluate the composed component's getInitialProps()
       let composedInitialProps = {};
       if (ComposedComponent.getInitialProps) {
-        composedInitialProps = await ComposedComponent.getInitialProps(ctx);
+        try {
+          composedInitialProps = await ComposedComponent.getInitialProps(ctx);
+        } catch (error) {
+          console.error('withdata: ', error);
+        }
       }
       // Run all GraphQL queries in the component tree
       // and extract the resulting data
