@@ -74,8 +74,9 @@ app.prepare().then(() => {
 
   server.get('/uganda/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
-    const isValidCountry = ugData.districts.some(distict => distict.slug === req.params.id);
     const queryParams = { id: req.params.id, state};
+    const isValidCountry = ugData.districts
+      .some(distict => distict.name.toLowerCase() === req.params.id);
     return isValidCountry ? renderAndCache(req, res, '/uganda', queryParams) :
       renderAndCache(req, res, '/spotlight-on-uganda');
   });
