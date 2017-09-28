@@ -2,9 +2,10 @@
 import React from 'react';
 import {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
+import {config} from 'package.json';
 import Generic from '../Generic';
-/* eslint-disable max-len */
 
+/* eslint-disable max-len */
 export default () =>
   (<Generic pathname="/who-are-the-global-p20">
     <Div paddingTop="5em">
@@ -27,7 +28,7 @@ export default () =>
       </Container>
       <iframe
         title="who-are-the-global-p20"
-        src="http://localhost:5000/#!/who-are-the-global-p20"
+        src={`${config.old_datahub}/#!/who-are-the-global-p20`}
         frameBorder="0"
         scrolling="no"
         style={{ width: '100%', height: '1728px' }}

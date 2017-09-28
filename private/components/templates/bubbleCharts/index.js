@@ -3,6 +3,7 @@ import React from 'react';
 import {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import SocialMediaBar from 'components/molecules/SocialMediaBar';
+import {config} from 'package.json';
 import Generic from '../Generic';
 /* eslint-disable max-len */
 
@@ -39,8 +40,8 @@ export default ({pathname}: Props) =>
       <iframe
         title="oda-donor"
         src={pathname === '/oda-donor' ?
-          'http://localhost:5000/#!/post/oda-donor' :
-          'http://localhost:5000/#!/post/poverty'
+          `${config.old_datahub}/#!/post/oda-donor` :
+          `${config.old_datahub}/#!/post/poverty`
         }
         frameBorder="0"
         scrolling="no"

@@ -2,7 +2,9 @@
 import React from 'react';
 import { Div } from 'glamorous';
 import { Container } from 'semantic-ui-react';
+import {config} from 'package.json';
 import Generic from '../Generic';
+
 /* eslint-disable max-len */
 
 type Props = {
@@ -14,7 +16,7 @@ export default ({id}: Props) =>
       <Container>
         <iframe
           title="oda-donor"
-          src={`http://localhost:5000/#!/multilateral/${id}`}
+          src={`${config.old_datahub}/#!/multilateral/${id}`}
           frameBorder="0"
           scrolling="no"
           style={{ width: '100%', height: '3560px' }}

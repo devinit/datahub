@@ -2,6 +2,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
+import {config} from 'package.json';
 import Generic from '../Generic';
 import data from './data';
 
@@ -47,7 +48,7 @@ export default () => {
         </HeaderContainer>
         <iframe
           title="where are the poor"
-          src="http://localhost:5000/#!/post/where-are-the-poor"
+          src={`${config.old_datahub}/#!/post/where-are-the-poor`}
           frameBorder="0"
           scrolling="no"
           style={{ width: '100%', height: '600px' }}
