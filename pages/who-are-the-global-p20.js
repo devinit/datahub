@@ -3,13 +3,10 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
-import App from 'components/templates/MultilateralProfile';
+import App from 'components/templates/WhoAreTheGlobalP20';
 
 type Props = {
-  url: {
-    pathname: string,
-    query: { id: string}
-  }
+  url: { pathname: string },
 };
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
@@ -19,5 +16,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App id={props.url.query.id} pathName={props.url.pathname} />;
+  return <App pathName={props.url.pathname} />;
 });

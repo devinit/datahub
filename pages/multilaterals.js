@@ -3,7 +3,7 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
-import App from 'components/templates/MultilateralProfile';
+import App from 'components/templates/MultilateralProfiles';
 
 type Props = {
   url: {
@@ -19,5 +19,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App id={props.url.query.id} pathName={props.url.pathname} />;
+  return <App id={props.url.query.id} />;
 });

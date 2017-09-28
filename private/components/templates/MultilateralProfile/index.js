@@ -10,14 +10,14 @@ type Props = {
 }
 export default ({id}: Props) =>
   (<Generic pathname="/multilateral">
-    <Div paddingTop="5em">
+    <Div paddingTop="0em">
       <Container>
         <iframe
           title="oda-donor"
-          src={`/${id}.html`}
+          src={`http://localhost:5000/#!/multilateral/${id}`}
           frameBorder="0"
           scrolling="no"
-          style={{ width: '100%', height: '900px' }}
+          style={{ width: '100%', height: '3560px' }}
         />
       </Container>
     </Div>

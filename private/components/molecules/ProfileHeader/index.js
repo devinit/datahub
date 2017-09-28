@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
 import { Div, Span, H4, Img, P} from 'glamorous';
-import { Container, Grid, Icon, Button, Dropdown } from 'semantic-ui-react';
+import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
 import { red } from 'components/theme/semantic';
 import { Lead } from 'components/atoms/Header';
 import { BodyLink } from 'components/atoms/Link';
+import ProfileSocialMedia from 'components/molecules/ProfileSocialMedia';
 import CountrySearch from 'components/organisms/CountrySearchInput';
 import { CardContainer, ProfileHeader } from 'components/atoms/Container';
 import Link from 'next/link';
@@ -49,10 +50,10 @@ const ProfileHeaderSection = (props: Props) => {
                     <Icon name="globe" color={'red'} />
                     {
                       props.spotlightCountry ?
-                        <Link href="/">
+                        <Link href="/spotlight-on-uganda">
                           <a role="link" style={{color: red}}>Spotlight on uganda</a>
                         </Link> :
-                        <Link href="/spotlight-on-uganda">
+                        <Link href="/">
                           <a role="link" style={{color: red}}>Global Picture</a>
                         </Link>
                     }
@@ -123,33 +124,10 @@ const ProfileHeaderSection = (props: Props) => {
                       : ''
                   }
                   {process.browser ?
-                    <Div marginTop={'1.5em'}>
-                      <a href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
-                        <Button icon="facebook f" />
-                      </a>
-                      <a
-                        href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}
-                      >
-                        <Button icon="twitter" />
-                      </a>
-                      <a href={`https://plus.google.com/share?url=${window.location.href}`}>
-                        <Button icon="google plus" />
-                      </a>
-                      <a
-                        href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
-                      >
-                        <Button icon="mail outline" />
-                      </a>
-                      {!props.spotlightCountry ?
-                        <a
-                          rel="noopener"
-                          href={`/pdf/20170331/${props.entity.name}.pdf`}
-                          target="__blank"
-                        >
-                          <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
-                        </a> : '' }
-
-                    </Div>
+                    <ProfileSocialMedia
+                      isCountryProfile={!props.spotlightCountry}
+                      entity={props.entity}
+                    />
                     : ''
                   }
                 </CardContainer>

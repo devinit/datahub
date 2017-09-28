@@ -31,7 +31,7 @@
     "patch": "release-it --no-npm.publish -i patch -n",
     "feature": "release-it --no-npm.publish -i minor -n",
     "breaking": "release-it --no-npm.publish -i major -n",
-    "prerender": "node tools/buildScripts/prerender.js",
+    "multilaterals": "node tools/buildScripts/multilaterals.js",
     "flow": "flow",
     "test": "BABEL_ENV=test jest",
     "analyze": "ANALYZE=1 next build",
