@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { LightBg } from 'components/atoms/Backgrounds';
-import glamorous, {Div, P} from 'glamorous';
+import glamorous, { Div } from 'glamorous';
 import ChartShare from 'components/molecules/ChartShare';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import { Icon, Grid } from 'semantic-ui-react';
