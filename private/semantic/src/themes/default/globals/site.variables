@@ -203,7 +203,7 @@
 @pink             : #E03997;
 @brown            : #A5673F;
 @grey             : lighten(#453f43, 10%);
-@black            : darken(#453f43, 10%);
+@black            : #443e42;
 
 /*---  Light Colors  ---*/
 @lightRed         : lighten(@red, 20%);
@@ -219,7 +219,7 @@
 @lightBrown       : #D67C1C;
 @lightGrey        : lighten(@grey, 45%);
 @lighterGrey      : #e9e7e8;
-@lightBlack       : #453f43;
+@lightBlack       : #60575d;
 
 /*---  Dark Colors  ---*/
 @darkRed         : #bc2629;
