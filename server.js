@@ -4,6 +4,7 @@ const LRUCache = require('lru-cache');
 const path = require('path');
 const next = require('next');
 const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
+const ugData = require('./private/components/organisms/CountrySearchInput/ug-data.js');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -63,7 +64,7 @@ app.prepare().then(() => {
     });
   });
 
-  ['/', 'spotlight-on-uganda'].forEach(link => {
+  ['/', '/spotlight-on-uganda'].forEach(link => {
     server.get(link, (req, res) => {
       const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
       const queryParams = { state };
@@ -73,8 +74,10 @@ app.prepare().then(() => {
 
   server.get('/uganda/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const isValidCountry = ugData.districts.some(distict => distict.slug === req.params.id);
     const queryParams = { id: req.params.id, state};
-    renderAndCache(req, res, '/uganda', queryParams);
+    return isValidCountry ? renderAndCache(req, res, '/uganda', queryParams) :
+      renderAndCache(req, res, '/spotlight-on-uganda');
   });
 
   server.get('/country/:id', (req, res) => {

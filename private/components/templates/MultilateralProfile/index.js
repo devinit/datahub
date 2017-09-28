@@ -9,18 +9,15 @@ type Props = {
   id: string
 }
 export default ({id}: Props) =>
-  (<Generic pathname="/oda-donor">
+  (<Generic pathname="/multilateral">
     <Div paddingTop="5em">
       <Container>
         <iframe
           title="oda-donor"
-          src={id === '/oda-donor' ?
-            'http://localhost:5000/#!/post/oda-donor' :
-            'http://localhost:5000/#!/post/poverty'
-          }
+          src={`/${id}.html`}
           frameBorder="0"
           scrolling="no"
-          style={{ width: '100%', height: '850px' }}
+          style={{ width: '100%', height: '900px' }}
         />
       </Container>
     </Div>
