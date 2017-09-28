@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { lightGrey } from 'components/theme/semantic';
+import { lighterGrey } from 'components/theme/semantic';
 import { Container, Grid } from 'semantic-ui-react';
 import ToolBar from 'components/molecules/UnbundlingAidToolBarItem';
 
 const ToolBarContainer = glamorous.div(
   {
-    background: lightGrey,
+    background: lighterGrey,
     '& i.icon': {
       margin: '0 !important',
     },

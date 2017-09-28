@@ -46,7 +46,7 @@ export default ({pathname}: Props) =>
         scrolling="no"
         style={{ width: '100%', height: '850px' }}
       />
-      <SocialMediaBar />
+      {process.env.NODE_ENV !== 'test' ? <SocialMediaBar /> : '' }
     </Div>
 
   </Generic>);

@@ -4,7 +4,7 @@ import glamorous from 'glamorous';
 import { Container, Button, Header, Grid } from 'semantic-ui-react';
 import config from 'visboxConfigs/unbundlingTreemapChart';
 import UnbundlingAid from 'components/organisms/UnbundlingAid';
-import Social from 'components/molecules/UnbundlingAidSocial';
+import SocialMediaBar from 'components/molecules/SocialMediaBar';
 import Tooltip from 'components/molecules/TabsToolTip';
 // import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 // import { connect } from 'react-redux';
@@ -57,7 +57,8 @@ export default (props: Props) =>
         </HeaderContainer>
       </Container>
       <UnbundlingAid aidType={props.aidType} startYear={props.aidType === 'oda' ? 2015 : 2013} config={config} />
-      <Social />
+      {process.env.NODE_ENV !== 'test' ?
+        <section style={{paddingTop: '2em'}}><SocialMediaBar /> </section> : '' }
       <TextContainer>
         <Container>
           <Grid>

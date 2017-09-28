@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { LightBg } from 'components/atoms/Backgrounds';
-import glamorous, {Div} from 'glamorous';
+import glamorous, {Div, P} from 'glamorous';
 import ChartShare from 'components/molecules/ChartShare';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import { Icon, Grid } from 'semantic-ui-react';
@@ -9,7 +9,7 @@ import { Icon, Grid } from 'semantic-ui-react';
 const SocialIcon = glamorous.a({
   fontSize: '1.5em',
   fontWeight: 'bold',
-  width: '2.5em',
+  width: '2em',
   display: 'inline-block'
 });
 type Props = {
@@ -19,24 +19,28 @@ const SocialMediaBar = (props?: Props) => (
   <LightBg>
     <Grid centered columns={16}>
       <Grid.Row centered >
-        <Grid.Column width={3}>
-          <SocialIcon
-            href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}
-          >
-            <Icon name="twitter" />
-          </SocialIcon>
-          <SocialIcon href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
-            <Icon name="facebook f" link />
-          </SocialIcon>
-          <SocialIcon
-            href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
-          >
-            <Icon name="mail outline" />
-          </SocialIcon>
+        <Grid.Column width={2}>
+          {process.browser ?
+            <div>
+              <SocialIcon
+                href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}
+              >
+                <Icon name="twitter" />
+              </SocialIcon>
+              <SocialIcon href={`http://www.facebook.com/share.php?u=${window.location.href}`}>
+                <Icon name="facebook f" link />
+              </SocialIcon>
+              <SocialIcon
+                href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
+              >
+                <Icon name="mail outline" />
+              </SocialIcon>
+            </div> : ''
+          }
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column width={4}>
+        <Grid.Column width={3}>
           <Div paddingLeft="1em">
             <ChartShare
               label="share this chart view"

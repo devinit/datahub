@@ -30586,9 +30586,9 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
               <p
                 className="css-boquj"
               >
-                How effectively are donors targeting the countries with the highest numbers of people in poverty
-                and the least domestic public resources to address it? This chart allows you to select
-                a provider of aid to see how it allocates aid across countries.
+                The proportion of people living in extreme poverty worldwide has more than halved since 2000,
+                    yet progress is varied across countries. Although domestic public resources are an important
+                  resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high.
               </p>
             </div>
           </div>
@@ -30606,6 +30606,819 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
         }
         title="oda-donor"
       />
+      
+    </div>
+  </div>
+  <div
+    className="css-xtq3xk"
+  >
+    <div
+      className="css-aam2ax"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Sections
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/data-blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/publications"
+                >
+                   Publications
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/events"
+                >
+                   Events
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/working-with-us"
+                >
+                   Working with us 
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Quick Links
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/contact-us/"
+                >
+                   Contact us 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/topics"
+                >
+                   Topics
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/consultancy"
+                >
+                   
+                  Our consultancy services
+                   
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/open-di-publishing-to-iati"
+                >
+                   
+                  Open DI - publishing to IATI
+                   
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Newsletter
+                </h3>
+                <p>
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
+                </p>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Creative Commons
+                </h3>
+                <p>
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-11jszci"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.facebook.com/Development.Initiatives"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.youtube.com/user/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.flickr.com/people/development_initiatives/"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-aam2ax lightBlack"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-f051qe"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Poverty bubble chart 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qsy4y1"
+      >
+        <a
+          href="http://devinit.org"
+        >
+          <img
+            alt="Development Initiatives"
+            height="32"
+            src="/img/logo.png"
+            width="132"
+          />
+        </a>
+      </div>
+      <ul
+        className="css-snu02m"
+      >
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Global Picture
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Profiles
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/country-profiles"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Unbundling Aid
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Spotlight on Uganda
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Other Visualisations
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/unbundling-other-flows"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/where-are-the-poor"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/methodology"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Methodology
+              </div>
+            </a>
+            
+          </div>
+        </li>
+      </ul>
+      <div>
+        <button
+          className="css-16yuken"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="align justify icon"
+          />
+        </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
+        <nav
+          className="css-1hpbsc1"
+        >
+          <li
+            className="navigation__item active"
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+                role="link"
+              >
+                Global Picture
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Profiles
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/country-profiles"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Country Profiles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Multilateral Profiles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/unbundling-aid"
+                onClick={[Function]}
+                role="link"
+              >
+                Unbundling Aid
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/spotlight-on-uganda"
+                onClick={[Function]}
+                role="link"
+              >
+                Spotlight on Uganda
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Other Visualisations
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/unbundling-other-flows"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    Unbundling other official flows
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/where-are-the-poor"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    Where are the poor and where will they be?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/methodology"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Are domestic public resources able to meet the needs of the poorest people?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Different providers, different priorities
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/methodology"
+                onClick={[Function]}
+                role="link"
+              >
+                Methodology
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="css-wm5i31"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="sixteen wide computer sixteen wide mobile sixteen wide tablet column"
+            >
+              <h2
+                className="ui red center aligned header"
+              >
+                Are domestic public resources able to meet the needs of the poorest people?
+              </h2>
+              <p
+                className="css-boquj"
+              >
+                The proportion of people living in extreme poverty worldwide has more than halved since 2000,
+                    yet progress is varied across countries. Although domestic public resources are an important
+                  resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <iframe
+        frameBorder="0"
+        scrolling="no"
+        src="http://localhost:5000/#!/post/poverty"
+        style={
+          Object {
+            "height": "850px",
+            "width": "100%",
+          }
+        }
+        title="oda-donor"
+      />
+      
     </div>
   </div>
   <div
@@ -34244,17 +35057,2662 @@ exports[`Storyshots Templates Spot Light 1`] = `
 `;
 
 exports[`Storyshots Templates UNDP profile 1`] = `
-<iframe
-  frameBorder="0"
-  src="http://data.devinit.org/#!/multilateral/undp"
-  style={
-    Object {
-      "height": "2000px",
-      "width": "100%",
-    }
-  }
-  title="UNDP"
-/>
+<div
+  className="ui fluid container"
+>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qsy4y1"
+      >
+        <a
+          href="http://devinit.org"
+        >
+          <img
+            alt="Development Initiatives"
+            height="32"
+            src="/img/logo.png"
+            width="132"
+          />
+        </a>
+      </div>
+      <ul
+        className="css-snu02m"
+      >
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Global Picture
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Profiles
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/country-profiles"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Unbundling Aid
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Spotlight on Uganda
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Other Visualisations
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/unbundling-other-flows"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/where-are-the-poor"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/methodology"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Methodology
+              </div>
+            </a>
+            
+          </div>
+        </li>
+      </ul>
+      <div>
+        <button
+          className="css-16yuken"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="align justify icon"
+          />
+        </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
+        <nav
+          className="css-1hpbsc1"
+        >
+          <li
+            className="navigation__item active"
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+                role="link"
+              >
+                Global Picture
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Profiles
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/country-profiles"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Country Profiles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Multilateral Profiles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/unbundling-aid"
+                onClick={[Function]}
+                role="link"
+              >
+                Unbundling Aid
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/spotlight-on-uganda"
+                onClick={[Function]}
+                role="link"
+              >
+                Spotlight on Uganda
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Other Visualisations
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/unbundling-other-flows"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    Unbundling other official flows
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/where-are-the-poor"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    Where are the poor and where will they be?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/methodology"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Are domestic public resources able to meet the needs of the poorest people?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Different providers, different priorities
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/methodology"
+                onClick={[Function]}
+                role="link"
+              >
+                Methodology
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="css-wm5i31"
+    >
+      <div
+        className="ui container"
+      >
+        <iframe
+          frameBorder="0"
+          scrolling="no"
+          src="http://localhost:5000/#!/post/poverty"
+          style={
+            Object {
+              "height": "850px",
+              "width": "100%",
+            }
+          }
+          title="oda-donor"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-xtq3xk"
+  >
+    <div
+      className="css-aam2ax"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Sections
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/data-blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/publications"
+                >
+                   Publications
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/events"
+                >
+                   Events
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/working-with-us"
+                >
+                   Working with us 
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Quick Links
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/contact-us/"
+                >
+                   Contact us 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/topics"
+                >
+                   Topics
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/consultancy"
+                >
+                   
+                  Our consultancy services
+                   
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/open-di-publishing-to-iati"
+                >
+                   
+                  Open DI - publishing to IATI
+                   
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Newsletter
+                </h3>
+                <p>
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
+                </p>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Creative Commons
+                </h3>
+                <p>
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-11jszci"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.facebook.com/Development.Initiatives"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.youtube.com/user/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.flickr.com/people/development_initiatives/"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-aam2ax lightBlack"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-f051qe"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qsy4y1"
+      >
+        <a
+          href="http://devinit.org"
+        >
+          <img
+            alt="Development Initiatives"
+            height="32"
+            src="/img/logo.png"
+            width="132"
+          />
+        </a>
+      </div>
+      <ul
+        className="css-snu02m"
+      >
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Global Picture
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Profiles
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/country-profiles"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Unbundling Aid
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Spotlight on Uganda
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Other Visualisations
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/unbundling-other-flows"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/where-are-the-poor"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/methodology"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Methodology
+              </div>
+            </a>
+            
+          </div>
+        </li>
+      </ul>
+      <div>
+        <button
+          className="css-16yuken"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="align justify icon"
+          />
+        </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
+        <nav
+          className="css-1hpbsc1"
+        >
+          <li
+            className="navigation__item active"
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+                role="link"
+              >
+                Global Picture
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Profiles
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/country-profiles"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Country Profiles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Multilateral Profiles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/unbundling-aid"
+                onClick={[Function]}
+                role="link"
+              >
+                Unbundling Aid
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/spotlight-on-uganda"
+                onClick={[Function]}
+                role="link"
+              >
+                Spotlight on Uganda
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Other Visualisations
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/unbundling-other-flows"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    Unbundling other official flows
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/where-are-the-poor"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    Where are the poor and where will they be?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/methodology"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Are domestic public resources able to meet the needs of the poorest people?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Different providers, different priorities
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/methodology"
+                onClick={[Function]}
+                role="link"
+              >
+                Methodology
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qaws8s"
+      >
+        <h1
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            <div
+              className="css-ahmmm3"
+            >
+              Unbundling aid
+            </div>
+            <div
+              className="sub header"
+            >
+              <div
+                className="css-4fxa7l"
+              >
+                Explore and compare funding priorities for official development assistance 
+                <i
+                  aria-hidden="true"
+                  className="info circle icon"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+                 
+                <button
+                  className="ui button"
+                  disabled={undefined}
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={undefined}
+                >
+                  Using This Visualization
+                </button>
+              </div>
+            </div>
+          </div>
+        </h1>
+      </div>
+    </div>
+    <div
+      className="css-13azwyo"
+    >
+      <div
+        className="css-epg9t9"
+      >
+        <div
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="css-1w255sy"
+          >
+            <h1
+              className="ui header"
+            >
+              <span
+                className="red"
+              >
+                 
+                2015
+              </span>
+               US$ 
+              174.3bn
+               
+              <span
+                className="small"
+              >
+                bn
+              </span>
+            </h1>
+            <h5
+              className="ui header"
+            >
+              Official development assistance (total gross disbursements, 2015 prices)
+            </h5>
+            <button
+              className="ui button"
+              disabled={undefined}
+              onClick={[Function]}
+              role="button"
+              tabIndex={undefined}
+            >
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        className="ui button"
+        disabled={undefined}
+        onClick={[Function]}
+        role="button"
+        style={
+          Object {
+            "position": "absolute",
+            "right": "1em",
+            "top": "0.3em",
+          }
+        }
+        tabIndex={undefined}
+      >
+        <span>
+          Compare 
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+        </span>
+      </button>
+    </div>
+    
+    <div
+      className="css-x7lxcg"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="ten wide column"
+            >
+              <h1
+                className="ui header"
+              >
+                Source
+              </h1>
+              <h2
+                className="ui header"
+              >
+                Development Initiatives based on OECD DAC data.
+              </h2>
+              <p>
+                Note that figures are rounded: precise data are available for download on the methodology page
+              </p>
+            </div>
+            <div
+              className="six wide column"
+            >
+              <h1
+                className="ui header"
+              >
+                Download the data
+              </h1>
+              <p>
+                For more information, see the DI data hub methodology page
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-xtq3xk"
+  >
+    <div
+      className="css-aam2ax"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Sections
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/data-blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/publications"
+                >
+                   Publications
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/events"
+                >
+                   Events
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/working-with-us"
+                >
+                   Working with us 
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Quick Links
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/contact-us/"
+                >
+                   Contact us 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/topics"
+                >
+                   Topics
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/consultancy"
+                >
+                   
+                  Our consultancy services
+                   
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/open-di-publishing-to-iati"
+                >
+                   
+                  Open DI - publishing to IATI
+                   
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Newsletter
+                </h3>
+                <p>
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
+                </p>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Creative Commons
+                </h3>
+                <p>
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-11jszci"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.facebook.com/Development.Initiatives"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.youtube.com/user/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.flickr.com/people/development_initiatives/"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-aam2ax lightBlack"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-f051qe"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
+<div
+  className="ui fluid container"
+>
+  <div
+    className="css-1ffx9ig"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qsy4y1"
+      >
+        <a
+          href="http://devinit.org"
+        >
+          <img
+            alt="Development Initiatives"
+            height="32"
+            src="/img/logo.png"
+            width="132"
+          />
+        </a>
+      </div>
+      <ul
+        className="css-snu02m"
+      >
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Global Picture
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Profiles
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/country-profiles"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Country Profiles
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Multilateral Profiles
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Unbundling Aid
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Spotlight on Uganda
+              </div>
+            </a>
+            
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-9jpsqc"
+          >
+            <i
+              aria-hidden="true"
+              className="pie graph icon menu-icon"
+            />
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Other Visualisations
+              </div>
+            </a>
+            <div
+              className="css-qbgmp1"
+            >
+              <div
+                className="ui container"
+              >
+                <ul
+                  className="css-1bqn8de"
+                >
+                  <div
+                    className="ui list"
+                    role="list"
+                  >
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/unbundling-other-flows"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="barcode icon"
+                          />
+                          Unbundling other official flows
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/where-are-the-poor"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="users icon"
+                          />
+                          Where are the poor and where will they be?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/methodology"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Are domestic public resources able to meet the needs of the poorest people?
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className="item"
+                      data-value={undefined}
+                      onClick={[Function]}
+                      role="listitem"
+                    >
+                      <div
+                        className="content"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                          role="link"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="area graph icon"
+                          />
+                          Different providers, different priorities
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          className="css-1dps91a"
+        >
+          <div
+            className="css-1tajbdq"
+          >
+            
+            <a
+              className="css-1oyn0yx"
+              onClick={[Function]}
+            >
+              <div
+                className="menu-text"
+              >
+                Methodology
+              </div>
+            </a>
+            
+          </div>
+        </li>
+      </ul>
+      <div>
+        <button
+          className="css-16yuken"
+          onClick={[Function]}
+        >
+          <i
+            aria-hidden="true"
+            className="align justify icon"
+          />
+        </button>
+        <div
+          className="css-1g5irst"
+          onClick={[Function]}
+        />
+        <nav
+          className="css-1hpbsc1"
+        >
+          <li
+            className="navigation__item active"
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+                role="link"
+              >
+                Global Picture
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Profiles
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/country-profiles"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Country Profiles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Multilateral Profiles
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/unbundling-aid"
+                onClick={[Function]}
+                role="link"
+              >
+                Unbundling Aid
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/spotlight-on-uganda"
+                onClick={[Function]}
+                role="link"
+              >
+                Spotlight on Uganda
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href=""
+                onClick={[Function]}
+                role="link"
+              >
+                Other Visualisations
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              <ul
+                className="css-1w2zwps"
+              >
+                <li>
+                  <a
+                    href="/unbundling-other-flows"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="barcode icon"
+                    />
+                    Unbundling other official flows
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/where-are-the-poor"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="users icon"
+                    />
+                    Where are the poor and where will they be?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/methodology"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Are domestic public resources able to meet the needs of the poorest people?
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                    role="link"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="area graph icon"
+                    />
+                    Different providers, different priorities
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            className="navigation__item "
+            onClick={[Function]}
+          >
+            <span
+              className="navigation__item-title small"
+            >
+              <a
+                href="/methodology"
+                onClick={[Function]}
+                role="link"
+              >
+                Methodology
+              </a>
+            </span>
+            <div
+              className="nav-children"
+            >
+              
+            </div>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1p5z960"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="css-1qaws8s"
+      >
+        <h1
+          className="ui center aligned header"
+        >
+          <div
+            className="content"
+          >
+            <div
+              className="css-ahmmm3"
+            >
+              Unbundling aid
+            </div>
+            <div
+              className="sub header"
+            >
+              <div
+                className="css-4fxa7l"
+              >
+                Explore and compare funding priorities for official development assistance 
+                <i
+                  aria-hidden="true"
+                  className="info circle icon"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+                 
+                <button
+                  className="ui button"
+                  disabled={undefined}
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={undefined}
+                >
+                  Using This Visualization
+                </button>
+              </div>
+            </div>
+          </div>
+        </h1>
+      </div>
+    </div>
+    <div
+      className="css-13azwyo"
+    >
+      <div
+        className="css-epg9t9"
+      >
+        <div
+          style={
+            Object {
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            className="css-1w255sy"
+          >
+            <h1
+              className="ui header"
+            >
+              <span
+                className="red"
+              >
+                 
+                2013
+              </span>
+               US$ 
+              73.1bn
+               
+              <span
+                className="small"
+              >
+                bn
+              </span>
+            </h1>
+            <h5
+              className="ui header"
+            >
+              Total other official flows (total gross disbursements, 2012 prices)
+            </h5>
+            <button
+              className="ui button"
+              disabled={undefined}
+              onClick={[Function]}
+              role="button"
+              tabIndex={undefined}
+            >
+              Explore
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        className="ui button"
+        disabled={undefined}
+        onClick={[Function]}
+        role="button"
+        style={
+          Object {
+            "position": "absolute",
+            "right": "1em",
+            "top": "0.3em",
+          }
+        }
+        tabIndex={undefined}
+      >
+        <span>
+          Compare 
+          <i
+            aria-hidden="true"
+            className="plus icon"
+          />
+        </span>
+      </button>
+    </div>
+    
+    <div
+      className="css-x7lxcg"
+    >
+      <div
+        className="ui container"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="ten wide column"
+            >
+              <h1
+                className="ui header"
+              >
+                Source
+              </h1>
+              <h2
+                className="ui header"
+              >
+                Development Initiatives based on OECD DAC data.
+              </h2>
+              <p>
+                Note that figures are rounded: precise data are available for download on the methodology page
+              </p>
+            </div>
+            <div
+              className="six wide column"
+            >
+              <h1
+                className="ui header"
+              >
+                Download the data
+              </h1>
+              <p>
+                For more information, see the DI data hub methodology page
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-xtq3xk"
+  >
+    <div
+      className="css-aam2ax"
+    >
+      <div
+        className="css-1tfdju4"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="ui grid"
+          >
+            <div
+              className="four column row"
+            >
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Sections
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/data-blog"
+                >
+                   Data blog 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/publications"
+                >
+                   Publications
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/events"
+                >
+                   Events
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/working-with-us"
+                >
+                   Working with us 
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Quick Links
+                </h3>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/contact-us/"
+                >
+                   Contact us 
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/topics"
+                >
+                   Topics
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/consultancy"
+                >
+                   
+                  Our consultancy services
+                   
+                </a>
+                <a
+                  className="css-k88r7w"
+                  href="http://devinit.org/about/open-di-publishing-to-iati"
+                >
+                   
+                  Open DI - publishing to IATI
+                   
+                </a>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Newsletter
+                </h3>
+                <p>
+                  Sign up for the
+                   
+                  <a
+                    href="http://devinit.org/about/newsletter-sign-up"
+                  >
+                    Development Initiatives newsletter
+                  </a>
+                   
+                  to receive regular news and updates from DI.
+                </p>
+              </div>
+              <div
+                className="four wide computer sixteen wide mobile eight wide tablet column"
+              >
+                <h3
+                  className="css-1ftmgmh"
+                >
+                  Creative Commons
+                </h3>
+                <p>
+                  This sites content is licensed under a
+                   
+                  <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  >
+                     
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-ntu1fe"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui center aligned container"
+        >
+          <div
+            className="sixteen wide column"
+          >
+            <a
+              className="css-11jszci"
+              href="https://twitter.com/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="twitter icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.facebook.com/Development.Initiatives"
+            >
+              <i
+                aria-hidden="true"
+                className="facebook f icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.youtube.com/user/devinitorg"
+            >
+              <i
+                aria-hidden="true"
+                className="youtube play icon"
+              />
+            </a>
+            <a
+              className="css-11jszci"
+              href="https://www.flickr.com/people/development_initiatives/"
+            >
+              <i
+                aria-hidden="true"
+                className="flickr icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-aam2ax lightBlack"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="ui container"
+        >
+          <div
+            className="css-f051qe"
+          >
+            <p>
+              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+               
+              <a
+                href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
+              >
+                privacy policy
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Tooltip Tabs Tooltip 1`] = `
