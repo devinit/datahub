@@ -17,7 +17,7 @@ if (typeof window !== 'undefined') {
 
 export default withData((props: Props) => {
   return (<App
-    pathName={props.url.pathname}
+    pathname={props.url.pathname}
     aidType="oda"
     title="Unbundling aid"
     description="Explore and compare funding priorities for official development assistance"
