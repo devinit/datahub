@@ -42,7 +42,7 @@
     "build-theme": "gulp  --gulpfile ./private/semantic/gulpfile.js",
     "build-theme-w": "gulp watch --gulpfile ./private/semantic/gulpfile.js",
     "build-worker": "BABEL_ENV=production node tools/buildScripts/worker.js",
-    "vendor-css": "node tools/buildScripts/css.js",
+    "vendor": "node tools/buildScripts/vendor.js",
     "qql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
     "gql-flow": "apollo-codegen generate **/*.graphql --schema schema.json --target flow --output types/schema.flow.js",
     "gql": "npm run qql-schema &&  npm run gql-flow"
@@ -55,7 +55,6 @@
     "@devinit/charts": "^1.6.16",
     "apollo-client": "^1.9.3",
     "apollo-fetch": "^0.6.0",
-    "autotrack": "^2.4.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-inline-import-graphql-ast": "^2.0.0",

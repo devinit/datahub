@@ -4617,16 +4617,6 @@ exports[`Storyshots Country Search country profile 1`] = `
         className={false}
       >
         <a
-          href="/country/uae"
-          onClick={[Function]}
-        >
-          UAE
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/usa"
           onClick={[Function]}
         >
@@ -6636,16 +6626,6 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className={false}
       >
         <a
-          href="/country/uae"
-          onClick={[Function]}
-        >
-          UAE
-        </a>
-      </li>
-      <li
-        className={false}
-      >
-        <a
           href="/country/usa"
           onClick={[Function]}
         >
@@ -6994,7 +6974,7 @@ exports[`Storyshots Loader progress loader 1`] = `
 exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7002,7 +6982,7 @@ exports[`Storyshots Maps Live with Apollo and Redux Depth of Poverty % Map 1`] =
 exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7010,7 +6990,7 @@ exports[`Storyshots Maps Live with Apollo and Redux Number of Poorest 20% 1`] = 
 exports[`Storyshots Maps Live with Apollo and Redux Subnational 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7018,7 +6998,7 @@ exports[`Storyshots Maps Live with Apollo and Redux Subnational 1`] = `
 exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7026,7 +7006,7 @@ exports[`Storyshots Maps Live with Apollo and Redux fragile states 1`] = `
 exports[`Storyshots Maps Live with Apollo and Redux global picture default map 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7034,7 +7014,7 @@ exports[`Storyshots Maps Live with Apollo and Redux global picture default map 1
 exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7042,7 +7022,7 @@ exports[`Storyshots Maps Live with Apollo and Redux largest_intl_flow 1`] = `
 exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7050,7 +7030,7 @@ exports[`Storyshots Maps Live with Apollo and Redux latest_census 1`] = `
 exports[`Storyshots Maps Live with Apollo and Redux spotlight default map 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7058,7 +7038,7 @@ exports[`Storyshots Maps Live with Apollo and Redux spotlight default map 1`] = 
 exports[`Storyshots Maps Live with Apollo and Redux uganda_poverty_headcount 1`] = `
 <div>
   <div
-    className="css-1a1papz"
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -7102,7 +7082,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
       </a>
     </div>
     <ul
-      className="css-snu02m"
+      className="css-6u8t4z"
     >
       <li
         className="css-1dps91a"
@@ -7419,7 +7399,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
     </ul>
     <div>
       <button
-        className="css-16yuken"
+        className="css-1uf0bbc"
         onClick={[Function]}
       >
         <i
@@ -7665,7 +7645,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
 
 exports[`Storyshots Menu Desktop Menu 1`] = `
 <ul
-  className="css-snu02m"
+  className="css-6u8t4z"
 >
   <li
     className="css-1dps91a"
@@ -10827,16 +10807,6 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/uae"
-                        onClick={[Function]}
-                      >
-                        UAE
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/usa"
                         onClick={[Function]}
                       >
@@ -13061,7 +13031,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -13378,7 +13348,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -13638,35 +13608,33 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
             Where are the poor and where will they be?
             <div
               className="sub header"
+              style={
+                Object {
+                  "fontWeight": "300",
+                  "lineHeight": 1.5,
+                  "width": "75%",
+                }
+              }
             >
-              <pre
-                className="css-ztv1z0"
-              >
-                Between 1990 and 2010, extreme poverty was cut in half. 
+              Between 1990 and 2010, extreme poverty was cut in half. 
 Explore plausible poverty outcomes for 2030 based on models of consumption.
-              </pre>
             </div>
           </div>
         </h1>
       </div>
-      <iframe
-        frameBorder="0"
-        scrolling="no"
-        src="http://212.111.41.68:8888/#!/post/where-are-the-poor"
-        style={
-          Object {
-            "height": "600px",
-            "width": "100%",
-          }
-        }
-        title="where are the poor"
-      />
     </div>
+    <iframe
+      className="css-1764e7z"
+      frameBorder="0"
+      scrolling="no"
+      src="http://212.111.41.68:8888/#!/post/where-are-the-poor"
+      title="where are the poor"
+    />
     <div
       className="ui container"
     >
       <div
-        className="css-1c4zp0i"
+        className="css-8v8jo1"
       >
         <div
           className="ui grid"
@@ -13683,12 +13651,12 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
                 About this visualisation
               </h3>
               <p
-                className="css-7dpqwn"
+                className="css-3cal72"
               >
                 This page allows you to explore three scenarios for future poverty levels both globally and by region up to 2030. The baseline scenario uses current forecasts for growth in consumption and current inequality levels. The best-case scenario shows what happens with more rapid growth that is shared more equally. By contrast, the worst-case scenario sees slower growth and increasing inequality. Forecasting future poverty levels is difficult, given the inherent uncertainties involved. Poverty modelling develops future scenarios to help inform policymaking. These models rely on simplifying assumptions, often focusing on economic growth and income distribution trends which determine how much poor people benefit from that growth.
               </p>
               <p
-                className="css-7dpqwn"
+                className="css-3cal72"
               >
                 Data accessed from source: 20 August 2013.
               </p>
@@ -13698,7 +13666,7 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
                 Scenario details
               </h3>
               <p
-                className="css-7dpqwn"
+                className="css-3cal72"
               >
                 The best and worst case scenarios are based on the extremes of two elements: For growth, a +/- 2 percentage point margin of error either side of baseline projections of consumption growth (which are driven by economic growth). This is in line with differences observed between past forecasts and actual outcomes. For inequality, an annual 0.25 percentage point change in the shares of national consumption between the poorest 40% and the richest 10%.
               </p>
@@ -13708,7 +13676,7 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
                 About the data
               </h3>
               <p
-                className="css-7dpqwn"
+                className="css-3cal72"
               >
                 Projections based on Chandy, Ledlie and Penciakova, The Final Countdown: Prospects for Ending Extreme Poverty by 2030 (2013), using the same methodology applied to a dataset updated with 40 country surveys. All data for years after 2010 are forecasts.
               </p>
@@ -13723,7 +13691,7 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
                 Download the data
               </h3>
               <p
-                className="css-7dpqwn"
+                className="css-3cal72"
               >
                 Not yet available
               </p>
@@ -13972,7 +13940,7 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -14289,7 +14257,7 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -16482,16 +16450,6 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           className={false}
                         >
                           <a
-                            href="/country/uae"
-                            onClick={[Function]}
-                          >
-                            UAE
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
                             href="/country/usa"
                             onClick={[Function]}
                           >
@@ -16798,6 +16756,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age.zip?raw=true"
                       >
                         <i
@@ -16807,7 +16769,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -16853,6 +16821,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors.zip?raw=true"
                       >
                         <i
@@ -16862,7 +16834,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -16908,6 +16886,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Staff reports."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/domestic.zip?raw=true"
                       >
                         <i
@@ -16917,7 +16899,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Staff reports."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/domestic"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -16963,6 +16951,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients.zip?raw=true"
                       >
                         <i
@@ -16972,7 +16964,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -17018,6 +17016,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190.zip?raw=true"
                       >
                         <i
@@ -17027,7 +17029,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -17073,6 +17081,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile.zip?raw=true"
                       >
                         <i
@@ -17082,7 +17094,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -17128,6 +17146,10 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-total.zip?raw=true"
                       >
                         <i
@@ -17137,7 +17159,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-total"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -17394,7 +17422,7 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -17711,7 +17739,7 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -19904,16 +19932,6 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           className={false}
                         >
                           <a
-                            href="/country/uae"
-                            onClick={[Function]}
-                          >
-                            UAE
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
                             href="/country/usa"
                             onClick={[Function]}
                           >
@@ -20229,6 +20247,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age.zip?raw=true"
                       >
                         <i
@@ -20238,7 +20260,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20284,6 +20312,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors.zip?raw=true"
                       >
                         <i
@@ -20293,7 +20325,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20339,6 +20377,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Staff reports."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/domestic.zip?raw=true"
                       >
                         <i
@@ -20348,7 +20390,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Staff reports."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/domestic"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20394,6 +20442,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients.zip?raw=true"
                       >
                         <i
@@ -20403,7 +20455,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20449,6 +20507,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190.zip?raw=true"
                       >
                         <i
@@ -20458,7 +20520,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20504,6 +20572,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile.zip?raw=true"
                       >
                         <i
@@ -20513,7 +20585,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20559,6 +20637,10 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-total.zip?raw=true"
                       >
                         <i
@@ -20568,7 +20650,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-total"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -20825,7 +20913,7 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -21142,7 +21230,7 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -23335,16 +23423,6 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           className={false}
                         >
                           <a
-                            href="/country/uae"
-                            onClick={[Function]}
-                          >
-                            UAE
-                          </a>
-                        </li>
-                        <li
-                          className={false}
-                        >
-                          <a
                             href="/country/usa"
                             onClick={[Function]}
                           >
@@ -23671,6 +23749,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age.zip?raw=true"
                       >
                         <i
@@ -23680,7 +23762,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -23726,6 +23814,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors.zip?raw=true"
                       >
                         <i
@@ -23735,7 +23827,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -23781,6 +23879,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Staff reports."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/domestic.zip?raw=true"
                       >
                         <i
@@ -23790,7 +23892,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Staff reports."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/domestic"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -23836,6 +23944,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients.zip?raw=true"
                       >
                         <i
@@ -23845,7 +23957,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -23891,6 +24009,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190.zip?raw=true"
                       >
                         <i
@@ -23900,7 +24022,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -23946,6 +24074,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile.zip?raw=true"
                       >
                         <i
@@ -23955,7 +24087,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -24001,6 +24139,10 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank World Development Indicators"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-total.zip?raw=true"
                       >
                         <i
@@ -24010,7 +24152,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank World Development Indicators"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/population-total"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -24267,7 +24415,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -24584,7 +24732,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -26761,16 +26909,6 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className={false}
                     >
                       <a
-                        href="/country/uae"
-                        onClick={[Function]}
-                      >
-                        UAE
-                      </a>
-                    </li>
-                    <li
-                      className={false}
-                    >
-                      <a
                         href="/country/usa"
                         onClick={[Function]}
                       >
@@ -27126,7 +27264,7 @@ exports[`Storyshots Templates Front Page 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -27443,7 +27581,7 @@ exports[`Storyshots Templates Front Page 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -29605,16 +29743,6 @@ exports[`Storyshots Templates Front Page 1`] = `
               className={false}
             >
               <a
-                href="/country/uae"
-                onClick={[Function]}
-              >
-                UAE
-              </a>
-            </li>
-            <li
-              className={false}
-            >
-              <a
                 href="/country/usa"
                 onClick={[Function]}
               >
@@ -30438,7 +30566,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -30755,7 +30883,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -31239,7 +31367,7 @@ exports[`Storyshots Templates Methodology 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -31556,7 +31684,7 @@ exports[`Storyshots Templates Methodology 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -31965,6 +32093,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/percent-in-p20-national.zip?raw=true"
                       >
                         <i
@@ -31974,7 +32106,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/percent-in-p20-national"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32020,6 +32158,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on World Bank PovcalNet"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/poverty-190.zip?raw=true"
                       >
                         <i
@@ -32029,7 +32171,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on World Bank PovcalNet"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/poverty-190"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32075,6 +32223,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on World Bank PovcalNet"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/poverty-310.zip?raw=true"
                       >
                         <i
@@ -32084,7 +32236,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on World Bank PovcalNet"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/poverty-310"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32130,6 +32288,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Inform (Index for Risk Management) v 3.0.5."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/human-hazard.zip?raw=true"
                       >
                         <i
@@ -32139,7 +32301,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Inform (Index for Risk Management) v 3.0.5."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/human-hazard"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32185,6 +32353,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on UN OCHA's FTS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/number-of-un-appeals.zip?raw=true"
                       >
                         <i
@@ -32194,7 +32366,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on UN OCHA's FTS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/number-of-un-appeals"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32240,6 +32418,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Inform (Index for Risk Management) v 3.0.5."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/natural-hazard.zip?raw=true"
                       >
                         <i
@@ -32249,7 +32431,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Inform (Index for Risk Management) v 3.0.5."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/natural-hazard"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32295,6 +32483,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on ECHO Forgotten Crisis Assessment Index."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/forgotten-crisis.zip?raw=true"
                       >
                         <i
@@ -32304,7 +32496,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on ECHO Forgotten Crisis Assessment Index."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/forgotten-crisis"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32350,6 +32548,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on Fund for Peace Fragile States Index."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/fragile-states.zip?raw=true"
                       >
                         <i
@@ -32359,7 +32561,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on Fund for Peace Fragile States Index."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/fragile-states"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32405,6 +32613,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/climate-vulnerability.zip?raw=true"
                       >
                         <i
@@ -32414,7 +32626,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/climate-vulnerability"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32460,6 +32678,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on UN High Commissioner for Refugees (UNHCR) and UN Relief and Works Agency for Palestine Refugees in the Near East."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/displacement.zip?raw=true"
                       >
                         <i
@@ -32469,7 +32691,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on UN High Commissioner for Refugees (UNHCR) and UN Relief and Works Agency for Palestine Refugees in the Near East."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/displacement"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32515,6 +32743,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC and national sources."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/ssc-percent-gni.zip?raw=true"
                       >
                         <i
@@ -32524,7 +32756,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC and national sources."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/ssc-percent-gni"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32570,6 +32808,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015.zip?raw=true"
                       >
                         <i
@@ -32579,7 +32821,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32625,6 +32873,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni.zip?raw=true"
                       >
                         <i
@@ -32634,7 +32886,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32680,6 +32938,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni.zip?raw=true"
                       >
                         <i
@@ -32689,7 +32951,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32735,6 +33003,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net.zip?raw=true"
                       >
                         <i
@@ -32744,7 +33016,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32790,6 +33068,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC and national sources."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net.zip?raw=true"
                       >
                         <i
@@ -32799,7 +33081,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC and national sources."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32845,6 +33133,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC and World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015.zip?raw=true"
                       >
                         <i
@@ -32854,7 +33146,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC and World Bank PovcalNet."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32900,6 +33198,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015.zip?raw=true"
                       >
                         <i
@@ -32909,7 +33211,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -32955,6 +33263,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015.zip?raw=true"
                       >
                         <i
@@ -32964,7 +33276,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33010,6 +33328,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross.zip?raw=true"
                       >
                         <i
@@ -33019,7 +33341,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33065,6 +33393,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on UNCTAD Stat and World Bank Development Indicators."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/fdi-pp.zip?raw=true"
                       >
                         <i
@@ -33074,7 +33406,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on UNCTAD Stat and World Bank Development Indicators."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/fdi-pp"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33120,6 +33458,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data)."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-resources-total-percent-gdp.zip?raw=true"
                       >
                         <i
@@ -33129,7 +33471,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data)."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/intl-resources-total-percent-gdp"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33175,6 +33523,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on World Bank."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/remittances-pp.zip?raw=true"
                       >
                         <i
@@ -33184,7 +33536,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on World Bank."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/remittances-pp"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33230,6 +33588,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data)."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-intl-resources.zip?raw=true"
                       >
                         <i
@@ -33239,7 +33601,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data)."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-intl-resources"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33285,6 +33653,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on UNCTAD Stat and World Bank Development Indicators."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/fdi-percent-gdp.zip?raw=true"
                       >
                         <i
@@ -33294,7 +33666,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on UNCTAD Stat and World Bank Development Indicators."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/fdi-percent-gdp"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33340,6 +33718,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on OECD DAC,UN OCHA FTS and UN CERF."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-ha.zip?raw=true"
                       >
                         <i
@@ -33349,7 +33731,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on OECD DAC,UN OCHA FTS and UN CERF."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/in-ha"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33395,6 +33783,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initaitives based on UK DFID data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-gb.zip?raw=true"
                       >
                         <i
@@ -33404,7 +33796,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initaitives based on UK DFID data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-gb"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33450,6 +33848,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initaitives based on Canada Global Affairs data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-ca.zip?raw=true"
                       >
                         <i
@@ -33459,7 +33861,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initaitives based on Canada Global Affairs data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-ca"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33505,6 +33913,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initaitives based on Belgian DG Development data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-be.zip?raw=true"
                       >
                         <i
@@ -33514,7 +33926,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initaitives based on Belgian DG Development data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-be"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33560,6 +33978,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initaitives based on Netherlands Ministry of Foreign Affairs data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-nl.zip?raw=true"
                       >
                         <i
@@ -33569,7 +33991,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initaitives based on Netherlands Ministry of Foreign Affairs data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-nl"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33615,6 +34043,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initaitives based on Denmark Ministry of Foreign Affairs data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-dk.zip?raw=true"
                       >
                         <i
@@ -33624,7 +34056,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initaitives based on Denmark Ministry of Foreign Affairs data downloaded via the IATI Registry on 15 December 2016."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-dk"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33670,6 +34108,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip FAO World Programme for the Census of Agriculture (WCA): www.fao.org/economic/ess/ess-wca/en/; World Bank World Development Indicators Metadata."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/agricultural-census.zip?raw=true"
                       >
                         <i
@@ -33679,7 +34121,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv FAO World Programme for the Census of Agriculture (WCA): www.fao.org/economic/ess/ess-wca/en/; World Bank World Development Indicators Metadata."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/agricultural-census"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33725,6 +34173,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank Statistical Capacity Indicators (2014)."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/number-of-surveys.zip?raw=true"
                       >
                         <i
@@ -33734,7 +34186,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank Statistical Capacity Indicators (2014)."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/number-of-surveys"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33780,6 +34238,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip UNDESA Population and Vital Statistics Report. Data as available at Jan 2014; UNSD Coverage of Birth and Death Registration."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-births.zip?raw=true"
                       >
                         <i
@@ -33789,7 +34251,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv UNDESA Population and Vital Statistics Report. Data as available at Jan 2014; UNSD Coverage of Birth and Death Registration."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-births"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33835,6 +34303,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip WHO African Health Observatory-Civil registration and vital statistics systems."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-deaths.zip?raw=true"
                       >
                         <i
@@ -33844,7 +34316,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv WHO African Health Observatory-Civil registration and vital statistics systems."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-deaths"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33890,6 +34368,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip UNICEF Country Annual Reports: www.unicef.org/about/annualreport/index_82089.html; UIS Data Quality Assessment Framework (DQAF) output: www.poledakar.com/dqaf/index.php?title=DQAF_Events."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/educ-mis.zip?raw=true"
                       >
                         <i
@@ -33899,7 +34381,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv UNICEF Country Annual Reports: www.unicef.org/about/annualreport/index_82089.html; UIS Data Quality Assessment Framework (DQAF) output: www.poledakar.com/dqaf/index.php?title=DQAF_Events."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/educ-mis"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -33945,6 +34433,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip UNDESA Population and Vital Statistics Report. Data as available at January 2014."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/latest-census.zip?raw=true"
                       >
                         <i
@@ -33954,7 +34446,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv UNDESA Population and Vital Statistics Report. Data as available at January 2014."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/latest-census"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34000,6 +34498,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip World Bank Statistical Capacity Indicators."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/stat-capacity.zip?raw=true"
                       >
                         <i
@@ -34009,7 +34511,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv World Bank Statistical Capacity Indicators."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/stat-capacity"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34055,6 +34563,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip IHSN Survey Catalog; USAID DHS Program."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/latest-hh-survey.zip?raw=true"
                       >
                         <i
@@ -34064,7 +34576,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv IHSN Survey Catalog; USAID DHS Program."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/latest-hh-survey"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34110,6 +34628,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Various, including system providers such as DHIS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/health-mis.zip?raw=true"
                       >
                         <i
@@ -34119,7 +34641,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Various, including system providers such as DHIS."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/health-mis"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34165,6 +34693,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/non-grant-revenue-ppp-pc.zip?raw=true"
                       >
                         <i
@@ -34174,7 +34706,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/non-grant-revenue-ppp-pc"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34220,6 +34758,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-ppp-pc.zip?raw=true"
                       >
                         <i
@@ -34229,7 +34771,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-ppp-pc"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34275,6 +34823,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/govt-revenue-pc-gdp.zip?raw=true"
                       >
                         <i
@@ -34284,7 +34836,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/govt-revenue-pc-gdp"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34330,6 +34888,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Article IV publications."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-percent-gdp.zip?raw=true"
                       >
                         <i
@@ -34339,7 +34901,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Article IV publications."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-percent-gdp"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34385,6 +34953,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/grants-percent-total-revenue.zip?raw=true"
                       >
                         <i
@@ -34394,7 +34966,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/grants-percent-total-revenue"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34440,6 +35018,10 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/govt-spend-pc.zip?raw=true"
                       >
                         <i
@@ -34449,7 +35031,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Development Initiatives based on IMF Article IV publications and World Economic Outlook."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/govt-spend-pc"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -34706,7 +35294,7 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -35023,7 +35611,7 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -35626,7 +36214,7 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -35943,7 +36531,7 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -36211,24 +36799,19 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
               <p
                 className="css-boquj"
               >
-                The proportion of people living in extreme poverty worldwide has more than halved since 2000,
-                    yet progress is varied across countries. Although domestic public resources are an important
-                  resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high.
+                How effectively are donors targeting the countries with the highest numbers of people in poverty
+                  and the least domestic public resources to address it? This chart allows you to select
+                  a provider of aid to see how it allocates aid across countries.
               </p>
             </div>
           </div>
         </div>
       </div>
       <iframe
+        className="css-1k337zb"
         frameBorder="0"
         scrolling="no"
         src="http://212.111.41.68:8888/#!/post/oda-donor"
-        style={
-          Object {
-            "height": "850px",
-            "width": "100%",
-          }
-        }
         title="oda-donor"
       />
       
@@ -36473,7 +37056,7 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -36790,7 +37373,7 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -37067,15 +37650,10 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
         </div>
       </div>
       <iframe
+        className="css-1k337zb"
         frameBorder="0"
         scrolling="no"
         src="http://212.111.41.68:8888/#!/post/poverty"
-        style={
-          Object {
-            "height": "850px",
-            "width": "100%",
-          }
-        }
         title="oda-donor"
       />
       
@@ -37320,7 +37898,7 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -37637,7 +38215,7 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -39311,171 +39889,6 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                     <td
                       className=""
                     >
-                      Agriculture allocation as a % of total expenditure
-                    </td>
-                    <td
-                      className=""
-                    >
-                      The proportion of total local government expenditure that is allocated to the agriculture sector, by district.
-                    </td>
-                    <td
-                      className=""
-                    >
-                      
-                    </td>
-                    <td
-                      className=""
-                    >
-                      percent
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href=""
-                      >
-                        Local government budgets, Ministry of Finance, Planning and Economic Development.
-                      </a>
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-agri-percent.zip?raw=true"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        ZIP
-                      </a>
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-agri-percent"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        CSV
-                      </a>
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      Antenatal care coverage rate
-                    </td>
-                    <td
-                      className=""
-                    >
-                      The percentage rate of antenatal care coverage, by district.
-                    </td>
-                    <td
-                      className=""
-                    >
-                      
-                    </td>
-                    <td
-                      className=""
-                    >
-                      unit
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href=""
-                      >
-                        Annual health sector performance reports 2010-2014, Ministry of Health.
-                      </a>
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-anc4-coverage.zip?raw=true"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        ZIP
-                      </a>
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-anc4-coverage"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        CSV
-                      </a>
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      Average household size
-                    </td>
-                    <td
-                      className=""
-                    >
-                      The number of people who normally live and eat together, by district.
-                    </td>
-                    <td
-                      className=""
-                    >
-                      
-                    </td>
-                    <td
-                      className=""
-                    >
-                      unit
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href=""
-                      >
-                        National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics.
-                      </a>
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-avg-house-size.zip?raw=true"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        ZIP
-                      </a>
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-avg-house-size"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        CSV
-                      </a>
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
                       Centrally raised revenues
                     </td>
                     <td
@@ -39506,6 +39919,10 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Local government budgets, Ministry of Finance, Planning and Economic Development"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-central-resources.zip?raw=true"
                       >
                         <i
@@ -39515,7 +39932,13 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Local government budgets, Ministry of Finance, Planning and Economic Development"
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-central-resources"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -39552,7 +39975,7 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
-                        href=""
+                        href="http://www.ubos.org/onlinefiles/uploads/ubos"
                       >
                         Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.
                       </a>
@@ -39561,6 +39984,10 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-dependency-ratio.zip?raw=true"
                       >
                         <i
@@ -39570,7 +39997,13 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-dependency-ratio"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -39607,7 +40040,7 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
-                        href=""
+                        href="http://www.ubos.org/onlinefiles/uploads/ubos"
                       >
                         Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.
                       </a>
@@ -39616,6 +40049,10 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-deprivation-living.zip?raw=true"
                       >
                         <i
@@ -39625,117 +40062,13 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-deprivation-living"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        CSV
-                      </a>
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      Primary education donor spending per child, US$
-                    </td>
-                    <td
-                      className=""
-                    >
-                      On-budget donor funded expenditure allocations per child in government primary education, by district.
-                    </td>
-                    <td
-                      className=""
-                    >
-                      
-                    </td>
-                    <td
-                      className=""
-                    >
-                      US$
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href=""
-                      >
-                        Local government budgets, Ministry of Finance, Planning and Economic Development.
-                      </a>
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-educ-spend.zip?raw=true"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        ZIP
-                      </a>
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-educ-spend"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        CSV
-                      </a>
-                    </td>
-                  </tr>
-                  <tr
-                    className=""
-                  >
-                    <td
-                      className=""
-                    >
-                      Donor funds
-                    </td>
-                    <td
-                      className=""
-                    >
-                      The proportion of local government revenue that is funded through donor funding, by district.
-                    </td>
-                    <td
-                      className=""
-                    >
-                      
-                    </td>
-                    <td
-                      className=""
-                    >
-                      percent
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href=""
-                      >
-                        Local government budgets, Ministry of Finance, Planning and Economic Development.
-                      </a>
-                    </td>
-                    <td
-                      className=""
-                    >
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-percent.zip?raw=true"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="file icon"
-                        />
-                        ZIP
-                      </a>
-                      <a
-                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-percent"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -39772,7 +40105,7 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
-                        href=""
+                        href="http://www.budget.go.ug/"
                       >
                         Local government budgets, Ministry of Finance, Planning and Economic Development.
                       </a>
@@ -39781,6 +40114,10 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                       className=""
                     >
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Local government budgets, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-resources.zip?raw=true"
                       >
                         <i
@@ -39790,7 +40127,858 @@ exports[`Storyshots Templates Regional Profiles 1`] = `
                         ZIP
                       </a>
                       <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Local government budgets, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
                         href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-resources"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      National finance
+                    </td>
+                    <td
+                      className=""
+                    >
+                      National finance
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.budget.go.ug/"
+                      >
+                        Uganda budget information, Ministry of Finance, Planning and Economic Development.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Uganda budget information, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-finance.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Uganda budget information, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-finance"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Total expenditure per capita
+                    </td>
+                    <td
+                      className=""
+                    >
+                      Total per capita local government expenditure allocations, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.budget.go.ug/"
+                      >
+                        Uganda budget information, Ministry of Finance, Planning and Economic Development.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Uganda budget information, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-gov-spend-pp.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Uganda budget information, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-gov-spend-pp"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Primary health spending per person, US$
+                    </td>
+                    <td
+                      className=""
+                    >
+                      Local government spending to healthcare per person, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      US$
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.budget.go.ug/"
+                      >
+                        Local government budgets, Ministry of Finance, Planning and Economic Development.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Local government budgets, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-funding.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Local government budgets, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-funding"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Locally raised revenues
+                    </td>
+                    <td
+                      className=""
+                    >
+                      The proportion of local government revenue that is locally generated, through collection of fees, fines and other local taxation, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.budget.go.ug/"
+                      >
+                        Uganda budget information, Ministry of Finance, Planning and Economic Development.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Uganda budget information, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-igf-resources.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Uganda budget information, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-igf-resources"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Primary leaving exam performance index
+                    </td>
+                    <td
+                      className=""
+                    >
+                      The percentage of pupils that pass the primary education leaving exam, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.education.go.ug"
+                      >
+                        Education abstracts 2010-2013 budget data, Ministry of Education.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Education abstracts 2010-2013 budget data, Ministry of Education."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-leaving-exam-perf-rate.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Education abstracts 2010-2013 budget data, Ministry of Education."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-leaving-exam-perf-rate"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Life expectancy
+                    </td>
+                    <td
+                      className=""
+                    >
+                      Average number of years that a person can expect to live in 'full health' by taking into account years lived in less than full health due to disease and/or injury. This can be derived for either males or females and is, in most populations, slightly higher for females. Life expectancy is normally determined at birth but can be derived at any other age based on the current death rates.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.ubos.org/onlinefiles/uploads/ubos"
+                      >
+                        Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-life-expectancy.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-life-expectancy"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      District league table overall score
+                    </td>
+                    <td
+                      className=""
+                    >
+                      A composite index based on the performance of all district health indicators. The higher the score the better the rated performance, with 0 the lowest score possible and 100 the highest.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://library.health.go.ug/"
+                      >
+                        Annual health sector performance reports 2010-2014, Ministry of Health.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Annual health sector performance reports 2010-2014, Ministry of Health."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-overall-health.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Annual health sector performance reports 2010-2014, Ministry of Health."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-overall-health"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Population density (per sq km)
+                    </td>
+                    <td
+                      className=""
+                    >
+                      The population per square kilometre, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.ubos.org/onlinefiles/uploads/ubos"
+                      >
+                        National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-dens.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-dens"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Primary education spending per child, US$
+                    </td>
+                    <td
+                      className=""
+                    >
+                      Total local government expenditure per child in government funded primary education by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      US$
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.budget.go.ug/"
+                      >
+                        Local government budgets, Ministry of Finance, Planning and Economic Development.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Local government budgets, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-educ-funding.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Local government budgets, Ministry of Finance, Planning and Economic Development."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-educ-funding"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Primary pupil to teacher ratio-all schools
+                    </td>
+                    <td
+                      className=""
+                    >
+                      The number of pupils per teacher in all primary education schools, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.education.go.ug/data/smenu/4"
+                      >
+                        Education statistics abstracts 2010-2013, Ministry of Education.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Education statistics abstracts 2010-2013, Ministry of Education."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Education statistics abstracts 2010-2013, Ministry of Education."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Primary pupil to teacher ratio-government schools
+                    </td>
+                    <td
+                      className=""
+                    >
+                      Primary pupil to teacher ratio-government schools.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.education.go.ug/data/smenu/4"
+                      >
+                        Education statistics abstracts 2010-2013, Ministry of Education.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Education statistics abstracts 2010-2013, Ministry of Education."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio-gov.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Education statistics abstracts 2010-2013, Ministry of Education."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio-gov"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Tuberculosis treatment success rate
+                    </td>
+                    <td
+                      className=""
+                    >
+                      Percentage of successes among a number of attempts for treatment of tuberculosis, by district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      %
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://library.health.go.ug/"
+                      >
+                        Annual health sector performance reports 2010-2014, Ministry of Health.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip Annual health sector performance reports 2010-2014, Ministry of Health."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-tb-success.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv Annual health sector performance reports 2010-2014, Ministry of Health."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-tb-success"
+                        rel="noopener"
+                        target="__blank"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        CSV
+                      </a>
+                    </td>
+                  </tr>
+                  <tr
+                    className=""
+                  >
+                    <td
+                      className=""
+                    >
+                      Total population
+                    </td>
+                    <td
+                      className=""
+                    >
+                      The number of people who live in a district.
+                    </td>
+                    <td
+                      className=""
+                    >
+                      
+                    </td>
+                    <td
+                      className=""
+                    >
+                      unit
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        href="http://www.ubos.org/onlinefiles/uploads/ubos"
+                      >
+                        National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics.
+                      </a>
+                    </td>
+                    <td
+                      className=""
+                    >
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-zip National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-total-pop.zip?raw=true"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="file icon"
+                        />
+                        ZIP
+                      </a>
+                      <a
+                        ga-event-action="Download"
+                        ga-event-category="Content Actions"
+                        ga-event-label="download-csv National Population and Housing Census 2014: provisional results, Uganda Bureau of Statistics."
+                        ga-on="click"
+                        href="https://github.com/devinit/digital-platform/blob/master/user-data/uganda-total-pop"
+                        rel="noopener"
+                        target="__blank"
                       >
                         <i
                           aria-hidden="true"
@@ -40047,7 +41235,7 @@ exports[`Storyshots Templates Spot Light 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -40364,7 +41552,7 @@ exports[`Storyshots Templates Spot Light 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -41259,7 +42447,7 @@ exports[`Storyshots Templates UNDP profile 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -41576,7 +42764,7 @@ exports[`Storyshots Templates UNDP profile 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -42081,7 +43269,7 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -42398,7 +43586,7 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -42657,16 +43845,15 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
           >
             <div
               className="css-ahmmm3"
-            >
-              Unbundling aid
-            </div>
+            />
             <div
               className="sub header"
             >
               <div
                 className="css-4fxa7l"
               >
-                Explore and compare funding priorities for official development assistance
+                Explore and compare funding priorities for 
+                official development assistance
                 <i
                   aria-hidden="true"
                   className="info circle icon"
@@ -42717,7 +43904,7 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                 2015
               </span>
                US$ 
-              174.3bn
+              174.1bn
             </h1>
             <h5
               className="ui header"
@@ -42789,9 +43976,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
               <br />
               is sized by the volume of
               <br />
-              ODA it represents. The
+              ODA
+               it represents. The
               <br />
-              total amount of ODA
+              total amount of 
+              ODA
               <br />
               being viewed at any time
               <br />
@@ -43192,7 +44381,7 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -43509,7 +44698,7 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -43768,16 +44957,15 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
           >
             <div
               className="css-ahmmm3"
-            >
-              Unbundling aid
-            </div>
+            />
             <div
               className="sub header"
             >
               <div
                 className="css-4fxa7l"
               >
-                Explore and compare funding priorities for official development assistance
+                Explore and compare funding priorities for 
+                other official flows (OOFs)
                 <i
                   aria-hidden="true"
                   className="info circle icon"
@@ -43900,9 +45088,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
               <br />
               is sized by the volume of
               <br />
-              ODA it represents. The
+              OOFs
+               it represents. The
               <br />
-              total amount of ODA
+              total amount of 
+              OOFs
               <br />
               being viewed at any time
               <br />
@@ -44303,7 +45493,7 @@ exports[`Storyshots Templates who are the global P20 1`] = `
         </a>
       </div>
       <ul
-        className="css-snu02m"
+        className="css-6u8t4z"
       >
         <li
           className="css-1dps91a"
@@ -44620,7 +45810,7 @@ exports[`Storyshots Templates who are the global P20 1`] = `
       </ul>
       <div>
         <button
-          className="css-16yuken"
+          className="css-1uf0bbc"
           onClick={[Function]}
         >
           <i
@@ -44898,15 +46088,10 @@ exports[`Storyshots Templates who are the global P20 1`] = `
         </div>
       </div>
       <iframe
+        className="css-11ym1t7"
         frameBorder="0"
         scrolling="no"
         src="http://212.111.41.68:8888/#!/who-are-the-global-p20"
-        style={
-          Object {
-            "height": "1728px",
-            "width": "100%",
-          }
-        }
         title="who-are-the-global-p20"
       />
     </div>
@@ -45454,9 +46639,9 @@ exports[`Storyshots Tour UnbundlindAid tour 1`] = `
         <br />
         is sized by the volume of
         <br />
-        ODA it represents. The
+         it represents. The
         <br />
-        total amount of ODA
+        total amount of 
         <br />
         being viewed at any time
         <br />
@@ -45594,7 +46779,7 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
             2015
           </span>
            US$ 
-          174.3bn
+          174.1bn
         </h1>
         <h5
           className="ui header"
@@ -45666,9 +46851,11 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
           <br />
           is sized by the volume of
           <br />
-          ODA it represents. The
+          ODA
+           it represents. The
           <br />
-          total amount of ODA
+          total amount of 
+          ODA
           <br />
           being viewed at any time
           <br />
