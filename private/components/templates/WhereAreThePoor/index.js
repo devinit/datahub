@@ -3,12 +3,13 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import {config} from 'package.json';
+import {mediaQueries} from 'components/theme';
 import Generic from '../Generic';
 import data from './data';
 
 const StyledPre = glamorous.pre({
   fontFamily: 'inherit',
-  fontSize: '22px',
+  fontSize: '2em',
   overflow: 'hidden',
   fontWeight: '300',
   lineHeight: '33px',
@@ -34,6 +35,16 @@ const HeaderContainer = glamorous.div({
     fontSize: '0.55em !important',
   },
 });
+const StyledIframe = glamorous.iframe({
+  width: '100%',
+  height: '600px',
+  [mediaQueries.tabs]: {
+    height: '480px',
+  },
+  [mediaQueries.phone]: {
+    height: '500px',
+  },
+});
 export default () => {
   return (
     <Generic pathname="/where-are-the-poor">
@@ -46,12 +57,11 @@ export default () => {
             </Header.Content>
           </Header>
         </HeaderContainer>
-        <iframe
+        <StyledIframe
           title="where are the poor"
           src={`${config.old_datahub}/#!/post/where-are-the-poor`}
           frameBorder="0"
           scrolling="no"
-          style={{ width: '100%', height: '600px' }}
         />
       </Container>
       <Container>

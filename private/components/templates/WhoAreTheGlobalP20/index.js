@@ -1,10 +1,21 @@
 // @flow
 import React from 'react';
-import {Div, P} from 'glamorous';
+import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import {config} from 'package.json';
+import {mediaQueries} from 'components/theme';
 import Generic from '../Generic';
 
+const StyledIframe = glamorous.iframe({
+  width: '100%',
+  height: '1728px',
+  [mediaQueries.tabs]: {
+    height: '480px',
+  },
+  [mediaQueries.phone]: {
+    height: '2900px',
+  },
+});
 /* eslint-disable max-len */
 export default () =>
   (<Generic pathname="/who-are-the-global-p20">
@@ -26,7 +37,7 @@ export default () =>
           </Grid.Row>
         </Grid>
       </Container>
-      <iframe
+      <StyledIframe
         title="who-are-the-global-p20"
         src={`${config.old_datahub}/#!/who-are-the-global-p20`}
         frameBorder="0"

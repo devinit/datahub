@@ -3,7 +3,7 @@
 import React from 'react';
 import { rehydrate } from 'glamor';
 import withData from 'lib/withData';
-import App from 'components/templates/Poor';
+import App from 'components/templates/WhereAreThePoor';
 
 type Props = {
   url: { pathname: string },
