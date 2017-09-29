@@ -13,10 +13,8 @@ const ToolBarContainer = glamorous.div(
     },
   },
   props => ({
+    padding: props.compact ? '1.76em 0' : '1em 0',
     fontSize: props.compact ? '1em' : '1.7em',
-    paddingLeft: '0.5em',
-    paddingTop: props.compact ? '.85em' : '.5em',
-    paddingBottom: props.compact ? '.85em' : '.5em',
   }),
 );
 
@@ -42,8 +40,8 @@ const InteractiveChartToolBar = (props: Props) => {
               values={values}
               onChange={props.onChange}
               data={props.toolBarOptions}
-              textAlign={compact ? 'left' : 'right'}
-              width={compact ? 16 : 10}
+              textAlign="center"
+              width={16}
             />
           </Grid.Row>
         </Grid>

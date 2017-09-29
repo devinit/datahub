@@ -62,10 +62,10 @@ const TourItems = glamorous.ul({
       '& i.right': {
         left: '100%',
         marginLeft: '-10px',
-        top: '2px',
+        top: '-10px',
       },
       '& i.left': {
-        top: '2px',
+        top: '-10px',
       },
     },
   },
@@ -88,7 +88,7 @@ const TourItems = glamorous.ul({
       bottom: '100%',
       left: '65px',
       '& i': {
-        top: 'auto',
+        top: '-10px',
       },
     },
   },

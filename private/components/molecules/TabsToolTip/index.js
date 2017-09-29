@@ -10,6 +10,14 @@ export type Props = {
   color?: string
 };
 
+export const RegularToolTip = (props: {color?: string, text: string}) => {
+  return (
+    <ToolTip color={props.color || 'black'} trigger={<Icon name="info circle" />}>
+      {props.text}
+    </ToolTip>
+  );
+};
+
 const TabsToolTip = (props: Props) => {
   return (
     <ToolTip color={props.color || 'black'} trigger={<Icon name="info circle" />}>
