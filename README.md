@@ -105,20 +105,6 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
  These commands are run at new deployments by docker.
 
 
-## TODO
-
----------
-- [ ] Reduce service worker pre-cache bundle
-- [ ] Social media meta
-- [ ] improvise for removing slugs in spotlight uganda data
-- [ ] refactor spotlightnavtabs && global picture nav tabs organisms so that they use same base component
-- [ ] Make webpack loader for coping over package.json version && api config into a separate config file. This will ensure we dont have the all package.json file in our client code budle
-- [ ] Get rid of proptypes in one of the lib folder files
-- [ ] re-add service worker
-- [ ] enable http2
-- [ ] move d3 charts visual in the datahub repo to charts eg the poor people viz
-- [ ] clean up our semantic build / customisation workflow in relation to semantic upgrades
-
 ## Known development issues / incompartibilities
 
 ----------
