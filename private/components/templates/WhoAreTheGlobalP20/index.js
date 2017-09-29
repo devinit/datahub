@@ -10,10 +10,10 @@ const StyledIframe = glamorous.iframe({
   width: '100%',
   height: '1728px',
   [mediaQueries.tabs]: {
-    height: '480px',
+    height: '1900px',
   },
   [mediaQueries.phone]: {
-    height: '2900px',
+    height: '2825px',
   },
 });
 /* eslint-disable max-len */
@@ -42,7 +42,7 @@ export default () =>
         src={`${config.old_datahub}/#!/who-are-the-global-p20`}
         frameBorder="0"
         scrolling="no"
-        style={{ width: '100%', height: '1728px' }}
+    
       />
       {/* <div className="beta-message">
         <p>BETA: This visualisation is currently a beta version; please share your
