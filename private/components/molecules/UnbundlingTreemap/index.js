@@ -2,6 +2,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
+import { approximate } from 'lib/utils';
+import { SectionHeader } from 'components/atoms/Header';
 import TreeChart from '../../atoms/TreeChart';
 import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
 
@@ -13,6 +15,7 @@ export type Props = {
   config: Object,
   selections: Object,
   bundles: Object[],
+  bundleSum: number,
   refetch: (variables: Object) => any,
 };
 
@@ -24,19 +27,30 @@ type State = {
 };
 
 const Container = glamorous.div({
-  margin: '1em',
+  margin: '1em 2em',
   height: '40em',
   position: 'relative',
+  '& .plot-label-header': {
+    fontSize: '1em !important',
+    fontWeight: '600 !important'
+  },
+  '& .plot-label-value': {
+    fontSize: '1em !important',
+  },
+
+  '&:hover .up': {
+    display: 'block',
+  },
 });
 
 const Up = glamorous.a({
+  display: 'none',
   position: 'absolute',
-  top: 0,
+  top: '42px',
   left: 0,
   width: '70px',
   padding: '5px',
   background: 'rgba(0, 0, 0, 0.4)',
-  display: 'block',
   zIndex: 1000,
 
   '&:hover': {
@@ -144,31 +158,43 @@ class UnbundlingTreemap extends React.Component {
         />
 
         <Container>
-          {this.props.loading
-            ? <Segment
-              style={{
-                position: 'absolute',
-                width: '100%',
-                left: 0,
-                right: 0,
-                height: '100%',
-              }}
-            >
-              <Dimmer style={{ backgroundColor: this.state.dimmerColor }} active>
-                <Loader />
-              </Dimmer>
-            </Segment>
-            : <TreeChart
-              config={this.props.config}
-              data={this.props.bundles}
-              height="36em"
-              onClick={d => this.zoomIn(d)}
-            />}
-          {this.state.position <= 1
-            ? ''
-            : <Up onClick={() => this.zoomOut()}>
-              <Icon name={'chevron left'} size="big" inverted />
-            </Up>}
+          <SectionHeader
+            color="rgb(238, 238, 238)"
+            style={{
+              textTransform: 'none'
+            }}
+          >
+            US$ {approximate(this.props.bundleSum)} total gross disbursements, 2015 prices
+          </SectionHeader>
+          <div>
+            {this.props.loading
+              ? <Segment
+                style={{
+                  position: 'absolute',
+                  width: '100%',
+                  left: 0,
+                  right: 0,
+                  height: '36em',
+                  padding: 0,
+                  margin: 0,
+                }}
+              >
+                <Dimmer style={{ backgroundColor: this.state.dimmerColor }} active>
+                  <Loader />
+                </Dimmer>
+              </Segment>
+              : <TreeChart
+                config={this.props.config}
+                data={this.props.bundles}
+                height="36em"
+                onClick={d => this.zoomIn(d)}
+              />}
+            {this.state.position <= 1
+              ? ''
+              : <Up className="up" onClick={() => this.zoomOut()}>
+                <Icon name={'chevron left'} size="big" inverted />
+              </Up>}
+          </div>
         </Container>
       </div>
     );

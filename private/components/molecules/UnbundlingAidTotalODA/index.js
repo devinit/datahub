@@ -52,7 +52,7 @@ const UnbundlingAidTotalODA = (props: Props) =>
     <div style={{ position: 'relative' }}>
       <Container>
         <Header as="h1">
-          <span className="red"> {props.yearTotal.year}</span> US$ {props.yearTotal.total} <span className="small">bn</span>
+          <span className="red"> {props.yearTotal.year}</span> US$ {props.yearTotal.total}
         </Header>
         <Header as="h5">
           {

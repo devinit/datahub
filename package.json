@@ -52,7 +52,7 @@
     "graphql": "^0.11.1"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.14",
+    "@devinit/charts": "^1.6.16",
     "apollo-client": "^1.9.3",
     "apollo-fetch": "^0.6.0",
     "babel-cli": "^6.26.0",
@@ -128,9 +128,7 @@
     "usus": "^1.6.0"
   },
   "git-pre-hooks": {
-    "pre-push": [
-      "npm run lint"
-    ]
+    "pre-push": []
   },
   "jest": {
     "coverageDirectory": "./coverage/",
