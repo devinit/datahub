@@ -10,9 +10,9 @@ module.exports = {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/percent-in-p20-national',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/poorest-20-percent',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/percent-in-p20-national.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/poorest-20-percent.zip?raw=true',
       source: {
         name:
           'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)',
