@@ -78,7 +78,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {process.browser && window.location.includes('datahub') ?
+          {process.browser && window.location.hostname === 'data.devinit.org' ?
             <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments)};
               gtag('js', new Date());
