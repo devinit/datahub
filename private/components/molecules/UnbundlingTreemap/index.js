@@ -158,7 +158,12 @@ class UnbundlingTreemap extends React.Component {
         />
 
         <Container>
-          <SectionHeader color="rgb(238, 238, 238)">
+          <SectionHeader
+            color="rgb(238, 238, 238)"
+            style={{
+              textTransform: 'none'
+            }}
+          >
             US$ {approximate(this.props.bundleSum)} total gross disbursements, 2015 prices
           </SectionHeader>
           <div>
