@@ -12,6 +12,7 @@ import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTi
 import INFLOWS_OUTFLOWS_QUERY from './queries/InflowsOutflowsList.graphql';
 import BUBBLE_INDICATORS_QUERY from './queries/BubbleChartOptions.graphql';
 import UNBUNDLING_QUERY from './queries/UnbundlingAidCache.graphql';
+import METHODOLOGY_QUERY from './queries/Methodology.graphql';
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';
@@ -140,6 +141,19 @@ export const getBubbleOptions = async () => {
   }
 };
 
+export const getMethodologyData = async () => {
+  ['country-profile', 'global-picture', 'spotlight-uganda']
+    .forEach(async (moduleName) => {
+      try {
+        const filePath = path.join(baseOrganismsPath, `Methodology/${moduleName}.js`);
+        const variables = {moduleName};
+        await getAndWriteData({query: METHODOLOGY_QUERY, filePath, variables});
+      } catch (error) {
+        console.error(error);
+      }
+    });
+};
+
 if (process.env.NODE_ENV !== 'test') {
   getCountries();
   getDistricts();
@@ -147,6 +161,7 @@ if (process.env.NODE_ENV !== 'test') {
   getInternationalResourcesToolTip();
   getInflowsAndOutflows();
   getBubbleOptions();
+  getMethodologyData();
   getUnbundlingData('oda', 2015);
   getUnbundlingData('oof', 2013);
   getSpotlightThemes();

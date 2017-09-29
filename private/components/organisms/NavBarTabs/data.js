@@ -94,9 +94,10 @@ module.exports = {
           id: 'data_series.fragile_states',
           name: 'Fragile states',
           heading:
-            "The OECD Fragiliy Framework identifies countries are fragile or extremely fragile based on 50 indicators across five dimensions (economic, environmental, political, security and societal). It is part of the OECD report 'States of Fragility'.",
+            'Countries susceptible to state failure risk elements based on twelve primary social, economic and political indicators. The Fragile States Index is produced by the Fund for Peace.',
           tooltip: 'Fragile states categories.',
-          source: 'Development Initiatives based on OECD.'
+          source:
+            'Development Initiatives based on Fund for Peace Fragile States Index.'
         },
         {
           id: 'data_series.climate_vulnerability',
@@ -115,7 +116,7 @@ module.exports = {
             'Countries that are at risk of conflict or have high current conflict intensity (Inform index component).',
           tooltip:
             'Index for risk management score for exposure to human hazards (10 = high exposure).',
-          source: 'Inform (Index for Risk Management) v 0.3.3.'
+          source: 'Inform (Index for Risk Management) v 3.0.5.'
         },
         {
           id: 'data_series.natural_hazard',
@@ -124,7 +125,7 @@ module.exports = {
             'Countries that are exposed to, or are vulnerable to natural hazards (INFORM index component).',
           tooltip:
             'Index for risk management score for exposure to natural hazards (10 = high exposure).',
-          source: 'Inform (Index for Risk Management) v 0.3.3.'
+          source: 'Inform (Index for Risk Management) v 3.0.5.'
         },
         {
           id: 'data_series.number_of_un_appeals',
@@ -138,9 +139,9 @@ module.exports = {
           name:
             "Number of appearances on ECHO's Forgotten Crisis Assessment index",
           heading:
-            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004. The map shows countries' number of appearences on the index since then.",
+            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.",
           tooltip:
-            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004. The map shows countries' number of appearences on the index since then.",
+            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.",
           source:
             'Development Initiatives based on ECHO Forgotten Crisis Assessment Index.'
         },
@@ -153,7 +154,7 @@ module.exports = {
           tooltip:
             'Number of people displaced due to human hazards refers to refugees and people in refugee-like situations, internally displaced persons and asylum seekers.',
           source:
-            'Development Initiatives based on UN High Commissioner for Refugees, UN Relief and Works Agency for Palestine Refugees in the Near East and the Internal Displacement Monitoring Centre.'
+            'Development Initiatives based on UN High Commissioner for Refugees (UNHCR) and UN Relief and Works Agency for Palestine Refugees in the Near East.'
         }
       ],
       default_indicator: 'data_series.fragile_states'
@@ -252,7 +253,7 @@ module.exports = {
           heading:
             'ODA received by each developing country, expressed as a percentage of all official, commercial and private international resource inflows.',
           tooltip:
-            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of total international resource flows received by the same country, each year.',
+            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of total international resource flows received by the same country, each year.',
           source:
             'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
         },

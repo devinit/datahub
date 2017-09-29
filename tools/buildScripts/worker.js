@@ -1,5 +1,5 @@
 /**
- * builds worker script using babel and dumbps it into the public folder
+ * builds worker script using webpack & babel and dumbps it into the public folder
  * this gives us a url for use in instatiating a worker.
  * This work around is here coz next.js doesnt run webpack loaders serverside
  * see more https://github.com/zeit/next.js#customizing-babel-config,

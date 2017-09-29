@@ -752,6 +752,26 @@ export type ResourcesOverTimeToolTipQuery = {|
   |},
 |};
 
+export type MethodologyQueryVariables = {|
+  moduleName: string,
+|};
+
+export type MethodologyQuery = {|
+  methodology: ? Array< {|
+    name: ?string,
+    description: ?string,
+    methodology: ?string,
+    // think units
+    uom: ?string,
+    csv: ?string,
+    zip: ?string,
+    source: ? {|
+      name: ?string,
+      link: ?string,
+    |},
+  |} >,
+|};
+
 export type PageDataQuery = {|
   countryProfile: ? Array< {|
     id: ?string,

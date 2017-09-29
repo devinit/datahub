@@ -11,9 +11,9 @@ import type {CurrencyOption} from 'lib/utils';
 import { connect } from 'react-redux';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State as ReduxState } from 'lib/reducers';
+import methodologyData from 'components/organisms/Methodology/spotlight-uganda';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
-import data from './data';
 
 const DynamicRegionalLowerTabs = dynamic(
   import('components/organisms/LocalGovernmentFinance'), { ssr: false });
@@ -86,7 +86,7 @@ class RegionalProfile extends Component {
             {...this.props.state}
           /> : ''
         }
-        <ProfileDataSourceTable data={data.dataSources} />
+        <ProfileDataSourceTable data={methodologyData.methodology} />
       </Generic>);
   }
 }

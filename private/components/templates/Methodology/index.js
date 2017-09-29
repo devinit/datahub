@@ -3,6 +3,7 @@ import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable';
 import { SectionHeader } from 'components/atoms/Header';
+import methodologyData from 'components/organisms/Methodology/global-picture';
 import Generic from '../Generic';
 import data from './data';
 
@@ -40,5 +41,5 @@ export default () =>
         </Grid>
       </Container>
     </Upper>
-    <ProfileDataSourceTable title="Data Sources" data={data.dataSources} />
+    <ProfileDataSourceTable title="Data Sources" data={methodologyData.methodology} />
   </Generic>);

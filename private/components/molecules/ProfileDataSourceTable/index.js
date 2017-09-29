@@ -17,7 +17,7 @@ const TableWrapper = glamorous.div({
 });
 
 type Props = {
-  data: Array<Object>,
+  data: Array<Object>, // TODO: use proper flow types
   title?: string,
 };
 
@@ -58,15 +58,20 @@ const ProfileDataSourceTable = ({ title, data }: Props) =>
                       {item.methodology}
                     </Table.Cell>
                     <Table.Cell>
-                      {item.unit}
+                      {item.uom}
                     </Table.Cell>
                     <Table.Cell>
                       <a href={item.source.link}>
-                        {item.source.link}
+                        {item.source.name}
                       </a>
                     </Table.Cell>
                     <Table.Cell>
-                      <Icon name="file" />ZIP <Icon name="file" />CSV
+                      <a href={item.zip}>
+                        <Icon name="file" />ZIP
+                      </a>
+                      <a href={item.csv}>
+                        <Icon name="file" />CSV
+                      </a>
                     </Table.Cell>
                   </Table.Row>),
                 )}

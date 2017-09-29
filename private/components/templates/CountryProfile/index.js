@@ -13,9 +13,9 @@ import { connect } from 'react-redux';
 import { GOVERNMENT_FINANCE_LOWER } from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import type { State } from 'lib/reducers';
+import methodologyData from 'components/organisms/Methodology/country-profile';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
-import data from './data';
 /* eslint-disable max-len */
 
 const DynamicCountryProfileLowerTabs = dynamic(
@@ -82,7 +82,7 @@ class Profile extends Component {
           MORE FROM DI ON {this.state.country.name && this.state.country.name.toUpperCase()}
           </SectionHeader>
         </DarkBg>
-        <ProfileDataSourceTable data={data.dataSources} />
+        <ProfileDataSourceTable data={methodologyData.methodology} />
       </Generic>);
   }
 }

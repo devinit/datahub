@@ -1,3 +1,6 @@
+/**
+ * runs in the front paget template and pulls in global picture data for client caching
+ */
 import {getData} from 'lib/utils';
 import navData from 'components/organisms/NavBarTabs/data';
 import MapsQuery from '../components/organisms/Map/Maps.graphql';
