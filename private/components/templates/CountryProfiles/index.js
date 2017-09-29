@@ -1,15 +1,14 @@
 // @flow
 import React from 'react';
-import glamorous, { H4 } from 'glamorous';
-import { Container, Grid, Icon, Button } from 'semantic-ui-react';
+import { H4 } from 'glamorous';
+import { Container, Grid, Icon } from 'semantic-ui-react';
 import { red } from 'components/theme/semantic';
+import ProfileSocialMedia from 'components/molecules/ProfileSocialMedia';
 import { CardContainer } from 'components/atoms/Container';
 import SearchInput from 'components/organisms/CountrySearchInput';
+import Link from 'next/link';
 import Generic from '../Generic';
 
-const SocialIconsContainer = glamorous.div({
-  marginTop: '1.5em',
-});
 export default () =>
   (<Generic pathname="/country-profiles">
     <Container>
@@ -18,15 +17,16 @@ export default () =>
           <Grid.Column width={10}>
             <CardContainer>
               <H4 color={red}>
-                <Icon name="globe" color={'red'} />General Picture
+                <Icon name="globe" color={'red'} />
+                <Link href="/">
+                  <a role="link" style={{color: red}}>Global Picture</a>
+                </Link>
               </H4>
               <SearchInput visible profile={false} />
-              <SocialIconsContainer>
-                <Button icon="facebook f" />
-                <Button icon="twitter" />
-                <Button icon="google plus" />
-                <Button icon="mail outline" />
-              </SocialIconsContainer>
+              {process.browser ?
+                <ProfileSocialMedia />
+                : ''
+              }
             </CardContainer>
           </Grid.Column>
         </Grid.Row>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Profile from '.';
+import Profiles from '.';
 
 storiesOf('Templates', module)
-  .add('UNDP profile', () => <Profile id="undp" />);
+  .add('Multilateral Profiles', () => <Profiles />);
