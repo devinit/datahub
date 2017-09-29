@@ -74,10 +74,6 @@ export default class MyDocument extends Document {
           />
           <script dangerouslySetInnerHTML={{ __html: `(${cssWithVersion})();` }} />
           <script async src="https://www.google-analytics.com/analytics.js" />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
           {process.browser && window.location.hostname === 'data.devinit.org' ?
             <script dangerouslySetInnerHTML={{ __html: `
             window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -86,6 +82,10 @@ export default class MyDocument extends Document {
             ` }}
             /> : ''
           }
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
         </body>
       </html>
     );
