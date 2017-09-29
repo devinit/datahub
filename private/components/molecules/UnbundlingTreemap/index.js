@@ -152,6 +152,7 @@ class UnbundlingTreemap extends React.Component {
     return (
       <div>
         <InteractiveChartToolBar
+          aidType={this.props.aidType}
           compact={this.props.compact}
           position={this.state.position}
           values={this.state.values}

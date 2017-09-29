@@ -19,6 +19,7 @@ const ToolBarContainer = glamorous.div(
 );
 
 type Props = {
+  aidType: string,
   compact?: boolean, // is in compare mode
   toolBarOptions: Object,
   position?: number,
@@ -36,6 +37,7 @@ const InteractiveChartToolBar = (props: Props) => {
         <Grid>
           <Grid.Row>
             <ToolBar
+              aid={props.aidType.toUpperCase()}
               position={position}
               values={values}
               onChange={props.onChange}

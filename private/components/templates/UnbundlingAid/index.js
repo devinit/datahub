@@ -51,7 +51,7 @@ export default class extends React.Component {
   props: Props;
   render() {
     const props = this.props;
-    const aid = props.aidType === 'ODA' ? 'ODA' : 'OOFs';
+    const aid = props.aidType === 'oda' ? 'ODA' : 'OOFs';
     return (
       <Generic pathname={this.props.pathname}>
         <Container>
@@ -61,7 +61,8 @@ export default class extends React.Component {
                 <TopHeader>{props.title}</TopHeader>
                 <Header.Subheader>
                   <BottomHeader>
-                    Explore and compare funding priorities for official development assistance
+                    Explore and compare funding priorities for { }
+                    {props.aidType === 'oda' ? 'official development assistance' : 'other official flows (OOFs)' }
                     <Tooltip
                       text={`Click the boxes to drill down into ${aid} bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ’Compare +’ button to see how different countries’ ${aid} bundles compare.`}
                     />

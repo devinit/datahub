@@ -4,6 +4,7 @@ import { Grid } from 'semantic-ui-react';
 import Select from 'components/molecules/UnbundlingAidSelect';
 
 type Props = {
+  aid: string,
   width: number,
   data: any,
   position?: number,
@@ -19,6 +20,7 @@ const ToolBarItem = (props: Props) => {
     position = 0,
     values,
     textAlign,
+    aid,
     onChange = (key, value) => {
       // TOFIX: @ernest why is this here yet its unused
     },
@@ -29,7 +31,7 @@ const ToolBarItem = (props: Props) => {
   return (
     <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
       <span>
-        ODA
+        {aid}
         <Select
           active
           value={values[keys.indexOf('years')]}

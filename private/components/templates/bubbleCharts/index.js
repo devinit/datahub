@@ -14,7 +14,7 @@ type Props = {
 }
 const StyledIframe = glamorous.iframe({
   width: '100%',
-  height: '650px',
+  height: '700px',
   [mediaQueries.tabs]: {
     width: '102%',
     height: '1475px',
