@@ -93,11 +93,13 @@ class UnbundlingTreemap extends React.Component {
   zoomIn(selected: Object) {
     const position = this.state.position <= 1 ? 1 : this.state.position;
 
-    const values = this.updateValueByPosition(position, selected.id);
+    if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
+      const values = this.updateValueByPosition(position, selected.id);
 
-    this.setState({ position: position + 1, values, dimmerColor: selected.color });
+      this.setState({position: position + 1, values, dimmerColor: selected.color});
 
-    this.fetch(position + 1, this.state.keys, this.state.values);
+      this.fetch(position + 1, this.state.keys, this.state.values);
+    }
   }
 
   zoomOut() {
