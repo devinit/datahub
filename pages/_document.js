@@ -73,10 +73,18 @@ export default class MyDocument extends Document {
             }}
           />
           <script dangerouslySetInnerHTML={{ __html: `(${cssWithVersion})();` }} />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80274731-1" />
         </Head>
         <body>
           <Main />
           <NextScript />
+          {process.browser && window.location.includes('datahub') ?
+            <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)};
+              gtag('js', new Date());
+              gtag('config', 'UA-80274731-1');` }}
+            /> : ''
+          }
         </body>
       </html>
     );
