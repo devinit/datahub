@@ -128,7 +128,9 @@
     "usus": "^1.6.0"
   },
   "git-pre-hooks": {
-    "pre-push": ["npm run lint"]
+    "pre-push": [
+      "npm run lint"
+    ]
   },
   "jest": {
     "coverageDirectory": "./coverage/",
