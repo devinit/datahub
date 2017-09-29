@@ -23,7 +23,7 @@ const StyledIframe = glamorous.iframe({
   },
 });
 export default ({pathname}: Props) =>
-  (<Generic pathname="/oda-donor">
+  (<Generic pathname={pathname}>
     <Div paddingTop="5em">
       <Container>
         <Grid>
@@ -36,7 +36,7 @@ export default ({pathname}: Props) =>
                 }
               </Header>
               <P textAlign="center" fontSize="1.1em" paddingBottom="2em">
-                {pathname === 'oda-donor' ?
+                {pathname === '/oda-donor' ?
                   `How effectively are donors targeting the countries with the highest numbers of people in poverty
                   and the least domestic public resources to address it? This chart allows you to select
                   a provider of aid to see how it allocates aid across countries.` :

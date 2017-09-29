@@ -348,14 +348,9 @@ module.exports = {
       { id: 'other-sectors-grouped', name: 'Other sectors (grouped)' }
     ],
     bundles: [
-      { id: 'cash-loan-equity', name: 'Cash (loan/equity)' },
-      { id: 'cash-grant', name: 'Cash grant' },
-      { id: 'commodities-food', name: 'Commodities & Food' },
-      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
-      { id: 'mixed-project-aid', name: 'Mixed project aid' },
-      { id: 'non-transfer', name: 'Non-transfer' },
-      { id: 'technical-ooperation', name: 'Technical cooperation' },
-      { id: 'export-credit', name: 'Export credit' }
+      { id: 'oof-grant', name: 'OOF Grant' },
+      { id: 'oof-loan', name: 'OOF Loan' },
+      { id: 'oof-export-credit', name: 'OOF Export Credit' }
     ],
     years: [2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
