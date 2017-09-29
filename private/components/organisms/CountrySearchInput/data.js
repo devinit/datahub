@@ -1313,13 +1313,6 @@ module.exports = {
       countryType: 'recipient'
     },
     {
-      id: 'AE',
-      name: 'UAE',
-      slug: 'uae',
-      has_domestic_data: '',
-      countryType: 'donor'
-    },
-    {
       id: 'US',
       name: 'United States',
       slug: 'usa',
