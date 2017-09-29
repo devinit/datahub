@@ -1,15 +1,27 @@
 // @flow
 import React from 'react';
-import {Div, P} from 'glamorous';
+import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import SocialMediaBar from 'components/molecules/SocialMediaBar';
 import {config} from 'package.json';
 import Generic from '../Generic';
+import {mediaQueries} from 'components/theme';
 /* eslint-disable max-len */
 
 type Props = {
   pathname: string
 }
+const StyledIframe = glamorous.iframe({
+  width: '100%',
+  height: '650px',
+  [mediaQueries.tabs]: {
+    width: '102%',
+    height: '1475px',
+  },
+  [mediaQueries.phone]: {
+    height: '14755px',
+  },
+});
 export default ({pathname}: Props) =>
   (<Generic pathname="/oda-donor">
     <Div paddingTop="5em">
@@ -37,7 +49,7 @@ export default ({pathname}: Props) =>
           </Grid.Row>
         </Grid>
       </Container>
-      <iframe
+      <StyledIframe
         title="oda-donor"
         src={pathname === '/oda-donor' ?
           `${config.old_datahub}/#!/post/oda-donor` :
@@ -45,7 +57,6 @@ export default ({pathname}: Props) =>
         }
         frameBorder="0"
         scrolling="no"
-        style={{ width: '100%', height: '850px' }}
       />
       {process.env.NODE_ENV !== 'test' ? <SocialMediaBar /> : '' }
     </Div>

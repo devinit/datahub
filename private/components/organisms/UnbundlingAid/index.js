@@ -155,7 +155,7 @@ class Chart extends React.Component {
           visible={this.state.showTour}
           closeHandler={() => this.closeTour()}
         >
-          <UnbundlingAidTour />
+          <UnbundlingAidTour aidType={this.props.aidType === 'oda' ? 'ODA' : 'OOFs'} />
         </TourContainer>
       </Div>
     );

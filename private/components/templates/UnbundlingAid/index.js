@@ -35,7 +35,9 @@ const TextContainer = glamorous.div({
 });
 type Props = {
   // rehydrated: boolean,
-  aidType: string
+  title: string,
+  pathname: string,
+  aidType: string,
 };
 
 // TODO: start year shouldnt be hardcoded @allan
@@ -49,18 +51,19 @@ export default class extends React.Component {
   props: Props;
   render() {
     const props = this.props;
+    const aid = props.aidType === 'ODA' ? 'ODA' : 'OOFs';
     return (
-      <Generic pathname="/unbundling-aid">
+      <Generic pathname={this.props.pathname}>
         <Container>
           <HeaderContainer>
             <Header as="h1" textAlign="center">
               <Header.Content>
-                <TopHeader>Unbundling aid</TopHeader>
+                <TopHeader>{props.title}</TopHeader>
                 <Header.Subheader>
                   <BottomHeader>
                     Explore and compare funding priorities for official development assistance
                     <Tooltip
-                      text="Click the boxes to drill down into the aid bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ‘Compare +’ button to see how different countries’ aid bundles compare."
+                      text={`Click the boxes to drill down into ${aid} bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ’Compare +’ button to see how different countries’ ${aid} bundles compare.`}
                     />
                     <Button
                       onClick={() => this.showTour()}

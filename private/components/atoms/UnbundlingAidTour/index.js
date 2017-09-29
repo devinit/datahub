@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
@@ -109,7 +110,10 @@ const TourItems = glamorous.ul({
     textAlign: 'center',
   },
 });
-const VisualizationTour = () =>
+type Props = {
+  aidType: string
+}
+const VisualizationTour = (props: Props) =>
   (<TourItems>
     <li className="item-1">
       <b>
@@ -117,8 +121,8 @@ const VisualizationTour = () =>
       </b>
       <br />
       Each cell in the tree map<br />
-      is sized by the volume of<br />ODA it represents. The<br />
-      total amount of ODA<br />
+      is sized by the volume of<br />{props.aidType} it represents. The<br />
+      total amount of {props.aidType}<br />
       being viewed at any time<br />
       is given above the top left<br />
       corner of the tree map

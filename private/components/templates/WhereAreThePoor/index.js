@@ -32,10 +32,10 @@ const StyledIframe = glamorous.iframe({
   width: '100%',
   height: '650px',
   [mediaQueries.tabs]: {
-    height: '650px',
+    height: '500px',
   },
   [mediaQueries.phone]: {
-    height: '500px',
+    height: '350px',
   },
 });
 export default () => {
