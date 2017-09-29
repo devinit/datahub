@@ -87,7 +87,8 @@ class Chart extends React.Component {
   // eslint-disable-next-line react/sort-comp
   state: {
     compare: boolean,
-    showTreemap: boolean
+    showTreemap: boolean,
+    showTour: boolean
   };
 
   constructor(props: Props) {
@@ -100,7 +101,6 @@ class Chart extends React.Component {
     };
   }
   componentWillReceiveProps(props: Props) {
-    console.log(props.showTreemap);
     this.setState({
       showTreemap: this.state.showTreemap || props.tourVisible,
       showTour: props.tourVisible,

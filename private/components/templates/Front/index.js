@@ -34,9 +34,11 @@ class Front extends Component {
     if (process.browser && window.Worker && !process.storybook) {
       shouldCacheData().then((shouldRunWorker) => {
         if (!shouldRunWorker) return false;
-        const worker = new Worker('/worker.js'); // caches global picture map data
-        worker.onmessage = (event) => console.log(event);
-        return true;
+        return setTimeout(() => {
+          const worker = new Worker('/worker.js'); // caches global picture map data
+          worker.onmessage = (event) => console.log(event);
+          return true;
+        }, 500);
       }).catch(console.error);
     }
   }
