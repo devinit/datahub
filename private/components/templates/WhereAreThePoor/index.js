@@ -7,24 +7,17 @@ import {mediaQueries} from 'components/theme';
 import Generic from '../Generic';
 import data from './data';
 
-const StyledPre = glamorous.pre({
-  fontFamily: 'inherit',
-  fontSize: '2em',
-  overflow: 'hidden',
-  fontWeight: '300',
-  lineHeight: '33px',
-  color: '#453f43'
-});
 const BottomWrapper = glamorous.div({
   '& h3': {
-    lineHeight: '30px !important',
-    fontSize: '24px !important',
+    lineHeight: '1.5 !important',
+    fontSize: '1.2em !important',
   }
 });
 const TextContainer = glamorous.p({
-  lineHeight: '24px',
-  fontSize: '16px',
+  lineHeight: 1.5,
+  fontSize: '1.2em', // NOTE: TODO: this is the write fontsize for all.
 });
+
 const HeaderContainer = glamorous.div({
   paddingTop: '4em',
   paddingBottom: '0em',
@@ -37,9 +30,9 @@ const HeaderContainer = glamorous.div({
 });
 const StyledIframe = glamorous.iframe({
   width: '100%',
-  height: '600px',
+  height: '650px',
   [mediaQueries.tabs]: {
-    height: '480px',
+    height: '650px',
   },
   [mediaQueries.phone]: {
     height: '500px',
@@ -53,17 +46,24 @@ export default () => {
           <Header as="h1">
             <Header.Content>
               Where are the poor and where will they be?
-              <Header.Subheader><StyledPre>{data.subHeader}</StyledPre></Header.Subheader>
+              <Header.Subheader style={{
+                fontWeight: '300',
+                lineHeight: 1.5,
+                width: '75%'
+              }}
+              >
+                {data.subHeader}
+              </Header.Subheader>
             </Header.Content>
           </Header>
         </HeaderContainer>
-        <StyledIframe
-          title="where are the poor"
-          src={`${config.old_datahub}/#!/post/where-are-the-poor`}
-          frameBorder="0"
-          scrolling="no"
-        />
       </Container>
+      <StyledIframe
+        title="where are the poor"
+        src={`${config.old_datahub}/#!/post/where-are-the-poor`}
+        frameBorder="0"
+        scrolling="no"
+      />
       <Container>
         <BottomWrapper>
           <Grid>
