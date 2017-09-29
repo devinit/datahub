@@ -73,7 +73,6 @@ export default class MyDocument extends Document {
             }}
           />
           <script dangerouslySetInnerHTML={{ __html: `(${cssWithVersion})();` }} />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80274731-1" />
           <script async src="https://www.google-analytics.com/analytics.js" />
         </Head>
         <body>
