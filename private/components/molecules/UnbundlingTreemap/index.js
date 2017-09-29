@@ -164,7 +164,10 @@ class UnbundlingTreemap extends React.Component {
               textTransform: 'none'
             }}
           >
-            US$ {approximate(this.props.bundleSum)} total gross disbursements, 2015 prices
+            {this.props.aidType === 'oda' ?
+              `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices` :
+              `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2012 prices`
+            }
           </SectionHeader>
           <div>
             {this.props.loading
