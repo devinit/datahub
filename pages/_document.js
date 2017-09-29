@@ -74,14 +74,12 @@ export default class MyDocument extends Document {
           />
           <script dangerouslySetInnerHTML={{ __html: `(${cssWithVersion})();` }} />
           <script async src="https://www.google-analytics.com/analytics.js" />
-          {process.browser && window.location.hostname === 'data.devinit.org' ?
-            <script dangerouslySetInnerHTML={{ __html: `
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'UA-80274731-1', 'auto');
-            ga('send', 'pageview');
-            ` }}
-            /> : ''
-          }
+          <script dangerouslySetInnerHTML={{ __html: `
+          window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+          ga('create', 'UA-80274731-1', 'auto');
+          ga('send', 'pageview');
+          ` }}
+          />
         </Head>
         <body>
           <Main />
