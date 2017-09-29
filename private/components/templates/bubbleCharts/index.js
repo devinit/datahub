@@ -4,8 +4,9 @@ import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import SocialMediaBar from 'components/molecules/SocialMediaBar';
 import {config} from 'package.json';
-import Generic from '../Generic';
 import {mediaQueries} from 'components/theme';
+import Generic from '../Generic';
+
 /* eslint-disable max-len */
 
 type Props = {

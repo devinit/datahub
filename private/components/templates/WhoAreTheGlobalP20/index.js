@@ -42,7 +42,6 @@ export default () =>
         src={`${config.old_datahub}/#!/who-are-the-global-p20`}
         frameBorder="0"
         scrolling="no"
-    
       />
       {/* <div className="beta-message">
         <p>BETA: This visualisation is currently a beta version; please share your
