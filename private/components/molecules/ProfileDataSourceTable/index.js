@@ -69,7 +69,7 @@ const ProfileDataSourceTable = ({ title, data }: Props) =>
                       <a href={item.zip}>
                         <Icon name="file" />ZIP
                       </a>
-                      <a href={item.csv}>
+                      <a href={item.csv} target="__blank" rel="noopener">
                         <Icon name="file" />CSV
                       </a>
                     </Table.Cell>
