@@ -16,5 +16,10 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App pathName={props.url.pathname} aidType="oof" />;
+  return (<App
+    pathName={props.url.pathname}
+    aidType="oof"
+    title="Unbundling other official flows"
+    description="Explore and compare funding priorities for other official flows (OOFs)"
+  />);
 });
