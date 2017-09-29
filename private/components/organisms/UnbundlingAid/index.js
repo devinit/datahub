@@ -4,14 +4,17 @@ import { Button, Grid, Icon } from 'semantic-ui-react';
 import {Div} from 'glamorous';
 import { graphql } from 'react-apollo';
 import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
+import UnbundlingTreemap from 'components/molecules/UnbundlingTreemap';
+import UnbundlingAidTour from 'components/atoms/UnbundlingAidTour';
+import TourContainer from 'components/molecules/TourContainer';
 import QUERY from './query.graphql';
-import UnbundlingTreemap from '../../molecules/UnbundlingTreemap';
 import dataODA from './data-oda';
 import dataOOF from './data-oof';
 
 type Props = {
-  aidType: string
-}
+  aidType: string,
+  tourVisible: boolean,
+};
 
 const toDropDownOptions = list => [
   { name: 'All', value: '', key: 'all', active: true },
@@ -75,7 +78,7 @@ const WithData = withData(UnbundlingTreemap);
 const buttonStyle = {
   position: 'absolute',
   right: '1em',
-  top: '0.3em',
+  top: '1.2em',
 };
 // TODO: supply year oda and oof totals via a pull API
 // TODO: supply selection options via pull API
@@ -92,14 +95,27 @@ class Chart extends React.Component {
 
     this.state = {
       compare: false,
-      showTreemap: false
+      showTreemap: props.tourVisible,
+      showTour: props.tourVisible,
     };
+  }
+  componentWillReceiveProps(props: Props) {
+    console.log(props.showTreemap);
+    this.setState({
+      showTreemap: this.state.showTreemap || props.tourVisible,
+      showTour: props.tourVisible,
+    });
   }
   showTreemapHandler() {
     this.setState({showTreemap: true});
   }
   toggleCompare() {
     this.setState({ compare: !this.state.compare });
+  }
+  closeTour() {
+    this.setState({
+      showTour: false,
+    });
   }
 
   render() {
@@ -135,6 +151,12 @@ class Chart extends React.Component {
                 Compare <Icon name="plus" />
             </span>}
         </Button>
+        <TourContainer
+          visible={this.state.showTour}
+          closeHandler={() => this.closeTour()}
+        >
+          <UnbundlingAidTour />
+        </TourContainer>
       </Div>
     );
   }

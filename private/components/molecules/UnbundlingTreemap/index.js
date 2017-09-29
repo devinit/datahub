@@ -27,7 +27,7 @@ type State = {
 };
 
 const Container = glamorous.div({
-  margin: '1em',
+  margin: '1em 2em',
   height: '40em',
   position: 'relative',
   '& .plot-label-header': {
