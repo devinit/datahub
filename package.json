@@ -55,6 +55,7 @@
     "@devinit/charts": "^1.6.16",
     "apollo-client": "^1.9.3",
     "apollo-fetch": "^0.6.0",
+    "autotrack": "^2.4.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-inline-import-graphql-ast": "^2.0.0",

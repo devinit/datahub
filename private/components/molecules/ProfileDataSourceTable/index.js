@@ -5,6 +5,8 @@ import glamorous from 'glamorous';
 import { LightBg } from 'components/atoms/Backgrounds';
 import { white } from 'components/theme/semantic';
 import { SectionHeader } from 'components/atoms/Header';
+// googleAnalytics tracking
+if (process.browser) require('autotrack/lib/plugins/event-tracker');
 
 const TableWrapper = glamorous.div({
   '& table': {
@@ -66,10 +68,24 @@ const ProfileDataSourceTable = ({ title, data }: Props) =>
                       </a>
                     </Table.Cell>
                     <Table.Cell>
-                      <a href={item.zip}>
+                      <a
+                        ga-on="click"
+                        ga-event-category="Content Actions"
+                        ga-event-action="Download"
+                        ga-event-label={`download-zip ${item.source.name}`}
+                        href={item.zip}
+                      >
                         <Icon name="file" />ZIP
                       </a>
-                      <a href={item.csv} target="__blank" rel="noopener">
+                      <a
+                        ga-on="click"
+                        ga-event-category="Content Actions"
+                        ga-event-action="Download"
+                        ga-event-label={`download-csv ${item.source.name}`}
+                        href={item.csv}
+                        target="__blank"
+                        rel="noopener"
+                      >
                         <Icon name="file" />CSV
                       </a>
                     </Table.Cell>

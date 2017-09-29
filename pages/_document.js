@@ -74,15 +74,17 @@ export default class MyDocument extends Document {
           />
           <script dangerouslySetInnerHTML={{ __html: `(${cssWithVersion})();` }} />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80274731-1" />
+          <script async src="https://www.google-analytics.com/analytics.js" />
         </Head>
         <body>
           <Main />
           <NextScript />
           {process.browser && window.location.hostname === 'data.devinit.org' ?
-            <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments)};
-              gtag('js', new Date());
-              gtag('config', 'UA-80274731-1');` }}
+            <script dangerouslySetInnerHTML={{ __html: `
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-80274731-1', 'auto');
+            ga('send', 'pageview');
+            ` }}
             /> : ''
           }
         </body>
