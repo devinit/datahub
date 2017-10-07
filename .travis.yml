@@ -30,3 +30,9 @@ cache:
 env:
   matrix:
     secure: uI9UmplGKeLQLFYSE3RnXWmrYnyZ4TCEiVjnF9Z7SZL4QDzYnWI2aa4YUQHX1d6f/lb9aJmX/ENBLRcgn1CiumqMq20iaF2gZJDJdYSqMC4WKvFhg66B3gpCBnTBP6inW7QzA+0OZzvdLn0gxOVHCGoZsgchf6NJz/bO3FDMcviTRqPVB0hARfxHacZ59Q//xIMRJOqeOS9IV1/SoR+6KCrx0sAxvyKBXUZfErZs4bNSdjp3ote+yS1rMJSMjS9MQtJlVTqHSF/AyL7iIdRzxGLKlOeF79QU/rNVn7UCZhonHZfLNi7uHcNVkpv4QySWCRopCEXDom0s+WKdV3loB3C2xs2/6LlUeuT6XRZgKd4piaey8IO5UoJ/qeMkkNk53nCWWF2MkwAQd6wd2CJKxy+5Z+2S8vE0S+hNXTaR6DJqboVb1LbWQFPrw3QqblAHABcvphvEsWdlwQNDIF5+Q/vjGIJyYSPhDHvsfP8GU3CREMZqqwd8JeUAkaWE9InfJePysCtq8LwD9dHZZO2UEtMY2uC94pzJhuAPv++NzALM2k2o23Ha2eQ5U1ddxCwrD0p/uUnsMM4HRUaIYGcHxu9fpkKeA2cWVFP9fIkPRNQzU+E3cF5BKwdEpUZituVNS2ywoNkGQgMToa4V2S/JhyOVNXK/FutMAtwrciUkslc=
+notifications:
+  webhooks: http://data.devinit.org:5000/notifications
+    on_success: always # default: always
+    on_failure: never # default: always
+    on_cancel: never
+    on_error: never # default: always
