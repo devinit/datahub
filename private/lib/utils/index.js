@@ -189,6 +189,34 @@ export function addMinAndMaxYear(config: Object, data: any[]): Object {
   const timeAxis = {...config.timeAxis, axisMinimum, axisMaximum};
   return {...config, timeAxis};
 }
+type Email = {
+  message: string,
+  token: string,
+  emails: string[],
+  subject: string
+}
+
+export const sendEmail = (payload: Email) => {
+  return fetch('http://data.devinit.org:9999/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+};
+// will email errors to allan when they occur
+export const errorHandler = async (error: String | Error) => {
+  console.error(error);
+  if (process.env.NODE_ENV === 'production') {
+    sendEmail({
+      message: error.toString(),
+      token: 'e2DQks99XapU6w2s1',
+      emails: ['epicallan.al@gmail.com'],
+      subject: 'Data hub error report',
+    });
+  }
+};
 
 // type GovernmentFinance = $PropertyType<TabDataQuery, 'governmentFinance'>
 

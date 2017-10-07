@@ -1,6 +1,6 @@
 import prettyFormat from 'pretty-format';
 import { getShortURL, getCountryName, getDistrictName, getMaxAndMin,
-  getCountry, approximate, getPageMeta, shouldShowTabData} from '.';
+  getCountry, approximate, getPageMeta, shouldShowTabData, sendEmail} from '.';
 
 describe('utils tests', () => {
   it(
@@ -69,5 +69,15 @@ describe('utils tests', () => {
     expect(toShowA).toBe(false);
     expect(toShowB).toBe(true);
     expect(toShowC).toBe(true);
+  });
+  it('should run without errors in sending email', async () => {
+    const response = await sendEmail({
+      message: 'test',
+      token: 'e2DQks99XapU6w2s1',
+      emails: ['epicallan.al@gmail.com'],
+      subject: 'test email from datahub'
+    });
+    console.log(response);
+    expect(response.status).toBe(200);
   });
 });
