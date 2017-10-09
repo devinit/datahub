@@ -15,7 +15,7 @@ import internationalResourcesConfig from 'visboxConfigs/internationalResourceTab
 import Tabs from 'components/molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import { DONOR } from 'lib/utils/constants';
-import { getCountry, shouldShowTabData } from 'lib/utils';
+import { getCountry, shouldShowTabData, errorHandler } from 'lib/utils';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import overviewConfig from 'visboxConfigs/overviewTabCharts';
 import {getCountryProfileData} from 'components/organisms/PagesData';
@@ -85,7 +85,7 @@ const withData = graphql(TABS_QUERY, {
   props: ({ data }) => {
     const { error } = data;
     if (error) {
-      throw Error(error);
+      errorHandler(error);
     }
     return data;
   },

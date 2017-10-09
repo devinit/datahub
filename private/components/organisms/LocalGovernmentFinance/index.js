@@ -4,6 +4,7 @@ import { graphql } from 'react-apollo';
 import { WhiteBg } from 'components/atoms/Backgrounds';
 import Chart from 'components/molecules/MultiLinePartition';
 import config from 'visboxConfigs/localLinePartition';
+import {errorHandler} from 'lib/utils';
 import QUERY from './query.graphql';
 
 const withData = graphql(QUERY, {
@@ -16,7 +17,7 @@ const withData = graphql(QUERY, {
   props: ({ data }) => {
     const { error, loading } = data;
 
-    if (error) throw new Error(error);
+    if (error) errorHandler(error);
 
     const {
       currencyCode = '',

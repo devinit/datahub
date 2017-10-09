@@ -5,7 +5,7 @@ import config from 'visboxConfigs/areaTreemapChart';
 import InternationalResourcesChart from 'components/molecules/AreaPartitionChart';
 import type { Props } from 'components/molecules/AreaPartitionChart';
 import LoadingBar from 'components/molecules/LoadingBar';
-import { getCountryName } from 'lib/utils';
+import { getCountryName, errorHandler } from 'lib/utils';
 import flowCache from './data';
 import countryCache from '../CountrySearchInput/data';
 import QUERY from './query.graphql';
@@ -51,7 +51,7 @@ const withData = graphql(QUERY, {
 
     const { error, loading } = data;
 
-    if (error) throw new Error(error);
+    if (error) errorHandler(error);
 
     return loading || !data.internationalResources
       ? { loading }

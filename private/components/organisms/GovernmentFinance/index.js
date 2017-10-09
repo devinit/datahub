@@ -3,6 +3,7 @@ import React from 'react';
 import { LightBg } from 'components/atoms/Backgrounds';
 import { graphql } from 'react-apollo';
 import Chart from 'components/molecules/MultiLinePartition';
+import {errorHandler} from 'lib/utils';
 import config from 'visboxConfigs/linePartition';
 import QUERY from './query.graphql';
 
@@ -15,7 +16,7 @@ const withData = graphql(QUERY, {
   props: ({ data }) => {
     const { error, loading } = data;
 
-    if (error) throw new Error(error);
+    if (error) errorHandler(error);
 
     const {
       startYear,

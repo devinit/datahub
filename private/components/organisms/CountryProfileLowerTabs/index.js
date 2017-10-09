@@ -10,7 +10,6 @@ import InternationalResourcesLower from 'components/molecules/CountryProfileTabs
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import {getCountryProfileData} from 'components/organisms/PagesData';
-
 import {getCountry} from 'lib/utils';
 import data from './data';
 

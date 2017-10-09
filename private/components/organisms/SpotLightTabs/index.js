@@ -9,6 +9,7 @@ import {
   Poverty,
 } from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
+import {errorHandler} from 'lib/utils';
 import Pane from 'components/atoms/Pane';
 import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
 import {getDistrictProfileData} from 'components/organisms/PagesData';
@@ -69,7 +70,7 @@ const withData = graphql(TABS_QUERY, {
   }),
   props: ({ data }) => {
     const { error } = data;
-    if (error) throw Error(error);
+    if (error) errorHandler(error);
     return data;
   },
 });

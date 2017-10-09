@@ -1,6 +1,7 @@
 // @flow
 import { graphql } from 'react-apollo';
 import BubbleChart from 'components/molecules/BubbleChartWidgets';
+import {errorHandler} from 'lib/utils';
 import QUERY from './DPDP.graphql';
 
 const objectify = (list, groupFn) => {
@@ -46,7 +47,7 @@ const withData = graphql(QUERY, {
   props: ({ data, ownProps }) => {
     const { error, loading } = data;
 
-    if (error) throw new Error(error);
+    if (error) errorHandler(error);
 
     const [points] = [
       [
