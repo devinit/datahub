@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import type { Props } from 'components/molecules/SlidingDualSidebar';
 import SlidingDualSidebar from 'components/molecules/SlidingDualSidebar';
-import {getCountryName} from 'lib/utils';
+import {getCountryName, errorHandler} from 'lib/utils';
 import config from 'visboxConfigs/dualbarChart';
 import RESOURCES_QUERY from '../InternationalResourcesChart/query.graphql';
 
@@ -36,7 +36,7 @@ const withData = graphql(RESOURCES_QUERY, {
   }),
   props: ({ data }) => {
     const { error, loading } = data;
-    if (error) throw new Error(error);
+    if (error) errorHandler(error);
     return loading || !data.internationalResources
       ? { loading }
       : {
