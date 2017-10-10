@@ -96,8 +96,7 @@ app.prepare().then(() => {
       renderAndCache(req, res, '/country-profiles');
   });
 
-  server.get('*', (req, res) => {
-    console.log('wild catch: ', req.path);
+  server.get('/_next/*', (req, res) => {
     return handle(req, res);
   });
 
