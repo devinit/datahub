@@ -70,7 +70,7 @@ const withData = graphql(TABS_QUERY, {
   }),
   props: ({ data }) => {
     const { error } = data;
-    if (error) errorHandler(error);
+    if (error) errorHandler(error, 'error in spotlight tabs');
     return data;
   },
 });

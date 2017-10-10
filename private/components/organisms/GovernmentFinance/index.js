@@ -16,7 +16,7 @@ const withData = graphql(QUERY, {
   props: ({ data }) => {
     const { error, loading } = data;
 
-    if (error) errorHandler(error);
+    if (error) errorHandler(error, 'error in government finance chart');
 
     const {
       startYear,

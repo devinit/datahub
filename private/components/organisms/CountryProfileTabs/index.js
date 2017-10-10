@@ -85,7 +85,7 @@ const withData = graphql(TABS_QUERY, {
   props: ({ data }) => {
     const { error } = data;
     if (error) {
-      errorHandler(error);
+      errorHandler(error, 'error in country profile tabs');
     }
     return data;
   },

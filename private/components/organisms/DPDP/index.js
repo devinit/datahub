@@ -47,7 +47,7 @@ const withData = graphql(QUERY, {
   props: ({ data, ownProps }) => {
     const { error, loading } = data;
 
-    if (error) errorHandler(error);
+    if (error) errorHandler(error, 'error in bubble chart DPDP');
 
     const [points] = [
       [

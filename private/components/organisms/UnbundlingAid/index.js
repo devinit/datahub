@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import {Div} from 'glamorous';
 import { graphql } from 'react-apollo';
+import {errorHandler} from 'lib/utils';
 import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import UnbundlingTreemap from 'components/molecules/UnbundlingTreemap';
 import UnbundlingAidTour from 'components/atoms/UnbundlingAidTour';
@@ -36,7 +37,7 @@ const withData = graphql(QUERY, {
   props: ({ ownProps, data }: { ownProps: Object, data: Object }) => {
     const { error, loading } = data;
 
-    if (error) throw new Error(error);
+    if (error) errorHandler(error, 'unbundling aid');
     const { channels = [], bundles = [], to = [], from = [], sectors = [], years = [] } =
       ownProps.aidType === 'oda' ? dataODA.selections : dataOOF.selections;
 

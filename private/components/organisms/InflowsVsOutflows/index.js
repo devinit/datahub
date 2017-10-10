@@ -36,7 +36,7 @@ const withData = graphql(RESOURCES_QUERY, {
   }),
   props: ({ data }) => {
     const { error, loading } = data;
-    if (error) errorHandler(error);
+    if (error) errorHandler(error, 'error in inflow outflow chart');
     return loading || !data.internationalResources
       ? { loading }
       : {

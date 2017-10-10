@@ -51,7 +51,7 @@ const withData = graphql(QUERY, {
 
     const { error, loading } = data;
 
-    if (error) errorHandler(error);
+    if (error) errorHandler(error, 'error in international finance chart');
 
     return loading || !data.internationalResources
       ? { loading }
