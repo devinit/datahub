@@ -22,6 +22,36 @@ export type ApolloResponse<T> = {
 export type CallBack<T> = {
   (data: T): string,
 }
+
+type Email = {
+  message: string,
+  token: string,
+  emails: string[],
+  subject: string
+}
+
+export const sendEmail = (payload: Email) => {
+  return fetch('http://data.devinit.org:9999/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+};
+// will email errors to allan when they occur
+export const errorHandler = async (error: String | Error, info?: string) => {
+  console.error(error);
+  if (process.env.NODE_ENV === 'production') {
+    sendEmail({
+      message: `info: ${info || ''} error: ${error.toString()} `,
+      token: 'e2DQks99XapU6w2s1',
+      emails: ['epicallan.al@gmail.com'],
+      subject: 'Data hub error report',
+    });
+  }
+};
+
 export async function shouldCacheData(): Promise<boolean> {
   const storedVersion = await localforage.getItem('version');
   return !storedVersion || storedVersion !== version;
@@ -36,7 +66,7 @@ export async function getLocalStorageInstance(): Promise<any> {
     await localforage.setItem('version', version);
     return localforage;
   } catch (error) {
-    console.error(error);
+    errorHandler(error, 'localforage: ');
     return localforage;
   }
 }
@@ -55,7 +85,7 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
       try {
         await storage.setItem(key, JSON.stringify(response.data));
       } catch (error) {
-        console.error(error);
+        errorHandler(error, 'getData function: ');
       }
     }
     return response.data;
@@ -189,35 +219,6 @@ export function addMinAndMaxYear(config: Object, data: any[]): Object {
   const timeAxis = {...config.timeAxis, axisMinimum, axisMaximum};
   return {...config, timeAxis};
 }
-type Email = {
-  message: string,
-  token: string,
-  emails: string[],
-  subject: string
-}
-
-export const sendEmail = (payload: Email) => {
-  return fetch('http://data.devinit.org:9999/send', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(payload)
-  });
-};
-// will email errors to allan when they occur
-export const errorHandler = async (error: String | Error, info?: string) => {
-  console.error(error);
-  if (process.env.NODE_ENV === 'production') {
-    sendEmail({
-      message: `info: ${info || ''} error: ${error.toString()} `,
-      token: 'e2DQks99XapU6w2s1',
-      emails: ['epicallan.al@gmail.com'],
-      subject: 'Data hub error report',
-    });
-  }
-};
-
 // type GovernmentFinance = $PropertyType<TabDataQuery, 'governmentFinance'>
 
 export const shouldShowTabData = (data: Object): boolean => {

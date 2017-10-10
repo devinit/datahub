@@ -97,11 +97,12 @@ app.prepare().then(() => {
   });
 
   server.get('*', (req, res) => {
+    console.log('wild catch: ', req.path);
     return handle(req, res);
   });
 
   server.listen(PORT, err => {
-    if (err) throw err;
+    if (err) console.error('app server error: ', err);
     console.log(`> App running on http://localhost:${PORT}`);
   });
 });

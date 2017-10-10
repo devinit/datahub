@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
 import {red} from 'components/theme/semantic';
 import type { State } from 'lib/reducers';
-import {shouldCacheData} from 'lib/utils';
+import {shouldCacheData, errorHandler} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import About from 'components/molecules/About';
 import Generic from '../Generic';
@@ -39,7 +39,7 @@ class Front extends Component {
           worker.onmessage = (event) => console.log(event);
           return true;
         }, 500);
-      }).catch(console.error);
+      }).catch((error) => errorHandler(error, 'front page cache worker: '));
     }
   }
   render() {
