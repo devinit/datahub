@@ -16,7 +16,7 @@ COPY . /src
 
 ENV NODE_ENV production
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD npm run start
 
