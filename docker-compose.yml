@@ -1,6 +1,6 @@
 datahub:
   build: .
-  container_name: datahub
+  container_name: datahub-new
   ports:
     - "8080:8080"
 
