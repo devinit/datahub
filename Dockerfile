@@ -9,6 +9,8 @@ ADD package.json /tmp/
 RUN cd /tmp && npm install --production --silent
 RUN cp -a /tmp/node_modules /src/
 
+RUN npm install pm2 -g --silent
+
 WORKDIR /src
 
 # Copy the rest of the files to the container workdir

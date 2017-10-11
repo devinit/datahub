@@ -3,6 +3,7 @@ datahub:
   container_name: datahub-new
   ports:
     - "8080:8080"
+  command: pm2-docker process.yml
 
 nginx:
   build: ./nginx/
