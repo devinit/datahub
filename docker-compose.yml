@@ -1,0 +1,13 @@
+datahub:
+  build: .
+  container_name: datahub
+  ports:
+    - "8080:8080"
+
+nginx:
+  build: ./nginx/
+  container_name: datahub-nginx
+  ports:
+    - "80:80"
+  links:
+    - datahub:web
