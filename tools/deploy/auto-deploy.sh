@@ -13,13 +13,9 @@ unzip build.zip
 
 cd build || exit
 
-docker build -t datahub .
+docker-compose build
 
-docker stop datahub-app
-
-docker rm datahub-app
-
-docker run -it -d -p 8080:8080 --name datahub-app datahub
+docker-compose up -d
 
 # add pdf folder.
 bash ~/pdf-prints/deploy.sh
