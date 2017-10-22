@@ -83,7 +83,7 @@ flow-typed create-stub @devinit/charts@1.1.4
 
 --------
 
-We use a mapbox-gl 
+We use a mapbox-gl
 
 ## Deployment for production
 cd into root of the project
@@ -123,5 +123,9 @@ In order to reduce on unnecessary API calls of data that rarelly changes, we hav
 - module resolution is handled by babel not webpack this is a next.js constraint
 - storybook has its own webpack config file you may need to update it where required. It also has a module resolution config.
 - Advised to use any modern linux OS or MacOS
-- Advised to use NodeJs > 7 
+- Advised to use NodeJs > 7
 
+## List of custom changes to watch out for in semantic ui
+
+- Disabled min width in dropdown via ``.ui.selection.dropdown .menu &&  .ui.scrolling.dropdown .menu`` styles in private/semantic/src/definitions/modules/dropdown.less
+- We have a couple of changes in the default theme folder that should be carried over to the sites folder
