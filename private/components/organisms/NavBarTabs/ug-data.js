@@ -230,7 +230,7 @@ module.exports = {
             'National Population and Housing Census 2014, Uganda Bureau of Statistics.'
         }
       ],
-      default_indicator: 'spotlight_on_uganda.uganda_poverty_headcount'
+      default_indicator: 'spotlight_on_uganda_2017.uganda_poverty_headcount'
     },
     {
       id: 'population',
@@ -305,7 +305,7 @@ module.exports = {
             'National Population and Housing Census 2014, Uganda Bureau of Statistics.'
         }
       ],
-      default_indicator: 'spotlight_on_uganda.uganda_total_pop'
+      default_indicator: 'spotlight_on_uganda_2017.uganda_total_pop'
     },
     {
       id: 'education',
@@ -544,7 +544,8 @@ module.exports = {
             'Education statistics abstracts 2010-2016, Ministry of Education.'
         }
       ],
-      default_indicator: 'spotlight_on_uganda.uganda_leaving_exam_perf_rate'
+      default_indicator:
+        'spotlight_on_uganda_2017.uganda_leaving_exam_perf_rate'
     },
     {
       id: 'health',
@@ -623,7 +624,7 @@ module.exports = {
             'Local government budgets, Ministry of Finance, Planning and Economic Development.'
         }
       ],
-      default_indicator: 'spotlight_on_uganda.uganda_overall_health'
+      default_indicator: 'spotlight_on_uganda_2017.uganda_overall_health'
     },
     {
       id: 'water_and_sanitation',
@@ -704,7 +705,7 @@ module.exports = {
             'Water and environment sector performance reports 2010-2016, Ministry of Water and Environment.'
         }
       ],
-      default_indicator: 'spotlight_on_uganda.uganda_wash_perf_score'
+      default_indicator: 'spotlight_on_uganda_2017.uganda_wash_perf_score'
     },
     {
       id: 'district_public_resources',
@@ -761,7 +762,7 @@ module.exports = {
             'Local government budgets, Ministry of Finance, Planning and Economic Development.'
         }
       ],
-      default_indicator: 'spotlight_on_uganda.uganda_agri_percent'
+      default_indicator: 'spotlight_on_uganda_2017.uganda_agri_percent'
     }
   ]
 };

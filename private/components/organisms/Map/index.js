@@ -67,7 +67,7 @@ class MapOrganism extends Component {
   render() {
     return (
       <div>
-        {!this.state.loading && this.data.mapData ?
+        {!this.state.loading && this.data && this.data.mapData ?
           <Map state={this.props.state} mapData={this.data.mapData} /> :
           <MapBackground />
         }

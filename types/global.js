@@ -56,3 +56,9 @@ export type NavBarItem = {|
   indicators: ? Array<NavIndicator>,
   default_indicator: ?string,
 |}
+
+export type SelectOption = {|
+  id: ?string,
+  name: ?string,
+  text: ?string,
+|}

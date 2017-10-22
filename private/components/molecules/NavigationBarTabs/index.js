@@ -2,12 +2,13 @@
 import React from 'react';
 import glamorous, { Div } from 'glamorous';
 import { Container } from 'semantic-ui-react';
-import NavigationBarTabsContainer from 'components/atoms/NavigationBarTabsContainer';
 import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
 import TourContainer from 'components/molecules/TourContainer';
 import type { LoadingStatus } from 'lib/actions';
 import LoadingBar from 'components/molecules/LoadingBar';
 import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
+import NavigationBarTabsContainer from 'components/molecules/NavigationBarTabsItems';
+import type {Option} from 'components/molecules/NavigationBarTabsItems';
 
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => Dispatch<T>;
 export type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>
@@ -95,9 +96,13 @@ class Tabs<T> extends React.Component {
     this.fireReduxActions(activeIndicator);
     this.setState({ selected: index, activeIndicator, loading: true });
   }
-  handleSelect(event: any) {
+  handleSelect(event: any, data: Option[]) {
     event.preventDefault();
-    const activeIndicator = event.target.value;
+    const optionElement = event.target.childNodes;
+    const text = optionElement[0].textContent;
+    const item = data.find(obj => obj.text === text);
+    if (!item) throw new Error(`${text} missing in ${JSON.stringify(data)}`);
+    const activeIndicator = item.value;
     this.fireReduxActions(activeIndicator);
     this.setState({ activeIndicator, loading: true });
   }
@@ -121,13 +126,13 @@ class Tabs<T> extends React.Component {
     if (!selectedNavItem.indicators) throw new Error('indicators missing in nav bar props');
     const options = selectedNavItem.indicators.map(obj => {
       if (!obj.id || !obj.name) throw new Error('id and name missing in nav bar indicators');
-      return { key: obj.id, value: obj.name };
+      return { key: obj.id, value: obj.id, text: obj.name };
     });
     return (
       <NavigationBarTabsContainer
         options={options}
         activeIndicator={this.state.activeIndicator}
-        onChange={e => this.handleSelect(e)}
+        onChange={(e, options) => this.handleSelect(e, options)}
         showUsingThisViz={this.props.showUsingThisViz}
         onUsingThisVizHandler={() => this.handleUsingThisViz()}
         toolTip={this.toolTipinfo()}
