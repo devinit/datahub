@@ -23,7 +23,7 @@ export type Props = {
 const Select = (props: Props) => {
   const { options, onChange, toolTip, onUsingThisVizHandler,
     showUsingThisViz, activeIndicator } = props;
-  return (<Wrapper id="menu-override">
+  return (<Wrapper>
     <SelectWrapper>
       <Dropdown
         selection
