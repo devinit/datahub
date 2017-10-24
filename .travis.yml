@@ -8,7 +8,7 @@ script:
 - npm run pull
 - npm run precache
 - npm run vendor
-- npm run build-worker
+- npm run build-workers
 - npm run lint
 - npm run build
 - npm run coverage

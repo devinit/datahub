@@ -10,9 +10,12 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 const config = {
-  entry: path.resolve(__dirname, '../../private/lib/worker.js'),
+  entry: {
+    worker_gp: path.resolve(__dirname, '../../private/lib/workers/global-picture.js'),
+    worker_ug: path.resolve(__dirname, '../../private/lib/workers/spotlight-ug.js')
+  },
   output: {
-    filename: 'worker.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, '../../public')
   },
   module: {

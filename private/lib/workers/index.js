@@ -2,11 +2,10 @@
  * runs in the front paget template and pulls in global picture data for client caching
  */
 import {getData} from 'lib/utils';
-import navData from 'components/organisms/NavBarTabs/data';
-import MapsQuery from '../components/organisms/Map/Maps.graphql';
+import MapsQuery from '../../components/organisms/Map/Maps.graphql';
 
-const cacheGlobalPicData = () => {
-  navData.globalPictureThemes.forEach(item => {
+export const cacheData = (data) => {
+  data.forEach(item => {
     if (!item.indicators) throw Error('indicators missing in navItem');
     item.indicators.forEach((indicator) => {
       const variables = { id: indicator.id };
@@ -16,5 +15,3 @@ const cacheGlobalPicData = () => {
     });
   });
 };
-
-cacheGlobalPicData();

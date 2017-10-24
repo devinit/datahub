@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 import { connect } from 'react-redux';
 import {red} from 'components/theme/semantic';
 import type { State } from 'lib/reducers';
-import {shouldCacheData, errorHandler} from 'lib/utils';
+import { cacheMapData } from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import About from 'components/molecules/About';
 import Generic from '../Generic';
@@ -31,16 +31,7 @@ class Front extends Component {
     super(props);
   }
   componentDidMount() {
-    if (process.browser && window.Worker && !process.storybook) {
-      shouldCacheData().then((shouldRunWorker) => {
-        if (!shouldRunWorker) return false;
-        return setTimeout(() => {
-          const worker = new Worker('/worker.js'); // caches global picture map data
-          worker.onmessage = (event) => console.log(event);
-          return true;
-        }, 500);
-      }).catch((error) => errorHandler(error, 'front page cache worker: '));
-    }
+    cacheMapData('/worker_gp.js');
   }
   render() {
     return (

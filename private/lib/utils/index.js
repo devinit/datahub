@@ -93,6 +93,18 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
     throw error;
   }
 }
+export const cacheMapData = (workerPath: string) => {
+  if (process.browser && window.Worker && !process.storybook) {
+    shouldCacheData().then((shouldRunWorker) => {
+      if (!shouldRunWorker) return false;
+      return setTimeout(() => {
+        const worker = new Worker(workerPath); // caches global picture map data
+        worker.onmessage = (event) => console.log(event);
+        return true;
+      }, 150);
+    }).catch((error) => errorHandler(error, 'front page cache worker: '));
+  }
+};
 
 export type CurrencyOption = {
   text: string,
