@@ -3,7 +3,7 @@ const config = {
   coloring: 'color',
   labeling: {
     prefix: 'US$ ',
-    autofit: false,
+    autofit: true,
   },
   tree: {
     id: 'name',

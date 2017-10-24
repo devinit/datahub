@@ -18,6 +18,9 @@ export const SelectWrapper = glamorous.div({
     background: lightBlack,
     border: 'none',
   },
+  '& .ui.selection.dropdown .menu': {
+    overflowY: 'scroll !important'
+  },
   '& .ui div:first-child, .ui.selection.visible.dropdown>.text:not(.default), .dropdown.icon': {
     color: white,
     fontWeight: 700,

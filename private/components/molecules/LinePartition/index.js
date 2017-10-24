@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
-import { groupBy } from 'ramda';
+import { groupBy, uniq } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from 'components/atoms/TreeChart';
 import Timeline from 'components/atoms/Timeline';
@@ -130,10 +130,8 @@ export default class LinePartition extends Component {
   }
 
   createTrendState(level: string) {
-    const allBudgetTypes = Object.keys(
-      this.props.data
-        .reduce((acc, datum) => ({...acc, [datum.budget_type]: true}), {})
-    );
+    const allBudgetTypes = uniq(this.props.data.map((datum) => datum.budget_type));
+    // put there coz budget was overlapping with actual for case of uganda
     const regexString = allBudgetTypes.length > 2 ?
       allBudgetTypes.filter(d => !d.match(/budget/gi)).join('|') :
       allBudgetTypes.join('|');
