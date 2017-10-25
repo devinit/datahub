@@ -30,7 +30,7 @@ const ProfileSocialMedia = (props: Props) => {
       {props.isCountryProfile && props.entity ?
         <a
           rel="noopener"
-          href={`/pdf/20170331/${props.entity.name}.pdf`}
+          href={`/pdf/20170331/${props.entity.name.replace(/\s/g, '-')}.pdf`}
           target="__blank"
         >
           <Button size="medium"><Span fontWeight={500}>Download and Print</Span></Button>
