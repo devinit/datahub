@@ -67,6 +67,7 @@ export async function getLocalStorageInstance(): Promise<any> {
     return localforage;
   } catch (error) {
     errorHandler(error, 'localforage: ');
+    await localforage.clear(); // cache is possibly full so lets clear it
     return localforage;
   }
 }
@@ -93,12 +94,19 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
     throw error;
   }
 }
-export const cacheMapData = (workerPath: string) => {
+export const cacheMapData = async (workerPath: string): Promise<void> => {
   if (process.browser && window.Worker && !process.storybook) {
-    setTimeout(() => {
-      const worker = new Worker(workerPath); // caches global picture map data
-      worker.onmessage = (event) => console.log(event);
-    }, 150);
+    try {
+      const storage = await getLocalStorageInstance();
+      const storedVersion = await storage.getItem(`${version}-${workerPath}`);
+      if (!storedVersion || storedVersion !== `${version}-${workerPath}`) {
+        await storage.setItem(`${version}-${workerPath}`, `${version}-${workerPath}`)
+        const worker = new Worker(workerPath); // caches global picture map data
+        worker.onmessage = (event) => console.log(event);
+      }
+    } catch (error) {
+      errorHandler(error, 'cache mapdata: ');
+    }
   }
 };
 

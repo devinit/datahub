@@ -1,6 +1,6 @@
 {
   "name": "datahub",
-  "version": "1.3.24",
+  "version": "1.3.36",
   "config": {
     "api": "http://212.111.41.68:9090/graphql",
     "old_datahub": "http://212.111.41.68:8888"
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./node_modules/.cache ./next",
-    "dev": "BABEL_ENV=development NODE_ENV=development && PORT=4040 node server.js",
+    "dev": "npm run build-workers && BABEL_ENV=development NODE_ENV=development PORT=4040 node server.js",
     "build": "BABEL_ENV=development NODE_ENV=development npm run clean && next build",
     "start": "NODE_ENV=production PORT=8080 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
