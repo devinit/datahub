@@ -52,7 +52,7 @@ export const errorHandler = async (error: String | Error, info?: string) => {
   }
 };
 
-export async function shouldCacheData(): Promise<boolean> {
+export async function shouldPurgeCache(): Promise<boolean> {
   const storedVersion = await localforage.getItem('version');
   return !storedVersion || storedVersion !== version;
 }
@@ -60,8 +60,8 @@ export async function shouldCacheData(): Promise<boolean> {
 export async function getLocalStorageInstance(): Promise<any> {
   if (!process.browser) return Promise.resolve(null);
   try {
-    const shouldCache = await shouldCacheData();
-    if (!shouldCache) return localforage;
+    const shouldPurge = await shouldPurgeCache();
+    if (!shouldPurge) return localforage;
     await localforage.clear();
     await localforage.setItem('version', version);
     return localforage;
@@ -95,14 +95,10 @@ export async function getData<T>(query: string, variables: Object): Promise<T> {
 }
 export const cacheMapData = (workerPath: string) => {
   if (process.browser && window.Worker && !process.storybook) {
-    shouldCacheData().then((shouldRunWorker) => {
-      if (!shouldRunWorker) return false;
-      return setTimeout(() => {
-        const worker = new Worker(workerPath); // caches global picture map data
-        worker.onmessage = (event) => console.log(event);
-        return true;
-      }, 150);
-    }).catch((error) => errorHandler(error, 'front page cache worker: '));
+    setTimeout(() => {
+      const worker = new Worker(workerPath); // caches global picture map data
+      worker.onmessage = (event) => console.log(event);
+    }, 150);
   }
 };
 
