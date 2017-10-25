@@ -100,7 +100,7 @@ export const cacheMapData = async (workerPath: string): Promise<void> => {
       const storage = await getLocalStorageInstance();
       const storedVersion = await storage.getItem(`${version}-${workerPath}`);
       if (!storedVersion || storedVersion !== `${version}-${workerPath}`) {
-        await storage.setItem(`${version}-${workerPath}`, `${version}-${workerPath}`)
+        await storage.setItem(`${version}-${workerPath}`, `${version}-${workerPath}`);
         const worker = new Worker(workerPath); // caches global picture map data
         worker.onmessage = (event) => console.log(event);
       }
