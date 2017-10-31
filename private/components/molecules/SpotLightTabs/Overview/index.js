@@ -109,7 +109,7 @@ const Overview = (props: Props) => {
           <TabsP>
             {overviewTabRegional.localGovernmentSpendPerPerson &&
             overviewTabRegional.localGovernmentSpendPerPerson.value
-              ? overviewTabRegional.localGovernmentSpendPerPerson.value
+              ? `US$ ${overviewTabRegional.localGovernmentSpendPerPerson.value}`
               : NoData}
           </TabsP>
         </Grid.Column>
