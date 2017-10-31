@@ -1,6 +1,6 @@
 export const populationDistribution = {
   type: 'stacked-bar',
-  colors: ['rgb(0, 149, 203)', 'rgb(186, 12, 47)'],
+  colors: ['rgb(0, 149, 203)', '#e8443a'],
   groupBy: 'group',
   labeling: {
     suffix: '%',
