@@ -3,16 +3,15 @@
 mkdir -p ~/datahub
 cd ~/datahub || exit
 
-rm -rf datahub.git && \
-  git clone --depth 1 -b master --single-branch git@github.com:devinit/datahub.git datahub.git
+rm -rf build.zip build
 
-echo 'finished clonning'
+wget https://github.com/devinit/datahub/releases/download/$1/build.zip
 
-cd datahub.git || exit # go into application directory
+echo 'finished downloading tag: $tag'
 
-rm -rf datahub.git/.git # no need for git history
+unzip build.zip
 
-echo 'rebuilding datahub docker containers'
+cd build || exit
 
 docker build -t datahub .
 
