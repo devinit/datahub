@@ -1,0 +1,12 @@
+{
+  "tilejson": "2.0.0",
+  "name": "Kenya",
+  "attribution": "",
+  "minzoom": 0,
+  "maxzoom": 20,
+  "bounds": [-180, -85.0511, 180, 85.0511],
+  "format": "png",
+  "type": "baselayer",
+  "tiles": ["http://178.79.185.236:8080/styles/kenyageojson/rendered/{z}/{x}/{y}.png"],
+  "center": [0, 0, 2]
+}
