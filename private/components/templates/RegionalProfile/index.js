@@ -14,7 +14,7 @@ import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 
 const DynamicRegionalLowerTabs = dynamic(
-  import('components/organisms/LocalGovernmentFinance'), { ssr: true });
+  import('../../organisms/LocalGovernmentFinance'), { ssr: true });
 
 type Props = {
   id: string,

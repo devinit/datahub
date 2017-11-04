@@ -15,7 +15,7 @@ import Generic from '../Generic';
 
 /* eslint-disable max-len */
 /* eslint-disable no-useless-constructor */
-const DynamicMapComponent = dynamic(import('components/organisms/Map'), {
+const DynamicMapComponent = dynamic(import('../../organisms/Map'), {
   ssr: false,
   loading: () => <MapBackground />,
 });

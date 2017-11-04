@@ -14,7 +14,7 @@ import type {StateToShare} from 'components/molecules/ChartShare';
 import Generic from '../Generic';
 
 const DynamicMapComponent = dynamic(
-  import('components/organisms/Map'), {
+  import('../../organisms/Map'), {
     ssr: false,
     loading: () => <MapBackground />
   });

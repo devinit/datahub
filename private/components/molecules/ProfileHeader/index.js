@@ -17,7 +17,7 @@ import dynamic from 'next/dynamic';
 
 
 const DynamicMapComponent = dynamic(
-  import('components/molecules/SmallMap'), {
+  import('../SmallMap'), {
     ssr: false,
     loading: () => (<p>Loading...</p>)
   });

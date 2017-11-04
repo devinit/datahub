@@ -1,7 +1,7 @@
+// @flow
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import initApollo from './initApollo';
 import { initRedux} from './initRedux';
@@ -15,7 +15,7 @@ export default ComposedComponent => {
   return class WithData extends React.Component {
     static displayName = `WithData(${getComponentDisplayName(ComposedComponent)})`;
     static propTypes = {
-      serverState: PropTypes.object.isRequired,
+      serverState: Object
     };
 
     static async getInitialProps(ctx) {
@@ -56,6 +56,7 @@ export default ComposedComponent => {
         }
         // getDataFromTree does not call componentWillUnmount
         // head side effect therefore need to be cleared manually
+        // $FlowFixMe
         Head.rewind();
 
         // Extract query data from the store

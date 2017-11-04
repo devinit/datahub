@@ -1,7 +1,4 @@
 import { createStore, combineReducers, compose } from 'redux';
-// import { persistStore } from 'redux-persist';
-// import localForage from 'localforage';
-// import packageJson from 'package.json';
 import { app } from './reducers';
 
 let reduxStore = null;
