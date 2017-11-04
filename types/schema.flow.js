@@ -9,6 +9,7 @@ export type UnbundlingAidQuery = {|
   groupBy: string,
   to_di_id?: ?string,
   from_di_id?: ?string,
+  oof_bundle?: ?string,
   sector?: ?string,
   // form is same as buddle
   bundle?: ?string,
@@ -266,7 +267,7 @@ export type GovernmentFinanceQuery = {|
     startYear: ?number,
     currencyCode: ?string,
     currencyUSD: ?string,
-    expenditure: ? Array< {|
+    expenditure:  Array< {|
       uid: ?string,
       year: ?number,
       color: ?string,
@@ -277,7 +278,7 @@ export type GovernmentFinanceQuery = {|
       value_ncu: ?number,
     |} >,
     // come from finance file
-    revenueAndGrants: ? Array< {|
+    revenueAndGrants:  Array< {|
       uid: ?string,
       color: ?string,
       year: ?number,
@@ -377,31 +378,56 @@ export type SpotLightTabDataQueryVariables = {|
 |};
 
 export type SpotLightTabDataQuery = {|
-  povertyTabRegional: ? {|
-    poorestPeople: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+  povertyTabRegional: ?( {
+      poorestPeople: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    // WHAT IS THE AVERAGE LIFE EXPECTANCY?
-    lifeExpectancy: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      // WHAT IS THE AVERAGE LIFE EXPECTANCY?
+      lifeExpectancy: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    // WHAT IS THE STANDARD OF LIVING SCORE?
-    stdOfLiving: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      // WHAT IS THE STANDARD OF LIVING SCORE?
+      stdOfLiving: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-  |},
+    } | {
+      poorestPeople: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      // WHAT IS THE AVERAGE LIFE EXPECTANCY?
+      meanExpenditure: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      // WHAT IS THE STANDARD OF LIVING SCORE?
+      povertyGap: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+    }
+  ),
   // id is district slug
   overviewTabRegional: ? {|
     // WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
@@ -425,7 +451,7 @@ export type SpotLightTabDataQuery = {|
     |},
     // IndicatorDataColored is defined in country profile types
     // has local government, donor and central government
-    regionalResourcesBreakdown: ? Array< {|
+    regionalResourcesBreakdown:  Array< {|
       data: ? {|
         id: ?string,
         year: ?number,
@@ -447,120 +473,191 @@ export type SpotLightTabDataQuery = {|
       |},
     |},
   |},
-  populationTabRegional: ? {|
-    // The total population of a given district and the population density in per sq km
-    totalPopulation: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+  populationTabRegional: ?( {
+      // The total population of a given district and the population density in per sq km
+      totalPopulation: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    populationDensity: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      populationDensity: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    // Urban vs Rural population level
-    populationDistribution: ? {|
-      data: ? Array< {|
-        group: ?string,
-        value: ?number,
-        year: ?number,
-      |} >,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      // Urban vs Rural population level
+      populationDistribution: ? {|
+        data: ? Array< {|
+          group: ?string,
+          value: ?number,
+          year: ?number,
+        |} >,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    averageDependencyRatio: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      averageDependencyRatio: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    allAverageDependencyRatio: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      allAverageDependencyRatio: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-  |},
-  educationTabRegional: ? {|
-    // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
-    pupilTeacherRatioGovtSchl: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+    } | {
+      // The total population of a given district and the population density in per sq km
+      totalPopulation: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    pupilTeacherRatioOtherSchl: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      populationDensity: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    // WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
-    studentsPassRate: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      populationBirthRate: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    studentsPassDistrictRank: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+    }
+  ),
+  educationTabRegional: ?( {
+      // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
+      pupilTeacherRatioGovtSchl: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
-    primaryEducationfunding: ? {|
-      value: ?string,
-      value_ncu: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      pupilTeacherRatioOtherSchl: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-  |},
-  healthTabRegional: ? {|
-    // WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
-    districtPerformance: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      // WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
+      studentsPassRate: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    districtHealthRank: ? {|
-      value: ?string,
-    |},
-    // WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
-    treatmeantOfTb: ? {|
-      value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      studentsPassDistrictRank: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-    // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
-    healthCareFunding: ? {|
-      value: ?string,
-      value_ncu: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
+      primaryEducationfunding: ? {|
+        value: ?string,
+        value_ncu: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
       |},
-    |},
-  |},
+    } | {
+      // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
+      primaryPupilTeacherRatioAllSchl: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      primaryTeacherRatioPublicSchl: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      primaryTeacherRatioPrivateSchl: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+    }
+  ),
+  healthTabRegional: ?( {
+      healthCareFunding: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      birthAttendanceSkilled: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      contraceptiveUse: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+    } | {
+      // WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
+      districtPerformance: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      districtHealthRank: ? {|
+        value: ?string,
+      |},
+      // WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
+      treatmeantOfTb: ? {|
+        value: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+      // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
+      healthCareFunding: ? {|
+        value: ?string,
+        value_ncu: ?string,
+        toolTip: ? {|
+          source: ?string,
+          heading: ?string,
+        |},
+      |},
+    }
+  ),
 |};
 
 export type UnbundlingAidDataQueryVariables = {|

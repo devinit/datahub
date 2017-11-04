@@ -7,12 +7,10 @@ import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
 import SpotLightNavTabs from 'components/organisms/NavBarTabs/spotlight';
 import { MapBackground } from 'components/atoms/Backgrounds';
-import { connect } from 'react-redux';
 import dynamic from 'next/dynamic';
 import About from 'components/molecules/About';
 import { cacheMapData } from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
-import type { State } from 'lib/reducers';
 import Generic from '../Generic';
 
 const DynamicMapComponent = dynamic(
@@ -26,7 +24,7 @@ type Props = {
   state: StateToShare
   // rehydrated: boolean,
 };
-class Spotlight extends Component {
+export default class Spotlight extends Component {
   constructor(props: Props) {
     super(props);
   }
@@ -63,9 +61,3 @@ class Spotlight extends Component {
     );
   }
 }
-
-const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
-
-const SpotLightWithRedux = connect(mapStateToProps)(Spotlight);
-
-export default SpotLightWithRedux;

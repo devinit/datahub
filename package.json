@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "1.3.29",
   "config": {
-    "api": "http://212.111.41.68:9090/graphql",
+    "api": "http://localhost:3000/graphql",
     "old_datahub": "http://212.111.41.68:8888"
   },
   "now": {
@@ -21,6 +21,7 @@
     "build": "BABEL_ENV=development NODE_ENV=development npm run clean && next build",
     "start": "NODE_ENV=production PORT=8080 node server.js",
     "build-tools": "BABEL_ENV=tools babel tools --out-dir dist --ignore **/.test.js",
+    "build-fragment": "npm run build-tools && node dist/graphql/index.js",
     "pull": "npm run build-tools && node dist/pullApiData/index.js",
     "precache": "npm run build-tools && node dist/precache/index.js",
     "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
@@ -48,13 +49,14 @@
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },
   "peerDependencies": {
-    "apollo-client": "^1.9.3",
     "graphql": "^0.11.1"
   },
   "dependencies": {
     "@devinit/charts": "^1.6.18",
+    "apollo-cache-inmemory": "^1.0.0",
     "apollo-client": "^2.0.1",
     "apollo-fetch": "^0.6.0",
+    "apollo-link-http": "^1.1.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-inline-import-graphql-ast": "^2.0.2",
@@ -83,7 +85,7 @@
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
     "react": "^15.6.1",
-    "react-apollo": "^1.4.15",
+    "react-apollo": "^2.0.0",
     "react-dom": "^15.6.1",
     "react-intersection-observer": "^1.0.1",
     "react-no-ssr": "^1.1.0",

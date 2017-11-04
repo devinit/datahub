@@ -8,15 +8,13 @@ import SpotLightTabs from 'components/organisms/SpotLightTabs';
 import ProfileHeader from 'components/molecules/ProfileHeader';
 import {getDistrict, getCountry, createCurrencyOptions} from 'lib/utils';
 import type {CurrencyOption} from 'lib/utils';
-import { connect } from 'react-redux';
 import type {StateToShare} from 'components/molecules/ChartShare';
-import type { State as ReduxState } from 'lib/reducers';
 import methodologyData from 'components/organisms/Methodology/spotlight-uganda';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 
 const DynamicRegionalLowerTabs = dynamic(
-  import('components/organisms/LocalGovernmentFinance'), { ssr: false });
+  import('components/organisms/LocalGovernmentFinance'), { ssr: true });
 
 type Props = {
   id: string,
@@ -33,7 +31,7 @@ type State = {
   country: Country,
   currencyOptions: CurrencyOption[]
 }
-class RegionalProfile extends Component {
+export default class RegionalProfile extends Component {
   static init(props): State {
     const district = getDistrict(props.id, props.country);
     const country = getCountry(props.country);
@@ -90,8 +88,3 @@ class RegionalProfile extends Component {
       </Generic>);
   }
 }
-
-const mapStateToProps = ({ app: { rehydrated } }: ReduxState) => ({ rehydrated });
-const ProfileWithRedux = connect(mapStateToProps)(RegionalProfile);
-
-export default ProfileWithRedux;

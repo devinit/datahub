@@ -19,7 +19,7 @@ import Generic from '../Generic';
 /* eslint-disable max-len */
 
 const DynamicCountryProfileLowerTabs = dynamic(
-  import('components/organisms/CountryProfileLowerTabs'), { ssr: false });
+  import('components/organisms/CountryProfileLowerTabs'), { ssr: true });
 
 type Props = {
   id: string,

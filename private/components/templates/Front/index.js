@@ -7,9 +7,7 @@ import { MapBackground } from 'components/atoms/Backgrounds';
 import CountrySearchInput from 'components/organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from 'components/molecules/GlobalPictureCountrySearch';
 import dynamic from 'next/dynamic';
-import { connect } from 'react-redux';
-import {red} from 'components/theme/semantic';
-import type { State } from 'lib/reducers';
+import { red } from 'components/theme/semantic';
 import { cacheMapData } from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import About from 'components/molecules/About';
@@ -23,10 +21,9 @@ const DynamicMapComponent = dynamic(import('components/organisms/Map'), {
 });
 
 type Props = {
-  rehydrated: boolean,
   state: StateToShare
 };
-class Front extends Component {
+export default class Front extends Component {
   constructor(props: Props) {
     super(props);
   }
@@ -64,9 +61,3 @@ class Front extends Component {
     );
   }
 }
-
-const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
-
-const FrontWithRedux = connect(mapStateToProps)(Front);
-
-export default FrontWithRedux;

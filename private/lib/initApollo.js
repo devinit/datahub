@@ -1,37 +1,38 @@
 // @flow
-import { ApolloClient } from 'react-apollo';
-import { createApolloFetch } from 'apollo-fetch';
+import { ApolloClient } from 'apollo-client';
 import fetch from 'isomorphic-fetch';
+import {HttpLink} from 'apollo-link-http';
 import { config } from 'package.json';
+import { IntrospectionFragmentMatcher, InMemoryCache } from 'apollo-cache-inmemory';
+import introspectionQueryResultData from './graphql/fragmentTypes.json';
 
 let apolloClient = null;
 
-// Polyfill fetch() on the server (used by apollo-client)
 if (!process.browser) {
   global.fetch = fetch;
 }
 
-function create(): ApolloClient {
-  const apolloFetch = createApolloFetch({ uri: config.api });
-  const networkInterface = {
-    query: (req) => apolloFetch({...req})
-  };
+export function create(initialState?: Object): ApolloClient {
+  const fragmentMatcher = new IntrospectionFragmentMatcher({
+    introspectionQueryResultData
+  });
   return new ApolloClient({
-    // Disables forceFetch on the server (so queries are only run once)
+    connectToDevTools: process.browser,
+    cache: new InMemoryCache({ fragmentMatcher }).restore(initialState || {}),
     ssrMode: !process.browser,
-    networkInterface,
+    link: new HttpLink({ uri: config.api }),
     queryDeduplication: true,
     dataIdFromObject: object => object.uid,
   });
 }
 
-export default function initApollo(): ApolloClient {
+export default function initApollo(initialState?: Object): ApolloClient {
   // Make sure to create a new client for every server-side request so that data
   // isn't shared between connections (which would be bad)
-  if (!process.browser) return create();
+  if (!process.browser) return create(initialState);
 
   // Reuse client on the client-side
-  if (!apolloClient) apolloClient = create();
+  if (!apolloClient) apolloClient = create(initialState);
 
   return apolloClient;
 }

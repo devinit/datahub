@@ -1,12 +1,10 @@
 // @flow
-import { REHYDRATE } from 'redux-persist/constants';
 import globalThemes from 'components/organisms/NavBarTabs/data';
 import spotlightUgandaThemes from 'components/organisms/NavBarTabs/ug-data';
 import { GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR, LOADING_STATUS } from './actions';
 
 // would have been to use & operator but it wasnt working
 export type AppState = {
-  rehydrated: boolean,
   loading: boolean,
   spotlightIndicator: string,
   globalIndicator: string,
@@ -31,7 +29,6 @@ export type AppReducers<S, A> = {
   app: Reducer<S, A>,
 };
 export const initialState: AppState = {
-  rehydrated: false,
   loading: true,
   spotlightIndicator: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
   globalIndicator: globalThemes.globalPictureThemes[0].default_indicator,
@@ -40,9 +37,6 @@ export const initialState: AppState = {
 export const app: AppReducers<AppState, Action> = {
   app: (state: AppState = initialState, action: Action): AppState => {
     switch (action.type) {
-      case REHYDRATE: {
-        return { ...state, rehydrated: true };
-      }
       case LOADING_STATUS: {
         return { ...state, loading: action.loading };
       }
@@ -56,20 +50,4 @@ export const app: AppReducers<AppState, Action> = {
         return state;
     }
   },
-};
-
-export const apolloWrapper = (apolloReducer: Reducer<Store, Action>) => (
-  state: Store,
-  action: Action,
-) => {
-  switch (action.type) {
-    case REHYDRATE: {
-      if (action && action.payload && action.payload.apollo) {
-        return { ...state, ...action.payload.apollo };
-      }
-      return state;
-    }
-    default:
-      return apolloReducer(state, action);
-  }
 };

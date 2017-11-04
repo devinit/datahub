@@ -1,5 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from 'react-apollo';
+import { Provider } from 'react-redux';
 import { store } from './redux';
 import { client } from './apollo';
 
@@ -7,9 +8,11 @@ import { client } from './apollo';
 const withApolloAndReduxProvider = () => {
   return storyFn => {
     return (
-      <ApolloProvider client={client} store={store}>
-        {storyFn()}
-      </ApolloProvider>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
+          {storyFn()}
+        </ApolloProvider>
+      </Provider>
     );
   };
 };

@@ -650,7 +650,7 @@
                 }
               ],
               "type": {
-                "kind": "OBJECT",
+                "kind": "UNION",
                 "name": "PovertyTabRegional",
                 "ofType": null
               },
@@ -691,7 +691,7 @@
                 }
               ],
               "type": {
-                "kind": "OBJECT",
+                "kind": "UNION",
                 "name": "PopulationTabRegional",
                 "ofType": null
               },
@@ -732,7 +732,7 @@
                 }
               ],
               "type": {
-                "kind": "OBJECT",
+                "kind": "UNION",
                 "name": "EducationTabRegional",
                 "ofType": null
               },
@@ -773,7 +773,7 @@
                 }
               ],
               "type": {
-                "kind": "OBJECT",
+                "kind": "UNION",
                 "name": "HealthTabRegional",
                 "ofType": null
               },
@@ -2279,7 +2279,7 @@
               "args": [],
               "type": {
                 "kind": "SCALAR",
-                "name": "Int",
+                "name": "Float",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -3721,12 +3721,16 @@
               "description": "IndicatorDataColored is defined in country profile types\nhas local government, donor and central government",
               "args": [],
               "type": {
-                "kind": "LIST",
+                "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "IndicatorDataColoredWithToolTip",
-                  "ofType": null
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "IndicatorDataColoredWithToolTip",
+                    "ofType": null
+                  }
                 }
               },
               "isDeprecated": false,
@@ -3833,8 +3837,29 @@
           "possibleTypes": null
         },
         {
-          "kind": "OBJECT",
+          "kind": "UNION",
           "name": "PovertyTabRegional",
+          "description": "",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "PovertyTabUg",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "PovertyTabKe",
+              "ofType": null
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PovertyTabUg",
           "description": "",
           "fields": [
             {
@@ -3881,7 +3906,75 @@
         },
         {
           "kind": "OBJECT",
+          "name": "PovertyTabKe",
+          "description": "",
+          "fields": [
+            {
+              "name": "poorestPeople",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "meanExpenditure",
+              "description": "WHAT IS THE AVERAGE LIFE EXPECTANCY? ",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "povertyGap",
+              "description": "WHAT IS THE STANDARD OF LIVING SCORE? ",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "UNION",
           "name": "PopulationTabRegional",
+          "description": "",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "PopulationTabRegionalUg",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "PopulationTabRegionalKe",
+              "ofType": null
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PopulationTabRegionalUg",
           "description": "",
           "fields": [
             {
@@ -3952,7 +4045,75 @@
         },
         {
           "kind": "OBJECT",
+          "name": "PopulationTabRegionalKe",
+          "description": "",
+          "fields": [
+            {
+              "name": "totalPopulation",
+              "description": "The total population of a given district and the population density in per sq km",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "populationDensity",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "populationBirthRate",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "UNION",
           "name": "EducationTabRegional",
+          "description": "",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "EducationTabRegionalUg",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "EducationTabRegionalKe",
+              "ofType": null
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "EducationTabRegionalUg",
           "description": "",
           "fields": [
             {
@@ -4023,7 +4184,122 @@
         },
         {
           "kind": "OBJECT",
+          "name": "EducationTabRegionalKe",
+          "description": "",
+          "fields": [
+            {
+              "name": "primaryPupilTeacherRatioAllSchl",
+              "description": "WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools ",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "primaryTeacherRatioPublicSchl",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "primaryTeacherRatioPrivateSchl",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "UNION",
           "name": "HealthTabRegional",
+          "description": "",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "HealthTabRegionalKe",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
+              "name": "HealthTabRegionalUg",
+              "ofType": null
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HealthTabRegionalKe",
+          "description": "",
+          "fields": [
+            {
+              "name": "birthAttendanceSkilled",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "contraceptiveUse",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "healthCareFunding",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "IndicatorValueNCUWithToolTip",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "HealthTabRegionalUg",
           "description": "",
           "fields": [
             {
@@ -4126,12 +4402,16 @@
               "description": "come from finance file",
               "args": [],
               "type": {
-                "kind": "LIST",
+                "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Domestic",
-                  "ofType": null
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Domestic",
+                    "ofType": null
+                  }
                 }
               },
               "isDeprecated": false,
@@ -4142,12 +4422,16 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "LIST",
+                "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Domestic",
-                  "ofType": null
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Domestic",
+                    "ofType": null
+                  }
                 }
               },
               "isDeprecated": false,
@@ -4289,6 +4573,16 @@
             },
             {
               "name": "from_di_id",
+              "description": "",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "oof_bundle",
               "description": "",
               "type": {
                 "kind": "SCALAR",

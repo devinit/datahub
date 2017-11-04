@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -33,7 +34,7 @@ export default ComposedComponent => {
       // and extract the resulting data
       if (!process.browser) {
         const apollo = initApollo();
-        const redux = initRedux(apollo);
+        const redux = initRedux();
         // Provide the `url` prop data in case a GraphQL query uses it
         const url = { query: ctx.query, pathname: ctx.pathname };
 
@@ -42,9 +43,11 @@ export default ComposedComponent => {
           await getDataFromTree(
             // No need to use the Redux Provider
             // because Apollo sets up the store for us
-            <ApolloProvider client={apollo} store={redux}>
-              <ComposedComponent url={url} {...composedInitialProps} />
-            </ApolloProvider>,
+            <Provider store={redux}>
+              <ApolloProvider client={apollo} >
+                <ComposedComponent url={url} {...composedInitialProps} />
+              </ApolloProvider>
+            </Provider>,
           );
         } catch (error) {
           // Prevent Apollo Client GraphQL errors from crashing SSR.
@@ -56,14 +59,13 @@ export default ComposedComponent => {
         Head.rewind();
 
         // Extract query data from the store
-        const state = redux.getState();
-        ('redux state', state);
+        // const state = redux.getState();
         // No need to include other initial Redux state because when it
         // initialises on the client-side it'll create it again anyway
         serverState = {
           apollo: {
             // Only include the Apollo data state
-            data: state.apollo.data,
+            data: apollo.cache.extract()
           },
         };
       }
@@ -72,23 +74,24 @@ export default ComposedComponent => {
         ...composedInitialProps,
       };
     }
-    async componentWillMount() {
-      // dispatches an Hydrate action
-      // if (process.browser) clientCachingHandling(this.redux);
-    }
     constructor(props) {
       super(props);
-      this.apollo = initApollo();
-      this.redux = initRedux(this.apollo, this.props.serverState);
+      const apolloData = this.props.serverState && this.props.serverState.apollo
+        && this.props.serverState.apollo.data;
+      this.apollo = initApollo(apolloData);
+      // the inital state we might have passed is now entirely handled by apollo
+      this.redux = initRedux();
     }
 
     render() {
       return (
         // No need to use the Redux Provider
         // because Apollo sets up the store for us
-        <ApolloProvider client={this.apollo} store={this.redux}>
-          <ComposedComponent {...this.props} />
-        </ApolloProvider>
+        <Provider store={this.redux}>
+          <ApolloProvider client={this.apollo}>
+            <ComposedComponent {...this.props} />
+          </ApolloProvider>
+        </Provider>
       );
     }
   };
