@@ -6,7 +6,7 @@ import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
-
+/* eslint-disable max-len */
 type Props = {
   ...SpotLightTabDataQuery,
   currency: string,
@@ -21,7 +21,8 @@ const Health = (props: Props) => {
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   const healthTabRegional = props.healthTabRegional;
   const fundingNCU = healthTabRegional.healthCareFunding &&
-    healthTabRegional.healthCareFunding.value_ncu;
+    healthTabRegional.healthCareFunding.value_ncu ?
+    healthTabRegional.healthCareFunding.value_ncu : NoData;
   const fundingUSD = healthTabRegional.healthCareFunding &&
     healthTabRegional.healthCareFunding.value;
   const fundingValue = props.currency === 'US$' ? fundingUSD : fundingNCU;
@@ -31,10 +32,10 @@ const Health = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {healthPerformance.title}
-            {healthTabRegional.districtPerformance &&
-              healthTabRegional.districtPerformance.toolTip
-              ? <TabsToolTip {...healthTabRegional.districtPerformance.toolTip} />
-              : ''}
+            {
+              // $FlowFixMe
+              TabsToolTip(healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
             {healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.value
@@ -53,12 +54,13 @@ const Health = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {caseOfTb.title}
-            {healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.toolTip
-              ? <TabsToolTip {...healthTabRegional.treatmeantOfTb.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
             {healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.value
+              // $FlowFixMe
               ? `${healthTabRegional.treatmeantOfTb.value} %`
               : NoData}
           </TabsP>

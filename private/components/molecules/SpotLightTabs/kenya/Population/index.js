@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable max-len */
 import React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
 import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from 'components/atoms/TabsText';
@@ -58,10 +59,9 @@ const Population = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             <RuralUrbanPopnText />
-            {populationTabRegional.populationDistribution &&
-            populationTabRegional.populationDistribution.toolTip
-              ? <TabsToolTip {...populationTabRegional.populationDistribution.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(populationTabRegional.populationDistribution && populationTabRegional.populationDistribution.toolTip)
+            }
           </HeaderTitle>
 
           {populationTabRegional.populationDistribution &&
@@ -79,10 +79,9 @@ const Population = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {dependencyRatio.title}
-            {populationTabRegional.averageDependencyRatio &&
-            populationTabRegional.averageDependencyRatio.toolTip
-              ? <TabsToolTip {...populationTabRegional.averageDependencyRatio.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(populationTabRegional.averageDependencyRatio && populationTabRegional.averageDependencyRatio.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
             {populationTabRegional.averageDependencyRatio &&

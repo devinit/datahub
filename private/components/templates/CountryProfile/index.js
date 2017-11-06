@@ -9,10 +9,8 @@ import ProfileDataSourceTable from 'components/molecules/ProfileDataSourceTable'
 import CountryProfileTopTabs from 'components/organisms/CountryProfileTabs';
 import ProfileHeader from 'components/molecules/ProfileHeader';
 import {getCountry} from 'lib/utils';
-import { connect } from 'react-redux';
 import { GOVERNMENT_FINANCE_LOWER } from 'lib/utils/constants';
 import type {StateToShare} from 'components/molecules/ChartShare';
-import type { State } from 'lib/reducers';
 import methodologyData from 'components/organisms/Methodology/country-profile';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
@@ -26,7 +24,7 @@ type Props = {
   rehydrated?: boolean,
   state?: StateToShare,
 };
-class Profile extends Component {
+export default class Profile extends Component {
   static init(props) {
     const country = getCountry(props.id);
     const selectedTab = props.state && props.state.chartId &&
@@ -86,8 +84,3 @@ class Profile extends Component {
       </Generic>);
   }
 }
-
-const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
-const ProfileWithRedux = connect(mapStateToProps)(Profile);
-
-export default ProfileWithRedux;

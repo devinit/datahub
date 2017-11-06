@@ -6,11 +6,19 @@ import Head from 'next/head';
 import initApollo from './initApollo';
 import { initRedux} from './initRedux';
 
+type Props = {
+  serverState: {
+    apollo: {
+      // Only include the Apollo data state
+      data: any
+    }
+  }
+}
 // Gets the display name of a JSX component for dev tools
 function getComponentDisplayName(Component) {
   return Component.displayName || Component.name || 'Unknown';
 }
-
+// $FlowFixMe
 export default ComposedComponent => {
   return class WithData extends React.Component {
     static displayName = `WithData(${getComponentDisplayName(ComposedComponent)})`;
@@ -75,7 +83,7 @@ export default ComposedComponent => {
         ...composedInitialProps,
       };
     }
-    constructor(props) {
+    constructor(props: Props) {
       super(props);
       const apolloData = this.props.serverState && this.props.serverState.apollo
         && this.props.serverState.apollo.data;
@@ -83,7 +91,8 @@ export default ComposedComponent => {
       // the inital state we might have passed is now entirely handled by apollo
       this.redux = initRedux();
     }
-
+    apollo: any;
+    redux: any;
     render() {
       return (
         // No need to use the Redux Provider

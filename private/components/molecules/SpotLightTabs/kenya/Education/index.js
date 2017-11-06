@@ -7,7 +7,7 @@ import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
-
+/* eslint-disable max-len */
 type Props = {
   ...SpotLightTabDataQuery,
   currency: string,
@@ -22,9 +22,11 @@ const Educaton = (props: Props) => {
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
   const educationTabRegional = props.educationTabRegional;
   const fundingUSD = educationTabRegional.primaryEducationfunding &&
-    educationTabRegional.primaryEducationfunding.value;
+    educationTabRegional.primaryEducationfunding.value ?
+    educationTabRegional.primaryEducationfunding.value : NoData;
   const fundingNCU = educationTabRegional.primaryEducationfunding &&
-    educationTabRegional.primaryEducationfunding.value_ncu;
+    educationTabRegional.primaryEducationfunding.value_ncu ?
+    educationTabRegional.primaryEducationfunding.value_ncu : NoData;
   const fundingValue = props.currency === 'US$' ? fundingUSD : fundingNCU;
   return (
     <Container>
@@ -41,10 +43,9 @@ const Educaton = (props: Props) => {
           </TabsP>
           <p>
             in government schools and
-            {educationTabRegional.pupilTeacherRatioGovtSchl &&
-            educationTabRegional.pupilTeacherRatioGovtSchl.toolTip
-              ? <TabsToolTip {...educationTabRegional.pupilTeacherRatioGovtSchl.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(educationTabRegional.pupilTeacherRatioGovtSchl && educationTabRegional.pupilTeacherRatioGovtSchl.toolTip)
+            }
           </p>
           <TabsP>
             {educationTabRegional.pupilTeacherRatioOtherSchl &&
@@ -54,10 +55,9 @@ const Educaton = (props: Props) => {
           </TabsP>
           <p>
             in all schools
-            {educationTabRegional.pupilTeacherRatioOtherSchl &&
-            educationTabRegional.pupilTeacherRatioOtherSchl.toolTip
-              ? <TabsToolTip {...educationTabRegional.pupilTeacherRatioOtherSchl.toolTip} />
-              : ''}
+            {// $FlowFixMe
+              TabsToolTip(educationTabRegional.pupilTeacherRatioOtherSchl && educationTabRegional.pupilTeacherRatioOtherSchl.toolTip)
+            }
           </p>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
@@ -66,14 +66,15 @@ const Educaton = (props: Props) => {
           </HeaderTitle>
           <TabsP>
             {educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.value
+              // $FlowFixMe
               ? `${educationTabRegional.studentsPassRate.value} %`
               : NoData}
           </TabsP>
           <p>and is ranked in
-            {educationTabRegional.studentsPassRate &&
-            educationTabRegional.studentsPassRate.toolTip
-              ? <TabsToolTip {...educationTabRegional.studentsPassRate.toolTip} />
-              : ''}
+            {
+              // $FlowFixMe
+              TabsToolTip(educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.toolTip)
+            }
           </p>
           <TabsP>
             {educationTabRegional.studentsPassDistrictRank &&
@@ -82,22 +83,22 @@ const Educaton = (props: Props) => {
               : NoData}
           </TabsP>
           <P>place overall
-            { educationTabRegional.studentsPassDistrictRank &&
-              educationTabRegional.studentsPassDistrictRank.toolTip
-              ? <TabsToolTip {...educationTabRegional.studentsPassDistrictRank.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(educationTabRegional.studentsPassDistrictRank && educationTabRegional.studentsPassDistrictRank.toolTip)
+            }
           </P>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {educationFunding.title}
-            {educationTabRegional.primaryEducationfunding &&
-            educationTabRegional.primaryEducationfunding.toolTip
-              ? <TabsToolTip {...educationTabRegional.primaryEducationfunding.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(educationTabRegional.primaryEducationfunding && educationTabRegional.primaryEducationfunding.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
-            { fundingValue ? `${props.currency} ${fundingValue}` : NoData}
+            { // $FlowFixMe
+              fundingValue ? `${props.currency} ${fundingValue}` : NoData
+            }
           </TabsP>
         </Grid.Column>
       </Grid>

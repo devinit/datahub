@@ -1,13 +1,7 @@
 // @flow
 import React from 'react';
 import { graphql } from 'react-apollo';
-import {
-  Education,
-  Health,
-  Overview,
-  Population,
-  Poverty,
-} from 'components/molecules/SpotLightTabs';
+import TabsComponents from 'components/molecules/SpotLightTabs';
 import Tabs from 'components/molecules/Tabs';
 import {errorHandler} from 'lib/utils';
 import Pane from 'components/atoms/Pane';
@@ -20,7 +14,7 @@ import TABS_QUERY from './query.graphql';
 type WrapperProps = {
   loading: boolean,
   currency: string,
-  variables: { id: string},
+  variables: { id: string, country: string},
   ...SpotLightTabDataQuery,
 };
 
@@ -34,7 +28,9 @@ const spotlightTabs = (props: WrapperProps) => {
   ) {
     return <LoadingPlaceholder loading={props.loading} />;
   }
-  const pageData = getDistrictProfileData(props.variables.id, 'uganda');
+  const pageData = getDistrictProfileData(props.variables.id, props.variables.country);
+  const {Overview, Poverty, Population, Education, Health} =
+    TabsComponents[props.variables.country];
   return (
     <Tabs selected={0} height="20em">
       <Pane label="Overview" id="spotlight-overview">

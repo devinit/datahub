@@ -84,10 +84,14 @@ const Overview = (props: Props) => {
                         <span>
                           {`${Math.round((datum.data && datum.data.value ? datum.data.value : 0) / sum)} `}% {' '}
                           {datum.data && datum.data.name ? datum.data.name.toLowerCase() : ''}
-                          <TabsToolTip
-                            source={datum.toolTip && datum.toolTip.source}
-                            heading={datum.data && datum.data.name}
-                          />
+                          {
+                            TabsToolTip({ // make flow happy
+                              source: datum.toolTip && datum.toolTip.source ? datum.toolTip.source : ' ',
+                              heading: datum.data && datum.data.name ? datum.data.name : ' '
+                            })
+
+                          }
+
                         </span>
                       </Legend>);
                   })

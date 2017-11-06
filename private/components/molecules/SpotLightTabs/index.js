@@ -1,7 +1,4 @@
-import Health from './Health';
-import Education from './Education';
-import Overview from './Overview';
-import Poverty from './Poverty';
-import Population from './Population';
+import kenya from './kenya';
+import uganda from './uganda';
 
-export { Health, Education, Overview, Population, Poverty };
+export default {kenya, uganda};

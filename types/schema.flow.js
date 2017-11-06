@@ -31,23 +31,23 @@ export type TabDataQuery = {|
     // Total revenue for a particular
     totalRevenue: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     grantsAsPcOfRevenue: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // for donut chart
     spendingAllocation: ? {|
       toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+        source: string,
+        heading: string,
       |},
       data: ? Array< {|
         value: ?number,
@@ -62,34 +62,34 @@ export type TabDataQuery = {|
   povertyTab: ? {|
     // Poverty reduction over time area chart trend
     poverty190Trend: ? {|
-      data: ? Array< {|
+      data:  Array< {|
         id: ?string,
         year: ?number,
         value: ?number,
         name: ?string,
       |} >,
       toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+        source: string,
+        heading: string,
       |},
     |},
     // how deep is poverty %
     depthOfExtremePoverty: ? {|
       value: ?string,
-      toolTip: ? {|
-        heading: ?string,
-        source: ?string,
+      toolTip: {|
+        heading: string,
+        source: string,
       |},
     |},
     // Recipients: how income is distributed, % of income received by each quintil
     incomeDistTrend: ? {|
-      data: ? Array< {|
+      data:  Array< {|
         value: ?number,
         quintileName: ?string,
       |} >,
       toolTip: ? {|
-        heading: ?string,
-        source: ?string,
+        heading: string,
+        source: string,
       |},
     |},
   |},
@@ -97,9 +97,9 @@ export type TabDataQuery = {|
     // total population in a country
     population: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // Urban vs Rural population level
@@ -110,8 +110,8 @@ export type TabDataQuery = {|
         year: ?number,
       |} >,
       toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+        source: string,
+        heading: string,
       |},
     |},
     // Number of people in 3 age bands (65+, 15- 65, 0 - 14)
@@ -122,8 +122,8 @@ export type TabDataQuery = {|
         year: ?number,
       |} >,
       toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+        source: string,
+        heading: string,
       |},
     |},
   |},
@@ -131,25 +131,25 @@ export type TabDataQuery = {|
     // Gross National Income
     GNI: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // Net ODA received, % of GNI for recipient countries
     netODAOfGNIIn: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // Net ODA out, % of GNI for recipient countries
     netODAOfGNIOut: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // Whats the mix of resources can be for donors (out flows) or receipient (in flows)
@@ -161,8 +161,8 @@ export type TabDataQuery = {|
         value: number,
       |} >,
       toolTip: ? {|
-        heading: ?string,
-        source: ?string,
+        heading: string,
+        source: string,
       |},
     |},
     // for line chart in the  international resources tabs section,
@@ -175,8 +175,8 @@ export type TabDataQuery = {|
         value: ?number,
       |} >,
       toolTip: ? {|
-        heading: ?string,
-        source: ?string,
+        heading: string,
+        source: string,
       |},
     |},
   |},
@@ -184,63 +184,63 @@ export type TabDataQuery = {|
     // how many of the poorest people globally live in a country
     poorestPeople: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // total population for a given country
     population: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     domesticResources: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     internationalResources: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // recipient countries $PPP, both donor and recipient
     governmentSpendPerPerson: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // donor: gross nation income per capit GNI
     averageIncomerPerPerson: ? {|
-      data: ? Array< {|
+      data:  Array< {|
         year: ?number,
         value: ?number,
         id: ?string,
         name: ?string,
       |} >,
       toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+        source: string,
+        heading: string,
       |},
     |},
     // donor: Income share by quintile
     incomeDistTrend: ? {|
-      data: ? Array< {|
+      data:  Array< {|
         value: ?number,
         quintileName: ?string,
       |} >,
       toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+        source: string,
+        heading: string,
       |},
     |},
   |},
@@ -381,49 +381,49 @@ export type SpotLightTabDataQuery = {|
   povertyTabRegional: ?( {
       poorestPeople: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // WHAT IS THE AVERAGE LIFE EXPECTANCY?
       lifeExpectancy: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // WHAT IS THE STANDARD OF LIVING SCORE?
       stdOfLiving: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     } | {
       poorestPeople: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // WHAT IS THE AVERAGE LIFE EXPECTANCY?
       meanExpenditure: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // WHAT IS THE STANDARD OF LIVING SCORE?
       povertyGap: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     }
@@ -434,9 +434,9 @@ export type SpotLightTabDataQuery = {|
     // can be no data or '12%'
     poorestPeople: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO? eg 3.6m or 2.7bn
@@ -444,9 +444,9 @@ export type SpotLightTabDataQuery = {|
     regionalResources: ? {|
       value: ?string,
       value_ncu: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
     // IndicatorDataColored is defined in country profile types
@@ -459,17 +459,17 @@ export type SpotLightTabDataQuery = {|
         name: ?string,
         color: ?string,
       |},
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |} >,
     // HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
     localGovernmentSpendPerPerson: ? {|
       value: ?string,
-      toolTip: ? {|
-        source: ?string,
-        heading: ?string,
+      toolTip: {|
+        source: string,
+        heading: string,
       |},
     |},
   |},
@@ -477,16 +477,16 @@ export type SpotLightTabDataQuery = {|
       // The total population of a given district and the population density in per sq km
       totalPopulation: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       populationDensity: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // Urban vs Rural population level
@@ -497,45 +497,45 @@ export type SpotLightTabDataQuery = {|
           year: ?number,
         |} >,
         toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+          source: string,
+          heading: string,
         |},
       |},
       averageDependencyRatio: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       allAverageDependencyRatio: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     } | {
       // The total population of a given district and the population density in per sq km
       totalPopulation: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       populationDensity: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       populationBirthRate: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     }
@@ -544,63 +544,63 @@ export type SpotLightTabDataQuery = {|
       // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
       pupilTeacherRatioGovtSchl: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       pupilTeacherRatioOtherSchl: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // WHAT PERCENTAGE OF STUDENTS PASS THE PRIMARY LEAVING EXAM?
       studentsPassRate: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       studentsPassDistrictRank: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // HOW MUCH PRIMARY EDUCATION FUNDING IS THERE?
       primaryEducationfunding: ? {|
         value: ?string,
         value_ncu: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     } | {
       // WHAT IS THE PUPIL–TEACHER RATIO IN PRIMARY EDUCATION?...in government schools  and...in all schools
       primaryPupilTeacherRatioAllSchl: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       primaryTeacherRatioPublicSchl: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       primaryTeacherRatioPrivateSchl: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     }
@@ -608,32 +608,32 @@ export type SpotLightTabDataQuery = {|
   healthTabRegional: ?( {
       healthCareFunding: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       birthAttendanceSkilled: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       contraceptiveUse: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     } | {
       // WHAT IS THE DISTRICT LEAGUE HEALTH PERFORMANCE SCORE?
       districtPerformance: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       districtHealthRank: ? {|
@@ -642,18 +642,18 @@ export type SpotLightTabDataQuery = {|
       // WHAT PERCENTAGE OF TUBERCULOSIS CASES HAVE BEEN SUCCESSFULLY TREATED?
       treatmeantOfTb: ? {|
         value: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
       // HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE?
       healthCareFunding: ? {|
         value: ?string,
         value_ncu: ?string,
-        toolTip: ? {|
-          source: ?string,
-          heading: ?string,
+        toolTip: {|
+          source: string,
+          heading: string,
         |},
       |},
     }
@@ -842,8 +842,8 @@ export type ResourcesOverTimeToolTipQuery = {|
     // for sidebar chart in international resources section & area partition tree chart default data
     resourcesOverTime: ? {|
       toolTip: ? {|
-        heading: ?string,
-        source: ?string,
+        heading: string,
+        source: string,
       |},
     |},
   |},

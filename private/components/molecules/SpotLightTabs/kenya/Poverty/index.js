@@ -25,9 +25,10 @@ const Poverty = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
             {povertyLevels.title ? povertyLevels.title.toUpperCase() : '' }
-            {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.toolTip
-              ? <TabsToolTip {...povertyTabRegional.poorestPeople.toolTip} />
-              : ''}
+            { // $FlowFixMe
+              TabsToolTip(povertyTabRegional.poorestPeople &&
+                povertyTabRegional.poorestPeople.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
             {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.value
@@ -38,9 +39,10 @@ const Poverty = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
             {lifeExpectancy.title}
-            {povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.toolTip
-              ? <TabsToolTip {...povertyTabRegional.lifeExpectancy.toolTip} />
-              : ''}
+            {
+              // $FlowFixMe
+             TabsToolTip(povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.toolTip) // eslint-disable-line
+            }
           </HeaderTitle>
           <TabsP>
             {povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.value
@@ -52,9 +54,10 @@ const Poverty = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
             {stdOfLiving.title}
-            {povertyTabRegional.stdOfLiving && povertyTabRegional.stdOfLiving.toolTip
-              ? <TabsToolTip {...povertyTabRegional.stdOfLiving.toolTip} />
-              : ''}
+            {
+              // $FlowFixMe
+             TabsToolTip(povertyTabRegional.stdOfLiving && povertyTabRegional.lifeExpectancy.toolTip) // eslint-disable-line
+            }
           </HeaderTitle>
           <TabsP>
             {povertyTabRegional.stdOfLiving && povertyTabRegional.stdOfLiving.value

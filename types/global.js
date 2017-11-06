@@ -62,3 +62,11 @@ export type SelectOption = {|
   name: ?string,
   text: ?string,
 |}
+
+export type IndicatorValueWithToolTip ={
+    value: ?string,
+    toolTip: {|
+      source: string,
+      heading: string,
+    |}
+}
