@@ -4,7 +4,7 @@ const LRUCache = require('lru-cache');
 const path = require('path');
 const next = require('next');
 const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
-const ugData = require('./private/components/organisms/CountrySearchInput/ug-data.js');
+const ugData = require('./private/components/organisms/CountrySearchInput/uganda-data.js');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
