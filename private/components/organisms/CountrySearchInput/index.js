@@ -2,7 +2,8 @@
 import React from 'react';
 import SearchInput from 'components/molecules/SearchInput';
 import data from './data';
-import ugData from './ug-data';
+import ugandaData from './uganda-data';
+import kenyaData from './kenya-data';
 
 type Props = {
   visible: boolean,
@@ -11,7 +12,10 @@ type Props = {
   placeholder?: string,
 };
 
-const countryData = {uganda: ugData.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}))};
+const countryData = (country: string) => {
+  const data = country === 'uganda' ? ugandaData : kenyaData;
+  return ({[country]: data.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}))});
+};
 
 const SearchwithData = (props: Props) =>
   (<SearchInput

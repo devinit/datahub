@@ -3,7 +3,8 @@ import fetch from 'isomorphic-fetch';
 import countriesData from 'components/organisms/CountrySearchInput/data';
 import {menueData} from 'components/templates/Generic/data';
 import type {MenueItem} from 'components/templates/Generic/data';
-import ugDistrictData from 'components/organisms/CountrySearchInput/ug-data';
+import ugDistrictData from 'components/organisms/CountrySearchInput/uganda-data';
+import keDistrictData from 'components/organisms/CountrySearchInput/kenya-data';
 import { config, version } from 'package.json';
 import localforage from 'localforage';
 import { createApolloFetch } from 'apollo-fetch';
@@ -136,16 +137,16 @@ export const getCountryName = (slug: string): string => {
 
 export const getDistrict = (slug: string, country: string): District => {
   // TODO: handle spotlight kenya
-  if (country !== 'uganda') throw new Error('we are only dealing with spotlight uganda for now');
+  const data = country === 'uganda' ? ugDistrictData : keDistrictData;
   const district: {|name: string, id: string|} | void =
-    ugDistrictData.districts.find(district => district.slug === slug);
+    data.districts.find(district => district.slug === slug);
   if (district) return {...district, slug};
   return {name: slug, slug, id: ''};
 };
 
-export const getDistrictName = (slug: string, country?: string): string => {
+export const getDistrictName = (slug: string): string => {
   // TODO: handle spotlight kenya
-  if (country !== 'uganda') throw new Error('we are only dealing with spotlight uganda for now');
+  // const data = country === 'uganda' ? ugDistrictData : keDistrictData;
   // const district = getDistrict(slug, country);
   return `${slug[0].toUpperCase()}${slug.substr(1)}`;
 };

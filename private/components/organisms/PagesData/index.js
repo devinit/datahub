@@ -34,9 +34,9 @@ const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
 };
 
 export const getDistrictProfileData = (slug: string, country: string): PageUnit[] => {
-  const districtName = getDistrictName(slug, country);
-  if (!pagesData.spotlightDistrict) throw new Error('District profile page data missing');
-  const pageData: PageUnit[] = pagesData.spotlightDistrict;
+  const districtName = getDistrictName(slug);
+  if (!pagesData[country]) throw new Error('District profile page data missing');
+  const pageData: PageUnit[] = pagesData[country];
   return replaceFields({pageData, toReplace: '{district}', replacement: districtName});
 };
 

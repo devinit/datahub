@@ -5,7 +5,12 @@ query PageData {
     narrative
     donor_title
   }
-  spotlightDistrict: districtPageData {
+  uganda: districtPageData (country: "uganda") {
+    id
+    title
+    narrative
+  }
+  kenya: districtPageData (country: "kenya") {
     id
     title
     narrative

@@ -63,9 +63,11 @@ export const getCountries = async () => {
 
 export const getDistricts = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'CountrySearchInput/ug-data.js');
-    const variables = { country: 'uganda' };
-    await getAndWriteData({ query: DISTRICT_QUERY, filePath, variables});
+    ['uganda', 'kenya'].forEach(async (country) => {
+      const filePath = path.join(baseOrganismsPath, `CountrySearchInput/${country}-data.js`);
+      const variables = { country };
+      await getAndWriteData({ query: DISTRICT_QUERY, filePath, variables});
+    });
   } catch (error) {
     console.error(error);
   }

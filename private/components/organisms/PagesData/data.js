@@ -134,7 +134,7 @@ module.exports = {
       donor_title: 'HOW HAVE RESOURCE OUTFLOWS CHANGED OVER TIME?'
     }
   ],
-  spotlightDistrict: [
+  uganda: [
     {
       id: 'overview-district-poverty',
       title:
@@ -213,6 +213,73 @@ module.exports = {
       id: 'health-care-funding',
       title:
         'HOW MUCH LOCAL GOVERNMENT HEALTHCARE FUNDING IS THERE PER PERSON?',
+      narrative: ''
+    }
+  ],
+  kenya: [
+    {
+      id: 'overview-district-poverty',
+      title:
+        'WHAT PERCENTAGE OF PEOPLE IN {district} LIVE BELOW THE NATIONAL POVERTY LINE?',
+      narrative: ''
+    },
+    {
+      id: 'overview-resources',
+      title: 'WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN {district}?',
+      narrative: ''
+    },
+    {
+      id: 'govt-spend-per-person',
+      title: 'HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?',
+      narrative: ''
+    },
+    { id: 'poorestPeople', title: 'Poverty headcount', narrative: '' },
+    { id: 'povertyGap', title: 'Poverty gap', narrative: '' },
+    {
+      id: 'meanExpenditure',
+      title: 'Mean per person monthly expenditure, 2013 prices (KES)',
+      narrative: ''
+    },
+    { id: 'totalPopulation', title: 'Total population', narrative: '' },
+    {
+      id: 'populationDensity',
+      title: 'Population density (per sq km)',
+      narrative: ''
+    },
+    {
+      id: 'populationBirthRate',
+      title: 'Annual crude birth rate',
+      narrative: ''
+    },
+    {
+      id: 'primaryPupilTeacherRatioAllSchl',
+      title: 'Primary pupil to teacher ratio-all schools',
+      narrative: ''
+    },
+    {
+      id: 'primaryTeacherRatioPublicSchl',
+      title: 'Primary pupil to teacher ratio-public schools',
+      narrative: ''
+    },
+    {
+      id: 'primaryTeacherRatioPrivateSchl',
+      title: 'Primary pupil to teacher ratio-private schools',
+      narrative: ''
+    },
+    {
+      id: 'healthCareFunding',
+      title: 'Primary health spending per person',
+      narrative: ''
+    },
+    {
+      id: 'birthAttendanceSkilled',
+      title: 'Proportion of births attended by skilled health personnel (%)',
+      narrative: ''
+    },
+    {
+      id: 'contraceptiveUse',
+      title:
+        'Modern contraceptive methods used among married women, any method (15-49 yrs) (%)',
       narrative: ''
     }
   ]

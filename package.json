@@ -82,8 +82,8 @@
     "webpack-bundle-analyzer": "^2.9.0"
   },
   "devDependencies": {
-    "@storybook/addon-storyshots": "^3.1.9",
-    "@storybook/react": "^3.1.9",
+    "@storybook/addon-storyshots": "^3.2.14",
+    "@storybook/react": "^3.2.14",
     "apollo-codegen": "^0.15.2",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
