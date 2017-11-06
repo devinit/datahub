@@ -205,7 +205,7 @@ export type PageMeta = {
 
 export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
   let title = obj.name;
-  if (obj.link === '/uganda') title = getDistrictName(args.query || '', 'uganda');
+  if (obj.link === '/uganda') title = getDistrictName(args.query || '');
   if (obj.link === '/') title = 'Development Data Hub';
   if (obj.link === '/country') title = getCountryName(args.query || '');
   return {title, image: '/img/logo.jpg'};
