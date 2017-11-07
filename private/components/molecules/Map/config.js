@@ -49,13 +49,13 @@ const mapConfigs: MapConfigs = {
   kenya: {
     paint: {
       propertyLayer: 'kenya',
-      propertyName: 'id',
+      propertyName: 'ID',
       mapStyle: '/styles/kenyageojson.json',
     },
     viewport: {
       center: [37.65, 0.85],
-      zoom: 1,
-      minZoom: 2.5,
+      zoom: 5,
+      minZoom: 3,
       bounds: [
         [-179, -61], // Southwest coordinates
         [188, 75], // Northeast coordinates

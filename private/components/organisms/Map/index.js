@@ -28,9 +28,9 @@ class MapOrganism extends Component {
     if (props.pathname && props.pathname.includes('uganda')) {
       return props.app.indicatorUganda;
     }
-    if (props.pathname && props.pathname.includes('kenya')) {
-      return props.app.indicatorKenya;
-    }
+    // if (props.pathname && props.pathname.includes('kenya')) {
+    //   return props.app.indicatorKenya;
+    // }
     return props.app.globalIndicator;
   }
   static getIndicatorData(props: Props): Promise<MapDataQuery> {

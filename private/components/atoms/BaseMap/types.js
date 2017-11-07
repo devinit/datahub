@@ -100,3 +100,8 @@ export type GenericTipHtml = {
   year: string | number,
   value: string | number,
 };
+export type PropertyLayerSlugMap = {
+  national: string,
+  kenya: string,
+  uganda: string
+}

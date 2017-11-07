@@ -11,6 +11,7 @@ import { MapContainer } from './styledMapContainer';
 import type {
   Feature,
   MapData,
+  PropertyLayerSlugMap,
   PaintMap,
   Props,
   Point,
@@ -108,6 +109,11 @@ class BaseMap extends Component {
   _center: Point;
   _zoomLevel: number;
   _element: HTMLDivElement;
+  _propertyLayerSlugMap: PropertyLayerSlugMap = {
+    national: 'country-slug',
+    uganda: 'name',
+    kenya: 'NAME_2'
+  }
 
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.paint.mapStyle !== this.props.paint.mapStyle ||
@@ -243,7 +249,7 @@ class BaseMap extends Component {
       if (meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
       const features: Feature = this._map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
-      const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
+      const slugProperty = this._propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
       const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
       if (!this.props.meta || !this.props.meta.country) return false;
@@ -266,14 +272,15 @@ class BaseMap extends Component {
       if (!obj.id || !obj.color) throw new Error('color and id values missing');
       return [obj.id, obj.color];
     });
+    console.log(propertyLayer, propertyName, stops[0]);
     this.setMapPaintProperty(stops, propertyLayer, propertyName);
   }
   getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
     const layer = propertyLayer || 'national';
-    const slugProperty = layer === 'national' ? 'country-slug' : 'name';
+    const slugProperty = this._propertyLayerSlugMap[layer];
     const features: Feature[] = this._map.queryRenderedFeatures({ layers: [layer] });
     const feature: Feature | void = features.find(feature => {
-      if (feature.properties[slugProperty] && slugProperty === 'name') {
+      if (feature.properties[slugProperty] && slugProperty !== 'country-slug') {
         return feature.properties[slugProperty].toLowerCase() === slug;
       }
       return feature.properties[slugProperty] === slug;
@@ -303,10 +310,11 @@ class BaseMap extends Component {
     const dy = (bounds._ne.lng - bounds._sw.lng);
     const distance = Math.sqrt((dx * dx) + (dy * dy));
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
+    const spotlightZoom = this.props.paint.propertyLayer === 'uganda' ? 5.5 : 4.5;
     return this._map.fitBounds(bounds, {
       padding: 0,
       offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, 0],
-      maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : 5.5,
+      maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : spotlightZoom,
     });
   }
   focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
