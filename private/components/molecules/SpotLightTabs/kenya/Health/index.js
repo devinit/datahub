@@ -15,66 +15,56 @@ type Props = {
 
 const Health = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
-  const healthPerformance = getPageLine('health-performance');
-  const caseOfTb = getPageLine('case-of-tb');
-  const healthCareFunding = getPageLine('health-care-funding');
+  const healthCareFunding = getPageLine('healthCareFunding');
+  const birthAttendanceSkilled = getPageLine('birthAttendanceSkilled');
+  const contraceptiveUse = getPageLine('contraceptiveUse');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
   const healthTabRegional = props.healthTabRegional;
-  const fundingNCU = healthTabRegional.healthCareFunding &&
-    healthTabRegional.healthCareFunding.value_ncu ?
-    healthTabRegional.healthCareFunding.value_ncu : NoData;
-  const fundingUSD = healthTabRegional.healthCareFunding &&
-    healthTabRegional.healthCareFunding.value;
-  const fundingValue = props.currency === 'US$' ? fundingUSD : fundingNCU;
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {healthPerformance.title}
+            {healthCareFunding.title}
             {
               // $FlowFixMe
-              TabsToolTip(healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.toolTip)
+              TabsToolTip(healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.value
-              ? healthTabRegional.districtPerformance.value
+            {healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.value
+              ? healthTabRegional.healthCareFunding.value
               : NoData}
           </TabsP>
-          <p>out of 100, and is ranked in</p>
-          <TabsP>
-            {healthTabRegional.districtHealthRank && healthTabRegional.districtHealthRank.value
-              ? healthTabRegional.districtHealthRank.value
-              : NoData}
-          </TabsP>
-          <p>place overall</p>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {caseOfTb.title}
+            {birthAttendanceSkilled.title}
             { // $FlowFixMe
-              TabsToolTip(healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.toolTip)
+              TabsToolTip(healthTabRegional.birthAttendanceSkilled && healthTabRegional.birthAttendanceSkilled.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.value
+            {healthTabRegional.birthAttendanceSkilled && healthTabRegional.birthAttendanceSkilled.value
               // $FlowFixMe
-              ? `${healthTabRegional.treatmeantOfTb.value} %`
+              ? `${healthTabRegional.birthAttendanceSkilled.value} %`
               : NoData}
           </TabsP>
         </Grid.Column>
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {healthCareFunding.title}
-            {healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.toolTip
-              ? <TabsToolTip {...healthTabRegional.healthCareFunding.toolTip} />
-              : ''}
+            {contraceptiveUse.title}
+            {
+              // $FlowFixMe
+              TabsToolTip(healthTabRegional.contraceptiveUse && healthTabRegional.contraceptiveUse.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
-            {fundingValue ? `${props.currency} ${fundingValue}` : NoData}
+            {healthTabRegional.contraceptiveUse && healthTabRegional.contraceptiveUse.value
+              ? healthTabRegional.contraceptiveUse.value
+              : NoData}
           </TabsP>
         </Grid.Column>
       </Grid>
