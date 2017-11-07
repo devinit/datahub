@@ -72,6 +72,7 @@ const Overview = (props: Props) => {
               <Grid.Column width="10">
                 <Div fontSize={small}>
                   {overviewTabRegional.regionalResourcesBreakdown
+                    .some(obj => obj.data && obj.data.value)
                   && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
                     const sum = all
                       .reduce((sum, datum) => sum + (datum.data && datum.data.value), 0) / 100;

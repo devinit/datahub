@@ -17,7 +17,7 @@ const Educaton = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
   const teacherRatioAll = getPageLine('primaryPupilTeacherRatioAllSchl');
   const teacherRatioPublic = getPageLine('primaryTeacherRatioPublicSchl');
-  const teacherRatioPrivate = getPageLine('primaryTeacherRatioPrivateSchl:');
+  const teacherRatioPrivate = getPageLine('primaryTeacherRatioPrivateSchl');
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
   const educationTabRegional = props.educationTabRegional;
   return (
@@ -59,6 +59,11 @@ const Educaton = (props: Props) => {
               TabsToolTip(educationTabRegional.primaryTeacherRatioPrivateSchl && educationTabRegional.primaryTeacherRatioPrivateSchl.toolTip)
             }
           </HeaderTitle>
+          <TabsP>
+            {educationTabRegional.primaryTeacherRatioPrivateSchl && educationTabRegional.primaryTeacherRatioPrivateSchl.value
+              ? educationTabRegional.primaryTeacherRatioPrivateSchl.value
+              : NoData}
+          </TabsP>
         </Grid.Column>
       </Grid>
     </Container>

@@ -5,4 +5,5 @@ import TabsWithData from '.';
 
 storiesOf('Tabs & Charts', module)
   .addDecorator(withApolloProvider())
-  .add('spotlight tabs upper', () => <TabsWithData country={'uganda'} id={'wakiso'} currency="US$" />);
+  .add('spotlight tabs upper Wakiso', () => <TabsWithData country={'uganda'} id={'wakiso'} currency="US$" />)
+  .add('spotlight tabs upper Nairobi', () => <TabsWithData country={'kenya'} id={'nairobi'} currency="US$" />);
