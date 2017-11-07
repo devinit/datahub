@@ -26,23 +26,16 @@ const withData = graphql(QUERY, {
       expenditure = [],
       revenueAndGrants = [],
     } = data.localGovernmentFinance || {};
+    const items: Object[] = [];
+    if (revenueAndGrants.length) items.push({title: 'Revenue', data: revenueAndGrants});
+    if (expenditure.length) items.push({title: 'Expenditure', data: expenditure, inverted: false});
     return {
       loading,
       currencyUSD,
       currencyCode,
       startYear,
       config,
-      items: [
-        {
-          title: 'Revenue',
-          data: revenueAndGrants,
-        },
-        {
-          title: 'Expenditure',
-          data: expenditure,
-          inverted: false
-        },
-      ]
+      items
     };
   },
 });

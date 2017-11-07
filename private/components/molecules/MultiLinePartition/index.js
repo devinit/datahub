@@ -75,13 +75,12 @@ export default class MultiLinePartition extends Component {
   }
 
   static createInitialState(props: Props) {
-    const year = props.year || props.startYear;
-    // @ernest seems ambiguos and increases code complexity
-    // why not simplify it to return only the things you need from props
     const everything = Array.prototype.concat.apply([], props.items.map(item => item.data));
     const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
     const budgetTypeOptions = MultiLinePartition.createBudgetTypeOptions(everything);
     const {lowestYear, highestYear} = MultiLinePartition.createTimeLimits(everything);
+    const possibleStartYear = props.year || props.startYear;
+    const year = possibleStartYear < lowestYear ? lowestYear : possibleStartYear;
     const currency = props.currency ?
       props.currency : currencyOptions[0] && currencyOptions[0].value;
     const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
@@ -110,7 +109,8 @@ export default class MultiLinePartition extends Component {
   state: State;
 
   componentWillReceiveProps(props: Props) {
-    this.setState(MultiLinePartition.createInitialState(props));
+    const initState = MultiLinePartition.createInitialState(props);
+    this.setState(initState);
   }
 
   setCurrencyBound: (currency: string) => void;
