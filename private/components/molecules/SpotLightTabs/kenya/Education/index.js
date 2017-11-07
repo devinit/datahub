@@ -16,29 +16,22 @@ type Props = {
 
 const Educaton = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
-  const teacherRatio = getPageLine('teacher-ratio');
-  const stdPassRatio = getPageLine('std-pass-ratio');
-  const educationFunding = getPageLine('education-funding');
+  const teacherRatioAll = getPageLine('primaryPupilTeacherRatioAllSchl');
+  const teacherRatioPublic = getPageLine('primaryTeacherRatioPublicSchl');
+  const teacherRatioPrivate = getPageLine('primaryTeacherRatioPrivateSchl:');
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
   const educationTabRegional = props.educationTabRegional;
-  const fundingUSD = educationTabRegional.primaryEducationfunding &&
-    educationTabRegional.primaryEducationfunding.value ?
-    educationTabRegional.primaryEducationfunding.value : NoData;
-  const fundingNCU = educationTabRegional.primaryEducationfunding &&
-    educationTabRegional.primaryEducationfunding.value_ncu ?
-    educationTabRegional.primaryEducationfunding.value_ncu : NoData;
-  const fundingValue = props.currency === 'US$' ? fundingUSD : fundingNCU;
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {teacherRatio.title}
+            {teacherRatioAll.title}
           </HeaderTitle>
           <TabsP>
-            {educationTabRegional.pupilTeacherRatioGovtSchl &&
-            educationTabRegional.pupilTeacherRatioGovtSchl.value
-              ? educationTabRegional.pupilTeacherRatioGovtSchl.value
+            {educationTabRegional.primaryPupilTeacherRatioAllSchl &&
+            educationTabRegional.primaryPupilTeacherRatioAllSchl.value
+              ? educationTabRegional.primaryPupilTeacherRatioAllSchl.value
               : NoData}
           </TabsP>
           <p>
@@ -62,7 +55,7 @@ const Educaton = (props: Props) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {stdPassRatio.title}
+            {teacherRatioPublic.title}
           </HeaderTitle>
           <TabsP>
             {educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.value
@@ -90,16 +83,11 @@ const Educaton = (props: Props) => {
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {educationFunding.title}
+            {teacherRatioPrivate.title}
             { // $FlowFixMe
               TabsToolTip(educationTabRegional.primaryEducationfunding && educationTabRegional.primaryEducationfunding.toolTip)
             }
           </HeaderTitle>
-          <TabsP>
-            { // $FlowFixMe
-              fundingValue ? `${props.currency} ${fundingValue}` : NoData
-            }
-          </TabsP>
         </Grid.Column>
       </Grid>
     </Container>
