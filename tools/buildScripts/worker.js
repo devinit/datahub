@@ -12,7 +12,8 @@ const path = require('path');
 const config = {
   entry: {
     worker_gp: path.resolve(__dirname, '../../private/lib/workers/global-picture.js'),
-    worker_ug: path.resolve(__dirname, '../../private/lib/workers/spotlight-ug.js')
+    worker_uganda: path.resolve(__dirname, '../../private/lib/workers/spotlight-ug.js'),
+    worker_kenya: path.resolve(__dirname, '../../private/lib/workers/spotlight-ke.js')
   },
   output: {
     filename: '[name].js',

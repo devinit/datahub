@@ -1,12 +1,14 @@
 // @flow
 import globalThemes from 'components/organisms/NavBarTabs/data';
-import spotlightUgandaThemes from 'components/organisms/NavBarTabs/ug-data';
-import { GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR, LOADING_STATUS } from './actions';
+import spotlightUgandaThemes from 'components/organisms/NavBarTabs/uganda';
+import spotlightKenyaThemes from 'components/organisms/NavBarTabs/kenya';
+import { GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR_UG, LOADING_STATUS, SPOTLIGHT_INDICATOR_KE } from './actions';
 
 // would have been to use & operator but it wasnt working
 export type AppState = {
   loading: boolean,
-  spotlightIndicator: string,
+  indicatorUganda: string,
+  indicatorKenya: string,
   globalIndicator: string,
 };
 
@@ -30,7 +32,8 @@ export type AppReducers<S, A> = {
 };
 export const initialState: AppState = {
   loading: true,
-  spotlightIndicator: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
+  indicatorUganda: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
+  indicatorKenya: spotlightKenyaThemes.spotlightThemes[0].default_indicator,
   globalIndicator: globalThemes.globalPictureThemes[0].default_indicator,
 };
 
@@ -41,10 +44,13 @@ export const app: AppReducers<AppState, Action> = {
         return { ...state, loading: action.loading };
       }
       case GLOBAL_INDICATOR: {
-        return { ...state, globalIndicator: action.globalIndicator, isFirstMapRender: false };
+        return { ...state, globalIndicator: action.globalIndicator};
       }
-      case SPOTLIGHT_INDICATOR: {
-        return { ...state, spotlightIndicator: action.spotlightIndicator, isFirstMapRender: false };
+      case SPOTLIGHT_INDICATOR_UG: {
+        return { ...state, indicatorKenya: action.indicatorUganda };
+      }
+      case SPOTLIGHT_INDICATOR_KE: {
+        return { ...state, indicatorUganda: action.indicatorKenya};
       }
       default:
         return state;

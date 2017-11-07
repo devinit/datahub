@@ -5,7 +5,8 @@
 import React, { Component } from 'react';
 import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
-import SpotLightNavTabs from 'components/organisms/NavBarTabs/spotlight';
+import SpotLightNavTabsKe from 'components/organisms/NavBarTabs/spotlightKe';
+import SpotLightNavTabsUg from 'components/organisms/NavBarTabs/spotlightUg';
 import { MapBackground } from 'components/atoms/Backgrounds';
 import dynamic from 'next/dynamic';
 import About from 'components/molecules/About';
@@ -21,6 +22,7 @@ const DynamicMapComponent = dynamic(
 
 type Props = {
   pathname: string,
+  id: string,
   state: StateToShare
   // rehydrated: boolean,
 };
@@ -29,7 +31,7 @@ export default class Spotlight extends Component {
     super(props);
   }
   componentDidMount() {
-    cacheMapData('/worker_ug.js');
+    cacheMapData(`/worker_${this.props.id}.js`);
   }
   render() {
     return (
@@ -39,7 +41,7 @@ export default class Spotlight extends Component {
             <Grid centered>
               <Grid.Column width={12} textAlign="center">
                 <b>
-                  <Icon name="pie graph" /> Spotlight on Uganda {' '}
+                  <Icon name="pie graph" /> Spotlight on {' '}
                 </b>
                 is a comprehensive source of Uganda's financial resource flow data at the
                 sub-national (district) level, alongside indicators on poverty, population, education,
@@ -51,7 +53,12 @@ export default class Spotlight extends Component {
             </Grid>
           </Div>
         </Container>
-        <SpotLightNavTabs state={this.props.state} />
+        {this.props.id === 'uganda' ?
+          <SpotLightNavTabsUg state={this.props.state} />
+          :
+          <SpotLightNavTabsKe state={this.props.state} />
+        }
+
         {
           process.env.NODE_ENV !== 'test' ?
             <DynamicMapComponent pathname={this.props.pathname} state={this.props.state} /> : ''

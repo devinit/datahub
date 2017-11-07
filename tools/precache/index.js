@@ -2,7 +2,8 @@
 // run as an npm command to get the map & tabs data cached on the api server
 import { getData } from '../utils';
 import globalNavTabsData from '../../private/components/organisms/NavBarTabs/data';
-import ugNavTabsData from '../../private/components/organisms/NavBarTabs/ug-data';
+import ugNavTabsData from '../../private/components/organisms/NavBarTabs/uganda';
+import keNavTabsData from '../../private/components/organisms/NavBarTabs/kenya';
 import MapsQuery from '../../private/components/organisms/Map/Maps.graphql';
 import countriesData from '../../private/components/organisms/CountrySearchInput/data';
 import TabsQuery from '../../private/components/organisms/CountryProfileTabs/query.graphql';
@@ -33,8 +34,11 @@ export const getCountryProfileTabsData = (): void => {
 };
 
 const preCache = () => {
-  [globalNavTabsData.globalPictureThemes,
-    ugNavTabsData.spotlightThemes]
+  [
+    globalNavTabsData.globalPictureThemes,
+    ugNavTabsData.spotlightThemes,
+    keNavTabsData.spotlightThemes
+  ]
     .forEach((data) => getMapsData(data));
   // getCountryProfileTabsData();
 };

@@ -7,6 +7,7 @@ import type { GlobalIndicator} from 'lib/actions';
 import type { Props } from 'components/molecules/NavigationBarTabs';
 import type { State, Action } from 'lib/reducers';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
+import type {StateToShare} from 'components/molecules/ChartShare';
 import type {BoundAction, BoundState} from './types';
 import data from './data';
 
@@ -19,7 +20,9 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<GlobalIndic
 const mapStateToProps = ({ app }: State): BoundState =>
   ({ activeIndicator: app.globalIndicator, loading: app.loading });
 
-const gloalPictureNavBarTabs = (props: Props<GlobalIndicator>) =>
+type GlobalPictureProps<T> = Props<T> & {state?: StateToShare, ... BoundState};
+
+const gloalPictureNavBarTabs = (props: GlobalPictureProps<GlobalIndicator>) =>
   (<NavigationBarTabs
     navBarItems={data.globalPictureThemes}
     showUsingThisViz

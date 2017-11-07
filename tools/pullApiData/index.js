@@ -92,9 +92,11 @@ export const getGlobalPictureThemes = async () => {
 export const getSpotlightThemes = async () => {
   // currently only getting spotlight uganda theme data
   try {
-    const filePath = path.join(baseOrganismsPath, 'NavBarTabs/ug-data.js');
-    const variables = { country: 'uganda' };
-    await getAndWriteData({ query: SPOTLIGHT_THEMES_QUERY, filePath, variables });
+    ['uganda', 'kenya'].forEach(async (country) => {
+      const filePath = path.join(baseOrganismsPath, `NavBarTabs/${country}.js`);
+      const variables = { country };
+      await getAndWriteData({ query: SPOTLIGHT_THEMES_QUERY, filePath, variables });
+    });
   } catch (error) {
     console.error(error);
   }

@@ -25,8 +25,11 @@ class MapOrganism extends Component {
   static getIndicatorId(props: Props): string {
     if (props.id) return props.id;
     if (props.state && props.state.indicator) return props.state.indicator;
-    if (props.pathname && props.pathname.includes('spotlight')) {
-      return props.app.spotlightIndicator;
+    if (props.pathname && props.pathname.includes('uganda')) {
+      return props.app.indicatorUganda;
+    }
+    if (props.pathname && props.pathname.includes('kenya')) {
+      return props.app.indicatorKenya;
     }
     return props.app.globalIndicator;
   }
@@ -48,7 +51,9 @@ class MapOrganism extends Component {
   }
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.app.globalIndicator !== this.props.app.globalIndicator ||
-      nextProps.app.spotlightIndicator !== this.props.app.spotlightIndicator) {
+      nextProps.app.indicatorUganda !== this.props.app.indicatorUganda ||
+      nextProps.app.indicatorKenya !== this.props.app.indicatorKenya
+    ) {
       this.initData(nextProps);
     }
   }

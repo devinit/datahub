@@ -1,6 +1,7 @@
 // @flow
 export const GLOBAL_INDICATOR = 'GLOBAL_INDICATOR';
-export const SPOTLIGHT_INDICATOR = 'SPOTLIGHT_INDICATOR';
+export const SPOTLIGHT_INDICATOR_KE = 'SPOTLIGHT_INDICATOR_KE';
+export const SPOTLIGHT_INDICATOR_UG = 'SPOTLIGHT_INDICATOR_UG';
 export const LOADING_STATUS = 'LOADING_STATUS';
 
 type ActionBase = {
@@ -26,6 +27,10 @@ export const changeGlobalIndicator = (globalIndicator: string): Dispatch<GlobalI
   globalIndicator,
 });
 
-export const changeSpotlightIndicator = (
+export const changeSpotlightIndicatorUg = (
   spotlightIndicator: string,
-): Dispatch<SpotLightlIndicator> => ({ type: SPOTLIGHT_INDICATOR, spotlightIndicator });
+): Dispatch<SpotLightlIndicator> => ({ type: SPOTLIGHT_INDICATOR_UG, spotlightIndicator });
+
+export const changeSpotlightIndicatorKe = (
+  spotlightIndicator: string,
+): Dispatch<SpotLightlIndicator> => ({ type: SPOTLIGHT_INDICATOR_KE, spotlightIndicator });

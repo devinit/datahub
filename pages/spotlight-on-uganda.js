@@ -20,5 +20,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App pathname={props.url.pathname} state={props.url.query.state} />;
+  return <App pathname={props.url.pathname} state={props.url.query.state} id="uganda" />;
 });
