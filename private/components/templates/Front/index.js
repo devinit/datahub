@@ -53,7 +53,7 @@ export default class Front extends Component {
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs state={this.props.state} />
           {process.env.NODE_ENV !== 'test' ?
-            <DynamicMapComponent pathname="/" state={this.props.state} /> : ''
+            <DynamicMapComponent country="global" state={this.props.state} /> : ''
           }
         </div>
         <About />

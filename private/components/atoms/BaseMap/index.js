@@ -272,7 +272,6 @@ class BaseMap extends Component {
       if (!obj.id || !obj.color) throw new Error('color and id values missing');
       return [obj.id, obj.color];
     });
-    console.log(propertyLayer, propertyName, stops[0]);
     this.setMapPaintProperty(stops, propertyLayer, propertyName);
   }
   getRegionFeature(slug: string, propertyLayer?: string): Feature | void {

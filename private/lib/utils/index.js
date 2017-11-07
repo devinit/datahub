@@ -144,12 +144,8 @@ export const getDistrict = (slug: string, country: string): District => {
   return {name: slug, slug, id: ''};
 };
 
-export const getDistrictName = (slug: string): string => {
-  // TODO: handle spotlight kenya
-  // const data = country === 'uganda' ? ugDistrictData : keDistrictData;
-  // const district = getDistrict(slug, country);
-  return `${slug[0].toUpperCase()}${slug.substr(1)}`;
-};
+export const capitalize = (slug: string): string => `${slug[0].toUpperCase()}${slug.substr(1)}`;
+
 
 export const printDiv = (divId: string) => {
   const divElem = document.getElementById(divId);
@@ -205,7 +201,7 @@ export type PageMeta = {
 
 export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
   let title = obj.name;
-  if (obj.link === '/uganda') title = getDistrictName(args.query || '');
+  if (obj.link === '/uganda') title = capitalize(args.query || '');
   if (obj.link === '/') title = 'Development Data Hub';
   if (obj.link === '/country') title = getCountryName(args.query || '');
   return {title, image: '/img/logo.jpg'};

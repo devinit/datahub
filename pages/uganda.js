@@ -24,6 +24,6 @@ export default withData((props: Props) =>
     id={props.url.query.id}
     state={props.url.query.state}
     currencyCode="UGX"
-    currencyUSD="constant 2012 USD"
+    currencyUSD="constant 2015 USD"
     country="uganda"
   />));

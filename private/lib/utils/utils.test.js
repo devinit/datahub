@@ -1,5 +1,5 @@
 import prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName, getDistrictName, getMaxAndMin,
+import { getShortURL, getCountryName, capitalize, getMaxAndMin,
   getCountry, approximate, getPageMeta, shouldShowTabData, sendEmail} from '.';
 
 describe('utils tests', () => {
@@ -25,7 +25,7 @@ describe('utils tests', () => {
     expect(prettyFormat({formattedB, formattedA})).toMatchSnapshot();
   });
   it('should return district name', () => {
-    const name = getDistrictName('wakiso', 'uganda');
+    const name = capitalize('wakiso', 'uganda');
     expect(name).toBe('Wakiso');
   });
   it('should return pageMeta for a given page', () => {

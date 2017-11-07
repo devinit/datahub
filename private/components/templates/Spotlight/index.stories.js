@@ -5,4 +5,5 @@ import Spotlight from '.';
 
 storiesOf('Templates', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('Spot Light', () => <Spotlight state={{}} />);
+  .add('Spot Light Uganda', () => <Spotlight state={{}} id="uganda" />)
+  .add('Spot Light Kenya', () => <Spotlight state={{}} id="kenya" />);

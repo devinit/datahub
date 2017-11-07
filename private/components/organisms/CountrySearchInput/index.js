@@ -14,12 +14,12 @@ type Props = {
 
 const countryData = (country: string) => {
   const data = country === 'uganda' ? ugandaData : kenyaData;
-  return ({[country]: data.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}))});
+  return data.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}));
 };
 
 const SearchwithData = (props: Props) =>
   (<SearchInput
-    entities={props.country ? countryData[props.country] : data.countries}
+    entities={props.country ? countryData(props.country) : data.countries}
     routePath={props.country || 'country'} // for route
     visible={props.visible}
     profile={props.profile}

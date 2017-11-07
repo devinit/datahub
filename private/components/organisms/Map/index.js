@@ -19,18 +19,14 @@ type Props = BoundAction & {
   app: AppState,
   id: string,
   state: StateToShare,
-  pathname: string
+  country: string
 };
 class MapOrganism extends Component {
   static getIndicatorId(props: Props): string {
     if (props.id) return props.id;
     if (props.state && props.state.indicator) return props.state.indicator;
-    if (props.pathname && props.pathname.includes('uganda')) {
-      return props.app.indicatorUganda;
-    }
-    // if (props.pathname && props.pathname.includes('kenya')) {
-    //   return props.app.indicatorKenya;
-    // }
+    if (props.country === 'uganda') return props.app.indicatorUganda;
+    if (props.country === 'kenya') return props.app.indicatorKenya;
     return props.app.globalIndicator;
   }
   static getIndicatorData(props: Props): Promise<MapDataQuery> {

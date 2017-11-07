@@ -10,7 +10,7 @@ import SpotLightNavTabsUg from 'components/organisms/NavBarTabs/spotlightUg';
 import { MapBackground } from 'components/atoms/Backgrounds';
 import dynamic from 'next/dynamic';
 import About from 'components/molecules/About';
-import { cacheMapData } from 'lib/utils';
+import { cacheMapData, capitalize } from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import Generic from '../Generic';
 
@@ -33,7 +33,9 @@ export default class Spotlight extends Component {
   componentDidMount() {
     cacheMapData(`/worker_${this.props.id}.js`);
   }
+  countryName: string
   render() {
+    const countryName = capitalize(this.props.id);
     return (
       <Generic pathname={this.props.pathname} >
         <Container>
@@ -41,9 +43,9 @@ export default class Spotlight extends Component {
             <Grid centered>
               <Grid.Column width={12} textAlign="center">
                 <b>
-                  <Icon name="pie graph" /> Spotlight on {' '}
+                  <Icon name="pie graph" /> Spotlight on {countryName} {' '}
                 </b>
-                is a comprehensive source of Uganda's financial resource flow data at the
+                is a comprehensive source of {countryName}'s financial resource flow data at the
                 sub-national (district) level, alongside indicators on poverty, population, education,
                 health, water, hygiene and sanitation. It highlights the geographical variance in
                 sector performance and financial resources, and seeks to answer whether resources are
@@ -61,7 +63,7 @@ export default class Spotlight extends Component {
 
         {
           process.env.NODE_ENV !== 'test' ?
-            <DynamicMapComponent pathname={this.props.pathname} state={this.props.state} /> : ''
+            <DynamicMapComponent country={this.props.id} state={this.props.state} /> : ''
         }
         <About />
       </Generic>

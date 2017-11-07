@@ -2,7 +2,7 @@
 /**
  * exports out page data for various pages after doing any necessary modifications
  */
-import {getCountryName, getDistrictName} from 'lib/utils';
+import {getCountryName, capitalize} from 'lib/utils';
 import data from './data';
 
 
@@ -34,7 +34,7 @@ const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
 };
 
 export const getDistrictProfileData = (slug: string, country: string): PageUnit[] => {
-  const districtName = getDistrictName(slug);
+  const districtName = capitalize(slug);
   if (!pagesData[country]) throw new Error('District profile page data missing');
   const pageData: PageUnit[] = pagesData[country];
   return replaceFields({pageData, toReplace: '{district}', replacement: districtName});

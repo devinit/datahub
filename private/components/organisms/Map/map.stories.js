@@ -5,8 +5,9 @@ import Map from '.';
 
 storiesOf('Maps Live with Apollo and Redux', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('global picture default map', () => <Map pathname={'/'} />)
-  .add('spotlight uganda default map', () => <Map pathname={'/spotlight-on-uganda'} />)
+  .add('global picture default map', () => <Map country={'global'} />)
+  .add('spotlight uganda default map', () => <Map country={'uganda'} />)
+  .add('spotlight kenya default map', () => <Map country="kenya" />)
   .add('kenya_poverty_headcount', () => <Map id="spotlight_on_kenya_2017.kenya_poverty_headcount" />)
   .add('Depth of Poverty % Map', () => <Map id={'data_series.depth_of_extreme_poverty_190'} />)
   .add('Number of Poorest 20%', () => <Map id={'data_series.poorest_20_percent'} />)
