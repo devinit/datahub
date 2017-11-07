@@ -2,7 +2,6 @@
 import React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from 'components/atoms/TabsText';
-import { P } from 'glamorous';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';
 import type {PageUnit} from 'components/organisms/PagesData';
@@ -27,6 +26,9 @@ const Educaton = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioAll.title}
+            { // $FlowFixMe
+              TabsToolTip(educationTabRegional.primaryPupilTeacherRatioAllSchl && educationTabRegional.primaryPupilTeacherRatioAllSchl.toolTip)
+            }
           </HeaderTitle>
           <TabsP>
             {educationTabRegional.primaryPupilTeacherRatioAllSchl &&
@@ -34,58 +36,27 @@ const Educaton = (props: Props) => {
               ? educationTabRegional.primaryPupilTeacherRatioAllSchl.value
               : NoData}
           </TabsP>
-          <p>
-            in government schools and
-            { // $FlowFixMe
-              TabsToolTip(educationTabRegional.pupilTeacherRatioGovtSchl && educationTabRegional.pupilTeacherRatioGovtSchl.toolTip)
-            }
-          </p>
-          <TabsP>
-            {educationTabRegional.pupilTeacherRatioOtherSchl &&
-            educationTabRegional.pupilTeacherRatioOtherSchl.value
-              ? educationTabRegional.pupilTeacherRatioOtherSchl.value
-              : NoData}
-          </TabsP>
-          <p>
-            in all schools
-            {// $FlowFixMe
-              TabsToolTip(educationTabRegional.pupilTeacherRatioOtherSchl && educationTabRegional.pupilTeacherRatioOtherSchl.toolTip)
-            }
-          </p>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioPublic.title}
-          </HeaderTitle>
-          <TabsP>
-            {educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.value
-              // $FlowFixMe
-              ? `${educationTabRegional.studentsPassRate.value} %`
-              : NoData}
-          </TabsP>
-          <p>and is ranked in
             {
               // $FlowFixMe
-              TabsToolTip(educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.toolTip)
+              TabsToolTip(educationTabRegional.primaryTeacherRatioPublicSchl && educationTabRegional.primaryTeacherRatioPublicSchl.toolTip)
             }
-          </p>
+          </HeaderTitle>
           <TabsP>
-            {educationTabRegional.studentsPassDistrictRank &&
-            educationTabRegional.studentsPassDistrictRank.value
-              ? educationTabRegional.studentsPassDistrictRank.value
+            {educationTabRegional.primaryTeacherRatioPublicSchl && educationTabRegional.primaryTeacherRatioPublicSchl.value
+              // $FlowFixMe
+              ? `${educationTabRegional.primaryTeacherRatioPublicSchl.value}`
               : NoData}
           </TabsP>
-          <P>place overall
-            { // $FlowFixMe
-              TabsToolTip(educationTabRegional.studentsPassDistrictRank && educationTabRegional.studentsPassDistrictRank.toolTip)
-            }
-          </P>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioPrivate.title}
             { // $FlowFixMe
-              TabsToolTip(educationTabRegional.primaryEducationfunding && educationTabRegional.primaryEducationfunding.toolTip)
+              TabsToolTip(educationTabRegional.primaryTeacherRatioPrivateSchl && educationTabRegional.primaryTeacherRatioPrivateSchl.toolTip)
             }
           </HeaderTitle>
         </Grid.Column>
