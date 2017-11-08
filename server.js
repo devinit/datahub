@@ -5,6 +5,7 @@ const path = require('path');
 const next = require('next');
 const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
 const ugData = require('./private/components/organisms/CountrySearchInput/uganda-data.js');
+const keData = require('./private/components/organisms/CountrySearchInput/kenya-data.js');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -64,7 +65,7 @@ app.prepare().then(() => {
     });
   });
 
-  ['/', '/spotlight-on-uganda'].forEach(link => {
+  ['/', '/spotlight-on-uganda', '/spotlight-on-kenya'].forEach(link => {
     server.get(link, (req, res) => {
       const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
       const queryParams = { state };
@@ -79,6 +80,14 @@ app.prepare().then(() => {
       .some(distict => distict.name.toLowerCase() === req.params.id);
     return isValidCountry ? renderAndCache(req, res, '/uganda', queryParams) :
       renderAndCache(req, res, '/spotlight-on-uganda');
+  });
+  server.get('/kenya/:id', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const queryParams = { id: req.params.id, state};
+    const isValidCountry = keData.districts
+      .some(distict => distict.name.toLowerCase() === req.params.id);
+    return isValidCountry ? renderAndCache(req, res, '/kenya', queryParams) :
+      renderAndCache(req, res, '/spotlight-on-kenya');
   });
   server.get('/multilateral/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};

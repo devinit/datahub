@@ -7,12 +7,7 @@ import initApollo from './initApollo';
 import { initRedux} from './initRedux';
 
 type Props = {
-  serverState: {
-    apollo: {
-      // Only include the Apollo data state
-      data: any
-    }
-  }
+  serverState: Object
 }
 // Gets the display name of a JSX component for dev tools
 function getComponentDisplayName(Component) {

@@ -10,8 +10,11 @@ type ActionBase = {
 export type GlobalIndicator = ActionBase & {
   globalIndicator: string,
 };
-export type SpotLightlIndicator = ActionBase & {
-  spotlightIndicator: string,
+export type SpotLightlIndicatorKe = ActionBase & {
+  indicatorKenya: string,
+};
+export type SpotLightlIndicatorUg = ActionBase & {
+  indicatorUganda: string,
 };
 export type LoadingStatus = ActionBase & {
   loading: boolean,
@@ -28,9 +31,9 @@ export const changeGlobalIndicator = (globalIndicator: string): Dispatch<GlobalI
 });
 
 export const changeSpotlightIndicatorUg = (
-  spotlightIndicator: string,
-): Dispatch<SpotLightlIndicator> => ({ type: SPOTLIGHT_INDICATOR_UG, spotlightIndicator });
+  indicatorUganda: string,
+): Dispatch<SpotLightlIndicatorUg> => ({ type: SPOTLIGHT_INDICATOR_UG, indicatorUganda });
 
 export const changeSpotlightIndicatorKe = (
-  spotlightIndicator: string,
-): Dispatch<SpotLightlIndicator> => ({ type: SPOTLIGHT_INDICATOR_KE, spotlightIndicator });
+  indicatorKenya: string,
+): Dispatch<SpotLightlIndicatorKe> => ({ type: SPOTLIGHT_INDICATOR_KE, indicatorKenya });

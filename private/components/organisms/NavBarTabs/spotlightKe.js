@@ -3,7 +3,7 @@ import React from 'react';
 import { changeSpotlightIndicatorKe, changeLoadingStatus} from 'lib/actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import type { SpotLightlIndicator} from 'lib/actions';
+import type { SpotLightlIndicatorKe} from 'lib/actions';
 import type { State, Action } from 'lib/reducers';
 import type { Props } from 'components/molecules/NavigationBarTabs';
 import NavigationBarTabs from 'components/molecules/NavigationBarTabs';
@@ -11,7 +11,7 @@ import type {StateToShare} from 'components/molecules/ChartShare';
 import type {BoundAction, BoundState} from './types';
 import data from './kenya';
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<SpotLightlIndicator> =>
+const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<SpotLightlIndicatorKe> =>
   ({
     changeActiveIndicator: bindActionCreators(changeSpotlightIndicatorKe, dispatch),
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),

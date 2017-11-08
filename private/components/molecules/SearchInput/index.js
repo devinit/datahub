@@ -135,7 +135,7 @@ class SearchInput extends React.Component {
           <List>
             {this.state.entities
               ? this.state.entities.map((country, i) =>
-                (<li key={country.slug} className={this.state.selected === i ? 'active' : false}>
+                (<li key={country.slug} className={this.state.selected === i ? 'active' : 'not-active'}>
                   <Link href={`/${this.props.routePath}?id=${country.slug}`} as={`/${this.props.routePath}/${country.slug}`}>
                     <a>
                       {country.name}

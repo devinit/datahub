@@ -41,6 +41,10 @@ export const menueData: Menue = {
       link: '/spotlight-on-uganda',
     },
     {
+      name: 'Spotlight on Kenya',
+      link: '/spotlight-on-kenya',
+    },
+    {
       name: 'Other Visualisations',
       icon: 'pie graph',
       link: '',

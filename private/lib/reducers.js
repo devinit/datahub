@@ -47,10 +47,12 @@ export const app: AppReducers<AppState, Action> = {
         return { ...state, globalIndicator: action.globalIndicator};
       }
       case SPOTLIGHT_INDICATOR_UG: {
-        return { ...state, indicatorKenya: action.indicatorUganda };
+        console.log('reducer ug: ', action);
+        return { ...state, indicatorUganda: action.indicatorUganda };
       }
       case SPOTLIGHT_INDICATOR_KE: {
-        return { ...state, indicatorUganda: action.indicatorKenya};
+        console.log('reducer ke: ', action);
+        return { ...state, indicatorKenya: action.indicatorKenya};
       }
       default:
         return state;

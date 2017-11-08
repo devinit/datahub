@@ -176,11 +176,10 @@ class BaseMap extends Component {
   }
   setMinimalMapDataPoint(feature: Feature, value: null | number): MapData {
     const id = feature.properties[this.props.paint.propertyName || this._propertyName];
-    const nameProperty = this.props.paint.propertyLayer === 'national' ? 'country-name' : 'name';
-    const slugProperty = this.props.paint.propertyLayer === 'national' ? 'country-slug' : 'name';
+    const nameProperty = this._propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
     return {
       id,
-      slug: feature.properties[slugProperty],
+      slug: feature.properties[nameProperty],
       name: feature.properties[nameProperty],
       year: 0,
       value,
@@ -209,6 +208,7 @@ class BaseMap extends Component {
   mouseHoverEvent() {
     this._map.on('mousemove', e => {
       const features: Feature[] = this._map.queryRenderedFeatures(e.point);
+
       if (!features.length && this._popup) return this._popup.remove();
       if (!features.length) return false;
       const pointData: MapData | null = this.getMouseHoverPointData(features);

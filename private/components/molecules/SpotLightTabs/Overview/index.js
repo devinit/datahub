@@ -59,8 +59,7 @@ const Overview = (props: Props) => {
           </TabsP>
 
           {overviewTabRegional.regionalResourcesBreakdown &&
-          overviewTabRegional.regionalResourcesBreakdown &&
-          overviewTabRegional.regionalResourcesBreakdown.length ?
+          overviewTabRegional.regionalResourcesBreakdown.some(obj => obj.data && obj.data.value) ?
             <Grid>
               <Grid.Column width="6">
                 <Chart
@@ -72,7 +71,6 @@ const Overview = (props: Props) => {
               <Grid.Column width="10">
                 <Div fontSize={small}>
                   {overviewTabRegional.regionalResourcesBreakdown
-                    .some(obj => obj.data && obj.data.value)
                   && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
                     const sum = all
                       .reduce((sum, datum) => sum + (datum.data && datum.data.value), 0) / 100;
