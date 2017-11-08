@@ -9,7 +9,7 @@ script:
 - npm run precache
 - npm run vendor
 - npm run build-workers
-- build-fragment
+- npm run build-fragment
 - npm run lint
 - npm run build
 - npm run coverage
