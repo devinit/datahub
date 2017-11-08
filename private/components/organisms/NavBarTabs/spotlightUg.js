@@ -26,7 +26,7 @@ type SpotlightProps<T> =
       ...BoundState
   };
 
-const spotlightNavBarTabs = (props: SpotlightProps<SpotLightlIndicator>) => {
+const spotlightNavBarTabs = (props: SpotlightProps<SpotLightlIndicatorUg>) => {
   return (<NavigationBarTabs
     navBarItems={data.spotlightThemes}
     showUsingThisViz
