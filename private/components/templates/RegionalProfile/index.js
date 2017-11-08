@@ -51,8 +51,6 @@ export default class RegionalProfile extends Component {
     this.setState({currency});
   }
 
-  lowerTabs: HTMLElement
-
   render() {
     return (
       <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
@@ -70,7 +68,7 @@ export default class RegionalProfile extends Component {
         />
         <Div paddingTop={'4em'} paddingBottom={'1em'}>
           <Container textAlign="center">
-            <Header ref={node => { this.lowerTabs = node; }} >
+            <Header>
               <Header.Content as="h2">Revenue and Expenditure</Header.Content>
             </Header>
             <Hr borderTop={`2px solid ${lighterGrey}`} />

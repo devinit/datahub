@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import glamorous from 'glamorous';
+import glamorous, {H4} from 'glamorous';
 import { groupBy, uniq } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from 'components/atoms/TreeChart';
@@ -169,10 +169,9 @@ export default class LinePartition extends Component {
 
     const showLegend = this.props.config.partition.legend &&
       this.props.config.partition.legend.showLegend;
-
     return (<Container>
 
-      {this.props.inverted ? '' :
+      {this.props.inverted && tree.length ? '' :
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
@@ -207,23 +206,26 @@ export default class LinePartition extends Component {
         </Grid.Column>
 
         <Grid.Column mobile={16} computer={11} width={11} style={{ padding: 0 }}>
-          <TreeChartContainer>
-            <TreeChart
-              height={showLegend ? '380px' : '222px'}
-              config={{
-                ...this.props.config.partition,
-                labeling: { prefix: this.props.currency },
-              }}
-              onClick={(d: { data: {levels: string[]} }) => {
-                this.setLevel(d.data.levels);
-              }}
-              data={tree}
-            />
-          </TreeChartContainer>
+          {tree.length ?
+            <TreeChartContainer>
+              <TreeChart
+                height={showLegend ? '380px' : '222px'}
+                config={{
+                  ...this.props.config.partition,
+                  labeling: { prefix: this.props.currency },
+                }}
+                onClick={(d: { data: {levels: string[]} }) => {
+                  this.setLevel(d.data.levels);
+                }}
+                data={tree}
+              />
+            </TreeChartContainer> :
+            <H4 textAlign="center" paddingTop="3em"> No resources breakdown for {this.props.year}</H4>
+          }
         </Grid.Column>
       </Grid>
 
-      {!this.props.inverted ? '' :
+      {!this.props.inverted && tree.length ? '' :
         // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
