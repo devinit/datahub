@@ -50,8 +50,8 @@ const ProfileHeaderSection = (props: Props) => {
                     <Icon name="globe" color={'red'} />
                     {
                       props.spotlightCountry ?
-                        <Link href="/spotlight-on-uganda">
-                          <a role="link" style={{color: red}}>Spotlight on uganda</a>
+                        <Link href={`/spotlight-on-${props.spotlightCountry.slug}`}>
+                          <a role="link" style={{color: red}}>Spotlight on {props.spotlightCountry.name}</a>
                         </Link> :
                         <Link href="/">
                           <a role="link" style={{color: red}}>Global Picture</a>

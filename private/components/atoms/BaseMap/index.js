@@ -310,9 +310,10 @@ class BaseMap extends Component {
     const distance = Math.sqrt((dx * dx) + (dy * dy));
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
     const spotlightZoom = this.props.paint.propertyLayer === 'uganda' ? 5.5 : 4.5;
+    const yOffset = this.props.paint.propertyLayer === 'uganda' ? -50 : -100;
     return this._map.fitBounds(bounds, {
       padding: 0,
-      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, 0],
+      offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, yOffset],
       maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : spotlightZoom,
     });
   }
