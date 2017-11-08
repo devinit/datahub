@@ -10,6 +10,6 @@ describe('pull api data tests', () => {
       expect(data.countries.length).toBeGreaterThan(2);
       expect(prettyFormat(data.countries[0])).toMatchSnapshot();
     },
-    20000,
+    100000,
   );
 });
