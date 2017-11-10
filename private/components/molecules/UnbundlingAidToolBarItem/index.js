@@ -66,35 +66,24 @@ export default class ToolBarItem extends React.Component {
             <Droppable droppableId="droppable">
               {(provided, snapshot) => (
                 <div ref={provided.innerRef}>
-                  {this.state.keys.map(key =>
-                    key === 'years' ?
-                      (<Draggable key={key} draggableId={key}>
-                        <Select
-                          ref={provided.innerRef}
-                          key={key}
-                          active
-                          value={values[this.state.keys.indexOf(key)]}
-                          options={data.years}
-                          onChange={d => onChange(key, d)}
-                        />
-                      </Draggable>) :
-                      (<Draggable key={key} draggableId={key}>
-                        <Select
-                          ref={provided.innerRef}
-                          key={key}
-                          active={this.state.keys.indexOf(key) <= position}
-                          value={values[this.state.keys.indexOf(key)] || ''}
-                          smallText={key}
-                          options={data.to}
-                          onChange={d => onChange(key, d)}
-                        />
-                      </Draggable>)
-                  )
-                  }
+                  {this.state.keys.map(key => (
+                    <Draggable key={key} draggableId={key}>
+                      {(provided, snapshot) => (
+                        <div>
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.dragHandleProps}
+                          >
+                            <div style={{width: '55px', height: '30px', backgroundColor: 'yellow', border: 'solid 2px', display: 'inline-block'}}>{key}</div>
+                          </div>
+                          {provided.placeholder}
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
                   {provided.placeholder}
                 </div>
-              )
-              }
+              )}
             </Droppable>
           </DragDropContext>
         </div>
