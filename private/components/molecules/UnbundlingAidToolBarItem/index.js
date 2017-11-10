@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
+import {lighterGrey, lightGrey } from 'components/theme/semantic';
 import Select from 'components/molecules/UnbundlingAidSelect';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
@@ -20,6 +21,17 @@ export default class ToolBarItem extends React.Component {
     list.splice(endIndex, 0, removed); // adds item in new place
     return list;
   }
+  static getItemStyle = (draggableStyle, isDragging) => ({
+    // some basic styles to make the items look a bit nicer
+    userSelect: 'none',
+    padding: ToolBarItem.grid * 2,
+    margin: `0 0 ${ToolBarItem.grid}px 0`,
+    // change background colour if dragging
+    background: isDragging ? lighterGrey : lightGrey,
+    // styles we need to apply on draggables
+    ...draggableStyle,
+  });
+  static grid: number = 8;
   static reorder: (list: string[], startIndex: number, endIndex: number) => string[]
   constructor(props: Props) {
     super(props);
@@ -63,18 +75,24 @@ export default class ToolBarItem extends React.Component {
         <div>
           <span>{aid}</span>
           <DragDropContext onDragEnd={this.onDragEnd}>
-            <Droppable droppableId="droppable">
+            <Droppable droppableId="droppable" direction="horizontal">
               {(provided, snapshot) => (
                 <div ref={provided.innerRef}>
                   {this.state.keys.map(key => (
                     <Draggable key={key} draggableId={key}>
                       {(provided, snapshot) => (
-                        <div>
+                        <div
+                          style={{width: '100px', height: '30px', marginLeft: '10px', display: 'inline-block'}}
+                        >
                           <div
                             ref={provided.innerRef}
+                            style={ToolBarItem.getItemStyle(
+                              provided.draggableStyle,
+                              snapshot.isDragging
+                            )}
                             {...provided.dragHandleProps}
                           >
-                            <div style={{width: '55px', height: '30px', backgroundColor: 'yellow', border: 'solid 2px', display: 'inline-block'}}>{key}</div>
+                            <div>{key}</div>
                           </div>
                           {provided.placeholder}
                         </div>
