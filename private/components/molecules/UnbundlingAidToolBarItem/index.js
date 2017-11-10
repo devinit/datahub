@@ -82,7 +82,7 @@ export default class ToolBarItem extends React.Component {
                     <Draggable key={key} draggableId={key}>
                       {(provided, snapshot) => (
                         <div
-                          style={{height: '30px', display: 'inline-block'}}
+                          style={{height: '30px', marginLeft: '2px', display: 'inline-block'}}
                         >
                           <div
                             ref={provided.innerRef}
