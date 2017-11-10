@@ -49,6 +49,7 @@ class Select extends React.Component {
   };
 
   onChanged(selected: Object) {
+    console.log('onchanged');
     this.setState({ bigText: selected.name, visible: false });
     this.props.onChange(selected.value);
   }

@@ -27,7 +27,7 @@ export default class ToolBarItem extends React.Component {
     padding: ToolBarItem.grid * 2,
     margin: `0 0 ${ToolBarItem.grid}px 0`,
     // change background colour if dragging
-    background: isDragging ? lighterGrey : lightGrey,
+    background: isDragging ? lightGrey : lighterGrey,
     // styles we need to apply on draggables
     ...draggableStyle,
   });
@@ -82,7 +82,7 @@ export default class ToolBarItem extends React.Component {
                     <Draggable key={key} draggableId={key}>
                       {(provided, snapshot) => (
                         <div
-                          style={{width: '100px', height: '30px', marginLeft: '10px', display: 'inline-block'}}
+                          style={{height: '30px', display: 'inline-block'}}
                         >
                           <div
                             ref={provided.innerRef}
@@ -92,7 +92,25 @@ export default class ToolBarItem extends React.Component {
                             )}
                             {...provided.dragHandleProps}
                           >
-                            <div>{key}</div>
+                            {
+                              key === 'years' ?
+                                (<Select
+                                  key={key}
+                                  active
+                                  value={values[this.state.keys.indexOf(key)]}
+                                  options={data.years}
+                                  onChange={d => onChange(key, d)}
+                                />)
+                                :
+                                (<Select
+                                  key={key}
+                                  active={this.state.keys.indexOf(key) <= position}
+                                  value={values[this.state.keys.indexOf(key)] || ''}
+                                  smallText={key}
+                                  options={data.to}
+                                  onChange={d => onChange(key, d)}
+                                />)
+                            }
                           </div>
                           {provided.placeholder}
                         </div>
