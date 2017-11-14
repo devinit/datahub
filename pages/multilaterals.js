@@ -8,7 +8,6 @@ import App from 'components/templates/MultilateralProfiles';
 type Props = {
   url: {
     pathname: string,
-    query: { id: string}
   }
 };
 // Adds server generated styles to glamor cache.
@@ -19,5 +18,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App id={props.url.query.id} />;
+  return <App pathName={props.url.pathname} />;
 });
