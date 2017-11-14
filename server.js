@@ -58,7 +58,8 @@ app.prepare().then(() => {
     '/unbundling-aid',
     '/unbundling-other-flows',
     '/country-profiles',
-    '/where-are-the-poor'
+    '/where-are-the-poor',
+    '/multilaterals'
   ].forEach(link => {
     server.get(link, (req, res) => {
       renderAndCache(req, res, link);
