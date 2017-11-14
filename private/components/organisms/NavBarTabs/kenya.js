@@ -370,30 +370,11 @@ module.exports = {
             'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
         },
         {
-          id: 'spotlight_on_kenya_2017.kenya_household_water_com',
-          name: 'Most commonly used water source',
-          heading:
-            'The most common water source used by households in a county.',
-          tooltip:
-            'The most common water source used by households in a county',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
-        },
-        {
           id: 'spotlight_on_kenya_2017.kenya_household_san_fac',
           name: 'Households with access to improved sanitation facilities (%)',
           heading:
             'Percentage of the population that has access to improved sanitation facilities, by county.',
           tooltip: 'Access to improved sanitation',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
-        },
-        {
-          id: 'spotlight_on_kenya_2017.kenya_household_san_com',
-          name: 'Most commonly used sanitation facility',
-          heading:
-            'The most common sanitation facility used by households in a county.',
-          tooltip: 'Most commonly used sanitation facility',
           source:
             'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
         }
@@ -402,7 +383,7 @@ module.exports = {
     },
     {
       id: 'district_public_resources',
-      name: 'District public resources',
+      name: 'County public resources',
       indicators: [
         {
           id: 'spotlight_on_kenya_2017.kenya_agri_percent',

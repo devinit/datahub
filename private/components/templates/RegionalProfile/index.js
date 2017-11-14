@@ -9,7 +9,8 @@ import ProfileHeader from 'components/molecules/ProfileHeader';
 import {getDistrict, getCountry, createCurrencyOptions} from 'lib/utils';
 import type {CurrencyOption} from 'lib/utils';
 import type {StateToShare} from 'components/molecules/ChartShare';
-import methodologyData from 'components/organisms/Methodology/spotlight-uganda';
+import methodologyDataUg from 'components/organisms/Methodology/spotlight-uganda';
+import methodologyDataKe from 'components/organisms/Methodology/spotlight-kenya';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 
@@ -52,6 +53,8 @@ export default class RegionalProfile extends Component {
   }
 
   render() {
+    const methodology = this.state.country.slug === 'kenya' ?
+      methodologyDataKe.methodology : methodologyDataUg.methodology;
     return (
       <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
         <ProfileHeader
@@ -82,7 +85,7 @@ export default class RegionalProfile extends Component {
             {...this.props.state}
           /> : ''
         }
-        <ProfileDataSourceTable data={methodologyData.methodology} />
+        <ProfileDataSourceTable data={methodology} noDownloads />
       </Generic>);
   }
 }

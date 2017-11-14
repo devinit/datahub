@@ -4,5 +4,5 @@ import { Icon } from 'semantic-ui-react';
 import TooltipTest from '.';
 
 storiesOf('Tooltip', module).add('Tooltip Test', () =>
-  <TooltipTest trigger={<Icon name="help" />}>Simple Tooltip</TooltipTest>,
+  <TooltipTest trigger={<span><Icon name="file" />File </span>}>Simple Tooltip</TooltipTest>,
 );

@@ -146,7 +146,7 @@ export const getBubbleOptions = async () => {
 };
 
 export const getMethodologyData = async () => {
-  ['country-profile', 'global-picture', 'spotlight-uganda']
+  ['country-profile', 'global-picture', 'spotlight-uganda', 'spotlight-kenya']
     .forEach(async (moduleName) => {
       try {
         const filePath = path.join(baseOrganismsPath, `Methodology/${moduleName}.js`);

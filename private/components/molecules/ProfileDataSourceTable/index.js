@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
 import { Grid, Container, Table, Icon } from 'semantic-ui-react';
-import glamorous from 'glamorous';
+import glamorous, {Div} from 'glamorous';
 import { LightBg } from 'components/atoms/Backgrounds';
+import ToolTip from 'components/molecules/ToolTip';
 import { white } from 'components/theme/semantic';
 import { SectionHeader } from 'components/atoms/Header';
 // googleAnalytics tracking
@@ -20,9 +21,10 @@ const TableWrapper = glamorous.div({
 type Props = {
   data: Array<Object>, // TODO: use proper flow types
   title?: string,
+  noDownloads?: boolean
 };
 
-const ProfileDataSourceTable = ({ title, data }: Props) =>
+const ProfileDataSourceTable = ({ title, data, noDownloads }: Props) =>
   (<LightBg>
     <Container>
       <Grid centered>
@@ -67,20 +69,34 @@ const ProfileDataSourceTable = ({ title, data }: Props) =>
                       </a>
                     </Table.Cell>
                     <Table.Cell>
-                      <a
-                        href={item.zip}
-                        target="__blank"
-                        rel="noopener"
-                      >
-                        <Icon name="file" />ZIP
-                      </a>
-                      <a
-                        href={item.csv}
-                        target="__blank"
-                        rel="noopener"
-                      >
-                        <Icon name="file" />CSV
-                      </a>
+                      {
+                        noDownloads ?
+                          <ToolTip
+                            trigger={<span><Icon name="file" />CSV</span>}
+                          >
+                            <Div textAlign="center">
+                              <p>Work in Progress.</p>
+                              <p>Please contact info@devinit.org for the data</p>
+                            </Div>
+                          </ToolTip>
+                          :
+                          <span>
+                            <a
+                              href={item.zip}
+                              target="__blank"
+                              rel="noopener"
+                            >
+                              <Icon name="file" />ZIP
+                            </a>
+                            <a
+                              href={item.csv}
+                              target="__blank"
+                              rel="noopener"
+                            >
+                              <Icon name="file" />CSV
+                            </a>
+                          </span>
+                      }
                     </Table.Cell>
                   </Table.Row>),
                 )}

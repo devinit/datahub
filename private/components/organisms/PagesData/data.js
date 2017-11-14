@@ -253,17 +253,17 @@ module.exports = {
     },
     {
       id: 'primaryPupilTeacherRatioAllSchl',
-      title: 'Primary pupil to teacher ratio-all schools',
+      title: 'Primary pupil to teacher ratio all schools',
       narrative: ''
     },
     {
       id: 'primaryTeacherRatioPublicSchl',
-      title: 'Primary pupil to teacher ratio-public schools',
+      title: 'Primary pupil to teacher ratio public schools',
       narrative: ''
     },
     {
       id: 'primaryTeacherRatioPrivateSchl',
-      title: 'Primary pupil to teacher ratio-private schools',
+      title: 'Primary pupil to teacher ratio private schools',
       narrative: ''
     },
     {
@@ -273,13 +273,13 @@ module.exports = {
     },
     {
       id: 'birthAttendanceSkilled',
-      title: 'Proportion of births attended by skilled health personnel (%)',
+      title: 'Proportion of births attended by skilled health personnel',
       narrative: ''
     },
     {
       id: 'contraceptiveUse',
       title:
-        'Modern contraceptive methods used among married women, any method (15-49 yrs) (%)',
+        'Modern contraceptive methods used among married women, any method (15-49 yrs)',
       narrative: ''
     }
   ]

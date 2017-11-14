@@ -36,6 +36,7 @@ export default class Spotlight extends Component {
   countryName: string
   render() {
     const countryName = capitalize(this.props.id);
+    const region = this.props.id === 'uganda' ? 'district' : 'country';
     return (
       <Generic pathname={this.props.pathname} >
         <Container>
@@ -46,11 +47,11 @@ export default class Spotlight extends Component {
                   <Icon name="pie graph" /> Spotlight on {countryName} {' '}
                 </b>
                 is a comprehensive source of {countryName}'s financial resource flow data at the
-                sub-national (district) level, alongside indicators on poverty, population, education,
+                sub-national ({region}) level, alongside indicators on poverty, population, education,
                 health, water, hygiene and sanitation. It highlights the geographical variance in
                 sector performance and financial resources, and seeks to answer whether resources are
                 allocated according to need. Explore the country picture by selecting topics and click
-                on a district for an in-depth profile.
+                on a {region} for an in-depth profile.
               </Grid.Column>
             </Grid>
           </Div>
