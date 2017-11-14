@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Grid, Container, Table, Icon } from 'semantic-ui-react';
-import glamorous, {Div} from 'glamorous';
+import glamorous, {P} from 'glamorous';
 import { LightBg } from 'components/atoms/Backgrounds';
 import ToolTip from 'components/molecules/ToolTip';
 import { white } from 'components/theme/semantic';
@@ -74,10 +74,11 @@ const ProfileDataSourceTable = ({ title, data, noDownloads }: Props) =>
                           <ToolTip
                             trigger={<span><Icon name="file" />CSV</span>}
                           >
-                            <Div textAlign="center">
-                              <p>Work in Progress.</p>
-                              <p>Please contact info@devinit.org for the data</p>
-                            </Div>
+                            <P textAlign="center">We are in the process of updating our data sources,{ }
+                                these will be available to download in the near future.{ }
+                                Please contact <a href="mailto:info@devinit.org">info@devinit.org</a> { }
+                                if you wish to access these sources in the meantime.
+                            </P>
                           </ToolTip>
                           :
                           <span>
