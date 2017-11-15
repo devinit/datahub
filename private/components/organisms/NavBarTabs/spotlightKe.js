@@ -31,7 +31,7 @@ const spotlightNavBarTabs = (props: SpotlightProps<SpotLightlIndicatorKe>) => {
     navBarItems={data.spotlightThemes}
     showUsingThisViz
     loading={props.loading}
-    isForSpotlights
+    isForSpotlightsKe
     changeActiveIndicator={props.changeActiveIndicator}
     changeLoadingStatus={props.changeLoadingStatus}
     activeIndicator={props.state && props.state.indicator ?

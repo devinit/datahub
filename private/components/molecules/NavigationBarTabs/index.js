@@ -2,7 +2,7 @@
 import React from 'react';
 import glamorous, { Div } from 'glamorous';
 import { Container } from 'semantic-ui-react';
-import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
+import MapVisualizationTour from 'components/molecules/MapTours';
 import TourContainer from 'components/molecules/TourContainer';
 import type { LoadingStatus } from 'lib/actions';
 import LoadingBar from 'components/molecules/LoadingBar';
@@ -20,7 +20,8 @@ export type Props<T> = {
   changeLoadingStatus?: ChangeLoadingStatus,
   showUsingThisViz?: boolean,
   loading: boolean,
-  isForSpotlights?: boolean,
+  isForSpotlightsKe?: boolean,
+  isForSpotlightsUg?: boolean,
   selected?: number,
   textAlign?: string,
 };
@@ -163,6 +164,9 @@ class Tabs<T> extends React.Component {
   }
 
   render() {
+    let entity = 'country';
+    if (this.props.isForSpotlightsKe) entity = 'county';
+    if (this.props.isForSpotlightsUg) entity = 'district';
     return (
       <section>
         <LoadingBar loading={this.state.loading} />
@@ -175,12 +179,12 @@ class Tabs<T> extends React.Component {
           {this._renderContent()}
         </div>
         <TourContainer
-          bottom={this.props.isForSpotlights ? '-22%' : '0px'}
-          top={this.props.isForSpotlights ? '25%' : '-50px'}
+          bottom={this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '-22%' : '0px'}
+          top={this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '25%' : '-50px'}
           visible={this.state.tourVisibility}
           closeHandler={() => this.handleUsingThisViz()}
         >
-          <GlobalVisualizationTour />
+          <MapVisualizationTour entity={entity} />
         </TourContainer>
       </section>
     );
