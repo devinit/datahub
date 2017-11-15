@@ -13,8 +13,7 @@ module.exports = {
           heading:
             'Percentage of people in poverty, in relation to the total population the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date.',
           tooltip: 'Poverty headcount',
-          source:
-            'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2015'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_gap',
@@ -22,8 +21,7 @@ module.exports = {
           heading:
             'The mean shortfall of the total population from the poverty line (counting the non poor as having zero shortfall), expressed as a percentage of the poverty line. This measure reflects the depth of poverty as well as its incidence.',
           tooltip: 'Poverty gap',
-          source:
-            'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2015'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_meanpp_exp',
@@ -31,8 +29,7 @@ module.exports = {
           heading:
             'The average amount of money (KES) spent by a person in a month in the county.',
           tooltip: 'Mean per person expenditure (KES)',
-          source:
-            'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2015'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_hdi',
@@ -47,8 +44,7 @@ module.exports = {
           name: 'Population with a disability (%)',
           heading: 'Percentage of people who have a disability, by county.',
           tooltip: 'Proportion of persons living with a disability (%)',
-          source:
-            'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2015'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_poverty_headcount'
@@ -62,16 +58,14 @@ module.exports = {
           name: 'Total population',
           heading: 'The number of people who live in a county.',
           tooltip: 'Total population',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2014'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_dens',
           name: 'Population density (per sq km)',
           heading: 'The population per square kilometre, by county.',
           tooltip: 'Population density (per sq km)',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2012'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_birthrate',
@@ -80,8 +74,7 @@ module.exports = {
             'The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county.',
           tooltip:
             'The number of live births per year per 1,000 midyear population',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2010'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_deathrate',
@@ -89,8 +82,7 @@ module.exports = {
           heading:
             'The number of deaths occurring among the population of a county during a given year, per 1,000 mid-year total population of the county during the same year, by county.',
           tooltip: 'The number of deaths per year per 1,000 midyear population',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2011'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_avg_house_size',
@@ -98,8 +90,7 @@ module.exports = {
           heading:
             'The number of people who normally live and eat together, by county.',
           tooltip: 'Average household size',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2006'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_dependency_ratio',
@@ -108,8 +99,7 @@ module.exports = {
             'This is the ratio of people over the of 64 years to the total population, expressed as a percentage.',
           tooltip:
             'Population over the age of 64 years, percent of the total (%)',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2007'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_urban_pop',
@@ -117,8 +107,7 @@ module.exports = {
           heading:
             'Percentage of population living in an urban setting, by county.',
           tooltip: 'Urban population (%)',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2015'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_sex_ratio',
@@ -126,24 +115,21 @@ module.exports = {
           heading:
             'Number of males divided by number of females normalized by multiplying by 100, by county.',
           tooltip: 'Sex ratio',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2013'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_household_female_head',
           name: 'Female headed households (%)',
           heading: 'Percentage of female headed households, by county.',
           tooltip: 'Female headed households',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2008'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_household_number',
           name: 'Number of households',
           heading: 'Number of households, by county.',
           tooltip: 'Number of households',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2009'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_total_pop'
@@ -366,8 +352,7 @@ module.exports = {
           name: 'Households with access to safe water (%)',
           heading: 'Percentage of people with access to safe water, by county.',
           tooltip: 'Access to safe water source',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2014'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_household_san_fac',
@@ -375,8 +360,7 @@ module.exports = {
           heading:
             'Percentage of the population that has access to improved sanitation facilities, by county.',
           tooltip: 'Access to improved sanitation',
-          source:
-            'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics'
+          source: 'The Socio-Economic Atlas of Kenya 2014'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_safe_water'

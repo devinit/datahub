@@ -447,11 +447,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-avg-house-size',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-avg-house-size.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2006', link: null }
     },
     {
       name: 'Population over the age of 64 years, percent of the total (%)',
@@ -463,11 +459,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-dependency-ratio',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-dependency-ratio.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2007', link: null }
     },
     {
       name: 'Female headed households (%)',
@@ -478,11 +470,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-female-head',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-female-head.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2008', link: null }
     },
     {
       name: 'Number of households',
@@ -493,11 +481,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-number',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-number.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2009', link: null }
     },
     {
       name: 'Annual crude birth rate',
@@ -509,11 +493,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-birthrate',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-birthrate.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2010', link: null }
     },
     {
       name: 'Annual crude death rate',
@@ -525,11 +505,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-deathrate',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-deathrate.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2011', link: null }
     },
     {
       name: 'Population density (per sq km)',
@@ -540,11 +516,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-dens',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-dens.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2012', link: null }
     },
     {
       name: 'Sex ratio',
@@ -556,11 +528,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-sex-ratio',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-sex-ratio.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2013', link: null }
     },
     {
       name: 'Total population',
@@ -571,11 +539,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
     },
     {
       name: 'Urban population (%)',
@@ -587,11 +551,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-urban-pop',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-urban-pop.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
     },
     {
       name: 'Population with a disability (%)',
@@ -602,11 +562,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
     },
     {
       name: 'Human Development Index',
@@ -633,11 +589,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
     },
     {
       name: 'Poverty headcount',
@@ -649,11 +601,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
     },
     {
       name: 'Mean per person monthly expenditure, 2013 prices (KES)',
@@ -665,11 +613,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
     },
     {
       name: 'Households with access to improved sanitation facilities (%)',
@@ -681,11 +625,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
     },
     {
       name: 'Households with access to safe water (%)',
@@ -696,11 +636,7 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water.zip?raw=true',
-      source: {
-        name:
-          'Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics',
-        link: null
-      }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
     }
   ]
 };
