@@ -2,7 +2,7 @@
 import React from 'react';
 import glamorous, { Div } from 'glamorous';
 import { Container } from 'semantic-ui-react';
-import MapVisualizationTour from 'components/molecules/MapTours';
+import MapVisualizationTour from 'components/molecules/MapTour';
 import TourContainer from 'components/molecules/TourContainer';
 import type { LoadingStatus } from 'lib/actions';
 import LoadingBar from 'components/molecules/LoadingBar';

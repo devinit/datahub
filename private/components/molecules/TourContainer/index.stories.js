@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import UnbundlingAidTour from 'components/atoms/UnbundlingAidTour';
-import GlobalVisualizationTour from 'components/atoms/GlobalVisualizationTour';
+import GlobalVisualizationTour from 'components/molecules/MapTour';
 import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
 import Tour from '.';
 
