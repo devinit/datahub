@@ -20,6 +20,7 @@ export type Props<T> = {
   changeLoadingStatus?: ChangeLoadingStatus,
   showUsingThisViz?: boolean,
   loading: boolean,
+  isForSpotlights?: boolean,
   selected?: number,
   textAlign?: string,
 };
@@ -174,6 +175,8 @@ class Tabs<T> extends React.Component {
           {this._renderContent()}
         </div>
         <TourContainer
+          bottom={this.props.isForSpotlights ? '-22%' : '0px'}
+          top={this.props.isForSpotlights ? '25%' : '-50px'}
           visible={this.state.tourVisibility}
           closeHandler={() => this.handleUsingThisViz()}
         >

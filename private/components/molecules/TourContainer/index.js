@@ -7,6 +7,8 @@ import { Icon } from 'semantic-ui-react';
 type Props = {
   visible: boolean,
   closeHandler?: (event: any) => void,
+  bottom?: string,
+  top?: string,
   children: Element<any>,
 };
 const CloseIcon = glamorous.a({
@@ -20,11 +22,9 @@ const CloseIcon = glamorous.a({
 const Overlay = glamorous.div(
   {
     position: 'absolute',
-    top: '-50px',
     fontWeight: 'normal',
     left: '20px',
     right: '20px',
-    bottom: '0',
     zIndex: '200',
     background: 'rgba(0,0,0,.65)',
     border: '1px solid #000',
@@ -35,6 +35,8 @@ const Overlay = glamorous.div(
   },
   props => ({
     display: props.visible ? 'block' : 'none',
+    bottom: props.bottom || '0px',
+    top: props.top || '-10%',
   }),
 );
 const Container = glamorous.div({
@@ -43,7 +45,7 @@ const Container = glamorous.div({
 });
 
 const TourContainer = (props: Props) =>
-  (<Overlay visible={props.visible}>
+  (<Overlay visible={props.visible} bottom={props.bottom} top={props.top}>
     <Container>
       <CloseIcon>
         <Icon
