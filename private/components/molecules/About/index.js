@@ -3,6 +3,7 @@ import { Div, P } from 'glamorous';
 import { SectionHeader } from 'components/atoms/Header';
 import { red, white } from 'components/theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
+import Router from 'next/router';
 import { LightBg, DarkBg } from 'components/atoms/Backgrounds';
 import Observer from 'react-intersection-observer';
 import NoSSR from 'react-no-ssr';
@@ -70,7 +71,7 @@ export default () => {
           <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
           </P>
-          <Button color="grey" size="large">
+          <Button color="grey" size="large" onClick={() => Router.push('/methodology')}>
             Methodology and Data <Icon name="chevron right" />
           </Button>
         </Container>
