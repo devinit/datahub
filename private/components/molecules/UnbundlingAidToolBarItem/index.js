@@ -5,18 +5,27 @@ import {lighterGrey, lightGrey } from 'components/theme/semantic';
 import Select from 'components/molecules/UnbundlingAidSelect';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+export type Value = {
+  key: string,
+  value: string
+}
+
 type Props = {
   aid: string,
   width: number,
   data: any,
   position?: number,
-  values: string[],
+  values: Value[],
   textAlign?: string,
-  onChange?: (key: string, value: string) => void,
+  onChange: (key: string, value: string) => void,
 };
 /* eslint-disable no-unused-vars */
 export default class ToolBarItem extends React.Component {
-  static reorder(list, startIndex, endIndex) {
+  static getValue(values: Value[], key: string): string {
+    const obj = values.find(obj => obj.key === 'key');
+    return obj ? obj.value : ' ';
+  }
+  static reorder(list: string[], startIndex: number, endIndex: number): string[] {
     const [removed] = list.splice(startIndex, 1); // gets a hold of the item
     list.splice(endIndex, 0, removed); // adds item in new place
     return list;
@@ -32,7 +41,7 @@ export default class ToolBarItem extends React.Component {
     ...draggableStyle,
   });
   static grid: number = 8;
-  static reorder: (list: string[], startIndex: number, endIndex: number) => string[]
+  // static reorder: (list: string[], startIndex: number, endIndex: number) => string[]
   constructor(props: Props) {
     super(props);
     const keys = Object.keys(this.props.data);
@@ -66,10 +75,10 @@ export default class ToolBarItem extends React.Component {
       values,
       textAlign,
       aid,
-      onChange = (key, value) => {
-        // TOFIX: @ernest why is this here yet its unused
-      },
+      onChange
     } = this.props;
+    console.log('props: ', this.props);
+    console.log('state: ', this.state);
     return (
       <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
         <div>
@@ -97,7 +106,7 @@ export default class ToolBarItem extends React.Component {
                                 (<Select
                                   key={key}
                                   active
-                                  value={values[this.state.keys.indexOf(key)]}
+                                  value={ToolBarItem.getValue(values, key)}
                                   options={data.years}
                                   onChange={d => onChange(key, d)}
                                 />)
@@ -105,9 +114,9 @@ export default class ToolBarItem extends React.Component {
                                 (<Select
                                   key={key}
                                   active={this.state.keys.indexOf(key) <= position}
-                                  value={values[this.state.keys.indexOf(key)] || ''}
+                                  value={ToolBarItem.getValue(values, key)}
                                   smallText={key}
-                                  options={data.to}
+                                  options={data[key]}
                                   onChange={d => onChange(key, d)}
                                 />)
                             }

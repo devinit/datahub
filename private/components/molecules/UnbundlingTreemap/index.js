@@ -3,8 +3,10 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
 import { approximate } from 'lib/utils';
+import {init} from 'ramda';
 import { SectionHeader } from 'components/atoms/Header';
 import TreeChart from '../../atoms/TreeChart';
+// import type {Value} from '../UnbundlingAidChartToolBar';
 import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
 
 export type Props = {
@@ -19,13 +21,22 @@ export type Props = {
   refetch: (variables: Object) => any,
 };
 
+type Value = {
+  key: string,
+  value: string
+}
+
 type State = {
   position: number,
   keys: string[],
-  values: string[],
+  values: Value[],
   dimmerColor?: string,
 };
-
+type Selected = {
+  id: string,
+  color: string,
+  key: string
+}
 const Container = glamorous.div({
   margin: '1em 2em',
   height: '40em',
@@ -78,71 +89,51 @@ class UnbundlingTreemap extends React.Component {
 
     const keys = Object.keys(props.selections);
 
-    const values = [
-      props.startYear.toString(),
-
-      ...keys.slice(1).map(d => {
-        const [selected] = props.selections[d].filter(x => x.active);
-        return selected ? selected.value : '';
-      }),
-    ];
+    const values = [{key: 'years', value: props.startYear.toString()}];
 
     this.state = { position, keys, values };
   }
 
-  zoomIn(selected: Object) {
+  zoomIn({key, id, color}: Selected) {
     const position = this.state.position <= 1 ? 1 : this.state.position;
 
     if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
-      const values = this.updateValueByPosition(position, selected.id);
-
-      this.setState({position: position + 1, values, dimmerColor: selected.color});
-
-      this.fetch(position + 1, this.state.keys, this.state.values);
+      // const newKey = this.state.keys[position + 1];
+      // TODO: check if key already exists
+      const values = [...this.state.values, {key, value: id}];
+      this.setState({position: position + 1, values, dimmerColor: color});
+      this.fetch(key, this.state.keys, this.state.values);
     }
   }
 
   zoomOut() {
     const position = this.state.position - 1;
 
-    const values = this.updateValueByPosition(position, '');
-
+    const values = init(this.state.values); // removes last entry
     this.setState({ position, values });
-
-    this.fetch(position, this.state.keys, values);
+    const [key] = values[position] ? Object.keys[values[position]] : ['years'];
+    this.fetch(key, this.state.keys, values);
   }
 
   updateValue(key: string, value: string) {
-    const position = this.state.keys.indexOf(key);
-
-    const values = this.updateValueByPosition(position, value);
+    const values = [...this.state.values, {key, value}];
 
     this.setState({ values });
 
-    this.fetch(this.state.position, this.state.keys, values);
+    this.fetch(key, this.state.keys, values);
   }
 
-  updateValueByPosition(position: number, value: string) {
-    const values = this.state.values;
-
-    values[position] = value;
-
-    return values;
-  }
-
-  fetch(position: number, keys: string[], values: string[]) {
+  fetch(active: string, keys: string[], values: Value[]) {
     const parameters = {
       aidType: this.props.aidType,
       args: {
         aidType: this.props.aidType,
-        groupBy: UnbundlingTreemap.groupers[keys[position]],
+        groupBy: UnbundlingTreemap.groupers[active],
 
         ...values
-          .map((value, index) => {
-            return { key: UnbundlingTreemap.groupers[keys[index]], value };
-          })
-          .filter(d => d.value)
-          .reduce((all, { key, value }) => ({ ...all, [key]: value }), {}),
+          .reduce((all, {key, value}) => {
+            return {...all, [UnbundlingTreemap.groupers[key]]: value};
+          }, {}),
       },
     };
     this.props.refetch(parameters);

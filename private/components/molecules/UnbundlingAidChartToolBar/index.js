@@ -3,6 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { lighterGrey } from 'components/theme/semantic';
 import { Container, Grid } from 'semantic-ui-react';
+import type {Value} from 'components/molecules/UnbundlingAidToolBarItem';
 import ToolBar from 'components/molecules/UnbundlingAidToolBarItem';
 
 const ToolBarContainer = glamorous.div(
@@ -24,7 +25,7 @@ type Props = {
   toolBarOptions: Object,
   position?: number,
   rightPosition?: number,
-  values?: string[],
+  values?: Value[],
   rightValues?: string[],
   onChange?: (key: string, value: string) => void,
   onRightChange?: (key: string, value: string) => void,
