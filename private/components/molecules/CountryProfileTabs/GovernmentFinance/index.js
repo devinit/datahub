@@ -79,7 +79,7 @@ const Government = (props: Props) => {
                 <Div fontSize={small} marginTop="2em">
                   {governmentFinance.spendingAllocation.data.map((d: Object) =>
                     (<Legend
-                      key={d.color}
+                      key={`${d.color}-${d.value}`}
                       color={d.color}
                     >
                       <span><span /></span>

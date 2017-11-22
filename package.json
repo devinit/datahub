@@ -48,7 +48,7 @@
     "graphql": "^0.11.1"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.18",
+    "@devinit/charts": "^1.6.22",
     "apollo-cache-inmemory": "^1.0.0",
     "apollo-client": "^2.0.1",
     "apollo-fetch": "^0.6.0",

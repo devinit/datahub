@@ -5,4 +5,5 @@ import InflowsVsOutflows from '.';
 
 storiesOf('Tabs & Charts', module)
   .addDecorator(withApolloProvider())
-  .add('Inflows Vs Outflows', () => <InflowsVsOutflows id={'uganda'} />);
+  .add('Inflows Vs Outflows uganda', () => <InflowsVsOutflows id={'uganda'} />)
+  .add('Inflows Vs Outflows Kenya', () => <InflowsVsOutflows id={'kenya'} />);
