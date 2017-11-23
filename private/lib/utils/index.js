@@ -41,9 +41,10 @@ export const sendEmail = (payload: Email) => {
   });
 };
 // will email errors to allan when they occur
+// TODO: improve this by adding more info on the errors. i.e if country profile add country etc
 export const errorHandler = async (error: String | Error, info?: string) => {
   console.error(error);
-  if (process.env.NODE_ENV === 'development') { // temporarily disable // should be production to renable
+  if (process.env.NODE_ENV === 'disable') { // temporarily disable // should be production to renable
     sendEmail({
       message: `info: ${info || ''} error: ${error.toString()} `,
       token: 'e2DQks99XapU6w2s1',

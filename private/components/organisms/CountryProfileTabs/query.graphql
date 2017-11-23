@@ -30,8 +30,8 @@ query TabData($id: String!) {
   povertyTab(id: $id) {
     poverty190Trend {
       data {
-        id
         year
+        uid
         value
         name
       }
@@ -175,8 +175,8 @@ query TabData($id: String!) {
       data {
         year
         value
-        id
         name
+        uid
       }
       toolTip {
         source

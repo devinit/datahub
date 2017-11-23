@@ -10,7 +10,9 @@ import InternationalResourcesLower from 'components/molecules/CountryProfileTabs
 import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
 import type {StateToShare} from 'components/molecules/ChartShare';
 import {getCountryProfileData} from 'components/organisms/PagesData';
+import ErrorBoundary from 'lib/ErrorBoundary';
 import {getCountry} from 'lib/utils';
+
 import data from './data';
 
 type Props = StateToShare & {
@@ -36,13 +38,15 @@ export default function CountryProfileLowerTabs(props: Props) {
             pageData={pageData}
             countryName={country && country.name ? country.name : props.id}
           >
-            <GovernmentFinanceChart
-              budgetType={props.budgetType}
-              shouldScrollIntoView={props.chartId === GOVERNMENT_FINANCE_LOWER}
-              id={props.id}
-              year={props.year}
-              chartId={GOVERNMENT_FINANCE_LOWER}
-            />
+            <ErrorBoundary>
+              <GovernmentFinanceChart
+                budgetType={props.budgetType}
+                shouldScrollIntoView={props.chartId === GOVERNMENT_FINANCE_LOWER}
+                id={props.id}
+                year={props.year}
+                chartId={GOVERNMENT_FINANCE_LOWER}
+              />
+            </ErrorBoundary>
           </GovernmentFinance>
         </Pane>
         : ''
@@ -55,19 +59,23 @@ export default function CountryProfileLowerTabs(props: Props) {
           pageData={pageData}
           toolTip={data.internationalResources.resourcesOverTime.toolTip}
         >
-          <InflowsVsOutflows
-            id={props.id}
-            shouldScrollIntoView={props.chartId === INFLOWS_VS_OUTFLOWS}
-            chartId={INFLOWS_VS_OUTFLOWS}
-            countryType={country.countryType}
-            year={props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : null}
-          />
-          <InternationalResourcesChart
-            shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES}
-            year={props.chartId === INTERNATIONAL_RESOURCES ? props.year : null}
-            chartId={INTERNATIONAL_RESOURCES}
-            id={props.id}
-          />
+          <ErrorBoundary>
+            <InflowsVsOutflows
+              id={props.id}
+              shouldScrollIntoView={props.chartId === INFLOWS_VS_OUTFLOWS}
+              chartId={INFLOWS_VS_OUTFLOWS}
+              countryType={country.countryType}
+              year={props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : null}
+            />
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <InternationalResourcesChart
+              shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES}
+              year={props.chartId === INTERNATIONAL_RESOURCES ? props.year : null}
+              chartId={INTERNATIONAL_RESOURCES}
+              id={props.id}
+            />
+          </ErrorBoundary>
         </InternationalResourcesLower>
       </Pane>
     </Tabs>

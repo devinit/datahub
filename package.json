@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "2.0.7",
   "config": {
-    "api": "http://212.111.41.68:3000/graphql",
+    "api": "http://localhost:3000/graphql",
     "old_datahub": "http://212.111.41.68:8888"
   },
   "repository": {

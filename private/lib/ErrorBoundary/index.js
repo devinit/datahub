@@ -4,6 +4,7 @@ import React from 'react';
 
 type Props = {
   children: any;
+  message?: string;
 }
 
 export default class ErrorBoundary extends React.Component {
@@ -26,7 +27,7 @@ export default class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <h2>Something went wrong! </h2>;
+      return <h5 style={{textAlign: 'center', margin: '0 auto'}}>Chart data might have an error! </h5>;
     }
     return this.props.children;
   }
