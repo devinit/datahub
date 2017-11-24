@@ -22,7 +22,6 @@ class Chart extends React.Component {
   }
 
   componentDidMount() {
-    // eslint-disable-next-line react/no-find-dom-node
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
@@ -36,7 +35,7 @@ class Chart extends React.Component {
   componentWillUpdate(props: Props) {
     if (this.chart) {
       this.chart.update(props.data);
-      this.chart.setLabeling(props.config.labeling);
+      // this.chart.setLabeling(props.config.labeling);
     }
   }
 
