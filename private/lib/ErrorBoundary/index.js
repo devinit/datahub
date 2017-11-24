@@ -26,6 +26,7 @@ export default class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
+      console.error(this.state.error);
       // You can render any custom fallback UI
       return <h5 style={{textAlign: 'center', margin: '0 auto'}}>Chart data might have an error! </h5>;
     }
