@@ -27,6 +27,7 @@ type Props = {
   rightPosition?: number,
   values?: Value[],
   rightValues?: string[],
+  onMove?: (key: string) => void,
   onChange?: (key: string, value: string) => void,
   onRightChange?: (key: string, value: string) => void,
 };
@@ -42,6 +43,7 @@ const InteractiveChartToolBar = (props: Props) => {
               position={position}
               values={values}
               onChange={props.onChange}
+              onMove={props.onMove}
               data={props.toolBarOptions}
               textAlign="center"
               width={16}

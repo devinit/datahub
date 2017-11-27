@@ -46,8 +46,14 @@ class Select extends React.Component {
     bigText: string,
   };
 
+  componentWillReceiveProps(nextProps: Props) {
+    if (this.props !== nextProps) {
+      const item = nextProps.options.find(obj => obj.key === nextProps.value);
+      this.setState({ bigText: item ? item.name : nextProps.value, visible: false });
+    }
+  }
+
   onChanged(selected: Object) {
-    // console.log('select ', selected);
     this.setState({ bigText: selected.name, visible: false });
     this.props.onChange(selected.value);
   }

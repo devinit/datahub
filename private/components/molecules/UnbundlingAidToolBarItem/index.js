@@ -17,6 +17,7 @@ type Props = {
   position?: number,
   values: Value[],
   textAlign?: string,
+  onMove: (key: string) => void,
   onChange: (key: string, value: string) => void,
 };
 /* eslint-disable no-unused-vars */
@@ -57,12 +58,13 @@ export default class ToolBarItem extends React.Component {
   onDragEnd(result: Object) {
     // dropped outside the list
     if (!result.destination) return;
-
     const keys = ToolBarItem.reorder(
       this.state.keys,
       result.source.index,
       result.destination.index
     );
+    console.log('results', result);
+    this.props.onMove(result.draggableId);
     this.setState({
       keys
     });
@@ -78,6 +80,7 @@ export default class ToolBarItem extends React.Component {
       aid,
       onChange
     } = this.props;
+    // console.log('values', values);
     return (
       <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
         <div>

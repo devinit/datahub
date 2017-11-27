@@ -84,10 +84,9 @@ class UnbundlingTreemap extends React.Component {
     return value ? [...valuesItems, {key, value}] : valuesItems;
   }
 
-  static getActiveOption(position: number): string {
-    const activeName = Object.keys(UnbundlingTreemap.groupers)[position];
-    return UnbundlingTreemap.groupers[activeName];
-  }
+  static getActiveOption = (position: number): string =>
+    Object.keys(UnbundlingTreemap.groupers)[position];
+
   // eslint-disable-next-line react/sort-comp
   state: State;
 
@@ -109,7 +108,9 @@ class UnbundlingTreemap extends React.Component {
     if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
       // const newKey = this.state.keys[position + 1];
       // TODO: check if key already exists
-      const values = UnbundlingTreemap.addNewValue({key, value: id}, this.state.values);
+      const currentActive = UnbundlingTreemap.getActiveOption(position);
+      const values =
+        UnbundlingTreemap.addNewValue({key: currentActive, value: id}, this.state.values);
       const active = UnbundlingTreemap.getActiveOption(position + 1);
       this.setState({position: position + 1, values, dimmerColor: color});
       this.fetch(active, values);
@@ -120,8 +121,8 @@ class UnbundlingTreemap extends React.Component {
     const position = this.state.position - 1;
     const values = init(this.state.values); // removes last entry
     this.setState({ position, values });
-    const [key] = values[position] ? Object.keys[values[position]] : ['years'];
-    this.fetch(key, values);
+    const active = position ? UnbundlingTreemap.getActiveOption(position) : 'to';
+    this.fetch(active, values);
   }
 
 
@@ -143,7 +144,7 @@ class UnbundlingTreemap extends React.Component {
       aidType: this.props.aidType,
       args: {
         aidType: this.props.aidType,
-        groupBy: active,
+        groupBy: UnbundlingTreemap.groupers[active],
         ...args
       },
     };
@@ -159,6 +160,7 @@ class UnbundlingTreemap extends React.Component {
           position={this.state.position}
           values={this.state.values}
           toolBarOptions={this.props.selections}
+          onMove={(key) => this.fetch(key, this.state.values)}
           onChange={(key, value) => this.updateValue(key, value)}
         />
 
