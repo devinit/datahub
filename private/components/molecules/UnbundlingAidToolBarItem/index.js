@@ -22,8 +22,9 @@ type Props = {
 /* eslint-disable no-unused-vars */
 export default class ToolBarItem extends React.Component {
   static getValue(values: Value[], key: string): string {
-    const obj = values.find(obj => obj.key === 'key');
-    return obj ? obj.value : ' ';
+    // console.log('key ', key, 'values: ', values);
+    const obj = values.find(obj => obj.key === key);
+    return obj ? obj.value : 'All';
   }
   static reorder(list: string[], startIndex: number, endIndex: number): string[] {
     const [removed] = list.splice(startIndex, 1); // gets a hold of the item
@@ -77,16 +78,14 @@ export default class ToolBarItem extends React.Component {
       aid,
       onChange
     } = this.props;
-    console.log('props: ', this.props);
-    console.log('state: ', this.state);
     return (
       <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
         <div>
-          <span>{aid}</span>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <Droppable droppableId="droppable" direction="horizontal">
               {(provided, snapshot) => (
                 <div ref={provided.innerRef}>
+                  <span>{aid}</span>
                   {this.state.keys.map(key => (
                     <Draggable key={key} draggableId={key}>
                       {(provided, snapshot) => (

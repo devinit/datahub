@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
 import { approximate } from 'lib/utils';
-import {init} from 'ramda';
+import { init } from 'ramda';
 import { SectionHeader } from 'components/atoms/Header';
 import TreeChart from '../../atoms/TreeChart';
 // import type {Value} from '../UnbundlingAidChartToolBar';
@@ -116,24 +116,26 @@ class UnbundlingTreemap extends React.Component {
   }
 
   updateValue(key: string, value: string) {
-    const values = [...this.state.values, {key, value}];
-
+    // making sure we dont have duplicates
+    const valuesItems = this.state.values.filter((item) => item.key !== key);
+    const values = [...valuesItems, {key, value}];
+    console.log('values', values);
     this.setState({ values });
-
     this.fetch(key, this.state.keys, values);
   }
 
   fetch(active: string, keys: string[], values: Value[]) {
+    const args = values
+      .reduce((all, {key, value}) => {
+        return {...all, [UnbundlingTreemap.groupers[key]]: value};
+      }, {});
+    console.log('args: ', args, UnbundlingTreemap.groupers[active]);
     const parameters = {
       aidType: this.props.aidType,
       args: {
         aidType: this.props.aidType,
         groupBy: UnbundlingTreemap.groupers[active],
-
-        ...values
-          .reduce((all, {key, value}) => {
-            return {...all, [UnbundlingTreemap.groupers[key]]: value};
-          }, {}),
+        ...args
       },
     };
     this.props.refetch(parameters);
