@@ -79,6 +79,15 @@ class UnbundlingTreemap extends React.Component {
     channels: 'channel',
   };
 
+  static addNewValue({key, value}: {key: string, value: string}, values: Value[]): Value[] {
+    const valuesItems = values.filter((item) => item.key !== key);
+    return value ? [...valuesItems, {key, value}] : valuesItems;
+  }
+
+  static getActiveOption(position: number): string {
+    const activeName = Object.keys(UnbundlingTreemap.groupers)[position];
+    return UnbundlingTreemap.groupers[activeName];
+  }
   // eslint-disable-next-line react/sort-comp
   state: State;
 
@@ -94,47 +103,47 @@ class UnbundlingTreemap extends React.Component {
     this.state = { position, keys, values };
   }
 
-  zoomIn({key, id, color}: Selected) {
+  zoomIn({id, color}: Selected) {
     const position = this.state.position <= 1 ? 1 : this.state.position;
 
     if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
       // const newKey = this.state.keys[position + 1];
       // TODO: check if key already exists
-      const values = [...this.state.values, {key, value: id}];
+      const values = UnbundlingTreemap.addNewValue({key, value: id}, this.state.values);
+      const active = UnbundlingTreemap.getActiveOption(position + 1);
       this.setState({position: position + 1, values, dimmerColor: color});
-      this.fetch(key, this.state.keys, this.state.values);
-    }
+      this.fetch(active, values);
+    } // else zoom out
   }
 
   zoomOut() {
     const position = this.state.position - 1;
-
     const values = init(this.state.values); // removes last entry
     this.setState({ position, values });
     const [key] = values[position] ? Object.keys[values[position]] : ['years'];
-    this.fetch(key, this.state.keys, values);
+    this.fetch(key, values);
   }
+
 
   updateValue(key: string, value: string) {
     // making sure we dont have duplicates
-    const valuesItems = this.state.values.filter((item) => item.key !== key);
-    const values = [...valuesItems, {key, value}];
-    console.log('values', values);
+    const values = UnbundlingTreemap.addNewValue({key, value}, this.state.values);
     this.setState({ values });
-    this.fetch(key, this.state.keys, values);
+    const active = UnbundlingTreemap.getActiveOption(this.state.position);
+    this.fetch(active, values);
   }
 
-  fetch(active: string, keys: string[], values: Value[]) {
+  fetch(active: string, values: Value[]) {
     const args = values
       .reduce((all, {key, value}) => {
         return {...all, [UnbundlingTreemap.groupers[key]]: value};
       }, {});
-    console.log('args: ', args, UnbundlingTreemap.groupers[active]);
+    console.log('args: ', args, active);
     const parameters = {
       aidType: this.props.aidType,
       args: {
         aidType: this.props.aidType,
-        groupBy: UnbundlingTreemap.groupers[active],
+        groupBy: active,
         ...args
       },
     };
