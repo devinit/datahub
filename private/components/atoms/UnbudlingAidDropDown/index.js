@@ -89,7 +89,11 @@ const DropDown = ({ visible, items, text, selected, onClose, active, onChange }:
       <Text active={active}>
         {text}
       </Text>
-      <Select value={selected || undefined} onChange={e => onDropdownChange(e, items, onChange)}>
+      <Select
+        onMouseDown={e => e.stopPropagation()}
+        value={selected || undefined}
+        onChange={e => onDropdownChange(e, items, onChange)}
+      >
         {options}
       </Select>
     </Wrapper>

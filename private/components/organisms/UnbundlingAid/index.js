@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import {Div} from 'glamorous';
 import { graphql } from 'react-apollo';
-import {errorHandler} from 'lib/utils';
+// import {errorHandler} from 'lib/utils';
 import TotalODA from 'components/molecules/UnbundlingAidTotalODA';
 import UnbundlingTreemap from 'components/molecules/UnbundlingTreemap';
 import UnbundlingAidTour from 'components/atoms/UnbundlingAidTour';
@@ -23,6 +23,28 @@ const toDropDownOptions = list => [
   ...list.map(({ id, name }) => ({ name, value: id, key: id })),
 ];
 
+const unbundlingSelections = (aidType, startYear) => {
+  const { channels = [], bundles = [], to = [], from = [], sectors = [], years = [] } =
+    aidType === 'oda' ? dataODA.selections : dataOOF.selections;
+  return {
+    years: years.map(year => ({
+      name: year,
+      value: year,
+      active: year === startYear,
+    })),
+
+    to: toDropDownOptions(to),
+
+    from: toDropDownOptions(from),
+
+    sectors: toDropDownOptions(sectors),
+
+    forms: toDropDownOptions(bundles),
+
+    channels: toDropDownOptions(channels),
+  };
+};
+
 const withData = graphql(QUERY, {
   options: props => ({
     variables: {
@@ -34,35 +56,20 @@ const withData = graphql(QUERY, {
     },
   }),
 
-  props: ({ ownProps, data }: { ownProps: Object, data: Object }) => {
+  props: ({ ownProps, data}: { ownProps: Object, data: Object}) => {
     const { error, loading } = data;
-
-    if (error) errorHandler(error, 'unbundling aid');
-    const { channels = [], bundles = [], to = [], from = [], sectors = [], years = [] } =
-      ownProps.aidType === 'oda' ? dataODA.selections : dataOOF.selections;
-
+    const selections = unbundlingSelections(ownProps.aidType, ownProps.startYear);
+    if (error) {
+      console.error('error: ', error, 'ownProps: ', ownProps);
+      return {loading: true, error, selections};
+    }
+    console.log('got data for ', data.variables);
     const safeBundles = data.bundles && data.bundles.length ? data.bundles : [];
     const bundleSum = safeBundles.reduce((sum, datum) => sum + datum.value, 0);
     return {
       loading,
 
-      selections: {
-        years: years.map(year => ({
-          name: year,
-          value: year,
-          active: year === ownProps.startYear,
-        })),
-
-        to: toDropDownOptions(to),
-
-        from: toDropDownOptions(from),
-
-        sectors: toDropDownOptions(sectors),
-
-        forms: toDropDownOptions(bundles),
-
-        channels: toDropDownOptions(channels),
-      },
+      selections,
 
       bundles: safeBundles,
 
@@ -75,14 +82,6 @@ const withData = graphql(QUERY, {
 
 // eslint-disable-next-line flowtype-errors/show-errors
 const WithData = withData(UnbundlingTreemap);
-
-const buttonStyle = {
-  position: 'absolute',
-  right: '1em',
-  top: '1.2em',
-};
-// TODO: supply year oda and oof totals via a pull API
-// TODO: supply selection options via pull API
 
 class Chart extends React.Component {
   // eslint-disable-next-line react/sort-comp
@@ -143,7 +142,10 @@ class Chart extends React.Component {
                 </Grid.Row>
               </Grid>
         }
-        <Button style={buttonStyle} onClick={() => this.toggleCompare()}>
+        <Button
+          style={{ position: 'absolute', right: '1em', top: '1.2em'}}
+          onClick={() => this.toggleCompare()}
+        >
           {this.state.compare
             ? <span>
                 Close <Icon name="close" />

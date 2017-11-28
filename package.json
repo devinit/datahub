@@ -71,6 +71,7 @@
     "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-apollo": "^2.0.0",
+    "react-beautiful-dnd": "^2.6.4",
     "react-dom": "^16.0.0",
     "react-intersection-observer": "^2.0.0",
     "react-no-ssr": "^1.1.0",

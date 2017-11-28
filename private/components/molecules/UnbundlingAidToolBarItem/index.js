@@ -1,81 +1,139 @@
 // @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
+import {lighterGrey, lightGrey } from 'components/theme/semantic';
 import Select from 'components/molecules/UnbundlingAidSelect';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
+export type Value = {
+  key: string,
+  value: string
+}
 
 type Props = {
   aid: string,
   width: number,
   data: any,
   position?: number,
-  values: string[],
+  values: Value[],
   textAlign?: string,
-  onChange?: (key: string, value: string) => void,
+  onMove: (key: string) => void,
+  onChange: (key: string, value: string) => void,
 };
 /* eslint-disable no-unused-vars */
-const ToolBarItem = (props: Props) => {
-  const {
-    width,
-    data,
-    position = 0,
-    values,
-    textAlign,
-    aid,
-    onChange = (key, value) => {
-      // TOFIX: @ernest why is this here yet its unused
-    },
-  } = props;
+export default class ToolBarItem extends React.Component {
+  static getValue(values: Value[], key: string): string {
+    // console.log('key ', key, 'values: ', values);
+    const obj = values.find(obj => obj.key === key);
+    return obj ? obj.value : 'All';
+  }
+  static reorder(list: string[], startIndex: number, endIndex: number): string[] {
+    const [removed] = list.splice(startIndex, 1); // gets a hold of the item
+    list.splice(endIndex, 0, removed); // adds item in new place
+    return list;
+  }
+  static getItemStyle = (draggableStyle, isDragging) => ({
+    // some basic styles to make the items look a bit nicer
+    userSelect: 'none',
+    padding: ToolBarItem.grid * 2,
+    margin: `0 0 ${ToolBarItem.grid}px 0`,
+    // change background colour if dragging
+    background: isDragging ? lightGrey : lighterGrey,
+    // styles we need to apply on draggables
+    ...draggableStyle,
+  });
+  static grid: number = 8;
+  // static reorder: (list: string[], startIndex: number, endIndex: number) => string[]
+  constructor(props: Props) {
+    super(props);
+    const keys = Object.keys(this.props.data).filter(key => key !== 'years');
+    this.state = {keys};
+    this.onDragEnd = this.onDragEnd.bind(this);
+  }
+  state: {
+    keys: string[]
+  }
+  onDragEnd: (result: Object) => void
 
-  const keys = Object.keys(data);
+  onDragEnd(result: Object) {
+    // dropped outside the list
+    if (!result.destination) return;
+    const keys = ToolBarItem.reorder(
+      this.state.keys,
+      result.source.index,
+      result.destination.index
+    );
+    // console.log('results', result);
+    this.props.onMove(result.draggableId);
+    this.setState({
+      keys
+    });
+  }
 
-  return (
-    <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
-      <span>
-        {aid}
-        <Select
-          active
-          value={values[keys.indexOf('years')]}
-          options={data.years}
-          onChange={d => onChange('years', d)}
-        />
-        <Select
-          active={keys.indexOf('to') <= position}
-          value={values[keys.indexOf('to')] || ''}
-          smallText="to"
-          options={data.to}
-          onChange={d => onChange('to', d)}
-        />
-        <Select
-          active={keys.indexOf('from') <= position}
-          value={values[keys.indexOf('from')] || ''}
-          smallText="from"
-          options={data.from}
-          onChange={d => onChange('from', d)}
-        />
-        <Select
-          active={keys.indexOf('sectors') <= position}
-          value={values[keys.indexOf('sectors')] || ''}
-          smallText="sector"
-          options={data.sectors}
-          onChange={d => onChange('sectors', d)}
-        />
-        <Select
-          active={keys.indexOf('forms') <= position}
-          value={values[keys.indexOf('forms')] || ''}
-          smallText="in the form of"
-          options={data.forms}
-          onChange={d => onChange('forms', d)}
-        />
-        <Select
-          active={keys.indexOf('channels') <= position}
-          value={values[keys.indexOf('channels')] || ''}
-          smallText="via channel"
-          options={data.channels}
-          onChange={d => onChange('channels', d)}
-        />
-      </span>
-    </Grid.Column>
-  );
-};
+  render() {
+    const {
+      width,
+      data,
+      position = 0,
+      values,
+      textAlign,
+      aid,
+      onChange
+    } = this.props;
+    // console.log('values', values);
+    return (
+      <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
+        <div>
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            <Droppable droppableId="droppable" direction="horizontal">
+              {(provided, snapshot) => (
+                <div ref={provided.innerRef}>
+                  <span style={{display: 'inline'}}>{aid}</span>
+                  <div style={{display: 'inline'}}>
+                    <Select
+                      key={'years'}
+                      active
+                      value={ToolBarItem.getValue(values, 'years')}
+                      options={data.years}
+                      onChange={d => onChange('years', d)}
+                    />
+                  </div>
+                  {this.state.keys.map(key => (
+                    <Draggable key={key} draggableId={key}>
+                      {(provided, snapshot) => (
+                        <div
+                          style={{height: '30px', marginLeft: '2px', display: 'inline-block'}}
+                        >
+                          <div
+                            ref={provided.innerRef}
+                            style={ToolBarItem.getItemStyle(
+                              provided.draggableStyle,
+                              snapshot.isDragging
+                            )}
+                            {...provided.dragHandleProps}
+                          >
+                            <Select
+                              key={key}
+                              active={this.state.keys.indexOf(key) <= position}
+                              value={ToolBarItem.getValue(values, key)}
+                              smallText={key}
+                              options={data[key]}
+                              onChange={d => onChange(key, d)}
+                            />
+                          </div>
+                          {provided.placeholder}
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
+      </Grid.Column>
+    );
+  }
+}
 
-export default ToolBarItem;

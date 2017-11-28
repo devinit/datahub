@@ -37,16 +37,21 @@ class Select extends React.Component {
     super(props);
     this.state = {
       visible: false,
-      bigText: '',
-      value: '',
+      bigText: this.props.value,
     };
   }
 
   state: {
     visible?: boolean,
     bigText: string,
-    value: string,
   };
+
+  componentWillReceiveProps(nextProps: Props) {
+    if (this.props !== nextProps) {
+      const item = nextProps.options.find(obj => obj.key === nextProps.value);
+      this.setState({ bigText: item ? item.name : nextProps.value, visible: false });
+    }
+  }
 
   onChanged(selected: Object) {
     this.setState({ bigText: selected.name, visible: false });
@@ -62,10 +67,6 @@ class Select extends React.Component {
   }
 
   render() {
-    // eslint-disable-next-line eqeqeq
-    const [selected = {}] = this.props.options.filter(d => d.value == this.props.value);
-    const { name = '' } = selected;
-
     return (
       <Wrapper>
         <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
@@ -73,7 +74,7 @@ class Select extends React.Component {
             {this.props.smallText}
           </SmallText>
           <BoldText>
-            {name}
+            {this.state.bigText}
           </BoldText>
         </TextWrapper>
         <DropDown
