@@ -11,6 +11,7 @@ import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
 
 export type Props = {
   loading: boolean,
+  error?: any,
   compact: boolean,
   startYear: number,
   aidType: string,
@@ -102,7 +103,7 @@ class UnbundlingTreemap extends React.Component {
     this.state = { position, keys, values };
   }
 
-  zoomIn({id, color}: Selected) {
+  onZoomIn({id, color}: Selected) {
     const position = this.state.position <= 1 ? 1 : this.state.position;
 
     if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
@@ -117,14 +118,13 @@ class UnbundlingTreemap extends React.Component {
     } // else zoom out
   }
 
-  zoomOut() {
+  onZoomOut() {
     const position = this.state.position - 1;
     const values = init(this.state.values); // removes last entry
     this.setState({ position, values });
     const active = position ? UnbundlingTreemap.getActiveOption(position) : 'to';
     this.fetch(active, values);
   }
-
 
   updateValue(key: string, value: string) {
     // making sure we dont have duplicates
@@ -139,7 +139,6 @@ class UnbundlingTreemap extends React.Component {
       .reduce((all, {key, value}) => {
         return {...all, [UnbundlingTreemap.groupers[key]]: value};
       }, {});
-    console.log('args: ', args, active);
     const parameters = {
       aidType: this.props.aidType,
       args: {
@@ -163,49 +162,56 @@ class UnbundlingTreemap extends React.Component {
           onMove={(key) => this.fetch(key, this.state.values)}
           onChange={(key, value) => this.updateValue(key, value)}
         />
+        {this.props.error ?
+          <p>
+            An error occured while fetching required data,{' '}
+            please change your select options or refresh page
+          </p>
+          :
+          <Container>
+            <SectionHeader
+              color="rgb(238, 238, 238)"
+              style={{
+                textTransform: 'none'
+              }}
+            >
+              {this.props.aidType === 'oda' ?
+                `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices` :
+                `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2012 prices`
+              }
+            </SectionHeader>
+            <div>
+              {this.props.loading
+                ? <Segment
+                  style={{
+                    position: 'absolute',
+                    width: '100%',
+                    left: 0,
+                    right: 0,
+                    height: '36em',
+                    padding: 0,
+                    margin: 0,
+                  }}
+                >
+                  <Dimmer style={{ backgroundColor: this.state.dimmerColor }} active>
+                    <Loader />
+                  </Dimmer>
+                </Segment>
+                : <TreeChart
+                  config={this.props.config}
+                  data={this.props.bundles}
+                  height="36em"
+                  onClick={d => this.onZoomIn(d)}
+                />}
+              {this.state.position <= 1
+                ? ''
+                : <Up className="up" onClick={() => this.onZoomOut()}>
+                  <Icon name={'chevron left'} size="big" inverted />
+                </Up>}
+            </div>
+          </Container>
+        }
 
-        <Container>
-          <SectionHeader
-            color="rgb(238, 238, 238)"
-            style={{
-              textTransform: 'none'
-            }}
-          >
-            {this.props.aidType === 'oda' ?
-              `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices` :
-              `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2012 prices`
-            }
-          </SectionHeader>
-          <div>
-            {this.props.loading
-              ? <Segment
-                style={{
-                  position: 'absolute',
-                  width: '100%',
-                  left: 0,
-                  right: 0,
-                  height: '36em',
-                  padding: 0,
-                  margin: 0,
-                }}
-              >
-                <Dimmer style={{ backgroundColor: this.state.dimmerColor }} active>
-                  <Loader />
-                </Dimmer>
-              </Segment>
-              : <TreeChart
-                config={this.props.config}
-                data={this.props.bundles}
-                height="36em"
-                onClick={d => this.zoomIn(d)}
-              />}
-            {this.state.position <= 1
-              ? ''
-              : <Up className="up" onClick={() => this.zoomOut()}>
-                <Icon name={'chevron left'} size="big" inverted />
-              </Up>}
-          </div>
-        </Container>
       </div>
     );
   }

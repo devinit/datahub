@@ -63,7 +63,7 @@ export default class ToolBarItem extends React.Component {
       result.source.index,
       result.destination.index
     );
-    console.log('results', result);
+    // console.log('results', result);
     this.props.onMove(result.draggableId);
     this.setState({
       keys
