@@ -46,7 +46,7 @@ export default class ToolBarItem extends React.Component {
   // static reorder: (list: string[], startIndex: number, endIndex: number) => string[]
   constructor(props: Props) {
     super(props);
-    const keys = Object.keys(this.props.data);
+    const keys = Object.keys(this.props.data).filter(key => key !== 'years');
     this.state = {keys};
     this.onDragEnd = this.onDragEnd.bind(this);
   }
@@ -88,7 +88,16 @@ export default class ToolBarItem extends React.Component {
             <Droppable droppableId="droppable" direction="horizontal">
               {(provided, snapshot) => (
                 <div ref={provided.innerRef}>
-                  <span>{aid}</span>
+                  <span style={{display: 'inline'}}>{aid}</span>
+                  <div style={{display: 'inline'}}>
+                    <Select
+                      key={'years'}
+                      active
+                      value={ToolBarItem.getValue(values, 'years')}
+                      options={data.years}
+                      onChange={d => onChange('years', d)}
+                    />
+                  </div>
                   {this.state.keys.map(key => (
                     <Draggable key={key} draggableId={key}>
                       {(provided, snapshot) => (
@@ -103,25 +112,14 @@ export default class ToolBarItem extends React.Component {
                             )}
                             {...provided.dragHandleProps}
                           >
-                            {
-                              key === 'years' ?
-                                (<Select
-                                  key={key}
-                                  active
-                                  value={ToolBarItem.getValue(values, key)}
-                                  options={data.years}
-                                  onChange={d => onChange(key, d)}
-                                />)
-                                :
-                                (<Select
-                                  key={key}
-                                  active={this.state.keys.indexOf(key) <= position}
-                                  value={ToolBarItem.getValue(values, key)}
-                                  smallText={key}
-                                  options={data[key]}
-                                  onChange={d => onChange(key, d)}
-                                />)
-                            }
+                            <Select
+                              key={key}
+                              active={this.state.keys.indexOf(key) <= position}
+                              value={ToolBarItem.getValue(values, key)}
+                              smallText={key}
+                              options={data[key]}
+                              onChange={d => onChange(key, d)}
+                            />
                           </div>
                           {provided.placeholder}
                         </div>
