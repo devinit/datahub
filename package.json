@@ -24,7 +24,7 @@
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
     "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
-    "format-p": "prettier-eslint --write \"private/components/molecules/AreaPartitionChart/index.js\"",
+    "format-p": "prettier-eslint --write \"private/components/templates/UnbundlingAid/index.js\"",
     "deploy": "git checkout master && git rebase dev && git push origin master && git push origin dev && git checkout dev",
     "patch": "release-it --no-npm.publish -i patch -n",
     "feature": "release-it --no-npm.publish -i minor -n",

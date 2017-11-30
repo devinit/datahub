@@ -59,7 +59,7 @@ const UnbundlingAidTotalODA = (props: Props) =>
             props.aidType === 'oda' ?
               'Official development assistance (total gross disbursements, 2015 prices)'
               :
-              'Total other official flows (total gross disbursements, 2012 prices)'
+              'Total other official flows (non export credit) (total gross disbursements, 2015 prices)'
           }
         </Header>
         <Button onClick={() => props.onClickHandler()}>Explore</Button>

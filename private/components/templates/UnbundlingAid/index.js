@@ -1,19 +1,16 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { Container, Button, Header, Grid } from 'semantic-ui-react';
+import { Container, Button, Header, Grid, Icon } from 'semantic-ui-react';
 import config from 'visboxConfigs/unbundlingTreemapChart';
 import UnbundlingAid from 'components/organisms/UnbundlingAid';
 import SocialMediaBar from 'components/molecules/SocialMediaBar';
-import { RegularToolTip as Tooltip} from 'components/molecules/TabsToolTip';
-// import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
-// import { connect } from 'react-redux';
-// import type { State } from 'lib/reducers';
+import ToolTip from 'components/molecules/ToolTip';
 import Generic from '../Generic';
 
 const headerStyles = {
   paddingTop: '4em',
-  paddingBottom: '4em'
+  paddingBottom: '4em',
 };
 const HeaderContainer = glamorous.div(headerStyles);
 const TopHeader = glamorous.div({
@@ -23,11 +20,11 @@ const TopHeader = glamorous.div({
 const BottomHeader = glamorous.div({
   fontSize: '1.4em',
   '& .button': {
-    marginLeft: '1em'
+    marginLeft: '1em',
   },
   '& i': {
-    fontSize: '0.8em'
-  }
+    fontSize: '0.8em',
+  },
 });
 const TextContainer = glamorous.div({
   marginTop: '2em',
@@ -42,7 +39,7 @@ type Props = {
 
 // TODO: start year shouldnt be hardcoded @allan
 export default class extends React.Component {
-  state = { tourVisible: false, };
+  state = { tourVisible: false };
   showTour = () => {
     this.setState({
       tourVisible: true,
@@ -61,15 +58,25 @@ export default class extends React.Component {
                 <TopHeader>{props.title}</TopHeader>
                 <Header.Subheader>
                   <BottomHeader>
-                    Explore and compare funding priorities for { }
-                    {props.aidType === 'oda' ? 'official development assistance' : 'other official flows (OOFs)' }
-                    <Tooltip
-                      text={`Click the boxes to drill down into ${aid} bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ’Compare +’ button to see how different countries’ ${aid} bundles compare.`}
-                    />
-                    <Button
-                      onClick={() => this.showTour()}
-                      content="Using This Visualization"
-                    />
+                    Explore and compare funding priorities for {}
+                    {props.aidType === 'oda'
+                      ? 'official development assistance'
+                      : 'other official flows (OOFs)'}
+                    <ToolTip color={'black'} trigger={<Icon name="info circle" />}>
+                      {props.aidType === 'oda' ? (
+                        ''
+                      ) : (
+                        <p style={{ marginBottom: '0.5em' }}>
+                          The Other Official Flows (OOF) data shown does not include export credits
+                          and the quality and completeness of data is reliant on the reporting of
+                          OOF activities by individual donors to the CRS.
+                        </p>
+                      )}
+                      Click the boxes to drill down into {aid} bundle. Drag and drop the buttons
+                      below to change the order and take different journeys through the data. Use
+                      the ’Compare +’ button to see how different countries’ {aid} bundles compare.
+                    </ToolTip>
+                    <Button onClick={() => this.showTour()} content="Using This Visualization" />
                   </BottomHeader>
                 </Header.Subheader>
               </Header.Content>
@@ -82,18 +89,20 @@ export default class extends React.Component {
           startYear={props.aidType === 'oda' ? 2015 : 2015}
           config={config}
         />
-        {process.env.NODE_ENV !== 'test' ?
-          <section style={{paddingTop: '2em'}}><SocialMediaBar /></section> : '' }
+        {process.env.NODE_ENV !== 'test' ? (
+          <section style={{ paddingTop: '2em' }}>
+            <SocialMediaBar />
+          </section>
+        ) : (
+          ''
+        )}
         <TextContainer>
           <Container>
             <Grid>
               <Grid.Row>
                 <Grid.Column width="10">
                   <Header as="h1">Source</Header>
-                  <Header
-                    as="h2"
-                    style={{fontWeight: 100}}
-                  >
+                  <Header as="h2" style={{ fontWeight: 100 }}>
                     Development Initiatives based on OECD DAC data.
                   </Header>
                   <p>
@@ -113,8 +122,3 @@ export default class extends React.Component {
     );
   }
 }
-
-// const mapStateToProps = ({ app: { rehydrated } }: State) => ({ rehydrated });
-// const UnbundlingAidWithRedux = connect(mapStateToProps)(unbundlingAid);
-// export default UnbundlingAidWithRedux;
-
