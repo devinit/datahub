@@ -354,11 +354,7 @@ module.exports = {
       { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
       { id: 'mixed-project-aid', name: 'Mixed project aid' },
       { id: 'non-transfer', name: 'Non-transfer' },
-      { id: 'technical-ooperation', name: 'Technical cooperation' },
-      { id: 'export-credit', name: 'Export credit' },
-      { id: 'oof-grant', name: 'OOF Grant' },
-      { id: 'oof-loan', name: 'OOF Loan' },
-      { id: 'oof-export-credit', name: 'OOF Export Credit' }
+      { id: 'technical-ooperation', name: 'Technical cooperation' }
     ],
     years: [2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },

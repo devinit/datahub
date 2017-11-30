@@ -167,7 +167,7 @@ if (process.env.NODE_ENV !== 'test') {
   getBubbleOptions();
   getMethodologyData();
   getUnbundlingData('oda', 2015);
-  getUnbundlingData('oof', 2013);
+  getUnbundlingData('oof', 2015);
   getSpotlightThemes();
   getPagesData();
 }

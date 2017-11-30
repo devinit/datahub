@@ -349,10 +349,9 @@ module.exports = {
     ],
     bundles: [
       { id: 'oof-grant', name: 'OOF Grant' },
-      { id: 'oof-loan', name: 'OOF Loan' },
-      { id: 'oof-export-credit', name: 'OOF Export Credit' }
+      { id: 'oof-loan', name: 'OOF Loan' }
     ],
-    years: [2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
+    years: [2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2013, total: '73.1bn' }
+  yearTotal: { year: 2015, total: '71.5bn' }
 };

@@ -60,10 +60,10 @@ const withData = graphql(QUERY, {
     const { error, loading } = data;
     const selections = unbundlingSelections(ownProps.aidType, ownProps.startYear);
     if (error) {
-      console.error('error: ', error, 'ownProps: ', ownProps);
+      // console.error('error: ', error, 'ownProps: ', ownProps);
       return {loading: true, error, selections};
     }
-    console.log('got data for ', data.variables);
+    // console.log('got data for ', data.variables);
     const safeBundles = data.bundles && data.bundles.length ? data.bundles : [];
     const bundleSum = safeBundles.reduce((sum, datum) => sum + datum.value, 0);
     return {

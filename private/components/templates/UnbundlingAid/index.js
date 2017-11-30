@@ -79,7 +79,7 @@ export default class extends React.Component {
         <UnbundlingAid
           tourVisible={this.state.tourVisible}
           aidType={props.aidType}
-          startYear={props.aidType === 'oda' ? 2015 : 2013}
+          startYear={props.aidType === 'oda' ? 2015 : 2015}
           config={config}
         />
         {process.env.NODE_ENV !== 'test' ?
