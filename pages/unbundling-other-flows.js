@@ -19,7 +19,7 @@ export default withData((props: Props) => {
   return (<App
     pathname={props.url.pathname}
     aidType="oof"
-    title="Unbundling other official flows"
+    title="Unbundling other official flows (non export credit)"
     description="Explore and compare funding priorities for other official flows (OOFs)"
   />);
 });
