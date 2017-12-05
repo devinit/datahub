@@ -18,7 +18,6 @@ const moduleResolver = {
 };
 
 const newPlugins = [
-  new webpack.EnvironmentPlugin(['MapboxAccessToken']),
   new webpack.DefinePlugin({
     'process.browser': true,
     'process.storybook': true

@@ -5,8 +5,8 @@ LABEL maintainer="epicallan.al@gmail.com"
 # set workdir and copy the dependnecies there
 RUN mkdir /src
 # This way, dependnecies are cached without the need of cacheing all files.
-ADD package.json /tmp/
-RUN cd /tmp && npm install --silent
+COPY package.json /tmp/
+RUN cd /tmp && npm install --silent --ignore-scripts
 RUN cp -a /tmp/node_modules /src/
 
 WORKDIR /src
@@ -18,5 +18,11 @@ ENV NODE_ENV production
 
 EXPOSE 6006
 
-CMD npm run storybook
+RUN npm run build-storybook
+
+RUN npm install -g node-static
+
+WORKDIR /src/.out
+
+CMD static -a 0.0.0.0 -p 6006 -z
 

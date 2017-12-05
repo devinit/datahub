@@ -1,24 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import UnbundlingAidTour from 'components/atoms/UnbundlingAidTour';
+// import UnbundlingAidTour from 'components/atoms/UnbundlingAidTour';
 import GovernmentFinanceTour from 'components/atoms/GovernmentFinanceTour';
-import GlobalVisualizationTour from '../MapTour';
+// import GlobalVisualizationTour from '../MapTour';
 import Tour from '.';
 
 storiesOf('Tour', module)
-  .add('Global Viz tour', () =>
-    (<Tour>
-      <GlobalVisualizationTour />
-    </Tour>),
-  )
-  .add('UnbundlindAid tour', () =>
-    (<Tour>
-      <UnbundlingAidTour />
-    </Tour>),
-  )
   .add('Government tour', () =>
     (<Tour visible>
       <GovernmentFinanceTour />
     </Tour>),
-  )
-;
+  );

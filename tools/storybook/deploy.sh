@@ -4,9 +4,9 @@ mkdir -p ~/datahub/storybook
 cd ~/datahub/storybook || exit
 
 rm -rf datahub && \
-  git clone --depth 1 -b master --single-branch git@github.com:devinit/datahub.git datahub.git
+  git clone --depth 1 -b master --single-branch git@github.com:devinit/datahub.git datahub
 
-echo 'finished downloading new datahub'
+echo 'finished downloading new datahub for storybook'
 
 cd datahub
 
