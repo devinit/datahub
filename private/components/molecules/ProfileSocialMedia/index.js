@@ -27,7 +27,7 @@ const ProfileSocialMedia = (props: Props) => {
       >
         <Button icon="mail outline" />
       </a>
-      {props.isCountryProfile && props.entity ?
+      {props.isCountryProfile && props.entity && props.entity.hasPDF ?
         <a
           rel="noopener"
           href={`/pdf/20170331/${props.entity.name.replace(/\s/g, '-')}.pdf`}

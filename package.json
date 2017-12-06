@@ -1,8 +1,8 @@
 {
   "name": "datahub",
-  "version": "2.0.19",
+  "version": "2.0.22",
   "config": {
-    "api": "http://212.111.41.68:9090/graphql",
+    "api": "http://212.111.41.68:3000/graphql",
     "old_datahub": "http://212.111.41.68:8888"
   },
   "repository": {

@@ -1,5 +1,6 @@
 // @flow
 /* eslint-disable react/sort-comp */
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { groupBy } from 'ramda';
 import { Grid, Segment } from 'semantic-ui-react';
@@ -132,7 +133,7 @@ class SlidingDualSidebar extends React.Component {
 
   render() {
     const {countryType, country} = this.props;
-    const blacklist = ['UAE'];
+    const blacklist = ['UAE', 'Saudi Arabia', 'Kuwait'];
     return (
       <LightBg
         innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
@@ -141,11 +142,15 @@ class SlidingDualSidebar extends React.Component {
           <Grid.Column width={8}>
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'right', marginRight: '47px' }}>
-                {countryType !== RECIPIENT ?
-                  'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' : `RESOURCE FLOWS TO ${country} `}
+                {
+                  blacklist.includes(country) ? 'RESOURCE FLOWS FROM DEVELOPING COUNTRIES' :
+                    countryType !== RECIPIENT ?
+                      'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' : `RESOURCE FLOWS TO ${country} `
+                }
                 <span>{
-                  countryType !== RECIPIENT && !blacklist.includes(country) ?
-                    this.state.outflowSum : this.state.inflowSum
+                  blacklist.includes(country) ? this.state.inflowSum :
+                    countryType !== RECIPIENT ?
+                      this.state.outflowSum : this.state.inflowSum
                 }</span>
               </SectionHeader>
             </Segment>
@@ -154,11 +159,13 @@ class SlidingDualSidebar extends React.Component {
           <Grid.Column width={8}>
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
-                {countryType !== RECIPIENT ?
-                  'RESOURCE FLOWS FROM DEVELOPING COUNTRIES ' : `RESOURCE FLOWS LEAVING ${country} `}
+                { blacklist.includes(country) ? 'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' :
+                  countryType !== RECIPIENT ?
+                    'RESOURCE FLOWS FROM DEVELOPING COUNTRIES' : `RESOURCE FLOWS LEAVING ${country} `}
                 <span>{
-                  countryType !== RECIPIENT && !blacklist.includes(country) ?
-                    this.state.inflowSum : this.state.outflowSum
+                  blacklist.includes(country) ? this.state.outflowSum :
+                    countryType !== RECIPIENT && blacklist.includes(country) ?
+                      this.state.inflowSum : this.state.outflowSum
                 }</span>
               </SectionHeader>
             </Segment>
