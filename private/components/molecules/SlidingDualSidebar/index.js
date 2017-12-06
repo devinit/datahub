@@ -132,6 +132,7 @@ class SlidingDualSidebar extends React.Component {
 
   render() {
     const {countryType, country} = this.props;
+    const blacklist = ['UAE'];
     return (
       <LightBg
         innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
@@ -141,8 +142,10 @@ class SlidingDualSidebar extends React.Component {
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'right', marginRight: '47px' }}>
                 {countryType !== RECIPIENT ?
-                  'RESOURCE FLOWS FROM DEVELOPING COUNTRIES ' : `RESOURCE FLOWS TO ${country} `}
-                <span>{this.state.inflowSum}</span>
+                  'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' : `RESOURCE FLOWS TO ${country} `}
+                <span>{
+                  countryType !== RECIPIENT && !blacklist.includes(country) ? this.state.outflowSum : this.state.inflowSum
+                }</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>
@@ -151,8 +154,10 @@ class SlidingDualSidebar extends React.Component {
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
                 {countryType !== RECIPIENT ?
-                  'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' : `RESOURCE FLOWS LEAVING ${country} `}
-                <span>{this.state.outflowSum}</span>
+                  'RESOURCE FLOWS FROM DEVELOPING COUNTRIES ' : `RESOURCE FLOWS LEAVING ${country} `}
+                <span>{
+                  countryType !== RECIPIENT && !blacklist.includes(country) ? this.state.inflowSum : this.state.outflowSum
+                }</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>
