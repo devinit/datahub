@@ -144,7 +144,8 @@ class SlidingDualSidebar extends React.Component {
                 {countryType !== RECIPIENT ?
                   'RESOURCE FLOWS TO DEVELOPING COUNTRIES ' : `RESOURCE FLOWS TO ${country} `}
                 <span>{
-                  countryType !== RECIPIENT && !blacklist.includes(country) ? this.state.outflowSum : this.state.inflowSum
+                  countryType !== RECIPIENT && !blacklist.includes(country) ?
+                    this.state.outflowSum : this.state.inflowSum
                 }</span>
               </SectionHeader>
             </Segment>
