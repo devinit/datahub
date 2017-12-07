@@ -94,7 +94,7 @@ module.exports = {
           id: 'data_series.fragile_states',
           name: 'Fragile states',
           heading:
-            'Countries susceptible to state failure risk elements based on twelve primary social, economic and political indicators. The Fragile States Index is produced by the Fund for Peace.',
+            "The OECD Fragiliy Framework identifies countries are fragile or extremely fragile based on 50 indicators across five dimensions (economic, environmental, political, security and societal). It is part of the OECD report 'States of Fragility'.",
           tooltip: 'Fragile states categories.',
           source:
             'Development Initiatives based on Fund for Peace Fragile States Index.'
@@ -139,7 +139,7 @@ module.exports = {
           name:
             "Number of appearances on ECHO's Forgotten Crisis Assessment index",
           heading:
-            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.",
+            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004. The map shows countries' number of appearances on the index since then.",
           tooltip:
             "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.",
           source:

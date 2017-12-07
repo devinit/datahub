@@ -593,7 +593,7 @@ module.exports = {
       slug: 'hungary',
       has_domestic_data: '',
       countryType: 'donor',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'IS',

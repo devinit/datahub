@@ -165,7 +165,7 @@ class SlidingDualSidebar extends React.Component {
                 <span>{
                   blacklist.includes(country) ? this.state.outflowSum :
                     countryType === RECIPIENT ?
-                      this.state.outflowSum : this.state.inflowSum
+                      this.state.inflowSum : this.state.inflowSum
                 }</span>
               </SectionHeader>
             </Segment>
