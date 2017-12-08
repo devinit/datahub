@@ -143,14 +143,12 @@ class SlidingDualSidebar extends React.Component {
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'right', marginRight: '47px' }}>
                 {
-                  blacklist.includes(country) ? `RESOURCE FLOWS FROM DEVELOPING COUNTRIES ${' '}` :
-                    countryType !== RECIPIENT ?
-                      `RESOURCE FLOWS LEAVING DEVELOPING COUNTRIES ${' '}` : `RESOURCE FLOWS LEAVING ${country} `
+                  countryType !== RECIPIENT || blacklist.includes(country) ?
+                    `RESOURCE FLOWS FROM DEVELOPING COUNTRIES ${' '}` : `RESOURCE FLOWS TO ${country} `
                 }
                 <span>{
-                  blacklist.includes(country) ? this.state.inflowSum :
-                    countryType === RECIPIENT ?
-                      this.state.outflowSum : this.state.outflowSum
+                  countryType !== RECIPIENT || blacklist.includes(country) ?
+                    this.state.inflowSum : this.state.outflowSum
                 }</span>
               </SectionHeader>
             </Segment>
@@ -159,13 +157,11 @@ class SlidingDualSidebar extends React.Component {
           <Grid.Column width={8}>
             <Segment basic clearing>
               <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
-                { blacklist.includes(country) ? `RESOURCE FLOWS TO DEVELOPING COUNTRIES ${' '}` :
-                  countryType !== RECIPIENT ?
-                    `RESOURCE FLOWS FROM DEVELOPING COUNTRIES ${' '}` : `RESOURCE FLOWS TO ${country} `}
+                { countryType !== RECIPIENT || blacklist.includes(country) ?
+                  `RESOURCE FLOWS TO DEVELOPING COUNTRIES ${' '}` : `RESOURCE FLOWS LEAVING ${country} `}
                 <span>{
-                  blacklist.includes(country) ? this.state.outflowSum :
-                    countryType === RECIPIENT ?
-                      this.state.inflowSum : this.state.inflowSum
+                  countryType !== RECIPIENT || blacklist.includes(country) ?
+                    this.state.outflowSum : this.state.inflowSum
                 }</span>
               </SectionHeader>
             </Segment>
