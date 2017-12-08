@@ -146,10 +146,7 @@ class SlidingDualSidebar extends React.Component {
                   countryType !== RECIPIENT || blacklist.includes(country) ?
                     `RESOURCE FLOWS FROM DEVELOPING COUNTRIES ${' '}` : `RESOURCE FLOWS TO ${country} `
                 }
-                <span>{
-                  countryType !== RECIPIENT || blacklist.includes(country) ?
-                    this.state.inflowSum : this.state.outflowSum
-                }</span>
+                <span>{ this.state.inflowSum }</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>
@@ -159,10 +156,7 @@ class SlidingDualSidebar extends React.Component {
               <SectionHeader color="#fff" style={{ float: 'left', marginLeft: '45px' }}>
                 { countryType !== RECIPIENT || blacklist.includes(country) ?
                   `RESOURCE FLOWS TO DEVELOPING COUNTRIES ${' '}` : `RESOURCE FLOWS LEAVING ${country} `}
-                <span>{
-                  countryType !== RECIPIENT || blacklist.includes(country) ?
-                    this.state.outflowSum : this.state.inflowSum
-                }</span>
+                <span>{ this.state.outflowSum }</span>
               </SectionHeader>
             </Segment>
           </Grid.Column>
