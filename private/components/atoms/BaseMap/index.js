@@ -27,7 +27,6 @@ import type {
 const NO_DATA = 'No data';
 
 export const indicatorsWith0dp = [
-  'data_series.natural_hazard',
   'spotlight_on_uganda.uganda_urban_pop',
   'spotlight_on_uganda.uganda_rural_safe_water',
   'spotlight_on_uganda.uganda_rural_water_func',
@@ -73,8 +72,8 @@ class BaseMap extends Component {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
     if (indicatorsWith0dp.includes(indicator)) return value.toFixed(0);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
-    if (uom === '%') return value.toFixed(2);
-    return approximate(value);
+    if (uom === '%' || 'data_series.climate_vulnerability') return value.toFixed(2);
+    return approximate(value, 1, true);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
     switch (uom) {
@@ -113,6 +112,10 @@ class BaseMap extends Component {
     national: 'country-slug',
     uganda: 'name',
     kenya: 'NAME_2'
+  }
+  _propertyLayerNameMap: PropertyLayerSlugMap = {
+    ...this._propertyLayerSlugMap,
+    national: 'country-name',
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -176,10 +179,11 @@ class BaseMap extends Component {
   }
   setMinimalMapDataPoint(feature: Feature, value: null | number): MapData {
     const id = feature.properties[this.props.paint.propertyName || this._propertyName];
-    const nameProperty = this._propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
+    const slugProperty = this._propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
+    const nameProperty = this._propertyLayerNameMap[this.props.paint.propertyLayer || 'national'];
     return {
       id,
-      slug: feature.properties[nameProperty],
+      slug: feature.properties[slugProperty],
       name: feature.properties[nameProperty],
       year: 0,
       value,
