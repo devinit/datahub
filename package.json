@@ -31,7 +31,7 @@
     "breaking": "release-it --no-npm.publish -i major -n",
     "multilaterals": "node tools/buildScripts/multilaterals.js",
     "flow": "flow",
-    "test": "BABEL_ENV=test jest",
+    "test": "BABEL_ENV=test jest private/lib/utils/utils.test.js",
     "analyze": "ANALYZE=1 next build",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "storybook": "BABEL_ENV=development start-storybook -c private/.storybook -s public -p 6006 ",

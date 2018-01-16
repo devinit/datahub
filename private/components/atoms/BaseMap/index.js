@@ -70,9 +70,9 @@ class BaseMap extends Component {
   static setPointDataValue(
     value: number, uom?: string, indicator?: string): string {
     if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
-    if (indicatorsWith0dp.includes(indicator)) return value.toFixed(0);
+    if (indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
-    if (uom === '%' || 'data_series.climate_vulnerability') return value.toFixed(2);
+    if (indicator === 'data_series.climate_vulnerability') return value.toFixed(2);
     return approximate(value, 1, true);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
@@ -212,7 +212,6 @@ class BaseMap extends Component {
   mouseHoverEvent() {
     this._map.on('mousemove', e => {
       const features: Feature[] = this._map.queryRenderedFeatures(e.point);
-
       if (!features.length && this._popup) return this._popup.remove();
       if (!features.length) return false;
       const pointData: MapData | null = this.getMouseHoverPointData(features);
