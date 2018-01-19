@@ -6,11 +6,6 @@ services:
     ports:
       - "8080:8080"
     command: pm2-docker process.yml
-    deploy:
-      restart_policy:
-        condition: on-failure
-        max_attempts: 3
-
   nginx:
     build: ./nginx/
     container_name: datahub-nginx
@@ -20,8 +15,4 @@ services:
       - "80:80"
     links:
       - datahub:web
-    deploy:
-      restart_policy:
-        condition: on-failure
-        max_attempts: 2
-      replicas: 2
+
