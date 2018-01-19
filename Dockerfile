@@ -1,4 +1,4 @@
-FROM node:8.7-alpine
+FROM node:9-alpine
 
 LABEL maintainer="epicallan.al@gmail.com"
 # Copy package.json only to temp folder, install its dependencies,

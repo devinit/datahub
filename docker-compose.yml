@@ -1,8 +1,9 @@
-version: '3'
+version: '2'
 services:
   datahub:
     build: .
     container_name: datahub-new
+    restart: always
     ports:
       - "8080:8080"
     command: pm2-docker process.yml
@@ -15,4 +16,5 @@ services:
       - "80:80"
     links:
       - datahub:web
+    restart: always
 
