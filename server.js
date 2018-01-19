@@ -59,7 +59,10 @@ app.prepare().then(() => {
     '/unbundling-other-flows',
     '/country-profiles',
     '/where-are-the-poor',
-    '/multilaterals'
+    '/multilaterals',
+    '/methodology',
+    '/oda-donor',
+    '/poverty'
   ].forEach(link => {
     server.get(link, (req, res) => {
       renderAndCache(req, res, link);
