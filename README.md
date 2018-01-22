@@ -7,6 +7,8 @@
 
 # DataHub - Next
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/devinit/datahub.svg)](https://greenkeeper.io/)
+
 This is just primarily the frontend part of the DataHub, to keep things modular the backend will be in a separate repo.
 
 ## How to use
