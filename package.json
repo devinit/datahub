@@ -22,7 +22,7 @@
     "precache": "npm run build-tools && node dist/precache/index.js",
     "critical-css": "npm run build-tools && node dist/criticalCss/index.js",
     "lessToJs": "npm run build-tools && node dist/lessToJs/index.js",
-    "lint": "eslint private server.js --ext .graphql --ext .js && npm run flow",
+    "lint": "eslint private server.js --ext .grabphql --ext .js && npm run flow",
     "format": "prettier-eslint --write \"private/**/*.js\" \"tools/**/*.js\" \"pages/*.js\"",
     "format-p": "prettier-eslint --write \"private/components/templates/UnbundlingAid/index.js\"",
     "deploy": "git checkout master && git rebase dev && git push origin master && git push origin dev && git checkout dev",
@@ -80,8 +80,8 @@
     "semantic-ui-react": "^0.77.2"
   },
   "devDependencies": {
-    "@storybook/addon-storyshots": "^3.2.14",
-    "@storybook/react": "^3.2.14",
+    "@storybook/addon-storyshots": "^3.3.10",
+    "@storybook/react": "^3.3.10",
     "apollo-codegen": "^0.18.3",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
