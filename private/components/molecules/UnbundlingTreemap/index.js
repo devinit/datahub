@@ -166,7 +166,7 @@ class UnbundlingTreemap extends React.Component {
         {this.props.error ?
           <p>
             An error occured while fetching required data,{' '}
-            please change your select options or refresh page <br>
+            please change your select options or refresh page < /br>
             error: {this.props.error }
           </p>
           :
