@@ -10,7 +10,6 @@ script:
 - npm run vendor
 - npm run build-workers
 - npm run build-fragment
-- npm run flow
 - npm run build
 - npm run coverage
 - mkdir build && mv .next build/ && mv server.js build/ && mv package.json build/ && mv private build/ && mv Dockerfile build/ && mv public build/ && mv nginx build/ && mv docker-compose.yml build/ && mv process.yml build/
