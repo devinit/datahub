@@ -5152,6 +5152,16 @@ exports[`Storyshots Country Search country profile 1`] = `
         className="not-active"
       >
         <a
+          href="/country/uae"
+          onClick={[Function]}
+        >
+          UAE
+        </a>
+      </li>
+      <li
+        className="not-active"
+      >
+        <a
           href="/country/usa"
           onClick={[Function]}
         >
@@ -7161,6 +7171,16 @@ exports[`Storyshots Country Search globalPicture 1`] = `
         className="not-active"
       >
         <a
+          href="/country/uae"
+          onClick={[Function]}
+        >
+          UAE
+        </a>
+      </li>
+      <li
+        className="not-active"
+      >
+        <a
           href="/country/usa"
           onClick={[Function]}
         >
@@ -8893,7 +8913,7 @@ exports[`Storyshots Navbar tabs with redux GlobalPicture Navbar 1`] = `
     </div>
   </div>
   <div
-    className="css-10ulgtr"
+    className="css-1byb50h"
   >
     <div
       className="css-8ys126"
@@ -8915,7 +8935,8 @@ exports[`Storyshots Navbar tabs with redux GlobalPicture Navbar 1`] = `
         >
           Compare the colour
           <br />
-          of each country
+          of each 
+          country
           <br />
           with the legend
           <span
@@ -8934,7 +8955,8 @@ exports[`Storyshots Navbar tabs with redux GlobalPicture Navbar 1`] = `
           <br />
           indicator the colour of each
           <br />
-          country will adapt to that
+          country
+           will adapt to that
           <br />
           indicator
         </li>
@@ -8977,21 +8999,28 @@ exports[`Storyshots Navbar tabs with redux GlobalPicture Navbar 1`] = `
         <li
           className="item-7"
         >
-          Hover over a country
+          Hover over a 
+          country
           <br />
           to see data snapshot
         </li>
         <li
           className="item-8"
         >
-          Click a country to go
+          Click a 
+          country
+           to go
           <br />
-          to country profile
+          to 
+          country
+           profile
         </li>
         <li
           className="item-9"
         >
-          Scroll down to see country rankings
+          Scroll down to see 
+          country
+           rankings
           <br />
           <i
             aria-hidden="true"
@@ -9335,7 +9364,7 @@ exports[`Storyshots Navbar tabs with redux Globalpicture Navbar with state 1`] =
     </div>
   </div>
   <div
-    className="css-10ulgtr"
+    className="css-1byb50h"
   >
     <div
       className="css-8ys126"
@@ -9357,7 +9386,8 @@ exports[`Storyshots Navbar tabs with redux Globalpicture Navbar with state 1`] =
         >
           Compare the colour
           <br />
-          of each country
+          of each 
+          country
           <br />
           with the legend
           <span
@@ -9376,7 +9406,8 @@ exports[`Storyshots Navbar tabs with redux Globalpicture Navbar with state 1`] =
           <br />
           indicator the colour of each
           <br />
-          country will adapt to that
+          country
+           will adapt to that
           <br />
           indicator
         </li>
@@ -9419,21 +9450,28 @@ exports[`Storyshots Navbar tabs with redux Globalpicture Navbar with state 1`] =
         <li
           className="item-7"
         >
-          Hover over a country
+          Hover over a 
+          country
           <br />
           to see data snapshot
         </li>
         <li
           className="item-8"
         >
-          Click a country to go
+          Click a 
+          country
+           to go
           <br />
-          to country profile
+          to 
+          country
+           profile
         </li>
         <li
           className="item-9"
         >
-          Scroll down to see country rankings
+          Scroll down to see 
+          country
+           rankings
           <br />
           <i
             aria-hidden="true"
@@ -9823,7 +9861,7 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Kenya 1`] = `
     </div>
   </div>
   <div
-    className="css-10ulgtr"
+    className="css-2tva4y"
   >
     <div
       className="css-8ys126"
@@ -9845,7 +9883,8 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Kenya 1`] = `
         >
           Compare the colour
           <br />
-          of each country
+          of each 
+          county
           <br />
           with the legend
           <span
@@ -9864,7 +9903,8 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Kenya 1`] = `
           <br />
           indicator the colour of each
           <br />
-          country will adapt to that
+          county
+           will adapt to that
           <br />
           indicator
         </li>
@@ -9907,21 +9947,28 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Kenya 1`] = `
         <li
           className="item-7"
         >
-          Hover over a country
+          Hover over a 
+          county
           <br />
           to see data snapshot
         </li>
         <li
           className="item-8"
         >
-          Click a country to go
+          Click a 
+          county
+           to go
           <br />
-          to country profile
+          to 
+          county
+           profile
         </li>
         <li
           className="item-9"
         >
-          Scroll down to see country rankings
+          Scroll down to see 
+          county
+           rankings
           <br />
           <i
             aria-hidden="true"
@@ -10532,7 +10579,7 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Uganda 1`] = `
     </div>
   </div>
   <div
-    className="css-10ulgtr"
+    className="css-2tva4y"
   >
     <div
       className="css-8ys126"
@@ -10554,7 +10601,8 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Uganda 1`] = `
         >
           Compare the colour
           <br />
-          of each country
+          of each 
+          district
           <br />
           with the legend
           <span
@@ -10573,7 +10621,8 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Uganda 1`] = `
           <br />
           indicator the colour of each
           <br />
-          country will adapt to that
+          district
+           will adapt to that
           <br />
           indicator
         </li>
@@ -10616,21 +10665,28 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Uganda 1`] = `
         <li
           className="item-7"
         >
-          Hover over a country
+          Hover over a 
+          district
           <br />
           to see data snapshot
         </li>
         <li
           className="item-8"
         >
-          Click a country to go
+          Click a 
+          district
+           to go
           <br />
-          to country profile
+          to 
+          district
+           profile
         </li>
         <li
           className="item-9"
         >
-          Scroll down to see country rankings
+          Scroll down to see 
+          district
+           rankings
           <br />
           <i
             aria-hidden="true"
@@ -12598,6 +12654,16 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
                         onClick={[Function]}
                       >
                         Ukraine
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country/uae"
+                        onClick={[Function]}
+                      >
+                        UAE
                       </a>
                     </li>
                     <li
@@ -14731,7 +14797,13 @@ exports[`Storyshots Tabs & Charts Government Finance ghana 1`] = `
 </div>
 `;
 
-exports[`Storyshots Tabs & Charts Inflows Vs Outflows 1`] = `
+exports[`Storyshots Tabs & Charts Inflows Vs Outflows Kenya 1`] = `
+<p>
+  Loading...
+</p>
+`;
+
+exports[`Storyshots Tabs & Charts Inflows Vs Outflows uganda 1`] = `
 <p>
   Loading...
 </p>
@@ -18389,6 +18461,16 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           className="not-active"
                         >
                           <a
+                            href="/country/uae"
+                            onClick={[Function]}
+                          >
+                            UAE
+                          </a>
+                        </li>
+                        <li
+                          className="not-active"
+                        >
+                          <a
                             href="/country/usa"
                             onClick={[Function]}
                           >
@@ -21878,6 +21960,16 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                             onClick={[Function]}
                           >
                             Ukraine
+                          </a>
+                        </li>
+                        <li
+                          className="not-active"
+                        >
+                          <a
+                            href="/country/uae"
+                            onClick={[Function]}
+                          >
+                            UAE
                           </a>
                         </li>
                         <li
@@ -25388,6 +25480,16 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           className="not-active"
                         >
                           <a
+                            href="/country/uae"
+                            onClick={[Function]}
+                          >
+                            UAE
+                          </a>
+                        </li>
+                        <li
+                          className="not-active"
+                        >
+                          <a
                             href="/country/usa"
                             onClick={[Function]}
                           >
@@ -28887,6 +28989,16 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                       className="not-active"
                     >
                       <a
+                        href="/country/uae"
+                        onClick={[Function]}
+                      >
+                        UAE
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
                         href="/country/usa"
                         onClick={[Function]}
                       >
@@ -31762,6 +31874,16 @@ exports[`Storyshots Templates Front Page 1`] = `
               className="not-active"
             >
               <a
+                href="/country/uae"
+                onClick={[Function]}
+              >
+                UAE
+              </a>
+            </li>
+            <li
+              className="not-active"
+            >
+              <a
                 href="/country/usa"
                 onClick={[Function]}
               >
@@ -32234,7 +32356,7 @@ exports[`Storyshots Templates Front Page 1`] = `
           </div>
         </div>
         <div
-          className="css-10ulgtr"
+          className="css-1byb50h"
         >
           <div
             className="css-8ys126"
@@ -32256,7 +32378,8 @@ exports[`Storyshots Templates Front Page 1`] = `
               >
                 Compare the colour
                 <br />
-                of each country
+                of each 
+                country
                 <br />
                 with the legend
                 <span
@@ -32275,7 +32398,8 @@ exports[`Storyshots Templates Front Page 1`] = `
                 <br />
                 indicator the colour of each
                 <br />
-                country will adapt to that
+                country
+                 will adapt to that
                 <br />
                 indicator
               </li>
@@ -32318,21 +32442,28 @@ exports[`Storyshots Templates Front Page 1`] = `
               <li
                 className="item-7"
               >
-                Hover over a country
+                Hover over a 
+                country
                 <br />
                 to see data snapshot
               </li>
               <li
                 className="item-8"
               >
-                Click a country to go
+                Click a 
+                country
+                 to go
                 <br />
-                to country profile
+                to 
+                country
+                 profile
               </li>
               <li
                 className="item-9"
               >
-                Scroll down to see country rankings
+                Scroll down to see 
+                country
+                 rankings
                 <br />
                 <i
                   aria-hidden="true"
@@ -34664,7 +34795,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.
+                      EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004. The map shows countries' number of appearances on the index since then.
                     </td>
                     <td
                       className=""
@@ -34725,7 +34856,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Countries susceptible to state failure risk elements based on twelve primary social, economic and political indicators. The Fragile States Index is produced by the Fund for Peace.
+                      The OECD Fragiliy Framework identifies countries are fragile or extremely fragile based on 50 indicators across five dimensions (economic, environmental, political, security and societal). It is part of the OECD report 'States of Fragility'.
                     </td>
                     <td
                       className=""
@@ -42873,7 +43004,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2006
                       </a>
                     </td>
                     <td
@@ -42923,7 +43054,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2007
                       </a>
                     </td>
                     <td
@@ -42973,7 +43104,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2008
                       </a>
                     </td>
                     <td
@@ -43023,7 +43154,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2009
                       </a>
                     </td>
                     <td
@@ -43073,7 +43204,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2010
                       </a>
                     </td>
                     <td
@@ -43123,7 +43254,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2011
                       </a>
                     </td>
                     <td
@@ -43173,7 +43304,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2012
                       </a>
                     </td>
                     <td
@@ -43223,7 +43354,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2013
                       </a>
                     </td>
                     <td
@@ -43273,7 +43404,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2014
                       </a>
                     </td>
                     <td
@@ -43323,7 +43454,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2015
                       </a>
                     </td>
                     <td
@@ -43373,7 +43504,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2015
                       </a>
                     </td>
                     <td
@@ -43473,7 +43604,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2015
                       </a>
                     </td>
                     <td
@@ -43523,7 +43654,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2015
                       </a>
                     </td>
                     <td
@@ -43573,7 +43704,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census and Kenya Integrated Household Budget Survey 2005/06, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2015
                       </a>
                     </td>
                     <td
@@ -43623,7 +43754,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2014
                       </a>
                     </td>
                     <td
@@ -43673,7 +43804,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                       <a
                         href={null}
                       >
-                        Kenya Population and Housing Census, 2009, Kenya National Bureau of Statistics
+                        The Socio-Economic Atlas of Kenya 2014
                       </a>
                     </td>
                     <td
@@ -50994,7 +51125,7 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
         </div>
       </div>
       <div
-        className="css-10ulgtr"
+        className="css-2tva4y"
       >
         <div
           className="css-8ys126"
@@ -51016,7 +51147,8 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
             >
               Compare the colour
               <br />
-              of each country
+              of each 
+              county
               <br />
               with the legend
               <span
@@ -51035,7 +51167,8 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
               <br />
               indicator the colour of each
               <br />
-              country will adapt to that
+              county
+               will adapt to that
               <br />
               indicator
             </li>
@@ -51078,21 +51211,28 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
             <li
               className="item-7"
             >
-              Hover over a country
+              Hover over a 
+              county
               <br />
               to see data snapshot
             </li>
             <li
               className="item-8"
             >
-              Click a country to go
+              Click a 
+              county
+               to go
               <br />
-              to country profile
+              to 
+              county
+               profile
             </li>
             <li
               className="item-9"
             >
-              Scroll down to see country rankings
+              Scroll down to see 
+              county
+               rankings
               <br />
               <i
                 aria-hidden="true"
@@ -52694,7 +52834,7 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
         </div>
       </div>
       <div
-        className="css-10ulgtr"
+        className="css-2tva4y"
       >
         <div
           className="css-8ys126"
@@ -52716,7 +52856,8 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
             >
               Compare the colour
               <br />
-              of each country
+              of each 
+              district
               <br />
               with the legend
               <span
@@ -52735,7 +52876,8 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
               <br />
               indicator the colour of each
               <br />
-              country will adapt to that
+              district
+               will adapt to that
               <br />
               indicator
             </li>
@@ -52778,21 +52920,28 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
             <li
               className="item-7"
             >
-              Hover over a country
+              Hover over a 
+              district
               <br />
               to see data snapshot
             </li>
             <li
               className="item-8"
             >
-              Click a country to go
+              Click a 
+              district
+               to go
               <br />
-              to country profile
+              to 
+              district
+               profile
             </li>
             <li
               className="item-9"
             >
-              Scroll down to see country rankings
+              Scroll down to see 
+              district
+               rankings
               <br />
               <i
                 aria-hidden="true"
@@ -54754,7 +54903,7 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
         </span>
       </button>
       <div
-        className="css-10ulgtr"
+        className="css-2ts4f7"
       >
         <div
           className="css-8ys126"
@@ -55862,15 +56011,15 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                 className="red"
               >
                  
-                2013
+                2015
               </span>
                US$ 
-              73.1bn
+              71.5bn
             </h1>
             <h5
               className="ui header"
             >
-              Total other official flows (total gross disbursements, 2012 prices)
+              Total other official flows (non export credit) (total gross disbursements, 2015 prices)
             </h5>
             <button
               className="ui button"
@@ -55907,7 +56056,7 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
         </span>
       </button>
       <div
-        className="css-10ulgtr"
+        className="css-2ts4f7"
       >
         <div
           className="css-8ys126"
@@ -57228,133 +57377,9 @@ exports[`Storyshots Tooltip Tooltip Test 1`] = `
 </span>
 `;
 
-exports[`Storyshots Tour Global Viz tour 1`] = `
-<div
-  className="css-10ulgtr"
->
-  <div
-    className="css-8ys126"
-  >
-    <a
-      className="css-v1w6d2"
-    >
-      <i
-        aria-hidden="true"
-        className="close icon"
-        onClick={[Function]}
-      />
-    </a>
-    <ul
-      className="css-1l3cw6m"
-    >
-      <li
-        className="item-1"
-      >
-        Compare the colour
-        <br />
-        of each country
-        <br />
-        with the legend
-        <span
-          className="css-1k5wtej tour-item-pointer"
-        >
-          <i
-            aria-hidden="true"
-            className="arrow down icon"
-          />
-        </span>
-      </li>
-      <li
-        className="item-2"
-      >
-        As you change theme and
-        <br />
-        indicator the colour of each
-        <br />
-        country will adapt to that
-        <br />
-        indicator
-      </li>
-      <li
-        className="item-3"
-      >
-        <i
-          aria-hidden="true"
-          className="arrow left icon"
-        />
-         Change theme
-      </li>
-      <li
-        className="item-4"
-      >
-        Change indicator 
-        <i
-          aria-hidden="true"
-          className="arrow right icon"
-        />
-      </li>
-      <li
-        className="item-5"
-      >
-        <i
-          aria-hidden="true"
-          className="arrow left icon"
-        />
-         Find source information
-      </li>
-      <li
-        className="item-6"
-      >
-        Zoom in and out 
-        <i
-          aria-hidden="true"
-          className="arrow up icon"
-        />
-      </li>
-      <li
-        className="item-7"
-      >
-        Hover over a country
-        <br />
-        to see data snapshot
-      </li>
-      <li
-        className="item-8"
-      >
-        Click a country to go
-        <br />
-        to country profile
-      </li>
-      <li
-        className="item-9"
-      >
-        Scroll down to see country rankings
-        <br />
-        <i
-          aria-hidden="true"
-          className="arrow down icon"
-        />
-      </li>
-      <li
-        className="item-10"
-      >
-        Click Share this chart view below to
-        <br />
-        to share the chart youve created
-        <br />
-        <i
-          aria-hidden="true"
-          className="arrow down icon"
-        />
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Tour Government tour 1`] = `
 <div
-  className="css-p0na0x"
+  className="css-xy01c"
 >
   <div
     className="css-8ys126"
@@ -57501,151 +57526,6 @@ exports[`Storyshots Tour Government tour 1`] = `
 </div>
 `;
 
-exports[`Storyshots Tour UnbundlindAid tour 1`] = `
-<div
-  className="css-10ulgtr"
->
-  <div
-    className="css-8ys126"
-  >
-    <a
-      className="css-v1w6d2"
-    >
-      <i
-        aria-hidden="true"
-        className="close icon"
-        onClick={[Function]}
-      />
-    </a>
-    <ul
-      className="css-410q1r"
-    >
-      <li
-        className="item-1"
-      >
-        <b>
-          How to read this
-          <br />
-          visualistion
-        </b>
-        <br />
-        Each cell in the tree map
-        <br />
-        is sized by the volume of
-        <br />
-         it represents. The
-        <br />
-        total amount of 
-        <br />
-        being viewed at any time
-        <br />
-        is given above the top left
-        <br />
-        corner of the tree map
-      </li>
-      <li
-        className="item-2 item-frame"
-      />
-      <li
-        className="item-3 text-right"
-      >
-        This sentence describes what the
-        <br />
-        tree map is showing. The
-        <br />
-        dimension in bold is the one
-        <br />
-        youre currently viewing
-        <i
-          aria-hidden="true"
-          className="arrow right icon"
-        />
-      </li>
-      <li
-        className="item-4 text-center"
-      >
-        Drag and drop dimensions to view in a customised order
-        <span
-          className="css-1k5wtej tour-item-pointer"
-        >
-          <i
-            aria-hidden="true"
-            className="arrow left icon"
-          />
-          <i
-            aria-hidden="true"
-            className="arrow right icon"
-          />
-        </span>
-      </li>
-      <li
-        className="item-5 text-center"
-      >
-        <i
-          aria-hidden="true"
-          className="arrow up icon"
-        />
-        <br />
-        Change the
-        <br />
-        year here
-      </li>
-      <li
-        className="item-6"
-      >
-        <span
-          className="css-1k5wtej tour-item-pointer"
-        >
-          <i
-            aria-hidden="true"
-            className="arrow up icon"
-          />
-        </span>
-        Click through the cells in the
-        <br />
-        tree map to drill down into the
-        <br />
-        details, or select a dimension
-        <br />
-        above to open a drop-down menu
-      </li>
-      <li
-        className="item-7 text-right"
-      >
-        <i
-          aria-hidden="true"
-          className="arrow up icon"
-        />
-        <br />
-        Click 
-        <b>
-          Compare
-        </b>
-         to view two
-        <br />
-        tree maps side by side
-      </li>
-      <li
-        className="item-8 text-center"
-      >
-        Click 
-        <b>
-          Share this chart
-        </b>
-         below to
-        <br />
-        share the chart you’ve created
-        <br />
-        <i
-          aria-hidden="true"
-          className="arrow down icon"
-        />
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Unbundling Aid Chart 1`] = `
 <div
   className="css-13azwyo"
@@ -57715,7 +57595,7 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
     </span>
   </button>
   <div
-    className="css-10ulgtr"
+    className="css-2ts4f7"
   >
     <div
       className="css-8ys126"
@@ -57876,9 +57756,7 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
     </span>
     <span
       className="css-chu540"
-    >
-      
-    </span>
+    />
   </span>
   <div
     className="css-1ik49x5"
@@ -57896,6 +57774,7 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
     <select
       className="css-14opy7r"
       onChange={[Function]}
+      onMouseDown={[Function]}
       value={undefined}
     >
       <option
