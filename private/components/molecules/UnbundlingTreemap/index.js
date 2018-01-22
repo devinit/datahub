@@ -147,7 +147,7 @@ class UnbundlingTreemap extends React.Component {
         ...args
       },
     };
-    console.log('parameters', parameters);
+    // console.log('parameters', parameters);
     this.props.refetch(parameters);
   }
 
@@ -166,7 +166,8 @@ class UnbundlingTreemap extends React.Component {
         {this.props.error ?
           <p>
             An error occured while fetching required data,{' '}
-            please change your select options or refresh page
+            please change your select options or refresh page <br>
+            error: {this.props.error }
           </p>
           :
           <Container>

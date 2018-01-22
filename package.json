@@ -106,7 +106,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "flow-bin": "^0.63.1",
+    "flow-bin": "^0.59.0",
     "flow-remove-types": "^1.2.1",
     "git-pre-hooks": "^1.2.0",
     "gulp": "^3.9.1",
