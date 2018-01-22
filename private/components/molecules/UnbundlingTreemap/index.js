@@ -147,6 +147,7 @@ class UnbundlingTreemap extends React.Component {
         ...args
       },
     };
+    console.log('parameters', parameters);
     this.props.refetch(parameters);
   }
 

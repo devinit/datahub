@@ -41,7 +41,7 @@ const config = {
 const build = () => {
   webpack(config, (err, stats) => {
     if (err || stats.hasErrors()) {
-      console.error(err);
+      console.error('error: ', err);
     }
   });
 };
