@@ -1,6 +1,6 @@
 {
   "name": "datahub",
-  "version": "2.0.39",
+  "version": "2.0.40",
   "config": {
     "api": "http://212.111.41.68:9090/graphql",
     "old_datahub": "http://212.111.41.68:8888"
@@ -124,10 +124,10 @@
     "webpack-bundle-analyzer": "^2.9.0"
   },
   "git-pre-hooks": {
-		"pre-push": [
-			"npm run test -- -u"
-		]
-	},
+    "pre-push": [
+      "npm run test -- -u"
+    ]
+  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "<rootDir>/private/lib/jest.config.js",
