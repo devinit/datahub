@@ -1,6 +1,7 @@
 language: node_js
 node_js:
 - v9
+- v8
 install:
 - npm install --ignore-scripts
 - npm install -g codecov
