@@ -1,0 +1,8 @@
+query DifferentProvidersDifferentPriotities {
+  bubbleChartOptions {
+    indicators {
+      id
+      name
+    }
+  }
+}

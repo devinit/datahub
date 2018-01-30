@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pull api data tests should return countries used in country search input 1`] = `
+"Object {
+  \\"countryType\\": \\"recipient\\",
+  \\"hasPDF\\": true,
+  \\"has_domestic_data\\": \\"1\\",
+  \\"id\\": \\"AF\\",
+  \\"name\\": \\"Afghanistan\\",
+  \\"slug\\": \\"afghanistan\\",
+}"
+`;

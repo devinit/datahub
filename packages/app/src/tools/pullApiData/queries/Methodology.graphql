@@ -1,0 +1,14 @@
+query Methodology($moduleName: String!) {
+  methodology(moduleName: $moduleName){
+    name
+    description
+    methodology
+    uom
+    csv
+    zip
+    source {
+      name
+      link
+    }
+  }
+}

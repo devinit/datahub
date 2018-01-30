@@ -1,0 +1,10 @@
+query UnbundlingAidData($args: UnbundlingAidQuery) {
+  bundles: unbundlingAidData(args: $args) {
+    uid,
+    id,
+    name,
+    value,
+    color,
+  }
+
+}
