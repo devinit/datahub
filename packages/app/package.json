@@ -1,6 +1,7 @@
 {
-  "name": "datahub",
+  "name": "@devinit/dh",
   "version": "2.0.36",
+  "private": true,
   "config": {
     "api": "http://localhost:3000/graphql",
     "old_datahub": "http://212.111.41.68:8888"
