@@ -2,7 +2,7 @@
   "name": "datahub",
   "version": "2.0.36",
   "config": {
-    "api": "http://212.111.41.68:3000/graphql",
+    "api": "http://localhost:3000/graphql",
     "old_datahub": "http://212.111.41.68:8888"
   },
   "repository": {
@@ -48,7 +48,7 @@
     "graphql": "^0.11.1"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.23",
+    "@devinit/charts": "^1.6.47",
     "apollo-cache-inmemory": "^1.0.0",
     "apollo-client": "^2.2.0",
     "apollo-fetch": "^0.7.0",
@@ -65,8 +65,8 @@
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.3",
     "lru-cache": "^4.1.1",
-    "next": "^4.2.3",
     "mapbox-gl": "^0.43.0",
+    "next": "^4.2.3",
     "prettier": "^1.7.4",
     "ramda": "^0.25.0",
     "react": "^16.0.0",
