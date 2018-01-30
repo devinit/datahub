@@ -34,12 +34,15 @@
     "dependencies": {
       "@devinit/charts": "^1.6.47",
       "glamor": "^2.20.40",
+      "fs-extra": "^5.0.0",
       "glamorous": "^4.11.0",
       "ramda": "^0.25.0",
       "react": "^16.2.0",
       "react-dom": "^16.2.0"
     },
     "devDependencies": {
+      "css-to-js-object": "0.0.3",
+      "csso": "^3.1.1",
       "@storybook/addon-actions": "3.3.10",
       "@storybook/addon-links": "3.3.10",
       "@storybook/react": "3.3.10",
@@ -48,6 +51,8 @@
       "@types/storybook__react": "3.0.6",
       "concurrently": "3.5.1",
       "css-loader": "0.28.9",
+      "usus": "^1.6.0",
+      "uglifyjs-webpack-plugin": "^1.1.6",
       "file-loader": "1.1.6",
       "less": "2.7.3",
       "less-plugin-clean-css": "1.5.1",

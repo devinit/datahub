@@ -5,7 +5,14 @@
 	},
 	"devDependencies": {
 		"git-pre-hooks": "1.2.0",
-		"lerna": "2.8.0"
+		"pretty-format": "^22.0.6",
+		"lerna": "2.8.0",
+		"jest": "^22.0.6",
+		"tslint": "5.9.1",
+		"jest-cli": "^22.0.6",
+		"webpack": "^3.10.0",
+		"tslint-react": "3.4.0",
+		"typescript": "2.6.2"
 	},
 	"git-pre-hooks": {
 		"pre-push": [

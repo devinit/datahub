@@ -2,29 +2,12 @@ language: node_js
 node_js:
 - v9
 install:
-- npm install --ignore-scripts
-- npm install -g codecov
+- npm install
+- npm install -g lerna yarn
 script:
-- npm run pull
-- npm run precache
-- npm run vendor
-- npm run build-workers
-- npm run build-fragment
-- npm run build
-- npm run coverage
-- mkdir build && mv .next build/ && mv server.js build/ && mv package.json build/ && mv private build/ && mv Dockerfile build/ && mv public build/ && mv nginx build/ && mv docker-compose.yml build/ && mv process.yml build/
-- zip -q -r build.zip build
-deploy:
-  provider: releases
-  api_key:
-    secure: bszwAE9uRsIRqH080Ca7PWi+CH0VzLxkFVA/7ERcVFNau8mhMkhjR6oy/7zSXFtNIIKuVnQbJGfL7dTHpDB48c9Qp6TSJz4fnl2V9tuPfQzq5ytdtm51aXsP7BwWRwDfQ9RUgnP0O7vCYs4CbgJFmsJSHBlSkYZDpTQGpzgN6vIIlNtHvlihD93UivTnyiZra09vchzeAMjbc6rVUhwV9jdWDPGWM9khvl3pRYt2dgzRZWhS5SwO9kK3Y/a/AOAlXL7/lZGHA1J0b4sqMnZHNhEG/rL44h6LQuyrJD7lrLUhwlUKVjDksXLP2p6uAQvQWrRxsDa7nsThjP8SWV3pe4o1Hj/6DIhgd7vmVVWgyvVEJlxrqW43yfwp7BfJ/RL+qnFyYCIQ6v8hxMlNEBTd+wNJSvyaI9oNZbmyAJ6XbGPznX9TNdhqFgifZSH57s1iiXXLyo5q/70T2a5qoVPgNK8l/tzy2Kh0ohgnvcg4J5L0/XDVGIXmjCKsf9PDZZMKOMfvcEr369zKEzlGp5ZOGN0zXfQHm44Di1+Wgyd1IlZ0wBGycbYa56Ab5xtfVU4ZrzWAXJMrlRrHvTNnnlUJRCGxsTnKEcNiue3hgXu4rgDJzZ+QSCWTr/mWfJsmejl3iMExERSbg1RwcYCafbNpERNADILmHQfJjJgKQPk2duk=
-  file_glob: true
-  file: 'build.zip'
-  skip_cleanup: true
-  on:
-    tags: true
-    repo: devinit/datahub
-    branch: 'master'
-env:
-  matrix:
-    secure: uI9UmplGKeLQLFYSE3RnXWmrYnyZ4TCEiVjnF9Z7SZL4QDzYnWI2aa4YUQHX1d6f/lb9aJmX/ENBLRcgn1CiumqMq20iaF2gZJDJdYSqMC4WKvFhg66B3gpCBnTBP6inW7QzA+0OZzvdLn0gxOVHCGoZsgchf6NJz/bO3FDMcviTRqPVB0hARfxHacZ59Q//xIMRJOqeOS9IV1/SoR+6KCrx0sAxvyKBXUZfErZs4bNSdjp3ote+yS1rMJSMjS9MQtJlVTqHSF/AyL7iIdRzxGLKlOeF79QU/rNVn7UCZhonHZfLNi7uHcNVkpv4QySWCRopCEXDom0s+WKdV3loB3C2xs2/6LlUeuT6XRZgKd4piaey8IO5UoJ/qeMkkNk53nCWWF2MkwAQd6wd2CJKxy+5Z+2S8vE0S+hNXTaR6DJqboVb1LbWQFPrw3QqblAHABcvphvEsWdlwQNDIF5+Q/vjGIJyYSPhDHvsfP8GU3CREMZqqwd8JeUAkaWE9InfJePysCtq8LwD9dHZZO2UEtMY2uC94pzJhuAPv++NzALM2k2o23Ha2eQ5U1ddxCwrD0p/uUnsMM4HRUaIYGcHxu9fpkKeA2cWVFP9fIkPRNQzU+E3cF5BKwdEpUZituVNS2ywoNkGQgMToa4V2S/JhyOVNXK/FutMAtwrciUkslc=
+- lerna bootstrap
+- lerna run tsc
+- lerna run lint
+cache:
+- node_modules
+sudo: false
