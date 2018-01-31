@@ -10,7 +10,7 @@ import SelectedCountries from 'components/atoms/BubbleChartSelectedCountries';
 import BubbleChartPrint from 'components/atoms/BubbleChartPrint';
 import BubbleChartAxisSettings from 'components/atoms/BubbleChartAxisSettings';
 import Slider from 'components/molecules/YearSlider';
-import { red } from 'components/theme/semantic';
+import { red } from '../../theme/semantic';
 import ScatterChart from 'components/atoms/ScatterChart';
 
 const ChartContainer = glamorous.div({

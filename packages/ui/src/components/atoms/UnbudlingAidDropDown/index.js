@@ -2,7 +2,7 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import { white, midWhite, black } from 'components/theme/semantic';
+import { white, midWhite, black } from '../../theme/semantic';
 
 type Props = {
   visible: any,

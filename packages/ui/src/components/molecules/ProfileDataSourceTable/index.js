@@ -4,7 +4,7 @@ import { Grid, Container, Table, Icon } from 'semantic-ui-react';
 import glamorous, {P} from 'glamorous';
 import { LightBg } from 'components/atoms/Backgrounds';
 import ToolTip from 'components/molecules/ToolTip';
-import { white } from 'components/theme/semantic';
+import { white } from '../../theme/semantic';
 import { SectionHeader } from 'components/atoms/Header';
 // googleAnalytics tracking
 

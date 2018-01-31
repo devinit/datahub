@@ -2,8 +2,8 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import { white, lightBlack } from 'components/theme/semantic';
-import { big } from 'components/theme';
+import { white, lightBlack } from '../../theme/semantic';
+import { big } from '../../theme';
 
 type Props = {
   children: any,

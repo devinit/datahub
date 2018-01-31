@@ -3,7 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import type { Element } from 'react';
 import { Container, Icon } from 'semantic-ui-react';
-import { white, redHeaderColor, black } from 'components/theme/semantic';
+import { white, redHeaderColor, black } from '../../theme/semantic';
 import Link from 'next/link';
 import { NavLink } from '../Link';
 

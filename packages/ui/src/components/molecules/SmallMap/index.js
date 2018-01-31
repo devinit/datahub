@@ -3,7 +3,7 @@ import React from 'react';
 import BaseMap from 'components/atoms/BaseMap';
 import type { PaintMap, Meta, Viewport } from 'components/atoms/BaseMap/types';
 import configs from 'components/molecules/Map/config';
-import { white } from 'components/theme/semantic';
+import { white } from '../../theme/semantic';
 
 type Props = {
   slug: string,

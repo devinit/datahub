@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import BaseMap, {indicatorsWith0dp} from 'components/atoms/BaseMap';
 import type { MapData, PaintMap, Meta } from 'components/atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
-import { grey } from 'components/theme/semantic';
+import { grey } from '../../theme/semantic';
 import type { LegendField } from 'components/molecules/MapLegend';
 import Legend from 'components/molecules/MapLegend';
 import YearSlider from 'components/molecules/YearSlider';

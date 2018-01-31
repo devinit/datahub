@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react';
 import Pane from 'components/atoms/MobileMenuPane';
 import React from 'react';
 import Link from 'next/link';
-import { lightGrey, black } from 'components/theme/semantic';
+import { lightGrey, black } from '../../theme/semantic';
 
 const SubMenuContainer = glamorous.ul({
   listStyleType: 'none',

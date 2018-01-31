@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
-import { white, redHeaderColor } from 'components/theme/semantic';
+import { white, redHeaderColor } from '../../theme/semantic';
 import MenuContainer from 'components/atoms/MobileMenuContainer';
-import {mediaQueries} from 'components/theme';
+import {mediaQueries} from '../../theme';
 import MenuItem from 'components/atoms/MobileMenuItem';
 
 export const ToggleButton = glamorous.button({

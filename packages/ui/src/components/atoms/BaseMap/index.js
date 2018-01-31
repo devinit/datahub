@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
-import { lightGrey, seaBackground, orange, red } from 'components/theme/semantic';
+import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import type {Route} from 'lib/utils';
 import {approximate, countryOrDistrictLink} from 'lib/utils';
 import LoadingBar from 'components/molecules/LoadingBar';

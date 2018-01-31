@@ -10,7 +10,7 @@ import UnbundlingInternationalResources, {
 } from 'components/organisms/UnbundlingInternationalResources';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from 'lib/utils/constants';
-import { red } from 'components/theme/semantic';
+import { red } from '../../theme/semantic';
 import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';

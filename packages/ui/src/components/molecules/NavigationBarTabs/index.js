@@ -6,7 +6,7 @@ import MapVisualizationTour from 'components/molecules/MapTour';
 import TourContainer from 'components/molecules/TourContainer';
 import type { LoadingStatus } from 'lib/actions';
 import LoadingBar from 'components/molecules/LoadingBar';
-import { lightBlack, white, lighterGrey } from 'components/theme/semantic';
+import { lightBlack, white, lighterGrey } from '../../theme/semantic';
 import NavigationBarTabsContainer from 'components/molecules/NavigationBarTabsItems';
 import type {Option} from 'components/molecules/NavigationBarTabsItems';
 

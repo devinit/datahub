@@ -10,7 +10,7 @@ import Chart from 'components/atoms/Chart';
 import {addMinAndMaxYear} from 'lib/utils';
 import type {PageUnit} from 'components/organisms/PagesData';
 import {getPageUnitById} from 'components/organisms/PagesData';
-import { red} from 'components/theme/semantic';
+import { red} from '../../theme/semantic';
 
 type Props = {
   countryType: string,

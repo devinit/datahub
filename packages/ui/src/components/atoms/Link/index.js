@@ -1,7 +1,7 @@
 import glamorous from 'glamorous';
-import { white, lighterGrey, grey, black, red} from 'components/theme/semantic';
+import { white, lighterGrey, grey, black, red} from '../../theme/semantic';
 // import Link from 'next/link';
-import { medium } from 'components/theme';
+import { medium } from '../../theme';
 
 export const FooterLink = glamorous.a({
   fontSize: medium,

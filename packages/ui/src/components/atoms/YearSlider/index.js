@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { white, red, lighterGrey, grey, lightGrey} from 'components/theme/semantic';
+import { white, red, lighterGrey, grey, lightGrey} from '../../theme/semantic';
 
 export const Slider = glamorous.div({
   display: 'inline-block',

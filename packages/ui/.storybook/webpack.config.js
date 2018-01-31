@@ -4,18 +4,16 @@ const webpack = require('webpack');
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
 
-const moduleResolver = {
-  resolve: {
-    modules: ['node_modules',
-      path.resolve(__dirname, 'private'),
-      path.resolve(__dirname, 'public/semantic'),
-      path.resolve(__dirname, 'public/img')
-    ],
-    alias: {
-      'package.json': './package.json'
-    }
+const newRules = [
+  {
+      test: /\.tsx?$/,
+      loader: 'ts-loader',
+      include: [
+          SRC_PATH,
+      ]
   }
-};
+]
+const newExtensions =  ['.ts', '.tsx', '.js', '.jsx'];
 
 const newPlugins = [
   new webpack.DefinePlugin({
@@ -24,10 +22,13 @@ const newPlugins = [
   })
 ];
 
+
 module.exports = (config, env) => {
   const webpack = genDefaultConfig(config, env);
   const plugins = webpack.plugins.concat(newPlugins);
-  return Object.assign(webpack, moduleResolver, {
-    plugins
-  });
+  const rules = webpack.module.rules.concat(newRules);
+  const module = Object.assign(webpack.module, {rules})
+  const extensions = webpack.resolve.extensions.concat(newExtensions);
+  const resolve = Object.assign(webpack.resolve, {extensions, enforceExtension: false})
+  return Object.assign(webpack, {resolve}, { module }), {plugins});
 };

@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { red, lightBlack } from 'components/theme/semantic';
+import { red, lightBlack } from '../../theme/semantic';
 
 export const Lead = glamorous.p({
   fontSize: '1.6em',

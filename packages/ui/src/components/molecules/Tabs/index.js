@@ -1,8 +1,8 @@
 // @flow
 import React, {Component} from 'react';
 import glamorous from 'glamorous';
-import { medium } from 'components/theme';
-import { lightGrey, lighterGrey } from 'components/theme/semantic';
+import { medium } from '../../theme';
+import { lightGrey, lighterGrey } from '../../theme/semantic';
 import { Container } from 'semantic-ui-react';
 
 type Props = {

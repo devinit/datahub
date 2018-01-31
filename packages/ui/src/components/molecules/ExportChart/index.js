@@ -1,7 +1,7 @@
 // @flow
 import { Grid, Button, Icon } from 'semantic-ui-react';
 import {printDiv as print} from 'lib/utils';
-// import { lighterGrey} from 'components/theme/semantic';
+// import { lighterGrey} from '../../theme/semantic';
 import React from 'react';
 import glamorous from 'glamorous';
 import ChartShare, {NoBackground} from '../ChartShare';

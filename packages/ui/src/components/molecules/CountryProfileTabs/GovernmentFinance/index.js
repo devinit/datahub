@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';
-import {small} from 'components/theme';
+import {small} from '../../theme';
 import Legend from 'components/atoms/Legend';
 import Chart from 'components/atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';

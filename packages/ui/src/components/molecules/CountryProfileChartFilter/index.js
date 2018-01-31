@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { white, lightBlack } from 'components/theme/semantic';
+import { white, lightBlack } from '../../theme/semantic';
 
 const Wrapper = glamorous.div({
   paddingTop: '1em',

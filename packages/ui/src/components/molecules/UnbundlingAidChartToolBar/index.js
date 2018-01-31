@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { lighterGrey } from 'components/theme/semantic';
+import { lighterGrey } from '../../theme/semantic';
 import { Container, Grid } from 'semantic-ui-react';
 import type {Value} from 'components/molecules/UnbundlingAidToolBarItem';
 import ToolBar from 'components/molecules/UnbundlingAidToolBarItem';

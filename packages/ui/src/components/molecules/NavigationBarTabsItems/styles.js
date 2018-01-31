@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { lightBlack, white } from 'components/theme/semantic';
+import { lightBlack, white } from '../../theme/semantic';
 
 export const SelectWrapper = glamorous.div({
   display: 'inline-block',

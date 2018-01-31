@@ -1,7 +1,7 @@
 // @flow
 import glamorous from 'glamorous';
-import { white } from 'components/theme/semantic';
-import {mediaQueries} from 'components/theme';
+import { white } from '../../theme/semantic';
+import {mediaQueries} from '../../theme';
 import MenuItem from 'components/atoms/DesktopMenuItem';
 import React from 'react';
 

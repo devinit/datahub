@@ -33,10 +33,11 @@
     "@devinit/charts": "^1.6.47",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
-    "semantic-ui-react": "^0.77.2",
+    "mapbox-gl": "^0.43.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "semantic-ui-react": "^0.77.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.3.10",

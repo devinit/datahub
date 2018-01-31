@@ -3,7 +3,7 @@ import {Container, Grid} from 'semantic-ui-react';
 import React from 'react';
 import Chart from 'components/atoms/Chart';
 import {Span} from 'glamorous';
-import {small} from 'components/theme';
+import {small} from '../../theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from 'components/atoms/TabsText';
 import {NoData, DONOR} from 'lib/utils/constants';
 import TabsToolTip from 'components/molecules/TabsToolTip';

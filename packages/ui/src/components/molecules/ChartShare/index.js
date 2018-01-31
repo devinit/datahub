@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
-import { white, black, lightSecondaryColor} from 'components/theme/semantic';
+import { white, black, lightSecondaryColor} from '../../theme/semantic';
 import {getShortURL} from 'lib/utils';
 import glamorous, { Div, Span } from 'glamorous';
 

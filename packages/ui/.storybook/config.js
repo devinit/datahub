@@ -1,8 +1,8 @@
 import { configure } from '@storybook/react';
-import Router from 'next/router'
-import 'semantic.min.css';
-import '../../public/css/di-charts.min.css';
-import '../../public/css/mapbox-gl.min.css';
+// import Router from 'next/router'
+import '../static/semantic.min.css';
+import '../static/di-charts.min.css';
+import '../static/mapbox-gl.min.css';
 
 const req = require.context('../components', true, /.stories.js$/);
 

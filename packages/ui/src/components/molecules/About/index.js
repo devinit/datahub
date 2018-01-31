@@ -1,7 +1,7 @@
 import React from 'react';
 import { Div, P } from 'glamorous';
 import { SectionHeader } from 'components/atoms/Header';
-import { red, white } from 'components/theme/semantic';
+import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import Router from 'next/router';
 import { LightBg, DarkBg } from 'components/atoms/Backgrounds';

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Div } from 'glamorous';
-import { lighterGrey } from 'components/theme/semantic';
+import { lighterGrey } from '../../theme/semantic';
 import LoadingBar from 'components/molecules/LoadingBar';
 
 type Props = {

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Div, Span, H4, Img, P} from 'glamorous';
 import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
-import { red } from 'components/theme/semantic';
+import { red } from '../../theme/semantic';
 import { Lead } from 'components/atoms/Header';
 import { BodyLink } from 'components/atoms/Link';
 import ProfileSocialMedia from 'components/molecules/ProfileSocialMedia';

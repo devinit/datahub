@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { lightGrey, seaBackground, white } from 'components/theme/semantic';
+import { lightGrey, seaBackground, white } from '../../theme/semantic';
 
 export const Container = glamorous.div({
   width: '100%',

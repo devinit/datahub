@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { white, red } from 'components/theme/semantic';
+import { white, red } from '../../theme/semantic';
 import { Container } from 'semantic-ui-react';
 import Logo from 'components/atoms/Logo';
 import DesktopMenu from 'components/molecules/DesktopMenu';

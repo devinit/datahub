@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import {lighterGrey, lightGrey } from 'components/theme/semantic';
+import {lighterGrey, lightGrey } from '../../theme/semantic';
 import Select from 'components/molecules/UnbundlingAidSelect';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 

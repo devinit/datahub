@@ -2,7 +2,7 @@
 import React from 'react';
 import { Header, Button, Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import { red } from 'components/theme/semantic';
+import { red } from '../../theme/semantic';
 
 // type Props = {
 //   onChange?: (value: string | void) => void,

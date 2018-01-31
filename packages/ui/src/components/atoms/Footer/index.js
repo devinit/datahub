@@ -1,7 +1,7 @@
 // TODO:  Move some of the container like atoms into the container atom and
 // just compose them from base containers
 import glamorous from 'glamorous';
-import { white, red, black } from 'components/theme/semantic';
+import { white, red, black } from '../../theme/semantic';
 
 export const FooterDiv = glamorous.div({
   display: 'flex',

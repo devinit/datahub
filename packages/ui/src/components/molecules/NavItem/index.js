@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { A } from 'glamorous';
-import { small } from 'components/theme';
+import { small } from '../../theme';
 
 type Props = {
   path: string,

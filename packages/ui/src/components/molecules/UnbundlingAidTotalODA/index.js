@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { white, primaryColor, black } from 'components/theme/semantic';
+import { white, primaryColor, black } from '../../theme/semantic';
 import { Header, Button } from 'semantic-ui-react';
 
 type Props = {

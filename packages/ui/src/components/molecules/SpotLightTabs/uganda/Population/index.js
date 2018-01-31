@@ -3,7 +3,7 @@
 import React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
 import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from 'components/atoms/TabsText';
-import { red } from 'components/theme/semantic';
+import { red } from '../../theme/semantic';
 import { Div, P} from 'glamorous';
 import TabsToolTip from 'components/molecules/TabsToolTip';
 import { NoData } from 'lib/utils/constants';

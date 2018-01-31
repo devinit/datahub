@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import glamorous, {Span} from 'glamorous';
-import { massive } from 'components/theme';
-import { red, grey, blue} from 'components/theme/semantic';
+import { massive } from '../../theme';
+import { red, grey, blue} from '../../theme/semantic';
 
 export const TabsP = glamorous.p({
   fontSize: massive,
