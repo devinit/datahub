@@ -4,10 +4,5 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 
 
-# DataHub - Next
 
-This is just primarily the frontend part of the DataHub, to keep things modular the backend will be in a separate repo.
-
-## How to use
-
-Start of refactor with lerna & typescript
+- Start of refactor with lerna & typescript
