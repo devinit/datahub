@@ -1,0 +1,31 @@
+{
+    "name": "@devinit/dh-tools",
+    "version": "1.0.0",
+    "description": "for datahub general purpose tools",
+    "private": true,
+    "main": "lib/index.js",
+    "scripts": {
+      "start": "tsc && lib/index.js",
+      "patch": "release-it -i patch -n",
+      "feature": "release-it -i minor -n",
+      "breaking": "release-it -i major -n",
+      "build-storybook": "build-storybook"
+    },
+    "keywords": [
+      "tools", "datahub"
+    ],
+    "author": "epicallan.al@gmail.com",
+    "license": "ISC",
+    "publishConfig": {
+      "access": "public"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/devinit/datahub.git"
+    },
+    "dependencies": {
+      "fs-extra": "^5.0.0",
+      "ramda": "^0.25.0"
+    }
+  }
+  
