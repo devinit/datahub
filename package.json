@@ -45,7 +45,7 @@
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.47",
+    "@devinit/charts": "^1.6.48",
     "apollo-cache-inmemory": "^1.0.0",
     "apollo-client": "^2.2.0",
     "apollo-fetch": "^0.7.0",
