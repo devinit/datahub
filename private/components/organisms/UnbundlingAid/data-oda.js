@@ -360,21 +360,7 @@ module.exports = {
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' }
     ],
-    years: [
-      2018,
-      2017,
-      2016,
-      2015,
-      2014,
-      2013,
-      2012,
-      2011,
-      2010,
-      2009,
-      2008,
-      2007,
-      2006
-    ]
+    years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2018, total: 'No data' }
+  yearTotal: { year: 2016, total: '181.1bn' }
 };
