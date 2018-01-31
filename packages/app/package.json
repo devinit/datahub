@@ -72,12 +72,6 @@
     "semantic-ui-react": "^0.77.2"
   },
   "devDependencies": {
-    "@storybook/addon-storyshots": "^3.3.10",
-    "@storybook/react": "^3.3.10",
-    "enzyme": "^3.1.1",
-    "enzyme-adapter-react-16": "^1.0.4",
-    "react-test-renderer": "^16.0.0",
-    "concurrently": "3.5.1",
     "usus": "^1.6.0",
     "webpack-bundle-analyzer": "^2.9.0"
   },
