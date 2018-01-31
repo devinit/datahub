@@ -6,3 +6,7 @@
 
 
 - Start of refactor with lerna & typescript
+
+TODO:
+
+- Make tsconfigs & tslints shareable

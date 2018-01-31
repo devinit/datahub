@@ -120,6 +120,9 @@ class Chart extends React.Component {
 
   render() {
     /* eslint-disable no-nested-ternary */
+    const startYear = this.props.aidType === 'oda' ? dataODA.yearTotal.year : dataOOF.yearTotal.year;
+    this.props = {...this.props, startYear};
+    console.log('start year', startYear);
     return (
       <Div position="relative">
         {
@@ -137,7 +140,7 @@ class Chart extends React.Component {
                     <WithData compact {...this.props} />
                   </Grid.Column>
                   <Grid.Column width={8} style={{ padding: 0}}>
-                    <WithData compact {...this.props} />
+                    <WithData compact {...this.props}  />
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
