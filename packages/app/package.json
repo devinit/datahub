@@ -45,9 +45,6 @@
     "gql-flow": "apollo-codegen generate **/*.graphql --schema schema.json --target flow --output types/schema.flow.js",
     "gql": "npm run qql-schema &&  npm run gql-flow"
   },
-  "peerDependencies": {
-    "graphql": "^0.11.1"
-  },
   "dependencies": {
     "apollo-cache-inmemory": "^1.0.0",
     "apollo-client": "^2.2.0",
