@@ -1,0 +1,17 @@
+/*******************************
+         Site Settings
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'geomanist';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, sans-serif;
+@pageFont          : @fontName, sans-serif;
+
+@googleFontName    : @fontName;
+@importGoogleFonts : false;
+
