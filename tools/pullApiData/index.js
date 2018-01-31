@@ -166,8 +166,8 @@ if (process.env.NODE_ENV !== 'test') {
   getInflowsAndOutflows();
   getBubbleOptions();
   getMethodologyData();
-  getUnbundlingData('oda', 2015);
-  getUnbundlingData('oof', 2015);
+  getUnbundlingData('oda'); // TOFIX: TODO: should be handled by server
+  getUnbundlingData('oof');
   getSpotlightThemes();
   getPagesData();
 }
