@@ -3,12 +3,11 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
-import type {Route} from '@devinit/dh-base/lib/utils';
-import {approximate, countryOrDistrictLink} from 'lib/utils';
-import LoadingBar from 'components/molecules/LoadingBar';
+import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
+import LoadingBar from '../../molecules/LoadingBar';
 import Router from 'next/router';
 import { MapContainer } from './styledMapContainer';
-import type {
+import {
   Feature,
   MapData,
   PropertyLayerSlugMap,
@@ -24,20 +23,20 @@ import type {
   Meta,
 } from './types';
 
-const NO_DATA = 'No data';
+const NODATA = 'No data';
 
 export const indicatorsWith0dp = [
-  'spotlight_on_uganda.uganda_urban_pop',
-  'spotlight_on_uganda.uganda_rural_safe_water',
-  'spotlight_on_uganda.uganda_rural_water_func',
-  'spotlight_on_uganda.uganda_water_source_comm_func',
-  'spotlight_on_uganda.uganda_wash_perf_score',
-  'data_series.number_of_un_appeals',
-  'spotlight_on_uganda.uganda_health_posts',
-  'data_series.forgotten_crisis'];
+  'spotlightonuganda.ugandaurbanpop',
+  'spotlightonuganda.ugandaruralsafewater',
+  'spotlightonuganda.ugandaruralwaterfunc',
+  'spotlightonuganda.ugandawatersourcecommfunc',
+  'spotlightonuganda.ugandawashperfscore',
+  'dataseries.numberofunappeals',
+  'spotlightonuganda.ugandahealthposts',
+  'dataseries.forgottencrisis'];
 
 class BaseMap extends Component {
-  static foldOverSurveyMapFeatures(features: Feature[]): MapData {
+  public static foldOverSurveyMapFeatures(features: Feature[]): MapData {
     const props = features.reverse().reduce((acc, feature) => {
       // this is a country feature;
       const p20: number = feature.properties && feature.properties.p20 ? feature.properties.p20 : 0;
@@ -54,8 +53,8 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
-  static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
-    if (indicator === 'survey_p20') return BaseMap.foldOverSurveyMapFeatures(features);
+  public static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
+    if (indicator === 'surveyp20') return BaseMap.foldOverSurveyMapFeatures(features);
     if (!features[0].properties) throw new Error('Properties missing from map style');
     if (features[0].layer.type === 'line') return null;
     const properties = features[0].properties;
@@ -67,15 +66,15 @@ class BaseMap extends Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug};
   }
-  static setPointDataValue(
+  public static setPointDataValue(
     value: number, uom?: string, indicator?: string): string {
-    if (indicator === 'survey_p20' || indicator === 'regional_p20') return value.toString();
+    if (indicator === 'surveyp20' || indicator === 'regionalp20') return value.toString();
     if (indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
-    if (indicator === 'data_series.climate_vulnerability') return value.toFixed(2);
+    if (indicator === 'dataseries.climatevulnerability') return value.toFixed(2);
     return approximate(value, 1, true);
   }
-  static tipToolTipValueStr(value: string | number, uom: string) {
+  public static tipToolTipValueStr(value: string | number, uom: string) {
     switch (uom) {
       case '%':
         return `${value}${uom}`;
@@ -83,49 +82,49 @@ class BaseMap extends Component {
         return value;
     }
   }
+  public state: State;
+    /* eslint-disable react/sort-comp */
+  public viewportDefaults: ViewportDefaults = {
+      attributionControl: true,
+      scrollZoom: false,
+    };
+  public propertyName: string = 'ISO2';
+  public mapLoaded: boolean = false;
+  public isOnMobile: boolean = false;
+  public map: object;
+  public nav: object;
+  public popup: object & { remove: any };
+  public center: Point;
+  public zoomLevel: number;
+  public element: HTMLDivElement;
+  public propertyLayerSlugMap: PropertyLayerSlugMap = {
+      national: 'country-slug',
+      uganda: 'name',
+      kenya: 'NAME2'
+  };
+  public propertyLayerNameMap: PropertyLayerSlugMap = {
+      ...this.propertyLayerSlugMap,
+      national: 'country-name',
+  };
   constructor(props: Props) {
     super(props);
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
     if (!props.paint) throw new Error('paint prop missing in basemap props');
-    this._isOnMobile = window.innerWidth < 1200;
+    this.isOnMobile = window.innerWidth < 1200;
     this.state = {
       profileLoading: false,
       shouldForceRedraw: false
     };
   }
-  state: State;
-  /* eslint-disable react/sort-comp */
-  _viewportDefaults: ViewportDefaults = {
-    attributionControl: true,
-    scrollZoom: false,
-  };
-  _propertyName: string = 'ISO2';
-  _mapLoaded: boolean = false;
-  _isOnMobile: boolean = false;
-  _map: Object;
-  _nav: ? Object;
-  _popup: Object & { remove: any };
-  _center: Point;
-  _zoomLevel: number;
-  _element: HTMLDivElement;
-  _propertyLayerSlugMap: PropertyLayerSlugMap = {
-    national: 'country-slug',
-    uganda: 'name',
-    kenya: 'NAME_2'
-  }
-  _propertyLayerNameMap: PropertyLayerSlugMap = {
-    ...this._propertyLayerSlugMap,
-    national: 'country-name',
-  }
 
-  componentWillReceiveProps(nextProps: Props) {
+  public componentWillReceiveProps(nextProps: Props) {
     if (nextProps.paint.mapStyle !== this.props.paint.mapStyle ||
       this.props.countryProfile !== nextProps.countryProfile) {
       this.setState({shouldForceRedraw: true});
     }
   }
-  genericTipHtml({ id, country, name, value, uom, year }: GenericTipHtml) {
-    const valueStr = value === NO_DATA ? NO_DATA : BaseMap.tipToolTipValueStr(value, uom);
+  public genericTipHtml({ id, country, name, value, uom, year }: GenericTipHtml) {
+    const valueStr = value === NODATA ? NODATA : BaseMap.tipToolTipValueStr(value, uom);
     const valueWithYear = year ?
       `${valueStr}<span style="color: white;font-weight: 500;"> in ${year}</span>` : valueStr;
     const flagUrl: string =
@@ -140,7 +139,7 @@ class BaseMap extends Component {
         : '';
     return `${upperTip}${lowerTip}`;
   }
-  tipTemplate(pointData: MapData) {
+  public tipTemplate(pointData: MapData) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : '';
     if (!pointData.id || !pointData.name || !pointData.id.length || !pointData.name.length) {
       return false;
@@ -149,18 +148,18 @@ class BaseMap extends Component {
     const id: string = pointData.id;
     const theme: string = this.props.meta && this.props.meta.theme ? this.props.meta.theme : '';
     const indicator: string = this.props.meta && this.props.meta.id ? this.props.meta.id : '';
-    const detail: string = pointData.detail || NO_DATA;
+    const detail: string = pointData.detail || NODATA;
     let uom: string =
-      this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
-    let value: string = NO_DATA;
+      this.props.meta && this.props.meta.uomdisplay ? this.props.meta.uomdisplay : '';
+    let value: string = NODATA;
     if (pointData.value !== null && pointData.value !== undefined &&
       this.props.meta && this.props.meta.id) {
       value = BaseMap.setPointDataValue(pointData.value, uom, this.props.meta.id);
     }
-    if (pointData.value === null) value = NO_DATA;
+    if (pointData.value === null) value = NODATA;
     if (this.props.countryProfile) value = '';
-    if (theme === 'data-revolution' || indicator === 'data_series.fragile_states'
-      || indicator === 'data_series.largest_intl_flow') {
+    if (theme === 'data-revolution' || indicator === 'dataseries.fragilestates'
+      || indicator === 'dataseries.largestintlflow') {
       value = detail;
     }
     if (theme === 'government-finance' && pointData.detail) {
@@ -171,16 +170,16 @@ class BaseMap extends Component {
     if (!id) return false;
     return this.genericTipHtml(opts);
   }
-  addPopupContent(obj: PopupItem) {
-    this._popup
+  public addPopupContent(obj: PopupItem) {
+    this.popup
       .setLngLat([obj.pos.lng, obj.pos.lat])
       .setHTML(this.tipTemplate(obj.pointData))
-      .addTo(this._map);
+      .addTo(this.map);
   }
-  setMinimalMapDataPoint(feature: Feature, value: null | number): MapData {
-    const id = feature.properties[this.props.paint.propertyName || this._propertyName];
-    const slugProperty = this._propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
-    const nameProperty = this._propertyLayerNameMap[this.props.paint.propertyLayer || 'national'];
+  public setMinimalMapDataPoint(feature: Feature, value: null | number): MapData {
+    const id = feature.properties[this.props.paint.propertyName || this.propertyName];
+    const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
+    const nameProperty = this.propertyLayerNameMap[this.props.paint.propertyLayer || 'national'];
     return {
       id,
       slug: feature.properties[slugProperty],
@@ -192,11 +191,11 @@ class BaseMap extends Component {
       color: '',
     };
   }
-  getMouseHoverPointData(features: Feature[]): MapData | null {
+  public getMouseHoverPointData(features: Feature[]): MapData | null {
     if (this.props.paint.data && this.props.paint.data.length) {
       // for regular global picture and spotlight map & the small profile maps
       const point: MapData | void = this.props.paint.data.find(obj => {
-        const paintProperty: string = this.props.paint.propertyName || this._propertyName;
+        const paintProperty: string = this.props.paint.propertyName || this.propertyName;
         return obj.id === features[0].properties[paintProperty];
       });
       return point || this.setMinimalMapDataPoint(features[0], null);
@@ -209,50 +208,50 @@ class BaseMap extends Component {
     }
     return this.setMinimalMapDataPoint(features[0], null);
   }
-  mouseHoverEvent() {
-    this._map.on('mousemove', e => {
-      const features: Feature[] = this._map.queryRenderedFeatures(e.point);
-      if (!features.length && this._popup) return this._popup.remove();
+  public mouseHoverEvent() {
+    this.map.on('mousemove', e => {
+      const features: Feature[] = this.map.queryRenderedFeatures(e.point);
+      if (!features.length && this.popup) return this.popup.remove();
       if (!features.length) return false;
       const pointData: MapData | null = this.getMouseHoverPointData(features);
-      if (!pointData && this._popup) return this._popup.remove();
+      if (!pointData && this.popup) return this.popup.remove();
       if (!pointData) return false;
-      if (pointData && !this._popup) this._popup = new mapboxgl.Popup({ offset: 5 });
+      if (pointData && !this.popup) this.popup = new mapboxgl.Popup({ offset: 5 });
       return this.addPopupContent({ pointData, pos: e.lngLat });
     });
   }
-  zoomListener() {
-    this._map.on('zoomend', () => {
-      this._zoomLevel = this._map.getZoom();
+  public zoomListener() {
+    this.map.on('zoomend', () => {
+      this.zoomLevel = this.map.getZoom();
       return true;
     });
   }
-  dragListener() {
-    this._map.on('dragend', () => {
-      this._center = this._map.getCenter();
+  public dragListener() {
+    this.map.on('dragend', () => {
+      this.center = this.map.getCenter();
       return true;
     });
   }
   // Persists zoom and center on style change
-  persistZoomAndCenterLevel() {
-    this._map.on('data', e => {
+  public persistZoomAndCenterLevel() {
+    this.map.on('data', e => {
       if (e.dataType === 'style') {
-        if (this._zoomLevel) this._map.setZoom(this._zoomLevel);
-        if (this._center) this._map.setCenter([this._center.lng, this._center.lat]);
+        if (this.zoomLevel) this.map.setZoom(this.zoomLevel);
+        if (this.center) this.map.setCenter([this.center.lng, this.center.lat]);
       }
     });
   }
-  resize() {
+  public resize() {
     window.addEventListener('resize', () => {
-      this._map.resize();
+      this.map.resize();
     });
   }
-  mouseMapClick(meta: Meta) {
-    this._map.on('click', event => {
-      if (meta.id === 'survey_p20' || meta.id === 'regional_p20') return false;
-      const features: Feature = this._map.queryRenderedFeatures(event.point);
+  public mouseMapClick(meta: Meta) {
+    this.map.on('click', event => {
+      if (meta.id === 'surveyp20' || meta.id === 'regionalp20') return false;
+      const features: Feature = this.map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
-      const slugProperty = this._propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
+      const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
       const slug: string | void = features[0].properties[slugProperty];
       if (!slug) return false;
       if (!this.props.meta || !this.props.meta.country) return false;
@@ -261,15 +260,15 @@ class BaseMap extends Component {
       return Router.push(route.routePath, route.routeAsPath);
     });
   }
-  setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
-    this._map.setPaintProperty(propertyLayer || 'national', 'fill-color', {
-      property: propertyName || this._propertyName,
+  public setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
+    this.map.setPaintProperty(propertyLayer || 'national', 'fill-color', {
+      property: propertyName || this.propertyName,
       type: 'categorical',
       default: lightGrey,
       stops,
     });
   }
-  colorMap({ data, propertyName, propertyLayer }: PaintMap) {
+  public colorMap({ data, propertyName, propertyLayer }: PaintMap) {
     if (!data || !data.length) throw new Error('you have to pass in data to color the map');
     const stops = data.filter(obj => obj.id && obj.color).map((obj: MapData) => {
       if (!obj.id || !obj.color) throw new Error('color and id values missing');
@@ -277,10 +276,10 @@ class BaseMap extends Component {
     });
     this.setMapPaintProperty(stops, propertyLayer, propertyName);
   }
-  getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
+  public getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
     const layer = propertyLayer || 'national';
-    const slugProperty = this._propertyLayerSlugMap[layer];
-    const features: Feature[] = this._map.queryRenderedFeatures({ layers: [layer] });
+    const slugProperty = this.propertyLayerSlugMap[layer];
+    const features: Feature[] = this.map.queryRenderedFeatures({ layers: [layer] });
     const feature: Feature | void = features.find(feature => {
       if (feature.properties[slugProperty] && slugProperty !== 'country-slug') {
         return feature.properties[slugProperty].toLowerCase() === slug;
@@ -289,7 +288,7 @@ class BaseMap extends Component {
     });
     return feature;
   }
-  zoomToGeometry(geometry: Geometry) {
+  public zoomToGeometry(geometry: Geometry) {
     let bounds: any;
     if (geometry.type === 'Polygon') {
       const coordinates: number[][] = geometry.coordinates[0];
@@ -308,23 +307,23 @@ class BaseMap extends Component {
       }, new mapboxgl.LngLatBounds(sets[0][0][0], sets[0][0][0]));
     }
     if (!bounds) return false;
-    const dx = (bounds._ne.lat - bounds._sw.lat);
-    const dy = (bounds._ne.lng - bounds._sw.lng);
+    const dx = (bounds.ne.lat - bounds.sw.lat);
+    const dy = (bounds.ne.lng - bounds.sw.lng);
     const distance = Math.sqrt((dx * dx) + (dy * dy));
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
     const spotlightZoom = this.props.paint.propertyLayer === 'uganda' ? 5.5 : 4.5;
     const yOffset = this.props.paint.propertyLayer === 'uganda' ? -50 : -70;
-    return this._map.fitBounds(bounds, {
+    return this.map.fitBounds(bounds, {
       padding: 0,
       offset: this.props.paint.propertyLayer === 'national' ? [350, 0] : [400, yOffset],
       maxZoom: this.props.paint.propertyLayer === 'national' ? maxZoom : spotlightZoom,
     });
   }
-  focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
+  public focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
     const feature = this.getRegionFeature(slug, paint.propertyLayer);
     if (feature) {
       this.zoomToGeometry(feature.geometry);
-      const propertyId: string = feature.properties[paint.propertyName || this._propertyName] || '';
+      const propertyId: string = feature.properties[paint.propertyName || this.propertyName] || '';
       if (propertyId.length) {
         const stop = [propertyId, red];
         this.setMapPaintProperty([stop], paint.propertyLayer, paint.propertyName);
@@ -332,38 +331,38 @@ class BaseMap extends Component {
     }
   }
 
-  draw(domElement: HTMLDivElement, paint: PaintMap) {
-    const viewport = { ...this._viewportDefaults, ...this.props.viewport };
+  public draw(domElement: HTMLDivElement, paint: PaintMap) {
+    const viewport = { ...this.viewportDefaults, ...this.props.viewport };
     const mapStyle = this.props.paint.mapStyle || '/styles/worldgeojson.json';
     const defaultOpts = { ...viewport, style: mapStyle, container: domElement };
-    const opts: MapBoxOptions = !this._isOnMobile && !this.props.countryProfile
+    const opts: MapBoxOptions = !this.isOnMobile && !this.props.countryProfile
       ? { ...defaultOpts, maxBounds: viewport.bounds }
       : defaultOpts;
     // draw map
-    if (!this._map || this.state.shouldForceRedraw) {
-      if (this._map) {
-        this._map.remove();
-        this._nav = undefined;
+    if (!this.map || this.state.shouldForceRedraw) {
+      if (this.map) {
+        this.map.remove();
+        this.nav = undefined;
       }
-      this._mapLoaded = false; // feels abit dirty
-      this._map = new mapboxgl.Map(opts);
+      this.mapLoaded = false; // feels abit dirty
+      this.map = new mapboxgl.Map(opts);
     }
-    if (!this._nav && !this._mapLoaded) this.addMapNav();
+    if (!this.nav && !this.mapLoaded) this.addMapNav();
     // React creates a new class instance per render which gets memoized
-    if (this._map && this._mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
+    if (this.map && this.mapLoaded && paint.data && paint.data.length) this.colorMap(paint);
 
-    if (!this._mapLoaded) this.onMapLoad(paint);
+    if (!this.mapLoaded) this.onMapLoad(paint);
   }
 
-  addMapNav = () => {
-    this._nav = new mapboxgl.NavigationControl();
-    this._map.addControl(this._nav, 'top-right');
+  public addMapNav = () => {
+    this.nav = new mapboxgl.NavigationControl();
+    this.map.addControl(this.nav, 'top-right');
   }
 
-  onMapLoad = (paint: PaintMap) => {
-    this._map.on('load', () => {
-      this._mapLoaded = true;
-      this._map.setPaintProperty(
+  public onMapLoad = (paint: PaintMap) => {
+    this.map.on('load', () => {
+      this.mapLoaded = true;
+      this.map.setPaintProperty(
         'background',
         'background-color',
         paint.background || seaBackground,
@@ -372,8 +371,8 @@ class BaseMap extends Component {
       if (this.props.countryProfile) {
         this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
       }
-      this._map.dragRotate.disable();
-      this._map.touchZoomRotate.disableRotation();
+      this.map.dragRotate.disable();
+      this.map.touchZoomRotate.disableRotation();
       if (!this.props.countryProfile) this.zoomListener();
       if (this.props.meta) this.mouseHoverEvent(); // TODO turn into a this.meta.
       if (this.props.meta) this.mouseMapClick(this.props.meta);
@@ -382,7 +381,7 @@ class BaseMap extends Component {
       this.resize();
     });
   }
-  render() {
+  public render() {
     let { width, height } = this.props;
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;

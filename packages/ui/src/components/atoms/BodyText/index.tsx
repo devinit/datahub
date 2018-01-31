@@ -1,14 +1,14 @@
 import glamorous from 'glamorous';
 
 export const Lead = glamorous.p({
-  fontSize: '1.5em',
-  fontWeight: '300',
-  textAlign: 'center',
+  'fontSize': '1.5em',
+  'textAlign': 'center',
+  'fontWeight': 300,
   '& span': {
-    paddingRight: '2px',
-    paddingLeft: '2px',
-    fontWeight: '600',
-  },
+      paddingRight: '2px',
+      paddingLeft: '2px',
+      fontWeight: '600',
+    }
 });
 
 export const TextBlock = glamorous.p({
