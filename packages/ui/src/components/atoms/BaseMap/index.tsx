@@ -1,9 +1,9 @@
 // @flow
 /* eslint-disable react/no-danger */
-import React, { Component } from 'react';
+import * as React from 'react';
 import mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
-import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
+import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/utils';
 import LoadingBar from '../../molecules/LoadingBar';
 import Router from 'next/router';
 import { MapContainer } from './styledMapContainer';
@@ -35,7 +35,7 @@ export const indicatorsWith0dp = [
   'spotlightonuganda.ugandahealthposts',
   'dataseries.forgottencrisis'];
 
-class BaseMap extends Component {
+class BaseMap extends React.Component {
   public static foldOverSurveyMapFeatures(features: Feature[]): MapData {
     const props = features.reverse().reduce((acc, feature) => {
       // this is a country feature;

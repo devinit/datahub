@@ -46,6 +46,7 @@
     "@storybook/react": "3.3.10",
     "@storybook/addon-links": "3.3.10",
     "@types/storybook__react": "3.0.6",
+    "@types/next": "2.4.7",
     "enzyme-adapter-react-16": "^1.0.4",
     "gulp": "^3.9.1",
     "semantic-ui": "^2.2.13",

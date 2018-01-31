@@ -73,9 +73,8 @@
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.3.10",
+    "@types/next": "2.4.7",
     "@storybook/react": "^3.3.10",
-    "enzyme": "^3.1.1",
-    "enzyme-adapter-react-16": "^1.0.4",
     "react-test-renderer": "^16.0.0",
     "concurrently": "3.5.1",
     "usus": "^1.6.0",
