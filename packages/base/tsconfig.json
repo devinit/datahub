@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES6",
+      "jsx": "react",
+      "sourceMap": false,
+      "strict": true,
+      "lib": ["es2017", "dom"],
+      "experimentalDecorators": true,
+      "typeRoots": ["node_modules/@types", "src/types"],
+      "noImplicitAny": false,
+      "noUnusedLocals": true,
+      "rootDir": "src",
+      "outDir": "dist",
+      "removeComments": true
+    },
+    "exclude": [
+      "node_modules",
+      "out"
+    ]
+  }

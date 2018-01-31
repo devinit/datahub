@@ -1,5 +1,4 @@
 import glamorous from 'glamorous';
-// import {mediaQueries} from '../../theme'; 
 import {mediaQueries} from '../../theme'; 
 import { lightBlack, lighterGrey } from '../../theme/semantic';
 

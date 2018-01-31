@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
-import type {Route} from 'lib/utils';
+import type {Route} from '@devinit/dh-base/lib/utils';
 import {approximate, countryOrDistrictLink} from 'lib/utils';
 import LoadingBar from 'components/molecules/LoadingBar';
 import Router from 'next/router';
