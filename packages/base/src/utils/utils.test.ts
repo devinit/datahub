@@ -1,3 +1,4 @@
+import 'jest';
 import * as prettyFormat from 'pretty-format';
 import COUNTRIES_QUERY from '../pullApiData/queries/Countries.graphql';
 import { getData } from '.';
