@@ -40,17 +40,11 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^5.0.0",
     "css-loader": "0.28.9",
-    "css-to-js-object": "0.0.3",
     "csso": "^3.1.1",
-    "file-loader": "1.1.6",
     "less": "2.7.3",
     "less-plugin-clean-css": "1.5.1",
-    "style-loader": "0.19.1",
-    "ts-loader": "3.3.1",
-    "tslint-react": "3.4.0",
-    "uglifyjs-webpack-plugin": "^1.1.6",
+    "css-to-js-object": "0.0.3",
     "usus": "^1.6.0"
   }
 }

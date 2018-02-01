@@ -71,10 +71,6 @@
     "redux": "^3.7.0",
     "semantic-ui-react": "^0.77.2"
   },
-  "devDependencies": {
-    "usus": "^1.6.0",
-    "webpack-bundle-analyzer": "^2.9.0"
-  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "<rootDir>/private/lib/jest.config.js",

@@ -1,25 +1,14 @@
-// @flow
 import fetch from 'isomorphic-fetch';
-// import { config, version } from 'package.json';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
+import {Country, District, MenueItem, Menue} from '../types';
 import {RECIPIENT} from './constants';
-
-// const uri = config.api;
 
 const apolloFetch = (uri: string) => createApolloFetch({ uri });
 
-// export interface ApolloResponse<T> {
-//   errors: string;
-//   data: T;
-//   extensions: string;
-// }
+export type CallBack<T> = (data: T) => any;
 
-export interface CallBack<T> {
-  (data: T): string,
-}
-
-export interface Email{
+export interface Email {
   message: string;
   token: string;
   emails: string[];
@@ -37,7 +26,7 @@ export const sendEmail = (payload: Email) => {
 };
 // will email errors to allan when they occur
 // TODO: improve this by adding more info on the errors. i.e if country profile add country etc
-export const errorHandler = async (error: String | Error, info?: string) => {
+export const errorHandler = async (error: string | Error, info?: string) => {
   console.error(error);
   if (process.env.NODE_ENV === 'disable') { // temporarily disable // should be production to renable
     sendEmail({
@@ -73,17 +62,20 @@ interface IgetData {
   query: string;
   uri: string;
   variables: object;
-  browser: boolean;
-  version: string;
+  browser?: boolean;
+  version?: string;
 }
 
 export async function getData<T>(opts: IgetData): Promise<T> {
   try {
-    const {query, variables, browser, version, uri} = opts
+    const {query, variables, browser, version, uri} = opts;
     const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
-    const storage = await getLocalStorageInstance(browser, version);
-    const cached = storage ? await storage.getItem(key) : null;
-    if (cached) return JSON.parse(cached);
+    let storage: any = null;
+    if (browser && version) {
+      storage = await getLocalStorageInstance(browser, version);
+      const cached = storage ? await storage.getItem(key) : null;
+      if (cached) return JSON.parse(cached);
+    }
     const response: FetchResult = variables
       ? await apolloFetch(uri)({ query, variables })
       : await apolloFetch(uri)({ query });
@@ -118,9 +110,9 @@ export const cacheMapData = async (opts: {workerPath: string, browser: boolean, 
   }
 };
 
-export type CurrencyOption = {
-  text: string,
-  value: string
+export interface CurrencyOption {
+  text: string;
+  value: string;
 }
 
 export const createCurrencyOptions =
@@ -130,29 +122,23 @@ export const createCurrencyOptions =
       { text: `Current ${currencyCode}`, value: currencyCode },
     ];
 
-export const getCountry = (slug: string): Country => {
-  const country = countriesData.countries.find(country => country.slug === slug);
+export const getCountry = (slug: string, countries: Country[]): Country => {
+  const country = countries.find(obj => obj.slug === slug);
   if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A', has_domestic_data: ''};
   return country;
 };
 
-export const getCountryName = (slug: string): string => {
-  const country = getCountry(slug);
+export const getCountryName = (slug: string, countries: Country[]): string => {
+  const country = getCountry(slug, countries);
   return country.name;
 };
-
-
-export const getDistrict = (slug: string, country: string): District => {
-  // TODO: handle spotlight kenya
-  const data = country === 'uganda' ? ugDistrictData : keDistrictData;
-  const district: {|name: string, id: string|} | void =
-    data.districts.find(district => district.slug === slug);
+export const getDistrict = (slug: string, districts: District[]): District => {
+  const district = districts.find(obj => obj.slug === slug);
   if (district) return {...district, slug};
   return {name: slug, slug, id: ''};
 };
 
 export const capitalize = (slug: string): string => `${slug[0].toUpperCase()}${slug.substr(1)}`;
-
 
 export const printDiv = (divId: string) => {
   const divElem = document.getElementById(divId);
@@ -176,9 +162,9 @@ export const getShortURL = async (longUrl: string): Promise<string> => {
   return json.data.url;
 };
 // country is global or uganda or kenya etc
-export type Route = {
-  routeAsPath: string,
-  routePath: string
+export interface Route {
+  routeAsPath: string;
+  routePath: string;
 }
 
 export const countryOrDistrictLink = (country: string, slug: string): Route => {
@@ -194,28 +180,29 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
   return {routePath, routeAsPath};
 };
 
-export type PageMetaArgs = {
-  query?: string,
-  pathname: string
+export interface PageMetaArgs {
+  query?: string;
+  pathname: string;
 }
 
-export type PageMeta = {
-  title: string,
-  image?: string,
-  width?: string,
-  height?: string,
+export interface PageMeta {
+  title: string;
+  image?: string;
+  width?: string;
+  height?: string;
 }
 
-export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
+export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem, countries): PageMeta => {
   let title = obj.name;
   if (obj.link === '/uganda') title = capitalize(args.query || '');
   if (obj.link === '/') title = 'Development Data Hub';
-  if (obj.link === '/country') title = getCountryName(args.query || '');
+  if (obj.link === '/country') title = getCountryName(args.query || '', countries);
   return {title, image: '/img/logo.jpg'};
 };
 
-export const getPageMeta = (args: PageMetaArgs): PageMeta => {
-  const item: ? MenueItem = menueData.mainMenu.reduce((acc: MenueItem[], obj: MenueItem) => {
+export const getPageMeta = (args: PageMetaArgs, menueData: Menue, countries): PageMeta => {
+  // TODO: add proper types
+  const item = menueData.mainMenu.reduce((acc: MenueItem[], obj: MenueItem) => {
     if (obj.children) return [...acc, ...obj.children];
     return [...acc, obj];
   }, [])
@@ -223,7 +210,7 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
     .find(obj => obj.link === args.pathname);
 
   if (!item) return {title: 'Development Data Hub'};
-  const linkMeta = createLinkMeta(args, item);
+  const linkMeta = createLinkMeta(args, item, countries);
   return linkMeta;
 };
 
@@ -234,14 +221,14 @@ export const getMaxAndMin = (data: Array<{year: number}>): number[] => {
   return [max, min];
 };
 
-export function addMinAndMaxYear(config: Object, data: any[]): Object {
+export function addMinAndMaxYear(config: {timeAxis} & any, data: any[]): object {
   const [axisMaximum, axisMinimum] = getMaxAndMin(data);
   const timeAxis = {...config.timeAxis, axisMinimum, axisMaximum};
   return {...config, timeAxis};
 }
 // type GovernmentFinance = $PropertyType<TabDataQuery, 'governmentFinance'>
 
-export const shouldShowTabData = (data: Object): boolean => {
+export const shouldShowTabData = (data: object): boolean => {
   if (!data) return false;
   return !Object.keys(data)
     .every(key => {
@@ -250,35 +237,37 @@ export const shouldShowTabData = (data: Object): boolean => {
       return value === 'No data' || !value.length;
     });
 };
-// (10 ** length) == Math.pow(10, length);
-const roundNum = (num, length): string =>
-  (Math.round(num * (10 ** length)) / (10 ** length)).toFixed(length);
 
 const removeTrailingZero = (value: string): string => {
   const val = Number(value);
   return Math.round(val) === val ? val.toString() : value;
 };
 
+// (10 ** length) == Math.pow(10, length);
+export const roundNum = (num, length): string =>
+  (Math.round(num * (10 ** length)) / (10 ** length)).toFixed(length);
+
 export const approximate =
-  (value: number | string | null,
-    precision: number = 1,
-    shouldrRemoveTrailingZero: boolean = false): string => {
-    if (value === undefined || value === null) return 'No data';
-    const val = Number(value);
-    const absValue = Math.abs(val);
-    if (absValue < 1e3) {
+  (value: number | string | undefined | null,
+   precision: number = 1,
+   shouldrRemoveTrailingZero: boolean = false): string => {
+  if (value === undefined || value === null) return 'No data';
+  const val = Number(value);
+  const absValue = Math.abs(val);
+  if (absValue < 1e3) {
       const fixed = roundNum(val, precision);
       return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}` : fixed;
-    } else if (absValue >= 1e3 && absValue < 1e6) {
+  } else if (absValue >= 1e3 && absValue < 1e6) {
       const newValue = val / 1e3;
       const fixed = roundNum(newValue, precision);
       return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}k` : `${fixed}k`;
-    } else if (absValue >= 1e6 && absValue < 1e9) {
+  } else if (absValue >= 1e6 && absValue < 1e9) {
       const newValue = val / 1e6;
       const fixed = roundNum(newValue, precision);
       return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}m` : `${fixed}m`;
-    }
-    const newValue = val / 1e9;
-    const fixed = roundNum(newValue, precision);
-    return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}bn` : `${fixed}bn`;
-  };
+  } else {
+      const newValue = val / 1e9;
+      const fixed = roundNum(newValue, precision);
+      return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}bn` : `${fixed}bn`;
+  }
+};

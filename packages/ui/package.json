@@ -40,18 +40,5 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "semantic-ui-react": "^0.77.2"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "3.3.10",
-    "@storybook/react": "3.3.10",
-    "@storybook/addon-links": "3.3.10",
-    "@types/storybook__react": "3.0.6",
-    "enzyme-adapter-react-16": "^1.0.4",
-    "gulp": "^3.9.1",
-    "semantic-ui": "^2.2.13",
-    "less": "^2.7.2",
-    "@types/react": "16.0.28",
-    "ts-loader": "3.3.1",
-    "tslint-react": "3.4.0"
   }
 }
