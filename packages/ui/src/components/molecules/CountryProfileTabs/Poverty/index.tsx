@@ -2,18 +2,17 @@
 import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
 import {Div} from 'glamorous';
-import Chart from 'components/atoms/Chart';
-import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
-import { NoData } from 'lib/utils/constants';
-import TabsToolTip from 'components/molecules/TabsToolTip';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
+import Chart from '../../../atoms/Chart';
+import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsText';
+import { NoData } from '@devinit/dh-base/utils/constants';
+import TabsToolTip from '../../TabsToolTip';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/PagesData';
 
-type Props = {
-  ...TabDataQuery,
-  config: any,
-  pagesData: PageUnit[],
-};
+interface Props  {
+  ...TabDataQuery;
+  config: any;
+  pagesData: PageUnit[];
+}
 
 const Poverty = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
