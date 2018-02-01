@@ -1,15 +1,15 @@
 // @flow
 import { Container, Header, Grid, Divider } from 'semantic-ui-react';
 import React from 'react';
-import {Lead} from 'components/atoms/BodyText';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
+import {Lead} from '../../../atoms/BodyText';
+import {PageUnit} from '@devinit/dh-base/lib/PagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
 
-type Props = {
-  children: any,
-  countryName: string,
-  pageData: PageUnit[]
-};
+interface Props  {
+  children: any;
+  countryName: string;
+  pageData: PageUnit[];
+}
 
 const Government = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);

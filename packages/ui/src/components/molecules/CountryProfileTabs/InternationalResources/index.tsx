@@ -1,23 +1,23 @@
 // @flow
 import {Container, Grid} from 'semantic-ui-react';
 import React from 'react';
-import Chart from 'components/atoms/Chart';
+import Chart from '../../../atoms/Chart';
 import {Span} from 'glamorous';
-import {small} from '../../theme';
-import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from 'components/atoms/TabsText';
-import {NoData, DONOR} from 'lib/utils/constants';
-import TabsToolTip from 'components/molecules/TabsToolTip';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
-import Legend from 'components/atoms/Legend';
+import {small} from '../../../theme';
+import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from '../../../atoms/TabsText';
+import {NoData, DONOR} from '@devinit/dh-base/utils/constants';
+import TabsToolTip from '../../TabsToolTip';
+import {PageUnit} from '@devinit/dh-base/lib/PagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import Legend from '../../../atoms/Legend';
 
-type Props = {
-  ...TabDataQuery,
-  countryType: string,
-  config: any,
-  countryType: string,
-  pagesData: PageUnit[],
-};
+interface Props {
+  ...TabDataQuery;
+  countryType: string;
+  config: any;
+  countryType: string;
+  pagesData: PageUnit[];
+}
 
 const International = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);

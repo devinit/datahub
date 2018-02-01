@@ -1,21 +1,21 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';
-import {small} from '../../theme';
-import Legend from 'components/atoms/Legend';
-import Chart from 'components/atoms/Chart';
-import {TabsNoData, TabsP, HeaderTitle} from 'components/atoms/TabsText';
-import TabsToolTip from 'components/molecules/TabsToolTip';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
-import { NoData } from 'lib/utils/constants';
+import {small} from '../../../theme';
+import Legend from '../../../atoms/Legend';
+import Chart from '../../../atoms/Chart';
+import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/TabsText';
+import TabsToolTip from '../../TabsToolTip';
+import {PageUnit} from '@devinit/dh-base/lib/PagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import { NoData } from '@devinit/dh-base/utils/constants';
 
-type Props = {
-  ...TabDataQuery,
-  config: any,
-  pagesData: PageUnit[],
-};
+interface Props {
+  ...TabDataQuery;
+  config: any;
+  pagesData: PageUnit[];
+}
 
 const Government = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);

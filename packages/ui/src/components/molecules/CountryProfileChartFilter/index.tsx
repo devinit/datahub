@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import glamorous from 'glamorous';
 import { white, lightBlack } from '../../theme/semantic';
 
@@ -7,19 +7,19 @@ const Wrapper = glamorous.div({
 });
 
 export const Select = glamorous.select({
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  margin: 0,
-  padding: '.75em 2.25em .75em 1em',
-  lineHeight: '1.5',
-  color: lightBlack,
-  backgroundColor: white,
-  border: '2px solid transparent',
-  borderRadius: '.25em',
-  cursor: 'pointer',
-  outline: 0,
-  appearance: 'none',
-  transition: 'all .25s',
+  'display': 'inline-block',
+  'verticalAlign': 'middle',
+  'margin': 0,
+  'padding': '.75em 2.25em .75em 1em',
+  'lineHeight': '1.5',
+  'color': lightBlack,
+  'backgroundColor': white,
+  'border': '2px solid transparent',
+  'borderRadius': '.25em',
+  'cursor': 'pointer',
+  'outline': 0,
+  'appearance': 'none',
+  'transition': 'all .25s',
   ':after': {
     position: 'absolute',
     top: '50%',

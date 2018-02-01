@@ -1,12 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import { Div, P } from 'glamorous';
-import { SectionHeader } from 'components/atoms/Header';
+import { SectionHeader } from '../../atoms/Header';
 import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import Router from 'next/router';
-import { LightBg, DarkBg } from 'components/atoms/Backgrounds';
-import Observer from 'react-intersection-observer';
-import NoSSR from 'react-no-ssr';
+import { LightBg, DarkBg } from '../../atoms/Backgrounds';
+import * as Observer from 'react-intersection-observer';
+import * as NoSSR from 'react-no-ssr';
 
 if (process.browser) require('intersection-observer');
 

@@ -1,17 +1,17 @@
 // @flow
 import { Container, Grid } from 'semantic-ui-react';
 import React from 'react';
-import {TextBlock} from 'components/atoms/BodyText';
-import { white } from '../../theme/semantic';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
-import TabsToolTip from 'components/molecules/TabsToolTip';
-import { SectionHeader } from 'components/atoms/Header';
+import {TextBlock} from '../../../atoms/BodyText';
+import { white } from '../../../theme/semantic';
+import {PageUnit} from '@devinit/dh-base/lib/PagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import TabsToolTip from '../../TabsToolTip';
+import { SectionHeader } from '../../../atoms/Header';
 
-type Props = {
-  children: any[],
-  pageData: PageUnit[],
-  toolTip: { source?: string, heading?: string}
+interface Props {
+  children: any[];
+  pageData: PageUnit[];
+  toolTip: { source?: string, heading?: string};
 }
 
 const InternationalResources = (props: Props) => {

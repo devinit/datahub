@@ -2,16 +2,16 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { Grid, Container, Button, Icon } from 'semantic-ui-react';
-import BubbleSize from 'components/atoms/BubbleSizeDropDown';
-import ColorBy from 'components/atoms/BubbleChartColorBy';
-import HighlightByIncomeGroup from 'components/atoms/BubbleChartHighlightByIncomeGroup';
-import HighlightByRegions from 'components/atoms/BubbleChartHighlightRegions';
-import SelectedCountries from 'components/atoms/BubbleChartSelectedCountries';
-import BubbleChartPrint from 'components/atoms/BubbleChartPrint';
-import BubbleChartAxisSettings from 'components/atoms/BubbleChartAxisSettings';
-import Slider from 'components/molecules/YearSlider';
+import BubbleSize from '../../atoms/BubbleSizeDropDown';
+import ColorBy from '../../atoms/BubbleChartColorBy';
+import HighlightByIncomeGroup from '../../atoms/BubbleChartHighlightByIncomeGroup';
+import HighlightByRegions from '../../atoms/BubbleChartHighlightRegions';
+import SelectedCountries from '../../atoms/BubbleChartSelectedCountries';
+import BubbleChartPrint from '../../atoms/BubbleChartPrint';
+import BubbleChartAxisSettings from '../../atoms/BubbleChartAxisSettings';
+import Slider from '../YearSlider';
 import { red } from '../../theme/semantic';
-import ScatterChart from 'components/atoms/ScatterChart';
+import ScatterChart from '../../atoms/ScatterChart';
 
 const ChartContainer = glamorous.div({
   margin: '2em 0 3em',
@@ -34,40 +34,40 @@ const Link = glamorous.a({
   marginBottom: '20px',
 });
 
-type Props = {
-  loading: boolean,
-  startYear: number,
-  maxYear: number,
-  minYear: number,
-  points: [Object],
-  annotation: Object,
-  config: Object,
-  indicators: Object[],
-  colorables: Object[],
-  regions: Object[],
-  incomeGroups: Object[],
-  countries: Object[],
-  data: Object,
-};
-type State = {
-  year: number,
-  colorBy: string,
-  showMoreOptions: boolean,
-  isPlaying: boolean,
-  pointsPerYear: Object,
-  incomeGroupColor: Object,
-  regionColor: Object,
-};
+interface Props  {
+  loading: boolean;
+  startYear: number;
+  maxYear: number;
+  minYear: number;
+  points: [object];
+  annotation: object;
+  config: object;
+  indicators: object[];
+  colorables: object[];
+  regions: object[];
+  incomeGroups: object[];
+  countries: object[];
+  data: object;
+}
+interface State  {
+  year: number;
+  colorBy: string;
+  showMoreOptions: boolean;
+  isPlaying: boolean;
+  pointsPerYear: object;
+  incomeGroupColor: object;
+  regionColor: object;
+}
 
 class BubbleChartWidget extends React.Component {
+  public intervalId: number;
+  public state: State;
   constructor(props: Props) {
     super(props);
     this.componentWillUpdate(props);
   }
   // eslint-disable-next-line react/sort-comp
-  intervalId: number;
-  state: State;
-  componentWillUpdate(props: Props) {
+  public componentWillUpdate(props: Props) {
     const colorBy = this.state ? this.state.colorBy : 'region';
     const regionColor = this.props.regions.reduce(
       (colors, region) => ({
@@ -95,10 +95,10 @@ class BubbleChartWidget extends React.Component {
       pointsPerYear,
     };
   }
-  componentWillUnmount() {
+  public componentWillUnmount() {
     clearInterval(this.intervalId);
   }
-  onChangeColorBy(colorBy: string) {
+  public onChangeColorBy(colorBy: string) {
     const colorHash = colorBy === 'region' ? this.state.regionColor : this.state.incomeGroupColor;
     const pointsPerYear = this.getPointsPerYear(colorBy, colorHash);
     this.setState({
@@ -106,7 +106,7 @@ class BubbleChartWidget extends React.Component {
       pointsPerYear,
     });
   }
-  getPointsPerYear(colorBy: string, colorHash: Object) {
+  public getPointsPerYear(colorBy: string, colorHash: Object) {
     return this.props.points
       .map(p => {
         return { ...p, color: colorHash[colorBy] };
@@ -119,17 +119,17 @@ class BubbleChartWidget extends React.Component {
         {},
       );
   }
-  setYear(year: number) {
+  public setYear(year: number) {
     this.setState({
       year: +year,
     });
   }
-  toggleMoreOptions() {
+  public toggleMoreOptions() {
     this.setState({
       showMoreOptions: !this.state.showMoreOptions,
     });
   }
-  play() {
+  public play() {
     clearInterval(this.intervalId);
     this.setState({ isPlaying: true });
     let year = this.state.year;
@@ -146,7 +146,7 @@ class BubbleChartWidget extends React.Component {
       year += 0.01;
     }, 25);
   }
-  pause() {
+  public pause() {
     clearInterval(this.intervalId);
     this.setState({
       isPlaying: false,
@@ -154,7 +154,7 @@ class BubbleChartWidget extends React.Component {
     });
   }
 
-  render() {
+  public render() {
     const {
       minYear,
       maxYear,

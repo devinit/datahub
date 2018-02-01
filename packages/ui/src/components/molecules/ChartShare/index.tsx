@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from '../../theme/semantic';
-import {getShortURL} from 'lib/utils';
+import {getShortURL} from '@devinit/dh-base/utils';
 import glamorous, { Div, Span } from 'glamorous';
 
 export const NoBackground = {
@@ -16,7 +16,7 @@ export const NoBackground = {
 };
 
 const Container = glamorous.div({
-  padding: '5em',
+  'padding': '5em',
   '& input.link': {
     display: 'inline-block',
     width: '100%',
@@ -46,61 +46,60 @@ const ButtonWrapper = glamorous.span({
   }
 }));
 
-
-export type StateToShare = {
-  year?: number,
-  budgetType?: string,
-  currency?: string,
-  chartId?: string,
-  indicator?: string
+export interface StateToShare  {
+  year?: number;
+  budgetType?: string;
+  currency?: string;
+  chartId?: string;
+  indicator?: string;
 }
-type Props = {
-  size: string,
-  color: string,
-  iconName?: string,
-  fontWeight?: string | number,
-  fontSize?: string,
-  backgroundColor?: string,
-  label?: string,
-  className?: string,
-  background?: boolean,
-  hover?: boolean,
-  stateToShare?: StateToShare
-};
+interface Props  {
+  size: string;
+  color: string;
+  iconName?: string;
+  fontWeight?: string | number;
+  fontSize?: string;
+  backgroundColor?: string;
+  label?: string;
+  className?: string;
+  background?: boolean;
+  hover?: boolean;
+  stateToShare?: StateToShare;
+}
 
-type State = {
-  link: string,
-  value: number
+interface State  {
+  link: string;
+  value: number;
 }
 
 export default class ChartShare extends Component {
-  static defaultProps = {
+  public static defaultProps = {
     background: true,
     hover: false
   };
+  public state = {
+    link: '',
+    value: 2
+  };
+  public state: State;
   /* eslint-disable no-useless-constructor */
   constructor(props: Props) {
     super(props);
   }
-  state = {
-    link: '',
-    value: 2
-  }
-  state: State
-  componentDidMount() {
+  public componentDidMount() {
     this.createLink(this.props);
   }
-  componentWillReceiveProps(nextProps: Props) {
+  public componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) this.createLink(nextProps);
   }
-  onLinkChange = () => this.createLink(this.props);
+  public onLinkChange = () => this.createLink(this.props);
 
-  handleChange = (value: number) => {
+  public handleChange = (value: number) => {
     this.setState({value});
     this.createLink(this.props, value);
-  };
+  }
   // checkedoption i.e 1 is default 2 is as configured
-  async createLink(props: Props, checkedOption?: number = 2) {
+  public async createLink(props: Props, checkedOption?: number = 2) {
     if (!props.stateToShare) return this.state;
     const currentUrl = window.location.href;
     const chartState =
@@ -110,7 +109,7 @@ export default class ChartShare extends Component {
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
     return this.setState({link: shortURL});
   }
-  render() {
+  public render() {
     const {className, size, color, label, background,
       hover, fontSize, iconName, fontWeight} = this.props;
     return (
@@ -129,8 +128,7 @@ export default class ChartShare extends Component {
               >
                 {label || 'Share this chart'}</Span>
             </Button>
-          </ButtonWrapper>
-        }
+          </ButtonWrapper>}
         size="tiny"
         closeIcon="close"
       >

@@ -2,56 +2,57 @@
 /* eslint-disable react/sort-comp */
 /* eslint-disable no-nested-ternary */
 import React from 'react';
-import { approximate } from 'lib/utils';
+import { approximate } from '@devinit/dh-base/utils';
 import { groupBy } from 'ramda';
-import { SectionHeader } from 'components/atoms/Header';
+import { SectionHeader } from '../../atoms/Header';
 import UnbundlingInternationalResources, {
   NoDataAvailableContainer,
-} from 'components/organisms/UnbundlingInternationalResources';
+} from '@devinit/dh-base/lib/UnbundlingInternationalResources';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
-import { DONOR } from 'lib/utils/constants';
+import { DONOR } from '@devinit/dh-base/utils/constants';
 import { red } from '../../theme/semantic';
 import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
-export type State = {
-  directions: Object[], // TOFIX: @ernest add proper types
-  flows: Object[], // TOFIX: @ernest add proper types
+export interface State  {
+  directions: object[]; // TOFIX: @ernest add proper types
+  flows: object[]; // TOFIX: @ernest add proper types
 
-  year: number,
-  direction: string,
-  flow?: string,
-  flowName?: string,
-  detailSelections?: Object[], // TOFIX: @ernest add proper types
-  detailGroup?: string,
-  shouldUnbundle?: boolean,
+  year: number;
+  direction: string;
+  flow?: string;
+  flowName?: string;
+  detailSelections?: object[]; // TOFIX: @ernest add proper types
+  detailGroup?: string;
+  shouldUnbundle?: boolean;
 
-  trend: Object[], // TOFIX: @ernest add proper types
-  mixes: Object, // TOFIX: @ernest add proper types
-};
-export type Props = {
-  id: string,
-  countryType: string,
-  country: string,
-  data: any[], // TODO: reuse FlowData type currently in the inflows outflows file
-  config: any,
-  startYear: number,
-  inflows: any[],
-  outflows: any[],
-  cached?: State,
-};
+  trend: object[]; // TOFIX: @ernest add proper types
+  mixes: object[]; // TOFIX: @ernest add proper types
+}
+
+export interface Props  {
+  id: string;
+  countryType: string;
+  country: string;
+  data: any[]; // TODO: reuse FlowData type currently in the inflows outflows file
+  config: any;
+  startYear: number;
+  inflows: any[];
+  outflows: any[];
+  cached?: State;
+}
 
 class AreaPartitionChart extends React.Component {
-  state: State;
-  props: Props;
+  public state: State;
+  public props: Props;
 
   constructor(props: Props) {
     super(props);
     this.state = this.initState(props);
   }
 
-  initState(props: Props) {
+  public initState(props: Props) {
     const year = this.props.startYear;
     const direction = this.props.countryType !== DONOR ? 'in' : 'out';
     const directions = [
@@ -70,21 +71,21 @@ class AreaPartitionChart extends React.Component {
     };
   }
 
-  setYear(year: number) {
+  public setYear(year: number) {
     this.setState({
       year,
     });
   }
 
-  setDirection(direction: string) {
+  public setDirection(direction: string) {
     this.setState(this.getDirectionState(direction));
   }
 
-  setFlow(id: string) {
+  public setFlow(id: string) {
     this.setState(this.getFlowState(this.state.direction, id));
   }
 
-  setFlowDetailGroup(id: string) {
+  public setFlowDetailGroup(id: string) {
     const selections = this.state.detailSelections || {};
     const [selection = {}] = selections.filter(d => d.value === id);
 
@@ -94,7 +95,7 @@ class AreaPartitionChart extends React.Component {
     });
   }
 
-  getDirectionState(direction: string) {
+  public getDirectionState(direction: string) {
     const flows = [
       {
         key: 'all',
@@ -119,7 +120,7 @@ class AreaPartitionChart extends React.Component {
     };
   }
 
-  getFlowState(direction: string, flow?: string) {
+  public getFlowState(direction: string, flow?: string) {
     const trend = this.props.data
       .filter(d => d.direction === direction && (flow === 'all' || d.flow_id === flow))
       .sort((a, b) => b.value - a.value);
@@ -148,7 +149,7 @@ class AreaPartitionChart extends React.Component {
     };
   }
 
-  render() {
+  public render() {
     return (
       <LightBg>
         <Container>
@@ -194,7 +195,6 @@ class AreaPartitionChart extends React.Component {
                 onYearChanged={year => this.setYear(+year)}
               />
             </Grid.Column>
-
 
             <Grid.Column mobile={1} computer={1} />
 

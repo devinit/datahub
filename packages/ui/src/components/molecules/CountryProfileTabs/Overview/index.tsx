@@ -1,23 +1,21 @@
 // @flow
 import { Container, Grid } from 'semantic-ui-react';
-import React from 'react';
-import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from 'components/atoms/TabsText';
+import * as React from 'react';
+import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import { P, Div } from 'glamorous';
-import { RECIPIENT, DONOR, NoData } from 'lib/utils/constants';
-import type { OverviewChartConfigs } from 'visboxConfigs/overviewTabCharts';
-import TabsToolTip from 'components/molecules/TabsToolTip';
-import Chart from 'components/atoms/Chart';
-import {addMinAndMaxYear} from 'lib/utils';
-import type {PageUnit} from 'components/organisms/PagesData';
-import {getPageUnitById} from 'components/organisms/PagesData';
-import { red} from '../../theme/semantic';
+import { RECIPIENT, DONOR, NoData, addMinAndMaxYear } from '@devinit/dh-base/utils/constants';
+import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
+import TabsToolTip from '../../TabsToolTip';
+import Chart from '../../../atoms/Chart';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import { red} from '../../../theme/semantic';
 
-type Props = {
-  countryType: string,
-  config: OverviewChartConfigs,
-  pagesData: PageUnit[],
-  ...TabDataQuery,
-};
+interface Props  {
+  countryType: string;
+  config: OverviewChartConfigs;
+  pagesData: PageUnit[];
+  ...TabDataQuery;
+}
 
 const Overview = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
