@@ -122,7 +122,10 @@ class Chart extends React.Component {
     /* eslint-disable no-nested-ternary */
     const startYear = this.props.aidType === 'oda' ? dataODA.yearTotal.year : dataOOF.yearTotal.year;
     this.props = {...this.props, startYear};
+<<<<<<< HEAD:packages/app/src/components/organisms/UnbundlingAid/index.js
     console.log('start year', startYear);
+=======
+>>>>>>> 1547153d69dc0a7b306dcce189b8bd8b0e0b8f76:private/components/organisms/UnbundlingAid/index.js
     return (
       <Div position="relative">
         {

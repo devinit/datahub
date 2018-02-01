@@ -350,7 +350,7 @@ module.exports = {
           source: 'Development Initiatives based on OECD DAC.'
         },
         {
-          id: 'data_series.out_oof_net',
+          id: 'fact.out_oof_net_2015',
           name: 'Net other official flows provided, US$',
           heading:
             'Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Net OOFs are equal to gross OOFs minus capital repayments on OOF loans. Data is in constant 2015 prices.',
