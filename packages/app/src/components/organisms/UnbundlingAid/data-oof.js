@@ -338,6 +338,10 @@ module.exports = {
       { id: 'environment', name: 'Environment' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'governance-and-security', name: 'Governance and security' },
+      {
+        id: 'governance-security-and-civil-society',
+        name: 'Governance, security and civil society'
+      },
       { id: 'health', name: 'Health' },
       { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'industry-and-trade', name: 'Industry and trade' },

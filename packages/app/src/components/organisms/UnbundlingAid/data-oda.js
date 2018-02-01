@@ -338,6 +338,10 @@ module.exports = {
       { id: 'environment', name: 'Environment' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'governance-and-security', name: 'Governance and security' },
+      {
+        id: 'governance-security-and-civil-society',
+        name: 'Governance, security and civil society'
+      },
       { id: 'health', name: 'Health' },
       { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'industry-and-trade', name: 'Industry and trade' },
@@ -356,7 +360,7 @@ module.exports = {
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' }
     ],
-    years: [2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
+    years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2015, total: '174.1bn' }
+  yearTotal: { year: 2016, total: '181.1bn' }
 };

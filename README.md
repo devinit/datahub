@@ -4,5 +4,19 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 
 
-
 - Start of refactor with lerna & typescript
+
+Installation
+-------------
+
+```
+npm install # in root
+npm install -g lerna # this is a lerna monorepo
+lerna bootstrap --hoist #install dependencies in all packages
+
+```
+
+TODO:
+
+- Make tsconfigs & tslints shareable
+- Re-add semantic ui

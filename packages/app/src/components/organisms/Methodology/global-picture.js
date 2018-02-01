@@ -214,9 +214,9 @@ module.exports = {
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015.zip?raw=true',
       source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
     },
     {
