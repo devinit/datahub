@@ -1,6 +1,6 @@
 // @flow
 import { Container, Grid } from 'semantic-ui-react';
-import React from 'react';
+import * as React from 'react';
 import {TextBlock} from '../../../atoms/BodyText';
 import { white } from '../../../theme/semantic';
 import {PageUnit} from '@devinit/dh-base/lib/PagesData';

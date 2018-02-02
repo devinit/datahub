@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable react/sort-comp */
 /* eslint-disable no-nested-ternary */
-import React from 'react';
+import * as React from 'react';
 import { approximate } from '@devinit/dh-base/utils';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';

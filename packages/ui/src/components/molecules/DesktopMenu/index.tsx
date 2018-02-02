@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { white } from '../../theme/semantic';
 import {mediaQueries} from '../../theme';
 import MenuItem from '../../atoms/DesktopMenuItem';
-import React from 'react';
+import * as React from 'react';
 
 const ListContainer = glamorous.ul({
   flexDirection: 'column',

@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import React from 'react';
+import * as React from 'react';
 // https://github.com/zeit/next.js/issues/1825
 // import logoImage from 'logo.png';
 

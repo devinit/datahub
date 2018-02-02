@@ -1,6 +1,6 @@
 // @flow
 import { Grid } from 'semantic-ui-react';
-import React from 'react';
+import * as React from 'react';
 import { Div } from 'glamorous';
 import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../atoms/TabsText';
 import Chart from '../../../atoms/Chart';

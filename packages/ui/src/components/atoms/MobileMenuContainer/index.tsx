@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import glamorous from 'glamorous';
 import Link from 'next/link';
 import { white, redHeaderColor, midWhite, lightBlack } from '../../theme/semantic';

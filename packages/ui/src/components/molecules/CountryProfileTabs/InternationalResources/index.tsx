@@ -1,6 +1,6 @@
 // @flow
 import {Container, Grid} from 'semantic-ui-react';
-import React from 'react';
+import * as React from 'react';
 import Chart from '../../../atoms/Chart';
 import {Span} from 'glamorous';
 import {small} from '../../../theme';

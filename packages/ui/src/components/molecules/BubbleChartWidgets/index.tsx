@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import glamorous from 'glamorous';
 import { Grid, Container, Button, Icon } from 'semantic-ui-react';
 import BubbleSize from '../../atoms/BubbleSizeDropDown';

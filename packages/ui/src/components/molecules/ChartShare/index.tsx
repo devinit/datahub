@@ -1,5 +1,5 @@
 // @flow
-import React, {Component} from 'react';
+import * as React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from '../../theme/semantic';
 import {getShortURL} from '@devinit/dh-base/utils';
@@ -72,7 +72,7 @@ interface State  {
   value: number;
 }
 
-export default class ChartShare extends Component {
+export default class ChartShare extends React.Component {
   public static defaultProps = {
     background: true,
     hover: false

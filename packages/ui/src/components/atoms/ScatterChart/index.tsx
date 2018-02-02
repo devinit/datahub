@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { draw } from '@devinit/charts';
 
 interface Props  {
@@ -7,7 +7,7 @@ interface Props  {
   config: {};
   width?: string;
   height?: string;
-};
+}
 
 class ScatterChart extends React.Component {
   // eslint-disable-next-line react/sort-comp

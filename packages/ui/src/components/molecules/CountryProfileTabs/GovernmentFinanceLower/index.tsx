@@ -1,6 +1,6 @@
 // @flow
 import { Container, Header, Grid, Divider } from 'semantic-ui-react';
-import React from 'react';
+import * as React from 'react';
 import {Lead} from '../../../atoms/BodyText';
 import {PageUnit} from '@devinit/dh-base/lib/PagesData';
 import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';

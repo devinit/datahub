@@ -33,7 +33,7 @@
     "@devinit/charts": "^1.6.47",
     "@devinit/dh-base": "1.0.0",
     "glamor": "^2.20.40",
-    "glamorous": "^4.11.0",
+    "glamorous": "^4.11.4",
     "mapbox-gl": "^0.43.0",
     "next": "^4.2.3",
     "ramda": "^0.25.0",
