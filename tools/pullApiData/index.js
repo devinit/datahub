@@ -120,14 +120,13 @@ export const getInflowsAndOutflows = async () => {
   }
 };
 
-export const getUnbundlingData = async (aidType: string, year: number) => {
+export const getUnbundlingData = async (aidType: string) => {
   try {
     const filePath = path.join(baseOrganismsPath, `UnbundlingAid/data-${aidType}.js`);
     const variables = {
       aidType,
       args: {
-        aidType,
-        year // TODO: shouldnt be hardcoded
+        aidType
       }
     };
     await getAndWriteData({query: UNBUNDLING_QUERY, filePath, variables});
