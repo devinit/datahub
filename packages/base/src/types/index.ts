@@ -1,13 +1,13 @@
-interface Process {
-    browser: boolean;
-    env: {
-      PORT: number,
-      MapboxAccessToken: string;
-      NODE_ENV: {
-        PORT: number
-      };
-    };
-}
+// interface Process {
+//     browser: boolean;
+//     env: {
+//       PORT: number,
+//       MapboxAccessToken: string;
+//       NODE_ENV: {
+//         PORT: number
+//       };
+//     };
+// }
 
 // declare var process: Process;
 
