@@ -7,6 +7,7 @@ query UnbundlingInternationalResources($resourceId: String!, $countryId: String!
       name
       value
       year
+      uid
     }
   }
 

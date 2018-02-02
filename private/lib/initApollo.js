@@ -1,9 +1,7 @@
 // @flow
-import { ApolloClient } from 'apollo-client';
 import fetch from 'isomorphic-fetch';
-import {HttpLink} from 'apollo-link-http';
 import { config } from 'package.json';
-import { IntrospectionFragmentMatcher, InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
 import introspectionQueryResultData from './graphql/fragmentTypes.json';
 
 let apolloClient = null;
@@ -12,17 +10,22 @@ if (!process.browser) {
   global.fetch = fetch;
 }
 
-export function create(initialState?: Object): ApolloClient {
-  const fragmentMatcher = new IntrospectionFragmentMatcher({
+const cache = () => new InMemoryCache({
+  dataIdFromObject: (obj) => obj.uid,
+  fragmentMatcher: new IntrospectionFragmentMatcher({
     introspectionQueryResultData
-  });
+  })
+});
+
+
+export function create(initialState?: Object): ApolloClient {
   return new ApolloClient({
     connectToDevTools: process.browser,
-    cache: new InMemoryCache({ fragmentMatcher }).restore(initialState || {}),
+    cache: cache().restore(initialState || {}),
     ssrMode: !process.browser,
     link: new HttpLink({ uri: config.api }),
     queryDeduplication: true,
-    dataIdFromObject: object => object.uid,
+    dataIdFromObject: obj => obj.uid,
   });
 }
 
