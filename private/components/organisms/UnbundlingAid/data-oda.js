@@ -362,5 +362,5 @@ module.exports = {
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2016, total: '181.1bn' }
+  yearTotal: { year: 2015, total: '174.3bn' }
 };
