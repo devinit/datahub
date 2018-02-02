@@ -1,10 +1,11 @@
 // @flow
-import {red } from 'components/theme/semantic';
+import {red } from '../theme/semantic';
 
-export type OverviewChartConfigs = {
-  area: any,
-  histogram: any,
-};
+export interface OverviewChartConfigs  {
+  area: any;
+  histogram: any;
+}
+
 export const area = {
   type: 'timearea',
   colors: [red],

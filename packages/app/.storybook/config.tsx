@@ -1,5 +1,5 @@
 import { configure } from '@storybook/react';
-import Router from 'next/router'
+import Router from 'next/router';
 import 'semantic.min.css';
 import '../../public/css/di-charts.min.css';
 import '../../public/css/mapbox-gl.min.css';

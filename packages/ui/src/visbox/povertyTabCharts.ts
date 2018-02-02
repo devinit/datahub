@@ -1,4 +1,4 @@
-import { red } from 'components/theme/semantic';
+import { red } from '../theme/semantic';
 
 export const area = {
   type: 'timearea',

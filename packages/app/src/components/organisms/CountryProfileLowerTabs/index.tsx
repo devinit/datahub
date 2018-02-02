@@ -1,6 +1,6 @@
 // @flow
-import React from 'react';
-import Tabs from 'components/molecules/Tabs';
+import * as React from 'react';
+import Tabs from '.../../../../../../../molecules/Tabs';
 import Pane from 'components/atoms/Pane';
 import GovernmentFinance from 'components/molecules/CountryProfileTabs/GovernmentFinanceLower';
 import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';

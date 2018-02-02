@@ -2,7 +2,8 @@
             Set-up
 *******************************/
 
-var
+// tslint:disable-next-line:one-variable-per-declaration
+let
   gulp         = require('gulp-help')(require('gulp')),
 
   // read user config to know what task to load
@@ -29,7 +30,6 @@ var
   buildRTL     = require('./tasks/rtl/build'),
   watchRTL     = require('./tasks/rtl/watch')
 ;
-
 
 /*******************************
              Tasks
@@ -61,12 +61,11 @@ gulp.task('version', 'Displays current version of Semantic', version);
 gulp.task('serve-docs', 'Serve file changes to SUI Docs', serveDocs);
 gulp.task('build-docs', 'Build all files and add to SUI Docs', buildDocs);
 
-
 /*--------------
       RTL
 ---------------*/
 
-if(config.rtl) {
+if (config.rtl) {
   gulp.task('watch-rtl', 'Watch files as RTL', watchRTL);
   gulp.task('build-rtl', 'Build all files as RTL', buildRTL);
 }

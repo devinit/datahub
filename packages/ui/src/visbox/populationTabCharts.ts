@@ -1,4 +1,4 @@
-import { red, blue } from 'components/theme/semantic';
+import { red, blue } from '../theme/semantic';
 
 export const populationDistribution = {
   type: 'stacked-timearea',
