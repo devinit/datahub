@@ -118,11 +118,6 @@
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.0"
   },
-  "git-pre-hooks": {
-    "pre-push": [
-      "npm run test -- -u"
-    ]
-  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "<rootDir>/private/lib/jest.config.js",
