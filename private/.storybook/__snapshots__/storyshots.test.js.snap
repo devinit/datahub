@@ -54858,10 +54858,10 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                 className="red"
               >
                  
-                2016
+                2015
               </span>
                US$ 
-              181.1bn
+              174.3bn
             </h1>
             <h5
               className="ui header"
@@ -56011,10 +56011,10 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                 className="red"
               >
                  
-                2016
+                2015
               </span>
                US$ 
-              64.0bn
+              71.5bn
             </h1>
             <h5
               className="ui header"
@@ -57550,10 +57550,10 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
             className="red"
           >
              
-            2016
+            2015
           </span>
            US$ 
-          181.1bn
+          174.3bn
         </h1>
         <h5
           className="ui header"
@@ -57789,35 +57789,45 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
 
 exports[`Storyshots Year Slider Datahub Year Slider 1`] = `
 <div
-  className="css-dnegyn"
+  style={
+    Object {
+      "marginLeft": "100px",
+      "marginTop": "50px",
+      "width": "40%",
+    }
+  }
 >
-  <span
-    className="css-77k8q4 bubble"
-  >
-    2000
-  </span>
   <div
-    className="css-1whzuw8"
+    className="css-dnegyn"
   >
     <span
-      className="css-yav0in"
+      className="css-77k8q4 bubble"
     >
-      2016
+      2000
+    </span>
+    <div
+      className="css-1whzuw8"
+    >
+      <span
+        className="css-yav0in"
+      >
+        2016
+      </span>
+    </div>
+    <input
+      className="css-13ehj2n input low"
+      max={2020}
+      min={2000}
+      onChange={[Function]}
+      step={1}
+      type="range"
+      value={2016}
+    />
+    <span
+      className="css-yc6k31 bubble"
+    >
+      2020
     </span>
   </div>
-  <input
-    className="css-13ehj2n input low"
-    max={2020}
-    min={2000}
-    onChange={[Function]}
-    step={1}
-    type="range"
-    value={2016}
-  />
-  <span
-    className="css-yc6k31 bubble"
-  >
-    2020
-  </span>
 </div>
 `;
