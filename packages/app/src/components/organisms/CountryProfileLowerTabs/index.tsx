@@ -1,17 +1,18 @@
 // @flow
 import * as React from 'react';
-import Tabs from '.../../../../../../../molecules/Tabs';
-import Pane from 'components/atoms/Pane';
-import GovernmentFinance from 'components/molecules/CountryProfileTabs/GovernmentFinanceLower';
-import GovernmentFinanceChart from 'components/organisms/GovernmentFinance';
-import InflowsVsOutflows from 'components/organisms/InflowsVsOutflows';
-import {GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from 'lib/utils/constants';
-import InternationalResourcesLower from 'components/molecules/CountryProfileTabs/InternationalResourcesLower';
-import InternationalResourcesChart from 'components/organisms/InternationalResourcesChart';
-import type {StateToShare} from 'components/molecules/ChartShare';
-import {getCountryProfileData} from 'components/organisms/PagesData';
-import ErrorBoundary from 'lib/ErrorBoundary';
-import {getCountry} from 'lib/utils';
+import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
+import Pane from '@devinit/dh-ui/lib/atoms/Pane';
+import GovernmentFinance from '@devinit/dh-ui/lib/molecules/CountryProfileTabs/GovernmentFinanceLower';
+import GovernmentFinanceChart from '../GovernmentFinance';
+import InflowsVsOutflows from '../InflowsVsOutflows';
+import {GOVERNMENT_FINANCE_LOWER,
+  INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from '@devinit/dh-base/lib/utils/constants';
+import InternationalResourcesLower from '@devinit/dh-ui/molecules/CountryProfileTabs/InternationalResourcesLower';
+import InternationalResourcesChart from '../InternationalResourcesChart';
+import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import {getCountryProfileData} from '../PagesData';
+import ErrorBoundary from '@devinit/dh-base/lib/ErrorBoundary';
+import {getCountry} from '@devinit/dh-base/lib/utils';
 
 import data from './data';
 

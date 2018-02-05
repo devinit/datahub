@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { Grid, Dropdown, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from '../Header/index';
 
