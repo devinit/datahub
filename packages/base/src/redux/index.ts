@@ -1,5 +1,5 @@
 import { createStore, combineReducers, compose } from 'redux';
-// import { process } from '../types';
+import {process} from '../types';
 
 let reduxStore;
 

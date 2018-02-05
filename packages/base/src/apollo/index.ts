@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
-// import { process } from '../types/index';
+import {process} from '../types';
 
 (global as any).fetch = (global as any).fetch || fetch;
 

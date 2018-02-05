@@ -2,7 +2,7 @@
  * exports out page data for various pages after doing any necessary modifications
  */
 import {getCountryName, capitalize} from '../utils';
-import { Country } from '../types/index';
+import { Country } from '../types';
 
 export interface PageUnit {
   id: string;

@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import {Country, District, MenueItem, Menue} from './types';
+import {Country, District, process, Menue, MenueItem} from '../types';
 import {RECIPIENT} from './constants';
 
 const apolloFetch = createApolloFetch({ uri: process.config.api });
@@ -69,7 +69,7 @@ export async function getData<T>(opts: IgetData): Promise<T> {
     const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
     let storage: any = null;
     if (process.browser) {
-      storage = await getLocalStorageInstance(process.browser, process.version);
+      storage = await getLocalStorageInstance(process.browser, process.version);  // @ts-ignore
       const cached = storage ? await storage.getItem(key) : null;
       if (cached) return JSON.parse(cached);
     }
