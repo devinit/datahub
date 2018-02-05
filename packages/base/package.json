@@ -4,7 +4,6 @@
   "description": "for datahub related libs & tools",
   "main": "lib/index.js",
   "scripts": {
-    "tslint": "tslint",
     "build": "npm run tsc",
     "tsc": "tsc",
     "css": "lessc src/theme/less/index.less static/styles.css",
@@ -33,19 +32,25 @@
     "glamor": "^2.20.40"
   },
   "dependencies": {
+    "apollo-client-preset": "^1.0.8",
     "apollo-fetch": "^0.7.0",
     "fs-extra": "^5.0.0",
+    "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.6",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-apollo": "^2.0.4",
+    "react-dom": "^16.2.0",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
+    "@types/localforage": "0.0.34",
     "css-loader": "0.28.9",
+    "css-to-js-object": "0.0.3",
     "csso": "^3.1.1",
     "less": "2.7.3",
     "less-plugin-clean-css": "1.5.1",
-    "css-to-js-object": "0.0.3",
+    "typescript": "^2.7.1",
     "usus": "^1.6.0"
   }
 }
