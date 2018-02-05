@@ -1,16 +1,3 @@
-interface Process {
-    browser: boolean;
-    env: {
-      PORT: number,
-      MapboxAccessToken: string;
-      NODE_ENV: {
-        PORT: number
-      };
-    };
-}
-
-// declare var process: Process;
-
 export interface District {
   id: string;
   name: string;

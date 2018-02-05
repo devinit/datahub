@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import {Country, District, MenueItem, Menue} from '../types';
+import {Country, District, MenueItem, Menue} from './types';
 import {RECIPIENT} from './constants';
 
-const apolloFetch = (uri: string) => createApolloFetch({ uri });
+const apolloFetch = createApolloFetch({ uri: process.config.api });
 
 export type CallBack<T> = (data: T) => any;
 
@@ -60,25 +60,22 @@ export async function getLocalStorageInstance(browser: boolean, version: string)
 
 interface IgetData {
   query: string;
-  uri: string;
   variables: object;
-  browser?: boolean;
-  version?: string;
 }
 
 export async function getData<T>(opts: IgetData): Promise<T> {
   try {
-    const {query, variables, browser, version, uri} = opts;
+    const {query, variables} = opts;
     const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
     let storage: any = null;
-    if (browser && version) {
-      storage = await getLocalStorageInstance(browser, version);
+    if (process.browser) {
+      storage = await getLocalStorageInstance(process.browser, process.version);
       const cached = storage ? await storage.getItem(key) : null;
       if (cached) return JSON.parse(cached);
     }
     const response: FetchResult = variables
-      ? await apolloFetch(uri)({ query, variables })
-      : await apolloFetch(uri)({ query });
+      ? await apolloFetch({ query, variables })
+      : await apolloFetch({ query });
     if (response.errors) throw response.errors;
     if (storage) {
       try {

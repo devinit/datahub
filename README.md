@@ -16,6 +16,13 @@ lerna bootstrap --hoist #install dependencies in all packages
 
 ```
 
+Usage examples
+
+```
+lerna run --scope @devinit/dh-base lint # linting base package
+lerna run --scope @devinit/dh-base build # building base package
+```
+
 TODO:
 
 - Make tsconfigs & tslints shareable
