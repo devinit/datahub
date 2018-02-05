@@ -61,7 +61,7 @@
     "localforage": "^1.5.3",
     "lru-cache": "^4.1.1",
     "mapbox-gl": "^0.44.0",
-    "next": "^4.2.3",
+    "next": "^5.0.0",
     "prettier": "^1.7.4",
     "ramda": "^0.25.0",
     "react": "^16.0.0",
