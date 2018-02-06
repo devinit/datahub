@@ -16,7 +16,6 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "apollo-client-preset": "^1.0.6",
     "compression": "^1.7.1",
     "express": "^4.16.2",
     "glamor": "^2.20.40",
