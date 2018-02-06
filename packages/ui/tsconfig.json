@@ -11,7 +11,7 @@
       "noImplicitAny": false,
       "noUnusedLocals": true,
       "rootDir": "src",
-      "outDir": "dist",
+      "outDir": "lib",
       "removeComments": true
     },
     "exclude": [
