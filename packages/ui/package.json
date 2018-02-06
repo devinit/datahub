@@ -7,7 +7,7 @@
     "release-it": "release-it",
     "build": "NODE_ENV=production npm run build-css && cp -R static lib/ && tsc",
     "tsc": "tsc",
-    "copy-chart-css": "cp node_modules/@devinit/charts/dist/di-charts.min.css static/",
+    "copy-css": "cp node_modules/@devinit/charts/dist/di-charts.min.css static/ && cp node_modules/mapbox-gl/dist/mapbox-gl.css static/",
     "lint": "tslint -c tslint.json 'pages/**/*.tsx' 'src/**/*.tsx' 'src/**/*.ts'",
     "storybook": "start-storybook -s static -p 6006",
     "patch": "release-it -i patch -n",
