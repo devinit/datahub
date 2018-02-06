@@ -1,4 +1,3 @@
-// @flow
 export interface State {
   profileLoading: boolean; // think loading new country on map click
   shouldForceRedraw: boolean;
@@ -60,6 +59,7 @@ export type MapBoxOptions = & Viewport & ViewportDefaults & {
 };
 
 export interface Geometry {
+  type: string;
   coordinates: number[][][];
 }
 
@@ -72,7 +72,7 @@ export interface Feature {
     ISO?: string;
     P20?: number;
     p20?: number;
-    DHSREGEN?: string;
+    DHSREGNA?: string;
     CNTRYNAMEE?: string;
     'country-slug'?: string;
     'country-name'?: string;
@@ -81,7 +81,8 @@ export interface Feature {
     dhsreg?: string;
   };
   layer: {
-    interface: string
+    interface: string;
+    type: string;
   };
   geometry: Geometry;
 }

@@ -12,7 +12,7 @@ interface State  {
   time: number;
 }
 
-const LoaderContainer = glamorous.div(
+const LoaderContainer = glamorous.div<{loading: boolean}>(
   {
     'position': 'fixed',
     'top': 0,
@@ -29,7 +29,7 @@ const LoaderContainer = glamorous.div(
   }),
 );
 
-export default class LoadingBar extends React.Component {
+export default class LoadingBar extends React.Component<Props> {
   public state: State;
   public progressInterval: any;
   public timeOutInterval: any;

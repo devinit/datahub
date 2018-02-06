@@ -33,9 +33,11 @@ export const indicatorsWith0dp = [
   'spotlightonuganda.ugandahealthposts',
   'dataseries.forgottencrisis'];
 
-class BaseMap extends React.Component {
+class BaseMap extends React.Component<Props> {
+
   public static foldOverSurveyMapFeatures(features: Feature[]): MapData {
-    const props = features.reverse().reduce((acc, feature) => {
+    type FeatureProps = Feature['properties'] & {total: number; sum: number};
+    const props: FeatureProps = features.reverse().reduce((acc, feature) => {
       // this is a country feature;
       const p20: number = feature.properties && feature.properties.p20 ? feature.properties.p20 : 0;
       if (p20 === 0) return { ...acc, ...feature.properties };
@@ -43,7 +45,6 @@ class BaseMap extends React.Component {
       const total = acc.total + 1;
       return { ...acc, sum, total, ...feature.properties };
     }, { total: 0, sum: 0 });
-
     const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
     const id: string = props.ISO2 || '';
     const countryName: string = props.NAME || '';
@@ -51,6 +52,7 @@ class BaseMap extends React.Component {
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
+
   public static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
     if (indicator === 'surveyp20') return BaseMap.foldOverSurveyMapFeatures(features);
     if (!features[0].properties) throw new Error('Properties missing from map style');
@@ -60,14 +62,14 @@ class BaseMap extends React.Component {
     const countryName: string = properties['country-name'] || '';
     const slug: string = properties['country-slug'] || '';
     const id: string = properties.ISO || '';
-    const region: string = properties.DHSREGEN ? properties.DHSREGEN : '';
+    const region: string = properties.DHSREGNA ? properties.DHSREGNA : '';
     const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug};
   }
   public static setPointDataValue(
     value: number, uom?: string, indicator?: string): string {
     if (indicator === 'surveyp20' || indicator === 'regionalp20') return value.toString();
-    if (indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
+    if (indicator && indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
     if (indicator === 'dataseries.climatevulnerability') return value.toFixed(2);
     return approximate(value, 1, true);
@@ -89,9 +91,9 @@ class BaseMap extends React.Component {
   public propertyName: string = 'ISO2';
   public mapLoaded: boolean = false;
   public isOnMobile: boolean = false;
-  public map: object;
-  public nav: object;
-  public popup: object & { remove: any };
+  public map: any;
+  public nav: any;
+  public popup: { remove: any,  setLngLat: (args: any[]) => any; } & any;
   public center: Point;
   public zoomLevel: number;
   public element: HTMLDivElement;
@@ -148,7 +150,7 @@ class BaseMap extends React.Component {
     const indicator: string = this.props.meta && this.props.meta.id ? this.props.meta.id : '';
     const detail: string = pointData.detail || NODATA;
     let uom: string =
-      this.props.meta && this.props.meta.uomdisplay ? this.props.meta.uomdisplay : '';
+      this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     let value: string = NODATA;
     if (pointData.value !== null && pointData.value !== undefined &&
       this.props.meta && this.props.meta.id) {
@@ -174,7 +176,7 @@ class BaseMap extends React.Component {
       .setHTML(this.tipTemplate(obj.pointData))
       .addTo(this.map);
   }
-  public setMinimalMapDataPoint(feature: Feature, value: null | number): MapData {
+  public setMinimalMapDataPoint(feature: Feature, value?: number): MapData {
     const id = feature.properties[this.props.paint.propertyName || this.propertyName];
     const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
     const nameProperty = this.propertyLayerNameMap[this.props.paint.propertyLayer || 'national'];
@@ -184,9 +186,6 @@ class BaseMap extends React.Component {
       name: feature.properties[nameProperty],
       year: 0,
       value,
-      uid: '',
-      detail: '',
-      color: '',
     };
   }
   public getMouseHoverPointData(features: Feature[]): MapData | null {
@@ -196,15 +195,15 @@ class BaseMap extends React.Component {
         const paintProperty: string = this.props.paint.propertyName || this.propertyName;
         return obj.id === features[0].properties[paintProperty];
       });
-      return point || this.setMinimalMapDataPoint(features[0], null);
+      return point || this.setMinimalMapDataPoint(features[0]);
     }
     if (this.props.countryProfile) return this.setMinimalMapDataPoint(features[0], 0);
     if (!this.props.countryProfile && features.length > 1 && this.props.meta) {
       // for pre-styled maps i.e survey & regional map
       if (this.props.meta.id) return BaseMap.pointDataForPreStyledMap(features, this.props.meta.id);
-      return this.setMinimalMapDataPoint(features[0], null);
+      return this.setMinimalMapDataPoint(features[0]);
     }
-    return this.setMinimalMapDataPoint(features[0], null);
+    return this.setMinimalMapDataPoint(features[0]);
   }
   public mouseHoverEvent() {
     this.map.on('mousemove', e => {
@@ -290,18 +289,18 @@ class BaseMap extends React.Component {
     let bounds: any;
     if (geometry.type === 'Polygon') {
       const coordinates: number[][] = geometry.coordinates[0];
-      bounds = coordinates.reduce((bounds: any, coord) => {
-        return bounds.extend(coord);
+      bounds = coordinates.reduce((boundsx: any, coord) => {
+        return boundsx.extend(coord);
       }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
     }
     if (geometry.type === 'MultiPolygon') {
       const sets: number[][][] = geometry.coordinates;
-      bounds = sets.reduce((bounds: any, set) => {
+      bounds = sets.reduce((boundsx: any, set) => {
         const coordinates: number[] = set[0];
         const innerBounds = coordinates.reduce((inner: any, coord) => {
           return inner.extend(coord);
         }, new mapboxgl.LngLatBounds(coordinates[0], coordinates[0]));
-        return bounds.extend(innerBounds);
+        return boundsx.extend(innerBounds);
       }, new mapboxgl.LngLatBounds(sets[0][0][0], sets[0][0][0]));
     }
     if (!bounds) return false;
@@ -383,16 +382,14 @@ class BaseMap extends React.Component {
     let { width, height } = this.props;
     if (!width) width = '100%';
     if (!height) height = window.innerWidth < 1000 ? 480 : 600;
-    const mapContainerStyle = { width, height, position: 'relative' };
     return (
       <MapContainer>
         <LoadingBar loading={this.state.profileLoading} />
         <div
-          key={'map-mapbox'}
+          style={{ width, height, position: 'relative' }}
           ref={element => {
             if (element) this.draw(element, this.props.paint);
           }}
-          style={mapContainerStyle}
         />
       </MapContainer>
     );
