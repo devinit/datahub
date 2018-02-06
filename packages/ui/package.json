@@ -30,7 +30,7 @@
     "url": "https://github.com/devinit/datagub.git"
   },
   "dependencies": {
-    "@devinit/charts": "^1.6.47",
+    "@devinit/charts": "^1.6.49",
     "@devinit/dh-base": "1.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.4",

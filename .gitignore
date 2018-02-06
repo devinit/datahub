@@ -3,6 +3,7 @@ dist
 .output
 .out
 .next
+lib
 
 # dependencies
 node_modules
