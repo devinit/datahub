@@ -12,7 +12,7 @@ Installation
 ```
 npm install # in root
 npm install -g lerna # this is a lerna monorepo
-lerna bootstrap --hoist #install dependencies in all packages
+lerna bootstrap #install dependencies in all packages
 
 ```
 

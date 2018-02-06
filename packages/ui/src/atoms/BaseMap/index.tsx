@@ -1,5 +1,3 @@
-// @flow
-/* eslint-disable react/no-danger */
 import * as React from 'react';
 import mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
