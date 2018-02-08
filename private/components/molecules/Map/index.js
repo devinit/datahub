@@ -23,7 +23,6 @@ type Props = {
 };
 
 type State = {
-  data: MapData[],
   currentYear: number,
 };
 
@@ -60,6 +59,7 @@ class Map extends Component {
   }
 
   state: State;
+  data: MapData[];
 
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) this.init(nextProps);
@@ -67,13 +67,13 @@ class Map extends Component {
 
   onYearChange(year: number) {
     if (this.props && this.props.mapData && this.props.mapData.map) {
-      const data = Map.setCurrentYearData(year, this.props.mapData.map);
-      this.paint = { data, ...this.config.paint };
-      this.setState({ currentYear: year, data });
+      this.data = Map.setCurrentYearData(year, this.props.mapData.map);
+      this.paint = { data: this.data, ...this.config.paint };
+      this.setState({ currentYear: year});
     }
   }
   setCountryRankData(): RankingsTableProps {
-    const sortedData = this.state.data
+    const sortedData = this.data
       .filter(obj => obj.value && obj.id)
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined'); // make flow happy
@@ -138,17 +138,16 @@ class Map extends Component {
   init(props: Props) {
     this.initYearSetup(props);
     this.initMetaSetup(props);
-    let data = [];
     if (props.mapData && props.mapData.map && props.mapData.map.length) {
-      data = this.yearSliderVisibility
+      this.data = this.yearSliderVisibility
         ? Map.setCurrentYearData(this.state.currentYear, props.mapData.map)
         : props.mapData.map;
-      this.paint = { data, ...this.config.paint };
+      this.paint = { data: this.data, ...this.config.paint };
     }
     if (props.mapData && props.mapData.map_style) {
-      this.paint = { data, ...this.config.paint, mapStyle: props.mapData.map_style };
+      this.paint = { data: this.data, ...this.config.paint, mapStyle: props.mapData.map_style };
     }
-    this.state = { ...this.state, data };
+    this.state = { ...this.state};
   }
   yearSliderVisibility: boolean;
   startYear: number;
