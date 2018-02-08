@@ -296,9 +296,10 @@ module.exports = {
           id: 'fact.in_oda_gross_2015',
           name: 'Gross ODA received, US$',
           heading:
-            'Gross official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices.',
+            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices',
           tooltip: 'Gross ODA received, US$.',
-          source: 'Development Initiatives based on OECD DAC'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'fact.in_oda_net_2015',
@@ -306,7 +307,8 @@ module.exports = {
           heading:
             'Net official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
           tooltip: 'Net ODA received, US$.',
-          source: 'Development Initiatives based on OECD DAC'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'fact.out_oda_net_2015',
@@ -314,7 +316,8 @@ module.exports = {
           heading:
             'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
           tooltip: 'Net ODA provided by OECD DAC members, US$.',
-          source: 'Development Initiatives based on OECD DAC.'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'recipient_profile.oda_per_poor_person_2015',
@@ -323,7 +326,7 @@ module.exports = {
             'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2015 prices.',
           tooltip: 'ODA per person living on under $1.90 a day, US$.',
           source:
-            'Development Initiatives based on OECD DAC and World Bank PovcalNet.'
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'fact.oda_percent_gni',
@@ -331,7 +334,8 @@ module.exports = {
           heading:
             'Net official development assistance (ODA) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income (GNI).',
           tooltip: 'Net ODA provided by DAC members, % of GNI.',
-          source: 'OECD DAC'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'fact.oda_to_ldcs_percent_gni',
@@ -339,15 +343,17 @@ module.exports = {
           heading:
             'Net official development assistance (ODA) to least-developed countries (LDCs) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.',
           tooltip: 'Gross ODA provided by DAC members to LDCs, % of GNI.',
-          source: 'OECD DAC'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
-          id: 'data_series.in_oof_gross',
+          id: 'fact.in_oof_gross_2015',
           name: 'Gross other official flows received, US$',
           heading:
             'Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',
           tooltip: 'Gross other official flows received, US$.',
-          source: 'Development Initiatives based on OECD DAC.'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'fact.out_oof_net_2015',
@@ -355,7 +361,8 @@ module.exports = {
           heading:
             'Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Net OOFs are equal to gross OOFs minus capital repayments on OOF loans. Data is in constant 2015 prices.',
           tooltip: 'Net other official flows provided, US$.',
-          source: 'Development Initiatives based on OECD DAC.'
+          source:
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'data_series.out_ssc_net',
@@ -364,7 +371,7 @@ module.exports = {
             'Net south-south development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC). Data is in constant 2015 prices.',
           tooltip: 'Net south-south development cooperation provided, US$.',
           source:
-            'Development Initiatives based on OECD DAC and national sources.'
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         },
         {
           id: 'data_series.ssc_percent_gni',
@@ -373,7 +380,7 @@ module.exports = {
             'Development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.',
           tooltip: 'South-south development cooperation provided, % of GNI.',
           source:
-            'Development Initiatives based on OECD DAC and national sources.'
+            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
         }
       ],
       default_indicator: 'fact.in_oda_gross_2015'

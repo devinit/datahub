@@ -167,7 +167,8 @@ module.exports = {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/ssc-percent-gni.zip?raw=true',
       source: {
-        name: 'Development Initiatives based on OECD DAC and national sources.',
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
         link: ''
       }
     },
@@ -181,7 +182,11 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Net ODA provided by DAC members, % of GNI',
@@ -193,7 +198,11 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni.zip?raw=true',
-      source: { name: 'OECD DAC', link: '' }
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Gross ODA provided by DAC members to LDCs, % of GNI',
@@ -205,7 +214,11 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni.zip?raw=true',
-      source: { name: 'OECD DAC', link: '' }
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Net other official flows provided, US$',
@@ -217,7 +230,11 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Net south-south development cooperation provided, US$',
@@ -230,7 +247,8 @@ module.exports = {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net.zip?raw=true',
       source: {
-        name: 'Development Initiatives based on OECD DAC and national sources.',
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
         link: ''
       }
     },
@@ -246,21 +264,25 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015.zip?raw=true',
       source: {
         name:
-          'Development Initiatives based on OECD DAC and World Bank PovcalNet.',
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
         link: ''
       }
     },
     {
       name: 'Gross ODA received, US$',
       description:
-        'Gross official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices.',
+        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC', link: '' }
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Net ODA received, US$',
@@ -272,7 +294,11 @@ module.exports = {
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC', link: '' }
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Gross other official flows received, US$',
@@ -281,10 +307,14 @@ module.exports = {
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015.zip?raw=true',
+      source: {
+        name:
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
+        link: ''
+      }
     },
     {
       name: 'Foreign direct investment per person, US$',
