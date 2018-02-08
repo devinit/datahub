@@ -1,8 +1,7 @@
-// @flow
 import * as React from 'react';
 import { Button, Modal, Icon } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from '../../theme/semantic';
-import {getShortURL} from '@devinit/dh-base/utils';
+import {getShortURL} from '@devinit/dh-base/lib/utils';
 import glamorous, { Div, Span } from 'glamorous';
 
 export const NoBackground = {
@@ -34,7 +33,7 @@ const Container = glamorous.div({
   },
 });
 
-const ButtonWrapper = glamorous.span({
+const ButtonWrapper = glamorous.span<{hover: any; background: any; }>({
   ...NoBackground,
 }, (props) => ({
   '& button:hover': {
@@ -54,10 +53,10 @@ export interface StateToShare  {
   indicator?: string;
 }
 interface Props  {
-  size: string;
-  color: string;
+  size: any;
+  color: any;
   iconName?: string;
-  fontWeight?: string | number;
+  fontWeight?: any;
   fontSize?: string;
   backgroundColor?: string;
   label?: string;
@@ -72,7 +71,7 @@ interface State  {
   value: number;
 }
 
-export default class ChartShare extends React.Component {
+export default class ChartShare extends React.Component<Props> {
   public static defaultProps = {
     background: true,
     hover: false
@@ -81,7 +80,7 @@ export default class ChartShare extends React.Component {
     link: '',
     value: 2
   };
-  public state: State;
+  public stateLv: State;
   /* eslint-disable no-useless-constructor */
   constructor(props: Props) {
     super(props);
@@ -95,8 +94,10 @@ export default class ChartShare extends React.Component {
   public onLinkChange = () => this.createLink(this.props);
 
   public handleChange = (value: number) => {
-    this.setState({value});
-    this.createLink(this.props, value);
+    return () => {
+      this.setState({value});
+      this.createLink(this.props, value);
+    };
   }
   // checkedoption i.e 1 is default 2 is as configured
   public async createLink(props: Props, checkedOption?: number = 2) {
@@ -126,7 +127,8 @@ export default class ChartShare extends React.Component {
                 fontWeight={fontWeight || 'normal'}
                 fontSize={fontSize || '0.85em'}
               >
-                {label || 'Share this chart'}</Span>
+                {label || 'Share this chart'}
+              </Span>
             </Button>
           </ButtonWrapper>}
         size="tiny"
@@ -140,13 +142,13 @@ export default class ChartShare extends React.Component {
                 type="radio"
                 value={1}
                 checked={this.state.value === 1}
-                onChange={() => this.handleChange(1)}
+                onChange={this.handleChange(1)}
               /> in default view <br />
               <input
                 type="radio"
                 value={2}
                 checked={this.state.value === 2}
-                onChange={() => this.handleChange(2)}
+                onChange={this.handleChange(2)}
               /> as I configured it<br />
               <input className="link" value={this.state.link} onChange={this.onLinkChange} />
               <Div marginTop={'1.5em'}>
@@ -159,7 +161,8 @@ export default class ChartShare extends React.Component {
                   <Button icon="twitter" />
                 </a>
                 <a
-                  href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${this.state.link}`}
+                  href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives:
+                  Uganda — ${this.state.link}`}
                 >
                   <Button icon="mail outline" />
                 </a>

@@ -1,14 +1,13 @@
-// @flow
 import * as React from 'react';
 import { P } from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import ToolTip from '../ToolTip';
 
-export type Props = {
-  source?: string,
-  heading?: string,
-  color?: string
-};
+export interface Props  {
+  source?: string;
+  heading?: string;
+  color?: string;
+}
 
 export const RegularToolTip = (props: {color?: string, text: string}) => {
   return (
@@ -17,7 +16,7 @@ export const RegularToolTip = (props: {color?: string, text: string}) => {
     </ToolTip>
   );
 };
-// $FlowFixMe
+
 const TabsToolTip = (props: Props) => {
   return (
     props ?

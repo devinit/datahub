@@ -9,7 +9,7 @@ import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/PagesData';
 import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
-import { NoData } from '@devinit/dh-base/utils/constants';
+import { NoData } from '@devinit/dh-base/lib/utils/constants';
 
 interface Props {
   ...TabDataQuery;
@@ -77,7 +77,7 @@ const Government = (props: Props) => {
               </Grid.Column>
               <Grid.Column width="8">
                 <Div fontSize={small} marginTop="2em">
-                  {governmentFinance.spendingAllocation.data.map((d: Object) =>
+                  {governmentFinance.spendingAllocation.data.map((d: any) =>
                     (<Legend
                       key={`${d.color}-${d.value}`}
                       color={d.color}

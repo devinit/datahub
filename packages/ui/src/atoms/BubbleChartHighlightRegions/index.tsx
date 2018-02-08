@@ -1,9 +1,8 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import Wrapper from '../BubbleChartWidgetWrapper';
 
-export const ColorSpan = glamorous.span(
+export const ColorSpan = glamorous.span<{color: string}>(
   {
     display: 'inline-block',
     width: '10px',
@@ -17,8 +16,8 @@ export const ColorSpan = glamorous.span(
 );
 
 interface Props  {
-  onChange?: (value: string | void) => void;
-  options: object[];
+  onChange?: (event: any) => void;
+  options: Array<{color: string, name: string}>;
   colorBy: boolean;
 }
 

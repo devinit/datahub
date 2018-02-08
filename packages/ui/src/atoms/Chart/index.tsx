@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { draw } from '@devinit/charts';
 // import stylesheet from '@devinit/charts/dist/di-charts.min.css';
@@ -12,18 +11,15 @@ interface Props  {
 }
 
 class Chart extends React.Component {
-  // eslint-disable-next-line react/sort-comp
   public props: Props;
-  public element: Element;
+  public element: HTMLDivElement | null;
   public chart: any;
 
-  // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);
   }
 
   public componentDidMount() {
-    // eslint-disable-next-line react/no-find-dom-node
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;

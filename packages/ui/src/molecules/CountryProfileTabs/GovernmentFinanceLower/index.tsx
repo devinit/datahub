@@ -1,4 +1,3 @@
-// @flow
 import { Container, Header, Grid, Divider } from 'semantic-ui-react';
 import * as React from 'react';
 import {Lead} from '../../../atoms/BodyText';

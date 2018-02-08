@@ -30,7 +30,7 @@ const InternationalResources = (props: Props) => {
             <TextBlock>{textBlockA1 ? textBlockA1.title : ''}</TextBlock>
             <TextBlock>
               {textBlockA2 ? textBlockA2.title : ''}
-              <TabsToolTip {...props.toolTip} color="grey" />
+              <TabsToolTip {...props.toolTip}  color="grey" />
             </TextBlock>
             {props.children[0]}
           </Grid.Column>

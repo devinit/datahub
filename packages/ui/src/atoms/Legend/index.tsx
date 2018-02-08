@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
 
-const Legend = glamorous.div({
+const Legend = glamorous.div<{color: string}>({
   'textAlign': 'left',
   'fontWeight': 100,
 

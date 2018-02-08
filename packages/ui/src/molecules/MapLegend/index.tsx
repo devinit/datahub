@@ -1,4 +1,3 @@
-// @flow
 import { Header } from 'semantic-ui-react';
 import glamorous, { P, Div, Ul } from 'glamorous';
 import * as React from 'react';
@@ -20,7 +19,7 @@ interface LegendItemStyleProps  {
   backgroundColor: string;
 }
 
-const LegendContainer = glamorous.div(
+const LegendContainer = glamorous.div<{length: any; }>(
   {
     position: 'absolute',
     left: '2%',

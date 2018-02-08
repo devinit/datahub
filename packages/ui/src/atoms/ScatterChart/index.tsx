@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { draw } from '@devinit/charts';
 
@@ -9,19 +8,16 @@ interface Props  {
   height?: string;
 }
 
-class ScatterChart extends React.Component {
-  // eslint-disable-next-line react/sort-comp
+class ScatterChart extends React.Component<Props> {
   public props: Props;
-  public element: Element;
+  public element: HTMLDivElement | null;
   public chart: any;
 
-  // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);
   }
 
   public componentWillMount() {
-    // eslint-disable-next-line react/no-find-dom-node
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;

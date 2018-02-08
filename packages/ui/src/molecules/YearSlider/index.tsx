@@ -15,7 +15,7 @@ interface Props  {
   step: number;
   position: number;
   backgroundColor?: string;
-  onChange(year: number): void;
+  onChange: (year: number) => void;
 }
 
 interface State  {
@@ -23,8 +23,7 @@ interface State  {
   position: number;
 }
 
-class YearSlider extends React.Component {
-  // eslint-disable-next-line
+class YearSlider extends React.Component<Props> {
   public state: State;
 
   constructor(props: Props) {
@@ -38,10 +37,10 @@ class YearSlider extends React.Component {
     if (nextProps !== this.props) this.setState({ position: nextProps.position });
   }
   public onSliderChange = (e: any) => {
-    const position = parseInt(e.target.value, 0);
+    const position: number = parseInt(e.target.value, 0);
     this.props.onChange(position);
     this.setState({ position });
-  };
+  }
 
   public render() {
     return (

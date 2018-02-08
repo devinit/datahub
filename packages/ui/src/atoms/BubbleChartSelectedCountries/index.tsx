@@ -4,7 +4,7 @@ import { Dropdown } from 'semantic-ui-react';
 import Wrapper from '../BubbleChartWidgetWrapper';
 
 interface Props  {
-  onChange: (value: string | void) => void;
+  onChange?: (event: any) => void;
   options?: object[];
   placeholder: string;
 }

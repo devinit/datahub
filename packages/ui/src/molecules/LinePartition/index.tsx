@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import glamorous, {H4} from 'glamorous';
 import { groupBy, uniq } from 'ramda';
@@ -25,10 +24,20 @@ const TreeChartContainer = glamorous.div({
     fontWeight: '500 !important'
   },
 });
-
-const groupByYear = groupBy(d => d.year);
-const groupByBudgetType = groupBy(d => d.budget_type);
-
+interface Args {
+  year: any;
+  budget_type: any;
+}
+const groupByYear = groupBy( (d: Args) => d.year);
+const groupByBudgetType = groupBy( (d: Args) => d.budget_type);
+interface Legendx {
+  legend: any;
+}
+interface TimeAxis {
+  timeAxis: any;
+}
+type changeYear = (year: number) => void;
+type changeCurrency = (currency: string) => any;
 interface Props  {
   title: string;
   inverted?: boolean;
@@ -36,33 +45,34 @@ interface Props  {
   year: number;
   lowestYear: number;
   highestYear: number;
-  data: object[];
+  data: Array<{levels: any; color: any; budget_type: any; value: any; value_ncu: any; }>;
   currency: string;
   currencyOptions: object[];
   budgetType: string;
   budgetTypeOptions: object[];
   config: {
-    line: object;
-    partition: object;
+    line: TimeAxis;
+    partition: Legendx;
   };
-  onChangeYear(year: number): void;
-  onChangeCurrency(currency: string): void;
+  onChangeYear: changeYear;
+  onChangeCurrency: changeCurrency;
   onChangeBudgetType(budgetType: string): void;
 }
 
 interface State  {
   treesByYear: {
     [year: number]: {
-      [budgetType: string]: object[];
+      [budgetType: string]: Array<{value: any; value_ncu: any; }>;
     }
   };
-  trend: object[];
+  trend: Array<{value: any; value_ncu: any; }>;
   level: string;
   heading: string;
 }
+const yearChange = (onChange: changeYear) => (e, year) => onChange(+year);
+const currencyChange = (onChange: changeCurrency) => (e, currency) => onChange(currency);
 
-export default class LinePartition extends Component {
-  // eslint-disable-next-line react/sort-comp
+export default class LinePartition extends React.Component<Props> {
   public state: State;
 
   constructor(props: Props) {
@@ -73,7 +83,7 @@ export default class LinePartition extends Component {
   public setLevel(levels: string[]) {
     const level = levels[levels.length - 1];
     const trend = this.createTrendState(level);
-    const heading = levels.map(level => level.replace(/Total\s*/gi, '')).join(' > ');
+    const heading = levels.map(levelx => levelx.replace(/Total\s*/gi, '')).join(' > ');
 
     this.setState({
       level,
@@ -82,7 +92,6 @@ export default class LinePartition extends Component {
     });
   }
 
-  // eslint-disable-next-line class-methods-use-this
   public createInitialState(props: Props) {
     const [root = {levels: []}] = props.data;
     const level = root.levels[0];
@@ -182,14 +191,14 @@ export default class LinePartition extends Component {
           onChangeBudgetType={budgetType => this.props.onChangeBudgetType(budgetType)}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={currency => this.props.onChangeCurrency(currency)}
+          onChangeCurrency={currencyChange()}
         />}
 
       <Grid style={{paddingBottom: '40px'}}>
         <Grid.Column mobile={16} computer={5} width={5} style={{ padding: 0 }}>
           <CardContainer>
             <Timeline
-              onYearChanged={year => this.props.onChangeYear(+year)}
+              onYearChanged={yearChange()}
               height={showLegend ? '250px' : '180px'}
               config={{
                 ...this.props.config.line,

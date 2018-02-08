@@ -1,8 +1,9 @@
-// @flow
 import * as React from 'react';
 import { Grid, Dropdown, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from '../Header/index';
 
+type onChangeT =  (budgetType: string) => void;
+type onChangeC = (currency: string) => void;
 interface Props  {
   title: string;
   hideOptions: boolean;
@@ -11,9 +12,11 @@ interface Props  {
   budgetTypeOptions: object[];
   currency: string;
   currencyOptions: object[];
-  onChangeCurrency(currency: string): void;
-  onChangeBudgetType(budgetType: string): void;
+  onChangeBudgetType: onChangeT;
+  onChangeCurrency: onChangeC;
 }
+const _onChange = (onChange: onChangeT) => (e, data) => onChange(data.value);
+const _onChangeC = (onChange: onChangeC) => (e, data) => onChange(data.value);
 
 const LinePartitionHeader = (props: Props) => {
   return (<Grid>
@@ -28,7 +31,7 @@ const LinePartitionHeader = (props: Props) => {
             selection
             value={props.budgetType}
             options={props.budgetTypeOptions}
-            onChange={(e, data) => props.onChangeBudgetType(data.value)}
+            onChange={_onChange(props.onChangeBudgetType)}
           />
           <Label style={{background: 'transparent'}}>Currency</Label>
           <Dropdown
@@ -36,7 +39,7 @@ const LinePartitionHeader = (props: Props) => {
             selection
             value={props.currency}
             options={props.currencyOptions}
-            onChange={(e, data) => props.onChangeCurrency(data.value)}
+            onChange={_onChangeC(props.onChangeCurrency)}
           />
         </Segment>}
       </Segment>

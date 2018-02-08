@@ -1,5 +1,3 @@
-// @flow
-// for when we migrate to react 16
 import * as React from 'react';
 
 interface Props  {
@@ -7,7 +5,7 @@ interface Props  {
   message?: string;
 }
 
-export default class ErrorBoundary extends React.Component {
+export default class ErrorBoundary extends React.Component<Props> {
   public state: {
     hasError: boolean,
     error: string,

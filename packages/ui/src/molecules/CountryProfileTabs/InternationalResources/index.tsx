@@ -5,7 +5,7 @@ import Chart from '../../../atoms/Chart';
 import {Span} from 'glamorous';
 import {small} from '../../../theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from '../../../atoms/TabsText';
-import {NoData, DONOR} from '@devinit/dh-base/utils/constants';
+import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/PagesData';
 import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
@@ -13,7 +13,6 @@ import Legend from '../../../atoms/Legend';
 
 interface Props {
   ...TabDataQuery;
-  countryType: string;
   config: any;
   countryType: string;
   pagesData: PageUnit[];
@@ -95,7 +94,7 @@ const International = (props: Props) => {
               </Grid.Column>
               <Grid.Column width="8">
                 <div>
-                  {internationalResources.mixOfResources.data.map((d: Object) =>
+                  {internationalResources.mixOfResources.data.map((d: any) =>
                     (<Legend
                       color={d.color}
                       key={`${d[props.config.mixOfResources.circular.label]}_${d.color}`}

@@ -4,17 +4,18 @@ import { Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import { white, midWhite, black } from '../../theme/semantic';
 
+type onClose1 = (event) => void;
 interface Props  {
   visible: any;
   text: string;
-  items: object[];
+  items: Array<{value: any; name: string; }>;
   selected?: string;
-  onClose: any;
+  onClose: onClose1;
   onChange?: any;
   active?: any;
 }
 
-const Wrapper = glamorous.div(
+const Wrapper = glamorous.div<{visible: any}>(
   {
     'background': white,
     'position': 'absolute',
@@ -56,7 +57,7 @@ const Select = glamorous.select({
   boxShadow: 'none',
   fontSize: '18px',
 });
-const Text = glamorous.span(
+const Text = glamorous.span<{active: any; }>(
   {
     display: 'inline-block',
     position: 'relative',
@@ -66,14 +67,15 @@ const Text = glamorous.span(
     textAlign: 'center',
   },
   props => ({
-    opacity: props.active ? '1' : '.5',
+    opacity: props.active ? 1 : 0.5,
   }),
 );
+const onMouseDown1 = (e) => e.stopPropagation();
 
-const onDropdownChange = function onChange(e, items, callback) {
+const onDropdownChange = (items, callback) => (e) => {
   if (callback) {
-    // eslint-disable-next-line eqeqeq
-    const [selected = { name: '', value: '' }] = items.filter(d => d.value == e.target.value);
+    const [selected = { name: '', value: '' }] =
+      items.filter(d => d.value === e.target.value);
     callback(selected);
   }
 };
@@ -86,14 +88,14 @@ const DropDown = ({ visible, items, text, selected, onClose, active, onChange }:
   );
   return (
     <Wrapper visible={visible}>
-      <Icon name="close" className="close" onClick={() => onClose()} />
+      <Icon name="close" className="close" onClick={onClose} />
       <Text active={active}>
         {text}
       </Text>
       <Select
-        onMouseDown={e => e.stopPropagation()}
+        onMouseDown={onMouseDown1}
         value={selected || undefined}
-        onChange={e => onDropdownChange(e, items, onChange)}
+        onChange={onDropdownChange(items, onChange)}
       >
         {options}
       </Select>

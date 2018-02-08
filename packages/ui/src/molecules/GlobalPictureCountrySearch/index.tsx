@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Container } from 'semantic-ui-react';
 import glamorous from 'glamorous';
@@ -25,7 +24,7 @@ const SearchTitle = glamorous.div({
   },
 });
 
-class Search extends React.Component {
+class Search extends React.Component<Props> {
   public state: State;
   constructor(props: Props) {
     super(props);

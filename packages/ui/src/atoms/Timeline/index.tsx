@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { draw } from '@devinit/charts';
 
@@ -10,13 +9,10 @@ interface Props  {
   onYearChanged(year: string): void;
 }
 
-class Timeline extends React.Component {
-  // eslint-disable-next-line react/sort-comp
+class Timeline extends React.Component<Props> {
   public chart: any;
   public props: Props;
-  public element: Element;
-
-  // eslint-disable-next-line no-useless-constructor
+  public element: HTMLDivElement | null;
   constructor(props: Props) {
     super(props);
   }
@@ -26,13 +22,12 @@ class Timeline extends React.Component {
   }
 
   public componentDidMount() {
-    // eslint-disable-next-line react/no-find-dom-node
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
-    const chart = draw({ element, data, config });
+    const chartx = draw({ element, data, config });
 
-    chart.then(chart => {
+    chartx.then( chart => {
       this.chart = chart;
       chart.onAnchorMoved(this.onYearChanged.bind(this));
     });

@@ -5,9 +5,11 @@ import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import Router from 'next/router';
 import { LightBg, DarkBg } from '../../atoms/Backgrounds';
-import * as Observer from 'react-intersection-observer';
+import {process} from '@devinit/dh-base/lib/types';
+import Observer from 'react-intersection-observer';
 import * as NoSSR from 'react-no-ssr';
 
+const push = () => Router.push('/methodology');
 if (process.browser) require('intersection-observer');
 
 export default () => {
@@ -71,7 +73,7 @@ export default () => {
           <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
           </P>
-          <Button color="grey" size="large" onClick={() => Router.push('/methodology')}>
+          <Button color="grey" size="large" onClick={push()}>
             Methodology and Data <Icon name="chevron right" />
           </Button>
         </Container>

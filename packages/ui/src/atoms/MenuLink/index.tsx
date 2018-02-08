@@ -1,21 +1,20 @@
 // @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
-import { Element } from 'react';
 import { Container, Icon } from 'semantic-ui-react';
 import { white, redHeaderColor, black } from '../../theme/semantic';
 import Link from 'next/link';
 import { NavLink } from '../Link';
 
 interface Props  {
-  children?: Element<any>;
+  children?: React.ReactChild | null;
   hasSubMenu: boolean;
   menu: string;
   link: string;
   icon?: string;
 }
 
-const LocalContainer = glamorous.div(
+const LocalContainer = glamorous.div<{hasSubMenu: boolean}>(
   {
     'height': '4em',
     'color': white,

@@ -1,9 +1,7 @@
-// @flow
 import * as React from 'react';
-import { Element } from 'react';
 
 interface Props  {
-  children: Element<any>;
+  children: any;
 }
 
 const MobileMenuItem = ({ children }: Props) =>

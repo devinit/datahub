@@ -1,4 +1,3 @@
-// @flow
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import Pane from '../MobileMenuPane';
@@ -6,6 +5,9 @@ import * as React from 'react';
 import Link from 'next/link';
 import { lightGrey, black } from '../../theme/semantic';
 
+interface Props {
+  menu: any;
+}
 const SubMenuContainer = glamorous.ul({
   'listStyleType': 'none',
   'color': black,
@@ -16,11 +18,11 @@ const SubMenuContainer = glamorous.ul({
     borderBottom: ` 1px solid ${lightGrey}`,
   },
 });
-const menuItem = (props: object) => {
-  let children = '';
+const menuItem = (props: Props) => {
+  let childrenContainer;
   let hasSubMenu = false;
   if ('children' in props.menu) {
-    children = props.menu.children.map(item =>
+    const children = props.menu.children.map(item =>
       (<li key={item.name}>
         <Link href={item.link} prefetch>
           <a role="link">
@@ -28,9 +30,9 @@ const menuItem = (props: object) => {
             {item.name}
           </a>
         </Link>
-      </li>),
+      </li>)
     );
-    children = (
+    childrenContainer = (
       <SubMenuContainer>
         {children}
       </SubMenuContainer>
@@ -38,8 +40,8 @@ const menuItem = (props: object) => {
     hasSubMenu = true;
   }
   return (
-    <Pane label={props.menu.name} url={props.menu.link} hasSub={hasSubMenu}>
-      {children}
+    <Pane>
+      {childrenContainer}
     </Pane>
   );
 };

@@ -2,7 +2,7 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 
-const TourPointer = glamorous.span({
+const TourPointer = glamorous.span<{top?: boolean; }>({
   'position': 'absolute',
   'left': '50%',
   'marginLeft': '-2px',
@@ -19,8 +19,8 @@ const TourPointer = glamorous.span({
   '& i': {
     top: props.top ? 'auto' : '100%',
   },
-  bottom: props.top ? '100%' : false,
-  top: props.top ? false : '100%',
+  'bottom': props.top ? '100%' : 'auto',
+  'top': props.top ? 'auto' : '100%',
 }));
 const TourItems = glamorous.ul({
   'padding': '0',

@@ -1,7 +1,7 @@
 import glamorous from 'glamorous';
 import { white, red, lighterGrey, grey, lightGrey} from '../../theme/semantic';
 
-export const Slider = glamorous.div({
+export const Slider = glamorous.div<{backgroundColor?: string}>({
   'display': 'inline-block',
   'position': 'relative',
   'height': '1em',
@@ -35,7 +35,7 @@ export const Input = glamorous.input({
   cursor: 'pointer',
 });
 
-export const Pointer = glamorous.span(
+export const Pointer = glamorous.span<{left: number }>(
   {
     position: 'absolute',
     cursor: 'pointer',

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { draw } from '@devinit/charts';
 
@@ -10,13 +9,11 @@ interface Props {
   onClick?: (d: any) => void;
 }
 
-class Chart extends React.Component {
-  // eslint-disable-next-line react/sort-comp
+class Chart extends React.Component<Props> {
   public props: Props;
-  public element: Element;
+  public element: HTMLDivElement | null;
   public chart: any;
 
-  // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);
   }
@@ -35,7 +32,6 @@ class Chart extends React.Component {
   public componentWillUpdate(props: Props) {
     if (this.chart) {
       this.chart.update(props.data);
-      // this.chart.setLabeling(props.config.labeling);
     }
   }
 

@@ -13,7 +13,7 @@ export const HeaderGroup = glamorous.div({
     marginTop: 0,
   },
 });
-export const SectionHeader = glamorous.h2(
+export const SectionHeader = glamorous.h2<{fontSize?: any; color?: string; fontColor?: any}>(
   {
     'padding': '1em 1em 1em 1em',
     'display': 'inline-block',

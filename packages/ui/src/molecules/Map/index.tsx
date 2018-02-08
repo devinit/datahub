@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import BaseMap, {indicatorsWith0dp} from '../../atoms/BaseMap';
 import { MapData, PaintMap, Meta } from '../../atoms/BaseMap/types';
@@ -26,7 +25,7 @@ interface State  {
   data: MapData[];
   currentYear: number;
 }
-class Map extends React.Component {
+class Map extends React.Component<Props> {
   public static setCurrentYearData(currentYear: number, data: MapData[]): MapData[] {
     return data.filter(obj => {
       if (obj.year === undefined) throw new Error('year property is missing in map data obj');
@@ -74,12 +73,14 @@ class Map extends React.Component {
     if (nextProps !== this.props) this.init(nextProps);
   }
 
-  public onYearChange(year: number) {
-    if (this.props && this.props.mapData && this.props.mapData.map) {
-      const data = Map.setCurrentYearData(year, this.props.mapData.map);
-      this.paint = { data, ...this.config.paint };
-      this.setState({ currentYear: year, data });
-    }
+  public onYearChange(e) {
+    return (year: number) => {
+      if (this.props && this.props.mapData && this.props.mapData.map) {
+        const data = Map.setCurrentYearData(year, this.props.mapData.map);
+        this.paint = { data, ...this.config.paint };
+        this.setState({ currentYear: year, data });
+      }
+    };
   }
   public setCountryRankData(): RankingsTableProps {
     const sortedData = this.state.data
@@ -190,7 +191,7 @@ class Map extends React.Component {
                   maximum={this.endYear}
                   step={1}
                   position={this.state.currentYear}
-                  onChange={year => this.onYearChange(year)}
+                  onChange={this.onYearChange}
                 />
                 : <Div fontWeight={'bold'}>
                   <P fontSize={'1.2em'}>

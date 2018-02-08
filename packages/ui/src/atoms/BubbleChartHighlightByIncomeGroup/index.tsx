@@ -1,11 +1,10 @@
-// @flow
 import * as React from 'react';
 import { ColorSpan } from '../BubbleChartHighlightRegions';
 import Wrapper from '../BubbleChartWidgetWrapper';
 
 interface Props  {
-  onChange?: (value: string | void) => void;
-  options: object[];
+  onChange?: (event: any) => void;
+  options: Array<{color: string, name: string}>;
   colorBy: boolean;
 }
 

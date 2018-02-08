@@ -1,4 +1,3 @@
-// @flow
 import glamorous from 'glamorous';
 import { white } from '../../theme/semantic';
 import {mediaQueries} from '../../theme';
@@ -17,8 +16,11 @@ const ListContainer = glamorous.ul({
     display: 'none',
   },
 });
+interface Props {
+  menu: Array<{name: string; }>;
+}
 
-const menu = (props: object) => {
+const menu = (props: Props) => {
   const menuItems = props.menu.map(item => <MenuItem key={item.name} menu={item} />);
   return (
     <ListContainer>

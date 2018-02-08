@@ -1,8 +1,8 @@
-// @flow
 import * as React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import Wrapper from '../BubbleChartWidgetWrapper';
 import glamorous from 'glamorous';
+import { FormEvent } from 'react';
 
 const Input = glamorous.input({
   width: '30%;',
@@ -18,11 +18,11 @@ const RangeWrapper = glamorous.div({
 
 interface Props  {
   title: string;
-  onScaleTypesChange?: (value: string | void) => void;
-  onLatestChecked?: (value: string | void) => void;
-  onMaxChanged?: (value: string | void) => void;
-  onMinChanged?: (value: string | void) => void;
-  onReset?: (value: string | void) => void;
+  onScaleTypesChange?: (event: any) => void;
+  onLatestChecked?: (event: FormEvent<HTMLInputElement>) => void;
+  onMaxChanged?: (value: FormEvent<HTMLInputElement>) => void;
+  onMinChanged?: (value: FormEvent<HTMLInputElement>) => void;
+  onReset?: (event: any) => void;
   scaleTypes?: object[];
   min?: number;
   max?: number;

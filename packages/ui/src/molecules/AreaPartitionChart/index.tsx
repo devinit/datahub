@@ -1,15 +1,14 @@
-// @flow
-/* eslint-disable react/sort-comp */
-/* eslint-disable no-nested-ternary */
+/* tslint-disable react/sort-comp */
+/* tslint-disable no-nested-ternary */
 import * as React from 'react';
-import { approximate } from '@devinit/dh-base/utils';
+import { approximate } from '@devinit/dh-base/lib/utils';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
 import UnbundlingInternationalResources, {
   NoDataAvailableContainer,
-} from '@devinit/dh-base/lib/UnbundlingInternationalResources';
+} from '@devinit/dh-app/lib/UnbundlingInternationalResources';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
-import { DONOR } from '@devinit/dh-base/utils/constants';
+import { DONOR } from '@devinit/dh-base/lib/utils/constants';
 import { red } from '../../theme/semantic';
 import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
@@ -43,7 +42,7 @@ export interface Props  {
   cached?: State;
 }
 
-class AreaPartitionChart extends React.Component {
+class AreaPartitionChart extends React.Component<Props> {
   public state: State;
   public props: Props;
 

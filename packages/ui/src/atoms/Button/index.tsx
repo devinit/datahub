@@ -1,11 +1,9 @@
-// @flow
 import * as React from 'react';
-import { Element } from 'react';
 import { Button } from 'semantic-ui-react';
 
 interface Props  {
-  children?: Element<any>;
-  onClick?: (value: string | void) => void;
+  children?: React.ReactChild;
+  onClick?: (event: any) => void;
   content?: string;
   primary?: boolean; // i got this from the semantic-ui-react code
   secondary?: boolean;

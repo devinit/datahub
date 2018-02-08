@@ -1,7 +1,5 @@
-// @flow
 import * as React from 'react';
 import { Header } from 'semantic-ui-react';
-import { Element } from 'react';
 import glamorous from 'glamorous';
 
 const Wrapper = glamorous.div({
@@ -12,7 +10,7 @@ const Wrapper = glamorous.div({
 });
 
 interface Props  {
-  children?: Element<any>;
+  children?: React.ReactChild | any;
   title: string;
 }
 

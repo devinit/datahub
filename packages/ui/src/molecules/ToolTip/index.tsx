@@ -1,20 +1,18 @@
-// @flow
 import * as React from 'react';
-import {Element} from 'react';
 import { Div } from 'glamorous';
-import { Icon, Popup } from 'semantic-ui-react';
+import { Popup, Icon } from 'semantic-ui-react';
 
 interface Props  {
   children: any;
-  color?: string;
-  trigger: Element<any>;
+  color?: any;
+  trigger: React.ReactChild;
 }
 
 interface State  {
   isOpen: boolean;
 }
 
-class ToolTip extends React.Component {
+class ToolTip extends React.Component<Props> {
   public state: State;
   constructor(props: Props) {
     super(props);
@@ -42,7 +40,7 @@ class ToolTip extends React.Component {
       >
         <Popup.Header>
           <Div textAlign="right">
-            <Icon name="close" onClick={this.handleClose} color={this.props.color || 'black'} />
+            <Icon name="close" onClick={this.handleClose}  color={this.props.color || 'black'}/>
           </Div>
         </Popup.Header>
         <Popup.Content>

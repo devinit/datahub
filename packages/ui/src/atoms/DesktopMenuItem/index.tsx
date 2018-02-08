@@ -1,11 +1,14 @@
-// @flow
 import { Li } from 'glamorous';
 import { Icon, List } from 'semantic-ui-react';
 import MenuLink from '../MenuLink';
 import Link from 'next/link';
 import * as React from 'react';
 
-const menuItem = (props: object) => {
+interface Props {
+  menu: any;
+}
+
+const menuItem = (props: Props) => {
   let children = {};
   let hasSubMenu = false;
   if ('children' in props.menu) {

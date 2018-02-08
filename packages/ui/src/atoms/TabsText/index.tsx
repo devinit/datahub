@@ -1,10 +1,9 @@
-// @flow
 import * as React from 'react';
 import glamorous, {Span} from 'glamorous';
 import { massive } from '../../theme';
 import { red, grey, blue} from '../../theme/semantic';
 
-export const TabsP = glamorous.p({
+export const TabsP = glamorous.p<{fontSize?: any;  }>({
   fontSize: massive,
   fontWeight: 'bold',
   textAlign: 'center',
@@ -14,7 +13,7 @@ export const TabsP = glamorous.p({
 }, (props) => ({
   fontSize: props.fontSize || massive
 }));
-export const TabsFootNote = glamorous.p({
+export const TabsFootNote = glamorous.p<{textAlign?: any; fontSize?: any; lineHeight?: number;  }>({
   fontWeight: 'bold',
   color: grey,
 }, (props) => ({

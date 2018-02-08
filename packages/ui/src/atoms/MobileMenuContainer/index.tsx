@@ -1,15 +1,14 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import Link from 'next/link';
 import { white, redHeaderColor, midWhite, lightBlack } from '../../theme/semantic';
 
 interface Props  {
-  children: any;
+  children: React.ReactChild[];
   selected?: number;
-  open?: any;
+  open?: boolean;
 }
-export const Navigation = glamorous.nav(
+export const Navigation = glamorous.nav<{open?: boolean}>(
   {
     'position': 'fixed',
     'top': '4em',
@@ -49,7 +48,7 @@ export const Navigation = glamorous.nav(
   }),
 );
 
-class MobileMenu extends React.Component {
+class MobileMenu extends React.Component<Props> {
   public static defaultProps = {
     selected: 0,
   };
@@ -66,13 +65,14 @@ class MobileMenu extends React.Component {
   public resetSelected() {
     this.setState({ selected: null });
   }
-  public handleClick(index: number, event: any) {
-    event.preventDefault();
-    this.setState({
-      selected: index,
-    });
+  public handleClick(child: any, index: number) {
+    const that = this;
+    return (event: any) => {
+      event.preventDefault();
+      if (child.props.hasSub) that.setState({ selected: index});
+      if (that.state.selected === index) that.resetSelected();
+    };
   }
-  /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
   public _renderContent() {
     const items = (child, index) => {
       const activeClass = this.state.selected === index ? 'active' : '';
@@ -80,10 +80,7 @@ class MobileMenu extends React.Component {
         <li
           key={index}
           className={`navigation__item ${activeClass}`}
-          onClick={e => {
-            child.props.hasSub ? this.handleClick(index, e) : '';
-            this.state.selected === index ? this.resetSelected() : '';
-          }}
+          onClick={this.handleClick(child, index)}
         >
           <span className="navigation__item-title small">
             <Link href={child.props.url} prefetch>
@@ -100,7 +97,7 @@ class MobileMenu extends React.Component {
   }
   public render() {
     return (
-      <Navigation {...this.props}>
+      <Navigation open={this.props.open}>
         {this._renderContent()}
       </Navigation>
     );
