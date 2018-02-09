@@ -1,10 +1,8 @@
-// @flow
 import { Container, Grid } from 'semantic-ui-react';
 import * as React from 'react';
 import {TextBlock} from '../../../atoms/BodyText';
 import { white } from '../../../theme/semantic';
-import {PageUnit} from '@devinit/dh-base/lib/PagesData';
-import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import TabsToolTip from '../../TabsToolTip';
 import { SectionHeader } from '../../../atoms/Header';
 

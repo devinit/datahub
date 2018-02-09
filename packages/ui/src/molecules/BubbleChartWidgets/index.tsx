@@ -34,7 +34,7 @@ const Link = glamorous.a({
 });
 
 interface Props  {
-  click?: () => void;
+  click: () => void;
   loading?: boolean;
   startYear: number;
   maxYear: number;

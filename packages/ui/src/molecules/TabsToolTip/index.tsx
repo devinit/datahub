@@ -17,9 +17,8 @@ export const RegularToolTip = (props: {color?: string, text: string}) => {
   );
 };
 
-const TabsToolTip = (props: Props) => {
+const TabsToolTip: React.SFC<Props> = (props) => {
   return (
-    props ?
       <ToolTip color={props.color || 'black'} trigger={<Icon name="info circle" />}>
         <P textAlign={'center'}>
           {props.heading}
@@ -28,7 +27,6 @@ const TabsToolTip = (props: Props) => {
           <b>Source</b>: {props.source}
         </P>
       </ToolTip>
-      : ''
   );
 };
 export default TabsToolTip;

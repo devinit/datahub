@@ -1,4 +1,3 @@
-// @flow
 import {Container, Grid} from 'semantic-ui-react';
 import * as React from 'react';
 import Chart from '../../../atoms/Chart';
@@ -7,16 +6,15 @@ import {small} from '../../../theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from '../../../atoms/TabsText';
 import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
-import {PageUnit} from '@devinit/dh-base/lib/PagesData';
-import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import Legend from '../../../atoms/Legend';
+import { TabsData } from '../types';
 
-interface Props {
-  ...TabDataQuery;
+type Props = TabsData & {
   config: any;
   countryType: string;
   pagesData: PageUnit[];
-}
+};
 
 const International = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
