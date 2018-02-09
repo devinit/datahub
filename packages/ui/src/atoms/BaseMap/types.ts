@@ -1,3 +1,5 @@
+import '@devinit/datahub-api'; // types
+
 export interface State {
   profileLoading: boolean; // think loading new country on map click
   shouldForceRedraw: boolean;
@@ -13,19 +15,9 @@ export interface ViewportDefaults {
   attributionControl: boolean;
   scrollZoom: boolean;
 }
-export interface MapData {
-  id?: string;
-  slug?: string;
-  name?: string;
-  color?: string;
-  year?: number;
-  uid?: string;
-  detail?: string;
-  value?: number;
-}
 
 export interface PaintMap {
-  data?: MapData[];
+  data?: DH.IMapUnit[];
   center?: number[];
   mapStyle?: string; // we have a default style
   baseColor?: string;
@@ -93,7 +85,7 @@ export interface Point {
 }
 
 export interface PopupItem {
-  pointData: MapData;
+  pointData: DH.IMapUnit;
   pos: Point;
 }
 
