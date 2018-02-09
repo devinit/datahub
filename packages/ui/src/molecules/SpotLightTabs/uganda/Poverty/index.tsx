@@ -1,16 +1,15 @@
-// @flow
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle} from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
-import { NoData } from '@devinit/dh-base/utils/constants';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
+import { NoData } from '@devinit/dh-base/lib/utils/constants';
+import {SpotLightTabData} from '../../types';
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
-interface Props  {
-  ...SpotLightTabDataQuery;
+type Props = SpotLightTabData &  {
+  currency: string;
   pageData: PageUnit[];
-}
+};
 
 const Poverty = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -18,7 +17,7 @@ const Poverty = (props: Props) => {
   const lifeExpectancy = getPageLine('life-expectancy');
   const stdOfLiving = getPageLine('std-of-living');
   if (!props.povertyTabRegional) throw new Error('regional poverty data is missing');
-  const povertyTabRegional = props.povertyTabRegional;
+  const povertyTabRegional = props.povertyTabRegional as DH.IPovertyTabUg;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -40,8 +39,8 @@ const Poverty = (props: Props) => {
           <HeaderTitle >
             {lifeExpectancy.title}
             {
-              // $FlowFixMe
-             TabsToolTip(povertyTabRegional.lifeExpectancy && povertyTabRegional.lifeExpectancy.toolTip) // eslint-disable-line
+             TabsToolTip(povertyTabRegional.lifeExpectancy &&
+              povertyTabRegional.lifeExpectancy.toolTip)
             }
           </HeaderTitle>
           <TabsP>
@@ -55,8 +54,8 @@ const Poverty = (props: Props) => {
           <HeaderTitle >
             {stdOfLiving.title}
             {
-              // $FlowFixMe
-             TabsToolTip(povertyTabRegional.stdOfLiving && povertyTabRegional.lifeExpectancy.toolTip) // eslint-disable-line
+             TabsToolTip(povertyTabRegional.stdOfLiving &&
+              povertyTabRegional.stdOfLiving.toolTip)
             }
           </HeaderTitle>
           <TabsP>

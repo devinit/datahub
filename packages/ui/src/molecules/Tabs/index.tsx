@@ -1,14 +1,13 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { medium } from '../../theme';
 import { lightGrey, lighterGrey } from '../../theme/semantic';
-import { Container } from 'semantic-ui-react';
+import { Container, SemanticTEXTALIGNMENTS } from 'semantic-ui-react';
 
 interface Props  {
   children: any;
   selected?: number;
-  textAlign?: string;
+  textAlign?: SemanticTEXTALIGNMENTS;
 }
 
 const Wrapper = glamorous.div({
@@ -74,7 +73,7 @@ const TabsContentWrapper = glamorous.div(
     },
   }
 );
-class Tabs extends React.Component {
+class Tabs extends React.Component<Props> {
   public static defaultProps = {
     selected: 0,
   };
@@ -92,7 +91,7 @@ class Tabs extends React.Component {
       this.setState({selected: nextProps.selected});
     }
   }
-  public handleClick(index: number, event: any) {
+  public handleClick = (index: number) => (event: any) => {
     event.preventDefault();
     this.setState({
       selected: index,
@@ -116,7 +115,7 @@ class Tabs extends React.Component {
       const activeClass = this.state.selected === index ? 'active' : '';
       return (
         <li key={child.props.label}>
-          <TabLink className={activeClass} onClick={e => this.handleClick(index, e)}>
+          <TabLink className={activeClass} onClick={this.handleClick(index)}>
             {child.props.label}
           </TabLink>
         </li>

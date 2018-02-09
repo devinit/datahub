@@ -1,28 +1,25 @@
-// @flow
-/* eslint-disable max-len */
 import * as React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
 import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../../atoms/TabsText';
 import { red } from '../../../../theme/semantic';
 import { Div, P} from 'glamorous';
 import TabsToolTip from '../../../TabsToolTip';
-import { NoData } from '@devinit/dh-base/utils/constants';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
-import Chart from '../../../../atoms/Chart';
+import { NoData } from '@devinit/dh-base/lib/utils/constants';
 
-interface Props  {
-  ...SpotLightTabDataQuery;
+import {SpotLightTabData} from '../../types';
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
+
+type Props = SpotLightTabData &  {
+  currency: string;
   pageData: PageUnit[];
-  config: object;
-}
+};
 
 const Population = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
   const popnDistrict = getPageLine('popn-district');
   const dependencyRatio = getPageLine('dependency-ratio');
   if (!props.populationTabRegional) throw new Error('regional population data is missing');
-  const populationTabRegional = props.populationTabRegional;
+  const populationTabRegional = props.populationTabRegional as DH.IPopulationTabRegionalUg;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -59,8 +56,9 @@ const Population = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             <RuralUrbanPopnText />
-            { // $FlowFixMe
-              TabsToolTip(populationTabRegional.populationDistribution && populationTabRegional.populationDistribution.toolTip)
+            {
+              TabsToolTip(populationTabRegional.populationDistribution
+                && populationTabRegional.populationDistribution.toolTip)
             }
           </HeaderTitle>
 
@@ -79,8 +77,9 @@ const Population = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {dependencyRatio.title}
-            { // $FlowFixMe
-              TabsToolTip(populationTabRegional.averageDependencyRatio && populationTabRegional.averageDependencyRatio.toolTip)
+            {
+              TabsToolTip(populationTabRegional.averageDependencyRatio
+                && populationTabRegional.averageDependencyRatio.toolTip)
             }
           </HeaderTitle>
           <TabsP>

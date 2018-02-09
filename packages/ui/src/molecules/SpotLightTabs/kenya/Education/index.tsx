@@ -1,17 +1,16 @@
-// @flow
 import * as React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
+import {SpotLightTabData} from '../../types';
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
+
 /* eslint-disable max-len */
-interface Props  {
-  ...SpotLightTabDataQuery;
+type Props = SpotLightTabData &  {
   currency: string;
   pageData: PageUnit[];
-}
+};
 
 const Educaton = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -19,49 +18,54 @@ const Educaton = (props: Props) => {
   const teacherRatioPublic = getPageLine('primaryTeacherRatioPublicSchl');
   const teacherRatioPrivate = getPageLine('primaryTeacherRatioPrivateSchl');
   if (!props.educationTabRegional) throw new Error('regional education data is missing');
-  const educationTabRegional = props.educationTabRegional;
+  const educationTabRegionalKe = props.educationTabRegional as DH.IEducationTabRegionalKe;
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioAll.title}
-            { // $FlowFixMe
-              TabsToolTip(educationTabRegional.primaryPupilTeacherRatioAllSchl && educationTabRegional.primaryPupilTeacherRatioAllSchl.toolTip)
+            {
+              TabsToolTip(educationTabRegionalKe.primaryPupilTeacherRatioAllSchl
+                && educationTabRegionalKe.primaryPupilTeacherRatioAllSchl.toolTip
+              )
             }
           </HeaderTitle>
           <TabsP>
-            {educationTabRegional.primaryPupilTeacherRatioAllSchl &&
-            educationTabRegional.primaryPupilTeacherRatioAllSchl.value
-              ? educationTabRegional.primaryPupilTeacherRatioAllSchl.value
-              : NoData}
+            {educationTabRegionalKe.primaryPupilTeacherRatioAllSchl
+              && educationTabRegionalKe.primaryPupilTeacherRatioAllSchl.value
+              ? educationTabRegionalKe.primaryPupilTeacherRatioAllSchl.value
+              : NoData
+            }
           </TabsP>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioPublic.title}
             {
-              // $FlowFixMe
-              TabsToolTip(educationTabRegional.primaryTeacherRatioPublicSchl && educationTabRegional.primaryTeacherRatioPublicSchl.toolTip)
+              TabsToolTip(educationTabRegionalKe.primaryTeacherRatioPublicSchl
+                && educationTabRegionalKe.primaryTeacherRatioPublicSchl.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {educationTabRegional.primaryTeacherRatioPublicSchl && educationTabRegional.primaryTeacherRatioPublicSchl.value
-              // $FlowFixMe
-              ? `${educationTabRegional.primaryTeacherRatioPublicSchl.value}`
+            {educationTabRegionalKe.primaryTeacherRatioPublicSchl
+            && educationTabRegionalKe.primaryTeacherRatioPublicSchl.value
+              ? `${educationTabRegionalKe.primaryTeacherRatioPublicSchl.value}`
               : NoData}
           </TabsP>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioPrivate.title}
-            { // $FlowFixMe
-              TabsToolTip(educationTabRegional.primaryTeacherRatioPrivateSchl && educationTabRegional.primaryTeacherRatioPrivateSchl.toolTip)
+            {
+              TabsToolTip(educationTabRegionalKe.primaryTeacherRatioPrivateSchl
+                && educationTabRegionalKe.primaryTeacherRatioPrivateSchl.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {educationTabRegional.primaryTeacherRatioPrivateSchl && educationTabRegional.primaryTeacherRatioPrivateSchl.value
-              ? educationTabRegional.primaryTeacherRatioPrivateSchl.value
+            {educationTabRegionalKe.primaryTeacherRatioPrivateSchl
+            && educationTabRegionalKe.primaryTeacherRatioPrivateSchl.value
+              ?educationTabRegionalKe.primaryTeacherRatioPrivateSchl.value
               : NoData}
           </TabsP>
         </Grid.Column>

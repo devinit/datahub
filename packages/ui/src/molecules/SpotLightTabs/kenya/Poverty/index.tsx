@@ -1,16 +1,15 @@
-// @flow
-import React from 'react';
+import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle} from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
+import {SpotLightTabData} from '../../types';
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
-interface Props  {
-  ...SpotLightTabDataQuery;
+type Props = SpotLightTabData &  {
+  currency: string;
   pageData: PageUnit[];
-}
+};
 
 const Poverty = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -18,35 +17,35 @@ const Poverty = (props: Props) => {
   const povertyGap = getPageLine('povertyGap');
   const meanExpenditure = getPageLine('meanExpenditure');
   if (!props.povertyTabRegional) throw new Error('regional poverty data is missing');
-  const povertyTabRegional = props.povertyTabRegional;
+  const povertyTabRegionalKe = props.povertyTabRegional as DH.IPovertyTabKe;
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
-            {poorestPeople.title }
-            { // $FlowFixMe
-              TabsToolTip(povertyTabRegional.poorestPeople &&
-                povertyTabRegional.poorestPeople.toolTip)
+            {poorestPeople.title}
+            {
+              TabsToolTip(povertyTabRegionalKe.poorestPeople &&
+                povertyTabRegionalKe.poorestPeople.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {povertyTabRegional.poorestPeople && povertyTabRegional.poorestPeople.value
-              ? `${povertyTabRegional.poorestPeople.value} %`
+            {povertyTabRegionalKe.poorestPeople && povertyTabRegionalKe.poorestPeople.value
+              ? `${povertyTabRegionalKe.poorestPeople.value} %`
               : NoData}
           </TabsP>
         </Grid.Column>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
-            { povertyGap.title}
+            {povertyGap.title}
             {
-              // $FlowFixMe
-             TabsToolTip(povertyTabRegional. povertyGap && povertyTabRegional. povertyGap.toolTip) // eslint-disable-line
+             TabsToolTip(povertyTabRegionalKe.povertyGap &&
+              povertyTabRegionalKe. povertyGap.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {povertyTabRegional.povertyGap && povertyTabRegional.povertyGap.value
-              ? povertyTabRegional.povertyGap.value
+            {povertyTabRegionalKe.povertyGap && povertyTabRegionalKe.povertyGap.value
+              ? povertyTabRegionalKe.povertyGap.value
               : NoData}
           </TabsP>
         </Grid.Column>
@@ -55,13 +54,13 @@ const Poverty = (props: Props) => {
           <HeaderTitle >
             {meanExpenditure.title}
             {
-              // $FlowFixMe
-             TabsToolTip(povertyTabRegional.meanExpenditure && povertyTabRegional.meanExpenditure.toolTip) // eslint-disable-line
+             TabsToolTip(povertyTabRegionalKe.meanExpenditure 
+              && povertyTabRegionalKe.meanExpenditure.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {povertyTabRegional.meanExpenditure && povertyTabRegional.meanExpenditure.value
-              ? povertyTabRegional.meanExpenditure.value
+            {povertyTabRegionalKe.meanExpenditure && povertyTabRegionalKe.meanExpenditure.value
+              ? povertyTabRegionalKe.meanExpenditure.value
               : NoData}
           </TabsP>
         </Grid.Column>

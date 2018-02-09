@@ -4,14 +4,13 @@ import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
-/* eslint-disable max-len */
-interface Props  {
-  ...SpotLightTabDataQuery;
+import {SpotLightTabData} from '../../types';
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
+
+type Props = SpotLightTabData &  {
   currency: string;
   pageData: PageUnit[];
-}
+};
 
 const Health = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -19,7 +18,7 @@ const Health = (props: Props) => {
   const caseOfTb = getPageLine('case-of-tb');
   const healthCareFunding = getPageLine('health-care-funding');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
-  const healthTabRegional = props.healthTabRegional;
+  const healthTabRegional = props.healthTabRegional as DH.IHealthTabRegionalUg;
   const fundingNCU = healthTabRegional.healthCareFunding &&
     healthTabRegional.healthCareFunding.value_ncu ?
     healthTabRegional.healthCareFunding.value_ncu : NoData;
@@ -33,7 +32,6 @@ const Health = (props: Props) => {
           <HeaderTitle>
             {healthPerformance.title}
             {
-              // $FlowFixMe
               TabsToolTip(healthTabRegional.districtPerformance && healthTabRegional.districtPerformance.toolTip)
             }
           </HeaderTitle>
@@ -54,13 +52,12 @@ const Health = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {caseOfTb.title}
-            { // $FlowFixMe
+            {
               TabsToolTip(healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.toolTip)
             }
           </HeaderTitle>
           <TabsP>
             {healthTabRegional.treatmeantOfTb && healthTabRegional.treatmeantOfTb.value
-              // $FlowFixMe
               ? `${healthTabRegional.treatmeantOfTb.value} %`
               : NoData}
           </TabsP>

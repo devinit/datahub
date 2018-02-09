@@ -1,17 +1,15 @@
-// @flow
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-// import type {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
-/* eslint-disable max-len */
-interface Props  {
-  ...SpotLightTabDataQuery;
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import {SpotLightTabData} from '../../types';
+
+type Props = SpotLightTabData &  {
   currency: string;
   pageData: PageUnit[];
-}
+};
 
 const Health = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -19,7 +17,7 @@ const Health = (props: Props) => {
   const birthAttendanceSkilled = getPageLine('birthAttendanceSkilled');
   const contraceptiveUse = getPageLine('contraceptiveUse');
   if (!props.healthTabRegional) throw new Error('regional health data is missing');
-  const healthTabRegional = props.healthTabRegional;
+  const healthTabRegionalKe = props.healthTabRegional as DH.IHealthTabRegionalKe;
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -28,12 +26,12 @@ const Health = (props: Props) => {
             {healthCareFunding.title}
             {
               // $FlowFixMe
-              TabsToolTip(healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.toolTip)
+              TabsToolTip(healthTabRegionalKe.healthCareFunding && healthTabRegionalKe.healthCareFunding.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {healthTabRegional.healthCareFunding && healthTabRegional.healthCareFunding.value
-              ? healthTabRegional.healthCareFunding.value
+            {healthTabRegionalKe.healthCareFunding && healthTabRegionalKe.healthCareFunding.value
+              ? healthTabRegionalKe.healthCareFunding.value
               : NoData}
           </TabsP>
         </Grid.Column>
@@ -41,14 +39,14 @@ const Health = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {birthAttendanceSkilled.title}
-            { // $FlowFixMe
-              TabsToolTip(healthTabRegional.birthAttendanceSkilled && healthTabRegional.birthAttendanceSkilled.toolTip)
+            {
+              TabsToolTip(healthTabRegionalKe.birthAttendanceSkilled
+                 && healthTabRegionalKe.birthAttendanceSkilled.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {healthTabRegional.birthAttendanceSkilled && healthTabRegional.birthAttendanceSkilled.value
-              // $FlowFixMe
-              ? `${healthTabRegional.birthAttendanceSkilled.value} %`
+            {healthTabRegionalKe.birthAttendanceSkilled && healthTabRegionalKe.birthAttendanceSkilled.value
+              ? `${healthTabRegionalKe.birthAttendanceSkilled.value} %`
               : NoData}
           </TabsP>
         </Grid.Column>
@@ -57,13 +55,12 @@ const Health = (props: Props) => {
           <HeaderTitle>
             {contraceptiveUse.title}
             {
-              // $FlowFixMe
-              TabsToolTip(healthTabRegional.contraceptiveUse && healthTabRegional.contraceptiveUse.toolTip)
+              TabsToolTip(healthTabRegionalKe.contraceptiveUse && healthTabRegionalKe.contraceptiveUse.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            {healthTabRegional.contraceptiveUse && healthTabRegional.contraceptiveUse.value
-              ? healthTabRegional.contraceptiveUse.value
+            {healthTabRegionalKe.contraceptiveUse && healthTabRegionalKe.contraceptiveUse.value
+              ? healthTabRegionalKe.contraceptiveUse.value
               : NoData}
           </TabsP>
         </Grid.Column>
