@@ -10,22 +10,20 @@ import { Grid, Container } from 'semantic-ui-react';
 import RankingsTable from '../RankingsTable';
 import { Props as RankingsTableProps } from '../RankingsTable';
 import ChartShare from '../ChartShare';
-import {Route} from '@devinit/dh-base/utils';
+import {Route} from '@devinit/dh-base/lib/utils';
 import {countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '../ChartShare';
 import { MapConfig } from './config';
 import mapConfigs from './config';
 
-interface Props  {
+type Props = MapDataQuery & {
   state: StateToShare;
-  ...MapDataQuery;
-}
+};
 
 interface State  {
-  data: MapData[];
   currentYear: number;
 }
-class Map extends React.Component<Props> {
+class Map extends React.Component<Props, State> {
   public static setCurrentYearData(currentYear: number, data: MapData[]): MapData[] {
     return data.filter(obj => {
       if (obj.year === undefined) throw new Error('year property is missing in map data obj');
@@ -48,17 +46,18 @@ class Map extends React.Component<Props> {
     return value;
   }
   public state: State;
-  public yearSliderVisibility: boolean;
-  public startYear: number;
-  public paint: PaintMap; // map data
-  public endYear: number;
-  public meta: Meta;
-  public country: string;
-  public config: MapConfig;
-  public heading: string;
-  public description: string;
-  public noRankTableList: string[] = ['data_series.largest_intl_flow', 'data_series.fragile_states'];
-  public legendData: LegendField[];
+  private yearSliderVisibility: boolean;
+  private startYear: number;
+  private paint: PaintMap; // map data
+  private endYear: number;
+  private meta: Meta;
+  private data: MapData[];
+  private country: string;
+  private config: MapConfig;
+  private heading: string;
+  private description: string;
+  private noRankTableList: string[] = ['data_series.largest_intl_flow', 'data_series.fragile_states'];
+  private legendData: LegendField[];
   constructor(props: Props) {
     super(props);
     if (!props.mapData) throw new Error('mapData is missing in props');
@@ -66,7 +65,6 @@ class Map extends React.Component<Props> {
     this.country = props.mapData.country;
     this.config = mapConfigs[this.country];
     this.init(props);
-    // onLoadCss();
   }
 
   public componentWillReceiveProps(nextProps: Props) {
@@ -76,14 +74,14 @@ class Map extends React.Component<Props> {
   public onYearChange(e) {
     return (year: number) => {
       if (this.props && this.props.mapData && this.props.mapData.map) {
-        const data = Map.setCurrentYearData(year, this.props.mapData.map);
-        this.paint = { data, ...this.config.paint };
-        this.setState({ currentYear: year, data });
+        this.data = Map.setCurrentYearData(year, this.props.mapData.map);
+        this.paint = { data: this.data, ...this.config.paint };
+        this.setState({ currentYear: year});
       }
     };
   }
   public setCountryRankData(): RankingsTableProps {
-    const sortedData = this.state.data
+    const sortedData = this.data
       .filter(obj => obj.value && obj.id)
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined'); // make flow happy
@@ -148,17 +146,16 @@ class Map extends React.Component<Props> {
   public init(props: Props) {
     this.initYearSetup(props);
     this.initMetaSetup(props);
-    let data = [];
     if (props.mapData && props.mapData.map && props.mapData.map.length) {
-      data = this.yearSliderVisibility
+      this.data = this.yearSliderVisibility
         ? Map.setCurrentYearData(this.state.currentYear, props.mapData.map)
         : props.mapData.map;
-      this.paint = { data, ...this.config.paint };
+      this.paint = { data: this.data, ...this.config.paint };
     }
     if (props.mapData && props.mapData.map_style) {
-      this.paint = { data, ...this.config.paint, mapStyle: props.mapData.map_style };
+      this.paint = { data: this.data, ...this.config.paint, mapStyle: props.mapData.map_style };
     }
-    this.state = { ...this.state, data };
+    this.state = { ...this.state};
   }
   public render() {
     return (
