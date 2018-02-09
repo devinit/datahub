@@ -1,4 +1,4 @@
-// @flow
+import '@devinit/datahub-api';
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';
@@ -7,15 +7,14 @@ import Legend from '../../../atoms/Legend';
 import Chart from '../../../atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import TabsToolTip from '../../TabsToolTip';
-import {PageUnit} from '@devinit/dh-base/lib/PagesData';
-import {getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
+import { TabsData } from '../types';
 
-interface Props {
-  ...TabDataQuery;
+type Props = TabsData & {
   config: any;
   pagesData: PageUnit[];
-}
+};
 
 const Government = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);

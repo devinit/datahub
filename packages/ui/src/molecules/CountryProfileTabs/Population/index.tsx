@@ -1,18 +1,17 @@
-// @flow
 import { Grid } from 'semantic-ui-react';
 import * as React from 'react';
 import { Div } from 'glamorous';
 import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../atoms/TabsText';
 import Chart from '../../../atoms/Chart';
-import { NoData } from '@devinit/dh-base/utils/constants';
+import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {TabsData} from '../types';
 
-interface Props  {
-  ...TabDataQuery;
+type Props = TabsData & {
   config: any;
   pagesData: PageUnit[];
-}
+};
 
 const Population = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);

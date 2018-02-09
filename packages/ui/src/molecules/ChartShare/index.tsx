@@ -100,7 +100,7 @@ export default class ChartShare extends React.Component<Props> {
     };
   }
   // checkedoption i.e 1 is default 2 is as configured
-  public async createLink(props: Props, checkedOption?: number = 2) {
+  public async createLink(props: Props, checkedOption: number = 2) {
     if (!props.stateToShare) return this.state;
     const currentUrl = window.location.href;
     const chartState =

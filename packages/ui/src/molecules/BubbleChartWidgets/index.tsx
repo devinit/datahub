@@ -65,7 +65,7 @@ class BubbleChartWidget extends React.Component<Props> {
     super(props);
     this.componentWillUpdate(props);
   }
-  // eslint-disable-next-line react/sort-comp
+
   public componentWillUpdate(props: Props) {
     const colorBy = this.state ? this.state.colorBy : 'region';
     const regionColor = this.props.regions.reduce(

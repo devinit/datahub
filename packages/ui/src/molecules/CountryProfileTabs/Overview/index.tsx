@@ -1,21 +1,20 @@
-// @flow
 import { Container, Grid } from 'semantic-ui-react';
 import * as React from 'react';
 import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import { P, Div } from 'glamorous';
-import { RECIPIENT, DONOR, NoData, addMinAndMaxYear } from '@devinit/dh-base/utils/constants';
+import { RECIPIENT, DONOR, NoData, addMinAndMaxYear } from '@devinit/dh-base/lib/utils/constants';
 import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
 import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/PagesData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { red} from '../../../theme/semantic';
+import {TabsData} from '../types';
 
-interface Props  {
+type Props = TabsData & {
   countryType: string;
   config: OverviewChartConfigs;
   pagesData: PageUnit[];
-  ...TabDataQuery;
-}
+};
 
 const Overview = (props: Props) => {
   const getPageLine = getPageUnitById(props.pagesData);
