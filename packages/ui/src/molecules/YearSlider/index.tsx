@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Slider, Floor, Ceiling, Input, Pointer } from '../../atoms/YearSlider';

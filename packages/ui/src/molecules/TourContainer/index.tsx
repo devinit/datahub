@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import { Element } from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 
@@ -9,7 +8,7 @@ interface Props  {
   closeHandler?: (event: any) => void;
   bottom?: string;
   top?: string;
-  children: Element<any>;
+  children: React.ReactChild;
 }
 
 const CloseIcon = glamorous.a({
@@ -20,7 +19,7 @@ const CloseIcon = glamorous.a({
   color: '#fff',
   fontSize: '1.5em',
 });
-const Overlay = glamorous.div(
+const Overlay = glamorous.div<{visible: boolean; bottom?: string; top?: string}>(
   {
     position: 'absolute',
     fontWeight: 'normal',
@@ -51,6 +50,7 @@ const TourContainer = (props: Props) =>
       <CloseIcon>
         <Icon
           name="close"
+          // tslint:disable-next-line:jsx-no-lambda
           onClick={event => (props.closeHandler ? props.closeHandler(event) : false)}
         />
       </CloseIcon>

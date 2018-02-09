@@ -34,8 +34,8 @@ const Link = glamorous.a({
 });
 
 interface Props  {
-  click: () => void;
-  loading: boolean;
+  click?: () => void;
+  loading?: boolean;
   startYear: number;
   maxYear: number;
   minYear: number;
@@ -47,7 +47,7 @@ interface Props  {
   regions: Array<{name: string; color: string; }>;
   incomeGroups: Array<{name: string; color: string; }>;
   countries: object[];
-  data: object;
+  data?: object;
 }
 interface State  {
   year: number;
@@ -65,7 +65,6 @@ class BubbleChartWidget extends React.Component<Props> {
     super(props);
     this.componentWillUpdate(props);
   }
-  // eslint-disable-next-line react/sort-comp
   public componentWillUpdate(props: Props) {
     const colorBy = this.state ? this.state.colorBy : 'region';
     const regionColor = this.props.regions.reduce(

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
@@ -65,13 +64,12 @@ const Up = glamorous.a({
   'padding': '5px',
   'background': 'rgba(0, 0, 0, 0.4)',
   'zIndex': 1000,
-
   '&:hover': {
     background: 'rgba(0, 0, 0, 0.6)',
   },
 });
 
-class UnbundlingTreemap extends React.Component {
+class UnbundlingTreemap extends React.Component<Props, State> {
   public static groupers = {
     years: 'year',
     to: 'to_di_id',
@@ -87,10 +85,7 @@ class UnbundlingTreemap extends React.Component {
   }
 
   public static getActiveOption = (position: number): string =>
-    Object.keys(UnbundlingTreemap.groupers)[position];
-
-  // eslint-disable-next-line react/sort-comp
-  public state: State;
+    Object.keys(UnbundlingTreemap.groupers)[position]
 
   constructor(props: Props) {
     super(props);
@@ -127,7 +122,7 @@ class UnbundlingTreemap extends React.Component {
     this.fetch(active, values);
   }
 
-  public updateValue(key: string, value: string) {
+  public updateValue = (key: string) => (value: string) => {
     // making sure we dont have duplicates
     const values = UnbundlingTreemap.addNewValue({key, value}, this.state.values);
     this.setState({ values });
@@ -148,7 +143,6 @@ class UnbundlingTreemap extends React.Component {
         ...args
       },
     };
-    // console.log('parameters', parameters);
     this.props.refetch(parameters);
   }
 
@@ -161,8 +155,9 @@ class UnbundlingTreemap extends React.Component {
           position={this.state.position}
           values={this.state.values}
           toolBarOptions={this.props.selections}
+          // tslint:disable-next-line:jsx-no-lambda
           onMove={(key) => this.fetch(key, this.state.values)}
-          onChange={(key, value) => this.updateValue(key, value)}
+          onChange={this.updateValue}
         />
         {this.props.error ?
           <p>
@@ -204,11 +199,11 @@ class UnbundlingTreemap extends React.Component {
                   config={this.props.config}
                   data={this.props.bundles}
                   height="36em"
-                  onClick={d => this.onZoomIn(d)}
+                  onClick={this.onZoomIn}
                 />}
               {this.state.position <= 1
                 ? ''
-                : <Up className="up" onClick={() => this.onZoomOut()}>
+                : <Up className="up" onClick={this.onZoomOut}>
                   <Icon name={'chevron left'} size="big" inverted />
                 </Up>}
             </div>

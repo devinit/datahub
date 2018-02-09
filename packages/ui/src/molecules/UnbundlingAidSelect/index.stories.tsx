@@ -4,5 +4,11 @@ import { storiesOf } from '@storybook/react';
 import Select from '.';
 
 storiesOf('Unbundling Aid', module).add('Select', () =>
-  <Select active={false} bigText="Test" smallText="all" options={[{ name: '1', value: 'test' }]} />,
+  <Select
+    active={false}
+    value="Test"
+    smallText="all"
+    onChange={console.info}
+    options={[{ name: '1', value: 'test', key: 'key' }]}
+  />,
 );

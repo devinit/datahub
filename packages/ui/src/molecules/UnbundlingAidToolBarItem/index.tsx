@@ -1,32 +1,33 @@
-// @flow
 import * as React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, SemanticWIDTHS } from 'semantic-ui-react';
 import {lighterGrey, lightGrey } from '../../theme/semantic';
 import Select from '../UnbundlingAidSelect';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable, DropResult} from 'react-beautiful-dnd';
 
-export interface Value  {
+export interface KeyValue  {
   key: string;
   value: string;
 }
 
 interface Props  {
   aid: string;
-  width: number;
+  width: SemanticWIDTHS;
   data: any;
   position?: number;
-  values: Value[];
-  textAlign?: string;
+  values: KeyValue[];
+  textAlign?: 'left' | 'right'| 'center';
   onMove: (key: string) => void;
-  onChange: (key: string, value: string) => void;
+  onChange: (key: string) => (value: string) => void;
 }
 
-/* eslint-disable no-unused-vars */
-export default class ToolBarItem extends React.Component {
+interface State {
+  keys: string[];
+}
+
+export default class ToolBarItem extends React.Component<Props, State> {
   public static grid: number = 8;
-  public static getValue(values: Value[], key: string): string {
-    // console.log('key ', key, 'values: ', values);
-    const obj = values.find(obj => obj.key === key);
+  public static getValue(values: KeyValue[], key: string): string {
+    const obj = values.find(objx => objx.key === key);
     return obj ? obj.value : 'All';
   }
   public static reorder(list: string[], startIndex: number, endIndex: number): string[] {
@@ -44,13 +45,13 @@ export default class ToolBarItem extends React.Component {
     // styles we need to apply on draggables
     ...draggableStyle,
   })
-  // static reorder: (list: string[], startIndex: number, endIndex: number) => string[]
-  public state: {
-    keys: string[]
-  };
-  public onDragEnd: (result: Object) => void;
-
-  public onDragEnd(result: Object) {
+  constructor(props: Props) {
+    super(props);
+    const keys = Object.keys(this.props.data).filter(key => key !== 'years');
+    this.state = {keys};
+    this.onDragEnd = this.onDragEnd.bind(this);
+  }
+  public onDragEnd(result: DropResult) {
     // dropped outside the list
     if (!result.destination) return;
     const keys = ToolBarItem.reorder(
@@ -58,14 +59,6 @@ export default class ToolBarItem extends React.Component {
       result.source.index,
       result.destination.index
     );
-   constructor(props: Props); {
-    super(props);
-    const keys = Object.keys(this.props.data).filter(key => key !== 'years');
-    this.state = {keys};
-    this.onDragEnd = this.onDragEnd.bind(this);
-  }
-
-    // console.log('results', result);
     this.props.onMove(result.draggableId);
     this.setState({
       keys
@@ -82,7 +75,6 @@ export default class ToolBarItem extends React.Component {
       aid,
       onChange
     } = this.props;
-    // console.log('values', values);
     return (
       <Grid.Column width={width} textAlign={textAlign || 'right'} verticalAlign="middle">
         <div>
@@ -97,22 +89,22 @@ export default class ToolBarItem extends React.Component {
                       active
                       value={ToolBarItem.getValue(values, 'years')}
                       options={data.years}
-                      onChange={d => onChange('years', d)}
+                      onChange={onChange('years')}
                     />
                   </div>
                   {this.state.keys.map(key => (
                     <Draggable key={key} draggableId={key}>
-                      {(provided, snapshot) => (
+                      {(providedx, snapshotx) => (
                         <div
                           style={{height: '30px', marginLeft: '2px', display: 'inline-block'}}
                         >
                           <div
                             ref={provided.innerRef}
                             style={ToolBarItem.getItemStyle(
-                              provided.draggableStyle,
-                              snapshot.isDragging
+                              providedx.draggableStyle,
+                              snapshotx.isDragging
                             )}
-                            {...provided.dragHandleProps}
+                            {...providedx.dragHandleProps}
                           >
                             <Select
                               key={key}
@@ -120,7 +112,7 @@ export default class ToolBarItem extends React.Component {
                               value={ToolBarItem.getValue(values, key)}
                               smallText={key}
                               options={data[key]}
-                              onChange={d => onChange(key, d)}
+                              onChange={onChange(key)}
                             />
                           </div>
                           {provided.placeholder}
