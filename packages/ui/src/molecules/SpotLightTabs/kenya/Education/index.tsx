@@ -3,15 +3,15 @@ import * as React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
+import {SpotLightTabData} from '../../types';
+import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
+
 /* eslint-disable max-len */
-interface Props  {
-  ...SpotLightTabDataQuery;
+type Props = SpotLightTabData &  {
   currency: string;
   pageData: PageUnit[];
-}
+};
 
 const Educaton = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -26,8 +26,11 @@ const Educaton = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {teacherRatioAll.title}
-            { // $FlowFixMe
-              TabsToolTip(educationTabRegional.primaryPupilTeacherRatioAllSchl && educationTabRegional.primaryPupilTeacherRatioAllSchl.toolTip)
+            {
+              TabsToolTip(
+                (educationTabRegional as DH.IEducationTabRegionalKe).primaryPupilTeacherRatioAllSchl
+                && educationTabRegional.primaryPupilTeacherRatioAllSchl.toolTip
+              )
             }
           </HeaderTitle>
           <TabsP>
