@@ -4,9 +4,9 @@ import * as React from 'react';
 import { approximate } from '@devinit/dh-base/lib/utils';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
-import UnbundlingInternationalResources, {
-  NoDataAvailableContainer,
-} from '@devinit/dh-app/lib/UnbundlingInternationalResources';
+// import UnbundlingInternationalResources, {
+//   NoDataAvailableContainer,
+// } from '@devinit/dh-app/lib/UnbundlingInternationalResources';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
 import { red } from '../../theme/semantic';
@@ -14,24 +14,44 @@ import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
-export interface State  {
-  directions: object[]; // TOFIX: @ernest add proper types
-  flows: object[]; // TOFIX: @ernest add proper types
-
-  year: number;
-  direction: string;
+interface DetailSelection {
+  value: string;
+  selection: {unbundle: boolean};
+  text: string;
+  key: string;
+}
+export interface FlowState {
   flow?: string;
   flowName?: string;
-  detailSelections?: object[]; // TOFIX: @ernest add proper types
+  detailSelections?: DetailSelection[]; // TOFIX: @ernest add proper types
   detailGroup?: string;
   shouldUnbundle?: boolean;
+  trend: any[]; // TOFIX: @ernest add proper types
+  mixes: {[index: string]: any[]};
+}
+export type DirectionState = FlowState & {
+  flows: any[]; // TOFIX: @ernest add proper types
+  direction: string;
+};
 
-  trend: object[]; // TOFIX: @ernest add proper types
-  mixes: object[]; // TOFIX: @ernest add proper types
+export type State = DirectionState &  {
+  year: number;
+  flows: any[]; // TOFIX: @ernest add proper types
+  directions: Array<{value: string, text: string}>;
+};
+
+interface UProps {
+  shouldFetch?: boolean;
+  country: string;
+  year: number;
+  groupBy?: string;
+  flow?: string;
+  config: any;
 }
 
-export interface Props  {
+export interface Props {
   id: string;
+  year: number;
   countryType: string;
   country: string;
   data: any[]; // TODO: reuse FlowData type currently in the inflows outflows file
@@ -39,19 +59,18 @@ export interface Props  {
   startYear: number;
   inflows: any[];
   outflows: any[];
+  unbundlingInternationalResources: React.ComponentClass<UProps>;
+  noDataAvailableContainer: React.ComponentClass<any>;
   cached?: State;
 }
 
-class AreaPartitionChart extends React.Component<Props> {
-  public state: State;
-  public props: Props;
-
+class AreaPartitionChart extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = this.initState(props);
   }
 
-  public initState(props: Props) {
+  public initState(props: Props): State {
     const year = this.props.startYear;
     const direction = this.props.countryType !== DONOR ? 'in' : 'out';
     const directions = [
@@ -65,36 +84,36 @@ class AreaPartitionChart extends React.Component<Props> {
       year,
       direction,
       directions,
-
       ...this.getDirectionState(direction),
     };
   }
 
-  public setYear(year: number) {
+  public setYear(year: number | string) {
     this.setState({
-      year,
+      year: +year,
     });
   }
 
-  public setDirection(direction: string) {
-    this.setState(this.getDirectionState(direction));
+  public setDirection(_event, data) {
+    this.setState(this.getDirectionState(data.value));
   }
 
-  public setFlow(id: string) {
-    this.setState(this.getFlowState(this.state.direction, id));
+  public setFlow(_event, data) {
+    this.setState(this.getFlowState(this.state.direction, data.id));
   }
 
-  public setFlowDetailGroup(id: string) {
-    const selections = this.state.detailSelections || {};
-    const [selection = {}] = selections.filter(d => d.value === id);
+  public setFlowDetailGroup(_event, data) {
+    const selections = this.state.detailSelections;
+    const filtered: Array<{selection: {unbundle: boolean}}> | undefined
+      = selections && selections.filter(d => d.value === data.id);
 
     this.setState({
-      detailGroup: id,
-      shouldUnbundle: selection.unbundle,
+      detailGroup: data.id,
+      shouldUnbundle: filtered && filtered[0].selection.unbundle,
     });
   }
 
-  public getDirectionState(direction: string) {
+  public getDirectionState(direction: string): DirectionState {
     const flows = [
       {
         key: 'all',
@@ -102,10 +121,10 @@ class AreaPartitionChart extends React.Component<Props> {
         value: 'all',
       },
 
-      ...(direction === 'in' ? this.props.inflows : this.props.outflows).map(flow => ({
-        key: flow.id,
-        text: flow.name,
-        value: flow.id,
+      ...(direction === 'in' ? this.props.inflows : this.props.outflows).map(flowx => ({
+        key: flowx.id,
+        text: flowx.name,
+        value: flowx.id,
       })),
     ];
 
@@ -119,7 +138,7 @@ class AreaPartitionChart extends React.Component<Props> {
     };
   }
 
-  public getFlowState(direction: string, flow?: string) {
+  public getFlowState(direction: string, flow?: string): FlowState {
     const trend = this.props.data
       .filter(d => d.direction === direction && (flow === 'all' || d.flow_id === flow))
       .sort((a, b) => b.value - a.value);
@@ -149,6 +168,8 @@ class AreaPartitionChart extends React.Component<Props> {
   }
 
   public render() {
+    const NoDataAvailableContainer = this.props.noDataAvailableContainer;
+    const UnbundlingInternationalResources = this.props.unbundlingInternationalResources;
     return (
       <LightBg>
         <Container>
@@ -157,7 +178,7 @@ class AreaPartitionChart extends React.Component<Props> {
               <Dropdown
                 selection
                 fluid
-                onChange={(e, data) => this.setDirection(data.value)}
+                onChange={this.setDirection}
                 value={this.state.direction}
                 options={this.state.directions}
               />
@@ -175,7 +196,7 @@ class AreaPartitionChart extends React.Component<Props> {
                 <Dropdown
                   selection
                   fluid
-                  onChange={(e, data) => this.setFlow(data.value)}
+                  onChange={this.setFlow}
                   value={this.state.flow}
                   options={this.state.flows}
                 />
@@ -191,7 +212,7 @@ class AreaPartitionChart extends React.Component<Props> {
                     start: this.state.year.toString(),
                   },
                 }}
-                onYearChanged={year => this.setYear(+year)}
+                onYearChanged={this.setYear}
               />
             </Grid.Column>
 
@@ -214,7 +235,7 @@ class AreaPartitionChart extends React.Component<Props> {
                         <Dropdown
                           selection
                           compact
-                          onChange={(e, data) => this.setFlowDetailGroup(data.value)}
+                          onChange={this.setFlowDetailGroup}
                           value={this.state.detailGroup}
                           options={
                             this.state.detailSelections &&
@@ -259,7 +280,9 @@ class AreaPartitionChart extends React.Component<Props> {
                     height="360px"
                     data={this.state.mixes[+this.state.year] || []}
                     config={this.props.config.treemapConfig}
-                    onClick={(d: { flow_id: string }) => this.setFlow(d.flow_id)}
+                    // tslint:disable-next-line:jsx-no-lambda
+                    onClick={(d: { flow_id: string }) =>
+                      this.setState(this.getFlowState(this.state.direction, d.flow_id))}
                   />
                 : <UnbundlingInternationalResources
                   shouldFetch={this.state.shouldUnbundle}

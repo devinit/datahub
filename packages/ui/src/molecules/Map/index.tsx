@@ -14,8 +14,7 @@ import ChartShare from '../ChartShare';
 import {Route} from '@devinit/dh-base/lib/utils';
 import {countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '../ChartShare';
-import { MapChonfig } from './config';
-import mapConfigs from './config';
+import mapConfigs, {MapConfig} from './config';
 
 type Props = DH.IMapData & {
   state: StateToShare;
