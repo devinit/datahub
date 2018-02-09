@@ -39,9 +39,13 @@
     "next": "^4.2.3",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
+    "react-beautiful-dnd": "^4.0.1",
     "react-dom": "^16.2.0",
     "react-intersection-observer": "^3.0.2",
     "react-no-ssr": "^1.1.0",
     "semantic-ui-react": "^0.71.3"
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^3.0.0"
   }
 }

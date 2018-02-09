@@ -1,10 +1,15 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import DropDown from '../../atoms/UnbudlingAidDropDown';
 
+interface Option {
+  name: string;
+  key: string;
+  value: string;
+}
+
 interface Props  {
-  options: object[];
+  options: Option[];
   active?: boolean;
   smallText?: string;
   value: string;
@@ -16,8 +21,8 @@ const Wrapper = glamorous.span({
   paddingLeft: '.2em',
 });
 
-const TextWrapper = glamorous.span({}, props => ({
-  opacity: props.active ? 1 : .5,
+const TextWrapper = glamorous.span<{active?: boolean}>({}, props => ({
+  opacity: props.active ? 1 : 0.5,
 }));
 
 const BoldText = glamorous.span({
@@ -32,11 +37,11 @@ const SmallText = glamorous.span({
   paddingLeft: '.15em',
 });
 
-class Select extends React.Component {
-  public state: {
-    visible?: boolean,
-    bigText: string,
-  };
+interface State {
+  visible?: boolean;
+  bigText: string;
+}
+class Select extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -52,7 +57,7 @@ class Select extends React.Component {
     }
   }
 
-  public onChanged(selected: object) {
+  public onChanged(selected: Option) {
     this.setState({ bigText: selected.name, visible: false });
     this.props.onChange(selected.value);
   }
@@ -68,7 +73,7 @@ class Select extends React.Component {
   public render() {
     return (
       <Wrapper>
-        <TextWrapper active={this.props.active} onClick={() => this.toggleDropDown()}>
+        <TextWrapper active={this.props.active} onClick={this.toggleDropDown}>
           <SmallText>
             {this.props.smallText}
           </SmallText>
@@ -77,9 +82,10 @@ class Select extends React.Component {
           </BoldText>
         </TextWrapper>
         <DropDown
+          // tslint:disable-next-line:jsx-no-lambda
           onChange={selected => this.onChanged && this.onChanged(selected)}
           active={this.props.active}
-          onClose={() => this.toggleDropDown()}
+          onClose={this.toggleDropDown}
           visible={this.state.visible}
           text={this.props.smallText || ''}
           items={this.props.options}

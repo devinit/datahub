@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { white, primaryColor, black } from '../../theme/semantic';
@@ -62,7 +61,7 @@ const UnbundlingAidTotalODA = (props: Props) =>
               'Total other official flows (non export credit) (total gross disbursements, 2015 prices)'
           }
         </Header>
-        <Button onClick={() => props.onClickHandler()}>Explore</Button>
+        <Button onClick={props.onClickHandler}>Explore</Button>
       </Container>
     </div>
   </ParentContainer>);

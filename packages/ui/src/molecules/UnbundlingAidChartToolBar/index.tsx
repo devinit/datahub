@@ -3,10 +3,10 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { lighterGrey } from '../../theme/semantic';
 import { Container, Grid } from 'semantic-ui-react';
-import {Value} from '../UnbundlingAidToolBarItem';
+import {KeyValue} from '../UnbundlingAidToolBarItem';
 import ToolBar from '../UnbundlingAidToolBarItem';
 
-const ToolBarContainer = glamorous.div(
+const ToolBarContainer = glamorous.div<{compact?: boolean}>(
   {
     'background': lighterGrey,
     '& i.icon': {
@@ -25,14 +25,13 @@ interface Props  {
   toolBarOptions: object;
   position?: number;
   rightPosition?: number;
-  values?: Value[];
+  values?: KeyValue[];
   rightValues?: string[];
-  onMove?: (key: string) => void;
-  onChange?: (key: string, value: string) => void;
-  onRightChange?: (key: string, value: string) => void;
+  onMove: (key: string) => void;
+  onChange: (key: string) => (value: string) => void;
 }
 
-const InteractiveChartToolBar = (props: Props) => {
+const InteractiveChartToolBar: React.SFC<Props> = (props) => {
   const { compact = false, position = 1, values = [] } = props;
   return (
     <ToolBarContainer compact={compact}>
