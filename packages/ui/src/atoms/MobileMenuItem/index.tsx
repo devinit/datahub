@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { lightGrey, black } from '../../theme/semantic';
 
 interface Props {
-  menu: any;
+  menu: {children: Array<{name: string; link: string; icon: string}>};
 }
 const SubMenuContainer = glamorous.ul({
   'listStyleType': 'none',
@@ -20,7 +20,6 @@ const SubMenuContainer = glamorous.ul({
 });
 const menuItem = (props: Props) => {
   let childrenContainer;
-  let hasSubMenu = false;
   if ('children' in props.menu) {
     const children = props.menu.children.map(item =>
       (<li key={item.name}>
@@ -37,10 +36,9 @@ const menuItem = (props: Props) => {
         {children}
       </SubMenuContainer>
     );
-    hasSubMenu = true;
   }
   return (
-    <Pane>
+    <Pane >
       {childrenContainer}
     </Pane>
   );

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 import LoadingBar from '../LoadingBar';
@@ -47,8 +46,8 @@ interface State  {
   revenueTourVisible: boolean;
 }
 
-export default class MultiLinePartition extends React.Component {
-  public static createTimeLimits(data: Object[]) {
+export default class MultiLinePartition extends React.Component<Props> {
+  public static createTimeLimits(data: object[]) {
     const years = data.map(datum => datum.year);
     const lowestYear = Math.min.apply(null, years);
     const highestYear = Math.max.apply(null, years);

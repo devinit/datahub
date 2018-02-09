@@ -10,10 +10,10 @@ import { Grid, Container } from 'semantic-ui-react';
 import RankingsTable from '../RankingsTable';
 import { Props as RankingsTableProps } from '../RankingsTable';
 import ChartShare from '../ChartShare';
-import {Route} from '@devinit/dh-base/utils';
+import {Route} from '@devinit/dh-base/lib/utils';
 import {countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '../ChartShare';
-import { MapConfig } from './config';
+import { MapChonfig } from './config';
 import mapConfigs from './config';
 
 interface Props  {

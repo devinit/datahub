@@ -1,4 +1,3 @@
-// @flow
 import { Viewport } from '../../atoms/BaseMap/types';
 
 export interface MapConfig  {

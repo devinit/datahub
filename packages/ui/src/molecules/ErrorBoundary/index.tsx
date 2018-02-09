@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ErrorInfo } from 'react';
 
 interface Props  {
   children: any;
@@ -15,7 +16,7 @@ export default class ErrorBoundary extends React.Component<Props> {
     super(props);
     this.state = { hasError: false, error: '', info: ''};
   }
-  public componentDidCatch(error: string, info: string) {
+  public componentDidCatch(error: Error, info: ErrorInfo) {
     // Display fallback UI
     this.setState({ hasError: true, error, info });
     // You can also log the error to an error reporting service

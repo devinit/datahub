@@ -1,5 +1,4 @@
-// @flow
-import React, { Component } from 'react';
+import * as React from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import { white, redHeaderColor } from '../../theme/semantic';
@@ -27,7 +26,7 @@ export const ToggleButton = glamorous.button({
     display: 'block',
   },
 });
-export const OutSideMenu = glamorous.div(
+export const OutSideMenu = glamorous.div<{open: boolean; }>(
   {
     background: '#fff',
     position: 'fixed',
@@ -44,10 +43,10 @@ export const OutSideMenu = glamorous.div(
 );
 
 interface Props {
-  menu: any[];
+  menu: any;
 }
 
-class MobileMenu extends Component {
+class MobileMenu extends React.Component<Props> {
   public state: {
     open: boolean,
   };
@@ -57,37 +56,31 @@ class MobileMenu extends Component {
       open: false,
     };
   }
-  public toggleNav() {
-    if (this.state.open) {
-      this.setState({ open: false });
-    } else {
-      this.setState({ open: true });
-    }
+  public toggleNav(e) {
+    return () => {
+      if (this.state.open) {
+        this.setState({ open: false });
+      } else {
+        this.setState({ open: true });
+      }
+    };
   }
   public render() {
     const { open } = this.state;
     const menuItems = this.props.menu.map(item => {
-      let hasSubMenu = false;
-      if ('children' in item) {
-        hasSubMenu = true;
-      }
       return (
         <MenuItem
           menu={item}
-          label={item.name}
-          url={item.link}
           key={item.name}
-          hasSub={hasSubMenu}
         />
       );
     });
-    /* eslint-disable flowtype-errors/show-errors */
     return (
       <div>
-        <ToggleButton onClick={() => this.toggleNav()}>
+        <ToggleButton onClick={this.toggleNav} >
           {open ? <Icon name="cancel" /> : <Icon name="align justify" />}
         </ToggleButton>
-        <OutSideMenu onClick={() => this.toggleNav()} open={open} />
+        <OutSideMenu onClick={this.toggleNav} open={open} />
         <MenuContainer open={open}>
           {menuItems}
         </MenuContainer>

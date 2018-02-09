@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { graphql } from 'react-apollo';
 import { WhiteBg } from '@devinit/dh-ui/lib/components/atoms/Backgrounds';

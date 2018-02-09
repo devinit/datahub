@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Div } from 'glamorous';
 import { lighterGrey } from '../../theme/semantic';
