@@ -1,5 +1,6 @@
 import * as React from 'react';
 import mapboxgl from 'mapbox-gl';
+import '@devinit/datahub-api'; // types
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import LoadingBar from '../../molecules/LoadingBar';
@@ -7,7 +8,6 @@ import Router from 'next/router';
 import { MapContainer } from './styledMapContainer';
 import {
   Feature,
-  MapData,
   PropertyLayerSlugMap,
   PaintMap,
   Props,
@@ -35,7 +35,7 @@ export const indicatorsWith0dp = [
 
 class BaseMap extends React.Component<Props> {
 
-  public static foldOverSurveyMapFeatures(features: Feature[]): MapData {
+  public static foldOverSurveyMapFeatures(features: Feature[]): DH.IMapUnit {
     type FeatureProps = Feature['properties'] & {total: number; sum: number};
     const props: FeatureProps = features.reverse().reduce((acc, feature) => {
       // this is a country feature;
@@ -53,7 +53,7 @@ class BaseMap extends React.Component<Props> {
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
 
-  public static pointDataForPreStyledMap(features: Feature[], indicator: string): MapData | null {
+  public static pointDataForPreStyledMap(features: Feature[], indicator: string): DH.IMapUnit | null {
     if (indicator === 'surveyp20') return BaseMap.foldOverSurveyMapFeatures(features);
     if (!features[0].properties) throw new Error('Properties missing from map style');
     if (features[0].layer.type === 'line') return null;
@@ -139,7 +139,7 @@ class BaseMap extends React.Component<Props> {
         : '';
     return `${upperTip}${lowerTip}`;
   }
-  public tipTemplate(pointData: MapData) {
+  public tipTemplate(pointData: DH.IMapUnit) {
     const name = this.props.meta && this.props.meta.name ? this.props.meta.name : '';
     if (!pointData.id || !pointData.name || !pointData.id.length || !pointData.name.length) {
       return false;
@@ -176,22 +176,25 @@ class BaseMap extends React.Component<Props> {
       .setHTML(this.tipTemplate(obj.pointData))
       .addTo(this.map);
   }
-  public setMinimalMapDataPoint(feature: Feature, value?: number): MapData {
+  public setMinimalMapDataPoint(feature: Feature, value?: number): DH.IMapUnit {
     const id = feature.properties[this.props.paint.propertyName || this.propertyName];
     const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
     const nameProperty = this.propertyLayerNameMap[this.props.paint.propertyLayer || 'national'];
     return {
       id,
+      color: null,
+      detail: null,
+      uid: '',
       slug: feature.properties[slugProperty],
       name: feature.properties[nameProperty],
       year: 0,
-      value,
+      value: value || null,
     };
   }
-  public getMouseHoverPointData(features: Feature[]): MapData | null {
+  public getMouseHoverPointData(features: Feature[]): DH.IMapUnit | null {
     if (this.props.paint.data && this.props.paint.data.length) {
       // for regular global picture and spotlight map & the small profile maps
-      const point: MapData | void = this.props.paint.data.find(obj => {
+      const point: DH.IMapUnit | void = this.props.paint.data.find(obj => {
         const paintProperty: string = this.props.paint.propertyName || this.propertyName;
         return obj.id === features[0].properties[paintProperty];
       });
@@ -210,7 +213,7 @@ class BaseMap extends React.Component<Props> {
       const features: Feature[] = this.map.queryRenderedFeatures(e.point);
       if (!features.length && this.popup) return this.popup.remove();
       if (!features.length) return false;
-      const pointData: MapData | null = this.getMouseHoverPointData(features);
+      const pointData: DH.IMapUnit | null = this.getMouseHoverPointData(features);
       if (!pointData && this.popup) return this.popup.remove();
       if (!pointData) return false;
       if (pointData && !this.popup) this.popup = new mapboxgl.Popup({ offset: 5 });
@@ -267,7 +270,7 @@ class BaseMap extends React.Component<Props> {
   }
   public colorMap({ data, propertyName, propertyLayer }: PaintMap) {
     if (!data || !data.length) throw new Error('you have to pass in data to color the map');
-    const stops = data.filter(obj => obj.id && obj.color).map((obj: MapData) => {
+    const stops = data.filter(obj => obj.id && obj.color).map((obj: DH.IMapUnit) => {
       if (!obj.id || !obj.color) throw new Error('color and id values missing');
       return [obj.id, obj.color];
     });

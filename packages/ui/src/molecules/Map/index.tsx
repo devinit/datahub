@@ -1,6 +1,7 @@
 import * as React from 'react';
+import '@devinit/datahub-api'; // types
 import BaseMap, {indicatorsWith0dp} from '../../atoms/BaseMap';
-import { MapData, PaintMap, Meta } from '../../atoms/BaseMap/types';
+import { PaintMap, Meta } from '../../atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
 import { grey } from '../../theme/semantic';
 import { LegendField } from '../MapLegend';
@@ -16,23 +17,21 @@ import {StateToShare} from '../ChartShare';
 import { MapChonfig } from './config';
 import mapConfigs from './config';
 
-interface Props  {
+type Props = DH.IMapData & {
   state: StateToShare;
-  ...MapDataQuery;
-}
+};
 
 interface State  {
-  data: MapData[];
   currentYear: number;
 }
-class Map extends React.Component<Props> {
-  public static setCurrentYearData(currentYear: number, data: MapData[]): MapData[] {
+class Map extends React.Component<Props, State> {
+  public static setCurrentYearData(currentYear: number, data: DH.IMapUnit[]): DH.IMapUnit[] {
     return data.filter(obj => {
       if (obj.year === undefined) throw new Error('year property is missing in map data obj');
       return obj.year === currentYear;
     });
   }
-  public static setCountryRankValue(mapPoint: MapData, meta: Meta): string | number {
+  public static setCountryRankValue(mapPoint: DH.IMapUnit, meta: Meta): string | number {
     const {value} = mapPoint;
     if (value === undefined || value === null) throw new Error('country rank value should be defined');
     if (meta.id === 'data_series.fragile_states' && mapPoint.detail) return mapPoint.detail;
@@ -48,25 +47,25 @@ class Map extends React.Component<Props> {
     return value;
   }
   public state: State;
-  public yearSliderVisibility: boolean;
-  public startYear: number;
-  public paint: PaintMap; // map data
-  public endYear: number;
-  public meta: Meta;
-  public country: string;
-  public config: MapConfig;
-  public heading: string;
-  public description: string;
-  public noRankTableList: string[] = ['data_series.largest_intl_flow', 'data_series.fragile_states'];
-  public legendData: LegendField[];
+  private yearSliderVisibility: boolean;
+  private startYear: number;
+  private paint: PaintMap; // map data
+  private endYear: number;
+  private meta: Meta;
+  private data: DH.IMapUnit[];
+  private country: string;
+  private config: MapConfig;
+  private heading: string;
+  private description: string;
+  private noRankTableList: string[] = ['data_series.largest_intl_flow', 'data_series.fragile_states'];
+  private legendData: LegendField[];
   constructor(props: Props) {
     super(props);
-    if (!props.mapData) throw new Error('mapData is missing in props');
-    if (!props.mapData.country) throw new Error('country is missing in props');
-    this.country = props.mapData.country;
+    if (!props.DH.IMapUnit) throw new Error('DH.IMapUnit is missing in props');
+    if (!props.country) throw new Error('country is missing in props');
+    this.country = props.country;
     this.config = mapConfigs[this.country];
     this.init(props);
-    // onLoadCss();
   }
 
   public componentWillReceiveProps(nextProps: Props) {
@@ -75,21 +74,21 @@ class Map extends React.Component<Props> {
 
   public onYearChange(e) {
     return (year: number) => {
-      if (this.props && this.props.mapData && this.props.mapData.map) {
-        const data = Map.setCurrentYearData(year, this.props.mapData.map);
-        this.paint = { data, ...this.config.paint };
-        this.setState({ currentYear: year, data });
+      if (this.props && this.props.map) {
+        this.data = Map.setCurrentYearData(year, this.props.map);
+        this.paint = { data: this.data, ...this.config.paint };
+        this.setState({ currentYear: year});
       }
     };
   }
   public setCountryRankData(): RankingsTableProps {
-    const sortedData = this.state.data
+    const sortedData = this.data
       .filter(obj => obj.value && obj.id)
       .sort((a, b) => {
         if (!a.value || !b.value) throw new Error('value must be defined'); // make flow happy
         return b.value - a.value;
       })
-      .map((obj: MapData, index: number) => {
+      .map((obj: DH.IMapUnit, index: number) => {
         if (!obj.id) throw new Error('data point id missing for country rank data');
         const flagUrl: string = this.country === 'global' ? `/flags/svg/${obj.id}.svg` : '';
         const name = obj.name ? obj.name : 'N/A';
@@ -112,53 +111,50 @@ class Map extends React.Component<Props> {
     };
   }
   public initYearSetup(props: Props) {
-    if (!props.mapData) throw new Error('mapData is missing in props');
-    if (!props.mapData.start_year) throw new Error('start_year is missing in props');
-    if (!props.mapData.default_year) throw new Error('default_year is missing in props');
+    if (!props.start_year) throw new Error('start_year is missing in props');
+    if (!props.default_year) throw new Error('default_year is missing in props');
     const currentYear = props.state && props.state.year ?
-      props.state.year : props.mapData.default_year;
-    this.startYear = props.mapData.start_year;
-    this.endYear = props.mapData.end_year ? props.mapData.end_year : this.startYear;
+      props.state.year : props.default_year;
+    this.startYear = props.start_year;
+    this.endYear = props.end_year ? props.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
     this.state = { ...this.state, currentYear };
   }
   public initMetaSetup(props: Props) {
-    if (!props.mapData || !props.mapData.legend) throw new Error('mapData is missing in props');
-    this.legendData = props.mapData.legend;
-    this.heading = props.mapData && props.mapData.heading ?
-      props.mapData.heading : 'Indicator must have a heading talk to Allan or Donata';
-    const name: string =
-      props.mapData && props.mapData.name
-        ? props.mapData.name
+    if (!props.legend) throw new Error('DH.IMapUnit is missing in props');
+    this.legendData = props.legend;
+    this.heading = props.heading ?
+      props.heading : 'Indicator must have a heading talk to Allan or Donata';
+    const name: string = props.name
+        ? props.name
         : 'Indicator must have a name talk to Allan or Donata';
-    const uomDisplay = props.mapData.uom_display || '';
+    const uomDisplay = props.uom_display || '';
     this.description =
-      props.mapData.description || 'Please add a proper description, talk to Allan or Donata ';
-    if (!props.mapData.theme) throw new Error('theme is missing in map data props');
-    if (!props.mapData.country) throw new Error('country is missing in map data props');
-    if (!props.mapData.id) throw new Error('indicator id is missing in map data props');
+      props.description || 'Please add a proper description, talk to Allan or Donata ';
+    if (!props.theme) throw new Error('theme is missing in map data props');
+    if (!props.country) throw new Error('country is missing in map data props');
+    if (!props.id) throw new Error('indicator id is missing in map data props');
     this.meta = {
       name,
       uom_display: uomDisplay,
-      theme: props.mapData.theme,
-      id: props.mapData.id,
-      country: props.mapData.country,
+      theme: props.theme,
+      id: props.id,
+      country: props.country,
     };
   }
   public init(props: Props) {
     this.initYearSetup(props);
     this.initMetaSetup(props);
-    let data = [];
-    if (props.mapData && props.mapData.map && props.mapData.map.length) {
-      data = this.yearSliderVisibility
-        ? Map.setCurrentYearData(this.state.currentYear, props.mapData.map)
-        : props.mapData.map;
-      this.paint = { data, ...this.config.paint };
+    if (props.map && props.map.length) {
+      this.data = this.yearSliderVisibility
+        ? Map.setCurrentYearData(this.state.currentYear, props.map)
+        : props.map;
+      this.paint = { data: this.data, ...this.config.paint };
     }
-    if (props.mapData && props.mapData.map_style) {
-      this.paint = { data, ...this.config.paint, mapStyle: props.mapData.map_style };
+    if (props.map_style) {
+      this.paint = { data: this.data, ...this.config.paint, mapStyle: props.map_style };
     }
-    this.state = { ...this.state, data };
+    this.state = { ...this.state};
   }
   public render() {
     return (

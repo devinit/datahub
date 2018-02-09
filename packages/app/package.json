@@ -16,6 +16,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "@devinit/datahub-api": "^1.0.2",
     "compression": "^1.7.1",
     "express": "^4.16.2",
     "glamor": "^2.20.40",
