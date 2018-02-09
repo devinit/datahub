@@ -47,7 +47,7 @@ interface State  {
 }
 
 export default class MultiLinePartition extends React.Component<Props> {
-  public static createTimeLimits(data: object[]) {
+  public static createTimeLimits(data: Array<{year: number; }>) {
     const years = data.map(datum => datum.year);
     const lowestYear = Math.min.apply(null, years);
     const highestYear = Math.max.apply(null, years);
@@ -57,7 +57,7 @@ export default class MultiLinePartition extends React.Component<Props> {
     };
   }
 
-  public static createBudgetTypeOptions(data: Object[]) {
+  public static createBudgetTypeOptions(data: Array<{year: number; budget_type: any;}>) {
     return data
       .reduce((acc, d) => {
         if (!acc[d.year]) {

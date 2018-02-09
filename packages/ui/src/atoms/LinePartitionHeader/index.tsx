@@ -15,8 +15,8 @@ interface Props  {
   onChangeBudgetType: onChangeT;
   onChangeCurrency: onChangeC;
 }
-const _onChange = (onChange: onChangeT) => (e, data) => onChange(data.value);
-const _onChangeC = (onChange: onChangeC) => (e, data) => onChange(data.value);
+const _onChange = (onChange: onChangeT) => (_e, data) => onChange(data.value);
+const _onChangeC = (onChange: onChangeC) => (_e, data) => onChange(data.value);
 
 const LinePartitionHeader = (props: Props) => {
   return (<Grid>

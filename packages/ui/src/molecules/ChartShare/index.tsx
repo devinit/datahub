@@ -33,7 +33,7 @@ const Container = glamorous.div({
   },
 });
 
-const ButtonWrapper = glamorous.span<{hover: any; background: any; }>({
+const ButtonWrapper = glamorous.span<{hover: boolean; background: boolean; }>({
   ...NoBackground,
 }, (props) => ({
   '& button:hover': {

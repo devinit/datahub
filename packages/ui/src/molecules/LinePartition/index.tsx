@@ -36,8 +36,7 @@ interface Legendx {
 interface TimeAxis {
   timeAxis: any;
 }
-type changeYear = (year: number) => void;
-type changeCurrency = (currency: string) => any;
+
 interface Props  {
   title: string;
   inverted?: boolean;
@@ -54,8 +53,8 @@ interface Props  {
     line: TimeAxis;
     partition: Legendx;
   };
-  onChangeYear: changeYear;
-  onChangeCurrency: changeCurrency;
+  onChangeYear: (year: number | string) => void;
+  onChangeCurrency: (currency: string) => any;
   onChangeBudgetType(budgetType: string): void;
 }
 
@@ -69,8 +68,6 @@ interface State  {
   level: string;
   heading: string;
 }
-const yearChange = (onChange: changeYear) => (e, year) => onChange(+year);
-const currencyChange = (onChange: changeCurrency) => (e, currency) => onChange(currency);
 
 export default class LinePartition extends React.Component<Props> {
   public state: State;
@@ -181,24 +178,23 @@ export default class LinePartition extends React.Component<Props> {
     return (<Container>
 
       {this.props.inverted && tree.length ? '' :
-        // eslint-disable-next-line react/jsx-indent
         <LinePartitionHeader
           title={this.state.heading}
           hideOptions={this.props.withoutOptions || false}
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={budgetType => this.props.onChangeBudgetType(budgetType)}
+          onChangeBudgetType={this.props.onChangeBudgetType}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={currencyChange()}
+          onChangeCurrency={this.props.onChangeCurrency}
         />}
 
       <Grid style={{paddingBottom: '40px'}}>
         <Grid.Column mobile={16} computer={5} width={5} style={{ padding: 0 }}>
           <CardContainer>
             <Timeline
-              onYearChanged={yearChange()}
+              onYearChanged={this.props.onChangeYear}
               height={showLegend ? '250px' : '180px'}
               config={{
                 ...this.props.config.line,
@@ -223,6 +219,7 @@ export default class LinePartition extends React.Component<Props> {
                   ...this.props.config.partition,
                   labeling: { prefix: this.props.currency },
                 }}
+                // tslint:disable-next-line:jsx-no-lambda
                 onClick={(d: { data: {levels: string[]} }) => {
                   this.setLevel(d.data.levels);
                 }}
@@ -242,10 +239,10 @@ export default class LinePartition extends React.Component<Props> {
           year={this.props.year}
           budgetType={this.props.budgetType}
           budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={budgetType => this.props.onChangeBudgetType(budgetType)}
+          onChangeBudgetType={this.props.onChangeBudgetType}
           currency={this.props.currency}
           currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={currency => this.props.onChangeCurrency(currency)}
+          onChangeCurrency={this.props.onChangeCurrency}
         />}
 
     </Container>);
