@@ -65,7 +65,7 @@ const Educaton = (props: Props) => {
           <TabsP>
             {educationTabRegionalKe.primaryTeacherRatioPrivateSchl
             && educationTabRegionalKe.primaryTeacherRatioPrivateSchl.value
-              ?educationTabRegionalKe.primaryTeacherRatioPrivateSchl.value
+              ? educationTabRegionalKe.primaryTeacherRatioPrivateSchl.value
               : NoData}
           </TabsP>
         </Grid.Column>

@@ -23,8 +23,8 @@ const Poverty = (props: Props) => {
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle >
-            {povertyLevels.title ? povertyLevels.title.toUpperCase() : '' }
-            { // $FlowFixMe
+            {povertyLevels.title ? povertyLevels.title.toUpperCase() : ''}
+            {
               TabsToolTip(povertyTabRegional.poorestPeople &&
                 povertyTabRegional.poorestPeople.toolTip)
             }

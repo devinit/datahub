@@ -72,9 +72,9 @@ const ProfileDataSourceTable = ({ title, data, noDownloads }: Props) =>
                           <ToolTip
                             trigger={<span><Icon name="file" />CSV</span>}
                           >
-                            <P textAlign="center">We are in the process of updating our data sources,{ }
-                                these will be available to download in the near future.{ }
-                                Please contact <a href="mailto:info@devinit.org">info@devinit.org</a> { }
+                            <P textAlign="center">We are in the process of updating our data sources,{' '}
+                                these will be available to download in the near future.{' '}
+                                Please contact <a href="mailto:info@devinit.org">info@devinit.org</a>{' '}
                                 if you wish to access these sources in the meantime.
                             </P>
                           </ToolTip>

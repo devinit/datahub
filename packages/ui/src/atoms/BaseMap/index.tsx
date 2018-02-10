@@ -291,11 +291,11 @@ class BaseMap extends React.Component<Props, State> {
     const layer = propertyLayer || 'national';
     const slugProperty = this.propertyLayerSlugMap[layer];
     const features: Feature[] = this.map.queryRenderedFeatures({ layers: [layer] });
-    const feature: Feature | void = features.find(feature => {
-      if (feature.properties[slugProperty] && slugProperty !== 'country-slug') {
-        return feature.properties[slugProperty].toLowerCase() === slug;
+    const feature: Feature | void = features.find(featurex => {
+      if (featurex.properties[slugProperty] && slugProperty !== 'country-slug') {
+        return featurex.properties[slugProperty].toLowerCase() === slug;
       }
-      return feature.properties[slugProperty] === slug;
+      return featurex.properties[slugProperty] === slug;
     });
     return feature;
   }

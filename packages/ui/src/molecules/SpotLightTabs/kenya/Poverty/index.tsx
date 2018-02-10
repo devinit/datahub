@@ -54,7 +54,7 @@ const Poverty = (props: Props) => {
           <HeaderTitle >
             {meanExpenditure.title}
             {
-             TabsToolTip(povertyTabRegionalKe.meanExpenditure 
+             TabsToolTip(povertyTabRegionalKe.meanExpenditure
               && povertyTabRegionalKe.meanExpenditure.toolTip)
             }
           </HeaderTitle>

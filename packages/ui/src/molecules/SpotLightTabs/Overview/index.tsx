@@ -47,7 +47,7 @@ const Overview = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {overviewResources.title ? overviewResources.title.toUpperCase() : '' }
+            {overviewResources.title ? overviewResources.title.toUpperCase() : ''}
             {overviewTabRegional.regionalResources && overviewTabRegional.regionalResources.toolTip
               ? <TabsToolTip {...overviewTabRegional.regionalResources.toolTip} />
               : ''}

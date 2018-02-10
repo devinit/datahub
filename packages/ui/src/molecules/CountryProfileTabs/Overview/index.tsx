@@ -47,7 +47,7 @@ const Overview = (props: Props) => {
           </Grid.Column>
           : <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
-              {avgIncomePerPerson.title }
+              {avgIncomePerPerson.title}
               {overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
                 ? <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} />
                 : ''}
@@ -68,7 +68,7 @@ const Overview = (props: Props) => {
         {props.countryType === RECIPIENT
           ? <Grid.Column computer={5} tablet={12} mobile={12}>
             <HeaderTitle>
-              {overviewCtryResources.title }
+              {overviewCtryResources.title}
             </HeaderTitle>
             <P color={red} fontWeight={'bold'} marginBottom={0} textAlign="center">
                 Domestic public
@@ -96,7 +96,7 @@ const Overview = (props: Props) => {
           : ''}
         <Grid.Column computer={5} tablet={12} mobile={12}>
           <HeaderTitle>
-            {overviewGovtSpentPerPerson.title }
+            {overviewGovtSpentPerPerson.title}
             {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip
               ? <TabsToolTip {...overviewTab.governmentSpendPerPerson.toolTip} />
               : ''}
@@ -113,7 +113,7 @@ const Overview = (props: Props) => {
         {props.countryType === DONOR
           ? <Grid.Column computer={5} tablet={12} mobile={1}>
             <HeaderTitle>
-              {incomeDistributionCtry.title }
+              {incomeDistributionCtry.title}
               {overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip
                 ? <TabsToolTip {...overviewTab.incomeDistTrend.toolTip} />
                 : ''}

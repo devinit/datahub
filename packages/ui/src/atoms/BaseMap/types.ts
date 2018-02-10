@@ -33,7 +33,6 @@ export interface Meta {
   name: string;
 }
 
-
 export type MapBoxOptions = & Viewport & ViewportDefaults & {
   style: string;
   container: HTMLDivElement | string;

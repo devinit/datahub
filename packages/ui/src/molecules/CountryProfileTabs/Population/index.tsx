@@ -23,7 +23,7 @@ const Population = (props: Props) => {
     <Grid textAlign={'center'}>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <HeaderTitle>
-          {popnCtry.title }
+          {popnCtry.title}
           {populationTab.population && populationTab.population.toolTip
             ? <TabsToolTip {...populationTab.population.toolTip} />
             : ''}
@@ -55,7 +55,7 @@ const Population = (props: Props) => {
       </Grid.Column>
       <Grid.Column computer={5} tablet={16} mobile={16}>
         <HeaderTitle>
-          {popnDistributionAgeCtry.title }
+          {popnDistributionAgeCtry.title}
           {populationTab.populationPerAgeBand && populationTab.populationPerAgeBand.toolTip
             ? <TabsToolTip {...populationTab.populationPerAgeBand.toolTip} />
             : ''}

@@ -42,8 +42,8 @@ const Educaton = (props: Props) => {
           </TabsP>
           <p>
             in government schools and
-            { 
-              TabsToolTip(educationTabRegional.pupilTeacherRatioGovtSchl 
+            {
+              TabsToolTip(educationTabRegional.pupilTeacherRatioGovtSchl
                 && educationTabRegional.pupilTeacherRatioGovtSchl.toolTip)
             }
           </p>
@@ -72,7 +72,6 @@ const Educaton = (props: Props) => {
           </TabsP>
           <p>and is ranked in
             {
-              // $FlowFixMe
               TabsToolTip(educationTabRegional.studentsPassRate && educationTabRegional.studentsPassRate.toolTip)
             }
           </p>
@@ -83,7 +82,7 @@ const Educaton = (props: Props) => {
               : NoData}
           </TabsP>
           <P>place overall
-            { // $FlowFixMe
+            {
               TabsToolTip(educationTabRegional.studentsPassDistrictRank
                 && educationTabRegional.studentsPassDistrictRank.toolTip)
             }
@@ -92,15 +91,14 @@ const Educaton = (props: Props) => {
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
             {educationFunding.title}
-            { 
-              TabsToolTip(educationTabRegional.primaryEducationfunding 
+            {
+              TabsToolTip(educationTabRegional.primaryEducationfunding
                 && educationTabRegional.primaryEducationfunding.toolTip)
             }
           </HeaderTitle>
           <TabsP>
-            { // $FlowFixMe
-              fundingValue ? `${props.currency} ${fundingValue}` : NoData
-            }
+            {
+              fundingValue ? `${props.currency} ${fundingValue}` : NoData}
           </TabsP>
         </Grid.Column>
       </Grid>

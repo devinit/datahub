@@ -20,13 +20,12 @@ const Poverty = (props: Props) => {
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.povertyTab) return new Error('No Poverty data');
   const povertyTab = props.povertyTab;
-  // noinspection JSUnresolvedVariable
   return (
     <Container>
       <Grid textAlign={'center'}>
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {povertyReductionCtry.title }
+            {povertyReductionCtry.title}
             {povertyTab.poverty190Trend && povertyTab.poverty190Trend.toolTip
               ? <TabsToolTip {...povertyTab.poverty190Trend.toolTip} />
               : ''}
@@ -43,7 +42,7 @@ const Poverty = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {povertyDepthCtry.title }
+            {povertyDepthCtry.title}
             {povertyTab.depthOfExtremePoverty && povertyTab.depthOfExtremePoverty.toolTip
               ? <TabsToolTip {...povertyTab.depthOfExtremePoverty.toolTip} />
               : ''}
@@ -58,7 +57,7 @@ const Poverty = (props: Props) => {
 
         <Grid.Column computer={5} tablet={16} mobile={16}>
           <HeaderTitle>
-            {incomeDistributionCtry.title }
+            {incomeDistributionCtry.title}
             {povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.toolTip
               ? <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} />
               : ''}

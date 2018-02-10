@@ -58,7 +58,7 @@ export default class MultiLinePartition extends React.Component<Props> {
     };
   }
 
-  public static createBudgetTypeOptions(data: Array<{year: number; budget_type: any;}>) {
+  public static createBudgetTypeOptions(data: Array<{year: number; budget_type: any}>) {
     return data
       .reduce((acc, d) => {
         if (!acc[d.year]) {
