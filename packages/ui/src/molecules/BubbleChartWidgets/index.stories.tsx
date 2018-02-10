@@ -5,5 +5,5 @@ import BubbleChart from '.';
 import data from './data';
 
 storiesOf('BubbleChartWidget', module).add('Main', () =>
-  <BubbleChart {...data} annotation={<BubbleChartAnnotation />} />,
+  <BubbleChart {...data} click={console.info} annotation={<BubbleChartAnnotation />} />,
 );

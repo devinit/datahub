@@ -25,7 +25,6 @@ const Health = (props: Props) => {
           <HeaderTitle>
             {healthCareFunding.title}
             {
-              // $FlowFixMe
               TabsToolTip(healthTabRegionalKe.healthCareFunding && healthTabRegionalKe.healthCareFunding.toolTip)
             }
           </HeaderTitle>

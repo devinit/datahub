@@ -1,5 +1,5 @@
 import { Container, Header, Grid, Divider } from 'semantic-ui-react';
-import React from 'react';
+import * as React from 'react';
 import ExportChart from '../ExportChart';
 import { LightBg } from '../../atoms/Backgrounds';
 import ChartFilter from '../CountryProfileChartFilter';

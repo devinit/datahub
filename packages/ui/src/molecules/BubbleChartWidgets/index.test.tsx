@@ -5,6 +5,12 @@ import BubbleChart from '.';
 import data from './data';
 
 it('renders 1 child of class BubbleChart', () => {
-  const wrapper = shallow(<BubbleChart {...data} annotation={<BubbleChartAnnotation />} />);
+  const wrapper = shallow(
+    <BubbleChart
+      {...data}
+      click={console.info}
+      annotation={<BubbleChartAnnotation />}
+    />
+    );
   expect(wrapper.children()).toHaveLength(1);
 });

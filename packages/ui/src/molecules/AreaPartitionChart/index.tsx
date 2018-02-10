@@ -1,12 +1,8 @@
-/* tslint-disable react/sort-comp */
 /* tslint-disable no-nested-ternary */
 import * as React from 'react';
 import { approximate } from '@devinit/dh-base/lib/utils';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
-// import UnbundlingInternationalResources, {
-//   NoDataAvailableContainer,
-// } from '@devinit/dh-app/lib/UnbundlingInternationalResources';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
 import { red } from '../../theme/semantic';

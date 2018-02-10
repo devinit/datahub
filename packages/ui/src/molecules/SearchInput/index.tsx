@@ -27,8 +27,7 @@ interface State  {
   value: string;
 }
 
-class SearchInput extends React.Component {
-  public state: State;
+class SearchInput extends React.Component <Props, State> {
   public onBlurTimer: any;
   constructor(props: Props) {
     super(props);
@@ -40,7 +39,7 @@ class SearchInput extends React.Component {
       showList: false,
     };
   }
-  public onKeyDown(e: Object) {
+  public onKeyDown(e: any) {
     let { selected } = this.state;
     const { entities } = this.state;
     const keyCode = e.keyCode;

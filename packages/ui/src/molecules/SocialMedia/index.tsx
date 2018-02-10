@@ -1,10 +1,9 @@
-// @flow
 import * as React from 'react';
 import { SocialMediaLink } from '../../atoms/Link';
 import { Icon } from 'semantic-ui-react';
 
 interface Props  {
-  type: string;
+  type: string; // TODO: and enum types
   href: string;
 }
 

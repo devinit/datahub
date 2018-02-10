@@ -7,13 +7,13 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { SectionHeader } from '../../atoms/Header';
 import {approximate} from '@devinit/dh-base/lib/utils';
 import ChartShare from '../ChartShare';
-import { RECIPIENT } from '@devinit/dh-base/utils/constants';
+import { RECIPIENT } from '@devinit/dh-base/lib/utils/constants';
 import { LightBg } from '../../atoms/Backgrounds';
 import Chart from '../../atoms/Chart';
 import YearSlider from '../YearSlider';
 
 export interface State  {
-  data: object;
+  data: any;
   config: any;
   currentYear: number;
   currentYearData: any;
@@ -30,13 +30,13 @@ export interface Props  {
   // from share url, cached state
   year?: number;
   shouldScrollIntoView?: boolean;
-  data: object[]; // TODO: should be flowData with API integration
+  data: any[]; // TODO: should be flowData with API integration
   config: any;
   cached?: State;
 }
 
-class SlidingDualSidebar extends React.Component {
-  public static normalizeDataset(data: Object[]) {
+class SlidingDualSidebar extends React.Component <Props, State> {
+  public static normalizeDataset(data: any[]) {
     // Group by unique flow-name
     const types = groupBy(
       d => `${d.direction}~${d.flow_type}~${d.flow_category}~${d.flow_name}`,
@@ -75,9 +75,6 @@ class SlidingDualSidebar extends React.Component {
       };
     }, {});
   }
-  public props: Props;
-  public state: State;
-
   constructor(props: Props) {
     super(props);
 
@@ -89,7 +86,7 @@ class SlidingDualSidebar extends React.Component {
 
     this.state = {
       data,
-      ...this.getYearState(data, parseInt(props.year || props.startYear, 10)),
+      ...this.getYearState(data, props.year || +props.startYear),
 
       config: {
         ...this.props.config,
@@ -110,7 +107,7 @@ class SlidingDualSidebar extends React.Component {
    */
 
   // eslint-disable-next-line class-methods-use-this
-  public getYearState(data: Object, year: number) {
+  public getYearState(data: any, year: number) {
     const currentYearData = data[year];
     const inflowSum = currentYearData
       .filter(d => d.direction === 'in')
@@ -135,6 +132,7 @@ class SlidingDualSidebar extends React.Component {
     const blacklist = ['UAE', 'Saudi Arabia', 'Kuwait'];
     return (
       <LightBg
+        // tslint:disable-next-line:jsx-no-lambda
         innerRef={node => this.props.shouldScrollIntoView && node ? node.scrollIntoView() : null}
       >
         <Grid>
@@ -171,7 +169,7 @@ class SlidingDualSidebar extends React.Component {
                 maximum={this.props.startYear}
                 step={1}
                 position={this.state.currentYear}
-                onChange={year => this.updateCurrentYear(year)}
+                onChange={this.updateCurrentYear}
               />
             </Segment>
           </Grid.Column>

@@ -5,12 +5,13 @@ import { red } from '../../../../theme/semantic';
 import { Div, P} from 'glamorous';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-
+import Chart from '../../../../atoms/Chart';
 import {SpotLightTabData} from '../../types';
 import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
 type Props = SpotLightTabData &  {
   currency: string;
+  config: any;
   pageData: PageUnit[];
 };
 

@@ -10,7 +10,7 @@ export interface MapConfig  {
 }
 
 export interface MapConfigs  {
-  [string]: MapConfig;
+  [countryName: string]: MapConfig;
 }
 
 const mapConfigs: MapConfigs = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import {menueData} from 'components/templates/Generic/data';
+import menueData from './testData';
 import { storiesOf } from '@storybook/react';
 import Menu from '.';
 

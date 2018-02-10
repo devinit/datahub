@@ -4,6 +4,7 @@ import { LightBg } from '../../atoms/Backgrounds';
 import glamorous, { Div } from 'glamorous';
 import ChartShare from '../ChartShare';
 import {StateToShare} from '../ChartShare';
+import {process} from '@devinit/dh-base/lib/types';
 import { Icon, Grid } from 'semantic-ui-react';
 
 const SocialIcon = glamorous.a({
@@ -31,7 +32,9 @@ const SocialMediaBar = (props?: Props) => (
                 <Icon name="facebook f" link />
               </SocialIcon>
               <SocialIcon
-                href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
+                href={
+                  `mailto:?subject=Development Initiatives:
+                    Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
               >
                 <Icon name="mail outline" />
               </SocialIcon>

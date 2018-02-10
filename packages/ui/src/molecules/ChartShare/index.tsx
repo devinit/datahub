@@ -37,7 +37,7 @@ const ButtonWrapper = glamorous.span<{hover: boolean; background: boolean; }>({
   ...NoBackground,
 }, (props) => ({
   '& button:hover': {
-    boxShadow: props.hover ? '0 1px 6px rgba(0,0,0,.3) !important' : false
+    boxShadow: props.hover ? '0 1px 6px rgba(0,0,0,.3) !important' : 'auto'
   },
   '& button': {
     backgroundColor: props.background ? 'inherit' : 'transparent !important',
