@@ -36,7 +36,7 @@ export type State = DirectionState &  {
   directions: Array<{value: string, text: string}>;
 };
 
-interface UProps {
+export interface UProps {
   shouldFetch?: boolean;
   country: string;
   year: number;

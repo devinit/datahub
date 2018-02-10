@@ -1,22 +1,20 @@
-// @flow
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';
 import {small} from '../../../theme';
 import Chart from '../../../atoms/Chart';
 import TabsToolTip from '../../TabsToolTip';
 import {TabsP, HeaderTitle} from '../../../atoms/TabsText';
-// import {PageUnit} from 'components/organisms/PagesData';
-// import {getPageUnitById} from 'components/organisms/PagesData';
-import { NoData } from '@devinit/dh-base/lib/utils/constants';
+import {SpotLightTabData} from '../types';
 
-interface Props  {
-  ...SpotLightTabDataQuery;
+type Props = SpotLightTabData & {
   currency: string;
   pageData: PageUnit[];
-  config: object;
-}
+  config: any; // TODO: Add proper types for spotlightabs chart config
+};
 
 const Overview = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);
@@ -59,7 +57,8 @@ const Overview = (props: Props) => {
           </TabsP>
 
           {overviewTabRegional.regionalResourcesBreakdown &&
-          overviewTabRegional.regionalResourcesBreakdown.some(obj => obj.data && obj.data.value) ?
+            overviewTabRegional.regionalResourcesBreakdown
+            .some(obj => obj.data && obj.data.value ? true : false) ?
             <Grid>
               <Grid.Column width="6">
                 <Chart
@@ -73,7 +72,7 @@ const Overview = (props: Props) => {
                   {overviewTabRegional.regionalResourcesBreakdown
                   && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
                     const sum = all
-                      .reduce((sum, datum) => sum + (datum.data && datum.data.value), 0) / 100;
+                      .reduce((sumx, datumx) => sum + (datumx.data && datumx.data.value), 0) / 100;
                     return (
                       <Legend
                         key={datum.data && datum.data.name ? datum.data.name : ''}
@@ -84,7 +83,7 @@ const Overview = (props: Props) => {
                           {`${Math.round((datum.data && datum.data.value ? datum.data.value : 0) / sum)} `}% {' '}
                           {datum.data && datum.data.name ? datum.data.name.toLowerCase() : ''}
                           {
-                            TabsToolTip({ // make flow happy
+                            TabsToolTip({
                               source: datum.toolTip && datum.toolTip.source ? datum.toolTip.source : ' ',
                               heading: datum.data && datum.data.name ? datum.data.name : ' '
                             })

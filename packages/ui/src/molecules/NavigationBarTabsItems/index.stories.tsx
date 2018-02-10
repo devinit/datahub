@@ -18,12 +18,17 @@ const options = [
     value: 'Sl',
     text: 'Salmona'
   }];
+const toolTip = {
+  heading: 'Heading',
+  source: 'source'
+};
+
 storiesOf('Navbar tabs with redux', module)
   .add('Select Dropdown', () =>
     (<Select
       options={options}
       activeIndicator={'al'}
-      toolTip
+      toolTip={toolTip}
       onUsingThisVizHandler={console.info}
       onChange={console.info}
       showUsingThisViz

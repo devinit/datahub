@@ -1,29 +1,29 @@
-// @flow
-import React from 'react';
+import * as React from 'react';
 import glamorous, { Div } from 'glamorous';
-import { Container } from 'semantic-ui-react';
+import { Container, SemanticTEXTALIGNMENTS } from 'semantic-ui-react';
 import MapVisualizationTour from '../MapTour';
 import TourContainer from '../TourContainer';
-import { LoadingStatus } from '@devinit/dh-base/lib/actions';
+import {Dispatch} from 'react-redux';
+import {NavBarItem} from '@devinit/dh-base/lib/types';
 import LoadingBar from '../LoadingBar';
 import { lightBlack, white, lighterGrey } from '../../theme/semantic';
 import NavigationBarTabsContainer from '../NavigationBarTabsItems';
 import {Option} from '../NavigationBarTabsItems';
 
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => Dispatch<T>;
-export type ChangeLoadingStatus = (loading: boolean) => Dispatch<LoadingStatus>
+export type ChangeLoadingStatus<L> = (loading: boolean) => Dispatch<L>;
 
-export interface Props<T>  {
+export interface Props<T, L>  {
   navBarItems: NavBarItem[]; // defined in global types
   activeIndicator: string;
   changeActiveIndicator?: ChangeActiveIndicator<T>; // made optional to make flow happy!!!
-  changeLoadingStatus?: ChangeLoadingStatus;
+  changeLoadingStatus?: ChangeLoadingStatus<L>;
   showUsingThisViz?: boolean;
   loading: boolean;
   isForSpotlightsKe?: boolean;
   isForSpotlightsUg?: boolean;
   selected?: number;
-  textAlign?: string;
+  textAlign?: SemanticTEXTALIGNMENTS;
 }
 interface State  {
   selected: number;
@@ -53,7 +53,7 @@ const TabLink = glamorous.a({
   cursor: 'pointer',
 });
 
-class Tabs<T> extends React.Component {
+class Tabs<T, L> extends React.Component<Props<T, L>, State> {
   public static selectedNavBarThemeIndex(activeIndicator: string, navBarItems: NavBarItem[]): number {
     let themeIndex = 0;
     navBarItems.forEach((current: NavBarItem, index: number) => {
@@ -63,9 +63,8 @@ class Tabs<T> extends React.Component {
     });
     return themeIndex;
   }
-  public state: State;
   public navBarItems: NavBarItem[];
-  constructor(props: Props<T>) {
+  constructor(props: Props<T, L>) {
     super(props);
     if (!props.navBarItems) throw new Error('nav bar data missing');
     const selected = Tabs.selectedNavBarThemeIndex(props.activeIndicator, props.navBarItems);
@@ -78,7 +77,7 @@ class Tabs<T> extends React.Component {
     };
     this.navBarItems = props.navBarItems;
   }
-  public componentWillReceiveProps(nextProps: Props<T>) {
+  public componentWillReceiveProps(nextProps: Props<T, L>) {
     if (nextProps !== this.props) {
       this.setState({loading: nextProps.loading});
     }
@@ -91,7 +90,7 @@ class Tabs<T> extends React.Component {
     if (!this.props.changeLoadingStatus) throw new Error('missing redux action creator changeLoadingStatus');
     this.props.changeLoadingStatus(true);
   }
-  public handleClick(index: number, event: any) {
+  public handleClick = (index: number) => (event: React.FormEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     if (!this.navBarItems[index].default_indicator) { throw new Error('default indicator missing in nav items'); }
     const activeIndicator: string = this.navBarItems[index].default_indicator;
@@ -134,9 +133,9 @@ class Tabs<T> extends React.Component {
       <NavigationBarTabsContainer
         options={options}
         activeIndicator={this.state.activeIndicator}
-        onChange={(e, options) => this.handleSelect(e, options)}
+        onChange={this.handleSelect}
         showUsingThisViz={this.props.showUsingThisViz}
-        onUsingThisVizHandler={() => this.handleUsingThisViz()}
+        onUsingThisVizHandler={this.handleUsingThisViz}
         toolTip={this.toolTipinfo()}
       />
     );
@@ -152,7 +151,7 @@ class Tabs<T> extends React.Component {
               <TabLink
                 className={activeClass}
                 href={`/${navItem.id}`}
-                onClick={e => this.handleClick(index, e)}
+                onClick={this.handleClick(index)}
               >
                 {navItem.name}
               </TabLink>
@@ -182,7 +181,7 @@ class Tabs<T> extends React.Component {
           bottom={this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '-22%' : '0px'}
           top={this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '25%' : '-50px'}
           visible={this.state.tourVisibility}
-          closeHandler={() => this.handleUsingThisViz()}
+          closeHandler={this.handleUsingThisViz}
         >
           <MapVisualizationTour entity={entity} />
         </TourContainer>

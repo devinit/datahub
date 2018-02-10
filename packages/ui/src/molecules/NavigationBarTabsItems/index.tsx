@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Dropdown, Button } from 'semantic-ui-react';
+import { Dropdown, Button} from 'semantic-ui-react';
 import TabsToolTip from '../TabsToolTip';
 import { Div } from 'glamorous';
 import { SelectWrapper, Wrapper } from './styles';
@@ -23,6 +23,8 @@ export interface Props  {
 const Select = (props: Props) => {
   const { options, onChange, toolTip, onUsingThisVizHandler,
     showUsingThisViz, activeIndicator } = props;
+  const _onChange = (event: React.SyntheticEvent<HTMLElement>, data: any) =>
+    onChange && onChange(event, data.options);
   return (<Wrapper>
     <SelectWrapper>
       <Dropdown
@@ -30,7 +32,7 @@ const Select = (props: Props) => {
         scrolling
         fluid
         options={options}
-        onChange={(event, data) => (onChange ? onChange(event, data.options) : false)}
+        onChange={_onChange}
         value={activeIndicator}
       />
     </SelectWrapper>
@@ -38,8 +40,7 @@ const Select = (props: Props) => {
     <Div display={showUsingThisViz ? 'inline-block' : 'none'}>
       <Button
         size="medium"
-        onClick={(event) =>
-          (onUsingThisVizHandler ? onUsingThisVizHandler(event) : false)}
+        onClick={onUsingThisVizHandler}
       >
         Using this Visualization
       </Button>

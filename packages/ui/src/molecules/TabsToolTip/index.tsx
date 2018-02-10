@@ -18,10 +18,7 @@ export const RegularToolTip = (props: {color?: string, text: string}) => {
 };
 
 const TabsToolTip = (props) => {
-<<<<<<< HEAD
-=======
   if (props === null) return <p>''</p>;
->>>>>>> 5475b33eb3bf0700149244f02d103a3344318157
   return (
       <ToolTip color={props.color || 'black'} trigger={<Icon name="info circle" />}>
         <P textAlign={'center'}>

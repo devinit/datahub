@@ -1,6 +1,6 @@
-// @flow
 import * as React from 'react';
 import { Div, Span } from 'glamorous';
+import {Country, District} from '@devinit/dh-base/lib/types';
 import { Button } from 'semantic-ui-react';
 
 interface Props  {
@@ -23,7 +23,8 @@ const ProfileSocialMedia = (props: Props) => {
         <Button icon="google plus" />
       </a>
       <a
-        href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
+        href={`mailto:?subject=Development Initiatives:
+          Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
       >
         <Button icon="mail outline" />
       </a>

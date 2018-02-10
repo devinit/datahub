@@ -26,15 +26,17 @@ export interface Props  {
     bottom: Data[];
   };
 }
-export default class RankingsTable extends React.Component {
-  public state: {
-    profileLoading: boolean,
-  };
+
+interface State {
+  profileLoading: boolean;
+}
+
+export default class RankingsTable extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { profileLoading: false };
   }
-  public onClick = (item: Data) => {
+  public onClick = (item: Data) => () => {
     this.setState({ profileLoading: true });
     return Router.push(item.route.routePath, item.route.routeAsPath);
   }
@@ -80,12 +82,13 @@ export default class RankingsTable extends React.Component {
                           </Table.Cell>
                           : <Table.Cell />}
                         <Table.Cell>
-                          <a onClick={() => this.onClick(item)} role="link">
+                          <a onClick={this.onClick(item)} role="link">
                             {item.name}
                           </a>
                         </Table.Cell>
                         <Table.Cell textAlign="right">
-                          {`${Number(item.value) && item.uom !== '%' ? Number(item.value).toLocaleString() : item.value} ${item.uom}`}
+                          {`${Number(item.value) && item.uom !== '%' ?
+                            Number(item.value).toLocaleString() : item.value} ${item.uom}`}
                         </Table.Cell>
                       </Table.Row>),
                     )}

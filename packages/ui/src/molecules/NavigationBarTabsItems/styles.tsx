@@ -29,10 +29,10 @@ export const SelectWrapper = glamorous.div({
 });
 
 export const Wrapper = glamorous.div({
-  textAlign: 'center',
-  paddingTop: '.5em',
-  paddingBottom: '.5em',
-  background: lightBlack,
+  'textAlign': 'center',
+  'paddingTop': '.5em',
+  'paddingBottom': '.5em',
+  'background': lightBlack,
   '& .ui.selection.active.dropdown .menu': {
     borderRadius: '0.25em',
     marginTop: '-2em'

@@ -27,7 +27,7 @@ export const List = glamorous.ul({
     backgroundColor: midWhite,
   },
 });
-export const InputContainer = glamorous.div<{visible: boolean; height: number; profile: boolean; }>(
+export const InputContainer = glamorous.div<{visible: boolean; height: string; profile: boolean; }>(
   {
     'width': '100%',
     'display': 'flex',

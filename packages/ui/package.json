@@ -4,11 +4,9 @@
   "description": "for creating datahub ui components",
   "main": "lib/index.js",
   "scripts": {
-    "release-it": "release-it",
-    "build": "NODE_ENV=production npm run build-css && cp -R static lib/ && tsc",
-    "tsc": "tsc",
+    "build": "tsc",
     "copy-css": "cp node_modules/@devinit/charts/dist/di-charts.min.css static/ && cp node_modules/mapbox-gl/dist/mapbox-gl.css static/",
-    "lint": "tslint -c tslint.json 'pages/**/*.tsx' 'src/**/*.tsx' 'src/**/*.ts'",
+    "lint": "tslint -c tslint.json 'src/**/*.tsx' 'src/**/*.ts'",
     "storybook": "start-storybook -s static -p 6006",
     "patch": "release-it -i patch -n",
     "feature": "release-it -i minor -n",

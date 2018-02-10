@@ -5,11 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "css": "lessc src/theme/less/index.less static/styles.css",
-    "copy-chart-css": "cp node_modules/@devinit/charts/dist/di-charts.min.css static/",
-    "build-css": "lessc  --clean-css='--s1 --advanced --compatibility=ie8' src/theme/less/index.less static/styles.min.css",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "storybook": "start-storybook -s static -p 6006",
     "patch": "release-it -i patch -n",
     "feature": "release-it -i minor -n",
     "breaking": "release-it -i major -n",

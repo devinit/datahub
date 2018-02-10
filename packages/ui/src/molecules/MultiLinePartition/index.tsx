@@ -1,3 +1,4 @@
+import '@devinit/datahub-api';
 import * as React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 import LoadingBar from '../LoadingBar';
@@ -11,7 +12,7 @@ import LinePartition from '../LinePartition';
 
 interface LinePartitionItem  {
   title: string;
-  data: object[];
+  data: DH.IDomestic[];
   inverted?: boolean;
   withoutOptions?: boolean;
 }
@@ -27,8 +28,8 @@ interface Props  {
   currencyCode: string;
   currencyUSD: string;
   config: {
-    line: object;
-    partition: object;
+    line: any;
+    partition: any;
   };
   items: LinePartitionItem[];
 }
@@ -39,7 +40,7 @@ interface State  {
   currencyOptions: CurrencyOption[];
   budgetType: string;
   budgetTypeOptions: {
-    [year: number]: object[];
+    [year: number]: any[];
   };
   lowestYear: number;
   highestYear: number;
@@ -99,7 +100,7 @@ export default class MultiLinePartition extends React.Component<Props> {
 
   public setCurrencyBound: (currency: string) => void;
   public setBudgetTypeBound: (budgetType: string) => void;
-  public setYearBound: (year: number) => void;
+  public setYearBound: (year: number| string) => void;
 
   // eslint-disable-next-line react/sort-comp
   constructor(props: Props) {
@@ -161,7 +162,7 @@ export default class MultiLinePartition extends React.Component<Props> {
             </Segment>
           </PrintContainer>
           <ExportChart
-            onViewVisualization={() => this.toggleRevenueTour()}
+            onViewVisualization={this.toggleRevenueTour}
             printDiv="print-chart"
             stateToShare={{
               year: this.state.year,
@@ -195,7 +196,7 @@ export default class MultiLinePartition extends React.Component<Props> {
 
       <TourContainer
         visible={this.state.revenueTourVisible}
-        closeHandler={() => this.toggleRevenueTour()}
+        closeHandler={this.toggleRevenueTour}
       >
         <GovernmentFinanceTour />
       </TourContainer>

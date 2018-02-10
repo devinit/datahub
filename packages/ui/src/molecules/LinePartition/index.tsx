@@ -1,3 +1,4 @@
+import '@devinit/datahub-api';
 import * as React from 'react';
 import glamorous, {H4} from 'glamorous';
 import { groupBy, uniq } from 'ramda';
@@ -37,14 +38,22 @@ interface TimeAxis {
   timeAxis: any;
 }
 
-interface Props  {
+export interface LinePartitionData {
+  levels: any;
+  color: string;
+  budget_type: string;
+  value: number;
+  value_ncu: number;
+}
+
+export interface Props  {
   title: string;
   inverted?: boolean;
   withoutOptions?: boolean;
   year: number;
   lowestYear: number;
   highestYear: number;
-  data: Array<{levels: any; color: any; budget_type: any; value: any; value_ncu: any; }>;
+  data: DH.IDomestic[];
   currency: string;
   currencyOptions: object[];
   budgetType: string;

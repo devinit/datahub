@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Div, Span, H4, Img, P} from 'glamorous';
 import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
@@ -6,14 +5,12 @@ import { red } from '../../theme/semantic';
 import { Lead } from '../../atoms/Header';
 import { BodyLink } from '../../atoms/Link';
 import ProfileSocialMedia from '../ProfileSocialMedia';
-// import CountrySearch from 'components/organisms/CountrySearchInput';
+import {Country, District, process} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
 import Link from 'next/link';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic from 'next/dynamic';
-/* eslint-disable react/no-danger */
-/* eslint-disable max-len */
 
 const DynamicMapComponent = dynamic(
   import('../SmallMap'), {
@@ -21,16 +18,27 @@ const DynamicMapComponent = dynamic(
     loading: () => (<p>Loading...</p>)
   });
 
-interface Props  {
+export interface CProps  {
+  visible: boolean;
+  profile: boolean;
+  country?: string; // for regional profile
+  placeholder?: string;
+}
+
+export interface Props  {
   entity: Country | District; // country or district
   jumpToSection?: (sectionId: string) => void;
   currency?: string;
   currencyOptions?: CurrencyOption[];
   onChangeCurrency ?: (currency: string) => void;
   spotlightCountry?: Country;
+  countrySearch: React.ComponentClass<CProps>;
 }
 
 const ProfileHeaderSection = (props: Props) => {
+  const CountrySearch = props.countrySearch;
+  const jumpToSection = (section: string) => () =>
+    props.jumpToSection && props.jumpToSection(section);
   return (
     <ProfileHeader>
       {process.env.NODE_ENV !== 'test' ?
@@ -59,7 +67,12 @@ const ProfileHeaderSection = (props: Props) => {
                   </H4>
                   {
                     props.spotlightCountry ?
-                      <CountrySearch visible placeholder={props.entity.name} profile country={props.spotlightCountry.slug} />
+                      <CountrySearch
+                        visible
+                        placeholder={props.entity.name}
+                        profile
+                        country={props.spotlightCountry.slug}
+                      />
                       :
                       <CountrySearch visible placeholder={props.entity.name} profile />
                   }
@@ -81,6 +94,7 @@ const ProfileHeaderSection = (props: Props) => {
                           `Explore this in-depth profile of ${props.entity.name} to find out overall levels of poverty,
                         income distribution, division of wealth and more. Discover how national and
                         sub-national revenue is generated.` :
+                          // tslint:disable-next-line:max-line-length
                           `Explore this in-depth profile of ${props.entity.name} to see the international resources it directs to developing countries.
                         Get an overview of government spending, population and income distribution.`
                         }
@@ -98,14 +112,16 @@ const ProfileHeaderSection = (props: Props) => {
                         props.entity.countryType !== DONOR ?
                           <span>
                             <BodyLink
-                              onClick={() => props.jumpToSection && props.jumpToSection(GOVERNMENT_FINANCE_LOWER)}
+                              onClick={jumpToSection(GOVERNMENT_FINANCE_LOWER)}
                               color={red}
-                            >government finance </BodyLink> or </span> : ''
+                            >government finance
+                            </BodyLink> or </span> : ''
                       }
                       <BodyLink
                         color={red}
-                        onClick={() => props.jumpToSection && props.jumpToSection(INFLOWS_VS_OUTFLOWS)}
-                      >international resources</BodyLink>
+                        onClick={jumpToSection(INFLOWS_VS_OUTFLOWS)}
+                      >international resources
+                      </BodyLink>
                     </Span> : ''
                   }
                   {
@@ -117,7 +133,10 @@ const ProfileHeaderSection = (props: Props) => {
                           selection
                           value={props.currency}
                           options={props.currencyOptions}
-                          onChange={(e, data) => props.onChangeCurrency && props.onChangeCurrency(data.value)}
+                          // tslint:disable-next-line:jsx-no-lambda
+                          onChange={(e, data) =>
+                            props.onChangeCurrency && data.value && props.onChangeCurrency(data.value.toString())
+                          }
                         />
                       </article>
                       : ''

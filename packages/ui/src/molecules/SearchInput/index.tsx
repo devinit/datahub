@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Div, H1 } from 'glamorous';
 import { Icon } from 'semantic-ui-react';
@@ -29,6 +28,7 @@ interface State  {
 
 class SearchInput extends React.Component <Props, State> {
   public onBlurTimer: any;
+  public textInput: HTMLInputElement;
   constructor(props: Props) {
     super(props);
     if (!props.entities || !props.entities.length) throw new Error('entities data prop mixing');
@@ -39,7 +39,7 @@ class SearchInput extends React.Component <Props, State> {
       showList: false,
     };
   }
-  public onKeyDown(e: any) {
+  public onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     let { selected } = this.state;
     const { entities } = this.state;
     const keyCode = e.keyCode;
@@ -83,7 +83,8 @@ class SearchInput extends React.Component <Props, State> {
     }
   }
   public onCaretDownClick() {
-    this.setState({...this.resetState(), showList: true});
+    this.resetState();
+    this.setState({showList: true});
     this.textInput.focus();
   }
   public onSubmit() {
@@ -95,7 +96,6 @@ class SearchInput extends React.Component <Props, State> {
     if (this.props.onSelected) return this.props.onSelected(country.slug);
     return Router.push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}/${country.slug}`);
   }
-  public textInput: HTMLInputElement;
   public resetState() {
     this.setState({
       value: '',
@@ -119,18 +119,20 @@ class SearchInput extends React.Component <Props, State> {
           {this.props.profile
             ? <H1 textTransform="capitalize" backgroundColor={this.state.showList ? 'white' : 'none'}>
               {this.props.placeholder}
-              <Icon name="caret down" onClick={() => this.onCaretDownClick()} />
+              <Icon name="caret down" onClick={this.onCaretDownClick} />
             </H1>
             : ''}
           <Input
             value={this.state.value}
-            profile={this.props.profile}
             placeholder={this.props.profile ? '' : this.props.placeholder}
-            onBlur={() => this.onBlur()}
+            onBlur={this.onBlur}
+            // tslint:disable-next-line:jsx-no-lambda
             innerRef={input => { this.textInput = input; }}
+            // tslint:disable-next-line:jsx-no-lambda
             onFocus={() => this.setState({ showList: true })}
-            onChange={e => this.onChange(e.target.value)}
-            onKeyDown={e => this.onKeyDown(e)}
+            // tslint:disable-next-line:jsx-no-lambda
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.onChange(e.target.value)}
+            onKeyDown={this.onKeyDown}
           />
         </InputContainer>
         <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>
@@ -138,7 +140,10 @@ class SearchInput extends React.Component <Props, State> {
             {this.state.entities
               ? this.state.entities.map((country, i) =>
                 (<li key={country.slug} className={this.state.selected === i ? 'active' : 'not-active'}>
-                  <Link href={`/${this.props.routePath}?id=${country.slug}`} as={`/${this.props.routePath}/${country.slug}`}>
+                  <Link
+                    href={`/${this.props.routePath}?id=${country.slug}`}
+                    as={`/${this.props.routePath}/${country.slug}`}
+                  >
                     <a>
                       {country.name}
                     </a>

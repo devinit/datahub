@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Grid, Container, Table, Icon } from 'semantic-ui-react';
 import glamorous, {P} from 'glamorous';
@@ -6,7 +5,6 @@ import { LightBg } from '../../atoms/Backgrounds';
 import ToolTip from '../ToolTip';
 import { white } from '../../theme/semantic';
 import { SectionHeader } from '../../atoms/Header';
-// googleAnalytics tracking
 
 const TableWrapper = glamorous.div({
   '& table': {
@@ -19,7 +17,7 @@ const TableWrapper = glamorous.div({
 });
 
 interface Props  {
-  data: object[]; // TODO: use proper flow types
+  data: any[];
   title?: string;
   noDownloads?: boolean;
 }

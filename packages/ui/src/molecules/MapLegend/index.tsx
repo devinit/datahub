@@ -5,7 +5,7 @@ import * as React from 'react';
 export interface LegendField  {
   label?: string;
   color?: string;
-  backgroundColor?: string;
+  backgroundColor: string;
 }
 
 interface Props  {
