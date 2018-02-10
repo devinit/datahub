@@ -1,6 +1,6 @@
+import '@devinit/datahub-api'; // types
 import * as React from 'react';
 import mapboxgl from 'mapbox-gl';
-import '@devinit/datahub-api'; // types
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import LoadingBar from '../../molecules/LoadingBar';
@@ -10,10 +10,9 @@ import {
   Feature,
   PropertyLayerSlugMap,
   PaintMap,
-  Props,
+  Viewport,
   Point,
   PopupItem,
-  State,
   MapBoxOptions,
   ViewportDefaults,
   Geometry,
@@ -22,6 +21,20 @@ import {
 } from './types';
 
 const NODATA = 'No data';
+
+export interface Props {
+  paint: PaintMap;
+  viewport: Viewport;
+  meta?: Meta;
+  countryProfile?: string;
+  width?: number | string;
+  height?: number | string;
+}
+
+interface State {
+  profileLoading: boolean; // think loading new country on map click
+  shouldForceRedraw: boolean;
+}
 
 export const indicatorsWith0dp = [
   'spotlightonuganda.ugandaurbanpop',
@@ -33,7 +46,7 @@ export const indicatorsWith0dp = [
   'spotlightonuganda.ugandahealthposts',
   'dataseries.forgottencrisis'];
 
-class BaseMap extends React.Component<Props> {
+class BaseMap extends React.Component<Props, State> {
 
   public static foldOverSurveyMapFeatures(features: Feature[]): DH.IMapUnit {
     type FeatureProps = Feature['properties'] & {total: number; sum: number};
@@ -82,8 +95,6 @@ class BaseMap extends React.Component<Props> {
         return value;
     }
   }
-  public state: State;
-    /* eslint-disable react/sort-comp */
   public viewportDefaults: ViewportDefaults = {
       attributionControl: true,
       scrollZoom: false,
@@ -249,7 +260,7 @@ class BaseMap extends React.Component<Props> {
   public mouseMapClick(meta: Meta) {
     this.map.on('click', event => {
       if (meta.id === 'surveyp20' || meta.id === 'regionalp20') return false;
-      const features: Feature = this.map.queryRenderedFeatures(event.point);
+      const features: Feature[] = this.map.queryRenderedFeatures(event.point);
       if (!features.length) return false;
       const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
       const slug: string | void = features[0].properties[slugProperty];

@@ -9,10 +9,10 @@ interface Props {
 }
 
 const menuItem = (props: Props) => {
-  let children = {};
+  let menuLinkChildren; // TODO: Try to assign correct type
   let hasSubMenu = false;
   if ('children' in props.menu) {
-    children = props.menu.children.map(item =>
+    const childrenList = props.menu.children.map(item =>
       (<List.Item key={item.name}>
         <List.Content>
           <Link href={item.link} prefetch>
@@ -24,9 +24,9 @@ const menuItem = (props: Props) => {
         </List.Content>
       </List.Item>),
     );
-    children = (
+    menuLinkChildren = (
       <List>
-        {children}
+        {childrenList}
       </List>
     );
     hasSubMenu = true;
@@ -34,7 +34,7 @@ const menuItem = (props: Props) => {
   return (
     <Li display={'inline'}>
       <MenuLink menu={props.menu.name} link={props.menu.link} hasSubMenu={hasSubMenu}>
-        {children}
+        {menuLinkChildren}
       </MenuLink>
     </Li>
   );

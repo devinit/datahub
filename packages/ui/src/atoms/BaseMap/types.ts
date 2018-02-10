@@ -1,14 +1,11 @@
 import '@devinit/datahub-api'; // types
 
-export interface State {
-  profileLoading: boolean; // think loading new country on map click
-  shouldForceRedraw: boolean;
-}
 export interface Viewport {
   zoom: number;
   center: number[];
   bounds: number[][];
   maxBounds?: number[][];
+  scrollZoom?: boolean;
   minZoom: number;
 }
 export interface ViewportDefaults {
@@ -36,14 +33,6 @@ export interface Meta {
   name: string;
 }
 
-export interface Props {
-  paint: PaintMap;
-  viewport: Viewport;
-  meta?: Meta;
-  countryProfile?: string;
-  width?: number | string;
-  height?: number | string;
-}
 
 export type MapBoxOptions = & Viewport & ViewportDefaults & {
   style: string;

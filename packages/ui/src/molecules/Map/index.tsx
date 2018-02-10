@@ -60,7 +60,7 @@ class Map extends React.Component<Props, State> {
   private legendData: LegendField[];
   constructor(props: Props) {
     super(props);
-    if (!props.DH.IMapUnit) throw new Error('DH.IMapUnit is missing in props');
+    if (!props.map) throw new Error('map data is missing in props');
     if (!props.country) throw new Error('country is missing in props');
     this.country = props.country;
     this.config = mapConfigs[this.country];
@@ -120,7 +120,7 @@ class Map extends React.Component<Props, State> {
     this.state = { ...this.state, currentYear };
   }
   public initMetaSetup(props: Props) {
-    if (!props.legend) throw new Error('DH.IMapUnit is missing in props');
+    if (!props.legend) throw new Error('legend data is missing in props');
     this.legendData = props.legend;
     this.heading = props.heading ?
       props.heading : 'Indicator must have a heading talk to Allan or Donata';
