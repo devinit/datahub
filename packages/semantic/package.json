@@ -1,0 +1,30 @@
+{
+  "name": "@devinit/dh-css",
+  "version": "1.0.0",
+  "description": "for creating datahub semantic css file",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:watch": "gulp watch --gulpfile ./src/semantic/gulpfile.js",
+    "patch": "release-it -i patch -n",
+    "feature": "release-it -i minor -n",
+    "breaking": "release-it -i major -n"
+  },
+  "keywords": [
+    "semantic-ui",
+    "css"
+  ],
+  "author": "epicallan.al@gmail.com",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devinit/datagub.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "less": "^2.7.2",
+    "semantic-ui": "^2.2.13"
+  }
+}
