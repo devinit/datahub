@@ -3,7 +3,7 @@ node_js:
 - v9
 install:
 - npm install
-- npm install -g lerna yarn
+- npm install -g lerna
 script:
 - lerna bootstrap
 - lerna run build
