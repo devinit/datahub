@@ -11,6 +11,10 @@
       "noUnusedLocals": true,
       "rootDir": "src",
       "outDir": "lib",
+      "baseUrl": ".",
+      "path": {
+        "react": "node_modules/@types/react"
+      },
       "removeComments": true
     },
     "exclude": [

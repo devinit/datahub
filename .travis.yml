@@ -8,4 +8,6 @@ script:
 - lerna bootstrap
 - lerna run build
 - lerna run lint
+cache:
+  - node_modules
 sudo: false
