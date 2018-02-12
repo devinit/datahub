@@ -10,8 +10,8 @@
       "experimentalDecorators": true,
       "typeRoots": ["node_modules/@types", "src/types"],
       "baseUrl": ".",
-      "path": {
-        "react": "node_modules/@types/react"
+      "paths": {
+        "react": ["node_modules/@types/react"]
       },
       "noImplicitAny": false,
       "noUnusedLocals": true,
