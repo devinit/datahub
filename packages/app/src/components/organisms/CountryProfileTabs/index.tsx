@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { graphql } from 'react-apollo';
 import {
@@ -8,10 +7,10 @@ import {
   Population,
   Poverty,
 } from '@devinit/dh-ui/lib/molecules/CountryProfileTabs';
-import povertyConfig from '@devinit/dh-ui/lib/visboxConfigs/povertyTabCharts';
-import populationConfig from '@devinit/dh-ui/lib/populationTabCharts';
-import govtFinanceConfig from '@devinit/dh-ui/lib/visboxConfigs/governmentFinanceTabCharts';
-import internationalResourcesConfig from '@devinit/dh-ui/lib/visboxConfigs/internationalResourceTabCharts';
+import povertyConfig from '@devinit/dh-ui/lib/visbox/povertyTabCharts';
+import populationConfig from '@devinit/dh-ui/lib/visbox/populationTabCharts';
+import govtFinanceConfig from '@devinit/dh-ui/lib/visbox/governmentFinanceTabCharts';
+import internationalResourcesConfig from '@devinit/dh-ui/lib/visbox/internationalResourceTabCharts';
 import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';

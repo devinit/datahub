@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
