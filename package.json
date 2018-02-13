@@ -111,7 +111,7 @@
     "prettier-eslint-cli": "^4.0.3",
     "pretty-format": "^22.0.6",
     "react-test-renderer": "^16.0.0",
-    "release-it": "^6.0.0",
+    "release-it": "^7.0.0",
     "semantic-ui": "^2.2.13",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "usus": "^1.6.0",
