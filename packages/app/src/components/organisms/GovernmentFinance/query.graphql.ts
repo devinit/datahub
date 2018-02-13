@@ -1,3 +1,6 @@
+import gql from 'graphql-tag';
+
+export default gql `
 query GvmtFinance($id: String!) {
   governmentFinance(id: $id) {
     startYear,
@@ -31,5 +34,4 @@ query GvmtFinance($id: String!) {
       value_ncu
     },
   }
-
-}
+}`;

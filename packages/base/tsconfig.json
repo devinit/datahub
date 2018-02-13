@@ -7,6 +7,8 @@
       "strict": true,
       "lib": ["es2017", "dom",  "esnext.asynciterable"],
       "experimentalDecorators": true,
+      "declaration": true,
+      "declarationDir": "lib",
       "noImplicitAny": false,
       "noUnusedLocals": true,
       "rootDir": "src",

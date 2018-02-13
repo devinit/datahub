@@ -7,15 +7,10 @@
       "strict": true,
       "lib": ["es2017", "dom"],
       "experimentalDecorators": true,
-      "typeRoots": ["node_modules/@types", "src/types"],
       "noImplicitAny": false,
       "noUnusedLocals": true,
       "rootDir": "src",
       "outDir": "dist",
-      "baseUrl": ".",
-      "path": {
-        "react": "node_modules/@types/react"
-      },
       "removeComments": true
     },
     "exclude": [

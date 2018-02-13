@@ -6,13 +6,11 @@
       "sourceMap": false,
       "strict": true,
       "lib": ["es2017", "dom"],
+      "declaration": true,
+      "declarationDir": "lib",
       "strictPropertyInitialization": false,
       "experimentalDecorators": true,
       "typeRoots": ["node_modules/@types", "src/types"],
-      "baseUrl": ".",
-      "paths": {
-        "react": ["node_modules/@types/react"]
-      },
       "noImplicitAny": false,
       "noUnusedLocals": true,
       "rootDir": "src",

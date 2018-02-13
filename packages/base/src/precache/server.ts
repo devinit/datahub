@@ -18,9 +18,9 @@ export const getMapsData = <T extends {indicators: U[]}, U extends {id: string}>
   });
 };
 
-type IMapTheme = Array<{indicators: Array<{id: string}>}>;
+export type IMapTheme = Array<{indicators: Array<{id: string}>}>;
 
-interface IPrecacheOpts {
+export interface IPrecacheOpts {
   mapThemesData: IMapTheme[];
   mapsQuery: string;
 }

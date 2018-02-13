@@ -58,7 +58,7 @@ export async function getLocalStorageInstance(browser: boolean, version: string)
   }
 }
 
-interface IgetData {
+export interface IgetData {
   query: string;
   variables: object;
 }

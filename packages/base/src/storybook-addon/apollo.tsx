@@ -6,8 +6,9 @@ import * as React from 'react';
 import { ApolloProvider} from 'react-apollo';
 // import { config } from 'package.json';
 import {create} from '../apollo';
+import ApolloClient from 'apollo-client';
 
-export const client = create({});
+export const client: ApolloClient<any> = create({});
 
 const withApolloProvider = () => {
   return storyFn => {

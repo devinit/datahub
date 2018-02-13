@@ -25,7 +25,7 @@ function create({reducers, initialState}) {
     ),
   );
 }
-interface IreduxArgs<T, S> {
+export interface IreduxArgs<T, S> {
     reducers: T;
     initialState: S;
 }
