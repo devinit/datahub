@@ -1,7 +1,8 @@
-/* tslint-disable */
+/* tslint:disable*/
 // this file is auto generated
+// tslint:disable-max-line-length
 
-module.exports = {
+export default  {
   internationalResources: {
     resourcesOverTime: {
       toolTip: {

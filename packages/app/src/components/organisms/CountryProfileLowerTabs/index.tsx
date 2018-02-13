@@ -7,11 +7,11 @@ import GovernmentFinanceChart from '../GovernmentFinance';
 import InflowsVsOutflows from '../InflowsVsOutflows';
 import {GOVERNMENT_FINANCE_LOWER,
   INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from '@devinit/dh-base/lib/utils/constants';
-import InternationalResourcesLower from '@devinit/dh-ui/molecules/CountryProfileTabs/InternationalResourcesLower';
+import InternationalResourcesLower from '@devinit/dh-ui/lib/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from '../InternationalResourcesChart';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import {getCountryProfileData} from '../PagesData';
-import ErrorBoundary from '@devinit/dh-base/lib/ErrorBoundary';
+import ErrorBoundary from '@devinit/dh-ui/lib/molecules/ErrorBoundary';
 import {getCountry} from '@devinit/dh-base/lib/utils';
 
 import data from './data';

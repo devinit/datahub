@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { graphql } from 'react-apollo';
 import { Props } from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';

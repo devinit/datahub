@@ -1,4 +1,4 @@
-query GovernmentFinance($id: String!) {
+query GvmtFinance($id: String!) {
   governmentFinance(id: $id) {
     startYear,
     currencyCode,
