@@ -26,7 +26,7 @@ export function create(args: InitApollo): ApolloClient<any> {
   });
 }
 
-interface InitApollo {
+export interface InitApollo {
   initialState?: any;
   uri?: string; // defaults to process.browser
   introspectionQueryResultData?: any;

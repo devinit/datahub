@@ -1,25 +1,25 @@
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 import {mediaQueries} from '../../theme';
 import { lightBlack, lighterGrey } from '../../theme/semantic';
 
-export const WhiteBg = glamorous.div({
+export const WhiteBg: GlamorousComponent<{}, any> = glamorous.div({
   background: '#fff',
   paddingTop: '1em',
   paddingBottom: '2em',
 });
 
-export const LightBg = glamorous.div({
+export const LightBg: GlamorousComponent<{}, any> = glamorous.div({
   background: lighterGrey,
   paddingTop: '1em',
   paddingBottom: '2em',
 });
-export const DarkBg = glamorous.div({
+export const DarkBg: GlamorousComponent<{}, any> = glamorous.div({
   background: lightBlack,
   paddingTop: '2em',
   paddingBottom: '2em',
   textAlign: 'center',
 });
-export const MapBackground = glamorous.div({
+export const MapBackground: GlamorousComponent<{}, any> = glamorous.div({
   background: lighterGrey,
   width: '100%',
   height: '600px',

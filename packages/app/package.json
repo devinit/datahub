@@ -14,7 +14,7 @@
   "license": "ISC",
   "scripts": {
     "qql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
-    "gql-ts": "apollo-codegen generate **/*.graphql --schema schema.json --target typescript --output gql-types.d.ts",
+    "gql-ts": "apollo-codegen generate **/*.graphql.ts --schema schema.json --target typescript --output gql-types.d.ts",
     "gql": "npm run qql-schema && npm run gql-ts",
     "patch": "release-it -i patch -n",
     "feature": "release-it -i minor -n",
@@ -29,6 +29,7 @@
     "glamor": "^2.20.40",
     "glamorous": "^4.11.0",
     "graphql": "^0.12.3",
+    "graphql-tag": "^2.7.3",
     "intersection-observer": "^0.5.0",
     "isomorphic-fetch": "^2.2.1",
     "localforage": "^1.5.6",
@@ -36,10 +37,8 @@
     "next": "^4.2.3",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
-    "react-apollo": "^2.0.0",
-    "react-beautiful-dnd": "^4.0.0",
+    "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
-    "react-intersection-observer": "^3.0.2",
     "react-no-ssr": "^1.1.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.0",
@@ -47,7 +46,7 @@
   },
   "devDependencies": {
     "apollo-codegen": "0.18.3"
-  },  
+  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "setupTestFrameworkScriptFile": "<rootDir>/private/lib/jest.config.js",

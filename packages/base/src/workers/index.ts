@@ -3,7 +3,7 @@
  */
 import {getData} from '../utils';
 
-interface ICacheOpts {
+export interface ICacheOpts {
   uri: string;
   query: string;
   api: string;

@@ -3,14 +3,14 @@ import { draw } from '@devinit/charts';
 // import stylesheet from '@devinit/charts/dist/di-charts.min.css';
 /* eslint-disable react/no-danger */
 
-interface Props  {
+export interface Props  {
   data: any;
   config: {};
   width?: string;
   height?: string;
 }
 
-class Chart extends React.Component {
+class Chart extends React.Component <Props> {
   public props: Props;
   public element: HTMLDivElement | null;
   public chart: any;

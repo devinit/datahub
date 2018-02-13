@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 import { Props } from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';
 import SlidingDualSidebar from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';
 import {getCountryName, errorHandler} from '@devinit/dh-base/lib/utils';
-import config from '@devinit/dh-ui/lib/visboxConfigs/dualbarChart';
+import config from '@devinit/dh-ui/lib/visbox/dualbarChart';
 import RESOURCES_QUERY from '../../InternationalResourcesChart/query.graphql';
 
 type WrapperProps = Props & {

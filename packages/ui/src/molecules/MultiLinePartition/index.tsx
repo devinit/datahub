@@ -10,14 +10,14 @@ import { PrintContainer } from '../../atoms/Container';
 import GovernmentFinanceTour from '../../atoms/GovernmentFinanceTour';
 import LinePartition from '../LinePartition';
 
-interface LinePartitionItem  {
+export interface LinePartitionItem  {
   title: string;
   data: DH.IDomestic[];
   inverted?: boolean;
   withoutOptions?: boolean;
 }
 
-interface Props  {
+export interface Props  {
   chartId: string;
   year?: number; // from cached url state
   loading: boolean;

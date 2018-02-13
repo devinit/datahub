@@ -11,12 +11,12 @@ export interface PageUnit {
   donor_title?: string;
 }
 
-interface PagesData {
+export interface PagesData {
     spotlightDistrict: PageUnit[];
     countryProfile: PageUnit[];
 }
 
-interface ReplaceFieldsArgs {
+export interface ReplaceFieldsArgs {
   pageData: PageUnit[];
   toReplace: string;
   replacement: string;

@@ -1,28 +1,22 @@
-import '@devinit/datahub-api';
 import * as React from 'react';
 import { LightBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import { graphql } from 'react-apollo';
-import Chart from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
+import Chart, {Props} from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
 import {errorHandler} from '@devinit/dh-base/lib/utils';
 import config from '@devinit/dh-ui/lib/visbox/linePartition';
-import { GvmtFinanceQuery } from 'gql-types';
+import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../gql-types';
+import GvtQUERY from './query.graphql';
 
-const QUERY = require('./query.graphql');
-
-// interface Result {
-//   data: {governmentFinance: DH.IGovernmentFinance};
-// }
-// raphql<TResult = {}, TProps = {}, TChildProps = ChildProps<TProps, TResult>, TGraphQLVariables = {}>
-const withData = graphql<GvmtFinanceQuery & {error: any, loading: boolean}, {id: string}>(QUERY, {
+const withData = graphql<GvmtFinanceQuery, GvmtFinanceQueryVariables>(GvtQUERY, {
   options: props => ({
     variables: {
       id: props.id,
     },
   }),
   props: ({ data }) => {
-    const { error, loading } = data;
 
-    if (error) errorHandler(error, 'error in government finance chart');
+    if (data && data.error) errorHandler(data.error, 'error in government finance chart');
+    const loading: boolean | undefined = data && data.loading;
 
     const {
       startYear = '',
@@ -58,4 +52,4 @@ const withData = graphql<GvmtFinanceQuery & {error: any, loading: boolean}, {id:
   },
 });
 
-export default withData(props => <LightBg><Chart {...props} /></LightBg>);
+export default withData((props: Props) => <LightBg><Chart {...props} /></LightBg>);

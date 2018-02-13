@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider} from 'react-redux';
+import { Store } from 'redux';
 // import { app, initialState } from 'lib/reducers';
 
 // Get the Redux DevTools extension and fallback to a no-op function
@@ -14,7 +15,7 @@ export interface Istore {
   reducers: any;
 }
 
-export const store = ({reducers, initialState}: Istore) =>
+export const store = ({reducers, initialState}: Istore): Store<any> =>
   createStore(combineReducers({ ...reducers }), { app: initialState }, devtools);
 
 const withReduxProvider = ({reducers, initialState}: Istore) => {

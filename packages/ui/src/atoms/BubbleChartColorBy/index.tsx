@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import Wrapper from '../BubbleChartWidgetWrapper';
 
-type onChangeT =  (value: string) => void;
-interface Props  {
+export type onChangeT =  (value: string) => void;
+export interface Props  {
   onChange: onChangeT;
   options: Array<{value: any}>;
 }

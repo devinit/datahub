@@ -1,9 +1,8 @@
-
 export interface IProcess {
   version: string;
   browser: boolean;
     // @ts-ignore
-  config: Process['config'] & {
+  config: {
     api: string;
     old_datahub: string;
   };
