@@ -34,8 +34,7 @@
 	},
 	"git-pre-hooks": {
 		"pre-push": [
-			"lerna run lint",
-			"lerna run tsc"
+			"lerna run lint"
 		]
 	}
 }
