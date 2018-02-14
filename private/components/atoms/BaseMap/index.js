@@ -73,6 +73,7 @@ class BaseMap extends Component {
     if (indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
     if (indicator === 'data_series.climate_vulnerability') return value.toFixed(2);
+    if (indicator === 'fact.out_oda_net_2015') return approximate(value, 2, true);
     return approximate(value, 1, true);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
