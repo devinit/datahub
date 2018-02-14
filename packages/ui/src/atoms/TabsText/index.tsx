@@ -1,10 +1,9 @@
 import * as React from 'react';
-import glamorous, {Span} from 'glamorous';
+import glamorous, {Span, GlamorousComponent} from 'glamorous';
 import { massive } from '../../theme';
 import { red, grey, blue} from '../../theme/semantic';
-import {compone}
 
-export const TabsP = glamorous.p<{fontSize?: any;  }>({
+export const TabsP: GlamorousComponent<any, any> = glamorous.p<{fontSize?: any;  }>({
   fontSize: massive,
   fontWeight: 'bold',
   textAlign: 'center',
@@ -14,7 +13,8 @@ export const TabsP = glamorous.p<{fontSize?: any;  }>({
 }, (props) => ({
   fontSize: props.fontSize || massive
 }));
-export const TabsFootNote = glamorous.p<{textAlign?: any; fontSize?: any; lineHeight?: number;  }>({
+export const TabsFootNote: GlamorousComponent<any, any> =
+glamorous.p<{textAlign?: any; fontSize?: any; lineHeight?: number;  }>({
   fontWeight: 'bold',
   color: grey,
 }, (props) => ({
