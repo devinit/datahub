@@ -3,12 +3,11 @@ import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle} from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-import {SpotLightTabData} from '../../types';
-import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import {CSProps} from '../../types';
+import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
-export type Props = SpotLightTabData &  {
-  currency: string;
-  pageData: PageUnit[];
+export type Props = CSProps &  {
+  config: any;
 };
 
 const Poverty = (props: Props) => {

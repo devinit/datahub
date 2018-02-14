@@ -4,13 +4,10 @@ import {TabsP, HeaderTitle} from '../../../../atoms/TabsText';
 import { P} from 'glamorous';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
-import {SpotLightTabData} from '../../types';
+import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import {CSProps} from '../../types';
 
-export type Props = SpotLightTabData &  {
-  currency: string;
-  pageData: PageUnit[];
-};
+export type Props = CSProps;
 
 const Population = (props: Props) => {
   const getPageLine = getPageUnitById(props.pageData);

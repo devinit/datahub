@@ -6,13 +6,11 @@ import { Div, P} from 'glamorous';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import Chart from '../../../../atoms/Chart';
-import {SpotLightTabData} from '../../types';
-import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import {CSProps} from '../../types';
+import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
-export type Props = SpotLightTabData &  {
-  currency: string;
+export type Props = CSProps &  {
   config: any;
-  pageData: PageUnit[];
 };
 
 const Population = (props: Props) => {

@@ -59,7 +59,7 @@ export interface State  {
   regionColor: object;
 }
 class BubbleChartWidget extends React.Component<Props> {
-  public intervalId: number;
+  public intervalId: NodeJS.Timer;
   public state: State;
   constructor(props: Props) {
     super(props);

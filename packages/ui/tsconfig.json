@@ -10,7 +10,6 @@
       "declarationDir": "lib",
       "strictPropertyInitialization": false,
       "experimentalDecorators": true,
-      "typeRoots": ["node_modules/@types", "src/types"],
       "noImplicitAny": false,
       "noUnusedLocals": true,
       "rootDir": "src",

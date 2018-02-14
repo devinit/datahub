@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';
@@ -8,11 +8,9 @@ import {small} from '../../../theme';
 import Chart from '../../../atoms/Chart';
 import TabsToolTip from '../../TabsToolTip';
 import {TabsP, HeaderTitle} from '../../../atoms/TabsText';
-import {SpotLightTabData} from '../types';
+import {CSProps} from '../types';
 
-type Props = SpotLightTabData & {
-  currency: string;
-  pageData: PageUnit[];
+export type Props = CSProps & {
   config: any; // TODO: Add proper types for spotlightabs chart config
 };
 
