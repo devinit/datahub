@@ -15,6 +15,24 @@ export interface IProcess {
 // @ts-ignore
 export declare var process: IProcess;
 
+export interface PageUnit {
+  id: string;
+  title: string;
+  narrative?: string;
+  donor_title?: string;
+}
+
+export interface PagesData {
+    spotlightDistrict: PageUnit[];
+    countryProfile: PageUnit[];
+}
+
+export interface ReplaceFieldsArgs {
+  pageData: PageUnit[];
+  toReplace: string;
+  replacement: string;
+}
+
 export interface District {
   id: string;
   name: string;

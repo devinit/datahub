@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this file is auto generated
 
-module.exports = {
+export default {
   districts: [
     { id: 'd101', name: 'Kalangala' },
     { id: 'd102', name: 'Kampala' },

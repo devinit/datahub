@@ -1,4 +1,7 @@
-query SpotLightTabData($id: String!, $country: String!) {
+import gql from 'graphql-tag';
+
+export default gql
+`query SpotLightTabData($id: String!, $country: String!) {
   povertyTabRegional(id: $id, country: $country) {
     ... on PovertyTabUg {
       poorestPeople {
@@ -265,4 +268,4 @@ query SpotLightTabData($id: String!, $country: String!) {
       }
     }
   }
-}
+}`;

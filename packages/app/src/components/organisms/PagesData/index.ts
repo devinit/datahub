@@ -1,20 +1,23 @@
-// @flow
 /**
  * exports out page data for various pages after doing any necessary modifications
  */
-import {getCountryName, capitalize} from 'lib/utils';
-import data from './data';
+import {getCountryName} from '../utils';
+import {capitalize} from '@devinit/dh-base/lib/utils';
+import pagesData from './data';
 
-export interface PageUnit  {
-  id: ?string;
-  title: ?string;
-  narrative: ?string;
-  donor_title: ?string;
+export interface PageUnit {
+  id: string;
+  title: string;
+  narrative?: string;
+  donor_title?: string;
 }
 
-const pagesData = (data: {spotlightDistrict: PageUnit[], countryProfile: PageUnit[]});
+export interface PagesData {
+    spotlightDistrict: PageUnit[];
+    countryProfile: PageUnit[];
+}
 
-interface ReplaceFieldsArgs  {
+export interface ReplaceFieldsArgs {
   pageData: PageUnit[];
   toReplace: string;
   replacement: string;
@@ -23,12 +26,11 @@ interface ReplaceFieldsArgs  {
 const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
   const {pageData, toReplace, replacement} = args;
   return pageData.map((obj: PageUnit) => {
-    // $FlowFixMe: this type is correct, flow just has issues!!! dahh
     return Object.keys(obj).reduce((acc: PageUnit, key: string): PageUnit => {
       const replaced: string = obj[key] && obj[key].includes(toReplace) ?
-        obj[key].replace(toReplace, replacement) : obj[key];
+                            obj[key].replace(toReplace, replacement) : obj[key];
       return replaced ? {...acc, [key]: replaced} : {...acc, [key]: replaced};
-    }, {});
+    }, {} as PageUnit);
   });
 };
 

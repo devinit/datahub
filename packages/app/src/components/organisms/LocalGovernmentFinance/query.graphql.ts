@@ -1,4 +1,7 @@
-query GovernmentFinance($id: String!, $country: String!) {
+import gql from 'graphql-tag';
+
+export default gql
+`query GovernmentFinance($id: String!, $country: String!) {
   localGovernmentFinance(id: $id, country: $country) {
     startYear,
     currencyCode,
@@ -22,4 +25,4 @@ query GovernmentFinance($id: String!, $country: String!) {
       value_ncu
     },
   }
-}
+}`;

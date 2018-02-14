@@ -1,7 +1,7 @@
-/* tslint-disable */
+/* tslint:disable */
 // this file is auto generated
 
-module.exports = {
+export default {
   districts: [
     { id: 'd18943', name: 'Kiambu' },
     { id: 'd18944', name: 'Kirinyaga' },

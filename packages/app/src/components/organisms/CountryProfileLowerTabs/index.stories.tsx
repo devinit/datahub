@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import withApolloProvider from 'lib/storybook-addon/apollo';
+import withApolloProvider from '@devinit/dh-base/lib/storybook-addon/apollo';
 import CountryProfileLowerTabs from '.';
 
 storiesOf('Tabs & Charts', module)
@@ -8,13 +8,11 @@ storiesOf('Tabs & Charts', module)
   .add('Country Profiles Lower tabs uganda', () =>
     (<CountryProfileLowerTabs
       id="uganda"
-      startYear={2010}
       chartId={'government-finance-lower'}
     />))
   .add('Country Profiles Lower tabs rwanda', () =>
     (<CountryProfileLowerTabs
       id="rwanda"
-      startYear={2010}
       chartId={'government-finance-lower'}
     />))
   .add('Country Profiles Lower tabs austria', () => <CountryProfileLowerTabs id="austria" />);

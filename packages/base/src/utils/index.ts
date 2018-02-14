@@ -1,8 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import {Country, District, process, Menue, MenueItem} from '../types';
-import {RECIPIENT} from './constants';
+import {process} from '../types';
 
 const apolloFetch = createApolloFetch({ uri: process.config.api });
 
@@ -119,22 +118,6 @@ export const createCurrencyOptions =
       { text: `Current ${currencyCode}`, value: currencyCode },
     ];
 
-export const getCountry = (slug: string, countries: Country[]): Country => {
-  const country = countries.find(obj => obj.slug === slug);
-  if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A', has_domestic_data: ''};
-  return country;
-};
-
-export const getCountryName = (slug: string, countries: Country[]): string => {
-  const country = getCountry(slug, countries);
-  return country.name;
-};
-export const getDistrict = (slug: string, districts: District[]): District => {
-  const district = districts.find(obj => obj.slug === slug);
-  if (district) return {...district, slug};
-  return {name: slug, slug, id: ''};
-};
-
 export const capitalize = (slug: string): string => `${slug[0].toUpperCase()}${slug.substr(1)}`;
 
 export const printDiv = (divId: string) => {
@@ -177,39 +160,6 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
   return {routePath, routeAsPath};
 };
 
-export interface PageMetaArgs {
-  query?: string;
-  pathname: string;
-}
-
-export interface PageMeta {
-  title: string;
-  image?: string;
-  width?: string;
-  height?: string;
-}
-
-export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem, countries): PageMeta => {
-  let title = obj.name;
-  if (obj.link === '/uganda') title = capitalize(args.query || '');
-  if (obj.link === '/') title = 'Development Data Hub';
-  if (obj.link === '/country') title = getCountryName(args.query || '', countries);
-  return {title, image: '/img/logo.jpg'};
-};
-
-export const getPageMeta = (args: PageMetaArgs, menueData: Menue, countries): PageMeta => {
-  // TODO: add proper types
-  const item = menueData.mainMenu.reduce((acc: MenueItem[], obj: MenueItem) => {
-    if (obj.children) return [...acc, ...obj.children];
-    return [...acc, obj];
-  }, [])
-    .concat([{link: '/country', name: ''}, {link: '/uganda', name: ''}])
-    .find(obj => obj.link === args.pathname);
-
-  if (!item) return {title: 'Development Data Hub'};
-  const linkMeta = createLinkMeta(args, item, countries);
-  return linkMeta;
-};
 
 export const getMaxAndMin = (data: Array<{year: number}>): number[] => {
   const years = data.map(obj => Number(obj.year));

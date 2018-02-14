@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {TabDataQuery} from '../gql-types';
 import { graphql } from 'react-apollo';
 import {
   GovernmentFinance,
@@ -14,17 +15,17 @@ import internationalResourcesConfig from '@devinit/dh-ui/lib/visbox/internationa
 import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
-import { getCountry, shouldShowTabData, errorHandler } from 'lib/utils';
-import LoadingPlaceholder from '@devinit/dh-base/lib/molecules/LoadingPlaceholder';
-import overviewConfig from '@devinit/dh-ui/lib/visboxConfigs/overviewTabCharts';
+import { getCountry } from '../utils';
+import { shouldShowTabData, errorHandler } from '@devinit/dh-base/lib/utils';
+import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
+import overviewConfig from '@devinit/dh-ui/lib/visbox/overviewTabCharts';
 import {getCountryProfileData} from '../PagesData';
 import TABS_QUERY from './query.graphql';
 
-interface TabsProps  {
+type TabsProps = TabDataQuery & {
   loading: boolean;
   variables: { id: string};
-  ...TabDataQuery;
-}
+};
 
 const countryProfileTabs = (props: TabsProps) => {
   if (props.loading || !props.overviewTab) {

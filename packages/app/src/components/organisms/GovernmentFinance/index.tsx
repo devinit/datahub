@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { LightBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import { graphql } from 'react-apollo';
-import Chart, {Props} from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
+import Chart, {Props as MProps} from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
 import {errorHandler} from '@devinit/dh-base/lib/utils';
 import config from '@devinit/dh-ui/lib/visbox/linePartition';
 import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../gql-types';
 import GvtQUERY from './query.graphql';
 
-const withData = graphql<GvmtFinanceQuery, GvmtFinanceQueryVariables>(GvtQUERY, {
+export type Props = MProps  & GvmtFinanceQueryVariables;
+
+const withData = graphql<GvmtFinanceQuery, MProps>(GvtQUERY, {
   options: props => ({
     variables: {
       id: props.id,
@@ -52,4 +54,4 @@ const withData = graphql<GvmtFinanceQuery, GvmtFinanceQueryVariables>(GvtQUERY, 
   },
 });
 
-export default withData((props: Props) => <LightBg><Chart {...props} /></LightBg>);
+export default withData((props: MProps) => <LightBg><Chart {...props} /></LightBg>);

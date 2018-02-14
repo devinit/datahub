@@ -1,4 +1,7 @@
-query TabData($id: String!) {
+import gql from 'graphql-tag';
+
+export default gql
+`query TabData($id: String!) {
   governmentFinance(id: $id) {
     totalRevenue {
       value
@@ -194,4 +197,4 @@ query TabData($id: String!) {
       }
     }
   }
-}
+}`;

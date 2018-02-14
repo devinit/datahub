@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this file is auto generated
 
-module.exports = {
+ export default {
   countries: [
     {
       id: 'AF',
