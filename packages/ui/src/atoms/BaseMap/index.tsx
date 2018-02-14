@@ -31,7 +31,7 @@ export interface Props {
   height?: number | string;
 }
 
-interface State {
+export interface State {
   profileLoading: boolean; // think loading new country on map click
   shouldForceRedraw: boolean;
 }

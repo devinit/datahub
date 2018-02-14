@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { LightBg } from '../../atoms/Backgrounds';
 import glamorous, { Div } from 'glamorous';
@@ -13,7 +12,7 @@ const SocialIcon = glamorous.a({
   width: '2em',
   display: 'inline-block'
 });
-interface Props  {
+export interface Props  {
   stateToShare?: StateToShare;
 }
 const SocialMediaBar = (props?: Props) => (

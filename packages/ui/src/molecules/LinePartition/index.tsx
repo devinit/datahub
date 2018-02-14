@@ -25,16 +25,16 @@ const TreeChartContainer = glamorous.div({
     fontWeight: '500 !important'
   },
 });
-interface Args {
+export interface Args {
   year: any;
   budget_type: any;
 }
 const groupByYear = groupBy( (d: Args) => d.year);
 const groupByBudgetType = groupBy( (d: Args) => d.budget_type);
-interface Legendx {
+export interface Legendx {
   legend: any;
 }
-interface TimeAxis {
+export interface TimeAxis {
   timeAxis: any;
 }
 
@@ -67,7 +67,7 @@ export interface Props  {
   onChangeBudgetType(budgetType: string): void;
 }
 
-interface State  {
+export interface State  {
   treesByYear: {
     [year: number]: {
       [budgetType: string]: Array<{value: any; value_ncu: any; }>;

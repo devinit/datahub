@@ -21,19 +21,19 @@ export interface Props  {
   refetch: (variables: object) => any;
 }
 
-interface Value {
+export interface Value {
   key: string;
   value: string;
 }
 
-interface State  {
+export interface State  {
   position: number;
   keys: string[];
   values: Value[];
   dimmerColor?: string;
 }
 
-interface Selected {
+export interface Selected {
   id: string;
   color: string;
   key: string;

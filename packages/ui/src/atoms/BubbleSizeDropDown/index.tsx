@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import Wrapper from '../BubbleChartWidgetWrapper';
 
-interface Props {
+export interface Props {
   onChange?: (event: any) => void;
   options?: object[];
 }

@@ -1,12 +1,11 @@
-// @flow
 import * as React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 import { lighterGrey } from '../../theme/semantic';
 import { Container, Grid } from 'semantic-ui-react';
 import {KeyValue} from '../UnbundlingAidToolBarItem';
 import ToolBar from '../UnbundlingAidToolBarItem';
 
-const ToolBarContainer = glamorous.div<{compact?: boolean}>(
+const ToolBarContainer: GlamorousComponent<any, any> = glamorous.div<{compact?: boolean}>(
   {
     'background': lighterGrey,
     '& i.icon': {
@@ -19,7 +18,7 @@ const ToolBarContainer = glamorous.div<{compact?: boolean}>(
   }),
 );
 
-interface Props  {
+export interface Props  {
   aidType: string;
   compact?: boolean; // is in compare mode
   toolBarOptions: object;

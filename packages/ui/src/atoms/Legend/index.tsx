@@ -1,6 +1,6 @@
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 
-const Legend = glamorous.div<{color: string}>({
+const Legend: GlamorousComponent<any, any> = glamorous.div<{color: string}>({
   'textAlign': 'left',
   'fontWeight': 100,
 

@@ -1,8 +1,9 @@
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 import { white, lighterGrey, midWhite } from '../../theme/semantic';
 import { big } from '../../theme';
+import {GlamorousComponentT} from '../../types';
 
-export const List = glamorous.ul({
+export const List: GlamorousComponentT = glamorous.ul({
   'borderRadius': '.125em',
   'boxShadow': '0 .125em .125em 0 rgba(0,0,0,.2)',
   'listStyleType': 'none',
@@ -27,7 +28,8 @@ export const List = glamorous.ul({
     backgroundColor: midWhite,
   },
 });
-export const InputContainer = glamorous.div<{visible: boolean; height: string; profile: boolean; }>(
+export const InputContainer: GlamorousComponent<any, any> =
+glamorous.div<{visible: boolean; height: string; profile: boolean; }>(
   {
     'width': '100%',
     'display': 'flex',
@@ -53,7 +55,7 @@ export const InputContainer = glamorous.div<{visible: boolean; height: string; p
   }),
 );
 
-export const Input = glamorous.input({
+export const Input: GlamorousComponentT = glamorous.input({
   'fontSize': big,
   'fontWeight': 700,
   'paddingLeft': '1.5em',

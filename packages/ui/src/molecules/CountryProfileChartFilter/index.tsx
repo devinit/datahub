@@ -1,12 +1,13 @@
 import * as React from 'react';
-import glamorous from 'glamorous';
+import glamorous, { GlamorousComponent } from 'glamorous';
 import { white, lightBlack } from '../../theme/semantic';
+import {GlamorousComponentT} from '../../types';
 
-const Wrapper = glamorous.div({
+const Wrapper: GlamorousComponentT = glamorous.div({
   paddingTop: '1em',
 });
 
-export const Select = glamorous.select({
+export const Select: GlamorousComponentT = glamorous.select({
   'display': 'inline-block',
   'verticalAlign': 'middle',
   'margin': 0,

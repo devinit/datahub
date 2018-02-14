@@ -1,6 +1,7 @@
 import glamorous from 'glamorous';
-// copied over from drag-dealer module css file
-const DragDealerContainer = glamorous.div(
+import {GlamorousComponentT} from '../../types';
+
+const DragDealerContainer: GlamorousComponentT = glamorous.div(
   {
     '& .dragdealer': {
       position: 'relative',

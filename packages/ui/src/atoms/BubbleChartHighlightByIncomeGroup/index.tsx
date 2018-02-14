@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ColorSpan } from '../BubbleChartHighlightRegions';
 import Wrapper from '../BubbleChartWidgetWrapper';
 
-interface Props  {
+export interface Props  {
   onChange?: (event: any) => void;
   options: Array<{color: string, name: string}>;
   colorBy: boolean;

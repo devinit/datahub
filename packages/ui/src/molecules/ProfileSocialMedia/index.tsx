@@ -3,7 +3,7 @@ import { Div, Span } from 'glamorous';
 import {Country, District} from '@devinit/dh-base/lib/types';
 import { Button } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   isCountryProfile?: boolean;
   entity?: Country | District; // country or district
 }

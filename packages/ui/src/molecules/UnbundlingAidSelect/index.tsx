@@ -2,13 +2,13 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import DropDown from '../../atoms/UnbudlingAidDropDown';
 
-interface Option {
+export interface Option {
   name: string;
   key: string;
   value: string;
 }
 
-interface Props  {
+export interface Props  {
   options: Option[];
   active?: boolean;
   smallText?: string;
@@ -37,7 +37,7 @@ const SmallText = glamorous.span({
   paddingLeft: '.15em',
 });
 
-interface State {
+export interface State {
   visible?: boolean;
   bigText: string;
 }

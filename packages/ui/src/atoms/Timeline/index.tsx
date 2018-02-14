@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { draw } from '@devinit/charts';
 
-interface Props  {
+export interface Props  {
   data: any;
   config: any;
   width?: string;

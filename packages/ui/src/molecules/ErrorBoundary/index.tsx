@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ErrorInfo } from 'react';
 
-interface Props  {
+export interface Props  {
   children: any;
   message?: string;
 }

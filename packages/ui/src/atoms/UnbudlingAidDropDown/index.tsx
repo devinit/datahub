@@ -1,11 +1,10 @@
-// @flow
 import * as React from 'react';
 import { Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import { white, midWhite, black } from '../../theme/semantic';
 
-type onClose1 = (event) => void;
-interface Props  {
+export type onClose1 = (event) => void;
+export interface Props  {
   visible: any;
   text: string;
   items: Array<{value: any; name: string; }>;

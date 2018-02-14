@@ -1,14 +1,14 @@
 import * as React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 import Link from 'next/link';
 import { white, redHeaderColor, midWhite, lightBlack } from '../../theme/semantic';
 
-interface Props  {
+export interface Props  {
   children: React.ReactChild[];
   selected?: number;
   open?: boolean;
 }
-export const Navigation = glamorous.nav<{open?: boolean}>(
+export const Navigation: GlamorousComponent<any, any> = glamorous.nav<{open?: boolean}>(
   {
     'position': 'fixed',
     'top': '4em',

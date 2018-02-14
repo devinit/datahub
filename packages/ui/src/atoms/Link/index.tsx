@@ -2,8 +2,9 @@ import glamorous from 'glamorous';
 import { white, lighterGrey, grey, black, red} from '../../theme/semantic';
 // import Link from 'next/link';
 import { medium } from '../../theme';
+import {GlamorousComponentT} from '../../types';
 
-export const FooterLink = glamorous.a({
+export const FooterLink: GlamorousComponentT = glamorous.a({
   fontSize: medium,
   display: 'block',
   color: lighterGrey,
@@ -11,7 +12,7 @@ export const FooterLink = glamorous.a({
   paddingTop: '.5em',
 });
 
-export const NavLink = glamorous.a({
+export const NavLink: GlamorousComponentT = glamorous.a({
   'color': white,
   'fontWeight': 700,
   'textAlign': 'center',
@@ -20,7 +21,7 @@ export const NavLink = glamorous.a({
     color: white,
   },
 });
-export const BodyLink = glamorous.a({
+export const BodyLink: GlamorousComponentT = glamorous.a({
   'color': red,
   'fontWeight': 500,
   'cursor': 'pointer',
@@ -28,7 +29,7 @@ export const BodyLink = glamorous.a({
     color: red,
   },
 });
-export const SocialMediaLink = glamorous.a({
+export const SocialMediaLink: GlamorousComponentT = glamorous.a({
   display: 'inline-block',
   color: black,
   border: `2px solid ${grey}`,

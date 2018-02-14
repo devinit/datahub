@@ -78,7 +78,7 @@ const TourItems = glamorous.ul({
   },
 });
 
-interface Props  {
+export interface Props  {
   entity: string;
 }
 

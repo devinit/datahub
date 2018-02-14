@@ -4,7 +4,7 @@ import { medium } from '../../theme';
 import { lightGrey, lighterGrey } from '../../theme/semantic';
 import { Container, SemanticTEXTALIGNMENTS } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   children: any;
   selected?: number;
   textAlign?: SemanticTEXTALIGNMENTS;

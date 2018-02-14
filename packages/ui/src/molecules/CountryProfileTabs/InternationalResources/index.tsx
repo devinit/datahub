@@ -10,7 +10,7 @@ import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import Legend from '../../../atoms/Legend';
 import { TabsData } from '../types';
 
-type Props = TabsData & {
+export type Props = TabsData & {
   config: any;
   countryType: string;
   pagesData: PageUnit[];

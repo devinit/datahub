@@ -5,9 +5,9 @@ import glamorous from 'glamorous';
 import ChartShare, {NoBackground} from '../ChartShare';
 import {StateToShare} from '../ChartShare';
 
-type ViewFn = () => void;
+export type ViewFn = () => void;
 
-interface Props  {
+export interface Props  {
   printDiv?: string;
   onViewVisualization?: ViewFn;
   stateToShare?: StateToShare; // state to serialise

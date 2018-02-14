@@ -1,6 +1,5 @@
-// @flow
-/* eslint-disable react/sort-comp */
-/* eslint-disable no-nested-ternary */
+/* tslint-disable react/sort-comp */
+/* tslint-disable no-nested-ternary */
 import * as React from 'react';
 import { groupBy } from 'ramda';
 import { Grid, Segment } from 'semantic-ui-react';

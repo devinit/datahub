@@ -2,8 +2,9 @@
 // just compose them from base containers
 import glamorous from 'glamorous';
 import { white, red, black } from '../../theme/semantic';
+import {GlamorousComponentT} from '../../types';
 
-export const FooterDiv = glamorous.div({
+export const FooterDiv: GlamorousComponentT = glamorous.div({
   'display': 'flex',
   'flexDirection': 'column',
   'alignItems': 'center',
@@ -13,7 +14,7 @@ export const FooterDiv = glamorous.div({
   },
 });
 
-export const FooterDisclaimer = glamorous.div({
+export const FooterDisclaimer: GlamorousComponentT = glamorous.div({
   'padding': 4,
   'color': white,
   'paddingTop': '2em',
@@ -22,12 +23,12 @@ export const FooterDisclaimer = glamorous.div({
     color: white,
   },
 });
-export const TopFooter = glamorous.div({
+export const TopFooter: GlamorousComponentT = glamorous.div({
   paddingTop: '2em',
   paddingBottom: '2em',
 });
 
-export const BlackContainer = glamorous.div({
+export const BlackContainer: GlamorousComponentT = glamorous.div({
   'backgroundColor': black,
   'width': '100%',
   'flexDirection': 'row',
@@ -38,7 +39,7 @@ export const BlackContainer = glamorous.div({
     color: red,
   },
 });
-export const WhiteContainer = glamorous.div({
+export const WhiteContainer: GlamorousComponentT = glamorous.div({
   backgroundColor: white,
   width: '100%',
   flexDirection: 'row',
@@ -46,7 +47,7 @@ export const WhiteContainer = glamorous.div({
   paddingBottom: '20px',
 });
 
-export const FooterHeader = glamorous.h3({
+export const FooterHeader: GlamorousComponentT = glamorous.h3({
   display: 'block',
   color: white,
   marginTop: '1em',

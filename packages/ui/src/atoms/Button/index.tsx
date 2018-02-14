@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   children?: React.ReactChild;
   onClick?: (event: any) => void;
   content?: string;

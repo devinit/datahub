@@ -1,14 +1,14 @@
 import * as React from 'react';
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 import { Slider, Floor, Ceiling, Input, Pointer } from '../../atoms/YearSlider';
 
-export const PointerContainer = glamorous.div({
+export const PointerContainer: GlamorousComponent<{}, any> = glamorous.div({
   width: '100%',
   left: '0.5em',
   position: 'relative',
 });
 
-interface Props  {
+export interface Props  {
   minimum: number;
   maximum: number;
   step: number;
@@ -17,7 +17,7 @@ interface Props  {
   onChange: (year: number) => void;
 }
 
-interface State  {
+export interface State  {
   showInput: boolean;
   position: number;
 }

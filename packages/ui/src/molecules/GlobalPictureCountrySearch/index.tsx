@@ -4,10 +4,10 @@ import glamorous from 'glamorous';
 import { white, lightBlack } from '../../theme/semantic';
 import { big } from '../../theme';
 
-interface Props  {
+export interface Props  {
   children: any;
 }
-interface State  {
+export interface State  {
   showInput: boolean;
 }
 const SearchTitle = glamorous.div({

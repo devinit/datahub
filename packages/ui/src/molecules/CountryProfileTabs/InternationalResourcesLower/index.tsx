@@ -6,7 +6,7 @@ import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import TabsToolTip from '../../TabsToolTip';
 import { SectionHeader } from '../../../atoms/Header';
 
-interface Props {
+export interface Props {
   children: any[];
   pageData: PageUnit[];
   toolTip: { source?: string, heading?: string};

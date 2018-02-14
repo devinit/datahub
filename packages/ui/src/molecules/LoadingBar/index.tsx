@@ -2,11 +2,11 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { Progress } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   loading: boolean;
 }
 
-interface State  {
+export interface State  {
   percent: number;
   time: number;
 }

@@ -4,7 +4,7 @@ import MenuLink from '../MenuLink';
 import Link from 'next/link';
 import * as React from 'react';
 
-interface Props {
+export interface Props {
   menu: any;
 }
 

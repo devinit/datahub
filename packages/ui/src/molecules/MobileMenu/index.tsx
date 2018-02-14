@@ -1,12 +1,12 @@
 import * as React from 'react';
-import glamorous from 'glamorous';
+import glamorous , {GlamorousComponent} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import { white, redHeaderColor } from '../../theme/semantic';
 import MenuContainer from '../../atoms/MobileMenuContainer';
 import {mediaQueries} from '../../theme';
 import MenuItem from '../../atoms/MobileMenuItem';
 
-export const ToggleButton = glamorous.button({
+export const ToggleButton: GlamorousComponent<{}, any> = glamorous.button({
   'position': 'absolute',
   'display': 'none',
   'top': 0,
@@ -26,7 +26,7 @@ export const ToggleButton = glamorous.button({
     display: 'block',
   },
 });
-export const OutSideMenu = glamorous.div<{open: boolean; }>(
+export const OutSideMenu: GlamorousComponent<any, any> = glamorous.div<{open: boolean; }>(
   {
     background: '#fff',
     position: 'fixed',
@@ -42,7 +42,7 @@ export const OutSideMenu = glamorous.div<{open: boolean; }>(
   }),
 );
 
-interface Props {
+export interface Props {
   menu: any;
 }
 

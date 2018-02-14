@@ -16,7 +16,7 @@ const ListContainer = glamorous.ul({
     display: 'none',
   },
 });
-interface Props {
+export interface Props {
   menu: Array<{name: string; }>;
 }
 

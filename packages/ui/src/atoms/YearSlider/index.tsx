@@ -1,7 +1,8 @@
-import glamorous from 'glamorous';
+import glamorous , {GlamorousComponent} from 'glamorous';
 import { white, red, lighterGrey, grey, lightGrey} from '../../theme/semantic';
+import {GlamorousComponentT} from '../../types';
 
-export const Slider = glamorous.div<{backgroundColor?: string}>({
+export const Slider: GlamorousComponent<any, any> = glamorous.div<{backgroundColor?: string}>({
   'display': 'inline-block',
   'position': 'relative',
   'height': '1em',
@@ -21,7 +22,7 @@ export const Slider = glamorous.div<{backgroundColor?: string}>({
 }, (props) => ({
   backgroundColor: props.backgroundColor || lighterGrey,
 }));
-export const Input = glamorous.input({
+export const Input: GlamorousComponentT = glamorous.input({
   whiteSpace: 'nowrap',
   position: 'absolute',
   display: 'block',
@@ -35,7 +36,7 @@ export const Input = glamorous.input({
   cursor: 'pointer',
 });
 
-export const Pointer = glamorous.span<{left: number }>(
+export const Pointer: GlamorousComponent<any, any> = glamorous.span<{left: number }>(
   {
     position: 'absolute',
     cursor: 'pointer',
@@ -55,7 +56,7 @@ export const Pointer = glamorous.span<{left: number }>(
   props => ({ left: `${100 * props.left}%` }),
 );
 
-export const Floor = glamorous.span({
+export const Floor: GlamorousComponentT = glamorous.span({
   userSelect: 'none',
   whiteSpace: 'nowrap',
   position: 'absolute',
@@ -65,7 +66,7 @@ export const Floor = glamorous.span({
   opacity: 1,
 });
 
-export const Ceiling = glamorous.span({
+export const Ceiling: GlamorousComponentT = glamorous.span({
   userSelect: 'none',
   whiteSpace: 'nowrap',
   position: 'absolute',

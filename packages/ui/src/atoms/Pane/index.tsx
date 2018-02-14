@@ -4,7 +4,7 @@
  */
 import * as React from 'react';
 
-interface Props  {
+export interface Props  {
   children: React.ReactChildren;
   label: string;
   id: string; // for id prop. react requirement

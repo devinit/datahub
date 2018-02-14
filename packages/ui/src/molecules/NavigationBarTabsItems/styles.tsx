@@ -1,7 +1,8 @@
 import glamorous from 'glamorous';
 import { lightBlack, white } from '../../theme/semantic';
+import {GlamorousComponentT} from '../../types';
 
-export const SelectWrapper = glamorous.div({
+export const SelectWrapper: GlamorousComponentT = glamorous.div({
   'display': 'inline-block',
   '& .menu .text': {
     paddingLeft: '0.5em'
@@ -28,7 +29,7 @@ export const SelectWrapper = glamorous.div({
   }
 });
 
-export const Wrapper = glamorous.div({
+export const Wrapper: GlamorousComponentT = glamorous.div({
   'textAlign': 'center',
   'paddingTop': '.5em',
   'paddingBottom': '.5em',

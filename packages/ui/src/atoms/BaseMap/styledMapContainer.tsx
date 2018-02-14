@@ -1,6 +1,6 @@
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 
-export const MapContainer = glamorous.div({
+export const MapContainer: GlamorousComponent<{}, any> = glamorous.div({
   '& .mapboxgl-map': {
     fontFamily: 'geomanist, sans-serif',
   },

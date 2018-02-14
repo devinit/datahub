@@ -1,16 +1,15 @@
-// @flow
 import * as React from 'react';
 import BaseMap from '../../atoms/BaseMap';
 import { PaintMap, Meta, Viewport } from '../../atoms/BaseMap/types';
 import configs from '../Map/config';
 import { white } from '../../theme/semantic';
 
-interface Props  {
+export interface Props  {
   slug: string;
   spotlightCountry?: string;
 }
 
-interface MapProps  {
+export interface MapProps  {
   paint: PaintMap;
   meta: Meta;
   viewport: Viewport;

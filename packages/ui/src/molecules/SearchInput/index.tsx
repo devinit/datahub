@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import { Input, InputContainer, List } from '../../atoms/SearchInput';
 
-interface Entity  {
+export interface Entity  {
   slug: string;
   name: string;
 }
@@ -19,7 +19,7 @@ export interface Props  {
   onSelected?: (any) => void;
 }
 
-interface State  {
+export interface State  {
   selected: number;
   entities: Entity[];
   showList: boolean;

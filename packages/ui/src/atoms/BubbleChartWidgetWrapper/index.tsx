@@ -9,7 +9,7 @@ const Wrapper = glamorous.div({
   },
 });
 
-interface Props  {
+export interface Props  {
   children?: React.ReactChild | any;
   title: string;
 }

@@ -5,7 +5,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { lightGrey, black } from '../../theme/semantic';
 
-interface Props {
+export interface Props {
   menu: {children: Array<{name: string; link: string; icon: string}>};
 }
 const SubMenuContainer = glamorous.ul({

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Grid, Table } from 'semantic-ui-react';
 import { Span, Img } from 'glamorous';
@@ -27,7 +26,7 @@ export interface Props  {
   };
 }
 
-interface State {
+export interface State {
   profileLoading: boolean;
 }
 

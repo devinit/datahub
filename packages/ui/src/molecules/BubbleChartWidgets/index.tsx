@@ -33,7 +33,7 @@ const Link = glamorous.a({
   marginBottom: '20px',
 });
 
-interface Props  {
+export interface Props  {
   click: () => void;
   loading?: boolean;
   startYear: number;
@@ -49,7 +49,7 @@ interface Props  {
   countries: object[];
   data?: object;
 }
-interface State  {
+export interface State  {
   year: number;
   colorBy: string;
   showMoreOptions: boolean;

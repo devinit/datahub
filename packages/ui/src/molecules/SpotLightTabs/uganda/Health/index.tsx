@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/TabsText';

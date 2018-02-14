@@ -16,7 +16,7 @@ const TableWrapper = glamorous.div({
   }
 });
 
-interface Props  {
+export interface Props  {
   data: any[];
   title?: string;
   noDownloads?: boolean;

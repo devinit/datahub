@@ -2,13 +2,13 @@ import * as React from 'react';
 import { Div } from 'glamorous';
 import { Popup, Icon } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   children: any;
   color?: any;
   trigger: React.ReactChild;
 }
 
-interface State  {
+export interface State  {
   isOpen: boolean;
 }
 

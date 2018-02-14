@@ -3,7 +3,7 @@ import * as React from 'react';
 import { A } from 'glamorous';
 import { small } from '../../theme';
 
-interface Props  {
+export interface Props  {
   path: string;
   pathName: string;
   isActive: boolean;

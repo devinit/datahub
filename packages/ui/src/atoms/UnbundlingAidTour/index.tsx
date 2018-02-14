@@ -109,7 +109,7 @@ const TourItems = glamorous.ul({
     textAlign: 'center',
   },
 });
-interface Props  {
+export interface Props  {
   aidType: string;
 }
 const VisualizationTour = (props: Props) =>

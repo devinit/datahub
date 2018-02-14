@@ -2,6 +2,7 @@ import * as React from 'react';
 import glamorous, {Span} from 'glamorous';
 import { massive } from '../../theme';
 import { red, grey, blue} from '../../theme/semantic';
+import {compone}
 
 export const TabsP = glamorous.p<{fontSize?: any;  }>({
   fontSize: massive,

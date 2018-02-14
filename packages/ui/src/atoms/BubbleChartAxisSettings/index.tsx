@@ -16,7 +16,7 @@ const RangeWrapper = glamorous.div({
   marginBottom: '1em',
 });
 
-interface Props  {
+export interface Props  {
   title: string;
   onScaleTypesChange?: (event: any) => void;
   onLatestChecked?: (event: FormEvent<HTMLInputElement>) => void;

@@ -16,11 +16,11 @@ import {countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '../ChartShare';
 import mapConfigs, {MapConfig} from './config';
 
-type Props = DH.IMapData & {
+export type Props = DH.IMapData & {
   state: StateToShare;
 };
 
-interface State  {
+export interface State  {
   currentYear: number;
 }
 class Map extends React.Component<Props, State> {

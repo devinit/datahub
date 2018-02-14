@@ -3,7 +3,7 @@ import { Div } from 'glamorous';
 import { lighterGrey } from '../../theme/semantic';
 import LoadingBar from '../LoadingBar';
 
-interface Props  {
+export interface Props  {
   loading: boolean;
   height?: number | string;
 }

@@ -1,9 +1,8 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   visible: boolean;
   closeHandler?: (event: any) => void;
   bottom?: string;

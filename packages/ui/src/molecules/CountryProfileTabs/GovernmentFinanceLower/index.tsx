@@ -3,7 +3,7 @@ import * as React from 'react';
 import {Lead} from '../../../atoms/BodyText';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 
-interface Props  {
+export interface Props  {
   children: any;
   countryName: string;
   pageData: PageUnit[];

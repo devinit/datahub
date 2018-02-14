@@ -8,13 +8,13 @@ export interface LegendField  {
   backgroundColor: string;
 }
 
-interface Props  {
+export interface Props  {
   title: string;
   description: string;
   legendData: LegendField[];
 }
 
-interface LegendItemStyleProps  {
+export interface LegendItemStyleProps  {
   color?: string;
   backgroundColor: string;
 }

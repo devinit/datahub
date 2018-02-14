@@ -1,19 +1,20 @@
 import glamorous from 'glamorous';
 import { lightGrey, seaBackground, white } from '../../theme/semantic';
+import {GlamorousComponentT} from '../../types';
 
-export const Container = glamorous.div({
+export const Container: GlamorousComponentT = glamorous.div({
   width: '100%',
   flexDirection: 'row',
   backgroundColor: seaBackground,
 });
 
-export const GreyContainer = glamorous.div({
+export const GreyContainer: GlamorousComponentT = glamorous.div({
   width: '100%',
   flexDirection: 'row',
   backgroundColor: lightGrey,
 });
 
-export const RankingsTableContainer = glamorous.div({
+export const RankingsTableContainer: GlamorousComponentT = glamorous.div({
   'paddingLeft': '2em',
   'paddingRight': '2em',
   '& a': {
@@ -24,20 +25,20 @@ export const RankingsTableContainer = glamorous.div({
   },
   'marginBottom': '2em'
 });
-export const PrintContainer = glamorous.div({
+export const PrintContainer: GlamorousComponentT = glamorous.div({
   'display': 'none',
   '@media print': {
     display: 'block !important',
   },
 });
-export const CardContainer = glamorous.div({
+export const CardContainer: GlamorousComponentT = glamorous.div({
   background: 'rgba(255,255,255,.6)',
   boxShadow: '0 1px 4px rgba(0,0,0,.1)',
   padding: '1.5em',
   marginBottom: '0em',
   height: '480px',
 });
-export const ProfileHeader = glamorous.div({
+export const ProfileHeader: GlamorousComponentT = glamorous.div({
   'height': '420px', // TODO -- use media queries
   'overflow': 'hidden',
   'borderBottom': `1px solid ${lightGrey}`,
@@ -51,4 +52,4 @@ export const ProfileHeader = glamorous.div({
   },
 });
 // TODO use media queries
-export const MapPlaceholder = glamorous(GreyContainer)({ height: '600px' });
+export const MapPlaceholder: GlamorousComponentT = glamorous(GreyContainer)({ height: '600px' });

@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { white, primaryColor, black } from '../../theme/semantic';
 import { Header, Button } from 'semantic-ui-react';
 
-interface Props  {
+export interface Props  {
   onClickHandler: () => void;
   yearTotal: { year: number, total: number};
   aidType: string;

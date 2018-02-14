@@ -6,8 +6,8 @@ import {SpotLightTabData} from '../../types';
 import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 
-/* eslint-disable max-len */
-type Props = SpotLightTabData &  {
+/* tslint-disable max-len */
+export type Props = SpotLightTabData &  {
   currency: string;
   pageData: PageUnit[];
 };

@@ -34,7 +34,7 @@ export interface Props  {
   items: LinePartitionItem[];
 }
 
-interface State  {
+export interface State  {
   year: number;
   currency: string;
   currencyOptions: CurrencyOption[];

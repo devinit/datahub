@@ -52,7 +52,7 @@ export interface StateToShare  {
   chartId?: string;
   indicator?: string;
 }
-interface Props  {
+export interface Props  {
   size: any;
   color: any;
   iconName?: string;
@@ -66,7 +66,7 @@ interface Props  {
   stateToShare?: StateToShare;
 }
 
-interface State  {
+export interface State  {
   link: string;
   value: number;
 }
@@ -80,7 +80,7 @@ export default class ChartShare extends React.Component<Props> {
     link: '',
     value: 2
   };
-  public stateLv: State;
+  public stateX: State;
   /* eslint-disable no-useless-constructor */
   constructor(props: Props) {
     super(props);

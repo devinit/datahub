@@ -1,19 +1,21 @@
-import glamorous from 'glamorous';
+import glamorous, {GlamorousComponent} from 'glamorous';
 import { red, lightBlack } from '../../theme/semantic';
+import {GlamorousComponentT} from '../../types';
 
-export const Lead = glamorous.p({
+export const Lead: GlamorousComponentT = glamorous.p({
   fontSize: '1.6em',
   fontWeight: 300,
 });
 
-export const HeaderGroup = glamorous.div({
+export const HeaderGroup: GlamorousComponentT = glamorous.div({
   'marginTop': '2em',
   '& .header': {
     marginBottom: 0,
     marginTop: 0,
   },
 });
-export const SectionHeader = glamorous.h2<{fontSize?: any; color?: string; fontColor?: any}>(
+export const SectionHeader: GlamorousComponent<any, any> =
+glamorous.h2<{fontSize?: any; color?: string; fontColor?: any}>(
   {
     'padding': '1em 1em 1em 1em',
     'display': 'inline-block',

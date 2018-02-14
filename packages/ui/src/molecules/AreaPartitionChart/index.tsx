@@ -10,7 +10,7 @@ import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
-interface DetailSelection {
+export interface DetailSelection {
   value: string;
   selection: {unbundle: boolean};
   text: string;

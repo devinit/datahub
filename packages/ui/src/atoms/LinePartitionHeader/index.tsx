@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Grid, Dropdown, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from '../Header/index';
 
-type onChangeT =  (budgetType: string) => void;
-type onChangeC = (currency: string) => void;
-interface Props  {
+export type onChangeT =  (budgetType: string) => void;
+export type onChangeC = (currency: string) => void;
+export interface Props  {
   title: string;
   hideOptions: boolean;
   year: number;

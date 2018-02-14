@@ -9,7 +9,7 @@ export interface KeyValue  {
   value: string;
 }
 
-interface Props  {
+export interface Props  {
   aid: string;
   width: SemanticWIDTHS;
   data: any;
@@ -20,7 +20,7 @@ interface Props  {
   onChange: (key: string) => (value: string) => void;
 }
 
-interface State {
+export interface State {
   keys: string[];
 }
 
