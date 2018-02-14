@@ -25,5 +25,8 @@ lerna run --scope @devinit/dh-base build # building base package
 
 TODO:
 
-- Make tsconfigs & tslints shareable
-- Re-add semantic ui
+- [ ] Make tsconfigs & tslints shareable
+- [ ] Maybe replace redux with [unistore](https://github.com/developit/unistore)
+- [ ] Use [greenlet](https://github.com/developit/greenlet) for webworkers
+- [ ] Explore [purgecss](https://github.com/FullHuman/purgecss) for css optimisation
+- [ ] Explore [reactpot](https://github.com/reactopt/reactopt) for further perf improvements
