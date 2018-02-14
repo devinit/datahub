@@ -35,6 +35,7 @@ export const indicatorsWith0dp = [
   'data_series.number_of_un_appeals',
   'spotlight_on_uganda.uganda_health_posts',
   'data_series.forgotten_crisis'];
+export const indicatorsWith2dp = ['fact.oda_to_ldcs_percent_gni', 'fact.oda_percent_gni'];
 
 class BaseMap extends Component {
   static foldOverSurveyMapFeatures(features: Feature[]): MapData {
@@ -73,7 +74,7 @@ class BaseMap extends Component {
     if (indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
     if (indicator === 'data_series.climate_vulnerability') return value.toFixed(2);
-    if (indicator === 'fact.out_oda_net_2015') return approximate(value, 2, true);
+    if (indicatorsWith2dp.includes(indicator)) return approximate(value, 2, true);
     return approximate(value, 1, true);
   }
   static tipToolTipValueStr(value: string | number, uom: string) {
