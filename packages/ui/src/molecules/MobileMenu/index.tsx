@@ -6,7 +6,7 @@ import MenuContainer from '../../atoms/MobileMenuContainer';
 import {mediaQueries} from '../../theme';
 import MenuItem from '../../atoms/MobileMenuItem';
 
-export const ToggleButton: GlamorousComponent<{}, any> = glamorous.button({
+export const ToggleButton: GlamorousComponent<any, any> = glamorous.button({
   'position': 'absolute',
   'display': 'none',
   'top': 0,

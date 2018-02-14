@@ -25,7 +25,7 @@ export interface Props<T, L>  {
   selected?: number;
   textAlign?: SemanticTEXTALIGNMENTS;
 }
-interface State  {
+export interface State  {
   selected: number;
   info: string;
   loading: boolean;
@@ -93,9 +93,14 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
   public handleClick = (index: number) => (event: React.FormEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     if (!this.navBarItems[index].default_indicator) { throw new Error('default indicator missing in nav items'); }
-    const activeIndicator: string = this.navBarItems[index].default_indicator;
-    this.fireReduxActions(activeIndicator);
-    this.setState({ selected: index, activeIndicator, loading: true });
+    const activeIndicator: string | undefined = this.navBarItems[index].default_indicator;
+    if (activeIndicator) {
+      this.fireReduxActions(activeIndicator);
+      this.setState({ selected: index, activeIndicator, loading: true });
+    } else {
+      // TODO: email error about lack of default indicator
+      console.error('missing default indicator');
+    }
   }
   public handleSelect(event: any, data: Option[]) {
     event.preventDefault();
@@ -117,7 +122,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
     this.navBarItems.forEach((navItem: NavBarItem) => {
       if (navItem.indicators) {
         const item = navItem.indicators.find(obj => obj.id === this.state.activeIndicator);
-        if (item && item.tooltip) active = {...item, heading: item.tooltip};
+        if (item && item.tooltip) active = {source: item.source || 'N/A', heading: item.tooltip};
       }
     });
     return active;

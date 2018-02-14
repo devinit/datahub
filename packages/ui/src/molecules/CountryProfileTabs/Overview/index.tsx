@@ -2,7 +2,8 @@ import { Container, Grid } from 'semantic-ui-react';
 import * as React from 'react';
 import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import { P, Div } from 'glamorous';
-import { RECIPIENT, DONOR, NoData, addMinAndMaxYear } from '@devinit/dh-base/lib/utils/constants';
+import { addMinAndMaxYear } from '@devinit/dh-base/lib/utils';
+import { RECIPIENT, DONOR, NoData} from '@devinit/dh-base/lib/utils/constants';
 import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
 import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
@@ -10,7 +11,7 @@ import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { red} from '../../../theme/semantic';
 import {TabsData} from '../types';
 
-type Props = TabsData & {
+export type Props = TabsData & {
   countryType: string;
   config: OverviewChartConfigs;
   pagesData: PageUnit[];

@@ -1,3 +1,3 @@
 import {GlamorousComponent} from 'glamorous';
 
-export type GlamorousComponentT = GlamorousComponent<{}, any>;
+export type GlamorousComponentT = GlamorousComponent<any, any>;

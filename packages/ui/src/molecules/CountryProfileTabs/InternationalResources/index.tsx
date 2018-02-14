@@ -29,7 +29,7 @@ const International = (props: Props) => {
   if (props.countryType === DONOR && internationalResources.netODAOfGNIOut) {
     shareOfGNITitleToolTip =
       internationalResources.netODAOfGNIOut.toolTip || shareOfGNITitleToolTip;
-    shareOfGNITitle = shareGniAllocatedToCtry.donor_title;
+    shareOfGNITitle = shareGniAllocatedToCtry.donor_title || '';
     shareOfGNIValue = internationalResources.netODAOfGNIOut.value || shareOfGNIValue;
   }
   if (props.countryType !== DONOR && internationalResources.netODAOfGNIIn) {

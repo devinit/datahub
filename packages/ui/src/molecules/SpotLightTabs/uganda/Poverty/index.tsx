@@ -6,7 +6,7 @@ import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {SpotLightTabData} from '../../types';
 import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
-type Props = SpotLightTabData &  {
+export type Props = SpotLightTabData &  {
   currency: string;
   pageData: PageUnit[];
 };

@@ -8,7 +8,7 @@ import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import {TabsData} from '../types';
 
-type Props = TabsData & {
+export type Props = TabsData & {
   config: any;
   pagesData: PageUnit[];
 };

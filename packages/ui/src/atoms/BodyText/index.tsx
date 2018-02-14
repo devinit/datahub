@@ -1,6 +1,7 @@
 import glamorous from 'glamorous';
+import {GlamorousComponentT} from '../../types';
 
-export const Lead = glamorous.p({
+export const Lead: GlamorousComponentT  = glamorous.p({
   'fontSize': '1.5em',
   'textAlign': 'center',
   'fontWeight': 300,
@@ -11,7 +12,7 @@ export const Lead = glamorous.p({
     }
 });
 
-export const TextBlock = glamorous.p({
+export const TextBlock: GlamorousComponentT = glamorous.p({
   fontSize: '1.3em',
   paddingLeft: '1em',
   paddingRight: '1em',

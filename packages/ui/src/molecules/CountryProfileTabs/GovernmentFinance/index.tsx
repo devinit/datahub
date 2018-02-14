@@ -11,7 +11,7 @@ import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import { TabsData } from '../types';
 
-type Props = TabsData & {
+export type Props = TabsData & {
   config: any;
   pagesData: PageUnit[];
 };

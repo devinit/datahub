@@ -90,7 +90,7 @@ const ProfileHeaderSection = (props: Props) => {
                         </Span>
                       </Lead> :
                       <Lead>
-                        {props.entity.countryType !== DONOR ?
+                        {(props.entity as Country).countryType !== DONOR ?
                           `Explore this in-depth profile of ${props.entity.name} to find out overall levels of poverty,
                         income distribution, division of wealth and more. Discover how national and
                         sub-national revenue is generated.` :
@@ -109,7 +109,7 @@ const ProfileHeaderSection = (props: Props) => {
                   {props.jumpToSection ?
                     <Span>
                       Jump to {
-                        props.entity.countryType !== DONOR ?
+                        (props.entity as Country).countryType !== DONOR ?
                           <span>
                             <BodyLink
                               onClick={jumpToSection(GOVERNMENT_FINANCE_LOWER)}

@@ -9,7 +9,7 @@ import Chart from '../../../../atoms/Chart';
 import {SpotLightTabData} from '../../types';
 import { PageUnit, getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
-type Props = SpotLightTabData &  {
+export type Props = SpotLightTabData &  {
   currency: string;
   config: any;
   pageData: PageUnit[];

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import glamorous, { GlamorousComponent } from 'glamorous';
+import glamorous from 'glamorous';
 import { white, lightBlack } from '../../theme/semantic';
 import {GlamorousComponentT} from '../../types';
 

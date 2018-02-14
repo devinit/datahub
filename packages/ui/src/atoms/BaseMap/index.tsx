@@ -35,6 +35,7 @@ export interface State {
   profileLoading: boolean; // think loading new country on map click
   shouldForceRedraw: boolean;
 }
+export const indicatorsWith2dp = ['fact.oda_to_ldcs_percent_gni', 'fact.oda_percent_gni'];
 
 export const indicatorsWith0dp = [
   'spotlightonuganda.ugandaurbanpop',
@@ -85,6 +86,7 @@ class BaseMap extends React.Component<Props, State> {
     if (indicator && indicatorsWith0dp.includes(indicator)) return approximate(value, 0, true);
     if (uom === '%' && indicator && indicator.includes('uganda')) return value.toFixed(1);
     if (indicator === 'dataseries.climatevulnerability') return value.toFixed(2);
+    if (indicatorsWith2dp.includes(indicator || '')) return approximate(value, 2, true);
     return approximate(value, 1, true);
   }
   public static tipToolTipValueStr(value: string | number, uom: string) {
