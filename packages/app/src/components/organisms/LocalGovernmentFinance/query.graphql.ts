@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-export default gql
-`query GovernmentFinance($id: String!, $country: String!) {
+export default gql`
+query GovernmentFinance($id: String!, $country: String!) {
   localGovernmentFinance(id: $id, country: $country) {
     startYear,
     currencyCode,

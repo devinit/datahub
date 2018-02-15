@@ -6,9 +6,9 @@ import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsT
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
-import {TabsData} from '../types';
+import {TabDataQuery} from '../../../types';
 
-export type Props = TabsData & {
+export type Props = TabDataQuery & {
   config: any;
   pagesData: PageUnit[];
 };
@@ -20,6 +20,12 @@ const Poverty = (props: Props) => {
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.povertyTab) return new Error('No Poverty data');
   const povertyTab = props.povertyTab;
+  // make typescript f**n happy
+  const incomeDistData = povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.data;
+  // make typescript f**n happy
+  const incomeDistDataObj = incomeDistData && incomeDistData[0];
+  // make typescript f**n happy
+  const incomeValue: number | string = incomeDistDataObj ? incomeDistDataObj.value : '';
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -62,24 +68,21 @@ const Poverty = (props: Props) => {
               ? <TabsToolTip {...povertyTab.incomeDistTrend.toolTip} />
               : ''}
           </HeaderTitle>
-          {povertyTab.incomeDistTrend &&
-          povertyTab.incomeDistTrend.data &&
-          povertyTab.incomeDistTrend.data.length
+          {incomeDistData && incomeDistData.length
             ? <Div width="70%" margin={'0 auto'}>
               <Chart
                 config={props.config.histogram}
-                data={povertyTab.incomeDistTrend.data.map((d, i) => i ? d : {...d, color: '#e84439'})}
+                data={incomeDistData.map((d, i) => i ? d : {...d, color: '#e84439'})}
                 height="120px"
               />
               <TabsFootNote textAlign="left" lineHeight={2}>
                 <span>Bottom quintile has </span>
                 <span>
-                  {povertyTab &&
-                  povertyTab.incomeDistTrend &&
-                  povertyTab.incomeDistTrend.data &&
-                  povertyTab.incomeDistTrend.data[0] &&
-                  povertyTab.incomeDistTrend.data[0].value ?
-                    `${povertyTab.incomeDistTrend.data[0].value.toFixed(1)}% of the income.` : NoData
+                  {
+                    `
+                    ${ Number(incomeValue) ?
+                      (incomeValue as number).toFixed(1) : ''} % of the income. : ${NoData}
+                    `
                   }
                 </span>
               </TabsFootNote>

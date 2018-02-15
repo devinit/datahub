@@ -9,9 +9,9 @@ import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-import { TabsData } from '../types';
+import {TabDataQuery} from '../../../types';
 
-export type Props = TabsData & {
+export type Props = TabDataQuery & {
   config: any;
   pagesData: PageUnit[];
 };

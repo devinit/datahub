@@ -1,4 +1,3 @@
-// @flow
 import { graphql } from 'react-apollo';
 import BubbleChart from '@devinit/dh-ui/lib/molecules/BubbleChartWidgets';
 import QUERY from './poverty.graphql';

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-export default gql
-`query TabData($id: String!) {
+export const TAB_QUERY = gql`
+ query TabData($id: String!) {
   governmentFinance(id: $id) {
     totalRevenue {
       value

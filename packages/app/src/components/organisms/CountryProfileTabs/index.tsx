@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {TabDataQuery} from '../gql-types';
+import {TabDataQuery} from '../../../types';
 import { graphql } from 'react-apollo';
 import {
   GovernmentFinance,
@@ -20,7 +20,7 @@ import { shouldShowTabData, errorHandler } from '@devinit/dh-base/lib/utils';
 import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
 import overviewConfig from '@devinit/dh-ui/lib/visbox/overviewTabCharts';
 import {getCountryProfileData} from '../PagesData';
-import TABS_QUERY from './query.graphql';
+import {TAB_QUERY} from './query.graphql';
 
 type TabsProps = TabDataQuery & {
   loading: boolean;
@@ -75,7 +75,7 @@ const countryProfileTabs = (props: TabsProps) => {
     </Tabs>
   );
 };
-const withData = graphql(TABS_QUERY, {
+const withData = graphql(TAB_QUERY, {
   options: props => {
     return {
       variables: { id: props.id },

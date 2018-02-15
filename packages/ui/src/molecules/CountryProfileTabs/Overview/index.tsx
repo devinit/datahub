@@ -9,9 +9,9 @@ import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { red} from '../../../theme/semantic';
-import {TabsData} from '../types';
+import {TabDataQuery} from '../../../types';
 
-export type Props = TabsData & {
+export type Props = TabDataQuery & {
   countryType: string;
   config: OverviewChartConfigs;
   pagesData: PageUnit[];
@@ -26,6 +26,12 @@ const Overview = (props: Props) => {
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
   if (!props.overviewTab) throw new Error('No OverView data');
   const overviewTab = props.overviewTab;
+  // make typescript f**n happy
+  const incomeDistData = overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.data;
+  // make typescript f**n happy
+  const incomeDistDataObj = incomeDistData && incomeDistData[0];
+  // make typescript f**n happy
+  const incomeValue = incomeDistDataObj ? incomeDistDataObj.value : 'No Data';
   return (
     <Container>
       <Grid>
@@ -119,17 +125,15 @@ const Overview = (props: Props) => {
                 ? <TabsToolTip {...overviewTab.incomeDistTrend.toolTip} />
                 : ''}
             </HeaderTitle>
-            {overviewTab.incomeDistTrend &&
-              overviewTab.incomeDistTrend.data &&
-              overviewTab.incomeDistTrend.data.length
+            { incomeDistData
               ? <div style={{width: '80%', margin: '0 auto'}}>
                 <Chart
                   config={props.config.histogram}
-                  data={overviewTab.incomeDistTrend.data}
+                  data={incomeDistData}
                   height="120px"
                 />
                 <TabsFootNote textAlign="left" lineHeight={2}>
-                  Bottom quintile has {overviewTab.incomeDistTrend.data[0].value} % of the income.
+                  Bottom quintile has {incomeValue} % of the income.
                 </TabsFootNote>
               </div>
               : <TabsNoData />}

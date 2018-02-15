@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export default gql `
+export const GvmtFinance = gql`
 query GvmtFinance($id: String!) {
   governmentFinance(id: $id) {
     startYear,

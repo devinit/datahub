@@ -56,12 +56,12 @@ const Overview = (props: Props) => {
 
           {overviewTabRegional.regionalResourcesBreakdown &&
             overviewTabRegional.regionalResourcesBreakdown
-            .some(obj => obj.data && obj.data.value ? true : false) ?
+            .some(obj => obj && obj.data && obj.data.value ? true : false) ?
             <Grid>
               <Grid.Column width="6">
                 <Chart
                   config={props.config.regionalResourcesBreakdown}
-                  data={overviewTabRegional.regionalResourcesBreakdown.map(d => d.data)}
+                  data={overviewTabRegional.regionalResourcesBreakdown.map(d => d && d.data)}
                   height="140px"
                 />
               </Grid.Column>
@@ -70,20 +70,21 @@ const Overview = (props: Props) => {
                   {overviewTabRegional.regionalResourcesBreakdown
                   && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
                     const sum = all
-                      .reduce((sumx, datumx) => sum + (datumx.data && datumx.data.value), 0) / 100;
+                      .reduce((sumx, datumx) => sum + (datumx && datumx.data && datumx.data.value), 0) / 100;
                     return (
                       <Legend
-                        key={datum.data && datum.data.name ? datum.data.name : ''}
-                        color={datum.data && datum.data.color ? datum.data.color : ''}
+                        key={datum && datum.data && datum.data.name ? datum.data.name : ''}
+                        color={datum && datum.data && datum.data.color ? datum.data.color : ''}
                       >
                         <span><span /></span>
                         <span>
-                          {`${Math.round((datum.data && datum.data.value ? datum.data.value : 0) / sum)} `}% {' '}
-                          {datum.data && datum.data.name ? datum.data.name.toLowerCase() : ''}
+                          {`${Math.round((datum && datum.data && datum.data.value ?
+                            datum.data.value : 0) / sum)} `}% {' '}
+                          {datum && datum.data && datum.data.name ? datum.data.name.toLowerCase() : ''}
                           {
                             TabsToolTip({
-                              source: datum.toolTip && datum.toolTip.source ? datum.toolTip.source : ' ',
-                              heading: datum.data && datum.data.name ? datum.data.name : ' '
+                              source: datum && datum.toolTip && datum.toolTip.source ? datum.toolTip.source : ' ',
+                              heading: datum && datum.data && datum.data.name ? datum.data.name : ' '
                             })
 
                           }

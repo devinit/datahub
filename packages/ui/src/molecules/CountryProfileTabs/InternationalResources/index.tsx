@@ -8,9 +8,9 @@ import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import Legend from '../../../atoms/Legend';
-import { TabsData } from '../types';
+import {TabDataQuery} from '../../../types';
 
-export type Props = TabsData & {
+export type Props = TabDataQuery & {
   config: any;
   countryType: string;
   pagesData: PageUnit[];
