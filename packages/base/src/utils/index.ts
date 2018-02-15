@@ -160,7 +160,6 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
   return {routePath, routeAsPath};
 };
 
-
 export const getMaxAndMin = (data: Array<{year: number}>): number[] => {
   const years = data.map(obj => Number(obj.year));
   const max: number = Math.max.apply(null, years);
