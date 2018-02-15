@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export default gql`
+export const INTL_RESOURCES_QUERY =  gql`
   query ResourcesOverTime($id: String!) {
     internationalResources(id: $id) {
       startYear

@@ -1,21 +1,26 @@
 import * as React from 'react';
 import { LightBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
-import { graphql } from 'react-apollo';
+import { graphql, ChildProps } from 'react-apollo';
 import Chart, {Props as MProps} from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
 import {errorHandler} from '@devinit/dh-base/lib/utils';
 import config from '@devinit/dh-ui/lib/visbox/linePartition';
-import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../gql-types';
-import GvtQUERY from './query.graphql';
+import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../../../types';
+import { GVNMT_QUERY} from './query.graphql';
 
-export type Props = MProps  & GvmtFinanceQueryVariables;
+type QueryVarTs = GvmtFinanceQueryVariables & MProps & {
+  loading: boolean;
+  error?: string;
+};
 
-const withData = graphql<GvmtFinanceQuery, MProps>(GvtQUERY, {
+type TChildProps = ChildProps<QueryVarTs, GvmtFinanceQuery>;
+
+const withData = graphql<GvmtFinanceQuery, GvmtFinanceQueryVariables, TChildProps>(GVNMT_QUERY, {
   options: props => ({
     variables: {
       id: props.id,
     },
   }),
-  props: ({ data }) => {
+  props: ({ data, error, loading}) => {
 
     if (data && data.error) errorHandler(data.error, 'error in government finance chart');
     const loading: boolean | undefined = data && data.loading;
@@ -54,4 +59,4 @@ const withData = graphql<GvmtFinanceQuery, MProps>(GvtQUERY, {
   },
 });
 
-export default withData((props: MProps) => <LightBg><Chart {...props} /></LightBg>);
+export default withData((props: TChildProps) => <LightBg><Chart {...props} /></LightBg>);

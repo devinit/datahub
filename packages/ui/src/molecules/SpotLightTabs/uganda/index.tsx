@@ -1,5 +1,5 @@
 import {CProps} from '../types';
-import {SpotLightTabDataQuery} from '../../../types';
+import {SpotLightTabDataQuery} from '../../../gql-types';
 import Health from './Health';
 import Education from './Education';
 import Overview from '../Overview';

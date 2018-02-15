@@ -9,7 +9,7 @@ import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { red} from '../../../theme/semantic';
-import {TabDataQuery} from '../../../types';
+import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   countryType: string;

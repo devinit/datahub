@@ -29,7 +29,7 @@ export interface Props  {
   // from share url, cached state
   year?: number;
   shouldScrollIntoView?: boolean;
-  data: any[]; // TODO: should be flowData with API integration
+  data: DH.IResourceData[]; // TODO: should be flowData with API integration
   config: any;
   cached?: State;
 }

@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {TabDataQuery} from '../../../types';
-import { graphql } from 'react-apollo';
+import { graphql, ChildProps } from 'react-apollo';
 import {
   GovernmentFinance,
   InternationalResources,
@@ -16,10 +15,11 @@ import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
 import { getCountry } from '../utils';
-import { shouldShowTabData, errorHandler } from '@devinit/dh-base/lib/utils';
+import { shouldShowTabData} from '@devinit/dh-base/lib/utils';
 import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
 import overviewConfig from '@devinit/dh-ui/lib/visbox/overviewTabCharts';
 import {getCountryProfileData} from '../PagesData';
+import { TabDataQuery,  TabDataQueryVariables } from '../../../types';
 import {TAB_QUERY} from './query.graphql';
 
 type TabsProps = TabDataQuery & {
@@ -27,12 +27,17 @@ type TabsProps = TabDataQuery & {
   variables: { id: string};
 };
 
-const countryProfileTabs = (props: TabsProps) => {
-  if (props.loading || !props.overviewTab) {
-    return <LoadingPlaceholder loading={props.loading} />;
+type TChildProps = ChildProps<TabDataQueryVariables, TabsProps>;
+
+const CountryProfileTabs: React.SFC<TChildProps> = ({data}) => {
+  if (data && data.loading || data && !data.overviewTab) {
+    return <LoadingPlaceholder loading={data.loading} />;
   }
-  const pagesData = getCountryProfileData(props.variables.id);
-  const country = getCountry(props.variables.id);
+  const variables = data && data.variables;
+  if (!variables) throw new Error ('country profile variable id missing');
+  const pagesData = getCountryProfileData(variables.id);
+  const country = getCountry(variables.id);
+  const props = data as TabDataQuery; // make typescript happy
   return (
     <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
@@ -75,19 +80,13 @@ const countryProfileTabs = (props: TabsProps) => {
     </Tabs>
   );
 };
-const withData = graphql(TAB_QUERY, {
+
+const withData = graphql<TabsProps, TabDataQueryVariables, TChildProps>(TAB_QUERY, {
   options: props => {
     return {
       variables: { id: props.id },
     };
-  },
-  props: ({ data }) => {
-    const { error } = data;
-    if (error) {
-      errorHandler(error, 'error in country profile tabs');
-    }
-    return data;
-  },
+  }
 });
 
-export default withData(countryProfileTabs);
+export default withData(CountryProfileTabs);

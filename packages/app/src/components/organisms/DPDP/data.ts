@@ -1,7 +1,7 @@
 /* eslint-disable */
 // this file is auto generated
 
-module.exports = {
+export default {
   bubbleChartOptions: {
     indicators: [
       { id: 'CH', name: 'Switzerland' },

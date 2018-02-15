@@ -2509,9 +2509,13 @@
               "description": "",
               "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "Int",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2557,9 +2561,13 @@
               "description": "for line chart in the  international resources tabs section,\nIndicatorDataColoredWithToolTip  is defined in spotlight types",
               "args": [],
               "type": {
-                "kind": "OBJECT",
-                "name": "FlowsOverTimeWithToolTip",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "FlowsOverTimeWithToolTip",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2569,9 +2577,13 @@
               "description": "for sidebar chart in international resources section & area partition tree chart default data",
               "args": [],
               "type": {
-                "kind": "OBJECT",
-                "name": "ResourceDataWithToolTip",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ResourceDataWithToolTip",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2581,9 +2593,13 @@
               "description": "Whats the mix of resources can be for donors (out flows) or receipient (in flows)\nthis is for the donut chart",
               "args": [],
               "type": {
-                "kind": "OBJECT",
-                "name": "ResourceDataWithToolTip",
-                "ofType": null
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ResourceDataWithToolTip",
+                  "ofType": null
+                }
               },
               "isDeprecated": false,
               "deprecationReason": null

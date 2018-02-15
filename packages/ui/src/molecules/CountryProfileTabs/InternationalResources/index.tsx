@@ -8,7 +8,7 @@ import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import Legend from '../../../atoms/Legend';
-import {TabDataQuery} from '../../../types';
+import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;
@@ -22,7 +22,7 @@ const International = (props: Props) => {
   const resourceInflow = getPageLine('resource-inflow');
   const mixtureOfResources = getPageLine('mixture-of-resources');
   const internationalResources = props.internationalResources;
-  if (!internationalResources) throw new Error('International resources tabd data missing');
+  if (!internationalResources) throw new Error('International resources tab data missing');
   let shareOfGNITitle = shareGniAllocatedToCtry.title;
   let shareOfGNITitleToolTip = { source: '', heading: ''};
   let shareOfGNIValue = NoData;

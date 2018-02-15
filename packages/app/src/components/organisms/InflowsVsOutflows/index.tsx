@@ -1,49 +1,52 @@
 import * as React from 'react';
-import { graphql } from 'react-apollo';
-import { Props } from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';
+import { graphql, ChildProps } from 'react-apollo';
+import { Props as SProps} from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';
 import SlidingDualSidebar from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';
-import {getCountryName, errorHandler} from '@devinit/dh-base/lib/utils';
+import {getCountryName} from '../utils';
+import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../../types';
 import config from '@devinit/dh-ui/lib/visbox/dualbarChart';
-import RESOURCES_QUERY from '../../InternationalResourcesChart/query.graphql';
+import {INTL_RESOURCES_QUERY} from '../InternationalResourcesChart/query.graphql';
 
-type WrapperProps = Props & {
-  loading: boolean
+type ChartProps = ResourcesOverTimeQuery & SProps;
+
+type QueryVarTs = ResourcesOverTimeQueryVariables & {
+  year?: number;
+  shouldScrollIntoView?: boolean;
+  loading?: boolean; // hack should be on returned data
+  error?: string; // hack should be on returned data
+  chartId: string;
 };
 
-const Chart = (props: WrapperProps) => {
-  if (props.loading) return <p>Loading...</p>;
-  return (
-    <SlidingDualSidebar
-      country={props.country}
-      countryType={props.countryType}
-      startYear={props.startYear}
-      year={props.year}
-      shouldScrollIntoView={props.shouldScrollIntoView}
-      chartId={props.chartId}
-      data={props.data}
-      config={config}
-    />
-  );
-};
+type TChildProps = ChildProps<QueryVarTs, ChartProps>;
 
-
-const withData = graphql(RESOURCES_QUERY, {
+const withData = graphql<ChartProps, ResourcesOverTimeQueryVariables, TChildProps>(INTL_RESOURCES_QUERY, {
   options: props => ({
     variables: {
       id: props.id,
     },
   }),
-  props: ({ data }) => {
-    const { error, loading } = data;
-    if (error) errorHandler(error, 'error in inflow outflow chart');
-    return loading || !data.internationalResources
-      ? { loading }
-      : {
-        country: getCountryName(data.variables.id),
-        startYear: data.internationalResources.startYear,
-        data: data.internationalResources.resourcesOverTime.data
-      };
-  },
 });
+
+const Chart  = ({data, loading, error, year, shouldScrollIntoView, chartId, id}: TChildProps) => {
+  if (loading) return <p>Loading...</p>;
+  if (error || !data || !data.internationalResources) return <p>Error in internationalResources..., {error}</p>;
+  // TODO:  To report typescript schema generation bug or error
+  const resourcesOverTime = data.internationalResources && data.internationalResources.resourcesOverTime
+    && data.internationalResources.resourcesOverTime.data as DH.IResourceData[];
+  if (!resourcesOverTime) return <p>Missing resourcesOverTime</p>;
+  const countryName = getCountryName(id);
+  return (
+    <SlidingDualSidebar
+      country={countryName}
+      countryType={data.countryType}
+      startYear={data.internationalResources.startYear}
+      year={year}
+      shouldScrollIntoView={shouldScrollIntoView}
+      chartId={chartId}
+      data={resourcesOverTime}
+      config={config}
+    />
+  );
+};
 
 export default withData(Chart);

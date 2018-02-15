@@ -19,11 +19,6 @@ const Container = glamorous.div({
   position: 'relative',
 });
 
-export const NoDataAvailableContainer = glamorous.div({
-  padding: '2em',
-  fontSize: '1.4em',
-});
-
 const withData = graphql(QUERY, {
   options: props => {
     return {

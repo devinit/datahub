@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import SearchInput from '@devinit/dh-ui/lib/molecules/SearchInput';
 import data from './data';
@@ -13,8 +12,8 @@ interface Props  {
 }
 
 const countryData = (country: string) => {
-  const data = country === 'uganda' ? ugandaData : kenyaData;
-  return data.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}));
+  const _data = country === 'uganda' ? ugandaData : kenyaData;
+  return _data.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}));
 };
 
 const SearchwithData = (props: Props) =>

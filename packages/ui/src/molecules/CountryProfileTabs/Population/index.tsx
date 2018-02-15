@@ -6,7 +6,7 @@ import Chart from '../../../atoms/Chart';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
-import {TabDataQuery} from '../../../types';
+import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;

@@ -53,3 +53,8 @@ export const ProfileHeader: GlamorousComponentT = glamorous.div({
 });
 // TODO use media queries
 export const MapPlaceholder: GlamorousComponentT = glamorous(GreyContainer)({ height: '600px' });
+
+export const NoDataAvailableContainer: GlamorousComponentT = glamorous.div({
+  padding: '2em',
+  fontSize: '1.4em',
+});

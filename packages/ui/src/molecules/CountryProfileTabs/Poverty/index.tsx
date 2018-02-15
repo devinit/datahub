@@ -6,7 +6,7 @@ import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsT
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
-import {TabDataQuery} from '../../../types';
+import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;
@@ -18,7 +18,7 @@ const Poverty = (props: Props) => {
   const povertyReductionCtry = getPageLine('poverty-reduction-ctry');
   const povertyDepthCtry = getPageLine('poverty-depth-ctry');
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
-  if (!props.povertyTab) return new Error('No Poverty data');
+  if (!props.povertyTab) throw new Error('No Poverty data');
   const povertyTab = props.povertyTab;
   // make typescript f**n happy
   const incomeDistData = povertyTab.incomeDistTrend && povertyTab.incomeDistTrend.data;

@@ -1,5 +1,5 @@
 import {CProps} from './types';
-import {SpotLightTabDataQuery} from '../../types';
+import {SpotLightTabDataQuery} from '../../gql-types';
 import kenya from './kenya';
 import uganda from './uganda';
 

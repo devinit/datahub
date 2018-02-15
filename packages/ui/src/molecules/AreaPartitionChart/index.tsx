@@ -1,4 +1,4 @@
-/* tslint-disable no-nested-ternary */
+/* tslint:disable no-nested-ternary */
 import * as React from 'react';
 import { approximate } from '@devinit/dh-base/lib/utils';
 import { groupBy } from 'ramda';
@@ -6,6 +6,7 @@ import { SectionHeader } from '../../atoms/Header';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
 import { red } from '../../theme/semantic';
+import { NoDataAvailableContainer } from '../../atoms/Container';
 import { LightBg } from '../../atoms/Backgrounds';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
@@ -56,7 +57,6 @@ export interface Props {
   inflows: any[];
   outflows: any[];
   unbundlingInternationalResources: React.ComponentClass<UProps>;
-  noDataAvailableContainer: React.ComponentClass<any>;
   cached?: State;
 }
 
@@ -164,7 +164,6 @@ class AreaPartitionChart extends React.Component<Props, State> {
   }
 
   public render() {
-    const NoDataAvailableContainer = this.props.noDataAvailableContainer;
     const UnbundlingInternationalResources = this.props.unbundlingInternationalResources;
     return (
       <LightBg>

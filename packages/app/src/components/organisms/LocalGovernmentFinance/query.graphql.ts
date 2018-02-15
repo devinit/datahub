@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export default gql`
+export const RESOURCES_QUERY = gql`
 query GovernmentFinance($id: String!, $country: String!) {
   localGovernmentFinance(id: $id, country: $country) {
     startYear,

@@ -1,14 +1,15 @@
-// @flow
 import * as React from 'react';
 import { graphql } from 'react-apollo';
-import config from '@devinit/dh-ui/lib/visboxConfigs/areaTreemapChart';
+import config from '@devinit/dh-ui/lib/visbox/areaTreemapChart';
 import InternationalResourcesChart from '@devinit/dh-ui/lib/molecules/AreaPartitionChart';
-import { Props } from '@devinit/dh-ui/lib/molecules/AreaPartitionChart';
+import UnbundlingInternationalResources from '../UnbundlingInternationalResources';
+// import { Props } from '@devinit/dh-ui/lib/molecules/AreaPartitionChart';
 import LoadingBar from '@devinit/dh-ui/lib/molecules/LoadingBar';
-import { getCountryName, errorHandler } from '@devinit/dh-base/lib/utils';
+import { errorHandler } from '@devinit/dh-base/lib/utils';
+import { getCountryName} from '../utils';
 import flowCache from './data';
 import countryCache from '../CountrySearchInput/data';
-import QUERY from './query.graphql';
+import {INTL_RESOURCES_QUERY} from './query.graphql';
 
 interface WrapperProps {
   Props;
@@ -33,11 +34,13 @@ const internationalResourcesChartWrapper = (props: WrapperProps) => {
       country={props.country}
       inflows={props.inflows}
       outflows={props.outflows}
+      unbundlingInternationalResources={UnbundlingInternationalResources}
+      }
     />
   );
 };
 
-const withData = graphql(QUERY, {
+const withData = graphql(INTL_RESOURCES_QUERY, {
   options: props => ({
     variables: {
       id: props.id,
