@@ -7,7 +7,7 @@ import {capitalize} from '@devinit/dh-base/lib/utils';
 
 export const getCountry = (slug: string): Country => {
     const country = countriesData.countries.find(obj => obj.slug === slug);
-    if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A', has_domestic_data: ''};
+    if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A', has_domestic_data: '', hasPDF: false};
     return country;
 };
 

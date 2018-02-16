@@ -1,10 +1,9 @@
-// @flow
-
-import { ChangeActiveIndicator, ChangeLoadingStatus } from 'components/molecules/NavigationBarTabs';
+import {ChangeActiveIndicator, ChangeLoadingStatus} from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
+import { LoadingStatus} from '../../../redux/actions';
 
 export interface BoundAction<T>  {
   changeActiveIndicator: ChangeActiveIndicator<T>;
-  changeLoadingStatus: ChangeLoadingStatus;
+  changeLoadingStatus: ChangeLoadingStatus<LoadingStatus>;
 }
 
 export interface BoundState  {

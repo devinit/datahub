@@ -1,58 +1,48 @@
-// @flow
 import * as React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql, ChildProps } from 'react-apollo';
 import glamorous from 'glamorous';
 import { groupBy } from 'ramda';
 import { Dimmer, Loader, Segment } from 'semantic-ui-react';
 import TreeChart from '@devinit/dh-ui/lib/atoms/TreeChart';
+import {NoDataAvailableContainer} from '@devinit/dh-ui/lib/atoms/Container';
+import {UnbundlingIntlResourcesQuery, UnbundlingIntlResourcesQueryVariables} from '../../../types';
 import QUERY from './query.graphql';
 
-export interface Props  {
-  loading: boolean;
-  color: string;
+type QueryVarTs = UnbundlingIntlResourcesQueryVariables & {
   year: number;
-  config: object;
-  bundles: any[];
-}
+  config: any;
+};
+
+type TChildProps = ChildProps<QueryVarTs, UnbundlingIntlResourcesQuery>;
 
 const Container = glamorous.div({
   position: 'relative',
 });
 
-const withData = graphql(QUERY, {
+const withData = graphql<UnbundlingIntlResourcesQuery, UnbundlingIntlResourcesQueryVariables, TChildProps>(QUERY, {
   options: props => {
     return {
       variables: {
-        groupById: props.groupBy,
-        countryId: props.country,
-        resourceId: props.flow,
+        groupById: props.groupById,
+        countryId: props.countryId,
+        resourceId: props.resourceId,
       },
     };
   },
-  skip: props => !props.shouldFetch,
-  props: ({ data }) => {
-    const { error, loading } = data;
-
-    if (error) {
-      console.error(error);
-    }
-
-    const { color = '#abc', resources = [] } = data.singleResource || {};
-
-    return loading
-      ? { loading }
-      : {
-        color,
-        bundles: groupBy(d => d.year, resources),
-      };
-  },
+  skip: props => !props.shouldFetch
 });
 
-const UnbundlingTreemap = (props: Props) => {
+const UnbundlingTreemap: React.SFC<TChildProps> = ({data, year, config}) => {
+  if (!data) return <p>Missing data key</p>;
+  if (data && data.error) return <p>Error:  ${data.error}</p>;
+  const loading = data.loading;
+  // TODO: single resouces is not nullable by api types, but apollo codegen doesnt seem to get that
+  const {color = '#888', resources = []} = data.singleResource || {};
+  const bundles = resources ? groupBy((d) => d.year.toString(), (resources as DH.IIndicatorData[])) : [];
   return (
     <div>
       <Container>
-        {props.loading || !((props.bundles || {})[props.year] || []).length
+        {loading || !((bundles || {})[year] || []).length
           ? <Segment
             basic
             style={{
@@ -65,10 +55,10 @@ const UnbundlingTreemap = (props: Props) => {
             }}
           >
             <Dimmer
-              style={{ backgroundColor: props.color || '#888', zIndex: 1, height: '100%' }}
+              style={{ backgroundColor: color || '#888', zIndex: 1, height: '100%' }}
               active
             >
-              {props.loading
+              {loading
                 ? <Loader />
                 : <NoDataAvailableContainer>
                       Detailed data is not available for this year
@@ -77,17 +67,16 @@ const UnbundlingTreemap = (props: Props) => {
           </Segment>
           : <TreeChart
             config={{
-              ...props.config,
-              colors: [props.color],
+              ...config,
+              colors: [color],
               coloring: null,
               tree: {
-                ...props.config.tree,
+                ...config.tree,
                 id: 'name',
               },
             }}
-            data={props.bundles[props.year] || []}
+            data={bundles[year] || []}
             height="360px"
-            onClick={() => {}}
           />}
       </Container>
     </div>

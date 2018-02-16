@@ -1,7 +1,7 @@
-/* tslint-disable */
+/* tslint:disable */
 // this file is auto generated
 
-module.exports = {
+export default {
   selections: {
     to: [
       { id: 'AF', name: 'Afghanistan' },

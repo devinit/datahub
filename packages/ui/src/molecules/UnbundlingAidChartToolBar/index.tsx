@@ -21,7 +21,7 @@ const ToolBarContainer: GlamorousComponent<any, any> = glamorous.div<{compact?: 
 export interface Props  {
   aidType: string;
   compact?: boolean; // is in compare mode
-  toolBarOptions: object;
+  toolBarOptions: any;
   position?: number;
   rightPosition?: number;
   values?: KeyValue[];

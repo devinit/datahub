@@ -1,21 +1,45 @@
-// @flow
 import * as React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import {Div} from 'glamorous';
-import { graphql } from 'react-apollo';
-import {errorHandler} from '@devinit/dh-base/lib/utils';
+import { graphql, ChildProps } from 'react-apollo';
 import TotalODA from '@devinit/dh-ui/lib/molecules/UnbundlingAidTotalODA';
 import UnbundlingTreemap from '@devinit/dh-ui/lib/molecules/UnbundlingTreemap';
 import UnbundlingAidTour from '@devinit/dh-ui/lib/atoms/UnbundlingAidTour';
 import TourContainer from '@devinit/dh-ui/lib/molecules/TourContainer';
+import {UnbundlingAidDataQuery} from '../../../types';
 import QUERY from './query.graphql';
 import dataODA from './data-oda';
 import dataOOF from './data-oof';
+/* tslint:disable no-nested-ternary */
 
-interface Props  {
-  aidType: string;
-  tourVisible: boolean;
+interface State {
+  compare: boolean;
+  showTreemap: boolean;
+  showTour: boolean;
 }
+interface InitialQuery {
+  aidType: string;
+  startYear: number;
+  compact?: boolean;
+}
+
+type Props = InitialQuery & {
+  tourVisible: boolean;
+};
+
+type TChildProps = ChildProps<InitialQuery, UnbundlingAidDataQuery>;
+
+const withData = graphql<UnbundlingAidDataQuery, InitialQuery>(QUERY, {
+  options: props => ({
+    variables: {
+      args: {
+        aidType: props.aidType,
+        year: props.startYear,
+        groupBy: 'to_di_id',
+      },
+    },
+  })
+});
 
 const toDropDownOptions = list => [
   { name: 'All', value: '', key: 'all', active: true },
@@ -45,29 +69,16 @@ const unbundlingSelections = (aidType, startYear) => {
   };
 };
 
-const withData = graphql(QUERY, {
-  options: props => ({
-    variables: {
-      args: {
-        aidType: props.aidType,
-        year: props.startYear,
-        groupBy: 'to_di_id',
-      },
-    },
-  }),
-
-  props: ({ ownProps, data}: { ownProps: Object, data: Object}) => {
-    const { error, loading } = data;
-    const selections = unbundlingSelections(ownProps.aidType, ownProps.startYear);
-    if (error) {
-      // console.error('error: ', error, 'ownProps: ', ownProps);
-      return {loading: true, error, selections};
-    }
-    // console.log('got data for ', data.variables);
+const WithData = withData(({data, aidType, startYear, compact}: TChildProps) => {
+    const selections = unbundlingSelections(aidType, startYear);
+    if (!data) return <p>data key is missing</p>;
     const safeBundles = data.bundles && data.bundles.length ? data.bundles : [];
-    const bundleSum = safeBundles.reduce((sum, datum) => sum + datum.value, 0);
-    return {
-      loading,
+    const bundleSum = safeBundles.reduce((sum, datum) => sum + (datum && datum.value || 0), 0);
+    const props = {
+      startYear,
+      aidType,
+      compact,
+      loading: data.loading === undefined ? true : data.loading,
 
       selections,
 
@@ -77,61 +88,46 @@ const withData = graphql(QUERY, {
 
       refetch: data.refetch,
     };
-  },
+    if (data.error) return <UnbundlingTreemap {...props} />;
+    return <UnbundlingTreemap {...props} />;
 });
 
-// eslint-disable-next-line flowtype-errors/show-errors
-const WithData = withData(UnbundlingTreemap);
-
-class Chart extends React.Component {
-  // eslint-disable-next-line react/sort-comp
-  state: {
-    compare: boolean,
-    showTreemap: boolean,
-    showTour: boolean
-  };
-
+class Chart extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-
     this.state = {
       compare: false,
       showTreemap: props.tourVisible,
       showTour: props.tourVisible,
     };
   }
-  componentWillReceiveProps(props: Props) {
+  public componentWillReceiveProps(props: Props) {
     this.setState({
       showTreemap: this.state.showTreemap || props.tourVisible,
       showTour: props.tourVisible,
     });
   }
-  showTreemapHandler() {
+  public showTreemapHandler() {
     this.setState({showTreemap: true});
   }
-  toggleCompare() {
+  public toggleCompare() {
     this.setState({ compare: !this.state.compare });
   }
-  closeTour() {
+  public closeTour() {
     this.setState({
       showTour: false,
     });
   }
 
-  render() {
-    /* eslint-disable no-nested-ternary */
+  public render() {
     const startYear = this.props.aidType === 'oda' ? dataODA.yearTotal.year : dataOOF.yearTotal.year;
     this.props = {...this.props, startYear};
-<<<<<<< HEAD:packages/app/src/components/organisms/UnbundlingAid/index.js
-    console.log('start year', startYear);
-=======
->>>>>>> 1547153d69dc0a7b306dcce189b8bd8b0e0b8f76:private/components/organisms/UnbundlingAid/index.js
     return (
       <Div position="relative">
         {
           !this.state.showTreemap ?
             <TotalODA
-              onClickHandler={() => this.showTreemapHandler()}
+              onClickHandler={this.showTreemapHandler}
               yearTotal={this.props.aidType === 'oda' ? dataODA.yearTotal : dataOOF.yearTotal}
               aidType={this.props.aidType}
             /> :
@@ -150,7 +146,7 @@ class Chart extends React.Component {
         }
         <Button
           style={{ position: 'absolute', right: '1em', top: '1.2em'}}
-          onClick={() => this.toggleCompare()}
+          onClick={this.toggleCompare}
         >
           {this.state.compare
             ? <span>
@@ -162,7 +158,7 @@ class Chart extends React.Component {
         </Button>
         <TourContainer
           visible={this.state.showTour}
-          closeHandler={() => this.closeTour()}
+          closeHandler={this.closeTour}
         >
           <UnbundlingAidTour aidType={this.props.aidType === 'oda' ? 'ODA' : 'OOFs'} />
         </TourContainer>

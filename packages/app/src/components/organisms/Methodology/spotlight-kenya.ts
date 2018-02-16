@@ -1,7 +1,7 @@
 /* tslint-disable */
 // this file is auto generated
 
-module.exports = {
+export default {
   methodology: [
     {
       name: 'Agriculture allocation as a % of total expenditure',

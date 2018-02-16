@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import withApolloProvider from '@devinit/dh-base/lib/storybook-addon/apollo';
-import config from '@devinit/dh-ui/lib/visboxConfigs/unbundlingTreemapChart';
+import config from '@devinit/dh-ui/lib/visbox/unbundlingTreemapChart';
 import Chart from '.';
 
 // Let's see

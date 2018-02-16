@@ -5,7 +5,7 @@ import { Header, Button } from 'semantic-ui-react';
 
 export interface Props  {
   onClickHandler: () => void;
-  yearTotal: { year: number, total: number};
+  yearTotal: { year: number, total: number | string};
   aidType: string;
 }
 const ParentContainer = glamorous.div({

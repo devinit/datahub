@@ -3,15 +3,14 @@ import glamorous, { Div } from 'glamorous';
 import { Container, SemanticTEXTALIGNMENTS } from 'semantic-ui-react';
 import MapVisualizationTour from '../MapTour';
 import TourContainer from '../TourContainer';
-import {Dispatch} from 'react-redux';
 import {NavBarItem} from '@devinit/dh-base/lib/types';
 import LoadingBar from '../LoadingBar';
 import { lightBlack, white, lighterGrey } from '../../theme/semantic';
 import NavigationBarTabsContainer from '../NavigationBarTabsItems';
 import {Option} from '../NavigationBarTabsItems';
 
-export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => Dispatch<T>;
-export type ChangeLoadingStatus<L> = (loading: boolean) => Dispatch<L>;
+export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => T;
+export type ChangeLoadingStatus<L> = (loading: boolean) => L;
 
 export interface Props<T, L>  {
   navBarItems: NavBarItem[]; // defined in global types

@@ -1,74 +1,61 @@
-// @flow
 import * as React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql, ChildProps } from 'react-apollo';
 import TabsComponents from '@devinit/dh-ui/lib/molecules/SpotLightTabs';
 import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
-import {errorHandler} from '@devinit/dh-base/lib/utils';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
-import LoadingPlaceholder from 'components/molecules/LoadingPlaceholder';
-import {getDistrictProfileData} from 'components/organisms/PagesData';
-import populationConfig from 'visboxConfigs/spotlightPopulationTabCharts';
-import overviewConfig from 'visboxConfigs/spotlightOverviewTabCharts';
+import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
+import {getDistrictProfileData} from '../PagesData';
+import populationConfig from '@devinit/dh-ui/lib/visbox/spotlightPopulationTabCharts';
+import overviewConfig from '@devinit/dh-ui/lib/visbox/spotlightOverviewTabCharts';
+import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../../types';
 import TABS_QUERY from './query.graphql';
 
-interface WrapperProps  {
-  loading: boolean;
+type QueryVarTs = SpotLightTabDataQueryVariables & {
   currency: string;
-  variables: { id: string, country: string};
-  ...SpotLightTabDataQuery;
-}
+};
 
-const spotlightTabs = (props: WrapperProps) => {
-  if (
-    props.loading ||
-    !props.overviewTabRegional ||
-    !props.populationTabRegional ||
-    !props.educationTabRegional ||
-    !props.healthTabRegional
-  ) {
-    return <LoadingPlaceholder loading={props.loading} />;
+type TChildProps = ChildProps<QueryVarTs, SpotLightTabDataQuery>;
+
+const spotlightTabs: React.SFC<TChildProps> = ({currency, data, id, country}) => {
+  if (!data) return <p>Missing data key</p>;
+  if (data && data.loading) {
+    return <LoadingPlaceholder loading={data.loading} />;
   }
-  const pageData = getDistrictProfileData(props.variables.id, props.variables.country);
-  const {Overview, Poverty, Population, Education, Health} =
-    TabsComponents[props.variables.country];
+  const pageData = getDistrictProfileData(id, country);
+  const {Overview, Poverty, Population, Education, Health} = TabsComponents[country];
   return (
-    <Tabs selected={0} height="20em">
+    <Tabs selected={0}>
       <Pane label="Overview" id="spotlight-overview">
         <Overview
-          {...props}
+          {...data}
           pageData={pageData}
-          currency={props.currency}
+          currency={currency}
           config={overviewConfig}
         />
       </Pane>
       <Pane label="Poverty" id="spotlight-poverty">
-        <Poverty {...props} pageData={pageData} />
+        <Poverty {...data} pageData={pageData} />
       </Pane>
       <Pane label="Population" id="spotlight-population">
-        <Population {...props} pageData={pageData} config={populationConfig} />
+        <Population {...data} pageData={pageData} config={populationConfig} />
       </Pane>
       <Pane label="Education" id="spotlight-education">
-        <Education {...props} pageData={pageData} currency={props.currency} />
+        <Education {...data} pageData={pageData} currency={currency} />
       </Pane>
       <Pane label="Health" id="spotlight-health">
-        <Health {...props} pageData={pageData} currency={props.currency} />
+        <Health {...data} pageData={pageData} currency={currency} />
       </Pane>
     </Tabs>
   );
 };
 
-const withData = graphql(TABS_QUERY, {
-  options: props => ({
-    variables: {
-      id: props.id,
+const withData = graphql<SpotLightTabDataQuery, QueryVarTs, TChildProps>(TABS_QUERY, {
+  options: props => {
+    return {
+      variables: { id: props.id },
       country: props.country,
-    },
-  }),
-  props: ({ data }) => {
-    const { error } = data;
-    if (error) errorHandler(error, 'error in spotlight tabs');
-    return data;
-  },
+    };
+  }
 });
 
 export default withData(spotlightTabs);

@@ -1,28 +1,36 @@
-// @flow
 import * as React from 'react';
 import Map from '@devinit/dh-ui/lib/molecules/Map';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { State, AppState, Action } from '@devinit/dh-base/lib/reducers';
+import { State as Store, AppState, Action } from '../../../redux/reducers';
 import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import {getData} from '@devinit/dh-base/lib/utils';
 import { bindActionCreators } from 'redux';
-import { changeLoadingStatus } from '@devinit/dh-base/lib/actions';
-import { LoadingStatus } from '@devinit/dh-base/lib/actions';
+import { changeLoadingStatus, LoadingStatus } from '../../../redux/actions';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
-import MAPSQUERY from './Maps.graphql';
+import {MapDataQuery} from '../../../types';
+import {MAP_QUERY} from './query.graphql';
 
-interface BoundAction  {
-  changeLoadingStatus: (loading: boolean) => Dispatch<LoadingStatus>;
+export interface BoundAction  {
+  changeLoadingStatus: (loading: boolean) => LoadingStatus;
 }
 
-interface Props   {
-  BoundAction;
+const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => ({
+    changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
+  });
+
+type Props = BoundAction & {
   app: AppState;
   id: string;
   state: StateToShare;
   country: string;
+};
+
+interface State {
+  loading: boolean;
 }
-class MapOrganism extends React.Component {
+
+class MapOrganism extends React.Component <Props, State> {
   public static getIndicatorId(props: Props): string {
     if (props.id) return props.id;
     if (props.state && props.state.indicator) return props.state.indicator;
@@ -33,17 +41,13 @@ class MapOrganism extends React.Component {
   public static getIndicatorData(props: Props): Promise<MapDataQuery> {
     const id = MapOrganism.getIndicatorId(props);
     const variables = { id };
-    return getData(MAPSQUERY, variables);
+    return getData<MapDataQuery>({query: MAP_QUERY, variables});
   }
-  public state: {
-    loading: boolean
-  };
-  public data: MapDataQuery
+  public data!: MapDataQuery;
   constructor(props: Props) {
     super(props);
     this.state = {loading: true };
   }
-  /* eslint react/no-did-mount-set-state: 0 */
   public componentDidMount() {
     this.initData(this.props);
   }
@@ -66,22 +70,19 @@ class MapOrganism extends React.Component {
       .catch(console.error);
   }
   public render() {
+    const mapData = this.data && this.data.mapData  as DH.IMapData;
     return (
       <div>
         {!this.state.loading && this.data && this.data.mapData ?
-          <Map state={this.props.state} mapData={this.data.mapData} /> :
+          <Map state={this.props.state} {...mapData} /> :
           <MapBackground />
         }
       </div>
     );
   }
 }
-const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => {
-  return {
-    changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
-  };
-};
-const mapStateToProps = ({ app }: State) => ({ app });
+
+const mapStateToProps = ({ app }: Store) => ({ app });
 
 const MapWithRedux = connect(mapStateToProps, mapDispatchToProps)(MapOrganism);
 

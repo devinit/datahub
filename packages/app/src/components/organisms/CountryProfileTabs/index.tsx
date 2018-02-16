@@ -22,18 +22,13 @@ import {getCountryProfileData} from '../PagesData';
 import { TabDataQuery,  TabDataQueryVariables } from '../../../types';
 import {TAB_QUERY} from './query.graphql';
 
-type TabsProps = TabDataQuery & {
-  loading: boolean;
-  variables: { id: string};
-};
-
-type TChildProps = ChildProps<TabDataQueryVariables, TabsProps>;
+type TChildProps = ChildProps<TabDataQueryVariables, TabDataQuery>;
 
 const CountryProfileTabs: React.SFC<TChildProps> = ({data}) => {
-  if (data && data.loading || data && !data.overviewTab) {
-    return <LoadingPlaceholder loading={data.loading} />;
+  if (!data || data.loading) {
+    return <LoadingPlaceholder loading />;
   }
-  const variables = data && data.variables;
+  const variables = data.variables;
   if (!variables) throw new Error ('country profile variable id missing');
   const pagesData = getCountryProfileData(variables.id);
   const country = getCountry(variables.id);
@@ -81,7 +76,7 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({data}) => {
   );
 };
 
-const withData = graphql<TabsProps, TabDataQueryVariables, TChildProps>(TAB_QUERY, {
+const withData = graphql<TabDataQuery, TabDataQueryVariables, TChildProps>(TAB_QUERY, {
   options: props => {
     return {
       variables: { id: props.id },

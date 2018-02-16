@@ -10,13 +10,13 @@ import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
 
 export interface Props  {
   loading: boolean;
-  error?: any;
-  compact: boolean;
+  error?: string;
+  compact?: boolean;
   startYear: number;
   aidType: string;
-  config: object;
-  selections: object;
-  bundles: object[];
+  config?: any;
+  selections: any;
+  bundles: any[];
   bundleSum: number;
   refetch: (variables: object) => any;
 }
@@ -196,7 +196,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
                   </Dimmer>
                 </Segment>
                 : <TreeChart
-                  config={this.props.config}
+                  config={this.props.config || {}}
                   data={this.props.bundles}
                   height="36em"
                   onClick={this.onZoomIn}

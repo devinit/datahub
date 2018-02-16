@@ -348,6 +348,46 @@ export interface GovernmentFinanceQuery {
   } | null,
 };
 
+export interface MapDataQueryVariables {
+  id: string,
+};
+
+export interface MapDataQuery {
+  mapData:  {
+    map:  Array< {
+      // country code Id in DW this is di_id
+      id: string,
+      // countryName derived from entity.csv
+      name: string,
+      color: string | null,
+      year: number,
+      uid: string,
+      detail: string | null,
+      value: number | null,
+      // country slug
+      slug: string,
+    } | null >,
+    start_year: number,
+    end_year: number,
+    country: string,
+    // map value unit eg US $ or %
+    uom_display: string,
+    // map indicator user friendly label / slug eg Poverty
+    name: string,
+    theme: string,
+    heading: string,
+    default_year: number,
+    description: string | null,
+    map_style: string | null,
+    id: string,
+    legend:  Array< {
+      label: string,
+      color: string,
+      backgroundColor: string,
+    } | null >,
+  } | null,
+};
+
 export interface SpotLightTabDataQueryVariables {
   id: string,
   country: string,
@@ -652,13 +692,13 @@ export interface UnbundlingAidDataQuery {
   } | null > | null,
 };
 
-export interface UnbundlingInternationalResourcesQueryVariables {
+export interface UnbundlingIntlResourcesQueryVariables {
   resourceId: string,
   countryId: string,
   groupById: string,
 };
 
-export interface UnbundlingInternationalResourcesQuery {
+export interface UnbundlingIntlResourcesQuery {
   // for area tree map chart dropdown selectoion
   singleResource:  {
     color: string,

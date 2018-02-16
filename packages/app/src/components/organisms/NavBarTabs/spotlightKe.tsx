@@ -1,11 +1,10 @@
-// @flow
 import * as React from 'react';
-import { changeSpotlightIndicatorKe, changeLoadingStatus} from '@devinit/dh-base/lib/actions';
-import { bindActionCreators } from 'redux';
+import { changeSpotlightIndicatorKe, changeLoadingStatus,
+  SpotLightlIndicatorKe,  LoadingStatus} from '../../../redux/actions';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { SpotLightlIndicatorKe} from '@devinit/dh-base/lib/actions';
-import { State, Action } from '@devinit/dh-base/lib/reducers';
 import { Props } from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
+import { State, Action } from '../../../redux/reducers';
 import NavigationBarTabs from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import {BoundAction, BoundState} from './types';
@@ -17,16 +16,13 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<SpotLightlI
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 
+type SpotlightKeProps = Props<SpotLightlIndicatorKe,  LoadingStatus> & {state?: StateToShare}
+  & BoundAction<SpotLightlIndicatorKe>;
+
 const mapStateToProps = ({ app }: State): BoundState =>
   ({ activeIndicator: app.indicatorKenya, loading: app.loading });
 
-interface SpotlightProps<T>
-  Props<T> & {
-      state?: StateToShare;
-      ...BoundState;
-  }
-
-const spotlightNavBarTabs = (props: SpotlightProps<SpotLightlIndicatorKe>) => {
+const spotlightNavBarTabs: React.SFC<SpotlightKeProps> = (props) => {
   return (<NavigationBarTabs
     navBarItems={data.spotlightThemes}
     showUsingThisViz

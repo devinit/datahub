@@ -1,7 +1,7 @@
-/* eslint-disable */
+/* tslint:disable */
 // this file is auto generated
 
-module.exports = {
+export default {
   spotlightThemes: [
     {
       id: 'poverty_and_vulnerability',
