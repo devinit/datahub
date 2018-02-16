@@ -1,5 +1,5 @@
 import * as React from 'react';
-import withApolloProvider from '@devinit/dh-base/lib/storybook-addon/apollo';
+import withApolloProvider from '../../../storybook-addon/apollo';
 import { storiesOf } from '@storybook/react';
 import Profiles from '.';
 

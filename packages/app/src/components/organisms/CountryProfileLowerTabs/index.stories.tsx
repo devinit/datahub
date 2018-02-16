@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import withApolloProvider from '@devinit/dh-base/lib/storybook-addon/apollo';
+import withApolloProvider from '../../../storybook-addon/apollo';
 import CountryProfileLowerTabs from '.';
 
 storiesOf('Tabs & Charts', module)
