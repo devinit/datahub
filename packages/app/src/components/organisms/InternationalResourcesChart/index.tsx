@@ -18,7 +18,7 @@ type QueryVarTs = ResourcesOverTimeQueryVariables & {
 
 type TChildProps = ChildProps<QueryVarTs, ResourcesOverTimeQuery>;
 
-const withData = graphql<ResourcesOverTimeQuery, ResourcesOverTimeQueryVariables, TChildProps>(INTL_RESOURCES_QUERY, {
+const withData = graphql<ResourcesOverTimeQuery, QueryVarTs, TChildProps>(INTL_RESOURCES_QUERY, {
   options: props => ({
     variables: {
       id: props.id,

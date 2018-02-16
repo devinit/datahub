@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
-import SpotLightNavTabsKe from '../../organisms/NavBarTabs/spotlightKe';
-import SpotLightNavTabsUg from '../../organisms/NavBarTabs/spotlightUg';
+import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/spotlightKe';
+import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
 import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import dynamic from 'next/dynamic';
 import About from '@devinit/dh-ui/lib/molecules/About';
@@ -23,7 +23,6 @@ interface Props  {
 }
 
 export default class Spotlight extends React.Component<Props> {
-  public countryName: string;
   constructor(props: Props) {
     super(props);
   }
@@ -33,6 +32,8 @@ export default class Spotlight extends React.Component<Props> {
   public render() {
     const countryName = capitalize(this.props.id);
     const region = this.props.id === 'uganda' ? 'district' : 'country';
+    // this casting is hack, typecript couldnt infar correct types
+    const navState = {state: this.props.state} as SpotlightKeProps | SpotlightUgProps;
     return (
       <Generic pathname={this.props.pathname} >
         <Container>
@@ -53,9 +54,9 @@ export default class Spotlight extends React.Component<Props> {
           </Div>
         </Container>
         {this.props.id === 'uganda' ?
-          <SpotLightNavTabsUg state={this.props.state} />
+          <SpotLightNavTabsUg {...navState} />
           :
-          <SpotLightNavTabsKe state={this.props.state} />
+          <SpotLightNavTabsKe {...navState} />
         }
 
         {

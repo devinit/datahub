@@ -64,14 +64,13 @@ export default function CountryProfileLowerTabs(props: Props) {
               id={props.id}
               shouldScrollIntoView={props.chartId === INFLOWS_VS_OUTFLOWS}
               chartId={INFLOWS_VS_OUTFLOWS}
-              countryType={country.countryType}
-              year={props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : null}
+              year={props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : 2015} // FIXME: this is a hack
             />
           </ErrorBoundary>
           <ErrorBoundary>
             <InternationalResourcesChart
               shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES}
-              year={props.chartId === INTERNATIONAL_RESOURCES ? props.year : null}
+              year={props.chartId === INTERNATIONAL_RESOURCES ? (props.year as number) : 2015} // FIXME: this is a hack
               chartId={INTERNATIONAL_RESOURCES}
               id={props.id}
             />

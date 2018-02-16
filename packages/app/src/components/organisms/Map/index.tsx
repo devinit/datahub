@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Map from '@devinit/dh-ui/lib/molecules/Map';
-import { Dispatch } from 'redux';
+import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
-import { State as Store, AppState, Action } from '../../../redux/reducers';
+import { State as Store, AppState} from '../../../redux/reducers';
 import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import {getData} from '@devinit/dh-base/lib/utils';
 import { bindActionCreators } from 'redux';
@@ -15,7 +15,7 @@ export interface BoundAction  {
   changeLoadingStatus: (loading: boolean) => LoadingStatus;
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): BoundAction => ({
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 

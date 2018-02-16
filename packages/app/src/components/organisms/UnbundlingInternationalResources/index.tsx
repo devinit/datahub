@@ -5,21 +5,17 @@ import { groupBy } from 'ramda';
 import { Dimmer, Loader, Segment } from 'semantic-ui-react';
 import TreeChart from '@devinit/dh-ui/lib/atoms/TreeChart';
 import {NoDataAvailableContainer} from '@devinit/dh-ui/lib/atoms/Container';
-import {UnbundlingIntlResourcesQuery, UnbundlingIntlResourcesQueryVariables} from '../../../types';
+import {UProps} from '@devinit/dh-ui/lib/molecules/AreaPartitionChart';
+import {UnbundlingIntlResourcesQuery} from '../../../types';
 import QUERY from './query.graphql';
 
-type QueryVarTs = UnbundlingIntlResourcesQueryVariables & {
-  year: number;
-  config: any;
-};
-
-type TChildProps = ChildProps<QueryVarTs, UnbundlingIntlResourcesQuery>;
+type TChildProps = ChildProps<UProps, UnbundlingIntlResourcesQuery>;
 
 const Container = glamorous.div({
   position: 'relative',
 });
 
-const withData = graphql<UnbundlingIntlResourcesQuery, UnbundlingIntlResourcesQueryVariables, TChildProps>(QUERY, {
+const withData = graphql<UnbundlingIntlResourcesQuery, UProps, TChildProps>(QUERY, {
   options: props => {
     return {
       variables: {

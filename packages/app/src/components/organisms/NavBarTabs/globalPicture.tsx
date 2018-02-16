@@ -1,24 +1,28 @@
 import * as React from 'react';
 import { changeGlobalIndicator, changeLoadingStatus, GlobalIndicator, LoadingStatus} from '../../../redux/actions';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect } from 'react-redux';
+import { bindActionCreators} from 'redux';
+import { connect,  MapStateToProps,  MapDispatchToPropsFunction } from 'react-redux';
 import { Props } from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
-import { State, Action } from '../../../redux/reducers';
+import { State} from '../../../redux/reducers';
 import NavigationBarTabs from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import {BoundAction, BoundState} from './types';
 import data from './data';
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<GlobalIndicator> =>
+interface OwnProps {
+  state?: StateToShare;
+}
+
+const mapDispatchToProps: MapDispatchToPropsFunction<BoundAction<GlobalIndicator>, OwnProps> = (dispatch) =>
   ({
     changeActiveIndicator: bindActionCreators(changeGlobalIndicator, dispatch),
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 
-const mapStateToProps = ({ app }: State): BoundState =>
+const mapStateToProps: MapStateToProps<BoundState, OwnProps, State> = ({ app }) =>
   ({ activeIndicator: app.globalIndicator, loading: app.loading });
 
-type GlobalPictureProps = Props<GlobalIndicator,  LoadingStatus> & {state?: StateToShare}
+export type GlobalPictureProps = Props<GlobalIndicator,  LoadingStatus> & OwnProps
   & BoundAction<GlobalIndicator>;
 
 const gloalPictureNavBarTabs: React.SFC<GlobalPictureProps> = (props) =>

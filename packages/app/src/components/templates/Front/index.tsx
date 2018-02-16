@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
 import { Div } from 'glamorous';
-import GlobalPictureNavTabs from '../../organisms/NavBarTabs/globalPicture';
+import GlobalPictureNavTabs, {GlobalPictureProps} from '../../organisms/NavBarTabs/globalPicture';
 import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import CountrySearchInput from '../../organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
@@ -29,6 +29,8 @@ export default class Front extends React.Component<Props> {
     cacheMapData('/worker_gp.js');
   }
   public render() {
+    // this casting is a hack, typescript coundnt infar this
+    const navState = {state: this.props.state} as GlobalPictureProps;
     return (
       <Generic pathname="/">
         <GlobalPictureCountrySearch>
@@ -49,7 +51,7 @@ export default class Front extends React.Component<Props> {
           </Div>
         </Container>
         <div style={{ position: 'relative' }}>
-          <GlobalPictureNavTabs state={this.props.state} />
+          <GlobalPictureNavTabs {...navState} />
           {process.env.NODE_ENV !== 'test' ?
             <DynamicMapComponent country="global" state={this.props.state} /> : ''
           }

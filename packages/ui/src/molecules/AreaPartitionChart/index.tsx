@@ -39,9 +39,10 @@ export type State = DirectionState &  {
 
 export interface UProps {
   shouldFetch?: boolean;
-  country: string;
   year: number;
-  groupBy?: string;
+  resourceId: string;
+  countryId: string;
+  groupById?: string;
   flow?: string;
   config: any;
 }
@@ -280,12 +281,12 @@ class AreaPartitionChart extends React.Component<Props, State> {
                       this.setState(this.getFlowState(this.state.direction, d.flow_id))}
                   />
                 : <UnbundlingInternationalResources
-                  shouldFetch={this.state.shouldUnbundle}
-                  country={this.props.id}
-                  year={this.state.year}
-                  groupBy={this.state.detailGroup}
-                  flow={this.state.flow}
-                  config={this.props.config.treemapConfig}
+                    shouldFetch={this.state.shouldUnbundle}
+                    countryId={this.props.id}
+                    year={this.state.year}
+                    groupById={this.state.detailGroup}
+                    resourceId={this.state.flow || ''} // TODO: shouldnt be nullable
+                    config={this.props.config.treemapConfig}
                 />}
             </Grid.Column>
           </Grid>

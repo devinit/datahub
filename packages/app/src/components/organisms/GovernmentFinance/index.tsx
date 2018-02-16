@@ -16,7 +16,7 @@ type QueryVarTs = GvmtFinanceQueryVariables & {
 
 type TChildProps = ChildProps<QueryVarTs, GvmtFinanceQuery>;
 
-const withData = graphql<QueryVarTs, GvmtFinanceQueryVariables, TChildProps>(GVNMT_QUERY, {
+const withData = graphql<GvmtFinanceQuery,  QueryVarTs,  TChildProps>(GVNMT_QUERY, {
   options: props => ({
     variables: {
       id: props.id,

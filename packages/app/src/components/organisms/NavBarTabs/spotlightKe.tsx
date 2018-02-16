@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { changeSpotlightIndicatorKe, changeLoadingStatus,
   SpotLightlIndicatorKe,  LoadingStatus} from '../../../redux/actions';
-import { bindActionCreators, Dispatch } from 'redux';
+import { bindActionCreators, Dispatch, AnyAction} from 'redux';
 import { connect } from 'react-redux';
 import { Props } from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
-import { State, Action } from '../../../redux/reducers';
+import { State} from '../../../redux/reducers';
 import NavigationBarTabs from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import {BoundAction, BoundState} from './types';
 import data from './kenya';
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>): BoundAction<SpotLightlIndicatorKe> =>
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): BoundAction<SpotLightlIndicatorKe> =>
   ({
     changeActiveIndicator: bindActionCreators(changeSpotlightIndicatorKe, dispatch),
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 
-type SpotlightKeProps = Props<SpotLightlIndicatorKe,  LoadingStatus> & {state?: StateToShare}
+export type SpotlightKeProps = Props<SpotLightlIndicatorKe,  LoadingStatus> & {state?: StateToShare}
   & BoundAction<SpotLightlIndicatorKe>;
 
 const mapStateToProps = ({ app }: State): BoundState =>
