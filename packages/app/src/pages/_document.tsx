@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
       loadCSS('/css/di-charts.min.css?v=${version}');
       loadCSS('/css/mapbox-gl.min.css?v=${version}');
     }`
-  public props!: any;
+  public props: any;
   constructor(props: any) {
     super(props);
     const { __NEXT_DATA__, ids } = props;

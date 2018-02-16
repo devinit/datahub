@@ -13,6 +13,7 @@
       "outDir": "dist",
       "removeComments": true
     },
+    "strictPropertyInitialization": false,
     "exclude": [
       "node_modules",
       "dist"

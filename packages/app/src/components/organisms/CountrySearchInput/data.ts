@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* tslint:disable */
 // this file is auto generated
 
  export default {

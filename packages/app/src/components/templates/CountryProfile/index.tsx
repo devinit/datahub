@@ -36,7 +36,7 @@ export default class Profile extends React.Component<Props> {
     selectedTab: number,
     country: Country
   };
-  public lowerTabs!: HTMLElement;
+  public lowerTabs: HTMLElement;
   constructor(props: Props) {
     super(props);
     this.state = Profile.init(props);

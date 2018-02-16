@@ -43,7 +43,7 @@ class MapOrganism extends React.Component <Props, State> {
     const variables = { id };
     return getData<MapDataQuery>({query: MAP_QUERY, variables});
   }
-  public data!: MapDataQuery;
+  public data: MapDataQuery;
   constructor(props: Props) {
     super(props);
     this.state = {loading: true };

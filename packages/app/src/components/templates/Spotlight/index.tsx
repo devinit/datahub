@@ -23,7 +23,7 @@ interface Props  {
 }
 
 export default class Spotlight extends React.Component<Props> {
-  public countryName!: string;
+  public countryName: string;
   constructor(props: Props) {
     super(props);
   }
