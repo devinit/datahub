@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { H4 } from 'glamorous';
 import { Container, Grid, Icon } from 'semantic-ui-react';
@@ -7,6 +6,7 @@ import ProfileSocialMedia from '@devinit/dh-ui/lib/molecules/ProfileSocialMedia'
 import { CardContainer } from '@devinit/dh-ui/lib/atoms/Container';
 import SearchInput from '../../organisms/CountrySearchInput';
 import Link from 'next/link';
+import {process} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 
 export default () =>

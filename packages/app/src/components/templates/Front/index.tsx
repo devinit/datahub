@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
 import { Div } from 'glamorous';
@@ -7,14 +6,12 @@ import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import CountrySearchInput from '../../organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
 import dynamic from 'next/dynamic';
-import { red } from '@devinit/dh-ui/theme/semantic';
+import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import { cacheMapData } from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import Generic from '../Generic';
 
-/* eslint-disable max-len */
-/* eslint-disable no-useless-constructor */
 const DynamicMapComponent = dynamic(import('../../organisms/Map'), {
   ssr: false,
   loading: () => <MapBackground />,
@@ -24,7 +21,7 @@ interface Props  {
   state: StateToShare;
 }
 
-export default class Front extends React.Component {
+export default class Front extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }

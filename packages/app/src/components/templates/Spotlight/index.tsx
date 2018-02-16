@@ -1,7 +1,3 @@
-// @flow
-/* eslint-disable no-useless-constructor */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable max-len */
 import * as React from 'react';
 import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
@@ -24,11 +20,10 @@ interface Props  {
   pathname: string;
   id: string;
   state: StateToShare;
-  // rehydrated: boolean,
 }
 
-export default class Spotlight extends React.Component {
-  public countryName: string;
+export default class Spotlight extends React.Component<Props> {
+  public countryName!: string;
   constructor(props: Props) {
     super(props);
   }

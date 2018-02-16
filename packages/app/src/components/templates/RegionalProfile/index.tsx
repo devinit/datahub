@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Div, Hr} from 'glamorous';
 import { Container, Header} from 'semantic-ui-react';
@@ -6,11 +5,14 @@ import { lighterGrey } from '@devinit/dh-ui/lib/theme/semantic';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import SpotLightTabs from '../../organisms/SpotLightTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
-import {getDistrict, getCountry, createCurrencyOptions} from '@devinit/dh-base/lib/utils';
+import {createCurrencyOptions} from '@devinit/dh-base/lib/utils';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
+import {Country, District} from '@devinit/dh-base/lib/types';
+import {getDistrict, getCountry} from '../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
-// import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
-// import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
+import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
+import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
+import CountrySearch from '../../organisms/CountrySearchInput';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 
@@ -32,15 +34,14 @@ interface State  {
   country: Country;
   currencyOptions: CurrencyOption[];
 }
-export default class RegionalProfile extends React.Component {
+export default class RegionalProfile extends React.Component<Props, State> {
   public static init(props): State {
     const district = getDistrict(props.id, props.country);
-    const country = getCountry(props.country);
+    const country: Country = getCountry(props.country);
     const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
     return {district, country, currencyOptions, currency: currencyOptions[0].value};
   }
-  public state: State;
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
     this.state = RegionalProfile.init(props);
   }
@@ -59,14 +60,15 @@ export default class RegionalProfile extends React.Component {
       <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
         <ProfileHeader
           currency={this.state.currency}
+          countrySearch={CountrySearch}
           currencyOptions={this.state.currencyOptions}
           entity={this.state.district}
           spotlightCountry={this.state.country}
-          onChangeCurrency={(currency) => this.onChangeCurrency(currency)}
+          onChangeCurrency={this.onChangeCurrency}
         />
         <SpotLightTabs
-          id={this.state.district.slug}
-          currency={this.state.currency}
+          id={this.state.district.slug || ''}
+          currency={this.state.currency || ''}
           country={this.state.country.slug}
         />
         <Div paddingTop={'4em'} paddingBottom={'1em'}>

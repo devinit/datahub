@@ -1,4 +1,4 @@
-// import {Dispatch, Store} from 'redux';
+import {ReducersMapObject, AnyAction} from 'redux';
 import globalThemes from '../components/organisms/NavBarTabs/data';
 import spotlightUgandaThemes from '../components/organisms/NavBarTabs/uganda';
 import spotlightKenyaThemes from '../components/organisms/NavBarTabs/kenya';
@@ -12,21 +12,8 @@ export interface AppState {
   globalIndicator: string;
 }
 
-export type Action = AppState & {
-  type: string,
-  payload: {
-    apollo: any,
-  },
-};
-
 export interface State {
     app: AppState;
-}
-
-type Reducer<S, A> = (state: S, action: A) => S;
-
-export interface AppReducers {
-    app: Reducer<AppState, Action>;
 }
 
 export const initialState: AppState = {
@@ -36,8 +23,9 @@ export const initialState: AppState = {
   globalIndicator: globalThemes.globalPictureThemes[0].default_indicator,
 };
 
-export const app: AppReducers = {
-  app: (state: AppState = initialState, action: Action): AppState => {
+// TODO: Redux types error, reducer type should have a Param for action
+export const app: ReducersMapObject = {
+  app: (state: AppState = initialState, action: AnyAction): AppState => {
     switch (action.type) {
       case LOADING_STATUS: {
         return { ...state, loading: action.loading };

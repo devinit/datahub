@@ -1,3 +1,5 @@
+// tslint:disable
+
 const data = {
   subHeader:
     'Between 1990 and 2010, extreme poverty was cut in half. \nExplore plausible poverty outcomes for 2030 based on models of consumption.',

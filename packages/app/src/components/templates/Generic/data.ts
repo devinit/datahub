@@ -1,13 +1,4 @@
-// @flow
-export interface MenueItem  {
-  name: string;
-  link: string;
-  icon?: string;
-  children?: MenueItem[];
-}
-export interface Menue  {
-  mainMenu: MenueItem[];
-}
+import {Menue} from '@devinit/dh-base/lib/types';
 
 export const menueData: Menue = {
   mainMenu: [

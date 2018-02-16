@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import { SectionHeader } from '@devinit/dh-ui/lib/atoms/Header';
-// import methodologyData from '../../organisms/Methodology/global-picture';
+import methodologyData from '../../organisms/Methodology/global-picture';
 import Generic from '../Generic';
 import data from './data';
 
@@ -12,7 +12,7 @@ const Upper = glamorous.div({
   marginBottom: '2em',
 });
 
-export default () =>
+const MethodologyTemplate: React.SFC = () =>
   (<Generic pathname="/methodology">
     <Upper>
       <Container>
@@ -43,3 +43,5 @@ export default () =>
     </Upper>
     <ProfileDataSourceTable title="Data Sources" data={methodologyData.methodology} />
   </Generic>);
+
+export default MethodologyTemplate;

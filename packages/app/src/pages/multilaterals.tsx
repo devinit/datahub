@@ -1,8 +1,6 @@
-// @flow
-/* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
-import React from 'react';
+import * as React from 'react';
 import { rehydrate } from 'glamor';
-import withData from '@devinit/dh-base/lib/withData';
+import withData from '../components/WithData';
 import App from '../components/templates/MultilateralProfiles';
 
 interface Props  {
@@ -14,9 +12,9 @@ interface Props  {
 // Has to run before any `style()` calls
 // '__NEXT_DATA__.ids' is set in '_document.js'
 if (typeof window !== 'undefined') {
-  rehydrate(window.__NEXT_DATA__.ids);
+  rehydrate((window as any).__NEXT_DATA__.ids);
 }
 
 export default withData((props: Props) => {
-  return <App pathName={props.url.pathname} />;
+  return <App />;
 });

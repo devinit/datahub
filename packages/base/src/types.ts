@@ -1,17 +1,13 @@
 export interface IProcess {
   version: string;
   browser: boolean;
-    // @ts-ignore
-  config: {
+  env: any & { // add by webpack
+    PORT: number,
+    NODE_ENV: string;
     api: string;
     old_datahub: string;
   };
-  env: any & {
-    PORT: number,
-    NODE_ENV: string;
-  };
 }
-
 // @ts-ignore
 export declare var process: IProcess;
 
@@ -42,6 +38,7 @@ export interface District {
 export type Country = District & {
   has_domestic_data?: string,
   countryType: string,
+  slug: string;
   hasPDF?: boolean
 };
 

@@ -1,23 +1,20 @@
+import {Action} from 'redux';
 export const GLOBAL_INDICATOR = 'GLOBAL_INDICATOR';
 export const SPOTLIGHT_INDICATOR_KE = 'SPOTLIGHT_INDICATOR_KE';
 export const SPOTLIGHT_INDICATOR_UG = 'SPOTLIGHT_INDICATOR_UG';
 export const LOADING_STATUS = 'LOADING_STATUS';
 
-interface ActionBase {
-  type: string;
-}
-
-export type GlobalIndicator = ActionBase & {
+export type GlobalIndicator = Action & {
   globalIndicator: string,
 };
-export type SpotLightlIndicatorKe = ActionBase & {
+export type SpotLightlIndicatorKe = Action & {
   indicatorKenya: string,
 };
-export type SpotLightlIndicatorUg = ActionBase & {
+export type SpotLightlIndicatorUg = Action & {
   indicatorUganda: string,
 };
 
-export type LoadingStatus = ActionBase & {
+export type LoadingStatus = Action & {
   loading: boolean;
 };
 

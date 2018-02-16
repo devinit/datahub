@@ -1,8 +1,9 @@
 import { RECIPIENT} from '@devinit/dh-base/lib/utils/constants';
-import countriesData from './CountrySearchInput/data';
-import keData from './CountrySearchInput/kenya-data';
-import ugData from './CountrySearchInput/uganda-data';
-import {Country, District,  MenueItem, Menue} from '@devinit/dh-base/lib/types';
+import countriesData from './organisms/CountrySearchInput/data';
+import keData from './organisms/CountrySearchInput/kenya-data';
+import ugData from './organisms/CountrySearchInput/uganda-data';
+import {menueData} from './templates/Generic/data';
+import {Country, District,  MenueItem} from '@devinit/dh-base/lib/types';
 import {capitalize} from '@devinit/dh-base/lib/utils';
 
 export const getCountry = (slug: string): Country => {
@@ -41,7 +42,7 @@ export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => 
     return {title, image: '/img/logo.jpg'};
 };
 
-export const getPageMeta = (args: PageMetaArgs, menueData: Menue): PageMeta => {
+export const getPageMeta = (args: PageMetaArgs): PageMeta => {
 // TODO: add proper types
     const item = menueData.mainMenu.reduce((acc: MenueItem[], obj: MenueItem) => {
         if (obj.children) return [...acc, ...obj.children];

@@ -1,9 +1,8 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import {config} from 'package.json';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
+import {process} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 import data from './data';
 
@@ -46,12 +45,7 @@ export default () => {
           <Header as="h1">
             <Header.Content>
               Where are the poor and where will they be?
-              <Header.Subheader style={{
-                fontWeight: '300',
-                lineHeight: 1.5,
-                width: '75%'
-              }}
-              >
+              <Header.Subheader style={{ fontWeight: '300', lineHeight: 1.5, width: '75%'}}>
                 {data.subHeader}
               </Header.Subheader>
             </Header.Content>
@@ -60,7 +54,7 @@ export default () => {
       </Container>
       <StyledIframe
         title="where are the poor"
-        src={`${config.old_datahub}/#!/post/where-are-the-poor`}
+        src={`${process.env.config.old_datahub}/#!/post/where-are-the-poor`}
         frameBorder="0"
         scrolling="no"
       />

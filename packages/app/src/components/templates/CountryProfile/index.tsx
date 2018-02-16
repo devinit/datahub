@@ -8,9 +8,12 @@ import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSour
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
 import {getCountry} from '../../utils';
+import CountrySearch from '../../organisms/CountrySearchInput';
 import { GOVERNMENT_FINANCE_LOWER } from '@devinit/dh-base/lib/utils/constants';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import dynamic from 'next/dynamic';
+import methodologyData from '../../organisms/Methodology/country-profile';
+import {Country} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 
 const DynamicCountryProfileLowerTabs = dynamic(
@@ -22,7 +25,7 @@ interface Props  {
   state?: StateToShare;
 }
 
-export default class Profile extends React.Component {
+export default class Profile extends React.Component<Props> {
   public static init(props) {
     const country = getCountry(props.id);
     const selectedTab = props.state && props.state.chartId &&
@@ -33,7 +36,7 @@ export default class Profile extends React.Component {
     selectedTab: number,
     country: Country
   };
-  public lowerTabs: HTMLElement;
+  public lowerTabs!: HTMLElement;
   constructor(props: Props) {
     super(props);
     this.state = Profile.init(props);
@@ -47,17 +50,21 @@ export default class Profile extends React.Component {
     this.setState({selectedTab});
     if (this.lowerTabs) this.lowerTabs.scrollIntoView();
   }
+  public setLowerTabs = (node) => {
+    this.lowerTabs = node;
+  }
   public render() {
     return (
       <Generic pathname="/country" query={this.props.id}>
         <ProfileHeader
           entity={this.state.country}
-          jumpToSection={(sectionId) => this.jumpToSection(sectionId)}
+          countrySearch={CountrySearch}
+          jumpToSection={this.jumpToSection}
         />
         <CountryProfileTopTabs id={this.props.id} />
         <Div paddingTop={'4em'} paddingBottom={'4em'}>
           <Container textAlign="center">
-            <SectionHeader innerRef={node => { this.lowerTabs = node; }}>
+            <SectionHeader innerRef={this.setLowerTabs}>
               <Img
                 width="32px"
                 verticalAlign="middle"

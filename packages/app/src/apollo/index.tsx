@@ -1,6 +1,6 @@
 import * as fetch from 'isomorphic-fetch';
 import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
-import {process} from '../types';
+import {process} from '@devinit/dh-base/lib/types';
 
 (global as any).fetch = (global as any).fetch || fetch;
 
@@ -21,7 +21,7 @@ export function create(args: InitApollo): ApolloClient<any> {
     connectToDevTools: process.browser, // comes from webpack
     cache: cache(introspectionQueryResultData).restore(initialState || {}),
     ssrMode: !process.browser,
-    link: new HttpLink({ uri: process.config.api || uri }),
+    link: new HttpLink({ uri: process.env.config.api || uri }),
     queryDeduplication: true
   });
 }
@@ -35,7 +35,7 @@ export interface InitApollo {
 export default function initApollo(args?: InitApollo): ApolloClient<any> {
   // Make sure to create a new client for every server-side request so that data
   // isn't shared between connections (which would be bad)
-  const opts = {...args || {}, uri: process.config.api || args && args.uri};
+  const opts = {...args || {}, uri: process.env.config.api || args && args.uri};
 
   if (!process.browser) return create(opts);
 

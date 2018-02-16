@@ -32,7 +32,7 @@ export interface Props  {
   currencyOptions?: CurrencyOption[];
   onChangeCurrency ?: (currency: string) => void;
   spotlightCountry?: Country;
-  countrySearch: React.ComponentClass<CProps>;
+  countrySearch: React.StatelessComponent<CProps>;
 }
 
 const ProfileHeaderSection = (props: Props) => {

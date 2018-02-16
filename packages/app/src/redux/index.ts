@@ -1,5 +1,6 @@
 import { createStore, combineReducers, compose } from 'redux';
-import {process} from '../types';
+import {process} from '@devinit/dh-base/lib/types';
+import {app, initialState} from './reducers';
 
 let reduxStore;
 
@@ -13,28 +14,22 @@ const initDevTools = () => {
 };
 
 // Get the Redux DevTools extension and fallback to a no-op function
-function create({reducers, initialState}) {
+function create(_initialState) {
   return createStore(
-    combineReducers({
-      // Setup reducers
-      ...reducers
-    }),
-    initialState, // Hydrate the store with server-side data
+    combineReducers(app),
+    _initialState, // Hydrate the store with server-side data
     compose(
       devtools,
     ),
   );
 }
-export interface IreduxArgs<T, S> {
-    reducers: T;
-    initialState: S;
-}
-export function initRedux<T, S>(args: IreduxArgs<T, S>) {
+
+export function initRedux(_initialState?: any) {
   // Make sure to create a new store for every server-side request so that data
   // isn't shared between connections (which would be bad)
-  if (!process.browser) return create(args);
+  if (!process.browser) return create(_initialState || initialState);
   // Reuse store on the client-side
-  if (!reduxStore) reduxStore = create(args);
+  if (!reduxStore) reduxStore = create(_initialState || initialState);
 
   if (process.browser && reduxStore) initDevTools();
 

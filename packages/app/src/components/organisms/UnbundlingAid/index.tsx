@@ -23,9 +23,10 @@ interface InitialQuery {
   compact?: boolean;
 }
 
-type Props = InitialQuery & {
+interface Props {
   tourVisible: boolean;
-};
+  aidType: string;
+}
 
 type TChildProps = ChildProps<InitialQuery, UnbundlingAidDataQuery>;
 
@@ -121,7 +122,7 @@ class Chart extends React.Component<Props, State> {
 
   public render() {
     const startYear = this.props.aidType === 'oda' ? dataODA.yearTotal.year : dataOOF.yearTotal.year;
-    this.props = {...this.props, startYear};
+    const uProps = {...this.props, startYear};
     return (
       <Div position="relative">
         {
@@ -132,14 +133,14 @@ class Chart extends React.Component<Props, State> {
               aidType={this.props.aidType}
             /> :
             !this.state.compare
-              ? <WithData {...this.props} />
+              ? <WithData {...uProps} />
               : <Grid style={{ margin: 0 }}>
                 <Grid.Row style={{ padding: 0 }}>
                   <Grid.Column width={8} style={{ padding: 0 }}>
-                    <WithData compact {...this.props} />
+                    <WithData compact {...uProps} />
                   </Grid.Column>
                   <Grid.Column width={8} style={{ padding: 0}}>
-                    <WithData compact {...this.props}  />
+                    <WithData compact {...uProps}  />
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

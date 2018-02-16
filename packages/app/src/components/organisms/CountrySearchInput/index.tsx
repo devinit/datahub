@@ -16,7 +16,7 @@ const countryData = (country: string) => {
   return _data.districts.map(obj => ({...obj, slug: obj.name.toLowerCase()}));
 };
 
-const SearchwithData = (props: Props) =>
+const SearchwithData: React.SFC<Props> = (props) =>
   (<SearchInput
     entities={props.country ? countryData(props.country) : data.countries}
     routePath={props.country || 'country'} // for route

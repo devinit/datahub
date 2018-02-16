@@ -1,8 +1,6 @@
-// @flow
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Button, Header, Grid, Icon } from 'semantic-ui-react';
-import config from '@devinit/dh-ui/lib/visboxConfigs/unbundlingTreemapChart';
 import UnbundlingAid from '../../organisms/UnbundlingAid';
 import SocialMediaBar from '@devinit/dh-ui/lib/molecules/SocialMediaBar';
 import ToolTip from '@devinit/dh-ui/lib/molecules/ToolTip';
@@ -31,15 +29,13 @@ const TextContainer = glamorous.div({
   marginBottom: '2em',
 });
 interface Props  {
-  // rehydrated: boolean,
   title: string;
   pathname: string;
   aidType: string;
 }
 
 // TODO: start year shouldnt be hardcoded @allan
-export default class extends React.Component {
-  public props: Props;
+export default class extends React.Component<Props> {
   public state = { tourVisible: false };
   public showTour = () => {
     this.setState({
@@ -76,7 +72,7 @@ export default class extends React.Component {
                       below to change the order and take different journeys through the data. Use
                       the ’Compare +’ button to see how different countries’ {aid} bundles compare.
                     </ToolTip>
-                    <Button onClick={() => this.showTour()} content="Using This Visualization" />
+                    <Button onClick={this.showTour} content="Using This Visualization" />
                   </BottomHeader>
                 </Header.Subheader>
               </Header.Content>
@@ -86,7 +82,6 @@ export default class extends React.Component {
         <UnbundlingAid
           tourVisible={this.state.tourVisible}
           aidType={props.aidType}
-          config={config}
         />
         {process.env.NODE_ENV !== 'test' ? (
           <section style={{ paddingTop: '2em' }}>

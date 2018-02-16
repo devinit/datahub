@@ -3,7 +3,7 @@ import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
 import {process} from '../types';
 
-const apolloFetch = createApolloFetch({ uri: process.config.api });
+const apolloFetch = createApolloFetch({ uri: process.env.config.api });
 
 export type CallBack<T> = (data: T) => any;
 
@@ -42,8 +42,8 @@ export async function shouldPurgeCache(version: string): Promise<boolean> {
   return !storedVersion || storedVersion !== version;
 }
 
-export async function getLocalStorageInstance(browser: boolean, version: string): Promise<any> {
-  if (browser) return Promise.resolve(null);
+export async function getLocalStorageInstance(version: string): Promise<any> {
+  if (process.browser) return Promise.resolve(null);
   try {
     const shouldPurge = await shouldPurgeCache(version);
     if (!shouldPurge) return localforage;
@@ -68,7 +68,7 @@ export async function getData<T>(opts: IgetData): Promise<T> {
     const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
     let storage: any = null;
     if (process.browser) {
-      storage = await getLocalStorageInstance(process.browser, process.version);  // @ts-ignore
+      storage = await getLocalStorageInstance(process.version);  // @ts-ignore
       const cached = storage ? await storage.getItem(key) : null;
       if (cached) return JSON.parse(cached);
     }
@@ -89,14 +89,13 @@ export async function getData<T>(opts: IgetData): Promise<T> {
   }
 }
 
-export const cacheMapData = async (opts: {workerPath: string, browser: boolean, version: string}): Promise<void> => {
-  const {browser, version, workerPath} = opts;
-  if (browser && (window as any).Worker) {
+export const cacheMapData = async (workerPath: string): Promise<void> => {
+  if (process.browser && (window as any).Worker) {
     try {
-      const storage = await getLocalStorageInstance(browser, version);
-      const storedVersion = await storage.getItem(`${version}-${workerPath}`);
-      if (!storedVersion || storedVersion !== `${version}-${workerPath}`) {
-        await storage.setItem(`${version}-${workerPath}`, `${version}-${workerPath}`);
+      const storage = await getLocalStorageInstance(process.env.version);
+      const storedVersion = await storage.getItem(`${process.env.version}-${workerPath}`);
+      if (!storedVersion || storedVersion !== `${process.env.version}-${workerPath}`) {
+        await storage.setItem(`${process.env.version}-${workerPath}`, `${process.env.version}-${workerPath}`);
         const worker = new Worker(workerPath); // caches global picture map data
         worker.onmessage = (event) => console.log(event);
       }
