@@ -14,7 +14,7 @@ import internationalResourcesConfig from '@devinit/dh-ui/lib/visbox/internationa
 import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
-import { getCountry } from '../utils';
+import { getCountry } from '../../utils';
 import { shouldShowTabData} from '@devinit/dh-base/lib/utils';
 import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
 import overviewConfig from '@devinit/dh-ui/lib/visbox/overviewTabCharts';

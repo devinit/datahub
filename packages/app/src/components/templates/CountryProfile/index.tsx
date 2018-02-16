@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import { Div, Img} from 'glamorous';
 import { Container } from 'semantic-ui-react';
@@ -8,13 +7,11 @@ import { DarkBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
-import {getCountry} from '@devinit/dh-base/lib/utils';
+import {getCountry} from '../../utils';
 import { GOVERNMENT_FINANCE_LOWER } from '@devinit/dh-base/lib/utils/constants';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
-// import methodologyData from '../../organisms/Methodology/country-profile';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
-/* eslint-disable max-len */
 
 const DynamicCountryProfileLowerTabs = dynamic(
   import('../../organisms/CountryProfileLowerTabs'), { ssr: true });
