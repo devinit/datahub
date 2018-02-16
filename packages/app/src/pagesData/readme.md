@@ -1,1 +1,0 @@
-Move page data graphql staff here

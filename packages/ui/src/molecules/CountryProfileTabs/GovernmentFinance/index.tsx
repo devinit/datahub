@@ -8,7 +8,7 @@ import Chart from '../../../atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-app/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {TabDataQuery} from '../../../gql-types';
 

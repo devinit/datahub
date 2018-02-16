@@ -6,7 +6,7 @@ import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsT
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-app/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {

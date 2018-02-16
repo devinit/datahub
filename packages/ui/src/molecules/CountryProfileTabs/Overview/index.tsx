@@ -8,7 +8,7 @@ import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
 import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-app/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
 import { red} from '../../../theme/semantic';
 import {TabDataQuery} from '../../../gql-types';
 

@@ -4,7 +4,7 @@ import TabsComponents from '@devinit/dh-ui/lib/molecules/SpotLightTabs';
 import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
 import Pane from '@devinit/dh-ui/lib/atoms/Pane';
 import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
-import {getDistrictProfileData} from '../../../pagesData';
+import {getDistrictProfileData} from '@devinit/dh-base/lib/pagesData';
 import populationConfig from '@devinit/dh-ui/lib/visbox/spotlightPopulationTabCharts';
 import overviewConfig from '@devinit/dh-ui/lib/visbox/spotlightOverviewTabCharts';
 import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../../types';

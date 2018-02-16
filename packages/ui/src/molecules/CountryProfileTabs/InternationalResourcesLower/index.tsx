@@ -3,7 +3,7 @@ import * as React from 'react';
 import {TextBlock} from '../../../atoms/BodyText';
 import { white } from '../../../theme/semantic';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-app/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
 import TabsToolTip from '../../TabsToolTip';
 import { SectionHeader } from '../../../atoms/Header';
 

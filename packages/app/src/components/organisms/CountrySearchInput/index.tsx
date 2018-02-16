@@ -1,8 +1,8 @@
 import * as React from 'react';
 import SearchInput from '@devinit/dh-ui/lib/molecules/SearchInput';
-import data from './data';
-import ugandaData from './uganda-data';
-import kenyaData from './kenya-data';
+import data from '@devinit/dh-base/lib/__generated__/data';
+import ugandaData from '@devinit/dh-base/lib/__generated__/uganda';
+import kenyaData from '@devinit/dh-base/lib/__generated__/kenya';
 
 interface Props  {
   visible: boolean;

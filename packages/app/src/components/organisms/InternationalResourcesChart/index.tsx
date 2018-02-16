@@ -7,7 +7,7 @@ import LoadingBar from '@devinit/dh-ui/lib/molecules/LoadingBar';
 import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../../types';
 import flowCache from './data';
 import {Country} from '@devinit/dh-base/lib/types';
-import countryCache from '../CountrySearchInput/data';
+import countryCache from '@devinit/dh-base/lib/__generated__/data';
 import {INTL_RESOURCES_QUERY} from './query.graphql';
 
 type QueryVarTs = ResourcesOverTimeQueryVariables & {

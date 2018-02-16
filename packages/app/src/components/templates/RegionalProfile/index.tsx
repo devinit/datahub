@@ -8,7 +8,7 @@ import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
 import {createCurrencyOptions} from '@devinit/dh-base/lib/utils';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {Country, District} from '@devinit/dh-base/lib/types';
-import {getDistrict, getCountry} from '../../../utils';
+import {getCountry, getDistrict} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
 import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';

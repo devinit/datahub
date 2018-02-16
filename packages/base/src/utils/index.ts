@@ -1,9 +1,30 @@
 import fetch from 'isomorphic-fetch';
 import * as localforage from 'localforage';
+import countriesData from '../__generated__/data';
+import keData from '../__generated__/kenya';
+import ugData from '../__generated__/uganda';
+import {RECIPIENT} from './constants';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import {process} from '../types';
+import {process, Country, District} from '../types';
 
 const apolloFetch = createApolloFetch({ uri: process.env.config.api });
+
+export const getCountry = (slug: string): Country => {
+  const country = countriesData.countries.find(obj => obj.slug === slug);
+  if (!country) return {name: slug, countryType: RECIPIENT, slug, id: 'N/A', has_domestic_data: '', hasPDF: false};
+  return country;
+};
+
+export const getCountryName = (slug: string): string =>
+  getCountry(slug).name || 'slug';
+
+export const getDistrict = (slug: string, country: string): District => {
+  const districts = country === 'uganda' ? ugData.districts : keData.districts;
+  const district = districts.find(obj => obj.name.toLowerCase() === slug);
+  if (district) return {...district, slug};
+  return {name: slug, slug, id: ''};
+};
+
 
 export type CallBack<T> = (data: T) => any;
 
