@@ -25,7 +25,6 @@ export const getDistrict = (slug: string, country: string): District => {
   return {name: slug, slug, id: ''};
 };
 
-
 export type CallBack<T> = (data: T) => any;
 
 export interface Email {
