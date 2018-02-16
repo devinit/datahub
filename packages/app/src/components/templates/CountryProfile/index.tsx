@@ -7,7 +7,7 @@ import { DarkBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
-import {getCountry} from '../../utils';
+import {getCountry} from '../../../utils';
 import CountrySearch from '../../organisms/CountrySearchInput';
 import { GOVERNMENT_FINANCE_LOWER } from '@devinit/dh-base/lib/utils/constants';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';

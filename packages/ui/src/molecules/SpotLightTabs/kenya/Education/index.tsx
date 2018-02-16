@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/TabsText';
 import TabsToolTip from '../../../TabsToolTip';
-import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import { getPageUnitById } from '@devinit/dh-app/lib/pagesData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {CSProps} from '../../types';
 

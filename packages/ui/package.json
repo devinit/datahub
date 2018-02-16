@@ -31,6 +31,7 @@
     "@devinit/charts": "^1.6.49",
     "@devinit/datahub-api": "^1.0.2",
     "@devinit/dh-base": "1.0.0",
+    "@devinit/dh-app": "3.0.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.4",
     "mapbox-gl": "^0.43.0",

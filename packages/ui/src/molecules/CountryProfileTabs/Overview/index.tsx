@@ -7,7 +7,8 @@ import { RECIPIENT, DONOR, NoData} from '@devinit/dh-base/lib/utils/constants';
 import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
 import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {PageUnit} from '@devinit/dh-base/lib/types';
+import {getPageUnitById} from '@devinit/dh-app/lib/pagesData';
 import { red} from '../../../theme/semantic';
 import {TabDataQuery} from '../../../gql-types';
 

@@ -9,9 +9,9 @@ import {GOVERNMENT_FINANCE_LOWER,
 import InternationalResourcesLower from '@devinit/dh-ui/lib/molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from '../InternationalResourcesChart';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
-import {getCountryProfileData} from '../PagesData';
+import {getCountryProfileData} from '../../../pagesData';
 import ErrorBoundary from '@devinit/dh-ui/lib/molecules/ErrorBoundary';
-import {getCountry} from '../../utils';
+import {getCountry} from '../../../utils';
 
 import data from './data';
 

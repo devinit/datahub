@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container } from 'semantic-ui-react';
 import Head from 'next/head';
-import {PageMeta, getPageMeta} from '../../utils';
+import {PageMeta, getPageMeta} from '../../../utils';
 import Footer from '@devinit/dh-ui/lib/molecules/Footer';
 import Menu from '@devinit/dh-ui/lib/molecules/Menu';
 import {menueData} from './data';

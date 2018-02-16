@@ -2,7 +2,6 @@ import * as React from 'react';
 import { LightBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import { graphql, ChildProps } from 'react-apollo';
 import Chart from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
-// import {errorHandler} from '@devinit/dh-base/lib/utils';
 import config from '@devinit/dh-ui/lib/visbox/linePartition';
 import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../../../types';
 import { GVNMT_QUERY} from './query.graphql';

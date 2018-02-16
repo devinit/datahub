@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
-import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {getPageUnitById} from '@devinit/dh-app/lib/pagesData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';

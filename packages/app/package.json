@@ -1,7 +1,6 @@
 {
   "name": "@devinit/dh-app",
-  "version": "2.0.36",
-  "private": true,
+  "version": "3.0.0",
   "config": {
     "api": "http://212.111.41.68:9090/graphql",
     "old_datahub": "http://212.111.41.68:8888"
@@ -9,6 +8,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/devinit/datahub"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "epicallan.al@gmail.com",
   "license": "ISC",

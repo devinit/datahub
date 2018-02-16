@@ -1,8 +1,8 @@
 import { RECIPIENT} from '@devinit/dh-base/lib/utils/constants';
-import countriesData from './organisms/CountrySearchInput/data';
-import keData from './organisms/CountrySearchInput/kenya-data';
-import ugData from './organisms/CountrySearchInput/uganda-data';
-import {menueData} from './templates/Generic/data';
+import countriesData from '../components/organisms/CountrySearchInput/data';
+import keData from '../components/organisms/CountrySearchInput/kenya-data';
+import ugData from '../components/organisms/CountrySearchInput/uganda-data';
+import {menueData} from '../components/templates/Generic/data';
 import {Country, District,  MenueItem} from '@devinit/dh-base/lib/types';
 import {capitalize} from '@devinit/dh-base/lib/utils';
 

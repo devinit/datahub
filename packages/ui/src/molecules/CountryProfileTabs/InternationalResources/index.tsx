@@ -6,7 +6,7 @@ import {small} from '../../../theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from '../../../atoms/TabsText';
 import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-app/lib/pagesData';
 import Legend from '../../../atoms/Legend';
 import {TabDataQuery} from '../../../gql-types';
 
