@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-css",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "for creating datahub semantic css file",
   "main": "lib/index.js",
   "scripts": {

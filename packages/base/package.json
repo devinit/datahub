@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-base",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "for datahub related libs & tools",
   "main": "lib/index.js",
   "scripts": {
