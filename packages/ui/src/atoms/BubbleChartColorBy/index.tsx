@@ -8,7 +8,7 @@ export interface Props  {
   options: Array<{value: any}>;
 }
 
-const _onChange = (onChange: onChangeT) => (e, data) => onChange(data.value);
+const _onChange = (onChange: onChangeT) => (_e, data) => onChange(data.value);
 
 const ColorBy = ({ onChange, options }: Props) =>
   (<Wrapper title="Color By">

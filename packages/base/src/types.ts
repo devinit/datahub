@@ -8,8 +8,6 @@ export interface IProcess {
     old_datahub: string;
   };
 }
-// @ts-ignore
-export declare var process: IProcess;
 
 export interface PageUnit {
   id: string;

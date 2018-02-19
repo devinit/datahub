@@ -4,16 +4,17 @@ import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
 import { red } from '../../theme/semantic';
 import { Lead } from '../../atoms/Header';
 import { BodyLink } from '../../atoms/Link';
+import {Props as MapProps} from '../SmallMap';
 import ProfileSocialMedia from '../ProfileSocialMedia';
-import {Country, District, process} from '@devinit/dh-base/lib/types';
+import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
 import Link from 'next/link';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic from 'next/dynamic';
 
-const DynamicMapComponent = dynamic(
-  import('../SmallMap'), {
+const DynamicMapComponent = dynamic<{}, MapProps>(
+  import('../SmallMap') as Promise<any>, {
     ssr: false,
     loading: () => (<p>Loading...</p>)
   });
@@ -43,7 +44,7 @@ const ProfileHeaderSection = (props: Props) => {
     <ProfileHeader>
       {process.env.NODE_ENV !== 'test' ?
         <DynamicMapComponent
-          slug={props.entity.slug}
+          slug={props.entity.slug || ''}
           spotlightCountry={props.spotlightCountry && props.spotlightCountry.slug}
         /> : ''
       }
@@ -134,14 +135,14 @@ const ProfileHeaderSection = (props: Props) => {
                           value={props.currency}
                           options={props.currencyOptions}
                           // tslint:disable-next-line:jsx-no-lambda
-                          onChange={(e, data) =>
+                          onChange={(_e, data) =>
                             props.onChangeCurrency && data.value && props.onChangeCurrency(data.value.toString())
                           }
                         />
                       </article>
                       : ''
                   }
-                  {process.browser ?
+                  {(process as any).browser ?
                     <ProfileSocialMedia
                       isCountryProfile={!props.spotlightCountry}
                       entity={props.entity}

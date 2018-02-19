@@ -5,7 +5,9 @@ import keData from '../__generated__/kenya';
 import ugData from '../__generated__/uganda';
 import {RECIPIENT} from './constants';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import {process, Country, District} from '../types';
+import {IProcess, Country, District} from '../types';
+
+declare var process: IProcess;
 
 const apolloFetch = createApolloFetch({ uri: process.env.config.api });
 

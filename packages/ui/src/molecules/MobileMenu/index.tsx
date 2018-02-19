@@ -56,7 +56,7 @@ class MobileMenu extends React.Component<Props> {
       open: false,
     };
   }
-  public toggleNav(e) {
+  public toggleNav() {
     return () => {
       if (this.state.open) {
         this.setState({ open: false });

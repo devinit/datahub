@@ -59,7 +59,7 @@ export interface State  {
   regionColor: object;
 }
 class BubbleChartWidget extends React.Component<Props> {
-  public intervalId: NodeJS.Timer;
+  public intervalId: any; // both timer & number types seem to error out
   public state: State;
   constructor(props: Props) {
     super(props);
@@ -96,8 +96,8 @@ class BubbleChartWidget extends React.Component<Props> {
   public componentWillUnmount() {
     clearInterval(this.intervalId);
   }
-  public onChangeColorBy(e) {
-    return (colorBy: string) => {
+  public onChangeColorBy(colorBy: string) {
+    return () => {
       const colorHash = colorBy === 'region' ? this.state.regionColor : this.state.incomeGroupColor;
       const pointsPerYear = this.getPointsPerYear(colorBy, colorHash);
       this.setState({

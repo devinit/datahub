@@ -68,9 +68,9 @@ const Overview = (props: Props) => {
               <Grid.Column width="10">
                 <Div fontSize={small}>
                   {overviewTabRegional.regionalResourcesBreakdown
-                  && overviewTabRegional.regionalResourcesBreakdown.map((datum, i, all) => {
+                  && overviewTabRegional.regionalResourcesBreakdown.map((datum, _i, all) => {
                     const sum = all
-                      .reduce((sumx, datumx) => sum + (datumx && datumx.data && datumx.data.value), 0) / 100;
+                      .reduce((sumx, datumx) => sumx + (datumx && datumx.data && datumx.data.value || 0), 0) / 100;
                     return (
                       <Legend
                         key={datum && datum.data && datum.data.name ? datum.data.name : ''}

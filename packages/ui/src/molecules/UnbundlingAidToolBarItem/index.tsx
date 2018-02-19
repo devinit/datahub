@@ -80,7 +80,7 @@ export default class ToolBarItem extends React.Component<Props, State> {
         <div>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <Droppable droppableId="droppable" direction="horizontal">
-              {(provided, snapshot) => (
+              {(provided) => (
                 <div ref={provided.innerRef}>
                   <span style={{display: 'inline'}}>{aid}</span>
                   <div style={{display: 'inline'}}>

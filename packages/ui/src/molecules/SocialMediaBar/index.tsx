@@ -3,7 +3,6 @@ import { LightBg } from '../../atoms/Backgrounds';
 import glamorous, { Div } from 'glamorous';
 import ChartShare from '../ChartShare';
 import {StateToShare} from '../ChartShare';
-import {process} from '@devinit/dh-base/lib/types';
 import { Icon, Grid } from 'semantic-ui-react';
 
 const SocialIcon = glamorous.a({
@@ -12,15 +11,17 @@ const SocialIcon = glamorous.a({
   width: '2em',
   display: 'inline-block'
 });
+
 export interface Props  {
   stateToShare?: StateToShare;
 }
+
 const SocialMediaBar = (props?: Props) => (
   <LightBg>
     <Grid centered columns={16}>
       <Grid.Row centered >
         <Grid.Column width={2}>
-          {process.browser ?
+          {(process as any).browser ?
             <div>
               <SocialIcon
                 href={`https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"`}

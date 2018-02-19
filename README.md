@@ -19,8 +19,9 @@ lerna bootstrap #install dependencies in all packages
 Usage examples
 
 ```
-lerna run --scope @devinit/dh-base lint # linting base package
-lerna run --scope @devinit/dh-base build # building base package
+lerna run storybook --scope @devinit/dh-ui --stream # running storybook in ui package
+lerna run lint --scope @devinit/dh-base  # linting base package
+lerna run build --scope @devinit/dh-base # building base package
 ```
 
 TODO:

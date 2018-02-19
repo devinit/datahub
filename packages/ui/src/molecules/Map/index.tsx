@@ -71,7 +71,7 @@ class Map extends React.Component<Props, State> {
     if (nextProps !== this.props) this.init(nextProps);
   }
 
-  public onYearChange(e) {
+  public onYearChange() {
     return (year: number) => {
       if (this.props && this.props.map) {
         this.data = Map.setCurrentYearData(year, this.props.map);
