@@ -45,11 +45,6 @@
     "semantic-ui-react": "^0.71.3"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.13",
-    "@storybook/addon-links": "^3.3.13",
-    "@storybook/addons": "^3.3.13",
-    "@storybook/react": "^3.3.13",
-    "@types/react-beautiful-dnd": "^3.0.0",
-    "babel-core": "^6.26.0"
+    "@types/react-beautiful-dnd": "^3.0.0"
   }
 }

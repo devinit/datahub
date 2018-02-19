@@ -71,17 +71,15 @@ export interface State  {
   value: number;
 }
 
-export default class ChartShare extends React.Component<Props> {
+export default class ChartShare extends React.Component<Props, State> {
   public static defaultProps = {
     background: true,
     hover: false
   };
   public state = {
     link: '',
-    value: 2
+    value: 2 // TODO:  why not a boolean
   };
-  public stateX: State;
-  /* eslint-disable no-useless-constructor */
   constructor(props: Props) {
     super(props);
   }
