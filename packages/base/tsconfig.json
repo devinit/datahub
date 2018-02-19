@@ -10,6 +10,8 @@
       "declaration": true,
       "declarationDir": "lib",
       "noImplicitAny": false,
+      "noUnusedParameters": true,
+      "skipLibCheck": true,
       "strictPropertyInitialization": false,
       "noUnusedLocals": true,
       "rootDir": "src",

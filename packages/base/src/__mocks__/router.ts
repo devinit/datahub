@@ -1,3 +1,3 @@
-import Router from 'next/router';
-const mockedRouter = { push: () => {}, prefetch: () => {} };
-Router.router = mockedRouter;
+// import Router from 'next/router';
+// const mockedRouter = { push: () => {}, prefetch: () => {} };
+// Router.route = mockedRouter;

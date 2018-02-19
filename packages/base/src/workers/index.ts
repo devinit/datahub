@@ -4,12 +4,10 @@
 import {getData} from '../utils';
 
 export interface ICacheOpts {
-  uri: string;
   query: string;
-  api: string;
   data: Array<{indicators: Array<{id: string}>}>;
 }
-export const cacheData = ({uri, query, api, data}: ICacheOpts) => {
+export const cacheData = ({query, data}: ICacheOpts) => {
   data.forEach(item => {
     if (!item.indicators) throw Error('indicators missing in navItem');
     item.indicators.forEach((indicator) => {

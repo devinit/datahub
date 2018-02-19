@@ -1,5 +1,3 @@
-// @flow
-/* eslint-disable react/no-danger */
 import Document, { Head, Main, NextScript } from 'next/document';
 import * as React from 'react';
 import { renderStatic } from 'glamor/server';

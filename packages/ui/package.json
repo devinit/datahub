@@ -34,7 +34,7 @@
     "glamor": "^2.20.40",
     "glamorous": "^4.11.4",
     "mapbox-gl": "^0.43.0",
-    "next": "^4.2.3",
+    "next": "^5.0.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-beautiful-dnd": "^4.0.1",
