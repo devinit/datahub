@@ -52,9 +52,14 @@
     "react-no-ssr": "^1.1.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.0",
-    "semantic-ui-react": "^0.77.2"
+    "semantic-ui-react": "0.78.2"
   },
   "devDependencies": {
+    "@storybook/addon-storyshots": "^3.3.10",
+		"@storybook/addon-actions": "^3.3.13",
+		"@storybook/addon-links": "^3.3.13",
+		"@storybook/addons": "^3.3.13",
+		"@storybook/react": "^3.3.13",
     "@zeit/next-typescript": "0.0.8",
     "apollo-codegen": "0.18.3"
   },

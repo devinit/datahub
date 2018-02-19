@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { SocialMediaLink } from '../../atoms/Link';
-import { Icon } from 'semantic-ui-react';
+import { Icon,  SemanticICONS } from 'semantic-ui-react';
 
 export interface Props  {
-  type: string; // TODO: and enum types
+  type: SemanticICONS; // TODO: and enum types
   href: string;
 }
 

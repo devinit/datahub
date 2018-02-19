@@ -1,12 +1,12 @@
 import glamorous from 'glamorous';
-import { Icon } from 'semantic-ui-react';
+import { Icon, SemanticICONS } from 'semantic-ui-react';
 import Pane from '../MobileMenuPane';
 import * as React from 'react';
 import Link from 'next/link';
 import { lightGrey, black } from '../../theme/semantic';
 
 export interface Props {
-  menu: {children: Array<{name: string; link: string; icon: string}>};
+  menu: {children: Array<{name: string; link: string; icon: SemanticICONS}>};
 }
 const SubMenuContainer = glamorous.ul({
   'listStyleType': 'none',

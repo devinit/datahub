@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Modal, Icon } from 'semantic-ui-react';
+import { Button, Modal, Icon, SemanticICONS } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from '../../theme/semantic';
 import {getShortURL} from '@devinit/dh-base/lib/utils';
 import glamorous, { Div, Span } from 'glamorous';
@@ -55,7 +55,7 @@ export interface StateToShare  {
 export interface Props  {
   size: any;
   color: any;
-  iconName?: string;
+  iconName?: SemanticICONS;
   fontWeight?: any;
   fontSize?: string;
   backgroundColor?: string;
