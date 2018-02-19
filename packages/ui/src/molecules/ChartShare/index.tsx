@@ -14,9 +14,7 @@ export const NoBackground = {
   }
 };
 
-const Container = glamorous.div({
-  'padding': '5em',
-  '& input.link': {
+const StyledInput = glamorous.input({
     display: 'inline-block',
     width: '100%',
     marginTop: '2em',
@@ -30,7 +28,6 @@ const Container = glamorous.div({
     borderRadius: '.25em',
     outline: 0,
     border: `2px solid ${black}`,
-  },
 });
 
 const ButtonWrapper = glamorous.span<{hover?: boolean; background?: boolean; }>({
@@ -133,8 +130,7 @@ export default class ChartShare extends React.Component<Props, State> {
         closeIcon="close"
       >
         <Modal.Content>
-          <Modal.Description>
-            <Container>
+          <Modal.Description style={{padding: '5em'}}>
               <h4>Share this visualisation</h4>
               <input
                 type="radio"
@@ -148,7 +144,7 @@ export default class ChartShare extends React.Component<Props, State> {
                 checked={this.state.value === 2}
                 onChange={this.handleChange(2)}
               /> as I configured it<br />
-              <input className="link" value={this.state.link} onChange={this.onLinkChange} />
+              <StyledInput value={this.state.link} onChange={this.onLinkChange} />
               <Div marginTop={'1.5em'}>
                 <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
                   <Button icon="facebook f" />
@@ -165,7 +161,6 @@ export default class ChartShare extends React.Component<Props, State> {
                   <Button icon="mail outline" />
                 </a>
               </Div>
-            </Container>
           </Modal.Description>
         </Modal.Content>
       </Modal>);

@@ -6,8 +6,18 @@ import ugData from '../__generated__/uganda';
 import {RECIPIENT} from './constants';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
 import {IProcess, Country, District} from '../types';
+const packageJSON = require('../../package.json');
 
 declare var process: IProcess;
+
+if (!process.env.config) {
+  try {
+    if (packageJSON.config) process.env.config = packageJSON.config;
+  } catch (error) {
+    console.log('error: ', error, ' falling back to staging api');
+    process.env.config = {api: 'http://212.111.41.68:9090/graphql'};
+  }
+}
 
 const apolloFetch = createApolloFetch({ uri: process.env.config.api });
 
@@ -49,14 +59,14 @@ export const sendEmail = (payload: Email) => {
 // TODO: improve this by adding more info on the errors. i.e if country profile add country etc
 export const errorHandler = async (error: string | Error, info?: string) => {
   console.error(error);
-  if (process.env.NODE_ENV === 'disable') { // temporarily disable // should be production to renable
-    sendEmail({
-      message: `info: ${info || ''} error: ${error.toString()} `,
-      token: 'e2DQks99XapU6w2s1',
-      emails: ['epicallan.al@gmail.com'],
-      subject: 'Data hub error report',
-    });
-  }
+  sendEmail({
+    message: `info: ${info || ''} error: ${error.toString()} `,
+    token: 'e2DQks99XapU6w2s1',
+    emails: ['epicallan.al@gmail.com'],
+    subject: 'Data hub error report',
+  });
+  // if (process.env.NODE_ENV === 'production') { // temporarily disable // should be production to renable
+  // }
 };
 
 export async function shouldPurgeCache(version: string): Promise<boolean> {

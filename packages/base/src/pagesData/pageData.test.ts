@@ -1,4 +1,4 @@
-import prettyFormat from 'pretty-format';
+import * as prettyFormat from 'pretty-format';
 import { getDistrictProfileData, getCountryProfileData} from '.';
 
 describe('page data tests', () => {

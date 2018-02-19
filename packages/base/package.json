@@ -2,9 +2,14 @@
   "name": "@devinit/dh-base",
   "version": "1.0.3",
   "description": "for datahub related libs & tools",
+  "config": {
+    "api": "http://212.111.41.68:9090/graphql",
+    "old_datahub": "http://212.111.41.68:8888"
+  },
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
+    "test": "jest",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "patch": "release-it -i patch -n",
     "feature": "release-it -i minor -n",
@@ -42,11 +47,27 @@
   },
   "devDependencies": {
     "@types/localforage": "0.0.34",
+    "ts-jest": "22.0.1",
     "css-loader": "0.28.9",
     "css-to-js-object": "0.0.3",
     "csso": "^3.1.1",
     "less": "2.7.3",
     "less-plugin-clean-css": "1.5.1",
     "usus": "^1.6.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "mapCoverage": true,
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "testEnvironment": "node",
+    "testRegex": ".*\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
   }
 }

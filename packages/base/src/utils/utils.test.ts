@@ -1,16 +1,13 @@
-// import 'jest';
-// import * as prettyFormat from 'pretty-format';
+import 'jest';
+import * as prettyFormat from 'pretty-format';
 // import COUNTRIES_QUERY from '../pullApiData/queries/Countries.graphql';
-// import { getData } from '.';
+import { getCountry } from '.';
 
-// describe('pull api data tests', () => {
-//   it(
-//     'should return countries used in country search input',
-//     async () => {
-//       const data = await getData(COUNTRIES_QUERY);
-//       expect(data.countries.length).toBeGreaterThan(2);
-//       expect(prettyFormat(data.countries[0])).toMatchSnapshot();
-//     },
-//     100000,
-//   );
-// });
+describe('utils test', () => {
+  it('should return a country details', () => {
+      const data = getCountry('uganda');
+      expect(prettyFormat(data)).toMatchSnapshot();
+    },
+    100000,
+  );
+});
