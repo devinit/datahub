@@ -5,7 +5,6 @@ import { approximate } from '@devinit/dh-base/lib/utils';
 import { init } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
 import TreeChart from '../../atoms/TreeChart';
-// import type {Value} from '../UnbundlingAidChartToolBar';
 import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
 
 export interface Props  {

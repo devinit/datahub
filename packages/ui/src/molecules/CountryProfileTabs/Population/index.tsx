@@ -6,16 +6,16 @@ import Chart from '../../../atoms/Chart';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;
-  pagesData: PageUnit[];
+  pageData: PageUnit[];
 };
 
 const Population = (props: Props) => {
-  const getPageLine = getPageUnitById(props.pagesData);
+  const getPageLine = getPageUnitById(props.pageData);
   const popnCtry = getPageLine('popn-ctry');
   const popnDistributionAgeCtry = getPageLine('popn-distribution-age-ctry');
   if (!props.populationTab) throw new Error('No Population data');

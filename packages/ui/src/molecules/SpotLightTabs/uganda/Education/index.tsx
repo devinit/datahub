@@ -6,7 +6,7 @@ import { P } from 'glamorous';
 import TabsToolTip from '../../../TabsToolTip';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {CSProps} from '../../types';
-import { getPageUnitById } from '@devinit/dh-base/lib/pagesData';
+import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
 
 export type Props = CSProps;
 

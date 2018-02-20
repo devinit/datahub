@@ -6,16 +6,16 @@ import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsT
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;
-  pagesData: PageUnit[];
+  pageData: PageUnit[];
 };
 
 const Poverty = (props: Props) => {
-  const getPageLine = getPageUnitById(props.pagesData);
+  const getPageLine = getPageUnitById(props.pageData);
   const povertyReductionCtry = getPageLine('poverty-reduction-ctry');
   const povertyDepthCtry = getPageLine('poverty-depth-ctry');
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');

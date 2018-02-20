@@ -3,7 +3,7 @@
  */
 import {getCountryName} from '../utils';
 import {capitalize} from '../utils';
-import pagesData from './data';
+import data from './data';
 
 export interface PageUnit {
   id: string;
@@ -12,7 +12,7 @@ export interface PageUnit {
   donor_title?: string;
 }
 
-export interface PagesData {
+export interface PageData {
     spotlightDistrict: PageUnit[];
     countryProfile: PageUnit[];
 }
@@ -36,21 +36,21 @@ const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
 
 export const getDistrictProfileData = (slug: string, country: string): PageUnit[] => {
   const districtName = capitalize(slug);
-  if (!pagesData[country]) throw new Error('District profile page data missing');
-  const pageData: PageUnit[] = pagesData[country];
+  if (!data[country]) throw new Error('District profile page data missing');
+  const pageData: PageUnit[] = data[country];
   return replaceFields({pageData, toReplace: '{district}', replacement: districtName});
 };
 
 export const getCountryProfileData = (slug: string): PageUnit[] => {
   const countryName = getCountryName(slug);
-  if (!pagesData.countryProfile) throw new Error('country profile page data missing');
-  const pageData: PageUnit[] = pagesData.countryProfile;
+  if (!data.countryProfile) throw new Error('country profile page data missing');
+  const pageData: PageUnit[] = data.countryProfile;
   return replaceFields({pageData, toReplace: '{country}', replacement: countryName});
 };
 // this is a curried function, it returns another function awaiting an argument
 
-export const getPageUnitById = (data: PageUnit[]) => (id: string): PageUnit => {
-  const pageUnit: PageUnit | void = data.find(obj => obj.id === id);
+export const getPageUnitById = (_data: PageUnit[]) => (id: string): PageUnit => {
+  const pageUnit: PageUnit | undefined = _data.find(obj => obj.id === id);
   if (!pageUnit) return { title: 'Error getting title', narrative: 'Error getting narrative for', id, donor_title: ''};
   return pageUnit;
 };

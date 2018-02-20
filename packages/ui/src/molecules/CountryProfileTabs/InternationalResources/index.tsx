@@ -6,18 +6,18 @@ import {small} from '../../../theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from '../../../atoms/TabsText';
 import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
 import TabsToolTip from '../../TabsToolTip';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pagesData';
+import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import Legend from '../../../atoms/Legend';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;
   countryType: string;
-  pagesData: PageUnit[];
+  pageData: PageUnit[];
 };
 
 const International = (props: Props) => {
-  const getPageLine = getPageUnitById(props.pagesData);
+  const getPageLine = getPageUnitById(props.pageData);
   const shareGniAllocatedToCtry = getPageLine('share-gni-allocated-to-ctry');
   const resourceInflow = getPageLine('resource-inflow');
   const mixtureOfResources = getPageLine('mixture-of-resources');

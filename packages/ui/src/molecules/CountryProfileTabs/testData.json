@@ -1,0 +1,1998 @@
+{
+    "data": {
+      "governmentFinance": {
+        "totalRevenue": {
+          "value": "3.1bn",
+          "toolTip": {
+            "source": "Development Initiatives based on IMF Staff reports.",
+            "heading": "Non-grant government revenue. Data is for 2015."
+          }
+        },
+        "grantsAsPcOfRevenue": {
+          "value": "8.4",
+          "toolTip": {
+            "source": "Development Initiatives based on IMF Article IV publications and World Economic Outlook.",
+            "heading": "Grants, % of government revenue, data is for 2015"
+          }
+        },
+        "spendingAllocation": {
+          "toolTip": {
+            "source": "Development Initiatives based on IMF Staff reports.",
+            "heading": "Government finance by economic type. Data is for 2015."
+          },
+          "data": [
+            {
+              "value": 3227595105,
+              "name": "Development Expenditure",
+              "color": "#0089cc"
+            },
+            {
+              "value": 4745573910,
+              "name": "Recurrent Expenditure",
+              "color": "#109e68"
+            },
+            {
+              "value": 381114825,
+              "name": "Net Lending",
+              "color": "#eb642b"
+            },
+            {
+              "value": 69433875,
+              "name": "Other Expenditure",
+              "color": "#e8443a"
+            }
+          ]
+        },
+        "currencyCode": "UGX"
+      },
+      "povertyTab": {
+        "poverty190Trend": {
+          "data": [
+            {
+              "year": 2000,
+              "uid": "SJphQHYKwM",
+              "value": 62.56,
+              "name": "Uganda"
+            },
+            {
+              "year": 2001,
+              "uid": "ByR3QBKFDM",
+              "value": 62.52,
+              "name": "Uganda"
+            },
+            {
+              "year": 2002,
+              "uid": "By1e27BKYwf",
+              "value": 62.48,
+              "name": "Uganda"
+            },
+            {
+              "year": 2003,
+              "uid": "B1gg3mBFYPf",
+              "value": 60,
+              "name": "Uganda"
+            },
+            {
+              "year": 2004,
+              "uid": "H1We3XHFKwz",
+              "value": 57.53,
+              "name": "Uganda"
+            },
+            {
+              "year": 2005,
+              "uid": "B1ze2mrYtwf",
+              "value": 55.05,
+              "name": "Uganda"
+            },
+            {
+              "year": 2006,
+              "uid": "rkQxhmSYtwz",
+              "value": 51.34,
+              "name": "Uganda"
+            },
+            {
+              "year": 2007,
+              "uid": "SJNl3QStFvz",
+              "value": 47.63,
+              "name": "Uganda"
+            },
+            {
+              "year": 2008,
+              "uid": "rJHx37rKYPM",
+              "value": 43.92,
+              "name": "Uganda"
+            },
+            {
+              "year": 2009,
+              "uid": "SJLe2mHKYPf",
+              "value": 42.14,
+              "name": "Uganda"
+            },
+            {
+              "year": 2010,
+              "uid": "SyDghXrKtPz",
+              "value": 40.36,
+              "name": "Uganda"
+            },
+            {
+              "year": 2011,
+              "uid": "SydehQHttwf",
+              "value": 36.99,
+              "name": "Uganda"
+            },
+            {
+              "year": 2012,
+              "uid": "H1KenQHFYvM",
+              "value": 34.82,
+              "name": "Uganda"
+            },
+            {
+              "year": 2013,
+              "uid": "ryqeh7rFKvM",
+              "value": 34.64,
+              "name": "Uganda"
+            }
+          ],
+          "toolTip": {
+            "source": "Development Initiatives based on World Bank PovcalNet.",
+            "heading": "Percentage of population living under 2011 PPP$ 1.90 per day."
+          }
+        },
+        "depthOfExtremePoverty": {
+          "value": "10",
+          "toolTip": {
+            "heading": "Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country. Data is for 2013",
+            "source": "World Bank PovcalNet."
+          }
+        },
+        "incomeDistTrend": {
+          "data": [
+            {
+              "value": 6.36,
+              "quintileName": "value bottom 20%"
+            },
+            {
+              "value": 10.41,
+              "quintileName": "value 2nd quintile"
+            },
+            {
+              "value": 14.32,
+              "quintileName": "value 3rd quintile"
+            },
+            {
+              "value": 20.62,
+              "quintileName": "value 4th quintile"
+            },
+            {
+              "value": 48.29,
+              "quintileName": "value 5th quintile"
+            }
+          ],
+          "toolTip": {
+            "heading": "Percentage of income received by each quintile of the population. Data is for 2014 or most recent year prior.",
+            "source": "World Bank World Development Indicators, series code SI.DST.FRST.20, SI.DST.02ND.20, SI.DST.03RD.20, SI.DST.04TH.20 and SI.DST.05TH.20."
+          }
+        }
+      },
+      "populationTab": {
+        "population": {
+          "value": "39m",
+          "toolTip": {
+            "source": "World Bank World Development Indicators, series code SP.POP.TOTL.",
+            "heading": "Total population. Data is for 2015"
+          }
+        },
+        "populationDistribution": {
+          "data": [
+            {
+              "group": "rural",
+              "value": 32748169,
+              "year": 2015
+            },
+            {
+              "group": "urban",
+              "value": 6284214,
+              "year": 2015
+            },
+            {
+              "group": "rural",
+              "value": 31824596,
+              "year": 2014
+            },
+            {
+              "group": "urban",
+              "value": 5958375,
+              "year": 2014
+            },
+            {
+              "group": "rural",
+              "value": 30926456,
+              "year": 2013
+            },
+            {
+              "group": "urban",
+              "value": 5646931,
+              "year": 2013
+            },
+            {
+              "group": "rural",
+              "value": 30051586,
+              "year": 2012
+            },
+            {
+              "group": "urban",
+              "value": 5352574,
+              "year": 2012
+            },
+            {
+              "group": "rural",
+              "value": 29189811,
+              "year": 2011
+            },
+            {
+              "group": "urban",
+              "value": 5070531,
+              "year": 2011
+            },
+            {
+              "group": "rural",
+              "value": 28346066,
+              "year": 2010
+            },
+            {
+              "group": "urban",
+              "value": 4803351,
+              "year": 2010
+            },
+            {
+              "group": "rural",
+              "value": 27516800,
+              "year": 2009
+            },
+            {
+              "group": "urban",
+              "value": 4550325,
+              "year": 2009
+            },
+            {
+              "group": "rural",
+              "value": 26706523,
+              "year": 2008
+            },
+            {
+              "group": "urban",
+              "value": 4307904,
+              "year": 2008
+            },
+            {
+              "group": "rural",
+              "value": 25913052,
+              "year": 2007
+            },
+            {
+              "group": "urban",
+              "value": 4078906,
+              "year": 2007
+            },
+            {
+              "group": "rural",
+              "value": 25140902,
+              "year": 2006
+            },
+            {
+              "group": "urban",
+              "value": 3860023,
+              "year": 2006
+            },
+            {
+              "group": "rural",
+              "value": 24388487,
+              "year": 2005
+            },
+            {
+              "group": "urban",
+              "value": 3653926,
+              "year": 2005
+            },
+            {
+              "group": "rural",
+              "value": 23657612,
+              "year": 2004
+            },
+            {
+              "group": "urban",
+              "value": 3459841,
+              "year": 2004
+            },
+            {
+              "group": "rural",
+              "value": 22945784,
+              "year": 2003
+            },
+            {
+              "group": "urban",
+              "value": 3271976,
+              "year": 2003
+            },
+            {
+              "group": "rural",
+              "value": 22249709,
+              "year": 2002
+            },
+            {
+              "group": "urban",
+              "value": 3106085,
+              "year": 2002
+            },
+            {
+              "group": "rural",
+              "value": 21548799,
+              "year": 2001
+            },
+            {
+              "group": "urban",
+              "value": 2985869,
+              "year": 2001
+            },
+            {
+              "group": "rural",
+              "value": 20887714,
+              "year": 2000
+            },
+            {
+              "group": "urban",
+              "value": 2869922,
+              "year": 2000
+            },
+            {
+              "group": "rural",
+              "value": 20263194,
+              "year": 1999
+            },
+            {
+              "group": "urban",
+              "value": 2763163,
+              "year": 1999
+            },
+            {
+              "group": "rural",
+              "value": 19676498,
+              "year": 1998
+            },
+            {
+              "group": "urban",
+              "value": 2660314,
+              "year": 1998
+            },
+            {
+              "group": "rural",
+              "value": 19114813,
+              "year": 1997
+            },
+            {
+              "group": "urban",
+              "value": 2564684,
+              "year": 1997
+            },
+            {
+              "group": "rural",
+              "value": 18569096,
+              "year": 1996
+            },
+            {
+              "group": "urban",
+              "value": 2472372,
+              "year": 1996
+            },
+            {
+              "group": "rural",
+              "value": 18032815,
+              "year": 1995
+            },
+            {
+              "group": "urban",
+              "value": 2380152,
+              "year": 1995
+            },
+            {
+              "group": "rural",
+              "value": 17499437,
+              "year": 1994
+            },
+            {
+              "group": "urban",
+              "value": 2291829,
+              "year": 1994
+            },
+            {
+              "group": "rural",
+              "value": 16972229,
+              "year": 1993
+            },
+            {
+              "group": "urban",
+              "value": 2205431,
+              "year": 1993
+            },
+            {
+              "group": "rural",
+              "value": 16450659,
+              "year": 1992
+            },
+            {
+              "group": "urban",
+              "value": 2120868,
+              "year": 1992
+            },
+            {
+              "group": "rural",
+              "value": 15935241,
+              "year": 1991
+            },
+            {
+              "group": "urban",
+              "value": 2038187,
+              "year": 1991
+            },
+            {
+              "group": "rural",
+              "value": 15458181,
+              "year": 1990
+            },
+            {
+              "group": "urban",
+              "value": 1926188,
+              "year": 1990
+            },
+            {
+              "group": "rural",
+              "value": 15011137,
+              "year": 1989
+            },
+            {
+              "group": "urban",
+              "value": 1792801,
+              "year": 1989
+            },
+            {
+              "group": "rural",
+              "value": 14561185,
+              "year": 1988
+            },
+            {
+              "group": "urban",
+              "value": 1666593,
+              "year": 1988
+            },
+            {
+              "group": "rural",
+              "value": 14120252,
+              "year": 1987
+            },
+            {
+              "group": "urban",
+              "value": 1548026,
+              "year": 1987
+            },
+            {
+              "group": "rural",
+              "value": 13694521,
+              "year": 1986
+            },
+            {
+              "group": "urban",
+              "value": 1439219,
+              "year": 1986
+            },
+            {
+              "group": "rural",
+              "value": 13292344,
+              "year": 1985
+            },
+            {
+              "group": "urban",
+              "value": 1338745,
+              "year": 1985
+            },
+            {
+              "group": "rural",
+              "value": 12916851,
+              "year": 1984
+            },
+            {
+              "group": "urban",
+              "value": 1247779,
+              "year": 1984
+            },
+            {
+              "group": "rural",
+              "value": 12564714,
+              "year": 1983
+            },
+            {
+              "group": "urban",
+              "value": 1162713,
+              "year": 1983
+            },
+            {
+              "group": "rural",
+              "value": 12232720,
+              "year": 1982
+            },
+            {
+              "group": "urban",
+              "value": 1085429,
+              "year": 1982
+            },
+            {
+              "group": "rural",
+              "value": 11914822,
+              "year": 1981
+            },
+            {
+              "group": "urban",
+              "value": 1012185,
+              "year": 1981
+            },
+            {
+              "group": "rural",
+              "value": 11602908,
+              "year": 1980
+            },
+            {
+              "group": "urban",
+              "value": 944846,
+              "year": 1980
+            },
+            {
+              "group": "rural",
+              "value": 11281400,
+              "year": 1979
+            },
+            {
+              "group": "urban",
+              "value": 896277,
+              "year": 1979
+            },
+            {
+              "group": "rural",
+              "value": 10957604,
+              "year": 1978
+            },
+            {
+              "group": "urban",
+              "value": 860347,
+              "year": 1978
+            },
+            {
+              "group": "rural",
+              "value": 10644848,
+              "year": 1977
+            },
+            {
+              "group": "urban",
+              "value": 825893,
+              "year": 1977
+            },
+            {
+              "group": "rural",
+              "value": 10346620,
+              "year": 1976
+            },
+            {
+              "group": "urban",
+              "value": 793152,
+              "year": 1976
+            },
+            {
+              "group": "rural",
+              "value": 10064845,
+              "year": 1975
+            },
+            {
+              "group": "urban",
+              "value": 762226,
+              "year": 1975
+            },
+            {
+              "group": "rural",
+              "value": 9800487,
+              "year": 1974
+            },
+            {
+              "group": "urban",
+              "value": 733140,
+              "year": 1974
+            },
+            {
+              "group": "rural",
+              "value": 9549680,
+              "year": 1973
+            },
+            {
+              "group": "urban",
+              "value": 706662,
+              "year": 1973
+            },
+            {
+              "group": "rural",
+              "value": 9308116,
+              "year": 1972
+            },
+            {
+              "group": "urban",
+              "value": 680205,
+              "year": 1972
+            },
+            {
+              "group": "rural",
+              "value": 9065212,
+              "year": 1971
+            },
+            {
+              "group": "urban",
+              "value": 655153,
+              "year": 1971
+            },
+            {
+              "group": "rural",
+              "value": 8816919,
+              "year": 1970
+            },
+            {
+              "group": "urban",
+              "value": 629105,
+              "year": 1970
+            },
+            {
+              "group": "rural",
+              "value": 8561695,
+              "year": 1969
+            },
+            {
+              "group": "urban",
+              "value": 601078,
+              "year": 1969
+            },
+            {
+              "group": "rural",
+              "value": 8315650,
+              "year": 1968
+            },
+            {
+              "group": "urban",
+              "value": 557216,
+              "year": 1968
+            },
+            {
+              "group": "rural",
+              "value": 8064936,
+              "year": 1967
+            },
+            {
+              "group": "urban",
+              "value": 515696,
+              "year": 1967
+            },
+            {
+              "group": "rural",
+              "value": 7815085,
+              "year": 1966
+            },
+            {
+              "group": "urban",
+              "value": 477662,
+              "year": 1966
+            },
+            {
+              "group": "rural",
+              "value": 7572784,
+              "year": 1965
+            },
+            {
+              "group": "urban",
+              "value": 441592,
+              "year": 1965
+            },
+            {
+              "group": "rural",
+              "value": 7337957,
+              "year": 1964
+            },
+            {
+              "group": "urban",
+              "value": 408224,
+              "year": 1964
+            },
+            {
+              "group": "rural",
+              "value": 7110045,
+              "year": 1963
+            },
+            {
+              "group": "urban",
+              "value": 378114,
+              "year": 1963
+            },
+            {
+              "group": "rural",
+              "value": 6890456,
+              "year": 1962
+            },
+            {
+              "group": "urban",
+              "value": 349699,
+              "year": 1962
+            },
+            {
+              "group": "rural",
+              "value": 6682923,
+              "year": 1961
+            },
+            {
+              "group": "urban",
+              "value": 323706,
+              "year": 1961
+            },
+            {
+              "group": "rural",
+              "value": 6488172,
+              "year": 1960
+            },
+            {
+              "group": "urban",
+              "value": 300039,
+              "year": 1960
+            }
+          ],
+          "toolTip": {
+            "source": "World Bank World Development Indicators, series code SP.RUR.TOTL.ZS, SP.URB.TOTL.IN.ZS.",
+            "heading": "Urban vs rural population level."
+          }
+        },
+        "populationPerAgeBand": {
+          "data": [
+            {
+              "band": "0-14",
+              "value": 18770673,
+              "year": 2015
+            },
+            {
+              "band": "15-64",
+              "value": 19289804,
+              "year": 2015
+            },
+            {
+              "band": "65-and-above",
+              "value": 971906,
+              "year": 2015
+            },
+            {
+              "band": "0-14",
+              "value": 18260510,
+              "year": 2014
+            },
+            {
+              "band": "15-64",
+              "value": 18581665,
+              "year": 2014
+            },
+            {
+              "band": "65-and-above",
+              "value": 944574,
+              "year": 2014
+            },
+            {
+              "band": "0-14",
+              "value": 17749065,
+              "year": 2013
+            },
+            {
+              "band": "15-64",
+              "value": 17906330,
+              "year": 2013
+            },
+            {
+              "band": "65-and-above",
+              "value": 917992,
+              "year": 2013
+            },
+            {
+              "band": "0-14",
+              "value": 17243642,
+              "year": 2012
+            },
+            {
+              "band": "15-64",
+              "value": 17264882,
+              "year": 2012
+            },
+            {
+              "band": "65-and-above",
+              "value": 892096,
+              "year": 2012
+            },
+            {
+              "band": "0-14",
+              "value": 16736177,
+              "year": 2011
+            },
+            {
+              "band": "15-64",
+              "value": 16657378,
+              "year": 2011
+            },
+            {
+              "band": "65-and-above",
+              "value": 866787,
+              "year": 2011
+            },
+            {
+              "band": "0-14",
+              "value": 16233270,
+              "year": 2010
+            },
+            {
+              "band": "15-64",
+              "value": 16077467,
+              "year": 2010
+            },
+            {
+              "band": "65-and-above",
+              "value": 838680,
+              "year": 2010
+            },
+            {
+              "band": "0-14",
+              "value": 15748165,
+              "year": 2009
+            },
+            {
+              "band": "15-64",
+              "value": 15504455,
+              "year": 2009
+            },
+            {
+              "band": "65-and-above",
+              "value": 814505,
+              "year": 2009
+            },
+            {
+              "band": "0-14",
+              "value": 15271504,
+              "year": 2008
+            },
+            {
+              "band": "15-64",
+              "value": 14955157,
+              "year": 2008
+            },
+            {
+              "band": "65-and-above",
+              "value": 790868,
+              "year": 2008
+            },
+            {
+              "band": "0-14",
+              "value": 14798032,
+              "year": 2007
+            },
+            {
+              "band": "15-64",
+              "value": 14429131,
+              "year": 2007
+            },
+            {
+              "band": "65-and-above",
+              "value": 764795,
+              "year": 2007
+            },
+            {
+              "band": "0-14",
+              "value": 14329357,
+              "year": 2006
+            },
+            {
+              "band": "15-64",
+              "value": 13929144,
+              "year": 2006
+            },
+            {
+              "band": "65-and-above",
+              "value": 742424,
+              "year": 2006
+            },
+            {
+              "band": "0-14",
+              "value": 13858561,
+              "year": 2005
+            },
+            {
+              "band": "15-64",
+              "value": 13463162,
+              "year": 2005
+            },
+            {
+              "band": "65-and-above",
+              "value": 720690,
+              "year": 2005
+            },
+            {
+              "band": "0-14",
+              "value": 13410951,
+              "year": 2004
+            },
+            {
+              "band": "15-64",
+              "value": 12998807,
+              "year": 2004
+            },
+            {
+              "band": "65-and-above",
+              "value": 704983,
+              "year": 2004
+            },
+            {
+              "band": "0-14",
+              "value": 12964682,
+              "year": 2003
+            },
+            {
+              "band": "15-64",
+              "value": 12560929,
+              "year": 2003
+            },
+            {
+              "band": "65-and-above",
+              "value": 692149,
+              "year": 2003
+            },
+            {
+              "band": "0-14",
+              "value": 12528298,
+              "year": 2002
+            },
+            {
+              "band": "15-64",
+              "value": 12147961,
+              "year": 2002
+            },
+            {
+              "band": "65-and-above",
+              "value": 679535,
+              "year": 2002
+            },
+            {
+              "band": "0-14",
+              "value": 12107859,
+              "year": 2001
+            },
+            {
+              "band": "15-64",
+              "value": 11759466,
+              "year": 2001
+            },
+            {
+              "band": "65-and-above",
+              "value": 667343,
+              "year": 2001
+            },
+            {
+              "band": "0-14",
+              "value": 11710139,
+              "year": 2000
+            },
+            {
+              "band": "15-64",
+              "value": 11396538,
+              "year": 2000
+            },
+            {
+              "band": "65-and-above",
+              "value": 650959,
+              "year": 2000
+            },
+            {
+              "band": "0-14",
+              "value": 11340481,
+              "year": 1999
+            },
+            {
+              "band": "15-64",
+              "value": 11050349,
+              "year": 1999
+            },
+            {
+              "band": "65-and-above",
+              "value": 635527,
+              "year": 1999
+            },
+            {
+              "band": "0-14",
+              "value": 10991945,
+              "year": 1998
+            },
+            {
+              "band": "15-64",
+              "value": 10726137,
+              "year": 1998
+            },
+            {
+              "band": "65-and-above",
+              "value": 618730,
+              "year": 1998
+            },
+            {
+              "band": "0-14",
+              "value": 10653305,
+              "year": 1997
+            },
+            {
+              "band": "15-64",
+              "value": 10427838,
+              "year": 1997
+            },
+            {
+              "band": "65-and-above",
+              "value": 598354,
+              "year": 1997
+            },
+            {
+              "band": "0-14",
+              "value": 10312423,
+              "year": 1996
+            },
+            {
+              "band": "15-64",
+              "value": 10152508,
+              "year": 1996
+            },
+            {
+              "band": "65-and-above",
+              "value": 576536,
+              "year": 1996
+            },
+            {
+              "band": "0-14",
+              "value": 9963569,
+              "year": 1995
+            },
+            {
+              "band": "15-64",
+              "value": 9894165,
+              "year": 1995
+            },
+            {
+              "band": "65-and-above",
+              "value": 555233,
+              "year": 1995
+            },
+            {
+              "band": "0-14",
+              "value": 9650221,
+              "year": 1994
+            },
+            {
+              "band": "15-64",
+              "value": 9604701,
+              "year": 1994
+            },
+            {
+              "band": "65-and-above",
+              "value": 538322,
+              "year": 1994
+            },
+            {
+              "band": "0-14",
+              "value": 9329932,
+              "year": 1993
+            },
+            {
+              "band": "15-64",
+              "value": 9326096,
+              "year": 1993
+            },
+            {
+              "band": "65-and-above",
+              "value": 521632,
+              "year": 1993
+            },
+            {
+              "band": "0-14",
+              "value": 9007191,
+              "year": 1992
+            },
+            {
+              "band": "15-64",
+              "value": 9061048,
+              "year": 1992
+            },
+            {
+              "band": "65-and-above",
+              "value": 503288,
+              "year": 1992
+            },
+            {
+              "band": "0-14",
+              "value": 8679368,
+              "year": 1991
+            },
+            {
+              "band": "15-64",
+              "value": 8806980,
+              "year": 1991
+            },
+            {
+              "band": "65-and-above",
+              "value": 487080,
+              "year": 1991
+            },
+            {
+              "band": "0-14",
+              "value": 8351451,
+              "year": 1990
+            },
+            {
+              "band": "15-64",
+              "value": 8565279,
+              "year": 1990
+            },
+            {
+              "band": "65-and-above",
+              "value": 467640,
+              "year": 1990
+            },
+            {
+              "band": "0-14",
+              "value": 8068444,
+              "year": 1989
+            },
+            {
+              "band": "15-64",
+              "value": 8281833,
+              "year": 1989
+            },
+            {
+              "band": "65-and-above",
+              "value": 451981,
+              "year": 1989
+            },
+            {
+              "band": "0-14",
+              "value": 7784465,
+              "year": 1988
+            },
+            {
+              "band": "15-64",
+              "value": 8008408,
+              "year": 1988
+            },
+            {
+              "band": "65-and-above",
+              "value": 434904,
+              "year": 1988
+            },
+            {
+              "band": "0-14",
+              "value": 7503538,
+              "year": 1987
+            },
+            {
+              "band": "15-64",
+              "value": 7746397,
+              "year": 1987
+            },
+            {
+              "band": "65-and-above",
+              "value": 419910,
+              "year": 1987
+            },
+            {
+              "band": "0-14",
+              "value": 7227874,
+              "year": 1986
+            },
+            {
+              "band": "15-64",
+              "value": 7501795,
+              "year": 1986
+            },
+            {
+              "band": "65-and-above",
+              "value": 404071,
+              "year": 1986
+            },
+            {
+              "band": "0-14",
+              "value": 6962935,
+              "year": 1985
+            },
+            {
+              "band": "15-64",
+              "value": 7280430,
+              "year": 1985
+            },
+            {
+              "band": "65-and-above",
+              "value": 387724,
+              "year": 1985
+            },
+            {
+              "band": "0-14",
+              "value": 6741690,
+              "year": 1984
+            },
+            {
+              "band": "15-64",
+              "value": 7046199,
+              "year": 1984
+            },
+            {
+              "band": "65-and-above",
+              "value": 375325,
+              "year": 1984
+            },
+            {
+              "band": "0-14",
+              "value": 6535628,
+              "year": 1983
+            },
+            {
+              "band": "15-64",
+              "value": 6828022,
+              "year": 1983
+            },
+            {
+              "band": "65-and-above",
+              "value": 363777,
+              "year": 1983
+            },
+            {
+              "band": "0-14",
+              "value": 6339439,
+              "year": 1982
+            },
+            {
+              "band": "15-64",
+              "value": 6625779,
+              "year": 1982
+            },
+            {
+              "band": "65-and-above",
+              "value": 352931,
+              "year": 1982
+            },
+            {
+              "band": "0-14",
+              "value": 6145499,
+              "year": 1981
+            },
+            {
+              "band": "15-64",
+              "value": 6440235,
+              "year": 1981
+            },
+            {
+              "band": "65-and-above",
+              "value": 341273,
+              "year": 1981
+            },
+            {
+              "band": "0-14",
+              "value": 5950145,
+              "year": 1980
+            },
+            {
+              "band": "15-64",
+              "value": 6267603,
+              "year": 1980
+            },
+            {
+              "band": "65-and-above",
+              "value": 330006,
+              "year": 1980
+            },
+            {
+              "band": "0-14",
+              "value": 5777090,
+              "year": 1979
+            },
+            {
+              "band": "15-64",
+              "value": 6080314,
+              "year": 1979
+            },
+            {
+              "band": "65-and-above",
+              "value": 320273,
+              "year": 1979
+            },
+            {
+              "band": "0-14",
+              "value": 5604072,
+              "year": 1978
+            },
+            {
+              "band": "15-64",
+              "value": 5901885,
+              "year": 1978
+            },
+            {
+              "band": "65-and-above",
+              "value": 311994,
+              "year": 1978
+            },
+            {
+              "band": "0-14",
+              "value": 5433690,
+              "year": 1977
+            },
+            {
+              "band": "15-64",
+              "value": 5734223,
+              "year": 1977
+            },
+            {
+              "band": "65-and-above",
+              "value": 302828,
+              "year": 1977
+            },
+            {
+              "band": "0-14",
+              "value": 5267998,
+              "year": 1976
+            },
+            {
+              "band": "15-64",
+              "value": 5578798,
+              "year": 1976
+            },
+            {
+              "band": "65-and-above",
+              "value": 292976,
+              "year": 1976
+            },
+            {
+              "band": "0-14",
+              "value": 5107129,
+              "year": 1975
+            },
+            {
+              "band": "15-64",
+              "value": 5436272,
+              "year": 1975
+            },
+            {
+              "band": "65-and-above",
+              "value": 283669,
+              "year": 1975
+            },
+            {
+              "band": "0-14",
+              "value": 4968712,
+              "year": 1974
+            },
+            {
+              "band": "15-64",
+              "value": 5288934,
+              "year": 1974
+            },
+            {
+              "band": "65-and-above",
+              "value": 275981,
+              "year": 1974
+            },
+            {
+              "band": "0-14",
+              "value": 4835865,
+              "year": 1973
+            },
+            {
+              "band": "15-64",
+              "value": 5150735,
+              "year": 1973
+            },
+            {
+              "band": "65-and-above",
+              "value": 268716,
+              "year": 1973
+            },
+            {
+              "band": "0-14",
+              "value": 4705498,
+              "year": 1972
+            },
+            {
+              "band": "15-64",
+              "value": 5021129,
+              "year": 1972
+            },
+            {
+              "band": "65-and-above",
+              "value": 261694,
+              "year": 1972
+            },
+            {
+              "band": "0-14",
+              "value": 4570516,
+              "year": 1971
+            },
+            {
+              "band": "15-64",
+              "value": 4896148,
+              "year": 1971
+            },
+            {
+              "band": "65-and-above",
+              "value": 253702,
+              "year": 1971
+            },
+            {
+              "band": "0-14",
+              "value": 4427351,
+              "year": 1970
+            },
+            {
+              "band": "15-64",
+              "value": 4774021,
+              "year": 1970
+            },
+            {
+              "band": "65-and-above",
+              "value": 245597,
+              "year": 1970
+            },
+            {
+              "band": "0-14",
+              "value": 4297341,
+              "year": 1969
+            },
+            {
+              "band": "15-64",
+              "value": 4627200,
+              "year": 1969
+            },
+            {
+              "band": "65-and-above",
+              "value": 238232,
+              "year": 1969
+            },
+            {
+              "band": "0-14",
+              "value": 4161374,
+              "year": 1968
+            },
+            {
+              "band": "15-64",
+              "value": 4480797,
+              "year": 1968
+            },
+            {
+              "band": "65-and-above",
+              "value": 229807,
+              "year": 1968
+            },
+            {
+              "band": "0-14",
+              "value": 4020884,
+              "year": 1967
+            },
+            {
+              "band": "15-64",
+              "value": 4337509,
+              "year": 1967
+            },
+            {
+              "band": "65-and-above",
+              "value": 222238,
+              "year": 1967
+            },
+            {
+              "band": "0-14",
+              "value": 3877688,
+              "year": 1966
+            },
+            {
+              "band": "15-64",
+              "value": 4201106,
+              "year": 1966
+            },
+            {
+              "band": "65-and-above",
+              "value": 213953,
+              "year": 1966
+            },
+            {
+              "band": "0-14",
+              "value": 3732295,
+              "year": 1965
+            },
+            {
+              "band": "15-64",
+              "value": 4076112,
+              "year": 1965
+            },
+            {
+              "band": "65-and-above",
+              "value": 205969,
+              "year": 1965
+            },
+            {
+              "band": "0-14",
+              "value": 3605847,
+              "year": 1964
+            },
+            {
+              "band": "15-64",
+              "value": 3940482,
+              "year": 1964
+            },
+            {
+              "band": "65-and-above",
+              "value": 199851,
+              "year": 1964
+            },
+            {
+              "band": "0-14",
+              "value": 3477902,
+              "year": 1963
+            },
+            {
+              "band": "15-64",
+              "value": 3815585,
+              "year": 1963
+            },
+            {
+              "band": "65-and-above",
+              "value": 193924,
+              "year": 1963
+            },
+            {
+              "band": "0-14",
+              "value": 3351468,
+              "year": 1962
+            },
+            {
+              "band": "15-64",
+              "value": 3700443,
+              "year": 1962
+            },
+            {
+              "band": "65-and-above",
+              "value": 188244,
+              "year": 1962
+            },
+            {
+              "band": "0-14",
+              "value": 3230757,
+              "year": 1961
+            },
+            {
+              "band": "15-64",
+              "value": 3593700,
+              "year": 1961
+            },
+            {
+              "band": "65-and-above",
+              "value": 182172,
+              "year": 1961
+            },
+            {
+              "band": "0-14",
+              "value": 3115789,
+              "year": 1960
+            },
+            {
+              "band": "15-64",
+              "value": 3495250,
+              "year": 1960
+            },
+            {
+              "band": "65-and-above",
+              "value": 177172,
+              "year": 1960
+            }
+          ],
+          "toolTip": {
+            "source": "World Bank World Development Indicators, series code SP.POP.0014.TO.ZS, SP.POP.1564.TO.ZS and SP.POP.65UP.TO.ZS.",
+            "heading": "Number of people in each of 3 age bands."
+          }
+        }
+      },
+      "internationalResources": {
+        "GNI": {
+          "value": "27bn",
+          "toolTip": {
+            "source": "Development Initiatives based on World Bank World Development Indicators, series code NY.GNP.MKTP.CD.",
+            "heading": "GNI (2015 US$)"
+          }
+        },
+        "netODAOfGNIIn": {
+          "value": "6.0",
+          "toolTip": {
+            "source": "OECD DAC and WB WDI.",
+            "heading": "Net ODA received, % of GNI. Data is for 2015."
+          }
+        },
+        "netODAOfGNIOut": null,
+        "mixOfResources": {
+          "data": [
+            {
+              "flow_name": "Official development assistance",
+              "color": "#e8443a",
+              "value": 1693450000
+            },
+            {
+              "flow_name": "Other official flows",
+              "color": "#bcd4f0",
+              "value": 36640000
+            },
+            {
+              "flow_name": "Long-term debt (official sources)",
+              "color": "#a45ea1",
+              "value": 429365000
+            },
+            {
+              "flow_name": "Foreign Direct Investment",
+              "color": "#eb642b",
+              "value": 1057301000
+            },
+            {
+              "flow_name": "Portfolio equity",
+              "color": "#f9b865",
+              "value": 90173.15074
+            },
+            {
+              "flow_name": "Short-term debt",
+              "color": "#109e68",
+              "value": 110026000
+            },
+            {
+              "flow_name": "Remittances",
+              "color": "#c2135b",
+              "value": 1049033152
+            }
+          ],
+          "toolTip": {
+            "heading": "Estimates of international resource flows into the country, 2015 US$. Data is for 2015. Estimates are gross inflows where available, with the following exceptions: foreign direct investment and portfolio equity are net inflows (new investments minus disinvestments) and short-term debt is net flows (disbursements minus capital repayments). See methodology for detailed notes on the data for each resource flow.",
+            "source": "Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data."
+          }
+        },
+        "resourceflowsOverTime": {
+          "data": [
+            {
+              "year": 2000,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 274119643.5
+            },
+            {
+              "year": 2001,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 255788790.598
+            },
+            {
+              "year": 2002,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 327289442.6957
+            },
+            {
+              "year": 2003,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 349851014.78
+            },
+            {
+              "year": 2004,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 468012669.99
+            },
+            {
+              "year": 2005,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 520765070.642
+            },
+            {
+              "year": 2006,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 944684322.51
+            },
+            {
+              "year": 2007,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 885456326.6
+            },
+            {
+              "year": 2008,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 1131653831.9
+            },
+            {
+              "year": 2009,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 942363012
+            },
+            {
+              "year": 2010,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 521505002.2
+            },
+            {
+              "year": 2011,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 980609693.1
+            },
+            {
+              "year": 2012,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 1052376696.54
+            },
+            {
+              "year": 2013,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 1410933249.99
+            },
+            {
+              "year": 2014,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 950173954.433
+            },
+            {
+              "year": 2015,
+              "name": "Commercial",
+              "color": "#109e68",
+              "value": 1167417173.15074
+            },
+            {
+              "year": 2000,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1389183237.69
+            },
+            {
+              "year": 2001,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1351383034.305
+            },
+            {
+              "year": 2002,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1165674890.73833
+            },
+            {
+              "year": 2003,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1408511468.26
+            },
+            {
+              "year": 2004,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1584973679.457
+            },
+            {
+              "year": 2005,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1425242800.4641
+            },
+            {
+              "year": 2006,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 5469738088.629
+            },
+            {
+              "year": 2007,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1729723774.165
+            },
+            {
+              "year": 2008,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1694249003.261
+            },
+            {
+              "year": 2009,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1887286799.083
+            },
+            {
+              "year": 2010,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1799728738.56
+            },
+            {
+              "year": 2011,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1533929404.36
+            },
+            {
+              "year": 2012,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1860922373
+            },
+            {
+              "year": 2013,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1798898952.18
+            },
+            {
+              "year": 2014,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 1693642941.06
+            },
+            {
+              "year": 2015,
+              "name": "Official",
+              "color": "#0089cc",
+              "value": 2159455000
+            },
+            {
+              "year": 2000,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 360819173.5
+            },
+            {
+              "year": 2001,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 569663142.7
+            },
+            {
+              "year": 2002,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 718261806.4
+            },
+            {
+              "year": 2003,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 498164870.6
+            },
+            {
+              "year": 2004,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 444933874.9
+            },
+            {
+              "year": 2005,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 436956787.6
+            },
+            {
+              "year": 2006,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 528691815.4
+            },
+            {
+              "year": 2007,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 504662699.8
+            },
+            {
+              "year": 2008,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 697466432.7
+            },
+            {
+              "year": 2009,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 756788845.4
+            },
+            {
+              "year": 2010,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 739089069.7
+            },
+            {
+              "year": 2011,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 800559387.8
+            },
+            {
+              "year": 2012,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 788136373.6
+            },
+            {
+              "year": 2013,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 812397265.9
+            },
+            {
+              "year": 2014,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 747983184
+            },
+            {
+              "year": 2015,
+              "name": "Private",
+              "color": "#e8443a",
+              "value": 1049033152
+            }
+          ],
+          "toolTip": {
+            "heading": "Estimates of International Resource Flows to Developed Countries",
+            "source": "Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook."
+          }
+        }
+      },
+      "overviewTab": {
+        "poorestPeople": {
+          "value": "19.6m",
+          "toolTip": {
+            "source": "Development Initiatives based on World Bank PovcalNet. See our factsheet: http://devinit.org/wp-content/uploads/2015/03/Factsheet-Ending-poverty-by-focusing-on-the-poorest-20-percent-of-people-globally.pdf.",
+            "heading": "Number of people in each country that are part of the poorest 20% of people worldwide. Data is for 2013."
+          }
+        },
+        "population": {
+          "value": "39m",
+          "toolTip": {
+            "source": "World Bank World Development Indicators, series code SP.POP.TOTL.",
+            "heading": "Total population. Data is for 2015"
+          }
+        },
+        "domesticResources": {
+          "value": "3.1bn",
+          "toolTip": {
+            "source": "Development Initiatives based on IMF Staff reports.",
+            "heading": "Non-grant government revenue. Data is for 2015."
+          }
+        },
+        "internationalResources": {
+          "value": "4.4bn",
+          "toolTip": {
+            "source": "Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data.",
+            "heading": "Estimates of international resource flows into the country, 2015 US$. Data is for 2015. Estimates are gross inflows where available, with the following exceptions: foreign direct investment and portfolio equity are net inflows (new investments minus disinvestments) and short-term debt is net flows (disbursements minus capital repayments). See methodology for detailed notes on the data for each resource flow."
+          }
+        },
+        "governmentSpendPerPerson": {
+          "value": "365",
+          "toolTip": {
+            "source": "Development Initiatives based on IMF Article IV publications and World Economic Outlook.",
+            "heading": "Government spending per person, 2015 PPP$. Data is for 2015 or most recent year prior"
+          }
+        },
+        "averageIncomerPerPerson": null,
+        "incomeDistTrend": null
+      }
+    }
+  }

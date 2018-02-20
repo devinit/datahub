@@ -1,0 +1,205 @@
+{
+  "data": {
+    "povertyTabRegional": {
+      "poorestPeople": {
+        "value": "13.1",
+        "toolTip": {
+          "source": "Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.",
+          "heading": "Percentage of people in poverty, in relation to the total population in a given area, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date, but is based on estimates from previous household surveys by the Uganda Bureau of Statistics."
+        }
+      },
+      "lifeExpectancy": {
+        "value": "50.4",
+        "toolTip": {
+          "source": "Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.",
+          "heading": "Average number of years that a person can expect to live in 'full health' by taking into account years lived in less than full health due to disease and/or injury. This can be derived for either males or females and is, in most populations, slightly higher for females. Life expectancy is normally determined at birth but can be derived at any other age based on the current death rates."
+        }
+      },
+      "stdOfLiving": {
+        "value": "19.7",
+        "toolTip": {
+          "source": "Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.",
+          "heading": "The basic needs for people to have a decent standard of living. The higher the score the better standard of living."
+        }
+      }
+    },
+    "overviewTabRegional": {
+      "poorestPeople": {
+        "value": "13.1",
+        "toolTip": {
+          "source": "Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.",
+          "heading": "Percentage of people in poverty, in relation to the total population in a given area, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date, but is based on estimates from previous household surveys by the Uganda Bureau of Statistics."
+        }
+      },
+      "regionalResources": {
+        "value": "22.7m",
+        "value_ncu": "98.4bn",
+        "toolTip": {
+          "source": "Uganda budget information, Ministry of Finance, Planning and Economic Development.",
+          "heading": "The proportion of local government revenue that is locally generated, through collection of fees, fines and other local taxation, by district."
+        }
+      },
+      "regionalResourcesBreakdown": [
+        {
+          "data": {
+            "id": "spotlight_on_uganda_2017.uganda_igf_resources",
+            "year": 2018,
+            "value": 4095043.43,
+            "name": "Locally raised revenues",
+            "color": "#109e68"
+          },
+          "toolTip": {
+            "source": "Uganda budget information, Ministry of Finance, Planning and Economic Development.",
+            "heading": "The proportion of local government revenue that is locally generated, through collection of fees, fines and other local taxation, by district."
+          }
+        },
+        {
+          "data": {
+            "id": "spotlight_on_uganda_2017.uganda_central_resources",
+            "year": 2018,
+            "value": 18640863.95,
+            "name": "Centrally raised revenues",
+            "color": "#e8443a"
+          },
+          "toolTip": {
+            "source": "Local government budgets, Ministry of Finance, Planning and Economic Development",
+            "heading": "The proportion of local government revenue that is funded though central government transfers, by district."
+          }
+        },
+        {
+          "data": {
+            "id": "spotlight_on_uganda_2017.uganda_donor_resources",
+            "year": 2018,
+            "value": 0,
+            "name": "Donor revenues",
+            "color": "#0089cc"
+          },
+          "toolTip": {
+            "source": "Local government budgets, Ministry of Finance, Planning and Economic Development.",
+            "heading": "Donor revenues."
+          }
+        }
+      ],
+      "localGovernmentSpendPerPerson": {
+        "value": "1.7",
+        "toolTip": {
+          "source": "Uganda budget information, Ministry of Finance, Planning and Economic Development.",
+          "heading": "Total per capita local government expenditure allocations, by district."
+        }
+      }
+    },
+    "populationTabRegional": {
+      "totalPopulation": {
+        "value": "2.5m",
+        "toolTip": {
+          "source": "National Population and Housing Census 2014 and Population projections 2014 to 2020, Uganda Bureau of Statistics.",
+          "heading": "The number of people who live in a district."
+        }
+      },
+      "populationDensity": {
+        "value": "1.1k",
+        "toolTip": {
+          "source": "National Population and Housing Census 2014, Uganda Bureau of Statistics.",
+          "heading": "The population per square kilometre, by district."
+        }
+      },
+      "populationDistribution": {
+        "data": [
+          {
+            "group": "rural",
+            "value": 40.77849503709289,
+            "year": 2014
+          },
+          {
+            "group": "urban",
+            "value": 59.22150496290711,
+            "year": 2014
+          }
+        ],
+        "toolTip": {
+          "source": "National Population and Housing Census 2014, Uganda Bureau of Statistics.",
+          "heading": "Percentage of population living in urban and rural settings, by district."
+        }
+      },
+      "averageDependencyRatio": {
+        "value": "91.3",
+        "toolTip": {
+          "source": "Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.",
+          "heading": "A ratio of people typically not in the labour force (the dependent part) and those typically in the labour force (the productive part). The higher the ratio, the higher the level of dependency."
+        }
+      },
+      "allAverageDependencyRatio": {
+        "value": "113.4",
+        "toolTip": {
+          "source": "Profiles of higher (district and municipal) local governments 2014, Uganda Bureau of Statistics.",
+          "heading": "A ratio of people typically not in the labour force (the dependent part) and those typically in the labour force (the productive part). The higher the ratio, the higher the level of dependency."
+        }
+      }
+    },
+    "educationTabRegional": {
+      "pupilTeacherRatioGovtSchl": {
+        "value": "37.0",
+        "toolTip": {
+          "source": "Education statistics abstracts 2010-2016, Ministry of Education.",
+          "heading": "Primary pupil to teacher ratio-government schools."
+        }
+      },
+      "pupilTeacherRatioOtherSchl": {
+        "value": "27.0",
+        "toolTip": {
+          "source": "Education statistics abstracts 2010-2016, Ministry of Education.",
+          "heading": "The number of pupils per teacher in all primary education schools, by district."
+        }
+      },
+      "studentsPassRate": {
+        "value": "67.7",
+        "toolTip": {
+          "source": "Education abstracts 2010-2018 budget data, Ministry of Education.",
+          "heading": "The percentage of pupils that pass the primary education leaving exam, by district."
+        }
+      },
+      "studentsPassDistrictRank": {
+        "value": "8th",
+        "toolTip": {
+          "source": "Education abstracts 2010-2018 budget data, Ministry of Education.",
+          "heading": "The percentage of pupils that pass the primary education leaving exam, by district."
+        }
+      },
+      "primaryEducationfunding": {
+        "value": "61.8",
+        "value_ncu": "228.8k",
+        "toolTip": {
+          "source": "Local government budgets, Ministry of Finance, Planning and Economic Development.",
+          "heading": "Total local government expenditure per child in government funded primary education by district."
+        }
+      }
+    },
+    "healthTabRegional": {
+      "districtPerformance": {
+        "value": "65.2",
+        "toolTip": {
+          "source": "Annual health sector performance reports 2010-2014, Ministry of Health.",
+          "heading": "A composite index based on the performance of all district health indicators. The higher the score the better the rated performance, with 0 the lowest score possible and 100 the highest."
+        }
+      },
+      "districtHealthRank": {
+        "value": "76th"
+      },
+      "treatmeantOfTb": {
+        "value": "74.0",
+        "toolTip": {
+          "source": "Annual health sector performance reports 2010-2014, Ministry of Health.",
+          "heading": "Percentage of successes among a number of attempts for treatment of tuberculosis, by district."
+        }
+      },
+      "healthCareFunding": {
+        "value": "0.3",
+        "value_ncu": "1.1k",
+        "toolTip": {
+          "source": "Local government budgets, Ministry of Finance, Planning and Economic Development.",
+          "heading": "Local government spending to healthcare per person, by district."
+        }
+      }
+    }
+  }
+}

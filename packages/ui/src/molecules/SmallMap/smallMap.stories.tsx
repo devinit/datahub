@@ -10,4 +10,4 @@ storiesOf('Base Maps', module)
   .add('kenya map centered on nairobi', () =>
     <SmallMap slug={'nairobi'} spotlightCountry="kenya" />,
   )
-  .add('world map centered on inda', () => <SmallMap slug={'india'} />);
+  .add('world map centered on india', () => <SmallMap slug={'india'} />);

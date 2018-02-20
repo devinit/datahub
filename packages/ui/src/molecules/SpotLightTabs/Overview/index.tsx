@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
-import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';
@@ -15,6 +15,7 @@ export type Props = CSProps & {
 };
 
 const Overview = (props: Props) => {
+  if (!props.pageData) throw new Error('missing pages data');
   const getPageLine = getPageUnitById(props.pageData);
   const overviewDistrictPoverty = getPageLine('overview-district-poverty');
   const overviewResources = getPageLine('overview-resources');

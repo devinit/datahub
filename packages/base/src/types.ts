@@ -16,7 +16,7 @@ export interface PageUnit {
   donor_title?: string;
 }
 
-export interface PagesData {
+export interface PageData {
     spotlightDistrict: PageUnit[];
     countryProfile: PageUnit[];
 }
@@ -63,7 +63,7 @@ export interface SelectOption {
 
 export interface MenueItem {
     name: string;
-    link: string;
+    link?: string;
     icon?: string;
     children?: MenueItem[];
 }

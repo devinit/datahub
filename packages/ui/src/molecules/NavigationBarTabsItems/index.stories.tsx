@@ -23,7 +23,7 @@ const toolTip = {
   source: 'source'
 };
 
-storiesOf('Navbar tabs with redux', module)
+storiesOf('Navbar tabs', module)
   .add('Select Dropdown', () =>
     (<Select
       options={options}

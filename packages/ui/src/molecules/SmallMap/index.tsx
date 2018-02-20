@@ -27,7 +27,7 @@ const getMeta = (spotlightCountry?: string): Meta => ({
 
 const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
   const paintProps = spotlightCountry ? configs[spotlightCountry].paint : configs.global.paint;
-  const paint = ({ background: white, ...paintProps });
+  const paint = { background: white, ...paintProps };
   const meta = getMeta(spotlightCountry);
   const viewport = { ...configs.global.viewport };
   return { paint, meta, countryProfile: slug, viewport };

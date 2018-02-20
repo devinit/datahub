@@ -5,7 +5,7 @@ import prettier from 'prettier';
 import { getData } from '../utils';
 import COUNTRIES_QUERY from './queries/Countries.graphql';
 import DISTRICT_QUERY from './queries/Districts.graphql';
-import PAGES_DATA_QUERY from './queries/PageData.graphql';
+import PAGES_DATA_QUERY from './queries/pageData.graphql';
 import GLOBAL_PICTURE_THEMES_QUERY from './queries/GlobalPictureThemes.graphql';
 import SPOTLIGHT_THEMES_QUERY from './queries/SpotlightThemes.graphql';
 import INTL_RESOURCES_TOOLTIP_QUERY from './queries/InternationalResourcesToolTip.graphql';

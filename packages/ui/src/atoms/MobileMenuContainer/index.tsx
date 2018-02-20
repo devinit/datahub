@@ -76,6 +76,7 @@ class MobileMenu extends React.Component<Props> {
   public _renderContent() {
     const items = (child, index) => {
       const activeClass = this.state.selected === index ? 'active' : '';
+      console.log('child props: ', child.props);
       return (
         <li
           key={index}
@@ -83,7 +84,7 @@ class MobileMenu extends React.Component<Props> {
           onClick={this.handleClick(child, index)}
         >
           <span className="navigation__item-title small">
-            <Link href={child.props.url} prefetch>
+            <Link href={child.props.url || '#'} prefetch>
               <a role="link">
                 {child.props.label}
               </a>

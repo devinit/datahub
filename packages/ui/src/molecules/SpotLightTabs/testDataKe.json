@@ -1,0 +1,161 @@
+{
+  "data": {
+    "povertyTabRegional": {
+      "poorestPeople": {
+        "value": "21.8",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2015",
+          "heading": "Percentage of people in poverty, in relation to the total population the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date."
+        }
+      },
+      "meanExpenditure": {
+        "value": "14.0k",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2015",
+          "heading": "The average amount of money (KES) spent by a person in a month in the county."
+        }
+      },
+      "povertyGap": {
+        "value": "4.1",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2015",
+          "heading": "The mean shortfall of the total population from the poverty line (counting the non poor as having zero shortfall), expressed as a percentage of the poverty line. This measure reflects the depth of poverty as well as its incidence."
+        }
+      }
+    },
+    "overviewTabRegional": {
+      "poorestPeople": {
+        "value": "21.8",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2015",
+          "heading": "Percentage of people in poverty, in relation to the total population the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date."
+        }
+      },
+      "regionalResources": {
+        "value": null,
+        "value_ncu": null,
+        "toolTip": {
+          "source": "County governments budgets, several years, County Governments of Kenya",
+          "heading": "The proportion of local government revenue that is locally generated, through collection of fees, fines and other local taxation, by county."
+        }
+      },
+      "regionalResourcesBreakdown": [
+        {
+          "data": {
+            "id": "spotlight_on_kenya_2017.kenya_igf_resources",
+            "year": 2017,
+            "value": null,
+            "name": "Locally raised revenues",
+            "color": "#e8443a"
+          },
+          "toolTip": {
+            "source": "County governments budgets, several years, County Governments of Kenya",
+            "heading": "The proportion of local government revenue that is locally generated, through collection of fees, fines and other local taxation, by county."
+          }
+        },
+        {
+          "data": {
+            "id": "spotlight_on_kenya_2017.kenya_central_resources",
+            "year": 2017,
+            "value": null,
+            "name": "Centrally raised revenues",
+            "color": "#eb642b"
+          },
+          "toolTip": {
+            "source": "County governments budgets, several years, County Governments of Kenya",
+            "heading": "The proportion of local government revenue that is funded though central government transfers, by county."
+          }
+        },
+        {
+          "data": {
+            "id": "spotlight_on_kenya_2017.kenya_donor_resources",
+            "year": 2017,
+            "value": null,
+            "name": "Donor revenues",
+            "color": "#0089cc"
+          },
+          "toolTip": {
+            "source": "County governments budgets, several years, County Governments of Kenya",
+            "heading": "Donor revenues."
+          }
+        }
+      ],
+      "localGovernmentSpendPerPerson": {
+        "value": "99.0",
+        "toolTip": {
+          "source": "County governments budgets, several years, County Governments of Kenya",
+          "heading": "Total per capita local government expenditure allocations, by county."
+        }
+      }
+    },
+    "populationTabRegional": {
+      "totalPopulation": {
+        "value": "3.1m",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2014",
+          "heading": "The number of people who live in a county."
+        }
+      },
+      "populationDensity": {
+        "value": "4.5k",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2012",
+          "heading": "The population per square kilometre, by county."
+        }
+      },
+      "populationBirthRate": {
+        "value": "36.0",
+        "toolTip": {
+          "source": "The Socio-Economic Atlas of Kenya 2010",
+          "heading": "The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county."
+        }
+      }
+    },
+    "educationTabRegional": {
+      "primaryPupilTeacherRatioAllSchl": {
+        "value": "28.7",
+        "toolTip": {
+          "source": "Basic Statistics Booklet, Ministry of Education Kenya",
+          "heading": "The number of pupils per teacher in all primary education schools, by county."
+        }
+      },
+      "primaryTeacherRatioPublicSchl": {
+        "value": "36.2",
+        "toolTip": {
+          "source": "Basic Statistics Booklet, Ministry of Education Kenya",
+          "heading": "The relationship between the number of pupils enrolled in a public school and the number of 'full-time equivalent' teachers employed by the school, by county."
+        }
+      },
+      "primaryTeacherRatioPrivateSchl": {
+        "value": "25.4",
+        "toolTip": {
+          "source": "Basic Statistics Booklet, Ministry of Education Kenya",
+          "heading": "The relationship between the number of pupils enrolled in a private school and the number of 'full-time equivalent' teachers employed by the school, by county."
+        }
+      }
+    },
+    "healthTabRegional": {
+      "birthAttendanceSkilled": {
+        "value": "89.1",
+        "toolTip": {
+          "source": "Demographic and Health Survey, 2014, Kenya National Bureau of Statistics",
+          "heading": "Percentage of births births attended by skilled health personnel, by county."
+        }
+      },
+      "contraceptiveUse": {
+        "value": "58.3",
+        "toolTip": {
+          "source": "Demographic and Health Survey, 2014, Kenya National Bureau of Statistics",
+          "heading": "Use of any modern contraceptive methods among married women of reproductive age (15-49) years, by county."
+        }
+      },
+      "healthCareFunding": {
+        "value": "18.0",
+        "toolTip": {
+          "source": "County governments budgets, several years, County Governments of Kenya",
+          "heading": "County government spending to healthcare per person per county."
+        }
+      }
+    }
+  }
+}

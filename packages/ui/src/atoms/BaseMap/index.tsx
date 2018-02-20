@@ -1,5 +1,5 @@
 import * as React from 'react';
-import mapboxgl from 'mapbox-gl';
+import * as mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import LoadingBar from '../../molecules/LoadingBar';
@@ -18,7 +18,6 @@ import {
   GenericTipHtml,
   Meta,
 } from './types';
-
 const NODATA = 'No data';
 
 export interface Props {
@@ -112,7 +111,7 @@ class BaseMap extends React.Component<Props, State> {
   public propertyLayerSlugMap: PropertyLayerSlugMap = {
       national: 'country-slug',
       uganda: 'name',
-      kenya: 'NAME2'
+      kenya: 'NAME_2'
   };
   public propertyLayerNameMap: PropertyLayerSlugMap = {
       ...this.propertyLayerSlugMap,
@@ -301,7 +300,7 @@ class BaseMap extends React.Component<Props, State> {
     return feature;
   }
   public zoomToGeometry(geometry: Geometry) {
-    let bounds: any;
+    let bounds: any; // TODO: add proper types
     if (geometry.type === 'Polygon') {
       const coordinates: number[][] = geometry.coordinates[0];
       bounds = coordinates.reduce((boundsx: any, coord) => {
@@ -319,8 +318,8 @@ class BaseMap extends React.Component<Props, State> {
       }, new mapboxgl.LngLatBounds(sets[0][0][0], sets[0][0][0]));
     }
     if (!bounds) return false;
-    const dx = (bounds.ne.lat - bounds.sw.lat);
-    const dy = (bounds.ne.lng - bounds.sw.lng);
+    const dx = (bounds._ne.lat - bounds._sw.lat);
+    const dy = (bounds._ne.lng - bounds._sw.lng);
     const distance = Math.sqrt((dx * dx) + (dy * dy));
     const maxZoom = distance > 30 || this.props.countryProfile === 'usa' ? 1.3 : 3.5;
     const spotlightZoom = this.props.paint.propertyLayer === 'uganda' ? 5.5 : 4.5;

@@ -8,17 +8,17 @@ import Chart from '../../../atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/TabsText';
 import TabsToolTip from '../../TabsToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   config: any;
-  pagesData: PageUnit[];
+  pageData: PageUnit[];
 };
 
 const Government = (props: Props) => {
-  const getPageLine = getPageUnitById(props.pagesData);
+  const getPageLine = getPageUnitById(props.pageData);
   const totalrevenueCtry = getPageLine('totalrevenue-ctry');
   const govtRevenueExternal = getPageLine('govt-revenue-external');
   const ctryExpenditure = getPageLine('ctry-expenditure');

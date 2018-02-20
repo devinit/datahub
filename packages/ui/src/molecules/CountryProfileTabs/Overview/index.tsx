@@ -8,18 +8,18 @@ import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
 import TabsToolTip from '../../TabsToolTip';
 import Chart from '../../../atoms/Chart';
 import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-base/lib/pagesData';
+import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { red} from '../../../theme/semantic';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
   countryType: string;
   config: OverviewChartConfigs;
-  pagesData: PageUnit[];
+  pageData: PageUnit[];
 };
 
 const Overview = (props: Props) => {
-  const getPageLine = getPageUnitById(props.pagesData);
+  const getPageLine = getPageUnitById(props.pageData);
   const overviewCtryPoorestPeople = getPageLine('overview-ctry-poorest-people');
   const overviewCtryResources = getPageLine('overview-ctry-resources');
   const avgIncomePerPerson = getPageLine('avg-income-per-person');

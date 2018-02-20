@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { Div, P } from 'glamorous';
+import { P, Div } from 'glamorous';
 import { SectionHeader } from '../../atoms/Header';
 import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import Router from 'next/router';
-import { LightBg, DarkBg } from '../../atoms/Backgrounds';
+import { DarkBg, LightBg } from '../../atoms/Backgrounds';
 import Observer from 'react-intersection-observer';
-import * as NoSSR from 'react-no-ssr';
 
-const push = () => Router.push('/methodology');
+const goToMethodologyPage = () => Router.push('/methodology');
 
 if ((process as any).browser) require('intersection-observer');
 
-export default () => {
-  return (
+export default () =>
     <section id="about">
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
@@ -52,7 +50,6 @@ export default () => {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="12">
-              <NoSSR onSSR={<P textAlign={'center'}>Loading...</P>}>
                 <Observer>
                   <iframe
                     src="http://www.youtube.com/embed/2G1Gg2opKPg?rel=0&amp;showinfo=0"
@@ -62,7 +59,6 @@ export default () => {
                     style={{ width: '100%' }}
                   />
                 </Observer>
-              </NoSSR>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -73,11 +69,10 @@ export default () => {
           <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
           </P>
-          <Button color="grey" size="large" onClick={push}>
+          <Button color="grey" size="large" onClick={goToMethodologyPage}>
             Methodology and Data <Icon name="chevron right" />
           </Button>
         </Container>
       </LightBg>
     </section>
-  );
-};
+    ;

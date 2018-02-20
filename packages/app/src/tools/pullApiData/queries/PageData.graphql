@@ -1,4 +1,4 @@
-query PageData {
+query pageData {
   countryProfile: countryProfilePageData {
     id
     title

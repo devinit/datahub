@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
-import {
-  GovernmentFinance,
-  InternationalResources,
-  Overview,
-  Population,
-  Poverty,
-} from '@devinit/dh-ui/lib/molecules/CountryProfileTabs';
+import * as CountryProfileTabs from '@devinit/dh-ui/lib/molecules/CountryProfileTabs';
 import povertyConfig from '@devinit/dh-ui/lib/visbox/povertyTabCharts';
 import populationConfig from '@devinit/dh-ui/lib/visbox/populationTabCharts';
 import govtFinanceConfig from '@devinit/dh-ui/lib/visbox/governmentFinanceTabCharts';
@@ -18,54 +12,54 @@ import {getCountry} from '@devinit/dh-base/lib/utils';
 import { shouldShowTabData} from '@devinit/dh-base/lib/utils';
 import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
 import overviewConfig from '@devinit/dh-ui/lib/visbox/overviewTabCharts';
-import {getCountryProfileData} from '@devinit/dh-base/lib/pagesData';
+import {getCountryProfileData} from '@devinit/dh-base/lib/pageData';
 import { TabDataQuery,  TabDataQueryVariables } from '../../../types';
 import {TAB_QUERY} from './query.graphql';
 
 type TChildProps = ChildProps<TabDataQueryVariables, TabDataQuery>;
 
-const CountryProfileTabs: React.SFC<TChildProps> = ({data}) => {
+const CountryProfileTabs: React.SFC<TChildProps> = ({data, id}) => {
   if (!data || data.loading) {
     return <LoadingPlaceholder loading />;
   }
   const variables = data.variables;
   if (!variables) throw new Error ('country profile variable id missing');
-  const pagesData = getCountryProfileData(variables.id);
-  const country = getCountry(variables.id);
+  const pageData = getCountryProfileData(id);
+  const country = getCountry(id);
   const props = data as TabDataQuery; // make typescript happy
   return (
     <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
-        <Overview
+        <CountryProfileTabs.Overview
           {...props}
-          pagesData={pagesData}
+          pageData={pageData}
           countryType={country.countryType}
           config={overviewConfig}
         />
       </Pane>
       {country.countryType !== DONOR && props.povertyTab && shouldShowTabData(props.povertyTab)
         ? <Pane label="Poverty" id={'poverty-tab'}>
-          <Poverty pagesData={pagesData} config={povertyConfig} {...props} />
+          <CountryProfileTabs.Poverty pageData={pageData} config={povertyConfig} {...props} />
         </Pane>
         : ''}
       {
         props.populationTab && shouldShowTabData(props.populationTab) ?
           <Pane label="Population" id={'population-tab'}>
-            <Population pagesData={pagesData} config={populationConfig} {...props} />
+            <CountryProfileTabs.Population pageData={pageData} config={populationConfig} {...props} />
           </Pane> : ''
       }
 
       {Number(country.has_domestic_data) && props.governmentFinance
       && shouldShowTabData(props.governmentFinance) ?
         <Pane label="Government Finance" id={'govt-finance-tab'}>
-          <GovernmentFinance pagesData={pagesData} config={govtFinanceConfig} {...props} />
+          <CountryProfileTabs.GovernmentFinance pageData={pageData} config={govtFinanceConfig} {...props} />
         </Pane>
         : ''}
       {
         props.internationalResources && shouldShowTabData(props.internationalResources) ?
           <Pane label="International Resources" id={'internantion-reseources-tab'}>
-            <InternationalResources
-              pagesData={pagesData}
+            <CountryProfileTabs.InternationalResources
+              pageData={pageData}
               countryType={country.countryType}
               config={internationalResourcesConfig}
               {...props}
