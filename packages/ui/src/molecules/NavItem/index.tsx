@@ -6,12 +6,12 @@ import { small } from '../../theme';
 export interface Props  {
   path: string;
   pathName: string;
-  isActive: boolean;
+  // isActive?: boolean;
 }
 // TODO: check that isActive prop works
-const NavItem = ({ path, pathName, isActive }: Props) =>
+const NavItem = ({ path, pathName}: Props) =>
   (<Link href={path}>
-    <A isActive={isActive.toString()} fontSize={small} textDecoration={'none'}>
+    <A fontSize={small} textDecoration={'none'}>
       {' '}{pathName}{' '}
     </A>
   </Link>);
