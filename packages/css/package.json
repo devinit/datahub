@@ -23,7 +23,7 @@
     "url": "https://github.com/devinit/datagub.git"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "less": "^2.7.2"
+    "gulp": "3.9.1",
+    "less": "2.7.3"
   }
 }
