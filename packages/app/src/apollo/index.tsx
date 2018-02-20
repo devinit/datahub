@@ -1,10 +1,10 @@
 import * as fetch from 'isomorphic-fetch';
 import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 
 (global as any).fetch = (global as any).fetch || fetch;
 
-// declare var process : Process;
+declare var process: IProcess;
 
 let apolloClient;
 

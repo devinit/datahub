@@ -1,6 +1,8 @@
 import { createStore, combineReducers, compose } from 'redux';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import {app, initialState} from './reducers';
+
+declare var process: IProcess;
 
 let reduxStore;
 

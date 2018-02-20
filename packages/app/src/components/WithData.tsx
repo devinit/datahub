@@ -3,7 +3,9 @@ import { Provider } from 'react-redux';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import Head from 'next/head';
 import initApollo from '../apollo';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
+
+declare var process: IProcess;
 import { initRedux} from '../redux';
 
 export interface Props {
