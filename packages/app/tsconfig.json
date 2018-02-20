@@ -12,6 +12,7 @@
     "noUnusedLocals": true,
     "rootDir": "src",
     "outDir": "lib",
+    "skipLibCheck": true,
     "removeComments": true
   },
   "exclude": [
