@@ -1,4 +1,3 @@
-const withTypescript = require('@zeit/next-typescript');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const packageJSON = require('./package.json');
 

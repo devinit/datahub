@@ -3,19 +3,17 @@ import { graphql, ChildProps } from 'react-apollo';
 import { WhiteBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import Chart from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
 import config from '@devinit/dh-ui/lib/visbox/localLinePartition';
-import {GovernmentFinanceQuery,  GovernmentFinanceQueryVariables} from '../../../types';
+import {LGvmntFinanceQuery, LGvmntFinanceQueryVariables} from '../../../types';
+import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import {LOC_GVMT_QUERY} from './query.graphql';
 
-type QueryVarTs =  GovernmentFinanceQueryVariables & {
-  chartId: string,
-  year?: number,
-  shouldScrollIntoView?: boolean;
-  budgetType?: string,
+export type QueryVarTs =  LGvmntFinanceQueryVariables & {
+  state?: StateToShare
 };
 
-type TChildProps = ChildProps<QueryVarTs, GovernmentFinanceQuery>;
+export type TChildProps = ChildProps<QueryVarTs, LGvmntFinanceQuery>;
 
-const withData = graphql<GovernmentFinanceQuery, GovernmentFinanceQueryVariables, TChildProps>(LOC_GVMT_QUERY, {
+const withData = graphql<LGvmntFinanceQuery, LGvmntFinanceQueryVariables, TChildProps>(LOC_GVMT_QUERY, {
   options: props => ({
     variables: {
       id: props.id,
@@ -23,19 +21,17 @@ const withData = graphql<GovernmentFinanceQuery, GovernmentFinanceQueryVariables
     },
   }),
 });
-export default withData(({data,  chartId, year, shouldScrollIntoView, budgetType}: TChildProps) => {
+
+export default withData(({data, country, id}: TChildProps) => {
   const loading = data && data.loading;
   const governmentFinance =  data && data.localGovernmentFinance;
-  if (!governmentFinance) return <p>loading ...</p>;
+  if (!governmentFinance || loading) return <p>loading ...</p>;
   // TODO: Report apollo codegen error; a nested error is sometimes stated as null eg levels in domestic
   // type even when stated to be non nullable
   const props =  {
-    loading: loading === undefined ? true : loading,
+    loading: loading === undefined ? true : loading, // TODO: not useful
+    chartId: 'localGovmntChart',
     config,
-    chartId,
-    year,
-    shouldScrollIntoView,
-    budgetType,
     currencyCode: governmentFinance.currencyCode || '',
     currencyUSD: governmentFinance.currencyUSD || '' ,
     startYear: governmentFinance.startYear,

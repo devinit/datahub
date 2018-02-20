@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Div } from 'glamorous';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import { Container } from 'semantic-ui-react';
 import Generic from '../Generic';
+
+declare var process: IProcess;
 
 interface Props  {
   id: string;

@@ -13,17 +13,19 @@ import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
 import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
 import CountrySearch from '../../organisms/CountrySearchInput';
+import {QueryVarTs} from '../../organisms/LocalGovernmentFinance';
 import dynamic from 'next/dynamic';
 import Generic from '../Generic';
 
-const DynamicRegionalLowerTabs = dynamic(
-  import('../../organisms/LocalGovernmentFinance'), { ssr: true });
+const DynamicRegionalLowerTabs = dynamic<{}, QueryVarTs>(
+  import('../../organisms/LocalGovernmentFinance') as Promise<any>,
+  { ssr: true });
 
 interface Props  {
   id: string;
   rehydrated?: boolean; // TODO: use this for client caching
   country: string;
-  currencyCode: string;
+  currencyCode: string; // TODO: get from a data file
   currencyUSD: string;
   state?: StateToShare;
 }
@@ -82,7 +84,6 @@ export default class RegionalProfile extends React.Component<Props, State> {
         {process.env.NODE_ENV !== 'test' ?
           <DynamicRegionalLowerTabs
             id={this.props.id}
-            currency={this.state.currency}
             country={this.state.country.slug}
             {...this.props.state}
           /> : ''

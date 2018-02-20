@@ -5,8 +5,10 @@ import ProfileSocialMedia from '@devinit/dh-ui/lib/molecules/ProfileSocialMedia'
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import { CardContainer } from '@devinit/dh-ui/lib/atoms/Container';
 import Link from 'next/link';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
+
+declare var process: IProcess;
 
 const multilaterals = [
   {name: 'World Bank Group', id: 'ida'},

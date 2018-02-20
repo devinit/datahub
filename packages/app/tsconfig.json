@@ -7,13 +7,13 @@
     "strict": true,
     "lib": ["es2017", "dom"],
     "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "rootDir": "src",
     "outDir": "lib",
     "removeComments": true
   },
-  "strictPropertyInitialization": false,
   "exclude": [
     "node_modules",
     "dist"

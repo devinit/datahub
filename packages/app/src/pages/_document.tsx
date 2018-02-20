@@ -1,10 +1,12 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import * as React from 'react';
 import { renderStatic } from 'glamor/server';
-import {process} from '@devinit/dh-base/lib/types';
 import indexCss from '../critical-css';
 import unbundlingCss from '../critical-css/unbundling'; // in private/criticalCss
 import profileCss from '../critical-css/countryProfile';
+import {IProcess} from '@devinit/dh-base/lib/types';
+
+declare var process: IProcess;
 // import 'lib/offline-install'; // Get our service worker on the page
 
 const version = process.env.config.version;

@@ -12,7 +12,9 @@ import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import Generic from '../Generic';
 
-const DynamicMapComponent = dynamic(import('../../organisms/Map'), {
+// any type use here a quick fix for typescript
+const DynamicMapComponent = dynamic<{}, any>(
+  import('../../organisms/Map') as Promise<any>, {
   ssr: false,
   loading: () => <MapBackground />,
 });

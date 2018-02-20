@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): BoundAction => ({
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 
-type Props = BoundAction & {
+export type Props = BoundAction & {
   app: AppState;
   id: string;
   state: StateToShare;

@@ -6,8 +6,10 @@ import ProfileSocialMedia from '@devinit/dh-ui/lib/molecules/ProfileSocialMedia'
 import { CardContainer } from '@devinit/dh-ui/lib/atoms/Container';
 import SearchInput from '../../organisms/CountrySearchInput';
 import Link from 'next/link';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
+
+declare var process: IProcess;
 
 export default () =>
   (<Generic pathname="/country-profiles">

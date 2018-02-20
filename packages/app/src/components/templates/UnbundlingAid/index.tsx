@@ -28,6 +28,7 @@ const TextContainer = glamorous.div({
   marginTop: '2em',
   marginBottom: '2em',
 });
+
 interface Props  {
   title: string;
   pathname: string;

@@ -2,9 +2,11 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 import data from './data';
+
+declare var process: IProcess;
 
 const BottomWrapper = glamorous.div({
   '& h3': {

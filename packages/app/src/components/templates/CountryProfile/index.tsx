@@ -6,6 +6,7 @@ import { SectionHeader } from '@devinit/dh-ui/lib/atoms/Header';
 import { DarkBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
+import {Props as CLProps} from '../../organisms/CountryProfileLowerTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
 import {getCountry} from '@devinit/dh-base/lib/utils';
 import CountrySearch from '../../organisms/CountrySearchInput';
@@ -16,8 +17,8 @@ import methodologyData from '../../organisms/Methodology/country-profile';
 import {Country} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 
-const DynamicCountryProfileLowerTabs = dynamic(
-  import('../../organisms/CountryProfileLowerTabs'), { ssr: true });
+const DynamicCountryProfileLowerTabs = dynamic<{}, CLProps>(
+  import('../../organisms/CountryProfileLowerTabs') as Promise<any>, { ssr: true });
 
 interface Props  {
   id: string;

@@ -1,9 +1,11 @@
 import * as React from 'react';
 import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
 import Generic from '../Generic';
+
+declare var process: IProcess;
 
 const StyledIframe = glamorous.iframe({
   width: '100%',

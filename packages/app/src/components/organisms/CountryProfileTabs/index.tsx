@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
-import * as CountryProfileTabs from '@devinit/dh-ui/lib/molecules/CountryProfileTabs';
+import * as CTabs from '@devinit/dh-ui/lib/molecules/CountryProfileTabs';
 import povertyConfig from '@devinit/dh-ui/lib/visbox/povertyTabCharts';
 import populationConfig from '@devinit/dh-ui/lib/visbox/populationTabCharts';
 import govtFinanceConfig from '@devinit/dh-ui/lib/visbox/governmentFinanceTabCharts';
@@ -30,7 +30,7 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({data, id}) => {
   return (
     <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
-        <CountryProfileTabs.Overview
+        <CTabs.Overview
           {...props}
           pageData={pageData}
           countryType={country.countryType}
@@ -39,26 +39,26 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({data, id}) => {
       </Pane>
       {country.countryType !== DONOR && props.povertyTab && shouldShowTabData(props.povertyTab)
         ? <Pane label="Poverty" id={'poverty-tab'}>
-          <CountryProfileTabs.Poverty pageData={pageData} config={povertyConfig} {...props} />
+          <CTabs.Poverty pageData={pageData} config={povertyConfig} {...props} />
         </Pane>
         : ''}
       {
         props.populationTab && shouldShowTabData(props.populationTab) ?
           <Pane label="Population" id={'population-tab'}>
-            <CountryProfileTabs.Population pageData={pageData} config={populationConfig} {...props} />
+            <CTabs.Population pageData={pageData} config={populationConfig} {...props} />
           </Pane> : ''
       }
 
       {Number(country.has_domestic_data) && props.governmentFinance
       && shouldShowTabData(props.governmentFinance) ?
         <Pane label="Government Finance" id={'govt-finance-tab'}>
-          <CountryProfileTabs.GovernmentFinance pageData={pageData} config={govtFinanceConfig} {...props} />
+          <CTabs.GovernmentFinance pageData={pageData} config={govtFinanceConfig} {...props} />
         </Pane>
         : ''}
       {
         props.internationalResources && shouldShowTabData(props.internationalResources) ?
           <Pane label="International Resources" id={'internantion-reseources-tab'}>
-            <CountryProfileTabs.InternationalResources
+            <CTabs.InternationalResources
               pageData={pageData}
               countryType={country.countryType}
               config={internationalResourcesConfig}

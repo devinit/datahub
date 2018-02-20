@@ -1,5 +1,3 @@
-// @flow
-/* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
 import * as React from 'react';
 import { rehydrate } from 'glamor';
 import withData from '../components/WithData';

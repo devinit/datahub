@@ -314,12 +314,12 @@ export interface ResourcesOverTimeQuery {
   } | null,
 };
 
-export interface GovernmentFinanceQueryVariables {
+export interface LGvmntFinanceQueryVariables {
   id: string,
   country: string,
 };
 
-export interface GovernmentFinanceQuery {
+export interface LGvmntFinanceQuery {
   localGovernmentFinance:  {
     startYear: number,
     currencyCode: string,

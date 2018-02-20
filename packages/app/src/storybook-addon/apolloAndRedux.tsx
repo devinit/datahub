@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import { Provider } from 'react-redux';
-import { store, Istore } from './redux';
+import { store } from './redux';
 import { client } from './apollo';
 
 // APollo provide comes with redux provider
-const withApolloAndReduxProvider = (args: Istore) => {
+const withApolloAndReduxProvider = () => {
   return storyFn => {
     return (
-      <Provider store={store(args)}>
+      <Provider store={store}>
         <ApolloProvider client={client}>
           {storyFn()}
         </ApolloProvider>

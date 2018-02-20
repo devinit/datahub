@@ -5,9 +5,9 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import SocialMediaBar from '@devinit/dh-ui/lib/molecules/SocialMediaBar';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
 import Generic from '../Generic';
-import {process} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
 
-/* eslint-disable max-len */
+declare var process: IProcess;
 
 interface Props  {
   pathname: string;

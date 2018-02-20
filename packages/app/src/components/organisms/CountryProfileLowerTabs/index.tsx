@@ -15,7 +15,7 @@ import {getCountry} from '@devinit/dh-base/lib/utils';
 
 import data from './data';
 
-type Props = StateToShare & {
+export type Props = StateToShare & {
   id: string,
   selectedTab?: number,
 };
