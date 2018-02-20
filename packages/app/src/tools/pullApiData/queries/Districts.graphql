@@ -1,6 +1,0 @@
-query Districts($country: String!) {
-  districts(country: $country) {
-    id
-    name
-  }
-}

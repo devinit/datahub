@@ -32,6 +32,7 @@
     "@devinit/datahub-api": "^1.0.2",
     "@devinit/dh-base": "^1.0.3",
     "@devinit/dh-ui": "^1.0.2",
+    "@devinit/graphql-next": "^0.1.17",
     "@zeit/next-css": "^0.1.2",
     "apollo-client-preset": "^1.0.8",
     "compression": "^1.7.1",
@@ -55,11 +56,11 @@
     "semantic-ui-react": "0.78.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.13",
+    "@storybook/addon-links": "^3.3.13",
     "@storybook/addon-storyshots": "^3.3.10",
-		"@storybook/addon-actions": "^3.3.13",
-		"@storybook/addon-links": "^3.3.13",
-		"@storybook/addons": "^3.3.13",
-		"@storybook/react": "^3.3.13",
+    "@storybook/addons": "^3.3.13",
+    "@storybook/react": "^3.3.13",
     "@zeit/next-typescript": "0.0.8",
     "apollo-codegen": "0.18.3"
   },

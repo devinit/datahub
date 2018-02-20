@@ -1,22 +1,21 @@
 {
-    "compilerOptions": {
-      "module": "esnext",
-      "target": "esnext",
-      "jsx": "react",
-      "outDir": "lib",
-      "sourceMap": false,
-      "strict": true,
-      "allowJs": true,
-      "lib": ["es2017", "dom"],
-      "experimentalDecorators": true,
-      "noImplicitAny": false,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "removeComments": true
-    },
-    "strictPropertyInitialization": false,
-    "exclude": [
-      "node_modules",
-      "lib"
-    ]
-  }
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES6",
+    "jsx": "react",
+    "sourceMap": false,
+    "strict": true,
+    "lib": ["es2017", "dom"],
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "removeComments": true
+  },
+  "strictPropertyInitialization": false,
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
