@@ -29,7 +29,7 @@
     "breaking": "release-it -i major -n"
   },
   "dependencies": {
-    "@devinit/datahub-api": "1.0.2",
+    "@devinit/datahub-api": "1.0.4",
     "@devinit/dh-base": "^1.0.3",
     "@devinit/dh-ui": "^1.0.2",
     "@devinit/graphql-next": "0.1.17",
