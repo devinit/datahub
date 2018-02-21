@@ -10,7 +10,7 @@
 		"@types/ramda": "0.25.18",
 		"@types/react": "16.0.36",
 		"@types/react-redux": "5.0.15",
-		"@types/storybook__react": "3.0.6",
+		"@types/storybook__react": "3.0.7",
 		"css-loader": "0.28.9",
 		"enzyme": "3.3.0",
 		"enzyme-adapter-react-16": "1.1.1",
