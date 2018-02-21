@@ -11,6 +11,6 @@ jest.mock('mapbox-gl', () => ({
 }));
 
 initStoryshots({
-  configPath: 'private/.storybook',
+  configPath: 'src/.storybook',
   storyKindRegex:/^((?!.*?DontTest).)*$/
 });

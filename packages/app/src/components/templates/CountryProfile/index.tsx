@@ -7,18 +7,28 @@ import { DarkBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
 import {Props as CLProps} from '../../organisms/CountryProfileLowerTabs';
-import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
+// import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
 import {getCountry} from '@devinit/dh-base/lib/utils';
-import CountrySearch from '../../organisms/CountrySearchInput';
+// import CountrySearch from '../../organisms/CountrySearchInput';
 import { GOVERNMENT_FINANCE_LOWER } from '@devinit/dh-base/lib/utils/constants';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
-import dynamic from 'next/dynamic';
+import dynamic, {DynamicOptions} from 'next/dynamic';
 import methodologyData from '../../organisms/Methodology/country-profile';
 import {Country} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 
-const DynamicCountryProfileLowerTabs = dynamic<{}, CLProps>(
-  import('../../organisms/CountryProfileLowerTabs') as Promise<any>, { ssr: true });
+// TODO: the dynamic types are a pain to work with, need to get improved submit PR
+const dynamicOpts: DynamicOptions<any, CLProps> = {
+    modules: props => ({
+        CountryProfileLowerTabs: import('../../organisms/CountryProfileLowerTabs') as Promise<any>
+      }),
+    render: (props, {CountryProfileLowerTabs}) =>
+      <div>
+        <CountryProfileLowerTabs {...props} />
+      </div>
+};
+
+const DynamicCountryProfileLowerTabs = dynamic(dynamicOpts as any);
 
 interface Props  {
   id: string;
@@ -57,11 +67,11 @@ export default class Profile extends React.Component<Props> {
   public render() {
     return (
       <Generic pathname="/country" query={this.props.id}>
-        <ProfileHeader
+        {/* <ProfileHeader
           entity={this.state.country}
           countrySearch={CountrySearch}
           jumpToSection={this.jumpToSection}
-        />
+        /> */}
         <CountryProfileTopTabs id={this.props.id} />
         <Div paddingTop={'4em'} paddingBottom={'4em'}>
           <Container textAlign="center">
