@@ -1,6 +1,7 @@
-import { getData } from '../utils';
+import {getData} from '../../utils';
 
 // running this module will trigger the server to cache the requested data in memory
+// on the server
 // hence precaching on the server
 
 export const getMapsData = <T extends {indicators: U[]}, U extends {id: string}>

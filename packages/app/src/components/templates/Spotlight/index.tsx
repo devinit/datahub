@@ -6,8 +6,8 @@ import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/s
 import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import dynamic from 'next/dynamic';
 import About from '@devinit/dh-ui/lib/molecules/About';
-// import {Props} from '../../organisms/Map';
-import { cacheMapData, capitalize } from '@devinit/dh-base/lib/utils';
+import {capitalize} from '@devinit/dh-base/lib/utils';
+import {cacheMapData} from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import Generic from '../Generic';
 

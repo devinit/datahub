@@ -1,5 +1,4 @@
 import * as React from 'react';
-import '@devinit/datahub-api'; // types
 import BaseMap, {indicatorsWith0dp} from '../../atoms/BaseMap';
 import { PaintMap, Meta } from '../../atoms/BaseMap/types';
 import { Div, P } from 'glamorous';

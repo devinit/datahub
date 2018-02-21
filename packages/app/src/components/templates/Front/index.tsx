@@ -7,7 +7,7 @@ import CountrySearchInput from '../../organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
 import dynamic from 'next/dynamic';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
-import { cacheMapData } from '@devinit/dh-base/lib/utils';
+import { cacheMapData } from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import Generic from '../Generic';

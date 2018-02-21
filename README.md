@@ -38,6 +38,7 @@ Important Points / guides
 ------------------------
 
 - Develop from a unix OS (MacOs , ubuntu etc). I dont plan to add windows support.
+- Prefer to use vscode, it has very good typescript support.
 
 
 Pain Points / issues

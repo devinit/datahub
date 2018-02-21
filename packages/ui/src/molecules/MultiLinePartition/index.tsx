@@ -1,4 +1,3 @@
-import '@devinit/datahub-api';
 import * as React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 import LoadingBar from '../LoadingBar';

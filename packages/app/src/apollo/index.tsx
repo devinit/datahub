@@ -1,6 +1,7 @@
 import * as fetch from 'isomorphic-fetch';
 import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
 import {IProcess} from '@devinit/dh-base/lib/types';
+const introspectionQueryResultData = require('./fragmentTypes.json');
 
 (global as any).fetch = (global as any).fetch || fetch;
 
@@ -8,7 +9,12 @@ declare var process: IProcess;
 
 let apolloClient;
 
-const cache = (introspectionQueryResultData?: any) => new InMemoryCache({
+export interface InitApollo {
+  initialState?: any;
+  uri?: string; // defaults to process.browser
+}
+
+const cache = () => new InMemoryCache({
   dataIdFromObject: (obj: {uid?: string}) => obj.uid,
   fragmentMatcher: introspectionQueryResultData && new IntrospectionFragmentMatcher({
     introspectionQueryResultData
@@ -16,20 +22,14 @@ const cache = (introspectionQueryResultData?: any) => new InMemoryCache({
 });
 
 export function create(args: InitApollo): ApolloClient<any> {
-  const {initialState, uri, introspectionQueryResultData} = args;
+  const {initialState, uri} = args;
   return new ApolloClient({
     connectToDevTools: process.browser, // comes from webpack
-    cache: cache(introspectionQueryResultData).restore(initialState || {}),
+    cache: cache().restore(initialState || {}),
     ssrMode: !process.browser,
     link: new HttpLink({ uri: process.env.config.api || uri }),
     queryDeduplication: true
   });
-}
-
-export interface InitApollo {
-  initialState?: any;
-  uri?: string; // defaults to process.browser
-  introspectionQueryResultData?: any;
 }
 
 export default function initApollo(args?: InitApollo): ApolloClient<any> {

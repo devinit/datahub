@@ -4,7 +4,7 @@
 import * as fetch from 'isomorphic-fetch';
 import * as fs from 'fs-extra';
 
-export default (api: string, fragmentFilePath?: string): void => {
+export default (api: string): void => {
   fetch(api, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@ export default (api: string, fragmentFilePath?: string): void => {
         type => type.possibleTypes !== null,
       );
       result.data.__schema.types = filteredData; // eslint-disable-line
-      const filePath = fragmentFilePath || 'fragmentTypes.json';
+      const filePath = 'src/apollo/fragmentTypes.json';
       fs.writeFile(filePath, JSON.stringify(result.data))
         .then(() => console.info('Fragment types successfully extracted!'))
         .catch(console.error);

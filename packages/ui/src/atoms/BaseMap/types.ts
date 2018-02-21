@@ -1,5 +1,3 @@
-import '@devinit/datahub-api'; // types
-
 export interface Viewport {
   zoom: number;
   center: number[];

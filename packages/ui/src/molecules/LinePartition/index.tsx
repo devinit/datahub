@@ -1,4 +1,3 @@
-import '@devinit/datahub-api';
 import * as React from 'react';
 import glamorous, {H4} from 'glamorous';
 import { groupBy, uniq } from 'ramda';

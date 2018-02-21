@@ -1,6 +1,10 @@
 import {menueData} from '../components/templates/Generic/data';
-import {MenueItem} from '@devinit/dh-base/lib/types';
+import {MenueItem, IProcess} from '@devinit/dh-base/lib/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
+import * as localforage from 'localforage';
+import { createApolloFetch,  FetchResult } from 'apollo-fetch';
+
+declare var process: IProcess;
 
 export interface PageMetaArgs {
     query?: string;
@@ -34,4 +38,74 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
     if (!item) return {title: 'Development Data Hub'};
     const linkMeta = createLinkMeta(args, item);
     return linkMeta;
+};
+
+const apolloFetch = createApolloFetch({ uri: process.env.config.api });
+
+export async function shouldPurgeCache(version: string): Promise<boolean> {
+    const storedVersion = await localforage.getItem('version');
+    return !storedVersion || storedVersion !== version;
+  }
+
+export async function getLocalStorageInstance(version: string): Promise<any> {
+if (process.browser) return Promise.resolve(null);
+try {
+        const shouldPurge = await shouldPurgeCache(version);
+        if (!shouldPurge) return localforage;
+        await localforage.clear();
+        await localforage.setItem('version', version);
+        return localforage;
+    } catch (error) {
+        console.error(error, 'localforage: ');
+        await localforage.clear(); // cache is possibly full so lets clear it
+        return localforage;
+    }
+}
+
+export interface IgetData {
+    query: string;
+    variables: object;
+  }
+
+export async function getData<T>(opts: IgetData): Promise<T> {
+    try {
+        const {query, variables} = opts;
+        const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
+        let storage: any = null;
+        if (process.browser) {
+            storage = await getLocalStorageInstance(process.version);  // @ts-ignore
+            const cached = storage ? await storage.getItem(key) : null;
+            if (cached) return JSON.parse(cached);
+        }
+        const response: FetchResult = variables
+            ? await apolloFetch({ query, variables })
+            : await apolloFetch({ query });
+        if (response.errors) throw response.errors;
+        if (storage) {
+            try {
+                await storage.setItem(key, JSON.stringify(response.data));
+            } catch (error) {
+                console.error(error, 'getData function: ');
+            }
+        }
+        return response.data;
+    } catch (error) {
+    throw error;
+    }
+}
+
+export const cacheMapData = async (workerPath: string): Promise<void> => {
+if (process.browser && (window as any).Worker) {
+    try {
+    const storage = await getLocalStorageInstance(process.env.version);
+    const storedVersion = await storage.getItem(`${process.env.version}-${workerPath}`);
+    if (!storedVersion || storedVersion !== `${process.env.version}-${workerPath}`) {
+        await storage.setItem(`${process.env.version}-${workerPath}`, `${process.env.version}-${workerPath}`);
+        const worker = new Worker(workerPath); // caches global picture map data
+        worker.onmessage = (event) => console.log(event);
+    }
+    } catch (error) {
+        console.error(error, 'cache mapdata: ');
+    }
+}
 };

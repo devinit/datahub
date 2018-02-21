@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const SRC_PATH = path.join(__dirname, '../src');
+const packageJSon = require('../package.json');
 // load the default config generator.
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
@@ -14,11 +15,13 @@ const newRules = [
       ]
   }
 ]
-const newExtensions =  ['.ts', '.tsx', '.js'];
+const newExtensions =  ['.ts', '.tsx'];
 
 const newPlugins = [
   new webpack.DefinePlugin({
     'process.browser': true,
+    'process.env.config.api': JSON.stringify(packageJSon.config.api),
+    'process.env.config.old_datahub': JSON.stringify(packageJSon.config.old_datahub),
     'process.storybook': true
   })
 ];

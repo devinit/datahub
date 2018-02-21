@@ -1,4 +1,3 @@
-import '@devinit/datahub-api';
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {Div} from 'glamorous';

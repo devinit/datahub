@@ -17,8 +17,8 @@ const {ANALYZE} = process.env;
     new webpack.DefinePlugin({
       'process.storybook': false,
       'process.version': packageJSON.version,
-      'process.config.api': packageJSON.config.api,
-      'process.config.old_datahub': packageJSON.config.old_datahub
+      'process.env.config.api': JSON.stringify(packageJSon.config.api),
+      'process.env.config.old_datahub': JSON.stringify(packageJSon.config.old_datahub)
     })
   ];
 

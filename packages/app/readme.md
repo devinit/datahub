@@ -3,7 +3,7 @@
 -------------------------------
 
 
-Important Notes / guides
+Important Notes / guides arround various npm commands & gotchas
 
 -----------------------
 
@@ -12,5 +12,6 @@ Important Notes / guides
 -  The static folder is a composition of assets in the UI package & those only native to the app package.
 Use `` lerna run cp-assets `` to sync the assets in app package with those in UI package
 
-
 - We are building on top of next.js see next.config.js for configs.
+
+- `` lerna run build-fragment `` to build out a fragment json for grapqhl union types
