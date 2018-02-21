@@ -51,7 +51,7 @@
     "react-apollo": "2.0.4",
     "react-dom": "16.2.0",
     "react-no-ssr": "1.1.0",
-    "react-redux": "5.0.6",
+    "react-redux": "5.0.7",
     "redux": "3.7.2",
     "semantic-ui-react": "0.78.2"
   },
