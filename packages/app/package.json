@@ -19,6 +19,7 @@
     "dev": "next src",
     "build:next": "next build src",
     "start": "next start src",
+    "cp-assets": "cp -R ../ui/static/* static/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "gql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
     "gql-ts": "apollo-codegen generate ./src/**/query.graphql.ts --schema schema.json --target typescript --output ./src/types.ts",

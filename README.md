@@ -27,9 +27,22 @@ TODO:
 
 _________
 
-
-- [ ] Make tsconfigs & tslints shareable
 - [ ] Maybe replace redux with [unistore](https://github.com/developit/unistore)
 - [ ] Use [greenlet](https://github.com/developit/greenlet) for webworkers
 - [ ] Explore [purgecss](https://github.com/FullHuman/purgecss) for css optimisation
 - [ ] Explore [reactpot](https://github.com/reactopt/reactopt) for further perf
+
+
+Important Points / guides
+
+------------------------
+
+- Develop from a unix OS (MacOs , ubuntu etc). I dont plan to add windows support.
+
+
+Pain Points / issues
+
+--------------
+
+- [ ] Currently stack with npm instead of yarn. Yarn installs seem to fail. I havent looked deeply into this.
+
