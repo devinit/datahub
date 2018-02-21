@@ -21,7 +21,7 @@
 		"lerna": "2.8.0",
 		"pretty-format": "22.1.0",
 		"react-test-renderer": "16.2.0",
-		"style-loader": "0.19.1",
+		"style-loader": "0.20.2",
 		"ts-jest": "22.0.1",
 		"ts-loader": "3.3.1",
 		"tslint": "5.9.1",
