@@ -24,6 +24,6 @@
   },
   "devDependencies": {
     "gulp": "3.9.1",
-    "less": "2.7.3"
+    "less": "3.0.1"
   }
 }
