@@ -32,13 +32,13 @@
     "breaking": "release-it -i major -n"
   },
   "dependencies": {
-    "@devinit/datahub-api": "1.0.2",
+    "@devinit/datahub-api": "1.0.4",
     "@devinit/dh-base": "^1.0.3",
     "@devinit/dh-ui": "^1.0.2",
     "@devinit/graphql-next": "0.1.17",
     "@zeit/next-css": "0.1.2",
     "apollo-client-preset": "1.0.8",
-    "compression": "1.7.1",
+    "compression": "1.7.2",
     "express": "4.16.2",
     "glamor": "2.20.40",
     "glamorous": "4.11.6",
@@ -54,7 +54,7 @@
     "react-apollo": "2.0.4",
     "react-dom": "16.2.0",
     "react-no-ssr": "1.1.0",
-    "react-redux": "5.0.6",
+    "react-redux": "5.0.7",
     "redux": "3.7.2",
     "semantic-ui-react": "0.78.2"
   },
@@ -64,7 +64,7 @@
     "@storybook/addon-storyshots": "3.3.13",
     "@storybook/addons": "3.3.13",
     "@storybook/react": "3.3.13",
-    "apollo-codegen": "0.18.3",
+    "apollo-codegen": "0.18.6",
     "typescript": "2.7.2"
   },
   "jest": {
