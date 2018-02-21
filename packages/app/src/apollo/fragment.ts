@@ -3,9 +3,10 @@
  */
 import * as fetch from 'isomorphic-fetch';
 import * as fs from 'fs-extra';
+const packageJson = require('../../package.json');
 
-export default (api: string): void => {
-  fetch(api, {
+const main = (): void => {
+  fetch(packageJson.config.api, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -26,14 +27,18 @@ export default (api: string): void => {
   })
     .then(result => result.json())
     .then(result => {
+      console.log('data', result);
       // here we're filtering out any type information unrelated to unions or interfaces
       const filteredData = result.data.__schema.types.filter(
         type => type.possibleTypes !== null,
       );
       result.data.__schema.types = filteredData; // eslint-disable-line
       const filePath = 'src/apollo/fragmentTypes.json';
+
       fs.writeFile(filePath, JSON.stringify(result.data))
         .then(() => console.info('Fragment types successfully extracted!'))
         .catch(console.error);
     });
 };
+
+main();
