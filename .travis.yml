@@ -12,6 +12,4 @@ script:
 - lerna bootstrap
 - lerna run build --scope @devinit/dh-app
 - lerna run lint
-cache:
-  - node_modules
 sudo: false
