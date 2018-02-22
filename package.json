@@ -38,16 +38,16 @@
 		]
 	},
 	"jest": {
-	"coverageDirectory": "./coverage/",
-	"mapCoverage": true,
-    "setupTestFrameworkScriptFile": "<rootDir>/packages/ui/jest/jest.config.js",
-	"collectCoverage": true,
-	"transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/packages/ui/jest/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/ui/jest/__mocks__/styleMock.js"
-    }
-  }
+		"coverageDirectory": "./coverage/",
+		"mapCoverage": true,
+		"setupTestFrameworkScriptFile": "<rootDir>/packages/ui/jest/jest.config.js",
+		"collectCoverage": true,
+		"transform": {
+			".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+		},
+		"moduleNameMapper": {
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/packages/ui/jest/__mocks__/fileMock.js",
+			"\\.(css|less)$": "<rootDir>/ui/jest/__mocks__/styleMock.js"
+		}
+	}
 }
