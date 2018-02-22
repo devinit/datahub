@@ -28,6 +28,11 @@ export default withData(({data, country, id}: TChildProps) => {
   if (!governmentFinance || loading) return <p>loading ...</p>;
   // TODO: Report apollo codegen error; a nested error is sometimes stated as null eg levels in domestic
   // type even when stated to be non nullable
+  const items: Array<{title: string, data: DH.IDomestic[], inverted?: boolean}> = [];
+  const revenueAndGrants = governmentFinance.revenueAndGrants as DH.IDomestic[];
+  const expenditure = governmentFinance.expenditure as DH.IDomestic[];
+  if (revenueAndGrants.length) items.push({title: 'Revenue', data: revenueAndGrants});
+  if (expenditure.length) items.push({title: 'Expenditure', data: expenditure, inverted: false});
   const props =  {
     loading: loading === undefined ? true : loading, // TODO: not useful
     chartId: 'localGovmntChart',
@@ -35,16 +40,7 @@ export default withData(({data, country, id}: TChildProps) => {
     currencyCode: governmentFinance.currencyCode || '',
     currencyUSD: governmentFinance.currencyUSD || '' ,
     startYear: governmentFinance.startYear,
-    items: [
-      {
-        title: 'Revenue And Grants',
-        data:  (governmentFinance.revenueAndGrants as DH.IDomestic[]) || [],
-      },
-      {
-        title: 'Expenditure',
-        data: (governmentFinance.expenditure as DH.IDomestic[]) || [],
-      },
-    ]
+    items
   };
   return <WhiteBg><Chart {...props} /></WhiteBg>;
 });

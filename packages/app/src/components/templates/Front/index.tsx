@@ -2,22 +2,14 @@ import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
 import { Div } from 'glamorous';
 import GlobalPictureNavTabs, {GlobalPictureProps} from '../../organisms/NavBarTabs/globalPicture';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import CountrySearchInput from '../../organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
-import dynamic from 'next/dynamic';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import { cacheMapData } from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
+import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
-
-// any type use here a quick fix for typescript
-const DynamicMapComponent = dynamic<{}, any>(
-  import('../../organisms/Map') as Promise<any>, {
-  ssr: false,
-  loading: () => <MapBackground />,
-});
 
 interface Props  {
   state: StateToShare;
@@ -55,7 +47,7 @@ export default class Front extends React.Component<Props> {
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs {...navState} />
           {process.env.NODE_ENV !== 'test' ?
-            <DynamicMapComponent country="global" state={this.props.state} /> : ''
+            <DynamicMap country="global" state={this.props.state} /> : ''
           }
         </div>
         <About />

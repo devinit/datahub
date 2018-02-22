@@ -1,0 +1,605 @@
+{
+    "data": {
+      "localGovernmentFinance": {
+        "startYear": 2014,
+        "currencyCode": "KES",
+        "currencyUSD": "constant 2015 USD",
+        "expenditure": [
+          {
+            "uid": "r17L0C4thvG",
+            "year": 2016,
+            "color": "#bcd4f0",
+            "levels": [
+              "Expenditure"
+            ],
+            "budget_type": "Estimated",
+            "value": 286551927.1399999,
+            "value_ncu": 30828694489
+          },
+          {
+            "uid": "HJELRC4t2wG",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration"
+            ],
+            "budget_type": "Estimated",
+            "value": 101380539.35,
+            "value_ncu": 10907027238
+          },
+          {
+            "uid": "S1S8A0NY3DM",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "County public service board"
+            ],
+            "budget_type": "Estimated",
+            "value": 929496.16,
+            "value_ncu": 99999862
+          },
+          {
+            "uid": "HJ88RAVthPz",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Office of the governor and deputy governor"
+            ],
+            "budget_type": "Estimated",
+            "value": 45245328.1,
+            "value_ncu": 4867719477
+          },
+          {
+            "uid": "HJP8RC4t2PG",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "ICT, e-government & public communication "
+            ],
+            "budget_type": "Estimated",
+            "value": 2732722.49,
+            "value_ncu": 294000000
+          },
+          {
+            "uid": "rJu8AR4t3DM",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Public service management"
+            ],
+            "budget_type": "Estimated",
+            "value": 9731130.030000001,
+            "value_ncu": 1046923808
+          },
+          {
+            "uid": "S1YURAEt3wf",
+            "year": 2016,
+            "color": "#8f1b13",
+            "levels": [
+              "Expenditure",
+              "Health"
+            ],
+            "budget_type": "Estimated",
+            "value": 63187236.21,
+            "value_ncu": 6798000000
+          },
+          {
+            "uid": "BJjURC4FhPz",
+            "year": 2016,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Agriculture, Livestock, Fisheries And Forestry"
+            ],
+            "budget_type": "Estimated",
+            "value": 3141701.37,
+            "value_ncu": 338000001
+          },
+          {
+            "uid": "BynI0R4Yhwz",
+            "year": 2016,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Agriculture, Livestock, Fisheries And Forestry",
+              "Agriculture, livestock development  and fisheries"
+            ],
+            "budget_type": "Estimated",
+            "value": 3141701.37,
+            "value_ncu": 338000001
+          },
+          {
+            "uid": "r1TURRNFhvz",
+            "year": 2016,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development"
+            ],
+            "budget_type": "Estimated",
+            "value": 76730013.96,
+            "value_ncu": 8255000000
+          },
+          {
+            "uid": "H108C04FnPM",
+            "year": 2016,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development",
+              "Physical planning, lands & housing"
+            ],
+            "budget_type": "Estimated",
+            "value": 6460007.23,
+            "value_ncu": 695000000
+          },
+          {
+            "uid": "SkkDARVF2Pz",
+            "year": 2017,
+            "color": "#bcd4f0",
+            "levels": [
+              "Expenditure"
+            ],
+            "budget_type": "Estimated",
+            "value": 310629548.6999999,
+            "value_ncu": 35986832106
+          },
+          {
+            "uid": "rJewC0NFnwM",
+            "year": 2017,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development"
+            ],
+            "budget_type": "Estimated",
+            "value": 78574873.55000001,
+            "value_ncu": 9103000000
+          },
+          {
+            "uid": "SJ-PRAEK3Pf",
+            "year": 2017,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development",
+              "Ward development"
+            ],
+            "budget_type": "Estimated",
+            "value": 14872515.34,
+            "value_ncu": 1723000000
+          },
+          {
+            "uid": "rJzD0R4Fhwz",
+            "year": 2017,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development",
+              "Urban planning and land sector"
+            ],
+            "budget_type": "Estimated",
+            "value": 6499712.16,
+            "value_ncu": 753000000
+          },
+          {
+            "uid": "SJQwRCVK2vM",
+            "year": 2017,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Agriculture, Livestock, Fisheries And Forestry"
+            ],
+            "budget_type": "Estimated",
+            "value": 4609357.63,
+            "value_ncu": 534000000
+          },
+          {
+            "uid": "SkND0RNY3wG",
+            "year": 2017,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Agriculture, Livestock, Fisheries And Forestry",
+              "Agriculture, Livestock ,Fisheries and Forestry"
+            ],
+            "budget_type": "Estimated",
+            "value": 3314594.25,
+            "value_ncu": 384000000
+          },
+          {
+            "uid": "HyHDCRNF3DM",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Environment, Water, Energy And Natural Resources"
+            ],
+            "budget_type": "Estimated",
+            "value": 21838342.310000002,
+            "value_ncu": 2530000000
+          },
+          {
+            "uid": "HJUDC04F2wf",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Environment, Water, Energy And Natural Resources",
+              "Environment, Water and Energy"
+            ],
+            "budget_type": "Estimated",
+            "value": 21838342.310000002,
+            "value_ncu": 2530000000
+          },
+          {
+            "uid": "ByDP004t2wz",
+            "year": 2016,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development",
+              "Public works, transport and infrastructure"
+            ],
+            "budget_type": "Estimated",
+            "value": 70270006.72999999,
+            "value_ncu": 7560000000
+          },
+          {
+            "uid": "SkOvC0NYhDG",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration"
+            ],
+            "budget_type": "Estimated",
+            "value": 122336426.49000002,
+            "value_ncu": 14172832106
+          },
+          {
+            "uid": "SJFw0RVKhwf",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "County Public Service Board"
+            ],
+            "budget_type": "Estimated",
+            "value": 992651.92,
+            "value_ncu": 115000000
+          },
+          {
+            "uid": "SkqP0R4F2wz",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Finance & economic planning"
+            ],
+            "budget_type": "Estimated",
+            "value": 26959055.76,
+            "value_ncu": 2900390523
+          },
+          {
+            "uid": "SJsP0REtnvG",
+            "year": 2016,
+            "color": "#deb5d6",
+            "levels": [
+              "Expenditure",
+              "Education"
+            ],
+            "budget_type": "Estimated",
+            "value": 18311099.63,
+            "value_ncu": 1970000000
+          },
+          {
+            "uid": "r12DA0VK2wG",
+            "year": 2016,
+            "color": "#deb5d6",
+            "levels": [
+              "Expenditure",
+              "Education",
+              "Education, youth affairs,sports, culture & social services"
+            ],
+            "budget_type": "Estimated",
+            "value": 18311099.63,
+            "value_ncu": 1970000000
+          },
+          {
+            "uid": "S1awCCNYhDM",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "County Assembly"
+            ],
+            "budget_type": "Estimated",
+            "value": 14699880.219999999,
+            "value_ncu": 1703000000
+          },
+          {
+            "uid": "H1AwCA4Y2DG",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "County assembly"
+            ],
+            "budget_type": "Estimated",
+            "value": 15782806.81,
+            "value_ncu": 1697993568
+          },
+          {
+            "uid": "Hy1uCCNY3vG",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Environment, Water, Energy And Natural Resources"
+            ],
+            "budget_type": "Estimated",
+            "value": 14702579.100000001,
+            "value_ncu": 1581777250
+          },
+          {
+            "uid": "rJxu004F3vz",
+            "year": 2016,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Environment, Water, Energy And Natural Resources",
+              "Water, energy, environment, forestry & natural resources"
+            ],
+            "budget_type": "Estimated",
+            "value": 14702579.100000001,
+            "value_ncu": 1581777250
+          },
+          {
+            "uid": "SJ-OCCVt2wM",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Donor funded projects"
+            ],
+            "budget_type": "Estimated",
+            "value": 12343410.87,
+            "value_ncu": 1430000000
+          },
+          {
+            "uid": "rkMuCR4K3wz",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Office of the governor"
+            ],
+            "budget_type": "Estimated",
+            "value": 52557312.17,
+            "value_ncu": 6088832106
+          },
+          {
+            "uid": "SJm_RCEF2vz",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "ICT and public communications"
+            ],
+            "budget_type": "Estimated",
+            "value": 3927448.92,
+            "value_ncu": 455000000
+          },
+          {
+            "uid": "ryVuRCNYnwz",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Finance and economic planning"
+            ],
+            "budget_type": "Estimated",
+            "value": 25213358.85,
+            "value_ncu": 2921000000
+          },
+          {
+            "uid": "H1HOAREYhvf",
+            "year": 2017,
+            "color": "#8f1b13",
+            "levels": [
+              "Expenditure",
+              "Health"
+            ],
+            "budget_type": "Estimated",
+            "value": 56538000.839999996,
+            "value_ncu": 6550000000
+          },
+          {
+            "uid": "HkLOAAVKnvG",
+            "year": 2017,
+            "color": "#8f1b13",
+            "levels": [
+              "Expenditure",
+              "Health",
+              "Health Services"
+            ],
+            "budget_type": "Estimated",
+            "value": 56538000.839999996,
+            "value_ncu": 6550000000
+          },
+          {
+            "uid": "HkDuA0VF2vM",
+            "year": 2017,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development",
+              "Urban renewal and housing sector"
+            ],
+            "budget_type": "Estimated",
+            "value": 3435438.83,
+            "value_ncu": 398000000
+          },
+          {
+            "uid": "S1duCANKnvM",
+            "year": 2016,
+            "color": "#8f1b13",
+            "levels": [
+              "Expenditure",
+              "Health",
+              "Health "
+            ],
+            "budget_type": "Estimated",
+            "value": 46828081.2,
+            "value_ncu": 5038000000
+          },
+          {
+            "uid": "ByK_RCVF3Pz",
+            "year": 2016,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Trade, Culture, Industrialization, Co-Operative  Development And Tourism"
+            ],
+            "budget_type": "Estimated",
+            "value": 9098757.52,
+            "value_ncu": 978890000
+          },
+          {
+            "uid": "H1c_CC4tnDf",
+            "year": 2016,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Trade, Culture, Industrialization, Co-Operative  Development And Tourism",
+              "Trade, industralization, cooperatives & tourism"
+            ],
+            "budget_type": "Estimated",
+            "value": 9098757.52,
+            "value_ncu": 978890000
+          },
+          {
+            "uid": "S1iOCCEthPM",
+            "year": 2017,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Agriculture, Livestock, Fisheries And Forestry",
+              "Agriculture , Livestock, Fisheries and Forestry"
+            ],
+            "budget_type": "Estimated",
+            "value": 1294763.38,
+            "value_ncu": 150000000
+          },
+          {
+            "uid": "ry3uRC4YhDz",
+            "year": 2017,
+            "color": "#0089cc",
+            "levels": [
+              "Expenditure",
+              "Administration",
+              "Public Service Management"
+            ],
+            "budget_type": "Estimated",
+            "value": 12602363.54,
+            "value_ncu": 1460000000
+          },
+          {
+            "uid": "SJpdRRVK2DG",
+            "year": 2017,
+            "color": "#f49b21",
+            "levels": [
+              "Expenditure",
+              "Infrastructure, Lands, Physical Planning, Housing And Urban Development",
+              "Public Works, Transport andInfrastructure"
+            ],
+            "budget_type": "Estimated",
+            "value": 53767207.22,
+            "value_ncu": 6229000000
+          },
+          {
+            "uid": "SJA_RRVKhwM",
+            "year": 2017,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Trade, Culture, Industrialization, Co-Operative  Development And Tourism"
+            ],
+            "budget_type": "Estimated",
+            "value": 10470319.85,
+            "value_ncu": 1213000000
+          },
+          {
+            "uid": "HkkF0C4KhDG",
+            "year": 2017,
+            "color": "#109e68",
+            "levels": [
+              "Expenditure",
+              "Trade, Culture, Industrialization, Co-Operative  Development And Tourism",
+              "Trade, Tourism and Co-operatives development"
+            ],
+            "budget_type": "Estimated",
+            "value": 10470319.85,
+            "value_ncu": 1213000000
+          },
+          {
+            "uid": "B1lFCREKnvM",
+            "year": 2017,
+            "color": "#deb5d6",
+            "levels": [
+              "Expenditure",
+              "Education"
+            ],
+            "budget_type": "Estimated",
+            "value": 16262228.03,
+            "value_ncu": 1884000000
+          },
+          {
+            "uid": "H1bY00NKnDf",
+            "year": 2017,
+            "color": "#deb5d6",
+            "levels": [
+              "Expenditure",
+              "Education",
+              "Education, Culture, Youth  Affairs , Sports, Social services"
+            ],
+            "budget_type": "Estimated",
+            "value": 12809525.69,
+            "value_ncu": 1484000000
+          },
+          {
+            "uid": "SJzFCRVKhDf",
+            "year": 2017,
+            "color": "#deb5d6",
+            "levels": [
+              "Expenditure",
+              "Education",
+              "Education,Culture, Youth Affairs, sports and social services"
+            ],
+            "budget_type": "Estimated",
+            "value": 3452702.34,
+            "value_ncu": 400000000
+          }
+        ],
+        "revenueAndGrants": []
+      }
+    }
+  }

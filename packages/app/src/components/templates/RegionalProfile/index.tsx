@@ -14,12 +14,20 @@ import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
 import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
 import CountrySearch from '../../organisms/CountrySearchInput';
 import {QueryVarTs} from '../../organisms/LocalGovernmentFinance';
-import dynamic from 'next/dynamic';
+import dynamic, {DynamicOptions} from 'next/dynamic';
 import Generic from '../Generic';
 
-const DynamicRegionalLowerTabs = dynamic<{}, QueryVarTs>(
-  import('../../organisms/LocalGovernmentFinance') as Promise<any>,
-  { ssr: true });
+const dynamicOpts: DynamicOptions<any, QueryVarTs> = {
+  ssr: true,
+  loading: () => <p>Loading...</p>,
+  modules: props => ({
+    LocalGovernmentFinance: import('../../organisms/LocalGovernmentFinance') as Promise<any>
+    }),
+  render: (props, {LocalGovernmentFinance}) =>
+      <LocalGovernmentFinance {...props} />
+};
+
+const DynamicRegionalLowerTabs = dynamic(dynamicOpts as any);
 
 interface Props  {
   id: string;

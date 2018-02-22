@@ -18,13 +18,13 @@ import Generic from '../Generic';
 
 // TODO: the dynamic types are a pain to work with, need to get improved submit PR
 const dynamicOpts: DynamicOptions<any, any> = {
+  ssr: true,
+  loading: () => <p>Loading...</p>,
     modules: props => ({
         CountryProfileLowerTabs: import('../../organisms/CountryProfileLowerTabs') as Promise<any>
       }),
     render: (props, {CountryProfileLowerTabs}) =>
-      <div>
         <CountryProfileLowerTabs {...props} />
-      </div>
 };
 
 const DynamicCountryProfileLowerTabs = dynamic(dynamicOpts as any);

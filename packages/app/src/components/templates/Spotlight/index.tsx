@@ -3,19 +3,12 @@ import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
 import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/spotlightKe';
 import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
-import dynamic from 'next/dynamic';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import {capitalize} from '@devinit/dh-base/lib/utils';
 import {cacheMapData} from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
-
-const DynamicMapComponent = dynamic<{}, any>(
-  import('../../organisms/Map') as Promise<any>, {
-    ssr: false,
-    loading: () => <MapBackground />
-  });
 
 interface Props  {
   pathname: string;
@@ -62,7 +55,7 @@ export default class Spotlight extends React.Component<Props> {
 
         {
           process.env.NODE_ENV !== 'test' ?
-            <DynamicMapComponent country={this.props.id} state={this.props.state} /> : ''
+            <DynamicMap country={this.props.id} state={this.props.state} /> : ''
         }
         <About />
       </Generic>
