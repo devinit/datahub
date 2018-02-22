@@ -12,7 +12,7 @@ import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 
-const dynamicOpts: DynamicOptions<any, MapProps> = {
+const dynamicOpts: DynamicOptions<MapProps, MapProps> = {
     ssr: false,
     loading: () => (<p>Loading...</p>),
     modules: () => ({

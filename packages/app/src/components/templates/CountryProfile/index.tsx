@@ -18,7 +18,7 @@ import {Country} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 
 // TODO: the dynamic types are a pain to work with, need to get improved submit PR
-const dynamicOpts: DynamicOptions<any, CLProps> = {
+const dynamicOpts: DynamicOptions<CLProps, CLProps> = {
     modules: props => ({
         CountryProfileLowerTabs: import('../../organisms/CountryProfileLowerTabs') as Promise<any>
       }),
