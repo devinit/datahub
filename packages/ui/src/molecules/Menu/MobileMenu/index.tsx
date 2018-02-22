@@ -5,7 +5,6 @@ import { white, redHeaderColor } from '../../../theme/semantic';
 import {MobileMenuContainer, MobileMenuItem} from '../../../atoms/Menue';
 import {mediaQueries} from '../../../theme';
 
-
 export const ToggleButton: GlamorousComponent<any, any> = glamorous.button({
   'position': 'absolute',
   'display': 'none',
