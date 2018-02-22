@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/localforage": "0.0.34",
-    "ts-jest": "22.0.1",
+    "ts-jest": "22.0.4",
     "css-loader": "0.28.9",
     "css-to-js-object": "0.0.3",
     "csso": "3.5.0",
