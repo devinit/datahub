@@ -1,10 +1,10 @@
 import * as React from 'react';
 import glamorous , {GlamorousComponent} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
-import { white, redHeaderColor } from '../../theme/semantic';
-import MenuContainer from '../../atoms/MobileMenuContainer';
-import {mediaQueries} from '../../theme';
-import MenuItem from '../../atoms/MobileMenuItem';
+import { white, redHeaderColor } from '../../../theme/semantic';
+import {MobileMenuContainer, MobileMenuItem} from '../../../atoms/Menue';
+import {mediaQueries} from '../../../theme';
+
 
 export const ToggleButton: GlamorousComponent<any, any> = glamorous.button({
   'position': 'absolute',
@@ -69,7 +69,7 @@ class MobileMenu extends React.Component<Props> {
     const { open } = this.state;
     const menuItems = this.props.menu.map(item => {
       return (
-        <MenuItem
+        <MobileMenuItem
           menu={item}
           key={item.name}
         />
@@ -81,9 +81,9 @@ class MobileMenu extends React.Component<Props> {
           {open ? <Icon name="cancel" /> : <Icon name="align justify" />}
         </ToggleButton>
         <OutSideMenu onClick={this.toggleNav} open={open} />
-        <MenuContainer open={open}>
+        <MobileMenuContainer open={open}>
           {menuItems}
-        </MenuContainer>
+        </MobileMenuContainer>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
-import { lightBlack, white } from '../../theme/semantic';
-import {GlamorousComponentT} from '../../types';
+import { lightBlack, white } from '../../../theme/semantic';
+import {GlamorousComponentT} from '../../../types';
 
 export const SelectWrapper: GlamorousComponentT = glamorous.div({
   'display': 'inline-block',

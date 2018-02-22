@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import {menueData} from '../Menu/testData';
+import {menueData} from '../../Menu/testData';
 import Menu from '.';
 
 it('renders 7 children for class Menu', () => {

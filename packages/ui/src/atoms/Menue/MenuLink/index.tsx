@@ -1,8 +1,8 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Icon } from 'semantic-ui-react';
-import { white, redHeaderColor, black } from '../../theme/semantic';
-import { NavLink } from '../Link';
+import { white, redHeaderColor, black } from '../../../theme/semantic';
+import { NavLink } from '../../Link';
 import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;

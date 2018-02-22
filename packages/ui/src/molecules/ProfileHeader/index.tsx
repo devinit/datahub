@@ -4,7 +4,6 @@ import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
 import { red } from '../../theme/semantic';
 import { Lead } from '../../atoms/Header';
 import { BodyLink } from '../../atoms/Link';
-import {Props as MapProps} from '../SmallMap';
 import ProfileSocialMedia from '../ProfileSocialMedia';
 import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
@@ -12,7 +11,7 @@ import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 
-const dynamicOpts: DynamicOptions<MapProps, MapProps> = {
+const dynamicOpts: DynamicOptions<any, any> = {
     ssr: false,
     loading: () => (<p>Loading...</p>),
     modules: () => ({

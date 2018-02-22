@@ -6,7 +6,6 @@ import { SectionHeader } from '@devinit/dh-ui/lib/atoms/Header';
 import { DarkBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
-import {Props as CLProps} from '../../organisms/CountryProfileLowerTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
 import {getCountry} from '@devinit/dh-base/lib/utils';
 import CountrySearch from '../../organisms/CountrySearchInput';
@@ -18,7 +17,7 @@ import {Country} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 
 // TODO: the dynamic types are a pain to work with, need to get improved submit PR
-const dynamicOpts: DynamicOptions<CLProps, CLProps> = {
+const dynamicOpts: DynamicOptions<any, any> = {
     modules: props => ({
         CountryProfileLowerTabs: import('../../organisms/CountryProfileLowerTabs') as Promise<any>
       }),

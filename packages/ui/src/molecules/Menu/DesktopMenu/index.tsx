@@ -1,7 +1,7 @@
 import glamorous from 'glamorous';
-import { white } from '../../theme/semantic';
-import {mediaQueries} from '../../theme';
-import MenuItem from '../../atoms/DesktopMenuItem';
+import { white } from '../../../theme/semantic';
+import {mediaQueries} from '../../../theme';
+import {DesktopMenuItem} from '../../../atoms/Menue';
 import * as React from 'react';
 
 const ListContainer = glamorous.ul({
@@ -21,7 +21,7 @@ export interface Props {
 }
 
 const menu = (props: Props) => {
-  const menuItems = props.menu.map(item => <MenuItem key={item.name} menu={item} />);
+  const menuItems = props.menu.map(item => <DesktopMenuItem key={item.name} menu={item} />);
   return (
     <ListContainer>
       {menuItems}

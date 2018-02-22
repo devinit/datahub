@@ -2,8 +2,8 @@ import glamorous from 'glamorous';
 import { white, red } from '../../theme/semantic';
 import { Container } from 'semantic-ui-react';
 import Logo from '../../atoms/Logo';
-import DesktopMenu from '../DesktopMenu';
-import MobileMenu from '../MobileMenu';
+import DesktopMenu from './DesktopMenu';
+import MobileMenu from './MobileMenu';
 import * as React from 'react';
 
 const MenuContainer = glamorous.div({

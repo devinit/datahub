@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous, {GlamorousComponent} from 'glamorous';
 import {IProcess} from '@devinit/dh-base/lib/types';
-import { white, redHeaderColor, midWhite, lightBlack } from '../../theme/semantic';
+import { white, redHeaderColor, midWhite, lightBlack } from '../../../theme/semantic';
 
 declare var process: IProcess;
 

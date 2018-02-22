@@ -6,8 +6,7 @@ import TourContainer from '../TourContainer';
 import {NavBarItem} from '@devinit/dh-base/lib/types';
 import LoadingBar from '../LoadingBar';
 import { lightBlack, white, lighterGrey } from '../../theme/semantic';
-import NavigationBarTabsContainer from '../NavigationBarTabsItems';
-import {Option} from '../NavigationBarTabsItems';
+import NavTabsItems, {Option} from './NavTabsItems';
 
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => T;
 export type ChangeLoadingStatus<L> = (loading: boolean) => L;
@@ -134,7 +133,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
       return { key: obj.id, value: obj.id, text: obj.name };
     });
     return (
-      <NavigationBarTabsContainer
+      <NavTabsItems
         options={options}
         activeIndicator={this.state.activeIndicator}
         onChange={this.handleSelect}

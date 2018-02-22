@@ -1,7 +1,7 @@
 import glamorous from 'glamorous';
 import { Icon, SemanticICONS } from 'semantic-ui-react';
 import * as React from 'react';
-import { lightGrey, black } from '../../theme/semantic';
+import { lightGrey, black } from '../../../theme/semantic';
 import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;
