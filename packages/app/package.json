@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-app",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "config": {
     "api": "http://212.111.41.68:9090/graphql",
     "old_datahub": "http://212.111.41.68:8888"
@@ -34,7 +34,7 @@
   "dependencies": {
     "@devinit/datahub-api": "1.0.4",
     "@devinit/dh-base": "^1.0.4",
-    "@devinit/dh-ui": "^1.0.3",
+    "@devinit/dh-ui": "^1.0.4",
     "@devinit/graphql-next": "0.1.17",
     "@zeit/next-css": "0.1.2",
     "apollo-client-preset": "1.0.8",
