@@ -17,6 +17,13 @@ if (!process.env.config) {
     process.env.config = {api: 'http://212.111.41.68:9090/graphql'};
   }
 }
+// next.js compatible router interface
+export const router  = {
+  push : (url) => {
+    if (typeof window !== 'undefined') return (window as any).location(url);
+    return console.log('cant change url in server environment');
+    }
+  };
 
 export const getCountry = (slug: string): Country => {
   const country = countriesData.countries.find(obj => obj.slug === slug);

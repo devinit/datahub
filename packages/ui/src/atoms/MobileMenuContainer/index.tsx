@@ -1,13 +1,18 @@
 import * as React from 'react';
 import glamorous, {GlamorousComponent} from 'glamorous';
-import Link from 'next/link';
+import {IProcess} from '@devinit/dh-base/lib/types';
 import { white, redHeaderColor, midWhite, lightBlack } from '../../theme/semantic';
+
+declare var process: IProcess;
+
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : null;
 
 export interface Props  {
   children: React.ReactChild[];
   selected?: number;
   open?: boolean;
 }
+
 export const Navigation: GlamorousComponent<any, any> = glamorous.nav<{open?: boolean}>(
   {
     'position': 'fixed',
@@ -76,7 +81,10 @@ class MobileMenu extends React.Component<Props> {
   public _renderContent() {
     const items = (child, index) => {
       const activeClass = this.state.selected === index ? 'active' : '';
-      console.log('child props: ', child.props);
+      const LinkContent =
+        <a role="link">
+          {child.props.label}
+        </a>;
       return (
         <li
           key={index}
@@ -84,11 +92,13 @@ class MobileMenu extends React.Component<Props> {
           onClick={this.handleClick(child, index)}
         >
           <span className="navigation__item-title small">
-            <Link href={child.props.url || '#'} prefetch>
-              <a role="link">
-                {child.props.label}
-              </a>
-            </Link>
+            {
+              Link ?
+               <Link href={child.props.url || '#'} prefetch>
+               {LinkContent}
+              </Link>
+              : <a href={child.props.url || '#'} > {LinkContent} </a>
+          }
           </span>
           {child}
         </li>

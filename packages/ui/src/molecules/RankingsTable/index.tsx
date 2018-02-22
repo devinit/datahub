@@ -2,11 +2,16 @@ import * as React from 'react';
 import { Grid, Table } from 'semantic-ui-react';
 import { Span, Img } from 'glamorous';
 import 'intersection-observer';
-import Router from 'next/router';
 import LoadingBar from '../LoadingBar';
 import { Route } from '@devinit/dh-base/lib/utils';
 import Observer from 'react-intersection-observer';
 import { RankingsTableContainer } from '../../atoms/Container';
+import {router} from '@devinit/dh-base/lib/utils';
+import {IProcess} from '@devinit/dh-base/lib/types';
+
+declare var process: IProcess;
+
+const Router = process.env && process.env.config && process.env.config.NEXT ? require('next/router') : router;
 
 export interface Data  {
   value: string | number;

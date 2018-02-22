@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Div, Span, H4, Img, P} from 'glamorous';
+import { Div, Span, H4, Img, P, A} from 'glamorous';
 import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
 import { red } from '../../theme/semantic';
 import { Lead } from '../../atoms/Header';
@@ -8,10 +8,14 @@ import {Props as MapProps} from '../SmallMap';
 import ProfileSocialMedia from '../ProfileSocialMedia';
 import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
-import Link from 'next/link';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic from 'next/dynamic';
+import {IProcess} from '@devinit/dh-base/lib/types';
+
+declare var process: IProcess;
+
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : A;
 
 const DynamicMapComponent = dynamic<{}, MapProps>(
   import('../SmallMap') as Promise<any>, {

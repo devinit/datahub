@@ -11,7 +11,7 @@ const newRules = [
       test: /\.(ts|tsx)(\?[^?]*)?$/,
       loader: 'ts-loader',
       include: [
-          SRC_PATH,
+          SRC_PATH
       ]
   }
 ]

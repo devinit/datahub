@@ -2,10 +2,13 @@ export interface IProcess {
   version: string;
   browser: boolean;
   env: any & { // add by webpack
-    PORT: number,
-    NODE_ENV: string;
-    api: string;
-    old_datahub: string;
+    PORT?: number,
+    NODE_ENV?: string;
+    // if we are not in a next.js app. I want us  to use other non next.js methods
+    // the other thing is that next.js app cant have 2 next.js instances.
+    NEXT?: boolean;
+    api?: string;
+    old_datahub?: string;
   };
 }
 

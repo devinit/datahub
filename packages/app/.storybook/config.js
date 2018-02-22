@@ -1,5 +1,5 @@
 import { configure } from '@storybook/react';
-// import Router from 'next/router'
+import Router from 'next/router'
 import '../static/semantic.min.css';
 import '../static/di-charts.min.css';
 import '../static/mapbox-gl.min.css';
@@ -10,10 +10,11 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-// const mockedRouter = {
-//   prefetch: () => {},
-// };
+const mockedRouter = {
+  prefetch: () => {},
+};
 
-// Router.router = mockedRouter;
+Router.router = mockedRouter;
+
 
 configure(loadStories, module);

@@ -1,6 +1,5 @@
 import glamorous from 'glamorous';
 import { white, lighterGrey, grey, black, red} from '../../theme/semantic';
-// import Link from 'next/link';
 import { medium } from '../../theme';
 import {GlamorousComponentT} from '../../types';
 

@@ -1,12 +1,23 @@
 import { Li } from 'glamorous';
-import { Icon, List } from 'semantic-ui-react';
+import { Icon, List, SemanticICONS } from 'semantic-ui-react';
 import MenuLink from '../MenuLink';
-import Link from 'next/link';
+import {IProcess} from '@devinit/dh-base/lib/types';
+
+declare var process: IProcess;
+
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : null;
+
 import * as React from 'react';
 
 export interface Props {
   menu: any;
 }
+
+const LinkContent = (item: {icon: SemanticICONS, name: string}) =>
+  <a role="link">
+    <Icon name={item.icon} />
+    {item.name}
+  </a>;
 
 const menuItem = (props: Props) => {
   let menuLinkChildren; // TODO: Try to assign correct type
@@ -15,12 +26,14 @@ const menuItem = (props: Props) => {
     const childrenList = props.menu.children.map(item =>
       (<List.Item key={item.name}>
         <List.Content>
-          <Link href={item.link} prefetch>
-            <a role="link">
-              <Icon name={item.icon} />
-              {item.name}
+          {Link ?
+            <Link href={item.link} prefetch>
+              {LinkContent}
+            </Link> :
+            <a href={item.link}>
+              {LinkContent}
             </a>
-          </Link>
+        }
         </List.Content>
       </List.Item>),
     );
