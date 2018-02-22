@@ -22,6 +22,7 @@ const newPlugins = [
     'process.browser': true,
     'process.env.config.api': JSON.stringify(packageJSon.config.api),
     'process.env.config.old_datahub': JSON.stringify(packageJSon.config.old_datahub),
+    'process.env.config.NEXT': true,
     'process.storybook': true
   })
 ];

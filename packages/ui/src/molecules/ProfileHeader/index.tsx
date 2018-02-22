@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Div, Span, H4, Img, P, A} from 'glamorous';
+import { Div, Span, H4, Img, P} from 'glamorous';
 import { Container, Grid, Icon, Dropdown } from 'semantic-ui-react';
 import { red } from '../../theme/semantic';
 import { Lead } from '../../atoms/Header';
@@ -10,18 +10,21 @@ import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
-import dynamic from 'next/dynamic';
-import {IProcess} from '@devinit/dh-base/lib/types';
+import dynamic, {DynamicOptions} from 'next/dynamic';
 
-declare var process: IProcess;
-
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : A;
-
-const DynamicMapComponent = dynamic<{}, MapProps>(
-  import('../SmallMap') as Promise<any>, {
+const dynamicOpts: DynamicOptions<any, MapProps> = {
     ssr: false,
-    loading: () => (<p>Loading...</p>)
-  });
+    loading: () => (<p>Loading...</p>),
+    modules: () => ({
+        SmallMap: import('../SmallMap') as Promise<any>
+    }),
+    render: (props, {SmallMap}) =>
+      <div>
+        <SmallMap {...props} />
+      </div>
+};
+
+const DynamicMapComponent = dynamic(dynamicOpts as any);
 
 export interface CProps  {
   visible: boolean;
@@ -62,12 +65,13 @@ const ProfileHeaderSection = (props: Props) => {
                     <Icon name="globe" color={'red'} />
                     {
                       props.spotlightCountry ?
-                        <Link href={`/spotlight-on-${props.spotlightCountry.slug}`}>
-                          <a role="link" style={{color: red}}>Spotlight on {props.spotlightCountry.name}</a>
-                        </Link> :
-                        <Link href="/">
-                          <a role="link" style={{color: red}}>Global Picture</a>
-                        </Link>
+                        <a>
+                          href={`/spotlight-on-${props.spotlightCountry.slug}`}
+                          role="link" style={{color: red}}>
+                          Spotlight on {props.spotlightCountry.name}
+                        </a>
+                       :
+                        <a href="/" role="link" style={{color: red}}>Global Picture</a>
                     }
                   </H4>
                   {

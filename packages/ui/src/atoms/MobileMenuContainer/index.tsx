@@ -5,7 +5,7 @@ import { white, redHeaderColor, midWhite, lightBlack } from '../../theme/semanti
 
 declare var process: IProcess;
 
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : null;
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
 
 export interface Props  {
   children: React.ReactChild[];

@@ -6,7 +6,7 @@ import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;
 
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : null;
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
 
 export interface Props {
   menu: {children: Array<{name: string; link: string; icon: SemanticICONS}>};

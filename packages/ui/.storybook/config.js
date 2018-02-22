@@ -9,8 +9,5 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-const mockedRouter = {
-  prefetch: () => {},
-};
 
 configure(loadStories, module);

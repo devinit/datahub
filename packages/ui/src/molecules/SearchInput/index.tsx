@@ -9,7 +9,7 @@ declare var process: IProcess;
 
 const Router = process.env && process.env.config && process.env.config.NEXT ? require('next/router') : router;
 
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/Link') : A;
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : A;
 
 export interface Entity  {
   slug: string;
