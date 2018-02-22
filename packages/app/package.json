@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-app",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "config": {
     "api": "http://212.111.41.68:9090/graphql",
     "old_datahub": "http://212.111.41.68:8888"
@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@devinit/datahub-api": "1.0.4",
-    "@devinit/dh-base": "^1.0.3",
-    "@devinit/dh-ui": "^1.0.2",
+    "@devinit/dh-base": "^1.0.4",
+    "@devinit/dh-ui": "^1.0.3",
     "@devinit/graphql-next": "0.1.17",
     "@zeit/next-css": "0.1.2",
     "apollo-client-preset": "1.0.8",
@@ -65,8 +65,8 @@
     "@storybook/addons": "3.3.14",
     "@storybook/react": "3.3.14",
     "apollo-codegen": "0.18.6",
-    "typescript": "2.7.2",
-    "ts-jest": "22.0.4"
+    "ts-jest": "22.0.4",
+    "typescript": "2.7.2"
   },
   "jest": {
     "coverageDirectory": "./coverage/",

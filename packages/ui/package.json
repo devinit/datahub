@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "for creating datahub ui components",
   "main": "lib/index.js",
   "scripts": {
@@ -34,7 +34,7 @@
   "dependencies": {
     "@devinit/charts": "^1.6.49",
     "@devinit/datahub-api": "^1.0.2",
-    "@devinit/dh-base": "^1.0.3",
+    "@devinit/dh-base": "^1.0.4",
     "glamor": "^2.20.40",
     "glamorous": "^4.11.4",
     "intersection-observer": "^0.5.0",
@@ -49,14 +49,14 @@
     "semantic-ui-react": "0.78.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "3.3.14",
+    "@storybook/addon-links": "3.3.14",
     "@storybook/addon-storyshots": "3.3.14",
-		"@storybook/addon-actions": "3.3.14",
-		"@storybook/addon-links": "3.3.14",
-		"@storybook/addons": "3.3.14",
-		"@storybook/react": "3.3.14",
+    "@storybook/addons": "3.3.14",
+    "@storybook/react": "3.3.14",
     "@types/react-beautiful-dnd": "3.0.1",
-    "typescript": "2.7.2",
-    "ts-jest": "22.0.4"
+    "ts-jest": "22.0.4",
+    "typescript": "2.7.2"
   },
   "jest": {
     "transform": {
