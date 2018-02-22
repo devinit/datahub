@@ -24,7 +24,7 @@ const dynamicOpts: DynamicOptions<any, any> = {
       </div>
 };
 
-const DynamicMapComponent: React.ComponentType<MProps> = dynamic(dynamicOpts as any);
+const DynamicMapComponent: React.ComponentClass<MProps> = dynamic(dynamicOpts as any);
 
 export interface CProps  {
   visible: boolean;
