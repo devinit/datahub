@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"publish": "lerna publish"
+		"publish": "lerna publish",
+		"test": "jest"
 	},
 	"devDependencies": {
 		"@types/fs-extra": "5.0.0",
@@ -22,7 +23,6 @@
 		"lerna": "2.9.0",
 		"pretty-format": "22.1.0",
 		"react-test-renderer": "16.2.0",
-		"ts-jest": "22.0.4",
 		"style-loader": "0.20.2",
 		"ts-loader": "3.5.0",
 		"tslint": "5.9.1",
@@ -36,5 +36,18 @@
 		"pre-push": [
 			"lerna run lint"
 		]
-	}
+	},
+	"jest": {
+	"coverageDirectory": "./coverage/",
+	"mapCoverage": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/packages/ui/jest/jest.config.js",
+	"collectCoverage": true,
+	"transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/packages/ui/jest/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/ui/jest/__mocks__/styleMock.js"
+    }
+  }
 }

@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
+    "test": "jest",
     "copy-css": "cp node_modules/@devinit/charts/dist/di-charts.min.css static/ && cp node_modules/mapbox-gl/dist/mapbox-gl.css static/",
     "lint": "tslint -c tslint.json 'src/**/*.tsx' 'src/**/*.ts'",
     "storybook": "start-storybook -p 6006 -s static",
@@ -54,6 +55,18 @@
 		"@storybook/addons": "3.3.13",
 		"@storybook/react": "3.3.13",
     "@types/react-beautiful-dnd": "3.0.1",
-     "typescript": "2.7.2"
+    "typescript": "2.7.2",
+    "ts-jest": "22.0.1"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
   }
 }
