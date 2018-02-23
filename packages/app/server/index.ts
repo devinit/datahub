@@ -1,11 +1,11 @@
-const express = require('express');
-const compression = require('compression');
-const LRUCache = require('lru-cache');
-const path = require('path');
-const next = require('next');
-const countriesData = require('./private/components/organisms/CountrySearchInput/data.js');
-const ugData = require('./private/components/organisms/CountrySearchInput/uganda-data.js');
-const keData = require('./private/components/organisms/CountrySearchInput/kenya-data.js');
+import * as express from 'express';
+import * as compression from 'compression';
+import * as LRUCache from 'lru-cache';
+import * as path from 'path';
+import * as next from 'next';
+import countriesData from '@devinit/dh-base/lib/__generated__/data';
+import ugData from '@devinit/dh-base/lib/__generated__/uganda';
+import keData from '@devinit/dh-base/lib/__generated__/kenya';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -19,7 +19,7 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 60 * 24 * 30 // 30 days
 });
 
-const renderAndCache = (req, res, pagePath, queryParams) => {
+const renderAndCache = (req, res, pagePath, queryParams?: {[key: string]: any}) => {
   const key = req.url;
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key) && process.env.NODE_ENV === 'production') {
@@ -27,7 +27,7 @@ const renderAndCache = (req, res, pagePath, queryParams) => {
     return res.send(ssrCache.get(key));
   }
   // If not let's render the page into HTML
-  return app.renderToHTML(req, res, pagePath, queryParams)
+  return app.renderToHTML(req, res, pagePath, queryParams || {})
     .then((html) => {
       // Let's cache this page
       console.log(`CACHE MISS: ${key}`);
@@ -39,7 +39,6 @@ const renderAndCache = (req, res, pagePath, queryParams) => {
       app.renderError(err, req, res, pagePath, queryParams);
     });
 };
-
 
 app.prepare().then(() => {
   const server = express();

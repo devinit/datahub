@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES6",
+    "target": "esnext",
+    "module": "esnext",
     "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
     "sourceMap": false,
     "strict": true,
     "lib": ["es2017", "dom"],
@@ -10,7 +12,7 @@
     "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "rootDir": "src",
+    "baseUrl": ".",
     "outDir": "lib",
     "skipLibCheck": true,
     "removeComments": true
@@ -18,5 +20,8 @@
   "exclude": [
     "node_modules",
     "dist"
+  ],
+  "include": [
+    "server/**/*.ts"
   ]
 }
