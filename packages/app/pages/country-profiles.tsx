@@ -2,8 +2,8 @@
 /* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
 import * as React from 'react';
 import { rehydrate } from 'glamor';
-import withData from '../components/WithData';
-import App from '../components/templates/CountryProfiles';
+import withData from '../src/components/WithData';
+import App from '../src/components/templates/CountryProfiles';
 
 interface Props  {
   url: { pathname: string };

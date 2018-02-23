@@ -2,8 +2,8 @@
 /* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
 import * as React from 'react';
 import { rehydrate } from 'glamor';
-import withData from '../components/WithData';
-import App from '../components/templates/MultilateralProfile';
+import withData from '../src/components/WithData';
+import App from '../src/components/templates/MultilateralProfile';
 
 interface Props  {
   url: {

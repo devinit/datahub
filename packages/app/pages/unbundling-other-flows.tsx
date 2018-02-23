@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { rehydrate } from 'glamor';
-import withData from '../components/WithData';
-import App from '../components/templates/UnbundlingAid';
+import withData from '../src/components/WithData';
+import App from '../src/components/templates/UnbundlingAid';
 
 interface Props  {
   url: { pathname: string };

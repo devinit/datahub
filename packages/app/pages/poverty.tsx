@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { rehydrate } from 'glamor';
-import withData from '../components/WithData';
-import App from '../components/templates/bubbleCharts';
+import withData from '../src/components/WithData';
+import App from '../src/components/templates/bubbleCharts';
 
 interface Props  {
   url: { pathname: string };
