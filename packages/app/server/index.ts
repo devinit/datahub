@@ -45,9 +45,9 @@ app.prepare().then(() => {
 
   server.use(compression());
 
-  server.use(express.static('public'));
+  server.use(express.static('static'));
 
-  server.use('/public', express.static(path.resolve(__dirname, '/public'), {
+  server.use('/static', express.static(path.resolve(__dirname, '/static'), {
     maxAge: '365d'
   }));
 
