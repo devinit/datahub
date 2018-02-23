@@ -1,9 +1,9 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import * as React from 'react';
 import { renderStatic } from 'glamor/server';
-import indexCss from '../critical-css';
-import unbundlingCss from '../critical-css/unbundling'; // in private/criticalCss
-import profileCss from '../critical-css/countryProfile';
+import indexCss from '../src/critical-css';
+import unbundlingCss from '../src/critical-css/unbundling'; // in private/criticalCss
+import profileCss from '../src/critical-css/countryProfile';
 import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;

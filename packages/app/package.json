@@ -16,7 +16,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon server/index.ts",
+    "dev": "nodemon src/server/index.ts",
     "build:next": "next build",
     "build-fragment": "npm run build && node lib/apollo/fragment.js",
     "start": "npm run build:next && next start",

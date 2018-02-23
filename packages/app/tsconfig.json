@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
+    "target": "ES5",
     "jsx": "react",
-    "allowJs": true,
     "moduleResolution": "node",
     "sourceMap": false,
     "strict": true,
@@ -22,6 +21,7 @@
     "dist"
   ],
   "include": [
-    "server/**/*.ts"
+    "src/**/*.ts",
+    "pages/**/*.ts"
   ]
 }

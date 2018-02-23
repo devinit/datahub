@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const SRC_PATH = path.join(__dirname, '../src');
 const packageJSon = require('../package.json');
+
+const SRC_PATH = path.join(__dirname, '../src');
+
 // load the default config generator.
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
 
