@@ -8,6 +8,7 @@ import ProfileSocialMedia from '../ProfileSocialMedia';
 import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
+import {Props as MProps} from '../SmallMap';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 
@@ -24,6 +25,7 @@ const dynamicOpts: DynamicOptions<any, any> = {
 };
 
 const DynamicMapComponent: React.ComponentType<any> = dynamic(dynamicOpts as any);
+const DynamicMapComponent: React.ComponentClass<MProps> = dynamic(dynamicOpts as any);
 
 export interface CProps  {
   visible: boolean;
