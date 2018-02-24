@@ -3,7 +3,7 @@ import Map from '@devinit/dh-ui/lib/molecules/Map';
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
 import { State as Store, AppState} from '../../../redux/reducers';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
+import { MapBackground } from '@devinit/dh-ui/lib/atoms/Container';
 import {getData} from '../../../utils';
 import { bindActionCreators } from 'redux';
 import { changeLoadingStatus, LoadingStatus } from '../../../redux/actions';

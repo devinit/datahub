@@ -1,10 +1,10 @@
 import { Grid } from 'semantic-ui-react';
 import * as React from 'react';
 import { Div } from 'glamorous';
-import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../atoms/TabsText';
+import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../atoms/Text';
 import Chart from '../../../atoms/Chart';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-import TabsToolTip from '../../TabsToolTip';
+import { TabsToolTip } from '../../ToolTipContainer';
 import {PageUnit} from '@devinit/dh-base/lib/types';
 import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import {TabDataQuery} from '../../../gql-types';

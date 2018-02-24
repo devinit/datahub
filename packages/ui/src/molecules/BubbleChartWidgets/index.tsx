@@ -1,13 +1,9 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Grid, Container, Button, Icon } from 'semantic-ui-react';
-import BubbleSize from '../../atoms/BubbleSizeDropDown';
-import ColorBy from '../../atoms/BubbleChartColorBy';
-import HighlightByIncomeGroup from '../../atoms/BubbleChartHighlightByIncomeGroup';
-import HighlightByRegions from '../../atoms/BubbleChartHighlightRegions';
-import SelectedCountries from '../../atoms/BubbleChartSelectedCountries';
-import BubbleChartPrint from '../../atoms/BubbleChartPrint';
-import BubbleChartAxisSettings from '../../atoms/BubbleChartAxisSettings';
+import {SelectedCountries, ColorBy, HighlightByIncome, HighlightRegion,
+  PrintWidget, BubbleChartSize, AxisSettings
+  } from '../../atoms/BubbleChart';
 import Slider from '../YearSlider';
 import { red } from '../../theme/semantic';
 import ScatterChart from '../../atoms/ScatterChart';
@@ -205,18 +201,18 @@ class BubbleChartWidget extends React.Component<Props> {
               </Grid>
             </Grid.Column>
             <Grid.Column computer={4} tablet={4} mobile={16}>
-              <BubbleSize options={indicators} />
+              <BubbleChartSize options={indicators} />
               <SelectedCountries
                 placeholder="Select Country"
                 options={countries}
               />
               <ColorBy options={colorables} onChange={this.onChangeColorBy} />
-              <HighlightByIncomeGroup
+              <HighlightByIncome
                 options={incomeGroups}
                 colorBy={this.state.colorBy === 'income-group'}
                 onChange={this.onChangeColorBy('income-group')}
               />
-              <HighlightByRegions
+              <HighlightRegion
                 options={regions}
                 colorBy={this.state.colorBy === 'region'}
                 onChange={this.onChangeColorBy('region')}
@@ -226,11 +222,11 @@ class BubbleChartWidget extends React.Component<Props> {
               </Link>
               {this.state.showMoreOptions
                 ? <div>
-                  <BubbleChartAxisSettings title="X-axis settings" />
-                  <BubbleChartAxisSettings title="Y-axis settings" />
+                  <AxisSettings title="X-axis settings" />
+                  <AxisSettings title="Y-axis settings" />
                 </div>
                 : false}
-              <BubbleChartPrint onClick={this.props.click} />
+              <PrintWidget onClick={this.props.click} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

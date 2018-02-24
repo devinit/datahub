@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous, { Div } from 'glamorous';
 import { Container, SemanticTEXTALIGNMENTS } from 'semantic-ui-react';
-import MapVisualizationTour from '../MapTour';
+import { VisualizationTour } from '../Maps';
 import TourContainer from '../TourContainer';
 import {NavBarItem} from '@devinit/dh-base/lib/types';
 import LoadingBar from '../LoadingBar';
@@ -186,7 +186,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
           visible={this.state.tourVisibility}
           closeHandler={this.handleUsingThisViz}
         >
-          <MapVisualizationTour entity={entity} />
+          <VisualizationTour entity={entity} />
         </TourContainer>
       </section>
     );

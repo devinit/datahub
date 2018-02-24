@@ -1,7 +1,6 @@
-// @flow
 import * as React from 'react';
 import { Dropdown, Button} from 'semantic-ui-react';
-import TabsToolTip from '../../TabsToolTip';
+import { TabsToolTip } from '../../ToolTipContainer';
 import { Div } from 'glamorous';
 import { SelectWrapper, Wrapper } from './styles';
 

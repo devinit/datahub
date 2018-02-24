@@ -15,7 +15,7 @@ const dynamicOpts: DynamicOptions<any, any> = {
     ssr: false,
     loading: () => (<p>Loading...</p>),
     modules: () => ({
-        SmallMap: import('../SmallMap') as Promise<any>
+        SmallMap: import('../Maps') as Promise<any>
     }),
     render: (props, {SmallMap}) =>
       <div>
@@ -23,7 +23,7 @@ const dynamicOpts: DynamicOptions<any, any> = {
       </div>
 };
 
-const DynamicMapComponent = dynamic(dynamicOpts as any);
+const DynamicMapComponent: React.ComponentType<any> = dynamic(dynamicOpts as any);
 
 export interface CProps  {
   visible: boolean;
