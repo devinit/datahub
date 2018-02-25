@@ -1,12 +1,11 @@
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, combineReducers, compose, Store } from 'redux';
 import {IProcess} from '@devinit/dh-base/lib/types';
-import {app, initialState} from './reducers';
+import {app, initialState, State} from './reducers';
 
 declare var process: IProcess;
 
-let reduxStore;
-
 let devtools = f => f;
+const DEFAULT_KEY = '__NEXT_REDUX_STORE__';
 
 const initDevTools = () => {
     if (process.env.NODE_ENV === 'development'
@@ -16,24 +15,24 @@ const initDevTools = () => {
 };
 
 // Get the Redux DevTools extension and fallback to a no-op function
-function create(_initialState) {
+function create(state): Store<State> {
   return createStore(
-    combineReducers(app),
-    _initialState, // Hydrate the store with server-side data
+    combineReducers({app}),
+    {app: state}, // Hydrate the store with server-side data
     compose(
       devtools,
     ),
   );
 }
 
-export function initRedux(_initialState?: any) {
+export function initRedux(state?: any): Store<State> {
+  if (process.browser) initDevTools();
   // Make sure to create a new store for every server-side request so that data
   // isn't shared between connections (which would be bad)
-  if (!process.browser) return create(_initialState || initialState);
+  if (!process.browser) return create(state || initialState);
   // Reuse store on the client-side
-  if (!reduxStore) reduxStore = create(_initialState || initialState);
-
-  if (process.browser && reduxStore) initDevTools();
-
-  return reduxStore;
+  if (!window[DEFAULT_KEY]) {
+      window[DEFAULT_KEY] = create(state || initialState);
+  }
+  return window[DEFAULT_KEY];
 }

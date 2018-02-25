@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
+import { Provider, Store } from 'react-redux';
 import Head from 'next/head';
 import initApollo from '../apollo';
+import {State} from '../redux/reducers';
+import {initRedux} from '../redux';
 import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;
@@ -39,13 +42,15 @@ export default ComposedComponent => {
       // and extract the resulting data
       if (!process.browser) {
         const apollo = initApollo();
-
+        const redux = initRedux();
         try {
           // Run all GraphQL queries
           await getDataFromTree(
-            <ApolloProvider client={apollo}>
-              <ComposedComponent {...composedInitialProps} />
-            </ApolloProvider>,
+            <Provider store={redux}>
+              <ApolloProvider client={apollo}>
+                <ComposedComponent {...composedInitialProps} />
+              </ApolloProvider>
+            </Provider>,
             {
               router: {
                 asPath: ctx.asPath,
@@ -70,22 +75,26 @@ export default ComposedComponent => {
           }
         };
       }
-
+      console.log('initial props: ', composedInitialProps);
       return {
         serverState,
         ...composedInitialProps
       };
     }
     public apollo: any;
+    public redux: Store<State>;
     constructor(props) {
       super(props);
       this.apollo = initApollo(this.props.serverState.apollo.data);
+      this.redux = initRedux();
     }
     public render() {
       return (
-        <ApolloProvider client={this.apollo}>
-          <ComposedComponent {...this.props} />
-        </ApolloProvider>
+        <Provider store={this.redux}>
+          <ApolloProvider client={this.apollo}>
+            <ComposedComponent {...this.props} />
+          </ApolloProvider>
+        </Provider>
       );
     }
   };

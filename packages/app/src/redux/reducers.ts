@@ -1,4 +1,4 @@
-import {ReducersMapObject, AnyAction} from 'redux';
+import { AnyAction} from 'redux';
 import globalThemes from '../components/organisms/NavBarTabs/data';
 import spotlightUgandaThemes from '../components/organisms/NavBarTabs/uganda';
 import spotlightKenyaThemes from '../components/organisms/NavBarTabs/kenya';
@@ -24,8 +24,7 @@ export const initialState: AppState = {
 };
 
 // TODO: Redux types error, reducer type should have a Param for action
-export const app: ReducersMapObject = {
-  app: (state: AppState = initialState, action: AnyAction): AppState => {
+export const app = (state: AppState = initialState, action: AnyAction): AppState => {
     switch (action.type) {
       case LOADING_STATUS: {
         return { ...state, loading: action.loading };
@@ -42,5 +41,4 @@ export const app: ReducersMapObject = {
       default:
         return state;
     }
-  },
 };

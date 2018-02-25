@@ -16,7 +16,7 @@ import {StateToShare} from '../../ChartShare';
 import mapConfigs, {MapConfig} from './config';
 
 export type Props = DH.IMapData & {
-  state: StateToShare;
+  state?: StateToShare;
 };
 
 export interface State  {
@@ -45,6 +45,7 @@ class Map extends React.Component<Props, State> {
     return value;
   }
   public state: State;
+  public mounted: boolean = false;
   private yearSliderVisibility: boolean;
   private startYear: number;
   private paint: PaintMap; // map data
@@ -63,13 +64,21 @@ class Map extends React.Component<Props, State> {
     if (!props.country) throw new Error('country is missing in props');
     this.country = props.country;
     this.config = mapConfigs[this.country];
+    this.state = {currentYear: this.getCurrentYear(props)};
     this.init(props);
   }
 
+  public componentDidMount() {
+    this.mounted = true;
+  }
   public componentWillReceiveProps(nextProps: Props) {
     if (nextProps !== this.props) this.init(nextProps);
   }
-
+  public getCurrentYear(props: Props): number {
+    const year = props.state && props.state.year ? props.state.year : props.default_year;
+    if (!year) throw new Error('default year missing, for current year');
+    return +year;
+  }
   public onYearChange() {
     return (year: number) => {
       if (this.props && this.props.map) {
@@ -111,12 +120,11 @@ class Map extends React.Component<Props, State> {
   public initYearSetup(props: Props) {
     if (!props.start_year) throw new Error('start_year is missing in props');
     if (!props.default_year) throw new Error('default_year is missing in props');
-    const currentYear = props.state && props.state.year ?
-      props.state.year : props.default_year;
+    const currentYear = this.getCurrentYear(props);
     this.startYear = props.start_year;
     this.endYear = props.end_year ? props.end_year : this.startYear;
     this.yearSliderVisibility = this.endYear > this.startYear;
-    this.state = { ...this.state, currentYear };
+    if (this.mounted) this.setState({ currentYear: +currentYear });
   }
   public initMetaSetup(props: Props) {
     if (!props.legend) throw new Error('legend data is missing in props');
@@ -152,7 +160,6 @@ class Map extends React.Component<Props, State> {
     if (props.map_style) {
       this.paint = { data: this.data, ...this.config.paint, mapStyle: props.map_style };
     }
-    this.state = { ...this.state};
   }
   public render() {
     return (

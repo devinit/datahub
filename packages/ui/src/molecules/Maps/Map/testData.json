@@ -1,0 +1,4886 @@
+{
+    "data": {
+      "mapData": {
+        "map": [
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "HkeHsb4xdf",
+            "detail": null,
+            "value": 0.42,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "BJ-BoW4xdM",
+            "detail": null,
+            "value": 0.27,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2016,
+            "uid": "SJXSjWNe_z",
+            "detail": null,
+            "value": 0.55,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "r1HSiZVgdf",
+            "detail": null,
+            "value": 0.26,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#9A579E",
+            "year": 2016,
+            "uid": "S1LSjW4xuG",
+            "detail": null,
+            "value": 0.53,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "B1PBsbVgdM",
+            "detail": null,
+            "value": 0.14,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#893F90",
+            "year": 2016,
+            "uid": "rJtSsZEg_f",
+            "detail": null,
+            "value": 0.7,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2016,
+            "uid": "ry9HiZVe_z",
+            "detail": null,
+            "value": 0.75,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "SJ3HoW4xdG",
+            "detail": null,
+            "value": 0.35,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "H1pHjZ4gdz",
+            "detail": null,
+            "value": 0.44,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "HJCrjbEgOz",
+            "detail": null,
+            "value": 0.38,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#893F90",
+            "year": 2016,
+            "uid": "SyJgHjbNluf",
+            "detail": null,
+            "value": 0.7,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "HygeSiZEl_f",
+            "detail": null,
+            "value": 0.19,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "ryzeribNxdG",
+            "detail": null,
+            "value": 0.17,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "SkQlHoZNx_M",
+            "detail": null,
+            "value": 0.32,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "B1SgSo-Vxuf",
+            "detail": null,
+            "value": 0.28,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "HkLeri-Ne_z",
+            "detail": null,
+            "value": 0.28,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "SkwxrjW4xOf",
+            "detail": null,
+            "value": 0.2,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "HJulBsZVedG",
+            "detail": null,
+            "value": 0.16,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2016,
+            "uid": "BJieHi-VxuM",
+            "detail": null,
+            "value": 1,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#9A579E",
+            "year": 2016,
+            "uid": "By0xBoWEeOz",
+            "detail": null,
+            "value": 0.65,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2016,
+            "uid": "Sk1ZBiZ4xOG",
+            "detail": null,
+            "value": 1.12,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2016,
+            "uid": "BJxbSsbNe_z",
+            "detail": null,
+            "value": 0.25,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "BkbZHo-NgOG",
+            "detail": null,
+            "value": 0.15,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "HJzWrjbEl_G",
+            "detail": null,
+            "value": 0.17,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2016,
+            "uid": "ByBbSjZNluG",
+            "detail": null,
+            "value": 0.94,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "SyLbSibVeuM",
+            "detail": null,
+            "value": 0.19,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "BkwbSi-4l_f",
+            "detail": null,
+            "value": 0.12,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2016,
+            "uid": "r1ibSi-Vxdz",
+            "detail": null,
+            "value": 0.19,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "rJ6ZHo-VgdM",
+            "detail": null,
+            "value": 0.35,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "rJ0brjWNxuf",
+            "detail": null,
+            "value": 0.29,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "SkefHoZ4gOz",
+            "detail": null,
+            "value": 0.42,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "H1zzHjW4lOM",
+            "detail": null,
+            "value": 0.28,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#9A579E",
+            "year": 2015,
+            "uid": "H17zSsZ4e_f",
+            "detail": null,
+            "value": 0.51,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "SkSGBibEeuf",
+            "detail": null,
+            "value": 0.12,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#9A579E",
+            "year": 2015,
+            "uid": "rkPfSoWVluM",
+            "detail": null,
+            "value": 0.52,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2015,
+            "uid": "rydMrjWExOz",
+            "detail": null,
+            "value": 0.85,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "ry9MrsWNldz",
+            "detail": null,
+            "value": 0.12,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2015,
+            "uid": "r1iGHjWVx_f",
+            "detail": null,
+            "value": 0.55,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "B1hfrj-NedG",
+            "detail": null,
+            "value": 0.37,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#893F90",
+            "year": 2015,
+            "uid": "r1TMSo-El_M",
+            "detail": null,
+            "value": 0.7,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "SJ0MBj-Nl_G",
+            "detail": null,
+            "value": 0.12,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "BkxmSj-4xuM",
+            "detail": null,
+            "value": 0.13,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "SyZmBjbExuG",
+            "detail": null,
+            "value": 0.32,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "ryXmHoWVluG",
+            "detail": null,
+            "value": 0.24,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "Sk4mSj-Vg_G",
+            "detail": null,
+            "value": 0.22,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "HJrQBibNl_G",
+            "detail": null,
+            "value": 0.2,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "ryUXHsZEe_z",
+            "detail": null,
+            "value": 0.14,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2015,
+            "uid": "BJtXSsZNguM",
+            "detail": null,
+            "value": 0.95,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2015,
+            "uid": "B1hQSjWVldM",
+            "detail": null,
+            "value": 0.75,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2015,
+            "uid": "HkTmBoWNlOM",
+            "detail": null,
+            "value": 1.05,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2015,
+            "uid": "SJRmHsbVedM",
+            "detail": null,
+            "value": 0.27,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "SJkESs-4e_z",
+            "detail": null,
+            "value": 0.1,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "S1gNSiZNgdM",
+            "detail": null,
+            "value": 0.16,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2015,
+            "uid": "S1XEBsb4xOM",
+            "detail": null,
+            "value": 1.41,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "S1VNSoWVgdz",
+            "detail": null,
+            "value": 0.15,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "ByBNSs-4guG",
+            "detail": null,
+            "value": 0.1,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2015,
+            "uid": "HktNroZEgOf",
+            "detail": null,
+            "value": 0.17,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "rysVHibVx_z",
+            "detail": null,
+            "value": 0.28,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "BJ2VSibVx_M",
+            "detail": null,
+            "value": 0.31,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "HJC4roWVxuG",
+            "detail": null,
+            "value": 0.46,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "BJlSBsWNgOG",
+            "detail": null,
+            "value": 0.24,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#9A579E",
+            "year": 2014,
+            "uid": "r1ZSHj-Ne_z",
+            "detail": null,
+            "value": 0.51,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "HJ7SSiZEluz",
+            "detail": null,
+            "value": 0.11,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "r1HHri-4euf",
+            "detail": null,
+            "value": 0.42,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2014,
+            "uid": "rJ8Hrs-EeOz",
+            "detail": null,
+            "value": 0.86,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "BkdHroZElOz",
+            "detail": null,
+            "value": 0.13,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2014,
+            "uid": "S1tHrjW4luG",
+            "detail": null,
+            "value": 0.59,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "SJ9Srj-4euG",
+            "detail": null,
+            "value": 0.37,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#893F90",
+            "year": 2014,
+            "uid": "ByoBrjb4x_z",
+            "detail": null,
+            "value": 0.7,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "SJ2HBjZ4gdf",
+            "detail": null,
+            "value": 0.11,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "S1ArBo-VxuG",
+            "detail": null,
+            "value": 0.11,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "SkJLBjbNgOf",
+            "detail": null,
+            "value": 0.38,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "HkWLBoZNluf",
+            "detail": null,
+            "value": 0.22,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "ryzISibNlOz",
+            "detail": null,
+            "value": 0.19,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "SyQIHjZ4xOM",
+            "detail": null,
+            "value": 0.2,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "BJVIBsW4xdG",
+            "detail": null,
+            "value": 0.13,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2014,
+            "uid": "S1d8HiZ4e_f",
+            "detail": null,
+            "value": 1.06,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#9A579E",
+            "year": 2014,
+            "uid": "S1i8Hj-4lOM",
+            "detail": null,
+            "value": 0.64,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2014,
+            "uid": "B12USobVlOG",
+            "detail": null,
+            "value": 1,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2014,
+            "uid": "r1pLBib4ldf",
+            "detail": null,
+            "value": 0.27,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2014,
+            "uid": "SkAUBsZ4e_z",
+            "detail": null,
+            "value": 0.09,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "ryJDrjW4g_z",
+            "detail": null,
+            "value": 0.19,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2014,
+            "uid": "HkGvro-VldG",
+            "detail": null,
+            "value": 1.09,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "H1XvBjWVxuM",
+            "detail": null,
+            "value": 0.13,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2014,
+            "uid": "Sy4DriWVeOf",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2014,
+            "uid": "ryuDriZVg_G",
+            "detail": null,
+            "value": 0.19,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "Hy5DBiZNguz",
+            "detail": null,
+            "value": 0.27,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "BJivHj-Vx_f",
+            "detail": null,
+            "value": 0.33,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "ByhPHsb4gOM",
+            "detail": null,
+            "value": 0.45,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "rJADBo-Vg_G",
+            "detail": null,
+            "value": 0.28,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "S1J_HoW4lOz",
+            "detail": null,
+            "value": 0.46,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "HkWOHjW4eOM",
+            "detail": null,
+            "value": 0.11,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "r1XdribNxdf",
+            "detail": null,
+            "value": 0.38,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2013,
+            "uid": "ByEuSj-Eldz",
+            "detail": null,
+            "value": 0.85,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "Bk8_rj-EedG",
+            "detail": null,
+            "value": 0.17,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2013,
+            "uid": "r1PdSoWVldz",
+            "detail": null,
+            "value": 0.54,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "r1uuSo-EedG",
+            "detail": null,
+            "value": 0.41,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#893F90",
+            "year": 2013,
+            "uid": "SJK_ro-4eOG",
+            "detail": null,
+            "value": 0.71,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "ry5dBoWNguM",
+            "detail": null,
+            "value": 0.1,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "H12uSsbVg_M",
+            "detail": null,
+            "value": 0.1,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "Sya_So-Eguf",
+            "detail": null,
+            "value": 0.46,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "H1yKHi-Nxdz",
+            "detail": null,
+            "value": 0.23,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "SyxKSs-4euM",
+            "detail": null,
+            "value": 0.17,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "BJbKBjbNxdG",
+            "detail": null,
+            "value": 0.23,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "SJzYHjZNedM",
+            "detail": null,
+            "value": 0.13,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2013,
+            "uid": "S1IFBib4edG",
+            "detail": null,
+            "value": 1,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#9A579E",
+            "year": 2013,
+            "uid": "ByYYrsbVxOG",
+            "detail": null,
+            "value": 0.67,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2013,
+            "uid": "r1cFBiWNx_z",
+            "detail": null,
+            "value": 1.08,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2013,
+            "uid": "rJsFriZNgdz",
+            "detail": null,
+            "value": 0.26,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "SyhFro-EeOz",
+            "detail": null,
+            "value": 0.1,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "BJaYHobNxuM",
+            "detail": null,
+            "value": 0.23,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2013,
+            "uid": "Bkx5HoW4euz",
+            "detail": null,
+            "value": 1.01,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "rJ-cSjWEguM",
+            "detail": null,
+            "value": 0.13,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2013,
+            "uid": "S1zcrj-NgOM",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2013,
+            "uid": "HyLqriWEgOG",
+            "detail": null,
+            "value": 0.18,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "rkOqBs-4gOG",
+            "detail": null,
+            "value": 0.28,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "BJF9SjbVxuM",
+            "detail": null,
+            "value": 0.36,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "rkq5ro-Nl_f",
+            "detail": null,
+            "value": 0.48,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "HJn9HsW4xdf",
+            "detail": null,
+            "value": 0.32,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "B16qHsZ4ldG",
+            "detail": null,
+            "value": 0.47,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "HJksBibNedM",
+            "detail": null,
+            "value": 0.12,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "BJbjriWEeOG",
+            "detail": null,
+            "value": 0.37,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2012,
+            "uid": "BkforsZExOz",
+            "detail": null,
+            "value": 0.83,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "rJ4srsbEx_f",
+            "detail": null,
+            "value": 0.16,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2012,
+            "uid": "rkBoHsWVldz",
+            "detail": null,
+            "value": 0.53,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "BkUsrjbVluG",
+            "detail": null,
+            "value": 0.45,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#9A579E",
+            "year": 2012,
+            "uid": "HkvoHsbVlOM",
+            "detail": null,
+            "value": 0.56,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "BJ_jro-4gOG",
+            "detail": null,
+            "value": 0.13,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "BJ5oSibVeOz",
+            "detail": null,
+            "value": 0.1,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "B1jorsWEeuM",
+            "detail": null,
+            "value": 0.47,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "HyTiHobVg_z",
+            "detail": null,
+            "value": 0.2,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "HJRsHs-Eg_z",
+            "detail": null,
+            "value": 0.14,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "HyJhSi-NluM",
+            "detail": null,
+            "value": 0.17,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "SJehBibVxuz",
+            "detail": null,
+            "value": 0.14,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2012,
+            "uid": "rkmhrsWVldG",
+            "detail": null,
+            "value": 1,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2012,
+            "uid": "SyLnBo-4guf",
+            "detail": null,
+            "value": 0.71,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2012,
+            "uid": "S1wnHiWVx_f",
+            "detail": null,
+            "value": 0.93,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "SkO3HjbVedM",
+            "detail": null,
+            "value": 0.28,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2012,
+            "uid": "r1YhBobNxOG",
+            "detail": null,
+            "value": 0.09,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2012,
+            "uid": "S1q3SoZNlOG",
+            "detail": null,
+            "value": 0.28,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2012,
+            "uid": "HkT2Sj-4xdf",
+            "detail": null,
+            "value": 0.97,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "BkRhBibEg_G",
+            "detail": null,
+            "value": 0.13,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2012,
+            "uid": "HJy6rsZNldz",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2012,
+            "uid": "Hy7aHsZEedf",
+            "detail": null,
+            "value": 0.19,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "SkHTrjZ4l_f",
+            "detail": null,
+            "value": 0.27,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "B18pBjb4gOz",
+            "detail": null,
+            "value": 0.34,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2011,
+            "uid": "rJPpSs-Vg_M",
+            "detail": null,
+            "value": 0.54,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "BkF6SjZEgOf",
+            "detail": null,
+            "value": 0.32,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "ry9Tri-VeOG",
+            "detail": null,
+            "value": 0.46,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "BkhpHobEeuf",
+            "detail": null,
+            "value": 0.13,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "BkCaSiWNgdz",
+            "detail": null,
+            "value": 0.39,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2011,
+            "uid": "rJyRriWVxdz",
+            "detail": null,
+            "value": 0.85,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "BkWCHsWNedG",
+            "detail": null,
+            "value": 0.29,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2011,
+            "uid": "SJzABsbVl_G",
+            "detail": null,
+            "value": 0.53,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "SkQ0BoWExdz",
+            "detail": null,
+            "value": 0.46,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#9A579E",
+            "year": 2011,
+            "uid": "rJEAribVgdM",
+            "detail": null,
+            "value": 0.56,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "BkS0Bsb4edG",
+            "detail": null,
+            "value": 0.15,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "BJIAHjWNgdz",
+            "detail": null,
+            "value": 0.11,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#9A579E",
+            "year": 2011,
+            "uid": "rJwCHo-Veuf",
+            "detail": null,
+            "value": 0.51,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "SkFAHoZEgdz",
+            "detail": null,
+            "value": 0.2,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "Bk9RHiZExdz",
+            "detail": null,
+            "value": 0.2,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "B1o0SsWEgOf",
+            "detail": null,
+            "value": 0.18,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "H1hCrobVldf",
+            "detail": null,
+            "value": 0.12,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2011,
+            "uid": "r11yxribNlOf",
+            "detail": null,
+            "value": 0.97,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2011,
+            "uid": "H1fklSi-4eOM",
+            "detail": null,
+            "value": 0.75,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2011,
+            "uid": "S17klBiZVeuM",
+            "detail": null,
+            "value": 0.96,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "HkVJxrobVgOz",
+            "detail": null,
+            "value": 0.28,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2011,
+            "uid": "ByrJxHoZEgdf",
+            "detail": null,
+            "value": 0.08,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2011,
+            "uid": "rkIygHobEedG",
+            "detail": null,
+            "value": 0.31,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2011,
+            "uid": "ryYylrobVeuf",
+            "detail": null,
+            "value": 1.02,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "H1q1xBiZNeuM",
+            "detail": null,
+            "value": 0.13,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2011,
+            "uid": "S1iJeHobVe_z",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2011,
+            "uid": "S11xgSiW4euM",
+            "detail": null,
+            "value": 0.2,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "Bk-xeBjbVx_G",
+            "detail": null,
+            "value": 0.32,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "B1fxxBoZNlOG",
+            "detail": null,
+            "value": 0.32,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2010,
+            "uid": "ByXexBi-Nl_f",
+            "detail": null,
+            "value": 0.64,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "S1HxgBsZNxOM",
+            "detail": null,
+            "value": 0.34,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "B18geBo-NedG",
+            "detail": null,
+            "value": 0.39,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "r1OxxHs-NxOG",
+            "detail": null,
+            "value": 0.13,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "Hk5xeBs-NguM",
+            "detail": null,
+            "value": 0.39,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2010,
+            "uid": "B1oxlSsbNeuM",
+            "detail": null,
+            "value": 0.91,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "H1TxeSjbEe_f",
+            "detail": null,
+            "value": 0.43,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2010,
+            "uid": "ry0egHsZ4l_M",
+            "detail": null,
+            "value": 0.55,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#9A579E",
+            "year": 2010,
+            "uid": "ry1-grjWEedf",
+            "detail": null,
+            "value": 0.5,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#9A579E",
+            "year": 2010,
+            "uid": "S1ebgrsW4edG",
+            "detail": null,
+            "value": 0.57,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "rJZWgHi-4ldG",
+            "detail": null,
+            "value": 0.17,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#CD9DC8",
+            "year": 2010,
+            "uid": "HyMZgBjZNedf",
+            "detail": null,
+            "value": 0.09,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#9A579E",
+            "year": 2010,
+            "uid": "rJmblBoW4lOz",
+            "detail": null,
+            "value": 0.52,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "S1H-xHjWVguM",
+            "detail": null,
+            "value": 0.26,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "HJIWgri-Ne_z",
+            "detail": null,
+            "value": 0.15,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "rkwbxSoWVxuf",
+            "detail": null,
+            "value": 0.2,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "rkdblrjW4xOM",
+            "detail": null,
+            "value": 0.12,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2010,
+            "uid": "r1jberj-NgOG",
+            "detail": null,
+            "value": 1.05,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2010,
+            "uid": "ryA-lHibVxdf",
+            "detail": null,
+            "value": 0.82,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2010,
+            "uid": "SJkzxBiWVxdf",
+            "detail": null,
+            "value": 1.05,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "HJgzxri-Vx_z",
+            "detail": null,
+            "value": 0.26,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2010,
+            "uid": "ryZMxBjZ4euz",
+            "detail": null,
+            "value": 0.08,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2010,
+            "uid": "HkfzeBsZEl_M",
+            "detail": null,
+            "value": 0.29,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2010,
+            "uid": "SyrflBsWEeuf",
+            "detail": null,
+            "value": 0.97,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "H1LMxBsWNxdz",
+            "detail": null,
+            "value": 0.13,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2010,
+            "uid": "HJPzgBoW4gOM",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2010,
+            "uid": "S1jGxBj-ExuM",
+            "detail": null,
+            "value": 0.2,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "HyTMlBobVxuf",
+            "detail": null,
+            "value": 0.3,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "rk0fxSoWNg_M",
+            "detail": null,
+            "value": 0.29,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2009,
+            "uid": "B1y7xBoZNedf",
+            "detail": null,
+            "value": 0.55,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "SJlQlHobVlOM",
+            "detail": null,
+            "value": 0.3,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "BybQxrjW4l_z",
+            "detail": null,
+            "value": 0.44,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "SkX7xHjb4xdz",
+            "detail": null,
+            "value": 0.12,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "ByrmxSs-4ldG",
+            "detail": null,
+            "value": 0.36,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2009,
+            "uid": "ryUXgBj-4gdf",
+            "detail": null,
+            "value": 0.88,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "r1_mlHsZNeuM",
+            "detail": null,
+            "value": 0.46,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#9A579E",
+            "year": 2009,
+            "uid": "HkF7xBsWVxdz",
+            "detail": null,
+            "value": 0.54,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "Skq7xrsb4gOf",
+            "detail": null,
+            "value": 0.47,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#9A579E",
+            "year": 2009,
+            "uid": "SyomeBsWExOf",
+            "detail": null,
+            "value": 0.51,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "rk2XlBiWVxuM",
+            "detail": null,
+            "value": 0.19,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "SkTXgHsbVxuf",
+            "detail": null,
+            "value": 0.1,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#9A579E",
+            "year": 2009,
+            "uid": "Sy07xBj-4edz",
+            "detail": null,
+            "value": 0.55,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "BygVgHjbEldM",
+            "detail": null,
+            "value": 0.33,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "HkZNlrsWVeOG",
+            "detail": null,
+            "value": 0.16,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "ByfNgHjZNgOf",
+            "detail": null,
+            "value": 0.18,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "By74xBo-Nldz",
+            "detail": null,
+            "value": 0.1,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2009,
+            "uid": "H1LVlrsb4gdf",
+            "detail": null,
+            "value": 1.04,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2009,
+            "uid": "B1YVxBoZNeuG",
+            "detail": null,
+            "value": 0.82,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2009,
+            "uid": "B1cVlBoZVluG",
+            "detail": null,
+            "value": 1.06,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2009,
+            "uid": "Bys4eSj-NeOz",
+            "detail": null,
+            "value": 0.28,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2009,
+            "uid": "rkn4xribVldM",
+            "detail": null,
+            "value": 0.09,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "SyaExriZEg_G",
+            "detail": null,
+            "value": 0.23,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2009,
+            "uid": "Hy1rxrsW4x_f",
+            "detail": null,
+            "value": 1.12,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "H1eBgBi-4guz",
+            "detail": null,
+            "value": 0.15,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2009,
+            "uid": "ryZBlBo-EluM",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2009,
+            "uid": "SJSrgHjZEeOG",
+            "detail": null,
+            "value": 0.21,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "Hk8reBo-Egdz",
+            "detail": null,
+            "value": 0.43,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "HywSeSjZNeuz",
+            "detail": null,
+            "value": 0.32,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "rkOSlSj-Exuf",
+            "detail": null,
+            "value": 0.48,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "SJYSlri-4gOM",
+            "detail": null,
+            "value": 0.33,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "HJ9rxSiWNedG",
+            "detail": null,
+            "value": 0.42,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "SknHxBjbNxuM",
+            "detail": null,
+            "value": 0.12,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "Sk0SxHs-4xOf",
+            "detail": null,
+            "value": 0.38,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2008,
+            "uid": "r1y8erj-EeOM",
+            "detail": null,
+            "value": 0.82,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "SkZUxBiWVxuz",
+            "detail": null,
+            "value": 0.45,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "SkM8xHj-Exuf",
+            "detail": null,
+            "value": 0.44,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "H17UlSjWVxuG",
+            "detail": null,
+            "value": 0.39,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "r1N8eroWVxuM",
+            "detail": null,
+            "value": 0.43,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "r1rUeri-NxdG",
+            "detail": null,
+            "value": 0.21,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#CD9DC8",
+            "year": 2008,
+            "uid": "HyL8eSs-Nxuf",
+            "detail": null,
+            "value": 0.08,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#9A579E",
+            "year": 2008,
+            "uid": "SyvUeSoWEe_z",
+            "detail": null,
+            "value": 0.59,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "HkYUxHoW4e_M",
+            "detail": null,
+            "value": 0.36,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "BkcLgrjW4guz",
+            "detail": null,
+            "value": 0.22,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "r1sLxSiW4e_M",
+            "detail": null,
+            "value": 0.19,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2008,
+            "uid": "Sk3UlSoZ4g_M",
+            "detail": null,
+            "value": 0.09,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2008,
+            "uid": "HykDlSjWEg_z",
+            "detail": null,
+            "value": 0.97,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2008,
+            "uid": "SJ-vxHjZEl_z",
+            "detail": null,
+            "value": 0.81,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2008,
+            "uid": "SkMPlBjWVlOM",
+            "detail": null,
+            "value": 0.89,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "B1mveBsWVx_M",
+            "detail": null,
+            "value": 0.3,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2008,
+            "uid": "Hy4DxHj-4gdz",
+            "detail": null,
+            "value": 0.08,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2008,
+            "uid": "S1BDlHo-Nxuf",
+            "detail": null,
+            "value": 0.27,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2008,
+            "uid": "rkwweSjZNeuM",
+            "detail": null,
+            "value": 0.98,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "B1_wlBj-Nl_M",
+            "detail": null,
+            "value": 0.13,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "HkYPeSibElOf",
+            "detail": null,
+            "value": 0.1,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2008,
+            "uid": "BkTDgBsZNeOz",
+            "detail": null,
+            "value": 0.18,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#9A579E",
+            "year": 2007,
+            "uid": "HkRPlBoZNl_z",
+            "detail": null,
+            "value": 0.5,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "HykOgriZNxdG",
+            "detail": null,
+            "value": 0.32,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "rJlOxBoW4gOM",
+            "detail": null,
+            "value": 0.43,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "rkZdlro-NeOf",
+            "detail": null,
+            "value": 0.29,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "rJfOeHoZ4e_G",
+            "detail": null,
+            "value": 0.37,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "SyEuxSs-Neuf",
+            "detail": null,
+            "value": 0.11,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "S18OerjW4lOf",
+            "detail": null,
+            "value": 0.37,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2007,
+            "uid": "ByP_gHi-4xdM",
+            "detail": null,
+            "value": 0.81,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "H1tueBiZVguz",
+            "detail": null,
+            "value": 0.37,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "SJ5OlBiZNgdM",
+            "detail": null,
+            "value": 0.39,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "BysdlBjbNedz",
+            "detail": null,
+            "value": 0.38,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "Sk3dlHiWNxdf",
+            "detail": null,
+            "value": 0.36,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "S1p_gBiZEeuf",
+            "detail": null,
+            "value": 0.16,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#CD9DC8",
+            "year": 2007,
+            "uid": "HkAOgHoZVguz",
+            "detail": null,
+            "value": 0.08,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#9A579E",
+            "year": 2007,
+            "uid": "ryyFxBi-Vg_z",
+            "detail": null,
+            "value": 0.55,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "BJZtgHjZEeOM",
+            "detail": null,
+            "value": 0.27,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "ryfFlBiW4euz",
+            "detail": null,
+            "value": 0.19,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "Bk7txriWElOf",
+            "detail": null,
+            "value": 0.17,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2007,
+            "uid": "rJNFxrsbNedz",
+            "detail": null,
+            "value": 0.07,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2007,
+            "uid": "SkwKxrs-EeOf",
+            "detail": null,
+            "value": 0.92,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2007,
+            "uid": "rJYKlBj-Nl_G",
+            "detail": null,
+            "value": 0.81,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2007,
+            "uid": "HkqYgSiWVx_G",
+            "detail": null,
+            "value": 0.95,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2007,
+            "uid": "BkoKlSi-VxOM",
+            "detail": null,
+            "value": 0.27,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "HJntlSiZVeuz",
+            "detail": null,
+            "value": 0.1,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "SJ6txrj-NxOM",
+            "detail": null,
+            "value": 0.22,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2007,
+            "uid": "S1RKlHibExOG",
+            "detail": null,
+            "value": 0.94,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "BkycxrsWVguG",
+            "detail": null,
+            "value": 0.12,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2007,
+            "uid": "HJeqlSiZNgdz",
+            "detail": null,
+            "value": 0.09,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2007,
+            "uid": "ryNcxSoWVxOz",
+            "detail": null,
+            "value": 0.16,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "SySqlSiZEluG",
+            "detail": null,
+            "value": 0.47,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "SkIqxHs-4xuG",
+            "detail": null,
+            "value": 0.3,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2006,
+            "uid": "H1w5xHo-Nx_M",
+            "detail": null,
+            "value": 0.5,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "r1_5lSobVeOM",
+            "detail": null,
+            "value": 0.29,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "SyY9lHsZEguz",
+            "detail": null,
+            "value": 0.38,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "B1oclSj-Vluz",
+            "detail": null,
+            "value": 0.12,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "HkTqxBiWNg_z",
+            "detail": null,
+            "value": 0.36,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2006,
+            "uid": "H1C9gHiWVedG",
+            "detail": null,
+            "value": 0.8,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "ryljeBjWVxOf",
+            "detail": null,
+            "value": 0.32,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "H1-ilHsbEeOG",
+            "detail": null,
+            "value": 0.4,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "H1fsgHibEgdG",
+            "detail": null,
+            "value": 0.47,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#9A579E",
+            "year": 2006,
+            "uid": "SkQolBjbVgdz",
+            "detail": null,
+            "value": 0.51,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "HkVigBi-Eg_M",
+            "detail": null,
+            "value": 0.17,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "S1SjeSsWNxdM",
+            "detail": null,
+            "value": 0.13,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#9A579E",
+            "year": 2006,
+            "uid": "Bk8oxBoZNlOz",
+            "detail": null,
+            "value": 0.54,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "S1_ogri-ExOM",
+            "detail": null,
+            "value": 0.27,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "H1YjgBsZNeOM",
+            "detail": null,
+            "value": 0.2,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "By9olSiZ4gdf",
+            "detail": null,
+            "value": 0.25,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2006,
+            "uid": "B1jogSoZVedz",
+            "detail": null,
+            "value": 0.05,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2006,
+            "uid": "rJTjgSj-NxuG",
+            "detail": null,
+            "value": 0.89,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2006,
+            "uid": "H1JhxSiZNxdM",
+            "detail": null,
+            "value": 0.81,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2006,
+            "uid": "Hkg3gSsWNl_G",
+            "detail": null,
+            "value": 0.89,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2006,
+            "uid": "ryZnlribVg_G",
+            "detail": null,
+            "value": 0.27,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2006,
+            "uid": "rJznlSo-Vluf",
+            "detail": null,
+            "value": 0.09,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "HkXnlroZEeOG",
+            "detail": null,
+            "value": 0.21,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2006,
+            "uid": "ByN2gHsbNluf",
+            "detail": null,
+            "value": 1.03,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "BJHheHjWNgdz",
+            "detail": null,
+            "value": 0.12,
+            "slug": "slovenia"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "r1IhxSjZ4xOM",
+            "detail": null,
+            "value": 0.1,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2006,
+            "uid": "rJq3xBiZ4ldf",
+            "detail": null,
+            "value": 0.18,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#9A579E",
+            "year": 2005,
+            "uid": "SJinxHibNlOG",
+            "detail": null,
+            "value": 0.52,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "SJ2nxri-4edM",
+            "detail": null,
+            "value": 0.25,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2005,
+            "uid": "SkT2eHoZVeuf",
+            "detail": null,
+            "value": 0.53,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "Hk02xHjbNg_z",
+            "detail": null,
+            "value": 0.34,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "SJ1alro-Neuf",
+            "detail": null,
+            "value": 0.42,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "HkbTxBsbVxuz",
+            "detail": null,
+            "value": 0.11,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "Skmagrsb4g_G",
+            "detail": null,
+            "value": 0.36,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2005,
+            "uid": "ry4TxSiZNe_z",
+            "detail": null,
+            "value": 0.81,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "rkL6lBobVxuz",
+            "detail": null,
+            "value": 0.27,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "SyvTeBib4eOz",
+            "detail": null,
+            "value": 0.46,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "HkuTlSjbNguf",
+            "detail": null,
+            "value": 0.47,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "H1YagrsbVxOf",
+            "detail": null,
+            "value": 0.47,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "ryqalHjZNl_z",
+            "detail": null,
+            "value": 0.17,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "HyopxSjbExuG",
+            "detail": null,
+            "value": 0.11,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "By2TlSob4luz",
+            "detail": null,
+            "value": 0.42,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "Sk06lSjWNl_f",
+            "detail": null,
+            "value": 0.18,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "H1y0gHs-4euM",
+            "detail": null,
+            "value": 0.29,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "SJgRlBs-EldG",
+            "detail": null,
+            "value": 0.28,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "r1bAeSoZ4x_f",
+            "detail": null,
+            "value": 0.1,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2005,
+            "uid": "rk7AlSj-EeOG",
+            "detail": null,
+            "value": 0.79,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2005,
+            "uid": "HySAlHsZNeOM",
+            "detail": null,
+            "value": 0.82,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2005,
+            "uid": "SJL0eHsbNxOM",
+            "detail": null,
+            "value": 0.94,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2005,
+            "uid": "HyvRgriZNedz",
+            "detail": null,
+            "value": 0.27,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2005,
+            "uid": "HkdAeHsbVldM",
+            "detail": null,
+            "value": 0.07,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "HkK0lSoZEgdG",
+            "detail": null,
+            "value": 0.21,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2005,
+            "uid": "SkcReSjW4ldG",
+            "detail": null,
+            "value": 0.94,
+            "slug": "sweden"
+          },
+          {
+            "id": "SI",
+            "name": "Slovenia",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "r1oClHib4ldM",
+            "detail": null,
+            "value": 0.11,
+            "slug": "slovenia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2005,
+            "uid": "rkRRgBjbVluG",
+            "detail": null,
+            "value": 0.23,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "BJJJ-HoWNe_z",
+            "detail": null,
+            "value": 0.23,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "Bkg1WHjbVgOf",
+            "detail": null,
+            "value": 0.25,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "r1W1bHj-4euz",
+            "detail": null,
+            "value": 0.41,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "B1fkbHoWNl_z",
+            "detail": null,
+            "value": 0.27,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "r1XybSsWNx_M",
+            "detail": null,
+            "value": 0.39,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "SJV1WHoWEguz",
+            "detail": null,
+            "value": 0.11,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "Sk81ZBiWEluM",
+            "detail": null,
+            "value": 0.28,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2004,
+            "uid": "B1v1ZSi-Ng_M",
+            "detail": null,
+            "value": 0.85,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "H1KJ-Sj-NgOz",
+            "detail": null,
+            "value": 0.24,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "Bk5JZHjZExuf",
+            "detail": null,
+            "value": 0.37,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "BJikWri-Nl_f",
+            "detail": null,
+            "value": 0.41,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "rknybro-EgOz",
+            "detail": null,
+            "value": 0.36,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "ryTyWSiZNxdM",
+            "detail": null,
+            "value": 0.16,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#CD9DC8",
+            "year": 2004,
+            "uid": "HJAJWSjbVldz",
+            "detail": null,
+            "value": 0.07,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2004,
+            "uid": "ry1gWSjZVlOG",
+            "detail": null,
+            "value": 0.39,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "rJ-ebHiZVxuG",
+            "detail": null,
+            "value": 0.18,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "ByMeZBoWExdz",
+            "detail": null,
+            "value": 0.15,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "Sy7e-HoZ4gOf",
+            "detail": null,
+            "value": 0.19,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2004,
+            "uid": "SJVeZBsZNluf",
+            "detail": null,
+            "value": 0.06,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2004,
+            "uid": "H1Ix-So-Eluz",
+            "detail": null,
+            "value": 0.79,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2004,
+            "uid": "H1OxZHi-4eOz",
+            "detail": null,
+            "value": 0.73,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2004,
+            "uid": "HJKgbroZNlOf",
+            "detail": null,
+            "value": 0.87,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "B1qgZBobVeuz",
+            "detail": null,
+            "value": 0.23,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#CD9DC8",
+            "year": 2004,
+            "uid": "rysl-BiZNg_z",
+            "detail": null,
+            "value": 0.05,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#9A579E",
+            "year": 2004,
+            "uid": "ry3xWBjbEldM",
+            "detail": null,
+            "value": 0.63,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2004,
+            "uid": "rJ6e-Hi-VgOM",
+            "detail": null,
+            "value": 0.78,
+            "slug": "sweden"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2004,
+            "uid": "Sy0eWHjbExOG",
+            "detail": null,
+            "value": 0.07,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2004,
+            "uid": "rkl-ZBjZNedG",
+            "detail": null,
+            "value": 0.17,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "SyZW-Hob4guG",
+            "detail": null,
+            "value": 0.2,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "Bkf-ZHjbExOG",
+            "detail": null,
+            "value": 0.25,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#9A579E",
+            "year": 2003,
+            "uid": "S1XZ-rs-EgOz",
+            "detail": null,
+            "value": 0.6,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "BkNZ-Sj-EguG",
+            "detail": null,
+            "value": 0.24,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "SJSbZHoWVguf",
+            "detail": null,
+            "value": 0.36,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "SyUWZBi-VeuG",
+            "detail": null,
+            "value": 0.11,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "SJObZBiZVxOf",
+            "detail": null,
+            "value": 0.28,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2003,
+            "uid": "SJtZ-SjZNgOG",
+            "detail": null,
+            "value": 0.84,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "Hy9WZSsWVlOf",
+            "detail": null,
+            "value": 0.23,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "HJjbWrsbVedM",
+            "detail": null,
+            "value": 0.35,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "S1nWZBiZEeOf",
+            "detail": null,
+            "value": 0.4,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "ryTZbHjWNeOz",
+            "detail": null,
+            "value": 0.34,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "rJCZZBsb4xOf",
+            "detail": null,
+            "value": 0.21,
+            "slug": "greece"
+          },
+          {
+            "id": "HU",
+            "name": "Hungary",
+            "color": "#DEB5D6",
+            "year": 2003,
+            "uid": "SkkzZSsbExOf",
+            "detail": null,
+            "value": 0.03,
+            "slug": "hungary"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2003,
+            "uid": "HJgGbrsWNlOM",
+            "detail": null,
+            "value": 0.4,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "SyzzbSsZEeOf",
+            "detail": null,
+            "value": 0.17,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "rkXfbHobVedz",
+            "detail": null,
+            "value": 0.17,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "r1NMZHoWNxOz",
+            "detail": null,
+            "value": 0.2,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2003,
+            "uid": "HyHMWHjZEl_z",
+            "detail": null,
+            "value": 0.06,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2003,
+            "uid": "BywMWroW4lOz",
+            "detail": null,
+            "value": 0.86,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2003,
+            "uid": "HkYzZBjZNxuM",
+            "detail": null,
+            "value": 0.8,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2003,
+            "uid": "rkqfbrjZVe_G",
+            "detail": null,
+            "value": 0.92,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "SysfZSi-4luM",
+            "detail": null,
+            "value": 0.23,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#DEB5D6",
+            "year": 2003,
+            "uid": "Hynf-BsZVedM",
+            "detail": null,
+            "value": 0.01,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "B1pGZBjbNguz",
+            "detail": null,
+            "value": 0.22,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2003,
+            "uid": "rJAG-SoZNguz",
+            "detail": null,
+            "value": 0.8,
+            "slug": "sweden"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#CD9DC8",
+            "year": 2003,
+            "uid": "HJ1m-rs-Ve_f",
+            "detail": null,
+            "value": 0.05,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2003,
+            "uid": "SJb7WrobEl_G",
+            "detail": null,
+            "value": 0.15,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "ByfXWBsZElOz",
+            "detail": null,
+            "value": 0.26,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "SJmmZrsZEl_G",
+            "detail": null,
+            "value": 0.26,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "rk47brsZEx_M",
+            "detail": null,
+            "value": 0.43,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "S1SXbBoZ4e_M",
+            "detail": null,
+            "value": 0.28,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "BkLmbSobNlOf",
+            "detail": null,
+            "value": 0.32,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#CD9DC8",
+            "year": 2002,
+            "uid": "rJPQWSsW4eOM",
+            "detail": null,
+            "value": 0.07,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "BJt7ZBsbNguf",
+            "detail": null,
+            "value": 0.27,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2002,
+            "uid": "Bk97WHoWVl_f",
+            "detail": null,
+            "value": 0.96,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "SkiQZSoW4euz",
+            "detail": null,
+            "value": 0.26,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "B13m-rsWNgOM",
+            "detail": null,
+            "value": 0.35,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "SJpQbHoWNxuG",
+            "detail": null,
+            "value": 0.38,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "rkAX-BsZ4gdf",
+            "detail": null,
+            "value": 0.31,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2002,
+            "uid": "S11NZribNldM",
+            "detail": null,
+            "value": 0.21,
+            "slug": "greece"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "SkgEZrs-EgdG",
+            "detail": null,
+            "value": 0.4,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2002,
+            "uid": "S1zNZBs-Eldf",
+            "detail": null,
+            "value": 0.15,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2002,
+            "uid": "HkQVWBoZ4lOM",
+            "detail": null,
+            "value": 0.2,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2002,
+            "uid": "SJV4-Si-Nx_M",
+            "detail": null,
+            "value": 0.23,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2002,
+            "uid": "HySE-Sib4xOG",
+            "detail": null,
+            "value": 0.05,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2002,
+            "uid": "BJI4bHjWEg_f",
+            "detail": null,
+            "value": 0.78,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2002,
+            "uid": "H1DVZBsWNl_z",
+            "detail": null,
+            "value": 0.81,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2002,
+            "uid": "SkOV-SsZ4xOM",
+            "detail": null,
+            "value": 0.89,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#BC86BA",
+            "year": 2002,
+            "uid": "B1t4ZBjZNedf",
+            "detail": null,
+            "value": 0.22,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2002,
+            "uid": "HyqVbHibVg_z",
+            "detail": null,
+            "value": 0.27,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2002,
+            "uid": "BysNWri-4guG",
+            "detail": null,
+            "value": 0.84,
+            "slug": "sweden"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#DEB5D6",
+            "year": 2002,
+            "uid": "r1hEbSiZNxuG",
+            "detail": null,
+            "value": 0.02,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2002,
+            "uid": "HyCVWBsWVldz",
+            "detail": null,
+            "value": 0.13,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "r11HWro-4gdf",
+            "detail": null,
+            "value": 0.34,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "SyeSbriZVg_f",
+            "detail": null,
+            "value": 0.25,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "rJZBZrjWExdM",
+            "detail": null,
+            "value": 0.37,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#BC86BA",
+            "year": 2001,
+            "uid": "r1fSWHjZVl_f",
+            "detail": null,
+            "value": 0.22,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "ryXB-SjZExuG",
+            "detail": null,
+            "value": 0.33,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#CD9DC8",
+            "year": 2001,
+            "uid": "SJNBbBj-4ldM",
+            "detail": null,
+            "value": 0.05,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "r1UHWro-Ng_z",
+            "detail": null,
+            "value": 0.27,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2001,
+            "uid": "SkvH-BsbNgOf",
+            "detail": null,
+            "value": 1.03,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "SkuHWBoZ4g_f",
+            "detail": null,
+            "value": 0.3,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "S1KS-HjbEe_z",
+            "detail": null,
+            "value": 0.32,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "B1cS-SjWVx_M",
+            "detail": null,
+            "value": 0.31,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "rkjr-HiWEeuz",
+            "detail": null,
+            "value": 0.32,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2001,
+            "uid": "ByhrbBjWNeuM",
+            "detail": null,
+            "value": 0.17,
+            "slug": "greece"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "ByarWroWVedM",
+            "detail": null,
+            "value": 0.33,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2001,
+            "uid": "SJk8ZHsZNx_f",
+            "detail": null,
+            "value": 0.13,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2001,
+            "uid": "SJg8ZHiWNldM",
+            "detail": null,
+            "value": 0.15,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#BC86BA",
+            "year": 2001,
+            "uid": "ryWUbriW4guf",
+            "detail": null,
+            "value": 0.23,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#CD9DC8",
+            "year": 2001,
+            "uid": "SJfIZSjWVg_M",
+            "detail": null,
+            "value": 0.06,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2001,
+            "uid": "HJmIbHjWVldz",
+            "detail": null,
+            "value": 0.77,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2001,
+            "uid": "r1NI-rsbNg_M",
+            "detail": null,
+            "value": 0.82,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2001,
+            "uid": "BJr8ZroZEl_M",
+            "detail": null,
+            "value": 0.8,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "SJUIZHjZElOM",
+            "detail": null,
+            "value": 0.25,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#DEB5D6",
+            "year": 2001,
+            "uid": "BJvUWSiZ4eOM",
+            "detail": null,
+            "value": 0.02,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2001,
+            "uid": "rkuLbSobEgOG",
+            "detail": null,
+            "value": 0.25,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2001,
+            "uid": "rkKIZSjZEe_f",
+            "detail": null,
+            "value": 0.77,
+            "slug": "sweden"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#DEB5D6",
+            "year": 2001,
+            "uid": "H1cLZSiW4eOz",
+            "detail": null,
+            "value": 0.04,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2001,
+            "uid": "Bk2I-riZVlOf",
+            "detail": null,
+            "value": 0.11,
+            "slug": "usa"
+          },
+          {
+            "id": "AT",
+            "name": "Austria",
+            "color": "#BC86BA",
+            "year": 2000,
+            "uid": "Skp8-rj-4lOM",
+            "detail": null,
+            "value": 0.23,
+            "slug": "austria"
+          },
+          {
+            "id": "AU",
+            "name": "Australia",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "SkCL-BobEedM",
+            "detail": null,
+            "value": 0.27,
+            "slug": "australia"
+          },
+          {
+            "id": "BE",
+            "name": "Belgium",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "Hk1wWHjZNe_M",
+            "detail": null,
+            "value": 0.36,
+            "slug": "belgium"
+          },
+          {
+            "id": "CA",
+            "name": "Canada",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "rkePWHiZNxOG",
+            "detail": null,
+            "value": 0.26,
+            "slug": "canada"
+          },
+          {
+            "id": "CH",
+            "name": "Switzerland",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "SkbDZHib4gOf",
+            "detail": null,
+            "value": 0.32,
+            "slug": "switzerland"
+          },
+          {
+            "id": "CZ",
+            "name": "Czech Republic",
+            "color": "#DEB5D6",
+            "year": 2000,
+            "uid": "BJGv-riZ4gdf",
+            "detail": null,
+            "value": 0.03,
+            "slug": "czech-republic"
+          },
+          {
+            "id": "DE",
+            "name": "Germany",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "HJ4D-HibVgOG",
+            "detail": null,
+            "value": 0.27,
+            "slug": "germany"
+          },
+          {
+            "id": "DK",
+            "name": "Denmark",
+            "color": "#893F90",
+            "year": 2000,
+            "uid": "rkHDWHobVldG",
+            "detail": null,
+            "value": 1.06,
+            "slug": "denmark"
+          },
+          {
+            "id": "ES",
+            "name": "Spain",
+            "color": "#BC86BA",
+            "year": 2000,
+            "uid": "SJIPZSiW4gOM",
+            "detail": null,
+            "value": 0.22,
+            "slug": "spain"
+          },
+          {
+            "id": "FI",
+            "name": "Finland",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "BkwPWSiWExdG",
+            "detail": null,
+            "value": 0.31,
+            "slug": "finland"
+          },
+          {
+            "id": "FR",
+            "name": "France",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "Bk_w-So-NxuM",
+            "detail": null,
+            "value": 0.31,
+            "slug": "france"
+          },
+          {
+            "id": "GB",
+            "name": "United Kingdom",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "rJFvbHobNluG",
+            "detail": null,
+            "value": 0.32,
+            "slug": "united-kingdom"
+          },
+          {
+            "id": "GR",
+            "name": "Greece",
+            "color": "#BC86BA",
+            "year": 2000,
+            "uid": "S15wZriWVg_z",
+            "detail": null,
+            "value": 0.2,
+            "slug": "greece"
+          },
+          {
+            "id": "IE",
+            "name": "Ireland",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "BJow-rs-El_z",
+            "detail": null,
+            "value": 0.3,
+            "slug": "ireland"
+          },
+          {
+            "id": "IS",
+            "name": "Iceland",
+            "color": "#BC86BA",
+            "year": 2000,
+            "uid": "H13vbBoZVg_f",
+            "detail": null,
+            "value": 0.1,
+            "slug": "iceland"
+          },
+          {
+            "id": "IT",
+            "name": "Italy",
+            "color": "#BC86BA",
+            "year": 2000,
+            "uid": "ByaP-SjbVxdf",
+            "detail": null,
+            "value": 0.13,
+            "slug": "italy"
+          },
+          {
+            "id": "JP",
+            "name": "Japan",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "HkRDZSoZVguM",
+            "detail": null,
+            "value": 0.28,
+            "slug": "japan"
+          },
+          {
+            "id": "KR",
+            "name": "Korea",
+            "color": "#DEB5D6",
+            "year": 2000,
+            "uid": "Bk1d-SiZNgOM",
+            "detail": null,
+            "value": 0.04,
+            "slug": "south-korea"
+          },
+          {
+            "id": "LU",
+            "name": "Luxembourg",
+            "color": "#893F90",
+            "year": 2000,
+            "uid": "Syg_bBsWVgOM",
+            "detail": null,
+            "value": 0.7,
+            "slug": "luxembourg"
+          },
+          {
+            "id": "NL",
+            "name": "Netherlands",
+            "color": "#893F90",
+            "year": 2000,
+            "uid": "H1ZO-SjW4lOf",
+            "detail": null,
+            "value": 0.84,
+            "slug": "netherlands"
+          },
+          {
+            "id": "NO",
+            "name": "Norway",
+            "color": "#893F90",
+            "year": 2000,
+            "uid": "HJzdbSs-Ex_f",
+            "detail": null,
+            "value": 0.76,
+            "slug": "norway"
+          },
+          {
+            "id": "NZ",
+            "name": "New Zealand",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "BkQdbrjWNluM",
+            "detail": null,
+            "value": 0.25,
+            "slug": "new-zealand"
+          },
+          {
+            "id": "PL",
+            "name": "Poland",
+            "color": "#DEB5D6",
+            "year": 2000,
+            "uid": "BkVu-HsW4gdM",
+            "detail": null,
+            "value": 0.02,
+            "slug": "poland"
+          },
+          {
+            "id": "PT",
+            "name": "Portugal",
+            "color": "#AB6EAC",
+            "year": 2000,
+            "uid": "HyBO-SsZVx_z",
+            "detail": null,
+            "value": 0.26,
+            "slug": "portugal"
+          },
+          {
+            "id": "SE",
+            "name": "Sweden",
+            "color": "#893F90",
+            "year": 2000,
+            "uid": "SkIdWHsZEgOM",
+            "detail": null,
+            "value": 0.8,
+            "slug": "sweden"
+          },
+          {
+            "id": "SK",
+            "name": "Slovak Republic",
+            "color": "#DEB5D6",
+            "year": 2000,
+            "uid": "S1wOZHjW4x_G",
+            "detail": null,
+            "value": 0.03,
+            "slug": "slovakia"
+          },
+          {
+            "id": "US",
+            "name": "United States",
+            "color": "#BC86BA",
+            "year": 2000,
+            "uid": "ByF_WBsZEl_M",
+            "detail": null,
+            "value": 0.1,
+            "slug": "usa"
+          }
+        ],
+        "start_year": 2000,
+        "end_year": 2016,
+        "country": "global",
+        "uom_display": "%",
+        "name": "Net ODA provided by DAC members, % of GNI",
+        "theme": "international-official-finance",
+        "heading": "Net ODA provided by DAC members, % of GNI",
+        "default_year": 2016,
+        "description": "Net official development assistance (ODA) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income (GNI).",
+        "map_style": "",
+        "id": "fact.oda_percent_gni",
+        "legend": [
+          {
+            "label": "<0.05 %",
+            "color": "black",
+            "backgroundColor": "rgb(222, 181, 214)"
+          },
+          {
+            "label": "0.05-0.10",
+            "color": "black",
+            "backgroundColor": "rgb(205, 157, 200)"
+          },
+          {
+            "label": "0.10-0.25",
+            "color": "white",
+            "backgroundColor": "rgb(188, 134, 186)"
+          },
+          {
+            "label": "0.25-0.50",
+            "color": "white",
+            "backgroundColor": "rgb(171, 110, 172)"
+          },
+          {
+            "label": "0.50-0.70",
+            "color": "white",
+            "backgroundColor": "rgb(154, 87, 158)"
+          },
+          {
+            "label": ">0.70 %",
+            "color": "white",
+            "backgroundColor": "rgb(137, 63, 144)"
+          },
+          {
+            "label": "no data/not applicable",
+            "color": "white",
+            "backgroundColor": "#d0cccf"
+          }
+        ]
+      }
+    }
+  }

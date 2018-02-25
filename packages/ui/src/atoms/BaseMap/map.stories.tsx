@@ -28,6 +28,6 @@ const viewport: Viewport = {
 
 const paint: PaintMap = { data };
 
-storiesOf('Base Maps', module).add('Base Map Atom', () =>
+storiesOf('Maps', module).add('Base Map Atom', () =>
   <BaseMap paint={paint} viewport={viewport} />,
 );
