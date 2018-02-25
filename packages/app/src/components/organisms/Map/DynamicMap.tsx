@@ -6,12 +6,9 @@ const dynamicOpts: DynamicOptions<any, any> = {
   loading: () => <MapBackground />,
   ssr: false,
   modules: props => ({
-    Map: import('../../organisms/Map') as Promise<any>
+    Map: import('.') as Promise<any>
     }),
-  render: (props, {Map}) =>
-    <div>
-      <Map {...props} />
-    </div>
+  render: (props, {Map}) => <Map {...props} />
 };
 
 export default dynamic(dynamicOpts as any);
