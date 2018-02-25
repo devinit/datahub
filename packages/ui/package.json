@@ -28,9 +28,6 @@
     "type": "git",
     "url": "https://github.com/devinit/datagub.git"
   },
-  "peerDependencies": {
-    "next": "^5.0.0"
-  },
   "dependencies": {
     "@devinit/charts": "^1.6.49",
     "@devinit/datahub-api": "^1.0.2",

@@ -6,8 +6,8 @@ import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';
 import {small} from '../../../theme';
 import Chart from '../../../atoms/Chart';
-import TabsToolTip from '../../TabsToolTip';
-import {TabsP, HeaderTitle} from '../../../atoms/TabsText';
+import {TabsToolTip} from '../../ToolTipContainer';
+import {TabsP, HeaderTitle} from '../../../atoms/Text';
 import {CSProps} from '../types';
 
 export type Props = CSProps & {

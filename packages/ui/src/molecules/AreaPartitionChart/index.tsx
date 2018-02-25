@@ -7,7 +7,7 @@ import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from '@devinit/dh-base/lib/utils/constants';
 import { red } from '../../theme/semantic';
 import { NoDataAvailableContainer } from '../../atoms/Container';
-import { LightBg } from '../../atoms/Backgrounds';
+import { LightBg } from '../../atoms/Container';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 

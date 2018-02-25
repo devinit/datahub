@@ -3,7 +3,7 @@ import { P, Div } from 'glamorous';
 import { SectionHeader } from '../../atoms/Header';
 import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
-import { DarkBg, LightBg } from '../../atoms/Backgrounds';
+import { DarkBg, LightBg } from '../../atoms/Container';
 import Observer from 'react-intersection-observer';
 import {router} from '@devinit/dh-base/lib/utils';
 import {IProcess} from '@devinit/dh-base/lib/types';

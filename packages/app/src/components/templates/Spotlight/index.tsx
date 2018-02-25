@@ -3,6 +3,8 @@ import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
 import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/spotlightKe';
 import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
+import { MapBackground } from '@devinit/dh-ui/lib/atoms/Container';
+import dynamic from 'next/dynamic';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import {capitalize} from '@devinit/dh-base/lib/utils';
 import {cacheMapData} from '../../../utils';

@@ -1,10 +1,10 @@
 import { Container, Grid } from 'semantic-ui-react';
 import * as React from 'react';
-import {TextBlock} from '../../../atoms/BodyText';
+import {TextBlock} from '../../../atoms/Text';
 import { white } from '../../../theme/semantic';
 import {PageUnit} from '@devinit/dh-base/lib/types';
 import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
-import TabsToolTip from '../../TabsToolTip';
+import {TabsToolTip} from '../../ToolTipContainer';
 import { SectionHeader } from '../../../atoms/Header';
 
 export interface Props {

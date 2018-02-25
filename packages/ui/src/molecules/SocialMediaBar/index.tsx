@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LightBg } from '../../atoms/Backgrounds';
+import { LightBg } from '../../atoms/Container';
 import glamorous, { Div } from 'glamorous';
 import ChartShare from '../ChartShare';
 import {StateToShare} from '../ChartShare';

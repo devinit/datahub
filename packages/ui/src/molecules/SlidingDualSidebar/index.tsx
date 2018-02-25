@@ -7,7 +7,7 @@ import { SectionHeader } from '../../atoms/Header';
 import {approximate} from '@devinit/dh-base/lib/utils';
 import ChartShare from '../ChartShare';
 import { RECIPIENT } from '@devinit/dh-base/lib/utils/constants';
-import { LightBg } from '../../atoms/Backgrounds';
+import { LightBg } from '../../atoms/Container';
 import Chart from '../../atoms/Chart';
 import YearSlider from '../YearSlider';
 

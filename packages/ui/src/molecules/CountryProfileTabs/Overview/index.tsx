@@ -1,11 +1,11 @@
 import { Container, Grid } from 'semantic-ui-react';
 import * as React from 'react';
-import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/TabsText';
+import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/Text';
 import { P, Div } from 'glamorous';
 import { addMinAndMaxYear } from '@devinit/dh-base/lib/utils';
 import { RECIPIENT, DONOR, NoData} from '@devinit/dh-base/lib/utils/constants';
 import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
-import TabsToolTip from '../../TabsToolTip';
+import {TabsToolTip} from '../../ToolTipContainer';
 import Chart from '../../../atoms/Chart';
 import {PageUnit} from '@devinit/dh-base/lib/types';
 import {getPageUnitById} from '@devinit/dh-base/lib/pageData';

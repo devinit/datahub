@@ -3,7 +3,7 @@ import { Div, Img} from 'glamorous';
 import { Container } from 'semantic-ui-react';
 import { red, white } from '@devinit/dh-ui/lib/theme/semantic';
 import { SectionHeader } from '@devinit/dh-ui/lib/atoms/Header';
-import { DarkBg } from '@devinit/dh-ui/lib/atoms/Backgrounds';
+import { DarkBg } from '@devinit/dh-ui/lib/atoms/Container';
 import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';

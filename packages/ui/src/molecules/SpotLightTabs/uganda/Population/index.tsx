@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
-import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../../atoms/TabsText';
+import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../../atoms/Text';
 import { red } from '../../../../theme/semantic';
 import { Div, P} from 'glamorous';
-import TabsToolTip from '../../../TabsToolTip';
+import { TabsToolTip} from '../../../ToolTipContainer';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
 import Chart from '../../../../atoms/Chart';
 import {CSProps} from '../../types';
