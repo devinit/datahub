@@ -79,14 +79,12 @@ class Map extends React.Component<Props, State> {
     if (!year) throw new Error('default year missing, for current year');
     return +year;
   }
-  public onYearChange() {
-    return (year: number) => {
-      if (this.props && this.props.map) {
-        this.data = Map.setCurrentYearData(year, this.props.map);
-        this.paint = { data: this.data, ...this.config.paint };
-        this.setState({ currentYear: year});
-      }
-    };
+  public onYearChange = (year: number) => {
+    if (this.props && this.props.map) {
+      this.data = Map.setCurrentYearData(year, this.props.map);
+      this.paint = { data: this.data, ...this.config.paint };
+      this.setState({ currentYear: year});
+    }
   }
   public setCountryRankData(): RankingsTableProps {
     const sortedData = this.data
