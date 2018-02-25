@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
 import { Div } from 'glamorous';
 import GlobalPictureNavTabs, {GlobalPictureProps} from '../../organisms/NavBarTabs/globalPicture';
-import CountrySearchInput from '../../organisms/CountrySearchInput';
-import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
+import {GlobalPictureSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 // import { cacheMapData } from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
@@ -29,9 +28,7 @@ export default class Front extends React.Component<Props> {
     const navState = {state: this.props.state} as GlobalPictureProps;
     return (
       <Generic pathname="/">
-        <GlobalPictureCountrySearch>
-          <CountrySearchInput visible={false} profile={false} />
-        </GlobalPictureCountrySearch>
+        <GlobalPictureSearch />
         <Container>
           <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
             <Grid centered>

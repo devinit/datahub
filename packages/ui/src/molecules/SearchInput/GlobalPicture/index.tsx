@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Container } from 'semantic-ui-react';
 import glamorous from 'glamorous';
-import { white, lightBlack } from '../../theme/semantic';
-import { big } from '../../theme';
+import { white, lightBlack } from '../../../theme/semantic';
+import data from '@devinit/dh-base/lib/__generated__/data';
+import SearchInput from '../Basic';
+import { big } from '../../../theme';
 
-export interface Props  {
-  children: any; // TODO: add proper types
-}
 export interface State  {
   showInput: boolean;
 }
+
 const SearchTitle = glamorous.div({
   'backgroundColor': lightBlack,
   'fontSize': big,
@@ -24,14 +24,9 @@ const SearchTitle = glamorous.div({
   },
 });
 
-class Search extends React.Component<Props> {
-  public state: State;
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      showInput: false,
-    };
-  }
+class Search extends React.Component {
+  public state: State = {showInput: false};
+
   public showInput = () => {
     this.state.showInput ? this.setState({ showInput: false }) : this.setState({ showInput: true });
   }
@@ -49,7 +44,13 @@ class Search extends React.Component<Props> {
             </h2>
           </Container>
         </SearchTitle>
-        {React.cloneElement(this.props.children, { visible: this.state.showInput })}
+        <SearchInput
+          entities={data.countries}
+          routePath={'country'} // for route
+          visible={false}
+          profile={false}
+          placeholder={'Type a country name...'}
+        />
       </div>
     );
   }

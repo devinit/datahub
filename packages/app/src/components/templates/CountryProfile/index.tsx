@@ -8,7 +8,6 @@ import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSour
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
 import ProfileHeader from '@devinit/dh-ui/lib/molecules/ProfileHeader';
 import {getCountry} from '@devinit/dh-base/lib/utils';
-import CountrySearch from '../../organisms/CountrySearchInput';
 import { GOVERNMENT_FINANCE_LOWER } from '@devinit/dh-base/lib/utils/constants';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import dynamic, {DynamicOptions} from 'next/dynamic';
@@ -68,7 +67,6 @@ export default class Profile extends React.Component<Props> {
       <Generic pathname="/country" query={this.props.id}>
         <ProfileHeader
           entity={this.state.country}
-          countrySearch={CountrySearch}
           jumpToSection={this.jumpToSection}
         />
         <CountryProfileTopTabs id={this.props.id} />

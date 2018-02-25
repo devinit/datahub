@@ -12,7 +12,6 @@ import {getCountry, getDistrict} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
 import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
-import CountrySearch from '../../organisms/CountrySearchInput';
 import {QueryVarTs} from '../../organisms/LocalGovernmentFinance';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 import Generic from '../Generic';
@@ -70,7 +69,6 @@ export default class RegionalProfile extends React.Component<Props, State> {
       <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
         <ProfileHeader
           currency={this.state.currency}
-          countrySearch={CountrySearch}
           currencyOptions={this.state.currencyOptions}
           entity={this.state.district}
           spotlightCountry={this.state.country}

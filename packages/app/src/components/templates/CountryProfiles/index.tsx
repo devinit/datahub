@@ -4,7 +4,7 @@ import { Container, Grid, Icon } from 'semantic-ui-react';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import ProfileSocialMedia from '@devinit/dh-ui/lib/molecules/ProfileSocialMedia';
 import { CardContainer } from '@devinit/dh-ui/lib/atoms/Container';
-import SearchInput from '../../organisms/CountrySearchInput';
+import {ProfileSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import Link from 'next/link';
 import {IProcess} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
@@ -24,7 +24,7 @@ export default () =>
                   <a role="link" style={{color: red}}>Global Picture</a>
                 </Link>
               </H4>
-              <SearchInput visible profile={false} />
+              <ProfileSearch profile={false} />
               {process.browser ?
                 <ProfileSocialMedia />
                 : ''

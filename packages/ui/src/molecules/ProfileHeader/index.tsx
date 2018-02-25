@@ -5,6 +5,7 @@ import { red } from '../../theme/semantic';
 import { Lead } from '../../atoms/Header';
 import { BodyLink } from '../../atoms/Link';
 import ProfileSocialMedia from '../ProfileSocialMedia';
+import {ProfileSearch} from '../SearchInput';
 import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
@@ -26,13 +27,6 @@ const dynamicOpts: DynamicOptions<any, any> = {
 
 const DynamicMapComponent: React.ComponentClass<SmallMapProps> = dynamic(dynamicOpts as any);
 
-export interface CProps  {
-  visible: boolean;
-  profile: boolean;
-  country?: string; // for regional profile
-  placeholder?: string;
-}
-
 export interface Props  {
   entity: Country | District; // country or district
   jumpToSection?: (sectionId: string) => void;
@@ -40,11 +34,9 @@ export interface Props  {
   currencyOptions?: CurrencyOption[];
   onChangeCurrency ?: (currency: string) => void;
   spotlightCountry?: Country;
-  countrySearch: React.StatelessComponent<CProps>;
 }
 
 const ProfileHeaderSection = (props: Props) => {
-  const CountrySearch = props.countrySearch;
   const jumpToSection = (section: string) => () =>
     props.jumpToSection && props.jumpToSection(section);
   return (
@@ -76,14 +68,12 @@ const ProfileHeaderSection = (props: Props) => {
                   </H4>
                   {
                     props.spotlightCountry ?
-                      <CountrySearch
-                        visible
+                      <ProfileSearch
                         placeholder={props.entity.name}
-                        profile
                         country={props.spotlightCountry.slug}
                       />
                       :
-                      <CountrySearch visible placeholder={props.entity.name} profile />
+                      <ProfileSearch placeholder={props.entity.name} />
                   }
                   {
                     props.spotlightCountry ?
