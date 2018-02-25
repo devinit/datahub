@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import {menueData} from './testData';
 import Menu from '.';
 
-const wrap = (props = {}) => shallow(<Menu {...props} />);
-
 it('renders props when passed in', () => {
-  const wrapper = wrap({ id: 'foo' });
-  expect(wrapper).toBeTruthy();
+  const component = shallow(<Menu menu={menueData.menu} />);
+  expect(component).toBeTruthy();
 });

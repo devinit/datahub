@@ -11,7 +11,7 @@ export const FooterLink: GlamorousComponentT = glamorous.a({
   paddingTop: '.5em',
 });
 
-export const NavLink: GlamorousComponentT = glamorous.a({
+export const NavLink: GlamorousComponentT = glamorous.div({
   'color': white,
   'fontWeight': 700,
   'textAlign': 'center',

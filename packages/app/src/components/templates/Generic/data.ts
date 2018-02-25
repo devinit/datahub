@@ -1,7 +1,7 @@
-import {Menue} from '@devinit/dh-base/lib/types';
+import {Menu} from '@devinit/dh-ui/lib/molecules/Menu';
 
-export const menueData: Menue = {
-  mainMenu: [
+export const menueData: Menu = {
+  menu: [
     {
       name: 'Global Picture',
       link: '/',

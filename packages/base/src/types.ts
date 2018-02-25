@@ -63,13 +63,3 @@ export interface SelectOption {
   name: string;
   text: string;
 }
-
-export interface MenueItem {
-    name: string;
-    link?: string;
-    icon?: string;
-    children?: MenueItem[];
-}
-export interface Menue {
-    mainMenu: MenueItem[];
-}

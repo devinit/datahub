@@ -1,7 +1,7 @@
-import {Menue} from '@devinit/dh-base/lib/types';
+import {Menu as Menu} from './types';
 
-export const menueData: Menue = {
-  mainMenu: [
+export const menueData: Menu = {
+  menu: [
     {
       name: 'Global Picture',
       link: '/',

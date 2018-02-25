@@ -2,15 +2,13 @@ import glamorous from 'glamorous';
 import { Icon, SemanticICONS } from 'semantic-ui-react';
 import * as React from 'react';
 import { lightGrey, black } from '../../../theme/semantic';
+import {MenuItem} from '../../../molecules/Menu/types';
 import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;
 
 const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
 
-export interface Props {
-  menu: {children: Array<{name: string; link: string; icon: SemanticICONS}>};
-}
 const SubMenuContainer = glamorous.ul({
   'listStyleType': 'none',
   'color': black,
@@ -22,6 +20,10 @@ const SubMenuContainer = glamorous.ul({
   },
 });
 
+export interface Props {
+  menu: MenuItem;
+}
+
 const LinkContent = (item: {name: string; icon: SemanticICONS}) =>
   <a role="link">
     <Icon name={item.icon} />
@@ -29,9 +31,9 @@ const LinkContent = (item: {name: string; icon: SemanticICONS}) =>
   </a>;
 
 const menuItem = (props: Props) => {
-  let childrenContainer;
+  let childrenContainer = <span>{''}</span>;
 
-  if ('children' in props.menu) {
+  if (props.menu.children) {
     const children = props.menu.children.map(item =>
       (<li key={item.name}>
         {Link ?

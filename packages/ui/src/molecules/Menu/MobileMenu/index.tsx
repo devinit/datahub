@@ -2,7 +2,8 @@ import * as React from 'react';
 import glamorous , {GlamorousComponent} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import { white, redHeaderColor } from '../../../theme/semantic';
-import {MobileMenuContainer, MobileMenuItem} from '../../../atoms/Menue';
+import {MobileMenuContainer, MobileMenuItem} from '../../../atoms/Menu';
+import {Menu} from '../types';
 import {mediaQueries} from '../../../theme';
 
 export const ToggleButton: GlamorousComponent<any, any> = glamorous.button({
@@ -41,15 +42,11 @@ export const OutSideMenu: GlamorousComponent<any, any> = glamorous.div<{open: bo
   }),
 );
 
-export interface Props {
-  menu: any;
-}
-
-class MobileMenu extends React.Component<Props> {
+class MobileMenu extends React.Component<Menu> {
   public state: {
     open: boolean,
   };
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
     this.state = {
       open: false,

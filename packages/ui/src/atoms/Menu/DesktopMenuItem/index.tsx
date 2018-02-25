@@ -1,6 +1,7 @@
 import { Li } from 'glamorous';
-import { Icon, List, SemanticICONS } from 'semantic-ui-react';
+import { Icon, List } from 'semantic-ui-react';
 import MenuLink from '../MenuLink';
+import {MenuItem} from '../../../molecules/Menu/types';
 import {IProcess} from '@devinit/dh-base/lib/types';
 
 declare var process: IProcess;
@@ -10,28 +11,26 @@ const Link = process.env && process.env.config && process.env.config.NEXT ? requ
 import * as React from 'react';
 
 export interface Props {
-  menu: any;
+  menu: MenuItem;
 }
-
-const LinkContent = (item: {icon: SemanticICONS, name: string}) =>
-  <a role="link">
-    <Icon name={item.icon} />
-    {item.name}
-  </a>;
 
 const menuItem = (props: Props) => {
   let menuLinkChildren; // TODO: Try to assign correct type
   let hasSubMenu = false;
-  if ('children' in props.menu) {
+  if (props.menu.children) {
     const childrenList = props.menu.children.map(item =>
       (<List.Item key={item.name}>
         <List.Content>
           {Link ?
             <Link href={item.link} prefetch>
-              {LinkContent}
+              <a role="link" >
+                <Icon name={item.icon} />
+              {item.name}
+            </a>;
             </Link> :
-            <a href={item.link}>
-              {LinkContent}
+             <a href={item.link} >
+              <Icon name={item.icon} />
+              {item.name}
             </a>
         }
         </List.Content>
@@ -46,7 +45,7 @@ const menuItem = (props: Props) => {
   }
   return (
     <Li display={'inline'}>
-      <MenuLink menu={props.menu.name} link={props.menu.link} hasSubMenu={hasSubMenu}>
+      <MenuLink menu={props.menu.name} link={props.menu.link || ''} hasSubMenu={hasSubMenu}>
         {menuLinkChildren}
       </MenuLink>
     </Li>
