@@ -22,7 +22,7 @@
     "start": "npm run build:next && next start",
     "cp-assets": "cp -R ../ui/static/* static/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "storybook": "start-storybook -p 6006 -s static",
+    "storybook": "start-storybook -p 6000 -s static",
     "gql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
     "gql-ts": "apollo-codegen generate ./src/**/query.graphql.ts --schema schema.json --target typescript --output ./src/types.ts",
     "types": "npm run gql-schema && npm run gql-ts && npm run cp-types-ui",

@@ -5,7 +5,7 @@ import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/s
 import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import {capitalize} from '@devinit/dh-base/lib/utils';
-import {cacheMapData} from '../../../utils';
+// import {cacheMapData} from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
@@ -21,7 +21,9 @@ export default class Spotlight extends React.Component<Props> {
     super(props);
   }
   public componentDidMount() {
-    cacheMapData(`/worker_${this.props.id}.js`);
+     // TODO: use greenlet to run worker
+    console.log('run worker');
+    // cacheMapData(`/worker_${this.props.id}.js`);
   }
   public render() {
     const countryName = capitalize(this.props.id);

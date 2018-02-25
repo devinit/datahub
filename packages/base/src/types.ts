@@ -1,6 +1,7 @@
 export interface IProcess {
   version: string;
   browser: boolean;
+  storybook: boolean;
   env: any & { // add by webpack
     PORT?: number,
     NODE_ENV?: string;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Div, H1, A } from 'glamorous';
+import { Div, H1} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import {router} from '@devinit/dh-base/lib/utils';
 import {IProcess} from '@devinit/dh-base/lib/types';
@@ -9,7 +9,7 @@ declare var process: IProcess;
 
 const Router = process.env && process.env.config && process.env.config.NEXT ? require('next/router') : router;
 
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : A;
+const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
 
 export interface Entity  {
   slug: string;
@@ -146,14 +146,19 @@ class SearchInput extends React.Component <Props, State> {
             {this.state.entities
               ? this.state.entities.map((country, i) =>
                 (<li key={country.slug} className={this.state.selected === i ? 'active' : 'not-active'}>
-                  <Link
-                    href={`/${this.props.routePath}?id=${country.slug}`}
-                    as={`/${this.props.routePath}/${country.slug}`}
-                  >
-                    <a>
-                      {country.name}
-                    </a>
-                  </Link>
+                  {Link ?
+                      <Link
+                        href={`/${this.props.routePath}?id=${country.slug}`}
+                        as={`/${this.props.routePath}/${country.slug}`}
+                      >
+                        <a role="link">
+                          {country.name}
+                        </a>
+                      </Link> :
+                      <a href={`/${this.props.routePath}?id=${country.slug}`}>
+                       {country.name}
+                      </a>
+                  }
                 </li>),
               )
               : <li>country list is not available</li>}

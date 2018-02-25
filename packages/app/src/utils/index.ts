@@ -96,7 +96,7 @@ export async function getData<T>(opts: IgetData): Promise<T> {
 }
 
 export const cacheMapData = async (workerPath: string): Promise<void> => {
-if (process.browser && (window as any).Worker) {
+if (process.browser && (window as any).Worker && !process.storybook) {
     try {
     const storage = await getLocalStorageInstance(process.env.version);
     const storedVersion = await storage.getItem(`${process.env.version}-${workerPath}`);

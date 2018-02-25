@@ -5,7 +5,7 @@ import GlobalPictureNavTabs, {GlobalPictureProps} from '../../organisms/NavBarTa
 import CountrySearchInput from '../../organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
-import { cacheMapData } from '../../../utils';
+// import { cacheMapData } from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import DynamicMap from '../../organisms/Map/DynamicMap';
@@ -20,7 +20,9 @@ export default class Front extends React.Component<Props> {
     super(props);
   }
   public componentDidMount() {
-    cacheMapData('/worker_gp.js');
+    // TODO: use greenlet
+    console.log('run worker');
+    // cacheMapData('/worker_gp.js');
   }
   public render() {
     // this casting is a hack, typescript coundnt infar this

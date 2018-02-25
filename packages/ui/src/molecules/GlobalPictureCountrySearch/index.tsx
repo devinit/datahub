@@ -5,7 +5,7 @@ import { white, lightBlack } from '../../theme/semantic';
 import { big } from '../../theme';
 
 export interface Props  {
-  children: any;
+  children: any; // TODO: add proper types
 }
 export interface State  {
   showInput: boolean;
