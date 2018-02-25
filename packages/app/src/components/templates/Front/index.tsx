@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
 import { Div } from 'glamorous';
 import GlobalPictureNavTabs, {GlobalPictureProps} from '../../organisms/NavBarTabs/globalPicture';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Container';
 import CountrySearchInput from '../../organisms/CountrySearchInput';
 import GlobalPictureCountrySearch from '@devinit/dh-ui/lib/molecules/GlobalPictureCountrySearch';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';

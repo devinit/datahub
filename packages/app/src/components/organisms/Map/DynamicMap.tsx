@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Backgrounds';
+import { MapBackground } from '@devinit/dh-ui/lib/atoms/Container';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 
 const dynamicOpts: DynamicOptions<any, any> = {

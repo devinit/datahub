@@ -27,7 +27,6 @@ const main = (): void => {
   })
     .then(result => result.json())
     .then(result => {
-      console.log('data', result);
       // here we're filtering out any type information unrelated to unions or interfaces
       const filteredData = result.data.__schema.types.filter(
         type => type.possibleTypes !== null,

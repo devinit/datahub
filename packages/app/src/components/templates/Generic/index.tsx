@@ -18,7 +18,7 @@ const Generic: React.SFC<Props> = ({ children, query, pathname}) => {
     <Head>
       <title>{pageMeta.title}</title>
     </Head>
-    <Menu menu={menueData.mainMenu} />
+    <Menu menu={menueData.menu} />
     <div style={{marginTop: '4em'}}>
       {children}
     </div>

@@ -1,4 +1,4 @@
-import {Menu} from '@devinit/dh-ui/lib/molecules/Menu';
+import {Menu} from '@devinit/dh-ui/lib/molecules/Menu/types';
 
 export const menueData: Menu = {
   menu: [

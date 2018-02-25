@@ -21,9 +21,9 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): BoundAction => ({
 
 export type Props = BoundAction & {
   app: AppState;
-  id: string;
-  state: StateToShare;
-  country: string;
+  id?: string;
+  state?: StateToShare;
+  country?: string;
 };
 
 interface State {
@@ -74,7 +74,7 @@ class MapOrganism extends React.Component <Props, State> {
     return (
       <div>
         {!this.state.loading && this.data && this.data.mapData ?
-          <Map state={this.props.state} {...mapData} /> :
+          <Map state={this.props.state || {}} {...mapData} /> :
           <MapBackground />
         }
       </div>

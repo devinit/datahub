@@ -1,5 +1,6 @@
 import {menueData} from '../components/templates/Generic/data';
-import {MenueItem, IProcess} from '@devinit/dh-base/lib/types';
+import {IProcess} from '@devinit/dh-base/lib/types';
+import {MenuItem} from '@devinit/dh-ui/lib/molecules/Menu/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
@@ -18,7 +19,7 @@ export interface PageMeta {
     height?: string;
 }
 
-export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => {
+export const createLinkMeta = (args: PageMetaArgs, obj: MenuItem): PageMeta => {
     let title = obj.name;
     if (obj.link === '/uganda') title = capitalize(args.query || '');
     if (obj.link === '/') title = 'Development Data Hub';
@@ -28,7 +29,7 @@ export const createLinkMeta = (args: PageMetaArgs, obj: MenueItem): PageMeta => 
 
 export const getPageMeta = (args: PageMetaArgs): PageMeta => {
 // TODO: add proper types
-    const item = menueData.mainMenu.reduce((acc: MenueItem[], obj: MenueItem) => {
+    const item = menueData.menu.reduce((acc: MenuItem[], obj: MenuItem) => {
         if (obj.children) return [...acc, ...obj.children];
         return [...acc, obj];
     }, [])

@@ -99,7 +99,6 @@ export default class LinePartition extends React.Component<Props> {
 
   public createInitialState(props: Props) {
     const [root = {levels: []}] = props.data;
-    console.log('data: ', props.data);
     const level = root.levels[0];
     const heading = level.replace(/Total\s*/gi, '');
 
