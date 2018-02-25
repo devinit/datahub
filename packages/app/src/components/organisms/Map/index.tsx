@@ -26,11 +26,7 @@ export type Props = BoundAction & {
   country?: string;
 };
 
-interface State {
-  loading: boolean;
-}
-
-class MapOrganism extends React.Component <Props, State> {
+class MapOrganism extends React.Component <Props> {
   public static getIndicatorId(props: Props): string {
     if (props.id) return props.id;
     if (props.state && props.state.indicator) return props.state.indicator;
@@ -44,6 +40,7 @@ class MapOrganism extends React.Component <Props, State> {
     return getData<MapDataQuery>({query: MAP_QUERY, variables});
   }
   public data: MapDataQuery;
+  public loading: boolean = true;
   constructor(props: Props) {
     super(props);
     this.state = {loading: true };
@@ -64,7 +61,7 @@ class MapOrganism extends React.Component <Props, State> {
     MapOrganism.getIndicatorData(props)
       .then(data => {
         this.data = data;
-        this.setState({loading: false});
+        this.loading = false;
         props.changeLoadingStatus(false);
       })
       .catch(console.error);
@@ -73,7 +70,7 @@ class MapOrganism extends React.Component <Props, State> {
     const mapData = this.data && this.data.mapData  as DH.IMapData;
     return (
       <div>
-        {!this.state.loading && this.data && this.data.mapData ?
+        {!this.loading && this.data && this.data.mapData ?
           <Map state={this.props.state || {}} {...mapData} /> :
           <MapBackground />
         }

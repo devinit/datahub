@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import withApolloAndReduxProvider from '../../../storybook-addon/apolloAndRedux';
 import Map from '.';
 
-storiesOf('Maps Live with Apollo and Redux', module)
+storiesOf('Maps', module)
   .addDecorator(withApolloAndReduxProvider())
   .add('global picture default map', () => <Map country={'global'} />)
   .add('spotlight uganda default map', () => <Map country={'uganda'} />)
