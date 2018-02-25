@@ -5,7 +5,7 @@ import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/s
 import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import {capitalize} from '@devinit/dh-base/lib/utils';
-// import {cacheMapData} from '../../../utils';
+import {cacheMapData} from '../../../utils';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
@@ -21,13 +21,11 @@ export default class Spotlight extends React.Component<Props> {
     super(props);
   }
   public componentDidMount() {
-     // TODO: use greenlet to run worker
-    console.log('run worker');
-    // cacheMapData(`/worker_${this.props.id}.js`);
+    if ((process as any).browser) cacheMapData(this.props.id);
   }
   public render() {
     const countryName = capitalize(this.props.id);
-    const region = this.props.id === 'uganda' ? 'district' : 'country';
+    const region = this.props.id === 'uganda' ? 'district' : 'county';
     // this casting is hack, typecript couldnt infar correct types
     const navState = {state: this.props.state} as SpotlightKeProps | SpotlightUgProps;
     return (
@@ -56,7 +54,7 @@ export default class Spotlight extends React.Component<Props> {
         }
 
         {
-          process.env.NODE_ENV !== 'test' ?
+          process.env.NODE_ENV !== 'test' && (process as any).browser ?
             <DynamicMap country={this.props.id} state={this.props.state} /> : ''
         }
         <About />

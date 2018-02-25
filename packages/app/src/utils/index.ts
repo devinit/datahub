@@ -4,6 +4,11 @@ import {MenuItem} from '@devinit/dh-ui/lib/molecules/Menu/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
+// import greenlet from 'greenlet';
+import navDataGlobal from '../components/organisms/NavBarTabs/data';
+import navDataKe from '../components/organisms/NavBarTabs/kenya';
+import navDataUg from '../components/organisms/NavBarTabs/uganda';
+const MapsQuery = require('../components/organisms/Map/query.graphql');
 
 declare var process: IProcess;
 
@@ -65,7 +70,7 @@ try {
 
 export interface IgetData {
     query: string;
-    variables: object;
+    variables: any;
   }
 
 export async function getData<T>(opts: IgetData): Promise<T> {
@@ -94,20 +99,39 @@ export async function getData<T>(opts: IgetData): Promise<T> {
     throw error;
     }
 }
-
-export const cacheMapData = async (workerPath: string): Promise<void> => {
-if (process.browser && (window as any).Worker && !process.storybook) {
-    try {
-    const storage = await getLocalStorageInstance(process.env.config.version);
-    const storedVersion = await storage.getItem(`${process.env.config.version}-${workerPath}`);
-    if (!storedVersion || storedVersion !== `${process.env.config.version}-${workerPath}`) {
-        await storage.setItem(
-            `${process.env.config.version}-${workerPath}`, `${process.env.config.version}-${workerPath}`);
-        const worker = new Worker(workerPath); // caches global picture map data
-        worker.onmessage = (event) => console.log(event);
-    }
-    } catch (error) {
-        console.error(error, 'cache mapdata: ');
-    }
-}
+export const cacheData = async (name: string) => {
+    const navData = {
+        uganda: navDataUg.spotlightThemes,
+        kenya: navDataKe.spotlightThemes,
+        global: navDataGlobal.globalPictureThemes
+    };
+    if (!navData[name]) console.error('country nav data missing for use in caching');
+    return navData[name].map(item => {
+      if (!item.indicators) throw Error('indicators missing in navItem');
+      item.indicators.map(async (indicator) => {
+        const variables = { id: indicator.id };
+        try {
+            await getData({query: MapsQuery, variables});
+            console.log(`cahing map data for ${indicator.id || 'nothing'}`);
+        } catch (err) {
+            console.log('failed to fetch data for ', `${indicator.id || 'nothing'}`)
+        }
+      });
+    });
 };
+
+// export const cacheMapData = async (workerName: string): Promise<void> => {
+//     if (process.browser && (window as any).Worker && !process.storybook) {
+//         try {
+//         const storage = await getLocalStorageInstance(process.env.config.version);
+//         const storedVersion = await storage.getItem(`${process.env.config.version}-${workerName}`);
+//         if (!storedVersion || storedVersion !== `${process.env.config.version}-${workerName}`) {
+//             await storage.setItem(
+//                 `${process.env.config.version}-${workerName}`, `${process.env.config.version}-${workerName}`);
+//             return greenlet(cacheMapData(workerName));
+//         }
+//         } catch (error) {
+//             console.error(error, 'cache mapdata: ');
+//         }
+//     }
+// };
