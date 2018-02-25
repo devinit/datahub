@@ -75,7 +75,7 @@ export default ComposedComponent => {
           }
         };
       }
-      console.log('initial props: ', composedInitialProps);
+      // console.log('initial props: ', composedInitialProps);
       return {
         serverState,
         ...composedInitialProps

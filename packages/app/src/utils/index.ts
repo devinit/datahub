@@ -74,7 +74,7 @@ export async function getData<T>(opts: IgetData): Promise<T> {
         const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
         let storage: any = null;
         if (process.browser) {
-            storage = await getLocalStorageInstance(process.version);  // @ts-ignore
+            storage = await getLocalStorageInstance(process.env.config.version);  // @ts-ignore
             const cached = storage ? await storage.getItem(key) : null;
             if (cached) return JSON.parse(cached);
         }
@@ -98,10 +98,11 @@ export async function getData<T>(opts: IgetData): Promise<T> {
 export const cacheMapData = async (workerPath: string): Promise<void> => {
 if (process.browser && (window as any).Worker && !process.storybook) {
     try {
-    const storage = await getLocalStorageInstance(process.env.version);
-    const storedVersion = await storage.getItem(`${process.env.version}-${workerPath}`);
-    if (!storedVersion || storedVersion !== `${process.env.version}-${workerPath}`) {
-        await storage.setItem(`${process.env.version}-${workerPath}`, `${process.env.version}-${workerPath}`);
+    const storage = await getLocalStorageInstance(process.env.config.version);
+    const storedVersion = await storage.getItem(`${process.env.config.version}-${workerPath}`);
+    if (!storedVersion || storedVersion !== `${process.env.config.version}-${workerPath}`) {
+        await storage.setItem(
+            `${process.env.config.version}-${workerPath}`, `${process.env.config.version}-${workerPath}`);
         const worker = new Worker(workerPath); // caches global picture map data
         worker.onmessage = (event) => console.log(event);
     }
