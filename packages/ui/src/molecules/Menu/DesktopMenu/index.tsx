@@ -10,10 +10,12 @@ const ListContainer = glamorous.ul({
   color: white,
   alignSelf: 'flex-end',
   listStyleType: 'none',
-  float: 'right',
   paddingTop: '0.2em',
   margin: '0',
   [mediaQueries.phone]: {
+    display: 'none',
+  },
+  [mediaQueries.tabs]: {
     display: 'none',
   },
 });

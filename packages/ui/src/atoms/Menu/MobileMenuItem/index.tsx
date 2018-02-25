@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { Icon, SemanticICONS } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import * as React from 'react';
 import { lightGrey, black } from '../../../theme/semantic';
 import {MenuItem} from '../../../molecules/Menu/types';
@@ -24,23 +24,22 @@ export interface Props {
   menu: MenuItem;
 }
 
-const LinkContent = (item: {name: string; icon: SemanticICONS}) =>
-  <a role="link">
-    <Icon name={item.icon} />
-    {item.name}
-  </a>;
-
 const menuItem = (props: Props) => {
-  let childrenContainer = <span>{''}</span>;
-
+  let childrenContainer;
   if (props.menu.children) {
     const children = props.menu.children.map(item =>
       (<li key={item.name}>
         {Link ?
           <Link href={item.link || '/'} prefetch>
-           {LinkContent}
+           <a role="link">
+            <Icon name={item.icon} />
+            {item.name}
+          </a>;
          </Link> :
-          <a href={item.link || '/'}>  {LinkContent} </a>
+          <a href={item.link || '/'}>
+            <Icon name={item.icon} />
+          {item.name}
+          </a>
         }
       </li>)
     );
