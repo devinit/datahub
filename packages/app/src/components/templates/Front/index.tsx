@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
 import { Div } from 'glamorous';
-import GlobalPictureNavTabs, {GlobalPictureProps} from '../../organisms/NavBarTabs/globalPicture';
+import GlobalPictureNavTabs from '../../organisms/NavBarTabs/globalPicture';
 import {GlobalPictureSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
-import DynamicMap from '../../organisms/Map/DynamicMap';
-import { cacheMapData } from '../../../utils';
+// import DynamicMap from '../../organisms/Map/DynamicMap';
+// import { cacheMapData } from '../../../utils';
 import Generic from '../Generic';
-
-const API = process.env.npm_package_config_API;
 
 interface Props  {
   state: StateToShare;
@@ -26,7 +24,7 @@ export default class Front extends React.Component<Props> {
   }
   public render() {
     // this casting is a hack, typescript coundnt infar this
-    const navState = {state: this.props.state} as GlobalPictureProps;
+    const navState = {state: this.props.state}
     return (
       <Generic pathname="/">
         <GlobalPictureSearch />
@@ -46,9 +44,6 @@ export default class Front extends React.Component<Props> {
         </Container>
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs {...navState} />
-            {process.env.NODE_ENV !== 'test' && (process as any).browser ?
-              <DynamicMap country="global" state={this.props.state} /> : ''
-            }
         </div>
         <About />
       </Generic>

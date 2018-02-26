@@ -44,7 +44,7 @@ module.exports = {
     })
     
     config.module = Object.assign(config.module, {
-      noParse: /(mapbox-gl)\.js$/
+      noParse: /mapbox-gl/
     });
 
     if (ANALYZE) {

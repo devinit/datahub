@@ -25,7 +25,8 @@ const mapStateToProps: MapStateToProps<BoundState, OwnProps, State> = ({ app }) 
 export type GlobalPictureProps = Props<GlobalIndicator,  LoadingStatus> & OwnProps
   & BoundAction<GlobalIndicator>;
 
-const gloalPictureNavBarTabs: React.SFC<GlobalPictureProps> = (props) =>
+// TODO: fix types
+const gloalPictureNavBarTabs: React.SFC<any> = (props) =>
   (<NavigationBarTabs
     navBarItems={data.globalPictureThemes}
     showUsingThisViz

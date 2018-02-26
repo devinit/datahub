@@ -23,7 +23,8 @@ const mapStateToProps = ({ app }: State): BoundState =>
 export type SpotlightUgProps = Props<SpotLightlIndicatorUg,  LoadingStatus> & {state?: StateToShare}
   & BoundAction<SpotLightlIndicatorUg>;
 
-const spotlightNavBarTabs: React.SFC<SpotlightUgProps> = (props) => {
+// TODO: fix types
+const spotlightNavBarTabs: React.SFC<any> = (props) => {
   return (<NavigationBarTabs
     navBarItems={data.spotlightThemes}
     showUsingThisViz

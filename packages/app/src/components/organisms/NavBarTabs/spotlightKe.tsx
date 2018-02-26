@@ -22,7 +22,8 @@ export type SpotlightKeProps = Props<SpotLightlIndicatorKe,  LoadingStatus> & {s
 const mapStateToProps = ({ app }: State): BoundState =>
   ({ activeIndicator: app.indicatorKenya, loading: app.loading });
 
-const spotlightNavBarTabs: React.SFC<SpotlightKeProps> = (props) => {
+// TODO: fix types
+const spotlightNavBarTabs: React.SFC<any> = (props) => {
   return (<NavigationBarTabs
     navBarItems={data.spotlightThemes}
     showUsingThisViz

@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const packageJSon = require('../package.json');
+const packageJSON = require('../package.json');
 
 const SRC_PATH = path.join(__dirname, '../src');
 
