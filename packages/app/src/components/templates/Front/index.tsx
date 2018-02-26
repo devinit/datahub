@@ -6,8 +6,8 @@ import {GlobalPictureSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
-// import DynamicMap from '../../organisms/Map/DynamicMap';
-// import { cacheMapData } from '../../../utils';
+import DynamicMap from '../../organisms/Map/DynamicMap';
+import { cacheMapData } from '../../../utils';
 import Generic from '../Generic';
 
 interface Props  {
@@ -24,7 +24,7 @@ export default class Front extends React.Component<Props> {
   }
   public render() {
     // this casting is a hack, typescript coundnt infar this
-    const navState = {state: this.props.state}
+    const navState = {state: this.props.state};
     return (
       <Generic pathname="/">
         <GlobalPictureSearch />
@@ -44,6 +44,7 @@ export default class Front extends React.Component<Props> {
         </Container>
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs {...navState} />
+          <DynamicMap country="global" state={this.props.state} />
         </div>
         <About />
       </Generic>

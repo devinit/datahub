@@ -43,9 +43,12 @@ module.exports = {
       ]
     })
     
-    config.module = Object.assign(config.module, {
-      noParse: /mapbox-gl/
-    });
+    if (isServer) {
+      config.module = Object.assign(config.module, {
+        noParse: /mapbox-gl/
+      });
+    }
+    
 
     if (ANALYZE) {
       config.plugins.push(new BundleAnalyzerPlugin({
