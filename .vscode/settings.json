@@ -5,7 +5,7 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/.next": false,
+        "**/.next": true,
         "**/dist": true,
         "**/lib": true,
         "**/.out": true,
