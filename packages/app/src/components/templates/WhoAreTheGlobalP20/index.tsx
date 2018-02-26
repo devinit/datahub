@@ -1,11 +1,10 @@
 import * as React from 'react';
 import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import {IProcess} from '@devinit/dh-base/lib/types';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
 import Generic from '../Generic';
 
-declare var process: IProcess;
+declare const OLD_DATAHUB_URL: string;
 
 const StyledIframe = glamorous.iframe({
   width: '100%',
@@ -41,7 +40,7 @@ export default () =>
       </Container>
       <StyledIframe
         title="who-are-the-global-p20"
-        src={`${process.env.config.old_datahub}/#!/who-are-the-global-p20`}
+        src={`${OLD_DATAHUB_URL}/#!/who-are-the-global-p20`}
         frameBorder="0"
         scrolling="no"
       />

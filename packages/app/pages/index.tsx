@@ -18,6 +18,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  console.log('front page: ', 'props');
   return <App state={props.url.query.state} />;
 });

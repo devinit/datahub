@@ -2,11 +2,10 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
-import {IProcess} from '@devinit/dh-base/lib/types';
 import Generic from '../Generic';
 import data from './data';
 
-declare var process: IProcess;
+declare const OLD_DATAHUB_URL: string;
 
 const BottomWrapper = glamorous.div({
   '& h3': {
@@ -56,7 +55,7 @@ export default () => {
       </Container>
       <StyledIframe
         title="where are the poor"
-        src={`${process.env.config.old_datahub}/#!/post/where-are-the-poor`}
+        src={`${OLD_DATAHUB_URL}/#!/post/where-are-the-poor`}
         frameBorder="0"
         scrolling="no"
       />

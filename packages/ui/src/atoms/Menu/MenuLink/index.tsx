@@ -3,11 +3,6 @@ import glamorous from 'glamorous';
 import { Container, Icon } from 'semantic-ui-react';
 import { white, redHeaderColor, black } from '../../../theme/semantic';
 import { NavLink } from '../../Link';
-import {IProcess} from '@devinit/dh-base/lib/types';
-
-declare var process: IProcess;
-
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
 
 export interface Props  {
   children?: React.ReactChild | null;
@@ -100,21 +95,16 @@ const ListContainer = glamorous.ul({
 });
 
 export default ({ children, hasSubMenu, menu, link}: Props) => {
-  const NavLinkContent =
-    <NavLink>
-      <div className="menu-text">
-        {menu}
-      </div>
-    </NavLink>;
   return (
     <LocalContainer hasSubMenu={hasSubMenu}>
       {hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : ''}
-      {Link ?
-       <Link href={link} prefetch>
-          {NavLinkContent}
-       </Link>
-       : <a href={link}> {NavLinkContent}</a>
-       }
+       <a href={link}>
+        <NavLink>
+          <div className="menu-text">
+            {menu}
+          </div>
+        </NavLink>
+      </a>
       {hasSubMenu
         ? <Drawer>
           <Container>

@@ -19,8 +19,7 @@ const newExtensions =  ['.ts', '.tsx', '.js'];
 const newPlugins = [
   new webpack.DefinePlugin({
     'process.browser': true,
-    'process.env.config': {},
-    'process.storybook': true
+    'process.env.config': {}
   })
 ];
 

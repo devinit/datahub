@@ -5,12 +5,10 @@ import indexCss from '../src/critical-css';
 import unbundlingCss from '../src/critical-css/unbundling'; // in private/criticalCss
 import profileCss from '../src/critical-css/countryProfile';
 import {IProcess} from '@devinit/dh-base/lib/types';
-const packageJSON = require('../package.json');
 
-declare var process: IProcess;
-// import 'lib/offline-install'; // Get our service worker on the page
+declare const APP_VERSION: string;
 
-const version = packageJSON.version; // FIXME: should use process
+const version = APP_VERSION;
 
 export default class MyDocument extends Document {
   public static async getInitialProps({ renderPage, query, pathname }) {
@@ -87,7 +85,7 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <NextScript />c
+          <NextScript />
         </body>
       </html>
     );

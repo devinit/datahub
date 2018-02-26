@@ -1,14 +1,11 @@
 import * as React from 'react';
 import glamorous, {GlamorousComponent} from 'glamorous';
-import {IProcess} from '@devinit/dh-base/lib/types';
 import { white, redHeaderColor, midWhite, lightBlack } from '../../../theme/semantic';
-
-declare var process: IProcess;
-
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
+import {LinkState} from 'next/link';
 
 export interface Props  {
   children: React.ReactChild[];
+  nextLink?: React.ComponentClass<LinkState>;
   selected?: number;
   open?: boolean;
 }
@@ -89,10 +86,10 @@ class MobileMenu extends React.Component<Props> {
         >
           <span className="navigation__item-title small">
             {
-              Link ?
-               <Link href={child.props.url || '#'} prefetch>
-               <a role="link">{child.props.label}</a>
-              </Link>
+              this.props.nextLink ?
+               <this.props.nextLink href={child.props.url || ''} prefetch>
+                <a role="link">{child.props.label}</a>
+                </this.props.nextLink>
               : <a href={child.props.url || '#'}>{child.props.label}</a>
           }
           </span>

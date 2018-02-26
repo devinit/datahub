@@ -5,9 +5,8 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import SocialMediaBar from '@devinit/dh-ui/lib/molecules/SocialMediaBar';
 import {mediaQueries} from '@devinit/dh-ui/lib/theme';
 import Generic from '../Generic';
-import {IProcess} from '@devinit/dh-base/lib/types';
 
-declare var process: IProcess;
+declare const OLD_DATAHUB_URL: string;
 
 interface Props  {
   pathname: string;
@@ -53,8 +52,8 @@ export default ({pathname}: Props) =>
       <StyledIframe
         title="oda-donor"
         src={pathname === '/oda-donor' ?
-          `${process.env.config.old_datahub}/#!/post/oda-donor` :
-          `${process.env.config.old_datahub}/#!/post/poverty`
+          `${OLD_DATAHUB_URL}/#!/post/oda-donor` :
+          `${OLD_DATAHUB_URL}/#!/post/poverty`
         }
         frameBorder="0"
         scrolling="no"

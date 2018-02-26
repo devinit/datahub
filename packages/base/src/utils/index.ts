@@ -4,19 +4,8 @@ import countriesData from '../__generated__/data';
 import keData from '../__generated__/kenya';
 import ugData from '../__generated__/uganda';
 import {RECIPIENT} from './constants';
-import {IProcess, Country, District} from '../types';
-const packageJSON = require('../../package.json');
+import {Country, District} from '../types';
 
-declare var process: IProcess;
-
-if (!process.env.config) {
-  try {
-    if (packageJSON.config) process.env.config = packageJSON.config;
-  } catch (error) {
-    console.log('error: ', error, ' falling back to staging api');
-    process.env.config = {api: 'http://212.111.41.68:9090/graphql'};
-  }
-}
 // next.js compatible router interface
 export const router  = {
   push : (url) => {

@@ -6,12 +6,11 @@ import {GlobalPictureSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import { red } from '@devinit/dh-ui/lib/theme/semantic';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
-// import DynamicMap from '../../organisms/Map/DynamicMap';
-import {IProcess} from '@devinit/dh-base/lib/types';
-// import { cacheMapData } from '../../../utils';
+import DynamicMap from '../../organisms/Map/DynamicMap';
+import { cacheMapData } from '../../../utils';
 import Generic from '../Generic';
 
-declare var process: IProcess;
+const API = process.env.npm_package_config_API;
 
 interface Props  {
   state: StateToShare;
@@ -21,8 +20,9 @@ export default class Front extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }
+
   public componentDidMount() {
-    // cacheMapData('global');
+    // TODO: cacheMapData('global');
   }
   public render() {
     // this casting is a hack, typescript coundnt infar this
@@ -46,9 +46,9 @@ export default class Front extends React.Component<Props> {
         </Container>
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs {...navState} />
-          {/* {process.env.NODE_ENV !== 'test' && process.browser ?
-            <DynamicMap country="global" state={this.props.state} /> : ''
-          } */}
+            {process.env.NODE_ENV !== 'test' && (process as any).browser ?
+              <DynamicMap country="global" state={this.props.state} /> : ''
+            }
         </div>
         <About />
       </Generic>

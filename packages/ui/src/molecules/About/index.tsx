@@ -6,11 +6,8 @@ import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { DarkBg, LightBg } from '../../atoms/Container';
 import Observer from 'react-intersection-observer';
 import {router} from '@devinit/dh-base/lib/utils';
-import {IProcess} from '@devinit/dh-base/lib/types';
 
-declare var process: IProcess;
-
-const Router = process.env && process.env.config && process.env.config.NEXT ? require('next/router') : router;
+const Router = process.env.npm_package_config_IS_NEXT_APP ? require('next/router') : router;
 
 const goToMethodologyPage = () => Router.push('/methodology');
 

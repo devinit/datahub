@@ -2,8 +2,8 @@
   "name": "@devinit/dh-app",
   "version": "3.0.5",
   "config": {
-    "api": "http://212.111.41.68:9090/graphql",
-    "old_datahub": "http://212.111.41.68:8888"
+    "API": "http://212.111.41.68:9090/graphql",
+    "OLD_DATAHUB_URL": "http://212.111.41.68:8888"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     "dev": "nodemon src/server/index.ts",
     "build:next": "next build",
     "build-fragment": "npm run build && node lib/apollo/fragment.js",
-    "start": "npm run build:next && next start",
+    "start": "NODE_ENV=production PORT=3000 node lib/server/index.js",
     "cp-assets": "cp -R ../ui/static/* static/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "storybook": "start-storybook -p 6005 -s static",

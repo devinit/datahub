@@ -3,11 +3,7 @@ import { Icon } from 'semantic-ui-react';
 import * as React from 'react';
 import { lightGrey, black } from '../../../theme/semantic';
 import {MenuItem} from '../../../molecules/Menu/types';
-import {IProcess} from '@devinit/dh-base/lib/types';
-
-declare var process: IProcess;
-
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
+import {LinkState} from 'next/link';
 
 const SubMenuContainer = glamorous.ul({
   'listStyleType': 'none',
@@ -22,6 +18,7 @@ const SubMenuContainer = glamorous.ul({
 
 export interface Props {
   menu: MenuItem;
+  nextLink?: React.ComponentClass<LinkState>;
 }
 
 const menuItem = (props: Props) => {
@@ -29,13 +26,13 @@ const menuItem = (props: Props) => {
   if (props.menu.children) {
     const children = props.menu.children.map(item =>
       (<li key={item.name}>
-        {Link ?
-          <Link href={item.link || '/'} prefetch>
+        {props.nextLink ?
+          <props.nextLink href={item.link || '#'} prefetch>
            <a role="link">
-            <Icon name={item.icon} />
-            {item.name}
-          </a>;
-         </Link> :
+              <Icon name={item.icon} />
+              {item.name}
+          </a>
+         </props.nextLink> :
           <a href={item.link || '/'}>
             <Icon name={item.icon} />
           {item.name}

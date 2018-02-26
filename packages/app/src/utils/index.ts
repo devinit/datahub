@@ -4,13 +4,17 @@ import {MenuItem} from '@devinit/dh-ui/lib/molecules/Menu/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-// import greenlet from 'greenlet';
+import greenlet from 'greenlet';
+// import * as fetch from 'isomorphic-fetch';
 import navDataGlobal from '../components/organisms/NavBarTabs/data';
 import navDataKe from '../components/organisms/NavBarTabs/kenya';
 import navDataUg from '../components/organisms/NavBarTabs/uganda';
 const MapsQuery = require('../components/organisms/Map/query.graphql');
 
 declare var process: IProcess;
+
+declare const APP_VERSION: string;
+declare const API: string;
 
 export interface PageMetaArgs {
     query?: string;
@@ -46,26 +50,24 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
     return linkMeta;
 };
 
-const apolloFetch = createApolloFetch({ uri: process.env.config.api });
-
 export async function shouldPurgeCache(version: string): Promise<boolean> {
     const storedVersion = await localforage.getItem('version');
     return !storedVersion || storedVersion !== version;
   }
 
 export async function getLocalStorageInstance(version: string): Promise<any> {
-if (process.browser) return Promise.resolve(null);
-try {
-        const shouldPurge = await shouldPurgeCache(version);
-        if (!shouldPurge) return localforage;
-        await localforage.clear();
-        await localforage.setItem('version', version);
-        return localforage;
-    } catch (error) {
-        console.error(error, 'localforage: ');
-        await localforage.clear(); // cache is possibly full so lets clear it
-        return localforage;
-    }
+    if (!process.browser) return Promise.resolve(null);
+    try {
+            const shouldPurge = await shouldPurgeCache(version);
+            if (!shouldPurge) return localforage;
+            await localforage.clear();
+            await localforage.setItem('version', version);
+            return localforage;
+        } catch (error) {
+                console.error(error, 'localforage: ');
+                await localforage.clear(); // cache is possibly full so lets clear it
+                return localforage;
+        }
 }
 
 export interface IgetData {
@@ -78,8 +80,12 @@ export async function getData<T>(opts: IgetData): Promise<T> {
         const {query, variables} = opts;
         const key = `${JSON.stringify(query)}${JSON.stringify(variables)}`;
         let storage: any = null;
+        if (!API || !APP_VERSION) {
+            throw new Error('missing env config, check package.json for env virables & next.config');
+        }
+        const apolloFetch = createApolloFetch({ uri: API });
         if (process.browser) {
-            storage = await getLocalStorageInstance(process.env.config.version);  // @ts-ignore
+            storage = await getLocalStorageInstance(APP_VERSION);  // @ts-ignore
             const cached = storage ? await storage.getItem(key) : null;
             if (cached) return JSON.parse(cached);
         }
@@ -99,39 +105,46 @@ export async function getData<T>(opts: IgetData): Promise<T> {
     throw error;
     }
 }
-export const cacheData = async (name: string) => {
-    const navData = {
-        uganda: navDataUg.spotlightThemes,
-        kenya: navDataKe.spotlightThemes,
-        global: navDataGlobal.globalPictureThemes
-    };
-    if (!navData[name]) console.error('country nav data missing for use in caching');
-    return navData[name].map(item => {
+export const cacheData = (navData: any[]) => {
+    if (!navData) {
+        console.log('missing nav data');
+        return;
+    }
+    return navData.map(item => {
       if (!item.indicators) throw Error('indicators missing in navItem');
       item.indicators.map(async (indicator) => {
         const variables = { id: indicator.id };
-        try {
-            await getData({query: MapsQuery, variables});
-            console.log(`cahing map data for ${indicator.id || 'nothing'}`);
-        } catch (err) {
-            console.log('failed to fetch data for ', `${indicator.id || 'nothing'}`)
-        }
+        getData({query: MapsQuery, variables})
+            .then((resp) => console.log(`cahing map data for ${indicator.id || 'nothing'}`))
+            .catch((err) => {
+                if (err) console.error('failed to fetch data for ', `${indicator.id || 'nothing'}`);
+            });
       });
     });
 };
 
-// export const cacheMapData = async (workerName: string): Promise<void> => {
-//     if (process.browser && (window as any).Worker && !process.storybook) {
-//         try {
-//         const storage = await getLocalStorageInstance(process.env.config.version);
-//         const storedVersion = await storage.getItem(`${process.env.config.version}-${workerName}`);
-//         if (!storedVersion || storedVersion !== `${process.env.config.version}-${workerName}`) {
-//             await storage.setItem(
-//                 `${process.env.config.version}-${workerName}`, `${process.env.config.version}-${workerName}`);
-//             return greenlet(cacheMapData(workerName));
-//         }
-//         } catch (error) {
-//             console.error(error, 'cache mapdata: ');
-//         }
-//     }
-// };
+export const cacheMapData = async (workerName: string): Promise<void> => {
+    if (process.browser && (window as any).Worker) {
+        try {
+        const storage = await getLocalStorageInstance(APP_VERSION);
+        if (!storage) return;
+        const fetchAndCache = greenlet(cacheData);
+        const navData = {
+            uganda: navDataUg.spotlightThemes,
+            kenya: navDataKe.spotlightThemes,
+            global: navDataGlobal.globalPictureThemes
+        };
+        await fetchAndCache(navData[workerName]);
+
+        // const storedVersion = await storage.getItem(`${APP_VERSION}-${workerName}`);
+        // return greenlet(cacheMapData(workerName));
+        // if (!storedVersion || storedVersion !== `${APP_VERSION}-${workerName}`) {
+        //     await storage.setItem(
+        //         `${APP_VERSION}-${workerName}`, `${APP_VERSION}-${workerName}`);
+        //     return greenlet(cacheMapData(workerName));
+        // }
+        } catch (error) {
+            if (error) console.error('error: ', error);
+        }
+    }
+};

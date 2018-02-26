@@ -4,6 +4,7 @@ import Head from 'next/head';
 import {PageMeta, getPageMeta} from '../../../utils';
 import Footer from '@devinit/dh-ui/lib/molecules/Footer';
 import Menu from '@devinit/dh-ui/lib/molecules/Menu';
+import Link from 'next/link';
 import {menueData} from './data';
 
 interface Props  {
@@ -18,7 +19,7 @@ const Generic: React.SFC<Props> = ({ children, query, pathname}) => {
     <Head>
       <title>{pageMeta.title}</title>
     </Head>
-    <Menu menu={menueData.menu} />
+    <Menu menu={menueData.menu} nextLink={Link} />
     <div style={{marginTop: '4em'}}>
       {children}
     </div>

@@ -1,37 +1,65 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const withTypescript = require('@zeit/next-typescript')
+const path = require('path')
+const Webpack = require('webpack');
 const packageJSON = require('./package.json');
 
 const {ANALYZE} = process.env;
 
-const webpackConfs =  (config, options) => {
+module.exports = {
+  webpack: (config, options) => {
+    if (!options.defaultLoaders) {
+      throw new Error(
+        'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade'
+      )
+    }
   
-  if (ANALYZE) {
-    config.plugins.push(new BundleAnalyzerPlugin({
-      analyzerMode: 'server',
-      analyzerPort: 8888,
-      openAnalyzer: true
-    }));
-  }
-
-  const additionalPlugins = [
-    new webpack.DefinePlugin({
-      'process.storybook': false,
-      'process.env.config.version': JSON.stringify(packageJSON.version),
-      'process.env.config.NEXT': true,
-      'process.env.config.api': JSON.stringify(packageJSon.config.api),
-      'process.env.config.old_datahub': JSON.stringify(packageJSon.config.old_datahub)
+    const { dir, defaultLoaders, dev, isServer } = options
+  
+    config.resolve.extensions.push('.ts', '.tsx')
+  
+    if (dev && !isServer) {
+      config.module.rules.push({
+        test: /\.(ts|tsx)(\?[^?]*)?$/,
+        loader: 'hot-self-accept-loader',
+        include: [path.join(dir, 'pages')]
+      })
+    }
+  
+    config.module.rules.push({
+      test: /\.+(ts|tsx)$/,
+      include: [dir],
+      exclude: /node_modules/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: 'ts-loader',
+          options: Object.assign(
+            {},
+            {
+              transpileOnly: true
+            }
+          )
+        }
+      ]
     })
-  ];
+    
+    config.module = Object.assign(config.module, {
+      noParse: /(mapbox-gl)\.js$/
+    });
 
-  const plugins = config.plugins.concat(additionalPlugins);
-
-  const module = Object.assign(config.module, {
-    noParse: /(mapbox-gl)\.js$/
-  });
-
-  const customConfig = Object.assign(config, { module }, {plugins});
-
-  return customConfig;
-};
-module.exports = withTypescript(webpackConfs)
+    if (ANALYZE) {
+      config.plugins.push(new BundleAnalyzerPlugin({
+        analyzerMode: 'server',
+        analyzerPort: 8888,
+        openAnalyzer: true
+      }));
+    }
+    config.plugins.push(
+      new Webpack.DefinePlugin({
+      'APP_VERSION': JSON.stringify(packageJSON.version),
+      'API': JSON.stringify(packageJSON.config.API),
+      'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
+    }));
+    return config
+  }
+}

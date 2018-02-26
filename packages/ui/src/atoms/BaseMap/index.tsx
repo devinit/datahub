@@ -3,7 +3,6 @@ import * as mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import LoadingBar from '../../molecules/LoadingBar';
-import {IProcess} from '@devinit/dh-base/lib/types';
 import {router} from '@devinit/dh-base/lib/utils';
 import { MapContainer } from './styledMapContainer';
 import {
@@ -20,9 +19,7 @@ import {
   Meta,
 } from './types';
 
-declare var process: IProcess;
-
-const Router = process.env && process.env.config && process.env.config.NEXT ? require('next/router') : router;
+const Router = process.env.npm_package_config_IS_NEXT_APP ? require('next/router') : router;
 
 const NODATA = 'No data';
 

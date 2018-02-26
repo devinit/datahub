@@ -1,17 +1,13 @@
+import * as React from 'react';
 import { Li } from 'glamorous';
 import { Icon, List } from 'semantic-ui-react';
+import {LinkState} from 'next/link';
 import MenuLink from '../MenuLink';
 import {MenuItem} from '../../../molecules/Menu/types';
-import {IProcess} from '@devinit/dh-base/lib/types';
-
-declare var process: IProcess;
-
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
-
-import * as React from 'react';
 
 export interface Props {
   menu: MenuItem;
+  nextLink?: React.ComponentClass<LinkState>;
 }
 
 const menuItem = (props: Props) => {
@@ -21,13 +17,13 @@ const menuItem = (props: Props) => {
     const childrenList = props.menu.children.map(item =>
       (<List.Item key={item.name}>
         <List.Content>
-          {Link ?
-            <Link href={item.link} prefetch>
-              <a role="link" >
-                <Icon name={item.icon} />
-              {item.name}
-            </a>;
-            </Link> :
+          {props.nextLink ?
+            <props.nextLink href={item.link} prefetch>
+                <a role="link">
+                  {item.name}
+                  <Icon name={item.icon} />
+                </a>
+            </props.nextLink> :
              <a href={item.link} >
               <Icon name={item.icon} />
               {item.name}

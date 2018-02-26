@@ -2,14 +2,11 @@ import * as React from 'react';
 import { Div, H1} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 import {router} from '@devinit/dh-base/lib/utils';
-import {IProcess} from '@devinit/dh-base/lib/types';
 import { Input, InputContainer, List } from '../../../atoms/SearchInput';
 
-declare var process: IProcess;
+const Router = process.env.npm_package_config_IS_NEXT_APP  ? require('next/router') : router;
 
-const Router = process.env && process.env.config && process.env.config.NEXT ? require('next/router') : router;
-
-const Link = process.env && process.env.config && process.env.config.NEXT ? require('next/link') : null;
+const Link = process.env.npm_package_config_IS_NEXT_APP ? require('next/link') : null;
 
 export interface Entity  {
   slug: string;

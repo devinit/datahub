@@ -22,11 +22,9 @@ const newExtensions =  ['.ts', '.tsx'];
 const newPlugins = [
   new webpack.DefinePlugin({
     'process.browser': true,
-    'process.version': JSON.stringify(packageJSON.version),
-    'process.env.config.api': JSON.stringify(packageJSon.config.api),
-    'process.env.config.old_datahub': JSON.stringify(packageJSon.config.old_datahub),
-    'process.env.config.NEXT': true,
-    'process.storybook': true
+    'APP_VERSION': JSON.stringify(packageJSON.version),
+    'API': JSON.stringify(packageJSON.config.API),
+    'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
   })
 ];
 
