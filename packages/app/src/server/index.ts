@@ -24,14 +24,14 @@ const renderAndCache = async (req, res, pagePath,  queryParams?: {[key: string]:
 
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key)) {
-    res.setHeader('x-cache', 'HIT')
-    res.send(ssrCache.get(key))
-    return
+    res.setHeader('x-cache', 'HIT');
+    res.send(ssrCache.get(key));
+    return;
   }
 
   try {
     // If not let's render the page into HTML
-    const html = await app.renderToHTML(req, res, pagePath, queryParams)
+    const html = await app.renderToHTML(req, res, pagePath, queryParams);
 
     // Something is wrong with the request, let's skip the cache
     if (res.statusCode !== 200) {
