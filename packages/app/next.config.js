@@ -1,5 +1,5 @@
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const path = require('path')
+const path = require('path');
 const Webpack = require('webpack');
 const packageJSON = require('./package.json');
 
@@ -10,19 +10,19 @@ module.exports = {
     if (!options.defaultLoaders) {
       throw new Error(
         'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade'
-      )
+      );
     }
   
-    const { dir, defaultLoaders, dev, isServer } = options
+    const { dir, defaultLoaders, dev, isServer } = options;
   
-    config.resolve.extensions.push('.ts', '.tsx')
+    config.resolve.extensions.push('.ts', '.tsx');
   
     if (dev && !isServer) {
       config.module.rules.push({
         test: /\.(ts|tsx)(\?[^?]*)?$/,
         loader: 'hot-self-accept-loader',
         include: [path.join(dir, 'pages')]
-      })
+      });
     }
   
     config.module.rules.push({
@@ -41,7 +41,7 @@ module.exports = {
           )
         }
       ]
-    })
+    });
     
     if (isServer) {
       config.module = Object.assign(config.module, {
@@ -63,6 +63,6 @@ module.exports = {
       'API': JSON.stringify(packageJSON.config.API),
       'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
     }));
-    return config
+    return config;
   }
 }

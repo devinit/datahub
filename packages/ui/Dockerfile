@@ -3,7 +3,7 @@ FROM node:9
 LABEL maintainer="epicallan.al@gmail.com"
 # Copy package.json only to temp folder, install its dependencies,
 # set workdir and copy the dependnecies there
-RUN mkdir /src
+COPY mkdir /src
 # This way, dependnecies are cached without the need of cacheing all files.
 COPY package.json /tmp/
 RUN cd /tmp && npm install --silent --ignore-scripts

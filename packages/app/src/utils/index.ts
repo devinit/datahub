@@ -6,9 +6,9 @@ import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
 // import greenlet from 'greenlet';
 // import * as fetch from 'isomorphic-fetch';
-import navDataGlobal from '../components/organisms/NavBarTabs/data';
-import navDataKe from '../components/organisms/NavBarTabs/kenya';
-import navDataUg from '../components/organisms/NavBarTabs/uganda';
+// import navDataGlobal from '../components/organisms/NavBarTabs/data';
+// import navDataKe from '../components/organisms/NavBarTabs/kenya';
+// import navDataUg from '../components/organisms/NavBarTabs/uganda';
 const MapsQuery = require('../components/organisms/Map/query.graphql');
 
 declare var process: IProcess;
