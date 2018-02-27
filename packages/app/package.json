@@ -56,7 +56,7 @@
     "react-dom": "16.2.0",
     "react-redux": "5.0.7",
     "redux": "3.7.2",
-    "semantic-ui-react": "0.78.2"
+    "semantic-ui-react": "0.78.3"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.3.14",
