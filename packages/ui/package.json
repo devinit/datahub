@@ -39,7 +39,7 @@
     "next": "^5.0.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
-    "react-beautiful-dnd": "^4.0.1",
+    "react-beautiful-dnd": "^5.0.0",
     "react-dom": "^16.2.0",
     "react-intersection-observer": "^3.0.3",
     "react-no-ssr": "^1.1.0",
