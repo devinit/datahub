@@ -12,7 +12,7 @@
 		"@types/storybook__react": "3.0.7",
 		"@types/ramda": "0.25.19",
 		"@types/react-redux": "5.0.15",
-		"css-loader": "0.28.9",
+		"css-loader": "0.28.10",
 		"enzyme": "3.3.0",
 		"enzyme-adapter-react-16": "1.1.1",
 		"file-loader": "1.1.10",
@@ -30,7 +30,7 @@
 		"typescript": "2.7.2",
 		"uglifyjs-webpack-plugin": "1.2.0",
 		"webpack": "3.11.0",
-		"webpack-bundle-analyzer": "2.11.0"
+		"webpack-bundle-analyzer": "2.10.0"
 	},
 	"git-pre-hooks": {
 		"pre-push": [
