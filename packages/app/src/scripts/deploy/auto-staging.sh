@@ -7,7 +7,7 @@ rm -rf build.zip build
 
 wget https://github.com/devinit/datahub/releases/download/$1/build.zip
 
-echo 'finished downloading tag: $tag'
+echo "finished downloading tag: $tag"
 
 unzip build.zip
 
