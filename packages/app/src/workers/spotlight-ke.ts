@@ -4,5 +4,4 @@
 import navData from '../components/organisms/NavBarTabs/kenya';
 import {cacheData} from '.';
 
-
 cacheData(navData.spotlightThemes);
