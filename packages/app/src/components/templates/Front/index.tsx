@@ -21,7 +21,7 @@ export default class Front extends React.Component<Props> {
   }
 
   public componentDidMount() {
-    // TODO: cacheMapData('global');
+    cacheMapData('/worker_gp.js');
   }
   public render() {
     // this casting is a hack, typescript coundnt infar this
@@ -45,7 +45,7 @@ export default class Front extends React.Component<Props> {
         </Container>
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs {...navState} />
-          {process.env.NODE_ENV !== 'test' ?
+          {process.env.NODE_ENV !== 'test' && (process as any).browser ?
             <DynamicMap country="global" state={this.props.state} /> : ''
           }
         </div>

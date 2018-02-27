@@ -8,28 +8,29 @@
 import * as path from 'path';
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const SRC_PATH = path.join(__dirname, '../workers');
 
 const config = {
   entry: {
-    worker_gp: path.resolve(__dirname, '../../private/lib/workers/global-picture.js'),
-    worker_uganda: path.resolve(__dirname, '../../private/lib/workers/spotlight-ug.js'),
-    worker_kenya: path.resolve(__dirname, '../../private/lib/workers/spotlight-ke.js')
+    worker_gp: path.resolve(__dirname, '../../src/workers/global-picture.ts'),
+    worker_uganda: path.resolve(__dirname, '../../src/workers/spotlight-ug.ts'),
+    worker_kenya: path.resolve(__dirname, '../../src/workers/spotlight-ke.ts')
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, '../../public')
+    path: path.resolve(__dirname, '../../static')
+  },
+  resolve: {
+    extensions: ['.ts', 'tsx']
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['next/babel']
-          }
-        }
+        test: /\.(ts|tsx)(\?[^?]*)?$/,
+        loader: 'ts-loader',
+        include: [
+            SRC_PATH
+        ]
       }
     ]
   },

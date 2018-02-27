@@ -21,7 +21,7 @@ export default class Spotlight extends React.Component<Props> {
     super(props);
   }
   public componentDidMount() {
-    if ((process as any).browser) cacheMapData(this.props.id);
+    cacheMapData(`/worker_${this.props.id}.js`);
   }
   public render() {
     const countryName = capitalize(this.props.id);

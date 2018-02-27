@@ -4,15 +4,8 @@ import {MenuItem} from '@devinit/dh-ui/lib/molecules/Menu/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-// import greenlet from 'greenlet';
-// import * as fetch from 'isomorphic-fetch';
-// import navDataGlobal from '../components/organisms/NavBarTabs/data';
-// import navDataKe from '../components/organisms/NavBarTabs/kenya';
-// import navDataUg from '../components/organisms/NavBarTabs/uganda';
-const MapsQuery = require('../components/organisms/Map/query.graphql');
 
 declare var process: IProcess;
-
 declare const APP_VERSION: string;
 declare const API: string;
 
@@ -50,18 +43,18 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
     return linkMeta;
 };
 
-export async function shouldPurgeCache(version: string): Promise<boolean> {
+export async function shouldPurgeCache(): Promise<boolean> {
     const storedVersion = await localforage.getItem('version');
-    return !storedVersion || storedVersion !== version;
+    return !storedVersion || storedVersion !== APP_VERSION;
   }
 
-export async function getLocalStorageInstance(version: string): Promise<any> {
+export async function getLocalStorageInstance(): Promise<any> {
     if (!process.browser) return Promise.resolve(null);
     try {
-            const shouldPurge = await shouldPurgeCache(version);
+            const shouldPurge = await shouldPurgeCache();
             if (!shouldPurge) return localforage;
             await localforage.clear();
-            await localforage.setItem('version', version);
+            await localforage.setItem('version', APP_VERSION);
             return localforage;
         } catch (error) {
                 console.error(error, 'localforage: ');
@@ -85,7 +78,7 @@ export async function getData<T>(opts: IgetData): Promise<T> {
         }
         const apolloFetch = createApolloFetch({ uri: API });
         if (process.browser) {
-            storage = await getLocalStorageInstance(APP_VERSION);  // @ts-ignore
+            storage = await getLocalStorageInstance();  // @ts-ignore
             const cached = storage ? await storage.getItem(key) : null;
             if (cached) return JSON.parse(cached);
         }
@@ -105,46 +98,18 @@ export async function getData<T>(opts: IgetData): Promise<T> {
     throw error;
     }
 }
-export const cacheData = (navData: any[]) => {
-    if (!navData) {
-        console.log('missing nav data');
-        return;
-    }
-    return navData.map(item => {
-      if (!item.indicators) throw Error('indicators missing in navItem');
-      item.indicators.map(async (indicator) => {
-        const variables = { id: indicator.id };
-        getData({query: MapsQuery, variables})
-            .then((resp) => console.log(`cahing map data for ${indicator.id || 'nothing'}`))
-            .catch((err) => {
-                if (err) console.error('failed to fetch data for ', `${indicator.id || 'nothing'}`);
-            });
-      });
-    });
-};
-
-export const cacheMapData = async (workerName: string): Promise<void> => {
-    if (process.browser && (window as any).Worker) {
-        try {
-        const storage = await getLocalStorageInstance(APP_VERSION);
-        if (!storage) return;
-        // const fetchAndCache = greenlet(cacheData);
-        // const navData = {
-        //     uganda: navDataUg.spotlightThemes,
-        //     kenya: navDataKe.spotlightThemes,
-        //     global: navDataGlobal.globalPictureThemes
-        // };
-        // await fetchAndCache(navData[workerName]);
-
-        // const storedVersion = await storage.getItem(`${APP_VERSION}-${workerName}`);
-        // return greenlet(cacheMapData(workerName));
-        // if (!storedVersion || storedVersion !== `${APP_VERSION}-${workerName}`) {
-        //     await storage.setItem(
-        //         `${APP_VERSION}-${workerName}`, `${APP_VERSION}-${workerName}`);
-        //     return greenlet(cacheMapData(workerName));
-        // }
-        } catch (error) {
-            if (error) console.error('error: ', error);
+export const cacheMapData = async (workerPath: string): Promise<void> => {
+    if (process.env.NODE_ENV !== 'test' && process.browser && (window as any).Worker) {
+      try {
+        const storage = await getLocalStorageInstance();
+        const storedVersion = await storage.getItem(`${APP_VERSION}-${workerPath}`);
+        if (!storedVersion || storedVersion !== `${APP_VERSION}-${workerPath}`) {
+          await storage.setItem(`${APP_VERSION}-${workerPath}`, `${APP_VERSION}-${workerPath}`);
+          const worker = new Worker(workerPath); // caches global picture map data
+          worker.onmessage = (event) => console.log(event);
         }
+      } catch (error) {
+        if (error) console.error(error, 'cache mapdata: ');
+      }
     }
-};
+  };
