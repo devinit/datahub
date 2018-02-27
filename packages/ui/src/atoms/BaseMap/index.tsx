@@ -3,8 +3,10 @@ import * as mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import LoadingBar from '../../molecules/LoadingBar';
-import {router} from '@devinit/dh-base/lib/utils';
+import {router, IRouter} from '@devinit/dh-base/lib/utils';
 import { MapContainer } from './styledMapContainer';
+import {SingletonRouter} from 'next/router';
+
 import {
   Feature,
   PropertyLayerSlugMap,
@@ -19,13 +21,12 @@ import {
   Meta,
 } from './types';
 
-const Router = process.env.npm_package_config_IS_NEXT_APP ? require('next/router') : router;
-
 const NODATA = 'No data';
 
 export interface Props {
   paint: PaintMap;
   viewport: Viewport;
+  router?: SingletonRouter;
   meta?: Meta;
   countryProfile?: string;
   width?: number | string;
@@ -120,6 +121,7 @@ class BaseMap extends React.Component<Props, State> {
       ...this.propertyLayerSlugMap,
       national: 'country-name',
   };
+  public router: IRouter;
   constructor(props: Props) {
     super(props);
     if (!props.viewport) throw new Error('viewport prop missing in basemap props');
@@ -129,6 +131,7 @@ class BaseMap extends React.Component<Props, State> {
       profileLoading: false,
       shouldForceRedraw: false
     };
+    this.router = this.props.router ? this.props.router : router;
   }
 
   public componentWillReceiveProps(nextProps: Props) {
@@ -271,7 +274,7 @@ class BaseMap extends React.Component<Props, State> {
       if (!this.props.meta || !this.props.meta.country) return false;
       const route: Route = countryOrDistrictLink(this.props.meta.country, slug.toLowerCase());
       this.setState({ profileLoading: true });
-      return Router.push(route.routePath, route.routeAsPath);
+      return this.router.push(route.routePath, route.routeAsPath);
     });
   }
   public setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {

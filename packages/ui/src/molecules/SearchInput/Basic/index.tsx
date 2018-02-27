@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Div, H1} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
-import {router} from '@devinit/dh-base/lib/utils';
+import {router, IRouter} from '@devinit/dh-base/lib/utils';
 import { Input, InputContainer, List } from '../../../atoms/SearchInput';
+import {SingletonRouter} from 'next/router';
+import {LinkState} from 'next/link';
 
-const Router = process.env.npm_package_config_IS_NEXT_APP  ? require('next/router') : router;
+// const Router = process.env.npm_package_config_IS_NEXT_APP  ? require('next/router') : router;
 
-const Link = process.env.npm_package_config_IS_NEXT_APP ? require('next/link') : null;
+// const Link = process.env.npm_package_config_IS_NEXT_APP ? require('next/link') : null;
 
 export interface Entity  {
   slug: string;
@@ -16,6 +18,8 @@ export interface Entity  {
 export interface Props  {
   entities: Entity[];
   routePath: string;
+  router?: SingletonRouter;
+  nextLink?: React.ComponentClass<LinkState>;
   placeholder: string;
   profile: boolean; // whether appears on a country profile page or on the front landing page
   visible: boolean;
@@ -32,6 +36,7 @@ export interface State  {
 class SearchInput extends React.Component <Props, State> {
   public onBlurTimer: any;
   public textInput: HTMLInputElement;
+  public router: IRouter;
   constructor(props: Props) {
     super(props);
     if (!props.entities || !props.entities.length) throw new Error('entities data prop mixing');
@@ -41,6 +46,7 @@ class SearchInput extends React.Component <Props, State> {
       value: '',
       showList: false,
     };
+    this.router = this.props.router ? this.props.router : router;
   }
   public onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     let { selected } = this.state;
@@ -97,7 +103,8 @@ class SearchInput extends React.Component <Props, State> {
     this.resetState();
     this.textInput.blur();
     if (this.props.onSelected) return this.props.onSelected(country.slug);
-    return Router.push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}/${country.slug}`);
+    return this.router
+      .push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}/${country.slug}`);
   }
   public resetState() {
     this.setState({
@@ -143,15 +150,15 @@ class SearchInput extends React.Component <Props, State> {
             {this.state.entities
               ? this.state.entities.map((country, i) =>
                 (<li key={country.slug} className={this.state.selected === i ? 'active' : 'not-active'}>
-                  {Link ?
-                      <Link
+                  {this.props.nextLink ?
+                      <this.props.nextLink
                         href={`/${this.props.routePath}?id=${country.slug}`}
                         as={`/${this.props.routePath}/${country.slug}`}
                       >
                         <a role="link">
                           {country.name}
                         </a>
-                      </Link> :
+                      </this.props.nextLink> :
                       <a href={`/${this.props.routePath}?id=${country.slug}`}>
                        {country.name}
                       </a>

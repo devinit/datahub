@@ -4,12 +4,17 @@ import glamorous from 'glamorous';
 import { white, lightBlack } from '../../../theme/semantic';
 import data from '@devinit/dh-base/lib/__generated__/data';
 import SearchInput from '../Basic';
+import {SingletonRouter} from 'next/router';
+import {LinkState} from 'next/link';
 import { big } from '../../../theme';
 
 export interface State  {
   showInput: boolean;
 }
-
+export interface Props {
+  router?: SingletonRouter;
+  nextLink?: React.ComponentClass<LinkState>;
+}
 const SearchTitle = glamorous.div({
   'backgroundColor': lightBlack,
   'fontSize': big,
@@ -24,8 +29,12 @@ const SearchTitle = glamorous.div({
   },
 });
 
-class Search extends React.Component {
+class Search extends React.Component<Props> {
   public state: State = {showInput: false};
+
+  constructor(props) {
+    super(props);
+  }
 
   public showInput = () => {
     this.state.showInput ? this.setState({ showInput: false }) : this.setState({ showInput: true });
@@ -45,6 +54,8 @@ class Search extends React.Component {
           </Container>
         </SearchTitle>
         <SearchInput
+          nextLink={this.props.nextLink}
+          router={this.props.router}
           entities={data.countries}
           routePath={'country'} // for route
           visible={false}

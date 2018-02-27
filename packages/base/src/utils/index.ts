@@ -7,8 +7,12 @@ import {RECIPIENT} from './constants';
 import {Country, District} from '../types';
 
 // next.js compatible router interface
-export const router  = {
-  push : (url) => {
+export interface IRouter  {
+  push: (url: string, as?: string) => any;
+}
+
+export const router: IRouter = {
+  push : (url: string, _as?: string) => {
     if (typeof window !== 'undefined') return (window as any).location(url);
     return console.log('cant change url in server environment');
     }

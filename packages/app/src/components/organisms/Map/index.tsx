@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import { changeLoadingStatus, LoadingStatus } from '../../../redux/actions';
 import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import {MapDataQuery} from '../../../types';
+import Router from 'next/router';
 import {MAP_QUERY} from './query.graphql';
 
 export interface BoundAction  {
@@ -73,7 +74,7 @@ class MapOrganism extends React.Component <Props> {
     return (
       <div>
         {!this.loading && this.data && this.data.mapData ?
-          <Map state={this.props.state || {}} {...mapData} /> :
+          <Map state={this.props.state || {}} {...mapData} router={Router} /> :
           <MapBackground />
         }
       </div>

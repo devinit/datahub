@@ -8,6 +8,7 @@ import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import About from '@devinit/dh-ui/lib/molecules/About';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import { cacheMapData } from '../../../utils';
+import Router from 'next/router';
 import Generic from '../Generic';
 
 interface Props  {
@@ -46,7 +47,7 @@ export default class Front extends React.Component<Props> {
           <GlobalPictureNavTabs {...navState} />
           <DynamicMap country="global" state={this.props.state} />
         </div>
-        <About />
+        <About router={Router} />
       </Generic>
     );
   }

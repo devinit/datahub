@@ -52,16 +52,25 @@
     "@storybook/addons": "3.3.14",
     "@storybook/react": "3.3.14",
     "@types/react-beautiful-dnd": "3.0.1",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "16.2.0",
     "ts-jest": "22.4.0",
     "typescript": "2.7.2"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/jest/config.js",
+    "coverageDirectory": "./coverage/",
+    "testRegex": ".*\\.test\\.(ts|tsx)$",
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testEnvironment": "node",
+    "moduleNameMapper": {
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/__mocks__/fileMock.js",
+			"\\.(css|less)$": "<rootDir>/jest/__mocks__/styleMock.js"
+		},
     "moduleFileExtensions": [
       "ts",
+      "tsx",
       "js",
       "json"
     ]

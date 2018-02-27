@@ -6,9 +6,8 @@ import LoadingBar from '../LoadingBar';
 import { Route } from '@devinit/dh-base/lib/utils';
 import Observer from 'react-intersection-observer';
 import { RankingsTableContainer } from '../../atoms/Container';
-import {router} from '@devinit/dh-base/lib/utils';
-
-const Router = process.env.npm_package_config_IS_NEXT_APP  ? require('next/router') : router;
+import {router, IRouter} from '@devinit/dh-base/lib/utils';
+import {SingletonRouter} from 'next/router';
 
 export interface Data  {
   value: string | number;
@@ -22,6 +21,7 @@ export interface Data  {
 
 export interface Props  {
   hasflags: boolean;
+  router?: SingletonRouter;
   data: {
     top: Data[];
     bottom: Data[];
@@ -33,13 +33,15 @@ export interface State {
 }
 
 export default class RankingsTable extends React.Component<Props, State> {
+  public router: IRouter;
   constructor(props: Props) {
     super(props);
     this.state = { profileLoading: false };
+    this.router = props.router ? props.router : router;
   }
   public onClick = (item: Data) => () => {
     this.setState({ profileLoading: true });
-    return Router.push(item.route.routePath, item.route.routeAsPath);
+    return this.router.push(item.route.routePath, item.route.routeAsPath);
   }
   public render() {
     return (

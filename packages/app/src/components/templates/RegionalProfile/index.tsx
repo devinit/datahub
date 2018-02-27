@@ -14,6 +14,8 @@ import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
 import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
 import {QueryVarTs} from '../../organisms/LocalGovernmentFinance';
 import dynamic, {DynamicOptions} from 'next/dynamic';
+import Router from 'next/router';
+import Link from 'next/link';
 import Generic from '../Generic';
 
 const dynamicOpts: DynamicOptions<any, QueryVarTs> = {
@@ -69,6 +71,8 @@ export default class RegionalProfile extends React.Component<Props, State> {
       <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
         <ProfileHeader
           currency={this.state.currency}
+          router={Router}
+          nextLink={Link}
           currencyOptions={this.state.currencyOptions}
           entity={this.state.district}
           spotlightCountry={this.state.country}

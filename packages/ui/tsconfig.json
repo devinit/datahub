@@ -16,6 +16,7 @@
       "noUnusedParameters": true,
       "rootDir": "src",
       "outDir": "lib",
+      "allowSyntheticDefaultImports": false,
       "removeComments": true
     },
     "exclude": [

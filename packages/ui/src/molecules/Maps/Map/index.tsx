@@ -14,9 +14,11 @@ import {Route} from '@devinit/dh-base/lib/utils';
 import {countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import {StateToShare} from '../../ChartShare';
 import mapConfigs, {MapConfig} from './config';
+import {SingletonRouter} from 'next/router';
 
 export type Props = DH.IMapData & {
   state?: StateToShare;
+  router?: SingletonRouter;
 };
 
 export interface State  {
@@ -215,7 +217,7 @@ class Map extends React.Component<Props, State> {
             </Grid.Column>
           </Grid.Row>
           {!this.noRankTableList.includes(this.meta.id) ?
-            <RankingsTable {...this.setCountryRankData()} /> : ''
+            <RankingsTable {...this.setCountryRankData()} router={this.props.router} /> : ''
           }
         </Grid>
       </Container>

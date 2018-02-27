@@ -10,6 +10,8 @@ import {Country, District} from '@devinit/dh-base/lib/types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
 import {CurrencyOption} from '@devinit/dh-base/lib/utils';
 import {SmallMapProps} from '../Maps';
+import {SingletonRouter} from 'next/router';
+import {LinkState} from 'next/link';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 
@@ -25,6 +27,8 @@ const dynamicOpts: DynamicOptions<any, any> = {
 const DynamicMapComponent = dynamic(dynamicOpts as any) as React.StatelessComponent<SmallMapProps>;
 
 export interface Props  {
+  router?: SingletonRouter;
+  nextLink?: React.ComponentClass<LinkState>;
   entity: Country | District; // country or district
   jumpToSection?: (sectionId: string) => void;
   currency?: string;
@@ -64,11 +68,17 @@ const ProfileHeaderSection = (props: Props) => {
                   {
                     props.spotlightCountry ?
                       <ProfileSearch
+                        router={props.router}
+                        nextLink={props.nextLink}
                         placeholder={props.entity.name}
                         country={props.spotlightCountry.slug}
                       />
                       :
-                      <ProfileSearch placeholder={props.entity.name} />
+                      <ProfileSearch
+                        placeholder={props.entity.name}
+                        router={props.router}
+                        nextLink={props.nextLink}
+                      />
                   }
                   {
                     props.spotlightCountry ?

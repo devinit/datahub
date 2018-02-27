@@ -5,15 +5,15 @@ import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { DarkBg, LightBg } from '../../atoms/Container';
 import Observer from 'react-intersection-observer';
-import {router} from '@devinit/dh-base/lib/utils';
+import {router as routerx} from '@devinit/dh-base/lib/utils';
+import {SingletonRouter} from 'next/router';
 
-const Router = process.env.npm_package_config_IS_NEXT_APP ? require('next/router') : router;
-
-const goToMethodologyPage = () => Router.push('/methodology');
+const goToMethodologyPage = (router?: SingletonRouter) => () =>
+  router ? router.push('/methodology') : routerx.push('/methodology');
 
 if ((process as any).browser) require('intersection-observer');
 
-export default () =>
+export default ({router}: {router?: SingletonRouter}) =>
     <section id="about">
       <DarkBg>
         <SectionHeader color={red} fontColor={white}>
@@ -71,7 +71,8 @@ export default () =>
           <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
           </P>
-          <Button color="grey" size="large" onClick={goToMethodologyPage}>
+          // tslint:disable-next-line:jsx-no-lambda
+          <Button color="grey" size="large" onClick={goToMethodologyPage(router)}>
             Methodology and Data <Icon name="chevron right" />
           </Button>
         </Container>

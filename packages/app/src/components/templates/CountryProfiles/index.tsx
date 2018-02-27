@@ -7,6 +7,8 @@ import { CardContainer } from '@devinit/dh-ui/lib/atoms/Container';
 import {ProfileSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import Link from 'next/link';
 import {IProcess} from '@devinit/dh-base/lib/types';
+import Router from 'next/router';
+import Link from 'next/link';
 import Generic from '../Generic';
 
 declare var process: IProcess;
@@ -24,7 +26,7 @@ export default () =>
                   <a role="link" style={{color: red}}>Global Picture</a>
                 </Link>
               </H4>
-              <ProfileSearch profile={false} />
+              <ProfileSearch profile={false} router={Router} nextLink={Link}  />
               {process.browser ?
                 <ProfileSocialMedia />
                 : ''

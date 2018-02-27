@@ -13,6 +13,8 @@ import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 import methodologyData from '../../organisms/Methodology/country-profile';
 import {Country} from '@devinit/dh-base/lib/types';
+import Router from 'next/router';
+import Link from 'next/link';
 import Generic from '../Generic';
 
 // TODO: the dynamic types are a pain to work with, need to get improved submit PR
@@ -67,6 +69,8 @@ export default class Profile extends React.Component<Props> {
       <Generic pathname="/country" query={this.props.id}>
         <ProfileHeader
           entity={this.state.country}
+          router={Router}
+          nextLink={Link}
           jumpToSection={this.jumpToSection}
         />
         <CountryProfileTopTabs id={this.props.id} />
