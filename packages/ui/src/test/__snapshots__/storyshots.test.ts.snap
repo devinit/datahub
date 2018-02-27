@@ -102,7 +102,6 @@ exports[`Storyshots About Global picture && spotlight on uganda 1`] = `
       >
         For documentation and data downloads, navigate to the methodology page.
       </p>
-      // tslint:disable-next-line:jsx-no-lambda
       <button
         className="ui grey large button"
         disabled={undefined}

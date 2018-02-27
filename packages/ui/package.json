@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --u",
     "copy-css": "cp node_modules/@devinit/charts/dist/di-charts.min.css static/ && cp node_modules/mapbox-gl/dist/mapbox-gl.css static/",
     "lint": "tslint -c tslint.json 'src/**/*.tsx' 'src/**/*.ts'",
     "storybook": "start-storybook -p 6006 -s static",
