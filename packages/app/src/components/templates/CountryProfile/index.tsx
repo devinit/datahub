@@ -67,12 +67,14 @@ export default class Profile extends React.Component<Props> {
   public render() {
     return (
       <Generic pathname="/country" query={this.props.id}>
+      {process.env.NODE_ENV !== 'test' ?
         <ProfileHeader
           entity={this.state.country}
           router={Router}
           nextLink={Link}
           jumpToSection={this.jumpToSection}
-        />
+        /> : ''
+        }
         <CountryProfileTopTabs id={this.props.id} />
         <Div paddingTop={'4em'} paddingBottom={'4em'}>
           <Container textAlign="center">

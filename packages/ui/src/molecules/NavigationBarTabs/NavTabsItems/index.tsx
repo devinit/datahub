@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dropdown, Button} from 'semantic-ui-react';
-import { TabsToolTip } from '../../ToolTipContainer';
+import { TabsToolTip } from '../../ToolTip';
 import { Div } from 'glamorous';
 import { SelectWrapper, Wrapper } from './styles';
 

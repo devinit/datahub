@@ -5,7 +5,7 @@ import { P, Div } from 'glamorous';
 import { addMinAndMaxYear } from '@devinit/dh-base/lib/utils';
 import { RECIPIENT, DONOR, NoData} from '@devinit/dh-base/lib/utils/constants';
 import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
-import {TabsToolTip} from '../../ToolTipContainer';
+import {TabsToolTip} from '../../ToolTip';
 import Chart from '../../../atoms/Chart';
 import {PageUnit} from '@devinit/dh-base/lib/types';
 import {getPageUnitById} from '@devinit/dh-base/lib/pageData';

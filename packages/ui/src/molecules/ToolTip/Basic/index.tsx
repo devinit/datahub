@@ -12,7 +12,7 @@ export interface State  {
   isOpen: boolean;
 }
 
-class ToolTip extends React.Component<Props> {
+export default class BasicToolTip extends React.Component<Props> {
   public state: State;
   constructor(props: Props) {
     super(props);
@@ -50,5 +50,3 @@ class ToolTip extends React.Component<Props> {
     );
   }
 }
-
-export default ToolTip;

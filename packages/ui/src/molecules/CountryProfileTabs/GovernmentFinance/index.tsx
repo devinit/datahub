@@ -5,7 +5,7 @@ import {small} from '../../../theme';
 import Legend from '../../../atoms/Legend';
 import Chart from '../../../atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/Text';
-import { TabsToolTip } from '../../ToolTipContainer';
+import { TabsToolTip } from '../../ToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
 import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';

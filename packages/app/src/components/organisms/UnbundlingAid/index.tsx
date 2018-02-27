@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import {Div} from 'glamorous';
 import { graphql, ChildProps } from 'react-apollo';
-import TotalODA from '@devinit/dh-ui/lib/molecules/UnbundlingAidTotalODA';
-import UnbundlingTreemap from '@devinit/dh-ui/lib/molecules/UnbundlingTreemap';
+import {Treemap, TotalODA} from '@devinit/dh-ui/lib/molecules/UnbundlingAid';
 import UnbundlingAidTour from '@devinit/dh-ui/lib/atoms/UnbundlingAidTour';
 import TourContainer from '@devinit/dh-ui/lib/molecules/TourContainer';
 import {UnbundlingAidDataQuery} from '../../../types';
@@ -89,8 +88,8 @@ const WithData = withData(({data, aidType, startYear, compact}: TChildProps) => 
 
       refetch: data.refetch,
     };
-    if (data.error) return <UnbundlingTreemap {...props} />;
-    return <UnbundlingTreemap {...props} />;
+    if (data.error) return <Treemap {...props} />;
+    return <Treemap {...props} />;
 });
 
 class Chart extends React.Component<Props, State> {

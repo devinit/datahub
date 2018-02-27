@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { P } from 'glamorous';
 import { Icon } from 'semantic-ui-react';
-import ToolTip from '../ToolTip';
+import ToolTip from '../Basic';
 
 export interface Props  {
   source?: string;

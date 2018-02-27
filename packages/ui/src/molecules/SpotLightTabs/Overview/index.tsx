@@ -6,7 +6,7 @@ import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';
 import {small} from '../../../theme';
 import Chart from '../../../atoms/Chart';
-import {TabsToolTip} from '../../ToolTipContainer';
+import {TabsToolTip} from '../../ToolTip';
 import {TabsP, HeaderTitle} from '../../../atoms/Text';
 import {CSProps} from '../types';
 

@@ -45,7 +45,9 @@ export default class Front extends React.Component<Props> {
         </Container>
         <div style={{ position: 'relative' }}>
           <GlobalPictureNavTabs {...navState} />
-          <DynamicMap country="global" state={this.props.state} />
+          {process.env.NODE_ENV !== 'test' ?
+            <DynamicMap country="global" state={this.props.state} /> : ''
+          }
         </div>
         <About router={Router} />
       </Generic>

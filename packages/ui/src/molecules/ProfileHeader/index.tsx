@@ -42,10 +42,12 @@ const ProfileHeaderSection = (props: Props) => {
     props.jumpToSection && props.jumpToSection(section);
   return (
     <ProfileHeader>
+      {process.env.NODE_ENV !== 'test' ?
         <DynamicMapComponent
           slug={props.entity.slug || ''}
           spotlightCountry={props.spotlightCountry && props.spotlightCountry.slug}
-        />
+        /> : ''
+      }
       <Div width="100%" position="absolute" top="0">
         <Container>
           <Grid>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Grid, Container, Table, Icon } from 'semantic-ui-react';
 import glamorous, {P} from 'glamorous';
 import { LightBg } from '../../atoms/Container';
-import {ToolTip} from '../ToolTipContainer';
+import {ToolTip} from '../ToolTip';
 import { white } from '../../theme/semantic';
 import { SectionHeader } from '../../atoms/Header';
 

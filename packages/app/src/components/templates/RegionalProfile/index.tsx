@@ -69,6 +69,7 @@ export default class RegionalProfile extends React.Component<Props, State> {
       methodologyDataKe.methodology : methodologyDataUg.methodology;
     return (
       <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
+      {process.env.NODE_ENV !== 'test' ?
         <ProfileHeader
           currency={this.state.currency}
           router={Router}
@@ -77,7 +78,7 @@ export default class RegionalProfile extends React.Component<Props, State> {
           entity={this.state.district}
           spotlightCountry={this.state.country}
           onChangeCurrency={this.onChangeCurrency}
-        />
+        /> : '' }
         <SpotLightTabs
           id={this.state.district.slug || ''}
           currency={this.state.currency || ''}

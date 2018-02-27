@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { Container, Button, Header, Grid, Icon } from 'semantic-ui-react';
 import UnbundlingAid from '../../organisms/UnbundlingAid';
 import SocialMediaBar from '@devinit/dh-ui/lib/molecules/SocialMediaBar';
-import ToolTip from '@devinit/dh-ui/lib/molecules/ToolTip';
+import {ToolTip} from '@devinit/dh-ui/lib/molecules/ToolTip';
 import Generic from '../Generic';
 
 const headerStyles = {

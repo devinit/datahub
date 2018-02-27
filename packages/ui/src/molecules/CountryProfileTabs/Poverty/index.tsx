@@ -4,7 +4,7 @@ import {Div} from 'glamorous';
 import Chart from '../../../atoms/Chart';
 import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/Text';
 import { NoData } from '@devinit/dh-base/lib/utils/constants';
-import { TabsToolTip} from '../../ToolTipContainer';
+import { TabsToolTip} from '../../ToolTip';
 import {PageUnit} from '@devinit/dh-base/lib/types';
 import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
 import {TabDataQuery} from '../../../gql-types';

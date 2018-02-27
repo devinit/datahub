@@ -16,6 +16,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
+    "test": "jest -u",
     "dev": "nodemon src/server/index.ts",
     "build:next": "next build",
     "build-fragment": "npm run build && node lib/apollo/fragment.js",
@@ -65,21 +66,29 @@
     "@storybook/addons": "3.3.14",
     "@storybook/react": "3.3.14",
     "apollo-codegen": "0.18.7",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "16.2.0",
     "nodemon": "^1.15.1",
     "ts-jest": "22.4.0",
     "ts-node": "^5.0.0",
     "typescript": "2.7.2"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/jest/config.js",
     "coverageDirectory": "./coverage/",
-    "setupTestFrameworkScriptFile": "<rootDir>/private/lib/jest.config.js",
-    "collectCoverage": true,
+    "testRegex": ".*\\.test\\.(ts|tsx)$",
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/private/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/private/__mocks__/styleMock.js"
-    }
-  },
-  "engines": {
-    "node": ">=8.5"
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/__mocks__/fileMock.js",
+			"\\.(css|less)$": "<rootDir>/jest/__mocks__/styleMock.js"
+		},
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }
