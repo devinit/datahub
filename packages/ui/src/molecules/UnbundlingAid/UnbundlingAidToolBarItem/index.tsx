@@ -92,17 +92,17 @@ export default class ToolBarItem extends React.Component<Props, State> {
                       onChange={onChange('years')}
                     />
                   </div>
-                  {this.state.keys.map(key => (
-                    <Draggable key={key} draggableId={key}>
-                      {(providedx, snapshotx) => (
+                  {this.state.keys.map((key, index) => (
+                    <Draggable key={key} draggableId={key} index={index}>
+                      {(providedx, snapshot) => (
                         <div
                           style={{height: '30px', marginLeft: '2px', display: 'inline-block'}}
                         >
                           <div
                             ref={provided.innerRef}
                             style={ToolBarItem.getItemStyle(
-                              providedx.draggableStyle,
-                              snapshotx.isDragging
+                              providedx.draggableProps.style,
+                              snapshot.isDragging
                             )}
                             {...providedx.dragHandleProps}
                           >
