@@ -71,7 +71,6 @@ export default ({router}: {router?: SingletonRouter}) =>
           <P paddingTop={'2em'} paddingBottom={'2em'}>
             For documentation and data downloads, navigate to the methodology page.
           </P>
-          // tslint:disable-next-line:jsx-no-lambda
           <Button color="grey" size="large" onClick={goToMethodologyPage(router)}>
             Methodology and Data <Icon name="chevron right" />
           </Button>

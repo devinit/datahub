@@ -11,10 +11,13 @@
     "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "baseUrl": ".",
     "outDir": "lib",
     "skipLibCheck": true,
-    "removeComments": true
+    "removeComments": true,
+    "baseUrl": ".", 
+    "paths": {
+      "mapbox-gl": ["node_modules/mapbox-gl/dist/mapbox-gl.js"] // This mapping is relative to "baseUrl"
+    }
   },
   "exclude": [
     "node_modules",

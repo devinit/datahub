@@ -1,12 +1,10 @@
 import * as React from 'react';
-import * as mapboxgl from 'mapbox-gl';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
 import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
 import LoadingBar from '../../molecules/LoadingBar';
 import {router, IRouter} from '@devinit/dh-base/lib/utils';
 import { MapContainer } from './styledMapContainer';
 import {SingletonRouter} from 'next/router';
-
 import {
   Feature,
   PropertyLayerSlugMap,
@@ -20,6 +18,9 @@ import {
   GenericTipHtml,
   Meta,
 } from './types';
+
+// TODO: this is a hack
+const mapboxgl = (process as any).browser ? require('mapbox-gl') : {};
 
 const NODATA = 'No data';
 

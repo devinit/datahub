@@ -17,5 +17,3 @@ Use `` lerna run cp-assets `` to sync the assets in app package with those in UI
 - `` lerna run build-fragment `` to build out a fragment json for grapqhl union types
 
 - we use npm config variables to prefill some global constants such as the API et la [see for more](http://www.marcusoft.net/2015/08/npm-scripting-configs-and-arguments.html#npm-configuration)
-
-- We had this mapbox-gl server rendering issue that eventually made me had mapbox in the app package even when it shouldnt be there. Look in ```next.config.js``` for more illumination on this.

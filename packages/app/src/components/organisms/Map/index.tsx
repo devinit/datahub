@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Map from '@devinit/dh-ui/lib/molecules/Maps';
+import {Map} from '@devinit/dh-ui/lib/molecules/Maps';
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
 import { State as Store, AppState} from '../../../redux/reducers';

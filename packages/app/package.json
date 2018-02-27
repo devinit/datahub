@@ -43,7 +43,6 @@
     "apollo-client-preset": "1.0.8",
     "compression": "1.7.2",
     "express": "4.16.2",
-    "mapbox-gl": "^0.44.0",
     "glamor": "2.20.40",
     "glamorous": "4.11.6",
     "graphql": "0.13.1",

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const packageJSON = require('../package.json');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const SRC_PATH = path.join(__dirname, '../src');
 
@@ -12,6 +13,9 @@ const newRules = [
   {
       test: /\.(ts|tsx)(\?[^?]*)?$/,
       loader: 'ts-loader',
+      options: {
+        transpileOnly: true 
+      },
       include: [
           SRC_PATH
       ]
@@ -25,7 +29,8 @@ const newPlugins = [
     'APP_VERSION': JSON.stringify(packageJSON.version),
     'API': JSON.stringify(packageJSON.config.API),
     'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
-  })
+  }),
+  new ForkTsCheckerWebpackPlugin()
 ];
 
 

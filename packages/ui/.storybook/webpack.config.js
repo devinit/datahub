@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const SRC_PATH = path.join(__dirname, '../src');
 // load the default config generator.
 const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
@@ -9,6 +10,9 @@ const newRules = [
   {
       test: /\.(ts|tsx)(\?[^?]*)?$/,
       loader: 'ts-loader',
+      options: {
+        transpileOnly: true 
+      },
       include: [
           SRC_PATH,
       ]
@@ -19,8 +23,8 @@ const newExtensions =  ['.ts', '.tsx', '.js'];
 const newPlugins = [
   new webpack.DefinePlugin({
     'process.browser': true,
-    'process.env.config': {}
-  })
+  }),
+  new ForkTsCheckerWebpackPlugin()
 ];
 
 
