@@ -29,7 +29,7 @@
 		"tslint-react": "3.5.1",
 		"typescript": "2.7.2",
 		"uglifyjs-webpack-plugin": "1.2.0",
-		"webpack": "3.11.0",
+		"webpack": "4.0.1",
 		"webpack-bundle-analyzer": "2.10.0"
 	},
 	"git-pre-hooks": {
