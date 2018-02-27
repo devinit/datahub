@@ -1,4 +1,4 @@
-FROM node:9
+FROM node:9@sha256:ca12dd0664cba60c0dee18fb0cfa73336285f0d0ac915d61cb1c8a04aa0f74e6
 
 LABEL maintainer="epicallan.al@gmail.com"
 # Copy package.json only to temp folder, install its dependencies,
