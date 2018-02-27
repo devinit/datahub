@@ -45,7 +45,6 @@
     "glamorous": "4.11.6",
     "graphql": "0.13.0",
     "graphql-tag": "2.8.0",
-    "greenlet": "^0.1.2",
     "intersection-observer": "0.5.0",
     "isomorphic-fetch": "2.2.1",
     "localforage": "1.5.6",
@@ -55,7 +54,6 @@
     "react": "16.2.0",
     "react-apollo": "2.0.4",
     "react-dom": "16.2.0",
-    "react-no-ssr": "1.1.0",
     "react-redux": "5.0.7",
     "redux": "3.7.2",
     "semantic-ui-react": "0.78.2"

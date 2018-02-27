@@ -19,11 +19,13 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): BoundAction => ({
     changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
   });
 
-export type Props = BoundAction & {
-  app: AppState;
+export interface OwnProps {
   id?: string;
   state?: StateToShare;
   country?: string;
+}
+export type Props = BoundAction & OwnProps & {
+  app: AppState;
 };
 
 class MapOrganism extends React.Component <Props> {

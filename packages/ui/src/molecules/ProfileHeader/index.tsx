@@ -19,13 +19,10 @@ const dynamicOpts: DynamicOptions<any, any> = {
     modules: () => ({
         SmallMap: import('../Maps') as Promise<any>
     }),
-    render: (props, {SmallMap}) =>
-      <div>
-        <SmallMap {...props} />
-      </div>
+    render: (props, {SmallMap}) => <SmallMap {...props} />
 };
 
-const DynamicMapComponent: React.ComponentClass<SmallMapProps> = dynamic(dynamicOpts as any);
+const DynamicMapComponent = dynamic(dynamicOpts as any) as React.StatelessComponent<SmallMapProps>;
 
 export interface Props  {
   entity: Country | District; // country or district
@@ -41,12 +38,10 @@ const ProfileHeaderSection = (props: Props) => {
     props.jumpToSection && props.jumpToSection(section);
   return (
     <ProfileHeader>
-      {process.env.NODE_ENV !== 'test' ?
         <DynamicMapComponent
           slug={props.entity.slug || ''}
           spotlightCountry={props.spotlightCountry && props.spotlightCountry.slug}
-        /> : ''
-      }
+        />
       <Div width="100%" position="absolute" top="0">
         <Container>
           <Grid>
