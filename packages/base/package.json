@@ -52,7 +52,7 @@
     "csso": "3.5.0",
     "less": "2.7.3",
     "less-plugin-clean-css": "1.5.1",
-    "ts-jest": "22.0.4",
+    "ts-jest": "22.4.0",
     "usus": "1.6.0"
   },
   "jest": {
