@@ -52,7 +52,7 @@
     "@storybook/addons": "3.3.14",
     "@storybook/react": "3.3.14",
     "@types/react-beautiful-dnd": "3.0.1",
-    "ts-jest": "22.0.4",
+    "ts-jest": "22.4.0",
     "typescript": "2.7.2"
   },
   "jest": {
