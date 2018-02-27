@@ -5,9 +5,9 @@
  * see more https://github.com/zeit/next.js#customizing-babel-config,
  * https://github.com/zeit/next.js/issues/1245
  */
+import * as path from 'path';
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const path = require('path');
 
 const config = {
   entry: {
@@ -45,6 +45,5 @@ const build = () => {
     }
   });
 };
-
 
 if (process.env.NODE_ENV !== 'test') build();
