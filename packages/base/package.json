@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/localforage": "0.0.34",
-    "css-loader": "0.28.9",
+    "css-loader": "0.28.10",
     "css-to-js-object": "0.0.3",
     "csso": "3.5.0",
     "less": "2.7.3",
