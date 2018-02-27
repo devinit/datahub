@@ -8,7 +8,6 @@ import {ProfileSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
 import Link from 'next/link';
 import {IProcess} from '@devinit/dh-base/lib/types';
 import Router from 'next/router';
-import Link from 'next/link';
 import Generic from '../Generic';
 
 declare var process: IProcess;
