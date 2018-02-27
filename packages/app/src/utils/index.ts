@@ -4,7 +4,7 @@ import {MenuItem} from '@devinit/dh-ui/lib/molecules/Menu/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import greenlet from 'greenlet';
+// import greenlet from 'greenlet';
 // import * as fetch from 'isomorphic-fetch';
 import navDataGlobal from '../components/organisms/NavBarTabs/data';
 import navDataKe from '../components/organisms/NavBarTabs/kenya';
@@ -128,13 +128,13 @@ export const cacheMapData = async (workerName: string): Promise<void> => {
         try {
         const storage = await getLocalStorageInstance(APP_VERSION);
         if (!storage) return;
-        const fetchAndCache = greenlet(cacheData);
-        const navData = {
-            uganda: navDataUg.spotlightThemes,
-            kenya: navDataKe.spotlightThemes,
-            global: navDataGlobal.globalPictureThemes
-        };
-        await fetchAndCache(navData[workerName]);
+        // const fetchAndCache = greenlet(cacheData);
+        // const navData = {
+        //     uganda: navDataUg.spotlightThemes,
+        //     kenya: navDataKe.spotlightThemes,
+        //     global: navDataGlobal.globalPictureThemes
+        // };
+        // await fetchAndCache(navData[workerName]);
 
         // const storedVersion = await storage.getItem(`${APP_VERSION}-${workerName}`);
         // return greenlet(cacheMapData(workerName));
