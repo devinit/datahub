@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import * as React from 'react';
 import { renderStatic } from 'glamor/server';
-import indexCss from '../src/critical-css';
+import indexCss from '../src/critical-css/home';
 import unbundlingCss from '../src/critical-css/unbundling'; // in private/criticalCss
 import profileCss from '../src/critical-css/countryProfile';
 import {IProcess} from '@devinit/dh-base/lib/types';
@@ -61,11 +61,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          {!MyDocument.shouldHaveCriticalCss(this.props.pathname) ?
-            <link rel="stylesheet" href={`/semantic.min.css?v=${version}`} /> :
-            <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
-          }
-          <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+          <style type="text/css" key="critical" dangerouslySetInnerHTML={{ __html: criticalCss }} />
+          <link rel="stylesheet" href={`/semantic.min.css?v=${version}`} />
+          <style  dangerouslySetInnerHTML={{ __html: this.props.css }} />
           <script
             dangerouslySetInnerHTML={{
               __html:
