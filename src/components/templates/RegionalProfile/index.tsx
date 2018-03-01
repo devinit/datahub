@@ -8,8 +8,8 @@ import ProfileHeader from '../../molecules/ProfileHeader';
 import {Country, District} from '../../types';
 import {getCountry, getDistrict, CurrencyOption, createCurrencyOptions} from '../../../utils';
 import {StateToShare} from '../../molecules/ChartShare';
-import methodologyDataUg from '../../organisms/Methodology/spotlight-uganda';
-import methodologyDataKe from '../../organisms/Methodology/spotlight-kenya';
+import methodologyDataUg from '../../MethodologyData/spotlight-uganda';
+import methodologyDataKe from '../../MethodologyData/spotlight-kenya';
 import {QueryVarTs} from '../../organisms/LocalGovernmentFinance';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 import Router from 'next/router';
@@ -26,7 +26,7 @@ const dynamicOpts: DynamicOptions<any, QueryVarTs> = {
       <LocalGovernmentFinance {...props} />
 };
 
-const DynamicRegionalLowerTabs = dynamic(dynamicOpts as any);
+const DynamicRegionalLowerTabs = dynamic(dynamicOpts as any) as any;
 
 interface Props  {
   id: string;

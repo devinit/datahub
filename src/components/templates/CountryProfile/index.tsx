@@ -28,7 +28,7 @@ const dynamicOpts: DynamicOptions<any, any> = {
         <CountryProfileLowerTabs {...props} />
 };
 
-const DynamicCountryProfileLowerTabs = dynamic(dynamicOpts as any);
+const DynamicCountryProfileLowerTabs = dynamic(dynamicOpts as any) as any;
 
 interface Props  {
   id: string;

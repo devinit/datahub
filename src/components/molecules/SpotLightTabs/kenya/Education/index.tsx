@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Container, Grid} from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/Text';
 import {TabsToolTip} from '../../../ToolTip';
-import { getPageUnitById } from '../../../../../../pageData';
+import { getPageUnitById } from '../../../../pageData';
 import { NoData } from '../../../../../utils/constants';
 import {CSProps} from '../../types';
 

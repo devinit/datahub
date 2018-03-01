@@ -16,5 +16,4 @@ const mockedRouter = {
 
 Router.router = mockedRouter;
 
-
 configure(loadStories, module);

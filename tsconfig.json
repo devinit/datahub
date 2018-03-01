@@ -13,18 +13,14 @@
     "noUnusedLocals": true,
     "outDir": "lib",
     "skipLibCheck": true,
-    "removeComments": true,
-    "baseUrl": ".", 
-    "paths": {
-      "mapbox-gl": ["node_modules/mapbox-gl/dist/mapbox-gl.js"] // This mapping is relative to "baseUrl"
-    }
+    "removeComments": true
   },
   "exclude": [
     "node_modules",
     "dist"
   ],
   "include": [
-    "src/**/*.ts",
-    "pages/**/*.ts"
+    "src",
+    "pages"
   ]
 }

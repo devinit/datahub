@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import {Map} from '../../molecules/Maps';
 import {Map} from '../../molecules/Maps';
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';

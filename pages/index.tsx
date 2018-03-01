@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { rehydrate } from 'glamor';
 import withData from '../src/components/WithData';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import {StateToShare} from '../src/components/molecules/ChartShare';
 import App from '../src/components/templates/Front';
 
 interface Props  {

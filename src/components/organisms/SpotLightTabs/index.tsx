@@ -4,7 +4,7 @@ import TabsComponents from '../../molecules/SpotLightTabs';
 import Tabs from '../../molecules/Tabs';
 import Pane from '../../atoms/Pane';
 import LoadingPlaceholder from '../../molecules/LoadingPlaceholder';
-import {getDistrictProfileData} from '../../../../pageData';
+import {getDistrictProfileData} from '../../pageData';
 import populationConfig from '../../visbox/spotlightPopulationTabCharts';
 import overviewConfig from '../../visbox/spotlightOverviewTabCharts';
 import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../gql-types';

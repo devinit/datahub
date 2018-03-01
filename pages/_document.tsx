@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import {PageMeta, getPageMeta} from '../src/utils';
-import criticalCSS from '../src/critical-css/critical';
+// import criticalCSS from '../src/critical-css/critical';
 import { renderStatic } from 'glamor/server';
 
 declare const APP_VERSION: string;

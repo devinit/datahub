@@ -1,6 +1,6 @@
 const Enzyme = require('enzyme');
 const Adapter = require('enzyme-adapter-react-16');
-const packageJSON = require('../package.json');
+const packageJSON = require('../../package.json');
 
 Enzyme.configure({ adapter: new Adapter() });
 

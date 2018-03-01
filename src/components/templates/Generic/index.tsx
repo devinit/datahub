@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Container } from 'semantic-ui-react';
-// import Head from 'next/head';
-
 import Footer from '../../molecules/Footer';
-import {lighterGrey} from '../../theme/semantic';
 import Menu from '../../molecules/Menu';
 import Link from 'next/link';
 import {menueData} from './data';
@@ -16,7 +13,7 @@ interface Props  {
 
 const Generic: React.SFC<Props> = ({ children, query, pathname}) =>
   <Container fluid>
-      <Menu menu={menueData.menu} />
+      <Menu menu={menueData.menu} nextLink={Link} />
       <div style={{marginTop: '4em'}}>
         {children}
       </div>

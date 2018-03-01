@@ -1,6 +1,6 @@
 import * as fetch from 'isomorphic-fetch';
 import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
-import {IProcess} from '../../types';
+import {IProcess} from '../components/types';
 const introspectionQueryResultData = require('./fragmentTypes.json');
 
 (global as any).fetch = (global as any).fetch || fetch;

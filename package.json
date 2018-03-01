@@ -18,6 +18,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest -u",
+    "coverage": "BABEL_ENV=test jest -u && codecov",
     "dev": "NODE_ENV=development nodemon src/server/index.ts",
     "build:next": "next build",
     "analyze": "ANALYZE=1 next build",
@@ -28,7 +29,7 @@
     "build-fragment": "npm run build && node lib/apollo/fragment.js",
     "start": "NODE_ENV=production PORT=3000 node lib/server/index.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "storybook": "start-storybook -p 6005 -s static",
+    "storybook": "start-storybook -p 6006 -s static",
     "gql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
     "gql-ts": "apollo-codegen generate ./src/**/query.graphql.ts --schema schema.json --target typescript --output ./src/components/gql-types.ts",
     "types": "npm run gql-schema && npm run gql-ts",
