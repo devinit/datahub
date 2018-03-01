@@ -91,7 +91,7 @@
     "jest-cli": "22.4.2",
     "jsdom": "11.6.2",
     "pretty-format": "22.4.0",
-    "ts-loader": "4.0.0",
+    "ts-loader": "3.5.0",
     "tslint": "5.9.1",
     "tslint-react": "3.5.1",
     "uglifyjs-webpack-plugin": "1.2.2",
