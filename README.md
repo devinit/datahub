@@ -7,7 +7,7 @@ Installation
 -------------
 
 ```
-npm install # in root
+ npm install --ignore-scripts # in root (ignore scripts is for preventing puppetter from downloading chromium)
 
 ```
 
