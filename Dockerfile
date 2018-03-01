@@ -1,4 +1,4 @@
-FROM node:9-alpine@sha256:6349b332f87fcdce541a5ce1e354d14dad54cb00833e547f5c31de6e6c783a91
+FROM node:9-alpine@sha256:7422a2653c781eb8280a9b811f0c5b605b54851fe458b09d9ccd6e04fbbca2ab
 
 LABEL maintainer="epicallan.al@gmail.com"
 # Copy package.json only to temp folder, install its dependencies,
