@@ -3,7 +3,7 @@ import * as path from 'path';
 import COUNTRIES_QUERY from './queries/Countries';
 // const COUNTRIES_QUERY = require('./queries/Countries');
 import DISTRICT_QUERY from './queries/Districts';
-import {PAGES_DATA_QUERY} from './queries/pageData';
+import {PAGES_DATA_QUERY} from './queries/PageData';
 import {GLOBAL_PICTURE_THEMES_QUERY} from './queries/GlobalPictureThemes';
 import {SPOTLIGHT_THEMES_QUERY} from './queries/SpotlightThemes';
 import {INTL_RESOURCES_TOOLTIP_QUERY} from './queries/InternationalResourcesToolTip';

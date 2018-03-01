@@ -1,5 +1,5 @@
 import * as fetch from 'isomorphic-fetch';
-import { ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
+import { ApolloLink, ApolloClient, HttpLink, InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-client-preset';
 import {IProcess} from '../components/types';
 const introspectionQueryResultData = require('./fragmentTypes.json');
 
@@ -28,7 +28,7 @@ export function create(args: InitApollo): ApolloClient<any> {
     connectToDevTools: process.browser, // comes from webpack
     cache: cache().restore(initialState || {}),
     ssrMode: !process.browser,
-    link: new HttpLink({ uri: API || uri }),
+    link: new HttpLink({ uri: API || uri }) as ApolloLink, // TODO: types are wrong in graphql
     queryDeduplication: true
   });
 }
