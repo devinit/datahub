@@ -6,13 +6,13 @@ import { Lead } from '../../atoms/Header';
 import { BodyLink } from '../../atoms/Link';
 import ProfileSocialMedia from '../ProfileSocialMedia';
 import {ProfileSearch} from '../SearchInput';
-import {Country, District} from '@devinit/dh-base/lib/types';
+import {Country, District} from '../../types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
-import {CurrencyOption} from '@devinit/dh-base/lib/utils';
+import {CurrencyOption} from '../../../utils';
 // import {SmallMapProps} from '../Maps';
 import {SingletonRouter} from 'next/router';
 import {LinkState} from 'next/link';
-import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '@devinit/dh-base/lib/utils/constants';
+import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '../../../utils/constants';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 
 const dynamicOpts: DynamicOptions<any, any> = {

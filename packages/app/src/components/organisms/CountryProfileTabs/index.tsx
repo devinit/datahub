@@ -7,12 +7,12 @@ import govtFinanceConfig from '../../visbox/governmentFinanceTabCharts';
 import internationalResourcesConfig from '../../visbox/internationalResourceTabCharts';
 import Tabs from '../../molecules/Tabs';
 import Pane from '../../atoms/Pane';
-import { DONOR } from '@devinit/dh-base/lib/utils/constants';
-import {getCountry} from '@devinit/dh-base/lib/utils';
-import { shouldShowTabData} from '@devinit/dh-base/lib/utils';
+import { DONOR } from '../../../../utils/constants';
+import {getCountry} from '../../../../utils';
+import { shouldShowTabData} from '../../..//utils';
 import LoadingPlaceholder from '../../molecules/LoadingPlaceholder';
 import overviewConfig from '../../visbox/overviewTabCharts';
-import {getCountryProfileData} from '@devinit/dh-base/lib/pageData';
+import {getCountryProfileData} from '../../../pageData';
 import { TabDataQuery,  TabDataQueryVariables } from '../../gql-types';
 import {TAB_QUERY} from './query.graphql';
 

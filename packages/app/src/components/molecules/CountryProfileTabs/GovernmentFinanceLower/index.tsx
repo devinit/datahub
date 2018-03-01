@@ -1,8 +1,8 @@
 import { Container, Header, Grid, Divider } from 'semantic-ui-react';
 import * as React from 'react';
 import {Lead} from '../../../atoms/Text';
-import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {PageUnit} from '../../../../types';
+import {getPageUnitById} from '../../../../pageData';
 
 export interface Props  {
   children: any;

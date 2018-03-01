@@ -4,10 +4,10 @@ import {TabsNoData, TabsP, HeaderTitle, RuralUrbanPopnText} from '../../../../at
 import { red } from '../../../../theme/semantic';
 import { Div, P} from 'glamorous';
 import { TabsToolTip} from '../../../ToolTip';
-import { NoData } from '@devinit/dh-base/lib/utils/constants';
+import { NoData } from '../../../../../utils/constants';
 import Chart from '../../../../atoms/Chart';
 import {CSProps} from '../../types';
-import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import { getPageUnitById } from '../../../../pageData';
 
 export type Props = CSProps &  {
   config: any;

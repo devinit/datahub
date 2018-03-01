@@ -3,7 +3,7 @@ import { changeSpotlightIndicatorUg, changeLoadingStatus, SpotLightlIndicatorUg,
   LoadingStatus} from '../../../redux/actions';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
-import { } from '@devinit/dh-base/lib/actions';
+import { } from '../../actions';
 import { State} from '../../../redux/reducers';
 import { Props } from '../../molecules/NavigationBarTabs';
 import NavigationBarTabs from '../../molecules/NavigationBarTabs';

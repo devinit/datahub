@@ -1,0 +1,1 @@
+Pulls static data from remote API and dumps it into the project

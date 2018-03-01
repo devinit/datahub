@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Div, Span } from 'glamorous';
-import {Country, District} from '@devinit/dh-base/lib/types';
+import {Country, District} from '../../types';
 import { Button } from 'semantic-ui-react';
 
 export interface Props  {

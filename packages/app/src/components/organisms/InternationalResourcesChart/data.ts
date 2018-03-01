@@ -1,7 +1,7 @@
 /* tslint:disable */
 // this file is auto generated
 
-export  default {
+export default {
   donor: {
     inflows: [
       {

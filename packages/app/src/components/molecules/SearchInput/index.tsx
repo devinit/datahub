@@ -1,8 +1,8 @@
 import * as React from 'react';
 import SearchInput from './Basic';
-import ugandaData from '@devinit/dh-base/lib/__generated__/uganda';
-import kenyaData from '@devinit/dh-base/lib/__generated__/kenya';
-import data from '@devinit/dh-base/lib/__generated__/data';
+import ugandaData from './uganda';
+import kenyaData from './kenya';
+import data from './global';
 import {SingletonRouter} from 'next/router';
 import {LinkState} from 'next/link';
 

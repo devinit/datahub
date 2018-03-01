@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import {getDistrictProfileData} from '@devinit/dh-base/lib/pageData';
+import {getDistrictProfileData} from '../../pageData';
 import Overview from './Overview';
 import PopulationUgTab from './uganda/Population';
 import PopulationKeTab from './kenya/Population';

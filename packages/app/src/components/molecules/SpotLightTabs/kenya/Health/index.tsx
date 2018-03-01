@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
 import {TabsP, HeaderTitle } from '../../../../atoms/Text';
 import { TabsToolTip } from '../../../ToolTip';
-import { NoData } from '@devinit/dh-base/lib/utils/constants';
-import { getPageUnitById } from '@devinit/dh-base/lib/pageData';
+import { NoData } from '../../../../../utils/constants';
+import { getPageUnitById } from '../../../../pageData';
 import {CSProps} from '../../types';
 
 export type Props = CSProps;

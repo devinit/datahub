@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
-import {Route, approximate, countryOrDistrictLink} from '@devinit/dh-base/lib/utils';
+import {Route, approximate, countryOrDistrictLink} from '../../../utils';
 import LoadingBar from '../../molecules/LoadingBar';
-import {router, IRouter} from '@devinit/dh-base/lib/utils';
+import {router, IRouter} from '../../../utils';
 import { MapContainer } from './styledMapContainer';
 import {SingletonRouter} from 'next/router';
 import {

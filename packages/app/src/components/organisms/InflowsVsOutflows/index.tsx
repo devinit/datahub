@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
 import SlidingDualSidebar from '../../molecules/SlidingDualSidebar';
-import {Country} from '@devinit/dh-base/lib/types';
+import {Country} from '../../types';
 import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../gql-types';
 import config from '../../visbox/dualbarChart';
-import countryCache from '@devinit/dh-base/lib/__generated__/data';
+import countryCache from '../../molecules/SearchInput/global';
 import {INTL_RESOURCES_QUERY} from '../InternationalResourcesChart/query.graphql';
 
 type QueryVarTs = ResourcesOverTimeQueryVariables & {

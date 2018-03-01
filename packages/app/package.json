@@ -2,7 +2,7 @@
   "name": "@devinit/dh-app",
   "version": "3.0.5",
   "config": {
-    "API": "http://212.111.41.68:9090/graphql",
+    "API": "http://localhost:3000/graphql",
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": true,
     "OLD_DATAHUB_URL": "http://212.111.41.68:8888"
   },
@@ -23,16 +23,15 @@
     "analyze": "ANALYZE=1 next build",
     "critical-css": "ts-node src/scripts/critical-css.ts",
     "vendor": "ts-node src/scripts/vendor.ts",
+    "pull": "ts-node src/scripts/pull/index.ts",
     "build:workers": "ts-node src/scripts/worker.ts",
     "build-fragment": "npm run build && node lib/apollo/fragment.js",
     "start": "NODE_ENV=production PORT=3000 node lib/server/index.js",
-    "cp-assets": "cp -R ../ui/static/* static/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "storybook": "start-storybook -p 6005 -s static",
     "gql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
-    "gql-ts": "apollo-codegen generate ./src/**/query.graphql.ts --schema schema.json --target typescript --output ./src/types.ts",
-    "types": "npm run gql-schema && npm run gql-ts && npm run cp-types-ui",
-    "cp-types-ui": "cp ./src/types.ts ../ui/src/gql-types.ts",
+    "gql-ts": "apollo-codegen generate ./src/**/query.graphql.ts --schema schema.json --target typescript --output ./src/components/gql-types.ts",
+    "types": "npm run gql-schema && npm run gql-ts",
     "patch": "release-it -i patch -n",
     "feature": "release-it -i minor -n",
     "breaking": "release-it -i major -n"

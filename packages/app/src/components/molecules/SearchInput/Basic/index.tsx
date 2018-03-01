@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Div, H1} from 'glamorous';
 import { Icon } from 'semantic-ui-react';
-import {router, IRouter} from '@devinit/dh-base/lib/utils';
+import {router, IRouter} from '../../../../utils';
 import { Input, InputContainer, List } from '../../../atoms/SearchInput';
 import {SingletonRouter} from 'next/router';
 import {LinkState} from 'next/link';

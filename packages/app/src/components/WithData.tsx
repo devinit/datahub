@@ -5,7 +5,7 @@ import Head from 'next/head';
 import initApollo from '../apollo';
 import {State} from '../redux/reducers';
 import {initRedux} from '../redux';
-import {IProcess} from '@devinit/dh-base/lib/types';
+import {IProcess} from '../../types';
 
 declare var process: IProcess;
 

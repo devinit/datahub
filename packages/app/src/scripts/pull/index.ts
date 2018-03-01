@@ -1,29 +1,27 @@
-import {getAndWriteData, IGetAndWriteDataOpts} from '@devinit/graphql-next/lib/query';
+import {getAndWriteData} from '@devinit/graphql-next/lib/query';
 import * as path from 'path';
-import * as fs from 'fs-extra';
-const COUNTRIES_QUERY = require('./queries/Countries.graphql');
-const DISTRICT_QUERY = require('./queries/Districts.graphql');
-const PAGES_DATA_QUERY = require('./queries/pageData.graphql');
-const GLOBAL_PICTURE_THEMES_QUERY = require('./queries/GlobalPictureThemes.graphql');
-const SPOTLIGHT_THEMES_QUERY = require('./queries/SpotlightThemes.graphql');
-const INTL_RESOURCES_TOOLTIP_QUERY = require('./queries/InternationalResourcesToolTip.graphql');
-const INFLOWS_OUTFLOWS_QUERY = require('./queries/InflowsOutflowsList.graphql');
-const BUBBLE_INDICATORS_QUERY = require('./queries/BubbleChartOptions.graphql');
-const UNBUNDLING_QUERY = require('./queries/UnbundlingAidCache.graphql');
-const METHODOLOGY_QUERY = require('./queries/Methodology.graphql');
+import COUNTRIES_QUERY from './queries/Countries';
+// const COUNTRIES_QUERY = require('./queries/Countries');
+import DISTRICT_QUERY from './queries/Districts';
+import {PAGES_DATA_QUERY} from './queries/pageData';
+import {GLOBAL_PICTURE_THEMES_QUERY} from './queries/GlobalPictureThemes';
+import {SPOTLIGHT_THEMES_QUERY} from './queries/SpotlightThemes';
+import {INTL_RESOURCES_TOOLTIP_QUERY} from './queries/InternationalResourcesToolTip';
+import {INFLOWS_OUTFLOWS_QUERY} from './queries/InflowsOutflowsList';
+import {BUBBLE_INDICATORS_QUERY} from './queries/BubbleChartOptions';
+import {UNBUNDLING_QUERY} from './queries/UnbundlingAidCache';
+import {METHODOLOGY_QUERY} from './queries/Methodology';
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';
 const baseOrganismsPath = 'src/components/organisms';
+const baseMoleculesPath = 'src/components/molecules';
 
-const getWrite = (obj: IGetAndWriteDataOpts<any>) =>
-  getAndWriteData('http://localhost:8080/graphql')({...obj, query: getGql(obj.query)});
-
-const getGql = (fileName: string): string => fs.readFileSync(`src/pull/${fileName}.gql`, 'utf8');
+const getWrite = getAndWriteData(process.env.npm_package_config_API);
 
 export const getCountries = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'CountrySearchInput/data.js');
+    const filePath = path.join(baseMoleculesPath, 'SearchInput/global.ts');
     await getWrite({ query: COUNTRIES_QUERY, filePath });
   } catch (error) {
     console.error(error);
@@ -33,7 +31,7 @@ export const getCountries = async () => {
 export const getDistricts = async () => {
   try {
     ['uganda', 'kenya'].forEach(async (country) => {
-      const filePath = path.join(baseOrganismsPath, `CountrySearchInput/${country}-data.js`);
+      const filePath = path.join(baseMoleculesPath, `SearchInput/${country}.ts`);
       const variables = { country };
       await getWrite({ query: DISTRICT_QUERY, filePath, variables});
     });
@@ -43,7 +41,7 @@ export const getDistricts = async () => {
 };
 export const getInternationalResourcesToolTip = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'CountryProfileLowerTabs/data.js');
+    const filePath = path.join(baseOrganismsPath, 'CountryProfileLowerTabs/data.ts');
     const variables = { id: 'uganda' }; // any country will do
     await getWrite({ query: INTL_RESOURCES_TOOLTIP_QUERY, filePath, variables });
   } catch (error) {
@@ -52,7 +50,7 @@ export const getInternationalResourcesToolTip = async () => {
 };
 export const getGlobalPictureThemes = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'NavBarTabs/data.js');
+    const filePath = path.join(baseOrganismsPath, 'NavBarTabs/data.ts');
     await getWrite({ query: GLOBAL_PICTURE_THEMES_QUERY, filePath });
   } catch (error) {
     console.error(error);
@@ -62,7 +60,7 @@ export const getSpotlightThemes = async () => {
   // currently only getting spotlight uganda theme data
   try {
     ['uganda', 'kenya'].forEach(async (country) => {
-      const filePath = path.join(baseOrganismsPath, `NavBarTabs/${country}.js`);
+      const filePath = path.join(baseOrganismsPath, `NavBarTabs/${country}.ts`);
       const variables = { country };
       await getWrite({ query: SPOTLIGHT_THEMES_QUERY, filePath, variables });
     });
@@ -72,7 +70,7 @@ export const getSpotlightThemes = async () => {
 };
 export const getPagesData = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'PagesData/data.js');
+    const filePath = path.join('src/components', 'pageData/data.ts');
     await getWrite({ query: PAGES_DATA_QUERY, filePath});
   } catch (error) {
     console.error(error);
@@ -81,7 +79,7 @@ export const getPagesData = async () => {
 
 export const getInflowsAndOutflows = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'InternationalResourcesChart/data.js');
+    const filePath = path.join(baseOrganismsPath, 'InternationalResourcesChart/data.ts');
     const variables = { donor: DONOR, recipient: RECIPIENT };
     await getWrite({query: INFLOWS_OUTFLOWS_QUERY, filePath, variables});
   } catch (error) {
@@ -91,7 +89,7 @@ export const getInflowsAndOutflows = async () => {
 
 export const getUnbundlingData = async (aidType: string) => {
   try {
-    const filePath = path.join(baseOrganismsPath, `UnbundlingAid/data-${aidType}.js`);
+    const filePath = path.join(baseOrganismsPath, `UnbundlingAid/data-${aidType}.ts`);
     const variables = {
       aidType,
       args: {
@@ -106,7 +104,7 @@ export const getUnbundlingData = async (aidType: string) => {
 
 export const getBubbleOptions = async () => {
   try {
-    const filePath = path.join(baseOrganismsPath, 'DPDP/data.js');
+    const filePath = path.join(baseOrganismsPath, 'DPDP/data.ts');
     await getWrite({query: BUBBLE_INDICATORS_QUERY, filePath});
   } catch (error) {
     console.log(error);
@@ -117,7 +115,7 @@ export const getMethodologyData = async () => {
   ['country-profile', 'global-picture', 'spotlight-uganda', 'spotlight-kenya']
     .forEach(async (moduleName) => {
       try {
-        const filePath = path.join(baseOrganismsPath, `Methodology/${moduleName}.js`);
+        const filePath = path.join('src/components', `MethodologyData/${moduleName}.ts`);
         const variables = {moduleName};
         await getWrite({query: METHODOLOGY_QUERY, filePath, variables});
       } catch (error) {

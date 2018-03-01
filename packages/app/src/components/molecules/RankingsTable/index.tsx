@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Grid, Table } from 'semantic-ui-react';
 import { Span, Img } from 'glamorous';
 import LoadingBar from '../LoadingBar';
-import { Route } from '@devinit/dh-base/lib/utils';
+import { Route } from '../../../utils';
 import Observer from 'react-intersection-observer';
 import { RankingsTableContainer } from '../../atoms/Container';
-import {router, IRouter} from '@devinit/dh-base/lib/utils';
+import {router, IRouter} from '../../../utils';
 import {SingletonRouter} from 'next/router';
 
 if ((process as any).browser) require('intersection-observer');

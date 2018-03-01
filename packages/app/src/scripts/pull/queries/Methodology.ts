@@ -1,3 +1,6 @@
+import gql from 'graphql-tag';
+
+export const METHODOLOGY_QUERY = gql`
 query Methodology($moduleName: String!) {
   methodology(moduleName: $moduleName){
     name
@@ -11,4 +14,4 @@ query Methodology($moduleName: String!) {
       link
     }
   }
-}
+}`;

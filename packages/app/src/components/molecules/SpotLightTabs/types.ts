@@ -1,5 +1,5 @@
 import {SpotLightTabDataQuery} from '../../gql-types';
-import { PageUnit} from '@devinit/dh-base/lib/pageData';
+import { PageUnit} from '../../pageData';
 
 export interface CProps {
     currency: string;

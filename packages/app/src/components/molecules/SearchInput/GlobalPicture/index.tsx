@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Container } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import { white, lightBlack } from '../../../theme/semantic';
-import data from '@devinit/dh-base/lib/__generated__/data';
+import data from '../global';
 import SearchInput from '../Basic';
 import {SingletonRouter} from 'next/router';
 import {LinkState} from 'next/link';

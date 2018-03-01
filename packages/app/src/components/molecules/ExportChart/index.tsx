@@ -1,5 +1,5 @@
 import { Grid, Button, Icon } from 'semantic-ui-react';
-import {printDiv as print} from '@devinit/dh-base/lib/utils';
+import {printDiv as print} from '../../../utils';
 import * as React from 'react';
 import glamorous from 'glamorous';
 import ChartShare, {NoBackground} from '../ChartShare';

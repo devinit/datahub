@@ -4,7 +4,7 @@ import { Container, Grid, Icon} from 'semantic-ui-react';
 import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/spotlightKe';
 import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
 import About from '../../molecules/About';
-import {capitalize} from '@devinit/dh-base/lib/utils';
+import {capitalize} from '../../../utils';
 import {cacheMapData} from '../../../utils';
 import {StateToShare} from '../../molecules/ChartShare';
 import DynamicMap from '../../organisms/Map/DynamicMap';

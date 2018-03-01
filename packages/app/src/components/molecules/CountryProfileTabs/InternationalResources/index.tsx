@@ -4,9 +4,9 @@ import Chart from '../../../atoms/Chart';
 import {Span} from 'glamorous';
 import {small} from '../../../theme';
 import {HeaderTitle, TabsFootNote, TabsNoData, TabsP} from '../../../atoms/Text';
-import {NoData, DONOR} from '@devinit/dh-base/lib/utils/constants';
+import {NoData, DONOR} from '../../../../utils/constants';
 import { TabsToolTip} from '../../ToolTip';
-import {PageUnit, getPageUnitById} from '@devinit/dh-base/lib/pageData';
+import {PageUnit, getPageUnitById} from '../../../pageData';
 import Legend from '../../../atoms/Legend';
 import {TabDataQuery} from '../../../gql-types';
 

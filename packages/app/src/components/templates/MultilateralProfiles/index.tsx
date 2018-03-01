@@ -5,7 +5,7 @@ import ProfileSocialMedia from '../../molecules/ProfileSocialMedia';
 import { red } from '../../theme/semantic';
 import { CardContainer } from '../../atoms/Container';
 import Link from 'next/link';
-import {IProcess} from '@devinit/dh-base/lib/types';
+import {IProcess} from '../../types';
 import Generic from '../Generic';
 
 declare var process: IProcess;

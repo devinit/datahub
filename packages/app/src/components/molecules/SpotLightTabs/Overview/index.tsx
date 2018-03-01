@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
-import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
-import { NoData } from '@devinit/dh-base/lib/utils/constants';
+import {getPageUnitById} from '../../../pageData';
+import { NoData } from '../../../../utils/constants';
 import {Div} from 'glamorous';
 import Legend from '../../../atoms/Legend';
 import {small} from '../../../theme';

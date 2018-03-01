@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import ProfileDataSourceTable from '../../molecules/ProfileDataSourceTable';
 import { SectionHeader } from '../../atoms/Header';
-import methodologyData from '../../organisms/Methodology/global-picture';
+import methodologyData from '../../MethodologyData/global-picture';
 import Generic from '../Generic';
 import data from './data';
 

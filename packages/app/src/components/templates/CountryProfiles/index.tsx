@@ -6,7 +6,7 @@ import ProfileSocialMedia from '../../molecules/ProfileSocialMedia';
 import { CardContainer } from '../../atoms/Container';
 import {ProfileSearch} from '../../molecules/SearchInput';
 import Link from 'next/link';
-import {IProcess} from '@devinit/dh-base/lib/types';
+import {IProcess} from '../../types';
 import Router from 'next/router';
 import Generic from '../Generic';
 

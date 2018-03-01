@@ -6,8 +6,8 @@ import UnbundlingInternationalResources from '../UnbundlingInternationalResource
 import LoadingBar from '../../molecules/LoadingBar';
 import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../gql-types';
 import flowCache from './data';
-import {Country} from '@devinit/dh-base/lib/types';
-import countryCache from '@devinit/dh-base/lib/__generated__/data';
+import {Country} from '../../types';
+import countryCache from '../../molecules/SearchInput/global';
 import {INTL_RESOURCES_QUERY} from './query.graphql';
 
 type QueryVarTs = ResourcesOverTimeQueryVariables & {

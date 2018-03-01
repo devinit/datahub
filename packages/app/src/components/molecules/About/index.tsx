@@ -5,7 +5,7 @@ import { red, white } from '../../theme/semantic';
 import { Container, Grid, Header, Icon, Button } from 'semantic-ui-react';
 import { DarkBg, LightBg } from '../../atoms/Container';
 import Observer from 'react-intersection-observer';
-import {router as routerx} from '@devinit/dh-base/lib/utils';
+import {router as routerx} from '../../../utils';
 import {SingletonRouter} from 'next/router';
 
 const goToMethodologyPage = (router?: SingletonRouter) => () =>

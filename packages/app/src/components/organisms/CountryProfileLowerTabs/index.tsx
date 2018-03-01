@@ -5,13 +5,13 @@ import GovernmentFinance from '../../molecules/CountryProfileTabs/GovernmentFina
 import GovernmentFinanceChart from '../GovernmentFinance';
 import InflowsVsOutflows from '../InflowsVsOutflows';
 import {GOVERNMENT_FINANCE_LOWER,
-  INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from '@devinit/dh-base/lib/utils/constants';
+  INFLOWS_VS_OUTFLOWS, INTERNATIONAL_RESOURCES} from '../../../utils/constants';
 import InternationalResourcesLower from '../../molecules/CountryProfileTabs/InternationalResourcesLower';
 import InternationalResourcesChart from '../InternationalResourcesChart';
 import {StateToShare} from '../../molecules/ChartShare';
-import {getCountryProfileData} from '@devinit/dh-base/lib/pageData';
+import {getCountryProfileData} from '../../pageData';
 import ErrorBoundary from '../../molecules/ErrorBoundary';
-import {getCountry} from '@devinit/dh-base/lib/utils';
+import {getCountry} from '../../../utils';
 
 import data from './data';
 

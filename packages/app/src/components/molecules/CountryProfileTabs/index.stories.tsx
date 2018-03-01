@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import {getCountryProfileData} from '@devinit/dh-base/lib/pageData';
-import {getCountry} from '@devinit/dh-base/lib/utils';
+import {getCountryProfileData} from '../../../pageData';
+import {getCountry} from '../../../../utils';
 import Overview from './Overview';
 import PovertyTab from './Poverty';
 import overviewConfig from '../../visbox/overviewTabCharts';

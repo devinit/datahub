@@ -1,6 +1,6 @@
 // import { graphql } from 'react-apollo';
 // import BubbleChart from '../../molecules/BubbleChartWidgets';
-// import {errorHandler} from '@devinit/dh-base/lib/utils';
+// import {errorHandler} from '../../../utils';
 // import QUERY from './DPDP.graphql';
 
 // const objectify = (list, groupFn) => {

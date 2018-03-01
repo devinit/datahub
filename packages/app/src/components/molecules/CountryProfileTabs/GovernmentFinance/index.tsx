@@ -6,9 +6,9 @@ import Legend from '../../../atoms/Legend';
 import Chart from '../../../atoms/Chart';
 import {TabsNoData, TabsP, HeaderTitle} from '../../../atoms/Text';
 import { TabsToolTip } from '../../ToolTip';
-import {PageUnit} from '@devinit/dh-base/lib/types';
-import {getPageUnitById} from '@devinit/dh-base/lib/pageData';
-import { NoData } from '@devinit/dh-base/lib/utils/constants';
+import {PageUnit} from '../../../../types';
+import {getPageUnitById} from '../../../../pageData';
+import { NoData } from '../../../../../utils/constants';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
