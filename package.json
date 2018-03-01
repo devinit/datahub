@@ -113,8 +113,8 @@
   },
   "git-pre-hooks": {
     "pre-push": [
-      "lerna run lint",
-      "lerna run build"
+      "npm run lint",
+      "npm run build"
     ]
   },
   "jest": {
