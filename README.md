@@ -3,25 +3,14 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/devinit/datahub.svg)](https://gemnasium.com/github.com/devinit/datahub)
 
 
-Data hub refactored with lerna (monorepo) & typescript
-
 Installation
 -------------
 
 ```
 npm install # in root
-npm install -g lerna # this is a lerna monorepo
-lerna bootstrap #install dependencies in all packages
 
 ```
 
-Usage examples
-
-```
-lerna run storybook --scope @devinit/dh-ui --stream # running storybook in ui package
-lerna run lint --scope @devinit/dh-base  # linting base package
-lerna run build --scope @devinit/dh-base # building base package
-```
 
 TODO:
 
@@ -39,6 +28,21 @@ Important Points / guides
 
 - Develop from a unix OS (MacOs , ubuntu etc). I dont plan to add windows support.
 - Prefer to use vscode, it has very good typescript support.
+
+-  We have the graphql queries in this repo, but we need the resulting types that can be generated from them for use in the UI package. We thus have a command `` npm run types `` that copies those types over
+
+-  The static folder is a composition of assets in the UI package & those only native to the app package.
+Use `` npm run cp-assets `` to sync the assets in app package with those in UI package
+
+- We are building on top of next.js see next.config.js for configs.
+
+- `` npm run build-fragment `` to build out a fragment json for grapqhl union types
+
+- we use npm config variables to prefill some global constants such as the API et la [see for more](http://www.marcusoft.net/2015/08/npm-scripting-configs-and-arguments.html#npm-configuration)
+
+- In dev mode we run a nodemon process, it sometimes doesnt die when you cntrl-c. You could use
+```lsof -i tcp:4444 ``` to find its PID and then kill it with ``` kill -9 <PID> ```.
+
 
 
 Pain Points / issues

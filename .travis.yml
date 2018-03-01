@@ -2,15 +2,17 @@ language: node_js
 node_js:
 - v9
 install:
-- npm install
-- npm install -g lerna
+- npm install --ignore-scripts
 script:
-- lerna bootstrap --ignore-scripts
-- lerna run build --scope @devinit/dh-base
-- lerna bootstrap
-- lerna run build --scope @devinit/dh-app
-- lerna run lint
-- lerna run test
+- npm run build
+- npm run lint
+- npm run test
+- npm run pull
+- npm run build-workers
+- npm run build-fragment
+- npm run build:next
+- mkdir build && mv .next build/ && mv server.js build/ && mv package.json build/ && mv private build/ && mv Dockerfile build/ && mv public build/ && mv nginx build/ && mv docker-compose.yml build/ && mv process.yml build/
+- zip -q -r build.zip build
 cache:
   - node_modules
 sudo: false
