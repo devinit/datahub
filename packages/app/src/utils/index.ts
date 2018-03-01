@@ -1,6 +1,6 @@
 import {menueData} from '../components/templates/Generic/data';
 import {IProcess} from '@devinit/dh-base/lib/types';
-import {MenuItem} from '@devinit/dh-ui/lib/molecules/Menu/types';
+import {MenuItem} from '../components/molecules/Menu/types';
 import {capitalize, getCountryName} from '@devinit/dh-base/lib/utils';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
@@ -32,9 +32,9 @@ export const createLinkMeta = (args: PageMetaArgs, obj: MenuItem): PageMeta => {
 export const getPageMeta = (args: PageMetaArgs): PageMeta => {
 // TODO: add proper types
     const item = menueData.menu.reduce((acc: MenuItem[], obj: MenuItem) => {
-        if (obj.children) return [...acc, ...obj.children];
-        return [...acc, obj];
-    }, [])
+            if (obj.children) return [...acc, ...obj.children];
+            return [...acc, obj];
+        }, [])
         .concat([{link: '/country', name: ''}, {link: '/uganda', name: ''}])
         .find(obj => obj.link === args.pathname);
 

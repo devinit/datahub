@@ -17,3 +17,6 @@ Use `` lerna run cp-assets `` to sync the assets in app package with those in UI
 - `` lerna run build-fragment `` to build out a fragment json for grapqhl union types
 
 - we use npm config variables to prefill some global constants such as the API et la [see for more](http://www.marcusoft.net/2015/08/npm-scripting-configs-and-arguments.html#npm-configuration)
+
+- In dev mode we run a nodemon process, it sometimes doesnt die when you cntrl-c. You could use
+```lsof -i tcp:4444 ``` to find its PID and then kill it with ``` kill -9 <PID> ```.

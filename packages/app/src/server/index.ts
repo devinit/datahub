@@ -116,7 +116,9 @@ app.prepare().then(() => {
     return isValidCountry ? renderAndCache(req, res, '/country', queryParams) :
       renderAndCache(req, res, '/country-profiles');
   });
-
+  server.get('/critical', (req, res) => {
+    return handle(req, res);
+  });
   server.get('/_next/*', (req, res) => {
     return handle(req, res);
   });

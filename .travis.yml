@@ -5,10 +5,8 @@ install:
 - npm install
 - npm install -g lerna
 script:
-- lerna bootstrap
+- lerna bootstrap --ignore-scripts
 - lerna run build --scope @devinit/dh-base
-- lerna bootstrap
-- lerna run build --scope @devinit/dh-ui
 - lerna bootstrap
 - lerna run build --scope @devinit/dh-app
 - lerna run lint
