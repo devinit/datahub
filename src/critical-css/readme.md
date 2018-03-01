@@ -1,0 +1,1 @@
+Will need to do benchmarking to decide whether to use critical css or not
