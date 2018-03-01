@@ -1,5 +1,5 @@
 import { createStore, combineReducers, compose, Store } from 'redux';
-import {IProcess} from '../../types';
+import {IProcess} from '../components/types';
 import {app, initialState, State} from './reducers';
 
 declare var process: IProcess;

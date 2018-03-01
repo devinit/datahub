@@ -3,9 +3,9 @@ import * as compression from 'compression';
 import * as LRUCache from 'lru-cache';
 import * as path from 'path';
 import * as next from 'next';
-import countriesData from '../../__generated__/data';
-import ugData from '../../__generated__/uganda';
-import keData from '../../__generated__/kenya';
+import countriesData from '../components/molecules/SearchInput/global';
+import ugData from '../components/molecules/SearchInput/uganda';
+import keData from '../components/molecules/SearchInput/kenya';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });

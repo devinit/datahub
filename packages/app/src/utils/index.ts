@@ -1,6 +1,10 @@
 import {menueData} from '../components/templates/Generic/data';
-import {IProcess} from '../../types';
+import {IProcess, Country, District} from '../components/types';
 import {MenuItem} from '../components/molecules/Menu/types';
+import countriesData from '../components/molecules/SearchInput/global';
+import ugData from '../components/molecules/SearchInput/uganda';
+import keData from '../components/molecules/SearchInput/kenya';
+import {RECIPIENT} from './constants';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
 
