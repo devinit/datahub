@@ -6,7 +6,7 @@ import * as fs from 'fs-extra';
 const packageJson = require('../../package.json');
 
 const main = (): void => {
-  fetch(packageJson.config.api, {
+  fetch(packageJson.config.API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

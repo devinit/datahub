@@ -26,7 +26,7 @@
     "vendor": "ts-node src/scripts/vendor.ts",
     "pull": "ts-node src/scripts/pull/index.ts",
     "build-workers": "ts-node src/scripts/worker.ts",
-    "build-fragment": "npm run build && node lib/apollo/fragment.js",
+    "build-fragment": "ts-node src/apollo/fragment.ts",
     "start": "NODE_ENV=production PORT=3000 node lib/server/index.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "storybook": "start-storybook -p 6006 -s static",
