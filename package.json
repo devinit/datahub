@@ -74,7 +74,7 @@
     "@storybook/react": "3.3.14",
     "@types/react-beautiful-dnd": "4.0.0",
     "@zeit/next-typescript": "0.0.10",
-    "apollo-codegen": "0.18.8",
+    "apollo-codegen": "0.19.0",
     "@types/fs-extra": "5.0.1",
     "@types/jest": "22.1.4",
     "@types/next": "2.4.8",
