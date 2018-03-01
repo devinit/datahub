@@ -7,7 +7,7 @@ Installation
 -------------
 
 ```
- npm install --ignore-scripts # in root (ignore scripts is for preventing puppetter from downloading chromium)
+ npm install --ignore-scripts
 
 ```
 
@@ -46,8 +46,7 @@ Use `` npm run cp-assets `` to sync the assets in app package with those in UI p
 
 
 Pain Points / issues
-
 --------------
 
-- [ ] Currently stack with npm instead of yarn. Yarn installs seem to fail. I havent looked deeply into this.
+- Currently stack with npm instead of yarn. Yarn installs seem to fail. I havent looked deeply into this.
 
