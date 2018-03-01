@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
-import config from '@devinit/dh-ui/lib/visbox/areaTreemapChart';
-import InternationalResourcesChart from '@devinit/dh-ui/lib/molecules/AreaPartitionChart';
+import config from '../../visbox/areaTreemapChart';
+import InternationalResourcesChart from '../../molecules/AreaPartitionChart';
 import UnbundlingInternationalResources from '../UnbundlingInternationalResources';
-import LoadingBar from '@devinit/dh-ui/lib/molecules/LoadingBar';
-import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../../types';
+import LoadingBar from '../../molecules/LoadingBar';
+import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../gql-types';
 import flowCache from './data';
 import {Country} from '@devinit/dh-base/lib/types';
 import countryCache from '@devinit/dh-base/lib/__generated__/data';

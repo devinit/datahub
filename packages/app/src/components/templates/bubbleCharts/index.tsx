@@ -2,8 +2,8 @@
 import * as React from 'react';
 import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import SocialMediaBar from '@devinit/dh-ui/lib/molecules/SocialMediaBar';
-import {mediaQueries} from '@devinit/dh-ui/lib/theme';
+import SocialMediaBar from '../../molecules/SocialMediaBar';
+import {mediaQueries} from '../../theme';
 import Generic from '../Generic';
 
 declare const OLD_DATAHUB_URL: string;

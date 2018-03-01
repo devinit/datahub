@@ -2,10 +2,10 @@ import * as React from 'react';
 import { changeGlobalIndicator, changeLoadingStatus, GlobalIndicator, LoadingStatus} from '../../../redux/actions';
 import { bindActionCreators} from 'redux';
 import { connect,  MapStateToProps,  MapDispatchToPropsFunction } from 'react-redux';
-import { Props } from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
+import { Props } from '../../molecules/NavigationBarTabs';
 import { State} from '../../../redux/reducers';
-import NavigationBarTabs from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import NavigationBarTabs from '../../molecules/NavigationBarTabs';
+import {StateToShare} from '../../molecules/ChartShare';
 import {BoundAction, BoundState} from './types';
 import data from './data';
 

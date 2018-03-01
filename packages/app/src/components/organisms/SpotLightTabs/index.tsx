@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
-import TabsComponents from '@devinit/dh-ui/lib/molecules/SpotLightTabs';
-import Tabs from '@devinit/dh-ui/lib/molecules/Tabs';
-import Pane from '@devinit/dh-ui/lib/atoms/Pane';
-import LoadingPlaceholder from '@devinit/dh-ui/lib/molecules/LoadingPlaceholder';
+import TabsComponents from '../../molecules/SpotLightTabs';
+import Tabs from '../../molecules/Tabs';
+import Pane from '../../atoms/Pane';
+import LoadingPlaceholder from '../../molecules/LoadingPlaceholder';
 import {getDistrictProfileData} from '@devinit/dh-base/lib/pageData';
-import populationConfig from '@devinit/dh-ui/lib/visbox/spotlightPopulationTabCharts';
-import overviewConfig from '@devinit/dh-ui/lib/visbox/spotlightOverviewTabCharts';
-import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../../types';
+import populationConfig from '../../visbox/spotlightPopulationTabCharts';
+import overviewConfig from '../../visbox/spotlightOverviewTabCharts';
+import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../gql-types';
 import TABS_QUERY from './query.graphql';
 
 type QueryVarTs = SpotLightTabDataQueryVariables & {

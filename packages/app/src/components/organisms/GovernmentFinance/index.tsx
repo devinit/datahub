@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { LightBg } from '@devinit/dh-ui/lib/atoms/Container';
+import { LightBg } from '../../atoms/Container';
 import { graphql, ChildProps } from 'react-apollo';
-import Chart from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
-import config from '@devinit/dh-ui/lib/visbox/linePartition';
-import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../../../types';
+import Chart from '../../molecules/MultiLinePartition';
+import config from '../../visbox/linePartition';
+import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../../gql-types';
 import { GVNMT_QUERY} from './query.graphql';
 
 type QueryVarTs = GvmtFinanceQueryVariables & {

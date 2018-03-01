@@ -3,10 +3,10 @@ import { graphql, ChildProps } from 'react-apollo';
 import glamorous from 'glamorous';
 import { groupBy } from 'ramda';
 import { Dimmer, Loader, Segment } from 'semantic-ui-react';
-import TreeChart from '@devinit/dh-ui/lib/atoms/TreeChart';
-import {NoDataAvailableContainer} from '@devinit/dh-ui/lib/atoms/Container';
-import {UProps} from '@devinit/dh-ui/lib/molecules/AreaPartitionChart';
-import {UnbundlingIntlResourcesQuery} from '../../../types';
+import TreeChart from '../../atoms/TreeChart';
+import {NoDataAvailableContainer} from '../../atoms/Container';
+import {UProps} from '../../molecules/AreaPartitionChart';
+import {UnbundlingIntlResourcesQuery} from '../../gql-types';
 import QUERY from './query.graphql';
 
 type TChildProps = ChildProps<UProps, UnbundlingIntlResourcesQuery>;

@@ -1,7 +1,7 @@
 // import * as React from 'react';
 // import { storiesOf } from '@storybook/react';
 // import withApolloProvider from '@storybook/react'; import withApolloProvider from '../../../storybook-addon/apollo';;
-// import BubbleChartAnnotation from '@devinit/dh-ui/lib/atoms/BubbleChartAnnotation';
+// import BubbleChartAnnotation from '../../atoms/BubbleChartAnnotation';
 // import DPDP from '.';
 // import config from './config';
 

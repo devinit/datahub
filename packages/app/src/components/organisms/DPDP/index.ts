@@ -1,5 +1,5 @@
 // import { graphql } from 'react-apollo';
-// import BubbleChart from '@devinit/dh-ui/lib/molecules/BubbleChartWidgets';
+// import BubbleChart from '../../molecules/BubbleChartWidgets';
 // import {errorHandler} from '@devinit/dh-base/lib/utils';
 // import QUERY from './DPDP.graphql';
 

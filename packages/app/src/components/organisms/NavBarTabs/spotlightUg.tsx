@@ -5,9 +5,9 @@ import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
 import { } from '@devinit/dh-base/lib/actions';
 import { State} from '../../../redux/reducers';
-import { Props } from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
-import NavigationBarTabs from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import { Props } from '../../molecules/NavigationBarTabs';
+import NavigationBarTabs from '../../molecules/NavigationBarTabs';
+import {StateToShare} from '../../molecules/ChartShare';
 import {BoundAction, BoundState} from './types';
 import data from './uganda';
 

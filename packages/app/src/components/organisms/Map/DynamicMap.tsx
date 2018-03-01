@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Container';
+import { MapBackground } from '../../atoms/Container';
 import {OwnProps} from '.';
 import dynamic, {DynamicOptions} from 'next/dynamic';
 

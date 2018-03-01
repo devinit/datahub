@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
-import { WhiteBg } from '@devinit/dh-ui/lib/atoms/Container';
-import Chart from '@devinit/dh-ui/lib/molecules/MultiLinePartition';
-import config from '@devinit/dh-ui/lib/visbox/localLinePartition';
-import {LGvmntFinanceQuery, LGvmntFinanceQueryVariables} from '../../../types';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import { WhiteBg } from '../../atoms/Container';
+import Chart from '../../molecules/MultiLinePartition';
+import config from '../../visbox/localLinePartition';
+import {LGvmntFinanceQuery, LGvmntFinanceQueryVariables} from '../../gql-types';
+import {StateToShare} from '../../molecules/ChartShare';
 import {LOC_GVMT_QUERY} from './query.graphql';
 
 export type QueryVarTs =  LGvmntFinanceQueryVariables & {

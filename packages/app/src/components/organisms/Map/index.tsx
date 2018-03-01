@@ -1,14 +1,16 @@
 import * as React from 'react';
-import {Map} from '@devinit/dh-ui/lib/molecules/Maps';
+// import {Map} from '../../molecules/Maps';
+import {Map} from '../../molecules/Maps';
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
 import { State as Store, AppState} from '../../../redux/reducers';
-import { MapBackground } from '@devinit/dh-ui/lib/atoms/Container';
+import { MapBackground } from '../../atoms/Container';
 import {getData} from '../../../utils';
 import { bindActionCreators } from 'redux';
 import { changeLoadingStatus, LoadingStatus } from '../../../redux/actions';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
-import {MapDataQuery} from '../../../types';
+import {StateToShare} from '../../molecules/ChartShare';
+// import {MapDataQuery} from '../../gql-types';
+import {MapDataQuery} from '../../gql-types';
 import Router from 'next/router';
 import {MAP_QUERY} from './query.graphql';
 

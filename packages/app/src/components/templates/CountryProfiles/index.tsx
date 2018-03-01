@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { H4 } from 'glamorous';
 import { Container, Grid, Icon } from 'semantic-ui-react';
-import { red } from '@devinit/dh-ui/lib/theme/semantic';
-import ProfileSocialMedia from '@devinit/dh-ui/lib/molecules/ProfileSocialMedia';
-import { CardContainer } from '@devinit/dh-ui/lib/atoms/Container';
-import {ProfileSearch} from '@devinit/dh-ui/lib/molecules/SearchInput';
+import { red } from '../../theme/semantic';
+import ProfileSocialMedia from '../../molecules/ProfileSocialMedia';
+import { CardContainer } from '../../atoms/Container';
+import {ProfileSearch} from '../../molecules/SearchInput';
 import Link from 'next/link';
 import {IProcess} from '@devinit/dh-base/lib/types';
 import Router from 'next/router';

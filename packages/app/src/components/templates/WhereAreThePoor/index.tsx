@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import {mediaQueries} from '@devinit/dh-ui/lib/theme';
+import {mediaQueries} from '../../theme';
 import Generic from '../Generic';
 import data from './data';
 

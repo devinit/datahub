@@ -1,5 +1,5 @@
 // import { graphql } from 'react-apollo';
-// import BubbleChart from '@devinit/dh-ui/lib/molecules/BubbleChartWidgets';
+// import BubbleChart from '../../molecules/BubbleChartWidgets';
 // import QUERY from './poverty.graphql';
 
 // const objectify = (list, groupFn) => {

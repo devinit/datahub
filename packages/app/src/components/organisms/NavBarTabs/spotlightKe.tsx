@@ -3,10 +3,10 @@ import { changeSpotlightIndicatorKe, changeLoadingStatus,
   SpotLightlIndicatorKe,  LoadingStatus} from '../../../redux/actions';
 import { bindActionCreators, Dispatch, AnyAction} from 'redux';
 import { connect } from 'react-redux';
-import { Props } from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
+import { Props } from '../../molecules/NavigationBarTabs';
 import { State} from '../../../redux/reducers';
-import NavigationBarTabs from '@devinit/dh-ui/lib/molecules/NavigationBarTabs';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import NavigationBarTabs from '../../molecules/NavigationBarTabs';
+import {StateToShare} from '../../molecules/ChartShare';
 import {BoundAction, BoundState} from './types';
 import data from './kenya';
 

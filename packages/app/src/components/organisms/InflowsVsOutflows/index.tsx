@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { graphql, ChildProps } from 'react-apollo';
-import SlidingDualSidebar from '@devinit/dh-ui/lib/molecules/SlidingDualSidebar';
+import SlidingDualSidebar from '../../molecules/SlidingDualSidebar';
 import {Country} from '@devinit/dh-base/lib/types';
-import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../../types';
-import config from '@devinit/dh-ui/lib/visbox/dualbarChart';
+import {ResourcesOverTimeQueryVariables,  ResourcesOverTimeQuery} from '../../gql-types';
+import config from '../../visbox/dualbarChart';
 import countryCache from '@devinit/dh-base/lib/__generated__/data';
 import {INTL_RESOURCES_QUERY} from '../InternationalResourcesChart/query.graphql';
 

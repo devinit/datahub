@@ -1,8 +1,8 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
-import ProfileDataSourceTable from '@devinit/dh-ui/lib/molecules/ProfileDataSourceTable';
-import { SectionHeader } from '@devinit/dh-ui/lib/atoms/Header';
+import ProfileDataSourceTable from '../../molecules/ProfileDataSourceTable';
+import { SectionHeader } from '../../atoms/Header';
 import methodologyData from '../../organisms/Methodology/global-picture';
 import Generic from '../Generic';
 import data from './data';

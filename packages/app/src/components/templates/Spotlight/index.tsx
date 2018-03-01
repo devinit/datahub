@@ -3,10 +3,10 @@ import { Div } from 'glamorous';
 import { Container, Grid, Icon} from 'semantic-ui-react';
 import SpotLightNavTabsKe, {SpotlightKeProps} from '../../organisms/NavBarTabs/spotlightKe';
 import SpotLightNavTabsUg, {SpotlightUgProps} from '../../organisms/NavBarTabs/spotlightUg';
-import About from '@devinit/dh-ui/lib/molecules/About';
+import About from '../../molecules/About';
 import {capitalize} from '@devinit/dh-base/lib/utils';
 import {cacheMapData} from '../../../utils';
-import {StateToShare} from '@devinit/dh-ui/lib/molecules/ChartShare';
+import {StateToShare} from '../../molecules/ChartShare';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
 
