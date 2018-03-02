@@ -19,10 +19,11 @@ const dynamicOpts: DynamicOptions<any, any> = {
     ssr: false,
     loading: () => (<p>Loading...</p>),
     modules: () => ({
-        SmallMap: import('../Maps') as Promise<any>
+        SmallMap: import('../Maps/SmallMap') as Promise<any>
     }),
     render: (props, {SmallMap}) => <SmallMap {...props} />
 };
+
 // SmallMapProps type should be used here, but react / next/dynamic issues wont let it happen
 const DynamicMapComponent = dynamic(dynamicOpts as any) as React.StatelessComponent<any>;
 
@@ -58,9 +59,10 @@ const ProfileHeaderSection = (props: Props) => {
                     <Icon name="globe" color={'red'} />
                     {
                       props.spotlightCountry ?
-                        <a>
+                        <a
                           href={`/spotlight-on-${props.spotlightCountry.slug}`}
-                          role="link" style={{color: red}}>
+                          style={{color: red}}
+                        >
                           Spotlight on {props.spotlightCountry.name}
                         </a>
                        :

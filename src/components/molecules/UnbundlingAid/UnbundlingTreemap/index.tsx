@@ -5,7 +5,8 @@ import { approximate } from '../../../../utils';
 import { init } from 'ramda';
 import { SectionHeader } from '../../../atoms/Header';
 import TreeChart from '../../../atoms/TreeChart';
-import InteractiveChartToolBar from '../UnbundlingAidChartToolBar';
+import UnbundlingAidToolBar from '../UnbundlingAidToolBar';
+import {Selections, KeyValue} from '../types';
 
 export interface Props  {
   loading: boolean;
@@ -14,21 +15,18 @@ export interface Props  {
   startYear: number;
   aidType: string;
   config?: any;
-  selections: any;
-  bundles: any[];
+  selections: Selections;
+  bundles: DH.IAidUnit[];
   bundleSum: number;
   refetch: (variables: object) => any;
 }
 
-export interface Value {
-  key: string;
-  value: string;
-}
+type SelectionKey = 'to' | 'from' | 'sectors' | 'channels' | 'forms' | 'years';
 
 export interface State  {
   position: number;
-  keys: string[];
-  values: Value[];
+  keys: SelectionKey[];
+  values: KeyValue[];
   dimmerColor?: string;
 }
 
@@ -78,7 +76,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     channels: 'channel',
   };
 
-  public static addNewValue({key, value}: {key: string, value: string}, values: Value[]): Value[] {
+  public static addNewValue({key, value}: {key: string, value: string}, values: KeyValue[]): KeyValue[] {
     const valuesItems = values.filter((item) => item.key !== key);
     return value ? [...valuesItems, {key, value}] : valuesItems;
   }
@@ -91,7 +89,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
 
     const position = 1;
 
-    const keys = Object.keys(props.selections);
+    const keys = Object.keys(props.selections) as SelectionKey[];
 
     const values = [{key: 'years', value: props.startYear.toString()}];
 
@@ -129,7 +127,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     this.fetch(active, values);
   }
 
-  public fetch(active: string, values: Value[]) {
+  public fetch(active: string, values: KeyValue[]) {
     const args = values
       .reduce((all, {key, value}) => {
         return {...all, [UnbundlingTreemap.groupers[key]]: value};
@@ -148,7 +146,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
   public render() {
     return (
       <div>
-        <InteractiveChartToolBar
+        <UnbundlingAidToolBar
           aidType={this.props.aidType}
           compact={this.props.compact}
           position={this.state.position}
@@ -195,7 +193,6 @@ class UnbundlingTreemap extends React.Component<Props, State> {
                   </Dimmer>
                 </Segment>
                 : <TreeChart
-                  config={this.props.config || {}}
                   data={this.props.bundles}
                   height="36em"
                   onClick={this.onZoomIn}

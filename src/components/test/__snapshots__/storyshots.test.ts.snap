@@ -120,138 +120,6 @@ exports[`Storyshots About Global picture && spotlight on uganda 1`] = `
 </section>
 `;
 
-exports[`Storyshots Base Maps kenya map centered on nairobi 1`] = `
-<div
-  className="css-12lsrhb"
->
-  <div
-    className="css-17y8yls"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "height": 600,
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots Base Maps uganda map centered on wakiso 1`] = `
-<div
-  className="css-12lsrhb"
->
-  <div
-    className="css-17y8yls"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "height": 600,
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots Base Maps world map centered on india 1`] = `
-<div
-  className="css-12lsrhb"
->
-  <div
-    className="css-17y8yls"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "height": 600,
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
-exports[`Storyshots Base Maps world map centered on uganda 1`] = `
-<div
-  className="css-12lsrhb"
->
-  <div
-    className="css-17y8yls"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "height": 600,
-        "position": "relative",
-        "width": "100%",
-      }
-    }
-  />
-</div>
-`;
-
 exports[`Storyshots BubbleChartWidget Main 1`] = `
 <div
   className="ui container"
@@ -1055,6 +923,14 @@ exports[`Storyshots Maps Base Map Atom 1`] = `
         "width": "100%",
       }
     }
+  />
+</div>
+`;
+
+exports[`Storyshots Maps Depth of Poverty % Map 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
   />
 </div>
 `;
@@ -2046,6 +1922,218 @@ exports[`Storyshots Maps Net ODA Map 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Maps Number of Poorest 20% 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps Subnational 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps fragile states 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps global picture default map 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps kenya map centered on nairobi 1`] = `
+<div
+  className="css-12lsrhb"
+>
+  <div
+    className="css-17y8yls"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Maps kenya_poverty_headcount 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps largest_intl_flow 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps latest_census 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps spotlight kenya default map 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps spotlight uganda default map 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps uganda map centered on wakiso 1`] = `
+<div
+  className="css-12lsrhb"
+>
+  <div
+    className="css-17y8yls"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Maps uganda_poverty_headcount 1`] = `
+<div>
+  <div
+    className="css-b0nvxx"
+  />
+</div>
+`;
+
+exports[`Storyshots Maps world map centered on india 1`] = `
+<div
+  className="css-12lsrhb"
+>
+  <div
+    className="css-17y8yls"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Maps world map centered on uganda 1`] = `
+<div
+  className="css-12lsrhb"
+>
+  <div
+    className="css-17y8yls"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "height": 600,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  />
 </div>
 `;
 
@@ -11674,7 +11762,7 @@ exports[`Storyshots SpotlightTabs PopulationTab Uganda 1`] = `
         <div
           style={
             Object {
-              "height": "160px",
+              "height": "180px",
               "width": undefined,
             }
           }
@@ -46468,6 +46556,2033 @@ exports[`Storyshots Unbundling Aid Select 1`] = `
     </select>
   </div>
 </span>
+`;
+
+exports[`Storyshots Unbundling Aid ToolBar 1`] = `
+<div
+  className="css-1l6e8ah"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="right aligned middle aligned sixteen wide column"
+        >
+          <div>
+            <div>
+              <span
+                style={
+                  Object {
+                    "display": "inline",
+                  }
+                }
+              >
+                ODA
+              </span>
+              <div
+                style={
+                  Object {
+                    "display": "inline",
+                  }
+                }
+              >
+                <span
+                  className="css-1jac8pt"
+                >
+                  <span
+                    className="css-1q1xq2l"
+                    onClick={[Function]}
+                  >
+                    <span
+                      className="css-yi8hno"
+                    />
+                    <span
+                      className="css-191ga5f"
+                    >
+                      2016
+                    </span>
+                  </span>
+                  <div
+                    className="css-1ik49x5"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close icon close"
+                      onClick={[Function]}
+                    />
+                    <span
+                      className="css-10ofrbl"
+                    >
+                      
+                    </span>
+                    <select
+                      className="css-14opy7r"
+                      onChange={[Function]}
+                      onMouseDown={[Function]}
+                      value={undefined}
+                    >
+                      <option
+                        value={2016}
+                      >
+                        2016
+                      </option>
+                      <option
+                        value={2015}
+                      >
+                        2015
+                      </option>
+                      <option
+                        value={2014}
+                      >
+                        2014
+                      </option>
+                      <option
+                        value={2013}
+                      >
+                        2013
+                      </option>
+                      <option
+                        value={2012}
+                      >
+                        2012
+                      </option>
+                      <option
+                        value={2011}
+                      >
+                        2011
+                      </option>
+                      <option
+                        value={2010}
+                      >
+                        2010
+                      </option>
+                      <option
+                        value={2009}
+                      >
+                        2009
+                      </option>
+                      <option
+                        value={2008}
+                      >
+                        2008
+                      </option>
+                      <option
+                        value={2007}
+                      >
+                        2007
+                      </option>
+                      <option
+                        value={2006}
+                      >
+                        2006
+                      </option>
+                    </select>
+                  </div>
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "30px",
+                    "marginLeft": "2px",
+                  }
+                }
+              >
+                <div
+                  aria-roledescription="Draggable item. Press space bar to lift"
+                  data-react-beautiful-dnd-drag-handle="0"
+                  draggable={false}
+                  onClick={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "background": "#e9e7e8",
+                      "margin": "0 0 8px 0",
+                      "padding": 16,
+                      "transform": null,
+                      "transition": null,
+                      "userSelect": "none",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <span
+                    className="css-1jac8pt"
+                  >
+                    <span
+                      className="css-1q1xq2l"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="css-yi8hno"
+                      >
+                        to
+                      </span>
+                      <span
+                        className="css-191ga5f"
+                      >
+                        All
+                      </span>
+                    </span>
+                    <div
+                      className="css-1ik49x5"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="close icon close"
+                        onClick={[Function]}
+                      />
+                      <span
+                        className="css-10ofrbl"
+                      >
+                        to
+                      </span>
+                      <select
+                        className="css-14opy7r"
+                        onChange={[Function]}
+                        onMouseDown={[Function]}
+                        value={undefined}
+                      >
+                        <option
+                          value=""
+                        >
+                          All
+                        </option>
+                        <option
+                          value="AF"
+                        >
+                          Afghanistan
+                        </option>
+                        <option
+                          value="africa"
+                        >
+                          Africa, regional
+                        </option>
+                        <option
+                          value="AL"
+                        >
+                          Albania
+                        </option>
+                        <option
+                          value="DZ"
+                        >
+                          Algeria
+                        </option>
+                        <option
+                          value="america"
+                        >
+                          America, regional
+                        </option>
+                        <option
+                          value="AO"
+                        >
+                          Angola
+                        </option>
+                        <option
+                          value="AI"
+                        >
+                          Anguilla
+                        </option>
+                        <option
+                          value="AG"
+                        >
+                          Antigua & Barbuda
+                        </option>
+                        <option
+                          value="AR"
+                        >
+                          Argentina
+                        </option>
+                        <option
+                          value="AM"
+                        >
+                          Armenia
+                        </option>
+                        <option
+                          value="asia"
+                        >
+                          Asia, regional
+                        </option>
+                        <option
+                          value="AZ"
+                        >
+                          Azerbaijan
+                        </option>
+                        <option
+                          value="BH"
+                        >
+                          Bahrain
+                        </option>
+                        <option
+                          value="BD"
+                        >
+                          Bangladesh
+                        </option>
+                        <option
+                          value="BB"
+                        >
+                          Barbados
+                        </option>
+                        <option
+                          value="BY"
+                        >
+                          Belarus
+                        </option>
+                        <option
+                          value="BZ"
+                        >
+                          Belize
+                        </option>
+                        <option
+                          value="BJ"
+                        >
+                          Benin
+                        </option>
+                        <option
+                          value="BT"
+                        >
+                          Bhutan
+                        </option>
+                        <option
+                          value="bilateral-unspecified"
+                        >
+                          Bilateral, unspecified
+                        </option>
+                        <option
+                          value="BO"
+                        >
+                          Bolivia
+                        </option>
+                        <option
+                          value="BA"
+                        >
+                          Bosnia & Herzegovina
+                        </option>
+                        <option
+                          value="BW"
+                        >
+                          Botswana
+                        </option>
+                        <option
+                          value="BR"
+                        >
+                          Brazil
+                        </option>
+                        <option
+                          value="BF"
+                        >
+                          Burkina Faso
+                        </option>
+                        <option
+                          value="BI"
+                        >
+                          Burundi
+                        </option>
+                        <option
+                          value="KH"
+                        >
+                          Cambodia
+                        </option>
+                        <option
+                          value="CM"
+                        >
+                          Cameroon
+                        </option>
+                        <option
+                          value="CV"
+                        >
+                          Cape Verde
+                        </option>
+                        <option
+                          value="CF"
+                        >
+                          CAR
+                        </option>
+                        <option
+                          value="central-asia"
+                        >
+                          Central Asia, regional
+                        </option>
+                        <option
+                          value="TD"
+                        >
+                          Chad
+                        </option>
+                        <option
+                          value="CL"
+                        >
+                          Chile
+                        </option>
+                        <option
+                          value="CN"
+                        >
+                          China
+                        </option>
+                        <option
+                          value="CO"
+                        >
+                          Colombia
+                        </option>
+                        <option
+                          value="KM"
+                        >
+                          Comoros
+                        </option>
+                        <option
+                          value="CG"
+                        >
+                          Congo
+                        </option>
+                        <option
+                          value="CD"
+                        >
+                          DRC
+                        </option>
+                        <option
+                          value="CK"
+                        >
+                          Cook Islands
+                        </option>
+                        <option
+                          value="CR"
+                        >
+                          Costa Rica
+                        </option>
+                        <option
+                          value="CI"
+                        >
+                          Côte d'Ivoire
+                        </option>
+                        <option
+                          value="country-unspecified"
+                        >
+                          Country not specified
+                        </option>
+                        <option
+                          value="CU"
+                        >
+                          Cuba
+                        </option>
+                        <option
+                          value="DJ"
+                        >
+                          Djibouti
+                        </option>
+                        <option
+                          value="DM"
+                        >
+                          Dominica
+                        </option>
+                        <option
+                          value="DO"
+                        >
+                          Dominican Republic
+                        </option>
+                        <option
+                          value="EC"
+                        >
+                          Ecuador
+                        </option>
+                        <option
+                          value="EG"
+                        >
+                          Egypt
+                        </option>
+                        <option
+                          value="SV"
+                        >
+                          El Salvador
+                        </option>
+                        <option
+                          value="GQ"
+                        >
+                          Equatorial Guinea
+                        </option>
+                        <option
+                          value="ER"
+                        >
+                          Eritrea
+                        </option>
+                        <option
+                          value="ET"
+                        >
+                          Ethiopia
+                        </option>
+                        <option
+                          value="europe"
+                        >
+                          Europe, regional
+                        </option>
+                        <option
+                          value="east-asia"
+                        >
+                          Far East Asia, regional
+                        </option>
+                        <option
+                          value="FJ"
+                        >
+                          Fiji
+                        </option>
+                        <option
+                          value="GA"
+                        >
+                          Gabon
+                        </option>
+                        <option
+                          value="GM"
+                        >
+                          Gambia
+                        </option>
+                        <option
+                          value="GE"
+                        >
+                          Georgia
+                        </option>
+                        <option
+                          value="GH"
+                        >
+                          Ghana
+                        </option>
+                        <option
+                          value="GD"
+                        >
+                          Grenada
+                        </option>
+                        <option
+                          value="GT"
+                        >
+                          Guatemala
+                        </option>
+                        <option
+                          value="GN"
+                        >
+                          Guinea
+                        </option>
+                        <option
+                          value="GW"
+                        >
+                          Guinea-Bissau
+                        </option>
+                        <option
+                          value="GY"
+                        >
+                          Guyana
+                        </option>
+                        <option
+                          value="HT"
+                        >
+                          Haiti
+                        </option>
+                        <option
+                          value="HN"
+                        >
+                          Honduras
+                        </option>
+                        <option
+                          value="IN"
+                        >
+                          India
+                        </option>
+                        <option
+                          value="ID"
+                        >
+                          Indonesia
+                        </option>
+                        <option
+                          value="IR"
+                        >
+                          Iran
+                        </option>
+                        <option
+                          value="IQ"
+                        >
+                          Iraq
+                        </option>
+                        <option
+                          value="JM"
+                        >
+                          Jamaica
+                        </option>
+                        <option
+                          value="JO"
+                        >
+                          Jordan
+                        </option>
+                        <option
+                          value="KZ"
+                        >
+                          Kazakhstan
+                        </option>
+                        <option
+                          value="KE"
+                        >
+                          Kenya
+                        </option>
+                        <option
+                          value="KI"
+                        >
+                          Kiribati
+                        </option>
+                        <option
+                          value="KP"
+                        >
+                          North Korea
+                        </option>
+                        <option
+                          value="XK"
+                        >
+                          Kosovo
+                        </option>
+                        <option
+                          value="KG"
+                        >
+                          Kyrgyzstan
+                        </option>
+                        <option
+                          value="LA"
+                        >
+                          Lao
+                        </option>
+                        <option
+                          value="LB"
+                        >
+                          Lebanon
+                        </option>
+                        <option
+                          value="LS"
+                        >
+                          Lesotho
+                        </option>
+                        <option
+                          value="LR"
+                        >
+                          Liberia
+                        </option>
+                        <option
+                          value="LY"
+                        >
+                          Libya
+                        </option>
+                        <option
+                          value="MK"
+                        >
+                          Macedonia
+                        </option>
+                        <option
+                          value="MG"
+                        >
+                          Madagascar
+                        </option>
+                        <option
+                          value="MW"
+                        >
+                          Malawi
+                        </option>
+                        <option
+                          value="MY"
+                        >
+                          Malaysia
+                        </option>
+                        <option
+                          value="MV"
+                        >
+                          Maldives
+                        </option>
+                        <option
+                          value="ML"
+                        >
+                          Mali
+                        </option>
+                        <option
+                          value="MH"
+                        >
+                          Marshall Islands
+                        </option>
+                        <option
+                          value="MR"
+                        >
+                          Mauritania
+                        </option>
+                        <option
+                          value="MU"
+                        >
+                          Mauritius
+                        </option>
+                        <option
+                          value="YT"
+                        >
+                          Mayotte
+                        </option>
+                        <option
+                          value="MX"
+                        >
+                          Mexico
+                        </option>
+                        <option
+                          value="FM"
+                        >
+                          Micronesia
+                        </option>
+                        <option
+                          value="middle-east"
+                        >
+                          Middle East, regional
+                        </option>
+                        <option
+                          value="MD"
+                        >
+                          Moldova
+                        </option>
+                        <option
+                          value="MN"
+                        >
+                          Mongolia
+                        </option>
+                        <option
+                          value="ME"
+                        >
+                          Montenegro
+                        </option>
+                        <option
+                          value="MS"
+                        >
+                          Montserrat
+                        </option>
+                        <option
+                          value="MA"
+                        >
+                          Morocco
+                        </option>
+                        <option
+                          value="MZ"
+                        >
+                          Mozambique
+                        </option>
+                        <option
+                          value="MM"
+                        >
+                          Myanmar
+                        </option>
+                        <option
+                          value="NA"
+                        >
+                          Namibia
+                        </option>
+                        <option
+                          value="NR"
+                        >
+                          Nauru
+                        </option>
+                        <option
+                          value="NP"
+                        >
+                          Nepal
+                        </option>
+                        <option
+                          value="NI"
+                        >
+                          Nicaragua
+                        </option>
+                        <option
+                          value="NE"
+                        >
+                          Niger
+                        </option>
+                        <option
+                          value="NG"
+                        >
+                          Nigeria
+                        </option>
+                        <option
+                          value="NU"
+                        >
+                          Niue
+                        </option>
+                        <option
+                          value="north-central-america"
+                        >
+                          North & Central America, regional
+                        </option>
+                        <option
+                          value="north-of-sahara"
+                        >
+                          North of Sahara, regional
+                        </option>
+                        <option
+                          value="oceania"
+                        >
+                          Oceania, regional
+                        </option>
+                        <option
+                          value="OM"
+                        >
+                          Oman
+                        </option>
+                        <option
+                          value="PK"
+                        >
+                          Pakistan
+                        </option>
+                        <option
+                          value="PW"
+                        >
+                          Palau
+                        </option>
+                        <option
+                          value="PS"
+                        >
+                          Palestine
+                        </option>
+                        <option
+                          value="PA"
+                        >
+                          Panama
+                        </option>
+                        <option
+                          value="PG"
+                        >
+                          Papua New Guinea
+                        </option>
+                        <option
+                          value="PY"
+                        >
+                          Paraguay
+                        </option>
+                        <option
+                          value="PE"
+                        >
+                          Peru
+                        </option>
+                        <option
+                          value="PH"
+                        >
+                          Philippines
+                        </option>
+                        <option
+                          value="region-unspecified"
+                        >
+                          Region, unspecified
+                        </option>
+                        <option
+                          value="RW"
+                        >
+                          Rwanda
+                        </option>
+                        <option
+                          value="SH"
+                        >
+                          Saint Helena, Ascension & Tristan da Cunha
+                        </option>
+                        <option
+                          value="KN"
+                        >
+                          Saint Kitts and Nevis
+                        </option>
+                        <option
+                          value="LC"
+                        >
+                          Saint Lucia
+                        </option>
+                        <option
+                          value="VC"
+                        >
+                          Saint Vincent & the Grenadines
+                        </option>
+                        <option
+                          value="WS"
+                        >
+                          Samoa
+                        </option>
+                        <option
+                          value="ST"
+                        >
+                          Sao Tome & Principe
+                        </option>
+                        <option
+                          value="SN"
+                        >
+                          Senegal
+                        </option>
+                        <option
+                          value="RS"
+                        >
+                          Serbia
+                        </option>
+                        <option
+                          value="SC"
+                        >
+                          Seychelles
+                        </option>
+                        <option
+                          value="SL"
+                        >
+                          Sierra Leone
+                        </option>
+                        <option
+                          value="SB"
+                        >
+                          Solomon Islands
+                        </option>
+                        <option
+                          value="SO"
+                        >
+                          Somalia
+                        </option>
+                        <option
+                          value="south-central-asia"
+                        >
+                          South & Central Asia, regional
+                        </option>
+                        <option
+                          value="ZA"
+                        >
+                          South Africa
+                        </option>
+                        <option
+                          value="south-america"
+                        >
+                          South America, regional
+                        </option>
+                        <option
+                          value="south-asia"
+                        >
+                          South Asia, regional
+                        </option>
+                        <option
+                          value="south-of-sahara"
+                        >
+                          South of Sahara, regional
+                        </option>
+                        <option
+                          value="SS"
+                        >
+                          South Sudan
+                        </option>
+                        <option
+                          value="LK"
+                        >
+                          Sri Lanka
+                        </option>
+                        <option
+                          value="ex-yugoslavia"
+                        >
+                          States Ex-Yugoslavia unspecified
+                        </option>
+                        <option
+                          value="SD"
+                        >
+                          Sudan
+                        </option>
+                        <option
+                          value="SR"
+                        >
+                          Suriname
+                        </option>
+                        <option
+                          value="SZ"
+                        >
+                          Swaziland
+                        </option>
+                        <option
+                          value="SY"
+                        >
+                          Syria
+                        </option>
+                        <option
+                          value="TJ"
+                        >
+                          Tajikistan
+                        </option>
+                        <option
+                          value="TZ"
+                        >
+                          Tanzania
+                        </option>
+                        <option
+                          value="TH"
+                        >
+                          Thailand
+                        </option>
+                        <option
+                          value="TL"
+                        >
+                          Timor-Leste
+                        </option>
+                        <option
+                          value="TG"
+                        >
+                          Togo
+                        </option>
+                        <option
+                          value="TK"
+                        >
+                          Tokelau
+                        </option>
+                        <option
+                          value="TO"
+                        >
+                          Tonga
+                        </option>
+                        <option
+                          value="TT"
+                        >
+                          Trinidad & Tobago
+                        </option>
+                        <option
+                          value="TN"
+                        >
+                          Tunisia
+                        </option>
+                        <option
+                          value="TR"
+                        >
+                          Turkey
+                        </option>
+                        <option
+                          value="TM"
+                        >
+                          Turkmenistan
+                        </option>
+                        <option
+                          value="TC"
+                        >
+                          Turks & Caicos Islands
+                        </option>
+                        <option
+                          value="TV"
+                        >
+                          Tuvalu
+                        </option>
+                        <option
+                          value="UG"
+                        >
+                          Uganda
+                        </option>
+                        <option
+                          value="UA"
+                        >
+                          Ukraine
+                        </option>
+                        <option
+                          value="UY"
+                        >
+                          Uruguay
+                        </option>
+                        <option
+                          value="UZ"
+                        >
+                          Uzbekistan
+                        </option>
+                        <option
+                          value="VU"
+                        >
+                          Vanuatu
+                        </option>
+                        <option
+                          value="VE"
+                        >
+                          Venezuela
+                        </option>
+                        <option
+                          value="VN"
+                        >
+                          Viet Nam
+                        </option>
+                        <option
+                          value="WF"
+                        >
+                          Wallis & Futuna
+                        </option>
+                        <option
+                          value="west-indies"
+                        >
+                          West Indies, regional
+                        </option>
+                        <option
+                          value="YE"
+                        >
+                          Yemen
+                        </option>
+                        <option
+                          value="ZM"
+                        >
+                          Zambia
+                        </option>
+                        <option
+                          value="ZW"
+                        >
+                          Zimbabwe
+                        </option>
+                      </select>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "30px",
+                    "marginLeft": "2px",
+                  }
+                }
+              >
+                <div
+                  aria-roledescription="Draggable item. Press space bar to lift"
+                  data-react-beautiful-dnd-drag-handle="0"
+                  draggable={false}
+                  onClick={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "background": "#e9e7e8",
+                      "margin": "0 0 8px 0",
+                      "padding": 16,
+                      "transform": null,
+                      "transition": null,
+                      "userSelect": "none",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <span
+                    className="css-1jac8pt"
+                  >
+                    <span
+                      className="css-1q1xq2l"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="css-yi8hno"
+                      >
+                        from
+                      </span>
+                      <span
+                        className="css-191ga5f"
+                      >
+                        All
+                      </span>
+                    </span>
+                    <div
+                      className="css-1ik49x5"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="close icon close"
+                        onClick={[Function]}
+                      />
+                      <span
+                        className="css-10ofrbl"
+                      >
+                        from
+                      </span>
+                      <select
+                        className="css-14opy7r"
+                        onChange={[Function]}
+                        onMouseDown={[Function]}
+                        value={undefined}
+                      >
+                        <option
+                          value=""
+                        >
+                          All
+                        </option>
+                        <option
+                          value="adaptation-fund"
+                        >
+                          Adaptation Fund
+                        </option>
+                        <option
+                          value="afdb"
+                        >
+                          African Development Bank (AfDB)
+                        </option>
+                        <option
+                          value="afdf"
+                        >
+                          African Development Fund (AfDF)
+                        </option>
+                        <option
+                          value="badea"
+                        >
+                          Arab Bank for Economic Development in Africa (BADEA)
+                        </option>
+                        <option
+                          value="arab-fund-afesd"
+                        >
+                          Arab Fund (AFESD)
+                        </option>
+                        <option
+                          value="asdb-special-funds"
+                        >
+                          ADB Special Funds
+                        </option>
+                        <option
+                          value="asdb"
+                        >
+                          Asian Development Bank (ADB)
+                        </option>
+                        <option
+                          value="AU"
+                        >
+                          Australia
+                        </option>
+                        <option
+                          value="AT"
+                        >
+                          Austria
+                        </option>
+                        <option
+                          value="BE"
+                        >
+                          Belgium
+                        </option>
+                        <option
+                          value="BG"
+                        >
+                          Bulgaria
+                        </option>
+                        <option
+                          value="CA"
+                        >
+                          Canada
+                        </option>
+                        <option
+                          value="cardb"
+                        >
+                          Caribbean Development Bank (CarDB)
+                        </option>
+                        <option
+                          value="cif"
+                        >
+                          Climate Investment Funds (CIF)
+                        </option>
+                        <option
+                          value="ceb"
+                        >
+                          Council of Europe Development Bank (CEB)
+                        </option>
+                        <option
+                          value="HR"
+                        >
+                          Croatia
+                        </option>
+                        <option
+                          value="CY"
+                        >
+                          Cyprus
+                        </option>
+                        <option
+                          value="CZ"
+                        >
+                          Czech Republic
+                        </option>
+                        <option
+                          value="DK"
+                        >
+                          Denmark
+                        </option>
+                        <option
+                          value="EE"
+                        >
+                          Estonia
+                        </option>
+                        <option
+                          value="ebrd"
+                        >
+                          European Bank for Reconstruction and Development (EBRD)
+                        </option>
+                        <option
+                          value="EU"
+                        >
+                          European Union
+                        </option>
+                        <option
+                          value="FI"
+                        >
+                          Finland
+                        </option>
+                        <option
+                          value="fao"
+                        >
+                          Food and Agriculture Organisation (FAO)
+                        </option>
+                        <option
+                          value="FR"
+                        >
+                          France
+                        </option>
+                        <option
+                          value="DE"
+                        >
+                          Germany
+                        </option>
+                        <option
+                          value="gavi"
+                        >
+                          Global Alliance for Vaccines and Immunization (GAVI)
+                        </option>
+                        <option
+                          value="gef"
+                        >
+                          Global Environment Facility (GEF)
+                        </option>
+                        <option
+                          value="global-fund"
+                        >
+                          Global Fund
+                        </option>
+                        <option
+                          value="gggi"
+                        >
+                          Global Green Growth Institute (GGGI)
+                        </option>
+                        <option
+                          value="GR"
+                        >
+                          Greece
+                        </option>
+                        <option
+                          value="HU"
+                        >
+                          Hungary
+                        </option>
+                        <option
+                          value="IS"
+                        >
+                          Iceland
+                        </option>
+                        <option
+                          value="idb-special-fund"
+                        >
+                          IDB Special Fund
+                        </option>
+                        <option
+                          value="imf-concessional-trust-funds"
+                        >
+                          IMF Concessional Trust Funds
+                        </option>
+                        <option
+                          value="idb"
+                        >
+                          Inter-American Development Bank (IDB)
+                        </option>
+                        <option
+                          value="iaea"
+                        >
+                          International Atomic Energy Agency (IAEA)
+                        </option>
+                        <option
+                          value="ibrd"
+                        >
+                          International Bank for Reconstruction and Development (IBRD)
+                        </option>
+                        <option
+                          value="ida"
+                        >
+                          International Development Association (IDA)
+                        </option>
+                        <option
+                          value="ifc"
+                        >
+                          International Finance Corporation (IFC)
+                        </option>
+                        <option
+                          value="ifad"
+                        >
+                          International Fund for Agricultural Development (IFAD)
+                        </option>
+                        <option
+                          value="international-labour-organisation"
+                        >
+                          International Labour Organisation (ILO)
+                        </option>
+                        <option
+                          value="imf"
+                        >
+                          International Monetary Fund (IMF)
+                        </option>
+                        <option
+                          value="IE"
+                        >
+                          Ireland
+                        </option>
+                        <option
+                          value="islamic-dev-bank"
+                        >
+                          Islamic Development Bank (IsDB)
+                        </option>
+                        <option
+                          value="IL"
+                        >
+                          Israel
+                        </option>
+                        <option
+                          value="IT"
+                        >
+                          Italy
+                        </option>
+                        <option
+                          value="JP"
+                        >
+                          Japan
+                        </option>
+                        <option
+                          value="unaids"
+                        >
+                          Joint United Nations Programme on HIV/AIDS (UNAIDS)
+                        </option>
+                        <option
+                          value="KZ"
+                        >
+                          Kazakhstan
+                        </option>
+                        <option
+                          value="KR"
+                        >
+                          Korea
+                        </option>
+                        <option
+                          value="KW"
+                        >
+                          Kuwait
+                        </option>
+                        <option
+                          value="LV"
+                        >
+                          Latvia
+                        </option>
+                        <option
+                          value="LI"
+                        >
+                          Liechtenstein
+                        </option>
+                        <option
+                          value="LT"
+                        >
+                          Lithuania
+                        </option>
+                        <option
+                          value="LU"
+                        >
+                          Luxembourg
+                        </option>
+                        <option
+                          value="MT"
+                        >
+                          Malta
+                        </option>
+                        <option
+                          value="montreal-protocol"
+                        >
+                          Montreal Protocol
+                        </option>
+                        <option
+                          value="NL"
+                        >
+                          Netherlands
+                        </option>
+                        <option
+                          value="NZ"
+                        >
+                          New Zealand
+                        </option>
+                        <option
+                          value="nordic-dev-fund"
+                        >
+                          Nordic Development Fund (NDF)
+                        </option>
+                        <option
+                          value="NO"
+                        >
+                          Norway
+                        </option>
+                        <option
+                          value="ofid"
+                        >
+                          OPEC Fund for International Development (OFID)
+                        </option>
+                        <option
+                          value="osce"
+                        >
+                          Organization for Security and Co-operation in Europe (OSCE)
+                        </option>
+                        <option
+                          value="PL"
+                        >
+                          Poland
+                        </option>
+                        <option
+                          value="PT"
+                        >
+                          Portugal
+                        </option>
+                        <option
+                          value="RO"
+                        >
+                          Romania
+                        </option>
+                        <option
+                          value="RU"
+                        >
+                          Russian Federation
+                        </option>
+                        <option
+                          value="SA"
+                        >
+                          Saudi Arabia
+                        </option>
+                        <option
+                          value="SK"
+                        >
+                          Slovak Republic
+                        </option>
+                        <option
+                          value="SI"
+                        >
+                          Slovenia
+                        </option>
+                        <option
+                          value="ES"
+                        >
+                          Spain
+                        </option>
+                        <option
+                          value="SE"
+                        >
+                          Sweden
+                        </option>
+                        <option
+                          value="CH"
+                        >
+                          Switzerland
+                        </option>
+                        <option
+                          value="TW"
+                        >
+                          Taiwan
+                        </option>
+                        <option
+                          value="TH"
+                        >
+                          Thailand
+                        </option>
+                        <option
+                          value="TL"
+                        >
+                          Timor-Leste
+                        </option>
+                        <option
+                          value="TR"
+                        >
+                          Turkey
+                        </option>
+                        <option
+                          value="GB"
+                        >
+                          United Kingdom
+                        </option>
+                        <option
+                          value="un-agencies"
+                        >
+                          UN Agencies
+                        </option>
+                        <option
+                          value="AE"
+                        >
+                          UAE
+                        </option>
+                        <option
+                          value="unicef"
+                        >
+                          United Nations Children's Fund (UNICEF)
+                        </option>
+                        <option
+                          value="undp"
+                        >
+                          United Nations Development Programme (UNDP)
+                        </option>
+                        <option
+                          value="unece"
+                        >
+                          United Nations Economic Commission for Europe (UNECE)
+                        </option>
+                        <option
+                          value="unep"
+                        >
+                          United Nations Environment Programme (UNEP)
+                        </option>
+                        <option
+                          value="unhcr"
+                        >
+                          United Nations High Commissioner for Refugees (UNHCR)
+                        </option>
+                        <option
+                          value="unpbf"
+                        >
+                          United Nations Peacebuilding Fund (UNPBF)
+                        </option>
+                        <option
+                          value="unfpa"
+                        >
+                          United Nations Population Fund (UNFPA)
+                        </option>
+                        <option
+                          value="unta"
+                        >
+                          United Nations Regular Programme for Technical Assistance (UNTA)
+                        </option>
+                        <option
+                          value="unrwa"
+                        >
+                          United Nations Relief and Works Agency (UNRWA)
+                        </option>
+                        <option
+                          value="US"
+                        >
+                          United States
+                        </option>
+                        <option
+                          value="wfp"
+                        >
+                          World Food Programme (WFP)
+                        </option>
+                        <option
+                          value="who"
+                        >
+                          World Health Organization (WHO)
+                        </option>
+                      </select>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "30px",
+                    "marginLeft": "2px",
+                  }
+                }
+              >
+                <div
+                  aria-roledescription="Draggable item. Press space bar to lift"
+                  data-react-beautiful-dnd-drag-handle="0"
+                  draggable={false}
+                  onClick={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "background": "#e9e7e8",
+                      "margin": "0 0 8px 0",
+                      "padding": 16,
+                      "transform": null,
+                      "transition": null,
+                      "userSelect": "none",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <span
+                    className="css-1jac8pt"
+                  >
+                    <span
+                      className="css-bwdon3"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="css-yi8hno"
+                      >
+                        sectors
+                      </span>
+                      <span
+                        className="css-191ga5f"
+                      >
+                        All
+                      </span>
+                    </span>
+                    <div
+                      className="css-1ik49x5"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="close icon close"
+                        onClick={[Function]}
+                      />
+                      <span
+                        className="css-n97tfr"
+                      >
+                        sectors
+                      </span>
+                      <select
+                        className="css-14opy7r"
+                        onChange={[Function]}
+                        onMouseDown={[Function]}
+                        value={undefined}
+                      >
+                        <option
+                          value=""
+                        >
+                          All
+                        </option>
+                        <option
+                          value="agriculture-and-food-security"
+                        >
+                          Agriculture and food security
+                        </option>
+                        <option
+                          value="banking-and-business"
+                        >
+                          Banking and business
+                        </option>
+                        <option
+                          value="debt-relief"
+                        >
+                          Debt relief
+                        </option>
+                        <option
+                          value="education"
+                        >
+                          Education
+                        </option>
+                        <option
+                          value="environment"
+                        >
+                          Environment
+                        </option>
+                        <option
+                          value="general-budget-support"
+                        >
+                          General budget support
+                        </option>
+                        <option
+                          value="governance-and-security"
+                        >
+                          Governance and security
+                        </option>
+                        <option
+                          value="governance-security-and-civil-society"
+                        >
+                          Governance, security and civil society
+                        </option>
+                        <option
+                          value="health"
+                        >
+                          Health
+                        </option>
+                        <option
+                          value="humanitarian"
+                        >
+                          Humanitarian
+                        </option>
+                        <option
+                          value="industry-and-trade"
+                        >
+                          Industry and trade
+                        </option>
+                        <option
+                          value="infrastructure"
+                        >
+                          Infrastructure
+                        </option>
+                        <option
+                          value="other"
+                        >
+                          Other
+                        </option>
+                        <option
+                          value="other-social-services"
+                        >
+                          Other social services
+                        </option>
+                        <option
+                          value="water-and-sanitation"
+                        >
+                          Water and sanitation
+                        </option>
+                        <option
+                          value="other-sectors-grouped"
+                        >
+                          Other sectors (grouped)
+                        </option>
+                      </select>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "30px",
+                    "marginLeft": "2px",
+                  }
+                }
+              >
+                <div
+                  aria-roledescription="Draggable item. Press space bar to lift"
+                  data-react-beautiful-dnd-drag-handle="0"
+                  draggable={false}
+                  onClick={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "background": "#e9e7e8",
+                      "margin": "0 0 8px 0",
+                      "padding": 16,
+                      "transform": null,
+                      "transition": null,
+                      "userSelect": "none",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <span
+                    className="css-1jac8pt"
+                  >
+                    <span
+                      className="css-bwdon3"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="css-yi8hno"
+                      >
+                        forms
+                      </span>
+                      <span
+                        className="css-191ga5f"
+                      >
+                        All
+                      </span>
+                    </span>
+                    <div
+                      className="css-1ik49x5"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="close icon close"
+                        onClick={[Function]}
+                      />
+                      <span
+                        className="css-n97tfr"
+                      >
+                        forms
+                      </span>
+                      <select
+                        className="css-14opy7r"
+                        onChange={[Function]}
+                        onMouseDown={[Function]}
+                        value={undefined}
+                      >
+                        <option
+                          value=""
+                        >
+                          All
+                        </option>
+                        <option
+                          value="cash-loan-equity"
+                        >
+                          Cash (loan/equity)
+                        </option>
+                        <option
+                          value="cash-grant"
+                        >
+                          Cash grant
+                        </option>
+                        <option
+                          value="commodities-food"
+                        >
+                          Commodities & Food
+                        </option>
+                        <option
+                          value="gpgs-nngos"
+                        >
+                          Global Initiatives & NNGOs
+                        </option>
+                        <option
+                          value="mixed-project-aid"
+                        >
+                          Mixed project aid
+                        </option>
+                        <option
+                          value="non-transfer"
+                        >
+                          Non-transfer
+                        </option>
+                        <option
+                          value="technical-ooperation"
+                        >
+                          Technical cooperation
+                        </option>
+                      </select>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "30px",
+                    "marginLeft": "2px",
+                  }
+                }
+              >
+                <div
+                  aria-roledescription="Draggable item. Press space bar to lift"
+                  data-react-beautiful-dnd-drag-handle="0"
+                  draggable={false}
+                  onClick={[Function]}
+                  onDragStart={[Function]}
+                  onDrop={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "background": "#e9e7e8",
+                      "margin": "0 0 8px 0",
+                      "padding": 16,
+                      "transform": null,
+                      "transition": null,
+                      "userSelect": "none",
+                    }
+                  }
+                  tabIndex={0}
+                >
+                  <span
+                    className="css-1jac8pt"
+                  >
+                    <span
+                      className="css-bwdon3"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="css-yi8hno"
+                      >
+                        channels
+                      </span>
+                      <span
+                        className="css-191ga5f"
+                      >
+                        All
+                      </span>
+                    </span>
+                    <div
+                      className="css-1ik49x5"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="close icon close"
+                        onClick={[Function]}
+                      />
+                      <span
+                        className="css-n97tfr"
+                      >
+                        channels
+                      </span>
+                      <select
+                        className="css-14opy7r"
+                        onChange={[Function]}
+                        onMouseDown={[Function]}
+                        value={undefined}
+                      >
+                        <option
+                          value=""
+                        >
+                          All
+                        </option>
+                        <option
+                          value="public-sector-unknown"
+                        >
+                          Public sector (unknown country)
+                        </option>
+                        <option
+                          value="public-sector-donor"
+                        >
+                          Public sector (donor government)
+                        </option>
+                        <option
+                          value="public-sector-recipient"
+                        >
+                          Public sector (recipient government)
+                        </option>
+                        <option
+                          value="ngo-unknown"
+                        >
+                          NGO (unknown country)
+                        </option>
+                        <option
+                          value="ngo-donor"
+                        >
+                          NGO (donor-country based)
+                        </option>
+                        <option
+                          value="ngo-recipient"
+                        >
+                          NGO (recipient-country based)
+                        </option>
+                        <option
+                          value="public-private-partnership"
+                        >
+                          Public private partnership
+                        </option>
+                        <option
+                          value="multilateral"
+                        >
+                          Multilateral
+                        </option>
+                        <option
+                          value="other"
+                        >
+                          Other (private sector, think-tank, etc.)
+                        </option>
+                        <option
+                          value="unspecified"
+                        >
+                          Unspecified
+                        </option>
+                      </select>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Year Slider Datahub Year Slider 1`] = `

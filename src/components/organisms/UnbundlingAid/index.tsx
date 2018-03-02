@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import {Div} from 'glamorous';
 import { graphql, ChildProps } from 'react-apollo';
-import {Treemap, TotalODA} from '../../molecules/UnbundlingAid';
+import {Treemap, TotalODA, Selections} from '../../molecules/UnbundlingAid';
 import UnbundlingAidTour from '../../atoms/UnbundlingAidTour';
 import TourContainer from '../../molecules/TourContainer';
 import {UnbundlingAidDataQuery} from '../../gql-types';
@@ -47,13 +47,14 @@ const toDropDownOptions = list => [
   ...list.map(({ id, name }) => ({ name, value: id, key: id })),
 ];
 
-const unbundlingSelections = (aidType, startYear) => {
+export const unbundlingSelections = (aidType, startYear): Selections => {
   const { channels = [], bundles = [], to = [], from = [], sectors = [], years = [] } =
     aidType === 'oda' ? dataODA.selections : dataOOF.selections;
   return {
     years: years.map(year => ({
-      name: year,
+      name: `${year}`,
       value: year,
+      key: `${year}`,
       active: year === startYear,
     })),
 
@@ -82,17 +83,17 @@ const WithData = withData(({data, aidType, startYear, compact}: TChildProps) => 
 
       selections,
 
-      bundles: safeBundles,
+      bundles: safeBundles as DH.IAidUnit[],
 
       bundleSum,
 
       refetch: data.refetch,
     };
-    if (data.error) return <Treemap {...props} />;
+    if (data.error) console.error(data.error);
     return <Treemap {...props} />;
 });
 
-class Chart extends React.Component<Props, State> {
+export default class UnbundlingChart extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -107,13 +108,13 @@ class Chart extends React.Component<Props, State> {
       showTour: props.tourVisible,
     });
   }
-  public showTreemapHandler() {
+  public showTreemapHandler = () => {
     this.setState({showTreemap: true});
   }
-  public toggleCompare() {
+  public toggleCompare = () => {
     this.setState({ compare: !this.state.compare });
   }
-  public closeTour() {
+  public closeTour = () => {
     this.setState({
       showTour: false,
     });
@@ -166,5 +167,3 @@ class Chart extends React.Component<Props, State> {
     );
   }
 }
-
-export default Chart;

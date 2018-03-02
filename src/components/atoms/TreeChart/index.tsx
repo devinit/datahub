@@ -1,9 +1,10 @@
 import * as React from 'react';
+import visboxConfigs from '../../visbox/unbundlingTreemapChart';
 import { draw } from '@devinit/charts';
 
 export interface Props {
   data: object[];
-  config: object;
+  config?: object;
   width?: string;
   height?: string;
   onClick?: (d: any) => void;
@@ -21,7 +22,7 @@ class Chart extends React.Component<Props> {
   public componentDidMount() {
     const element = this.element;
     const data = this.props.data;
-    const config = this.props.config;
+    const config = this.props.config || visboxConfigs;
 
     draw({ element, data, config }).then(chart => {
       this.chart = chart;

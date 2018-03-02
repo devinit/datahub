@@ -5,7 +5,7 @@ import DropDown from '../../../atoms/UnbudlingAidDropDown';
 export interface Option {
   name: string;
   key: string;
-  value: string;
+  value: string | number;
 }
 
 export interface Props  {
@@ -13,7 +13,7 @@ export interface Props  {
   active?: boolean;
   smallText?: string;
   value: string;
-  onChange(value: string): void;
+  onChange(value: string | number): void;
 }
 
 const Wrapper = glamorous.span({
