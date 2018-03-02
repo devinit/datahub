@@ -41,7 +41,7 @@
     "@devinit/charts": "1.6.49",
     "@devinit/datahub-api": "1.0.4",
     "@devinit/dh-base": "1.0.4",
-    "@devinit/graphql-next": "0.1.20",
+    "@devinit/graphql-next": "0.3.2",
     "@zeit/next-css": "0.1.2",
     "apollo-client-preset": "1.0.8",
     "compression": "1.7.2",
