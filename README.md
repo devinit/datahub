@@ -11,9 +11,7 @@ Installation
 
 ```
 
-
 TODO:
-
 _________
 
 - [ ] Maybe replace redux with [unistore](https://github.com/developit/unistore)
@@ -27,12 +25,8 @@ Important Points / guides
 ------------------------
 
 - Develop from a unix OS (MacOs , ubuntu etc). I dont plan to add windows support.
+
 - Prefer to use vscode, it has very good typescript support.
-
--  We have the graphql queries in this repo, but we need the resulting types that can be generated from them for use in the UI package. We thus have a command `` npm run types `` that copies those types over
-
--  The static folder is a composition of assets in the UI package & those only native to the app package.
-Use `` npm run cp-assets `` to sync the assets in app package with those in UI package
 
 - We are building on top of next.js see next.config.js for configs.
 
