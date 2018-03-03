@@ -42,6 +42,7 @@
     "@devinit/datahub-api": "1.0.4",
     "@devinit/graphql-next": "0.1.20",
     "apollo-client-preset": "1.0.8",
+    "apollo-fetch": "^0.7.0",
     "compression": "1.7.2",
     "express": "4.16.2",
     "glamor": "2.20.40",

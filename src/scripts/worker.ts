@@ -8,7 +8,8 @@
 import * as path from 'path';
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const SRC_PATH = path.join(__dirname, '../workers');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const configFile = '../../tsconfig.json';
 
 const config = {
   entry: {
@@ -21,21 +22,26 @@ const config = {
     path: path.resolve(__dirname, '../../static')
   },
   resolve: {
-    extensions: ['.ts', 'tsx']
+    extensions: [ '.ts', '.tsx', '.js', '.json']
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)(\?[^?]*)?$/,
         loader: 'ts-loader',
-        include: [
-            SRC_PATH
-        ]
+        options: {
+          transpileOnly: true,
+          configFile
+        }
       }
     ]
   },
   plugins: [
-    new UglifyJSPlugin()
+    new UglifyJSPlugin(),
+    new ForkTsCheckerWebpackPlugin(),
+    new webpack.DefinePlugin({
+      API: JSON.stringify(process.env.npm_package_config_API)
+    })
   ]
 };
 
