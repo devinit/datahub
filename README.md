@@ -16,7 +16,7 @@ _________
 
 - [ ] Maybe replace redux with [unistore](https://github.com/developit/unistore)
 - [x] Use [greenlet](https://github.com/developit/greenlet) for webworkers --> didnt pan out well
-- [ ] Explore [purgecss](https://github.com/FullHuman/purgecss) for css optimisation
+- [ ] Explore [purgecss](https://github.com/FullHuman/purgecss) for css optimisation --> need to carry out some tests
 - [ ] Explore [reactpot](https://github.com/reactopt/reactopt) for further perf
 
 

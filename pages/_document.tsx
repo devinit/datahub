@@ -26,8 +26,8 @@ export default class MyDocument extends Document {
       ['/country', '/kenya', '/uganda', '/spotlight-on-kenya', '/spotlight-on-uganda', '/'];
   }
   public render() {
-    const pathname = this.props.__NEXT_DATA__.pathname;
-    const query = this.props.__NEXT_DATA__.query;
+    const pathname = this.props.__NEXT_DATA__ &&  this.props.__NEXT_DATA__.pathname || '/';
+    const query = this.props.__NEXT_DATA__ && this.props.__NEXT_DATA__.query && this.props.__NEXT_DATA__.query.id ;
     const pageMeta: PageMeta = getPageMeta({query, pathname});
     return (
       <html>

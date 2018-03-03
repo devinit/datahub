@@ -17,7 +17,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "test": "jest -u",
+    "test": "jest",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "dev": "NODE_ENV=development nodemon src/server/index.ts",
     "build:next": "next build",
@@ -41,6 +41,7 @@
     "@devinit/charts": "1.6.49",
     "@devinit/datahub-api": "1.0.4",
     "@devinit/graphql-next": "0.1.20",
+    "apollo-cache-persist": "^0.1.1",
     "apollo-client-preset": "1.0.8",
     "apollo-fetch": "^0.7.0",
     "compression": "1.7.2",

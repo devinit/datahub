@@ -29,7 +29,7 @@ export const createLinkMeta = (args: PageMetaArgs, obj: MenuItem): PageMeta => {
     if (obj.link === '/uganda') title = capitalize(args.query || '');
     if (obj.link === '/') title = 'Development Data Hub';
     if (obj.link === '/country') title = getCountryName(args.query || '');
-    return {title, image: '/img/logo.jpg'};
+    return {title};
 };
 
 export const getPageMeta = (args: PageMetaArgs): PageMeta => {
@@ -42,8 +42,7 @@ export const getPageMeta = (args: PageMetaArgs): PageMeta => {
         .find(obj => obj.link === args.pathname);
 
     if (!item) return {title: 'Development Data Hub'};
-    const linkMeta = createLinkMeta(args, item);
-    return linkMeta;
+    return createLinkMeta(args, item);
 };
 
 export async function shouldPurgeCache(): Promise<boolean> {
@@ -123,8 +122,8 @@ export interface IRouter  {
   }
 
 export const router: IRouter = {
-    push : (url: string, _as?: string) => {
-    if (typeof window !== 'undefined') return (window as any).location(url);
+    push : (_url: string, as?: string) => {
+    if (typeof window !== 'undefined') return (window as any).location.assign(as);
     return console.log('cant change url in server environment');
     }
     };

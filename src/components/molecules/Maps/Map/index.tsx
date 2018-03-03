@@ -167,7 +167,7 @@ class Map extends React.Component<Props, State> {
         <Grid columns={1}>
           <Grid.Row>
             <Div width={'100%'}>
-              <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} />
+              <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} router={this.props.router} />
             </Div>
             <Legend
               title={this.heading}

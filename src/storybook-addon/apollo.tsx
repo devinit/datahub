@@ -4,7 +4,6 @@
  */
 import * as React from 'react';
 import { ApolloProvider} from 'react-apollo';
-// import { config } from 'package.json';
 import {create} from '../apollo';
 import ApolloClient from 'apollo-client';
 
