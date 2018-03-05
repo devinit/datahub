@@ -10,9 +10,6 @@
     "type": "git",
     "url": "https://github.com/devinit/datahub"
   },
-  "publishConfig": {
-    "access": "private"
-  },
   "author": "epicallan.al@gmail.com",
   "license": "ISC",
   "scripts": {
