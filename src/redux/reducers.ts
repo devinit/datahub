@@ -4,7 +4,6 @@ import spotlightUgandaThemes from '../components/organisms/NavBarTabs/uganda';
 import spotlightKenyaThemes from '../components/organisms/NavBarTabs/kenya';
 import { GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR_UG, LOADING_STATUS, SPOTLIGHT_INDICATOR_KE } from './actions';
 
-// would have been to use & operator but it wasnt working
 export interface AppState {
   loading: boolean;
   indicatorUganda: string;

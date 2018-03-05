@@ -1,9 +1,8 @@
 /**
- * builds worker script using webpack & babel and dumbps it into the public folder
+ * builds web worker script using webpack and dumbps it into the static folder
  * this gives us a url for use in instatiating a worker.
- * This work around is here coz next.js doesnt run webpack loaders serverside
- * see more https://github.com/zeit/next.js#customizing-babel-config,
- * https://github.com/zeit/next.js/issues/1245
+ * This was work around coz next.js wouldnt use loaders until version 5
+ * in which case we could have used a webworker loader
  */
 import * as path from 'path';
 const webpack = require('webpack');
