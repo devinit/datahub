@@ -30,9 +30,9 @@
     "gql-schema": "apollo-codegen introspect-schema $npm_package_config_api  --output schema.json",
     "gql-ts": "apollo-codegen generate ./src/**/query.graphql.ts --schema schema.json --target typescript --output ./src/components/gql-types.ts",
     "types": "npm run gql-schema && npm run gql-ts",
-    "patch": "release-it -i patch -n",
-    "feature": "release-it -i minor -n",
-    "breaking": "release-it -i major -n"
+    "patch": "release-it --no-npm.publish -i patch -n",
+    "feature": "release-it --no-npm.publish -i minor -n",
+    "breaking": "release-it --no-npm.publish -i major -n"
   },
   "dependencies": {
     "@devinit/charts": "1.6.49",
