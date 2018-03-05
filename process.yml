@@ -1,5 +1,5 @@
 apps:
-  - script   : 'lib/server/index.js'
+  - script   : 'src/server/index.js'
     name     : 'APP'
     exec_mode: 'cluster'
     instances: 2
