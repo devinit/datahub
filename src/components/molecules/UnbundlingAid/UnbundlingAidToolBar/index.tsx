@@ -92,7 +92,7 @@ export default class ToolBar extends React.Component<Props, State> {
         <Container>
           <Grid>
             <Grid.Row>
-              <Grid.Column width={16} textAlign={textAlign || 'right'} verticalAlign="middle">
+              <Grid.Column width={16} textAlign={textAlign || 'center'} verticalAlign="middle">
                 <div>
                   <DragDropContext onDragEnd={this.onDragEnd}>
                     <Droppable droppableId="droppable" direction="horizontal">
