@@ -3,6 +3,7 @@ import BaseMap from '../../../atoms/BaseMap';
 import { PaintMap, Meta, Viewport } from '../../../atoms/BaseMap/types';
 import configs from '../Map/config';
 import { white } from '../../../theme/semantic';
+import Router from 'next/router';
 
 export interface Props  {
   slug: string;
@@ -34,7 +35,7 @@ const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
 };
 const SmallMap = (props: Props) => {
   const baseMapProps = mapProps(props);
-  return (<BaseMap {...baseMapProps} />);
+  return (<BaseMap {...baseMapProps} router={Router} />);
 };
 
 export default SmallMap;
