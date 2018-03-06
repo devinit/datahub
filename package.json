@@ -71,7 +71,7 @@
     "@storybook/addons": "3.3.14",
     "@storybook/react": "3.3.14",
     "@types/fs-extra": "5.0.1",
-    "@types/jest": "22.1.4",
+    "@types/jest": "22.2.0",
     "@types/next": "2.4.8",
     "@types/node": "9.4.6",
     "@types/ramda": "0.25.19",
