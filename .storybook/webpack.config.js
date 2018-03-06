@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HappyPack = require('happypack');
 const packageJSON = require('../package.json');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
@@ -12,15 +13,13 @@ const genDefaultConfig = require('@storybook/react/dist/server/config/defaults/w
 const newRules = [
   {
       test: /\.(ts|tsx)(\?[^?]*)?$/,
-      loader: 'ts-loader',
-      options: {
-        transpileOnly: true 
-      },
+      loader: 'happypack/loader?id=ts',
       include: [
           SRC_PATH
       ]
   }
 ]
+
 const newExtensions =  ['.ts', '.tsx'];
 
 const newPlugins = [
@@ -30,7 +29,16 @@ const newPlugins = [
     'API': JSON.stringify(packageJSON.config.API),
     'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
   }),
-  new ForkTsCheckerWebpackPlugin()
+  new HappyPack({
+    threads: 4,
+    id: 'ts',
+    loaders: [{
+      loader: 'ts-loader',
+      query: { happyPackMode: true },
+      options: { transpileOnly: true }
+    }]
+  }),
+  new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
 ];
 
 

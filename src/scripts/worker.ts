@@ -6,6 +6,7 @@
  */
 import * as path from 'path';
 const webpack = require('webpack');
+const HappyPack = require('happypack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const configFile = '../../tsconfig.json';
@@ -27,17 +28,27 @@ const config = {
     rules: [
       {
         test: /\.(ts|tsx)(\?[^?]*)?$/,
-        loader: 'ts-loader',
-        options: {
-          transpileOnly: true,
-          configFile
-        }
+        loader: 'happypack/loader?id=ts'
       }
     ]
   },
   plugins: [
     new UglifyJSPlugin(),
-    new ForkTsCheckerWebpackPlugin(),
+    new HappyPack({
+      id: 'ts',
+      threads: 3,
+      loaders: [
+          {
+              path: 'ts-loader',
+              query: { happyPackMode: true },
+              options: {
+                transpileOnly: true ,
+                configFile
+              }
+          }
+      ]
+    }),
+    new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
     new webpack.DefinePlugin({
       API: JSON.stringify(process.env.npm_package_config_API)
     })

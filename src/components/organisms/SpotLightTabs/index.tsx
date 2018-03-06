@@ -52,8 +52,7 @@ const spotlightTabs: React.SFC<TChildProps> = ({currency, data, id, country}) =>
 const withData = graphql<SpotLightTabDataQuery, QueryVarTs, TChildProps>(TABS_QUERY, {
   options: props => {
     return {
-      variables: { id: props.id },
-      country: props.country,
+      variables: { id: props.id, country: props.country }
     };
   }
 });

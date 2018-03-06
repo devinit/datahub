@@ -35,14 +35,14 @@ class Chart extends React.Component<Props> {
       this.chart.update(props.data);
     }
   }
-
+  // the treemap overflows on zoon, overflow hidden here is a quick fix for that
   public render() {
     return (
       <div
         ref={element => {
           this.element = element;
         }}
-        style={{ width: this.props.width, height: this.props.height }}
+        style={{ width: this.props.width, height: this.props.height, overflow: 'hidden' }}
       />
     );
   }
