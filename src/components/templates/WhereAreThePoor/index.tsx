@@ -4,6 +4,7 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import {mediaQueries} from '../../theme';
 import Generic from '../Generic';
 import data from './data';
+import pageData from '../../pageData/data';
 
 declare const OLD_DATAHUB_URL: string;
 
@@ -45,9 +46,9 @@ export default () => {
         <HeaderContainer>
           <Header as="h1">
             <Header.Content>
-              Where are the poor and where will they be?
+                    {pageData.whereThePoor[0].title}
               <Header.Subheader style={{ fontWeight: '300', lineHeight: 1.5, width: '75%'}}>
-                {data.subHeader}
+                {pageData.whereThePoor[0].narrative}
               </Header.Subheader>
             </Header.Content>
           </Header>
@@ -64,18 +65,18 @@ export default () => {
           <Grid>
             <Grid.Row>
               <Grid.Column computer="12" tablet="16" mobile="16">
-                <Header as="h3">About this visualisation</Header>
+                <Header as="h3">{pageData.whereThePoor[4].title}</Header>
                 <TextContainer>
-                  {data.abtVisualization}
+                  {pageData.whereThePoor[4].narrative}
                 </TextContainer>
                 <TextContainer>{data.dateAccessed}</TextContainer>
-                <Header as="h3">Scenario details</Header>
+                <Header as="h3">{pageData.whereThePoor[5].title}</Header>
                 <TextContainer>
-                  {data.scenarioDetails}
+                  {pageData.whereThePoor[5].narrative}
                 </TextContainer>
-                <Header as="h3">About the data</Header>
+                <Header as="h3">{pageData.whereThePoor[6].title}</Header>
                 <TextContainer>
-                  {data.aboutData}
+                  {pageData.whereThePoor[6].narrative}
                 </TextContainer>
                 <br />
               </Grid.Column>

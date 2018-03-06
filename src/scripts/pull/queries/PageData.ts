@@ -18,4 +18,29 @@ export const PAGES_DATA_QUERY = gql`
       title
       narrative
     }
+    landingPage: globalPicturePageData {
+      id
+      title
+      narrative
+    }
+    povertyBubbleChart: povertyBubbleChartPageData {
+      id
+      title
+      narrative
+    }
+    unbundlingOda: unbundlingOdaPageData{
+      id
+      title
+      narrative
+    }
+    unbundingOOf: unbundlingOOfPageData {
+      id
+      title
+      narrative
+    }
+    whereThePoor: whereThePoorPageData {
+      id
+      title
+      narrative
+    }
   }`;

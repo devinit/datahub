@@ -282,5 +282,94 @@ export default {
         'Modern contraceptive methods used among married women, any method (15-49 yrs)',
       narrative: ''
     }
+  ],
+  landingPage: [
+    {
+      id: 'introduction',
+      title:
+        'The Development Data Hub is the most comprehensive source for financial resource flow data alongside poverty, social and vulnerability indicators. Read more about the data hub',
+      narrative: ''
+    },
+    {
+      id: 'the-development-data-Hub',
+      title: 'The Development Data Hub',
+      narrative:
+        'The Development Data Hub is the most comprehensive online resource for financial and resource flow data alongside poverty, social and vulnerability indicators. It combines an extensive data store with interactive visualisations enabling you to chart, map and compare data at the global, national and local level.'
+    },
+    {
+      id: 'how-does-it-work',
+      title: 'How does it work?',
+      narrative:
+        'It brings together many data sets, enabling you to dig into these through interactive maps, charts and visualisations. It turns complex data around poverty and resource flows into easy to understand robust information and evidence about what is really going on. The Data Hub is an accessible and easy to use tool for anyone wanting to know more about how resources for development are spent.'
+    },
+    { id: 'videoUrl', title: 'https://youtu.be/2G1Gg2opKPg', narrative: '' }
+  ],
+  povertyBubbleChart: [
+    {
+      id: 'resources-able-to-meet-needs',
+      title:
+        'Are domestic public resources able to meet the needs of the poorest people?',
+      narrative:
+        'The proportion of people living in extreme poverty worldwide has more than halved since 2000, yet progress is varied across countries. Although domestic public resources are an important resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high'
+    }
+  ],
+  unbundlingOda: [
+    {
+      id: 'Unbundling aid',
+      title: 'Unbundling aid',
+      narrative:
+        'Explore and compare funding priorities for official development assistance'
+    }
+  ],
+  unbundingOOf: [
+    {
+      id: 'Unbundling aid',
+      title: 'Unbundling aid',
+      narrative:
+        'Explore and compare funding priorities for other official flows (OOFs)'
+    }
+  ],
+  whereThePoor: [
+    {
+      id: 'poverty-visualisation',
+      title: 'Where are the poor and where will they be?',
+      narrative:
+        'Between 1990 and 2010, extreme poverty was cut in half and Explore plausible poverty outcomes for 2030 based on models of consumption'
+    },
+    {
+      id: 'Source',
+      title: 'Source',
+      narrative:
+        'Development Initiatives based on OECD DAC data.Note that figures are rounded: precise data are available for download on the methodology page'
+    },
+    {
+      id: 'download-the-data',
+      title: 'Download the data',
+      narrative: 'For more information, see the DI data hub methodology page'
+    },
+    {
+      id: 'poverty-visualisation',
+      title: 'Where are the poor and where will they be?',
+      narrative:
+        'Between 1990 and 2010, extreme poverty was cut in half and Explore plausible poverty outcomes for 2030 based on models of consumption'
+    },
+    {
+      id: 'about-this-visualization',
+      title: 'About this visualization',
+      narrative:
+        'This page allows you to explore three scenarios for future poverty levels both globally and by region up to 2030. The baseline scenario uses current forecasts for growth in consumption and current inequality levels. The best-case scenario shows what happens with more rapid growth that is shared more equally. By contrast, the worst-case scenario sees slower growth and increasing inequality. Forecasting future poverty levels is difficult, given the inherent uncertainties involved. Poverty modelling develops future scenarios to help inform policymaking. These models rely on simplifying assumptions, often focusing on economic growth and income distribution trends which determine how much poor people benefit from that growth.Data accessed from source: 20 August 2013.'
+    },
+    {
+      id: 'scenario details',
+      title: 'Scenario details',
+      narrative:
+        'The best and worst case scenarios are based on the extremes of two elements: For growth, a +/- 2 percentage point margin of error either side of baseline projections of consumption growth (which are driven by economic growth). This is in line with differences observed between past forecasts and actual outcomes. For inequality, an annual 0.25 percentage point change in the shares of national consumption between the poorest 40% and the richest 10%'
+    },
+    {
+      id: 'about-the-data',
+      title: 'About the data',
+      narrative:
+        'Projections based on Chandy, Ledlie and Penciakova, The Final Countdown: Prospects for Ending Extreme Poverty by 2030 (2013), using the same methodology applied to a dataset updated with 40 country surveys. All data for years after 2010 are forecasts'
+    }
   ]
 };
