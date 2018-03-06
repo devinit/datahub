@@ -28,11 +28,7 @@ const config = {
     rules: [
       {
         test: /\.(ts|tsx)(\?[^?]*)?$/,
-        loader: 'happypack/loader?id=ts',
-        options: {
-          transpileOnly: true ,
-          configFile
-        }
+        loader: 'happypack/loader?id=ts'
       }
     ]
   },
@@ -44,7 +40,11 @@ const config = {
       loaders: [
           {
               path: 'ts-loader',
-              query: { happyPackMode: true }
+              query: { happyPackMode: true },
+              options: {
+                transpileOnly: true ,
+                configFile
+              }
           }
       ]
     }),

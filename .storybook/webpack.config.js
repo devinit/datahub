@@ -14,9 +14,6 @@ const newRules = [
   {
       test: /\.(ts|tsx)(\?[^?]*)?$/,
       loader: 'happypack/loader?id=ts',
-      options: {
-        transpileOnly: true 
-      },
       include: [
           SRC_PATH
       ]
@@ -33,14 +30,13 @@ const newPlugins = [
     'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
   }),
   new HappyPack({
+    threads: 4,
     id: 'ts',
-    threads: 3,
-    loaders: [
-        {
-            path: 'ts-loader',
-            query: { happyPackMode: true }
-        }
-    ]
+    loaders: [{
+      loader: 'ts-loader',
+      query: { happyPackMode: true },
+      options: { transpileOnly: true }
+    }]
   }),
   new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
 ];

@@ -12,7 +12,7 @@ const dataUg = require('./testDataUg.json');
 const pagesUgData = getDistrictProfileData('wakiso', 'uganda');
 const pagesKeData = getDistrictProfileData('nairobi', 'kenya');
 
-storiesOf('SpotlightTabs', module)
+storiesOf('Tabs & Charts', module)
     .add('OverviewTab Uganda', () =>
         <Overview
             {...dataUg.data}
