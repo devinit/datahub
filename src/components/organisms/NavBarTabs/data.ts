@@ -44,7 +44,7 @@ export default {
           source: 'Development Initiatives based on World Bank PovcalNet'
         },
         {
-          id: 'data_series.poorest_20_percent',
+          id: 'data_series.2013_p20_population',
           name: 'Number of people in the P20',
           heading:
             'The approximate number of people in each country who are in the global poorest 20%',

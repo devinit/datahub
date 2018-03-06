@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';

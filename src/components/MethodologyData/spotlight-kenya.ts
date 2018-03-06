@@ -84,7 +84,7 @@ export default {
       }
     },
     {
-      name: 'ECDE net enrolment rate-boys',
+      name: 'ECDE net enrolment rate (boys)',
       description:
         'The number of boy children of official ECD age who are enrolled in ECD education as a percentage of the total children of the official ECDE age population.',
       methodology: '',
@@ -99,7 +99,7 @@ export default {
       }
     },
     {
-      name: 'ECDE net enrolment rate-girls',
+      name: 'ECDE net enrolment rate (girls)',
       description:
         'The number of boy children of official ECD age who are enrolled in ECD education as a percentage of the total children of the official ECDE age population.',
       methodology: '',
@@ -114,7 +114,7 @@ export default {
       }
     },
     {
-      name: 'Primary average number of students-government schools',
+      name: 'Primary average number of students (government schools)',
       description:
         'The average number of children in a public primary school, by county.',
       methodology: '',
@@ -129,7 +129,7 @@ export default {
       }
     },
     {
-      name: 'Primary average number of students-private schools',
+      name: 'Primary average number of students (private schools)',
       description:
         'The average number of children in a private primary school, by county.',
       methodology: '',
@@ -144,7 +144,7 @@ export default {
       }
     },
     {
-      name: 'Primary net enrolment rate-boys',
+      name: 'Primary net enrolment rate (boys)',
       description:
         'The number of boy children of official primary school age who are enrolled in primary education as a percentage of the total children of the official school age population.',
       methodology: '',
@@ -159,7 +159,7 @@ export default {
       }
     },
     {
-      name: 'Primary net enrolment rate-girls',
+      name: 'Primary net enrolment rate (girls)',
       description:
         'The number of girl children of official primary school age who are enrolled in primary education as a percentage of the total children of the official school age population.',
       methodology: '',
@@ -174,7 +174,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to teacher ratio-all schools',
+      name: 'Primary pupil to teacher ratio (all schools)',
       description:
         'The number of pupils per teacher in all primary education schools, by county.',
       methodology: '',
@@ -189,7 +189,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to teacher ratio-public schools',
+      name: 'Primary pupil to teacher ratio (public schools)',
       description:
         "The relationship between the number of pupils enrolled in a public school and the number of 'full-time equivalent' teachers employed by the school, by county.",
       methodology: '',
@@ -204,7 +204,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to teacher ratio-private schools',
+      name: 'Primary pupil to teacher ratio (private schools)',
       description:
         "The relationship between the number of pupils enrolled in a private school and the number of 'full-time equivalent' teachers employed by the school, by county.",
       methodology: '',
@@ -219,7 +219,7 @@ export default {
       }
     },
     {
-      name: 'Secondary average number of students-government schools',
+      name: 'Secondary average number of students (government schools)',
       description:
         'The average number of children in a public secondary school, by county.',
       methodology: '',
@@ -234,7 +234,7 @@ export default {
       }
     },
     {
-      name: 'Secondary average number of students-private schools',
+      name: 'Secondary average number of students (private schools)',
       description:
         'The average number of children in a public secondary school, by county.',
       methodology: '',
@@ -249,7 +249,7 @@ export default {
       }
     },
     {
-      name: 'Secondary net enrolment rate-boys',
+      name: 'Secondary net enrolment rate (boys)',
       description:
         'The number of boy children of official secondary school age who are enrolled in secondary education as a percentage of the total children of the official school age population, by county.',
       methodology: '',
@@ -264,7 +264,7 @@ export default {
       }
     },
     {
-      name: 'Secondary net enrolment rate-girls',
+      name: 'Secondary net enrolment rate (girls)',
       description:
         'The number of girl children of official secondary school age who are enrolled in secondary education as a percentage of the total children of the official school age population, by county.',
       methodology: '',
