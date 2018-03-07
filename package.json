@@ -65,11 +65,11 @@
     "semantic-ui-react": "0.78.3"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.3.14",
-    "@storybook/addon-links": "3.3.14",
-    "@storybook/addon-storyshots": "3.3.14",
-    "@storybook/addons": "3.3.14",
-    "@storybook/react": "3.3.14",
+    "@storybook/addon-actions": "3.3.15",
+    "@storybook/addon-links": "3.3.15",
+    "@storybook/addon-storyshots": "3.3.15",
+    "@storybook/addons": "3.3.15",
+    "@storybook/react": "3.3.15",
     "@types/fs-extra": "5.0.1",
     "@types/jest": "22.2.0",
     "@types/next": "2.4.8",
