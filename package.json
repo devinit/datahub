@@ -2,7 +2,7 @@
   "name": "@devinit/dh-app",
   "version": "3.0.15",
   "config": {
-    "API": "http://212.111.41.68:9090/graphql",
+    "API": "http://212.111.41.68:3000/graphql",
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": true,
     "OLD_DATAHUB_URL": "http://212.111.41.68:8888"
   },
@@ -87,7 +87,7 @@
     "fork-ts-checker-webpack-plugin": "0.4.0",
     "fs-extra": "5.0.0",
     "git-pre-hooks": "1.2.0",
-    "happypack": "^4.0.1",
+    "happypack": "4.0.1",
     "jest": "22.4.2",
     "jest-cli": "22.4.2",
     "jsdom": "11.6.2",
