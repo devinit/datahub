@@ -12,9 +12,9 @@ import Timeline from '../../atoms/Timeline';
 
 export interface DetailSelection {
   value: string;
-  selection: {unbundle: boolean};
+  unbundle: boolean;
   text: string;
-  key: string;
+  key: number | string;
 }
 export interface FlowState {
   flow?: string;
@@ -22,18 +22,17 @@ export interface FlowState {
   detailSelections?: DetailSelection[];
   detailGroup?: string;
   shouldUnbundle?: boolean;
-  trend: any[];
-  mixes: {[index: string]: any[]};
+  trend: DH.IResourceData[];
+  mixes: {[index: string]: DH.IResourceData[]};
+}
+export interface Flow {
+  key: string;
+  text: string;
+  value: string;
 }
 export type DirectionState = FlowState & {
-  flows: any[]; // TOFIX: @epicallan add proper types
+  flows: Flow[]
   direction: string;
-};
-
-export type State = DirectionState &  {
-  year: number;
-  flows: any[]; // TOFIX: @epicallan add proper types
-  directions: Array<{value: string, text: string}>;
 };
 
 export interface UProps {
@@ -45,27 +44,35 @@ export interface UProps {
   flow?: string;
   config: any;
 }
+export type State = DirectionState &  {
+  year: number;
+  flows: Flow[];
+  directions: Array<{value: string, text: string}>;
+};
 
 export interface Props {
   id: string;
   year: number;
   countryType: string;
   country: string;
-  data: any[]; // TODO: reuse FlowData type currently in the inflows outflows file
+  data: DH.IResourceData[];
   config: any;
   startYear: number;
-  inflows: any[];
-  outflows: any[];
+  inflows: DH.IFlow[];
+  outflows: DH.IFlow[];
   unbundlingInternationalResources: React.ComponentClass<UProps>;
   cached?: State;
 }
 
 class AreaPartitionChart extends React.Component<Props, State> {
+  // this contains list of oda & oof flows that we should use with
+  // unbundlingInternationalResources
+
+  public odaAndOOFFlows: string[] = ['oda-out', 'oda-in', 'oofs-out', 'oofs-in'];
   constructor(props: Props) {
     super(props);
     this.state = this.initState(props);
   }
-
   public initState(props: Props): State {
     const year = this.props.startYear;
     const direction = this.props.countryType !== DONOR ? 'in' : 'out';
@@ -84,28 +91,27 @@ class AreaPartitionChart extends React.Component<Props, State> {
     };
   }
 
-  public setYear(year: number | string) {
+  public setYear = (year: number | string) => {
     this.setState({
       year: +year,
     });
   }
 
-  public setDirection(_event, data) {
+  public setDirection = (_event, data) => {
     this.setState(this.getDirectionState(data.value));
   }
 
-  public setFlow(_event, data) {
-    this.setState(this.getFlowState(this.state.direction, data.id));
+  public setFlow = (_event, data) => {
+    this.setState(this.getFlowState(this.state.direction, data.value));
   }
 
-  public setFlowDetailGroup(_event, data) {
+  public setFlowDetailGroup = (_event, data) => {
     const selections = this.state.detailSelections;
-    const filtered: Array<{selection: {unbundle: boolean}}> | undefined
-      = selections && selections.filter(d => d.value === data.id);
+    const filtered = selections && selections.find(d => d.value === data.value);
 
     this.setState({
       detailGroup: data.id,
-      shouldUnbundle: filtered && filtered[0].selection.unbundle,
+      shouldUnbundle: filtered && filtered.unbundle,
     });
   }
 
@@ -135,36 +141,40 @@ class AreaPartitionChart extends React.Component<Props, State> {
   }
 
   public getFlowState(direction: string, flow?: string): FlowState {
+    console.log('flow: ', flow);
     const trend = this.props.data
       .filter(d => d.direction === direction && (flow === 'all' || d.flow_id === flow))
       .sort((a, b) => b.value - a.value);
 
     const flows = direction === 'in' ? this.props.inflows : this.props.outflows;
 
-    const [flowDetails = {}] = flows.filter(f => f.id === flow);
+    const flowDetails = flows.find(f => f.id === flow);
 
-    const detailSelections = (flowDetails.selections || []).map(({ id, name, unbundle }, i) => ({
-      text: name,
-      value: id,
-      key: i,
-      unbundle,
-    }));
+    const detailSelections: DetailSelection[] = (flowDetails && flowDetails.selections || [])
+      .map(({ id, name, unbundle }, i) => ({
+        text: name,
+        value: id,
+        key: i,
+        unbundle,
+      }));
 
     const selection = detailSelections[0] || {};
 
     return {
       flow,
-      flowName: flowDetails.name,
+      flowName: flowDetails && flowDetails.name,
       trend,
       detailSelections,
       detailGroup: selection.value,
       shouldUnbundle: selection.unbundle,
-      mixes: groupBy(d => d.year, trend),
+      mixes: groupBy(d => `${d.year}`, trend),
     };
   }
 
   public render() {
     const UnbundlingInternationalResources = this.props.unbundlingInternationalResources;
+    console.log('state', this.state);
+    console.log('is oda : ', this.odaAndOOFFlows.includes(this.state.flow || ''));
     return (
       <LightBg>
         <Container>
@@ -256,9 +266,26 @@ class AreaPartitionChart extends React.Component<Props, State> {
                     .reduce((sum, datum) => sum + datum.value, 0),
                 )}
               </SectionHeader>
-              {this.state.flow === 'all'
-                ? !this.state.mixes[+this.state.year] || !this.state.mixes[+this.state.year].length
-                  ? <Dimmer
+              {this.state.flow === 'all' ?
+                <TreeChart
+                  height="360px"
+                  data={this.state.mixes[+this.state.year] || []}
+                  config={this.props.config.treemapConfig}
+                  // tslint:disable-next-line:jsx-no-lambda
+                  onClick={(d: { flow_id: string }) =>
+                    this.setState(this.getFlowState(this.state.direction, d.flow_id))}
+                />
+                : this.odaAndOOFFlows.includes(this.state.flow || '')
+                  ? <UnbundlingInternationalResources
+                    shouldFetch={this.state.shouldUnbundle}
+                    countryId={this.props.id}
+                    year={this.state.year}
+                    groupById={this.state.detailGroup}
+                    resourceId={this.state.flow || ''} // TODO: shouldnt be nullable
+                    config={this.props.config.treemapConfig}
+                  />
+                  :
+                  <Dimmer
                     style={{
                       backgroundColor: '#888',
                       zIndex: 1,
@@ -271,22 +298,7 @@ class AreaPartitionChart extends React.Component<Props, State> {
                         Detailed data is not available for this year
                     </NoDataAvailableContainer>
                   </Dimmer>
-                  : <TreeChart
-                    height="360px"
-                    data={this.state.mixes[+this.state.year] || []}
-                    config={this.props.config.treemapConfig}
-                    // tslint:disable-next-line:jsx-no-lambda
-                    onClick={(d: { flow_id: string }) =>
-                      this.setState(this.getFlowState(this.state.direction, d.flow_id))}
-                  />
-                : <UnbundlingInternationalResources
-                    shouldFetch={this.state.shouldUnbundle}
-                    countryId={this.props.id}
-                    year={this.state.year}
-                    groupById={this.state.detailGroup}
-                    resourceId={this.state.flow || ''} // TODO: shouldnt be nullable
-                    config={this.props.config.treemapConfig}
-                />}
+                  }
             </Grid.Column>
           </Grid>
         </Container>

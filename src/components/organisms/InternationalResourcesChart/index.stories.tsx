@@ -5,4 +5,4 @@ import InternationalResourcesChart from '.';
 
 storiesOf('Tabs & Charts', module)
   .addDecorator(withApolloProvider())
-  .add('International Resources', () => <InternationalResourcesChart id={'estonia'} year={2015} />);
+  .add('International Resources', () => <InternationalResourcesChart id={'uganda'} year={2015} />);
