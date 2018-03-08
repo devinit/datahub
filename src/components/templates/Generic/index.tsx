@@ -7,11 +7,9 @@ import {menueData} from './data';
 
 interface Props  {
   children: JSX.Element[] | React.ReactChild | React.ReactChildren | any; // screw it with any
-  pathname: string;
-  query?: string;
 }
 
-const Generic: React.SFC<Props> = ({ children, query, pathname}) =>
+const Generic: React.SFC<Props> = ({ children}) =>
   <Container fluid>
       <Menu menu={menueData.menu} nextLink={Link} />
       <div style={{marginTop: '4em'}}>

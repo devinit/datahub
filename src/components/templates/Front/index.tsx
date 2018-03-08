@@ -27,7 +27,7 @@ export default class Front extends React.Component<Props> {
     // this casting is a hack, typescript coundnt infar this
     const navState = {state: this.props.state};
     return (
-      <Generic pathname="/">
+      <Generic>
         <GlobalPictureSearch />
         <Container>
           <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>

@@ -47,7 +47,7 @@ export default class extends React.Component<Props> {
     const props = this.props;
     const aid = props.aidType === 'oda' ? 'ODA' : 'OOFs';
     return (
-      <Generic pathname={this.props.pathname}>
+      <Generic>
         <Container>
           <HeaderContainer>
             <Header as="h1" textAlign="center">

@@ -22,7 +22,7 @@ const withData = graphql<LGvmntFinanceQuery, LGvmntFinanceQueryVariables, TChild
   }),
 });
 
-export default withData(({data, country, id}: TChildProps) => {
+export default withData(({data}: TChildProps) => {
   const loading = data && data.loading;
   const governmentFinance =  data && data.localGovernmentFinance;
   if (!governmentFinance || loading) return <p>loading ...</p>;

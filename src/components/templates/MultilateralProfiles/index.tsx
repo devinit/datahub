@@ -24,7 +24,7 @@ const ListWrapper = glamorous.div({
 });
 
 export default () =>
-  (<Generic pathname="/multilaterals">
+  (<Generic>
     <Container>
       <Grid>
         <Grid.Row>

@@ -19,7 +19,7 @@ import Generic from '../Generic';
 const dynamicOpts: DynamicOptions<any, QueryVarTs> = {
   ssr: true,
   loading: () => <p>Loading...</p>,
-  modules: props => ({
+  modules: () => ({
     LocalGovernmentFinance: import('../../organisms/LocalGovernmentFinance') as Promise<any>
     }),
   render: (props, {LocalGovernmentFinance}) =>
@@ -66,7 +66,7 @@ export default class RegionalProfile extends React.Component<Props, State> {
     const methodology = this.state.country.slug === 'kenya' ?
       methodologyDataKe.methodology : methodologyDataUg.methodology;
     return (
-      <Generic pathname={`/${this.state.country.slug}`} query={this.state.district.slug}>
+      <Generic>
       {process.env.NODE_ENV !== 'test' ?
         <ProfileHeader
           currency={this.state.currency}

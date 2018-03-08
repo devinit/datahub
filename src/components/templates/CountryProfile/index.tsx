@@ -21,7 +21,7 @@ import Generic from '../Generic';
 const dynamicOpts: DynamicOptions<any, any> = {
   ssr: true,
   loading: () => <p>Loading...</p>,
-    modules: props => ({
+    modules: () => ({
         CountryProfileLowerTabs: import('../../organisms/CountryProfileLowerTabs') as Promise<any>
       }),
     render: (props, {CountryProfileLowerTabs}) =>
@@ -66,7 +66,7 @@ export default class Profile extends React.Component<Props> {
   }
   public render() {
     return (
-      <Generic pathname="/country" query={this.props.id}>
+      <Generic>
       {process.env.NODE_ENV !== 'test' ?
         <ProfileHeader
           entity={this.state.country}

@@ -6,7 +6,7 @@ import dynamic, {DynamicOptions} from 'next/dynamic';
 const dynamicOpts: DynamicOptions<any, any> = {
   loading: () => <MapBackground />,
   ssr: false,
-  modules: props => ({
+  modules: () => ({
     Map: import('.') as Promise<any>
     }),
   render: (props, {Map}) => <Map {...props} />

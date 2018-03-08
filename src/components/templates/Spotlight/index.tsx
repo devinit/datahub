@@ -29,7 +29,7 @@ export default class Spotlight extends React.Component<Props> {
     // this casting is hack, typecript couldnt infar correct types
     const navState = {state: this.props.state} as SpotlightKeProps | SpotlightUgProps;
     return (
-      <Generic pathname={this.props.pathname} >
+      <Generic >
         <Container>
           <Div paddingTop={'4em'} paddingBottom={'4em'}>
             <Grid centered>

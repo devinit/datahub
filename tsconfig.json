@@ -11,6 +11,7 @@
     "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "lib",
     "skipLibCheck": true,
     "removeComments": true

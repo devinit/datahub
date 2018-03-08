@@ -69,9 +69,7 @@ export default function CountryProfileLowerTabs(props: Props) {
           </ErrorBoundary>
           <ErrorBoundary>
             <InternationalResourcesChart
-              shouldScrollIntoView={props.chartId === INTERNATIONAL_RESOURCES}
               year={props.chartId === INTERNATIONAL_RESOURCES ? (props.year as number) : 2015} // FIXME: this is a hack
-              chartId={INTERNATIONAL_RESOURCES}
               id={props.id}
             />
           </ErrorBoundary>

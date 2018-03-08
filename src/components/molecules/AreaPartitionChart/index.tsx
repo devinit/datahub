@@ -1,4 +1,3 @@
-/* tslint:disable no-nested-ternary */
 import * as React from 'react';
 import { approximate } from '../../../utils';
 import { groupBy } from 'ramda';
@@ -20,20 +19,20 @@ export interface DetailSelection {
 export interface FlowState {
   flow?: string;
   flowName?: string;
-  detailSelections?: DetailSelection[]; // TOFIX: @ernest add proper types
+  detailSelections?: DetailSelection[];
   detailGroup?: string;
   shouldUnbundle?: boolean;
-  trend: any[]; // TOFIX: @ernest add proper types
+  trend: any[];
   mixes: {[index: string]: any[]};
 }
 export type DirectionState = FlowState & {
-  flows: any[]; // TOFIX: @ernest add proper types
+  flows: any[]; // TOFIX: @epicallan add proper types
   direction: string;
 };
 
 export type State = DirectionState &  {
   year: number;
-  flows: any[]; // TOFIX: @ernest add proper types
+  flows: any[]; // TOFIX: @epicallan add proper types
   directions: Array<{value: string, text: string}>;
 };
 

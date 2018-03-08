@@ -9,7 +9,7 @@ interface Props  {
   id: string;
 }
 export default ({id}: Props) =>
-  (<Generic pathname="/multilateral">
+  (<Generic>
     <Div paddingTop="0em">
       <Container>
         <iframe

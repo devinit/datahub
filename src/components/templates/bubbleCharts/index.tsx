@@ -23,7 +23,7 @@ const StyledIframe = glamorous.iframe({
   },
 });
 export default ({pathname}: Props) =>
-  (<Generic pathname={pathname}>
+  (<Generic>
     <Div paddingTop="5em">
       <Container>
         <Grid>
