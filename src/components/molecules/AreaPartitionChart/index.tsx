@@ -173,8 +173,6 @@ class AreaPartitionChart extends React.Component<Props, State> {
 
   public render() {
     const UnbundlingInternationalResources = this.props.unbundlingInternationalResources;
-    console.log('state', this.state);
-    console.log('is oda : ', this.odaAndOOFFlows.includes(this.state.flow || ''));
     return (
       <LightBg>
         <Container>
