@@ -57,17 +57,16 @@ class Select extends React.Component<Props, State> {
     }
   }
 
-  public onChanged(selected: Option) {
+  public onChanged = (selected: Option) => {
     this.setState({ bigText: selected.name, visible: false });
     this.props.onChange(selected.value);
   }
 
-  public toggleDropDown() {
-    if (this.state.visible) {
-      this.setState({ visible: false });
-    } else {
+  public toggleDropDown = () => {
+    this.state.visible ?
+      this.setState({ visible: false })
+    :
       this.setState({ visible: true });
-    }
   }
 
   public render() {
