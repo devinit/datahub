@@ -8,7 +8,7 @@ import ProfileSocialMedia from '../ProfileSocialMedia';
 import {ProfileSearch} from '../SearchInput';
 import {Country, District} from '../../types';
 import { CardContainer, ProfileHeader } from '../../atoms/Container';
-import {CurrencyOption, isMobile} from '../../../utils';
+import {CurrencyOption} from '../../../utils';
 // import {SmallMapProps} from '../Maps';
 import {SingletonRouter} from 'next/router';
 import {mediaQueries} from '../../theme';
