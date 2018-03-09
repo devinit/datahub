@@ -120,6 +120,379 @@ exports[`Storyshots About Global picture && spotlight on uganda 1`] = `
 </section>
 `;
 
+exports[`Storyshots Area Partition Chart 1`] = `
+<div
+  className="css-h7jsub"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="ui centered grid"
+    >
+      <div
+        className="eight wide computer sixteen wide mobile column"
+      >
+        <div
+          aria-busy={undefined}
+          aria-disabled={undefined}
+          aria-expanded={false}
+          aria-multiselectable={undefined}
+          className="ui fluid selection dropdown"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          role="listbox"
+          tabIndex={0}
+        >
+          <div
+            aria-live="polite"
+            className="text"
+            role="alert"
+          >
+            Inflows to Uganda
+          </div>
+          <i
+            aria-hidden="true"
+            className="dropdown icon"
+            onClick={[Function]}
+          />
+          <div
+            className="menu transition"
+          >
+            <div
+              aria-checked={true}
+              aria-disabled={undefined}
+              aria-selected={true}
+              className="active selected item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                Inflows to Uganda
+              </span>
+            </div>
+            <div
+              aria-checked={false}
+              aria-disabled={undefined}
+              aria-selected={false}
+              className="item"
+              onClick={[Function]}
+              role="option"
+              style={
+                Object {
+                  "pointerEvents": "all",
+                }
+              }
+            >
+              <span
+                className="text"
+              >
+                Outflows leaving Uganda
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ui grid"
+    >
+      <div
+        className="seven wide computer sixteen wide mobile column"
+      >
+        <div
+          style={
+            Object {
+              "minHeight": "85px",
+            }
+          }
+        >
+          <h3
+            className="ui center aligned header"
+          >
+            <div
+              className="content"
+            >
+              Inflows
+               over time
+            </div>
+          </h3>
+          <div
+            aria-busy={undefined}
+            aria-disabled={undefined}
+            aria-expanded={false}
+            aria-multiselectable={undefined}
+            className="ui fluid selection dropdown"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            role="listbox"
+            tabIndex={0}
+          >
+            <div
+              aria-live="polite"
+              className="text"
+              role="alert"
+            >
+              Choose a flow for more details
+            </div>
+            <i
+              aria-hidden="true"
+              className="dropdown icon"
+              onClick={[Function]}
+            />
+            <div
+              className="menu transition"
+            >
+              <div
+                aria-checked={true}
+                aria-disabled={undefined}
+                aria-selected={true}
+                className="active selected item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Choose a flow for more details
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Foreign Direct Investment
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Long-term debt (commercial sources)
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Long-term debt (official sources)
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Portfolio equity
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Official development assistance
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Other official flows
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Remittances
+                </span>
+              </div>
+              <div
+                aria-checked={false}
+                aria-disabled={undefined}
+                aria-selected={false}
+                className="item"
+                onClick={[Function]}
+                role="option"
+                style={
+                  Object {
+                    "pointerEvents": "all",
+                  }
+                }
+              >
+                <span
+                  className="text"
+                >
+                  Short-term debt
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "height": "400px",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+      <div
+        className="one wide computer one wide mobile column"
+      />
+      <div
+        className="eight wide computer sixteen wide mobile column"
+      >
+        <div
+          style={
+            Object {
+              "minHeight": "85px",
+            }
+          }
+        >
+          <h3
+            className="ui center aligned header"
+          >
+            <div
+              className="content"
+            >
+              The mix of resources in 
+              <span
+                style={
+                  Object {
+                    "color": "#e8443a",
+                  }
+                }
+              >
+                2015
+              </span>
+            </div>
+          </h3>
+        </div>
+        <h2
+          className="css-15403or"
+        >
+          US$ 
+           
+          4.4bn
+        </h2>
+        <div
+          style={
+            Object {
+              "height": "360px",
+              "overflow": "hidden",
+              "width": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots BubbleChartWidget Main 1`] = `
 <div
   className="ui container"
@@ -2147,7 +2520,7 @@ exports[`Storyshots Menu Datahub Logo 1`] = `
     <img
       alt="Development Initiatives"
       height="32"
-      src="./images/logo.png"
+      src="/images/logo.png"
       width="132"
     />
   </a>
@@ -2170,7 +2543,7 @@ exports[`Storyshots Menu Datahub Menu 1`] = `
         <img
           alt="Development Initiatives"
           height="32"
-          src="./images/logo.png"
+          src="/images/logo.png"
           width="132"
         />
       </a>
@@ -3073,6 +3446,7 @@ exports[`Storyshots MultiLine partition Kampala 1`] = `
                 style={
                   Object {
                     "height": "380px",
+                    "overflow": "hidden",
                     "width": undefined,
                   }
                 }
@@ -3318,6 +3692,7 @@ exports[`Storyshots MultiLine partition Kampala 1`] = `
                 style={
                   Object {
                     "height": "380px",
+                    "overflow": "hidden",
                     "width": undefined,
                   }
                 }
@@ -3818,6 +4193,7 @@ exports[`Storyshots MultiLine partition Nairobi 1`] = `
                 style={
                   Object {
                     "height": "380px",
+                    "overflow": "hidden",
                     "width": undefined,
                   }
                 }
@@ -6093,6 +6469,3122 @@ exports[`Storyshots Navbar tabs with redux sportlight Navbar Uganda 1`] = `
     </div>
   </div>
 </section>
+`;
+
+exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
+<div
+  className="css-3nxmei"
+>
+  
+  <div
+    className="css-1a1zkly"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="ui grid"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="twelve wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              className="css-e65tfo"
+            >
+              <h4
+                className="css-1feb7iy"
+              >
+                <i
+                  aria-hidden="true"
+                  className="red globe icon"
+                />
+                <a
+                  href="/"
+                  role="link"
+                  style={
+                    Object {
+                      "color": "#e8443a",
+                    }
+                  }
+                >
+                  Global Picture
+                </a>
+              </h4>
+              <div
+                className="css-nil"
+              >
+                <div
+                  className="css-3qegu8"
+                >
+                  <h1
+                    className="css-q6duvf"
+                  >
+                    Uganda
+                    <i
+                      aria-hidden="true"
+                      className="caret down icon"
+                      onClick={[Function]}
+                    />
+                  </h1>
+                  <input
+                    className="css-1hzm7kr"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder=""
+                    value=""
+                  />
+                </div>
+                <div
+                  className="css-1x2mn3f"
+                >
+                  <ul
+                    className="css-dk1683"
+                  >
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=afghanistan"
+                      >
+                        Afghanistan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=albania"
+                      >
+                        Albania
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=algeria"
+                      >
+                        Algeria
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=andorra"
+                      >
+                        Andorra
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=angola"
+                      >
+                        Angola
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=anguilla"
+                      >
+                        Anguilla
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=antigua-and-barbuda"
+                      >
+                        Antigua & Barbuda
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=argentina"
+                      >
+                        Argentina
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=armenia"
+                      >
+                        Armenia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=australia"
+                      >
+                        Australia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=austria"
+                      >
+                        Austria
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=azerbaijan"
+                      >
+                        Azerbaijan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=bahrain"
+                      >
+                        Bahrain
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=bangladesh"
+                      >
+                        Bangladesh
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=barbados"
+                      >
+                        Barbados
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=belarus"
+                      >
+                        Belarus
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=belgium"
+                      >
+                        Belgium
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=belize"
+                      >
+                        Belize
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=benin"
+                      >
+                        Benin
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=bhutan"
+                      >
+                        Bhutan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=bolivia"
+                      >
+                        Bolivia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=bosnia-and-herzegovina"
+                      >
+                        Bosnia & Herzegovina
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=botswana"
+                      >
+                        Botswana
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=brazil"
+                      >
+                        Brazil
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=bulgaria"
+                      >
+                        Bulgaria
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=burkina-faso"
+                      >
+                        Burkina Faso
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=burundi"
+                      >
+                        Burundi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cambodia"
+                      >
+                        Cambodia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cameroon"
+                      >
+                        Cameroon
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=canada"
+                      >
+                        Canada
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cape-verde"
+                      >
+                        Cape Verde
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=car"
+                      >
+                        CAR
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=chad"
+                      >
+                        Chad
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=chile"
+                      >
+                        Chile
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=china"
+                      >
+                        China
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=colombia"
+                      >
+                        Colombia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=comoros"
+                      >
+                        Comoros
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=congo"
+                      >
+                        Congo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=drc"
+                      >
+                        DRC
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cook-islands"
+                      >
+                        Cook Islands
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=costa-rica"
+                      >
+                        Costa Rica
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cote-divoire"
+                      >
+                        Côte d'Ivoire
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=croatia"
+                      >
+                        Croatia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cuba"
+                      >
+                        Cuba
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=cyprus"
+                      >
+                        Cyprus
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=czech-republic"
+                      >
+                        Czech Republic
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=denmark"
+                      >
+                        Denmark
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=djibouti"
+                      >
+                        Djibouti
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=dominica"
+                      >
+                        Dominica
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=dominican-republic"
+                      >
+                        Dominican Republic
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=ecuador"
+                      >
+                        Ecuador
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=egypt"
+                      >
+                        Egypt
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=el-salvador"
+                      >
+                        El Salvador
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=equatorial-guinea"
+                      >
+                        Equatorial Guinea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=eritrea"
+                      >
+                        Eritrea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=estonia"
+                      >
+                        Estonia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=ethiopia"
+                      >
+                        Ethiopia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=fiji"
+                      >
+                        Fiji
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=finland"
+                      >
+                        Finland
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=france"
+                      >
+                        France
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=gabon"
+                      >
+                        Gabon
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=gambia"
+                      >
+                        Gambia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=georgia"
+                      >
+                        Georgia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=germany"
+                      >
+                        Germany
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=ghana"
+                      >
+                        Ghana
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=greece"
+                      >
+                        Greece
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=grenada"
+                      >
+                        Grenada
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=guatemala"
+                      >
+                        Guatemala
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=guinea"
+                      >
+                        Guinea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=guinea-bissau"
+                      >
+                        Guinea-Bissau
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=guyana"
+                      >
+                        Guyana
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=haiti"
+                      >
+                        Haiti
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=honduras"
+                      >
+                        Honduras
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=hungary"
+                      >
+                        Hungary
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=iceland"
+                      >
+                        Iceland
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=india"
+                      >
+                        India
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=indonesia"
+                      >
+                        Indonesia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=iran"
+                      >
+                        Iran
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=iraq"
+                      >
+                        Iraq
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=ireland"
+                      >
+                        Ireland
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=israel"
+                      >
+                        Israel
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=italy"
+                      >
+                        Italy
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=jamaica"
+                      >
+                        Jamaica
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=japan"
+                      >
+                        Japan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=jordan"
+                      >
+                        Jordan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=kazakhstan"
+                      >
+                        Kazakhstan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=kenya"
+                      >
+                        Kenya
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=kiribati"
+                      >
+                        Kiribati
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=north-korea"
+                      >
+                        North Korea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=south-korea"
+                      >
+                        Korea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=kosovo"
+                      >
+                        Kosovo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=kuwait"
+                      >
+                        Kuwait
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=kyrgyzstan"
+                      >
+                        Kyrgyzstan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=lao"
+                      >
+                        Lao
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=latvia"
+                      >
+                        Latvia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=lebanon"
+                      >
+                        Lebanon
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=lesotho"
+                      >
+                        Lesotho
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=liberia"
+                      >
+                        Liberia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=libya"
+                      >
+                        Libya
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=liechtenstein"
+                      >
+                        Liechtenstein
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=lithuania"
+                      >
+                        Lithuania
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=luxembourg"
+                      >
+                        Luxembourg
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=macedonia"
+                      >
+                        Macedonia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=madagascar"
+                      >
+                        Madagascar
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=malawi"
+                      >
+                        Malawi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=malaysia"
+                      >
+                        Malaysia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=maldives"
+                      >
+                        Maldives
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mali"
+                      >
+                        Mali
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=malta"
+                      >
+                        Malta
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=marshall-islands"
+                      >
+                        Marshall Islands
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mauritania"
+                      >
+                        Mauritania
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mauritius"
+                      >
+                        Mauritius
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mayotte"
+                      >
+                        Mayotte
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mexico"
+                      >
+                        Mexico
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=micronesia"
+                      >
+                        Micronesia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=moldova"
+                      >
+                        Moldova
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mongolia"
+                      >
+                        Mongolia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=montenegro"
+                      >
+                        Montenegro
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=montserrat"
+                      >
+                        Montserrat
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=morocco"
+                      >
+                        Morocco
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=mozambique"
+                      >
+                        Mozambique
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=myanmar"
+                      >
+                        Myanmar
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=namibia"
+                      >
+                        Namibia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=nauru"
+                      >
+                        Nauru
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=nepal"
+                      >
+                        Nepal
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=netherlands"
+                      >
+                        Netherlands
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=new-zealand"
+                      >
+                        New Zealand
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=nicaragua"
+                      >
+                        Nicaragua
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=niger"
+                      >
+                        Niger
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=nigeria"
+                      >
+                        Nigeria
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=niue"
+                      >
+                        Niue
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=norway"
+                      >
+                        Norway
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=oman"
+                      >
+                        Oman
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=pakistan"
+                      >
+                        Pakistan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=palau"
+                      >
+                        Palau
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=palestine"
+                      >
+                        Palestine
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=panama"
+                      >
+                        Panama
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=papua-new-guinea"
+                      >
+                        Papua New Guinea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=paraguay"
+                      >
+                        Paraguay
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=peru"
+                      >
+                        Peru
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=philippines"
+                      >
+                        Philippines
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=poland"
+                      >
+                        Poland
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=portugal"
+                      >
+                        Portugal
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=romania"
+                      >
+                        Romania
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=russian-federation"
+                      >
+                        Russian Federation
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=rwanda"
+                      >
+                        Rwanda
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=saint-kitts-and-nevis"
+                      >
+                        Saint Kitts and Nevis
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=saint-lucia"
+                      >
+                        Saint Lucia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=saint-vincent-and-the-grenadines"
+                      >
+                        Saint Vincent & the Grenadines
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=samoa"
+                      >
+                        Samoa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=sao-tome-and-principe"
+                      >
+                        Sao Tome & Principe
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=saudi-arabia"
+                      >
+                        Saudi Arabia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=senegal"
+                      >
+                        Senegal
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=serbia"
+                      >
+                        Serbia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=seychelles"
+                      >
+                        Seychelles
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=sierra-leone"
+                      >
+                        Sierra Leone
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=slovakia"
+                      >
+                        Slovak Republic
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=slovenia"
+                      >
+                        Slovenia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=solomon-islands"
+                      >
+                        Solomon Islands
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=somalia"
+                      >
+                        Somalia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=south-africa"
+                      >
+                        South Africa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=south-sudan"
+                      >
+                        South Sudan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=spain"
+                      >
+                        Spain
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=sri-lanka"
+                      >
+                        Sri Lanka
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=sudan"
+                      >
+                        Sudan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=suriname"
+                      >
+                        Suriname
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=swaziland"
+                      >
+                        Swaziland
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=sweden"
+                      >
+                        Sweden
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=switzerland"
+                      >
+                        Switzerland
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=syria"
+                      >
+                        Syria
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=taiwan"
+                      >
+                        Taiwan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=tajikistan"
+                      >
+                        Tajikistan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=tanzania"
+                      >
+                        Tanzania
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=thailand"
+                      >
+                        Thailand
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=timor-leste"
+                      >
+                        Timor-Leste
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=togo"
+                      >
+                        Togo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=tokelau"
+                      >
+                        Tokelau
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=tonga"
+                      >
+                        Tonga
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=trinidad-and-tobago"
+                      >
+                        Trinidad & Tobago
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=tunisia"
+                      >
+                        Tunisia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=turkey"
+                      >
+                        Turkey
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=turkmenistan"
+                      >
+                        Turkmenistan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=turks-and-caicos-islands"
+                      >
+                        Turks & Caicos Islands
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=tuvalu"
+                      >
+                        Tuvalu
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=uganda"
+                      >
+                        Uganda
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=united-kingdom"
+                      >
+                        United Kingdom
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=ukraine"
+                      >
+                        Ukraine
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=uae"
+                      >
+                        UAE
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=usa"
+                      >
+                        United States
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=uruguay"
+                      >
+                        Uruguay
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=uzbekistan"
+                      >
+                        Uzbekistan
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=vanuatu"
+                      >
+                        Vanuatu
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=venezuela"
+                      >
+                        Venezuela
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=viet-nam"
+                      >
+                        Viet Nam
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=wallis-and-futuna"
+                      >
+                        Wallis & Futuna
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=western-sahara"
+                      >
+                        Western Sahara
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=yemen"
+                      >
+                        Yemen
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=zambia"
+                      >
+                        Zambia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/country?id=zimbabwe"
+                      >
+                        Zimbabwe
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p
+                className="css-146a9r5"
+              >
+                Explore this in-depth profile of Uganda to find out overall levels of poverty,
+                        income distribution, division of wealth and more. Discover how national and
+                        sub-national revenue is generated.
+                <img
+                  className="css-of1dda"
+                  src="/flags/svg/UG.svg"
+                />
+                <span
+                  className="css-wecxws"
+                >
+                  Visit our new 
+                  <a
+                    className="css-1wk6uqe"
+                    href="/spotlight-on-uganda"
+                  >
+                    Spotlight on Uganda
+                  </a>
+                   to explore data by district.
+                </span>
+              </p>
+              <span
+                className="css-nil"
+              >
+                Jump to 
+                <span>
+                  <a
+                    className="css-1wk6uqe"
+                    onClick={[Function]}
+                  >
+                    government finance
+                  </a>
+                   or 
+                </span>
+                <a
+                  className="css-1wk6uqe"
+                  onClick={[Function]}
+                >
+                  international resources
+                </a>
+              </span>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Profile Headers Wakiso Profile header 1`] = `
+<div
+  className="css-3nxmei"
+>
+  
+  <div
+    className="css-1a1zkly"
+  >
+    <div
+      className="ui container"
+    >
+      <div
+        className="ui grid"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="twelve wide computer sixteen wide mobile sixteen wide tablet column"
+          >
+            <div
+              className="css-e65tfo"
+            >
+              <h4
+                className="css-1feb7iy"
+              >
+                <i
+                  aria-hidden="true"
+                  className="red globe icon"
+                />
+                <a
+                  href="/spotlight-on-uganda"
+                  style={
+                    Object {
+                      "color": "#e8443a",
+                    }
+                  }
+                >
+                  Spotlight on 
+                  Uganda
+                </a>
+              </h4>
+              <div
+                className="css-nil"
+              >
+                <div
+                  className="css-3qegu8"
+                >
+                  <h1
+                    className="css-q6duvf"
+                  >
+                    Wakiso
+                    <i
+                      aria-hidden="true"
+                      className="caret down icon"
+                      onClick={[Function]}
+                    />
+                  </h1>
+                  <input
+                    className="css-1hzm7kr"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder=""
+                    value=""
+                  />
+                </div>
+                <div
+                  className="css-1x2mn3f"
+                >
+                  <ul
+                    className="css-dk1683"
+                  >
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kalangala"
+                      >
+                        Kalangala
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kampala"
+                      >
+                        Kampala
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kiboga"
+                      >
+                        Kiboga
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=luwero"
+                      >
+                        Luwero
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=masaka"
+                      >
+                        Masaka
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mpigi"
+                      >
+                        Mpigi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mubende"
+                      >
+                        Mubende
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mukono"
+                      >
+                        Mukono
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=nakasongola"
+                      >
+                        Nakasongola
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=rakai"
+                      >
+                        Rakai
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=ssembabule"
+                      >
+                        Ssembabule
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kayunga"
+                      >
+                        Kayunga
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=wakiso"
+                      >
+                        Wakiso
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=lyantonde"
+                      >
+                        Lyantonde
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mityana"
+                      >
+                        Mityana
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=nakaseke"
+                      >
+                        Nakaseke
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=buikwe"
+                      >
+                        Buikwe
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bukomansimbi"
+                      >
+                        Bukomansimbi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=butambala"
+                      >
+                        Butambala
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=buvuma"
+                      >
+                        Buvuma
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=gomba"
+                      >
+                        Gomba
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kalungu"
+                      >
+                        Kalungu
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kyankwanzi"
+                      >
+                        Kyankwanzi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=lwengo"
+                      >
+                        Lwengo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bugiri"
+                      >
+                        Bugiri
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=busia"
+                      >
+                        Busia
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=iganga"
+                      >
+                        Iganga
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=jinja"
+                      >
+                        Jinja
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kamuli"
+                      >
+                        Kamuli
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kapchorwa"
+                      >
+                        Kapchorwa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=katakwi"
+                      >
+                        Katakwi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kumi"
+                      >
+                        Kumi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mbale"
+                      >
+                        Mbale
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=pallisa"
+                      >
+                        Pallisa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=soroti"
+                      >
+                        Soroti
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=tororo"
+                      >
+                        Tororo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kaberamaido"
+                      >
+                        Kaberamaido
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mayuge"
+                      >
+                        Mayuge
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=sironko"
+                      >
+                        Sironko
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=amuria"
+                      >
+                        Amuria
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=budaka"
+                      >
+                        Budaka
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bududa"
+                      >
+                        Bududa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bukedea"
+                      >
+                        Bukedea
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bukwo"
+                      >
+                        Bukwo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=butaleja"
+                      >
+                        Butaleja
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kaliro"
+                      >
+                        Kaliro
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=manafwa"
+                      >
+                        Manafwa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=namutumba"
+                      >
+                        Namutumba
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bulambuli"
+                      >
+                        Bulambuli
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=buyende"
+                      >
+                        Buyende
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kibuku"
+                      >
+                        Kibuku
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kween"
+                      >
+                        Kween
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=luuka"
+                      >
+                        Luuka
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=namayingo"
+                      >
+                        Namayingo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=ngora"
+                      >
+                        Ngora
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=serere"
+                      >
+                        Serere
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=adjumani"
+                      >
+                        Adjumani
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=apac"
+                      >
+                        Apac
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=arua"
+                      >
+                        Arua
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=gulu"
+                      >
+                        Gulu
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kitgum"
+                      >
+                        Kitgum
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kotido"
+                      >
+                        Kotido
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=lira"
+                      >
+                        Lira
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=moroto"
+                      >
+                        Moroto
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=moyo"
+                      >
+                        Moyo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=nebbi"
+                      >
+                        Nebbi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=nakapiripirit"
+                      >
+                        Nakapiripirit
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=pader"
+                      >
+                        Pader
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=yumbe"
+                      >
+                        Yumbe
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=abim"
+                      >
+                        Abim
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=amolatar"
+                      >
+                        Amolatar
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=amuru"
+                      >
+                        Amuru
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=dokolo"
+                      >
+                        Dokolo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kaabong"
+                      >
+                        Kaabong
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=koboko"
+                      >
+                        Koboko
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=maracha"
+                      >
+                        Maracha
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=oyam"
+                      >
+                        Oyam
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=agago"
+                      >
+                        Agago
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=alebtong"
+                      >
+                        Alebtong
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=amudat"
+                      >
+                        Amudat
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kole"
+                      >
+                        Kole
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=lamwo"
+                      >
+                        Lamwo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=napak"
+                      >
+                        Napak
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=nwoya"
+                      >
+                        Nwoya
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=otuke"
+                      >
+                        Otuke
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=zombo"
+                      >
+                        Zombo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bundibugyo"
+                      >
+                        Bundibugyo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=bushenyi"
+                      >
+                        Bushenyi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=hoima"
+                      >
+                        Hoima
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kabale"
+                      >
+                        Kabale
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kabarole"
+                      >
+                        Kabarole
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kasese"
+                      >
+                        Kasese
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kibaale"
+                      >
+                        Kibaale
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kisoro"
+                      >
+                        Kisoro
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=masindi"
+                      >
+                        Masindi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mbarara"
+                      >
+                        Mbarara
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=ntungamo"
+                      >
+                        Ntungamo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=rukungiri"
+                      >
+                        Rukungiri
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kamwenge"
+                      >
+                        Kamwenge
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kanungu"
+                      >
+                        Kanungu
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kyenjojo"
+                      >
+                        Kyenjojo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=buliisa"
+                      >
+                        Buliisa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=ibanda"
+                      >
+                        Ibanda
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=isingiro"
+                      >
+                        Isingiro
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kiruhura"
+                      >
+                        Kiruhura
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=buhweju"
+                      >
+                        Buhweju
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kiryandongo"
+                      >
+                        Kiryandongo
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=kyegegwa"
+                      >
+                        Kyegegwa
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=mitooma"
+                      >
+                        Mitooma
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=ntoroko"
+                      >
+                        Ntoroko
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=rubirizi"
+                      >
+                        Rubirizi
+                      </a>
+                    </li>
+                    <li
+                      className="not-active"
+                    >
+                      <a
+                        href="/uganda?id=sheema"
+                      >
+                        Sheema
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p
+                className="css-146a9r5"
+              >
+                Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and district public resources in 
+                Wakiso
+                .
+                <span
+                  className="css-d62f5g"
+                >
+                  Visit the 
+                   
+                  <a
+                    className="css-1wk6uqe"
+                    href="/country/uganda"
+                  >
+                    Uganda
+                     country Profile
+                  </a>
+                   
+                  to explore national-level data.
+                </span>
+              </p>
+              
+              <article>
+                <p
+                  className="css-lkfhrv"
+                >
+                  View all financial data in: 
+                </p>
+                <div
+                  aria-busy={undefined}
+                  aria-disabled={undefined}
+                  aria-expanded={false}
+                  aria-multiselectable={undefined}
+                  className="ui compact selection dropdown"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseDown={[Function]}
+                  role="listbox"
+                  tabIndex={0}
+                >
+                  <div
+                    aria-live="polite"
+                    className="text"
+                    role="alert"
+                  >
+                    Current UGX
+                  </div>
+                  <i
+                    aria-hidden="true"
+                    className="dropdown icon"
+                    onClick={[Function]}
+                  />
+                  <div
+                    className="menu transition"
+                  >
+                    <div
+                      aria-checked={false}
+                      aria-disabled={undefined}
+                      aria-selected={false}
+                      className="item"
+                      onClick={[Function]}
+                      role="option"
+                      style={
+                        Object {
+                          "pointerEvents": "all",
+                        }
+                      }
+                    >
+                      <span
+                        className="text"
+                      >
+                        constant 2012
+                      </span>
+                    </div>
+                    <div
+                      aria-checked={true}
+                      aria-disabled={undefined}
+                      aria-selected={true}
+                      className="active selected item"
+                      onClick={[Function]}
+                      role="option"
+                      style={
+                        Object {
+                          "pointerEvents": "all",
+                        }
+                      }
+                    >
+                      <span
+                        className="text"
+                      >
+                        Current UGX
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Search Kenya regional profile 1`] = `
@@ -11330,482 +14822,6 @@ exports[`Storyshots SocialMedia Bar bar 1`] = `
 </div>
 `;
 
-exports[`Storyshots SpotlightTabs OverviewTab Kenya 1`] = `
-<div
-  className="ui container"
->
-  <div
-    className="ui center aligned grid"
-  >
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        21.8 %
-      </p>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        No data
-      </p>
-      
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        US$ 99.0
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SpotlightTabs OverviewTab Uganda 1`] = `
-<div
-  className="ui container"
->
-  <div
-    className="ui center aligned grid"
-  >
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        13.1 %
-      </p>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        UgSh 98.4bn
-      </p>
-      <div
-        className="ui grid"
-      >
-        <div
-          className="six wide column"
-        >
-          <div
-            style={
-              Object {
-                "height": "140px",
-                "width": undefined,
-              }
-            }
-          />
-        </div>
-        <div
-          className="ten wide column"
-        >
-          <div
-            className="css-zpd97m"
-          >
-            <div
-              className="css-mcxcfb"
-            >
-              <span>
-                <span />
-              </span>
-              <span>
-                18 
-                % 
-                 
-                locally raised revenues
-                <i
-                  aria-hidden="true"
-                  className="info circle icon"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </span>
-            </div>
-            <div
-              className="css-arur6b"
-            >
-              <span>
-                <span />
-              </span>
-              <span>
-                82 
-                % 
-                 
-                centrally raised revenues
-                <i
-                  aria-hidden="true"
-                  className="info circle icon"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </span>
-            </div>
-            <div
-              className="css-1w6idfd"
-            >
-              <span>
-                <span />
-              </span>
-              <span>
-                0 
-                % 
-                 
-                donor revenues
-                <i
-                  aria-hidden="true"
-                  className="info circle icon"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                />
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        US$ 1.7
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SpotlightTabs PopulationTab Kenya 1`] = `
-<div
-  className="ui container"
->
-  <div
-    className="ui center aligned grid"
-  >
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        Total population
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        3.1m
-      </p>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        Population density (per sq km)
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        4.5k
-      </p>
-      <p
-        className="css-l6c9n4"
-      >
-        per sq km
-      </p>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        Annual crude birth rate
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        36.0
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SpotlightTabs PopulationTab Uganda 1`] = `
-<div
-  className="ui container"
->
-  <div
-    className="ui center aligned grid"
-  >
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        WHAT IS THE POPULATION?
-      </h3>
-      <p
-        className="css-cvoc03"
-      >
-        The total population is
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </p>
-      <p
-        className="css-5ql10x"
-      >
-        2.5m
-      </p>
-      <p
-        className="css-l6c9n4"
-      >
-        and the population density is
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </p>
-      <p
-        className="css-5ql10x"
-      >
-        1.1k
-      </p>
-      <p
-        className="css-l6c9n4"
-      >
-        per sq km
-      </p>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        <span>
-          WHAT IS THE 
-          <span
-            className="css-1feb7iy"
-          >
-            URBAN
-          </span>
-           VS 
-          <span
-            className="css-1y5q8ud"
-          >
-            RURAL
-          </span>
-           SPLIT?
-        </span>
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <div
-        className="css-1jke4qm"
-      >
-        <div
-          style={
-            Object {
-              "height": "180px",
-              "width": undefined,
-            }
-          }
-        />
-      </div>
-    </div>
-    <div
-      className="five wide computer sixteen wide mobile sixteen wide tablet column"
-    >
-      <h3
-        className="css-5ivibr"
-      >
-        WHAT IS THE AVERAGE DEPENDENCY RATIO?
-        <i
-          aria-hidden="true"
-          className="info circle icon"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      </h3>
-      <p
-        className="css-5ql10x"
-      >
-        91.3
-      </p>
-      <p
-        className="css-l6c9n4"
-      >
-        Compared with the all-district average:
-      </p>
-      <p
-        className="css-5ql10x"
-      >
-        113.4
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Tabs & Charts Country Profiles Lower tabs austria 1`] = `
 <div
   className="css-n8e9wl"
@@ -12408,6 +15424,572 @@ exports[`Storyshots Tabs & Charts Government Finance ghana 1`] = `
 </p>
 `;
 
+exports[`Storyshots Tabs & Charts Inflows Vs Outflows Kenya 1`] = `
+<p>
+  Loading...
+</p>
+`;
+
+exports[`Storyshots Tabs & Charts Inflows Vs Outflows uganda 1`] = `
+<p>
+  Loading...
+</p>
+`;
+
+exports[`Storyshots Tabs & Charts International Resources 1`] = `
+<div
+  className="css-hu3x4g"
+>
+  <div
+    className="ui tiny active progress"
+    data-percent={0}
+  >
+    <div
+      className="bar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs & Charts Nairobi with apollo 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-x5a8zc"
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs & Charts OverviewTab Kenya 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui center aligned grid"
+  >
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        21.8 %
+      </p>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        No data
+      </p>
+      
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        US$ 99.0
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs & Charts OverviewTab Uganda 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui center aligned grid"
+  >
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        WHAT PERCENTAGE OF PEOPLE IN WAKISO LIVE BELOW THE NATIONAL POVERTY LINE?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        13.1 %
+      </p>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        WHAT RESOURCES ARE AVAILABLE TO LOCAL GOVERNMENTS IN WAKISO?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        UgSh 98.4bn
+      </p>
+      <div
+        className="ui grid"
+      >
+        <div
+          className="six wide column"
+        >
+          <div
+            style={
+              Object {
+                "height": "140px",
+                "width": undefined,
+              }
+            }
+          />
+        </div>
+        <div
+          className="ten wide column"
+        >
+          <div
+            className="css-zpd97m"
+          >
+            <div
+              className="css-mcxcfb"
+            >
+              <span>
+                <span />
+              </span>
+              <span>
+                18 
+                % 
+                 
+                locally raised revenues
+                <i
+                  aria-hidden="true"
+                  className="info circle icon"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+              </span>
+            </div>
+            <div
+              className="css-arur6b"
+            >
+              <span>
+                <span />
+              </span>
+              <span>
+                82 
+                % 
+                 
+                centrally raised revenues
+                <i
+                  aria-hidden="true"
+                  className="info circle icon"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+              </span>
+            </div>
+            <div
+              className="css-1w6idfd"
+            >
+              <span>
+                <span />
+              </span>
+              <span>
+                0 
+                % 
+                 
+                donor revenues
+                <i
+                  aria-hidden="true"
+                  className="info circle icon"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        HOW MUCH DOES THE LOCAL GOVERNMENT SPEND PER PERSON?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        US$ 1.7
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs & Charts PopulationTab Kenya 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui center aligned grid"
+  >
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        Total population
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        3.1m
+      </p>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        Population density (per sq km)
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        4.5k
+      </p>
+      <p
+        className="css-l6c9n4"
+      >
+        per sq km
+      </p>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        Annual crude birth rate
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        36.0
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs & Charts PopulationTab Uganda 1`] = `
+<div
+  className="ui container"
+>
+  <div
+    className="ui center aligned grid"
+  >
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        WHAT IS THE POPULATION?
+      </h3>
+      <p
+        className="css-cvoc03"
+      >
+        The total population is
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </p>
+      <p
+        className="css-5ql10x"
+      >
+        2.5m
+      </p>
+      <p
+        className="css-l6c9n4"
+      >
+        and the population density is
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </p>
+      <p
+        className="css-5ql10x"
+      >
+        1.1k
+      </p>
+      <p
+        className="css-l6c9n4"
+      >
+        per sq km
+      </p>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        <span>
+          WHAT IS THE 
+          <span
+            className="css-1feb7iy"
+          >
+            URBAN
+          </span>
+           VS 
+          <span
+            className="css-1y5q8ud"
+          >
+            RURAL
+          </span>
+           SPLIT?
+        </span>
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <div
+        className="css-1jke4qm"
+      >
+        <div
+          style={
+            Object {
+              "height": "180px",
+              "width": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="five wide computer sixteen wide mobile sixteen wide tablet column"
+    >
+      <h3
+        className="css-5ivibr"
+      >
+        WHAT IS THE AVERAGE DEPENDENCY RATIO?
+        <i
+          aria-hidden="true"
+          className="info circle icon"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
+      </h3>
+      <p
+        className="css-5ql10x"
+      >
+        91.3
+      </p>
+      <p
+        className="css-l6c9n4"
+      >
+        Compared with the all-district average:
+      </p>
+      <p
+        className="css-5ql10x"
+      >
+        113.4
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs & Charts Wakiso with apollo 1`] = `
+<div>
+  <div
+    className="css-hu3x4g"
+  >
+    <div
+      className="ui tiny active progress"
+      data-percent={0}
+    >
+      <div
+        className="bar"
+        style={
+          Object {
+            "width": "0%",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="css-x5a8zc"
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Tabs & Charts local government Finance Nairobi 1`] = `
 <p>
   loading ...
@@ -12418,64 +16000,6 @@ exports[`Storyshots Tabs & Charts local government Finance Wakiso 1`] = `
 <p>
   loading ...
 </p>
-`;
-
-exports[`Storyshots Tabs & Charts spotlight tabs upper Nairobi 1`] = `
-<div>
-  <div
-    className="css-hu3x4g"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Tabs & Charts spotlight tabs upper Wakiso 1`] = `
-<div>
-  <div
-    className="css-hu3x4g"
-  >
-    <div
-      className="ui tiny active progress"
-      data-percent={0}
-    >
-      <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
-    </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
-  </div>
-</div>
 `;
 
 exports[`Storyshots Templates  Where are the poor 1`] = `
@@ -12497,7 +16021,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -13102,8 +16626,7 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 }
               }
             >
-              Between 1990 and 2010, extreme poverty was cut in half. 
-Explore plausible poverty outcomes for 2030 based on models of consumption.
+              Between 1990 and 2010, extreme poverty was cut in half and Explore plausible poverty outcomes for 2030 based on models of consumption
             </div>
           </div>
         </h1>
@@ -13134,12 +16657,12 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
               <h3
                 className="ui header"
               >
-                About this visualisation
+                About this visualization
               </h3>
               <p
                 className="css-3cal72"
               >
-                This page allows you to explore three scenarios for future poverty levels both globally and by region up to 2030. The baseline scenario uses current forecasts for growth in consumption and current inequality levels. The best-case scenario shows what happens with more rapid growth that is shared more equally. By contrast, the worst-case scenario sees slower growth and increasing inequality. Forecasting future poverty levels is difficult, given the inherent uncertainties involved. Poverty modelling develops future scenarios to help inform policymaking. These models rely on simplifying assumptions, often focusing on economic growth and income distribution trends which determine how much poor people benefit from that growth.
+                This page allows you to explore three scenarios for future poverty levels both globally and by region up to 2030. The baseline scenario uses current forecasts for growth in consumption and current inequality levels. The best-case scenario shows what happens with more rapid growth that is shared more equally. By contrast, the worst-case scenario sees slower growth and increasing inequality. Forecasting future poverty levels is difficult, given the inherent uncertainties involved. Poverty modelling develops future scenarios to help inform policymaking. These models rely on simplifying assumptions, often focusing on economic growth and income distribution trends which determine how much poor people benefit from that growth.Data accessed from source: 20 August 2013.
               </p>
               <p
                 className="css-3cal72"
@@ -13154,7 +16677,7 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
               <p
                 className="css-3cal72"
               >
-                The best and worst case scenarios are based on the extremes of two elements: For growth, a +/- 2 percentage point margin of error either side of baseline projections of consumption growth (which are driven by economic growth). This is in line with differences observed between past forecasts and actual outcomes. For inequality, an annual 0.25 percentage point change in the shares of national consumption between the poorest 40% and the richest 10%.
+                The best and worst case scenarios are based on the extremes of two elements: For growth, a +/- 2 percentage point margin of error either side of baseline projections of consumption growth (which are driven by economic growth). This is in line with differences observed between past forecasts and actual outcomes. For inequality, an annual 0.25 percentage point change in the shares of national consumption between the poorest 40% and the richest 10%
               </p>
               <h3
                 className="ui header"
@@ -13164,7 +16687,7 @@ Explore plausible poverty outcomes for 2030 based on models of consumption.
               <p
                 className="css-3cal72"
               >
-                Projections based on Chandy, Ledlie and Penciakova, The Final Countdown: Prospects for Ending Extreme Poverty by 2030 (2013), using the same methodology applied to a dataset updated with 40 country surveys. All data for years after 2010 are forecasts.
+                Projections based on Chandy, Ledlie and Penciakova, The Final Countdown: Prospects for Ending Extreme Poverty by 2030 (2013), using the same methodology applied to a dataset updated with 40 country surveys. All data for years after 2010 are forecasts
               </p>
               <br />
             </div>
@@ -13420,7 +16943,7 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -14800,7 +18323,7 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -16180,7 +19703,7 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -17560,7 +21083,7 @@ exports[`Storyshots Templates Country Profiles 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -20632,7 +24155,7 @@ exports[`Storyshots Templates Front Page 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -23897,7 +27420,7 @@ exports[`Storyshots Templates Main Generic 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -24723,7 +28246,7 @@ exports[`Storyshots Templates Methodology 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -26049,12 +29572,12 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Net ODA provided by non-DAC donors, % of GNI
+                      South-south development cooperation provided, % of GNI
                     </td>
                     <td
                       className=""
                     >
-                      Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD, expressed as a percentage of gross national income
+                      Development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.
                     </td>
                     <td
                       className=""
@@ -26070,9 +29593,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1"
+                        href=""
                       >
-                        OECD DAC1.
+                        Development Initiatives based on OECD DAC and national sources.
                       </a>
                     </td>
                     <td
@@ -26115,7 +29638,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.
+                      Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.
                     </td>
                     <td
                       className=""
@@ -26131,9 +29654,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a"
+                        href=""
                       >
-                        OECD DAC 2A.
+                        Development Initiatives based on OECD DAC.
                       </a>
                     </td>
                     <td
@@ -26192,9 +29715,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1"
+                        href=""
                       >
-                        OECD DAC 1.
+                        OECD DAC
                       </a>
                     </td>
                     <td
@@ -26232,7 +29755,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Net ODA provided by DAC members to LDCs, % of GNI
+                      Gross ODA provided by DAC members to LDCs, % of GNI
                     </td>
                     <td
                       className=""
@@ -26253,9 +29776,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1"
+                        href=""
                       >
-                        OECD DAC 1, OECD DAC 2A.
+                        OECD DAC
                       </a>
                     </td>
                     <td
@@ -26293,12 +29816,12 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Net other official flows and export credits provided, US$
+                      Net other official flows provided, US$
                     </td>
                     <td
                       className=""
                     >
-                      Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.
+                      Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Net OOFs are equal to gross OOFs minus capital repayments on OOF loans. Data is in constant 2015 prices.
                     </td>
                     <td
                       className=""
@@ -26314,9 +29837,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b"
+                        href=""
                       >
-                        OECD DAC 2B.
+                        Development Initiatives based on OECD DAC.
                       </a>
                     </td>
                     <td
@@ -26354,12 +29877,12 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Net ODA provided by non-DAC donors, US$
+                      Net south-south development cooperation provided, US$
                     </td>
                     <td
                       className=""
                     >
-                      Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD. Data is in constant 2015 prices.
+                      Net south-south development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC). Data is in constant 2015 prices.
                     </td>
                     <td
                       className=""
@@ -26375,9 +29898,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1"
+                        href=""
                       >
-                        OECD DAC 2A
+                        Development Initiatives based on OECD DAC and national sources.
                       </a>
                     </td>
                     <td
@@ -26385,7 +29908,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     >
                       <span>
                         <a
-                          href="https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-2015.zip?raw=true"
+                          href="https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net.zip?raw=true"
                           rel="noopener"
                           target="__blank"
                         >
@@ -26396,7 +29919,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                           ZIP
                         </a>
                         <a
-                          href="https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-2015"
+                          href="https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net"
                           rel="noopener"
                           target="__blank"
                         >
@@ -26438,7 +29961,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                       <a
                         href=""
                       >
-                        ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.
+                        Development Initiatives based on OECD DAC and World Bank PovcalNet.
                       </a>
                     </td>
                     <td
@@ -26481,7 +30004,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices
+                      Gross official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices.
                     </td>
                     <td
                       className=""
@@ -26497,9 +30020,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a."
+                        href=""
                       >
-                        OECD DAC 2A.
+                        Development Initiatives based on OECD DAC
                       </a>
                     </td>
                     <td
@@ -26542,7 +30065,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.
+                      Net official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.
                     </td>
                     <td
                       className=""
@@ -26558,9 +30081,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a"
+                        href=""
                       >
-                        OECD DAC 2B.
+                        Development Initiatives based on OECD DAC
                       </a>
                     </td>
                     <td
@@ -26598,12 +30121,12 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Gross long-term other official flows and export credits received, US$
+                      Gross other official flows received, US$
                     </td>
                     <td
                       className=""
                     >
-                      Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.
+                      Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.
                     </td>
                     <td
                       className=""
@@ -26619,9 +30142,9 @@ exports[`Storyshots Templates Methodology 1`] = `
                       className=""
                     >
                       <a
-                        href="https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b"
+                        href=""
                       >
-                        OECD DAC 2B.
+                        Development Initiatives based on OECD DAC.
                       </a>
                     </td>
                     <td
@@ -26629,7 +30152,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     >
                       <span>
                         <a
-                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015.zip?raw=true"
+                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross.zip?raw=true"
                           rel="noopener"
                           target="__blank"
                         >
@@ -26640,7 +30163,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                           ZIP
                         </a>
                         <a
-                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015"
+                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross"
                           rel="noopener"
                           target="__blank"
                         >
@@ -28480,7 +32003,7 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -29414,7 +32937,7 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -30270,7 +33793,7 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -31126,7 +34649,7 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -34319,7 +37842,7 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -39162,7 +42685,7 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -40502,7 +44025,7 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -42184,7 +45707,7 @@ exports[`Storyshots Templates UNDP profile 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -43020,7 +46543,7 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -43674,10 +47197,10 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                 className="red"
               >
                  
-                2016
+                2015
               </span>
                US$ 
-              181.1bn
+              174.3bn
             </h1>
             <h5
               className="ui header"
@@ -44148,7 +47671,7 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -44802,10 +48325,10 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                 className="red"
               >
                  
-                2016
+                2015
               </span>
                US$ 
-              64.0bn
+              71.5bn
             </h1>
             <h5
               className="ui header"
@@ -45276,7 +48799,7 @@ exports[`Storyshots Templates who are the global P20 1`] = `
           <img
             alt="Development Initiatives"
             height="32"
-            src="./images/logo.png"
+            src="/images/logo.png"
             width="132"
           />
         </a>
@@ -46319,10 +49842,10 @@ exports[`Storyshots Unbundling Aid Chart 1`] = `
             className="red"
           >
              
-            2016
+            2015
           </span>
            US$ 
-          181.1bn
+          174.3bn
         </h1>
         <h5
           className="ui header"
@@ -46572,7 +50095,7 @@ exports[`Storyshots Unbundling Aid ToolBar 1`] = `
         className="row"
       >
         <div
-          className="right aligned middle aligned sixteen wide column"
+          className="center aligned middle aligned sixteen wide column"
         >
           <div>
             <div>
@@ -46627,11 +50150,6 @@ exports[`Storyshots Unbundling Aid ToolBar 1`] = `
                       onMouseDown={[Function]}
                       value={undefined}
                     >
-                      <option
-                        value={2016}
-                      >
-                        2016
-                      </option>
                       <option
                         value={2015}
                       >
