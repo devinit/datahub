@@ -72,23 +72,24 @@ const Poverty = (props: Props) => {
           </HeaderTitle>
           {incomeDistData && incomeDistData.length
             ? <Div width="70%" margin={'0 auto'}>
-              <Chart
-                config={props.config.histogram}
-                data={incomeDistData.map((d, i) => i ? d : {...d, color: '#e84439'})}
-                height="120px"
-              />
-              <TabsFootNote textAlign="left" lineHeight={2}>
-                <span>Bottom quintile has </span>
-                <span>
-                  {
-                    `
-                    ${ Number(incomeValue) ?
-                      incomeValue : ''} % of the income. : ${NoData}
-                    `
-                  }
-                </span>
-              </TabsFootNote>
-            </Div>
+                <Chart
+                  config={props.config.histogram}
+                  data={incomeDistData.map((d, i) => i ? d : {...d, color: '#e84439'})}
+                  height="120px"
+                />
+                <TabsFootNote textAlign="left" lineHeight={2}>
+                  <span>Bottom quintile has </span>
+                  <span>
+                    {
+                      `
+                      ${ incomeValue && incomeValue.length ?
+                        `${incomeValue} % of the income` : NoData
+                      }
+                      `
+                    }
+                  </span>
+                </TabsFootNote>
+              </Div>
             : <TabsNoData />}
         </Grid.Column>
       </Grid>
