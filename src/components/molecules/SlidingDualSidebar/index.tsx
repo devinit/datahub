@@ -4,7 +4,7 @@ import * as React from 'react';
 import { groupBy } from 'ramda';
 import { Grid, Segment } from 'semantic-ui-react';
 import { SectionHeader } from '../../atoms/Header';
-import {approximate} from '../../../utils';
+import {approximate} from '@devinit/prelude';
 import ChartShare from '../ChartShare';
 import { RECIPIENT } from '../../../utils/constants';
 import { LightBg } from '../../atoms/Container';

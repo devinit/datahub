@@ -1,6 +1,6 @@
 /* tslint:disable no-nested-ternary */
 import * as React from 'react';
-import { approximate } from '../../../utils';
+import { approximate } from '@devinit/prelude';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';

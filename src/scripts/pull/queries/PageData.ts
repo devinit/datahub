@@ -43,4 +43,24 @@ export const PAGES_DATA_QUERY = gql`
       title
       narrative
     }
+    about: aboutPageData {
+      id
+      title
+      narrative
+    }
+    front: frontPageDaa {
+      id
+      title
+      narrative
+    }
+    spotlight: spotlightPageData {
+      id
+      title
+      narrative
+    }
+    unbundlingAid: unbundlingAidPageData {
+      id
+      title
+      narrative
+    }
   }`;

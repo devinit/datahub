@@ -7,6 +7,7 @@ import keData from '../components/molecules/SearchInput/kenya';
 import {RECIPIENT} from './constants';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
+import {getMaxAndMin, capitalize } from '@devinit/prelude';
 
 declare var process: IProcess;
 declare const APP_VERSION: string;
@@ -188,8 +189,6 @@ export const createCurrencyOptions =
         { text: `Current ${currencyCode}`, value: currencyCode },
     ];
 
-export const capitalize = (slug: string): string => `${slug[0].toUpperCase()}${slug.substr(1)}`;
-
 export const printDiv = (divId: string) => {
     const divElem = document.getElementById(divId);
     const printContents = divElem && divElem.innerHTML ? divElem.innerHTML : 'Inavlid div id';
@@ -230,13 +229,6 @@ export const countryOrDistrictLink = (country: string, slug: string): Route => {
     return {routePath, routeAsPath};
 };
 
-export const getMaxAndMin = (data: Array<{year: number}>): number[] => {
-    const years = data.map(obj => Number(obj.year));
-    const max: number = Math.max.apply(null, years);
-    const min: number = Math.min.apply(null, years);
-    return [max, min];
-};
-
 export function addMinAndMaxYear(config: {timeAxis} & any, data: any[]): object {
     const [axisMaximum, axisMinimum] = getMaxAndMin(data);
     const timeAxis = {...config.timeAxis, axisMinimum, axisMaximum};
@@ -252,38 +244,4 @@ export const shouldShowTabData = (data: object): boolean => {
         if (!value) return true;
         return value === 'No data' || !value.length;
     });
-};
-
-const removeTrailingZero = (value: string): string => {
-    const val = Number(value);
-    return Math.round(val) === val ? val.toString() : value;
-};
-
-// (10 ** length) == Math.pow(10, length);
-export const roundNum = (num, length): string =>
-    (Math.round(num * (10 ** length)) / (10 ** length)).toFixed(length);
-
-export const approximate =
-    (value: number | string | undefined | null,
-     precision: number = 1,
-     shouldrRemoveTrailingZero: boolean = false): string => {
-    if (value === undefined || value === null) return 'No data';
-    const val = Number(value);
-    const absValue = Math.abs(val);
-    if (absValue < 1e3) {
-        const fixed = roundNum(val, precision);
-        return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}` : fixed;
-    } else if (absValue >= 1e3 && absValue < 1e6) {
-        const newValue = val / 1e3;
-        const fixed = roundNum(newValue, precision);
-        return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}k` : `${fixed}k`;
-    } else if (absValue >= 1e6 && absValue < 1e9) {
-        const newValue = val / 1e6;
-        const fixed = roundNum(newValue, precision);
-        return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}m` : `${fixed}m`;
-    } else {
-        const newValue = val / 1e9;
-        const fixed = roundNum(newValue, precision);
-        return shouldrRemoveTrailingZero ? `${removeTrailingZero(fixed)}bn` : `${fixed}bn`;
-    }
 };

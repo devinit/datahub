@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { lightGrey, seaBackground, orange, red } from '../../theme/semantic';
-import {Route, approximate, countryOrDistrictLink} from '../../../utils';
+import {Route, countryOrDistrictLink} from '../../../utils';
 import LoadingBar from '../../molecules/LoadingBar';
 import {router, IRouter} from '../../../utils';
 import { MapContainer } from './styledMapContainer';
@@ -18,6 +18,7 @@ import {
   GenericTipHtml,
   Meta,
 } from './types';
+import {approximate} from '@devinit/prelude';
 
 // TODO: this is a hack
 const mapboxgl = (process as any).browser ? require('mapbox-gl') : {};
