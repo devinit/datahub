@@ -7,6 +7,7 @@ import { NoData } from '../../../../utils/constants';
 import { TabsToolTip} from '../../ToolTip';
 import {PageUnit} from '../../../types';
 import {getPageUnitById} from '../../../pageData';
+import {approximate} from '../../../../utils';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
@@ -26,7 +27,7 @@ const Poverty = (props: Props) => {
   // make typescript f**n happy
   const incomeDistDataObj = incomeDistData && incomeDistData[0];
   // make typescript f**n happy
-  const incomeValue: number | string = incomeDistDataObj ? incomeDistDataObj.value : '';
+  const incomeValue: number | string = incomeDistDataObj ? approximate(incomeDistDataObj.value) : '';
   return (
     <Container>
       <Grid textAlign={'center'}>
@@ -82,7 +83,7 @@ const Poverty = (props: Props) => {
                   {
                     `
                     ${ Number(incomeValue) ?
-                      (incomeValue as number).toFixed(1) : ''} % of the income. : ${NoData}
+                      incomeValue : ''} % of the income. : ${NoData}
                     `
                   }
                 </span>
