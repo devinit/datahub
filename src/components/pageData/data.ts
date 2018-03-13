@@ -425,6 +425,42 @@ export default {
       title: '',
       narrative:
         ' Click the boxes to drill down into {aid} bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ’Compare +’ button to see how different countries’ {aid} bundles compare.'
+    },
+    {
+      id: 'devt',
+      title: 'Development Initiatives based on OECD DAC data.',
+      narrative: ''
+    },
+    {
+      id: 'note',
+      title: 'Note',
+      narrative:
+        ' Note that figures are rounded: precise data are available for download on the methodology page'
+    },
+    { id: 'download', title: 'Download the data', narrative: '' },
+    {
+      id: 'more',
+      title: '',
+      narrative: 'For more information, see the DI data hub methodology page'
+    }
+  ],
+  bubbleChart: [
+    {
+      id: 'since',
+      title: '',
+      narrative:
+        'Since 2000, when the Millennium Development Goals were agreed, the domestic public resources vailable to many countries have grown and extreme poverty rates have fallen.'
+    },
+    {
+      id: 'poverty',
+      title: '',
+      narrative:
+        ' Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain scarce and poverty rates, although falling slowly in some countries are actually rising in others.'
+    },
+    {
+      id: 'click',
+      title: '',
+      narrative: 'Click the years to see how countries have progressed'
     }
   ]
 };

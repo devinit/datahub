@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Header, Button, Icon } from 'semantic-ui-react';
 import glamorous from 'glamorous';
 import { red } from '../../../theme/semantic';
+import pageData from '../../../pageData/data';
 
 // type Props = {
 //   onChange?: (value: string | void) => void,
@@ -31,18 +32,14 @@ const FloatLeft = glamorous.div({
 const Annotation = () =>
   (<Wrapper>
     <Header as="h5">
-      Since 2000, when the Millennium Development Goals were agreed, the domestic public resources
-      available to many countries have grown and extreme poverty rates have fallen.
+     {pageData.bubbleChart[0].narrative}
     </Header>
     <p>
-      Poverty rates in Far East Asia have fallen rapidly and domestic public resources are growing
-      fast. Yet in sub-Saharan Africa the story is more mixed; domestic public resources remain
-      scarce and poverty rates, although falling slowly in some countries are actually rising in
-      others.
+     {pageData.bubbleChart[1].narrative}
     </p>
     <FloatLeft>
       <p>
-        <a href="">Click the years to see how countries have progressed</a>
+        <a href="">{pageData.bubbleChart[2].narrative}</a>
       </p>
     </FloatLeft>
     <FloatLeft>

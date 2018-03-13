@@ -63,4 +63,9 @@ export const PAGES_DATA_QUERY = gql`
       title
       narrative
     }
+    bubbleChart: bubbleChartAnnotationPageData {
+      id
+      title
+      narrative
+    }
   }`;

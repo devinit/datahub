@@ -95,16 +95,15 @@ export default class extends React.Component<Props> {
                 <Grid.Column width="10">
                   <Header as="h1">Source</Header>
                   <Header as="h2" style={{ fontWeight: 100 }}>
-                    Development Initiatives based on OECD DAC data.
+                      {pageData.unbundlingAid[3].title}
                   </Header>
                   <p>
-                    Note that figures are rounded: precise data are available for download on the
-                    methodology page
+                    {pageData.unbundlingAid[4].narrative}
                   </p>
                 </Grid.Column>
                 <Grid.Column width="6">
-                  <Header as="h1">Download the data</Header>
-                  <p>For more information, see the DI data hub methodology page</p>
+                  <Header as="h1">{pageData.unbundlingAid[5].title}</Header>
+                  <p>{pageData.unbundlingAid[6].narrative}</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
