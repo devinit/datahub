@@ -6,6 +6,7 @@ import SocialMediaBar from '../../molecules/SocialMediaBar';
 import {ToolTip} from '../../molecules/ToolTip';
 import Generic from '../Generic';
 import pageData from '../../pageData/data';
+import ErrorBoundary from '../../molecules/ErrorBoundary';
 import {getUnbundlingAidPageData} from '../../pageData';
 
 const headerStyles = {
@@ -55,23 +56,25 @@ export default class extends React.Component<Props> {
               <Header.Content>
                 <TopHeader>{props.title}</TopHeader>
                 <Header.Subheader>
-                  <BottomHeader>
-                    Explore and compare funding priorities for {}
-                    {props.aidType === 'oda'
-                      ? 'official development assistance'
-                      : 'other official flows (OOFs)'}
-                    <ToolTip color={'black'} trigger={<Icon name="info circle" />}>
-                      {props.aidType === 'oda' ? (
-                        ''
-                      ) : (
-                        <p style={{ marginBottom: '0.5em' }}>
-                          {pageData.unbundlingAid[1].narrative}
-                        </p>
-                      )}
-                      {getUnbundlingAidPageData(props.aidType)}
-                    </ToolTip>
-                    <Button onClick={this.showTour} content="Using This Visualization" />
-                  </BottomHeader>
+                  <ErrorBoundary>
+                    <BottomHeader>
+                      Explore and compare funding priorities for {}
+                      {props.aidType === 'oda'
+                        ? 'official development assistance'
+                        : 'other official flows (OOFs)'}
+                      <ToolTip color={'black'} trigger={<Icon name="info circle" />}>
+                        {props.aidType === 'oda' ? (
+                          ''
+                        ) : (
+                          <p style={{ marginBottom: '0.5em' }}>
+                            {pageData.unbundlingAid[1].narrative}
+                          </p>
+                        )}
+                        {getUnbundlingAidPageData(props.aidType)}
+                      </ToolTip>
+                      <Button onClick={this.showTour} content="Using This Visualization" />
+                    </BottomHeader>
+                  </ErrorBoundary>
                 </Header.Subheader>
               </Header.Content>
             </Header>

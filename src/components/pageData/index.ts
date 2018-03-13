@@ -55,17 +55,21 @@ export const getPageUnitById = (_data: PageUnit[]) => (id: string): PageUnit => 
   if (!pageUnit) return { title: 'Error getting title', narrative: 'Error getting narrative for', id, donor_title: ''};
   return pageUnit;
 };
-export const getSpotlightPageData = (slug: string): PageUnit[] => {
+export const getSpotlightPageData = (slug: string): string => {
   const countryName = getCountryName(slug);
   if (!data.spotlight) throw new Error('country profile page data missing');
   const pageData: PageUnit[] = data.spotlight;
   const newData: PageUnit[] = replaceFields({pageData, toReplace: '{country}', replacement: countryName});
   const region = slug === 'uganda' ? 'district' : 'county';
-  return replaceFields({pageData: newData, toReplace: '{region}', replacement: region});
+  const obj = replaceFields({pageData: newData, toReplace: '{region}', replacement: region})[0];
+  if (!obj) throw Error ('Missing spotlight page data');
+  return obj.narrative || 'Missing spotlight narrative contact';
 };
-export const getUnbundlingAidPageData = (aidType: string): PageUnit[] => {
+export const getUnbundlingAidPageData = (aidType: string): string => {
   const aid = aidType === 'oda' ? 'ODA' : 'OOFs';
   if (!data.unbundlingAid) throw new Error('unbundlingAid page data missing');
   const pageData: PageUnit[] = data.unbundlingAid;
-  return replaceFields({pageData, toReplace: '{aid}', replacement: aid});
+  const obj = replaceFields({pageData, toReplace: '{aid}', replacement: aid})[0];
+  if (!obj) throw Error ('Missing unbundling page data');
+  return obj.narrative || 'Unbundling Aid is missing requred narrative';
 };
