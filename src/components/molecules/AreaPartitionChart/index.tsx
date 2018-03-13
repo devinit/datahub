@@ -141,7 +141,6 @@ class AreaPartitionChart extends React.Component<Props, State> {
   }
 
   public getFlowState(direction: string, flow?: string): FlowState {
-    console.log('flow: ', flow);
     const trend = this.props.data
       .filter(d => d.direction === direction && (flow === 'all' || d.flow_id === flow))
       .sort((a, b) => b.value - a.value);
