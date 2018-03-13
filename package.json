@@ -57,7 +57,7 @@
     "ramda": "0.25.0",
     "react": "16.2.0",
     "react-apollo": "2.0.4",
-    "react-beautiful-dnd": "5.0.0",
+    "react-beautiful-dnd": "6.0.0",
     "react-dom": "16.2.0",
     "react-intersection-observer": "3.0.3",
     "react-redux": "5.0.7",
