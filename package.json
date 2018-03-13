@@ -38,7 +38,7 @@
   "dependencies": {
     "@devinit/charts": "1.6.53",
     "@devinit/datahub-api": "1.0.6",
-    "@devinit/graphql-next": "0.3.3",
+    "@devinit/graphql-next": "0.4.3",
     "apollo-cache-persist": "0.1.1",
     "apollo-client-preset": "1.0.8",
     "apollo-fetch": "0.7.0",
