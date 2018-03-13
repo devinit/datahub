@@ -74,7 +74,7 @@
     "@types/jest": "22.2.0",
     "@types/next": "2.4.8",
     "@types/node": "9.4.7",
-    "@types/ramda": "0.25.19",
+    "@types/ramda": "0.25.20",
     "@types/react": "16.0.40",
     "@types/react-beautiful-dnd": "4.0.0",
     "@types/react-redux": "5.0.15",
