@@ -130,7 +130,7 @@ const Overview = (props: Props) => {
               ? <div style={{width: '80%', margin: '0 auto'}}>
                 <Chart
                   config={props.config.histogram}
-                  data={incomeDistData}
+                  data={incomeDistData.map((d, i) => i ? d : {...d, color: '#e84439'})}
                   height="120px"
                 />
                 <TabsFootNote textAlign="left" lineHeight={2}>
