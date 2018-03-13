@@ -1,10 +1,14 @@
+/**
+ * TODO: this visual is not well optimisied we have unncessary renders when scrubbing
+ * through the time line
+ */
 import * as React from 'react';
 import glamorous, {H4} from 'glamorous';
-import { groupBy, uniq } from 'ramda';
+import { groupBy, uniq, prop } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
-import LinePartitionHeader from '../../atoms/LinePartitionHeader';
+import LinePartitionHeader from './LinePartitionHeader';
 
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
@@ -24,12 +28,11 @@ const TreeChartContainer = glamorous.div({
     fontWeight: '500 !important'
   },
 });
-export interface Args {
-  year: any;
-  budget_type: any;
-}
-const groupByYear = groupBy( (d: Args) => d.year);
-const groupByBudgetType = groupBy( (d: Args) => d.budget_type);
+
+const groupByYear = groupBy<TreeObj>( d => `${d.year}`);
+
+const groupByBudgetType = groupBy<DH.IDomestic>(prop('budget_type'));
+
 export interface Legendx {
   legend: any;
 }
@@ -61,31 +64,38 @@ export interface Props  {
     line: TimeAxis;
     partition: Legendx;
   };
-  onChangeYear: (year: number | string) => void;
+  onChangeYear: (year: string) => void;
   onChangeCurrency: (currency: string) => any;
   onChangeBudgetType(budgetType: string): void;
 }
 
-export interface State  {
-  treesByYear: {
-    [year: number]: {
-      [budgetType: string]: Array<{value: any; value_ncu: any; }>;
-    }
+type TreeObj = DH.IDomestic & {
+      color: string,
+      nodeParent?: string,
+      nodeId: string
+    };
+
+interface TreesByYearAndBudget {
+  [year: string]: {
+    [budgetType: string]: TreeObj[]
   };
-  trend: Array<{value: any; value_ncu: any; }>;
+}
+
+export interface State  {
+  treesByYear: TreesByYearAndBudget;
+  trend: DH.IDomestic[];
   level: string;
   heading: string;
 }
 
-export default class LinePartition extends React.Component<Props> {
-  public state: State;
+export default class LinePartition extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
     this.state = this.createInitialState(props);
   }
 
-  public setLevel(levels: string[]) {
+  public setLevel = (levels: string[]) => {
     const level = levels[levels.length - 1];
     const trend = this.createTrendState(level);
     const heading = levels.map(levelx => levelx.replace(/Total\s*/gi, '')).join(' > ');
@@ -122,8 +132,8 @@ export default class LinePartition extends React.Component<Props> {
    * }
    * @returns {{}}
    */
-  public createTreeStateByYearAndBudgetType() {
-    const groupedByYear = groupByYear(this.props.data
+  public createTreeStateByYearAndBudgetType = (): TreesByYearAndBudget => {
+    const groupedByYear: {[year: string]: TreeObj[]} = groupByYear(this.props.data
       .map(datum => {
         return {
           ...datum,
@@ -134,16 +144,14 @@ export default class LinePartition extends React.Component<Props> {
         };
       }));
 
-    const groupedByYearAndBudgetType = {};
-
-    Object.keys(groupedByYear)
-      .forEach(year => {
-        groupedByYearAndBudgetType[year] = groupByBudgetType(groupedByYear[year]);
-      });
-    return groupedByYearAndBudgetType;
+    return Object.keys(groupedByYear)
+      .reduce((acc, year) => {
+        const yearBudgetTypeData = groupByBudgetType(groupedByYear[`${year}`]);
+        return {...acc, [`${year}`]: yearBudgetTypeData};
+      }, {});
   }
 
-  public createTrendState(level: string) {
+  public createTrendState = (level: string) => {
     const allBudgetTypes = uniq(this.props.data.map((datum) => datum.budget_type));
     // put there coz budget was overlapping with actual for case of uganda
     const regexString = allBudgetTypes.length > 2 ?
@@ -161,10 +169,10 @@ export default class LinePartition extends React.Component<Props> {
       });
   }
 
-  public render() {
+  public getTreeData = () => {
     const treeOfYear = this.state.treesByYear[this.props.year] || {};
     const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
-    const tree = treeOfBudgetType
+    return treeOfBudgetType
       .map(datum => {
         const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
         return {
@@ -172,19 +180,26 @@ export default class LinePartition extends React.Component<Props> {
           value,
         };
       });
-    const trend = this.state.trend
-      .map(datum => {
-        const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
-        return {
-          ...datum,
-          value,
-        };
-      });
+  }
 
+  public getTrendData = () => {
+   const trend = this.state.trend
+    .map(datum => {
+      const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
+      return {
+        ...datum,
+        value,
+      };
+    })
+    .filter(datum => datum.budget_type === this.props.budgetType);
+   return trend;
+  }
+  public render() {
+    const tree = this.getTreeData();
+    const trend = this.getTrendData();
     const showLegend = this.props.config.partition.legend &&
       this.props.config.partition.legend.showLegend;
     return (<Container>
-
       {this.props.inverted && tree.length ? '' :
         <LinePartitionHeader
           title={this.state.heading}
@@ -197,12 +212,12 @@ export default class LinePartition extends React.Component<Props> {
           currencyOptions={this.props.currencyOptions}
           onChangeCurrency={this.props.onChangeCurrency}
         />}
-
       <Grid style={{paddingBottom: '40px'}}>
         <Grid.Column mobile={16} computer={5} width={5} style={{ padding: 0 }}>
           <CardContainer>
             <Timeline
-              onYearChanged={this.props.onChangeYear}
+              // tslint:disable-next-line:jsx-no-lambda
+              onYearChanged={(year) => this.props.onChangeYear(year)}
               height={showLegend ? '250px' : '180px'}
               config={{
                 ...this.props.config.line,

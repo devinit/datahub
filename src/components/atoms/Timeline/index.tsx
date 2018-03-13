@@ -2,7 +2,7 @@ import * as React from 'react';
 import { draw } from '@devinit/charts';
 
 export interface Props  {
-  data: any;
+  data: any[];
   config: any;
   width?: string;
   height?: string;
@@ -17,7 +17,7 @@ class Timeline extends React.Component<Props> {
     super(props);
   }
 
-  public onYearChanged(year: string) {
+  public onYearChanged = (year: string) => {
     this.props.onYearChanged(year);
   }
 
@@ -25,11 +25,10 @@ class Timeline extends React.Component<Props> {
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
-    const chartx = draw({ element, data, config });
-
-    chartx.then( chart => {
-      this.chart = chart;
-      chart.onAnchorMoved(this.onYearChanged.bind(this));
+    const chart = draw({ element, data, config });
+    chart.then(xchart => {
+      this.chart = xchart;
+      xchart.onAnchorMoved((year) => this.props.onYearChanged(year));
     });
   }
 

@@ -1,0 +1,81 @@
+export default [{
+    uid: 'ByOYpF6EK2PM',
+    color: '#bcd4f0',
+    year: 2018,
+    levels: ['Revenue'],
+    budget_type: 'Proposed',
+    value: 23119404.540000003,
+    value_ncu: 98358212000
+}, {
+    uid: 'rJRYpKTVtnvM',
+    color: '#bcd4f0',
+    year: 2017,
+    levels: ['Revenue'],
+    budget_type: 'Actual',
+    value: 26043574.630000003,
+    value_ncu: 102098238000
+}, {
+    uid: 'HJZcpF6Vt3Pz',
+    color: '#bcd4f0',
+    year: 2014,
+    levels: ['Revenue'],
+    budget_type: 'Actual',
+    value: 28676211.11,
+    value_ncu: 69713045000
+}, {
+    uid: 'B1nnTFpVthvG',
+    color: '#bcd4f0',
+    year: 2017,
+    levels: ['Revenue'],
+    budget_type: 'Approved',
+    value: 21643225.060000002,
+    value_ncu: 84847613000
+}, {
+    uid: 'BJObRK6EthDf',
+    color: '#bcd4f0',
+    year: 2016,
+    levels: ['Revenue'],
+    budget_type: 'Actual',
+    value: 25347997.909999993,
+    value_ncu: 91514767000
+}, {
+    uid: 'rJ3Z0t64YnPM',
+    color: '#bcd4f0',
+    year: 2016,
+    levels: ['Revenue'],
+    budget_type: 'Proposed',
+    value: 28969426.470000003,
+    value_ncu: 104589338000
+}, {
+    uid: 'r1AHAFTEYhPf',
+    color: '#bcd4f0',
+    year: 2016,
+    levels: ['Revenue'],
+    budget_type: 'Approved',
+    value: 24786154.990000002,
+    value_ncu: 89486326000
+}, {
+    uid: 'SkUJkxY6NFhvz',
+    color: '#bcd4f0',
+    year: 2015,
+    levels: ['Revenue'],
+    budget_type: 'Actual',
+    value: 33160158.430000007,
+    value_ncu: 93618409000
+}, {
+    uid: 'r1Y1keY64F2wf',
+    color: '#bcd4f0',
+    year: 2015,
+    levels: ['Revenue'],
+    budget_type: 'Approved',
+    value: 33160158.430000007,
+    value_ncu: 93618409000
+}, {
+    uid: 'r1_xleKp4YhPz',
+    color: '#bcd4f0',
+    year: 2013,
+    levels: ['Revenue'],
+    budget_type: 'Actual',
+    value: 27143088.540000014,
+    value_ncu: 64397889000
+}];

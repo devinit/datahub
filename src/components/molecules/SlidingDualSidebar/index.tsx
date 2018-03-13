@@ -105,7 +105,6 @@ class SlidingDualSidebar extends React.Component <Props, State> {
    * @param data
    */
 
-  // eslint-disable-next-line class-methods-use-this
   public getYearState(data: any, year: number) {
     const currentYearData = data[year];
     const inflowSum = currentYearData
@@ -122,7 +121,7 @@ class SlidingDualSidebar extends React.Component <Props, State> {
     };
   }
 
-  public updateCurrentYear(year: number) {
+  public updateCurrentYear = (year: number) => {
     this.setState(this.getYearState(this.state.data, year));
   }
 
