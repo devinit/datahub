@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@devinit/charts": "^1.6.53",
-    "@devinit/datahub-api": "1.0.4",
+    "@devinit/datahub-api": "1.0.6",
     "@devinit/graphql-next": "0.3.3",
     "apollo-cache-persist": "0.1.1",
     "apollo-client-preset": "1.0.8",
@@ -93,7 +93,6 @@
     "jsdom": "11.6.2",
     "nodemon": "1.17.1",
     "pretty-format": "22.4.0",
-    "puppeteer": "1.1.1",
     "purgecss": "0.20.0",
     "react-test-renderer": "16.2.0",
     "ts-jest": "22.4.1",

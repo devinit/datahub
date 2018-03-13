@@ -41,5 +41,7 @@ Important Points / guides
 Pain Points / issues
 --------------
 
-- Currently stack with npm instead of yarn. Yarn installs seem to fail. I havent looked deeply into this.
+- Currently stack with npm instead of yarn.
+The thing with installing with yarn, is that the charts library will stop working well for some charts. This
+may have to do with the way npm installs dependencies vs yarn.
 

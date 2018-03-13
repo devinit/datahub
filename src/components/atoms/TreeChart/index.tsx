@@ -4,7 +4,7 @@ import { draw } from '@devinit/charts';
 
 export interface Props {
   data: object[];
-  config?: object;
+  config?: any;
   width?: string;
   height?: string;
   onClick?: (d: any) => void;
@@ -14,6 +14,7 @@ class Chart extends React.Component<Props> {
   public props: Props;
   public element: HTMLDivElement | null;
   public chart: any;
+  public config: any;
 
   constructor(props: Props) {
     super(props);
@@ -22,9 +23,9 @@ class Chart extends React.Component<Props> {
   public componentDidMount() {
     const element = this.element;
     const data = this.props.data;
-    const config = this.props.config || visboxConfigs;
+    this.config = this.props.config || visboxConfigs;
 
-    draw({ element, data, config }).then(chart => {
+    draw({ element, data, config: this.config }).then(chart => {
       this.chart = chart;
       this.chart.onClick(this.props.onClick);
     });
@@ -32,6 +33,8 @@ class Chart extends React.Component<Props> {
 
   public componentWillUpdate(props: Props) {
     if (this.chart) {
+      console.log('in tree chart data', props.data);
+      if (props.config && props.config.labeling) this.chart.setLabeling(props.config.labeling);
       this.chart.update(props.data);
     }
   }
