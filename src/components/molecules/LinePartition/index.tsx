@@ -29,7 +29,7 @@ const TreeChartContainer = glamorous.div({
   },
 });
 
-const groupByYear = groupBy<DH.IDomestic>( d => `${d.year}`);
+const groupByYear = groupBy<TreeObj>( d => `${d.year}`);
 
 const groupByBudgetType = groupBy<DH.IDomestic>(prop('budget_type'));
 
@@ -172,7 +172,6 @@ export default class LinePartition extends React.Component<Props, State> {
   public getTreeData = () => {
     const treeOfYear = this.state.treesByYear[this.props.year] || {};
     const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
-    console.log(this.props.budgetType, treeOfBudgetType);
     return treeOfBudgetType
       .map(datum => {
         const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
