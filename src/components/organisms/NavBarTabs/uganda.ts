@@ -331,7 +331,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_pupil_classroom_ratio',
-          name: 'Primary pupil to classroom ratio-all schools',
+          name: 'Primary pupil to classroom ratio (all schools)',
           heading: 'Primary pupil to classroom ratio-all schools.',
           tooltip: 'Primary pupil to classroom ratio-all schools.',
           source:
@@ -340,7 +340,7 @@ export default {
         {
           id:
             'spotlight_on_uganda_2017.uganda_primary_pupil_classroom_ratio_gov',
-          name: 'Primary pupil to classroom ratio-government schools',
+          name: 'Primary pupil to classroom ratio (government schools)',
           heading: 'Primary pupil to classroom ratio-government schools.',
           tooltip: 'Primary pupil to classroom ratio-government schools.',
           source:
@@ -349,7 +349,7 @@ export default {
         {
           id:
             'spotlight_on_uganda_2017.uganda_primary_pupil_classroom_ratio_priv',
-          name: 'Primary pupil to classroom ratio-private schools',
+          name: 'Primary pupil to classroom ratio (private schools)',
           heading: 'Primary pupil to classroom ratio-private schools.',
           tooltip: 'Primary pupil to classroom ratio-private schools.',
           source:
@@ -357,7 +357,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_stu_teach_ratio',
-          name: 'Primary pupil to teacher ratio-all schools',
+          name: 'Primary pupil to teacher ratio (all schools)',
           heading:
             'The number of pupils per teacher in all primary education schools, by district.',
           tooltip: 'Primary pupil to teacher ratio-all schools.',
@@ -366,7 +366,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_stu_teach_ratio_gov',
-          name: 'Primary pupil to teacher ratio-government schools',
+          name: 'Primary pupil to teacher ratio (government schools)',
           heading: 'Primary pupil to teacher ratio-government schools.',
           tooltip: 'Primary pupil to teacher ratio-government schools.',
           source:
@@ -374,7 +374,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_stu_teach_ratio_priv',
-          name: 'Primary pupil to teacher ratio-private schools',
+          name: 'Primary pupil to teacher ratio (private schools)',
           heading: 'Primary pupil to teacher ratio-private schools.',
           tooltip: 'Primary pupil to teacher ratio-private schools.',
           source:
@@ -382,7 +382,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_pupil_stance_ratio',
-          name: 'Primary pupil to toilet stance ratio-all schools',
+          name: 'Primary pupil to toilet stance ratio (all schools)',
           heading: 'Primary pupil to toilet stance ratio-all schools.',
           tooltip: 'Primary pupil to toilet stance ratio-all schools.',
           source:
@@ -390,7 +390,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_pupil_stance_ratio_gov',
-          name: 'Primary pupil to toilet stance ratio-government schools',
+          name: 'Primary pupil to toilet stance ratio (government schools)',
           heading: 'Primary pupil to toilet stance ratio-government schools.',
           tooltip: 'Primary pupil to toilet stance ratio-government schools.',
           source:
@@ -398,7 +398,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_pupil_stance_ratio_priv',
-          name: 'Primary pupil to toilet stance ratio-private schools',
+          name: 'Primary pupil to toilet stance ratio (private schools)',
           heading: 'Primary pupil to toilet stance ratio-private schools.',
           tooltip: 'Primary pupil to toilet stance ratio-private schools.',
           source:
@@ -407,7 +407,7 @@ export default {
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_sit_write',
           name:
-            'Primary pupils with adequate sitting and writing space-all schools (%)',
+            'Primary pupils with adequate sitting and writing space (all schools, %)',
           heading:
             'The percentage of primary school pupils in government and private run educational facilities that have adequate reading and writing space in their classrooms, by district.',
           tooltip:
@@ -418,7 +418,7 @@ export default {
         {
           id: 'spotlight_on_uganda_2017.uganda_primary_sit_write_gov',
           name:
-            'Primary pupils with adequate sitting and writing space-government schools (%)',
+            'Primary pupils with adequate sitting and writing space (government schools, %)',
           heading:
             'The percentage of primary school pupils in government run educational facilities that have adequate reading and writing space in their classrooms, by district.',
           tooltip:
@@ -495,7 +495,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_secondary_stu_classroom_ratio',
-          name: 'Secondary student classroom ratio-all schools',
+          name: 'Secondary student classroom ratio (all schools)',
           heading: 'Secondary student classroom ratio-all schools.',
           tooltip: 'Secondary student classroom ratio-all schools.',
           source:
@@ -504,7 +504,7 @@ export default {
         {
           id:
             'spotlight_on_uganda_2017.uganda_secondary_stu_classroom_ratio_gov',
-          name: 'Secondary student classroom ratio-government schools',
+          name: 'Secondary student classroom ratio (government schools)',
           heading: 'Secondary student classroom ratio-government schools.',
           tooltip: 'Secondary student classroom ratio-government schools.',
           source:
@@ -513,7 +513,7 @@ export default {
         {
           id:
             'spotlight_on_uganda_2017.uganda_secondary_stu_classroom_ratio_priv',
-          name: 'Secondary student classroom ratio-private schools',
+          name: 'Secondary student classroom ratio (private schools)',
           heading: 'Secondary student classroom ratio-private schools.',
           tooltip: 'Secondary student classroom ratio-private schools.',
           source:
@@ -521,7 +521,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_secondary_stu_stance_ratio',
-          name: 'Secondary student stance ratio-all schools',
+          name: 'Secondary student stance ratio (all schools)',
           heading: 'Secondary student stance ratio-all schools.',
           tooltip: 'Secondary student stance ratio-all schools.',
           source:
@@ -529,7 +529,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_secondary_stu_stance_ratio_gov',
-          name: 'Secondary student stance ratio-government schools',
+          name: 'Secondary student stance ratio (government schools)',
           heading: 'Secondary student stance ratio-government schools.',
           tooltip: 'Secondary student stance ratio-government schools.',
           source:
@@ -537,7 +537,7 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_secondary_stu_stance_ratio_priv',
-          name: 'Secondary student stance ratio-private schools',
+          name: 'Secondary student stance ratio (private schools)',
           heading: 'Secondary student stance ratio-private schools.',
           tooltip: 'Secondary student stance ratio-private schools.',
           source:
@@ -641,10 +641,10 @@ export default {
         },
         {
           id: 'spotlight_on_uganda_2017.uganda_household_water_coverage',
-          name: 'Household Water coverage (%)',
+          name: 'Household water coverage (%)',
           heading:
             'Percentage of households with access to clean water, by district.',
-          tooltip: 'Household Water coverage (%).',
+          tooltip: 'Household water coverage (%).',
           source:
             'Water and environment sector performance reports 2010-2016, Ministry of Water and Environment.'
         },

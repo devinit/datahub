@@ -157,9 +157,9 @@ export default {
       }
     },
     {
-      name: 'South-south development cooperation provided, % of GNI',
+      name: 'Net ODA provided by non-DAC donors, % of GNI',
       description:
-        'Development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.',
+        'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD, expressed as a percentage of gross national income',
       methodology: '',
       uom: 'percent',
       csv:
@@ -167,21 +167,24 @@ export default {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/ssc-percent-gni.zip?raw=true',
       source: {
-        name: 'Development Initiatives based on OECD DAC and national sources.',
-        link: ''
+        name: 'OECD DAC1.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1'
       }
     },
     {
       name: 'Net ODA provided by OECD DAC members, US$',
       description:
-        'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
+        'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
+      source: {
+        name: 'OECD DAC 2A.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a'
+      }
     },
     {
       name: 'Net ODA provided by DAC members, % of GNI',
@@ -193,10 +196,13 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni.zip?raw=true',
-      source: { name: 'OECD DAC', link: '' }
+      source: {
+        name: 'OECD DAC 1.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1'
+      }
     },
     {
-      name: 'Gross ODA provided by DAC members to LDCs, % of GNI',
+      name: 'Net ODA provided by DAC members to LDCs, % of GNI',
       description:
         'Net official development assistance (ODA) to least-developed countries (LDCs) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.',
       methodology: '',
@@ -205,33 +211,39 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni.zip?raw=true',
-      source: { name: 'OECD DAC', link: '' }
+      source: {
+        name: 'OECD DAC 1, OECD DAC 2A.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1'
+      }
     },
     {
-      name: 'Net other official flows provided, US$',
+      name: 'Net other official flows and export credits provided, US$',
       description:
-        'Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Net OOFs are equal to gross OOFs minus capital repayments on OOF loans. Data is in constant 2015 prices.',
+        'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
+      source: {
+        name: 'OECD DAC 2B.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b'
+      }
     },
     {
-      name: 'Net south-south development cooperation provided, US$',
+      name: 'Net ODA provided by non-DAC donors, US$',
       description:
-        'Net south-south development cooperation provided by countries that are not members of the OECD Development Assistance Committee (DAC). Data is in constant 2015 prices.',
+        'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD. Data is in constant 2015 prices.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-2015',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-2015.zip?raw=true',
       source: {
-        name: 'Development Initiatives based on OECD DAC and national sources.',
-        link: ''
+        name: 'OECD DAC 2A',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1'
       }
     },
     {
@@ -246,45 +258,55 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015.zip?raw=true',
       source: {
         name:
-          'Development Initiatives based on OECD DAC and World Bank PovcalNet.',
+          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
         link: ''
       }
     },
     {
       name: 'Gross ODA received, US$',
       description:
-        'Gross official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices.',
+        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC', link: '' }
+      source: {
+        name: 'OECD DAC 2A.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a.'
+      }
     },
     {
       name: 'Net ODA received, US$',
       description:
-        'Net official development assistance (ODA) includes non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
+        'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC', link: '' }
+      source: {
+        name: 'OECD DAC 2B.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a'
+      }
     },
     {
-      name: 'Gross other official flows received, US$',
+      name:
+        'Gross long-term other official flows and export credits received, US$',
       description:
-        'Other official flows (OOF) are flows to developing countries from donor governments, development finance institutions (DFIs) and multilateral bodies that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality or finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',
+        'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross.zip?raw=true',
-      source: { name: 'Development Initiatives based on OECD DAC.', link: '' }
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015.zip?raw=true',
+      source: {
+        name: 'OECD DAC 2B.',
+        link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b'
+      }
     },
     {
       name: 'Foreign direct investment per person, US$',

@@ -4,7 +4,7 @@ import { groupBy, uniq } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
-import LinePartitionHeader from '../../atoms/LinePartitionHeader';
+import LinePartitionHeader from './LinePartitionHeader';
 
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
@@ -85,7 +85,7 @@ export default class LinePartition extends React.Component<Props> {
     this.state = this.createInitialState(props);
   }
 
-  public setLevel(levels: string[]) {
+  public setLevel = (levels: string[]) => {
     const level = levels[levels.length - 1];
     const trend = this.createTrendState(level);
     const heading = levels.map(levelx => levelx.replace(/Total\s*/gi, '')).join(' > ');
@@ -122,7 +122,7 @@ export default class LinePartition extends React.Component<Props> {
    * }
    * @returns {{}}
    */
-  public createTreeStateByYearAndBudgetType() {
+  public createTreeStateByYearAndBudgetType = () => {
     const groupedByYear = groupByYear(this.props.data
       .map(datum => {
         return {
@@ -143,7 +143,7 @@ export default class LinePartition extends React.Component<Props> {
     return groupedByYearAndBudgetType;
   }
 
-  public createTrendState(level: string) {
+  public createTrendState = (level: string) => {
     const allBudgetTypes = uniq(this.props.data.map((datum) => datum.budget_type));
     // put there coz budget was overlapping with actual for case of uganda
     const regexString = allBudgetTypes.length > 2 ?
@@ -180,11 +180,10 @@ export default class LinePartition extends React.Component<Props> {
           value,
         };
       });
-
+    console.log('trend', trend[0]);
     const showLegend = this.props.config.partition.legend &&
       this.props.config.partition.legend.showLegend;
     return (<Container>
-
       {this.props.inverted && tree.length ? '' :
         <LinePartitionHeader
           title={this.state.heading}
@@ -197,12 +196,12 @@ export default class LinePartition extends React.Component<Props> {
           currencyOptions={this.props.currencyOptions}
           onChangeCurrency={this.props.onChangeCurrency}
         />}
-
       <Grid style={{paddingBottom: '40px'}}>
         <Grid.Column mobile={16} computer={5} width={5} style={{ padding: 0 }}>
           <CardContainer>
             <Timeline
-              onYearChanged={this.props.onChangeYear}
+              // tslint:disable-next-line:jsx-no-lambda
+              onYearChanged={(year) => this.props.onChangeYear(year)}
               height={showLegend ? '250px' : '180px'}
               config={{
                 ...this.props.config.line,

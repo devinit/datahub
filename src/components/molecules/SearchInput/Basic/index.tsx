@@ -48,7 +48,7 @@ class SearchInput extends React.Component <Props, State> {
     };
     this.router = this.props.router ? this.props.router : router;
   }
-  public onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+  public onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     let { selected } = this.state;
     const { entities } = this.state;
     const keyCode = e.keyCode;
@@ -77,26 +77,26 @@ class SearchInput extends React.Component <Props, State> {
     }
     this.setState({ selected });
   }
-  public onChange(text: string) {
+  public onChange = (text: string) => {
     this.setState({ value: text });
     const filteredCountries: Entity[] = this.props.entities.filter((country: Entity) =>
       country.name.toLowerCase().includes(text.toLowerCase()),
     );
     if (filteredCountries.length) this.setState({ entities: filteredCountries });
   }
-  public onBlur() {
+  public onBlur = () => {
     if (this.setState) {
       this.onBlurTimer = setTimeout(() => {
         this.resetState();
       }, 200);
     }
   }
-  public onCaretDownClick() {
+  public onCaretDownClick = () => {
     this.resetState();
     this.setState({showList: true});
     this.textInput.focus();
   }
-  public onSubmit() {
+  public onSubmit = () => {
     const country: Entity | void = this.state.entities[0] || null;
     if (!country) return false;
     // reset state
@@ -135,14 +135,16 @@ class SearchInput extends React.Component <Props, State> {
           <Input
             value={this.state.value}
             placeholder={this.props.profile ? '' : this.props.placeholder}
-            onBlur={this.onBlur}
+            // tslint:disable-next-line:jsx-no-lambda
+            onBlur={() => this.onBlur()}
             // tslint:disable-next-line:jsx-no-lambda
             innerRef={input => { this.textInput = input; }}
             // tslint:disable-next-line:jsx-no-lambda
             onFocus={() => this.setState({ showList: true })}
             // tslint:disable-next-line:jsx-no-lambda
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => this.onChange(e.target.value)}
-            onKeyDown={this.onKeyDown}
+            // tslint:disable-next-line:jsx-no-lambda
+            onKeyDown={(event) => this.onKeyDown(event)}
           />
         </InputContainer>
         <Div position="relative" visibility={this.state.showList ? 'visible' : 'hidden'}>

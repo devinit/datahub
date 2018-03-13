@@ -36,7 +36,7 @@
     "breaking": "release-it --no-npm.publish -i major -n"
   },
   "dependencies": {
-    "@devinit/charts": "1.6.50",
+    "@devinit/charts": "^1.6.53",
     "@devinit/datahub-api": "1.0.4",
     "@devinit/graphql-next": "0.3.3",
     "apollo-cache-persist": "0.1.1",

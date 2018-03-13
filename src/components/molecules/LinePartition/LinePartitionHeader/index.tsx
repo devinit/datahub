@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Grid, Dropdown, Label, Segment } from 'semantic-ui-react';
-import { SectionHeader } from '../Header/index';
+import { SectionHeader } from '../../../atoms/Header/index';
 
 export type onChangeT =  (budgetType: string) => void;
 export type onChangeC = (currency: string) => void;

@@ -81,7 +81,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
     }
   }
 
-  public fireReduxActions(activeIndicator: string) {
+  public fireReduxActions = (activeIndicator: string) => {
     // these weird ifs are for flow to be happy
     if (!this.props.changeActiveIndicator) throw new Error('missing redux action creator changeActiveIndicator');
     this.props.changeActiveIndicator(activeIndicator);
@@ -100,7 +100,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
       console.error('missing default indicator');
     }
   }
-  public handleSelect(event: any, data: Option[]) {
+  public handleSelect = (event: any, data: Option[]) => {
     event.preventDefault();
     const optionElement = event.target.childNodes;
     const text = optionElement[0].textContent;
@@ -110,12 +110,12 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
     this.fireReduxActions(activeIndicator);
     this.setState({ activeIndicator, loading: true });
   }
-  public handleUsingThisViz() {
+  public handleUsingThisViz = () => {
     if (!this.state.tourVisibility) return this.setState({ tourVisibility: true });
     window.scrollTo(300, 0);
     return this.setState({ tourVisibility: false });
   }
-  public toolTipinfo() {
+  public toolTipinfo = () => {
     let active = { heading: 'N/A', source: 'N/A' };
     this.navBarItems.forEach((navItem: NavBarItem) => {
       if (navItem.indicators) {
@@ -136,9 +136,11 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
       <NavTabsItems
         options={options}
         activeIndicator={this.state.activeIndicator}
-        onChange={this.handleSelect}
+        // tslint:disable-next-line:jsx-no-lambda
+        onChange={(event, data) => this.handleSelect(event, data)}
         showUsingThisViz={this.props.showUsingThisViz}
-        onUsingThisVizHandler={this.handleUsingThisViz}
+        // tslint:disable-next-line:jsx-no-lambda
+        onUsingThisVizHandler={() => this.handleUsingThisViz()}
         toolTip={this.toolTipinfo()}
       />
     );
@@ -184,7 +186,8 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
           bottom={this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '-22%' : '0px'}
           top={this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '25%' : '-50px'}
           visible={this.state.tourVisibility}
-          closeHandler={this.handleUsingThisViz}
+          // tslint:disable-next-line:jsx-no-lambda
+          closeHandler={() => this.handleUsingThisViz()}
         >
           <VisualizationTour entity={entity} />
         </TourContainer>

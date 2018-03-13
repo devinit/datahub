@@ -47,7 +47,11 @@ class Search extends React.Component<Props> {
           <Container>
             <h2>
               Explore by
-              <span onClick={this.showInput} className="clickable" role="button">
+              <span
+                onClick={this.showInput}
+                className="clickable"
+                role="button"
+              >
                 {' '}country
               </span>
             </h2>
@@ -58,7 +62,7 @@ class Search extends React.Component<Props> {
           router={this.props.router}
           entities={data.countries}
           routePath={'country'} // for route
-          visible={false}
+          visible={this.state.showInput}
           profile={false}
           placeholder={'Type a country name...'}
         />

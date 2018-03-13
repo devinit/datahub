@@ -115,15 +115,15 @@ export default class MultiLinePartition extends React.Component<Props> {
     this.setState(initState);
   }
 
-  public setCurrency(currency: string) {
+  public setCurrency = (currency: string) => {
     this.setState({ currency });
   }
 
-  public setBudgetType(budgetType: string) {
+  public setBudgetType = (budgetType: string) => {
     this.setState({ budgetType });
   }
 
-  public setYear(year: number) {
+  public setYear = (year: number) => {
     const budgetTypeOptions = this.state.budgetTypeOptions[year];
     const budgetType = budgetTypeOptions && budgetTypeOptions[0].value;
     this.setState({
@@ -131,7 +131,7 @@ export default class MultiLinePartition extends React.Component<Props> {
       budgetType,
     });
   }
-  public toggleRevenueTour() {
+  public toggleRevenueTour = () => {
     if (this.state.revenueTourVisible) {
       this.setState({ revenueTourVisible: false });
     } else {
@@ -185,7 +185,8 @@ export default class MultiLinePartition extends React.Component<Props> {
               budgetType={this.state.budgetType}
               budgetTypeOptions={this.state.budgetTypeOptions[this.state.year]}
               config={this.props.config}
-              onChangeYear={this.setYearBound}
+              // tslint:disable-next-line:jsx-no-lambda
+              onChangeYear={(year) => this.setYearBound(year)}
               onChangeCurrency={this.setCurrencyBound}
               onChangeBudgetType={this.setBudgetTypeBound}
             />

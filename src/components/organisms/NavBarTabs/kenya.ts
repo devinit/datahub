@@ -140,7 +140,7 @@ export default {
       indicators: [
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_stu_teach_ratio',
-          name: 'Primary pupil to teacher ratio-all schools',
+          name: 'Primary pupil to teacher ratio (all schools)',
           heading:
             'The number of pupils per teacher in all primary education schools, by county.',
           tooltip: 'Primary pupil to teacher ratio-all schools',
@@ -148,7 +148,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_stu_teach_ratio_gov',
-          name: 'Primary pupil to teacher ratio-public schools',
+          name: 'Primary pupil to teacher ratio (public schools)',
           heading:
             "The relationship between the number of pupils enrolled in a public school and the number of 'full-time equivalent' teachers employed by the school, by county.",
           tooltip: 'Primary pupil to teacher ratio-public schools',
@@ -156,7 +156,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_stu_teach_ratio_priv',
-          name: 'Primary pupil to teacher ratio-private schools',
+          name: 'Primary pupil to teacher ratio (private schools)',
           heading:
             "The relationship between the number of pupils enrolled in a private school and the number of 'full-time equivalent' teachers employed by the school, by county.",
           tooltip: 'Primary pupil to teacher ratio-private schools',
@@ -164,7 +164,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_av_size_gov',
-          name: 'Primary average number of students-government schools',
+          name: 'Primary average number of students (government schools)',
           heading:
             'The average number of children in a public primary school, by county.',
           tooltip: 'Primary average class size public schools',
@@ -172,7 +172,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_av_size_priv',
-          name: 'Primary average number of students-private schools',
+          name: 'Primary average number of students (private schools)',
           heading:
             'The average number of children in a private primary school, by county.',
           tooltip: 'Primary average class size private schools',
@@ -180,7 +180,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_ner_girls',
-          name: 'Primary net enrolment rate-girls',
+          name: 'Primary net enrolment rate (girls)',
           heading:
             'The number of girl children of official primary school age who are enrolled in primary education as a percentage of the total children of the official school age population.',
           tooltip: 'Primary net enrolment rate girls',
@@ -188,7 +188,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_primary_ner_boys',
-          name: 'Primary net enrolment rate-boys',
+          name: 'Primary net enrolment rate (boys)',
           heading:
             'The number of boy children of official primary school age who are enrolled in primary education as a percentage of the total children of the official school age population.',
           tooltip: 'Primary net enrolment rate boys',
@@ -220,7 +220,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_secondary_av_size_gov',
-          name: 'Secondary average number of students-government schools',
+          name: 'Secondary average number of students (government schools)',
           heading:
             'The average number of children in a public secondary school, by county.',
           tooltip: 'Average secondary school size public',
@@ -228,7 +228,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_secondary_av_size_priv',
-          name: 'Secondary average number of students-private schools',
+          name: 'Secondary average number of students (private schools)',
           heading:
             'The average number of children in a public secondary school, by county.',
           tooltip: 'Average secondary school size private',
@@ -236,7 +236,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_secondary_ner_girls',
-          name: 'Secondary net enrolment rate-girls',
+          name: 'Secondary net enrolment rate (girls)',
           heading:
             'The number of girl children of official secondary school age who are enrolled in secondary education as a percentage of the total children of the official school age population, by county.',
           tooltip: 'Secondary school net enrolment rate girls',
@@ -244,7 +244,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_secondary_ner_boys',
-          name: 'Secondary net enrolment rate-boys',
+          name: 'Secondary net enrolment rate (boys)',
           heading:
             'The number of boy children of official secondary school age who are enrolled in secondary education as a percentage of the total children of the official school age population, by county.',
           tooltip: 'Secondary school net enrolment rate boys',
@@ -252,7 +252,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_ecde_ner_girls',
-          name: 'ECDE net enrolment rate-girls',
+          name: 'ECDE net enrolment rate (girls)',
           heading:
             'The number of boy children of official ECD age who are enrolled in ECD education as a percentage of the total children of the official ECDE age population.',
           tooltip: 'ECDE net enrolment rate girls',
@@ -260,7 +260,7 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_ecde_ner_boys',
-          name: 'ECDE net enrolment rate-boys',
+          name: 'ECDE net enrolment rate (boys)',
           heading:
             'The number of boy children of official ECD age who are enrolled in ECD education as a percentage of the total children of the official ECDE age population.',
           tooltip: 'ECDE net enrolment rate boys',
