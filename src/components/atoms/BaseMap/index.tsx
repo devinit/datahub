@@ -18,7 +18,7 @@ import {
   GenericTipHtml,
   Meta,
 } from './types';
-import {approximate} from '@devinit/prelude';
+import {approximate} from '@devinit/prelude/lib/numbers';
 
 // TODO: this is a hack
 const mapboxgl = (process as any).browser ? require('mapbox-gl') : {};

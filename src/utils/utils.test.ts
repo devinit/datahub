@@ -2,7 +2,8 @@ import 'jest';
 import * as prettyFormat from 'pretty-format';
 import { getShortURL, getCountryName,
   getCountry, getPageMeta, shouldShowTabData, sendEmail} from '.';
-import {getMaxAndMin, approximate, capitalize} from '@devinit/prelude';
+import {capitalize } from '@devinit/prelude/lib/strings';
+import {getMaxAndMin, approximate} from '@devinit/prelude/lib/numbers';
 
 describe('utils tests', () => {
   it('should return short url of a long url', async () => {

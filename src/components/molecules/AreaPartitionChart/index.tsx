@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { approximate } from '@devinit/prelude';
+import { approximate } from '@devinit/prelude/lib/numbers';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';

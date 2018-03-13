@@ -1,7 +1,7 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
-import { approximate } from '@devinit/prelude';
+import { approximate } from '@devinit/prelude/lib/numbers';
 import { init } from 'ramda';
 import { SectionHeader } from '../../../atoms/Header';
 import TreeChart from '../../../atoms/TreeChart';

@@ -7,7 +7,8 @@ import keData from '../components/molecules/SearchInput/kenya';
 import {RECIPIENT} from './constants';
 import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
-import {getMaxAndMin, capitalize } from '@devinit/prelude';
+import {getMaxAndMin} from '@devinit/prelude/lib/numbers';
+import {capitalize } from '@devinit/prelude/lib/strings';
 
 declare var process: IProcess;
 declare const APP_VERSION: string;

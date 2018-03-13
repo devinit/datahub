@@ -7,7 +7,7 @@ import { NoData } from '../../../../utils/constants';
 import { TabsToolTip} from '../../ToolTip';
 import {PageUnit} from '../../../types';
 import {getPageUnitById} from '../../../pageData';
-import {approximate} from '@devinit/prelude';
+import {approximate} from '@devinit/prelude/lib/numbers';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {

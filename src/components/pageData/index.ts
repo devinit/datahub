@@ -2,7 +2,7 @@
  * exports out page data for various pages after doing any necessary modifications
  */
 import {getCountryName} from '../../utils';
-import {capitalize} from '@devinit/prelude';
+import {capitalize} from '@devinit/prelude/lib/strings';
 import data from './data';
 
 export interface PageUnit {
