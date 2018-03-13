@@ -13,7 +13,7 @@ const Upper = glamorous.div({
 });
 
 const MethodologyTemplate: React.SFC = () =>
-  (<Generic pathname="/methodology">
+  (<Generic>
     <Upper>
       <Container>
         <Grid>

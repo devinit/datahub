@@ -17,7 +17,7 @@ const StyledIframe = glamorous.iframe({
   },
 });
 export default () =>
-  (<Generic pathname="/who-are-the-global-p20">
+  (<Generic>
     <Div paddingTop="5em">
       <Container>
         <Grid>

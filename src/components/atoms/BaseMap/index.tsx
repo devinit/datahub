@@ -276,6 +276,7 @@ class BaseMap extends React.Component<Props, State> {
       if (!this.props.meta || !this.props.meta.country) return false;
       const route: Route = countryOrDistrictLink(this.props.meta.country, slug.toLowerCase());
       this.setState({ profileLoading: true });
+      console.log(route.routePath, route.routeAsPath);
       return this.router.push(route.routePath, route.routeAsPath);
     });
   }

@@ -7,6 +7,7 @@ import { DarkBg, LightBg } from '../../atoms/Container';
 import Observer from 'react-intersection-observer';
 import {router as routerx} from '../../../utils';
 import {SingletonRouter} from 'next/router';
+import pageData from '../../pageData/data';
 
 const goToMethodologyPage = (router?: SingletonRouter) => () =>
   router ? router.push('/methodology') : routerx.push('/methodology');
@@ -31,22 +32,15 @@ export default ({router}: {router?: SingletonRouter}) =>
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width="8">
-              <Header as="h3">The Development Data Hub</Header>
+              <Header as="h3">{pageData.about[0].title}</Header>
               <p>
-                The Development Data Hub is the most comprehensive online resource for financial
-                and resource flow data alongside poverty, social and vulnerability indicators. It
-                combines an extensive data store with interactive visualisations enabling you to
-                chart, map and compare data at the global, national and local level.
+                {pageData.about[1].narrative}
               </p>
             </Grid.Column>
             <Grid.Column width="8">
               <Header as="h3">How does it work?</Header>
               <p>
-                It brings together many data sets, enabling you to dig into these through
-                interactive maps, charts and visualisations. It turns complex data around poverty
-                and resource flows into easy to understand robust information and evidence about
-                what is really going on. The Data Hub is an accessible and easy to use tool for
-                anyone wanting to know more about how resources for development are spent.
+                {pageData.about[2].narrative}
               </p>
             </Grid.Column>
           </Grid.Row>

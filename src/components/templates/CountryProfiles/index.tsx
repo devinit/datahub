@@ -13,7 +13,7 @@ import Generic from '../Generic';
 declare var process: IProcess;
 
 export default () =>
-  (<Generic pathname="/country-profiles">
+  (<Generic>
     <Container>
       <Grid>
         <Grid.Row>

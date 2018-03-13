@@ -527,7 +527,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to classroom ratio-all schools',
+      name: 'Primary pupil to classroom ratio (all schools)',
       description: 'Primary pupil to classroom ratio-all schools.',
       methodology: '',
       uom: 'unit',
@@ -542,7 +542,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to classroom ratio-government schools',
+      name: 'Primary pupil to classroom ratio (government schools)',
       description: 'Primary pupil to classroom ratio-government schools.',
       methodology: '',
       uom: 'unit',
@@ -557,7 +557,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to classroom ratio-private schools',
+      name: 'Primary pupil to classroom ratio (private schools)',
       description: 'Primary pupil to classroom ratio-private schools.',
       methodology: '',
       uom: 'unit',
@@ -572,7 +572,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to teacher ratio-all schools',
+      name: 'Primary pupil to teacher ratio (all schools)',
       description:
         'The number of pupils per teacher in all primary education schools, by district.',
       methodology: '',
@@ -588,7 +588,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to teacher ratio-government schools',
+      name: 'Primary pupil to teacher ratio (government schools)',
       description: 'Primary pupil to teacher ratio-government schools.',
       methodology: '',
       uom: 'unit',
@@ -603,7 +603,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to teacher ratio-private schools',
+      name: 'Primary pupil to teacher ratio (private schools)',
       description: 'Primary pupil to teacher ratio-private schools.',
       methodology: '',
       uom: 'unit',
@@ -618,7 +618,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to toilet stance ratio-all schools',
+      name: 'Primary pupil to toilet stance ratio (all schools)',
       description: 'Primary pupil to toilet stance ratio-all schools.',
       methodology: '',
       uom: 'unit',
@@ -633,7 +633,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to toilet stance ratio-government schools',
+      name: 'Primary pupil to toilet stance ratio (government schools)',
       description: 'Primary pupil to toilet stance ratio-government schools.',
       methodology: '',
       uom: 'unit',
@@ -648,7 +648,7 @@ export default {
       }
     },
     {
-      name: 'Primary pupil to toilet stance ratio-private schools',
+      name: 'Primary pupil to toilet stance ratio (private schools)',
       description: 'Primary pupil to toilet stance ratio-private schools.',
       methodology: '',
       uom: 'unit',
@@ -664,7 +664,7 @@ export default {
     },
     {
       name:
-        'Primary pupils with adequate sitting and writing space-all schools (%)',
+        'Primary pupils with adequate sitting and writing space (all schools, %)',
       description:
         'The percentage of primary school pupils in government and private run educational facilities that have adequate reading and writing space in their classrooms, by district.',
       methodology: '',
@@ -681,7 +681,7 @@ export default {
     },
     {
       name:
-        'Primary pupils with adequate sitting and writing space-government schools (%)',
+        'Primary pupils with adequate sitting and writing space (government schools, %)',
       description:
         'The percentage of primary school pupils in government run educational facilities that have adequate reading and writing space in their classrooms, by district.',
       methodology: '',
@@ -811,7 +811,7 @@ export default {
       }
     },
     {
-      name: 'Secondary student classroom ratio-all schools',
+      name: 'Secondary student classroom ratio (all schools)',
       description: 'Secondary student classroom ratio-all schools.',
       methodology: '',
       uom: 'unit',
@@ -826,7 +826,7 @@ export default {
       }
     },
     {
-      name: 'Secondary student classroom ratio-government schools',
+      name: 'Secondary student classroom ratio (government schools)',
       description: 'Secondary student classroom ratio-government schools.',
       methodology: '',
       uom: 'unit',
@@ -841,7 +841,7 @@ export default {
       }
     },
     {
-      name: 'Secondary student classroom ratio-private schools',
+      name: 'Secondary student classroom ratio (private schools)',
       description: 'Secondary student classroom ratio-private schools.',
       methodology: '',
       uom: 'unit',
@@ -856,7 +856,7 @@ export default {
       }
     },
     {
-      name: 'Secondary student stance ratio-all schools',
+      name: 'Secondary student stance ratio (all schools)',
       description: 'Secondary student stance ratio-all schools.',
       methodology: '',
       uom: 'unit',
@@ -871,7 +871,7 @@ export default {
       }
     },
     {
-      name: 'Secondary student stance ratio-government schools',
+      name: 'Secondary student stance ratio (government schools)',
       description: 'Secondary student stance ratio-government schools.',
       methodology: '',
       uom: 'unit',
@@ -886,7 +886,7 @@ export default {
       }
     },
     {
-      name: 'Secondary student stance ratio-private schools',
+      name: 'Secondary student stance ratio (private schools)',
       description: 'Secondary student stance ratio-private schools.',
       methodology: '',
       uom: 'unit',
@@ -1045,7 +1045,7 @@ export default {
       }
     },
     {
-      name: 'Household Water coverage (%)',
+      name: 'Household water coverage (%)',
       description:
         'Percentage of households with access to clean water, by district.',
       methodology: '',

@@ -27,9 +27,10 @@ const replaceFields = (args: ReplaceFieldsArgs): PageUnit[] => {
   const {pageData, toReplace, replacement} = args;
   return pageData.map((obj: PageUnit) => {
     return Object.keys(obj).reduce((acc: PageUnit, key: string): PageUnit => {
-      const replaced: string = obj[key] && obj[key].includes(toReplace) ?
-                            obj[key].replace(toReplace, replacement) : obj[key];
-      return replaced ? {...acc, [key]: replaced} : {...acc, [key]: replaced};
+    const toReplaceRegx = new RegExp(toReplace, 'g');
+    const replaced: string = obj[key] && obj[key].includes(toReplace) ?
+                            obj[key].replace(toReplaceRegx, replacement) : obj[key];
+    return replaced ? {...acc, [key]: replaced} : {...acc, [key]: replaced};
     }, {} as PageUnit);
   });
 };
@@ -53,4 +54,18 @@ export const getPageUnitById = (_data: PageUnit[]) => (id: string): PageUnit => 
   const pageUnit: PageUnit | undefined = _data.find(obj => obj.id === id);
   if (!pageUnit) return { title: 'Error getting title', narrative: 'Error getting narrative for', id, donor_title: ''};
   return pageUnit;
+};
+export const getSpotlightPageData = (slug: string): PageUnit[] => {
+  const countryName = getCountryName(slug);
+  if (!data.spotlight) throw new Error('country profile page data missing');
+  const pageData: PageUnit[] = data.spotlight;
+  const newData: PageUnit[] = replaceFields({pageData, toReplace: '{country}', replacement: countryName});
+  const region = slug === 'uganda' ? 'district' : 'county';
+  return replaceFields({pageData: newData, toReplace: '{region}', replacement: region});
+};
+export const getUnbundlingAidPageData = (aidType: string): PageUnit[] => {
+  const aid = aidType === 'oda' ? 'ODA' : 'OOFs';
+  if (!data.unbundlingAid) throw new Error('unbundlingAid page data missing');
+  const pageData: PageUnit[] = data.unbundlingAid;
+  return replaceFields({pageData, toReplace: '{aid}', replacement: aid});
 };

@@ -210,3 +210,33 @@ exports[`page data tests should return district page data 1`] = `
   },
 ]"
 `;
+
+exports[`page data tests should return spotlightPage page data 1`] = `
+"Array [
+  Object {
+    \\"id\\": \\"comprehensive-source\\",
+    \\"narrative\\": \\"is a comprehensive source of Uganda's financial resource flow data at the sub-national (district) level, alongside indicators on poverty, population, education,health, water, hygiene and sanitation. It highlights the geographical variance in sector performance and financial resources, and seeks to answer whether resources are allocated according to need. Explore the country picture by selecting topics and click on a {region} for an in-depth profile.\\",
+    \\"title\\": \\"\\",
+  },
+]"
+`;
+
+exports[`page data tests should return unbundlingAid page data 1`] = `
+"Array [
+  Object {
+    \\"id\\": \\"explore\\",
+    \\"narrative\\": \\"\\",
+    \\"title\\": \\"Explore and compare funding priorities for\\",
+  },
+  Object {
+    \\"id\\": \\"oofs\\",
+    \\"narrative\\": \\"The Other Official Flows (OOF) data shown does not include export credits and the quality and completeness of data is reliant on the reporting of OOF activities by individual donors to the CRS.\\",
+    \\"title\\": \\"\\",
+  },
+  Object {
+    \\"id\\": \\"click-boxes\\",
+    \\"narrative\\": \\" Click the boxes to drill down into OOFs bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ’Compare +’ button to see how different countries’ OOFs bundles compare.\\",
+    \\"title\\": \\"\\",
+  },
+]"
+`;

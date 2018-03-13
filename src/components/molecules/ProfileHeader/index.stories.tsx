@@ -2,7 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import ProfileHeader from '.';
 
-storiesOf('Profile Headers DontTest', module)
+storiesOf('Profile Headers', module)
   .add('Uganda Profile header', () =>
     (<ProfileHeader
       entity={{name: 'Uganda', id: 'UG', slug: 'uganda'}}

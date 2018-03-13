@@ -9,6 +9,7 @@ import {cacheMapData} from '../../../utils';
 import {StateToShare} from '../../molecules/ChartShare';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
+import {getSpotlightPageData} from '../../pageData';
 
 interface Props  {
   pathname: string;
@@ -25,11 +26,10 @@ export default class Spotlight extends React.Component<Props> {
   }
   public render() {
     const countryName = capitalize(this.props.id);
-    const region = this.props.id === 'uganda' ? 'district' : 'county';
     // this casting is hack, typecript couldnt infar correct types
     const navState = {state: this.props.state} as SpotlightKeProps | SpotlightUgProps;
     return (
-      <Generic pathname={this.props.pathname} >
+      <Generic >
         <Container>
           <Div paddingTop={'4em'} paddingBottom={'4em'}>
             <Grid centered>
@@ -37,12 +37,7 @@ export default class Spotlight extends React.Component<Props> {
                 <b>
                   <Icon name="pie graph" /> Spotlight on {countryName} {' '}
                 </b>
-                is a comprehensive source of {countryName}'s financial resource flow data at the
-                sub-national ({region}) level, alongside indicators on poverty, population, education,
-                health, water, hygiene and sanitation. It highlights the geographical variance in
-                sector performance and financial resources, and seeks to answer whether resources are
-                allocated according to need. Explore the country picture by selecting topics and click
-                on a {region} for an in-depth profile.
+                {getSpotlightPageData(this.props.id)}
               </Grid.Column>
             </Grid>
           </Div>

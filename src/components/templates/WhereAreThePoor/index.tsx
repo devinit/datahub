@@ -41,7 +41,7 @@ const StyledIframe = glamorous.iframe({
 });
 export default () => {
   return (
-    <Generic pathname="/where-are-the-poor">
+    <Generic>
       <Container>
         <HeaderContainer>
           <Header as="h1">

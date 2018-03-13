@@ -371,5 +371,60 @@ export default {
       narrative:
         'Projections based on Chandy, Ledlie and Penciakova, The Final Countdown: Prospects for Ending Extreme Poverty by 2030 (2013), using the same methodology applied to a dataset updated with 40 country surveys. All data for years after 2010 are forecasts'
     }
+  ],
+  about: [
+    {
+      id: 'about-the-development-data-hub',
+      title: 'ABOUT THE DEVELOPMENT DATA HUB',
+      narrative: ''
+    },
+    {
+      id: 'the-development-data-hub',
+      title: 'The Development Data Hub',
+      narrative:
+        'The Development Data Hub is the most comprehensive online resource for financial and resource flow data alongside poverty, social and vulnerability indicators. It combines an extensive data store with interactive visualisations enabling you to chart, map and compare data at the global, national and local level.'
+    },
+    {
+      id: 'how-does-it-work?',
+      title: 'How does it work?',
+      narrative:
+        'It brings together many data sets,enabling you to dig into these through interactive maps, charts and visualisations. It turns complex data around poverty and resource flows into easy to understand robust information and evidence about what is really going on. The Data Hub is an accessible and easy to use tool for anyone wanting to know more about how resources for development are spent.'
+    }
+  ],
+  front: [
+    {
+      id: 'comprehensive',
+      title: 'comprehensive',
+      narrative:
+        'is the most comprehensive source for financial resource flow data alongside poverty,social and vulnerability indicators.'
+    },
+    { id: 'read', title: 'Read more about the data hub.', narrative: '' }
+  ],
+  spotlight: [
+    {
+      id: 'comprehensive-source',
+      title: '',
+      narrative:
+        "is a comprehensive source of {country}'s financial resource flow data at the sub-national ({region}) level, alongside indicators on poverty, population, education,health, water, hygiene and sanitation. It highlights the geographical variance in sector performance and financial resources, and seeks to answer whether resources are allocated according to need. Explore the country picture by selecting topics and click on a {region} for an in-depth profile."
+    }
+  ],
+  unbundlingAid: [
+    {
+      id: 'explore',
+      title: 'Explore and compare funding priorities for',
+      narrative: ''
+    },
+    {
+      id: 'oofs',
+      title: '',
+      narrative:
+        'The Other Official Flows (OOF) data shown does not include export credits and the quality and completeness of data is reliant on the reporting of OOF activities by individual donors to the CRS.'
+    },
+    {
+      id: 'click-boxes',
+      title: '',
+      narrative:
+        ' Click the boxes to drill down into {aid} bundle. Drag and drop the buttons below to change the order and take different journeys through the data. Use the ’Compare +’ button to see how different countries’ {aid} bundles compare.'
+    }
   ]
 };

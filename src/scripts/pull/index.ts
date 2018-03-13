@@ -1,4 +1,4 @@
-import {getAndWriteData} from '@devinit/graphql-next/lib/query';
+import {getAndWriteData} from '@devinit/prelude';
 import * as path from 'path';
 import COUNTRIES_QUERY from './queries/Countries';
 // const COUNTRIES_QUERY = require('./queries/Countries');

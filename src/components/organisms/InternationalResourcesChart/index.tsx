@@ -12,8 +12,6 @@ import {INTL_RESOURCES_QUERY} from './query.graphql';
 
 type QueryVarTs = ResourcesOverTimeQueryVariables & {
   year: number;
-  shouldScrollIntoView: boolean;
-  chartId: string;
 };
 
 type TChildProps = ChildProps<QueryVarTs, ResourcesOverTimeQuery>;
@@ -26,7 +24,7 @@ const withData = graphql<ResourcesOverTimeQuery, QueryVarTs, TChildProps>(INTL_R
   }),
 });
 
-const Chart: React.SFC<TChildProps> = ({data, year, shouldScrollIntoView, chartId, id}) => {
+const Chart: React.SFC<TChildProps> = ({data, year, id}) => {
   if (data && data.loading) return <LoadingBar loading />;
   if (data && data.error) throw new Error (`Error in international finance chart, ${data.error}`);
   if (!data) return <p>data key is missing</p>;

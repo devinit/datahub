@@ -10,6 +10,7 @@ import DynamicMap from '../../organisms/Map/DynamicMap';
 import { cacheMapData } from '../../../utils';
 import Router from 'next/router';
 import Generic from '../Generic';
+import pageData from '../../pageData/data';
 
 interface Props  {
   state: StateToShare;
@@ -27,7 +28,7 @@ export default class Front extends React.Component<Props> {
     // this casting is a hack, typescript coundnt infar this
     const navState = {state: this.props.state};
     return (
-      <Generic pathname="/">
+      <Generic>
         <GlobalPictureSearch />
         <Container>
           <Div paddingTop={'2em'} paddingBottom={'2em'} fontSize={'1.2rem'}>
@@ -36,9 +37,8 @@ export default class Front extends React.Component<Props> {
                 <b>
                   <Icon name="pie graph" />The Development Data Hub{' '}
                 </b>{' '}
-                is the most comprehensive source for financial resource flow data alongside poverty,
-                social and vulnerability indicators.{' '}
-                <a href="#about" style={{color: red}}>Read more about the data hub.</a>
+                {pageData.front[0].narrative}.{' '}
+                <a href="#about" style={{color: red}}>{pageData.front[1].title}</a>
               </Grid.Column>
             </Grid>
           </Div>

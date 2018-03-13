@@ -5,6 +5,8 @@ import UnbundlingAid from '../../organisms/UnbundlingAid';
 import SocialMediaBar from '../../molecules/SocialMediaBar';
 import {ToolTip} from '../../molecules/ToolTip';
 import Generic from '../Generic';
+import pageData from '../../pageData/data';
+import {getUnbundlingAidPageData} from '../../pageData';
 
 const headerStyles = {
   paddingTop: '4em',
@@ -45,9 +47,8 @@ export default class extends React.Component<Props> {
   }
   public render() {
     const props = this.props;
-    const aid = props.aidType === 'oda' ? 'ODA' : 'OOFs';
     return (
-      <Generic pathname={this.props.pathname}>
+      <Generic>
         <Container>
           <HeaderContainer>
             <Header as="h1" textAlign="center">
@@ -64,14 +65,10 @@ export default class extends React.Component<Props> {
                         ''
                       ) : (
                         <p style={{ marginBottom: '0.5em' }}>
-                          The Other Official Flows (OOF) data shown does not include export credits
-                          and the quality and completeness of data is reliant on the reporting of
-                          OOF activities by individual donors to the CRS.
+                          {pageData.unbundlingAid[1].narrative}
                         </p>
                       )}
-                      Click the boxes to drill down into {aid} bundle. Drag and drop the buttons
-                      below to change the order and take different journeys through the data. Use
-                      the ’Compare +’ button to see how different countries’ {aid} bundles compare.
+                      {getUnbundlingAidPageData(props.aidType)}
                     </ToolTip>
                     <Button onClick={this.showTour} content="Using This Visualization" />
                   </BottomHeader>

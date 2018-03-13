@@ -176,6 +176,10 @@ export const errorHandler = async (error: string | Error, info?: string) => {
     // if (process.env.NODE_ENV === 'production') { // temporarily disable // should be production to renable
     // }
 };
+export const isMobile = () => {
+    if (!process.browser) return false;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
+};
 
 export interface CurrencyOption {
     text: string;

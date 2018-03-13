@@ -19,7 +19,6 @@ _________
 - [ ] Explore [purgecss](https://github.com/FullHuman/purgecss) for css optimisation --> need to carry out some tests
 - [ ] Explore [reactpot](https://github.com/reactopt/reactopt) for further perf
 
-
 Important Points / guides
 
 ------------------------
