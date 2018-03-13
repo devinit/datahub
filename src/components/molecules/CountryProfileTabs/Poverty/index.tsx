@@ -7,7 +7,7 @@ import { NoData } from '../../../../utils/constants';
 import { TabsToolTip} from '../../ToolTip';
 import {PageUnit} from '../../../types';
 import {getPageUnitById} from '../../../pageData';
-import {approximate} from '../../../../utils';
+import {approximate} from '@devinit/prelude';
 import {TabDataQuery} from '../../../gql-types';
 
 export type Props = TabDataQuery & {
@@ -27,7 +27,7 @@ const Poverty = (props: Props) => {
   // make typescript f**n happy
   const incomeDistDataObj = incomeDistData && incomeDistData[0];
   // make typescript f**n happy
-  const incomeValue: number | string = incomeDistDataObj ? approximate(incomeDistDataObj.value) : '';
+  const incomeValue: any = incomeDistDataObj ? approximate(incomeDistDataObj.value) : '';
   return (
     <Container>
       <Grid textAlign={'center'}>
