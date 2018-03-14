@@ -69,7 +69,8 @@ export const getUnbundlingAidPageData = (aidType: string): string => {
   const aid = aidType === 'oda' ? 'ODA' : 'OOFs';
   if (!data.unbundlingAid) throw new Error('unbundlingAid page data missing');
   const pageData: PageUnit[] = data.unbundlingAid;
-  const obj = replaceFields({pageData, toReplace: '{aid}', replacement: aid})[0];
+  const arr = replaceFields({pageData, toReplace: '{aid}', replacement: aid});
+  const obj = arr.find((item) => item.id === 'click-boxes');
   if (!obj) throw Error ('Missing unbundling page data');
   return obj.narrative || 'Unbundling Aid is missing requred narrative';
 };

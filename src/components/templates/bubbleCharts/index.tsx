@@ -4,6 +4,7 @@ import { Container, Header, Grid } from 'semantic-ui-react';
 import SocialMediaBar from '../../molecules/SocialMediaBar';
 import {mediaQueries} from '../../theme';
 import Generic from '../Generic';
+import pageData from '../../pageData/data';
 
 declare const OLD_DATAHUB_URL: string;
 
@@ -30,18 +31,14 @@ export default ({pathname}: Props) =>
             <Grid.Column computer="16" tablet="16" mobile="16">
               <Header as="h2" textAlign="center" color="red">
                 {pathname === '/oda-donor' ?
-                  'Different providers, different priorities' :
-                  'Are domestic public resources able to meet the needs of the poorest people?'
+                  pageData.odaDonorBubbleChartPageData[0].title :
+                  pageData.odaDonorBubbleChartPageData[1].title
                 }
               </Header>
               <P textAlign="center" fontSize="1.1em" paddingBottom="2em">
                 {pathname === '/oda-donor' ?
-                  `How effectively are donors targeting the countries with the highest numbers of people in poverty
-                  and the least domestic public resources to address it? This chart allows you to select
-                  a provider of aid to see how it allocates aid across countries.` :
-                  `The proportion of people living in extreme poverty worldwide has more than halved since 2000,
-                    yet progress is varied across countries. Although domestic public resources are an important
-                  resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high.`
+               pageData.odaDonorBubbleChartPageData[0].narrative :
+                  pageData.odaDonorBubbleChartPageData[1].narrative
                 }
               </P>
             </Grid.Column>

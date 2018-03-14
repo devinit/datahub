@@ -304,6 +304,21 @@ export default {
     },
     { id: 'videoUrl', title: 'https://youtu.be/2G1Gg2opKPg', narrative: '' }
   ],
+  odaDonorBubbleChartPageData: [
+    {
+      id: 'diff-providers-priorities',
+      title: 'Different providers, different priorities',
+      narrative:
+        'How effectively are donors targeting the countries with the highest numbers of people in poverty and the least domestic public resources to address it? This chart allows you to select a provider of aid to see how it allocates aid across countries'
+    },
+    {
+      id: 'public-resources',
+      title:
+        'Are domestic public resources able to meet the needs of the poorest people?',
+      narrative:
+        'The proportion of people living in extreme poverty worldwide has more than halved since 2000, yet progress is varied across countries. Although domestic public resources are an important resource to drive efforts to end poverty, they remain scarce in many countries where poverty is high.'
+    }
+  ],
   povertyBubbleChart: [
     {
       id: 'resources-able-to-meet-needs',
@@ -396,7 +411,7 @@ export default {
       id: 'comprehensive',
       title: 'comprehensive',
       narrative:
-        'is the most comprehensive source for financial resource flow data alongside poverty,social and vulnerability indicators.'
+        'is the most comprehensive source for financial resource flow data alongside poverty, social and vulnerability indicators'
     },
     { id: 'read', title: 'Read more about the data hub.', narrative: '' }
   ],
@@ -461,6 +476,14 @@ export default {
       id: 'click',
       title: '',
       narrative: 'Click the years to see how countries have progressed'
+    }
+  ],
+  whoAreTheGlobalP20: [
+    {
+      id: 'the-P20',
+      title: '',
+      narrative:
+        ' The P20 are the 1.4 billion men, women and children living in over 100 countries who are the poorest 20% of the global population. People in the P20 often experience multiple and intersecting deprivations, disadvantages and discrimination based on identity, circumstances and life events. The below visualisation enables you to explore how these experiences and identities intersect for the P20 across different countries.'
     }
   ]
 };

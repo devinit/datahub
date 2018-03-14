@@ -296,7 +296,7 @@ export default {
           id: 'fact.in_oda_gross_2015',
           name: 'Gross ODA received, US$',
           heading:
-            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices',
+            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices',
           tooltip: 'Gross ODA received, US$.',
           source: 'OECD DAC 2A.'
         },
@@ -304,7 +304,7 @@ export default {
           id: 'fact.in_oda_net_2015',
           name: 'Net ODA received, US$',
           heading:
-            'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
+            'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices.',
           tooltip: 'Net ODA received, US$.',
           source: 'OECD DAC 2B.'
         },
@@ -322,8 +322,7 @@ export default {
           heading:
             'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2015 prices.',
           tooltip: 'ODA per person living on under $1.90 a day, US$.',
-          source:
-            'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.'
+          source: 'OECD DAC2A and World Bank PovcalNet.'
         },
         {
           id: 'fact.oda_percent_gni',
@@ -352,7 +351,7 @@ export default {
           source: 'OECD DAC 2B.'
         },
         {
-          id: 'fact.out_oof_net',
+          id: 'fact.out_oof_net_2015',
           name: 'Net other official flows and export credits provided, US$',
           heading:
             'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',

@@ -14,7 +14,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "test": "jest src/components/pageData/pageData.test.ts",
+    "test": "jest ",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "dev": "NODE_ENV=development nodemon src/server/index.ts",
     "build:next": "next build",
