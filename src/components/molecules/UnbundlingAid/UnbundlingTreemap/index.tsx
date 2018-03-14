@@ -121,6 +121,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
 
   public updateValue = (key: string) => (value: string) => {
     // making sure we dont have duplicates
+    console.log(key, value);
     const values = UnbundlingTreemap.addNewValue({key, value}, this.state.values);
     this.setState({ values });
     const active = UnbundlingTreemap.getActiveOption(this.state.position);

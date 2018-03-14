@@ -33,7 +33,6 @@ class Chart extends React.Component<Props> {
 
   public componentWillUpdate(props: Props) {
     if (this.chart) {
-      console.log('in tree chart data', props.data);
       if (props.config && props.config.labeling) this.chart.setLabeling(props.config.labeling);
       this.chart.update(props.data);
     }

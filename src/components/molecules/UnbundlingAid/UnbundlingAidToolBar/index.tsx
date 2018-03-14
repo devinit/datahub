@@ -99,7 +99,7 @@ export default class ToolBar extends React.Component<Props, State> {
                       {(provided) => (
                         <div ref={provided.innerRef}>
                           <span style={{display: 'inline'}}>{aid}</span>
-                          <div style={{display: 'inline'}}>
+                          <div style={{display: 'inline-block'}}>
                             <Select
                               key={'years'}
                               active

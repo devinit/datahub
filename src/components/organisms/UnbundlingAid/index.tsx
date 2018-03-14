@@ -53,7 +53,7 @@ export const unbundlingSelections = (aidType, startYear): Selections => {
   return {
     years: years.map(year => ({
       name: `${year}`,
-      value: year,
+      value: `${year}`,
       key: `${year}`,
       active: year === startYear,
     })),

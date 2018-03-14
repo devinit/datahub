@@ -5,4 +5,5 @@ import Chart from '.';
 
 storiesOf('Unbundling Aid', module)
   .addDecorator(withApolloProvider())
-  .add('Chart', () => <Chart aidType={'oda'} tourVisible={false} />);
+  .add('ODA', () => <Chart aidType={'oda'} tourVisible={false} />)
+  .add('OOF', () => <Chart aidType={'oof'} tourVisible={false} />);
