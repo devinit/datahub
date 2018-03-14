@@ -1,6 +1,6 @@
 import 'jest';
 import * as prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName,
+import { getShortURL, getCountryName, shouldHaveMapboxCss,
   getCountry, getPageMeta, shouldShowTabData, sendEmail} from '.';
 import {capitalize } from '@devinit/prelude/lib/strings';
 import {getMaxAndMin, approximate} from '@devinit/prelude/lib/numbers';
@@ -82,5 +82,11 @@ describe('utils tests', () => {
       subject: 'test email from datahub'
     });
     expect(response.status).toBe(200);
+  });
+  it('should let us know whether to add mabox css on a page or not', () => {
+    const shouldBeOnHomePage = shouldHaveMapboxCss('/country/uganda');
+    const shouldBeOnHomeCountryPage = shouldHaveMapboxCss('/uganda/wakiso');
+    expect(shouldBeOnHomePage).toBe(true);
+    expect(shouldBeOnHomeCountryPage).toBe(true);
   });
 });
