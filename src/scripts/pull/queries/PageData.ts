@@ -23,6 +23,11 @@ export const PAGES_DATA_QUERY = gql`
       title
       narrative
     }
+    odaDonorBubbleChartPageData {
+      id
+      title
+      narrative
+    }
     povertyBubbleChart: povertyBubbleChartPageData {
       id
       title
@@ -64,6 +69,11 @@ export const PAGES_DATA_QUERY = gql`
       narrative
     }
     bubbleChart: bubbleChartAnnotationPageData {
+      id
+      title
+      narrative
+    }
+    whoAreTheGlobalP20: whoAreTheGlobalP20PageData {
       id
       title
       narrative

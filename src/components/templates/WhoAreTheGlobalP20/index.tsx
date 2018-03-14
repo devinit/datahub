@@ -3,6 +3,7 @@ import glamorous, {Div, P} from 'glamorous';
 import { Container, Header, Grid } from 'semantic-ui-react';
 import {mediaQueries} from '../../theme';
 import Generic from '../Generic';
+import pageData from '../../pageData/data';
 
 declare const OLD_DATAHUB_URL: string;
 
@@ -27,12 +28,7 @@ export default () =>
                 Who are the global P20?
               </Header>
               <P textAlign="center" fontSize="1.1em" paddingBottom="2em">
-                The P20 are the 1.4 billion men, women and children living in
-                {' '}over 100 countries who are the poorest 20% of the global population.
-                {' '}People in the P20 often experience multiple and intersecting deprivations,
-                {' '}disadvantages and discrimination based on identity, circumstances and life events.
-                {' '}The below visualisation enables you to explore how these experiences and
-                identities intersect for the P20 across different countries.
+               {pageData.whoAreTheGlobalP20[0].narrative}
               </P>
             </Grid.Column>
           </Grid.Row>
