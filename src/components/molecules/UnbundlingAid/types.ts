@@ -1,7 +1,7 @@
 export interface DropDownOption {
     name: string;
     key: string;
-    value: string | number;
+    value: string;
     active: boolean;
 }
 export interface Selections {

@@ -396,7 +396,7 @@ export default {
       id: 'comprehensive',
       title: 'comprehensive',
       narrative:
-        'is the most comprehensive source for financial resource flow data alongside poverty,social and vulnerability indicators.'
+        'is the most comprehensive source for financial resource flow data alongside poverty, social and vulnerability indicators'
     },
     { id: 'read', title: 'Read more about the data hub.', narrative: '' }
   ],

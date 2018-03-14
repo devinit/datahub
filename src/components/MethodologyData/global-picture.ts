@@ -223,9 +223,9 @@ export default {
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015.zip?raw=true',
       source: {
         name: 'OECD DAC 2B.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b'
@@ -256,16 +256,12 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015.zip?raw=true',
-      source: {
-        name:
-          'ODA shown is provided by DAC donors and multilateral organisations reporting to the OECD DAC; recipients shown include those on the historical and current DAC lists of ODA recipients.',
-        link: ''
-      }
+      source: { name: 'OECD DAC2A and World Bank PovcalNet.', link: '' }
     },
     {
       name: 'Gross ODA received, US$',
       description:
-        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data is in constant 2015 prices',
+        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
@@ -280,7 +276,7 @@ export default {
     {
       name: 'Net ODA received, US$',
       description:
-        'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
+        'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
