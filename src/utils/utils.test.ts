@@ -1,18 +1,12 @@
 import 'jest';
 import * as prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName,
-  getCountry, getPageMeta, shouldShowTabData, sendEmail} from '.';
+import {  getCountryName,
+  getCountry, getPageMeta, shouldShowTabData,} from '.';
 import {capitalize } from '@devinit/prelude/lib/strings';
 import {getMaxAndMin, approximate} from '@devinit/prelude/lib/numbers';
+import {sendEmail} from '@devinit/prelude/lib/misc';
 
 describe('utils tests', () => {
-  it('should return short url of a long url', async () => {
-      const url =
-        await getShortURL('http://212.71.254.23:9999/country/uganda?state={"year":2015,"budgetType":"actual"}');
-      expect(url).toMatchSnapshot();
-    },
-    20000,
-  );
   it('should return country object', () => {
     const country = getCountry('drc');
     expect(prettyFormat(country)).toMatchSnapshot();

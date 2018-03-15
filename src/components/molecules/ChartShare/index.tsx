@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Modal, Icon, SemanticICONS } from 'semantic-ui-react';
 import { white, black, lightSecondaryColor} from '../../theme/semantic';
-import {getShortURL} from '../../../utils';
+import {getShortURL} from '@devinit/prelude/misc';
 import glamorous, { Div, Span } from 'glamorous';
 
 export const NoBackground = {
