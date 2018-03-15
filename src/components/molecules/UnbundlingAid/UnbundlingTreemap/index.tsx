@@ -132,7 +132,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     const active = UnbundlingTreemap.getActiveOption(this.state.position) as SelectionKey;
     this.setState({ values, active });
     this.history.push(this.state);
-    this.fetch(active, values);gi
+    this.fetch(active, values);
   }
   public onMove = (key: string) => {
     const groupersKeys = Object.keys(UnbundlingTreemap.groupers) as SelectionKey[];
