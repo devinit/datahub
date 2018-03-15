@@ -230,3 +230,13 @@ export const shouldShowTabData = (data: object): boolean => {
         return value === 'No data' || !value.length;
     });
 };
+
+export const shouldHaveMapboxCss = (pathname: string): boolean => {
+    if (pathname === '/') return true;
+    const basePathName = pathname.split('/')[1];
+    if (!basePathName) return false;
+    return ['/country', '/kenya', '/uganda', '/spotlight-on-kenya', '/spotlight-on-uganda']
+      .some(path => {
+          return RegExp(`\/${basePathName}\S*`).test(path);
+    });
+};

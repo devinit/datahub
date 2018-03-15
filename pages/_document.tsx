@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import {PageMeta, getPageMeta} from '../src/utils';
-// import criticalCSS from '../src/critical-css/critical';
+import {PageMeta, getPageMeta, shouldHaveMapboxCss} from '../src/utils';
 import { renderStatic } from 'glamor/server';
 
 declare const APP_VERSION: string;
@@ -14,16 +13,12 @@ export default class MyDocument extends Document {
     const styles = renderStatic(() => page.html || page.errorHtml);
     return { ...page, ...styles };
   }
-  public shouldHaveMapboxCss: string[];
-  public shouldHaveChartsCss: string[];
   constructor(props) {
     super(props);
     const { __NEXT_DATA__, ids } = props;
     if (ids) {
       __NEXT_DATA__.ids = this.props.ids;
     }
-    this.shouldHaveMapboxCss =
-      ['/country', '/kenya', '/uganda', '/spotlight-on-kenya', '/spotlight-on-uganda', '/'];
   }
   public render() {
     const pathname = this.props.__NEXT_DATA__ &&  this.props.__NEXT_DATA__.pathname || '/';
@@ -42,7 +37,7 @@ export default class MyDocument extends Document {
         {process.env.NODE_ENV !== 'production' ?
             <link as="style" href={`/mapbox-gl.min.css?v${version}`} rel="stylesheet"/>
             :
-          this.shouldHaveMapboxCss.includes(pathname) ?
+            shouldHaveMapboxCss(pathname) ?
                <link as="style" href={`/mapbox-gl.min.css?v${version}`} rel="stylesheet"/>
                : ''
         }

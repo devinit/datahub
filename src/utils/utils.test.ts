@@ -1,10 +1,9 @@
 import 'jest';
 import * as prettyFormat from 'pretty-format';
-import {  getCountryName,
-  getCountry, getPageMeta, shouldShowTabData,} from '.';
+import {  getCountryName, shouldHaveMapboxCss,
+  getCountry, getPageMeta, shouldShowTabData } from '.';
 import {capitalize } from '@devinit/prelude/lib/strings';
 import {getMaxAndMin, approximate} from '@devinit/prelude/lib/numbers';
-import {sendEmail} from '@devinit/prelude/lib/misc';
 
 describe('utils tests', () => {
   it('should return country object', () => {
@@ -68,13 +67,10 @@ describe('utils tests', () => {
     expect(toShowB).toBe(true);
     expect(toShowC).toBe(true);
   });
-  it.skip('should run without errors while sending email', async () => {
-    const response = await sendEmail({
-      message: 'test',
-      token: 'e2DQks99XapU6w2s1',
-      emails: ['epicallan.al@gmail.com'],
-      subject: 'test email from datahub'
-    });
-    expect(response.status).toBe(200);
+  it('should let us know whether to add mabox css on a page or not', () => {
+    const shouldBeOnHomePage = shouldHaveMapboxCss('/country/uganda');
+    const shouldBeOnHomeCountryPage = shouldHaveMapboxCss('/uganda/wakiso');
+    expect(shouldBeOnHomePage).toBe(true);
+    expect(shouldBeOnHomeCountryPage).toBe(true);
   });
 });

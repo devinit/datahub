@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-app",
-  "version": "3.0.24",
+  "version": "3.1.1",
   "config": {
     "API": "http://212.111.41.68:9090/graphql",
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": true,
@@ -14,7 +14,7 @@
   "license": "ISC",
   "scripts": {
     "build": "tsc",
-    "test": "jest ",
+    "test": "jest",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "dev": "NODE_ENV=development nodemon src/server/index.ts",
     "build:next": "next build",
@@ -38,6 +38,7 @@
   "dependencies": {
     "@devinit/charts": "1.6.53",
     "@devinit/datahub-api": "1.0.6",
+    "@devinit/prelude": "1.1.0",
     "apollo-cache-persist": "0.1.1",
     "apollo-client-preset": "1.0.8",
     "apollo-fetch": "0.7.0",
@@ -90,9 +91,8 @@
     "jest": "22.4.2",
     "jest-cli": "22.4.2",
     "jsdom": "11.6.2",
-    "nodemon": "1.17.1",
+    "nodemon": "1.17.2",
     "pretty-format": "22.4.0",
-    "purgecss": "0.20.0",
     "react-test-renderer": "16.2.0",
     "ts-jest": "22.4.1",
     "ts-loader": "3.5.0",
