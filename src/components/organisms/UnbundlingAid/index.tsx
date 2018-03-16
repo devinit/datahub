@@ -29,6 +29,8 @@ interface Props {
 
 type TChildProps = ChildProps<InitialQuery, UnbundlingAidDataQuery>;
 
+// for fetching inital unbundling aid data, subsequent data fetches are done in
+// the unbundling aid molecule
 const withData = graphql<UnbundlingAidDataQuery, InitialQuery>(QUERY, {
   options: props => ({
     variables: {
