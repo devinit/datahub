@@ -34,6 +34,7 @@ export default function CountryProfileLowerTabs(props: Props) {
           label="GOVERNMENT FINANCE"
           id={GOVERNMENT_FINANCE_LOWER}
         >
+        <ErrorBoundary>
           <GovernmentFinance
             pageData={pageData}
             countryName={country && country.name ? country.name : props.id}
@@ -48,6 +49,7 @@ export default function CountryProfileLowerTabs(props: Props) {
               />
             </ErrorBoundary>
           </GovernmentFinance>
+          </ErrorBoundary>
         </Pane>
         : ''
       }

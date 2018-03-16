@@ -9,6 +9,7 @@ import * as localforage from 'localforage';
 import { createApolloFetch,  FetchResult } from 'apollo-fetch';
 import {getMaxAndMin} from '@devinit/prelude/lib/numbers';
 import {capitalize } from '@devinit/prelude/lib/strings';
+import { sendEmail } from '@devinit/prelude/lib/misc';
 
 declare var process: IProcess;
 declare const APP_VERSION: string;
@@ -155,15 +156,6 @@ export interface Email {
     subject: string;
 }
 
-export const sendEmail = (payload: Email) => {
-    return fetch('http://data.devinit.org:9999/send', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(payload)
-    });
-};
 // will email errors to allan when they occur
 // TODO: improve this by adding more info on the errors. i.e if country profile add country etc
 export const errorHandler = async (error: string | Error, info?: string) => {
@@ -176,10 +168,6 @@ export const errorHandler = async (error: string | Error, info?: string) => {
     });
     // if (process.env.NODE_ENV === 'production') { // temporarily disable // should be production to renable
     // }
-};
-export const isMobile = () => {
-    if (!process.browser) return false;
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent);
 };
 
 export interface CurrencyOption {
@@ -207,14 +195,6 @@ export const printDiv = (divId: string) => {
     }
 };
 
-export const getShortURL = async (longUrl: string): Promise<string> => {
-    // TODO: add access token to sever env virables
-    const apiToken = '43c76f9ad7b4a259615aba8f682b55493477e467';
-    const apiUrl = `https://api-ssl.bitly.com/v3/shorten?access_token=${apiToken}`;
-    const response = await fetch(`${apiUrl}&longUrl=${longUrl}`);
-    const json = await response.json();
-    return json.data.url;
-};
 // country is global or uganda or kenya etc
 export interface Route {
     routeAsPath: string;
