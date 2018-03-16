@@ -9,6 +9,7 @@ import populationConfig from '../../visbox/spotlightPopulationTabCharts';
 import overviewConfig from '../../visbox/spotlightOverviewTabCharts';
 import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../gql-types';
 import TABS_QUERY from './query.graphql';
+import ErrorBoundary from '../../molecules/ErrorBoundary';
 
 type QueryVarTs = SpotLightTabDataQueryVariables & {
   currency: string;
@@ -26,24 +27,34 @@ const spotlightTabs: React.SFC<TChildProps> = ({currency, data, id, country}) =>
   return (
     <Tabs selected={0}>
       <Pane label="Overview" id="spotlight-overview">
+        <ErrorBoundary>
         <Overview
           {...data}
           pageData={pageData}
           currency={currency}
           config={overviewConfig}
         />
+        </ErrorBoundary>
       </Pane>
       <Pane label="Poverty" id="spotlight-poverty">
+      <ErrorBoundary>
         <Poverty {...data} pageData={pageData} />
+        </ErrorBoundary>
       </Pane>
       <Pane label="Population" id="spotlight-population">
+      <ErrorBoundary>
         <Population {...data} pageData={pageData} config={populationConfig} />
+        </ErrorBoundary>
       </Pane>
       <Pane label="Education" id="spotlight-education">
+      <ErrorBoundary>
         <Education {...data} pageData={pageData} currency={currency} />
+        </ErrorBoundary>
       </Pane>
       <Pane label="Health" id="spotlight-health">
+      <ErrorBoundary>
         <Health {...data} pageData={pageData} currency={currency} />
+        </ErrorBoundary>
       </Pane>
     </Tabs>
   );
