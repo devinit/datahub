@@ -313,43 +313,36 @@ export default {
       { id: 'who', name: 'World Health Organization (WHO)' }
     ],
     channels: [
-      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
-      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       {
         id: 'public-sector-recipient',
         name: 'Public sector (recipient government)'
       },
-      { id: 'ngo-unknown', name: 'NGO (unknown country)' },
-      { id: 'ngo-donor', name: 'NGO (donor-country based)' },
-      { id: 'ngo-recipient', name: 'NGO (recipient-country based)' },
-      { id: 'public-private-partnership', name: 'Public private partnership' },
+      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
+      { id: 'unspecified', name: 'Unspecified' },
       { id: 'multilateral', name: 'Multilateral' },
-      { id: 'other', name: 'Other (private sector, think-tank, etc.)' },
-      { id: 'unspecified', name: 'Unspecified' }
+      { id: 'other', name: 'Other (private sector, think-tank, etc.)' }
     ],
     sectors: [
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
-      { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'debt-relief', name: 'Debt relief' },
-      { id: 'education', name: 'Education' },
-      { id: 'environment', name: 'Environment' },
+      { id: 'humanitarian', name: 'Humanitarian' },
+      { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
-      { id: 'governance-and-security', name: 'Governance and security' },
+      { id: 'education', name: 'Education' },
+      { id: 'health', name: 'Health' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
-      { id: 'health', name: 'Health' },
-      { id: 'humanitarian', name: 'Humanitarian' },
-      { id: 'industry-and-trade', name: 'Industry and trade' },
-      { id: 'infrastructure', name: 'Infrastructure' },
-      { id: 'other', name: 'Other' },
       { id: 'other-social-services', name: 'Other social services' },
-      { id: 'water-and-sanitation', name: 'Water and sanitation' },
-      { id: 'other-sectors-grouped', name: 'Other sectors (grouped)' }
+      { id: 'debt-relief', name: 'Debt relief' },
+      { id: 'infrastructure', name: 'Infrastructure' },
+      { id: 'environment', name: 'Environment' },
+      { id: 'banking-and-business', name: 'Banking and business' },
+      { id: 'other', name: 'Other' },
+      { id: 'industry-and-trade', name: 'Industry and trade' }
     ],
     bundles: [
       { id: 'oof-grant', name: 'OOF Grant' },

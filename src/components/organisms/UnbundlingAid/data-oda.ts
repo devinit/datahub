@@ -313,52 +313,58 @@ export default {
       { id: 'who', name: 'World Health Organization (WHO)' }
     ],
     channels: [
-      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
+      { id: 'ngo-donor', name: 'NGO (donor-country based)' },
+      { id: 'ngo-recipient', name: 'NGO (recipient-country based)' },
       { id: 'public-sector-donor', name: 'Public sector (donor government)' },
+      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
+      { id: 'multilateral', name: 'Multilateral' },
+      { id: 'private-sector-institution', name: 'Private sector institution' },
+      { id: 'ngo-unknown', name: 'NGO (unknown country)' },
       {
         id: 'public-sector-recipient',
         name: 'Public sector (recipient government)'
       },
-      { id: 'ngo-unknown', name: 'NGO (unknown country)' },
-      { id: 'ngo-donor', name: 'NGO (donor-country based)' },
-      { id: 'ngo-recipient', name: 'NGO (recipient-country based)' },
-      { id: 'public-private-partnership', name: 'Public private partnership' },
-      { id: 'multilateral', name: 'Multilateral' },
-      { id: 'other', name: 'Other (private sector, think-tank, etc.)' },
-      { id: 'unspecified', name: 'Unspecified' }
+      {
+        id: 'university-research-institute-etc',
+        name: 'University research institute etc'
+      },
+      { id: 'unspecified', name: 'Unspecified' },
+      {
+        id: 'ppps-and-networks',
+        name: 'Public private partnership and Networks'
+      },
+      { id: 'other', name: 'Other (private sector, think-tank, etc.)' }
     ],
     sectors: [
+      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
-      { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'debt-relief', name: 'Debt relief' },
-      { id: 'education', name: 'Education' },
-      { id: 'environment', name: 'Environment' },
+      { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
-      { id: 'governance-and-security', name: 'Governance and security' },
+      { id: 'education', name: 'Education' },
+      { id: 'health', name: 'Health' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
-      { id: 'health', name: 'Health' },
-      { id: 'humanitarian', name: 'Humanitarian' },
-      { id: 'industry-and-trade', name: 'Industry and trade' },
-      { id: 'infrastructure', name: 'Infrastructure' },
-      { id: 'other', name: 'Other' },
       { id: 'other-social-services', name: 'Other social services' },
-      { id: 'water-and-sanitation', name: 'Water and sanitation' },
-      { id: 'other-sectors-grouped', name: 'Other sectors (grouped)' }
+      { id: 'debt-relief', name: 'Debt relief' },
+      { id: 'infrastructure', name: 'Infrastructure' },
+      { id: 'environment', name: 'Environment' },
+      { id: 'banking-and-business', name: 'Banking and business' },
+      { id: 'other', name: 'Other' },
+      { id: 'industry-and-trade', name: 'Industry and trade' }
     ],
     bundles: [
+      { id: 'mixed-project-aid', name: 'Mixed project aid' },
       { id: 'cash-loan-equity', name: 'Cash (loan/equity)' },
+      { id: 'non-transfer', name: 'Non-transfer' },
+      { id: 'technical-ooperation', name: 'Technical cooperation' },
       { id: 'cash-grant', name: 'Cash grant' },
       { id: 'commodities-food', name: 'Commodities & Food' },
-      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
-      { id: 'mixed-project-aid', name: 'Mixed project aid' },
-      { id: 'non-transfer', name: 'Non-transfer' },
-      { id: 'technical-ooperation', name: 'Technical cooperation' }
+      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' }
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
