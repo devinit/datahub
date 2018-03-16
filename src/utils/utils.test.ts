@@ -1,18 +1,11 @@
 import 'jest';
 import * as prettyFormat from 'pretty-format';
-import { getShortURL, getCountryName, shouldHaveMapboxCss,
-  getCountry, getPageMeta, shouldShowTabData, sendEmail} from '.';
+import {  getCountryName, shouldHaveMapboxCss,
+  getCountry, getPageMeta, shouldShowTabData } from '.';
 import {capitalize } from '@devinit/prelude/lib/strings';
 import {getMaxAndMin, approximate} from '@devinit/prelude/lib/numbers';
 
 describe('utils tests', () => {
-  it('should return short url of a long url', async () => {
-      const url =
-        await getShortURL('http://212.71.254.23:9999/country/uganda?state={"year":2015,"budgetType":"actual"}');
-      expect(url).toMatchSnapshot();
-    },
-    20000,
-  );
   it('should return country object', () => {
     const country = getCountry('drc');
     expect(prettyFormat(country)).toMatchSnapshot();
@@ -73,15 +66,6 @@ describe('utils tests', () => {
     expect(toShowA).toBe(false);
     expect(toShowB).toBe(true);
     expect(toShowC).toBe(true);
-  });
-  it.skip('should run without errors while sending email', async () => {
-    const response = await sendEmail({
-      message: 'test',
-      token: 'e2DQks99XapU6w2s1',
-      emails: ['epicallan.al@gmail.com'],
-      subject: 'test email from datahub'
-    });
-    expect(response.status).toBe(200);
   });
   it('should let us know whether to add mabox css on a page or not', () => {
     const shouldBeOnHomePage = shouldHaveMapboxCss('/country/uganda');

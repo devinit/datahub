@@ -7,6 +7,7 @@ import SearchInput from '../Basic';
 import {SingletonRouter} from 'next/router';
 import {LinkState} from 'next/link';
 import { big } from '../../../theme';
+import ErrorBoundary from '../../ErrorBoundary';
 
 export interface State  {
   showInput: boolean;
@@ -57,6 +58,7 @@ class Search extends React.Component<Props> {
             </h2>
           </Container>
         </SearchTitle>
+        <ErrorBoundary>
         <SearchInput
           nextLink={this.props.nextLink}
           router={this.props.router}
@@ -66,6 +68,7 @@ class Search extends React.Component<Props> {
           profile={false}
           placeholder={'Type a country name...'}
         />
+        </ErrorBoundary>
       </div>
     );
   }

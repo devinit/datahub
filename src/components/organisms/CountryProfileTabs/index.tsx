@@ -15,6 +15,7 @@ import overviewConfig from '../../visbox/overviewTabCharts';
 import {getCountryProfileData} from '../../pageData';
 import { TabDataQuery,  TabDataQueryVariables } from '../../gql-types';
 import {TAB_QUERY} from './query.graphql';
+import ErrorBoundary from '../../molecules/ErrorBoundary';
 
 type TChildProps = ChildProps<TabDataQueryVariables, TabDataQuery>;
 
@@ -30,40 +31,50 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({data, id}) => {
   return (
     <Tabs selected={0}>
       <Pane label="Overview" id={'overview-tab'}>
+      <ErrorBoundary>
         <CTabs.Overview
           {...props}
           pageData={pageData}
           countryType={country.countryType}
           config={overviewConfig}
         />
+        </ErrorBoundary>
       </Pane>
       {country.countryType !== DONOR && props.povertyTab && shouldShowTabData(props.povertyTab)
         ? <Pane label="Poverty" id={'poverty-tab'}>
+        <ErrorBoundary>
           <CTabs.Poverty pageData={pageData} config={povertyConfig} {...props} />
+          </ErrorBoundary>
         </Pane>
         : ''}
       {
         props.populationTab && shouldShowTabData(props.populationTab) ?
           <Pane label="Population" id={'population-tab'}>
+          <ErrorBoundary>
             <CTabs.Population pageData={pageData} config={populationConfig} {...props} />
+            </ErrorBoundary>
           </Pane> : ''
       }
 
       {Number(country.has_domestic_data) && props.governmentFinance
       && shouldShowTabData(props.governmentFinance) ?
         <Pane label="Government Finance" id={'govt-finance-tab'}>
+        <ErrorBoundary>
           <CTabs.GovernmentFinance pageData={pageData} config={govtFinanceConfig} {...props} />
+          </ErrorBoundary>
         </Pane>
         : ''}
       {
         props.internationalResources && shouldShowTabData(props.internationalResources) ?
           <Pane label="International Resources" id={'internantion-reseources-tab'}>
+          <ErrorBoundary>
             <CTabs.InternationalResources
               pageData={pageData}
               countryType={country.countryType}
               config={internationalResourcesConfig}
               {...props}
             />
+            </ErrorBoundary>
           </Pane> : ''
       }
     </Tabs>

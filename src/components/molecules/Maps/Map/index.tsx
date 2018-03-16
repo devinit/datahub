@@ -15,6 +15,7 @@ import {countryOrDistrictLink} from '../../../../utils';
 import {StateToShare} from '../../ChartShare';
 import mapConfigs, {MapConfig} from './config';
 import {SingletonRouter} from 'next/router';
+import ErrorBoundary from '../../ErrorBoundary';
 
 export type Props = DH.IMapData & {
   state?: StateToShare;
@@ -167,7 +168,9 @@ class Map extends React.Component<Props, State> {
         <Grid columns={1}>
           <Grid.Row>
             <Div width={'100%'}>
+              <ErrorBoundary>
               <BaseMap paint={this.paint} viewport={this.config.viewport} meta={this.meta} router={this.props.router} />
+              </ErrorBoundary>
             </Div>
             <Legend
               title={this.heading}

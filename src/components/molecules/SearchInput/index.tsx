@@ -5,6 +5,7 @@ import kenyaData from './kenya';
 import data from './global';
 import {SingletonRouter} from 'next/router';
 import {LinkState} from 'next/link';
+import ErrorBoundary from '../ErrorBoundary';
 
 const countryData = (country: string) => {
     const _data = country === 'uganda' ? ugandaData : kenyaData;
@@ -20,14 +21,15 @@ export interface Props {
 }
 
 export const ProfileSearch: React.SFC<Props> = (props: Props) =>
-    <SearchInput
-        entities={props.country ? countryData(props.country) : data.countries}
-        routePath={props.country || 'country'} // for route
-        visible={true}
-        router={props.router}
-        nextLink={props.nextLink}
-        profile={props.profile !== undefined ? props.profile : true}
-        placeholder={props.placeholder || 'Type a country name...'}
-    />;
-
+    <ErrorBoundary>
+        <SearchInput
+            entities={props.country ? countryData(props.country) : data.countries}
+            routePath={props.country || 'country'} // for route
+            visible={true}
+            router={props.router}
+            nextLink={props.nextLink}
+            profile={props.profile !== undefined ? props.profile : true}
+            placeholder={props.placeholder || 'Type a country name...'}
+        />;
+    </ErrorBoundary>;
 export { default as GlobalPictureSearch} from './GlobalPicture';
