@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HappyPack = require('happypack');
 const packageJSON = require('../package.json');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const SRC_PATH = path.join(__dirname, '../src');
@@ -23,6 +24,7 @@ const newRules = [
 const newExtensions =  ['.ts', '.tsx'];
 
 const newPlugins = [
+  new ProgressBarPlugin(),
   new webpack.DefinePlugin({
     'process.browser': true,
     'APP_VERSION': JSON.stringify(packageJSON.version),
