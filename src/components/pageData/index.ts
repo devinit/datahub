@@ -74,3 +74,14 @@ export const getUnbundlingAidPageData = (aidType: string): string => {
   if (!obj) throw Error ('Missing unbundling page data');
   return obj.narrative || 'Unbundling Aid is missing requred narrative';
 };
+export const getProfilePageData = (slug: any): PageUnit[] => {
+  const countryName = getCountryName(slug);
+  if (!data.profileHeader) throw new Error('profile header page data missing');
+  const pageData: PageUnit[] = data.profileHeader;
+  return replaceFields({pageData, toReplace: '{country}', replacement: countryName});
+};
+export const getDistrictProfilePageData = (entityName: string): PageUnit[] => {
+  if (!data.profileHeader) throw new Error('District profile page data missing');
+  const pageData: PageUnit[] = data.profileHeader;
+  return replaceFields({pageData, toReplace: '{region}', replacement: entityName});
+};

@@ -78,4 +78,9 @@ export const PAGES_DATA_QUERY = gql`
       title
       narrative
     }
+    profileHeader: profileHeaderPageData {
+      id
+      title
+      narrative
+    }
   }`;

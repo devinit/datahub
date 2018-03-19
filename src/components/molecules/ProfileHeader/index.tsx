@@ -15,6 +15,7 @@ import {mediaQueries} from '../../theme';
 import {LinkState} from 'next/link';
 import {DONOR, GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS} from '../../../utils/constants';
 import dynamic, {DynamicOptions} from 'next/dynamic';
+import {getProfilePageData, getDistrictProfilePageData} from '../../pageData';
 
 const dynamicOpts: DynamicOptions<any, any> = {
     ssr: false,
@@ -93,8 +94,7 @@ const ProfileHeaderSection = (props: Props) => {
           {
             props.spotlightCountry ?
               <Lead>
-                Explore this in-depth profile to find out about poverty, population, education, health, water,
-                sanitation and hygiene, and district public resources in {props.entity.name}.
+                {getDistrictProfilePageData(props.entity.name)[0].narrative}
                 <Span fontWeight={500} lineHeight="3" fontSize="0.7em" display="block">
                     Visit the {' '}
                   <BodyLink href={`/country/${props.spotlightCountry.slug}`}>
@@ -105,12 +105,8 @@ const ProfileHeaderSection = (props: Props) => {
               </Lead> :
               <Lead>
                 {(props.entity as Country).countryType !== DONOR ?
-                  `Explore this in-depth profile of ${props.entity.name} to find out overall levels of poverty,
-                income distribution, division of wealth and more. Discover how national and
-                sub-national revenue is generated.` :
-                  // tslint:disable-next-line:max-line-length
-                  `Explore this in-depth profile of ${props.entity.name} to see the international resources it directs to developing countries.
-                Get an overview of government spending, population and income distribution.`
+                  getProfilePageData(props.entity.slug)[1].narrative :
+                  getProfilePageData(props.entity.slug)[2].narrative
                 }
                 <Img marginLeft="10px" width="32px" src={`/flags/svg/${props.entity.id}.svg`} />
                 {props.entity.slug === 'uganda' ?

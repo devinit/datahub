@@ -27,5 +27,3 @@ exports[`utils tests should return country object 1`] = `
   \\"slug\\": \\"drc\\",
 }"
 `;
-
-exports[`utils tests should return short url of a long url 1`] = `"http://bit.ly/2wamIhE"`;

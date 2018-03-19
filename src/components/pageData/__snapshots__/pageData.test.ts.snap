@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`page data tests should return DistrictProfilePageData page data 1`] = `
+"Array [
+  Object {
+    \\"id\\": \\"spotlight\\",
+    \\"narrative\\": \\"Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and district public resources in Wakiso.\\",
+    \\"title\\": \\"\\",
+  },
+  Object {
+    \\"id\\": \\"not-donor\\",
+    \\"narrative\\": \\"Explore this in-depth profile of {country} to find out overall levels of poverty, income distribution, division of wealth and more. Discover how national and sub-national revenue is generated.\\",
+    \\"title\\": \\"\\",
+  },
+  Object {
+    \\"id\\": \\"donor\\",
+    \\"narrative\\": \\"Explore this in-depth profile of {country} to see the international resources it directs to developing countries. Get an overview of government spending, population and income distribution.\\",
+    \\"title\\": \\"\\",
+  },
+]"
+`;
+
+exports[`page data tests should return ProfilePageData page data 1`] = `
+"Array [
+  Object {
+    \\"id\\": \\"spotlight\\",
+    \\"narrative\\": \\"Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and district public resources in {region}.\\",
+    \\"title\\": \\"\\",
+  },
+  Object {
+    \\"id\\": \\"not-donor\\",
+    \\"narrative\\": \\"Explore this in-depth profile of Uganda to find out overall levels of poverty, income distribution, division of wealth and more. Discover how national and sub-national revenue is generated.\\",
+    \\"title\\": \\"\\",
+  },
+  Object {
+    \\"id\\": \\"donor\\",
+    \\"narrative\\": \\"Explore this in-depth profile of Uganda to see the international resources it directs to developing countries. Get an overview of government spending, population and income distribution.\\",
+    \\"title\\": \\"\\",
+  },
+]"
+`;
+
 exports[`page data tests should return country profile page data 1`] = `
 "Array [
   Object {
