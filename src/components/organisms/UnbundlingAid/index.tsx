@@ -6,6 +6,7 @@ import {Treemap, TotalODA, Selections} from '../../molecules/UnbundlingAid';
 import UnbundlingAidTour from '../../atoms/UnbundlingAidTour';
 import TourContainer from '../../molecules/TourContainer';
 import {UnbundlingAidDataQuery} from '../../gql-types';
+import ErrorBoundary from '../../molecules/ErrorBoundary';
 import QUERY from './query.graphql';
 import dataODA from './data-oda';
 import dataOOF from './data-oof';
@@ -92,7 +93,9 @@ const WithData = withData(({data, aidType, startYear, compact}: TChildProps) => 
       refetch: data.refetch,
     };
     if (data.error) console.error(data.error);
-    return <Treemap {...props} />;
+    return <ErrorBoundary message="Unbundling treemap errored: ">
+            <Treemap {...props} />
+          </ErrorBoundary>;
 });
 
 export default class UnbundlingChart extends React.Component<Props, State> {
