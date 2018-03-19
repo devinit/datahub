@@ -118,6 +118,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
   }
   // we store states in this.history such that zoom-out is just a reversal back through those states
   public onZoomOut = () => {
+    // remove latest history item
     const newHistory = init(this.history);
     const latestHistory = last(newHistory);
     this.history = newHistory;
