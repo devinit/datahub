@@ -5,6 +5,7 @@ import { SectionHeader } from '../../atoms/Header';
 import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from '../../../utils/constants';
 import { red } from '../../theme/semantic';
+import ErrorBoundary from '../ErrorBoundary';
 import { NoDataAvailableContainer } from '../../atoms/Container';
 import { LightBg } from '../../atoms/Container';
 import TreeChart from '../../atoms/TreeChart';
@@ -203,19 +204,20 @@ class AreaPartitionChart extends React.Component<Props, State> {
                   options={this.state.flows}
                 />
               </div>
+              <ErrorBoundary>
+                <Timeline
+                  height="400px"
+                  data={this.state.trend}
+                  config={{
+                    ...this.props.config.areaConfig,
 
-              <Timeline
-                height="400px"
-                data={this.state.trend}
-                config={{
-                  ...this.props.config.areaConfig,
-
-                  anchor: {
-                    start: this.state.year.toString(),
-                  },
-                }}
-                onYearChanged={this.setYear}
-              />
+                    anchor: {
+                      start: this.state.year.toString(),
+                    },
+                  }}
+                  onYearChanged={this.setYear}
+                />
+              </ErrorBoundary>
             </Grid.Column>
 
             <Grid.Column mobile={1} computer={1} />
@@ -264,23 +266,27 @@ class AreaPartitionChart extends React.Component<Props, State> {
                 )}
               </SectionHeader>
               {this.state.flow === 'all' ?
-                <TreeChart
-                  height="360px"
-                  data={this.state.mixes[+this.state.year] || []}
-                  config={this.props.config.treemapConfig}
-                  // tslint:disable-next-line:jsx-no-lambda
-                  onClick={(d: { flow_id: string }) =>
-                    this.setState(this.getFlowState(this.state.direction, d.flow_id))}
-                />
-                : this.odaAndOOFFlows.includes(this.state.flow || '')
-                  ? <UnbundlingInternationalResources
-                    shouldFetch={this.state.shouldUnbundle}
-                    countryId={this.props.id}
-                    year={this.state.year}
-                    groupById={this.state.detailGroup}
-                    resourceId={this.state.flow || ''} // TODO: shouldnt be nullable
+                <ErrorBoundary message="Tree chart errored">
+                  <TreeChart
+                    height="360px"
+                    data={this.state.mixes[+this.state.year] || []}
                     config={this.props.config.treemapConfig}
+                    // tslint:disable-next-line:jsx-no-lambda
+                    onClick={(d: { flow_id: string }) =>
+                      this.setState(this.getFlowState(this.state.direction, d.flow_id))}
                   />
+                </ErrorBoundary>
+                : this.odaAndOOFFlows.includes(this.state.flow || '')
+                  ? <ErrorBoundary message="UnbundlingInternationalResources chart errored">
+                      <UnbundlingInternationalResources
+                        shouldFetch={this.state.shouldUnbundle}
+                        countryId={this.props.id}
+                        year={this.state.year}
+                        groupById={this.state.detailGroup}
+                        resourceId={this.state.flow || ''} // TODO: shouldnt be nullable
+                        config={this.props.config.treemapConfig}
+                      />
+                  </ErrorBoundary>
                   :
                   <Dimmer
                     style={{

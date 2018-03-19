@@ -27,7 +27,9 @@ export default class ErrorBoundary extends React.Component<Props> {
     if (this.state.hasError) {
       console.error(this.state.error);
       // You can render any custom fallback UI
-      return <h5 style={{textAlign: 'center', margin: '0 auto'}}>Chart data might have an error! </h5>;
+      return <h5 style={{textAlign: 'center', margin: '0 auto'}}>
+              React component has an error! {this.props.message}
+            </h5>;
     }
     return this.props.children;
   }
