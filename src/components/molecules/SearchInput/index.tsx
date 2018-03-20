@@ -30,6 +30,6 @@ export const ProfileSearch: React.SFC<Props> = (props: Props) =>
             nextLink={props.nextLink}
             profile={props.profile !== undefined ? props.profile : true}
             placeholder={props.placeholder || 'Type a country name...'}
-        />;
+        />
     </ErrorBoundary>;
 export { default as GlobalPictureSearch} from './GlobalPicture';

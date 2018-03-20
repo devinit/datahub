@@ -491,7 +491,7 @@ export default {
       id: 'spotlight',
       title: '',
       narrative:
-        'Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and district public resources in {region}.'
+        'Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and {area} public resources in {region}.'
     },
     {
       id: 'not-donor',

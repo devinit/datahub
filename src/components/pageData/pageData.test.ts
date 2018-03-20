@@ -19,12 +19,13 @@ describe('page data tests', () => {
     const data = getUnbundlingAidPageData('oofs');
     expect(prettyFormat(data)).toMatchSnapshot();
   });
-  it('should return ProfilePageData page data', () => {
+  it.skip('should return ProfilePageData page data', () => {
     const data = getProfilePageData('uganda');
     expect(prettyFormat(data)).toMatchSnapshot();
   });
-  it.skip('should return DistrictProfilePageData page data', () => {
-    const data = getDistrictProfilePageData('Wakiso');
-    expect(prettyFormat(data)).toMatchSnapshot();
+  it('should return DistrictProfilePageData page data', () => {
+    const dataA = getDistrictProfilePageData('kenya', 'Nairobi');
+    const dataB = getDistrictProfilePageData('uganda', 'Wakiso');
+    expect(prettyFormat({dataA, dataB})).toMatchSnapshot();
   });
 });

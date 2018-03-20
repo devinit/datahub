@@ -50,6 +50,7 @@ export interface Props  {
 }
 
 const ProfileHeaderSection = (props: Props) => {
+  console.log(props.entity);
   const jumpToSection = (section: string) => () =>
     props.jumpToSection && props.jumpToSection(section);
   return (
@@ -94,7 +95,7 @@ const ProfileHeaderSection = (props: Props) => {
           {
             props.spotlightCountry ?
               <Lead>
-                {getDistrictProfilePageData(props.entity.name)[0].narrative}
+                {getDistrictProfilePageData(props.spotlightCountry.slug, props.entity.name)}
                 <Span fontWeight={500} lineHeight="3" fontSize="0.7em" display="block">
                     Visit the {' '}
                   <BodyLink href={`/country/${props.spotlightCountry.slug}`}>
@@ -105,8 +106,8 @@ const ProfileHeaderSection = (props: Props) => {
               </Lead> :
               <Lead>
                 {(props.entity as Country).countryType !== DONOR ?
-                  getProfilePageData(props.entity.slug)[1].narrative :
-                  getProfilePageData(props.entity.slug)[2].narrative
+                  getProfilePageData(props.entity.name)[1].narrative :
+                  getProfilePageData(props.entity.name)[2].narrative
                 }
                 <Img marginLeft="10px" width="32px" src={`/flags/svg/${props.entity.id}.svg`} />
                 {props.entity.slug === 'uganda' ?
