@@ -485,5 +485,25 @@ export default {
       narrative:
         ' The P20 are the 1.4 billion men, women and children living in over 100 countries who are the poorest 20% of the global population. People in the P20 often experience multiple and intersecting deprivations, disadvantages and discrimination based on identity, circumstances and life events. The below visualisation enables you to explore how these experiences and identities intersect for the P20 across different countries.'
     }
+  ],
+  profileHeader: [
+    {
+      id: 'spotlight',
+      title: '',
+      narrative:
+        'Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and {area} public resources in {region}.'
+    },
+    {
+      id: 'not-donor',
+      title: '',
+      narrative:
+        'Explore this in-depth profile of {country} to find out overall levels of poverty, income distribution, division of wealth and more. Discover how national and sub-national revenue is generated.'
+    },
+    {
+      id: 'donor',
+      title: '',
+      narrative:
+        'Explore this in-depth profile of {country} to see the international resources it directs to developing countries. Get an overview of government spending, population and income distribution.'
+    }
   ]
 };

@@ -320,7 +320,7 @@ export default {
       { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'unspecified', name: 'Unspecified' },
       { id: 'multilateral', name: 'Multilateral' },
-      { id: 'other', name: 'Other (private sector, think-tank, etc.)' }
+      { id: 'other', name: 'Other' }
     ],
     sectors: [
       {
