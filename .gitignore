@@ -26,3 +26,5 @@ test/**/out
 
 worker_gp.js
 worker_ug.js
+
+videos
