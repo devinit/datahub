@@ -50,7 +50,6 @@ export interface Props  {
 }
 
 const ProfileHeaderSection = (props: Props) => {
-  console.log(props.entity);
   const jumpToSection = (section: string) => () =>
     props.jumpToSection && props.jumpToSection(section);
   return (
@@ -70,11 +69,12 @@ const ProfileHeaderSection = (props: Props) => {
                 <a
                   href={`/spotlight-on-${props.spotlightCountry.slug}`}
                   style={{color: red}}
+                  data-cy="Spotlight__Country__Link"
                 >
                   Spotlight on {props.spotlightCountry.name}
                 </a>
                 :
-                <a href="/" role="link" style={{color: red}}>Global Picture</a>
+                <a href="/" data-cy="GP__Link" role="link" style={{color: red}}>Global Picture</a>
             }
           </H4>
           {

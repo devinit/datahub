@@ -134,6 +134,7 @@ class SearchInput extends React.Component <Props, State> {
             : ''}
           <Input
             value={this.state.value}
+            data-cy="Search__Input"
             placeholder={this.props.profile ? '' : this.props.placeholder}
             // tslint:disable-next-line:jsx-no-lambda
             onBlur={() => this.onBlur()}

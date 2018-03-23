@@ -36,8 +36,10 @@ Important Points / guides
 - In dev mode we run a nodemon process, it sometimes doesnt die when you cntrl-c. You could use
 ```lsof -i tcp:4444 ``` to find its PID and then kill it with ``` kill -9 <PID> ```.
 
+Cypress testing
+-------
 
-
+- You need to have run `npm run build:next` before running the cypress-open command
 Pain Points / issues
 --------------
 

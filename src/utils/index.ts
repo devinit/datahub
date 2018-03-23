@@ -161,10 +161,10 @@ export interface Email {
 export const errorHandler = async (error: string | Error, info?: string) => {
     console.error(error);
     sendEmail({
-    message: `info: ${info || ''} error: ${error.toString()} `,
-    token: 'e2DQks99XapU6w2s1',
-    emails: ['epicallan.al@gmail.com'],
-    subject: 'Data hub error report',
+        message: `info: ${info || ''} error: ${error.toString()} `,
+        token: 'e2DQks99XapU6w2s1',
+        emails: ['epicallan.al@gmail.com'],
+        subject: 'Data hub error report',
     });
     // if (process.env.NODE_ENV === 'production') { // temporarily disable // should be production to renable
     // }
