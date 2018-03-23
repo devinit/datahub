@@ -1,3 +1,4 @@
 {
-    "defaultCommandTimeout": 20000
+  "defaultCommandTimeout": 20000,
+  "projectId": "hs94i1"
 }
