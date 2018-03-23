@@ -39,7 +39,10 @@ Important Points / guides
 Cypress testing
 -------
 
-- You need to have run `npm run build:next` before running the cypress-open command
+- You need to have run `npm run build:next` before running the cypress-open command. Checkout the [readme file](https://github.com/devinit/datahub/tree/cypress/cypress) in cypress directory for more.
+
+
+
 Pain Points / issues
 --------------
 
