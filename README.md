@@ -38,7 +38,7 @@ Important Points / guides
 
 Cypress testing
 -------
-
+- check out the apps [cypress dashboard here](https://dashboard.cypress.io/#/organizations/dab40b78-b24e-4f1c-913a-0a0b8bd0c71a/projects))
 - You need to have run `npm run build:next` before running the cypress-open command. Checkout the [readme file](https://github.com/devinit/datahub/tree/cypress/cypress) in cypress directory for more.
 
 
@@ -49,4 +49,6 @@ Pain Points / issues
 - Currently stack with npm instead of yarn.
 The thing with installing with yarn, is that the charts library will stop working well for some charts. This
 may have to do with the way npm installs dependencies vs yarn.
+
+- For some reason cypress tests fail on travis. Temporary measure is to have them run on the git push pre hook.
 

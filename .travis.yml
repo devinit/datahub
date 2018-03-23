@@ -13,7 +13,6 @@ script:
 - npm run build-workers
 - npm run build-fragment
 - npm run build:next
-- npm run cypress:test
 - mkdir build && mv .next build/ && mv lib/* build/ && mv package.json build/ && mv static build/ && mv Dockerfile build/ && mv nginx build/ && mv docker-compose.yml build/ && mv process.yml build/
 - zip -q -r build.zip build
 cache:
