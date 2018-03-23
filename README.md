@@ -7,7 +7,7 @@ Installation
 -------------
 
 ```
- npm install --ignore-scripts
+ npm install
 
 ```
 
