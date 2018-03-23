@@ -16,7 +16,7 @@
     "build": "tsc",
     "test": "jest src/components/pageData/pageData.test.ts",
     "coverage": "BABEL_ENV=test jest -u && codecov",
-    "cypress:test": "start-server-and-test start http://localhost:8080 cypress:run",
+    "cypress:test": "npm run build:next && start-server-and-test start http://localhost:8080 cypress:run",
     "cypress:run": "cypress run --record --key 13a9c637-1ce1-4f5f-8ebf-08896968b64f",
     "cypress:open": "npm run build:next && concurrently \"npm run start\" \"cypress open\"",
     "dev": "NODE_ENV=development nodemon src/server/index.ts",
