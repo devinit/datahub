@@ -36,6 +36,9 @@ Important Points / guides
 - In dev mode we run a nodemon process, it sometimes doesnt die when you cntrl-c. You could use
 ```lsof -i tcp:4444 ``` to find its PID and then kill it with ``` kill -9 <PID> ```.
 
+## [Atomic react design component development](http://bradfrost.com/blog/post/atomic-web-design/) with [storybook](https://storybooks.js.org/)
+
+
 Cypress testing
 -------
 - check out the apps [cypress dashboard here](https://dashboard.cypress.io/#/organizations/dab40b78-b24e-4f1c-913a-0a0b8bd0c71a/projects))

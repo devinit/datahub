@@ -114,9 +114,7 @@
   "git-pre-hooks": {
     "pre-push": [
       "npm run lint",
-      "npm run build",
-      "npm run build:next",
-      "npm run cypress:test"
+      "npm run build"
     ]
   },
   "jest": {

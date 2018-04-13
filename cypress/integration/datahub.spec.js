@@ -15,7 +15,7 @@ describe('Datahub', () => {
       return false
     })
     cy.screenshot();
-    cy.get('[data-cy=GP__Link]').click()
+    cy.get('[data-cy=GP__Link]').click();
     cy.get('[data-cy=Search__Input]');
     //    cy.focused()
     //    .should('have.class'. 'css-glamorous-input--146umv7')

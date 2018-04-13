@@ -1,5 +1,6 @@
 /**
  * used to create critical css
+ * Its not used as an actual page
  * only has header and footer
  */
 import * as React from 'react';
