@@ -11,7 +11,7 @@
     "url": "https://github.com/devinit/datahub"
   },
   "author": "epicallan.al@gmail.com",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "tsc",
     "test": "jest src/components/pageData/pageData.test.ts",
@@ -98,7 +98,7 @@
     "jsdom": "11.6.2",
     "nodemon": "1.17.2",
     "pretty-format": "22.4.0",
-    "progress-bar-webpack-plugin": "^1.11.0",
+    "progress-bar-webpack-plugin": "1.11.0",
     "react-test-renderer": "16.2.0",
     "start-server-and-test": "^1.1.0",
     "ts-jest": "22.4.1",
