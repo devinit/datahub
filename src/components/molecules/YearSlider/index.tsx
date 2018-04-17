@@ -59,6 +59,7 @@ class YearSlider extends React.Component<Props> {
         <Input
           type="range"
           className="input low"
+          data-cy="Range__Input"
           step={this.props.step}
           min={this.props.minimum}
           max={this.props.maximum}
