@@ -486,7 +486,7 @@ export default {
     {
       name: 'Annual crude birth rate',
       description:
-        'The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county.',
+        'The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county.',
       methodology: '',
       uom: 'unit',
       csv:
@@ -498,7 +498,7 @@ export default {
     {
       name: 'Annual crude death rate',
       description:
-        'The number of deaths occurring among the population of a county during a given year, per 1,000 mid-year total population of the county during the same year, by county.',
+        'The number of deaths occurring among the population of a county during a given year, per 1,000 mid-year total population of the county during the same year, by county.',
       methodology: '',
       uom: 'unit',
       csv:
@@ -546,7 +546,7 @@ export default {
       description:
         'Percentage of population living in an urban setting, by county.',
       methodology: '',
-      uom: '%',
+      uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-urban-pop',
       zip:
@@ -555,21 +555,21 @@ export default {
     },
     {
       name: 'Population with a disability (%)',
-      description: 'Percentage of people who have a disability, by county.',
+      description: 'The Socio-Economic Atlas of Kenya 2015',
       methodology: '',
       uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
     },
     {
       name: 'Human Development Index',
       description:
-        'A composite statistic of life expectancy, education, and per capita income indicators, used to rank counties on level of human development. A county scores higher HDI when the lifespan is higher, the education level is higher, and the GDP per capita is higher.',
+        'A composite statistic of life expectancy, education, and per capita income indicators, used to rank counties on level of human development. A county scores higher HDI when the lifespan is higher, the education level is higher, and the GDP per capita is higher',
       methodology: '',
-      uom: 'unit',
+      uom: '',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-hdi',
       zip:
@@ -589,38 +589,74 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
+      source: { name: '', link: null }
     },
     {
       name: 'Poverty headcount',
       description:
-        'Percentage of people in poverty, in relation to the total population the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date.',
+        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
       methodology: '',
       uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
+      source: { name: '', link: null }
     },
     {
-      name: 'Mean per person monthly expenditure, 2013 prices (KES)',
+      name: 'Mean per person monthly expenditure, 2016 prices (KES)',
       description:
-        'The average amount of money (KES) spent by a person in a month in the county.',
+        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
       methodology: '',
-      uom: 'unit',
+      uom: '',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
+      source: { name: '', link: null }
+    },
+    {
+      name: 'Hardcore poverty Headcount',
+      description:
+        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-hardcore',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-hardcore.zip?raw=true',
+      source: { name: '', link: null }
+    },
+    {
+      name: 'Food Poverty Headcount',
+      description:
+        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-food',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-food.zip?raw=true',
+      source: { name: '', link: null }
+    },
+    {
+      name: 'Most commonly used sanitation facility',
+      description:
+        'The most common sanitation facility used by households in a county.',
+      methodology: '',
+      uom: '',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-com',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-com.zip?raw=true',
+      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
     },
     {
       name: 'Households with access to improved sanitation facilities (%)',
       description:
         'Percentage of the population that has access to improved sanitation facilities, by county.',
       methodology: '',
-      uom: '%',
+      uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac',
       zip:
@@ -628,10 +664,22 @@ export default {
       source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
     },
     {
+      name: 'Most commonly used water source',
+      description:
+        'The most common water source used by households in a county.',
+      methodology: '',
+      uom: '',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-water-com',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-water-com.zip?raw=true',
+      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
+    },
+    {
       name: 'Households with access to safe water (%)',
       description: 'Percentage of people with access to safe water, by county.',
       methodology: '',
-      uom: '%',
+      uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water',
       zip:

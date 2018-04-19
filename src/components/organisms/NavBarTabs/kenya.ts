@@ -11,9 +11,28 @@ export default {
           id: 'spotlight_on_kenya_2017.kenya_poverty_headcount',
           name: 'Poverty headcount',
           heading:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+          tooltip:
             'Percentage of people in poverty, in relation to the total population the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date.',
-          tooltip: 'Poverty headcount',
-          source: 'The Socio-Economic Atlas of Kenya 2015'
+          source: ''
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_poverty_hardcore',
+          name: 'Hardcore poverty Headcount',
+          heading:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+          tooltip:
+            'Headcount of individuals whose total  consumption expenditure per month is less than the recommended food consumption expenditure per month',
+          source: ''
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_poverty_food',
+          name: 'Food Poverty Headcount',
+          heading:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+          tooltip:
+            'Headcount of individuals in unable to consume the minimum daily caloric requirement of 2,250 Kcal',
+          source: ''
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_gap',
@@ -21,30 +40,24 @@ export default {
           heading:
             'The mean shortfall of the total population from the poverty line (counting the non poor as having zero shortfall), expressed as a percentage of the poverty line. This measure reflects the depth of poverty as well as its incidence.',
           tooltip: 'Poverty gap',
-          source: 'The Socio-Economic Atlas of Kenya 2015'
+          source: ''
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_meanpp_exp',
-          name: 'Mean per person monthly expenditure, 2013 prices (KES)',
+          name: 'Mean per person monthly expenditure, 2016 prices (KES)',
           heading:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+          tooltip:
             'The average amount of money (KES) spent by a person in a month in the county.',
-          tooltip: 'Mean per person expenditure (KES)',
-          source: 'The Socio-Economic Atlas of Kenya 2015'
+          source: ''
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_hdi',
           name: 'Human Development Index',
           heading:
-            'A composite statistic of life expectancy, education, and per capita income indicators, used to rank counties on level of human development. A county scores higher HDI when the lifespan is higher, the education level is higher, and the GDP per capita is higher.',
-          tooltip: 'Human Development Index for the county',
+            'A composite statistic of life expectancy, education, and per capita income indicators, used to rank counties on level of human development. A county scores higher HDI when the lifespan is higher, the education level is higher, and the GDP per capita is higher',
+          tooltip: '\nHuman Development Index for the county\n',
           source: 'United Nations Development Programme (UNDP)'
-        },
-        {
-          id: 'spotlight_on_kenya_2017.kenya_disability',
-          name: 'Population with a disability (%)',
-          heading: 'Percentage of people who have a disability, by county.',
-          tooltip: 'Proportion of persons living with a disability (%)',
-          source: 'The Socio-Economic Atlas of Kenya 2015'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_poverty_headcount'
@@ -71,17 +84,17 @@ export default {
           id: 'spotlight_on_kenya_2017.kenya_pop_birthrate',
           name: 'Annual crude birth rate',
           heading:
-            'The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county.',
+            'The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county.',
           tooltip:
-            'The number of live births per year per 1,000 midyear population',
+            'The number of live births per year per 1,000 midyear population',
           source: 'The Socio-Economic Atlas of Kenya 2010'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_deathrate',
           name: 'Annual crude death rate',
           heading:
-            'The number of deaths occurring among the population of a county during a given year, per 1,000 mid-year total population of the county during the same year, by county.',
-          tooltip: 'The number of deaths per year per 1,000 midyear population',
+            'The number of deaths occurring among the population of a county during a given year, per 1,000 mid-year total population of the county during the same year, by county.',
+          tooltip: 'The number of deaths per year per 1,000 midyear population',
           source: 'The Socio-Economic Atlas of Kenya 2011'
         },
         {
