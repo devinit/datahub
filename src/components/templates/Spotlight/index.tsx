@@ -9,6 +9,7 @@ import {cacheMapData} from '../../../utils';
 import {StateToShare} from '../../molecules/ChartShare';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import Generic from '../Generic';
+import router from 'next/router';
 import {getSpotlightPageData} from '../../pageData';
 
 interface Props  {
@@ -52,7 +53,7 @@ export default class Spotlight extends React.Component<Props> {
           process.env.NODE_ENV !== 'test' && (process as any).browser ?
             <DynamicMap country={this.props.id} state={this.props.state} /> : ''
         }
-        <About />
+        <About router={router} />
       </Generic>
     );
   }

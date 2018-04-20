@@ -8,7 +8,7 @@ import {StateToShare} from '../../molecules/ChartShare';
 import About from '../../molecules/About';
 import DynamicMap from '../../organisms/Map/DynamicMap';
 import { cacheMapData } from '../../../utils';
-import Router from 'next/router';
+import router from 'next/router';
 import Generic from '../Generic';
 import pageData from '../../pageData/data';
 
@@ -49,7 +49,7 @@ export default class Front extends React.Component<Props> {
             <DynamicMap country="global" state={this.props.state} /> : ''
           }
         </div>
-        <About router={Router} />
+        <About router={router} />
       </Generic>
     );
   }
