@@ -1,0 +1,6 @@
+**/*.ts
+**/*.tsx
+node_modules/*
+src/**
+**/next.config.js
+static
