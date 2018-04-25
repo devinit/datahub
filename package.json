@@ -82,7 +82,7 @@
     "@types/react-beautiful-dnd": "6.0.1",
     "@types/react-redux": "5.0.15",
     "@types/storybook__react": "3.0.7",
-    "@zeit/next-typescript": "0.0.10",
+    "@zeit/next-typescript": "0.1.1",
     "apollo-codegen": "0.19.0",
     "concurrently": "3.5.1",
     "csso": "3.5.0",
