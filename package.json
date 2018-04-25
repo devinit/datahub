@@ -73,7 +73,7 @@
     "@storybook/addon-storyshots": "3.3.15",
     "@storybook/addons": "3.3.15",
     "@storybook/react": "3.3.15",
-    "@types/fs-extra": "5.0.1",
+    "@types/fs-extra": "5.0.2",
     "@types/jest": "22.2.3",
     "@types/next": "2.4.8",
     "@types/node": "9.4.7",
