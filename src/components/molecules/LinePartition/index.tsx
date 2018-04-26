@@ -7,6 +7,7 @@ import glamorous, {H4} from 'glamorous';
 import { groupBy, uniq, prop } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from '../../atoms/TreeChart';
+import ErrorBoundary from '../ErrorBoundary';
 import Timeline from '../../atoms/Timeline';
 import LinePartitionHeader from './LinePartitionHeader';
 
@@ -196,6 +197,7 @@ export default class LinePartition extends React.Component<Props, State> {
   }
   public render() {
     const tree = this.getTreeData();
+    console.log(tree);
     const trend = this.getTrendData();
     const showLegend = this.props.config.partition.legend &&
       this.props.config.partition.legend.showLegend;
@@ -236,18 +238,20 @@ export default class LinePartition extends React.Component<Props, State> {
         <Grid.Column mobile={16} computer={11} width={11} style={{ padding: 0 }}>
           {tree.length ?
             <TreeChartContainer>
-              <TreeChart
-                height={showLegend ? '380px' : '222px'}
-                config={{
-                  ...this.props.config.partition,
-                  labeling: { prefix: this.props.currency },
-                }}
-                // tslint:disable-next-line:jsx-no-lambda
-                onClick={(d: { data: {levels: string[]} }) => {
-                  this.setLevel(d.data.levels);
-                }}
-                data={tree}
-              />
+              <ErrorBoundary message="government finance treemap ">
+                <TreeChart
+                  height={showLegend ? '380px' : '222px'}
+                  config={{
+                    ...this.props.config.partition,
+                    labeling: { prefix: this.props.currency },
+                  }}
+                  // tslint:disable-next-line:jsx-no-lambda
+                  onClick={(d: { data: {levels: string[]} }) => {
+                    this.setLevel(d.data.levels);
+                  }}
+                  data={tree}
+                />
+              </ErrorBoundary>
             </TreeChartContainer> :
             <H4 textAlign="center" paddingTop="3em"> No resources breakdown for {this.props.year}</H4>
           }

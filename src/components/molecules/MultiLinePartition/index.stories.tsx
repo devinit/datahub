@@ -9,13 +9,13 @@ const ngData = require ('./testData/ng.json');
 const getProps = (data: any, financeType: string): Props => {
     const governmentFinance = data[financeType];
     const items: Array<{title: string, data: DH.IDomestic[], inverted?: boolean}> = [];
-    const revenueAndGrants = governmentFinance.revenueAndGrants as DH.IDomestic[];
+    // const revenueAndGrants = governmentFinance.revenueAndGrants as DH.IDomestic[];
     const expenditure = governmentFinance.expenditure as DH.IDomestic[];
-    if (financeType === 'governmentFinance') {
-        const finance = governmentFinance.finance as DH.IDomestic[];
-        items.push({title: 'Finance', data: finance, inverted: false});
-    }
-    if (revenueAndGrants.length) items.push({title: 'Revenue', data: revenueAndGrants});
+    // if (financeType === 'governmentFinance') {
+    //     const finance = governmentFinance.finance as DH.IDomestic[];
+    //     items.push({title: 'Finance', data: finance, inverted: false});
+    // }
+    // if (revenueAndGrants.length) items.push({title: 'Revenue', data: revenueAndGrants});
     if (expenditure.length) items.push({title: 'Expenditure', data: expenditure, inverted: false});
     return {
         loading: false,

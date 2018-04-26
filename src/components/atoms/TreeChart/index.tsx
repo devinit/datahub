@@ -24,7 +24,6 @@ class Chart extends React.Component<Props> {
     const element = this.element;
     const data = this.props.data;
     this.config = this.props.config || visboxConfigs;
-
     draw({ element, data, config: this.config }).then(chart => {
       this.chart = chart;
       this.chart.onClick(this.props.onClick);
