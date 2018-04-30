@@ -46,7 +46,7 @@ export default withData(({data,  chartId, year, shouldScrollIntoView, budgetType
       },
       {
         title: 'Financing',
-        inverted: true,
+        inverted: false,
         withoutOptions: true,
         data: (governmentFinance.finance as DH.IDomestic[]) || [],
       },
