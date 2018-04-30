@@ -159,6 +159,7 @@ export default class LinePartition extends React.Component<Props, State> {
       allBudgetTypes.filter(d => !d.match(/budget/gi)).join('|') :
       allBudgetTypes.join('|');
     const regex = new RegExp(`(${regexString})`, 'gi');
+    console.log('regex string', regexString);
     return this.props.data
       .filter(d => {
         const isActualOrProjected = d.budget_type.match(regex);
@@ -191,13 +192,11 @@ export default class LinePartition extends React.Component<Props, State> {
         ...datum,
         value,
       };
-    })
-    .filter(datum => datum.budget_type === this.props.budgetType);
+    });
    return trend;
   }
   public render() {
     const tree = this.getTreeData();
-    console.log(tree);
     const trend = this.getTrendData();
     const showLegend = this.props.config.partition.legend &&
       this.props.config.partition.legend.showLegend;
