@@ -10,6 +10,9 @@
       "dom",
       "es2017"
     ],
+    "types": [
+      "semantic-ui-react"
+    ],
     "declaration": false,
     "removeComments": true,
     "noLib": false,
