@@ -1,5 +1,6 @@
-{   "javascript.validate.enable": false,
-     "files.exclude": {
+{
+    "javascript.validate.enable": false,
+    "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
@@ -9,7 +10,6 @@
         "**/dist": true,
         "**/lib": true,
         "**/.out": true,
-        "**/coverage": true,
-        "**/node_modules": true
+        "**/coverage": true
     }
 }

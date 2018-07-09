@@ -34,7 +34,7 @@ const main = (): void => {
       result.data.__schema.types = filteredData; // eslint-disable-line
       const filePath = 'src/apollo/fragmentTypes.json';
 
-      fs.writeFile(filePath, JSON.stringify(result.data))
+      fs.writeFile(filePath, JSON.stringify(result.data, null, 4))
         .then(() => console.info('Fragment types successfully extracted!'))
         .catch(console.error);
     });

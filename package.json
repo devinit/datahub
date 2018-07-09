@@ -39,6 +39,9 @@
     "feature": "release-it --no-npm.publish -i minor -n",
     "breaking": "release-it --no-npm.publish -i major -n"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "@devinit/charts": "1.6.53",
     "@devinit/datahub-api": "1.0.6",
@@ -104,6 +107,7 @@
     "jest-cli": "22.4.3",
     "jsdom": "11.6.2",
     "nodemon": "1.17.2",
+    "pre-commit": "^1.2.2",
     "pretty-format": "22.4.3",
     "progress-bar-webpack-plugin": "1.11.0",
     "react-test-renderer": "16.2.0",
@@ -112,6 +116,8 @@
     "ts-loader": "3.5.0",
     "ts-node": "5.0.1",
     "tslint": "5.9.1",
+    "tslint-eslint-rules": "^5.3.1",
+    "tslint-microsoft-contrib": "^5.0.3",
     "tslint-react": "3.5.1",
     "typescript": "2.8.3",
     "uglifyjs-webpack-plugin": "1.2.3",

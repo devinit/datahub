@@ -1,24 +1,31 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES5",
-    "jsx": "react",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "strict": true,
-    "lib": ["es2017", "dom"],
-    "experimentalDecorators": true,
-    "strictPropertyInitialization": false,
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "outDir": "lib",
-    "skipLibCheck": true,
-    "removeComments": true
+    "noEmitOnError": false,
+    "sourceMap": false,
+    "target": "es5",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "declaration": false,
+    "removeComments": true,
+    "noLib": false,
+    "watch": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "strictFunctionTypes": false,
+    "skipLibCheck": false,
+    "jsx": "react",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "exclude": [
-    "node_modules",
-    "lib"
+    "data",
+    "node_modules"
   ],
   "include": [
     "src",
