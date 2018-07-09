@@ -120,11 +120,11 @@ export const cacheMapData = async (workerPath: string): Promise<void> => {
   };
 
 // next.js compatible router interface
-export interface IRouter  {
+export interface Router  {
     push: (url: string, as?: string) => any;
   }
 
-export const router: IRouter = {
+export const router: Router = {
     push : (_url: string, as?: string) => {
     if (typeof window !== 'undefined') return (window as any).location.assign(as);
     return console.log('cant change url in server environment');

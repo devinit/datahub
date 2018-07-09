@@ -5,7 +5,7 @@ import LoadingBar from '../LoadingBar';
 import { Route } from '../../../utils';
 import Observer from 'react-intersection-observer';
 import { RankingsTableContainer } from '../../atoms/Container';
-import {router, IRouter} from '../../../utils';
+import {router, Router} from '../../../utils';
 import {SingletonRouter} from 'next/router';
 
 if ((process as any).browser) require('intersection-observer');
@@ -34,7 +34,7 @@ export interface State {
 }
 
 export default class RankingsTable extends React.Component<Props, State> {
-  public router: IRouter;
+  public router: Router;
   constructor(props: Props) {
     super(props);
     this.state = { profileLoading: false };
