@@ -152,7 +152,8 @@
     "array-type": false,
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
-    "jsx-wrap-multiline": false
+    "jsx-wrap-multiline": false,
+    "newline-before-return": true
   },
   "jsRules": {
     "trailing-comma": [
