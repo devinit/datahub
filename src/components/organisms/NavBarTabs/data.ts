@@ -265,7 +265,7 @@ export default {
           tooltip:
             'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
           source:
-            'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
+            'UNCTAD Stat and World Bank Development Indicators.'
         },
         {
           id: 'data_series.fdi_pp',
@@ -275,7 +275,7 @@ export default {
           tooltip:
             'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
           source:
-            'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
+            'Development Initiatives based on UNCTAD Stat and World Bank World Development Indicators.'
         },
         {
           id: 'data_series.remittances_pp',
@@ -283,7 +283,7 @@ export default {
           heading:
             "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2015 prices.",
           tooltip: 'Remittances per person.',
-          source: 'Development Initiatives based on World Bank.'
+          source: 'World Bank.'
         }
       ],
       default_indicator: 'data_series.largest_intl_flow'
