@@ -2,7 +2,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const Webpack = require('webpack');
-const withTypescript = require('@zeit/next-typescript')
+const withTypescript = require('@zeit/next-typescript');
 const packageJSON = require('./package.json');
 const { ANALYZE } = process.env;
 
@@ -23,7 +23,7 @@ module.exports = withTypescript({
         'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
       }));
 
-    config.plugins.push(new ForkTsCheckerWebpackPlugin())
+    config.plugins.push(new ForkTsCheckerWebpackPlugin());
     config.module.noParse = /mapbox-gl/;
 
     return config;
@@ -31,4 +31,4 @@ module.exports = withTypescript({
   typescriptLoaderOptions: {
     transpileOnly: true
   }
-})
+});
