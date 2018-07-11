@@ -56,9 +56,9 @@ class BaseMap extends React.Component<Props, State> {
     attributionControl: true,
     scrollZoom: false
   };
-  propertyName: string = 'ISO2';
-  mapLoaded: boolean = false;
-  isOnMobile: boolean = false;
+  propertyName = 'ISO2';
+  mapLoaded = false;
+  isOnMobile = false;
   map: any;
   nav: any;
   popup: { remove: any,  setLngLat: (args: any[]) => any; } & any;
@@ -142,7 +142,7 @@ class BaseMap extends React.Component<Props, State> {
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.paint.mapStyle !== this.props.paint.mapStyle ||
       this.props.countryProfile !== nextProps.countryProfile) {
-      this.setState({ shouldForceRedraw: true });å
+      this.setState({ shouldForceRedraw: true });
     }
   }
 
@@ -195,7 +195,7 @@ class BaseMap extends React.Component<Props, State> {
   }
   addPopupContent(obj: PopupItem) {
     this.popup
-      .setLngLat([obj.pos.lng, obj.pos.lat])
+      .setLngLat([ obj.pos.lng, obj.pos.lat ])
       .setHTML(this.tipTemplate(obj.pointData))
       .addTo(this.map);
   }

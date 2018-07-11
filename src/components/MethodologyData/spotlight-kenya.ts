@@ -589,55 +589,75 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap.zip?raw=true',
-      source: { name: '', link: null }
+      source: {
+        name:
+          'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        link: null
+      }
     },
     {
       name: 'Poverty headcount',
       description:
-        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        'Percentage of people in poverty, in relation to the total population in the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date.',
       methodology: '',
       uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount.zip?raw=true',
-      source: { name: '', link: null }
+      source: {
+        name:
+          'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        link: null
+      }
     },
     {
       name: 'Mean per person monthly expenditure, 2016 prices (KES)',
       description:
-        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        'The average amount of money (KES) spent by a person in a month in the county.',
       methodology: '',
       uom: '',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp.zip?raw=true',
-      source: { name: '', link: null }
+      source: {
+        name:
+          'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        link: null
+      }
     },
     {
       name: 'Hardcore poverty Headcount',
       description:
-        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        'Headcount of individuals whose total  consumption expenditure per month is less than the recommended food consumption expenditure per month',
       methodology: '',
       uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-hardcore',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-hardcore.zip?raw=true',
-      source: { name: '', link: null }
+      source: {
+        name:
+          'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        link: null
+      }
     },
     {
       name: 'Food Poverty Headcount',
       description:
-        'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        'Headcount of individuals  unable to consume the minimum daily caloric requirement of 2,250 Kcal',
       methodology: '',
       uom: 'percent',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-food',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-food.zip?raw=true',
-      source: { name: '', link: null }
+      source: {
+        name:
+          'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
+        link: null
+      }
     },
     {
       name: 'Most commonly used sanitation facility',
