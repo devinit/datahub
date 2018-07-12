@@ -19,7 +19,7 @@
     "cypress:test": "start-server-and-test start http://localhost:8080 cypress:run",
     "cypress:run": "cypress run --record --key 13a9c637-1ce1-4f5f-8ebf-08896968b64f",
     "cypress:open": "npm run build:next && concurrently \"npm run start\" \"cypress open\"",
-    "dev": "NODE_ENV=development nodemon src/server/index.ts",
+    "dev": "NODE_ENV=development npm run build-workers && npm run build-fragment && nodemon src/server/index.ts",
     "build:next": "next build",
     "analyze": "ANALYZE=1 next build",
     "critical-css": "ts-node src/scripts/critical-css.ts",
