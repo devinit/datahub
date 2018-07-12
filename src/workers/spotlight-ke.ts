@@ -1,7 +1,7 @@
 /**
- * runs in the front paget template and pulls in global picture data for client caching
+ * runs in the front page template and pulls in global picture data for client caching
  */
 import navData from '../components/organisms/NavBarTabs/kenya';
-import {cacheData} from '.';
+import { cacheData } from '.';
 
 cacheData(navData.spotlightThemes);

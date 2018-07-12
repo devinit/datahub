@@ -19,13 +19,14 @@ const ssrCache = new LRUCache({
   maxAge: 1000 * 60 * 60 * 24 * 30 // 30 days
 });
 
-const renderAndCache = async (req, res, pagePath,  queryParams?: {[key: string]: any}) => {
+const renderAndCache = async (req, res, pagePath, queryParams?: {[key: string]: any}) => {
   const key = req.url;
 
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key)) {
     res.setHeader('x-cache', 'HIT');
     res.send(ssrCache.get(key));
+
     return;
   }
 
@@ -36,6 +37,7 @@ const renderAndCache = async (req, res, pagePath,  queryParams?: {[key: string]:
     // Something is wrong with the request, let's skip the cache
     if (res.statusCode !== 200) {
       res.send(html);
+
       return;
     }
 
@@ -77,7 +79,7 @@ app.prepare().then(() => {
     });
   });
 
-  ['/', '/spotlight-on-uganda', '/spotlight-on-kenya'].forEach(link => {
+  [ '/', '/spotlight-on-uganda', '/spotlight-on-kenya' ].forEach(link => {
     server.get(link, (req, res) => {
       const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
       const queryParams = { state };
@@ -87,32 +89,36 @@ app.prepare().then(() => {
 
   server.get('/uganda/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
-    const queryParams = { id: req.params.id, state};
+    const queryParams = { id: req.params.id, state };
     const isValidCountry = ugData.districts
       .some(distict => distict.name.toLowerCase() === req.params.id);
+
     return isValidCountry ? renderAndCache(req, res, '/uganda', queryParams) :
       renderAndCache(req, res, '/spotlight-on-uganda');
   });
   server.get('/kenya/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
-    const queryParams = { id: req.params.id, state};
+    const queryParams = { id: req.params.id, state };
     const isValidCountry = keData.districts
       .some(distict => distict.name.toLowerCase() === req.params.id);
+
     return isValidCountry ? renderAndCache(req, res, '/kenya', queryParams) :
       renderAndCache(req, res, '/spotlight-on-kenya');
   });
   server.get('/multilateral/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
-    const queryParams = { id: req.params.id, state};
-    const isValid = ['oda', 'ida', 'EU', 'afdb', 'undp']
+    const queryParams = { id: req.params.id, state };
+    const isValid = [ 'oda', 'ida', 'EU', 'afdb', 'undp' ]
       .some(multilateral => multilateral === req.params.id);
+
     return isValid ? renderAndCache(req, res, '/multilateral', queryParams) :
       renderAndCache(req, res, '/multilaterals');
   });
   server.get('/country/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
     const isValidCountry = countriesData.countries.some(country => country.slug === req.params.id);
-    const queryParams = { id: req.params.id, state};
+    const queryParams = { id: req.params.id, state };
+
     return isValidCountry ? renderAndCache(req, res, '/country', queryParams) :
       renderAndCache(req, res, '/country-profiles');
   });
@@ -124,7 +130,7 @@ app.prepare().then(() => {
   });
 
   server.listen(PORT, err => {
-    if (err) console.error('app server error: ', err);
+    if (err) { console.error('app server error: ', err); }
     console.log(`> App running on http://localhost:${PORT}`);
   });
 });

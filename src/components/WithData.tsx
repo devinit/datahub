@@ -3,9 +3,9 @@ import { ApolloProvider, getDataFromTree } from 'react-apollo';
 import { Provider, Store } from 'react-redux';
 import Head from 'next/head';
 import initApollo from '../apollo';
-import {State} from '../redux/reducers';
-import {initRedux} from '../redux';
-import {IProcess} from './types';
+import { State } from '../redux/reducers';
+import { initRedux } from '../redux';
+import { IProcess } from './types';
 
 declare var process: IProcess;
 
@@ -20,9 +20,25 @@ export interface Props {
   // Ge
 export default ComposedComponent => {
   return class WithData extends React.Component<Props> {
-    public static displayName = `WithData(${getComponentDisplayName(
-      ComposedComponent
-    )})`;
+    apollo: any;
+    redux: Store<State>;
+    static displayName = `WithData(${getComponentDisplayName(ComposedComponent)})`;
+
+    constructor(props) {
+      super(props);
+      this.apollo = initApollo(this.props.serverState.apollo.data);
+      this.redux = initRedux();
+    }
+
+    render() {
+      return (
+        <Provider store={ this.redux }>
+          <ApolloProvider client={ this.apollo }>
+            <ComposedComponent { ...this.props } />
+          </ApolloProvider>
+        </Provider>
+      );
+    }
 
     public static async getInitialProps(ctx) {
       // Initial serverState with apollo (empty)
@@ -46,9 +62,9 @@ export default ComposedComponent => {
         try {
           // Run all GraphQL queries
           await getDataFromTree(
-            <Provider store={redux}>
-              <ApolloProvider client={apollo}>
-                <ComposedComponent {...composedInitialProps} />
+            <Provider store={ redux }>
+              <ApolloProvider client={ apollo }>
+                <ComposedComponent { ...composedInitialProps } />
               </ApolloProvider>
             </Provider>,
             {
@@ -76,26 +92,11 @@ export default ComposedComponent => {
         };
       }
       // console.log('initial props: ', composedInitialProps);
+
       return {
         serverState,
         ...composedInitialProps
       };
-    }
-    public apollo: any;
-    public redux: Store<State>;
-    constructor(props) {
-      super(props);
-      this.apollo = initApollo(this.props.serverState.apollo.data);
-      this.redux = initRedux();
-    }
-    public render() {
-      return (
-        <Provider store={this.redux}>
-          <ApolloProvider client={this.apollo}>
-            <ComposedComponent {...this.props} />
-          </ApolloProvider>
-        </Provider>
-      );
     }
   };
 };

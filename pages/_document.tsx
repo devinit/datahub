@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import {PageMeta, getPageMeta, shouldHaveMapboxCss} from '../src/utils';
+import { PageMeta, getPageMeta, shouldHaveMapboxCss } from '../src/utils';
 import { renderStatic } from 'glamor/server';
 
 declare const APP_VERSION: string;
@@ -11,8 +11,10 @@ export default class MyDocument extends Document {
   public static async getInitialProps({ renderPage }) {
     const page = renderPage();
     const styles = renderStatic(() => page.html || page.errorHtml);
+
     return { ...page, ...styles };
   }
+
   constructor(props) {
     super(props);
     const { __NEXT_DATA__, ids } = props;
@@ -20,34 +22,36 @@ export default class MyDocument extends Document {
       __NEXT_DATA__.ids = this.props.ids;
     }
   }
-  public render() {
+
+  render() {
     const pathname = this.props.__NEXT_DATA__ &&  this.props.__NEXT_DATA__.pathname || '/';
     const query = this.props.__NEXT_DATA__ && this.props.__NEXT_DATA__.query && this.props.__NEXT_DATA__.query.id ;
-    const pageMeta: PageMeta = getPageMeta({query, pathname});
+    const pageMeta: PageMeta = getPageMeta({ query, pathname });
+
     return (
       <html>
         <Head>
         <meta name="theme-color" content="#e8443a" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <title>{pageMeta.title}</title>
-        <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
-        {/* <style key="critical" dangerouslySetInnerHTML={{ __html: criticalCSS}} /> */}
-        <link as="style" href={`/semantic.min.css?v${version}`} rel="stylesheet" />
-        <link as="style" href={`/di-charts.min.css?v${version}`} rel="stylesheet"/>
-        {process.env.NODE_ENV !== 'production' ?
-            <link as="style" href={`/mapbox-gl.min.css?v${version}`} rel="stylesheet"/>
+        <title>{ pageMeta.title }</title>
+        <style dangerouslySetInnerHTML={ { __html: this.props.css } } />
+        {/* <style key="critical" dangerouslySetInnerHTML={{ __html: criticalCSS}} /> */ }
+        <link as="style" href={ `/semantic.min.css?v${version}` } rel="stylesheet" />
+        <link as="style" href={ `/di-charts.min.css?v${version}` } rel="stylesheet"/>
+        { process.env.NODE_ENV !== 'production' ?
+            <link as="style" href={ `/mapbox-gl.min.css?v${version}` } rel="stylesheet"/>
             :
             shouldHaveMapboxCss(pathname) ?
-               <link as="style" href={`/mapbox-gl.min.css?v${version}`} rel="stylesheet"/>
-               : ''
+                <link as="style" href={ `/mapbox-gl.min.css?v${version}` } rel="stylesheet"/>
+                : ''
         }
         <script async src="https://www.google-analytics.com/analytics.js" />
         <script
-          dangerouslySetInnerHTML={{ __html: `
+          dangerouslySetInnerHTML={ { __html: `
           window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
           ga('create', 'UA-80274731-1', 'auto');
           ga('send', 'pageview');
-        ` }}
+        ` } }
         />
         </Head>
         <body>
