@@ -13,7 +13,6 @@ import { getSpotlightPageData } from '../../pageData';
 import { Country } from '../../types';
 import Generic from '../Generic';
 import Link from 'next/link';
-import { red } from '../../theme/semantic';
 interface Props {
   pathname: string;
   id: string;
@@ -35,13 +34,13 @@ export default class Spotlight extends React.Component<Props> {
     return (
       <Generic >
         <Container>
-          <Div paddingTop={ '2em' } paddingBottom={ '4em' }>
-            <H4 color="red">
-              { this.renderCountryFlag() }
-              <Link href={ `/country/${this.props.id}` }>
-                <a role="link" style={ { color: red } }>{ countryName }</a>
-              </Link>
-            </H4>
+          <H4 paddingTop="2em" position="absolute" right="150px">
+            { this.renderCountryFlag() }
+            <Link href={ `/country/${this.props.id}` }>
+              <a role="link">{ `${countryName} Country Profile` }</a>
+            </Link>
+          </H4>
+          <Div paddingTop={ '4em' } paddingBottom={ '4em' }>
             <Grid centered>
               <Grid.Column width={ 12 } textAlign="center">
                 <b>
