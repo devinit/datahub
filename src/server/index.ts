@@ -6,6 +6,7 @@ import * as next from 'next';
 import countriesData from '../components/molecules/SearchInput/global';
 import ugData from '../components/molecules/SearchInput/uganda';
 import keData from '../components/molecules/SearchInput/kenya';
+import navTabsData from '../components/organisms/NavBarTabs/data';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -87,6 +88,23 @@ app.prepare().then(() => {
     });
   });
 
+  server.get('/global-picture', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const queryParams = { state };
+
+    renderAndCache(req, res, '/', queryParams);
+  });
+  server.get('/global-picture/:themeId', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const themeId = req.params.themeId;
+    const theme = navTabsData.globalPictureThemes.find(globalTheme => globalTheme.id === themeId);
+    if (theme) {
+      state.indicator = theme.default_indicator;
+    }
+    const queryParams = { state };
+
+    renderAndCache(req, res, '/', queryParams);
+  });
   server.get('/uganda/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
     const queryParams = { id: req.params.id, state };

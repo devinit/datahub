@@ -78,7 +78,8 @@ class MapOrganism extends React.Component <MapOrganismProps> {
 
   public static getIndicatorId(props: MapOrganismProps): string {
     if (props.id) { return props.id; }
-    if (props.state && props.state.indicator) { return props.state.indicator; }
+    // FIXME: commented out below so as to leave nav indicator to redux state only. Confirm
+    // if (props.state && props.state.indicator) { return props.state.indicator; }
     if (props.country === 'uganda') { return props.app.indicatorUganda; }
     if (props.country === 'kenya') { return props.app.indicatorKenya; }
 

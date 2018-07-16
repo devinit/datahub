@@ -1,10 +1,11 @@
+import Head from 'next/head';
 import * as React from 'react';
 import { ApolloProvider, getDataFromTree } from 'react-apollo';
-import { Provider, Store } from 'react-redux';
-import Head from 'next/head';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
 import initApollo from '../apollo';
-import { State } from '../redux/reducers';
 import { initRedux } from '../redux';
+import { State } from '../redux/reducers';
 import { IProcess } from './types';
 
 declare var process: IProcess;
