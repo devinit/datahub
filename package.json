@@ -103,7 +103,7 @@
     "jest": "22.4.3",
     "jest-cli": "22.4.3",
     "jsdom": "11.6.2",
-    "nodemon": "1.17.2",
+    "nodemon": "1.18.3",
     "pretty-format": "22.4.3",
     "progress-bar-webpack-plugin": "1.11.0",
     "react-test-renderer": "16.2.0",
