@@ -66,7 +66,11 @@ class MapOrganism extends React.Component <MapOrganismProps> {
         this.loading = false;
         props.changeLoadingStatus(false);
       })
-      .catch(console.error);
+      .catch(error => {
+        console.error(error);
+        this.loading = false;
+        props.changeLoadingStatus(false);
+      });
   }
 
   public static getIndicatorData(props: MapOrganismProps): Promise<MapDataQuery> {

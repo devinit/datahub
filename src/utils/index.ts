@@ -103,9 +103,11 @@ export async function getData<T>(options: GetDataOptions): Promise<T> {
     }
     const apolloFetch = createApolloFetch({ uri: API });
     if (process.browser) {
-      storage = await getLocalStorageInstance(); // @ts-ignore
+      storage = await getLocalStorageInstance();
       const cached = storage ? await storage.getItem<string>(key) : null;
-      if (cached) { return JSON.parse(cached); }
+      if (cached) {
+        return JSON.parse(cached);
+      }
     }
     const response: FetchResult = await apolloFetch({ query, variables: variables || undefined });
     if (response.errors) {
