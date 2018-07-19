@@ -39,11 +39,15 @@ class Map extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    if (!props.map) { throw new Error('map data is missing in props'); }
-    if (!props.country) { throw new Error('country is missing in props'); }
+    if (!props.map) {
+      throw new Error('map data is missing in props');
+    }
+    if (!props.country) {
+      throw new Error('country is missing in props');
+    }
+    this.state = { currentYear: this.getCurrentYear(props) };
     this.country = props.country;
     this.config = mapConfigs[this.country];
-    this.state = { currentYear: this.getCurrentYear(props) };
     this.init(props);
   }
 
@@ -122,7 +126,58 @@ class Map extends React.Component<Props, State> {
   }
 
   componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) { this.init(nextProps); }
+    if (nextProps !== this.props) {
+      this.setState({
+        currentYear: this.getCurrentYear(nextProps)
+      }, () => this.init(nextProps));
+    }
+  }
+
+  init(props: Props) {
+    this.initYearSetup(props);
+    this.initMetaSetup(props);
+    if (props.map && props.map.length) {
+      this.data = this.yearSliderVisibility
+        ? Map.setCurrentYearData(this.state.currentYear, props.map)
+        : props.map;
+      this.paint = { data: this.data, ...this.config.paint };
+    }
+    if (props.map_style) {
+      this.paint = { data: this.data, ...this.config.paint, mapStyle: props.map_style };
+    }
+  }
+
+  initYearSetup(props: Props) {
+    if (!props.start_year) { throw new Error('start_year is missing in props'); }
+    if (!props.default_year) { throw new Error('default_year is missing in props'); }
+    const currentYear = this.getCurrentYear(props);
+    this.startYear = props.start_year;
+    this.endYear = props.end_year ? props.end_year : this.startYear;
+    this.yearSliderVisibility = this.endYear > this.startYear;
+    if (this.mounted) { this.setState({ currentYear: +currentYear }); }
+  }
+
+  initMetaSetup(props: Props) {
+    if (!props.legend) { throw new Error('legend data is missing in props'); }
+    this.legendData = props.legend;
+    this.heading = props.heading ?
+      props.heading : 'Indicator must have a heading talk to Allan or Donata';
+    const name: string = props.name
+        ? props.name
+        : 'Indicator must have a name talk to Allan or Donata';
+    const uomDisplay = props.uom_display || '';
+    this.description =
+      props.description || 'Please add a proper description, talk to Allan or Donata ';
+    if (!props.theme) { throw new Error('theme is missing in map data props'); }
+    if (!props.country) { throw new Error('country is missing in map data props'); }
+    if (!props.id) { throw new Error('indicator id is missing in map data props'); }
+    this.meta = {
+      name,
+      uom_display: uomDisplay,
+      theme: props.theme,
+      id: props.id,
+      country: props.country
+    };
   }
 
   getCurrentYear(props: Props): number {
@@ -176,53 +231,6 @@ class Map extends React.Component<Props, State> {
       hasflags: this.country === 'global',
       data: { top, bottom }
     };
-  }
-
-  initYearSetup(props: Props) {
-    if (!props.start_year) { throw new Error('start_year is missing in props'); }
-    if (!props.default_year) { throw new Error('default_year is missing in props'); }
-    const currentYear = this.getCurrentYear(props);
-    this.startYear = props.start_year;
-    this.endYear = props.end_year ? props.end_year : this.startYear;
-    this.yearSliderVisibility = this.endYear > this.startYear;
-    if (this.mounted) { this.setState({ currentYear: +currentYear }); }
-  }
-
-  initMetaSetup(props: Props) {
-    if (!props.legend) { throw new Error('legend data is missing in props'); }
-    this.legendData = props.legend;
-    this.heading = props.heading ?
-      props.heading : 'Indicator must have a heading talk to Allan or Donata';
-    const name: string = props.name
-        ? props.name
-        : 'Indicator must have a name talk to Allan or Donata';
-    const uomDisplay = props.uom_display || '';
-    this.description =
-      props.description || 'Please add a proper description, talk to Allan or Donata ';
-    if (!props.theme) { throw new Error('theme is missing in map data props'); }
-    if (!props.country) { throw new Error('country is missing in map data props'); }
-    if (!props.id) { throw new Error('indicator id is missing in map data props'); }
-    this.meta = {
-      name,
-      uom_display: uomDisplay,
-      theme: props.theme,
-      id: props.id,
-      country: props.country
-    };
-  }
-
-  init(props: Props) {
-    this.initYearSetup(props);
-    this.initMetaSetup(props);
-    if (props.map && props.map.length) {
-      this.data = this.yearSliderVisibility
-        ? Map.setCurrentYearData(this.state.currentYear, props.map)
-        : props.map;
-      this.paint = { data: this.data, ...this.config.paint };
-    }
-    if (props.map_style) {
-      this.paint = { data: this.data, ...this.config.paint, mapStyle: props.map_style };
-    }
   }
 
   public static setCurrentYearData(currentYear: number, data: DH.IMapUnit[]): DH.IMapUnit[] {
