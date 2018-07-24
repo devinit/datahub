@@ -137,8 +137,9 @@ app.prepare().then(() => {
     const isValidCountry = countriesData.countries.some(country => country.slug === req.params.id);
     const queryParams = { id: req.params.id, state };
 
-    return isValidCountry ? renderAndCache(req, res, '/country', queryParams) :
-      renderAndCache(req, res, '/country-profiles');
+    return isValidCountry
+      ? renderAndCache(req, res, '/country', queryParams)
+      : renderAndCache(req, res, '/country-profiles');
   });
   server.get('/critical', (req, res) => {
     return handle(req, res);

@@ -4,7 +4,7 @@ import { getCountry, shouldShowTabData } from '../../../utils';
 import { DONOR } from '../../../utils/constants';
 import Pane from '../../atoms/Pane';
 import { TabDataQuery, TabDataQueryVariables } from '../../gql-types';
-import * as CTabs from '../../molecules/CountryProfileTabs';
+import * as CountryTabs from '../../molecules/CountryProfileTabs';
 import ErrorBoundary from '../../molecules/ErrorBoundary';
 import LoadingPlaceholder from '../../molecules/LoadingPlaceholder';
 import Tabs from '../../molecules/Tabs';
@@ -23,7 +23,9 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
     return <LoadingPlaceholder loading />;
   }
   const variables = data.variables;
-  if (!variables) { throw new Error ('country profile variable id missing'); }
+  if (!variables) {
+    throw new Error('country profile variable id missing');
+  }
   const pageData = getCountryProfileData(id);
   const country = getCountry(id);
   const props = data as TabDataQuery; // make typescript happy
@@ -32,18 +34,18 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
     <Tabs selected={ 0 }>
       <Pane label="Overview" id={ 'overview-tab' }>
       <ErrorBoundary>
-        <CTabs.Overview
+        <CountryTabs.Overview
           { ...props }
           pageData={ pageData }
           countryType={ country.countryType }
           config={ overviewConfig }
         />
-        </ErrorBoundary>
+      </ErrorBoundary>
       </Pane>
       { country.countryType !== DONOR && props.povertyTab && shouldShowTabData(props.povertyTab)
         ? <Pane label="Poverty" id={ 'poverty-tab' }>
         <ErrorBoundary>
-          <CTabs.Poverty pageData={ pageData } config={ povertyConfig } { ...props } />
+          <CountryTabs.Poverty pageData={ pageData } config={ povertyConfig } { ...props } />
           </ErrorBoundary>
         </Pane>
         : '' }
@@ -51,7 +53,7 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
         props.populationTab && shouldShowTabData(props.populationTab) ?
           <Pane label="Population" id={ 'population-tab' }>
           <ErrorBoundary>
-            <CTabs.Population pageData={ pageData } config={ populationConfig } { ...props } />
+            <CountryTabs.Population pageData={ pageData } config={ populationConfig } { ...props } />
             </ErrorBoundary>
           </Pane> : ''
       }
@@ -60,7 +62,7 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
       && shouldShowTabData(props.governmentFinance) ?
         <Pane label="Government Finance" id={ 'govt-finance-tab' }>
         <ErrorBoundary>
-          <CTabs.GovernmentFinance pageData={ pageData } config={ govtFinanceConfig } { ...props } />
+          <CountryTabs.GovernmentFinance pageData={ pageData } config={ govtFinanceConfig } { ...props } />
           </ErrorBoundary>
         </Pane>
         : '' }
@@ -68,7 +70,7 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
         props.internationalResources && shouldShowTabData(props.internationalResources) ?
           <Pane label="International Resources" id={ 'internantion-reseources-tab' }>
           <ErrorBoundary>
-            <CTabs.InternationalResources
+            <CountryTabs.InternationalResources
               pageData={ pageData }
               countryType={ country.countryType }
               config={ internationalResourcesConfig }

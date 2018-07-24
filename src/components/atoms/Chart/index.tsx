@@ -3,7 +3,7 @@ import { draw } from '@devinit/charts';
 // import stylesheet from '@devinit/charts/dist/di-charts.min.css';
 /* eslint-disable react/no-danger */
 
-export interface Props  {
+export interface Props {
   data: any;
   config: {};
   width?: string;
@@ -15,33 +15,27 @@ class Chart extends React.Component <Props> {
   public element: HTMLDivElement | null;
   public chart: any;
 
-  constructor(props: Props) {
-    super(props);
+  render() {
+    return (
+      <div
+        ref={ element => { this.element = element; } }
+        style={ { width: this.props.width, height: this.props.height } }
+      />
+    );
   }
 
-  public componentDidMount() {
+  componentDidMount() {
     const element = this.element;
-    const data = this.props.data;
-    const config = this.props.config;
+    const { data, config } = this.props;
     draw({ element, data, config }).then(chart => {
       this.chart = chart;
     });
   }
 
-  public componentWillUpdate(props: Props) {
+  componentWillUpdate(props: Props) {
     if (this.chart) {
       this.chart.update(props.data);
     }
-  }
-  public render() {
-    return (
-      <div
-        ref={element => {
-          this.element = element;
-        }}
-        style={{ width: this.props.width, height: this.props.height }}
-      />
-    );
   }
 }
 

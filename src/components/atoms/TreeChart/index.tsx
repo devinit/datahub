@@ -16,10 +16,6 @@ class Chart extends React.Component<Props> {
   public chart: any;
   public config: any;
 
-  constructor(props: Props) {
-    super(props);
-  }
-
   public componentDidMount() {
     const element = this.element;
     const data = this.props.data;
@@ -33,8 +29,8 @@ class Chart extends React.Component<Props> {
   public componentWillUpdate(props: Props) {
     if (this.chart) {
       if (props.config && props.config.type === 'partition' && props.config.labeling) {
-          this.chart.setLabeling(props.config.labeling);
-        }
+        this.chart.setLabeling(props.config.labeling);
+      }
       this.chart.update(props.data);
     }
   }
@@ -42,10 +38,8 @@ class Chart extends React.Component<Props> {
   public render() {
     return (
       <div
-        ref={element => {
-          this.element = element;
-        }}
-        style={{ width: this.props.width, height: this.props.height, overflow: 'hidden' }}
+        ref={ element => { this.element = element; } }
+        style={ { width: this.props.width, height: this.props.height, overflow: 'hidden' } }
       />
     );
   }

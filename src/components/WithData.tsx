@@ -27,6 +27,7 @@ export default ComposedComponent => {
 
     constructor(props) {
       super(props);
+
       this.apollo = initApollo(this.props.serverState.apollo.data);
       this.redux = initRedux();
     }

@@ -58,7 +58,7 @@ class BaseMap extends React.Component<Props, State> {
   };
   propertyName = 'ISO2';
   mapLoaded = false;
-  isOnMobile = false;
+  isOnMobile = window.innerWidth < 1200;
   map: any;
   nav: any;
   popup: { remove: any, setLngLat: (args: any[]) => any; } & any;
@@ -74,93 +74,23 @@ class BaseMap extends React.Component<Props, State> {
     ...this.propertyLayerSlugMap,
     national: 'country-name'
   };
-  router: Router;
-
-  static foldOverSurveyMapFeatures(features: Feature[]): DH.IMapUnit {
-    type FeatureProps = Feature['properties'] & {total: number; sum: number};
-    const props: FeatureProps = features.reverse().reduce((acc, feature) => {
-      // this is a country feature;
-      const p20: number = feature.properties && feature.properties.p20 ? feature.properties.p20 : 0;
-      if (p20 === 0) { return { ...acc, ...feature.properties }; }
-      const sum = acc.sum + p20;
-      const total = acc.total + 1;
-
-      return { ...acc, sum, total, ...feature.properties };
-    }, { total: 0, sum: 0 });
-    const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
-    const id: string = props.ISO2 || '';
-    const countryName: string = props.NAME || '';
-    const region: string = props.DHSREGNA || '';
-    const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
-
-    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
-  }
-
-  static pointDataForPreStyledMap(features: Feature[], indicator: string): DH.IMapUnit | null {
-    if (indicator === 'surveyp20') {
-      return BaseMap.foldOverSurveyMapFeatures(features);
-    }
-    if (!features[0].properties) {
-      throw new Error('Properties missing from map style');
-    }
-    if (features[0].layer.type === 'line') {
-      return null;
-    }
-    const properties = features[0].properties;
-    const value: number = properties.P20 ? Math.round(properties.P20 * 100) : 0;
-    const countryName: string = properties['country-name'] || '';
-    const slug: string = properties['country-slug'] || '';
-    const id: string = properties.ISO || '';
-    const region: string = properties.DHSREGNA ? properties.DHSREGNA : '';
-    const name = region ? `Region: ${region}, ${countryName}` : countryName;
-
-    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug };
-  }
-
-  static setPointDataValue(
-    value: number, uom?: string, indicator?: string): string {
-    if (indicator === 'surveyp20' || indicator === 'regionalp20') {
-      return value.toString();
-    }
-    if (indicator && indicatorsWith0dp.includes(indicator)) {
-      return approximate(value, 0, true);
-    }
-    if (uom === '%' && indicator && indicator.includes('uganda')) {
-      return value.toFixed(1);
-    }
-    if (indicator === 'dataseries.climatevulnerability') {
-      return value.toFixed(2);
-    }
-    if (indicatorsWith2dp.includes(indicator || '')) {
-      return approximate(value, 2, true);
-    }
-
-    return approximate(value, 1, true);
-  }
-
-  static tipToolTipValueStr(value: string | number, uom: string) {
-    switch (uom) {
-      case '%':
-        return `${value}${uom}`;
-      default:
-        return value;
-    }
-  }
+  router: Router = this.props.router ? this.props.router : router;
+  private mapNode?: HTMLDivElement;
 
   constructor(props: Props) {
     super(props);
+
     if (!props.viewport) {
       throw new Error('viewport prop missing in basemap props');
     }
     if (!props.paint) {
       throw new Error('paint prop missing in basemap props');
     }
-    this.isOnMobile = window.innerWidth < 1200;
     this.state = {
       profileLoading: false,
       shouldForceRedraw: false
     };
-    this.router = this.props.router ? this.props.router : router;
+    this.getMapNode = this.getMapNode.bind(this);
   }
 
   render() {
@@ -173,22 +103,133 @@ class BaseMap extends React.Component<Props, State> {
         <LoadingBar loading={ this.state.profileLoading } />
         <div
           style={ { width, height, position: 'relative' } }
-          ref={ element => {
-            if (element) { this.draw(element, this.props.paint); }
-          } }
+          ref={ this.getMapNode }
         />
       </MapContainer>
     );
   }
 
-  componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.paint.mapStyle !== this.props.paint.mapStyle ||
-      this.props.countryProfile !== nextProps.countryProfile) {
-      this.setState({ shouldForceRedraw: true });
+  componentDidMount() {
+    if (this.mapNode) {
+      this.draw(this.mapNode, this.props.paint);
     }
   }
 
-  genericTipHtml({ id, country, name, value, uom, year }: GenericTipHtml) {
+  componentWillReceiveProps(nextProps: Props) {
+    const mapStyleUpdated = nextProps.paint.mapStyle !== this.props.paint.mapStyle;
+    const countryProfileUpdated = this.props.countryProfile !== nextProps.countryProfile;
+    if ((mapStyleUpdated || countryProfileUpdated) && this.mapNode) {
+      this.draw(this.mapNode, nextProps.paint);
+    } else if (this.map && this.mapLoaded && nextProps.paint.data && nextProps.paint.data.length) {
+      this.colorMap(nextProps.paint);
+    }
+  }
+
+  private getMapNode(mapNode: HTMLDivElement | null) {
+    if (mapNode) {
+      this.mapNode = mapNode;
+    }
+  }
+
+  private draw(mapElement: HTMLDivElement, paint: PaintMap) {
+    const mapOptions: MapBoxOptions = this.getMapOptions(mapElement);
+    if (this.map) {
+      this.map.remove();
+      this.nav = undefined;
+    }
+    this.mapLoaded = false; // feels abit dirty
+    this.map = new mapboxgl.Map(mapOptions);
+    if (!this.nav) { this.addMapNav(); }
+    this.onMapLoad(paint);
+  }
+
+  private getMapOptions(container: HTMLDivElement): MapBoxOptions {
+    const viewport = { ...this.viewportDefaults, ...this.props.viewport };
+    const mapStyle = this.props.paint.mapStyle || '/styles/worldgeojson.json';
+    const defaultOptions = { ...viewport, container, style: mapStyle };
+
+    return !this.isOnMobile && !this.props.countryProfile
+      ? { ...defaultOptions, maxBounds: viewport.bounds }
+      : defaultOptions;
+  }
+
+  private addMapNav = () => {
+    this.nav = new mapboxgl.NavigationControl();
+    this.map.addControl(this.nav, 'top-right');
+  }
+
+  private colorMap({ data, propertyName, propertyLayer }: PaintMap) {
+    if (!data || !data.length) {
+      throw new Error('you have to pass in data to color the map');
+    }
+    const stops = data.filter(obj => obj.id && obj.color).map(obj => {
+      if (!obj.id || !obj.color) {
+        throw new Error('color and id values missing');
+      }
+
+      return [ obj.id, obj.color ];
+    });
+    this.setMapPaintProperty(stops, propertyLayer, propertyName);
+  }
+
+  private setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
+    this.map.setPaintProperty(propertyLayer || 'national', 'fill-color', {
+      property: propertyName || this.propertyName,
+      type: 'categorical',
+      default: lightGrey,
+      stops
+    });
+  }
+
+  private onMapLoad = (paint: PaintMap) => {
+    this.map.on('load', () => {
+      this.mapLoaded = true;
+      this.map.setPaintProperty('background', 'background-color', paint.background || seaBackground);
+      if (paint.data && paint.data.length) { this.colorMap(paint); }
+      if (this.props.countryProfile) {
+        this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
+      }
+      this.map.dragRotate.disable();
+      this.map.touchZoomRotate.disableRotation();
+      if (!this.props.countryProfile) { this.zoomListener(); }
+      if (this.props.meta) {
+        this.mouseHoverEvent();
+        this.mouseMapClick(this.props.meta);
+      } // TODO: turn into a this.meta.
+      if (!this.props.countryProfile) {
+        this.dragListener();
+        this.persistZoomAndCenterLevel();
+      }
+      this.resize();
+    });
+  }
+
+  private focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
+    const feature = this.getRegionFeature(slug, paint.propertyLayer);
+    if (feature) {
+      this.zoomToGeometry(feature.geometry);
+      const propertyId: string = feature.properties[paint.propertyName || this.propertyName] || '';
+      if (propertyId.length) {
+        const stop = [ propertyId, red ];
+        this.setMapPaintProperty([ stop ], paint.propertyLayer, paint.propertyName);
+      }
+    }
+  }
+
+  private getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
+    const layer = propertyLayer || 'national';
+    const slugProperty = this.propertyLayerSlugMap[layer];
+    const features: Feature[] = this.map.queryRenderedFeatures({ layers: [ layer ] });
+    const regionalFeature: Feature | void = features.find(feature => {
+      return feature.properties[slugProperty] && slugProperty !== 'country-slug'
+        ? feature.properties[slugProperty].toLowerCase() === slug
+        : feature.properties[slugProperty] === slug;
+    });
+
+    return regionalFeature;
+  }
+
+  private genericTipHtml({ id, country, name, value, uom, year }: GenericTipHtml) {
     const valueStr = value === NODATA ? NODATA : BaseMap.tipToolTipValueStr(value, uom);
     const valueWithYear = year
       ? `${valueStr}<span style="color: white;font-weight: 500;"> in ${year}</span>`
@@ -360,42 +401,6 @@ class BaseMap extends React.Component<Props, State> {
     });
   }
 
-  setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
-    this.map.setPaintProperty(propertyLayer || 'national', 'fill-color', {
-      property: propertyName || this.propertyName,
-      type: 'categorical',
-      default: lightGrey,
-      stops
-    });
-  }
-
-  colorMap({ data, propertyName, propertyLayer }: PaintMap) {
-    if (!data || !data.length) {
-      throw new Error('you have to pass in data to color the map');
-    }
-    const stops = data.filter(obj => obj.id && obj.color).map((obj: DH.IMapUnit) => {
-      if (!obj.id || !obj.color) {
-        throw new Error('color and id values missing');
-      }
-
-      return [ obj.id, obj.color ];
-    });
-    this.setMapPaintProperty(stops, propertyLayer, propertyName);
-  }
-
-  getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
-    const layer = propertyLayer || 'national';
-    const slugProperty = this.propertyLayerSlugMap[layer];
-    const features: Feature[] = this.map.queryRenderedFeatures({ layers: [ layer ] });
-    const feature: Feature | void = features.find(featurex => {
-      return featurex.properties[slugProperty] && slugProperty !== 'country-slug'
-        ? featurex.properties[slugProperty].toLowerCase() === slug
-        : featurex.properties[slugProperty] === slug;
-    });
-
-    return feature;
-  }
-
   zoomToGeometry(geometry: Geometry) {
     let bounds: any; // TODO: add proper types
     if (geometry.type === 'Polygon') {
@@ -432,67 +437,75 @@ class BaseMap extends React.Component<Props, State> {
     });
   }
 
-  focusOnCountryOrDistrict(slug: string, paint: PaintMap) {
-    const feature = this.getRegionFeature(slug, paint.propertyLayer);
-    if (feature) {
-      this.zoomToGeometry(feature.geometry);
-      const propertyId: string = feature.properties[paint.propertyName || this.propertyName] || '';
-      if (propertyId.length) {
-        const stop = [ propertyId, red ];
-        this.setMapPaintProperty([ stop ], paint.propertyLayer, paint.propertyName);
-      }
+  static foldOverSurveyMapFeatures(features: Feature[]): DH.IMapUnit {
+    type FeatureProps = Feature['properties'] & {total: number; sum: number};
+    const props: FeatureProps = features.reverse().reduce((acc, feature) => {
+      // this is a country feature;
+      const p20: number = feature.properties && feature.properties.p20 ? feature.properties.p20 : 0;
+      if (p20 === 0) { return { ...acc, ...feature.properties }; }
+      const sum = acc.sum + p20;
+      const total = acc.total + 1;
+
+      return { ...acc, sum, total, ...feature.properties };
+    }, { total: 0, sum: 0 });
+    const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
+    const id: string = props.ISO2 || '';
+    const countryName: string = props.NAME || '';
+    const region: string = props.DHSREGNA || '';
+    const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
+
+    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
+  }
+
+  static pointDataForPreStyledMap(features: Feature[], indicator: string): DH.IMapUnit | null {
+    if (indicator === 'surveyp20') {
+      return BaseMap.foldOverSurveyMapFeatures(features);
     }
-  }
-
-  draw(domElement: HTMLDivElement, paint: PaintMap) {
-    const viewport = { ...this.viewportDefaults, ...this.props.viewport };
-    const mapStyle = this.props.paint.mapStyle || '/styles/worldgeojson.json';
-    const defaultOpts = { ...viewport, style: mapStyle, container: domElement };
-    const opts: MapBoxOptions = !this.isOnMobile && !this.props.countryProfile
-      ? { ...defaultOpts, maxBounds: viewport.bounds }
-      : defaultOpts;
-    // draw map
-    if (!this.map || this.state.shouldForceRedraw) {
-      if (this.map) {
-        this.map.remove();
-        this.nav = undefined;
-      }
-      this.mapLoaded = false; // feels abit dirty
-      this.map = new mapboxgl.Map(opts);
+    if (!features[0].properties) {
+      throw new Error('Properties missing from map style');
     }
-    if (!this.nav && !this.mapLoaded) { this.addMapNav(); }
-    // React creates a new class instance per render which gets memoized
-    if (this.map && this.mapLoaded && paint.data && paint.data.length) { this.colorMap(paint); }
+    if (features[0].layer.type === 'line') {
+      return null;
+    }
+    const properties = features[0].properties;
+    const value: number = properties.P20 ? Math.round(properties.P20 * 100) : 0;
+    const countryName: string = properties['country-name'] || '';
+    const slug: string = properties['country-slug'] || '';
+    const id: string = properties.ISO || '';
+    const region: string = properties.DHSREGNA ? properties.DHSREGNA : '';
+    const name = region ? `Region: ${region}, ${countryName}` : countryName;
 
-    if (!this.mapLoaded) { this.onMapLoad(paint); }
+    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug };
   }
 
-  addMapNav = () => {
-    this.nav = new mapboxgl.NavigationControl();
-    this.map.addControl(this.nav, 'top-right');
+  static setPointDataValue(
+    value: number, uom?: string, indicator?: string): string {
+    if (indicator === 'surveyp20' || indicator === 'regionalp20') {
+      return value.toString();
+    }
+    if (indicator && indicatorsWith0dp.includes(indicator)) {
+      return approximate(value, 0, true);
+    }
+    if (uom === '%' && indicator && indicator.includes('uganda')) {
+      return value.toFixed(1);
+    }
+    if (indicator === 'dataseries.climatevulnerability') {
+      return value.toFixed(2);
+    }
+    if (indicatorsWith2dp.includes(indicator || '')) {
+      return approximate(value, 2, true);
+    }
+
+    return approximate(value, 1, true);
   }
 
-  onMapLoad = (paint: PaintMap) => {
-    this.map.on('load', () => {
-      this.mapLoaded = true;
-      this.map.setPaintProperty(
-        'background',
-        'background-color',
-        paint.background || seaBackground
-      );
-      if (paint.data && paint.data.length) { this.colorMap(paint); }
-      if (this.props.countryProfile) {
-        this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
-      }
-      this.map.dragRotate.disable();
-      this.map.touchZoomRotate.disableRotation();
-      if (!this.props.countryProfile) { this.zoomListener(); }
-      if (this.props.meta) { this.mouseHoverEvent(); } // TODO turn into a this.meta.
-      if (this.props.meta) { this.mouseMapClick(this.props.meta); }
-      if (!this.props.countryProfile) { this.dragListener(); }
-      if (!this.props.countryProfile) { this.persistZoomAndCenterLevel(); }
-      this.resize();
-    });
+  static tipToolTipValueStr(value: string | number, uom: string) {
+    switch (uom) {
+      case '%':
+        return `${value}${uom}`;
+      default:
+        return value;
+    }
   }
 }
 

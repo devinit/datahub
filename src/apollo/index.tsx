@@ -61,7 +61,9 @@ export function create({ initialState }: InitApollo): ApolloClient<any> {
 export default function initApollo(args?: InitApollo): ApolloClient<any> {
   // Make sure to create a new client for every server-side request so that data
   // isn't shared between connections (which would be bad)
-  if (!process.browser) { return create(args || {}); }
+  if (!process.browser) {
+    return create(args || {});
+  }
   // Reuse client on the client-side
   if (!apolloClient) { apolloClient = create(args || {}); }
 
