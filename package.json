@@ -13,7 +13,7 @@
   "author": "epicallan.al@gmail.com",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "tsc",
+    "emit": "tsc",
     "test": "jest src/components/pageData/pageData.test.ts",
     "coverage": "BABEL_ENV=test jest -u && codecov",
     "cypress:test": "start-server-and-test start http://localhost:8080 cypress:run",
@@ -25,6 +25,7 @@
     "critical-css": "ts-node src/scripts/critical-css.ts",
     "vendor": "ts-node src/scripts/vendor.ts",
     "pull": "ts-node src/scripts/pull/index.ts",
+    "build": "sh ./build.sh",
     "build-workers": "ts-node src/scripts/worker.ts",
     "build-fragment": "ts-node src/apollo/fragment.ts",
     "start": "NODE_ENV=production PORT=8080 node lib/src/server/index.js",
@@ -127,7 +128,7 @@
   "git-pre-hooks": {
     "pre-push": [
       "npm run lint",
-      "npm run build"
+      "npm run emit"
     ]
   },
   "jest": {
