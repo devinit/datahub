@@ -1,35 +1,37 @@
 import * as React from 'react';
 import { LightBg } from '../../atoms/Container';
-import { graphql, ChildProps } from 'react-apollo';
+import { ChildProps, graphql } from 'react-apollo';
 import Chart from '../../molecules/MultiLinePartition';
 import config from '../../visbox/linePartition';
-import { GvmtFinanceQuery,  GvmtFinanceQueryVariables } from '../../gql-types';
-import { GVNMT_QUERY} from './query.graphql';
+import { GovernmentFinanceQuery, GovernmentFinanceQueryVariables } from '../../gql-types';
+import { GOVERNMENT_FINANCE_QUERY } from './query.graphql';
 
-type QueryVarTs = GvmtFinanceQueryVariables & {
+type QueryVarTs = GovernmentFinanceQueryVariables & {
   chartId: string,
   year?: number,
   shouldScrollIntoView?: boolean;
   budgetType?: string,
 };
 
-type TChildProps = ChildProps<QueryVarTs, GvmtFinanceQuery>;
+type TChildProps = ChildProps<QueryVarTs, GovernmentFinanceQuery>;
 
-const withData = graphql<GvmtFinanceQuery,  QueryVarTs,  TChildProps>(GVNMT_QUERY, {
+const withData = graphql<GovernmentFinanceQuery, QueryVarTs, TChildProps>(GOVERNMENT_FINANCE_QUERY, {
   options: props => ({
     variables: {
-      id: props.id,
-    },
+      id: props.id
+    }
   })
 });
 
-export default withData(({data,  chartId, year, shouldScrollIntoView, budgetType}: TChildProps) => {
+export default withData(({ data, chartId, year, shouldScrollIntoView, budgetType }: TChildProps) => {
   const loading = data && data.loading;
-  const governmentFinance =  data && data.governmentFinance;
-  if (!governmentFinance) return <p>loading ...</p>;
+  const governmentFinance = data && data.governmentFinance;
+  if (!governmentFinance) {
+    return <p>loading ...</p>;
+  }
   // TODO: Report apollo codegen error; a nested error is sometimes stated as null eg levels in domestic
   // type even when stated to be non nullable
-  const props =  {
+  const props = {
     loading: loading === undefined ? true : loading,
     config,
     chartId,
@@ -42,19 +44,20 @@ export default withData(({data,  chartId, year, shouldScrollIntoView, budgetType
     items: [
       {
         title: 'Revenue And Grants',
-        data:  (governmentFinance.revenueAndGrants as DH.IDomestic[]) || [],
+        data:  (governmentFinance.revenueAndGrants as DH.IDomestic[]) || []
       },
       {
         title: 'Financing',
         inverted: false,
         withoutOptions: true,
-        data: (governmentFinance.finance as DH.IDomestic[]) || [],
+        data: (governmentFinance.finance as DH.IDomestic[]) || []
       },
       {
         title: 'Expenditure',
-        data: (governmentFinance.expenditure as DH.IDomestic[]) || [],
-      },
+        data: (governmentFinance.expenditure as DH.IDomestic[]) || []
+      }
     ]
   };
-  return <LightBg><Chart {...props} /></LightBg>;
+
+  return <LightBg><Chart { ...props } /></LightBg>;
 });

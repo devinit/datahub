@@ -239,11 +239,11 @@ export interface TabDataQuery {
   } | null,
 };
 
-export interface GvmtFinanceQueryVariables {
+export interface GovernmentFinanceQueryVariables {
   id: string,
 };
 
-export interface GvmtFinanceQuery {
+export interface GovernmentFinanceQuery {
   governmentFinance:  {
     startYear: number,
     // for treemap

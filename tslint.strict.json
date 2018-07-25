@@ -154,7 +154,11 @@
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
     "jsx-wrap-multiline": false,
-    "newline-before-return": true
+    "newline-before-return": true,
+    "max-line-length": [
+      true,
+      { "limit": 120, "ignore-pattern": "//" }
+    ]
   },
   "jsRules": {
     "trailing-comma": [

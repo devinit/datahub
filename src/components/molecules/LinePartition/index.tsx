@@ -3,8 +3,8 @@
  * through the time line
  */
 import * as React from 'react';
-import glamorous, {H4} from 'glamorous';
-import { groupBy, uniq, prop } from 'ramda';
+import glamorous, { H4 } from 'glamorous';
+import { groupBy, prop, uniq } from 'ramda';
 import { Container, Grid } from 'semantic-ui-react';
 import TreeChart from '../../atoms/TreeChart';
 import ErrorBoundary from '../ErrorBoundary';
@@ -17,20 +17,20 @@ const CardContainer = glamorous.div({
   paddingRight: '3em',
   paddingBottom: '1.5em',
   paddingTop: '1.5em',
-  overflow: 'visible',
+  overflow: 'visible'
 });
 
 const TreeChartContainer = glamorous.div({
   '& .plot-label-header': {
-    fontSize: '1em !important',
+    fontSize: '1em !important'
   },
   '& .plot-label-value': {
     fontSize: '1.15em !important',
     fontWeight: '500 !important'
-  },
+  }
 });
 
-const groupByYear = groupBy<TreeObj>( d => `${d.year}`);
+const groupByYear = groupBy<TreeObj>(d => `${d.year}`);
 
 const groupByBudgetType = groupBy<DH.IDomestic>(prop('budget_type'));
 
@@ -49,7 +49,7 @@ export interface LinePartitionData {
   value_ncu: number;
 }
 
-export interface Props  {
+export interface Props {
   title: string;
   inverted?: boolean;
   withoutOptions?: boolean;
@@ -82,7 +82,7 @@ interface TreesByYearAndBudget {
   };
 }
 
-export interface State  {
+export interface State {
   treesByYear: TreesByYearAndBudget;
   trend: DH.IDomestic[];
   level: string;
@@ -90,26 +90,97 @@ export interface State  {
 }
 
 export default class LinePartition extends React.Component<Props, State> {
-
   constructor(props: Props) {
     super(props);
     this.state = this.createInitialState(props);
   }
 
-  public setLevel = (levels: string[]) => {
-    const level = levels[levels.length - 1];
-    const trend = this.createTrendState(level);
-    const heading = levels.map(levelx => levelx.replace(/Total\s*/gi, '')).join(' > ');
+  public render() {
+    const tree = this.getTreeData();
+    const trend = this.getTrendData();
+    const showLegend = this.props.config.partition.legend && this.props.config.partition.legend.showLegend;
 
-    this.setState({
-      level,
-      trend,
-      heading,
-    });
+    return (
+      <Container>
+        { this.renderLinePartitionHeader(!this.props.inverted || !tree.length) }
+        <Grid style={ { paddingBottom: '40px' } }>
+          <Grid.Column mobile={ 16 } computer={ 5 } width={ 5 } style={ { padding: 0 } }>
+            <CardContainer>
+              <Timeline
+                onYearChanged={ this.props.onChangeYear }
+                height={ showLegend ? '250px' : '180px' }
+                config={ {
+                  ...this.props.config.line,
+                  timeAxis: {
+                    ...this.props.config.line.timeAxis,
+                    axisMinimum: this.props.lowestYear.toString(),
+                    axisMaximum: this.props.highestYear.toString()
+                  },
+                  anchor: { start: this.props.year.toString() }
+                } }
+                data={ trend }
+              />
+            </CardContainer>
+          </Grid.Column>
+
+          <Grid.Column mobile={ 16 } computer={ 11 } width={ 11 } style={ { padding: 0 } }>
+            { this.renderTreeChart(tree, showLegend) }
+          </Grid.Column>
+        </Grid>
+        { this.renderLinePartitionHeader(this.props.inverted || !tree.length) }
+      </Container>
+    );
   }
 
-  public createInitialState(props: Props) {
-    const [root = {levels: []}] = props.data;
+  private renderLinePartitionHeader(showHeader: boolean) {
+    if (showHeader) {
+      return (
+        <LinePartitionHeader
+          title={ this.state.heading }
+          hideOptions={ this.props.withoutOptions || false }
+          year={ this.props.year }
+          budgetType={ this.props.budgetType }
+          budgetTypeOptions={ this.props.budgetTypeOptions }
+          onChangeBudgetType={ this.props.onChangeBudgetType }
+          currency={ this.props.currency }
+          currencyOptions={ this.props.currencyOptions }
+          onChangeCurrency={ this.props.onChangeCurrency }
+        />
+      );
+    }
+
+    return null;
+  }
+
+  private renderTreeChart(tree: TreeObj[], showLegend: boolean) {
+    if (tree.length) {
+      const cleanTree = this.connectOrphanedBranchesToRoot(tree);
+
+      return (
+        <TreeChartContainer>
+          <ErrorBoundary message="government finance treemap ">
+            <TreeChart
+              height={ showLegend ? '380px' : '222px' }
+              config={ {
+                ...this.props.config.partition,
+                labeling: { prefix: this.props.currency }
+              } }
+              // tslint:disable-next-line:jsx-no-lambda
+              onClick={ (d: { data: {levels: string[]} }) => {
+                this.setLevel(d.data.levels);
+              } }
+              data={ cleanTree }
+            />
+          </ErrorBoundary>
+        </TreeChartContainer>
+      );
+    }
+
+    return <H4 textAlign="center" paddingTop="3em"> No resources breakdown for { this.props.year }</H4>;
+  }
+
+  private createInitialState(props: Props) {
+    const [ root = { levels: [] } ] = props.data;
     const level = root.levels[0];
     const heading = level.replace(/Total\s*/gi, '');
 
@@ -120,7 +191,7 @@ export default class LinePartition extends React.Component<Props, State> {
       level,
       heading,
       trend,
-      treesByYear,
+      treesByYear
     };
   }
 
@@ -133,26 +204,77 @@ export default class LinePartition extends React.Component<Props, State> {
    * }
    * @returns {{}}
    */
-  public createTreeStateByYearAndBudgetType = (): TreesByYearAndBudget => {
-    const groupedByYear: {[year: string]: TreeObj[]} = groupByYear(this.props.data
-      .map(datum => {
+  private createTreeStateByYearAndBudgetType = (): TreesByYearAndBudget => {
+    const groupedByYear: {[year: string]: TreeObj[]} = groupByYear(
+      this.props.data.map(datum => {
         return {
           ...datum,
           // Hack: Coloring nodes with negative values to red
           color: datum.value > 0 ? datum.color : 'rgb(240, 122, 146)',
           nodeParent: datum.levels[datum.levels.length - 2],
-          nodeId: datum.levels[datum.levels.length - 1],
+          nodeId: datum.levels[datum.levels.length - 1]
         };
-      }));
+      })
+    );
 
     return Object.keys(groupedByYear)
       .reduce((acc, year) => {
         const yearBudgetTypeData = groupByBudgetType(groupedByYear[`${year}`]);
-        return {...acc, [`${year}`]: yearBudgetTypeData};
+
+        return { ...acc, [`${year}`]: yearBudgetTypeData };
       }, {});
   }
 
-  public createTrendState = (level: string) => {
+  private getTreeData = (): TreeObj[] => {
+    const treeOfYear = this.state.treesByYear[this.props.year] || {};
+    const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
+
+    return treeOfBudgetType
+      .map(datum => {
+        const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
+
+        return {
+          ...datum,
+          value
+        };
+      });
+  }
+
+  private connectOrphanedBranchesToRoot(tree: TreeObj[]) {
+    const validNodeIDs = tree.map(branch => branch.nodeId);
+    let rootBranch = tree.find(branch => !branch.nodeParent);
+
+    return tree.map(branch => {
+      if (branch.nodeParent) {
+        if (validNodeIDs.indexOf(branch.nodeParent) === -1) {
+          if (!rootBranch) {
+            console.log(`Orphaned branch "${branch.nodeId}" requires parent "${branch.nodeParent}". No root branch found. Branch "${branch.nodeId}" promoted to root`); // tslint:ignore-line
+            rootBranch = branch;
+            branch.nodeParent = undefined;
+          } else {
+            console.log(`Orphaned branch "${branch.nodeId}" requires parent "${branch.nodeParent}". Now attached to root branch "${rootBranch.nodeId}"`); // tslint:ignore-line
+            branch.nodeParent = rootBranch.nodeId;
+          }
+        }
+      }
+
+      return branch;
+    });
+  }
+
+  private setLevel = (levels: string[]) => {
+    const level = levels[levels.length - 1];
+    const trend = this.createTrendState(level);
+    const heading = levels.map(levelx => levelx.replace(/Total\s*/gi, '')).join(' > ');
+
+    this.setState({
+      level,
+      trend,
+      heading
+    });
+  }
+
+  private createTrendState = (level: string) => {
     const allBudgetTypes = uniq(this.props.data.map((datum) => datum.budget_type));
     // put there coz budget was overlapping with actual for case of uganda
     const regexString = allBudgetTypes.length > 2 ?
@@ -160,6 +282,7 @@ export default class LinePartition extends React.Component<Props, State> {
       allBudgetTypes.join('|');
     const regex = new RegExp(`(${regexString})`, 'gi');
     console.log('regex string', regexString);
+
     return this.props.data
       .filter(d => {
         const isActualOrProjected = d.budget_type.match(regex);
@@ -171,106 +294,17 @@ export default class LinePartition extends React.Component<Props, State> {
       });
   }
 
-  public getTreeData = () => {
-    const treeOfYear = this.state.treesByYear[this.props.year] || {};
-    const treeOfBudgetType = treeOfYear[this.props.budgetType] || [];
-    return treeOfBudgetType
+  private getTrendData = () => {
+    const trend = this.state.trend
       .map(datum => {
         const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
+
         return {
           ...datum,
-          value,
+          value
         };
       });
-  }
 
-  public getTrendData = () => {
-   const trend = this.state.trend
-    .map(datum => {
-      const value = this.props.currency === 'US$' ? datum.value : datum.value_ncu;
-      return {
-        ...datum,
-        value,
-      };
-    });
-   return trend;
-  }
-  public render() {
-    const tree = this.getTreeData();
-    const trend = this.getTrendData();
-    const showLegend = this.props.config.partition.legend &&
-      this.props.config.partition.legend.showLegend;
-    return (<Container>
-      {this.props.inverted && tree.length ? '' :
-        <LinePartitionHeader
-          title={this.state.heading}
-          hideOptions={this.props.withoutOptions || false}
-          year={this.props.year}
-          budgetType={this.props.budgetType}
-          budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={this.props.onChangeBudgetType}
-          currency={this.props.currency}
-          currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={this.props.onChangeCurrency}
-        />}
-      <Grid style={{paddingBottom: '40px'}}>
-        <Grid.Column mobile={16} computer={5} width={5} style={{ padding: 0 }}>
-          <CardContainer>
-            <Timeline
-              // tslint:disable-next-line:jsx-no-lambda
-              onYearChanged={(year) => this.props.onChangeYear(year)}
-              height={showLegend ? '250px' : '180px'}
-              config={{
-                ...this.props.config.line,
-                timeAxis: {
-                  ...this.props.config.line.timeAxis,
-                  axisMinimum: this.props.lowestYear.toString(),
-                  axisMaximum: this.props.highestYear.toString(),
-                },
-                anchor: { start: this.props.year.toString() },
-              }}
-              data={trend}
-            />
-          </CardContainer>
-        </Grid.Column>
-
-        <Grid.Column mobile={16} computer={11} width={11} style={{ padding: 0 }}>
-          {tree.length ?
-            <TreeChartContainer>
-              <ErrorBoundary message="government finance treemap ">
-                <TreeChart
-                  height={showLegend ? '380px' : '222px'}
-                  config={{
-                    ...this.props.config.partition,
-                    labeling: { prefix: this.props.currency },
-                  }}
-                  // tslint:disable-next-line:jsx-no-lambda
-                  onClick={(d: { data: {levels: string[]} }) => {
-                    this.setLevel(d.data.levels);
-                  }}
-                  data={tree}
-                />
-              </ErrorBoundary>
-            </TreeChartContainer> :
-            <H4 textAlign="center" paddingTop="3em"> No resources breakdown for {this.props.year}</H4>
-          }
-        </Grid.Column>
-      </Grid>
-
-      {!this.props.inverted && tree.length ? '' :
-        // eslint-disable-next-line react/jsx-indent
-        <LinePartitionHeader
-          title={this.state.heading}
-          hideOptions={this.props.withoutOptions || false}
-          year={this.props.year}
-          budgetType={this.props.budgetType}
-          budgetTypeOptions={this.props.budgetTypeOptions}
-          onChangeBudgetType={this.props.onChangeBudgetType}
-          currency={this.props.currency}
-          currencyOptions={this.props.currencyOptions}
-          onChangeCurrency={this.props.onChangeCurrency}
-        />}
-
-    </Container>);
+    return trend;
   }
 }

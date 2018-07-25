@@ -15,7 +15,11 @@
     "variable-name":false,
     "ordered-imports": [false],
     "member-access": false,
-    "member-ordering": false
+    "member-ordering": false,
+    "max-line-length": [
+      true,
+      { "limit": 120, "ignore-pattern": "//" }
+    ]
   },
   "jsRules": {
     "trailing-comma": [
