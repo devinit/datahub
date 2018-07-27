@@ -154,7 +154,7 @@ export default class LinePartition extends React.Component<Props, State> {
 
   private renderTreeChart(tree: TreeObj[], showLegend: boolean) {
     if (tree.length) {
-      const cleanTree = this.connectOrphanedBranchesToRoot(tree);
+      const cleanTree = this.removeDuplicates(this.connectOrphanedBranchesToRoot(tree));
 
       return (
         <TreeChartContainer>
@@ -260,6 +260,25 @@ export default class LinePartition extends React.Component<Props, State> {
 
       return branch;
     });
+  }
+
+  private removeDuplicates(tree: TreeObj[]) {
+    return tree.reduce((newTree: TreeObj[], branch) => {
+      const duplicate = newTree.find(duplicateBranch => duplicateBranch.nodeId === branch.nodeId);
+      if (!duplicate && branch.nodeId !== branch.nodeParent && branch.value) {
+        newTree.push(branch);
+        branch.levels = branch.levels.reduce((newLevels: string[], level) => {
+          const duplicateLevel = newLevels.find(dup => dup === level);
+          if (!duplicateLevel) {
+            newLevels.push(level);
+          }
+
+          return newLevels;
+        }, []);
+      }
+
+      return newTree;
+    }, []);
   }
 
   private setLevel = (levels: string[]) => {
