@@ -266,7 +266,7 @@ class AreaPartitionChart extends React.Component<Props, State> {
     const filtered = selections && selections.find(d => d.value === data.value);
 
     this.setState({
-      detailGroup: data.id,
+      detailGroup: data.id || data.value,
       shouldUnbundle: filtered && filtered.unbundle
     });
   }
