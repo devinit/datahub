@@ -3,6 +3,7 @@ import { SingletonRouter } from 'next/router';
 import * as React from 'react';
 import { Route, Router, countryOrDistrictLink, router } from '../../../utils';
 import LoadingBar from '../../molecules/LoadingBar';
+import globalData from '../../molecules/SearchInput/global';
 import { lightGrey, orange, red, seaBackground } from '../../theme/semantic';
 import { MapContainer } from './styledMapContainer';
 import {
@@ -338,6 +339,10 @@ class BaseMap extends React.Component<Props, State> {
       const pointData: DH.IMapUnit | null = this.getMouseHoverPointData(features);
       if (!pointData) {
         return !!this.popup && this.popup.remove();
+      }
+      const countryData = globalData.countries.find(data => data.slug === pointData.slug);
+      if (countryData && countryData.name !== pointData.name) {
+        pointData.name = countryData.name;
       }
       if (!this.popup) {
         this.popup = new mapboxgl.Popup({ offset: 5 });
