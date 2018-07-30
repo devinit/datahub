@@ -24,6 +24,12 @@ export default class ErrorBoundary extends React.Component<Props> {
     // TODO: logErrorToMyService(error, info);
   }
 
+  componentWillReceiveProps() {
+    if (this.state.hasError) {
+      this.setState({ hasError: false });
+    }
+  }
+
   render() {
     if (this.state.hasError) {
       console.error(this.state.error);
