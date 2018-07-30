@@ -64,100 +64,25 @@ class ProfileHeaderSection extends React.Component<Props> {
           <CardContainer>
             <H4 color={ red }>
               <Icon name="globe" color={ 'red' } />
-              {
-                this.props.spotlightCountry ?
-                  <a
-                    href={ `/spotlight-on-${this.props.spotlightCountry.slug}` }
-                    style={ { color: red } }
-                    data-cy="Spotlight__Country__Link"
-                  >
-                    Spotlight on { this.props.spotlightCountry.name }
-                  </a>
-                  :
-                  <a href="/" data-cy="GP__Link" role="link" style={ { color: red } }>Global Picture</a>
-              }
+              { this.renderLink(this.props) }
             </H4>
+            <ProfileSearch
+              router={ this.props.router }
+              nextLink={ this.props.nextLink }
+              placeholder={ this.props.entity.name }
+              country={ this.props.spotlightCountry && this.props.spotlightCountry.slug }
+            />
+            { this.renderLead(this.props) }
+            { this.renderJumpToSection() }
+            { this.renderArticle() }
             {
-              this.props.spotlightCountry ?
-                <ProfileSearch
-                  router={ this.props.router }
-                  nextLink={ this.props.nextLink }
-                  placeholder={ this.props.entity.name }
-                  country={ this.props.spotlightCountry.slug }
-                />
-                :
-                <ProfileSearch
-                  placeholder={ this.props.entity.name }
-                  router={ this.props.router }
-                  nextLink={ this.props.nextLink }
-                />
-            }
-            {
-              this.props.spotlightCountry ?
-                <Lead>
-                  { getDistrictProfilePageData(this.props.spotlightCountry.slug, this.props.entity.name) }
-                  <Span fontWeight={ 500 } lineHeight="3" fontSize="0.7em" display="block">
-                    Visit the { ' ' }
-                    <BodyLink href={ `/country/${this.props.spotlightCountry.slug}` }>
-                      { this.props.spotlightCountry.name } country Profile
-                  </BodyLink>
-                    { ' ' }to explore national-level data.
-                </Span>
-                </Lead> :
-                <Lead>
-                  { (this.props.entity as Country).countryType !== DONOR ?
-                    getProfilePageData(this.props.entity.name)[1].narrative :
-                    getProfilePageData(this.props.entity.name)[2].narrative
-                  }
-                  <Img marginLeft="10px" width="32px" src={ `/flags/svg/${this.props.entity.id}.svg` } />
-                  { this.props.entity.slug === 'uganda' ?
-                    <Span fontSize="0.7em" display={ 'block' } fontWeight={ 500 } >
-                      Visit our new <BodyLink href="/spotlight-on-uganda">
-                        Spotlight on Uganda</BodyLink> to explore data by district.</Span> : ''
-                  }
-                </Lead>
-            }
-            { this.props.jumpToSection ?
-              <Span>
-                Jump to {
-                  (this.props.entity as Country).countryType !== DONOR ?
-                    <span>
-                      <BodyLink
-                        onClick={ this.jumpToSection(GOVERNMENT_FINANCE_LOWER) }
-                        color={ red }
-                      >government finance
-                      </BodyLink> or </span> : ''
-                }
-                <BodyLink
-                  color={ red }
-                  onClick={ this.jumpToSection(INFLOWS_VS_OUTFLOWS) }
-                >international resources
-                </BodyLink>
-              </Span> : ''
-            }
-            {
-              this.props.spotlightCountry ?
-                <article>
-                  <P fontWeight={ 500 } fontSize="1.2em" lineHeight="0">View all financial data in: </P>
-                  <Dropdown
-                    compact
-                    selection
-                    value={ this.props.currency }
-                    options={ this.props.currencyOptions }
-                    // tslint:disable-next-line:jsx-no-lambda
-                    onChange={ (_e, data) =>
-                      this.props.onChangeCurrency && data.value && this.props.onChangeCurrency(data.value.toString())
-                    }
+              (process as any).browser
+                ?
+                  <ProfileSocialMedia
+                    isCountryProfile={ !this.props.spotlightCountry }
+                    entity={ this.props.entity }
                   />
-                </article>
                 : ''
-            }
-            { (process as any).browser ?
-              <ProfileSocialMedia
-                isCountryProfile={ !this.props.spotlightCountry }
-                entity={ this.props.entity }
-              />
-              : ''
             }
           </CardContainer>
         </ProfileContent>
@@ -175,6 +100,107 @@ class ProfileHeaderSection extends React.Component<Props> {
     }
 
     return null;
+  }
+
+  private renderLink(props: Props) {
+    if (props.spotlightCountry) {
+      return (
+        <a
+          href={ `/spotlight-on-${props.spotlightCountry.slug}` }
+          style={ { color: red } }
+          data-cy="Spotlight__Country__Link"
+        >
+          Spotlight on { props.spotlightCountry.name }
+        </a>
+      );
+    }
+
+    return <a href="/" data-cy="GP__Link" role="link" style={ { color: red } }>Global Picture</a>;
+  }
+
+  private renderLead(props: Props) {
+    if (props.spotlightCountry) {
+      return (
+        <Lead>
+          { getDistrictProfilePageData(props.spotlightCountry.slug, props.entity.name) }
+          <Span fontWeight={ 500 } lineHeight="3" fontSize="0.7em" display="block">
+            Visit the { ' ' }
+            <BodyLink href={ `/country/${props.spotlightCountry.slug}` }>
+              { props.spotlightCountry.name } country Profile
+            </BodyLink>
+            { ' ' }to explore national-level data.
+          </Span>
+        </Lead>
+      );
+    }
+
+    return (
+      <Lead>
+        {
+          (this.props.entity as Country).countryType !== DONOR
+            ? getProfilePageData(this.props.entity.name)[1].narrative
+            : getProfilePageData(this.props.entity.name)[2].narrative
+        }
+        <Img marginLeft="10px" width="32px" src={ `/flags/svg/${this.props.entity.id}.svg` } />
+        {
+          this.props.entity.slug === 'uganda'
+            ? <Span fontSize="0.7em" display={ 'block' } fontWeight={ 500 } >
+                Visit our new <BodyLink href="/spotlight-on-uganda">
+                Spotlight on Uganda</BodyLink> to explore data by district.</Span>
+            : ''
+        }
+      </Lead>
+    );
+  }
+
+  private renderJumpToSection(): React.ReactNode {
+    if (this.props.jumpToSection) {
+      return (
+        <Span>
+          Jump to {
+            (this.props.entity as Country).countryType !== DONOR
+              ?
+                <span>
+                  <BodyLink
+                    onClick={ this.jumpToSection(GOVERNMENT_FINANCE_LOWER) }
+                    color={ red }
+                  >
+                    government finance
+                  </BodyLink> or { ' ' }
+                </span> : ''
+          }
+          <BodyLink
+            color={ red }
+            onClick={ this.jumpToSection(INFLOWS_VS_OUTFLOWS) }
+          >international resources
+          </BodyLink>
+        </Span>
+      );
+    }
+
+    return '';
+  }
+
+  private renderArticle(): React.ReactNode {
+    if (this.props.spotlightCountry) {
+      return (
+        <article>
+          <P fontWeight={ 500 } fontSize="1.2em" lineHeight="0">View all financial data in: </P>
+          <Dropdown
+            compact
+            selection
+            value={ this.props.currency }
+            options={ this.props.currencyOptions }
+            // tslint:disable-next-line:jsx-no-lambda
+            onChange={ (_e, data) =>
+              this.props.onChangeCurrency && data.value && this.props.onChangeCurrency(data.value.toString())
+            }
+          />
+        </article>
+      );
+    }
+
+    return '';
   }
 
   private jumpToSection(section: string) {
