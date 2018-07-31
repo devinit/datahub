@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { graphql, ChildProps } from 'react-apollo';
+import { ChildProps, graphql } from 'react-apollo';
 import { WhiteBg } from '../../atoms/Container';
 import Chart from '../../molecules/MultiLinePartition';
 import config from '../../visbox/localLinePartition';
-import {LGvmntFinanceQuery, LGvmntFinanceQueryVariables} from '../../gql-types';
-import {StateToShare} from '../../molecules/ChartShare';
-import {LOC_GVMT_QUERY} from './query.graphql';
+import { LGvmntFinanceQuery, LGvmntFinanceQueryVariables } from '../../gql-types';
+import { StateToShare } from '../../molecules/ChartShare';
+import { LOC_GVMT_QUERY } from './query.graphql';
 
-export type QueryVarTs =  LGvmntFinanceQueryVariables & {
+export type QueryVarTs = LGvmntFinanceQueryVariables & {
   state?: StateToShare
 };
 
@@ -18,22 +18,28 @@ const withData = graphql<LGvmntFinanceQuery, LGvmntFinanceQueryVariables, TChild
     variables: {
       id: props.id,
       country: props.country
-    },
-  }),
+    }
+  })
 });
 
-export default withData(({data}: TChildProps) => {
+export default withData(({ data }: TChildProps) => {
   const loading = data && data.loading;
-  const governmentFinance =  data && data.localGovernmentFinance;
-  if (!governmentFinance || loading) return <p>loading ...</p>;
+  const governmentFinance = data && data.localGovernmentFinance;
+  if (!governmentFinance || loading) {
+    return <p>loading ...</p>;
+  }
   // TODO: Report apollo codegen error; a nested error is sometimes stated as null eg levels in domestic
   // type even when stated to be non nullable
   const items: Array<{title: string, data: DH.IDomestic[], inverted?: boolean}> = [];
   const revenueAndGrants = governmentFinance.revenueAndGrants as DH.IDomestic[];
   const expenditure = governmentFinance.expenditure as DH.IDomestic[];
-  if (revenueAndGrants.length) items.push({title: 'Revenue', data: revenueAndGrants});
-  if (expenditure.length) items.push({title: 'Expenditure', data: expenditure, inverted: false});
-  const props =  {
+  if (revenueAndGrants.length) {
+    items.push({ title: 'Revenue', data: revenueAndGrants });
+  }
+  if (expenditure.length) {
+    items.push({ title: 'Expenditure', data: expenditure, inverted: false });
+  }
+  const props = {
     loading: loading === undefined ? true : loading, // TODO: not useful
     chartId: 'localGovmntChart',
     config,
@@ -42,5 +48,6 @@ export default withData(({data}: TChildProps) => {
     startYear: governmentFinance.startYear,
     items
   };
-  return <WhiteBg><Chart {...props} /></WhiteBg>;
+
+  return <WhiteBg><Chart { ...props } /></WhiteBg>;
 });
