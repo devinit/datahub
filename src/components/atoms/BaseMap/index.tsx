@@ -112,7 +112,7 @@ class BaseMap extends React.Component<Props, State> {
 
   componentDidMount() {
     if (this.mapNode) {
-      this.draw(this.mapNode, this.props.paint);
+      this.draw(this.mapNode, this.props);
     }
   }
 
@@ -120,7 +120,7 @@ class BaseMap extends React.Component<Props, State> {
     const mapStyleUpdated = nextProps.paint.mapStyle !== this.props.paint.mapStyle;
     const countryProfileUpdated = this.props.countryProfile !== nextProps.countryProfile;
     if ((mapStyleUpdated || countryProfileUpdated) && this.mapNode) {
-      this.draw(this.mapNode, nextProps.paint);
+      this.draw(this.mapNode, nextProps);
     } else if (this.map && this.mapLoaded && nextProps.paint.data && nextProps.paint.data.length) {
       this.colorMap(nextProps.paint);
     }
@@ -132,8 +132,8 @@ class BaseMap extends React.Component<Props, State> {
     }
   }
 
-  private draw(mapElement: HTMLDivElement, paint: PaintMap) {
-    const mapOptions: MapBoxOptions = this.getMapOptions(mapElement);
+  private draw(mapElement: HTMLDivElement, props: Props) {
+    const mapOptions: MapBoxOptions = this.getMapOptions(mapElement, props);
     if (this.map) {
       this.map.remove();
       this.nav = undefined;
@@ -141,15 +141,15 @@ class BaseMap extends React.Component<Props, State> {
     this.mapLoaded = false; // feels abit dirty
     this.map = new mapboxgl.Map(mapOptions);
     if (!this.nav) { this.addMapNav(); }
-    this.onMapLoad(paint);
+    this.onMapLoad(props.paint);
   }
 
-  private getMapOptions(container: HTMLDivElement): MapBoxOptions {
-    const viewport = { ...this.viewportDefaults, ...this.props.viewport };
-    const mapStyle = this.props.paint.mapStyle || '/styles/worldgeojson.json';
+  private getMapOptions(container: HTMLDivElement, props: Props): MapBoxOptions {
+    const viewport = { ...this.viewportDefaults, ...props.viewport };
+    const mapStyle = props.paint.mapStyle || '/styles/worldgeojson.json';
     const defaultOptions = { ...viewport, container, style: mapStyle };
 
-    return !this.isOnMobile && !this.props.countryProfile
+    return !this.isOnMobile && !props.countryProfile
       ? { ...defaultOptions, maxBounds: viewport.bounds }
       : defaultOptions;
   }
