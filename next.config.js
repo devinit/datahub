@@ -25,6 +25,7 @@ module.exports = withTypescript({
 
     config.plugins.push(new ForkTsCheckerWebpackPlugin());
     config.module.noParse = /mapbox-gl/;
+    config.devtool = 'cheap-source-map';
 
     return config;
   },
