@@ -141,7 +141,7 @@ class BaseMap extends React.Component<Props, State> {
     this.mapLoaded = false; // feels abit dirty
     this.map = new mapboxgl.Map(mapOptions);
     if (!this.nav) { this.addMapNav(); }
-    this.onMapLoad(props.paint);
+    this.onMapLoad(props);
   }
 
   private getMapOptions(container: HTMLDivElement, props: Props): MapBoxOptions {
@@ -182,22 +182,22 @@ class BaseMap extends React.Component<Props, State> {
     });
   }
 
-  private onMapLoad = (paint: PaintMap) => {
+  private onMapLoad = ({ countryProfile, meta, paint }: Props) => {
     this.map.on('load', () => {
       this.mapLoaded = true;
       this.map.setPaintProperty('background', 'background-color', paint.background || seaBackground);
       if (paint.data && paint.data.length) { this.colorMap(paint); }
-      if (this.props.countryProfile) {
-        this.focusOnCountryOrDistrict(this.props.countryProfile, paint);
+      if (countryProfile) {
+        this.focusOnCountryOrDistrict(countryProfile, paint);
       }
       this.map.dragRotate.disable();
       this.map.touchZoomRotate.disableRotation();
-      if (!this.props.countryProfile) { this.zoomListener(); }
-      if (this.props.meta) {
+      if (!countryProfile) { this.zoomListener(); }
+      if (meta) {
         this.mouseHoverEvent();
-        this.mouseMapClick(this.props.meta);
+        this.mouseMapClick(meta);
       } // TODO: turn into a this.meta.
-      if (!this.props.countryProfile) {
+      if (!countryProfile) {
         this.dragListener();
         this.persistZoomAndCenterLevel();
       }
@@ -303,28 +303,35 @@ class BaseMap extends React.Component<Props, State> {
     };
   }
 
+  private getFeature(features: Feature[]): Feature {
+    const paintProperty: string = this.props.paint.propertyName || this.propertyName;
+    const feature = features.find(feat => feat.properties[paintProperty]);
+
+    return feature || features[0];
+  }
+
   getMouseHoverPointData(features: Feature[]): DH.IMapUnit | null {
+    const feature = this.getFeature(features);
     if (this.props.paint.data && this.props.paint.data.length) {
+      const paintProperty: string = this.props.paint.propertyName || this.propertyName;
       // for regular global picture and spotlight map & the small profile maps
-      const point: DH.IMapUnit | void = this.props.paint.data.find(obj => {
-        const paintProperty: string = this.props.paint.propertyName || this.propertyName;
+      const point: DH.IMapUnit | void = this.props.paint.data.find(obj =>
+        obj.id === feature.properties[paintProperty]
+      );
 
-        return obj.id === features[0].properties[paintProperty];
-      });
-
-      return point || this.setMinimalMapDataPoint(features[0]);
+      return point || this.setMinimalMapDataPoint(feature);
     }
     if (this.props.countryProfile) {
-      return this.setMinimalMapDataPoint(features[0], 0);
+      return this.setMinimalMapDataPoint(feature, 0);
     }
-    if (!this.props.countryProfile && features.length > 1 && this.props.meta) {
+    if (!this.props.countryProfile && features.length && this.props.meta) {
       // for pre-styled maps i.e survey & regional map
       return this.props.meta.id
-        ? BaseMap.pointDataForPreStyledMap(features, this.props.meta.id)
-        : this.setMinimalMapDataPoint(features[0]);
+        ? this.pointDataForPreStyledMap(features, this.props.meta.id)
+        : this.setMinimalMapDataPoint(feature);
     }
 
-    return this.setMinimalMapDataPoint(features[0]);
+    return this.setMinimalMapDataPoint(feature);
   }
 
   mouseHoverEvent() {
@@ -389,12 +396,12 @@ class BaseMap extends React.Component<Props, State> {
       if (meta.id === 'surveyp20' || meta.id === 'regionalp20') {
         return false;
       }
-      const features: Feature[] = this.map.queryRenderedFeatures(event.point);
-      if (!features.length) {
+      const feature: Feature = this.getFeature(this.map.queryRenderedFeatures(event.point));
+      if (!feature) {
         return false;
       }
       const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
-      const slug: string | void = features[0].properties[slugProperty];
+      const slug: string | void = feature.properties[slugProperty];
       if (!slug || !this.props.meta || !this.props.meta.country) {
         return false;
       }
@@ -462,21 +469,22 @@ class BaseMap extends React.Component<Props, State> {
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
 
-  static pointDataForPreStyledMap(features: Feature[], indicator: string): DH.IMapUnit | null {
+  private pointDataForPreStyledMap(features: Feature[], indicator: string): DH.IMapUnit | null {
     if (indicator === 'surveyp20') {
       return BaseMap.foldOverSurveyMapFeatures(features);
     }
-    if (!features[0].properties) {
+    const feature = this.getFeature(features);
+    if (!feature.properties) {
       throw new Error('Properties missing from map style');
     }
-    if (features[0].layer.type === 'line') {
+    if (feature.layer.type === 'line') {
       return null;
     }
-    const properties = features[0].properties;
+    const properties = feature.properties;
     const value: number = properties.P20 ? Math.round(properties.P20 * 100) : 0;
     const countryName: string = properties['country-name'] || '';
     const slug: string = properties['country-slug'] || '';
-    const id: string = properties.ISO || '';
+    const id: string = properties.ISO || properties.ISO2 || '';
     const region: string = properties.DHSREGNA ? properties.DHSREGNA : '';
     const name = region ? `Region: ${region}, ${countryName}` : countryName;
 

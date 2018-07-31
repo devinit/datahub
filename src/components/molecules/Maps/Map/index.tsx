@@ -141,6 +141,8 @@ class Map extends React.Component<Props, State> {
         ? Map.setCurrentYearData(this.state.currentYear, props.map)
         : props.map;
       this.paint = { data: this.data, ...this.config.paint };
+    } else {
+      this.data = [];
     }
     if (props.map_style) {
       this.paint = { data: this.data, ...this.config.paint, mapStyle: props.map_style };
