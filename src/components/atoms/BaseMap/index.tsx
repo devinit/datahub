@@ -121,7 +121,7 @@ class BaseMap extends React.Component<Props, State> {
     const countryProfileUpdated = this.props.countryProfile !== nextProps.countryProfile;
     if ((mapStyleUpdated || countryProfileUpdated) && this.mapNode) {
       this.draw(this.mapNode, nextProps);
-    } else if (this.map && this.mapLoaded && nextProps.paint.data && nextProps.paint.data.length) {
+    } else if (this.map && this.mapLoaded && nextProps.paint.data) {
       this.colorMap(nextProps.paint);
     }
   }
@@ -160,7 +160,7 @@ class BaseMap extends React.Component<Props, State> {
   }
 
   private colorMap({ data, propertyName, propertyLayer }: PaintMap) {
-    if (!data || !data.length) {
+    if (!data) {
       throw new Error('you have to pass in data to color the map');
     }
     const stops = data.filter(obj => obj.id && obj.color).map(obj => {
@@ -174,12 +174,16 @@ class BaseMap extends React.Component<Props, State> {
   }
 
   private setMapPaintProperty(stops: string[][], propertyLayer?: string, propertyName?: string) {
-    this.map.setPaintProperty(propertyLayer || 'national', 'fill-color', {
-      property: propertyName || this.propertyName,
-      type: 'categorical',
-      default: lightGrey,
-      stops
-    });
+    if (stops && stops.length) {
+      this.map.setPaintProperty(propertyLayer || 'national', 'fill-color', {
+        property: propertyName || this.propertyName,
+        type: 'categorical',
+        default: lightGrey,
+        stops
+      });
+    } else {
+      this.map.setPaintProperty(propertyLayer || 'national', 'fill-color', lightGrey);
+    }
   }
 
   private onMapLoad = ({ countryProfile, meta, paint }: Props) => {

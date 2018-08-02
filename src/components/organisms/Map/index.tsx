@@ -68,6 +68,7 @@ class MapOrganism extends React.Component <MapOrganismProps> {
       })
       .catch(error => {
         console.error(error);
+        this.data = undefined;
         this.loading = false;
         props.changeLoadingStatus(false);
       });

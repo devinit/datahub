@@ -51,15 +51,16 @@ export default class Spotlight extends React.Component<Props> {
             </Grid>
           </Div>
         </Container>
-        { this.props.id === 'uganda' ?
-          <SpotLightNavTabsUg { ...navState } />
-          :
-          <SpotLightNavTabsKe { ...navState } />
+        {
+          this.props.id === 'uganda'
+            ? <SpotLightNavTabsUg { ...navState } />
+            : <SpotLightNavTabsKe { ...navState } />
         }
 
         {
-          process.env.NODE_ENV !== 'test' && (process as any).browser ?
-            <DynamicMap country={ this.props.id } state={ this.props.state } /> : ''
+          process.env.NODE_ENV !== 'test' && (process as any).browser
+            ? <DynamicMap country={ this.props.id } state={ this.props.state } />
+            : ''
         }
         <About router={ router } />
       </Generic>
