@@ -6,7 +6,7 @@ import Pane from '../../atoms/Pane';
 import { TabDataQuery, TabDataQueryVariables } from '../../gql-types';
 import * as CountryTabs from '../../molecules/CountryProfileTabs';
 import ErrorBoundary from '../../molecules/ErrorBoundary';
-import LoadingPlaceholder from '../../molecules/LoadingPlaceholder';
+import { LoadingIndicator } from '../../molecules/LoadingIndicator';
 import Tabs from '../../molecules/Tabs';
 import { getCountryProfileData } from '../../pageData';
 import govtFinanceConfig from '../../visbox/governmentFinanceTabCharts';
@@ -20,7 +20,7 @@ type TChildProps = ChildProps<TabDataQueryVariables, TabDataQuery>;
 
 const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
   if (!data || data.loading) {
-    return <LoadingPlaceholder loading />;
+    return <LoadingIndicator height={ '300px' }/>;
   }
   const variables = data.variables;
   if (!variables) {

@@ -49,7 +49,7 @@ class UnbundlingTreemap extends React.Component<TChildProps> {
         <Container>
           {
             loading || !((bundles || {})[year] || []).length
-              ? this.renderSegment(loading, color)
+              ? this.renderLoadingIndicator(loading, color)
               : this.renderTreeChart(color, bundles)
           }
         </Container>
@@ -57,7 +57,7 @@ class UnbundlingTreemap extends React.Component<TChildProps> {
     );
   }
 
-  private renderSegment(loading: boolean, color: string) {
+  private renderLoadingIndicator(loading: boolean, color: string) {
     return (
       <Segment
         basic

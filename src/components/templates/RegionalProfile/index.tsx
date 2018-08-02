@@ -1,24 +1,25 @@
-import { CurrencyOption, createCurrencyOptions, getCountry, getDistrict } from '../../../utils';
+import { StateToShare } from '../../molecules/ChartShare';
+import { Div, Hr } from 'glamorous';
+import Link from 'next/link';
+import Router from 'next/router';
 import * as React from 'react';
 import { Container, Header } from 'semantic-ui-react';
-import { lighterGrey } from '../../theme/semantic';
-import ProfileDataSourceTable from '../../molecules/ProfileDataSourceTable';
-import SpotLightTabs from '../../organisms/SpotLightTabs';
-import ProfileHeader from '../../molecules/ProfileHeader';
-import { Country, District } from '../../types';
-import { Div, Hr } from 'glamorous';
-import { StateToShare } from '../../molecules/ChartShare';
-import methodologyDataUg from '../../MethodologyData/spotlight-uganda';
+import { CurrencyOption, createCurrencyOptions, getCountry, getDistrict } from '../../../utils';
 import methodologyDataKe from '../../MethodologyData/spotlight-kenya';
-import { QueryVarTs } from '../../organisms/LocalGovernmentFinance';
+import methodologyDataUg from '../../MethodologyData/spotlight-uganda';
 import dynamic, { DynamicOptions } from 'next/dynamic';
-import Router from 'next/router';
-import Link from 'next/link';
+import { LoadingIndicator } from '../../molecules/LoadingIndicator';
+import ProfileDataSourceTable from '../../molecules/ProfileDataSourceTable';
+import ProfileHeader from '../../molecules/ProfileHeader';
+import { QueryVarTs } from '../../organisms/LocalGovernmentFinance';
+import SpotLightTabs from '../../organisms/SpotLightTabs';
+import { lighterGrey } from '../../theme/semantic';
+import { Country, District } from '../../types';
 import Generic from '../Generic';
 
 const dynamicOpts: DynamicOptions<any, QueryVarTs> = {
   ssr: true,
-  loading: () => <p>Loading...</p>,
+  loading: () => <LoadingIndicator height={ '600px' }/>,
   modules: () => ({
     LocalGovernmentFinance: import('../../organisms/LocalGovernmentFinance') as Promise<any>
     }),

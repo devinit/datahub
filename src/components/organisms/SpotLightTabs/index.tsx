@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { graphql, ChildProps } from 'react-apollo';
+import { ChildProps, graphql } from 'react-apollo';
+import Pane from '../../atoms/Pane';
+import { SpotLightTabDataQuery, SpotLightTabDataQueryVariables } from '../../gql-types';
+import ErrorBoundary from '../../molecules/ErrorBoundary';
 import TabsComponents from '../../molecules/SpotLightTabs';
 import Tabs from '../../molecules/Tabs';
-import Pane from '../../atoms/Pane';
-import LoadingPlaceholder from '../../molecules/LoadingPlaceholder';
-import {getDistrictProfileData} from '../../pageData';
-import populationConfig from '../../visbox/spotlightPopulationTabCharts';
+import { getDistrictProfileData } from '../../pageData';
 import overviewConfig from '../../visbox/spotlightOverviewTabCharts';
-import {SpotLightTabDataQuery, SpotLightTabDataQueryVariables} from '../../gql-types';
+import populationConfig from '../../visbox/spotlightPopulationTabCharts';
 import TABS_QUERY from './query.graphql';
-import ErrorBoundary from '../../molecules/ErrorBoundary';
+import { LoadingIndicator } from '../../molecules/LoadingIndicator';
 
 type QueryVarTs = SpotLightTabDataQueryVariables & {
   currency: string;
@@ -17,43 +17,46 @@ type QueryVarTs = SpotLightTabDataQueryVariables & {
 
 type TChildProps = ChildProps<QueryVarTs, SpotLightTabDataQuery>;
 
-const spotlightTabs: React.SFC<TChildProps> = ({currency, data, id, country}) => {
-  if (!data) return <p>Missing data key</p>;
+const spotlightTabs: React.SFC<TChildProps> = ({ currency, data, id, country }) => {
+  if (!data) {
+    return <p>Missing data key</p>;
+  }
   if (data && data.loading) {
-    return <LoadingPlaceholder loading={data.loading} />;
+    return <LoadingIndicator height={ '300px' }/>;
   }
   const pageData = getDistrictProfileData(id, country);
-  const {Overview, Poverty, Population, Education, Health} = TabsComponents[country];
+  const { Overview, Poverty, Population, Education, Health } = TabsComponents[country];
+
   return (
-    <Tabs selected={0}>
+    <Tabs selected={ 0 }>
       <Pane label="Overview" id="spotlight-overview">
         <ErrorBoundary>
         <Overview
-          {...data}
-          pageData={pageData}
-          currency={currency}
-          config={overviewConfig}
+          { ...data }
+          pageData={ pageData }
+          currency={ currency }
+          config={ overviewConfig }
         />
         </ErrorBoundary>
       </Pane>
       <Pane label="Poverty" id="spotlight-poverty">
       <ErrorBoundary>
-        <Poverty {...data} pageData={pageData} />
+        <Poverty { ...data } pageData={ pageData } />
         </ErrorBoundary>
       </Pane>
       <Pane label="Population" id="spotlight-population">
       <ErrorBoundary>
-        <Population {...data} pageData={pageData} config={populationConfig} />
+        <Population { ...data } pageData={ pageData } config={ populationConfig } />
         </ErrorBoundary>
       </Pane>
       <Pane label="Education" id="spotlight-education">
       <ErrorBoundary>
-        <Education {...data} pageData={pageData} currency={currency} />
+        <Education { ...data } pageData={ pageData } currency={ currency } />
         </ErrorBoundary>
       </Pane>
       <Pane label="Health" id="spotlight-health">
       <ErrorBoundary>
-        <Health {...data} pageData={pageData} currency={currency} />
+        <Health { ...data } pageData={ pageData } currency={ currency } />
         </ErrorBoundary>
       </Pane>
     </Tabs>

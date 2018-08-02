@@ -20,7 +20,6 @@ export type Props = StateToShare & {
 };
 
 export default class CountryProfileLowerTabs extends React.Component<Props> {
-
   render() {
     const country = getCountry(this.props.id);
     const pageData = getCountryProfileData(this.props.id);

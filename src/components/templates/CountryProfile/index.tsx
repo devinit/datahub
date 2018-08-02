@@ -10,6 +10,7 @@ import { DarkBg } from '../../atoms/Container';
 import { SectionHeader } from '../../atoms/Header';
 import methodologyData from '../../MethodologyData/country-profile';
 import { StateToShare } from '../../molecules/ChartShare';
+import { LoadingIndicator } from '../../molecules/LoadingIndicator';
 import ProfileDataSourceTable from '../../molecules/ProfileDataSourceTable';
 import ProfileHeader from '../../molecules/ProfileHeader';
 import CountryProfileTopTabs from '../../organisms/CountryProfileTabs';
@@ -20,7 +21,7 @@ import Generic from '../Generic';
 // TODO: the dynamic types are a pain to work with, need to get improved submit PR
 const dynamicOpts: DynamicOptions<any, any> = {
   ssr: true,
-  loading: () => <p>Loading...</p>,
+  loading: () => <LoadingIndicator height={ '600px' }/>,
   modules: () => ({
     CountryProfileLowerTabs: import('../../organisms/CountryProfileLowerTabs') as Promise<any>
   }),
