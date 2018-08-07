@@ -4,6 +4,8 @@ dist
 .out
 .next
 lib
+build
+build.zip
 
 # dependencies
 node_modules

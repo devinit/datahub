@@ -1,6 +1,12 @@
 import * as prettyFormat from 'pretty-format';
-import { getDistrictProfileData, getCountryProfileData, getSpotlightPageData,
-  getUnbundlingAidPageData, getProfilePageData, getDistrictProfilePageData} from '.';
+import {
+  getCountryProfileData,
+  getDistrictProfileData,
+  getDistrictProfilePageData,
+  getProfilePageData,
+  getSpotlightPageData,
+  getUnbundlingAidPageData
+} from '.';
 
 describe('page data tests', () => {
   it.skip('should return country profile page data', () => {
@@ -26,6 +32,6 @@ describe('page data tests', () => {
   it('should return DistrictProfilePageData page data', () => {
     const dataA = getDistrictProfilePageData('kenya', 'Nairobi');
     const dataB = getDistrictProfilePageData('uganda', 'Wakiso');
-    expect(prettyFormat({dataA, dataB})).toMatchSnapshot();
+    expect(prettyFormat({ dataA, dataB })).toMatchSnapshot();
   });
 });

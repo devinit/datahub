@@ -1,22 +1,21 @@
 import * as React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
-import LoadingBar from '../LoadingBar';
-import ExportChart from '../ExportChart';
-import TourContainer from '../TourContainer';
-import {createCurrencyOptions} from '../../../utils';
-import {CurrencyOption} from '../../../utils';
+import { CurrencyOption, createCurrencyOptions } from '../../../utils';
 import { PrintContainer } from '../../atoms/Container';
 import GovernmentFinanceTour from '../../atoms/GovernmentFinanceTour';
+import ExportChart from '../ExportChart';
 import LinePartition from '../LinePartition';
+import LoadingBar from '../LoadingBar';
+import TourContainer from '../TourContainer';
 
-export interface LinePartitionItem  {
+export interface LinePartitionItem {
   title: string;
   data: DH.IDomestic[];
   inverted?: boolean;
   withoutOptions?: boolean;
 }
 
-export interface Props  {
+export interface Props {
   chartId: string;
   year?: number; // from cached url state
   loading: boolean;
@@ -33,7 +32,7 @@ export interface Props  {
   items: LinePartitionItem[];
 }
 
-export interface State  {
+export interface State {
   year: number;
   currency: string;
   currencyOptions: CurrencyOption[];
@@ -47,55 +46,7 @@ export interface State  {
 }
 
 export default class MultiLinePartition extends React.Component<Props> {
-  public static createTimeLimits(data: Array<{year: number; }>) {
-    const years = data.map(datum => datum.year);
-    const lowestYear = Math.min.apply(null, years);
-    const highestYear = Math.max.apply(null, years);
-    return {
-      lowestYear,
-      highestYear,
-    };
-  }
-
-  public static createBudgetTypeOptions(data: Array<{year: number; budget_type: any}>) {
-    return data
-      .reduce((acc, d) => {
-        if (!acc[d.year]) {
-          acc[d.year] = [];
-        }
-
-        if (!acc[d.year].find(option => d.budget_type === option.value)) {
-          acc[d.year] = [...acc[d.year], { value: d.budget_type, text: d.budget_type }]
-            .sort((a, b) => a.text < b.text ? -1 : 1);
-        }
-
-        return acc;
-      }, {});
-  }
-
-  public static createInitialState(props: Props) {
-    const everything = Array.prototype.concat.apply([], props.items.map(item => item.data));
-    const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
-    const budgetTypeOptions = MultiLinePartition.createBudgetTypeOptions(everything);
-    const {lowestYear, highestYear} = MultiLinePartition.createTimeLimits(everything);
-    const possibleStartYear = props.year || props.startYear;
-    const year = possibleStartYear < lowestYear ? lowestYear : possibleStartYear;
-    const currency = props.currency ?
-      props.currency : currencyOptions[0] && currencyOptions[0].value;
-    const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
-    const revenueTourVisible = false;
-    return {
-      year,
-      currency,
-      currencyOptions,
-      budgetType,
-      budgetTypeOptions,
-      lowestYear,
-      highestYear,
-      revenueTourVisible,
-    };
-  }
-  public state: State;
+  readonly state: State = MultiLinePartition.createInitialState(this.props);
 
   // public setCurrencyBound: (currency: string) => void;
   // public setBudgetTypeBound: (budgetType: string) => void;
@@ -104,15 +55,86 @@ export default class MultiLinePartition extends React.Component<Props> {
   // eslint-disable-next-line react/sort-comp
   constructor(props: Props) {
     super(props);
-    this.state = MultiLinePartition.createInitialState(props);
     // this.setCurrencyBound = this.setCurrency.bind(this);
     // this.setBudgetTypeBound = this.setBudgetType.bind(this);
-    // this.setYearBound = this.setYear.bind(this);
+    this.setYear = this.setYear.bind(this);
   }
 
-  public componentWillReceiveProps(props: Props) {
+  render() {
+    if (this.props.loading) {
+      return <LoadingBar loading={ this.props.loading } />;
+    }
+
+    return (
+      <Segment basic>
+        <section>
+          <div id="print-chart">
+            <PrintContainer>
+              <Segment textAlign="center" vertical>
+                <img
+                  src="/img/print-logo.jpg"
+                  alt="Development Initiatives"
+                  height="50"
+                  width="132"
+                />
+                <Header>
+                  <Header.Content as="h2">Domestic public resources in Uganda</Header.Content>
+                  <Header.Subheader as="h3">www.devinit.org</Header.Subheader>
+                </Header>
+                <Header as="h2">Government revenue, financing and expenditure</Header>
+              </Segment>
+            </PrintContainer>
+            <ExportChart
+              onViewVisualization={ this.toggleRevenueTour }
+              printDiv="print-chart"
+              stateToShare={ {
+                year: this.state.year,
+                budgetType: this.state.budgetType,
+                chartId: this.props.chartId
+              } }
+            />
+            { this.renderItems() }
+          </div>
+        </section>
+
+        <TourContainer
+          visible={ this.state.revenueTourVisible }
+          closeHandler={ this.toggleRevenueTour }
+        >
+          <GovernmentFinanceTour />
+        </TourContainer>
+      </Segment>
+    );
+  }
+
+  componentWillReceiveProps(props: Props) {
     const initState = MultiLinePartition.createInitialState(props);
     this.setState(initState);
+  }
+
+  private renderItems() {
+    return this.props.items.map((item: LinePartitionItem) => (
+      <LinePartition
+        key={ item.title }
+        title={ item.title }
+        inverted={ item.inverted }
+        withoutOptions={ item.withoutOptions }
+        year={ this.state.year }
+        highestYear={ this.state.highestYear }
+        lowestYear={ this.state.lowestYear }
+        data={ item.data }
+        currency={ this.state.currency }
+        currencyOptions={ this.state.currencyOptions }
+        budgetType={ this.state.budgetType }
+        budgetTypeOptions={ this.state.budgetTypeOptions[this.state.year] }
+        config={ this.props.config }
+        onChangeYear={ this.setYear }
+        // tslint:disable-next-line:jsx-no-lambda
+        onChangeCurrency={ (currency) => this.setCurrency(currency) }
+        // tslint:disable-next-line:jsx-no-lambda
+        onChangeBudgetType={ (budgetType) => this.setBudgetType(budgetType) }
+      />
+    ));
   }
 
   public setCurrency = (currency: string) =>
@@ -126,7 +148,7 @@ export default class MultiLinePartition extends React.Component<Props> {
     const budgetType = budgetTypeOptions && budgetTypeOptions[0].value;
     this.setState({
       year: +year,
-      budgetType,
+      budgetType
     });
   }
   public toggleRevenueTour = () => {
@@ -136,70 +158,55 @@ export default class MultiLinePartition extends React.Component<Props> {
       this.setState({ revenueTourVisible: true });
     }
   }
-  public render() {
-    if (this.props.loading) {
-      return <LoadingBar loading={this.props.loading} />;
-    }
-    return (<Segment basic>
-      <section>
-        <div id="print-chart">
-          <PrintContainer>
-            <Segment textAlign="center" vertical>
-              <img
-                src="/img/print-logo.jpg"
-                alt="Development Initiatives"
-                height="50"
-                width="132"
-              />
-              <Header>
-                <Header.Content as="h2">Domestic public resources in Uganda</Header.Content>
-                <Header.Subheader as="h3">www.devinit.org</Header.Subheader>
-              </Header>
-              <Header as="h2">Government revenue, financing and expenditure</Header>
-            </Segment>
-          </PrintContainer>
-          <ExportChart
-            onViewVisualization={this.toggleRevenueTour}
-            printDiv="print-chart"
-            stateToShare={{
-              year: this.state.year,
-              budgetType: this.state.budgetType,
-              chartId: this.props.chartId,
-            }}
-          />
 
-          {this.props.items.map((item: LinePartitionItem) => (
-            <LinePartition
-              key={item.title}
-              title={item.title}
-              inverted={item.inverted}
-              withoutOptions={item.withoutOptions}
-              year={this.state.year}
-              highestYear={this.state.highestYear}
-              lowestYear={this.state.lowestYear}
-              data={item.data}
-              currency={this.state.currency}
-              currencyOptions={this.state.currencyOptions}
-              budgetType={this.state.budgetType}
-              budgetTypeOptions={this.state.budgetTypeOptions[this.state.year]}
-              config={this.props.config}
-              // tslint:disable-next-line:jsx-no-lambda
-              onChangeYear={(year) => this.setYear(year)}
-              // tslint:disable-next-line:jsx-no-lambda
-              onChangeCurrency={(currency) => this.setCurrency(currency)}
-              // tslint:disable-next-line:jsx-no-lambda
-              onChangeBudgetType={(budgetType) => this.setBudgetType(budgetType)}
-            />
-          ))}
-        </div>
-      </section>
+  public static createTimeLimits(data: Array<{year: number; }>) {
+    const years = data.map(datum => datum.year);
+    const lowestYear = Math.min.apply(null, years);
+    const highestYear = Math.max.apply(null, years);
 
-      <TourContainer
-        visible={this.state.revenueTourVisible}
-        closeHandler={this.toggleRevenueTour}
-      >
-        <GovernmentFinanceTour />
-      </TourContainer>
-    </Segment>);
+    return {
+      lowestYear,
+      highestYear
+    };
+  }
+
+  public static createBudgetTypeOptions(data: Array<{year: number; budget_type: any}>) {
+    return data
+      .reduce((acc, d) => {
+        if (!acc[d.year]) {
+          acc[d.year] = [];
+        }
+
+        if (!acc[d.year].find(option => d.budget_type === option.value)) {
+          acc[d.year] = [ ...acc[d.year], { value: d.budget_type, text: d.budget_type } ]
+            .sort((a, b) => a.text < b.text ? -1 : 1);
+        }
+
+        return acc;
+      }, {});
+  }
+
+  public static createInitialState(props: Props) {
+    const everything = Array.prototype.concat.apply([], props.items.map(item => item.data));
+    const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
+    const budgetTypeOptions = MultiLinePartition.createBudgetTypeOptions(everything);
+    const { lowestYear, highestYear } = MultiLinePartition.createTimeLimits(everything);
+    const possibleStartYear = props.year || props.startYear;
+    const year = possibleStartYear < lowestYear ? lowestYear : possibleStartYear;
+    const currency = props.currency ?
+      props.currency : currencyOptions[0] && currencyOptions[0].value;
+    const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
+    const revenueTourVisible = false;
+
+    return {
+      year,
+      currency,
+      currencyOptions,
+      budgetType,
+      budgetTypeOptions,
+      lowestYear,
+      highestYear,
+      revenueTourVisible
+    };
   }
 }

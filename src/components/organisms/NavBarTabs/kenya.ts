@@ -11,28 +11,28 @@ export default {
           id: 'spotlight_on_kenya_2017.kenya_poverty_headcount',
           name: 'Poverty headcount',
           heading:
-            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
-          tooltip:
-            'Percentage of people in poverty, in relation to the total population the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date.',
-          source: ''
+            'Percentage of people in poverty, in relation to the total population in the county, based on the national poverty line. It does not take into account the depth of poverty. The data year is given as the document publication date.',
+          tooltip: 'Poverty headcount',
+          source:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_hardcore',
           name: 'Hardcore poverty Headcount',
           heading:
-            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
-          tooltip:
             'Headcount of individuals whose total  consumption expenditure per month is less than the recommended food consumption expenditure per month',
-          source: ''
+          tooltip: 'Hardcore poverty Headcount',
+          source:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_food',
           name: 'Food Poverty Headcount',
           heading:
-            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
-          tooltip:
-            'Headcount of individuals in unable to consume the minimum daily caloric requirement of 2,250 Kcal',
-          source: ''
+            'Headcount of individuals  unable to consume the minimum daily caloric requirement of 2,250 Kcal',
+          tooltip: 'Food Poverty Headcount',
+          source:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_gap',
@@ -40,16 +40,17 @@ export default {
           heading:
             'The mean shortfall of the total population from the poverty line (counting the non poor as having zero shortfall), expressed as a percentage of the poverty line. This measure reflects the depth of poverty as well as its incidence.',
           tooltip: 'Poverty gap',
-          source: ''
+          source:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_poverty_meanpp_exp',
           name: 'Mean per person monthly expenditure, 2016 prices (KES)',
           heading:
-            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics',
-          tooltip:
             'The average amount of money (KES) spent by a person in a month in the county.',
-          source: ''
+          tooltip: 'Mean per person expenditure (KES)',
+          source:
+            'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_hdi',

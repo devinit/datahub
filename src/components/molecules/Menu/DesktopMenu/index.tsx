@@ -1,8 +1,8 @@
 import glamorous from 'glamorous';
 import { white } from '../../../theme/semantic';
-import {mediaQueries} from '../../../theme';
-import {DesktopMenuItem} from '../../../atoms/Menu';
-import {Props} from '../';
+import { mediaQueries } from '../../../theme';
+import { DesktopMenuItem } from '../../../atoms/Menu';
+import { Props } from '..';
 import * as React from 'react';
 
 const ListContainer = glamorous.ul({
@@ -13,20 +13,21 @@ const ListContainer = glamorous.ul({
   paddingTop: '0.2em',
   margin: '0',
   [mediaQueries.phone]: {
-    display: 'none',
+    display: 'none'
   },
   [mediaQueries.tabs]: {
-    display: 'none',
-  },
+    display: 'none'
+  }
 });
 
 const menu = (props: Props) => {
   const menuItems = props.menu.map(item =>
-    <DesktopMenuItem key={item.name} menu={item} nextLink={props.nextLink} />
+    <DesktopMenuItem key={ item.name } menu={ item } nextLink={ props.nextLink } />
   );
+
   return (
     <ListContainer>
-      {menuItems}
+      { menuItems }
     </ListContainer>
   );
 };

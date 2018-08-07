@@ -7,5 +7,5 @@ export const huge = '1.8em';
 export const massive = '2.6em';
 export const mediaQueries = {
   phone: '@media only screen and (max-width: 700px)',
-  tabs: '@media only screen and (max-width: 1025px)',
+  tabs: '@media only screen and (max-width: 1025px)'
 };

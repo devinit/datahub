@@ -16,11 +16,17 @@ class Chart extends React.Component<Props> {
   public chart: any;
   public config: any;
 
-  constructor(props: Props) {
-    super(props);
+  // the treemap overflows on zoon, overflow hidden here is a quick fix for that
+  render() {
+    return (
+      <div
+        ref={ element => { this.element = element; } }
+        style={ { width: this.props.width, height: this.props.height, overflow: 'hidden' } }
+      />
+    );
   }
 
-  public componentDidMount() {
+  componentDidMount() {
     const element = this.element;
     const data = this.props.data;
     this.config = this.props.config || visboxConfigs;
@@ -30,24 +36,13 @@ class Chart extends React.Component<Props> {
     });
   }
 
-  public componentWillUpdate(props: Props) {
+  componentWillUpdate(props: Props) {
     if (this.chart) {
       if (props.config && props.config.type === 'partition' && props.config.labeling) {
-          this.chart.setLabeling(props.config.labeling);
-        }
+        this.chart.setLabeling(props.config.labeling);
+      }
       this.chart.update(props.data);
     }
-  }
-  // the treemap overflows on zoon, overflow hidden here is a quick fix for that
-  public render() {
-    return (
-      <div
-        ref={element => {
-          this.element = element;
-        }}
-        style={{ width: this.props.width, height: this.props.height, overflow: 'hidden' }}
-      />
-    );
   }
 }
 

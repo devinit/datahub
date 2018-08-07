@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Button, Modal, Icon, SemanticICONS } from 'semantic-ui-react';
-import { white, black, lightSecondaryColor} from '../../theme/semantic';
-import {getShortURL} from '@devinit/prelude/lib/misc';
+import { Button, Icon, Modal, SemanticICONS } from 'semantic-ui-react';
+import { black, lightSecondaryColor, white } from '../../theme/semantic';
+import { getShortURL } from '@devinit/prelude/lib/misc';
 import glamorous, { Div, Span } from 'glamorous';
 
 export const NoBackground = {
@@ -10,7 +10,7 @@ export const NoBackground = {
   },
   '& .no-background': {
     backgroundColor: 'transparent !important',
-    color: `${lightSecondaryColor} !important`,
+    color: `${lightSecondaryColor} !important`
   }
 };
 
@@ -27,29 +27,29 @@ const StyledInput = glamorous.input({
     boxSizing: 'border-box',
     borderRadius: '.25em',
     outline: 0,
-    border: `2px solid ${black}`,
+    border: `2px solid ${black}`
 });
 
 const ButtonWrapper = glamorous.span<{hover?: boolean; background?: boolean; }>({
-  ...NoBackground,
+  ...NoBackground
 }, (props) => ({
   '& button:hover': {
     boxShadow: props.hover ? '0 1px 6px rgba(0,0,0,.3) !important' : 'auto'
   },
   '& button': {
     backgroundColor: props.background ? 'inherit' : 'transparent !important',
-    color: props.background ? 'inherit' : `${lightSecondaryColor} !important`,
+    color: props.background ? 'inherit' : `${lightSecondaryColor} !important`
   }
 }));
 
-export interface StateToShare  {
+export interface StateToShare {
   year?: number;
   budgetType?: string;
   currency?: string;
   chartId?: string;
   indicator?: string;
 }
-export interface Props  {
+export interface Props {
   size: any;
   color: any;
   iconName?: SemanticICONS;
@@ -63,7 +63,7 @@ export interface Props  {
   stateToShare?: StateToShare;
 }
 
-export interface State  {
+export interface State {
   link: string;
   value: number;
 }
@@ -84,81 +84,82 @@ export default class ChartShare extends React.Component<Props, State> {
     this.createLink(this.props);
   }
   public componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) this.createLink(nextProps);
+    if (nextProps !== this.props) { this.createLink(nextProps); }
   }
   public onLinkChange = () => this.createLink(this.props);
 
   public handleChange = (value: number) => {
     return () => {
-      this.setState({value});
+      this.setState({ value });
       this.createLink(this.props, value);
     };
   }
   // checkedoption i.e 1 is default 2 is as configured
-  public async createLink(props: Props, checkedOption: number = 2) {
-    if (!props.stateToShare) return this.state;
+  public async createLink(props: Props, checkedOption = 2) {
+    if (!props.stateToShare) { return this.state; }
     const currentUrl = window.location.href;
     const chartState =
       checkedOption === 1 && props.stateToShare ?
-        {...props.stateToShare, year: null} : props.stateToShare;
+        { ...props.stateToShare, year: null } : props.stateToShare;
     const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
-    return this.setState({link: shortURL});
+
+    return this.setState({ link: shortURL });
   }
   public render() {
-    const {className, size, color, label, background,
-      hover, fontSize, iconName, fontWeight} = this.props;
+    const { className, size, color, label, background, hover, fontSize, iconName, fontWeight } = this.props;
+
     return (
       <Modal
         trigger={
-          <ButtonWrapper background={background} hover={hover}>
+          <ButtonWrapper background={ background } hover={ hover }>
             <Button
-              className={className}
-              size={size}
-              color={color}
+              className={ className }
+              size={ size }
+              color={ color }
             >
-              <Icon name={iconName || 'share alternate'} />
+              <Icon name={ iconName || 'share alternate' } />
               <Span
-                fontWeight={fontWeight || 'normal'}
-                fontSize={fontSize || '0.85em'}
+                fontWeight={ fontWeight || 'normal' }
+                fontSize={ fontSize || '0.85em' }
               >
-                {label || 'Share this chart'}
+                { label || 'Share this chart' }
               </Span>
             </Button>
-          </ButtonWrapper>}
+          </ButtonWrapper> }
         size="tiny"
         closeIcon="close"
       >
         <Modal.Content>
-          <Modal.Description style={{padding: '5em'}}>
+          <Modal.Description style={ { padding: '5em' } }>
               <h4>Share this visualisation</h4>
               <input
                 type="radio"
-                value={1}
-                checked={this.state.value === 1}
-                onChange={this.handleChange(1)}
+                value={ 1 }
+                checked={ this.state.value === 1 }
+                onChange={ this.handleChange(1) }
               /> in default view <br />
               <input
                 type="radio"
-                value={2}
-                checked={this.state.value === 2}
-                onChange={this.handleChange(2)}
+                value={ 2 }
+                checked={ this.state.value === 2 }
+                onChange={ this.handleChange(2) }
               /> as I configured it<br />
-              <StyledInput value={this.state.link} onChange={this.onLinkChange} />
-              <Div marginTop={'1.5em'}>
-                <a href={`http://www.facebook.com/share.php?u=${this.state.link}`}>
+              <StyledInput value={ this.state.link } onChange={ this.onLinkChange } />
+              <Div marginTop={ '1.5em' }>
+                <a href={ `http://www.facebook.com/share.php?u=${this.state.link}` }>
                   <Button icon="facebook f" />
                 </a>
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"`}
+                  href={ `https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"` }
                 >
                   <Button icon="twitter" />
                 </a>
                 <a
-                  href={`mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives:
-                  Uganda — ${this.state.link}`}
+                  href={ `mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives:
+                  Uganda — ${this.state.link}` }
                 >
-                  <Button icon="mail outline" />
+                  <Button icon="mail" />
                 </a>
               </Div>
           </Modal.Description>

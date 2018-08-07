@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
-export const GVNMT_QUERY = gql`
-query GvmtFinance($id: String!) {
+export const GOVERNMENT_FINANCE_QUERY = gql`
+query governmentFinance($id: String!) {
   governmentFinance(id: $id) {
     startYear,
     currencyCode,

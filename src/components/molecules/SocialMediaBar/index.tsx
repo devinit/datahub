@@ -36,7 +36,7 @@ const SocialMediaBar = (props?: Props) => (
                   `mailto:?subject=Development Initiatives:
                     Uganda&body=Development Initiatives: Uganda — ${window.location.href}`}
               >
-                <Icon name="mail outline" />
+                <Icon name="mail" />
               </SocialIcon>
             </div> : ''
           }

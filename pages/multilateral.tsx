@@ -5,7 +5,7 @@ import { rehydrate } from 'glamor';
 import withData from '../src/components/WithData';
 import App from '../src/components/templates/MultilateralProfile';
 
-interface Props  {
+interface Props {
   url: {
     pathname: string;
     query: { id: string}
@@ -19,5 +19,5 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return <App id={props.url.query.id} />;
+  return <App id={ props.url.query.id } />;
 });

@@ -1,40 +1,53 @@
 import * as React from 'react';
-import { changeGlobalIndicator, changeLoadingStatus, GlobalIndicator, LoadingStatus} from '../../../redux/actions';
-import { bindActionCreators} from 'redux';
-import { connect,  MapStateToProps,  MapDispatchToPropsFunction } from 'react-redux';
-import { Props } from '../../molecules/NavigationBarTabs';
-import { State} from '../../../redux/reducers';
-import NavigationBarTabs from '../../molecules/NavigationBarTabs';
-import {StateToShare} from '../../molecules/ChartShare';
-import {BoundAction, BoundState} from './types';
+import { MapDispatchToProps, MapStateToProps, connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {
+  GlobalIndicator,
+  LoadingStatus,
+  changeGlobalIndicator,
+  changeLoadingStatus
+} from '../../../redux/actions';
+import { State } from '../../../redux/reducers';
+import { StateToShare } from '../../molecules/ChartShare';
+import NavigationBarTabs, { Props } from '../../molecules/NavigationBarTabs';
 import data from './data';
+import { BoundAction, BoundState } from './types';
 
 interface OwnProps {
   state?: StateToShare;
 }
 
-const mapDispatchToProps: MapDispatchToPropsFunction<BoundAction<GlobalIndicator>, OwnProps> = (dispatch) =>
+const mapDispatchToProps: MapDispatchToProps<BoundAction<GlobalIndicator>, OwnProps> = dispatch =>
   ({
     changeActiveIndicator: bindActionCreators(changeGlobalIndicator, dispatch),
-    changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch),
+    changeLoadingStatus: bindActionCreators(changeLoadingStatus, dispatch)
   });
 
 const mapStateToProps: MapStateToProps<BoundState, OwnProps, State> = ({ app }) =>
   ({ activeIndicator: app.globalIndicator, loading: app.loading });
 
-export type GlobalPictureProps = Props<GlobalIndicator,  LoadingStatus> & OwnProps
-  & BoundAction<GlobalIndicator>;
+export type GlobalPictureProps = Props<GlobalIndicator, LoadingStatus> & OwnProps & BoundAction<GlobalIndicator>;
 
-// TODO: fix types
-const gloalPictureNavBarTabs: React.SFC<any> = (props) =>
-  (<NavigationBarTabs
-    navBarItems={data.globalPictureThemes}
-    showUsingThisViz
-    loading={props.loading}
-    changeActiveIndicator={props.changeActiveIndicator}
-    changeLoadingStatus={props.changeLoadingStatus}
-    activeIndicator={props.state && props.state.indicator ?
-      props.state.indicator : props.activeIndicator}
-  />);
+class GlobalPictureNavbarTabs extends React.Component<GlobalPictureProps> {
+  componentDidMount() {
+    const { state } = this.props;
+    if (state && state.indicator && this.props.activeIndicator !== state.indicator) {
+      this.props.changeActiveIndicator(state.indicator);
+    }
+  }
 
-export default connect(mapStateToProps, mapDispatchToProps)(gloalPictureNavBarTabs);
+  render() {
+    return (
+      <NavigationBarTabs
+        navBarItems={ data.globalPictureThemes }
+        showUsingThisViz
+        loading={ this.props.loading }
+        changeActiveIndicator={ this.props.changeActiveIndicator }
+        changeLoadingStatus={ this.props.changeLoadingStatus }
+        activeIndicator={ this.props.activeIndicator }
+      />
+    );
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GlobalPictureNavbarTabs) as any;

@@ -1,16 +1,15 @@
-import {getAndWriteData} from '@devinit/prelude/lib/graphql';
+import { getAndWriteData } from '@devinit/prelude/lib/graphql';
 import * as path from 'path';
 import COUNTRIES_QUERY from './queries/Countries';
-// const COUNTRIES_QUERY = require('./queries/Countries');
 import DISTRICT_QUERY from './queries/Districts';
-import {PAGES_DATA_QUERY} from './queries/PageData';
-import {GLOBAL_PICTURE_THEMES_QUERY} from './queries/GlobalPictureThemes';
-import {SPOTLIGHT_THEMES_QUERY} from './queries/SpotlightThemes';
-import {INTL_RESOURCES_TOOLTIP_QUERY} from './queries/InternationalResourcesToolTip';
-import {INFLOWS_OUTFLOWS_QUERY} from './queries/InflowsOutflowsList';
-import {BUBBLE_INDICATORS_QUERY} from './queries/BubbleChartOptions';
-import {UNBUNDLING_QUERY} from './queries/UnbundlingAidCache';
-import {METHODOLOGY_QUERY} from './queries/Methodology';
+import { PAGES_DATA_QUERY } from './queries/PageData';
+import { GLOBAL_PICTURE_THEMES_QUERY } from './queries/GlobalPictureThemes';
+import { SPOTLIGHT_THEMES_QUERY } from './queries/SpotlightThemes';
+import { INTL_RESOURCES_TOOLTIP_QUERY } from './queries/InternationalResourcesToolTip';
+import { INFLOWS_OUTFLOWS_QUERY } from './queries/InflowsOutflowsList';
+import { BUBBLE_INDICATORS_QUERY } from './queries/BubbleChartOptions';
+import { UNBUNDLING_QUERY } from './queries/UnbundlingAidCache';
+import { METHODOLOGY_QUERY } from './queries/Methodology';
 
 const RECIPIENT = 'recipient';
 const DONOR = 'donor';
@@ -30,10 +29,10 @@ export const getCountries = async () => {
 
 export const getDistricts = async () => {
   try {
-    ['uganda', 'kenya'].forEach(async (country) => {
+    [ 'uganda', 'kenya' ].forEach(async (country) => {
       const filePath = path.join(baseMoleculesPath, `SearchInput/${country}.ts`);
       const variables = { country };
-      await getWrite({ query: DISTRICT_QUERY, filePath, variables});
+      await getWrite({ query: DISTRICT_QUERY, filePath, variables });
     });
   } catch (error) {
     console.error(error);
@@ -59,7 +58,7 @@ export const getGlobalPictureThemes = async () => {
 export const getSpotlightThemes = async () => {
   // currently only getting spotlight uganda theme data
   try {
-    ['uganda', 'kenya'].forEach(async (country) => {
+    [ 'uganda', 'kenya' ].forEach(async (country) => {
       const filePath = path.join(baseOrganismsPath, `NavBarTabs/${country}.ts`);
       const variables = { country };
       await getWrite({ query: SPOTLIGHT_THEMES_QUERY, filePath, variables });
@@ -71,7 +70,7 @@ export const getSpotlightThemes = async () => {
 export const getPagesData = async () => {
   try {
     const filePath = path.join('src/components', 'pageData/data.ts');
-    await getWrite({ query: PAGES_DATA_QUERY, filePath});
+    await getWrite({ query: PAGES_DATA_QUERY, filePath });
   } catch (error) {
     console.error(error);
   }
@@ -81,7 +80,7 @@ export const getInflowsAndOutflows = async () => {
   try {
     const filePath = path.join(baseOrganismsPath, 'InternationalResourcesChart/data.ts');
     const variables = { donor: DONOR, recipient: RECIPIENT };
-    await getWrite({query: INFLOWS_OUTFLOWS_QUERY, filePath, variables});
+    await getWrite({ query: INFLOWS_OUTFLOWS_QUERY, filePath, variables });
   } catch (error) {
     console.log(error);
   }
@@ -96,7 +95,7 @@ export const getUnbundlingData = async (aidType: string) => {
         aidType
       }
     };
-    await getWrite({query: UNBUNDLING_QUERY, filePath, variables});
+    await getWrite({ query: UNBUNDLING_QUERY, filePath, variables });
   } catch (error) {
     console.log(error);
   }
@@ -105,19 +104,19 @@ export const getUnbundlingData = async (aidType: string) => {
 export const getBubbleOptions = async () => {
   try {
     const filePath = path.join(baseOrganismsPath, 'DPDP/data.ts');
-    await getWrite({query: BUBBLE_INDICATORS_QUERY, filePath});
+    await getWrite({ query: BUBBLE_INDICATORS_QUERY, filePath });
   } catch (error) {
     console.log(error);
   }
 };
 
 export const getMethodologyData = async () => {
-  ['country-profile', 'global-picture', 'spotlight-uganda', 'spotlight-kenya']
+  [ 'country-profile', 'global-picture', 'spotlight-uganda', 'spotlight-kenya' ]
     .forEach(async (moduleName) => {
       try {
         const filePath = path.join('src/components', `MethodologyData/${moduleName}.ts`);
-        const variables = {moduleName};
-        await getWrite({query: METHODOLOGY_QUERY, filePath, variables});
+        const variables = { moduleName };
+        await getWrite({ query: METHODOLOGY_QUERY, filePath, variables });
       } catch (error) {
         console.error(error);
       }

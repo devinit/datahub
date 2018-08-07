@@ -1,1 +1,54 @@
-{"__schema":{"types":[{"kind":"UNION","name":"PovertyTabRegional","possibleTypes":[{"name":"PovertyTabUg"},{"name":"PovertyTabKe"}]},{"kind":"UNION","name":"PopulationTabRegional","possibleTypes":[{"name":"PopulationTabRegionalUg"},{"name":"PopulationTabRegionalKe"}]},{"kind":"UNION","name":"EducationTabRegional","possibleTypes":[{"name":"EducationTabRegionalUg"},{"name":"EducationTabRegionalKe"}]},{"kind":"UNION","name":"HealthTabRegional","possibleTypes":[{"name":"HealthTabRegionalKe"},{"name":"HealthTabRegionalUg"}]}]}}
+{
+    "__schema": {
+        "types": [
+            {
+                "kind": "UNION",
+                "name": "PovertyTabRegional",
+                "possibleTypes": [
+                    {
+                        "name": "PovertyTabUg"
+                    },
+                    {
+                        "name": "PovertyTabKe"
+                    }
+                ]
+            },
+            {
+                "kind": "UNION",
+                "name": "PopulationTabRegional",
+                "possibleTypes": [
+                    {
+                        "name": "PopulationTabRegionalUg"
+                    },
+                    {
+                        "name": "PopulationTabRegionalKe"
+                    }
+                ]
+            },
+            {
+                "kind": "UNION",
+                "name": "EducationTabRegional",
+                "possibleTypes": [
+                    {
+                        "name": "EducationTabRegionalUg"
+                    },
+                    {
+                        "name": "EducationTabRegionalKe"
+                    }
+                ]
+            },
+            {
+                "kind": "UNION",
+                "name": "HealthTabRegional",
+                "possibleTypes": [
+                    {
+                        "name": "HealthTabRegionalKe"
+                    },
+                    {
+                        "name": "HealthTabRegionalUg"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,8 +1,8 @@
-import { AnyAction} from 'redux';
+import { AnyAction } from 'redux';
 import globalThemes from '../components/organisms/NavBarTabs/data';
 import spotlightUgandaThemes from '../components/organisms/NavBarTabs/uganda';
 import spotlightKenyaThemes from '../components/organisms/NavBarTabs/kenya';
-import { GLOBAL_INDICATOR, SPOTLIGHT_INDICATOR_UG, LOADING_STATUS, SPOTLIGHT_INDICATOR_KE } from './actions';
+import { GLOBAL_INDICATOR, LOADING_STATUS, SPOTLIGHT_INDICATOR_KE, SPOTLIGHT_INDICATOR_UG } from './actions';
 
 export interface AppState {
   loading: boolean;
@@ -19,7 +19,7 @@ export const initialState: AppState = {
   loading: true,
   indicatorUganda: spotlightUgandaThemes.spotlightThemes[0].default_indicator,
   indicatorKenya: spotlightKenyaThemes.spotlightThemes[0].default_indicator,
-  globalIndicator: globalThemes.globalPictureThemes[0].default_indicator,
+  globalIndicator: globalThemes.globalPictureThemes[0].default_indicator
 };
 
 // TODO: Redux types error, reducer type should have a Param for action
@@ -29,13 +29,13 @@ export const app = (state: AppState = initialState, action: AnyAction): AppState
         return { ...state, loading: action.loading };
       }
       case GLOBAL_INDICATOR: {
-        return { ...state, globalIndicator: action.globalIndicator};
+        return { ...state, globalIndicator: action.globalIndicator };
       }
       case SPOTLIGHT_INDICATOR_UG: {
         return { ...state, indicatorUganda: action.indicatorUganda };
       }
       case SPOTLIGHT_INDICATOR_KE: {
-        return { ...state, indicatorKenya: action.indicatorKenya};
+        return { ...state, indicatorKenya: action.indicatorKenya };
       }
       default:
         return state;

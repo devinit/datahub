@@ -5,4 +5,4 @@ import Front from '.';
 
 storiesOf('Templates', module)
   .addDecorator(withApolloAndReduxProvider())
-  .add('Front Page', () => <Front state={{}} />);
+  .add('Front Page', () => <Front state={ {} } />);

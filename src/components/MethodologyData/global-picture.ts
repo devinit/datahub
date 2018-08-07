@@ -307,7 +307,7 @@ export default {
     {
       name: 'Foreign direct investment per person, US$',
       description:
-        "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2015 prices.",
+        "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
       methodology: '',
       uom: 'US$ per person',
       csv:
@@ -315,8 +315,7 @@ export default {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/fdi-pp.zip?raw=true',
       source: {
-        name:
-          'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.',
+        name: 'UNCTAD Stat and World Bank World Development Indicators.',
         link: ''
       }
     },
@@ -339,14 +338,14 @@ export default {
     {
       name: 'Remittances received per person, US$',
       description:
-        "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2015 prices.",
+        "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2016 prices.",
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/remittances-pp',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/remittances-pp.zip?raw=true',
-      source: { name: 'Development Initiatives based on World Bank.', link: '' }
+      source: { name: 'World Bank.', link: '' }
     },
     {
       name: 'ODA, % of international resource flows',
@@ -375,8 +374,7 @@ export default {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/fdi-percent-gdp.zip?raw=true',
       source: {
-        name:
-          'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.',
+        name: 'UNCTAD Stat and World Bank World Development Indicators.',
         link: ''
       }
     },

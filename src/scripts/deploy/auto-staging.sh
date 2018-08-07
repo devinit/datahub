@@ -7,7 +7,7 @@ rm -rf build.zip build
 
 wget https://github.com/devinit/datahub/releases/download/$1/build.zip
 
-echo "finished downloading tag: $tag"
+echo "finished downloading tag: "$1
 
 unzip build.zip
 
@@ -23,6 +23,3 @@ docker run -it -d -p 8080:8080 --name datahub-new datahub
 
 # add pdf folder.
 bash ~/pdf-prints/deploy.sh
-
-
-

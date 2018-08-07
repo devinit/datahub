@@ -18,9 +18,10 @@ const filesMap = [
 ];
 
 const compressCSS = async (file: string): Promise<string> => {
-  const content = await fs.readFile(file, {encoding: 'utf8'});
+  const content = await fs.readFile(file, { encoding: 'utf8' });
   const ast = csso.syntax.parse(content);
-  const compressedAst = csso.compress(ast, {comments: false}).ast;
+  const compressedAst = csso.compress(ast, { comments: false }).ast;
+
   return csso.syntax.generate(compressedAst);
 };
 
@@ -32,4 +33,4 @@ const main = async () => {
   });
 };
 
-if (process.env.NODE_ENV !== 'test') main();
+if (process.env.NODE_ENV !== 'test') { main(); }

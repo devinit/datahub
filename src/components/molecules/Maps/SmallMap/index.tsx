@@ -1,16 +1,16 @@
 import * as React from 'react';
 import BaseMap from '../../../atoms/BaseMap';
-import { PaintMap, Meta, Viewport } from '../../../atoms/BaseMap/types';
+import { Meta, PaintMap, Viewport } from '../../../atoms/BaseMap/types';
 import configs from '../Map/config';
 import { white } from '../../../theme/semantic';
 import Router from 'next/router';
 
-export interface Props  {
+export interface Props {
   slug: string;
   spotlightCountry?: string;
 }
 
-export interface MapProps  {
+export interface MapProps {
   paint: PaintMap;
   meta: Meta;
   viewport: Viewport;
@@ -23,7 +23,7 @@ const getMeta = (spotlightCountry?: string): Meta => ({
   uom_display: '',
   theme: '',
   id: '',
-  country: spotlightCountry || 'global',
+  country: spotlightCountry || 'global'
 });
 
 const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
@@ -31,11 +31,14 @@ const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
   const paint = { background: white, ...paintProps };
   const meta = getMeta(spotlightCountry);
   const viewport = { ...configs.global.viewport };
+
   return { paint, meta, countryProfile: slug, viewport };
 };
+
 const SmallMap = (props: Props) => {
   const baseMapProps = mapProps(props);
-  return (<BaseMap {...baseMapProps} router={Router} />);
+
+  return (<BaseMap { ...baseMapProps } router={ Router } />);
 };
 
 export default SmallMap;
