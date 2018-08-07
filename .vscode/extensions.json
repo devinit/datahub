@@ -1,8 +1,6 @@
  {
      "recommendations": [
          "kumar-harsh.graphql-for-vscode",
-         "dbaeumer.vscode-eslint",
-         "flowtype.flow-for-vscode",
-         "nitin42.vscode-glamorous"
+         "dbaeumer.vscode-eslint"
      ]
  }

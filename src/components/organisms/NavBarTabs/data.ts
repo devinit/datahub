@@ -264,26 +264,24 @@ export default {
             "Inflows of foreign direct investment expressed as a percentage of the country's GDP.",
           tooltip:
             'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
-          source:
-            'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
+          source: 'UNCTAD Stat and World Bank World Development Indicators.'
         },
         {
           id: 'data_series.fdi_pp',
           name: 'Foreign direct investment per person, US$',
           heading:
-            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2015 prices.",
+            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
           tooltip:
             'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
-          source:
-            'Development Initiatives based on UNCTAD Stat and World Bank Development Indicators.'
+          source: 'UNCTAD Stat and World Bank World Development Indicators.'
         },
         {
           id: 'data_series.remittances_pp',
           name: 'Remittances received per person, US$',
           heading:
-            "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2015 prices.",
+            "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2016 prices.",
           tooltip: 'Remittances per person.',
-          source: 'Development Initiatives based on World Bank.'
+          source: 'World Bank.'
         }
       ],
       default_indicator: 'data_series.largest_intl_flow'

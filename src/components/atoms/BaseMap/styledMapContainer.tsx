@@ -1,8 +1,8 @@
-import glamorous, {GlamorousComponent} from 'glamorous';
+import glamorous, { GlamorousComponent } from 'glamorous';
 
 export const MapContainer: GlamorousComponent<{}, any> = glamorous.div({
   '& .mapboxgl-map': {
-    fontFamily: 'geomanist, sans-serif',
+    fontFamily: 'geomanist, sans-serif'
   },
   '& .mapboxgl-ctrl-top-righ': {
     right: '0.5em'
@@ -12,18 +12,21 @@ export const MapContainer: GlamorousComponent<{}, any> = glamorous.div({
     boxShadow: 'none !important',
     color: 'white !important',
     fontFamily: 'geomanist, sans-serif',
-    WebkitTtapHighlightColor: 'black',
+    WebkitTtapHighlightColor: 'black'
   },
   '& .mapboxgl-canvas-container': {
-    cursor: 'pointer',
+    cursor: 'pointer'
   },
   '& .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip': {
-    borderTopColor: 'rgba(0, 0, 0, 0.9)',
+    borderTopColor: 'rgba(0, 0, 0, 0.9)'
   },
   '& .mapboxgl-popup-anchor-top .mapboxgl-popup-tip': {
-    borderBottomColor: 'rgba(0, 0, 0, 0.9)',
+    borderBottomColor: 'rgba(0, 0, 0, 0.9)'
   },
   '&.mapboxgl-map .mapboxgl-popup-content .mapBox-popup p': {
-    marginBottom: 0,
+    marginBottom: 0
   },
+  '& .mapboxgl-map .mapboxgl-popup': {
+    zIndex: 1000
+  }
 });

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { draw } from '@devinit/charts';
 
-export interface Props  {
+export interface Props {
   data: any[];
   config: any;
   width?: string;
@@ -13,26 +13,34 @@ class Timeline extends React.Component<Props> {
   public chart: any;
   public props: Props;
   public element: HTMLDivElement | null;
+
   constructor(props: Props) {
     super(props);
   }
 
-  public onYearChanged = (year: string) => {
-    this.props.onYearChanged(year);
+  public render() {
+    return (
+      <div
+        ref={ element => {
+          this.element = element;
+        } }
+        style={ { width: this.props.width || '100%', height: this.props.height } }
+      />
+    );
   }
 
-  public componentDidMount() {
+  componentDidMount() {
     const element = this.element;
     const data = this.props.data;
     const config = this.props.config;
     const chart = draw({ element, data, config });
     chart.then(xchart => {
       this.chart = xchart;
-      xchart.onAnchorMoved((year) => this.props.onYearChanged(year));
+      xchart.onAnchorMoved(this.props.onYearChanged);
     });
   }
 
-  public componentWillUpdate(props: Props) {
+  componentWillUpdate(props: Props) {
     if (this.chart) {
       this.chart.update(props.data);
 
@@ -40,17 +48,6 @@ class Timeline extends React.Component<Props> {
         this.chart.moveAnchor(props.config.anchor.start.toString());
       }
     }
-  }
-
-  public render() {
-    return (
-      <div
-        ref={element => {
-          this.element = element;
-        }}
-        style={{ width: this.props.width || '100%', height: this.props.height }}
-      />
-    );
   }
 }
 

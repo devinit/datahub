@@ -1,19 +1,39 @@
 {
-    "extends": ["tslint:recommended", "tslint-react"],
-      "rules": {
-        "no-console": [false],
-        "quotemark": [true, "single", "jsx-double"],
-        "trailing-comma": [false],
-        "no-var-requires": false,
-        "curly": false,
-        "jsx-no-multiline-js": false,
-        "jsx-boolean-value": false,
-        "interface-name":false,
-        "jsx-wrap-multiline": false,
-        "object-literal-sort-keys": false,
-        "arrow-parens":false,
-        "variable-name":false,
-        "ordered-imports": [false]
-      }
-    }
-    
+  "extends": ["tslint:recommended", "tslint-react"],
+  "rules": {
+    "no-console": [false],
+    "quotemark": [true, "single", "jsx-double"],
+    "trailing-comma": [false],
+    "no-var-requires": false,
+    "curly": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false,
+    "interface-name":false,
+    "jsx-wrap-multiline": false,
+    "object-literal-sort-keys": false,
+    "arrow-parens":false,
+    "variable-name":false,
+    "ordered-imports": [false],
+    "member-access": false,
+    "member-ordering": false,
+    "max-line-length": [
+      true,
+      { "limit": 120, "ignore-pattern": "//" }
+    ]
+  },
+  "jsRules": {
+    "trailing-comma": [
+      false
+    ],
+    "object-literal-sort-keys": false,
+    "array-bracket-spacing": [
+      true,
+      "always"
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ]
+  }
+}

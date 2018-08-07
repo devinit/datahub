@@ -1,16 +1,16 @@
-import { Container, Grid } from 'semantic-ui-react';
+import { Div, P } from 'glamorous';
 import * as React from 'react';
-import {TabsNoData, TabsFootNote, TabsP, HeaderTitle} from '../../../atoms/Text';
-import { P, Div } from 'glamorous';
+import { Container, Grid } from 'semantic-ui-react';
 import { addMinAndMaxYear } from '../../../../utils';
-import { RECIPIENT, DONOR, NoData} from '../../../../utils/constants';
-import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
-import {TabsToolTip} from '../../ToolTip';
+import { DONOR, NoData, RECIPIENT } from '../../../../utils/constants';
 import Chart from '../../../atoms/Chart';
-import {PageUnit} from '../../../types';
-import {getPageUnitById} from '../../../pageData';
-import { red} from '../../../theme/semantic';
-import {TabDataQuery} from '../../../gql-types';
+import { HeaderTitle, TabsFootNote, TabsNoData, TabsP } from '../../../atoms/Text';
+import { TabDataQuery } from '../../../gql-types';
+import { getPageUnitById } from '../../../pageData';
+import { red } from '../../../theme/semantic';
+import { PageUnit } from '../../../types';
+import { OverviewChartConfigs } from '../../../visbox/overviewTabCharts';
+import { TabsToolTip } from '../../ToolTip';
 
 export type Props = TabDataQuery & {
   countryType: string;
@@ -25,7 +25,7 @@ const Overview = (props: Props) => {
   const avgIncomePerPerson = getPageLine('avg-income-per-person');
   const overviewGovtSpentPerPerson = getPageLine('overview-govt-spentperperson');
   const incomeDistributionCtry = getPageLine('income-distribution-ctry');
-  if (!props.overviewTab) throw new Error('No OverView data');
+  if (!props.overviewTab) { throw new Error('No OverView data'); }
   const overviewTab = props.overviewTab;
   // make typescript f**n happy
   const incomeDistData = overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.data;
@@ -36,16 +36,16 @@ const Overview = (props: Props) => {
   return (
     <Container>
       <Grid>
-        {props.countryType !== DONOR && overviewTab.poorestPeople
-          ? <Grid.Column computer={5} tablet={12} mobile={12}>
+        { props.countryType !== DONOR && overviewTab.poorestPeople
+          ? <Grid.Column computer={ 5 } tablet={ 12 } mobile={ 12 }>
             <HeaderTitle>
-              {overviewCtryPoorestPeople.title ? overviewCtryPoorestPeople.title.toUpperCase() : ''}
-              {overviewTab.poorestPeople.toolTip
-                ? <TabsToolTip {...overviewTab.poorestPeople.toolTip} />
-                : ''}
+              { overviewCtryPoorestPeople.title ? overviewCtryPoorestPeople.title.toUpperCase() : '' }
+              { overviewTab.poorestPeople.toolTip
+                ? <TabsToolTip { ...overviewTab.poorestPeople.toolTip } />
+                : '' }
             </HeaderTitle>
             <TabsP>
-              {overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData}
+              { overviewTab.poorestPeople.value ? overviewTab.poorestPeople.value : NoData }
             </TabsP>
             <TabsFootNote>out of a population of {
               props.populationTab && props.populationTab.population &&
@@ -53,93 +53,93 @@ const Overview = (props: Props) => {
                 props.populationTab.population.value : NoData
             } million people </TabsFootNote>
           </Grid.Column>
-          : <Grid.Column computer={5} tablet={12} mobile={12}>
+          : <Grid.Column computer={ 5 } tablet={ 12 } mobile={ 12 }>
             <HeaderTitle>
-              {avgIncomePerPerson.title}
-              {overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
-                ? <TabsToolTip {...overviewTab.averageIncomerPerPerson.toolTip} />
-                : ''}
+              { avgIncomePerPerson.title }
+              { overviewTab.averageIncomerPerPerson && overviewTab.averageIncomerPerPerson.toolTip
+                ? <TabsToolTip { ...overviewTab.averageIncomerPerPerson.toolTip } />
+                : '' }
             </HeaderTitle>
-            <Div paddingRight={'40px'}>
-              {overviewTab.averageIncomerPerPerson &&
+            <Div paddingRight={ '40px' }>
+              { overviewTab.averageIncomerPerPerson &&
                 overviewTab.averageIncomerPerPerson.data &&
                 overviewTab.averageIncomerPerPerson.data.length
                 ? <Chart
-                  data={overviewTab.averageIncomerPerPerson.data}
+                  data={ overviewTab.averageIncomerPerPerson.data }
                   height="140px"
                   config={
-                    addMinAndMaxYear(props.config.area, overviewTab.averageIncomerPerPerson.data)}
+                    addMinAndMaxYear(props.config.area, overviewTab.averageIncomerPerPerson.data) }
                 />
-                : <TabsNoData />}
+                : <TabsNoData /> }
             </Div>
-          </Grid.Column>}
-        {props.countryType === RECIPIENT
-          ? <Grid.Column computer={5} tablet={12} mobile={12}>
+          </Grid.Column> }
+        { props.countryType === RECIPIENT
+          ? <Grid.Column computer={ 5 } tablet={ 12 } mobile={ 12 }>
             <HeaderTitle>
-              {overviewCtryResources.title}
+              { overviewCtryResources.title }
             </HeaderTitle>
-            <P color={red} fontWeight={'bold'} marginBottom={0} textAlign="center">
+            <P color={ red } fontWeight={ 'bold' } marginBottom={ 0 } textAlign="center">
                 Domestic public
-              {overviewTab.domesticResources && overviewTab.domesticResources.toolTip
-                ? <TabsToolTip {...overviewTab.domesticResources.toolTip} />
-                : ''}
+              { overviewTab.domesticResources && overviewTab.domesticResources.toolTip
+                ? <TabsToolTip { ...overviewTab.domesticResources.toolTip } />
+                : '' }
             </P>
-            <TabsP fontSize={'1.6em'}>
-              {overviewTab.domesticResources && overviewTab.domesticResources.value
+            <TabsP fontSize={ '1.6em' }>
+              { overviewTab.domesticResources && overviewTab.domesticResources.value
                 ? `US$ ${overviewTab.domesticResources.value}`
-                : NoData}
+                : NoData }
             </TabsP>
-            <P fontWeight={'bold'} marginBottom={0} textAlign="center">
+            <P fontWeight={ 'bold' } marginBottom={ 0 } textAlign="center">
                 International
-              {overviewTab.internationalResources && overviewTab.internationalResources.toolTip
-                ? <TabsToolTip {...overviewTab.internationalResources.toolTip} />
-                : ''}
+              { overviewTab.internationalResources && overviewTab.internationalResources.toolTip
+                ? <TabsToolTip { ...overviewTab.internationalResources.toolTip } />
+                : '' }
             </P>
-            <TabsP fontSize={'1.6em'}>
-              {overviewTab.internationalResources && overviewTab.internationalResources.value
+            <TabsP fontSize={ '1.6em' }>
+              { overviewTab.internationalResources && overviewTab.internationalResources.value
                 ? `US$ ${overviewTab.internationalResources.value}`
-                : NoData}
+                : NoData }
             </TabsP>
           </Grid.Column>
-          : ''}
-        <Grid.Column computer={5} tablet={12} mobile={12}>
+          : '' }
+        <Grid.Column computer={ 5 } tablet={ 12 } mobile={ 12 }>
           <HeaderTitle>
-            {overviewGovtSpentPerPerson.title}
-            {overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip
-              ? <TabsToolTip {...overviewTab.governmentSpendPerPerson.toolTip} />
-              : ''}
+            { overviewGovtSpentPerPerson.title }
+            { overviewTab.governmentSpendPerPerson && overviewTab.governmentSpendPerPerson.toolTip
+              ? <TabsToolTip { ...overviewTab.governmentSpendPerPerson.toolTip } />
+              : '' }
           </HeaderTitle>
           <TabsP>
-            {overviewTab.governmentSpendPerPerson &&
+            { overviewTab.governmentSpendPerPerson &&
               overviewTab.governmentSpendPerPerson.value &&
               overviewTab.governmentSpendPerPerson.value !== NoData
               ? `PPP$ ${Number(overviewTab.governmentSpendPerPerson.value).toLocaleString()}`
-              : NoData}
+              : NoData }
           </TabsP>
           <TabsFootNote>Government spending per person per annum</TabsFootNote>
         </Grid.Column>
-        {props.countryType === DONOR
-          ? <Grid.Column computer={5} tablet={12} mobile={1}>
+        { props.countryType === DONOR
+          ? <Grid.Column computer={ 5 } tablet={ 12 } mobile={ 1 }>
             <HeaderTitle>
-              {incomeDistributionCtry.title}
-              {overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip
-                ? <TabsToolTip {...overviewTab.incomeDistTrend.toolTip} />
-                : ''}
+              { incomeDistributionCtry.title }
+              { overviewTab.incomeDistTrend && overviewTab.incomeDistTrend.toolTip
+                ? <TabsToolTip { ...overviewTab.incomeDistTrend.toolTip } />
+                : '' }
             </HeaderTitle>
             { incomeDistData
-              ? <div style={{width: '80%', margin: '0 auto'}}>
+              ? <div style={ { width: '80%', margin: '0 auto' } }>
                 <Chart
-                  config={props.config.histogram}
-                  data={incomeDistData.map((d, i) => i ? d : {...d, color: '#e84439'})}
+                  config={ props.config.histogram }
+                  data={ incomeDistData.map((d, i) => i ? d : { ...d, color: '#e84439' }) }
                   height="120px"
                 />
-                <TabsFootNote textAlign="left" lineHeight={2}>
-                  Bottom quintile has {incomeValue} % of the income.
+                <TabsFootNote textAlign="left" lineHeight={ 2 }>
+                  Bottom quintile has { incomeValue } % of the income.
                 </TabsFootNote>
               </div>
-              : <TabsNoData />}
+              : <TabsNoData /> }
           </Grid.Column>
-          : ''}
+          : '' }
       </Grid>
     </Container>
   );

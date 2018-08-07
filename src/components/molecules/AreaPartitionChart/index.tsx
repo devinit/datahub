@@ -1,13 +1,12 @@
+import { red } from '../../theme/semantic';
 import * as React from 'react';
-import { approximate } from '@devinit/prelude/lib/numbers';
 import { groupBy } from 'ramda';
 import { SectionHeader } from '../../atoms/Header';
-import { Dimmer, Container, Dropdown, Grid, Header } from 'semantic-ui-react';
+import { Container, Dimmer, Dropdown, Grid, Header } from 'semantic-ui-react';
 import { DONOR } from '../../../utils/constants';
-import { red } from '../../theme/semantic';
+import { approximate } from '@devinit/prelude/lib/numbers';
 import ErrorBoundary from '../ErrorBoundary';
-import { NoDataAvailableContainer } from '../../atoms/Container';
-import { LightBg } from '../../atoms/Container';
+import { LightBg, NoDataAvailableContainer } from '../../atoms/Container';
 import TreeChart from '../../atoms/TreeChart';
 import Timeline from '../../atoms/Timeline';
 
@@ -45,7 +44,7 @@ export interface UProps {
   flow?: string;
   config: any;
 }
-export type State = DirectionState &  {
+export type State = DirectionState & {
   year: number;
   flows: Flow[];
   directions: Array<{value: string, text: string}>;
@@ -69,11 +68,167 @@ class AreaPartitionChart extends React.Component<Props, State> {
   // this contains list of oda & oof flows that we should use with
   // unbundlingInternationalResources
 
-  public odaAndOOFFlows: string[] = ['oda-out', 'oda-in', 'oofs-out', 'oofs-in'];
+  public odaAndOOFFlows: string[] = [ 'oda-out', 'oda-in', 'oofs-out', 'oofs-in' ];
+
   constructor(props: Props) {
     super(props);
     this.state = this.initState(props);
   }
+
+  public render() {
+    return (
+      <LightBg>
+        <Container>
+          <Grid centered>
+            <Grid.Column mobile={ 16 } computer={ 8 }>
+              <Dropdown
+                selection
+                fluid
+                onChange={ this.setDirection }
+                value={ this.state.direction }
+                options={ this.state.directions }
+              />
+            </Grid.Column>
+          </Grid>
+
+          <Grid>
+            <Grid.Column mobile={ 16 } computer={ 7 }>
+              <div style={ { minHeight: '85px' } }>
+                <Header as="h3" textAlign="center">
+                  <Header.Content>
+                    { this.state.direction === 'in' ? 'Inflows' : 'Outflows' } over time
+                  </Header.Content>
+                </Header>
+                <Dropdown
+                  selection
+                  fluid
+                  onChange={ this.setFlow }
+                  value={ this.state.flow }
+                  options={ this.state.flows }
+                />
+              </div>
+              <ErrorBoundary>
+                <Timeline
+                  height="400px"
+                  data={ this.state.trend }
+                  config={ {
+                    ...this.props.config.areaConfig,
+
+                    anchor: {
+                      start: this.state.year.toString()
+                    }
+                  } }
+                  onYearChanged={ this.setYear }
+                />
+              </ErrorBoundary>
+            </Grid.Column>
+
+            <Grid.Column mobile={ 1 } computer={ 1 } />
+
+            <Grid.Column mobile={ 16 } computer={ 8 }>
+              <div style={ { minHeight: '85px' } }>
+                { this.state.flow === 'all'
+                  ? <Header as="h3" textAlign="center">
+                    <Header.Content>
+                      The mix of resources in <span style={ { color: red } }>{ this.state.year }</span>
+                    </Header.Content>
+                  </Header>
+                  : <Header as="h3" textAlign="center">
+                    <Header.Content>
+                      <span>
+                          What we know about { this.state.flowName } by{ ' ' }
+                      </span>
+                      {
+                        <Dropdown
+                          selection
+                          compact
+                          onChange={ this.setFlowDetailGroup }
+                          value={ this.state.detailGroup }
+                          options={
+                            this.state.detailSelections &&
+                            this.state.detailSelections.map(d => ({
+                              text: d.text,
+                              value: d.value,
+                              key: d.key
+                            }))
+                          }
+                        />
+                      }
+                      <span>
+                        { ' ' }in { this.state.year }
+                      </span>
+                    </Header.Content>
+                  </Header>
+                }
+              </div>
+              <SectionHeader color="rgb(238, 238, 238)">
+                { this.props.config.treemapConfig.labeling.prefix }{ ' ' }
+                {
+                  approximate((this.state.mixes[+this.state.year] || [])
+                    .reduce((sum, datum) => sum + datum.value, 0))
+                }
+              </SectionHeader>
+              { this.renderChart() }
+            </Grid.Column>
+          </Grid>
+        </Container>
+      </LightBg>
+    );
+  }
+
+  private renderChart() {
+      if (this.state.flow === 'all') {
+        return (
+          <ErrorBoundary message="Error on TreeChart">
+            <TreeChart
+              height="360px"
+              data={ this.state.mixes[+this.state.year] || [] }
+              config={ this.props.config.treemapConfig }
+              // tslint:disable-next-line:jsx-no-lambda
+              onClick={ (d: { flow_id: string }) =>
+                this.setState(this.getFlowState(this.state.direction, d.flow_id)) }
+            />
+          </ErrorBoundary>
+        );
+      }
+
+      return this.renderUnbundlingInternationResources();
+  }
+
+  private renderUnbundlingInternationResources() {
+    const UnbundlingInternationalResources = this.props.unbundlingInternationalResources;
+    if (this.odaAndOOFFlows.includes(this.state.flow || '')) {
+      return (
+        <ErrorBoundary message="Error on UnbundlingInternationalResources chart">
+            <UnbundlingInternationalResources
+              shouldFetch={ this.state.shouldUnbundle }
+              countryId={ this.props.id }
+              year={ this.state.year }
+              groupById={ this.state.detailGroup }
+              resourceId={ this.state.flow || '' } // TODO: shouldnt be nullable
+              config={ this.props.config.treemapConfig }
+            />
+        </ErrorBoundary>
+      );
+    }
+
+    return (
+      <Dimmer
+        style={ {
+          backgroundColor: '#888',
+          zIndex: 1,
+          height: '360px',
+          position: 'relative'
+        } }
+        active
+      >
+        <NoDataAvailableContainer>
+            Detailed data is not available for this year
+        </NoDataAvailableContainer>
+      </Dimmer>
+    );
+  }
+
   public initState(props: Props): State {
     const year = this.props.startYear;
     const direction = this.props.countryType !== DONOR ? 'in' : 'out';
@@ -81,20 +236,20 @@ class AreaPartitionChart extends React.Component<Props, State> {
       { value: 'in', text: `Inflows to ${props.country}` },
       { value: 'out',
         text: this.props.countryType !== DONOR ?
-          `Outflows leaving ${props.country}` : `Outflows from ${props.country}` },
+          `Outflows leaving ${props.country}` : `Outflows from ${props.country}` }
     ];
 
     return {
       year,
       direction,
       directions,
-      ...this.getDirectionState(direction),
+      ...this.getDirectionState(direction)
     };
   }
 
   public setYear = (year: number | string) => {
     this.setState({
-      year: +year,
+      year: +year
     });
   }
 
@@ -111,8 +266,8 @@ class AreaPartitionChart extends React.Component<Props, State> {
     const filtered = selections && selections.find(d => d.value === data.value);
 
     this.setState({
-      detailGroup: data.id,
-      shouldUnbundle: filtered && filtered.unbundle,
+      detailGroup: data.id || data.value,
+      shouldUnbundle: filtered && filtered.unbundle
     });
   }
 
@@ -121,14 +276,14 @@ class AreaPartitionChart extends React.Component<Props, State> {
       {
         key: 'all',
         text: 'Choose a flow for more details',
-        value: 'all',
+        value: 'all'
       },
 
       ...(direction === 'in' ? this.props.inflows : this.props.outflows).map(flowx => ({
         key: flowx.id,
         text: flowx.name,
-        value: flowx.id,
-      })),
+        value: flowx.id
+      }))
     ];
 
     const flow = 'all';
@@ -137,7 +292,7 @@ class AreaPartitionChart extends React.Component<Props, State> {
       direction,
       flow,
       flows,
-      ...this.getFlowState(direction, flow),
+      ...this.getFlowState(direction, flow)
     };
   }
 
@@ -155,7 +310,7 @@ class AreaPartitionChart extends React.Component<Props, State> {
         text: name,
         value: id,
         key: i,
-        unbundle,
+        unbundle
       }));
 
     const selection = detailSelections[0] || {};
@@ -167,146 +322,8 @@ class AreaPartitionChart extends React.Component<Props, State> {
       detailSelections,
       detailGroup: selection.value,
       shouldUnbundle: selection.unbundle,
-      mixes: groupBy(d => `${d.year}`, trend),
+      mixes: groupBy(d => `${d.year}`, trend)
     };
-  }
-
-  public render() {
-    const UnbundlingInternationalResources = this.props.unbundlingInternationalResources;
-    return (
-      <LightBg>
-        <Container>
-          <Grid centered>
-            <Grid.Column mobile={16} computer={8}>
-              <Dropdown
-                selection
-                fluid
-                onChange={this.setDirection}
-                value={this.state.direction}
-                options={this.state.directions}
-              />
-            </Grid.Column>
-          </Grid>
-
-          <Grid>
-            <Grid.Column mobile={16} computer={7}>
-              <div style={{minHeight: '85px'}}>
-                <Header as="h3" textAlign="center">
-                  <Header.Content>
-                    {this.state.direction === 'in' ? 'Inflows' : 'Outflows'} over time
-                  </Header.Content>
-                </Header>
-                <Dropdown
-                  selection
-                  fluid
-                  onChange={this.setFlow}
-                  value={this.state.flow}
-                  options={this.state.flows}
-                />
-              </div>
-              <ErrorBoundary>
-                <Timeline
-                  height="400px"
-                  data={this.state.trend}
-                  config={{
-                    ...this.props.config.areaConfig,
-
-                    anchor: {
-                      start: this.state.year.toString(),
-                    },
-                  }}
-                  onYearChanged={this.setYear}
-                />
-              </ErrorBoundary>
-            </Grid.Column>
-
-            <Grid.Column mobile={1} computer={1} />
-
-            <Grid.Column mobile={16} computer={8}>
-              <div style={{minHeight: '85px'}}>
-                {this.state.flow === 'all'
-                  ? <Header as="h3" textAlign="center">
-                    <Header.Content>
-                      The mix of resources in <span style={{color: red}}>{this.state.year}</span>
-                    </Header.Content>
-                  </Header>
-                  : <Header as="h3" textAlign="center">
-                    <Header.Content>
-                      <span>
-                          What we know about {this.state.flowName} by{' '}
-                      </span>
-                      {
-                        <Dropdown
-                          selection
-                          compact
-                          onChange={this.setFlowDetailGroup}
-                          value={this.state.detailGroup}
-                          options={
-                            this.state.detailSelections &&
-                            this.state.detailSelections.map(d => ({
-                              text: d.text,
-                              value: d.value,
-                              key: d.key,
-                            }))
-                          }
-                        />
-                      }
-                      <span>
-                        {' '}in {this.state.year}
-                      </span>
-                    </Header.Content>
-                  </Header>
-                }
-              </div>
-              <SectionHeader color="rgb(238, 238, 238)">
-                {this.props.config.treemapConfig.labeling.prefix}{' '}
-                {approximate(
-                  (this.state.mixes[+this.state.year] || [])
-                    .reduce((sum, datum) => sum + datum.value, 0),
-                )}
-              </SectionHeader>
-              {this.state.flow === 'all' ?
-                <ErrorBoundary message="Tree chart errored">
-                  <TreeChart
-                    height="360px"
-                    data={this.state.mixes[+this.state.year] || []}
-                    config={this.props.config.treemapConfig}
-                    // tslint:disable-next-line:jsx-no-lambda
-                    onClick={(d: { flow_id: string }) =>
-                      this.setState(this.getFlowState(this.state.direction, d.flow_id))}
-                  />
-                </ErrorBoundary>
-                : this.odaAndOOFFlows.includes(this.state.flow || '')
-                  ? <ErrorBoundary message="UnbundlingInternationalResources chart errored">
-                      <UnbundlingInternationalResources
-                        shouldFetch={this.state.shouldUnbundle}
-                        countryId={this.props.id}
-                        year={this.state.year}
-                        groupById={this.state.detailGroup}
-                        resourceId={this.state.flow || ''} // TODO: shouldnt be nullable
-                        config={this.props.config.treemapConfig}
-                      />
-                  </ErrorBoundary>
-                  :
-                  <Dimmer
-                    style={{
-                      backgroundColor: '#888',
-                      zIndex: 1,
-                      height: '360px',
-                      position: 'relative',
-                    }}
-                    active
-                  >
-                    <NoDataAvailableContainer>
-                        Detailed data is not available for this year
-                    </NoDataAvailableContainer>
-                  </Dimmer>
-                  }
-            </Grid.Column>
-          </Grid>
-        </Container>
-      </LightBg>
-    );
   }
 }
 

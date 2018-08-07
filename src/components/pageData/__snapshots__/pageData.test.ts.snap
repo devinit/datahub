@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page data tests should return DistrictProfilePageData page data 1`] = `"\\"Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and county public resources in Nairobi.\\""`;
+exports[`page data tests should return DistrictProfilePageData page data 1`] = `
+"Object {
+  \\"dataA\\": \\"Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and county public resources in Nairobi.\\",
+  \\"dataB\\": \\"Explore this in-depth profile to find out about poverty, population, education, health, water, sanitation and hygiene, and district public resources in Wakiso.\\",
+}"
+`;
 
 exports[`page data tests should return ProfilePageData page data 1`] = `
 "Array [

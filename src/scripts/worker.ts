@@ -5,10 +5,10 @@
  * in which case we could have used a webworker loader
  */
 import * as path from 'path';
-const webpack = require('webpack');
-const HappyPack = require('happypack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+import * as webpack from 'webpack';
+import * as HappyPack from 'happypack';
+import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin';
+import * as ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 const configFile = '../../tsconfig.json';
 
 const config = {
@@ -22,7 +22,7 @@ const config = {
     path: path.resolve(__dirname, '../../static')
   },
   resolve: {
-    extensions: [ '.ts', '.tsx', '.js', '.json']
+    extensions: [ '.ts', '.tsx', '.js', '.json' ]
   },
   module: {
     rules: [
@@ -63,4 +63,4 @@ const build = () => {
   });
 };
 
-if (process.env.NODE_ENV !== 'test') build();
+if (process.env.NODE_ENV !== 'test') { build(); }
