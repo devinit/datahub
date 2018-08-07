@@ -81,7 +81,7 @@
     "@types/ramda": "0.25.24",
     "@types/react": "16.3.12",
     "@types/react-beautiful-dnd": "6.0.1",
-    "@types/react-redux": "5.0.15",
+    "@types/react-redux": "5.0.21",
     "@types/storybook__react": "3.0.7",
     "@zeit/next-typescript": "0.1.1",
     "apollo-codegen": "0.19.0",
