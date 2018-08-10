@@ -1,5 +1,5 @@
 import { RECIPIENT } from './constants';
-import { menueData } from '../components/templates/Generic/data';
+import { menuData } from '../components/templates/Generic/data';
 import { MenuItem } from '../components/molecules/Menu/types';
 import countriesData from '../components/molecules/SearchInput/global';
 import ugData from '../components/molecules/SearchInput/uganda';
@@ -42,7 +42,7 @@ export const createLinkMeta = (args: PageMetaArgs, obj: MenuItem): PageMeta => {
 
 export const getPageMeta = (args: PageMetaArgs): PageMeta => {
   // TODO: add proper types
-  const item = menueData.menu
+  const item = menuData.menu
     .reduce((acc: MenuItem[], obj: MenuItem) => {
       if (obj.children) {
         return [ ...acc, ...obj.children ];

@@ -1,9 +1,9 @@
 import glamorous from 'glamorous';
-import { white } from '../../../theme/semantic';
-import { mediaQueries } from '../../../theme';
-import { DesktopMenuItem } from '../../../atoms/Menu';
-import { Props } from '..';
 import * as React from 'react';
+import { Props } from '..';
+import { DesktopMenuItem } from '../../../atoms/Menu';
+import { mediaQueries } from '../../../theme';
+import { white } from '../../../theme/semantic';
 
 const ListContainer = glamorous.ul({
   flexDirection: 'column',

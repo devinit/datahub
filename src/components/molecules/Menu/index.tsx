@@ -1,11 +1,11 @@
 import glamorous from 'glamorous';
-import { white, red } from '../../theme/semantic';
+import { red, white } from '../../theme/semantic';
 import { Container } from 'semantic-ui-react';
 import Logo from '../../atoms/Logo';
 import DesktopMenu from './DesktopMenu';
 import MobileMenu from './MobileMenu';
-import {Menu} from './types';
-import {LinkState} from 'next/link';
+import { Menu } from './types';
+import { LinkState } from 'next/link';
 import * as React from 'react';
 
 const MenuContainer = glamorous.div({
@@ -18,7 +18,7 @@ const MenuContainer = glamorous.div({
   width: '100%',
   zIndex: 450,
   overflow: 'visible',
-  boxShadow: '0 0 16px rgba(0,0,0,.3)', // TODO:add to color variables
+  boxShadow: '0 0 16px rgba(0,0,0,.3)' // TODO:add to color variables
 });
 
 export type Props = Menu & {
@@ -26,12 +26,12 @@ export type Props = Menu & {
 };
 
 const menu = (props: Props) =>
-  (<MenuContainer>
+  <MenuContainer>
     <Container>
       <Logo />
-      <DesktopMenu {...props} />
-      <MobileMenu {...props} />
+      <DesktopMenu { ...props } />
+      <MobileMenu { ...props } />
     </Container>
-  </MenuContainer>);
+  </MenuContainer>;
 
 export default menu;

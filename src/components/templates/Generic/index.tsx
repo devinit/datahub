@@ -3,17 +3,17 @@ import { Container } from 'semantic-ui-react';
 import Footer from '../../molecules/Footer';
 import Menu from '../../molecules/Menu';
 import Link from 'next/link';
-import {menueData} from './data';
+import { menuData } from './data';
 
-interface Props  {
+interface Props {
   children: JSX.Element[] | React.ReactChild | React.ReactChildren | any; // screw it with any
 }
 
-const Generic: React.SFC<Props> = ({ children}) =>
+const Generic: React.SFC<Props> = ({ children }) =>
   <Container fluid>
-      <Menu menu={menueData.menu} nextLink={Link} />
-      <div style={{marginTop: '4em'}}>
-        {children}
+      <Menu menu={ menuData.menu } nextLink={ Link } />
+      <div style={ { marginTop: '4em' } }>
+        { children }
       </div>
       <Footer />
   </Container>;
