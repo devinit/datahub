@@ -278,6 +278,10 @@ class BaseMap extends React.Component<Props, State> {
       value = `${value} <span style="color: white; font-weight: 400;">[ ${pointData.detail} ]</span>`;
     }
     if (theme === 'government-finance' && pointData.detail && uom === '%') { uom = ''; }
+    if (this.props.paint && this.props.paint.mapStyle && (!this.props.paint.data || !this.props.paint.data.length)) {
+      value = 'Refer to the legend for the value range';
+      uom = '';
+    }
     const opts = { id, value, name, uom, country, year: pointData.year || 0 };
 
     return !!id && this.genericTipHtml(opts);
