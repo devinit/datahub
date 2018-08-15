@@ -3,10 +3,11 @@
  */
 import * as fetch from 'isomorphic-fetch';
 import * as fs from 'fs-extra';
-const packageJson = require('../../package.json');
+const packageJSON = require('../../package.json');
+const API = process.env.API || packageJSON.config.API;
 
 const main = (): void => {
-  fetch(packageJson.config.API, {
+  fetch(API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
