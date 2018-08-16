@@ -1,6 +1,7 @@
 #!/bin/bash
 rm -rf build.zip build
 
+npm run emit
 npm run build-workers
 npm run build-fragment
 npm run build:next
