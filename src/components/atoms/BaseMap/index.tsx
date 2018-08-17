@@ -453,29 +453,9 @@ class BaseMap extends React.Component<Props, State> {
     });
   }
 
-  static foldOverSurveyMapFeatures(features: Feature[]): DH.IMapUnit {
-    type FeatureProps = Feature['properties'] & {total: number; sum: number};
-    const props: FeatureProps = features.reverse().reduce((acc, feature) => {
-      // this is a country feature;
-      const p20: number = feature.properties && feature.properties.p20 ? feature.properties.p20 : 0;
-      if (p20 === 0) { return { ...acc, ...feature.properties }; }
-      const sum = acc.sum + p20;
-      const total = acc.total + 1;
-
-      return { ...acc, sum, total, ...feature.properties };
-    }, { total: 0, sum: 0 });
-    const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
-    const id: string = props.ISO2 || '';
-    const countryName: string = props.NAME || '';
-    const region: string = props.DHSREGNA || '';
-    const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
-
-    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
-  }
-
   private pointDataForPreStyledMap(features: Feature[], indicator: string): DH.IMapUnit | null {
-    if (indicator === 'surveyp20') {
-      return BaseMap.foldOverSurveyMapFeatures(features);
+    if (indicator === 'surveyp20' || indicator === 'survey_p20' || indicator === 'subnational_p20') {
+      return BaseMap.fetchDataFromMapsWithCustomStyles(features);
     }
     const feature = this.getFeature(features);
     if (!feature.properties) {
@@ -493,6 +473,28 @@ class BaseMap extends React.Component<Props, State> {
     const name = region ? `Region: ${region}, ${countryName}` : countryName;
 
     return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug };
+  }
+
+  static fetchDataFromMapsWithCustomStyles(features: Feature[]): DH.IMapUnit {
+    type FeatureProps = Feature['properties'] & {total: number; sum: number};
+    const props: FeatureProps = features.reverse().reduce((acc, feature) => {
+      // this is a country feature;
+      const { properties } = feature;
+      let p20: number = properties && properties.p20 ? properties.p20 : 0;
+      p20 = p20 || (properties && properties.P20 ? properties.P20 : 0);
+      if (p20 === 0) { return { ...acc, ...feature.properties }; }
+      const sum = acc.sum + p20;
+      const total = acc.total + 1;
+
+      return { ...acc, sum, total, ...feature.properties };
+    }, { total: 0, sum: 0 });
+    const value: number = props.total ? Math.round((props.sum / props.total) * 100) : 0;
+    const id: string = props.ISO2 || '';
+    const countryName: string = props.NAME || '';
+    const region: string = props.DHSREGNA || '';
+    const name = region ? `Region: ${region} ,  ${countryName}` : countryName;
+
+    return { value, id, name, detail: '', uid: '', year: 2013, color: '', slug: '' };
   }
 
   static setPointDataValue(

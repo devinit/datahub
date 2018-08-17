@@ -5,6 +5,7 @@ const Webpack = require('webpack');
 const withTypescript = require('@zeit/next-typescript');
 const packageJSON = require('./package.json');
 const { ANALYZE } = process.env;
+const API = process.env.API || packageJSON.config.API;
 
 module.exports = withTypescript({
   webpack(config, options) {
@@ -19,7 +20,7 @@ module.exports = withTypescript({
     config.plugins.push(
       new Webpack.DefinePlugin({
         'APP_VERSION': JSON.stringify(packageJSON.version),
-        'API': JSON.stringify(packageJSON.config.API),
+        'API': JSON.stringify(API),
         'OLD_DATAHUB_URL': JSON.stringify(packageJSON.config.OLD_DATAHUB_URL)
       }));
 

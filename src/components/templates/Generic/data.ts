@@ -1,10 +1,10 @@
-import {Menu} from '../../molecules/Menu/types';
+import { Menu } from '../../molecules/Menu/types';
 
-export const menueData: Menu = {
+export const menuData: Menu = {
   menu: [
     {
       name: 'Global Picture',
-      link: '/',
+      link: '/'
     },
     {
       name: 'Profiles',
@@ -14,26 +14,26 @@ export const menueData: Menu = {
         {
           name: 'Country Profiles',
           link: '/country-profiles',
-          icon: 'area graph',
+          icon: 'area graph'
         },
         {
           name: 'Multilateral Profiles',
           link: '/multilaterals',
-          icon: 'area graph',
-        },
-      ],
+          icon: 'area graph'
+        }
+      ]
     },
     {
       name: 'Unbundling Aid',
-      link: '/unbundling-aid',
+      link: '/unbundling-aid'
     },
     {
       name: 'Spotlight on Uganda',
-      link: '/spotlight-on-uganda',
+      link: '/spotlight-on-uganda'
     },
     {
       name: 'Spotlight on Kenya',
-      link: '/spotlight-on-kenya',
+      link: '/spotlight-on-kenya'
     },
     {
       name: 'Other Visualisations',
@@ -43,33 +43,33 @@ export const menueData: Menu = {
         {
           name: 'Unbundling other official flows',
           link: '/unbundling-other-flows',
-          icon: 'barcode',
+          icon: 'barcode'
         },
         {
           name: 'Where are the poor and where will they be?',
           link: '/where-are-the-poor',
-          icon: 'users',
+          icon: 'users'
         },
         {
           name: 'Who are the global P20',
           link: '/who-are-the-global-p20',
-          icon: 'users',
+          icon: 'users'
         },
         {
           name: 'Different providers, different priorities',
           link: '/oda-donor',
-          icon: 'area graph',
+          icon: 'area graph'
         },
         {
           name: 'Are domestic public resources able to meet the needs of the poorest people?',
           link: '/poverty',
-          icon: 'area graph',
-        },
-      ],
+          icon: 'area graph'
+        }
+      ]
     },
     {
       name: 'Methodology',
-      link: '/methodology',
-    },
-  ],
+      link: '/methodology'
+    }
+  ]
 };

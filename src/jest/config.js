@@ -6,7 +6,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('global', () => global);
 
-global.API = packageJSON.config.API;
+global.API = process.env.API || packageJSON.config.API;
 global.APP_VERSION = packageJSON.version;
 global.OLD_DATAHUB_URL = packageJSON.config.OLD_DATAHUB_URL;
 
@@ -25,7 +25,7 @@ function copyProps(src, target) {
 }
 
 global.window = window;
-global.window.URL.createObjectURL = () => {}
+global.window.URL.createObjectURL = () => {};
 global.document = window.document;
 global.navigator = {
   userAgent: 'node.js',

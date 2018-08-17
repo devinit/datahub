@@ -33,7 +33,7 @@ export default {
       slug: 'andorra',
       has_domestic_data: '',
       countryType: '',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'AO',
@@ -49,7 +49,7 @@ export default {
       slug: 'anguilla',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'AG',
@@ -57,7 +57,7 @@ export default {
       slug: 'antigua-and-barbuda',
       has_domestic_data: '1',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'AR',
@@ -121,7 +121,7 @@ export default {
       slug: 'barbados',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'BY',
@@ -177,7 +177,7 @@ export default {
       slug: 'bosnia-and-herzegovina',
       has_domestic_data: '1',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'BW',
@@ -337,7 +337,7 @@ export default {
       slug: 'cote-divoire',
       has_domestic_data: '1',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'HR',
@@ -353,7 +353,7 @@ export default {
       slug: 'cuba',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'CY',
@@ -905,7 +905,7 @@ export default {
       slug: 'mayotte',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'MX',
@@ -953,7 +953,7 @@ export default {
       slug: 'montserrat',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'MA',
@@ -993,7 +993,7 @@ export default {
       slug: 'nauru',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'NP',
@@ -1049,7 +1049,7 @@ export default {
       slug: 'niue',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'NO',
@@ -1065,7 +1065,7 @@ export default {
       slug: 'oman',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'PK',
@@ -1105,7 +1105,7 @@ export default {
       slug: 'papua-new-guinea',
       has_domestic_data: '1',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'PY',
@@ -1177,7 +1177,7 @@ export default {
       slug: 'saint-kitts-and-nevis',
       has_domestic_data: '1',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'LC',
@@ -1209,7 +1209,7 @@ export default {
       slug: 'sao-tome-and-principe',
       has_domestic_data: '1',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'SA',
@@ -1257,7 +1257,7 @@ export default {
       slug: 'slovakia',
       has_domestic_data: '',
       countryType: 'donor',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'SI',
@@ -1281,7 +1281,7 @@ export default {
       slug: 'somalia',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'ZA',
@@ -1393,7 +1393,7 @@ export default {
       slug: 'thailand',
       has_domestic_data: '1',
       countryType: 'crossover',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'TL',
@@ -1417,7 +1417,7 @@ export default {
       slug: 'tokelau',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'TO',
@@ -1433,7 +1433,7 @@ export default {
       slug: 'trinidad-and-tobago',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'TN',
@@ -1465,7 +1465,7 @@ export default {
       slug: 'turks-and-caicos-islands',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'TV',
@@ -1561,7 +1561,7 @@ export default {
       slug: 'wallis-and-futuna',
       has_domestic_data: '',
       countryType: 'recipient',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'EH',
@@ -1569,7 +1569,7 @@ export default {
       slug: 'western-sahara',
       has_domestic_data: '',
       countryType: '',
-      hasPDF: true
+      hasPDF: false
     },
     {
       id: 'YE',

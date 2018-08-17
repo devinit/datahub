@@ -56,10 +56,10 @@ export default {
       },
       { id: 'unep', name: 'United Nations Environment Programme (UNEP)' },
       { id: 'HR', name: 'Croatia' },
-      { id: 'asdb-special-funds', name: 'ADB Special Funds' },
       { id: 'IE', name: 'Ireland' },
-      { id: 'AZ', name: 'Azerbaijan' },
+      { id: 'asdb-special-funds', name: 'ADB Special Funds' },
       { id: 'gef', name: 'Global Environment Facility (GEF)' },
+      { id: 'AZ', name: 'Azerbaijan' },
       {
         id: 'ifad',
         name: 'International Fund for Agricultural Development (IFAD)'
@@ -68,8 +68,8 @@ export default {
       { id: 'MT', name: 'Malta' },
       { id: 'nordic-dev-fund', name: 'Nordic Development Fund (NDF)' },
       { id: 'AU', name: 'Australia' },
-      { id: 'AE', name: 'UAE' },
       { id: 'BE', name: 'Belgium' },
+      { id: 'AE', name: 'UAE' },
       { id: 'AT', name: 'Austria' },
       { id: 'unpbf', name: 'United Nations Peacebuilding Fund (UNPBF)' },
       { id: 'fao', name: 'Food and Agriculture Organisation (FAO)' },
@@ -95,11 +95,11 @@ export default {
       { id: 'ida', name: 'International Development Association (IDA)' },
       { id: 'unfpa', name: 'United Nations Population Fund (UNFPA)' },
       { id: 'FI', name: 'Finland' },
-      { id: 'PL', name: 'Poland' },
       { id: 'PT', name: 'Portugal' },
+      { id: 'PL', name: 'Poland' },
       { id: 'DE', name: 'Germany' },
-      { id: 'EE', name: 'Estonia' },
       { id: 'JP', name: 'Japan' },
+      { id: 'EE', name: 'Estonia' },
       {
         id: 'unhcr',
         name: 'United Nations High Commissioner for Refugees (UNHCR)'
