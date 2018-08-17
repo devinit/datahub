@@ -336,11 +336,11 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
+      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
-      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
@@ -362,9 +362,9 @@ export default {
       { id: 'cash-loan-equity', name: 'Cash (loan/equity)' },
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' },
+      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
       { id: 'cash-grant', name: 'Cash grant' },
-      { id: 'commodities-food', name: 'Commodities & Food' },
-      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' }
+      { id: 'commodities-food', name: 'Commodities & Food' }
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
