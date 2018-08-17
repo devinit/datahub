@@ -3456,7 +3456,6 @@ exports[`Storyshots MultiLine partition Kampala 1`] = `
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   </section>
@@ -3957,7 +3956,6 @@ exports[`Storyshots MultiLine partition Nairobi 1`] = `
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   </section>
@@ -4458,7 +4456,6 @@ exports[`Storyshots MultiLine partition Nigeria 1`] = `
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   </section>
@@ -6751,7 +6748,6 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
 <div
   className="css-3nxmei"
 >
-  
   <div
     className="css-2t8kmp"
   >
@@ -8638,6 +8634,7 @@ exports[`Storyshots Profile Headers Uganda Profile header 1`] = `
             government finance
           </a>
            or 
+           
         </span>
         <a
           className="css-1wk6uqe"
@@ -8657,7 +8654,6 @@ exports[`Storyshots Profile Headers Wakiso Profile header 1`] = `
 <div
   className="css-3nxmei"
 >
-  
   <div
     className="css-2t8kmp"
   >
@@ -15250,6 +15246,7 @@ exports[`Storyshots Tabs & Charts Country Profiles Lower tabs rwanda 1`] = `
                     className="css-1908kll"
                   >
                     How does Rwanda finance and spend its budget?
+                    <br />
                     <span>
                       Move the year slider
                     </span>
@@ -15279,9 +15276,30 @@ exports[`Storyshots Tabs & Charts Country Profiles Lower tabs rwanda 1`] = `
               className="ui divider"
             />
           </div>
-          <p>
-            loading ...
-          </p>
+          <div
+            className="ui segment"
+            style={
+              Object {
+                "height": "600px",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="ui active transition visible inverted dimmer"
+              onClick={[Function]}
+            >
+              <div
+                className="content"
+              >
+                <div
+                  className="ui text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -15442,6 +15460,7 @@ exports[`Storyshots Tabs & Charts Country Profiles Lower tabs uganda 1`] = `
                     className="css-1908kll"
                   >
                     How does Uganda finance and spend its budget?
+                    <br />
                     <span>
                       Move the year slider
                     </span>
@@ -15471,9 +15490,30 @@ exports[`Storyshots Tabs & Charts Country Profiles Lower tabs uganda 1`] = `
               className="ui divider"
             />
           </div>
-          <p>
-            loading ...
-          </p>
+          <div
+            className="ui segment"
+            style={
+              Object {
+                "height": "600px",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="ui active transition visible inverted dimmer"
+              onClick={[Function]}
+            >
+              <div
+                className="content"
+              >
+                <div
+                  className="ui text loader"
+                >
+                  Loading
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -15580,96 +15620,111 @@ exports[`Storyshots Tabs & Charts Country Profiles Lower tabs uganda 1`] = `
 `;
 
 exports[`Storyshots Tabs & Charts Country Profiles tabs austria 1`] = `
-<div>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "300px",
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="css-hu3x4g"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      className="ui tiny active progress"
-      data-percent={0}
+      className="content"
     >
       <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
+        className="ui text loader"
+      >
+        Loading
+      </div>
     </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots Tabs & Charts Country Profiles tabs kenya 1`] = `
-<div>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "300px",
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="css-hu3x4g"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      className="ui tiny active progress"
-      data-percent={0}
+      className="content"
     >
       <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
+        className="ui text loader"
+      >
+        Loading
+      </div>
     </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots Tabs & Charts Country Profiles tabs uganda 1`] = `
-<div>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "300px",
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="css-hu3x4g"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      className="ui tiny active progress"
-      data-percent={0}
+      className="content"
     >
       <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
+        className="ui text loader"
+      >
+        Loading
+      </div>
     </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots Tabs & Charts Government Finance ghana 1`] = `
-<p>
-  loading ...
-</p>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "600px",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="ui text loader"
+      >
+        Loading
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Tabs & Charts Inflows Vs Outflows Kenya 1`] = `
@@ -15705,30 +15760,28 @@ exports[`Storyshots Tabs & Charts International Resources 1`] = `
 `;
 
 exports[`Storyshots Tabs & Charts Nairobi with apollo 1`] = `
-<div>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "300px",
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="css-hu3x4g"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      className="ui tiny active progress"
-      data-percent={0}
+      className="content"
     >
       <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
+        className="ui text loader"
+      >
+        Loading
+      </div>
     </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
   </div>
 </div>
 `;
@@ -16210,44 +16263,84 @@ exports[`Storyshots Tabs & Charts PopulationTab Uganda 1`] = `
 `;
 
 exports[`Storyshots Tabs & Charts Wakiso with apollo 1`] = `
-<div>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "300px",
+      "width": "100%",
+    }
+  }
+>
   <div
-    className="css-hu3x4g"
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
   >
     <div
-      className="ui tiny active progress"
-      data-percent={0}
+      className="content"
     >
       <div
-        className="bar"
-        style={
-          Object {
-            "width": "0%",
-          }
-        }
-      />
+        className="ui text loader"
+      >
+        Loading
+      </div>
     </div>
-  </div>
-  <div
-    className="css-x5a8zc"
-  >
-    <p>
-      Loading...
-    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots Tabs & Charts local government Finance Nairobi 1`] = `
-<p>
-  loading ...
-</p>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "550px",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="ui text loader"
+      >
+        Loading
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Tabs & Charts local government Finance Wakiso 1`] = `
-<p>
-  loading ...
-</p>
+<div
+  className="ui segment"
+  style={
+    Object {
+      "height": "550px",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="ui active transition visible inverted dimmer"
+    onClick={[Function]}
+  >
+    <div
+      className="content"
+    >
+      <div
+        className="ui text loader"
+      >
+        Loading
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Templates  Where are the poor 1`] = `
@@ -16350,11 +16443,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -16372,11 +16465,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -16505,11 +16598,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -16527,11 +16620,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -16549,11 +16642,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -16571,11 +16664,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -16593,11 +16686,11 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -17155,7 +17248,9 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -17163,6 +17258,13 @@ exports[`Storyshots Templates  Where are the poor 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -17272,11 +17374,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -17294,11 +17396,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -17427,11 +17529,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -17449,11 +17551,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -17471,11 +17573,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -17493,11 +17595,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -17515,11 +17617,11 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -17773,31 +17875,28 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
       }
     }
   >
-    
-    <div>
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "height": "300px",
+          "width": "100%",
+        }
+      }
+    >
       <div
-        className="css-hu3x4g"
+        className="ui active transition visible inverted dimmer"
+        onClick={[Function]}
       >
         <div
-          className="ui tiny active progress"
-          data-percent={0}
+          className="content"
         >
           <div
-            className="bar"
-            style={
-              Object {
-                "width": "0%",
-              }
-            }
-          />
+            className="ui text loader"
+          >
+            Loading
+          </div>
         </div>
-      </div>
-      <div
-        className="css-x5a8zc"
-      >
-        <p>
-          Loading...
-        </p>
       </div>
     </div>
     <div
@@ -17813,14 +17912,14 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
             className="css-p5hcfq"
             src="/flags/svg/AT.svg"
           />
-           EXPLORE 
+           
+          EXPLORE 
           <span>
             DOMESTIC AND INTERNATIONAL RESOURCES
           </span>
         </h2>
       </div>
     </div>
-    
     <div
       className="css-7q1pau"
     >
@@ -18535,7 +18634,9 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -18543,6 +18644,13 @@ exports[`Storyshots Templates Country Profile Austria 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -18652,11 +18760,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -18674,11 +18782,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -18807,11 +18915,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -18829,11 +18937,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -18851,11 +18959,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -18873,11 +18981,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -18895,11 +19003,11 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -19153,31 +19261,28 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
       }
     }
   >
-    
-    <div>
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "height": "300px",
+          "width": "100%",
+        }
+      }
+    >
       <div
-        className="css-hu3x4g"
+        className="ui active transition visible inverted dimmer"
+        onClick={[Function]}
       >
         <div
-          className="ui tiny active progress"
-          data-percent={0}
+          className="content"
         >
           <div
-            className="bar"
-            style={
-              Object {
-                "width": "0%",
-              }
-            }
-          />
+            className="ui text loader"
+          >
+            Loading
+          </div>
         </div>
-      </div>
-      <div
-        className="css-x5a8zc"
-      >
-        <p>
-          Loading...
-        </p>
       </div>
     </div>
     <div
@@ -19193,14 +19298,14 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
             className="css-p5hcfq"
             src="/flags/svg/RW.svg"
           />
-           EXPLORE 
+           
+          EXPLORE 
           <span>
             DOMESTIC AND INTERNATIONAL RESOURCES
           </span>
         </h2>
       </div>
     </div>
-    
     <div
       className="css-7q1pau"
     >
@@ -19915,7 +20020,9 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -19923,6 +20030,13 @@ exports[`Storyshots Templates Country Profile rwanda 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -20032,11 +20146,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -20054,11 +20168,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -20187,11 +20301,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -20209,11 +20323,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -20231,11 +20345,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -20253,11 +20367,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -20275,11 +20389,11 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -20533,31 +20647,28 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
       }
     }
   >
-    
-    <div>
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "height": "300px",
+          "width": "100%",
+        }
+      }
+    >
       <div
-        className="css-hu3x4g"
+        className="ui active transition visible inverted dimmer"
+        onClick={[Function]}
       >
         <div
-          className="ui tiny active progress"
-          data-percent={0}
+          className="content"
         >
           <div
-            className="bar"
-            style={
-              Object {
-                "width": "0%",
-              }
-            }
-          />
+            className="ui text loader"
+          >
+            Loading
+          </div>
         </div>
-      </div>
-      <div
-        className="css-x5a8zc"
-      >
-        <p>
-          Loading...
-        </p>
       </div>
     </div>
     <div
@@ -20573,14 +20684,14 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
             className="css-p5hcfq"
             src="/flags/svg/UG.svg"
           />
-           EXPLORE 
+           
+          EXPLORE 
           <span>
             DOMESTIC AND INTERNATIONAL RESOURCES
           </span>
         </h2>
       </div>
     </div>
-    
     <div
       className="css-7q1pau"
     >
@@ -21295,7 +21406,9 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -21303,6 +21416,13 @@ exports[`Storyshots Templates Country Profile uganda 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -21412,11 +21532,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -21434,11 +21554,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -21567,11 +21687,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -21589,11 +21709,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -21611,11 +21731,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -21633,11 +21753,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -21655,11 +21775,11 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -24368,7 +24488,9 @@ exports[`Storyshots Templates Country Profiles 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -24376,6 +24498,13 @@ exports[`Storyshots Templates Country Profiles 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -24485,11 +24614,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -24507,11 +24636,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -24640,11 +24769,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -24662,11 +24791,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -24684,11 +24813,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -24706,11 +24835,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -24728,11 +24857,11 @@ exports[`Storyshots Templates Front Page 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -27635,7 +27764,9 @@ exports[`Storyshots Templates Front Page 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -27643,6 +27774,13 @@ exports[`Storyshots Templates Front Page 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -27752,11 +27890,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -27774,11 +27912,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -27907,11 +28045,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -27929,11 +28067,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -27951,11 +28089,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -27973,11 +28111,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -27995,11 +28133,11 @@ exports[`Storyshots Templates Main Generic 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -28461,7 +28599,9 @@ exports[`Storyshots Templates Main Generic 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -28469,6 +28609,13 @@ exports[`Storyshots Templates Main Generic 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -28578,11 +28725,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -28600,11 +28747,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -28733,11 +28880,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -28755,11 +28902,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -28777,11 +28924,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -28799,11 +28946,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -28821,11 +28968,11 @@ exports[`Storyshots Templates Methodology 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -30255,7 +30402,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices
+                      Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices
                     </td>
                     <td
                       className=""
@@ -30265,7 +30412,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     <td
                       className=""
                     >
-                      constant 2015 US$
+                      constant 2016 US$
                     </td>
                     <td
                       className=""
@@ -30281,7 +30428,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                     >
                       <span>
                         <a
-                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015.zip?raw=true"
+                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant.zip?raw=true"
                           rel="noopener"
                           target="__blank"
                         >
@@ -30292,7 +30439,7 @@ exports[`Storyshots Templates Methodology 1`] = `
                           ZIP
                         </a>
                         <a
-                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015"
+                          href="https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant"
                           rel="noopener"
                           target="__blank"
                         >
@@ -32218,7 +32365,9 @@ exports[`Storyshots Templates Methodology 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -32226,6 +32375,13 @@ exports[`Storyshots Templates Methodology 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -32335,11 +32491,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -32357,11 +32513,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -32490,11 +32646,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -32512,11 +32668,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -32534,11 +32690,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -32556,11 +32712,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -32578,11 +32734,11 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -33152,7 +33308,9 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -33160,6 +33318,13 @@ exports[`Storyshots Templates Multilateral Profiles 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -33269,11 +33434,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -33291,11 +33456,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -33424,11 +33589,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -33446,11 +33611,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -33468,11 +33633,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -33490,11 +33655,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -33512,11 +33677,11 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -34006,7 +34171,9 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -34014,6 +34181,13 @@ exports[`Storyshots Templates ODA-donor bubble chart 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -34123,11 +34297,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -34145,11 +34319,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -34278,11 +34452,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -34300,11 +34474,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -34322,11 +34496,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -34344,11 +34518,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -34366,11 +34540,11 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -34860,7 +35034,9 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -34868,6 +35044,13 @@ exports[`Storyshots Templates Poverty bubble chart 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -34977,11 +35160,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -34999,11 +35182,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -35132,11 +35315,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -35154,11 +35337,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -35176,11 +35359,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -35198,11 +35381,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -35220,11 +35403,11 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -35479,30 +35662,28 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
     }
   >
     
-    <div>
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "height": "300px",
+          "width": "100%",
+        }
+      }
+    >
       <div
-        className="css-hu3x4g"
+        className="ui active transition visible inverted dimmer"
+        onClick={[Function]}
       >
         <div
-          className="ui tiny active progress"
-          data-percent={0}
+          className="content"
         >
           <div
-            className="bar"
-            style={
-              Object {
-                "width": "0%",
-              }
-            }
-          />
+            className="ui text loader"
+          >
+            Loading
+          </div>
         </div>
-      </div>
-      <div
-        className="css-x5a8zc"
-      >
-        <p>
-          Loading...
-        </p>
       </div>
     </div>
     <div
@@ -38253,7 +38434,9 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -38261,6 +38444,13 @@ exports[`Storyshots Templates Regional Profiles Nairobi 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -38370,11 +38560,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -38392,11 +38582,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -38525,11 +38715,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -38547,11 +38737,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -38569,11 +38759,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -38591,11 +38781,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -38613,11 +38803,11 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -38872,30 +39062,28 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
     }
   >
     
-    <div>
+    <div
+      className="ui segment"
+      style={
+        Object {
+          "height": "300px",
+          "width": "100%",
+        }
+      }
+    >
       <div
-        className="css-hu3x4g"
+        className="ui active transition visible inverted dimmer"
+        onClick={[Function]}
       >
         <div
-          className="ui tiny active progress"
-          data-percent={0}
+          className="content"
         >
           <div
-            className="bar"
-            style={
-              Object {
-                "width": "0%",
-              }
-            }
-          />
+            className="ui text loader"
+          >
+            Loading
+          </div>
         </div>
-      </div>
-      <div
-        className="css-x5a8zc"
-      >
-        <p>
-          Loading...
-        </p>
       </div>
     </div>
     <div
@@ -43096,7 +43284,9 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -43104,6 +43294,13 @@ exports[`Storyshots Templates Regional Profiles Wakiso 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -43213,11 +43410,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -43235,11 +43432,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -43368,11 +43565,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -43390,11 +43587,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -43412,11 +43609,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -43434,11 +43631,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -43456,11 +43653,11 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -44464,7 +44661,9 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -44472,6 +44671,13 @@ exports[`Storyshots Templates Spot Light Kenya 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -44581,11 +44787,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -44603,11 +44809,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -44736,11 +44942,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -44758,11 +44964,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -44780,11 +44986,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -44802,11 +45008,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -44824,11 +45030,11 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -46155,7 +46361,9 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -46163,6 +46371,13 @@ exports[`Storyshots Templates Spot Light Uganda 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -46272,11 +46487,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -46294,11 +46509,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -46427,11 +46642,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -46449,11 +46664,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -46471,11 +46686,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -46493,11 +46708,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -46515,11 +46730,11 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -46991,7 +47206,9 @@ exports[`Storyshots Templates UNDP profile 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -46999,6 +47216,13 @@ exports[`Storyshots Templates UNDP profile 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -47108,11 +47332,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -47130,11 +47354,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -47263,11 +47487,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -47285,11 +47509,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -47307,11 +47531,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -47329,11 +47553,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -47351,11 +47575,11 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -48119,7 +48343,9 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -48127,6 +48353,13 @@ exports[`Storyshots Templates Unbundling Aid ODA 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -48236,11 +48469,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -48258,11 +48491,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -48391,11 +48624,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -48413,11 +48646,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -48435,11 +48668,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -48457,11 +48690,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -48479,11 +48712,11 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -49247,7 +49480,9 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -49255,6 +49490,13 @@ exports[`Storyshots Templates Unbundling Aid OOF 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -49364,11 +49606,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Country Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Country Profiles
                         </a>
                       </div>
                     </div>
@@ -49386,11 +49628,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Multilateral Profiles
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Multilateral Profiles
                         </a>
                       </div>
                     </div>
@@ -49519,11 +49761,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Unbundling other official flows
                           <i
                             aria-hidden="true"
                             className="barcode icon"
                           />
+                          Unbundling other official flows
                         </a>
                       </div>
                     </div>
@@ -49541,11 +49783,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Where are the poor and where will they be?
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Where are the poor and where will they be?
                         </a>
                       </div>
                     </div>
@@ -49563,11 +49805,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Who are the global P20
                           <i
                             aria-hidden="true"
                             className="users icon"
                           />
+                          Who are the global P20
                         </a>
                       </div>
                     </div>
@@ -49585,11 +49827,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Different providers, different priorities
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Different providers, different priorities
                         </a>
                       </div>
                     </div>
@@ -49607,11 +49849,11 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                           onClick={[Function]}
                           role="link"
                         >
-                          Are domestic public resources able to meet the needs of the poorest people?
                           <i
                             aria-hidden="true"
                             className="area graph icon"
                           />
+                          Are domestic public resources able to meet the needs of the poorest people?
                         </a>
                       </div>
                     </div>
@@ -50100,7 +50342,9 @@ exports[`Storyshots Templates who are the global P20 1`] = `
             className="css-f051qe"
           >
             <p>
-              © Development Initiatives 2017. Development Initiatives is the trading name of DI International Ltd. Registered in England and Wales No. 05802543. Development Initiatives Poverty Research is the not-for-profit partner of DI International Ltd. Registered in England and Wales No. 06368740. Read our 
+              © Development Initiatives 2018. Development Initiatives is the trading name of Development Initiatives Poverty Research Ltd, registered in England and Wales, Company No. 06368740;
+              <br />
+              DI International Ltd, registered in England and Wales, Company No. 5802543, Registered Address: North Quay House, Quay Side, Temple Back, Bristol, BS1 6FL, UK; and Development Initiatives Poverty Research America Inc. (a 501(C)3 company registered in the state of Delaware with the registration number 5737757), Registered Address: 1209 Orange Street, Wilmington, New Castle County, Delaware 19801. Read our 
                
               <a
                 href="http://devinit.org/wp-content/uploads/2017/01/privacy_and_data_policy.pdf"
@@ -50108,6 +50352,13 @@ exports[`Storyshots Templates who are the global P20 1`] = `
                 privacy policy
               </a>
               .
+              <a
+                href="http://devinit.org/wp-content/uploads/2018/07/Modern-slavery-and-human-trafficking-statement.pdf"
+                target="_blank"
+              >
+                 
+                 View our Modern slavery and human trafficking statement.
+              </a>
             </p>
           </div>
         </div>
@@ -52550,14 +52801,14 @@ exports[`Storyshots Unbundling Aid ToolBar 1`] = `
                           Health
                         </option>
                         <option
-                          value="governance-security-and-civil-society"
-                        >
-                          Governance, security and civil society
-                        </option>
-                        <option
                           value="other-social-services"
                         >
                           Other social services
+                        </option>
+                        <option
+                          value="governance-security-and-civil-society"
+                        >
+                          Governance, security and civil society
                         </option>
                         <option
                           value="debt-relief"
@@ -52687,6 +52938,11 @@ exports[`Storyshots Unbundling Aid ToolBar 1`] = `
                           Technical cooperation
                         </option>
                         <option
+                          value="gpgs-nngos"
+                        >
+                          Global Initiatives & NNGOs
+                        </option>
+                        <option
                           value="cash-grant"
                         >
                           Cash grant
@@ -52695,11 +52951,6 @@ exports[`Storyshots Unbundling Aid ToolBar 1`] = `
                           value="commodities-food"
                         >
                           Commodities & Food
-                        </option>
-                        <option
-                          value="gpgs-nngos"
-                        >
-                          Global Initiatives & NNGOs
                         </option>
                       </select>
                     </div>
