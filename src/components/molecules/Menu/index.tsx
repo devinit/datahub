@@ -18,7 +18,8 @@ const MenuContainer = glamorous.div({
   width: '100%',
   zIndex: 450,
   overflow: 'visible',
-  boxShadow: '0 0 16px rgba(0,0,0,.3)' // TODO:add to color variables
+  boxShadow: '0 0 16px rgba(0,0,0,.3)', // TODO:add to color variables
+  height: '57px'
 });
 
 export type Props = Menu & {

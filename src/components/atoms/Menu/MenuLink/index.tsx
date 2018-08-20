@@ -1,10 +1,10 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
 import { Container, Icon } from 'semantic-ui-react';
-import { white, redHeaderColor, black } from '../../../theme/semantic';
+import { black, redHeaderColor, white } from '../../../theme/semantic';
 import { NavLink } from '../../Link';
 
-export interface Props  {
+export interface Props {
   children?: React.ReactChild | null;
   hasSubMenu: boolean;
   menu: string;
@@ -24,7 +24,7 @@ const LocalContainer = glamorous.div<{hasSubMenu: boolean}>(
     'display': 'inline-table',
     'cursor': 'pointer',
     '& .item': {
-      marginBottom: '12px',
+      marginBottom: '12px'
     },
     '&  i.menu-icon': {
       display: 'block',
@@ -37,32 +37,32 @@ const LocalContainer = glamorous.div<{hasSubMenu: boolean}>(
       textAlign: 'center',
       transform: 'translate(0,0)',
       transition: 'transform .3s cubic-bezier(.215,.61,.355,1)',
-      transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)',
+      transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
     },
     ':hover i.menu-icon': {
-      transform: 'translate(0,180%)',
+      transform: 'translate(0,180%)'
     },
     '& .menu-text': {
       transform: 'translate(0,0)',
       transition: 'transform .3s cubic-bezier(.215,.61,.355,1)',
-      transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)',
+      transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)'
     },
     ':hover .menu-text': {
-      transform: 'translate(0,80%)',
+      transform: 'translate(0,80%)'
     },
     ':hover div': {
       opacity: 1,
-      visibility: 'visible',
+      visibility: 'visible'
     },
     ':hover': {
-      background: redHeaderColor,
-    },
+      background: redHeaderColor
+    }
   },
   props => ({
     ':hover .menu-text': {
-      transform: props.hasSubMenu ? 'translate(0,50%)' : '',
-    },
-  }),
+      transform: props.hasSubMenu ? 'translate(0,50%)' : ''
+    }
+  })
 );
 
 const Drawer = glamorous.div({
@@ -82,8 +82,8 @@ const Drawer = glamorous.div({
   'transform': 'translate(0,10px)',
   'boxShadow': '0 4px 6px rgba(0,0,0,.3)',
   '& i': {
-    width: '1.18em',
-  },
+    width: '1.18em'
+  }
 });
 const ListContainer = glamorous.ul({
   columnCount: 2,
@@ -94,26 +94,29 @@ const ListContainer = glamorous.ul({
   fontSize: '1.1em'
 });
 
-export default ({ children, hasSubMenu, menu, link}: Props) => {
+export default ({ children, hasSubMenu, menu, link }: Props) => {
   return (
-    <LocalContainer hasSubMenu={hasSubMenu}>
-      {hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : ''}
-       <a href={link}>
+    <LocalContainer hasSubMenu={ hasSubMenu }>
+      { hasSubMenu ? <Icon name="pie graph" className="menu-icon" /> : '' }
+      <a href={ link }>
         <NavLink>
           <div className="menu-text">
-            {menu}
+            { menu }
           </div>
         </NavLink>
       </a>
-      {hasSubMenu
-        ? <Drawer>
-          <Container>
-            <ListContainer>
-              {children}
-            </ListContainer>
-          </Container>
-        </Drawer>
-        : ''}
+      {
+        hasSubMenu
+          ?
+          <Drawer>
+            <Container>
+              <ListContainer>
+                { children }
+              </ListContainer>
+            </Container>
+          </Drawer>
+          : ''
+      }
     </LocalContainer>
   );
 };

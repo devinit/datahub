@@ -1,9 +1,9 @@
 import * as React from 'react';
-import glamorous, {GlamorousComponent} from 'glamorous';
-import { white, redHeaderColor, midWhite, lightBlack } from '../../../theme/semantic';
-import {LinkState} from 'next/link';
+import glamorous, { GlamorousComponent } from 'glamorous';
+import { lightBlack, midWhite, redHeaderColor, white } from '../../../theme/semantic';
+import { LinkState } from 'next/link';
 
-export interface Props  {
+export interface Props {
   children: React.ReactChild[];
   nextLink?: React.ComponentClass<LinkState>;
   selected?: number;
@@ -29,11 +29,11 @@ export const Navigation: GlamorousComponent<any, any> = glamorous.nav<{open?: bo
       display: 'block',
       marginBottom: '2px',
       height: '4em',
-      overflow: 'hidden',
+      overflow: 'hidden'
     },
     '& li.active': {
       height: 'auto',
-      overflow: 'vissible',
+      overflow: 'vissible'
     },
     '& .navigation__item-title': {
       display: 'block',
@@ -42,69 +42,80 @@ export const Navigation: GlamorousComponent<any, any> = glamorous.nav<{open?: bo
       fontWeight: '700',
       background: midWhite,
       cursor: 'pointer',
-      color: lightBlack,
-    },
+      color: lightBlack
+    }
   },
   props => ({
-    transform: props.open ? 'translate(0,0)' : 'translate(100%,0)',
-  }),
+    transform: props.open ? 'translate(0,0)' : 'translate(100%,0)'
+  })
 );
 
 class MobileMenu extends React.Component<Props> {
   public static defaultProps = {
-    selected: 0,
+    selected: 0
   };
   public state: {
-    selected?: any,
+    selected?: any
   };
 
   constructor(props: Props) {
     super(props);
     this.state = {
-      selected: props.selected,
+      selected: props.selected
     };
   }
-  public resetSelected() {
-    this.setState({ selected: null });
+
+  render() {
+    return (
+      <Navigation open={ this.props.open }>
+        { this.renderContent() }
+      </Navigation>
+    );
   }
-  public handleClick(child: any, index: number) {
-    const that = this;
-    return (event: any) => {
-      event.preventDefault();
-      if (child.props.hasSub) that.setState({ selected: index});
-      if (that.state.selected === index) that.resetSelected();
-    };
-  }
-  public _renderContent() {
+
+  renderContent() {
     const items = (child, index) => {
       const activeClass = this.state.selected === index ? 'active' : '';
+
       return (
         <li
-          key={index}
-          className={`navigation__item ${activeClass}`}
-          onClick={this.handleClick(child, index)}
+          key={ index }
+          className={ `navigation__item ${activeClass}` }
+          onClick={ this.handleClick(child, index) }
         >
           <span className="navigation__item-title small">
             {
-              this.props.nextLink ?
-               <this.props.nextLink href={child.props.url || ''} prefetch>
-                <a role="link">{child.props.label}</a>
+              this.props.nextLink
+                ?
+                <this.props.nextLink href={ child.props.menu.link || '' } prefetch>
+                  <a role="link">{ child.props.menu.name }</a>
                 </this.props.nextLink>
-              : <a href={child.props.url || '#'}>{child.props.label}</a>
+                :
+                <a href={ child.props.menu.link || '#' }>{ child.props.menu.name }</a>
           }
           </span>
-          {child}
+          { child }
         </li>
       );
     };
+
     return this.props.children.map(items);
   }
-  public render() {
-    return (
-      <Navigation open={this.props.open}>
-        {this._renderContent()}
-      </Navigation>
-    );
+
+  resetSelected() {
+    this.setState({ selected: null });
+  }
+
+  handleClick(child: any, index: number) {
+    return (event: any) => {
+      if (child.props.menu.children) {
+        if (this.state.selected !== index) {
+          event.preventDefault();
+        }
+        this.setState({ selected: index });
+      }
+      if (this.state.selected === index) { this.resetSelected(); }
+    };
   }
 }
 

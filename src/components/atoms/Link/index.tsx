@@ -1,14 +1,14 @@
 import glamorous from 'glamorous';
-import { white, lighterGrey, grey, black, red} from '../../theme/semantic';
+import { black, grey, lighterGrey, red, white } from '../../theme/semantic';
 import { medium } from '../../theme';
-import {GlamorousComponentT} from '../../types';
+import { GlamorousComponentT } from '../../types';
 
 export const FooterLink: GlamorousComponentT = glamorous.a({
   fontSize: medium,
   display: 'block',
   color: lighterGrey,
   paddingBottom: '.5em',
-  paddingTop: '.5em',
+  paddingTop: '.5em'
 });
 
 export const NavLink: GlamorousComponentT = glamorous.div({
@@ -17,16 +17,16 @@ export const NavLink: GlamorousComponentT = glamorous.div({
   'textAlign': 'center',
   'transition': 'all .3s',
   ':hover': {
-    color: white,
-  },
+    color: white
+  }
 });
 export const BodyLink: GlamorousComponentT = glamorous.a({
   'color': red,
   'fontWeight': 500,
   'cursor': 'pointer',
   ':hover': {
-    color: red,
-  },
+    color: red
+  }
 });
 export const SocialMediaLink: GlamorousComponentT = glamorous.a({
   display: 'inline-block',
@@ -41,5 +41,5 @@ export const SocialMediaLink: GlamorousComponentT = glamorous.a({
   textAlign: 'center',
   boxSizing: 'border-box',
   paddingLeft: '3px',
-  marginLeft: '5px',
+  marginLeft: '5px'
 });
