@@ -2,7 +2,7 @@ import * as React from 'react';
 import glamorous from 'glamorous';
 import { Icon } from 'semantic-ui-react';
 
-export interface Props  {
+export interface Props {
   visible: boolean;
   closeHandler?: (event: any) => void;
   bottom?: string;
@@ -16,7 +16,7 @@ const CloseIcon = glamorous.a({
   top: '20px',
   zIndex: 100,
   color: '#fff',
-  fontSize: '1.5em',
+  fontSize: '1.5em'
 });
 const Overlay = glamorous.div<{visible: boolean; bottom?: string; top?: string}>(
   {
@@ -35,25 +35,25 @@ const Overlay = glamorous.div<{visible: boolean; bottom?: string; top?: string}>
   props => ({
     display: props.visible ? 'block' : 'none',
     bottom: props.bottom || '0px',
-    top: props.top || '-10%',
-  }),
+    top: props.top || '-10%'
+  })
 );
 const Container = glamorous.div({
   padding: '0 20px',
-  fontSize: '1.1em',
+  fontSize: '1.1em'
 });
 
 const TourContainer = (props: Props) =>
-  (<Overlay visible={props.visible} bottom={props.bottom} top={props.top}>
+  (<Overlay visible={ props.visible } bottom={ props.bottom } top={ props.top }>
     <Container>
       <CloseIcon>
         <Icon
           name="close"
           // tslint:disable-next-line:jsx-no-lambda
-          onClick={event => (props.closeHandler ? props.closeHandler(event) : false)}
+          onClick={ event => (props.closeHandler ? props.closeHandler(event) : false) }
         />
       </CloseIcon>
-      {props.children}
+      { props.children }
     </Container>
   </Overlay>);
 export default TourContainer;

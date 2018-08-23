@@ -3,7 +3,7 @@ import { rehydrate } from 'glamor';
 import withData from '../src/components/WithData';
 import App from '../src/components/templates/UnbundlingAid';
 
-interface Props  {
+interface Props {
   url: { pathname: string };
 }
 
@@ -12,9 +12,11 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) => {
-  return (<App
-      pathname={props.url.pathname}
+  return (
+    <App
+      pathname={ props.url.pathname }
       aidType="oda"
       title="Unbundling aid"
-  />);
+    />
+  );
 });

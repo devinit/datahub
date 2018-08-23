@@ -1,38 +1,38 @@
-import * as React from 'react';
 import glamorous from 'glamorous';
-import { Container, Button, Header, Grid, Icon } from 'semantic-ui-react';
-import UnbundlingAid from '../../organisms/UnbundlingAid';
-import SocialMediaBar from '../../molecules/SocialMediaBar';
-import {ToolTip} from '../../molecules/ToolTip';
-import Generic from '../Generic';
-import pageData from '../../pageData/data';
+import * as React from 'react';
+import { Button, Container, Grid, Header, Icon } from 'semantic-ui-react';
 import ErrorBoundary from '../../molecules/ErrorBoundary';
-import {getUnbundlingAidPageData} from '../../pageData';
+import SocialMediaBar from '../../molecules/SocialMediaBar';
+import { ToolTip } from '../../molecules/ToolTip';
+import UnbundlingAid from '../../organisms/UnbundlingAid';
+import { getUnbundlingAidPageData } from '../../pageData';
+import pageData from '../../pageData/data';
+import Generic from '../Generic';
 
 const headerStyles = {
   paddingTop: '4em',
-  paddingBottom: '4em',
+  paddingBottom: '4em'
 };
 const HeaderContainer = glamorous.div(headerStyles);
 const TopHeader = glamorous.div({
   fontSize: '1.4em',
-  marginBottom: '0.5em',
+  marginBottom: '0.5em'
 });
 const BottomHeader = glamorous.div({
   'fontSize': '1.4em',
   '& .button': {
-    marginLeft: '1em',
+    marginLeft: '1em'
   },
   '& i': {
-    fontSize: '0.8em',
-  },
+    fontSize: '0.8em'
+  }
 });
 const TextContainer = glamorous.div({
   marginTop: '2em',
-  marginBottom: '2em',
+  marginBottom: '2em'
 });
 
-interface Props  {
+interface Props {
   title: string;
   pathname: string;
   aidType: string;
@@ -41,38 +41,34 @@ interface Props  {
 // TODO: start year shouldnt be hardcoded @allan
 export default class extends React.Component<Props> {
   public state = { tourVisible: false };
-  public showTour = () => {
-    this.setState({
-      tourVisible: true,
-    });
-  }
-  public render() {
+
+  render() {
     const props = this.props;
+
     return (
       <Generic>
         <Container>
           <HeaderContainer>
             <Header as="h1" textAlign="center">
               <Header.Content>
-                <TopHeader>{props.title}</TopHeader>
+                <TopHeader>{ props.title }</TopHeader>
                 <Header.Subheader>
                   <ErrorBoundary>
                     <BottomHeader>
-                      Explore and compare funding priorities for {}
-                      {props.aidType === 'oda'
-                        ? 'official development assistance'
-                        : 'other official flows (OOFs)'}
-                      <ToolTip color={'black'} trigger={<Icon name="info circle" />}>
-                        {props.aidType === 'oda' ? (
-                          ''
-                        ) : (
-                          <p style={{ marginBottom: '0.5em' }}>
-                            {pageData.unbundlingAid[1].narrative}
-                          </p>
-                        )}
-                        {getUnbundlingAidPageData(props.aidType)}
+                      Explore and compare funding priorities for { }
+                      { props.aidType === 'oda' ? 'official development assistance' : 'other official flows (OOFs)' }
+                      <ToolTip color={ 'black' } trigger={ <Icon name="info circle" /> }>
+                        {
+                          props.aidType === 'oda'
+                            ? ''
+                            :
+                            <p style={ { marginBottom: '0.5em' } }>
+                              { pageData.unbundlingAid[1].narrative }
+                            </p>
+                        }
+                        { getUnbundlingAidPageData(props.aidType) }
                       </ToolTip>
-                      <Button onClick={this.showTour} content="Using This Visualization" />
+                      <Button onClick={ this.showTour } content="Using This Visualization" />
                     </BottomHeader>
                   </ErrorBoundary>
                 </Header.Subheader>
@@ -81,32 +77,33 @@ export default class extends React.Component<Props> {
           </HeaderContainer>
         </Container>
         <UnbundlingAid
-          tourVisible={this.state.tourVisible}
-          aidType={props.aidType}
+          tourVisible={ this.state.tourVisible }
+          aidType={ props.aidType }
         />
-        {process.env.NODE_ENV !== 'test' ? (
-          <section style={{ paddingTop: '2em' }}>
-            <SocialMediaBar />
-          </section>
-        ) : (
-          ''
-        )}
+        {
+          process.env.NODE_ENV !== 'test'
+            ?
+            <section style={ { paddingTop: '2em' } }>
+              <SocialMediaBar />
+            </section>
+            : ''
+        }
         <TextContainer>
           <Container>
             <Grid>
               <Grid.Row>
                 <Grid.Column width="10">
                   <Header as="h1">Source</Header>
-                  <Header as="h2" style={{ fontWeight: 100 }}>
-                      {pageData.unbundlingAid[3].title}
+                  <Header as="h2" style={ { fontWeight: 100 } }>
+                      { pageData.unbundlingAid[3].title }
                   </Header>
                   <p>
-                    {pageData.unbundlingAid[4].narrative}
+                    { pageData.unbundlingAid[4].narrative }
                   </p>
                 </Grid.Column>
                 <Grid.Column width="6">
-                  <Header as="h1">{pageData.unbundlingAid[5].title}</Header>
-                  <p>{pageData.unbundlingAid[6].narrative}</p>
+                  <Header as="h1">{ pageData.unbundlingAid[5].title }</Header>
+                  <p>{ pageData.unbundlingAid[6].narrative }</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -114,5 +111,11 @@ export default class extends React.Component<Props> {
         </TextContainer>
       </Generic>
     );
+  }
+
+  private showTour = () => {
+    this.setState({
+      tourVisible: true
+    });
   }
 }

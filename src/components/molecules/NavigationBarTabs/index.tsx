@@ -1,6 +1,8 @@
 import { Div } from 'glamorous';
+import * as introJS from 'intro.js';
 import * as React from 'react';
 import { Container, SemanticTEXTALIGNMENTS } from 'semantic-ui-react';
+import { updateAnalytics } from '../../../utils/analytics';
 import { lighterGrey } from '../../theme/semantic';
 import { NavBarItem } from '../../types';
 import LoadingBar from '../LoadingBar';
@@ -9,7 +11,7 @@ import TourContainer from '../TourContainer';
 import NavTabsItems, { Option } from './NavTabsItems';
 import { TabLink } from './TabLink';
 import { TabsContainer } from './TabsContainer';
-import { updateAnalytics } from '../../../utils/analytics';
+import { Intro } from '../../atoms/Intro';
 
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => T;
 export type ChangeLoadingStatus<L> = (loading: boolean) => L;
@@ -63,9 +65,11 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
         <div>
           <Div background={ lighterGrey }>
             <Container textAlign={ this.props.textAlign || 'left' }>
-            <TabsContainer>
-              { this.renderTitles() }
-            </TabsContainer>
+            <Intro step={ 1 } intro="Change theme">
+              <TabsContainer>
+                { this.renderTitles() }
+              </TabsContainer>
+            </Intro>
             </Container>
           </Div>
           { this.renderContent() }
@@ -74,18 +78,11 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
           bottom={ this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '-22%' : '0px' }
           top={ this.props.isForSpotlightsUg || this.props.isForSpotlightsKe ? '25%' : '-50px' }
           visible={ this.state.tourVisibility }
-          closeHandler={ this.handleUsingThisViz }
         >
           <VisualizationTour entity={ entity } />
         </TourContainer>
       </section>
     );
-  }
-
-  componentDidMount() {
-    window.onpopstate = event => {
-      console.log('Poped', event);
-    };
   }
 
   componentWillReceiveProps(nextProps: Props<T, L>) {
@@ -98,7 +95,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
     }
   }
 
-  renderContent() {
+  private renderContent() {
     const selectedNavItem = this.props.navBarItems[this.state.selected];
     if (!selectedNavItem.indicators) {
       throw new Error('indicators missing in nav bar props');
@@ -123,7 +120,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
     );
   }
 
-  renderTitles() {
+  private renderTitles() {
     return this.props.navBarItems.map((navItem: NavBarItem, index: number) => {
       const activeClass = this.state.selected === index ? 'active' : '';
       if (!navItem.id || !navItem.name) {
@@ -193,10 +190,11 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
   }
 
   handleUsingThisViz = () => {
-    if (!this.state.tourVisibility) { return this.setState({ tourVisibility: true }); }
-    window.scrollTo(300, 0);
+    // if (!this.state.tourVisibility) { return this.setState({ tourVisibility: true }); }
+    // window.scrollTo(300, 0);
 
-    return this.setState({ tourVisibility: false });
+    // return this.setState({ tourVisibility: false });
+    introJS().start();
   }
 
   toolTipinfo = () => {
