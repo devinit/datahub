@@ -7,6 +7,7 @@ import { SectionHeader } from '../../../atoms/Header';
 import TreeChart from '../../../atoms/TreeChart';
 import UnbundlingAidToolBar from '../UnbundlingAidToolBar';
 import { KeyValue, Selections } from '../types';
+import { Intro } from '../../../atoms/Intro';
 
 export interface Props {
   loading: boolean;
@@ -170,54 +171,65 @@ class UnbundlingTreemap extends React.Component<Props, State> {
           onMove={ this.onMove }
           onChange={ this.updateValue }
         />
-        { this.props.error ?
-          <p>
-            An error occured while fetching required data,{ ' ' }
-            please change your select options or refresh page.
-            error: { this.props.error }
-          </p>
-          :
-          <Container>
-            <SectionHeader
-              color="rgb(238, 238, 238)"
-              style={ {
-                textTransform: 'none'
-              } }
-            >
-              { this.props.aidType === 'oda' ?
-                `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices` :
-                `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
-              }
-            </SectionHeader>
-            <div>
-              { this.props.loading
-                ? <Segment
-                  style={ {
-                    position: 'absolute',
-                    width: '100%',
-                    left: 0,
-                    right: 0,
-                    height: '36em',
-                    padding: 0,
-                    margin: 0
-                  } }
-                >
-                  <Dimmer style={ { backgroundColor: this.state.dimmerColor } } active>
-                    <Loader />
-                  </Dimmer>
-                </Segment>
-                : <TreeChart
-                  data={ this.props.bundles }
-                  height="36em"
-                  onClick={ this.onZoomIn }
-                /> }
-              { this.state.position <= 1
-                ? ''
-                : <Up className="up" onClick={ this.onZoomOut }>
-                  <Icon name={ 'chevron left' } size="big" inverted />
-                </Up> }
-            </div>
-          </Container>
+        {
+          this.props.error
+            ?
+            <p>
+              An error occured while fetching required data,{ ' ' }
+              please change your select options or refresh page.
+              error: { this.props.error }
+            </p>
+            :
+            <Container>
+              <SectionHeader color="rgb(238, 238, 238)" style={ { textTransform: 'none' } }>
+                {
+                  this.props.aidType === 'oda'
+                    ? `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
+                    : `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
+                }
+              </SectionHeader>
+              <Intro
+                step={ 3 }
+                intro={
+                  `Each cell in the tree map is sized by the volume of ODA it represents.
+                  The total amount of ODA being viewed at any time is given above the top left corner of the tree map`
+                }
+              >
+                {
+                  this.props.loading
+                    ?
+                    <Segment
+                      style={ {
+                        position: 'absolute',
+                        width: '100%',
+                        left: 0,
+                        right: 0,
+                        height: '36em',
+                        padding: 0,
+                        margin: 0
+                      } }
+                    >
+                    <Dimmer style={ { backgroundColor: this.state.dimmerColor } } active>
+                      <Loader />
+                    </Dimmer>
+                    </Segment>
+                    :
+                    <TreeChart
+                      data={ this.props.bundles }
+                      height="36em"
+                      onClick={ this.onZoomIn }
+                    />
+                  }
+                  {
+                    this.state.position <= 1
+                      ? ''
+                      :
+                      <Up className="up" onClick={ this.onZoomOut }>
+                        <Icon name={ 'chevron left' } size="big" inverted />
+                      </Up>
+                  }
+              </Intro>
+            </Container>
         }
 
       </div>

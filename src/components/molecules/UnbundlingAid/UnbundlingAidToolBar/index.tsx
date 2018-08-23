@@ -5,6 +5,7 @@ import { lightGrey, lighterGrey } from '../../../theme/semantic';
 import Select from '../UnbundlingAidSelect';
 import { KeyValue, Selections } from '../types';
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd';
+import { Intro } from '../../../atoms/Intro';
 
 export interface Props {
   aidType: string;
@@ -100,7 +101,15 @@ export default class ToolBar extends React.Component<Props, State> {
           <Grid>
               <Grid.Row>
                 <Grid.Column width={ 16 } textAlign={ textAlign || 'center' } verticalAlign="middle">
-                  <div>
+                  <Intro
+                    step={ 1 }
+                    intro={
+                      `<p>Drag and drop dimensions to view in a customised order</p>
+                      <p>Change the year</p>
+                      <p>Select a dimension to open a drop-down menu</p>
+                      <p>This sentence describes what the tree map is showing. The dimension in bold is the one youre currently viewing</p>` // tslint:disable-line
+                    }
+                  >
                     <DragDropContext onDragEnd={ this.onDragEnd }>
                       <Droppable droppableId="droppable" direction="horizontal">
                         { (provided) => (
@@ -148,7 +157,7 @@ export default class ToolBar extends React.Component<Props, State> {
                         ) }
                       </Droppable>
                     </DragDropContext>
-                  </div>
+                  </Intro>
                 </Grid.Column>
               </Grid.Row>
           </Grid>

@@ -1,15 +1,15 @@
-import TourContainer from '../../molecules/TourContainer';
-import * as React from 'react';
 import { Div } from 'glamorous';
+import * as React from 'react';
+import * as introJS from 'intro.js';
 import { ChildProps, graphql } from 'react-apollo';
-import { Selections, TotalODA, Treemap } from '../../molecules/UnbundlingAid';
-import UnbundlingAidTour from '../../atoms/UnbundlingAidTour';
 import { Button, Grid, Icon } from 'semantic-ui-react';
 import { UnbundlingAidDataQuery } from '../../gql-types';
 import ErrorBoundary from '../../molecules/ErrorBoundary';
-import QUERY from './query.graphql';
+import { Selections, TotalODA, Treemap } from '../../molecules/UnbundlingAid';
 import dataODA from './data-oda';
 import dataOOF from './data-oof';
+import QUERY from './query.graphql';
+import { Intro } from '../../atoms/Intro';
 /* tslint:disable no-nested-ternary */
 
 interface State {
@@ -135,25 +135,24 @@ export default class UnbundlingChart extends React.Component<Props, State> {
                 </Grid.Row>
               </Grid>
         }
-        <Button
-          style={ { position: 'absolute', right: '1em', top: '1.2em' } }
-          onClick={ this.toggleCompare }
-        >
-          {
-            this.state.compare
-              ?
-              <span>
-                Close <Icon name="close" />
-              </span>
-              :
-              <span>
-                Compare <Icon name="plus" />
-              </span>
-            }
-        </Button>
-        <TourContainer visible={ this.state.showTour } closeHandler={ this.closeTour }>
-          <UnbundlingAidTour aidType={ this.props.aidType === 'oda' ? 'ODA' : 'OOFs' } />
-        </TourContainer>
+          <Button
+            onClick={ this.toggleCompare }
+            style={ { position: 'absolute', right: '1em', top: '1.5em' } }
+          >
+            <Intro step={ 2 } intro="Click to view two tree maps side by side">
+            {
+              this.state.compare
+                ?
+                <span>
+                  Close <Icon name="close" />
+                </span>
+                :
+                <span>
+                  Compare <Icon name="plus" />
+                </span>
+              }
+            </Intro>
+          </Button>
       </Div>
     );
   }
@@ -163,6 +162,15 @@ export default class UnbundlingChart extends React.Component<Props, State> {
       showTreemap: this.state.showTreemap || props.tourVisible,
       showTour: props.tourVisible
     });
+  }
+
+  componentDidUpdate(_prevProps: Props, prevState: State) {
+    if (!prevState.showTour && this.state.showTour) {
+      introJS()
+        .start()
+        .oncomplete(() => this.setState({ showTour: false }))
+        .onexit(() => this.setState({ showTour: false }));
+    }
   }
 
   showTreemapHandler = () => {
