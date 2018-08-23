@@ -1,14 +1,14 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
-import {indexOf, init, last} from 'ramda';
+import { indexOf, init, last } from 'ramda';
 import { Dimmer, Icon, Loader, Segment } from 'semantic-ui-react';
 import { approximate } from '@devinit/prelude/lib/numbers';
 import { SectionHeader } from '../../../atoms/Header';
 import TreeChart from '../../../atoms/TreeChart';
 import UnbundlingAidToolBar from '../UnbundlingAidToolBar';
-import {Selections, KeyValue} from '../types';
+import { KeyValue, Selections } from '../types';
 
-export interface Props  {
+export interface Props {
   loading: boolean;
   error?: string;
   compact?: boolean;
@@ -23,7 +23,7 @@ export interface Props  {
 
 type SelectionKey = 'to' | 'from' | 'sectors' | 'channels' | 'forms' | 'years';
 
-export interface State  {
+export interface State {
   position: number;
   active: SelectionKey;
   keys: SelectionKey[];
@@ -45,12 +45,12 @@ const Container = glamorous.div({
     fontWeight: '600 !important'
   },
   '& .plot-label-value': {
-    fontSize: '1em !important',
+    fontSize: '1em !important'
   },
 
   '&:hover .up': {
-    display: 'block',
-  },
+    display: 'block'
+  }
 });
 
 const Up = glamorous.a({
@@ -63,8 +63,8 @@ const Up = glamorous.a({
   'background': 'rgba(0, 0, 0, 0.4)',
   'zIndex': 1000,
   '&:hover': {
-    background: 'rgba(0, 0, 0, 0.6)',
-  },
+    background: 'rgba(0, 0, 0, 0.6)'
+  }
 });
 
 class UnbundlingTreemap extends React.Component<Props, State> {
@@ -74,44 +74,41 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     from: 'from_di_id',
     sectors: 'sector',
     forms: 'bundle',
-    channels: 'channel',
+    channels: 'channel'
   };
+
+  // we use history to store subsquent states, which we can replay back to
+  public history: State[] = [];
   // adds new value to a key
-  public static addNewValue({key, value}: KeyValue, values: KeyValue[]): KeyValue[] {
+  public static addNewValue({ key, value }: KeyValue, values: KeyValue[]): KeyValue[] {
     const valuesItems = values.filter((item) => item.key !== key);
-    return value ? [...valuesItems, {key, value}] : valuesItems;
+
+    return value ? [ ...valuesItems, { key, value } ] : valuesItems;
   }
 
   public static getActiveOption = (position: number): string =>
     Object.keys(UnbundlingTreemap.groupers)[position]
 
-  // we use history to store subsquent states, which we can replay back to
-  public history: State[] = [];
-
   constructor(props: Props) {
     super(props);
 
     const position = 1;
-
     const keys = Object.keys(props.selections) as SelectionKey[];
-
-    const values = [{key: 'years', value: props.startYear.toString()}];
-
-    this.state = { position, keys, values, active: 'to'};
+    const values = [ { key: 'years', value: props.startYear.toString() } ];
+    this.state = { position, keys, values, active: 'to' };
     this.history.push(this.state);
   }
 
-  public onZoomIn = ({id, color}: Selected) => {
+  public onZoomIn = ({ id, color }: Selected) => {
     const position = this.state.position <= 1 ? 1 : this.state.position;
 
     if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
       // const newKey = this.state.keys[position + 1];
       // TODO: check if key already exists
       const currentActive = UnbundlingTreemap.getActiveOption(position);
-      const values =
-        UnbundlingTreemap.addNewValue({key: currentActive, value: id}, this.state.values);
+      const values = UnbundlingTreemap.addNewValue({ key: currentActive, value: id }, this.state.values);
       const active = UnbundlingTreemap.getActiveOption(position + 1) as SelectionKey;
-      this.setState({position: position + 1, values, dimmerColor: color, active});
+      this.setState({ position: position + 1, values, dimmerColor: color, active });
       this.history.push(this.state);
       this.fetch(active, values);
     } // else zoom out
@@ -122,38 +119,40 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     const newHistory = init(this.history);
     const latestHistory = last(newHistory);
     this.history = newHistory;
-    if (!latestHistory) return false;
+    if (!latestHistory) { return false; }
     this.setState(latestHistory);
     this.fetch(latestHistory.active, latestHistory.values);
   }
 
   public updateValue = (key: string) => (value: string) => {
     // making sure we dont have duplicates
-    const values = UnbundlingTreemap.addNewValue({key, value}, this.state.values);
+    const values = UnbundlingTreemap.addNewValue({ key, value }, this.state.values);
     const active = UnbundlingTreemap.getActiveOption(this.state.position) as SelectionKey;
     this.setState({ values, active });
     this.history.push(this.state);
     this.fetch(active, values);
   }
+
   public onMove = (key: string) => {
     const groupersKeys = Object.keys(UnbundlingTreemap.groupers) as SelectionKey[];
     const activeKeyPosition = indexOf(key, groupersKeys);
-    this.setState({position: activeKeyPosition, active: key as SelectionKey});
+    this.setState({ position: activeKeyPosition, active: key as SelectionKey });
     this.history.push(this.state);
+
     return this.fetch(key, this.state.values);
   }
+
   public fetch(active: string, values: KeyValue[]) {
-    const args = values
-      .reduce((all, {key, value}) => {
-        return {...all, [UnbundlingTreemap.groupers[key]]: value};
-      }, {});
+    const args = values.reduce((all, { key, value }) => {
+      return { ...all, [UnbundlingTreemap.groupers[key]]: value };
+    }, {});
     const parameters = {
       aidType: this.props.aidType,
       args: {
         aidType: this.props.aidType,
         groupBy: UnbundlingTreemap.groupers[active],
         ...args
-      },
+      }
     };
     this.props.refetch(parameters);
   }
@@ -162,61 +161,61 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     return (
       <div>
         <UnbundlingAidToolBar
-          aidType={this.props.aidType}
-          compact={this.props.compact}
-          position={this.state.position}
-          values={this.state.values}
-          toolBarOptions={this.props.selections}
+          aidType={ this.props.aidType }
+          compact={ this.props.compact }
+          position={ this.state.position }
+          values={ this.state.values }
+          toolBarOptions={ this.props.selections }
           // tslint:disable-next-line:jsx-no-lambda
-          onMove={this.onMove}
-          onChange={this.updateValue}
+          onMove={ this.onMove }
+          onChange={ this.updateValue }
         />
-        {this.props.error ?
+        { this.props.error ?
           <p>
-            An error occured while fetching required data,{' '}
+            An error occured while fetching required data,{ ' ' }
             please change your select options or refresh page.
-            error: {this.props.error}
+            error: { this.props.error }
           </p>
           :
           <Container>
             <SectionHeader
               color="rgb(238, 238, 238)"
-              style={{
+              style={ {
                 textTransform: 'none'
-              }}
+              } }
             >
-              {this.props.aidType === 'oda' ?
+              { this.props.aidType === 'oda' ?
                 `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices` :
                 `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
               }
             </SectionHeader>
             <div>
-              {this.props.loading
+              { this.props.loading
                 ? <Segment
-                  style={{
+                  style={ {
                     position: 'absolute',
                     width: '100%',
                     left: 0,
                     right: 0,
                     height: '36em',
                     padding: 0,
-                    margin: 0,
-                  }}
+                    margin: 0
+                  } }
                 >
-                  <Dimmer style={{ backgroundColor: this.state.dimmerColor }} active>
+                  <Dimmer style={ { backgroundColor: this.state.dimmerColor } } active>
                     <Loader />
                   </Dimmer>
                 </Segment>
                 : <TreeChart
-                  data={this.props.bundles}
+                  data={ this.props.bundles }
                   height="36em"
-                  onClick={this.onZoomIn}
-                />}
-              {this.state.position <= 1
+                  onClick={ this.onZoomIn }
+                /> }
+              { this.state.position <= 1
                 ? ''
-                : <Up className="up" onClick={this.onZoomOut}>
-                  <Icon name={'chevron left'} size="big" inverted />
-                </Up>}
+                : <Up className="up" onClick={ this.onZoomOut }>
+                  <Icon name={ 'chevron left' } size="big" inverted />
+                </Up> }
             </div>
           </Container>
         }
