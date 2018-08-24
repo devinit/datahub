@@ -1,9 +1,8 @@
-import { Grid, Button, Icon } from 'semantic-ui-react';
-import {printDiv as print} from '../../../utils';
-import * as React from 'react';
 import glamorous from 'glamorous';
-import ChartShare, {NoBackground} from '../ChartShare';
-import {StateToShare} from '../ChartShare';
+import * as React from 'react';
+import { Button, Grid, Icon } from 'semantic-ui-react';
+import { printDiv as print } from '../../../utils';
+import ChartShare, { NoBackground, StateToShare } from '../ChartShare';
 
 export type ViewFn = () => void;
 
@@ -17,7 +16,7 @@ const Wrapper = glamorous.div({
   '& i': {
     fontSize: '1.48em'
   },
-  ...NoBackground,
+  ...NoBackground
 });
 
 const onPrintClick = (divElem: string) => () => print(divElem);
@@ -25,21 +24,27 @@ const onPrintClick = (divElem: string) => () => print(divElem);
 const shouldVisualise = (onViewVisualization?: ViewFn) =>
   () => onViewVisualization ? onViewVisualization() : null;
 
-const ExportChart = ({printDiv, stateToShare, onViewVisualization}: Props) =>
+const ExportChart = ({ printDiv, stateToShare, onViewVisualization }: Props) =>
   (<Wrapper>
     <Grid>
       <Grid.Row textAlign="right">
         <Grid.Column>
-          <ChartShare className="no-background" label="Share" color="grey" stateToShare={stateToShare} size="medium" />
-          {printDiv ?
-            <Button onClick={onPrintClick(printDiv)} className="no-background" size="medium"color="grey">
+          <ChartShare
+            className="no-background"
+            label="Share"
+            color="grey"
+            stateToShare={ stateToShare }
+            size="medium"
+          />
+          { printDiv ?
+            <Button onClick={ onPrintClick(printDiv) } className="no-background" size="medium"color="grey">
               <Icon name="print" />
             </Button> : ''
           }
           <Button
             size="medium"
             color="grey"
-            onClick={shouldVisualise(onViewVisualization)}
+            onClick={ shouldVisualise(onViewVisualization) }
           >
             Using this visualisation
           </Button>

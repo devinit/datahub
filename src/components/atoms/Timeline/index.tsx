@@ -21,9 +21,7 @@ class Timeline extends React.Component<Props> {
   public render() {
     return (
       <div
-        ref={ element => {
-          this.element = element;
-        } }
+        ref={ element => { this.element = element; } }
         style={ { width: this.props.width || '100%', height: this.props.height } }
       />
     );
