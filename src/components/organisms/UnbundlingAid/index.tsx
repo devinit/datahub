@@ -167,6 +167,7 @@ export default class UnbundlingChart extends React.Component<Props, State> {
   componentDidUpdate(_prevProps: Props, prevState: State) {
     if (!prevState.showTour && this.state.showTour) {
       introJS()
+        .setOptions({ showStepNumbers: false })
         .start()
         .oncomplete(() => this.setState({ showTour: false }))
         .onexit(() => this.setState({ showTour: false }));

@@ -194,7 +194,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
     // window.scrollTo(300, 0);
 
     // return this.setState({ tourVisibility: false });
-    introJS().start();
+    introJS().setOptions({ showStepNumbers: false }).start();
   }
 
   toolTipinfo = () => {
