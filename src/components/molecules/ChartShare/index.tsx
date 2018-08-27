@@ -113,20 +113,14 @@ export default class ChartShare extends React.Component<Props, State> {
       <Modal
         trigger={
           <ButtonWrapper background={ background } hover={ hover }>
-            <Button
-              className={ className }
-              size={ size }
-              color={ color }
-            >
+            <Button className={ className } size={ size } color={ color }>
               <Icon name={ iconName || 'share alternate' } />
-              <Span
-                fontWeight={ fontWeight || 'normal' }
-                fontSize={ fontSize || '0.85em' }
-              >
+              <Span fontWeight={ fontWeight || 'normal' } fontSize={ fontSize || '1.3em' }>
                 { label || 'Share this chart' }
               </Span>
             </Button>
-          </ButtonWrapper> }
+          </ButtonWrapper>
+        }
         size="tiny"
         closeIcon="close"
       >

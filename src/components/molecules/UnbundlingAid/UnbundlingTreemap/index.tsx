@@ -8,6 +8,7 @@ import TreeChart from '../../../atoms/TreeChart';
 import UnbundlingAidToolBar from '../UnbundlingAidToolBar';
 import { KeyValue, Selections } from '../types';
 import { Intro } from '../../../atoms/Intro';
+import { howTo } from '../../../../utils/howTo';
 
 export interface Props {
   loading: boolean;
@@ -188,13 +189,7 @@ class UnbundlingTreemap extends React.Component<Props, State> {
                     : `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
                 }
               </SectionHeader>
-              <Intro
-                step={ 3 }
-                intro={
-                  `Each cell in the tree map is sized by the volume of ODA it represents.
-                  The total amount of ODA being viewed at any time is given above the top left corner of the tree map`
-                }
-              >
+              <Intro step={ 3 } intro={ howTo.unbundlingAid.treeChart }>
                 {
                   this.props.loading
                     ?

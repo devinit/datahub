@@ -4,6 +4,7 @@ import { Button, Dropdown } from 'semantic-ui-react';
 import { Intro } from '../../../atoms/Intro';
 import { TabsToolTip } from '../../ToolTip';
 import { SelectWrapper, Wrapper } from './styles';
+import { howTo } from '../../../../utils/howTo';
 
 export interface Option {
   key: string;
@@ -33,7 +34,7 @@ class Select extends React.Component<Props> {
     return (
       <Wrapper>
         <SelectWrapper>
-        <Intro step={ 2 } intro="Change indicator">
+        <Intro step={ 2 } intro={ howTo.globalPicture.indicator }>
           <Dropdown
             selection
             scrolling

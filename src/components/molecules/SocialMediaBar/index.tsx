@@ -4,6 +4,7 @@ import { Grid, Icon } from 'semantic-ui-react';
 import { LightBg } from '../../atoms/Container';
 import { Intro } from '../../atoms/Intro';
 import ChartShare, { StateToShare } from '../ChartShare';
+import { howTo } from '../../../utils/howTo';
 
 const SocialIcon = glamorous.a({
   fontSize: '1.5em',
@@ -42,7 +43,7 @@ const SocialMediaBar = (props?: Props) => (
           }
         </Grid.Column>
       </Grid.Row>
-      <Intro step={ 4 } intro="Click to share the visualisation" style={ { paddingLeft: '1em' } }>
+      <Intro step={ 4 } intro={ howTo.unbundlingAid.share } style={ { paddingLeft: '1em' } }>
         <Grid.Row>
           <Grid.Column width={ 3 }>
               <ChartShare

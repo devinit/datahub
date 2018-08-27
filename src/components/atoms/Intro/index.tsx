@@ -6,20 +6,17 @@ interface IntroProps {
   position?: string;
   className?: string;
   style?: object;
+  span?: boolean;
 }
 
-const Intro: React.SFC<IntroProps> = ({ step, intro, children, className, position, style }) => {
-  return (
-    <div
-      data-step={ `${step}` }
-      data-intro={ intro }
-      className={ className }
-      style={ style }
-      data-position={ position }
-    >
-      { children }
-    </div>
-  );
+const Intro: React.SFC<IntroProps> = ({ step, intro, children, className, position, style, span }) => {
+  return React.createElement(`${span ? 'span' : 'div' }`, {
+    'data-step': step,
+    'data-intro': intro,
+    className,
+    style,
+    'data-position': position
+  }, children);
 };
 
 export { Intro };

@@ -12,6 +12,8 @@ import { Route, countryOrDistrictLink } from '../../../../utils';
 import mapConfigs, { MapConfig } from './config';
 import { SingletonRouter } from 'next/router';
 import ErrorBoundary from '../../ErrorBoundary';
+import { howTo } from '../../../../utils/howTo';
+import { Intro } from '../../../atoms/Intro';
 
 export type Props = DH.IMapData & {
   state?: StateToShare;
@@ -56,7 +58,7 @@ class Map extends React.Component<Props, State> {
       <Container fluid>
         <Grid columns={ 1 }>
           <Grid.Row>
-            <Div width={ '100%' } data-step="3" data-intro="Hover over the map to see a data snapshot">
+            <Div width={ '100%' } data-step="3" data-intro={ howTo.globalPicture.data }>
               <ErrorBoundary>
               <BaseMap
                 paint={ this.paint as PaintMap }
@@ -107,7 +109,7 @@ class Map extends React.Component<Props, State> {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={ 5 } textAlign="center">
-              <div data-step="7" data-intro="Share a link to this visualisation via social media">
+              <Intro step={ 7 } intro={ howTo.globalPicture.share }>
                 <Div paddingBottom="2em">
                   <ChartShare
                     size="big"
@@ -118,7 +120,7 @@ class Map extends React.Component<Props, State> {
                     } }
                   />
                 </Div>
-              </div>
+              </Intro>
             </Grid.Column>
           </Grid.Row>
           {

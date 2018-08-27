@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Dropdown, Grid, Label, Segment } from 'semantic-ui-react';
 import { SectionHeader } from '../../../atoms/Header/index';
+import { Intro } from '../../../atoms/Intro';
+import { howTo } from '../../../../utils/howTo';
 
 export type onChangeT = (budgetType: string) => void;
 export type onChangeC = (currency: string) => void;
@@ -23,9 +25,11 @@ const LinePartitionHeader = (props: Props) => {
     <Grid>
       <Grid.Column width={ 16 } style={ { paddingLeft: 0, paddingRight: 0 } }>
         <Segment basic clearing style={ { paddingRight: 0, paddingLeft: 0 } }>
-          <SectionHeader color="#fff" style={ { float: 'left' } }>
-            { props.title } <span>{ props.year }</span>
-          </SectionHeader>
+            <SectionHeader color="#fff" style={ { float: 'left' } }>
+              <Intro step={ 1 } intro={ howTo.countryProfile.governmentFinance.breadCrumb }>
+                { props.title } <span>{ props.year }</span>
+              </Intro>
+            </SectionHeader>
             { props.hideOptions ? '' : <Segment basic floated={ 'right' } style={ { padding: 0, margin: 0 } }>
             <Label style={ { background: 'transparent' } }>Budget Type</Label>
             <Dropdown

@@ -7,6 +7,7 @@ import { Route, Router, router } from '../../../utils';
 import { RankingsTableContainer } from '../../atoms/Container';
 import { Intro } from '../../atoms/Intro';
 import LoadingBar from '../LoadingBar';
+import { howTo } from '../../../utils/howTo';
 
 if ((process as any).browser) { require('intersection-observer'); }
 
@@ -44,7 +45,7 @@ export default class RankingsTable extends React.Component<Props, State> {
 
   render() {
     return (
-      <Intro className="centered row computer tablet only grid" step={ 6 } intro="View the rankings">
+      <Intro className="centered row computer tablet only grid" step={ 6 } intro={ howTo.globalPicture.rankings }>
         <LoadingBar loading={ this.state.profileLoading } />
         { Object.keys(this.props.data).map(key =>
           (<Grid.Column computer={ 6 } tablet={ 6 } key={ key }>

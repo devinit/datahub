@@ -12,6 +12,7 @@ import NavTabsItems, { Option } from './NavTabsItems';
 import { TabLink } from './TabLink';
 import { TabsContainer } from './TabsContainer';
 import { Intro } from '../../atoms/Intro';
+import { howTo } from '../../../utils/howTo';
 
 export type ChangeActiveIndicator<T> = (activeMapIndicator: string) => T;
 export type ChangeLoadingStatus<L> = (loading: boolean) => L;
@@ -65,7 +66,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
         <div>
           <Div background={ lighterGrey }>
             <Container textAlign={ this.props.textAlign || 'left' }>
-            <Intro step={ 1 } intro="Change theme">
+            <Intro step={ 1 } intro={ howTo.globalPicture.theme }>
               <TabsContainer>
                 { this.renderTitles() }
               </TabsContainer>

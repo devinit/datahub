@@ -2,6 +2,7 @@ import { Header, Popup } from 'semantic-ui-react';
 import glamorous, { Div, P, Ul } from 'glamorous';
 import * as React from 'react';
 import { Intro } from '../../../atoms/Intro';
+import { howTo } from '../../../../utils/howTo';
 
 export interface LegendField {
   label?: string;
@@ -48,14 +49,7 @@ const LegendKey = glamorous.li(
 
 const Legend = (props: Props) =>
   <LegendContainer length={ props.legendData.length }>
-    <Intro
-      step={ 4 }
-      intro={
-        `<p>Compare the map colours with the legend to determine data ranges</p>
-        <hr/>
-        <p>As you change themes and indicators, the colour of map will adapt to that indicator</p>`
-      }
-    >
+    <Intro step={ 4 } intro={ howTo.globalPicture.legend }>
       <Popup
         trigger={
           <Div>

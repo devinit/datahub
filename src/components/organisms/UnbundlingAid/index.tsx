@@ -10,6 +10,7 @@ import dataODA from './data-oda';
 import dataOOF from './data-oof';
 import QUERY from './query.graphql';
 import { Intro } from '../../atoms/Intro';
+import { howTo } from '../../../utils/howTo';
 /* tslint:disable no-nested-ternary */
 
 interface State {
@@ -139,7 +140,7 @@ export default class UnbundlingChart extends React.Component<Props, State> {
             onClick={ this.toggleCompare }
             style={ { position: 'absolute', right: '1em', top: '1.5em' } }
           >
-            <Intro step={ 2 } intro="Click to view two tree maps side by side">
+            <Intro step={ 2 } intro={ howTo.unbundlingAid.compare }>
             {
               this.state.compare
                 ?

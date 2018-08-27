@@ -6,6 +6,7 @@ import Select from '../UnbundlingAidSelect';
 import { KeyValue, Selections } from '../types';
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd';
 import { Intro } from '../../../atoms/Intro';
+import { howTo } from '../../../../utils/howTo';
 
 export interface Props {
   aidType: string;
@@ -101,15 +102,7 @@ export default class ToolBar extends React.Component<Props, State> {
           <Grid>
               <Grid.Row>
                 <Grid.Column width={ 16 } textAlign={ textAlign || 'center' } verticalAlign="middle">
-                  <Intro
-                    step={ 1 }
-                    intro={
-                      `<p>Drag and drop dimensions to view in a customised order</p>
-                      <p>Change the year</p>
-                      <p>Select a dimension to open a drop-down menu</p>
-                      <p>This sentence describes what the tree map is showing. The dimension in bold is the one youre currently viewing</p>` // tslint:disable-line
-                    }
-                  >
+                  <Intro step={ 1 } intro={ howTo.unbundlingAid.dimensions }>
                     <DragDropContext onDragEnd={ this.onDragEnd }>
                       <Droppable droppableId="droppable" direction="horizontal">
                         { (provided) => (
