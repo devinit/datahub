@@ -47,6 +47,7 @@ export default class MyDocument extends Document {
           }
           { /* FIXME: Manual css imported in line below. Faced lots of headches trying to import css in next.js */ }
           <link href={ `/introjs.min.css?v${version}` } rel="stylesheet"/>
+          <link href={ `/main.css?v${version}` } rel="stylesheet"/>
           <script async src="https://www.google-analytics.com/analytics.js" />
           <script
             dangerouslySetInnerHTML={ { __html: `
