@@ -1,8 +1,8 @@
-import { Header, Popup } from 'semantic-ui-react';
 import glamorous, { Div, P, Ul } from 'glamorous';
 import * as React from 'react';
-import { Intro } from '../../../atoms/Intro';
+import { Header } from 'semantic-ui-react';
 import { howTo } from '../../../../utils/howTo';
+import { Intro } from '../../../atoms/Intro';
 
 export interface LegendField {
   label?: string;
@@ -50,20 +50,10 @@ const LegendKey = glamorous.li(
 const Legend = (props: Props) =>
   <LegendContainer length={ props.legendData.length }>
     <Intro step={ 4 } intro={ howTo.globalPicture.legend }>
-      <Popup
-        trigger={
-          <Div>
-            <Header as="h3">
-              { props.title }
-            </Header>
-            <P justifyContent="center">
-              { props.description }
-            </P>
-          </Div>
-        }
-        content={ 'It Works!' }
-        position={ 'top center' }
-      />
+      <Div>
+        <Header as="h3">{ props.title }</Header>
+        <P justifyContent="center">{ props.description }</P>
+      </Div>
       <Div>
         <Ul display={ 'inline-block' } padding={ 0 }>
           { props.legendData.map(item =>
