@@ -261,13 +261,13 @@ export default {
     {
       name: 'Gross ODA received, US$',
       description:
-        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices',
+        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices',
       methodology: '',
-      uom: 'constant 2016 US$',
+      uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015.zip?raw=true',
       source: {
         name: 'OECD DAC 2A.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a.'

@@ -12,8 +12,8 @@ const TourPointer = glamorous.span({
     position: 'absolute',
     top: '100%',
     left: '-7px',
-    marginTop: '-10px',
-  },
+    marginTop: '-10px'
+  }
 });
 const TourItems = glamorous.ul({
   'padding': '0',
@@ -22,11 +22,11 @@ const TourItems = glamorous.ul({
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    position: 'absolute',
+    position: 'absolute'
   },
   '& .item-1': {
     bottom: '80px',
-    left: '20px',
+    left: '20px'
   },
   '& .item-2': {
     width: '580px',
@@ -34,7 +34,7 @@ const TourItems = glamorous.ul({
     top: '45px',
     left: '50%',
     marginLeft: '-320px',
-    border: '2px solid #fff',
+    border: '2px solid #fff'
   },
   '& .item-3': {
     'left': '50%',
@@ -45,8 +45,8 @@ const TourItems = glamorous.ul({
       left: '100%',
       top: '50%',
       marginLeft: '10px',
-      marginTop: '-10px',
-    },
+      marginTop: '-10px'
+    }
   },
   '& .item-4': {
     'top': '10px',
@@ -62,12 +62,12 @@ const TourItems = glamorous.ul({
       '& i.right': {
         left: '100%',
         marginLeft: '-10px',
-        top: '-10px',
+        top: '-10px'
       },
       '& i.left': {
-        top: '-10px',
-      },
-    },
+        top: '-10px'
+      }
+    }
   },
   '& .item-5': {
     'top': '110px',
@@ -75,8 +75,8 @@ const TourItems = glamorous.ul({
     'marginLeft': '-290px',
     '& i': {
       marginTop: '-10px',
-      position: 'absolute',
-    },
+      position: 'absolute'
+    }
   },
   '& .item-6': {
     'top': '260px',
@@ -88,28 +88,28 @@ const TourItems = glamorous.ul({
       'bottom': '100%',
       'left': '65px',
       '& i': {
-        top: '-10px',
-      },
-    },
+        top: '-10px'
+      }
+    }
   },
   '& .item-7': {
     right: '60px',
-    top: '100px',
+    top: '100px'
   },
   '& .item-8': {
     bottom: '60px',
     left: '50%',
     width: '300px',
-    marginLeft: '-150px',
+    marginLeft: '-150px'
   },
   '& .text-right': {
-    textAlign: 'right',
+    textAlign: 'right'
   },
   '& .text-center': {
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
-export interface Props  {
+export interface Props {
   aidType: string;
 }
 const VisualizationTour = (props: Props) =>
@@ -120,8 +120,8 @@ const VisualizationTour = (props: Props) =>
       </b>
       <br />
       Each cell in the tree map<br />
-      is sized by the volume of<br />{props.aidType} it represents. The<br />
-      total amount of {props.aidType}<br />
+      is sized by the volume of<br />{ props.aidType } it represents. The<br />
+      total amount of { props.aidType }<br />
       being viewed at any time<br />
       is given above the top left<br />
       corner of the tree map

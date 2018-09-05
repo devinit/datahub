@@ -12,6 +12,8 @@ import { Route, countryOrDistrictLink } from '../../../../utils';
 import mapConfigs, { MapConfig } from './config';
 import { SingletonRouter } from 'next/router';
 import ErrorBoundary from '../../ErrorBoundary';
+import { howTo } from '../../../../utils/howTo';
+import { Intro } from '../../../atoms/Intro';
 
 export type Props = DH.IMapData & {
   state?: StateToShare;
@@ -56,7 +58,7 @@ class Map extends React.Component<Props, State> {
       <Container fluid>
         <Grid columns={ 1 }>
           <Grid.Row>
-            <Div width={ '100%' }>
+            <Div width={ '100%' } data-step="3" data-intro={ howTo.globalPicture.data }>
               <ErrorBoundary>
               <BaseMap
                 paint={ this.paint as PaintMap }
@@ -83,38 +85,47 @@ class Map extends React.Component<Props, State> {
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={ 4 } textAlign="center">
-              { this.yearSliderVisibility
-                ? <YearSlider
-                  minimum={ this.startYear }
-                  maximum={ this.endYear }
-                  step={ 1 }
-                  position={ this.state.currentYear }
-                  onChange={ this.onYearChange }
-                />
-                : <Div fontWeight={ 'bold' }>
-                  <P fontSize={ '1.2em' }>
-                    { this.startYear }
-                  </P>
-                  <P>(This indicator has data for a single year only.)</P>
-                </Div> }
+              <div data-step="5" data-intro="Use the year slider to view the map with data for different years">
+                {
+                  this.yearSliderVisibility
+                    ?
+                    <YearSlider
+                      minimum={ this.startYear }
+                      maximum={ this.endYear }
+                      step={ 1 }
+                      position={ this.state.currentYear }
+                      onChange={ this.onYearChange }
+                    />
+                    :
+                    <Div fontWeight={ 'bold' }>
+                      <P fontSize={ '1.2em' }>
+                        { this.startYear }
+                      </P>
+                      <P>(This indicator has data for a single year only.)</P>
+                    </Div>
+                  }
+                </div>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
             <Grid.Column width={ 5 } textAlign="center">
-              <Div paddingBottom="2em">
-                <ChartShare
-                  size="big"
-                  color="black"
-                  stateToShare={ {
-                    year: this.state.currentYear,
-                    indicator: this.meta.id
-                  } }
-                />
-              </Div>
+              <Intro step={ 7 } intro={ howTo.globalPicture.share }>
+                <Div paddingBottom="2em">
+                  <ChartShare
+                    size="big"
+                    color="black"
+                    stateToShare={ {
+                      year: this.state.currentYear,
+                      indicator: this.meta.id
+                    } }
+                  />
+                </Div>
+              </Intro>
             </Grid.Column>
           </Grid.Row>
-          { !this.noRankTableList.includes(this.meta.id) ?
-            <RankingsTable { ...this.setCountryRankData() } router={ this.props.router } /> : ''
+          {
+            !this.noRankTableList.includes(this.meta.id)
+              ? <RankingsTable { ...this.setCountryRankData() } router={ this.props.router } /> : ''
           }
         </Grid>
       </Container>
@@ -160,7 +171,7 @@ class Map extends React.Component<Props, State> {
   }
 
   initMetaSetup(props: Props) {
-    if (!props.legend) { throw new Error('legend data is missing in props'); }
+    if (!props.legend) {                   throw new Error('legend data is missing in props'); }
     this.legendData = props.legend;
     this.heading = props.heading ?
       props.heading : 'Indicator must have a heading talk to Allan or Donata';

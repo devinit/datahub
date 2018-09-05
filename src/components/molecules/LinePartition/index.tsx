@@ -10,6 +10,8 @@ import TreeChart from '../../atoms/TreeChart';
 import ErrorBoundary from '../ErrorBoundary';
 import Timeline from '../../atoms/Timeline';
 import LinePartitionHeader from './LinePartitionHeader';
+import { Intro } from '../../atoms/Intro';
+import { howTo } from '../../../utils/howTo';
 
 const CardContainer = glamorous.div({
   background: 'rgb(255,255,255)',
@@ -105,22 +107,24 @@ export default class LinePartition extends React.Component<Props, State> {
         { this.renderLinePartitionHeader(!this.props.inverted || !tree.length) }
         <Grid style={ { paddingBottom: '40px' } }>
           <Grid.Column mobile={ 16 } computer={ 5 } width={ 5 } style={ { padding: 0 } }>
-            <CardContainer>
-              <Timeline
-                onYearChanged={ this.props.onChangeYear }
-                height={ showLegend ? '250px' : '180px' }
-                config={ {
-                  ...this.props.config.line,
-                  timeAxis: {
-                    ...this.props.config.line.timeAxis,
-                    axisMinimum: this.props.lowestYear.toString(),
-                    axisMaximum: this.props.highestYear.toString()
-                  },
-                  anchor: { start: this.props.year.toString() }
-                } }
-                data={ trend }
-              />
-            </CardContainer>
+            <Intro step={ 2 } intro={ howTo.countryProfile.governmentFinance.timeline }>
+              <CardContainer>
+                <Timeline
+                  onYearChanged={ this.props.onChangeYear }
+                  height={ showLegend ? '250px' : '180px' }
+                  config={ {
+                    ...this.props.config.line,
+                    timeAxis: {
+                      ...this.props.config.line.timeAxis,
+                      axisMinimum: this.props.lowestYear.toString(),
+                      axisMaximum: this.props.highestYear.toString()
+                    },
+                    anchor: { start: this.props.year.toString() }
+                  } }
+                  data={ trend }
+                />
+              </CardContainer>
+            </Intro>
           </Grid.Column>
 
           <Grid.Column mobile={ 16 } computer={ 11 } width={ 11 } style={ { padding: 0 } }>
@@ -158,20 +162,22 @@ export default class LinePartition extends React.Component<Props, State> {
 
       return (
         <TreeChartContainer>
-          <ErrorBoundary message="government finance treemap ">
-            <TreeChart
-              height={ showLegend ? '380px' : '222px' }
-              config={ {
-                ...this.props.config.partition,
-                labeling: { prefix: this.props.currency }
-              } }
-              // tslint:disable-next-line:jsx-no-lambda
-              onClick={ (d: { data: {levels: string[]} }) => {
-                this.setLevel(d.data.levels);
-              } }
-              data={ cleanTree }
-            />
-          </ErrorBoundary>
+          <Intro step={ 3 } intro={ howTo.countryProfile.governmentFinance.treeChart }>
+            <ErrorBoundary message="government finance treemap ">
+              <TreeChart
+                height={ showLegend ? '380px' : '222px' }
+                config={ {
+                  ...this.props.config.partition,
+                  labeling: { prefix: this.props.currency }
+                } }
+                // tslint:disable-next-line:jsx-no-lambda
+                onClick={ (d: { data: {levels: string[]} }) => {
+                  this.setLevel(d.data.levels);
+                } }
+                data={ cleanTree }
+              />
+            </ErrorBoundary>
+          </Intro>
         </TreeChartContainer>
       );
     }

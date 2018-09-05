@@ -21,7 +21,8 @@ class Chart extends React.Component<Props> {
     return (
       <div
         ref={ element => { this.element = element; } }
-        style={ { width: this.props.width, height: this.props.height, overflow: 'hidden' } }
+        style={ { width: this.props.width, height: this.props.height } }
+        className="overflow-hidden"
       />
     );
   }

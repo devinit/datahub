@@ -7,6 +7,7 @@ import ExportChart from '../ExportChart';
 import LinePartition from '../LinePartition';
 import LoadingBar from '../LoadingBar';
 import TourContainer from '../TourContainer';
+import * as introJS from 'intro.js';
 
 export interface LinePartitionItem {
   title: string;
@@ -137,13 +138,13 @@ export default class MultiLinePartition extends React.Component<Props> {
     ));
   }
 
-  public setCurrency = (currency: string) =>
+  private setCurrency = (currency: string) =>
     this.setState({ currency })
 
-  public setBudgetType = (budgetType: string) =>
+  private setBudgetType = (budgetType: string) =>
     this.setState({ budgetType })
 
-  public setYear = (year: string) => {
+  private setYear = (year: string) => {
     const budgetTypeOptions = this.state.budgetTypeOptions[year];
     const budgetType = budgetTypeOptions && budgetTypeOptions[0].value;
     this.setState({
@@ -151,12 +152,14 @@ export default class MultiLinePartition extends React.Component<Props> {
       budgetType
     });
   }
-  public toggleRevenueTour = () => {
-    if (this.state.revenueTourVisible) {
-      this.setState({ revenueTourVisible: false });
-    } else {
-      this.setState({ revenueTourVisible: true });
-    }
+
+  private toggleRevenueTour = () => {
+    // if (this.state.revenueTourVisible) {
+    //   this.setState({ revenueTourVisible: false });
+    // } else {
+    //   this.setState({ revenueTourVisible: true });
+    // }
+    introJS().setOptions({ showStepNumbers: false }).start();
   }
 
   public static createTimeLimits(data: Array<{year: number; }>) {
@@ -193,8 +196,7 @@ export default class MultiLinePartition extends React.Component<Props> {
     const { lowestYear, highestYear } = MultiLinePartition.createTimeLimits(everything);
     const possibleStartYear = props.year || props.startYear;
     const year = possibleStartYear < lowestYear ? lowestYear : possibleStartYear;
-    const currency = props.currency ?
-      props.currency : currencyOptions[0] && currencyOptions[0].value;
+    const currency = props.currency || (currencyOptions[0] && currencyOptions[0].value);
     const budgetType = budgetTypeOptions[year] && budgetTypeOptions[year][0].value;
     const revenueTourVisible = false;
 

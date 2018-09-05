@@ -12,8 +12,8 @@ const TourPointer = glamorous.span({
     position: 'absolute',
     top: '100%',
     left: '-7px',
-    marginTop: '-10px',
-  },
+    marginTop: '-10px'
+  }
 });
 const TourItems = glamorous.ul({
   'padding': '0',
@@ -22,7 +22,7 @@ const TourItems = glamorous.ul({
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    position: 'absolute',
+    position: 'absolute'
   },
   '& .item-1': {
     'top': '10px',
@@ -30,52 +30,52 @@ const TourItems = glamorous.ul({
     '& .tour-item-pointer': {
       height: '470px',
       top: '100%',
-      left: '10px',
-    },
+      left: '10px'
+    }
   },
   '& .item-2': {
     top: '100px',
-    left: '50px',
+    left: '50px'
   },
   '& .item-3': {
     top: '60px',
     left: '50%',
-    marginLeft: '420px',
+    marginLeft: '420px'
   },
   '& .item-4': {
     top: '110px',
     left: '50%',
-    marginLeft: '-270px',
+    marginLeft: '-270px'
   },
   '& .item-5': {
     top: '110px',
     left: '50%',
-    marginLeft: '15px',
+    marginLeft: '15px'
   },
   '& .item-6': {
     top: '200px',
-    right: '60px',
+    right: '60px'
   },
   '& .item-7': {
     top: '350px',
-    left: '50%',
+    left: '50%'
   },
   '& .item-8': {
     top: '400px',
-    left: '50%',
+    left: '50%'
   },
   '& .item-9': {
     bottom: '10px',
     left: '50%',
     width: '300px',
     marginLeft: '-150px',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   '& .item-10': {
     bottom: '10px',
     right: '5%',
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
 
 export interface Props  {
@@ -83,10 +83,10 @@ export interface Props  {
 }
 
 const VisualizationTour = (props: Props) =>
-  (<TourItems>
+  <TourItems>
     <li className="item-1">
       Compare the colour<br />
-      of each {props.entity}<br />
+      of each { props.entity }<br />
       with the legend
       <TourPointer className="tour-item-pointer">
         <Icon name="arrow down" />
@@ -95,7 +95,7 @@ const VisualizationTour = (props: Props) =>
     <li className="item-2">
       As you change theme and<br />
       indicator the colour of each<br />
-      {props.entity} will adapt to that<br />
+      { props.entity } will adapt to that<br />
       indicator
     </li>
     <li className="item-3">
@@ -111,13 +111,13 @@ const VisualizationTour = (props: Props) =>
       Zoom in and out <Icon name="arrow up" />
     </li>
     <li className="item-7">
-      Hover over a {props.entity}<br />to see data snapshot
+      Hover over a { props.entity }<br />to see data snapshot
     </li>
     <li className="item-8">
-      Click a {props.entity} to go<br />to {props.entity} profile
+      Click a { props.entity } to go<br />to { props.entity } profile
     </li>
     <li className="item-9">
-      Scroll down to see {props.entity} rankings<br />
+      Scroll down to see { props.entity } rankings<br />
       <Icon name="arrow down" />
     </li>
     <li className="item-10">
@@ -125,6 +125,6 @@ const VisualizationTour = (props: Props) =>
       to share the chart youve created<br />
       <Icon name="arrow down" />
     </li>
-  </TourItems>);
+  </TourItems>;
 
 export default VisualizationTour;

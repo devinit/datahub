@@ -27,6 +27,6 @@ export const MapContainer: GlamorousComponent<{}, any> = glamorous.div({
     marginBottom: 0
   },
   '& .mapboxgl-map .mapboxgl-popup': {
-    zIndex: 1000
+    zIndex: 400
   }
 });
