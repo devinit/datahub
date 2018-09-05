@@ -291,10 +291,10 @@ export default {
       name: 'International official finance',
       indicators: [
         {
-          id: 'fact.in_oda_gross_constant',
+          id: 'fact.in_oda_gross_2015',
           name: 'Gross ODA received, US$',
           heading:
-            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices',
+            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices',
           tooltip: 'Gross ODA received, US$.',
           source: 'OECD DAC 2A.'
         },
@@ -373,7 +373,7 @@ export default {
           source: 'OECD DAC1.'
         }
       ],
-      default_indicator: 'fact.in_oda_gross_constant'
+      default_indicator: 'fact.in_oda_gross_2015'
     },
     {
       id: 'humanitarian-finance',

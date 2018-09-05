@@ -345,11 +345,11 @@ export default {
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
-      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
+      { id: 'other-social-services', name: 'Other social services' },
       { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
@@ -362,9 +362,9 @@ export default {
       { id: 'cash-loan-equity', name: 'Cash (loan/equity)' },
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' },
-      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
       { id: 'cash-grant', name: 'Cash grant' },
-      { id: 'commodities-food', name: 'Commodities & Food' }
+      { id: 'commodities-food', name: 'Commodities & Food' },
+      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' }
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
