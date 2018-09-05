@@ -89,7 +89,7 @@
     "@types/react-redux": "^6.0.6",
     "@types/storybook__react": "^3.0.9",
     "@zeit/next-typescript": "0.1.1",
-    "apollo-codegen": "0.19.0",
+    "apollo-codegen": "0.20.2",
     "concurrently": "^3.6.1",
     "csso": "^3.5.1",
     "cypress": "2.1.0",
