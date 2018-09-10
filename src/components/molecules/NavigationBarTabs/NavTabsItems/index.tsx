@@ -34,16 +34,16 @@ class Select extends React.Component<Props> {
     return (
       <Wrapper>
         <SelectWrapper>
-        <Intro step={ 2 } intro={ howTo.globalPicture.indicator }>
-          <Dropdown
-            selection
-            scrolling
-            fluid
-            options={ this.props.options }
-            onChange={ this.onChange }
-            value={ this.props.activeIndicator }
-          />
-        </Intro>
+          <Intro step={ 2 } intro={ howTo.globalPicture.indicator }>
+            <Dropdown
+              selection
+              scrolling
+              fluid
+              options={ this.props.options }
+              onChange={ this.onChange }
+              value={ this.props.activeIndicator }
+            />
+          </Intro>
         </SelectWrapper>
         { toolTip ? <TabsToolTip { ...toolTip } /> : '' }
         <Div display={ showUsingThisViz ? 'inline-block' : 'none' }>

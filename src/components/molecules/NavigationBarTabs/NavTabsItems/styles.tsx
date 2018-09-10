@@ -1,6 +1,7 @@
 import glamorous from 'glamorous';
 import { lightBlack, white } from '../../../theme/semantic';
-import {GlamorousComponentT} from '../../../types';
+import { GlamorousComponentT } from '../../../types';
+import { mediaQueries } from '../../../theme';
 
 export const SelectWrapper: GlamorousComponentT = glamorous.div({
   'display': 'inline-block',
@@ -17,7 +18,7 @@ export const SelectWrapper: GlamorousComponentT = glamorous.div({
   },
   '& .ui.selection, .ui.selection.dropdown, .ui.selection.dropdown:hover': {
     background: lightBlack,
-    border: 'none',
+    border: 'none'
   },
   '& .ui.selection.dropdown .menu': {
     overflowY: 'scroll !important'
@@ -26,6 +27,11 @@ export const SelectWrapper: GlamorousComponentT = glamorous.div({
     color: white,
     fontWeight: 700,
     fontSize: '18px'
+  },
+  [mediaQueries.phone]: {
+    '& .text, & .ui div:first-child': {
+      fontSize: '1.1em'
+    }
   }
 });
 
@@ -43,9 +49,9 @@ export const Wrapper: GlamorousComponentT = glamorous.div({
     paddingTop: '.5em',
     paddingBottom: '.5em',
     paddingRight: '.85em',
-    paddingLeft: '0.75em',
+    paddingLeft: '0.75em'
   },
   '& i.icon': {
     color: white
-  },
+  }
 });

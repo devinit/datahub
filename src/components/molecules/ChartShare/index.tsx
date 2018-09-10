@@ -115,7 +115,7 @@ export default class ChartShare extends React.Component<Props, State> {
           <ButtonWrapper background={ background } hover={ hover }>
             <Button className={ className } size={ size } color={ color }>
               <Icon name={ iconName || 'share alternate' } />
-              <Span fontWeight={ fontWeight || 'normal' } fontSize={ fontSize || '1.3em' }>
+              <Span fontWeight={ fontWeight || 'normal' } fontSize={ fontSize || '1em' }>
                 { label || 'Share this chart' }
               </Span>
             </Button>
