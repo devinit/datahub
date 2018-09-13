@@ -315,8 +315,8 @@ export default {
     channels: [
       { id: 'ngo-donor', name: 'NGO (donor country)' },
       { id: 'ngo-recipient', name: 'NGO (recipient country)' },
-      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'public-sector-donor', name: 'Public sector (donor government)' },
+      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'multilateral', name: 'Multilateral' },
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
@@ -345,17 +345,17 @@ export default {
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
-      { id: 'debt-relief', name: 'Debt relief' },
+      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
-      { id: 'other-social-services', name: 'Other social services' },
+      { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
       { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'industry-and-trade', name: 'Industry and trade' },
-      { id: 'other', name: 'Other' }
+      { id: 'other', name: 'Other' },
+      { id: 'industry-and-trade', name: 'Industry and trade' }
     ],
     bundles: [
       { id: 'mixed-project-aid', name: 'Mixed project aid' },
@@ -368,5 +368,5 @@ export default {
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2016, total: '181.1bn' }
+  yearTotal: { year: 2016, total: '180.4bn' }
 };
