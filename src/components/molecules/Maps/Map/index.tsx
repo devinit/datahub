@@ -1,12 +1,13 @@
+import BaseMap, { indicatorsWith0dp } from '../../../atoms/BaseMap';
 import RankingsTable, { Props as RankingsTableProps } from '../../RankingsTable';
-import * as React from 'react';
 import { Meta, PaintMap } from '../../../atoms/BaseMap/types';
 import { Div, P } from 'glamorous';
+import { css } from 'glamor';
 import { grey } from '../../../theme/semantic';
 import Legend, { LegendField } from '../MapLegend';
 import YearSlider from '../../YearSlider';
-import { Container, Grid } from 'semantic-ui-react';
-import BaseMap, { indicatorsWith0dp } from '../../../atoms/BaseMap';
+import { Button, Container, Grid } from 'semantic-ui-react';
+import * as React from 'react';
 import ChartShare, { StateToShare } from '../../ChartShare';
 import { Route, countryOrDistrictLink } from '../../../../utils';
 import mapConfigs, { MapConfig } from './config';
@@ -14,6 +15,7 @@ import { SingletonRouter } from 'next/router';
 import ErrorBoundary from '../../ErrorBoundary';
 import { howTo } from '../../../../utils/howTo';
 import { Intro } from '../../../atoms/Intro';
+import { mediaQueries } from '../../../theme';
 
 export type Props = DH.IMapData & {
   state?: StateToShare;
@@ -22,6 +24,7 @@ export type Props = DH.IMapData & {
 
 export interface State {
   currentYear: number;
+  showLegend: boolean;
 }
 class Map extends React.Component<Props, State> {
   public state: State;
@@ -47,31 +50,46 @@ class Map extends React.Component<Props, State> {
     if (!props.country) {
       throw new Error('country is missing in props');
     }
-    this.state = { currentYear: this.getCurrentYear(props) };
+    this.state = {
+      currentYear: this.getCurrentYear(props),
+      showLegend: false
+    };
     this.country = props.country;
     this.config = mapConfigs[this.country];
     this.init(props);
+    this.toggleShowLegend = this.toggleShowLegend.bind(this);
   }
 
   render() {
+    const legendButtonStyles = css({
+      display: 'none !important',
+      position: 'absolute',
+      bottom: '60px',
+      right: '5px',
+      [mediaQueries.phone]: {
+        display: 'block !important'
+      }
+    });
+
     return (
       <Container fluid>
         <Grid columns={ 1 }>
           <Grid.Row>
             <Div width={ '100%' } data-step="3" data-intro={ howTo.globalPicture.data }>
               <ErrorBoundary>
-              <BaseMap
-                paint={ this.paint as PaintMap }
-                viewport={ this.config.viewport }
-                meta={ this.meta }
-                router={ this.props.router }
-              />
+                <BaseMap
+                  paint={ this.paint as PaintMap }
+                  viewport={ this.config.viewport }
+                  meta={ this.meta }
+                  router={ this.props.router }
+                />
               </ErrorBoundary>
             </Div>
             <Legend
               title={ this.heading }
               description={ this.description }
               legendData={ this.legendData }
+              visible={ this.state.showLegend }
             />
             <P
               fontSize={ '0.7em' }
@@ -82,10 +100,13 @@ class Map extends React.Component<Props, State> {
             >
               Country borders do not necessarily reflect Development Initiatives&apos; position.
             </P>
+            <Button className={ `${legendButtonStyles}` } onClick={ this.toggleShowLegend }>
+              { `${this.state.showLegend ? 'Hide' : 'Show'}` } Legend
+            </Button>
           </Grid.Row>
           <Grid.Row centered>
-            <Grid.Column width={ 4 } textAlign="center">
-              <div data-step="5" data-intro="Use the year slider to view the map with data for different years">
+            <Grid.Column mobile={ 12 } tablet={ 10 } computer={ 4 } textAlign="center">
+              <Intro step={ 5 } intro={ 'Use the year slider to view the map with data for different years' }>
                 {
                   this.yearSliderVisibility
                     ?
@@ -104,11 +125,11 @@ class Map extends React.Component<Props, State> {
                       <P>(This indicator has data for a single year only.)</P>
                     </Div>
                   }
-                </div>
+                </Intro>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
-            <Grid.Column width={ 5 } textAlign="center">
+            <Grid.Column computer={ 5 } tablet={ 5 } mobile={ 10 } textAlign="center">
               <Intro step={ 7 } intro={ howTo.globalPicture.share }>
                 <Div paddingBottom="2em">
                   <ChartShare
@@ -171,7 +192,9 @@ class Map extends React.Component<Props, State> {
   }
 
   initMetaSetup(props: Props) {
-    if (!props.legend) {                   throw new Error('legend data is missing in props'); }
+    if (!props.legend) {
+      throw new Error('legend data is missing in props');
+    }
     this.legendData = props.legend;
     this.heading = props.heading ?
       props.heading : 'Indicator must have a heading talk to Allan or Donata';
@@ -244,6 +267,10 @@ class Map extends React.Component<Props, State> {
       hasflags: this.country === 'global',
       data: { top, bottom }
     };
+  }
+
+  private toggleShowLegend() {
+    this.setState({ showLegend: !this.state.showLegend });
   }
 
   public static setCurrentYearData(currentYear: number, data: DH.IMapUnit[]): DH.IMapUnit[] {

@@ -21,16 +21,16 @@ export default {
     {
       name: 'International resource flows to and from developed countries',
       description:
-        'Estimates of international resource flows from developed countries, 2015 US$.',
+        'Estimates of international resource flows from developed countries, 2016 US$.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors.zip?raw=true',
       source: {
         name:
-          "Development Initiatives based on numerous sources. Note that data of some flows is missing. Development finance institutions: Development Initiatives calculations based on a review of DFIs' annual reports (with flows reported as ODA or OOFs subtracted). Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Remittances: World Bank Migration and Remittances Factbook.",
+          'Development Initiatives based on numerous sources. Note that data of some flows is missing. Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Export Credits: OECD DAC. PDA: Hudson Insitutue and OECD. Remittances: World Bank Migration and Remittances Factbook.',
         link: ''
       }
     },
@@ -97,7 +97,7 @@ export default {
     },
     {
       name: 'Total population',
-      description: 'Total population. Data is for 2015',
+      description: 'Total population. Data is for 2016',
       methodology: '',
       uom: 'unit',
       csv:

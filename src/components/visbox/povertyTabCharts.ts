@@ -2,16 +2,16 @@ import { red } from '../theme/semantic';
 
 export const area = {
   type: 'timearea',
-  colors: [red],
+  colors: [ red ],
   labeling: {
-    suffix: '%',
+    suffix: '%'
   },
   linearAxis: {
     showAxis: true,
     indicator: 'value',
     axisMargin: 0,
     ticking: 'sparse',
-    suffix: '%',
+    suffix: '%'
   },
   timeAxis: {
     showAxis: true,
@@ -19,38 +19,38 @@ export const area = {
     ticking: 'years',
     tickingStep: 20,
     axisMinimum: 2000,
-    axisMaximum: 2013,
+    axisMaximum: 2013
   },
   time: {
-    interpolate: true,
+    interpolate: true
   }
 };
 
 export const histogram = {
   type: 'bar',
-  colors: ['#a0979d'],
+  colors: [ '#a0979d' ],
   coloring: 'color',
   labeling: {
     showLabels: false,
-    suffix: '%',
+    suffix: '%'
   },
   linearAxis: {
     showAxis: false,
     indicator: 'value',
-    suffix: '%',
+    suffix: '%'
   },
   categoryAxis: {
     indicator: 'quintileName',
     ticking: 'end',
-    innerPadding: 0.5,
+    innerPadding: 0.5
   },
   interactions: {
-    enable: true,
+    enable: true
   },
   tooltips: {
-    enable: false,
+    enable: false
   },
-  highlight: ['value bottom 20%']
+  highlight: [ 'value bottom 20%' ]
 };
 
 export default { area, histogram };

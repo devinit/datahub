@@ -23,6 +23,11 @@ export default {
         id: 'oofs-interest',
         name: 'Interest payments on OOFs loans',
         selections: [{ id: 'to_di_id', name: 'Recipients', unbundle: false }]
+      },
+      {
+        id: 'export-credits-in-devcountries',
+        name: 'Official supported export credits Received',
+        selections: []
       }
     ],
     outflows: [
@@ -69,6 +74,11 @@ export default {
         id: 'remittances-devcountries',
         name: 'Remittances to developing countries',
         selections: [{ id: 'to_di_id', name: 'Destination', unbundle: false }]
+      },
+      {
+        id: 'export-credits-out-devcountries',
+        name: 'Official supported export credits Extended',
+        selections: []
       }
     ]
   },
@@ -162,6 +172,17 @@ export default {
             unbundle: false
           }
         ]
+      },
+      { id: 'tourism-in', name: 'Tourism', selections: [] },
+      {
+        id: 'export-credits-in',
+        name: 'Officially supported export credits',
+        selections: []
+      },
+      {
+        id: 'finance-mobilised-in',
+        name: 'Blended Finance Mobilised',
+        selections: []
       }
     ],
     outflows: [
@@ -205,7 +226,13 @@ export default {
         id: 'short-debt-interest-out',
         name: 'Interest payments on short-term debt',
         selections: []
-      }
+      },
+      {
+        id: 'export-credits-out',
+        name: 'Officially supported export credits',
+        selections: []
+      },
+      { id: 'tourism-out', name: 'Tourism', selections: [] }
     ]
   },
   crossover: {
@@ -298,6 +325,17 @@ export default {
             unbundle: false
           }
         ]
+      },
+      { id: 'tourism-in', name: 'Tourism', selections: [] },
+      {
+        id: 'export-credits-in',
+        name: 'Officially supported export credits',
+        selections: []
+      },
+      {
+        id: 'finance-mobilised-in',
+        name: 'Blended Finance Mobilised',
+        selections: []
       }
     ],
     outflows: [
@@ -341,7 +379,13 @@ export default {
         id: 'short-debt-interest-out',
         name: 'Interest payments on short-term debt',
         selections: []
-      }
+      },
+      {
+        id: 'export-credits-out',
+        name: 'Officially supported export credits',
+        selections: []
+      },
+      { id: 'tourism-out', name: 'Tourism', selections: [] }
     ]
   }
 };

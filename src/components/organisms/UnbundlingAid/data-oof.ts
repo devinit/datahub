@@ -320,6 +320,7 @@ export default {
       { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'unspecified', name: 'Unspecified' },
       { id: 'multilateral', name: 'Multilateral' },
+      { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'other', name: 'Other' }
     ],
     sectors: [
@@ -350,5 +351,5 @@ export default {
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2016, total: '64.0bn' }
+  yearTotal: { year: 2016, total: '63.7bn' }
 };

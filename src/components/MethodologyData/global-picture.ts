@@ -52,7 +52,7 @@ export default {
     {
       name: 'Human hazard and exposure score',
       description:
-        'Countries that are at risk of conflict or have high current conflict intensity (Inform index component).',
+        'The level of risk that a country will be subject to conflict or have a high level of conflict intensity, based on historical data (Inform index component).',
       methodology: '',
       uom: 'index',
       csv:
@@ -60,7 +60,7 @@ export default {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/human-hazard.zip?raw=true',
       source: {
-        name: 'Inform (Index for Risk Management) v 3.0.5.',
+        name: 'Inform (Index for Risk Management) v 3.3.3.',
         link: 'http://www.inform-index.org/'
       }
     },
@@ -81,14 +81,14 @@ export default {
     {
       name: 'Natural hazard and exposure score',
       description:
-        'Countries that are exposed to, or are vulnerable to natural hazards (INFORM index component).',
+        'The level of risk that a country will be exposed to, or is vulnerable to, natural hazards, based on historical data (INFORM index component).',
       methodology: '',
       uom: 'index',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/natural-hazard',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/natural-hazard.zip?raw=true',
-      source: { name: 'Inform (Index for Risk Management) v 3.0.5.', link: '' }
+      source: { name: 'Inform (Index for Risk Management) v 3.3.3.', link: '' }
     },
     {
       name: "Number of appearances on ECHO's Forgotten Crisis Assessment index",
@@ -174,13 +174,13 @@ export default {
     {
       name: 'Net ODA provided by OECD DAC members, US$',
       description:
-        'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2015 prices.',
+        'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2016 prices.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-constant.zip?raw=true',
       source: {
         name: 'OECD DAC 2A.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a'
@@ -219,13 +219,13 @@ export default {
     {
       name: 'Net other official flows and export credits provided, US$',
       description:
-        'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',
+        'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2016 prices.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-constant.zip?raw=true',
       source: {
         name: 'OECD DAC 2B.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b'
@@ -234,13 +234,13 @@ export default {
     {
       name: 'Net ODA provided by non-DAC donors, US$',
       description:
-        'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD. Data is in constant 2015 prices.',
+        'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD. Data is in constant 2016 prices.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-constant.zip?raw=true',
       source: {
         name: 'OECD DAC 2A',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table1'
@@ -249,25 +249,25 @@ export default {
     {
       name: 'ODA per person living on under $1.90 a day, US$',
       description:
-        'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2015 prices.',
+        'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2016 prices.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-constant.zip?raw=true',
       source: { name: 'OECD DAC2A and World Bank PovcalNet.', link: '' }
     },
     {
       name: 'Gross ODA received, US$',
       description:
-        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices',
+        'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant.zip?raw=true',
       source: {
         name: 'OECD DAC 2A.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a.'
@@ -276,13 +276,13 @@ export default {
     {
       name: 'Net ODA received, US$',
       description:
-        'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data shown is from OECD DAC and multilateral donors and is in constant 2015 prices.',
+        'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-constant.zip?raw=true',
       source: {
         name: 'OECD DAC 2B.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2a'
@@ -292,13 +292,13 @@ export default {
       name:
         'Gross long-term other official flows and export credits received, US$',
       description:
-        'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2015 prices.',
+        'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2016 prices.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-constant',
       zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-2015.zip?raw=true',
+        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-constant.zip?raw=true',
       source: {
         name: 'OECD DAC 2B.',
         link: 'https://stats.oecd.org/DownloadFiles.aspx?DatasetCode=table2b'
@@ -383,7 +383,7 @@ export default {
       description:
         'Humanitarian assistance refers to the financial resources for humanitarian action. It is delivered during and in the aftermath of man-made crises and disasters caused by natural hazards.',
       methodology: '',
-      uom: 'constant 2015 US$',
+      uom: 'constant 2016 US$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-ha',
       zip:

@@ -28,7 +28,7 @@ export default class Front extends React.Component<Props> {
         <Container>
           <Div paddingTop={ '2em' } paddingBottom={ '2em' } fontSize={ '1.2rem' }>
             <Grid centered>
-              <Grid.Column width={ 8 } textAlign="center">
+              <Grid.Column mobile={ 16 } tablet={ 8 } computer={ 8 } textAlign="center">
                 <b><Icon name="pie graph" />The Development Data Hub{ ' ' }</b>
                 { ' ' }
                 { pageData.front[0].narrative }.{ ' ' }

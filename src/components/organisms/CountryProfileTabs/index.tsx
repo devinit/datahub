@@ -33,14 +33,14 @@ const CountryProfileTabs: React.SFC<TChildProps> = ({ data, id }) => {
   return (
     <Tabs selected={ 0 }>
       <Pane label="Overview" id={ 'overview-tab' }>
-      <ErrorBoundary>
-        <CountryTabs.Overview
-          { ...props }
-          pageData={ pageData }
-          countryType={ country.countryType }
-          config={ overviewConfig }
-        />
-      </ErrorBoundary>
+        <ErrorBoundary>
+          <CountryTabs.Overview
+            { ...props }
+            pageData={ pageData }
+            countryType={ country.countryType }
+            config={ overviewConfig }
+          />
+        </ErrorBoundary>
       </Pane>
       { country.countryType !== DONOR && props.povertyTab && shouldShowTabData(props.povertyTab)
         ? <Pane label="Poverty" id={ 'poverty-tab' }>

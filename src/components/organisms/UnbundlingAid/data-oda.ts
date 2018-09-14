@@ -336,20 +336,20 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
-      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
+      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
+      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
-      { id: 'other-social-services', name: 'Other social services' },
       { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
@@ -368,5 +368,5 @@ export default {
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },
-  yearTotal: { year: 2016, total: '181.1bn' }
+  yearTotal: { year: 2016, total: '180.4bn' }
 };

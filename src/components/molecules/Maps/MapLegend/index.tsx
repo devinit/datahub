@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Header } from 'semantic-ui-react';
 import { howTo } from '../../../../utils/howTo';
 import { Intro } from '../../../atoms/Intro';
+import { mediaQueries } from '../../../theme';
 
 export interface LegendField {
   label?: string;
@@ -14,6 +15,7 @@ export interface Props {
   title: string;
   description: string;
   legendData: LegendField[];
+  visible: boolean;
 }
 
 export interface LegendItemStyleProps {
@@ -21,16 +23,26 @@ export interface LegendItemStyleProps {
   backgroundColor: string;
 }
 
-const LegendContainer = glamorous.div<{length: any; }>(
+const LegendContainer = glamorous.div<{length: any; visible: boolean; }>(
   {
     position: 'absolute',
     left: '2%',
     width: '18%',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    [mediaQueries.tabs]: {
+      width: '50%'
+    },
+    [mediaQueries.phone]: {
+      width: '100%',
+      display: 'none'
+    }
   },
   props => ({
-    top: props.length ? `${140 / props.length}%` : '25%'
+    top: props.length ? `${140 / props.length}%` : '25%',
+    [mediaQueries.phone]: {
+      display: props.visible ? 'flex !important' : 'none'
+    }
   })
 );
 
@@ -48,7 +60,7 @@ const LegendKey = glamorous.li(
 );
 
 const Legend = (props: Props) =>
-  <LegendContainer length={ props.legendData.length }>
+  <LegendContainer length={ props.legendData.length } visible={ props.visible }>
     <Intro step={ 4 } intro={ howTo.globalPicture.legend }>
       <Div>
         <Header as="h3">{ props.title }</Header>

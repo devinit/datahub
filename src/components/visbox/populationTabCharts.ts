@@ -1,14 +1,14 @@
-import { red, blue } from '../theme/semantic';
+import { blue, red } from '../theme/semantic';
 
 export const populationDistribution = {
   type: 'stacked-timearea',
-  colors: [blue, red],
+  colors: [ blue, red ],
   groupBy: 'group',
   linearAxis: {
     showAxis: true,
     indicator: 'value',
     axisMargin: 0,
-    ticking: 'sparse',
+    ticking: 'sparse'
   },
   timeAxis: {
     showAxis: true,
@@ -17,19 +17,19 @@ export const populationDistribution = {
     // Every 30 years
     tickingStep: 20,
     axisMinimum: 1960,
-    axisMaximum: 2015,
-  },
+    axisMaximum: 2016
+  }
 };
 
 export const populationPerAgeBand = {
   type: 'stacked-timearea',
-  colors: [blue, red, 'rgb(183, 193, 0)'],
+  colors: [ blue, red, 'rgb(183, 193, 0)' ],
   groupBy: 'band',
   linearAxis: {
     showAxis: true,
     indicator: 'value',
     axisMargin: 0,
-    ticking: 'sparse',
+    ticking: 'sparse'
   },
   timeAxis: {
     showAxis: true,
@@ -38,8 +38,8 @@ export const populationPerAgeBand = {
     // Every 30 years
     tickingStep: 20,
     axisMinimum: 1960,
-    axisMaximum: 2015,
-  },
+    axisMaximum: 2016
+  }
 };
 
 export default { populationDistribution, populationPerAgeBand };
