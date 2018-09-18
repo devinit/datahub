@@ -185,8 +185,8 @@ class UnbundlingTreemap extends React.Component<Props, State> {
               <SectionHeader color="rgb(238, 238, 238)" style={ { textTransform: 'none' } }>
                 {
                   this.props.aidType === 'oda'
-                    ? `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
-                    : `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2015 prices`
+                    ? `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2016 prices`
+                    : `US$ ${approximate(this.props.bundleSum)} total gross disbursements, 2016 prices`
                 }
               </SectionHeader>
               <Intro step={ 3 } intro={ howTo.unbundlingAid.treeChart }>
