@@ -98,7 +98,7 @@ app.prepare().then(() => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
     const themeId = req.params.themeId;
     const theme = navTabsData.globalPictureThemes.find(globalTheme => globalTheme.id === themeId);
-    if (theme) {
+    if (theme && !state.indicator) {
       state.indicator = theme.default_indicator;
     }
     const queryParams = { state };

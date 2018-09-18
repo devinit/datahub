@@ -155,6 +155,9 @@ class Map extends React.Component<Props, State> {
 
   componentDidMount() {
     this.mounted = true;
+    if ((window as any).gtag) {
+      this.updateGoogleAnalytics(this.props);
+    }
   }
 
   componentWillReceiveProps(nextProps: Props) {
@@ -162,6 +165,9 @@ class Map extends React.Component<Props, State> {
       this.setState({
         currentYear: this.getCurrentYear(nextProps)
       }, () => this.init(nextProps));
+    }
+    if (nextProps.id !== this.props.id && (window as any).gtag) {
+      this.updateGoogleAnalytics(nextProps);
     }
   }
 
@@ -267,6 +273,20 @@ class Map extends React.Component<Props, State> {
       hasflags: this.country === 'global',
       data: { top, bottom }
     };
+  }
+
+  private updateGoogleAnalytics(props: Props) {
+    let source = 'global_picture.indicator';
+    if (props.id.indexOf('spotlight_on_uganda') > -1) {
+      source = 'spotlight_on_uganda.indicator';
+    }
+    if (props.id.indexOf('spotlight_on_kenya') > -1) {
+      source = 'spotlight_on_kenya.indicator';
+    }
+    (window as any).gtag('event', source, {
+      event_category: props.heading,
+      event_label: props.theme
+    });
   }
 
   private toggleShowLegend() {
