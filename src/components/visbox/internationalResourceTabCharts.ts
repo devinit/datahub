@@ -24,7 +24,7 @@ export const resourcesOverTime = {
     ticking: 'years',
     tickingStep: 20,
     axisMinimum: 2000,
-    axisMaximum: 2015
+    axisMaximum: 2016
   },
   legend: {
     showLegend: false
