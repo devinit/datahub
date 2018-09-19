@@ -13,10 +13,20 @@ const SocialIcon = glamorous.a({
   display: 'inline-block'
 });
 
+const updateShareAnalytics = (source: 'facebook' | 'twitter' | 'mail') => {
+  if ((window as any).gtag) {
+    (window as any).gtag('event', 'share', {
+      event_category: source,
+      event_label: window.location.href
+    });
+  }
+};
+
 export interface Props {
   stateToShare?: StateToShare;
 }
 
+// tslint:disable jsx-no-lambda
 const SocialMediaBar = (props?: Props) => (
   <LightBg>
     <Grid centered columns={ 16 }>
@@ -26,16 +36,21 @@ const SocialMediaBar = (props?: Props) => (
             <div>
               <SocialIcon
                 href={ `https://twitter.com/intent/tweet?text=${window.location.href}&source=webclient"` }
+                onClick={ () => updateShareAnalytics('twitter') }
               >
                 <Icon name="twitter" />
               </SocialIcon>
-              <SocialIcon href={ `http://www.facebook.com/share.php?u=${window.location.href}` }>
+              <SocialIcon
+                href={ `http://www.facebook.com/share.php?u=${window.location.href}` }
+                onClick={ () => updateShareAnalytics('facebook') }
+              >
                 <Icon name="facebook f" link />
               </SocialIcon>
               <SocialIcon
                 href={
                   `mailto:?subject=Development Initiatives:
                     Uganda&body=Development Initiatives: Uganda — ${window.location.href}` }
+                onClick={ () => updateShareAnalytics('mail') }
               >
                 <Icon name="mail" />
               </SocialIcon>
