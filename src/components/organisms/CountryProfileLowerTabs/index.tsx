@@ -72,12 +72,12 @@ export default class CountryProfileLowerTabs extends React.Component<Props> {
                 id={ props.id }
                 shouldScrollIntoView={ props.chartId === INFLOWS_VS_OUTFLOWS }
                 chartId={ INFLOWS_VS_OUTFLOWS }
-                year={ props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : 2015 } // FIXME: this is a hack
+                year={ props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : 2016 } // FIXME: this is a hack
               />
             </ErrorBoundary>
             <ErrorBoundary>
               <InternationalResourcesChart
-                year={ props.chartId === INTERNATIONAL_RESOURCES ? (props.year as number) : 2015 } // FIXME: this is a hack
+                year={ props.chartId === INTERNATIONAL_RESOURCES ? (props.year as number) : 2016 } // FIXME: this is a hack
                 id={ props.id }
               />
             </ErrorBoundary>

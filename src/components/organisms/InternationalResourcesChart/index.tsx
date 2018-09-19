@@ -50,7 +50,7 @@ const Chart: React.SFC<TChildProps> = ({ data, year, id }) => {
     <InternationalResourcesChart
       id={ country.id }
       countryType={ countryType }
-      startYear={ internationalResources && internationalResources.startYear || 2015 }
+      startYear={ internationalResources && internationalResources.startYear || 2016 }
       data={ resourcesOverTime && resourcesOverTime.data as DH.IResourceData[] }
       config={ config }
       year={ year } // look in countryProfile lower tabs
