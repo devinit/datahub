@@ -13,6 +13,15 @@ import { getSpotlightPageData } from '../../pageData';
 import { Country } from '../../types';
 import Generic from '../Generic';
 import Link from 'next/link';
+import { css } from 'glamor';
+import { mediaQueries } from '../../theme';
+
+const responsiveCountryProfile = css({
+  [mediaQueries.phone]: {
+    right: '5%'
+  }
+});
+
 interface Props {
   pathname: string;
   id: string;
@@ -34,7 +43,7 @@ export default class Spotlight extends React.Component<Props> {
     return (
       <Generic >
         <Container>
-          <H4 paddingTop="2em" position="absolute" right="150px">
+          <H4 paddingTop="2em" position="absolute" right="20%" { ...responsiveCountryProfile }>
             { this.renderCountryFlag() }
             <Link href={ `/country/${this.props.id}` }>
               <a role="link">{ `${countryName} Country Profile` }</a>
