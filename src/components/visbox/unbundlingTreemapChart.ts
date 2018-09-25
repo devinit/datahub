@@ -3,12 +3,12 @@ const config = {
   coloring: 'color',
   labeling: {
     prefix: 'US$ ',
-    autofit: true,
+    autofit: true
   },
   tree: {
     id: 'name',
-    value: 'value',
-  },
+    value: 'value'
+  }
 };
 
 export default config;

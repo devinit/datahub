@@ -24,9 +24,15 @@ const withData = graphql<ResourcesOverTimeQuery, QueryVarTs, TChildProps>(INTL_R
 });
 
 const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chartId, id }) => {
-  if (data && data.loading) { return <p>Loading...</p>; }
-  if (data && data.error) { return <p>Error in internationalResources..., { data.error }</p>; }
-  if (!data) { return <p>Some error.., data key is missing</p>; }
+  if (data && data.loading) {
+    return <p>Loading...</p>;
+  }
+  if (data && data.error) {
+    return <p>Error in internationalResources..., { data.error }</p>;
+  }
+  if (!data) {
+    return <p>Some error.., data key is missing</p>;
+  }
   // TODO:  To report typescript schema generation bug or error, forinstance resourcesOverTime is not
   // nullable, but it is here and so is data;
   const internationalResources = data.internationalResources;

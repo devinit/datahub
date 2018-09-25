@@ -154,11 +154,6 @@ export default class MultiLinePartition extends React.Component<Props> {
   }
 
   private toggleRevenueTour = () => {
-    // if (this.state.revenueTourVisible) {
-    //   this.setState({ revenueTourVisible: false });
-    // } else {
-    //   this.setState({ revenueTourVisible: true });
-    // }
     introJS().setOptions({ showStepNumbers: false }).start();
   }
 
