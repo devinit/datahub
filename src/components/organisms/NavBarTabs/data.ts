@@ -11,7 +11,7 @@ export default {
           id: 'data_series.poor_people_190',
           name: 'Number of people living in extreme poverty',
           heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$.",
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
           tooltip:
             'Number of poor people living on under 2011 PPP$ 1.90 per day.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -20,7 +20,7 @@ export default {
           id: 'data_series.poverty_190',
           name: '% of population living in extreme poverty',
           heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$.",
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
           tooltip:
             'Percentage of population living under 2011 PPP$ 1.90 per day.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -29,7 +29,7 @@ export default {
           id: 'data_series.depth_of_extreme_poverty_190',
           name: 'Depth of extreme poverty (poverty gap)',
           heading:
-            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap.',
+            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap. 2013 represents the most recent year data is available',
           tooltip:
             'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -38,7 +38,7 @@ export default {
           id: 'data_series.poverty_310',
           name: '% of population living on less than $3.10 a day',
           heading:
-            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor.',
+            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
           tooltip:
             'Percentage of population living under 2011 PPP$ 3.10 per day.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -47,7 +47,7 @@ export default {
           id: 'data_series.2013_p20_population',
           name: 'Number of people in the P20',
           heading:
-            'The approximate number of people in each country who are in the global poorest 20%',
+            'The approximate number of people in each country who are in the global poorest 20%. . 2013 represents the most recent year data is available.',
           tooltip:
             'The approximate number of people in each country who are in the global poorest 20%',
           source:
@@ -57,7 +57,7 @@ export default {
           id: 'data_series.percent_in_p20_national',
           name: '% of people in the P20',
           heading:
-            'The percentage of population of each country who are in the global poorest 20%',
+            'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
           tooltip:
             'The percentage of population of each country who are in the global poorest 20%',
           source:
