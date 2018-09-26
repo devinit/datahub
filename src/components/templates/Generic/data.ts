@@ -44,27 +44,27 @@ export const menuData: Menu = {
           name: 'Unbundling other official flows',
           link: '/unbundling-other-flows',
           icon: 'barcode'
-        },
-        {
-          name: 'Where are the poor and where will they be?',
-          link: '/where-are-the-poor',
-          icon: 'users'
-        },
-        {
-          name: 'Who are the global P20',
-          link: '/who-are-the-global-p20',
-          icon: 'users'
-        },
-        {
-          name: 'Different providers, different priorities',
-          link: '/oda-donor',
-          icon: 'area graph'
-        },
-        {
-          name: 'Are domestic public resources able to meet the needs of the poorest people?',
-          link: '/poverty',
-          icon: 'area graph'
         }
+        // {
+        //   name: 'Where are the poor and where will they be?',
+        //   link: '/where-are-the-poor',
+        //   icon: 'users'
+        // },
+        // {
+        //   name: 'Who are the global P20',
+        //   link: '/who-are-the-global-p20',
+        //   icon: 'users'
+        // },
+        // {
+        //   name: 'Different providers, different priorities',
+        //   link: '/oda-donor',
+        //   icon: 'area graph'
+        // },
+        // {
+        //   name: 'Are domestic public resources able to meet the needs of the poorest people?',
+        //   link: '/poverty',
+        //   icon: 'area graph'
+        // }
       ]
     },
     {
