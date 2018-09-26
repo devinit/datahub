@@ -109,7 +109,7 @@ class SlidingDualSidebar extends React.Component <Props, State> {
    */
 
   public getYearState(data: any, year: number) {
-    const currentYearData = data[year];
+    const currentYearData = data[year] || [];
     const inflowSum = currentYearData
       .filter(d => d.direction === 'in')
       .reduce((sum, datum) => sum + datum.value, 0);

@@ -1333,8 +1333,8 @@ export default {
     },
     {
       id: 'SZ',
-      name: 'Swaziland',
-      slug: 'swaziland',
+      name: 'Eswatini',
+      slug: 'eswatini',
       has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: true

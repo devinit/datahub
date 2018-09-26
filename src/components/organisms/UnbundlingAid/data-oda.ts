@@ -153,7 +153,7 @@ export default {
       { id: 'ex-yugoslavia', name: 'States Ex-Yugoslavia unspecified' },
       { id: 'SD', name: 'Sudan' },
       { id: 'SR', name: 'Suriname' },
-      { id: 'SZ', name: 'Swaziland' },
+      { id: 'SZ', name: 'Eswatini' },
       { id: 'SY', name: 'Syria' },
       { id: 'TJ', name: 'Tajikistan' },
       { id: 'TZ', name: 'Tanzania' },
@@ -321,12 +321,12 @@ export default {
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
       {
-        id: 'public-sector-recipient',
-        name: 'Public sector (recipient government)'
-      },
-      {
         id: 'university-research-institute-etc',
         name: 'University, research institute or think-tank, etc'
+      },
+      {
+        id: 'public-sector-recipient',
+        name: 'Public sector (recipient government)'
       },
       { id: 'unspecified', name: 'Unspecified' },
       {
@@ -354,8 +354,8 @@ export default {
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
       { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'other', name: 'Other' },
-      { id: 'industry-and-trade', name: 'Industry and trade' }
+      { id: 'industry-and-trade', name: 'Industry and trade' },
+      { id: 'other', name: 'Other' }
     ],
     bundles: [
       { id: 'mixed-project-aid', name: 'Mixed project aid' },

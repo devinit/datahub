@@ -38,8 +38,6 @@ class Search extends React.Component<Props> {
   }
 
   public showInput = () => {
-    console.log('Works');
-
     this.state.showInput ? this.setState({ showInput: false }) : this.setState({ showInput: true });
   }
 

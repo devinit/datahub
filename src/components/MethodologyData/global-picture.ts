@@ -6,7 +6,7 @@ export default {
     {
       name: '% of people in the P20',
       description:
-        'The percentage of population of each country who are in the global poorest 20%',
+        'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
       methodology: '',
       uom: 'percent',
       csv:
@@ -22,7 +22,7 @@ export default {
     {
       name: '% of population living in extreme poverty',
       description:
-        "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$.",
+        "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
       methodology: '',
       uom: 'percent',
       csv:
@@ -37,7 +37,7 @@ export default {
     {
       name: '% of population living on less than $3.10 a day',
       description:
-        'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor.',
+        'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
       methodology: '',
       uom: 'percent',
       csv:
