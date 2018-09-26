@@ -1,14 +1,14 @@
+import { Div } from 'glamorous';
 import * as React from 'react';
-import { Div, Span } from 'glamorous';
-import { Country, District } from '../../types';
 import { Button } from 'semantic-ui-react';
+import { Country, District } from '../../types';
 
 export interface Props {
   isCountryProfile?: boolean;
   entity?: Country | District; // country or district
 }
 
-const ProfileSocialMedia = (props: Props) => {
+const ProfileSocialMedia = (_props: Props) => {
   return (
     <Div marginTop={ '1.5em' }>
       <a href={ `http://www.facebook.com/share.php?u=${window.location.href}` }>
@@ -26,15 +26,6 @@ const ProfileSocialMedia = (props: Props) => {
       >
         <Button icon="mail" />
       </a>
-      { props.isCountryProfile && props.entity && (props.entity as Country).hasPDF ?
-        <a
-          rel="noopener"
-          href={ `/pdf/20170331/${props.entity.name.replace(/\s/g, '-')}.pdf` }
-          target="__blank"
-        >
-          <Button size="medium"><Span fontWeight={ 500 }>Download and Print</Span></Button>
-        </a> : '' }
-
     </Div>);
 };
 
