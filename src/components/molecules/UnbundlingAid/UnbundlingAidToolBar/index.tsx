@@ -69,6 +69,7 @@ export default class ToolBar extends React.Component<Props, State> {
     const keys = Object.keys(this.props.toolBarOptions).filter(key => key !== 'years');
     this.state = { keys };
     this.onDragEnd = this.onDragEnd.bind(this);
+    this.captureVisualSentence = this.captureVisualSentence.bind(this);
   }
 
   public onDragEnd(result: DropResult) {
@@ -85,7 +86,7 @@ export default class ToolBar extends React.Component<Props, State> {
     });
   }
 
-  public render() {
+  render() {
     const {
       position = 1,
       toolBarOptions,
@@ -157,5 +158,43 @@ export default class ToolBar extends React.Component<Props, State> {
         </Container>
       </ToolBarContainer>
     );
+  }
+
+  componentDidMount() {
+    window.addEventListener('beforeunload', this.captureVisualSentence);
+  }
+
+  componentWillUnmount() {
+    this.captureVisualSentence();
+    window.removeEventListener('beforeunload', this.captureVisualSentence); // remove the event handler for normal unmounting
+  }
+
+  private captureVisualSentence() {
+    const { aidType, toolBarOptions, values = [] } = this.props;
+    const sentence: any = {};
+    this.state.keys.forEach(key => {
+      const value = ToolBar.getValue(values, key);
+      const options = toolBarOptions[key];
+      if (value !== 'All') {
+        const item = options.find(obj => obj.key === value);
+
+        sentence[key] = item ? item.name : value;
+      } else {
+        return sentence[key] = 'All';
+      }
+    });
+    sentence.aidType = aidType;
+    sentence.year = ToolBar.getValue(values, 'years');
+
+    this.updateUnbundlingAnalytics(sentence);
+  }
+
+  private updateUnbundlingAnalytics(sentence: any) {
+    if ((window as any).gtag) {
+      (window as any).gtag('event', sentence.aidType === 'oda' ? 'UnbundlingAid' : 'UnbundlingOOF', {
+        event_category: sentence.to,
+        event_label: JSON.stringify(sentence)
+      });
+    }
   }
 }

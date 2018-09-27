@@ -76,10 +76,7 @@ export default class extends React.Component<Props> {
             </Header>
           </HeaderContainer>
         </Container>
-        <UnbundlingAid
-          tourVisible={ this.state.tourVisible }
-          aidType={ props.aidType }
-        />
+        <UnbundlingAid tourVisible={ this.state.tourVisible } aidType={ props.aidType }/>
         {
           process.env.NODE_ENV !== 'test'
             ?
