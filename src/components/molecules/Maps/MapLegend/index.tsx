@@ -31,7 +31,8 @@ const LegendContainer = glamorous.div<{length: any; visible: boolean; }>(
     display: 'flex',
     flexDirection: 'column',
     [mediaQueries.tabs]: {
-      width: '50%'
+      width: '50%',
+      display: 'none'
     },
     [mediaQueries.phone]: {
       width: '100%',
@@ -41,6 +42,11 @@ const LegendContainer = glamorous.div<{length: any; visible: boolean; }>(
   props => ({
     top: props.length ? `${140 / props.length}%` : '25%',
     [mediaQueries.phone]: {
+      display: props.visible ? 'flex !important' : 'none',
+      position: 'relative',
+      top: '2%'
+    },
+    [mediaQueries.tabs]: {
       display: props.visible ? 'flex !important' : 'none'
     }
   })

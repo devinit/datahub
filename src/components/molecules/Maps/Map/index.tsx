@@ -64,10 +64,20 @@ class Map extends React.Component<Props, State> {
     const legendButtonStyles = css({
       display: 'none !important',
       position: 'absolute',
-      bottom: '60px',
-      right: '5px',
+      bottom: '4%',
+      right: '3%',
+      [mediaQueries.tabs]: {
+        display: 'block !important',
+        bottom: '10%'
+      },
       [mediaQueries.phone]: {
-        display: 'block !important'
+        display: 'block !important',
+        bottom: '4%'
+      }
+    });
+    const countryBorderTextStyle = css({
+      [mediaQueries.phone]: {
+        top: '14px'
       }
     });
 
@@ -97,6 +107,7 @@ class Map extends React.Component<Props, State> {
               bottom={ '5%' }
               right={ '2%' }
               position={ 'absolute' }
+              { ...countryBorderTextStyle }
             >
               Country borders do not necessarily reflect Development Initiatives&apos; position.
             </P>
