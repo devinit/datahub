@@ -162,7 +162,7 @@ class SlidingDualSidebar extends React.Component <Props, State> {
           </Grid.Column>
         </Grid>
 
-        <Chart height="400px" config={ this.state.config } data={ this.state.currentYearData } />
+        <Chart height="550px" config={ this.state.config } data={ this.state.currentYearData } />
 
         <Grid centered>
           <Grid.Column width={ 8 }>
