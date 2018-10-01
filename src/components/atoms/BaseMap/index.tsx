@@ -222,6 +222,7 @@ class BaseMap extends React.Component<Props, State> {
   }
 
   private getRegionFeature(slug: string, propertyLayer?: string): Feature | void {
+    slug = slug === 'eswatini' ? 'swaziland' : slug; // FIXME: please do this the right way. Consult Alex
     const layer = propertyLayer || 'national';
     const slugProperty = this.propertyLayerSlugMap[layer];
     const features: Feature[] = this.map.queryRenderedFeatures({ layers: [ layer ] });
@@ -350,6 +351,9 @@ class BaseMap extends React.Component<Props, State> {
       const pointData: DH.IMapUnit | null = this.getMouseHoverPointData(features);
       if (!pointData) {
         return !!this.popup && this.popup.remove();
+      } else if (pointData.slug === 'swaziland') {
+        pointData.slug = 'eswatini';
+        pointData.name = 'Eswatini';
       }
       const countryData = globalData.countries.find(data => data.slug === pointData.slug);
       if (countryData && countryData.name !== pointData.name) {
@@ -405,9 +409,11 @@ class BaseMap extends React.Component<Props, State> {
         return false;
       }
       const slugProperty = this.propertyLayerSlugMap[this.props.paint.propertyLayer || 'national'];
-      const slug: string | void = feature.properties[slugProperty];
+      let slug: string | void = feature.properties[slugProperty];
       if (!slug || !this.props.meta || !this.props.meta.country) {
         return false;
+      } else if (slug === 'swaziland') {
+        slug = 'eswatini';
       }
       const route: Route = countryOrDistrictLink(this.props.meta.country, slug.toLowerCase());
       this.setState({ profileLoading: true });
