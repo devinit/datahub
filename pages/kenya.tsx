@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { rehydrate } from 'glamor';
+import { withRouter } from 'next/router';
 import withData from '../src/components/WithData';
 import { StateToShare } from '../src/components/molecules/ChartShare';
 import App from '../src/components/templates/RegionalProfile';
 
-interface Props  {
-  url: {
+interface Props {
+  router: {
     pathname: string;
     query: { id: string, state: StateToShare};
   };
@@ -17,12 +18,13 @@ if (typeof window !== 'undefined') {
   rehydrate((window as any).__NEXT_DATA__.ids);
 }
 
-export default withData((props: Props) =>
-  (<App
-    id={ props.url.query.id }
-    state={ props.url.query.state }
+export default withRouter(withData((props: Props) =>
+  <App
+    id={ props.router.query.id }
+    state={ props.router.query.state }
     currencyCode="KES"
     currencyUSD="constant 2015 USD"
     country="kenya"
     supportLocalCurrencyOnly={ false }
-  />));
+  />
+));

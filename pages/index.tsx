@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { rehydrate } from 'glamor';
+import { withRouter } from 'next/router';
 import withData from '../src/components/WithData';
 import { StateToShare } from '../src/components/molecules/ChartShare';
 import App from '../src/components/templates/Front';
 
 interface Props {
-  url: {
+  router: {
     pathname: string;
     query: { state: StateToShare };
   };
@@ -17,6 +18,4 @@ if (typeof window !== 'undefined') {
   rehydrate((window as any).__NEXT_DATA__.ids);
 }
 
-export default withData((props: Props) => {
-  return <App state={ props.url.query.state } />;
-});
+export default withRouter(withData((props: Props) => <App state={ props.router.query.state } />));

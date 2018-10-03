@@ -2,11 +2,12 @@
 /* eslint-disable no-underscore-dangle, max-len, react/no-unescaped-entities */
 import * as React from 'react';
 import { rehydrate } from 'glamor';
+import { withRouter } from 'next/router';
 import withData from '../src/components/WithData';
 import App from '../src/components/templates/MultilateralProfile';
 
 interface Props {
-  url: {
+  router: {
     pathname: string;
     query: { id: string}
   };
@@ -18,6 +19,4 @@ if (typeof window !== 'undefined') {
   rehydrate((window as any).__NEXT_DATA__.ids);
 }
 
-export default withData((props: Props) => {
-  return <App id={ props.url.query.id } />;
-});
+export default withRouter(withData((props: Props) => <App id={ props.router.query.id } />));

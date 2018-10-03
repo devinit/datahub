@@ -2,6 +2,7 @@ import * as React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { PageMeta, getPageMeta, shouldHaveMapboxCss } from '../src/utils';
 import { renderStatic } from 'glamor/server';
+import MyApp from './_app';
 
 declare const APP_VERSION: string;
 
@@ -33,7 +34,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="theme-color" content="#e8443a" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <title>{ pageMeta.title }</title>
+          <MyApp title={ pageMeta.title }/>
           <style dangerouslySetInnerHTML={ { __html: this.props.css } } />
           {/* <style key="critical" dangerouslySetInnerHTML={{ __html: criticalCSS}} /> */ }
           <link as="style" href="/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet"/>

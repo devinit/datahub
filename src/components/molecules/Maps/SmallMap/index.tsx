@@ -5,7 +5,7 @@ import configs from '../Map/config';
 import { white } from '../../../theme/semantic';
 import Router from 'next/router';
 
-export interface Props {
+export interface SmallMapProps {
   slug: string;
   spotlightCountry?: string;
 }
@@ -26,7 +26,7 @@ const getMeta = (spotlightCountry?: string): Meta => ({
   country: spotlightCountry || 'global'
 });
 
-const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
+const mapProps = ({ slug, spotlightCountry }: SmallMapProps): MapProps => {
   const paintProps = spotlightCountry ? configs[spotlightCountry].paint : configs.global.paint;
   const paint = { background: white, ...paintProps };
   const meta = getMeta(spotlightCountry);
@@ -35,7 +35,7 @@ const mapProps = ({ slug, spotlightCountry }: Props): MapProps => {
   return { paint, meta, countryProfile: slug, viewport };
 };
 
-const SmallMap = (props: Props) => {
+const SmallMap = (props: SmallMapProps) => {
   const baseMapProps = mapProps(props);
 
   return (<BaseMap { ...baseMapProps } router={ Router } />);

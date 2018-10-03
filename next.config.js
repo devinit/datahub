@@ -29,8 +29,5 @@ module.exports = withTypescript({
     config.devtool = 'cheap-source-map';
 
     return config;
-  },
-  typescriptLoaderOptions: {
-    transpileOnly: true
   }
 });
