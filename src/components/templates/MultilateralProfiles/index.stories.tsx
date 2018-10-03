@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import Profiles from '.';
+// import * as React from 'react';
+// import { storiesOf } from '@storybook/react';
+// import Profiles from '.';
 
-storiesOf('Templates', module)
-  .add('Multilateral Profiles', () => <Profiles />);
+// storiesOf('Templates', module)
+//   .add('Multilateral Profiles', () => <Profiles />);

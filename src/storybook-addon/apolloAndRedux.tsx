@@ -7,9 +7,9 @@ import { client } from './apollo';
 const withApolloAndReduxProvider = () => {
   return storyFn => {
     return (
-      <Provider store={initRedux()}>
-        <ApolloProvider client={client}>
-          {storyFn()}
+      <Provider store={ initRedux() }>
+        <ApolloProvider client={ client }>
+          { storyFn() }
         </ApolloProvider>
       </Provider>
     );

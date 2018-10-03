@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import WhereAreThePoor from '.';
+// import * as React from 'react';
+// import { storiesOf } from '@storybook/react';
+// import WhereAreThePoor from '.';
 
-storiesOf('Templates', module).add(' Where are the poor', () => <WhereAreThePoor />);
+// storiesOf('Templates', module).add(' Where are the poor', () => <WhereAreThePoor />);
