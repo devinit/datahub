@@ -165,21 +165,21 @@ export default {
       indicators: [
         {
           id: 'data_series.non_grant_revenue_ppp_pc',
-          name: 'Government revenue per person (excluding grants), 2015 PPP$',
+          name: 'Government revenue per person (excluding grants), 2011 PPP$',
           heading:
-            'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+            'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip:
-            'Government revenue per person (excluding grants), 2015 PPP$.',
+            'Government revenue per person (excluding grants), 2011 PPP$.',
           source:
             'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
         },
         {
           id: 'data_series.total_revenue_ppp_pc',
-          name: 'Government revenue per person (including grants), 2015 PPP$',
+          name: 'Government revenue per person (including grants), 2011 PPP$',
           heading:
-            'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+            'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip:
-            'Government revenue per person (including grants), 2015 PPP$.',
+            'Government revenue per person (including grants), 2011 PPP$.',
           source:
             'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
         },
@@ -187,7 +187,7 @@ export default {
           id: 'data_series.govt_revenue_pc_gdp',
           name: 'Government revenue (excluding grants), % of GDP',
           heading:
-            'Revenue raised as a proportion of national income (GDP) by the government, including tax and non-tax revenue (grants and borrowing are excluded). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+            'Revenue raised as a proportion of national income (GDP) by the government, including tax and non-tax revenue (grants and borrowing are excluded). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip: 'Government revenue (excluding grants), % of GDP',
           source:
             'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
@@ -196,7 +196,7 @@ export default {
           id: 'data_series.total_revenue_percent_gdp',
           name: 'Government revenue (including grants), % of GDP',
           heading:
-            'Revenue raised as a proportion of national income (GDP) by the government, including tax, non-tax revenue and grants (borrowing is excluded). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+            'Revenue raised as a proportion of national income (GDP) by the government, including tax, non-tax revenue and grants (borrowing is excluded). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip: 'Government revenue (including grants), % of GDP.',
           source:
             'Development Initiatives based on IMF Article IV publications.'
@@ -205,18 +205,18 @@ export default {
           id: 'data_series.grants_percent_total_revenue',
           name: 'Grants, % of government revenue',
           heading:
-            'Grants from international donors as a proportion of government revenue (including grants). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+            'Grants from international donors as a proportion of government revenue (including grants). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip: 'Grants, % of government revenue.',
           source:
             'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
         },
         {
           id: 'data_series.govt_spend_pc',
-          name: 'Government spending per person, 2015 PPP$',
+          name: 'Government spending per person, 2011 PPP$',
           heading:
-            'Total expenditure by the government divided by the total population. Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+            'Total expenditure by the government divided by the total population. Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
           tooltip:
-            'Government spending per person, 2015 PPP$. Data is for 2015 or most recent year prior.',
+            'Government spending per person, 2011 PPP$. Data is for 2016 or most recent year prior.',
           source:
             'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
         }

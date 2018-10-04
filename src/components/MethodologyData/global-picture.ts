@@ -609,11 +609,11 @@ export default {
       }
     },
     {
-      name: 'Government revenue per person (excluding grants), 2015 PPP$',
+      name: 'Government revenue per person (excluding grants), 2011 PPP$',
       description:
-        'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+        'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
       methodology: '',
-      uom: '2015 PPP$',
+      uom: '2011 PPP$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/non-grant-revenue-ppp-pc',
       zip:
@@ -625,11 +625,11 @@ export default {
       }
     },
     {
-      name: 'Government revenue per person (including grants), 2015 PPP$',
+      name: 'Government revenue per person (including grants), 2011 PPP$',
       description:
-        'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+        'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
       methodology: '',
-      uom: '2015 PPP$',
+      uom: '2011 PPP$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-ppp-pc',
       zip:
@@ -643,7 +643,7 @@ export default {
     {
       name: 'Government revenue (excluding grants), % of GDP',
       description:
-        'Revenue raised as a proportion of national income (GDP) by the government, including tax and non-tax revenue (grants and borrowing are excluded). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+        'Revenue raised as a proportion of national income (GDP) by the government, including tax and non-tax revenue (grants and borrowing are excluded). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
       methodology: '',
       uom: 'percent',
       csv:
@@ -659,7 +659,7 @@ export default {
     {
       name: 'Government revenue (including grants), % of GDP',
       description:
-        'Revenue raised as a proportion of national income (GDP) by the government, including tax, non-tax revenue and grants (borrowing is excluded). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+        'Revenue raised as a proportion of national income (GDP) by the government, including tax, non-tax revenue and grants (borrowing is excluded). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
       methodology: '',
       uom: 'percent',
       csv:
@@ -674,7 +674,7 @@ export default {
     {
       name: 'Grants, % of government revenue',
       description:
-        'Grants from international donors as a proportion of government revenue (including grants). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+        'Grants from international donors as a proportion of government revenue (including grants). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
       methodology: '',
       uom: 'percent',
       csv:
@@ -688,11 +688,11 @@ export default {
       }
     },
     {
-      name: 'Government spending per person, 2015 PPP$',
+      name: 'Government spending per person, 2011 PPP$',
       description:
-        'Total expenditure by the government divided by the total population. Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
+        'Total expenditure by the government divided by the total population. Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
       methodology: '',
-      uom: '2015 PPP$',
+      uom: '2011 PPP$',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/govt-spend-pc',
       zip:

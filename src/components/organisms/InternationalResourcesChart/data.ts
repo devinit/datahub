@@ -179,11 +179,7 @@ export default {
         name: 'Officially supported export credits',
         selections: []
       },
-      {
-        id: 'finance-mobilised-in',
-        name: 'Blended Finance Mobilised',
-        selections: []
-      }
+      { id: 'finance-mobilised-in', name: 'Blended Finance', selections: [] }
     ],
     outflows: [
       { id: 'fdi-in-profits-out', name: 'Profits on FDI', selections: [] },
@@ -332,11 +328,7 @@ export default {
         name: 'Officially supported export credits',
         selections: []
       },
-      {
-        id: 'finance-mobilised-in',
-        name: 'Blended Finance Mobilised',
-        selections: []
-      }
+      { id: 'finance-mobilised-in', name: 'Blended Finance', selections: [] }
     ],
     outflows: [
       { id: 'fdi-in-profits-out', name: 'Profits on FDI', selections: [] },

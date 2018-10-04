@@ -21,7 +21,7 @@ export default {
     {
       name: 'International resource flows to and from developed countries',
       description:
-        'Estimates of international resource flows from developed countries, 2016 US$.',
+        'Estimates of international resource flows from and to the country, US$ (constant 2016 prices). Data is for 2000-2016. Data on private development assistance (PDA) is shown for a single year only. See methodology for detailed notes on the data for each resource flow.',
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
@@ -30,15 +30,15 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors.zip?raw=true',
       source: {
         name:
-          'Development Initiatives based on numerous sources. Note that data of some flows is missing. Foreign direct investment: OECD. Disbursements of official development assistance and other official flows: OECD DAC. Export Credits: OECD DAC. PDA: Hudson Insitutue and OECD. Remittances: World Bank Migration and Remittances Factbook.',
+          'Source: Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance, other official flows and officially supported export credits: OECD DAC. Foreign direct investment: OECD. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data. Private Development Assistance: Hudson Institute Index of Global Philanthropy and Remittances 2016 and OECD DAC.',
         link: ''
       }
     },
     {
       name: 'Non-grant government revenue',
-      description: 'Non-grant government revenue. Data is for 2015.',
+      description: 'Non-grant government revenue. Data is for 2016.',
       methodology: '',
-      uom: 'constant 2015 US$, NCU',
+      uom: 'constant 2016 US$, NCU',
       csv:
         'https://github.com/devinit/digital-platform/blob/master/user-data/domestic',
       zip:
@@ -51,7 +51,7 @@ export default {
     {
       name: 'International resource flows to and from developing countries',
       description:
-        'Estimates of international resource flows into the country, 2016 US$. Data is for 2016. Estimates are gross inflows where available, with the following exceptions: foreign direct investment and portfolio equity are net inflows (new investments minus disinvestments) and short-term debt is net flows (disbursements minus capital repayments). See methodology for detailed notes on the data for each resource flow.',
+        'Estimates of international resource flows to and from the country, US$ (constant 2016 prices). Data is for 2000-2016. Estimates are in gross for inflows where available, with the following exceptions: foreign direct investment and portfolio equity are net inflows (new investments minus disinvestments) and short-term debt is net flows (disbursements minus capital repayments). Blended finance refers to private finance mobilised by official development finance interventions, data is available for 2012-2015 only. Data on South-South Cooperation can vary in-terms of definition and types of flow included by provider.  See methodology for detailed notes on the data for each resource flow.',
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
@@ -60,7 +60,7 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients.zip?raw=true',
       source: {
         name:
-          'Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance and other official flows: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data. Export Credits: OECD DAC2b. Tourism: World Bank World Development Indicators.',
+          'Source: Development Initiatives based on numerous sources. Note that data on some flows are missing. Official development assistance, other official flows, officially supported export credits, blended finance: OECD DAC. Foreign direct investment: UNCTAD Stats. Long- and short-term debt: World Bank International Debt Statistics. Portfolio equity: World Bank data bank. Remittances: World Bank Migration and Remittances Data. Tourism: World Bank World Development Indicators. South-South cooperation data is based on the national sources of each provider.',
         link: ''
       }
     },

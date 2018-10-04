@@ -315,8 +315,8 @@ export default {
     channels: [
       { id: 'ngo-donor', name: 'NGO (donor country)' },
       { id: 'ngo-recipient', name: 'NGO (recipient country)' },
-      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
+      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       { id: 'multilateral', name: 'Multilateral' },
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
@@ -362,8 +362,8 @@ export default {
       { id: 'cash-loan-equity', name: 'Cash (loan/equity)' },
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' },
-      { id: 'cash-grant', name: 'Cash grant' },
       { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
+      { id: 'cash-grant', name: 'Cash grant' },
       { id: 'commodities-food', name: 'Commodities & Food' }
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
