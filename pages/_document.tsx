@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
           <title>{ pageMeta.title }</title>
           <style dangerouslySetInnerHTML={ { __html: this.props.css } } />
           {/* <style key="critical" dangerouslySetInnerHTML={{ __html: criticalCSS}} /> */ }
+          <link as="style" href="/outdatedbrowser/outdatedbrowser.min.css" rel="stylesheet"/>
           <link as="style" href={ `/semantic.min.css?v${version}` } rel="stylesheet" />
           <link as="style" href={ `/di-charts.min.css?v${version}` } rel="stylesheet"/>
           { process.env.NODE_ENV !== 'production' ?
@@ -67,11 +68,42 @@ export default class MyDocument extends Document {
               gtag('config', 'UA-122244396-1');`
             } }
           />
+          <script async src="/outdatedbrowser/outdatedbrowser.min.js"/>
 
         </Head>
         <body>
           <Main />
           <NextScript />
+          <div id="outdated"/>
+          <script
+            dangerouslySetInnerHTML={ {
+              __html: `
+                //event listener form DOM ready
+                function addLoadEvent(func) {
+                    var oldonload = window.onload;
+                    if (typeof window.onload != 'function') {
+                        window.onload = func;
+                    } else {
+                        window.onload = function() {
+                            if (oldonload) {
+                                oldonload();
+                            }
+                            func();
+                        }
+                    }
+                }
+                //call function after DOM ready
+                addLoadEvent(function(){
+                    outdatedBrowser({
+                        bgColor: '#f25648',
+                        color: '#ffffff',
+                        lowerThan: 'Edge',
+                        languagePath: '/outdatedbrowser/lang/en.html'
+                    })
+                });
+              `
+            } }
+          />
         </body>
       </html>
     );
