@@ -15,7 +15,7 @@ const areaConfig = {
     axisMinimum: 2000,
     axisMaximum: 2016,
     ticking: 'years',
-    tickingStep: 5
+    tickingStep: 4
   }
 };
 
