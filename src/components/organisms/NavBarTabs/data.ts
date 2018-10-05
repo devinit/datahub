@@ -4,87 +4,156 @@
 export default {
   globalPictureThemes: [
     {
-      id: 'poverty',
-      name: 'Poverty',
+      id: 'international-official-finance',
+      name: 'International official finance',
       indicators: [
         {
-          id: 'data_series.poor_people_190',
-          name: 'Number of people living in extreme poverty',
+          id: 'fact.in_oda_gross_constant',
+          name: 'Gross ODA received, US$',
           heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
-          tooltip:
-            'Number of poor people living on under 2011 PPP$ 1.90 per day.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
+            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices',
+          tooltip: 'Gross ODA received, US$.',
+          source: 'OECD DAC 2A.'
         },
         {
-          id: 'data_series.poverty_190',
-          name: '% of population living in extreme poverty',
+          id: 'fact.in_oda_net_constant',
+          name: 'Net ODA received, US$',
           heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
-          tooltip:
-            'Percentage of population living under 2011 PPP$ 1.90 per day.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
+            'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices.',
+          tooltip: 'Net ODA received, US$.',
+          source: 'OECD DAC 2B.'
         },
         {
-          id: 'data_series.depth_of_extreme_poverty_190',
-          name: 'Depth of extreme poverty (poverty gap)',
+          id: 'fact.out_oda_net_constant',
+          name: 'Net ODA provided by OECD DAC members, US$',
           heading:
-            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap. 2013 represents the most recent year data is available',
-          tooltip:
-            'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
+            'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2016 prices.',
+          tooltip: 'Net ODA provided by OECD DAC members, US$.',
+          source: 'OECD DAC 2A.'
         },
         {
-          id: 'data_series.poverty_310',
-          name: '% of population living on less than $3.10 a day',
+          id: 'recipient_profile.oda_per_poor_person_constant',
+          name: 'ODA per person living on under $1.90 a day, US$',
           heading:
-            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
-          tooltip:
-            'Percentage of population living under 2011 PPP$ 3.10 per day.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
+            'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2016 prices.',
+          tooltip: 'ODA per person living on under $1.90 a day, US$.',
+          source: 'OECD DAC2A and World Bank PovcalNet.'
         },
         {
-          id: 'data_series.2013_p20_population',
-          name: 'Number of people in the P20',
+          id: 'fact.oda_percent_gni',
+          name: 'Net ODA provided by DAC members, % of GNI',
           heading:
-            'The approximate number of people in each country who are in the global poorest 20%. . 2013 represents the most recent year data is available.',
-          tooltip:
-            'The approximate number of people in each country who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+            'Net official development assistance (ODA) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income (GNI).',
+          tooltip: 'Net ODA provided by DAC members, % of GNI.',
+          source: 'OECD DAC 1.'
         },
         {
-          id: 'data_series.percent_in_p20_national',
-          name: '% of people in the P20',
+          id: 'fact.oda_to_ldcs_percent_gni',
+          name: 'Net ODA provided by DAC members to LDCs, % of GNI',
           heading:
-            'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
-          tooltip:
-            'The percentage of population of each country who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+            'Net official development assistance (ODA) to least-developed countries (LDCs) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.',
+          tooltip: 'Net ODA provided by DAC members to LDCs, % of GNI.',
+          source: 'OECD DAC 1, OECD DAC 2A.'
         },
         {
-          id: 'subnational_p20',
-          name: '% of people in the P20 (subnational level)',
+          id: 'fact.in_oof_gross_constant',
+          name:
+            'Gross long-term other official flows and export credits received, US$',
           heading:
-            'The percentage of people in each subnational area who are in the global poorest 20%',
+            'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2016 prices.',
           tooltip:
-            'The percentage of people in each subnational area who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+            'Gross long-term other official flows and export credits received, US$',
+          source: 'OECD DAC 2B.'
         },
         {
-          id: 'survey_p20',
-          name: '% of people in the P20 (survey level)',
+          id: 'fact.out_oof_net_constant',
+          name: 'Net other official flows and export credits provided, US$',
           heading:
-            'The percentage of people in each household survey region who are in the global poorest 20%',
-          tooltip:
-            'The percentage of people in each household survey region who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+            'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2016 prices.',
+          tooltip: 'Net other official flows and export credits provided, US$.',
+          source: 'OECD DAC 2B.'
+        },
+        {
+          id: 'fact.out_ssc_net_constant',
+          name: 'Net ODA provided by non-DAC donors, US$',
+          heading:
+            'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD. Data is in constant 2016 prices.',
+          tooltip: 'Net ODA provided by non-DAC donors, US$',
+          source: 'OECD DAC 2A'
+        },
+        {
+          id: 'fact.ssc_percent_gni',
+          name: 'Net ODA provided by non-DAC donors, % of GNI',
+          heading:
+            'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD, expressed as a percentage of gross national income',
+          tooltip: 'Net ODA provided by non-DAC donors, % of GNI.',
+          source: 'OECD DAC1.'
         }
       ],
-      default_indicator: 'data_series.poor_people_190'
+      default_indicator: 'fact.in_oda_gross_constant'
+    },
+    {
+      id: 'international-finance',
+      name: 'International finance',
+      indicators: [
+        {
+          id: 'data_series.largest_intl_flow',
+          name: 'Largest international resource flow',
+          heading:
+            'Largest source of international financing to each developing country',
+          tooltip:
+            'The largest international resource flow to each country in each year.',
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+        },
+        {
+          id: 'data_series.intl_resources_total_percent_gdp',
+          name: 'Total international resource flows, % of GDP',
+          heading:
+            'The sum of official, commercial and private resource flows received by each developing country, expressed as a percentage of GDP.',
+          tooltip:
+            "Total international resource flows received by each country divided by the country's GDP, for each year.",
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+        },
+        {
+          id: 'data_series.oda_percent_intl_resources',
+          name: 'ODA, % of international resource flows',
+          heading:
+            'ODA received by each developing country, expressed as a percentage of all official, commercial and private international resource inflows.',
+          tooltip:
+            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of total international resource flows received by the same country, each year.',
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+        },
+        {
+          id: 'data_series.fdi_percent_gdp',
+          name: 'Foreign direct investment, % of GDP',
+          heading:
+            "Inflows of foreign direct investment expressed as a percentage of the country's GDP.",
+          tooltip:
+            'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
+          source: 'UNCTAD Stat and World Bank World Development Indicators.'
+        },
+        {
+          id: 'data_series.fdi_pp',
+          name: 'Foreign direct investment per person, US$',
+          heading:
+            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
+          tooltip:
+            'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
+          source: 'UNCTAD Stat and World Bank World Development Indicators.'
+        },
+        {
+          id: 'data_series.remittances_pp',
+          name: 'Remittances received per person, US$',
+          heading:
+            "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2016 prices.",
+          tooltip: 'Remittances per person.',
+          source: 'World Bank.'
+        }
+      ],
+      default_indicator: 'data_series.largest_intl_flow'
     },
     {
       id: 'vulnerability',
@@ -224,156 +293,87 @@ export default {
       default_indicator: 'data_series.non_grant_revenue_ppp_pc'
     },
     {
-      id: 'international-finance',
-      name: 'International finance',
+      id: 'poverty',
+      name: 'Poverty',
       indicators: [
         {
-          id: 'data_series.largest_intl_flow',
-          name: 'Largest international resource flow',
+          id: 'data_series.poor_people_190',
+          name: 'Number of people living in extreme poverty',
           heading:
-            'Largest source of international financing to each developing country',
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
           tooltip:
-            'The largest international resource flow to each country in each year.',
+            'Number of poor people living on under 2011 PPP$ 1.90 per day.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.poverty_190',
+          name: '% of population living in extreme poverty',
+          heading:
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
+          tooltip:
+            'Percentage of population living under 2011 PPP$ 1.90 per day.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.depth_of_extreme_poverty_190',
+          name: 'Depth of extreme poverty (poverty gap)',
+          heading:
+            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap. 2013 represents the most recent year data is available',
+          tooltip:
+            'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.poverty_310',
+          name: '% of population living on less than $3.10 a day',
+          heading:
+            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
+          tooltip:
+            'Percentage of population living under 2011 PPP$ 3.10 per day.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.2013_p20_population',
+          name: 'Number of people in the P20',
+          heading:
+            'The approximate number of people in each country who are in the global poorest 20%. . 2013 represents the most recent year data is available.',
+          tooltip:
+            'The approximate number of people in each country who are in the global poorest 20%',
           source:
-            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         },
         {
-          id: 'data_series.intl_resources_total_percent_gdp',
-          name: 'Total international resource flows, % of GDP',
+          id: 'data_series.percent_in_p20_national',
+          name: '% of people in the P20',
           heading:
-            'The sum of official, commercial and private resource flows received by each developing country, expressed as a percentage of GDP.',
+            'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
           tooltip:
-            "Total international resource flows received by each country divided by the country's GDP, for each year.",
+            'The percentage of population of each country who are in the global poorest 20%',
           source:
-            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         },
         {
-          id: 'data_series.oda_percent_intl_resources',
-          name: 'ODA, % of international resource flows',
+          id: 'subnational_p20',
+          name: '% of people in the P20 (subnational level)',
           heading:
-            'ODA received by each developing country, expressed as a percentage of all official, commercial and private international resource inflows.',
+            'The percentage of people in each subnational area who are in the global poorest 20%',
           tooltip:
-            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of total international resource flows received by the same country, each year.',
+            'The percentage of people in each subnational area who are in the global poorest 20%',
           source:
-            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         },
         {
-          id: 'data_series.fdi_percent_gdp',
-          name: 'Foreign direct investment, % of GDP',
+          id: 'survey_p20',
+          name: '% of people in the P20 (survey level)',
           heading:
-            "Inflows of foreign direct investment expressed as a percentage of the country's GDP.",
+            'The percentage of people in each household survey region who are in the global poorest 20%',
           tooltip:
-            'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
-          source: 'UNCTAD Stat and World Bank World Development Indicators.'
-        },
-        {
-          id: 'data_series.fdi_pp',
-          name: 'Foreign direct investment per person, US$',
-          heading:
-            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
-          tooltip:
-            'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
-          source: 'UNCTAD Stat and World Bank World Development Indicators.'
-        },
-        {
-          id: 'data_series.remittances_pp',
-          name: 'Remittances received per person, US$',
-          heading:
-            "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2016 prices.",
-          tooltip: 'Remittances per person.',
-          source: 'World Bank.'
+            'The percentage of people in each household survey region who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
         }
       ],
-      default_indicator: 'data_series.largest_intl_flow'
-    },
-    {
-      id: 'international-official-finance',
-      name: 'International official finance',
-      indicators: [
-        {
-          id: 'fact.in_oda_gross_constant',
-          name: 'Gross ODA received, US$',
-          heading:
-            'Gross official development assistance (ODA) includes monetary transfers (e.g. grants and loans to governments and for project-type interventions), non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices',
-          tooltip: 'Gross ODA received, US$.',
-          source: 'OECD DAC 2A.'
-        },
-        {
-          id: 'fact.in_oda_net_constant',
-          name: 'Net ODA received, US$',
-          heading:
-            'Net official development assistance (ODA) includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data shown is from OECD DAC and multilateral donors and is in constant 2016 prices.',
-          tooltip: 'Net ODA received, US$.',
-          source: 'OECD DAC 2B.'
-        },
-        {
-          id: 'fact.out_oda_net_constant',
-          name: 'Net ODA provided by OECD DAC members, US$',
-          heading:
-            'Net official development assistance (ODA) provided by each member of the OECD Development Assistance Committee (DAC). Includes monetary transfers, non-monetary transfers (e.g. food aid, technical cooperation) and ODA that resulted in no additional transfer of resources (e.g. debt relief) minus capital repayments on ODA loans (interest repayments are not subtracted). Data is in constant 2016 prices.',
-          tooltip: 'Net ODA provided by OECD DAC members, US$.',
-          source: 'OECD DAC 2A.'
-        },
-        {
-          id: 'recipient_profile.oda_per_poor_person_constant',
-          name: 'ODA per person living on under $1.90 a day, US$',
-          heading:
-            'Official development assistance (ODA) per poor person, calculated as the total net ODA received by a country divided by the number of people in that country living on less than $1.90 per day. Data is in constant 2016 prices.',
-          tooltip: 'ODA per person living on under $1.90 a day, US$.',
-          source: 'OECD DAC2A and World Bank PovcalNet.'
-        },
-        {
-          id: 'fact.oda_percent_gni',
-          name: 'Net ODA provided by DAC members, % of GNI',
-          heading:
-            'Net official development assistance (ODA) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income (GNI).',
-          tooltip: 'Net ODA provided by DAC members, % of GNI.',
-          source: 'OECD DAC 1.'
-        },
-        {
-          id: 'fact.oda_to_ldcs_percent_gni',
-          name: 'Net ODA provided by DAC members to LDCs, % of GNI',
-          heading:
-            'Net official development assistance (ODA) to least-developed countries (LDCs) provided by members of the OECD Development Assistance Committee (DAC), expressed as a percentage of gross national income.',
-          tooltip: 'Net ODA provided by DAC members to LDCs, % of GNI.',
-          source: 'OECD DAC 1, OECD DAC 2A.'
-        },
-        {
-          id: 'fact.in_oof_gross_constant',
-          name:
-            'Gross long-term other official flows and export credits received, US$',
-          heading:
-            'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2016 prices.',
-          tooltip:
-            'Gross long-term other official flows and export credits received, US$',
-          source: 'OECD DAC 2B.'
-        },
-        {
-          id: 'fact.out_oof_net_constant',
-          name: 'Net other official flows and export credits provided, US$',
-          heading:
-            'Other official flows (OOFs) are flows to developing countries that do not meet the criteria to count as ODA. These are typically loans at low levels of concessionality. Officially supported export credits are finance that is primarily aimed at facilitating exports from the donor country. Data is in constant 2016 prices.',
-          tooltip: 'Net other official flows and export credits provided, US$.',
-          source: 'OECD DAC 2B.'
-        },
-        {
-          id: 'fact.out_ssc_net_constant',
-          name: 'Net ODA provided by non-DAC donors, US$',
-          heading:
-            'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD. Data is in constant 2016 prices.',
-          tooltip: 'Net ODA provided by non-DAC donors, US$',
-          source: 'OECD DAC 2A'
-        },
-        {
-          id: 'fact.ssc_percent_gni',
-          name: 'Net ODA provided by non-DAC donors, % of GNI',
-          heading:
-            'Net ODA provided by countries beyond the OECD Development Assistance Committee (DAC) who do report to the OECD, expressed as a percentage of gross national income',
-          tooltip: 'Net ODA provided by non-DAC donors, % of GNI.',
-          source: 'OECD DAC1.'
-        }
-      ],
-      default_indicator: 'fact.in_oda_gross_constant'
+      default_indicator: 'data_series.poor_people_190'
     },
     {
       id: 'humanitarian-finance',

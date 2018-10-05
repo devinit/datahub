@@ -66,7 +66,7 @@ export default {
     },
     {
       id: 'totalrevenue-ctry',
-      title: 'WHAT IS THE TOTAL REVENUE OF {country}?',
+      title: 'WHAT IS THE TOTAL REVENUE EXCLUDING GRANTS OF {country}?',
       narrative: '',
       donor_title: ''
     },
