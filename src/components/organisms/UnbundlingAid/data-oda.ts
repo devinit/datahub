@@ -321,12 +321,12 @@ export default {
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
       {
-        id: 'university-research-institute-etc',
-        name: 'University, research institute or think-tank, etc'
-      },
-      {
         id: 'public-sector-recipient',
         name: 'Public sector (recipient government)'
+      },
+      {
+        id: 'university-research-institute-etc',
+        name: 'University, research institute or think-tank, etc'
       },
       { id: 'unspecified', name: 'Unspecified' },
       {
@@ -362,8 +362,8 @@ export default {
       { id: 'cash-loan-equity', name: 'Cash (loan/equity)' },
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' },
-      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
       { id: 'cash-grant', name: 'Cash grant' },
+      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
       { id: 'commodities-food', name: 'Commodities & Food' }
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
