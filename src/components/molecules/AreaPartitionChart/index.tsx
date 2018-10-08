@@ -230,12 +230,12 @@ class AreaPartitionChart extends React.Component<Props, State> {
   }
 
   public initState(props: Props): State {
-    const year = this.props.startYear;
-    const direction = this.props.countryType !== DONOR ? 'in' : 'out';
+    const year = props.startYear;
+    const direction = props.countryType !== DONOR ? 'in' : 'out';
     const directions = [
       { value: 'in', text: `Inflows to ${props.country}` },
       { value: 'out',
-        text: this.props.countryType !== DONOR ?
+        text: props.countryType !== DONOR ?
           `Outflows leaving ${props.country}` : `Outflows from ${props.country}` }
     ];
 
@@ -297,7 +297,7 @@ class AreaPartitionChart extends React.Component<Props, State> {
   }
 
   public getFlowState(direction: string, flow?: string): FlowState {
-    const trend = this.props.data
+    const trend = this.generateCompleteData(this.props)
       .filter(d => d.direction === direction && (flow === 'all' || d.flow_id === flow))
       .sort((a, b) => b.value - a.value);
 
@@ -324,6 +324,47 @@ class AreaPartitionChart extends React.Component<Props, State> {
       shouldUnbundle: selection.unbundle,
       mixes: groupBy(d => `${d.year}`, trend)
     };
+  }
+
+  private generateCompleteData(props: Props) {
+    const { axisMaximum, axisMinimum } = props.config.areaConfig.timeAxis;
+    const cleanData = props.data.slice();
+    const inFlowNames = props.inflows.map(flow => flow.name);
+    const outFlowNames = props.outflows.map(flow => flow.name);
+    inFlowNames.forEach(flowName => {
+      for (let year = axisMinimum; year <= axisMaximum; year++) {
+        const missingData = this.generateMissingFlowData(props, flowName, 'in', year);
+        if (missingData) {
+          cleanData.push(missingData);
+        }
+      }
+    });
+    outFlowNames.forEach(flowName => {
+      for (let year = axisMinimum; year <= axisMaximum; year++) {
+        const missingData = this.generateMissingFlowData(props, flowName, 'out', year);
+        if (missingData) {
+          cleanData.push(missingData);
+        }
+      }
+    });
+
+    return cleanData;
+  }
+
+  private generateMissingFlowData(props: Props, flowName: string, direction: 'in' | 'out', year: number) {
+    const match = props.data.find(flowData =>
+      flowData.flow_name === flowName && flowData.year === year && flowData.direction === direction
+    );
+    if (!match) {
+      const baseLine = props.data.find(flowData =>
+        flowData.flow_name === flowName && flowData.direction === direction
+      );
+      if (baseLine) {
+        return { ...baseLine, value: 0, year };
+      }
+    }
+
+    return null;
   }
 }
 
