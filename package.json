@@ -1,8 +1,8 @@
 {
   "name": "@devinit/dh-app",
-  "version": "3.3.8",
+  "version": "3.3.9",
   "config": {
-    "API": "http://212.111.41.68:3000/graphql",
+    "API": "http://212.111.41.68:9090/graphql",
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": true,
     "OLD_DATAHUB_URL": "http://212.111.41.68:8888"
   },
