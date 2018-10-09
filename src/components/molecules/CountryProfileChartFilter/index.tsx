@@ -1,10 +1,10 @@
 import * as React from 'react';
 import glamorous from 'glamorous';
-import { white, lightBlack } from '../../theme/semantic';
-import {GlamorousComponentT} from '../../types';
+import { lightBlack, white } from '../../theme/semantic';
+import { GlamorousComponentT } from '../../types';
 
 const Wrapper: GlamorousComponentT = glamorous.div({
-  paddingTop: '1em',
+  paddingTop: '1em'
 });
 
 export const Select: GlamorousComponentT = glamorous.select({
@@ -35,11 +35,11 @@ export const Select: GlamorousComponentT = glamorous.select({
     borderRight: '.35em solid transparent',
     borderBottom: '.35em solid transparent',
     borderLeft: '.35em solid transparent',
-    transform: 'scale(1.2,1.2)',
-  },
+    transform: 'scale(1.2,1.2)'
+  }
 });
 const ChartFilter = () =>
-  (<Wrapper>
+  <Wrapper>
     <span>Budget Type</span>
     <Select>
       <option>Actual</option>
@@ -50,6 +50,6 @@ const ChartFilter = () =>
       <option>constant 2015 US$</option>
       <option>currency UGX</option>
     </Select>
-  </Wrapper>);
+  </Wrapper>;
 
 export default ChartFilter;

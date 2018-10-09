@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { H4 } from 'glamorous';
 import { Header, Segment } from 'semantic-ui-react';
 import { CurrencyOption, createCurrencyOptions } from '../../../utils';
 import { PrintContainer } from '../../atoms/Container';
@@ -59,6 +60,8 @@ export default class MultiLinePartition extends React.Component<Props> {
     // this.setCurrencyBound = this.setCurrency.bind(this);
     // this.setBudgetTypeBound = this.setBudgetType.bind(this);
     this.setYear = this.setYear.bind(this);
+    this.setBudgetType = this.setBudgetType.bind(this);
+    this.setCurrency = this.setCurrency.bind(this);
   }
 
   render() {
@@ -114,28 +117,32 @@ export default class MultiLinePartition extends React.Component<Props> {
   }
 
   private renderItems() {
-    return this.props.items.map((item: LinePartitionItem) => (
-      <LinePartition
-        key={ item.title }
-        title={ item.title }
-        inverted={ item.inverted }
-        withoutOptions={ item.withoutOptions }
-        year={ this.state.year }
-        highestYear={ this.state.highestYear }
-        lowestYear={ this.state.lowestYear }
-        data={ item.data }
-        currency={ this.state.currency }
-        currencyOptions={ this.state.currencyOptions }
-        budgetType={ this.state.budgetType }
-        budgetTypeOptions={ this.state.budgetTypeOptions[this.state.year] }
-        config={ this.props.config }
-        onChangeYear={ this.setYear }
-        // tslint:disable-next-line:jsx-no-lambda
-        onChangeCurrency={ (currency) => this.setCurrency(currency) }
-        // tslint:disable-next-line:jsx-no-lambda
-        onChangeBudgetType={ (budgetType) => this.setBudgetType(budgetType) }
-      />
-    ));
+    return this.props.items.map((item: LinePartitionItem) => {
+      if (item.data && item.data.length) {
+        return (
+          <LinePartition
+            key={ item.title }
+            title={ item.title }
+            inverted={ item.inverted }
+            withoutOptions={ item.withoutOptions }
+            year={ this.state.year }
+            highestYear={ this.state.highestYear }
+            lowestYear={ this.state.lowestYear }
+            data={ item.data }
+            currency={ this.state.currency }
+            currencyOptions={ this.state.currencyOptions }
+            budgetType={ this.state.budgetType }
+            budgetTypeOptions={ this.state.budgetTypeOptions[this.state.year] }
+            config={ this.props.config }
+            onChangeYear={ this.setYear }
+            onChangeCurrency={ this.setCurrency }
+            onChangeBudgetType={ this.setBudgetType }
+          />
+        );
+      } else {
+        return <H4 textAlign="center" paddingTop="3em">{ `No ${ item.title } data` }</H4>;
+      }
+    });
   }
 
   private setCurrency = (currency: string) =>
@@ -154,11 +161,6 @@ export default class MultiLinePartition extends React.Component<Props> {
   }
 
   private toggleRevenueTour = () => {
-    // if (this.state.revenueTourVisible) {
-    //   this.setState({ revenueTourVisible: false });
-    // } else {
-    //   this.setState({ revenueTourVisible: true });
-    // }
     introJS().setOptions({ showStepNumbers: false }).start();
   }
 

@@ -4,289 +4,6 @@
 export default {
   globalPictureThemes: [
     {
-      id: 'poverty',
-      name: 'Poverty',
-      indicators: [
-        {
-          id: 'data_series.poor_people_190',
-          name: 'Number of people living in extreme poverty',
-          heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$.",
-          tooltip:
-            'Number of poor people living on under 2011 PPP$ 1.90 per day.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
-        },
-        {
-          id: 'data_series.poverty_190',
-          name: '% of population living in extreme poverty',
-          heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$.",
-          tooltip:
-            'Percentage of population living under 2011 PPP$ 1.90 per day.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
-        },
-        {
-          id: 'data_series.depth_of_extreme_poverty_190',
-          name: 'Depth of extreme poverty (poverty gap)',
-          heading:
-            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap.',
-          tooltip:
-            'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
-        },
-        {
-          id: 'data_series.poverty_310',
-          name: '% of population living on less than $3.10 a day',
-          heading:
-            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor.',
-          tooltip:
-            'Percentage of population living under 2011 PPP$ 3.10 per day.',
-          source: 'Development Initiatives based on World Bank PovcalNet'
-        },
-        {
-          id: 'data_series.2013_p20_population',
-          name: 'Number of people in the P20',
-          heading:
-            'The approximate number of people in each country who are in the global poorest 20%',
-          tooltip:
-            'The approximate number of people in each country who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
-        },
-        {
-          id: 'data_series.percent_in_p20_national',
-          name: '% of people in the P20',
-          heading:
-            'The percentage of population of each country who are in the global poorest 20%',
-          tooltip:
-            'The percentage of population of each country who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
-        },
-        {
-          id: 'subnational_p20',
-          name: '% of people in the P20 (subnational level)',
-          heading:
-            'The percentage of people in each subnational area who are in the global poorest 20%',
-          tooltip:
-            'The percentage of people in each subnational area who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
-        },
-        {
-          id: 'survey_p20',
-          name: '% of people in the P20 (survey level)',
-          heading:
-            'The percentage of people in each household survey region who are in the global poorest 20%',
-          tooltip:
-            'The percentage of people in each household survey region who are in the global poorest 20%',
-          source:
-            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
-        }
-      ],
-      default_indicator: 'data_series.poor_people_190'
-    },
-    {
-      id: 'vulnerability',
-      name: 'Vulnerability',
-      indicators: [
-        {
-          id: 'data_series.fragile_states',
-          name: 'Fragile states',
-          heading:
-            "The OECD Fragiliy Framework identifies countries are fragile or extremely fragile based on 50 indicators across five dimensions (economic, environmental, political, security and societal). It is part of the OECD report 'States of Fragility'.",
-          tooltip: 'Fragile states categories.',
-          source:
-            'Development Initiatives based on Fund for Peace Fragile States Index.'
-        },
-        {
-          id: 'data_series.climate_vulnerability',
-          name: 'Climate vulnerability',
-          heading:
-            "Global adaptation index score of each country's vulnerability to climate change, incorporating exposure, sensitivity and ability to adapt to the negative impacts of climate. Source: Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score.",
-          tooltip:
-            "Global adaptation index score of each country's vulnerability to climate change, incorporating exposure, sensitivity and ability to adapt to the negative impacts of climate change. Higher scores indicate higher vulnerability to climate change.",
-          source:
-            'Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score.'
-        },
-        {
-          id: 'data_series.human_hazard',
-          name: 'Human hazard and exposure score',
-          heading:
-            'The level of risk that a country will be subject to conflict or have a high level of conflict intensity, based on historical data (Inform index component).',
-          tooltip:
-            'Index for risk management score for exposure to human hazards (10 = high exposure).',
-          source: 'Inform (Index for Risk Management) v 3.3.3.'
-        },
-        {
-          id: 'data_series.natural_hazard',
-          name: 'Natural hazard and exposure score',
-          heading:
-            'The level of risk that a country will be exposed to, or is vulnerable to, natural hazards, based on historical data (INFORM index component).',
-          tooltip:
-            'Index for risk management score for exposure to natural hazards (10 = high exposure).',
-          source: 'Inform (Index for Risk Management) v 3.3.3.'
-        },
-        {
-          id: 'data_series.number_of_un_appeals',
-          name: 'Number of UN-coordinated appeals',
-          heading: 'Number of UN-coordinated appeals per country since 2000',
-          tooltip: 'Number of UN-coordinated appeals per country since 2000.',
-          source: "Development Initiatives based on UN OCHA's FTS."
-        },
-        {
-          id: 'data_series.forgotten_crisis',
-          name:
-            "Number of appearances on ECHO's Forgotten Crisis Assessment index",
-          heading:
-            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004. The map shows countries' number of appearances on the index since then.",
-          tooltip:
-            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.",
-          source:
-            'Development Initiatives based on ECHO Forgotten Crisis Assessment Index.'
-        },
-        {
-          id: 'data_series.displacement',
-          name:
-            'Number of people displaced due to human hazards by hosting country',
-          heading:
-            'Number of people displaced due to human hazards refers to refugees and people in refugee-like situations, internally displaced persons and asylum seekers',
-          tooltip:
-            'Number of people displaced due to human hazards refers to refugees and people in refugee-like situations, internally displaced persons and asylum seekers.',
-          source:
-            'Development Initiatives based on UN High Commissioner for Refugees (UNHCR) and UN Relief and Works Agency for Palestine Refugees in the Near East.'
-        }
-      ],
-      default_indicator: 'data_series.fragile_states'
-    },
-    {
-      id: 'government-finance',
-      name: 'Government finance',
-      indicators: [
-        {
-          id: 'data_series.non_grant_revenue_ppp_pc',
-          name: 'Government revenue per person (excluding grants), 2015 PPP$',
-          heading:
-            'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
-          tooltip:
-            'Government revenue per person (excluding grants), 2015 PPP$.',
-          source:
-            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
-        },
-        {
-          id: 'data_series.total_revenue_ppp_pc',
-          name: 'Government revenue per person (including grants), 2015 PPP$',
-          heading:
-            'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
-          tooltip:
-            'Government revenue per person (including grants), 2015 PPP$.',
-          source:
-            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
-        },
-        {
-          id: 'data_series.govt_revenue_pc_gdp',
-          name: 'Government revenue (excluding grants), % of GDP',
-          heading:
-            'Revenue raised as a proportion of national income (GDP) by the government, including tax and non-tax revenue (grants and borrowing are excluded). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
-          tooltip: 'Government revenue (excluding grants), % of GDP',
-          source:
-            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
-        },
-        {
-          id: 'data_series.total_revenue_percent_gdp',
-          name: 'Government revenue (including grants), % of GDP',
-          heading:
-            'Revenue raised as a proportion of national income (GDP) by the government, including tax, non-tax revenue and grants (borrowing is excluded). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
-          tooltip: 'Government revenue (including grants), % of GDP.',
-          source:
-            'Development Initiatives based on IMF Article IV publications.'
-        },
-        {
-          id: 'data_series.grants_percent_total_revenue',
-          name: 'Grants, % of government revenue',
-          heading:
-            'Grants from international donors as a proportion of government revenue (including grants). (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
-          tooltip: 'Grants, % of government revenue.',
-          source:
-            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
-        },
-        {
-          id: 'data_series.govt_spend_pc',
-          name: 'Government spending per person, 2015 PPP$',
-          heading:
-            'Total expenditure by the government divided by the total population. Figures are displayed in 2015 constant purchasing power parity (PPP)$. (Data series is from 1999-2021, where available. The hover function details whether the data point is an actual or a projected figure.)',
-          tooltip:
-            'Government spending per person, 2015 PPP$. Data is for 2015 or most recent year prior.',
-          source:
-            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
-        }
-      ],
-      default_indicator: 'data_series.non_grant_revenue_ppp_pc'
-    },
-    {
-      id: 'international-finance',
-      name: 'International finance',
-      indicators: [
-        {
-          id: 'data_series.largest_intl_flow',
-          name: 'Largest international resource flow',
-          heading:
-            'Largest source of international financing to each developing country',
-          tooltip:
-            'The largest international resource flow to each country in each year.',
-          source:
-            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
-        },
-        {
-          id: 'data_series.intl_resources_total_percent_gdp',
-          name: 'Total international resource flows, % of GDP',
-          heading:
-            'The sum of official, commercial and private resource flows received by each developing country, expressed as a percentage of GDP.',
-          tooltip:
-            "Total international resource flows received by each country divided by the country's GDP, for each year.",
-          source:
-            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
-        },
-        {
-          id: 'data_series.oda_percent_intl_resources',
-          name: 'ODA, % of international resource flows',
-          heading:
-            'ODA received by each developing country, expressed as a percentage of all official, commercial and private international resource inflows.',
-          tooltip:
-            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of total international resource flows received by the same country, each year.',
-          source:
-            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
-        },
-        {
-          id: 'data_series.fdi_percent_gdp',
-          name: 'Foreign direct investment, % of GDP',
-          heading:
-            "Inflows of foreign direct investment expressed as a percentage of the country's GDP.",
-          tooltip:
-            'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
-          source: 'UNCTAD Stat and World Bank World Development Indicators.'
-        },
-        {
-          id: 'data_series.fdi_pp',
-          name: 'Foreign direct investment per person, US$',
-          heading:
-            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
-          tooltip:
-            'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
-          source: 'UNCTAD Stat and World Bank World Development Indicators.'
-        },
-        {
-          id: 'data_series.remittances_pp',
-          name: 'Remittances received per person, US$',
-          heading:
-            "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2016 prices.",
-          tooltip: 'Remittances per person.',
-          source: 'World Bank.'
-        }
-      ],
-      default_indicator: 'data_series.largest_intl_flow'
-    },
-    {
       id: 'international-official-finance',
       name: 'International official finance',
       indicators: [
@@ -374,6 +91,289 @@ export default {
         }
       ],
       default_indicator: 'fact.in_oda_gross_constant'
+    },
+    {
+      id: 'international-finance',
+      name: 'International finance',
+      indicators: [
+        {
+          id: 'data_series.largest_intl_flow',
+          name: 'Largest international resource flow',
+          heading:
+            'Largest source of international financing to each developing country',
+          tooltip:
+            'The largest international resource flow to each country in each year.',
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+        },
+        {
+          id: 'data_series.intl_resources_total_percent_gdp',
+          name: 'Total international resource flows, % of GDP',
+          heading:
+            'The sum of official, commercial and private resource flows received by each developing country, expressed as a percentage of GDP.',
+          tooltip:
+            "Total international resource flows received by each country divided by the country's GDP, for each year.",
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+        },
+        {
+          id: 'data_series.oda_percent_intl_resources',
+          name: 'ODA, % of international resource flows',
+          heading:
+            'ODA received by each developing country, expressed as a percentage of all official, commercial and private international resource inflows.',
+          tooltip:
+            'Inflows of gross official development assistance (ODA) to each country expressed as a percentage of total international resource flows received by the same country, each year.',
+          source:
+            'Development Initiatives based on numerous sources (see notes for international resource flows to and from developing countries data).'
+        },
+        {
+          id: 'data_series.fdi_percent_gdp',
+          name: 'Foreign direct investment, % of GDP',
+          heading:
+            "Inflows of foreign direct investment expressed as a percentage of the country's GDP.",
+          tooltip:
+            'Inflows of foreign direct investment to each country expressed as a percentage of GDP of the same country, each year.',
+          source: 'UNCTAD Stat and World Bank World Development Indicators.'
+        },
+        {
+          id: 'data_series.fdi_pp',
+          name: 'Foreign direct investment per person, US$',
+          heading:
+            "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
+          tooltip:
+            'Foreign direct investment per person (note that negative values, which occur when disinvestment exceeds new investments, are excluded).',
+          source: 'UNCTAD Stat and World Bank World Development Indicators.'
+        },
+        {
+          id: 'data_series.remittances_pp',
+          name: 'Remittances received per person, US$',
+          heading:
+            "Volume of remittances received in each country divided by the country's population (includes personal transfers and income of workers employed in an economy where they are not resident). Data is in constant 2016 prices.",
+          tooltip: 'Remittances per person.',
+          source: 'World Bank.'
+        }
+      ],
+      default_indicator: 'data_series.largest_intl_flow'
+    },
+    {
+      id: 'vulnerability',
+      name: 'Vulnerability',
+      indicators: [
+        {
+          id: 'data_series.fragile_states',
+          name: 'Fragile states',
+          heading:
+            "The OECD Fragiliy Framework identifies countries are fragile or extremely fragile based on 50 indicators across five dimensions (economic, environmental, political, security and societal). It is part of the OECD report 'States of Fragility'.",
+          tooltip: 'Fragile states categories.',
+          source:
+            'Development Initiatives based on Fund for Peace Fragile States Index.'
+        },
+        {
+          id: 'data_series.climate_vulnerability',
+          name: 'Climate vulnerability',
+          heading:
+            "Global adaptation index score of each country's vulnerability to climate change, incorporating exposure, sensitivity and ability to adapt to the negative impacts of climate. Source: Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score.",
+          tooltip:
+            "Global adaptation index score of each country's vulnerability to climate change, incorporating exposure, sensitivity and ability to adapt to the negative impacts of climate change. Higher scores indicate higher vulnerability to climate change.",
+          source:
+            'Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score.'
+        },
+        {
+          id: 'data_series.human_hazard',
+          name: 'Human hazard and exposure score',
+          heading:
+            'The level of risk that a country will be subject to conflict or have a high level of conflict intensity, based on historical data (Inform index component).',
+          tooltip:
+            'Index for risk management score for exposure to human hazards (10 = high exposure).',
+          source: 'Inform (Index for Risk Management) v 3.3.3.'
+        },
+        {
+          id: 'data_series.natural_hazard',
+          name: 'Natural hazard and exposure score',
+          heading:
+            'The level of risk that a country will be exposed to, or is vulnerable to, natural hazards, based on historical data (INFORM index component).',
+          tooltip:
+            'Index for risk management score for exposure to natural hazards (10 = high exposure).',
+          source: 'Inform (Index for Risk Management) v 3.3.3.'
+        },
+        {
+          id: 'data_series.number_of_un_appeals',
+          name: 'Number of UN-coordinated appeals',
+          heading: 'Number of UN-coordinated appeals per country since 2000',
+          tooltip: 'Number of UN-coordinated appeals per country since 2000.',
+          source: "Development Initiatives based on UN OCHA's FTS."
+        },
+        {
+          id: 'data_series.forgotten_crisis',
+          name:
+            "Number of appearances on ECHO's Forgotten Crisis Assessment index",
+          heading:
+            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004. The map shows countries' number of appearances on the index since then.",
+          tooltip:
+            "EC's department of Humanitarian Aid and Civil Protection (ECHO) identifies forgotten or so-called 'neglected' emergencies. It has been assembling data for its index since 2004.",
+          source:
+            'Development Initiatives based on ECHO Forgotten Crisis Assessment Index.'
+        },
+        {
+          id: 'data_series.displacement',
+          name:
+            'Number of people displaced due to human hazards by hosting country',
+          heading:
+            'Number of people displaced due to human hazards refers to refugees and people in refugee-like situations, internally displaced persons and asylum seekers',
+          tooltip:
+            'Number of people displaced due to human hazards refers to refugees and people in refugee-like situations, internally displaced persons and asylum seekers.',
+          source:
+            'Development Initiatives based on UN High Commissioner for Refugees (UNHCR) and UN Relief and Works Agency for Palestine Refugees in the Near East.'
+        }
+      ],
+      default_indicator: 'data_series.fragile_states'
+    },
+    {
+      id: 'government-finance',
+      name: 'Government finance',
+      indicators: [
+        {
+          id: 'data_series.non_grant_revenue_ppp_pc',
+          name: 'Government revenue per person (excluding grants), 2011 PPP$',
+          heading:
+            'Average revenue raised per person by the government, including tax and non-tax revenue (grants and borrowing are excluded). Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
+          tooltip:
+            'Government revenue per person (excluding grants), 2011 PPP$.',
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
+        },
+        {
+          id: 'data_series.total_revenue_ppp_pc',
+          name: 'Government revenue per person (including grants), 2011 PPP$',
+          heading:
+            'Average revenue raised per person by the government, including tax, non-tax revenue and grants (borrowing is excluded). Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
+          tooltip:
+            'Government revenue per person (including grants), 2011 PPP$.',
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
+        },
+        {
+          id: 'data_series.govt_revenue_pc_gdp',
+          name: 'Government revenue (excluding grants), % of GDP',
+          heading:
+            'Revenue raised as a proportion of national income (GDP) by the government, including tax and non-tax revenue (grants and borrowing are excluded). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
+          tooltip: 'Government revenue (excluding grants), % of GDP',
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
+        },
+        {
+          id: 'data_series.total_revenue_percent_gdp',
+          name: 'Government revenue (including grants), % of GDP',
+          heading:
+            'Revenue raised as a proportion of national income (GDP) by the government, including tax, non-tax revenue and grants (borrowing is excluded). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
+          tooltip: 'Government revenue (including grants), % of GDP.',
+          source:
+            'Development Initiatives based on IMF Article IV publications.'
+        },
+        {
+          id: 'data_series.grants_percent_total_revenue',
+          name: 'Grants, % of government revenue',
+          heading:
+            'Grants from international donors as a proportion of government revenue (including grants). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
+          tooltip: 'Grants, % of government revenue.',
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
+        },
+        {
+          id: 'data_series.govt_spend_pc',
+          name: 'Government spending per person, 2011 PPP$',
+          heading:
+            'Total expenditure by the government divided by the total population. Figures are displayed in 2011 PPP$ (purchasing power parity). (Data series is from 1999-2023, where available. The hover function details whether the data point is an actual or a projected figure.)',
+          tooltip:
+            'Government spending per person, 2011 PPP$. Data is for 2016 or most recent year prior.',
+          source:
+            'Development Initiatives based on IMF Article IV publications and World Economic Outlook.'
+        }
+      ],
+      default_indicator: 'data_series.non_grant_revenue_ppp_pc'
+    },
+    {
+      id: 'poverty',
+      name: 'Poverty',
+      indicators: [
+        {
+          id: 'data_series.poor_people_190',
+          name: 'Number of people living in extreme poverty',
+          heading:
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
+          tooltip:
+            'Number of poor people living on under 2011 PPP$ 1.90 per day.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.poverty_190',
+          name: '% of population living in extreme poverty',
+          heading:
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
+          tooltip:
+            'Percentage of population living under 2011 PPP$ 1.90 per day.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.depth_of_extreme_poverty_190',
+          name: 'Depth of extreme poverty (poverty gap)',
+          heading:
+            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap. 2013 represents the most recent year data is available',
+          tooltip:
+            'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.poverty_310',
+          name: '% of population living on less than $3.10 a day',
+          heading:
+            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
+          tooltip:
+            'Percentage of population living under 2011 PPP$ 3.10 per day.',
+          source: 'Development Initiatives based on World Bank PovcalNet'
+        },
+        {
+          id: 'data_series.2013_p20_population',
+          name: 'Number of people in the P20',
+          heading:
+            'The approximate number of people in each country who are in the global poorest 20%. . 2013 represents the most recent year data is available.',
+          tooltip:
+            'The approximate number of people in each country who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+        },
+        {
+          id: 'data_series.percent_in_p20_national',
+          name: '% of people in the P20',
+          heading:
+            'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
+          tooltip:
+            'The percentage of population of each country who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+        },
+        {
+          id: 'subnational_p20',
+          name: '% of people in the P20 (subnational level)',
+          heading:
+            'The percentage of people in each subnational area who are in the global poorest 20%',
+          tooltip:
+            'The percentage of people in each subnational area who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+        },
+        {
+          id: 'survey_p20',
+          name: '% of people in the P20 (survey level)',
+          heading:
+            'The percentage of people in each household survey region who are in the global poorest 20%',
+          tooltip:
+            'The percentage of people in each household survey region who are in the global poorest 20%',
+          source:
+            'Development Initiatives based on PovcalNet as well as selected Demographic and health Surveys (DHS), Multiple Indicator Cluster Surveys (MICS), China Family Panel Studies (CFPS), and Brazil National Demographic and Healtj Surveys (PNDS)'
+        }
+      ],
+      default_indicator: 'data_series.poor_people_190'
     },
     {
       id: 'humanitarian-finance',

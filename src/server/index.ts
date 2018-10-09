@@ -7,6 +7,8 @@ import countriesData from '../components/molecules/SearchInput/global';
 import ugData from '../components/molecules/SearchInput/uganda';
 import keData from '../components/molecules/SearchInput/kenya';
 import navTabsData from '../components/organisms/NavBarTabs/data';
+import ugandaNavTabsData from '../components/organisms/NavBarTabs/uganda';
+import kenyaNavTabsData from '../components/organisms/NavBarTabs/kenya';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
@@ -98,12 +100,34 @@ app.prepare().then(() => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
     const themeId = req.params.themeId;
     const theme = navTabsData.globalPictureThemes.find(globalTheme => globalTheme.id === themeId);
-    if (theme) {
+    if (theme && !state.indicator) {
       state.indicator = theme.default_indicator;
     }
     const queryParams = { state };
 
     renderAndCache(req, res, '/', queryParams);
+  });
+  server.get('/spotlight-on-uganda/:themeId', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const themeId = req.params.themeId;
+    const theme = ugandaNavTabsData.spotlightThemes.find(globalTheme => globalTheme.id === themeId);
+    if (theme && !state.indicator) {
+      state.indicator = theme.default_indicator;
+    }
+    const queryParams = { state };
+
+    renderAndCache(req, res, '/spotlight-on-uganda', queryParams);
+  });
+  server.get('/spotlight-on-kenya/:themeId', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const themeId = req.params.themeId;
+    const theme = kenyaNavTabsData.spotlightThemes.find(globalTheme => globalTheme.id === themeId);
+    if (theme && !state.indicator) {
+      state.indicator = theme.default_indicator;
+    }
+    const queryParams = { state };
+
+    renderAndCache(req, res, '/spotlight-on-kenya', queryParams);
   });
   server.get('/uganda/:id', (req, res) => {
     const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};

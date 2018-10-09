@@ -7,16 +7,16 @@ const areaConfig = {
     showAxis: true,
     indicator: 'value',
     ticking: 'odd',
-    showGridlines: true,
+    showGridlines: true
   },
   timeAxis: {
     showAxis: true,
     indicator: 'year',
-    axisMinimum: '2000',
-    axisMaximum: '2015',
+    axisMinimum: 2000,
+    axisMaximum: 2016,
     ticking: 'years',
-    tickingStep: 5,
-  },
+    tickingStep: 4
+  }
 };
 
 const treemapConfig = {
@@ -24,15 +24,15 @@ const treemapConfig = {
   coloring: 'color',
   colors: [],
   labeling: {
-    prefix: 'US$ ',
+    prefix: 'US$ '
   },
   tree: {
     id: 'flow_name',
-    value: 'value',
+    value: 'value'
   },
   treemap: {
-    tile: 'binary',
-  },
+    tile: 'binary'
+  }
 };
 
 export default { areaConfig, treemapConfig };

@@ -89,6 +89,7 @@ export interface State {
   trend: DH.IDomestic[];
   level: string;
   heading: string;
+  recreate: boolean;
 }
 
 export default class LinePartition extends React.Component<Props, State> {
@@ -117,11 +118,13 @@ export default class LinePartition extends React.Component<Props, State> {
                     timeAxis: {
                       ...this.props.config.line.timeAxis,
                       axisMinimum: this.props.lowestYear.toString(),
-                      axisMaximum: this.props.highestYear.toString()
+                      axisMaximum: this.props.highestYear.toString(),
+                      tickingStep: this.getTickingStep()
                     },
                     anchor: { start: this.props.year.toString() }
                   } }
                   data={ trend }
+                  recreate={ this.state.recreate }
                 />
               </CardContainer>
             </Intro>
@@ -134,6 +137,26 @@ export default class LinePartition extends React.Component<Props, State> {
         { this.renderLinePartitionHeader(this.props.inverted || !tree.length) }
       </Container>
     );
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps.currency !== this.props.currency && !this.state.recreate) {
+      this.setState({ recreate: true });
+    } else if (nextProps.currency === this.props.currency && this.state.recreate) {
+      this.setState({ recreate: false });
+    }
+  }
+
+  private getTickingStep() {
+    const { highestYear, lowestYear } = this.props;
+    const difference = highestYear - lowestYear;
+    if (difference % 5 === 0) {
+      return 5;
+    } else if (difference % 2 === 0) {
+      return 4;
+    }
+
+    return 3;
   }
 
   private renderLinePartitionHeader(showHeader: boolean) {
@@ -197,7 +220,8 @@ export default class LinePartition extends React.Component<Props, State> {
       level,
       heading,
       trend,
-      treesByYear
+      treesByYear,
+      recreate: false
     };
   }
 

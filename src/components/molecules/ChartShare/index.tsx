@@ -106,6 +106,7 @@ export default class ChartShare extends React.Component<Props, State> {
 
     return this.setState({ link: shortURL });
   }
+   // tslint:disable jsx-no-lambda
   public render() {
     const { className, size, color, label, background, hover, fontSize, iconName, fontWeight } = this.props;
 
@@ -142,22 +143,29 @@ export default class ChartShare extends React.Component<Props, State> {
               <StyledInput value={ this.state.link } onChange={ this.onLinkChange } />
               <Div marginTop={ '1.5em' }>
                 <a href={ `http://www.facebook.com/share.php?u=${this.state.link}` }>
-                  <Button icon="facebook f" />
+                  <Button icon="facebook f" onClick={ () => this.updateShareAnalytics('facebook') } />
                 </a>
-                <a
-                  href={ `https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"` }
-                >
-                  <Button icon="twitter" />
+                <a href={ `https://twitter.com/intent/tweet?text=${this.state.link}&source=webclient"` }>
+                  <Button icon="twitter" onClick={ () => this.updateShareAnalytics('twitter') } />
                 </a>
                 <a
                   href={ `mailto:?subject=Development Initiatives: Uganda&body=Development Initiatives:
                   Uganda — ${this.state.link}` }
                 >
-                  <Button icon="mail" />
+                  <Button icon="mail" onClick={ () => this.updateShareAnalytics('mail') } />
                 </a>
               </Div>
           </Modal.Description>
         </Modal.Content>
       </Modal>);
+  }
+
+  private updateShareAnalytics(source: 'facebook' | 'twitter' | 'mail') {
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'share', {
+        event_category: source,
+        event_label: this.state.link
+      });
+    }
   }
 }

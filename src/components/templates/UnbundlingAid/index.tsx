@@ -76,10 +76,7 @@ export default class extends React.Component<Props> {
             </Header>
           </HeaderContainer>
         </Container>
-        <UnbundlingAid
-          tourVisible={ this.state.tourVisible }
-          aidType={ props.aidType }
-        />
+        <UnbundlingAid tourVisible={ this.state.tourVisible } aidType={ props.aidType }/>
         {
           process.env.NODE_ENV !== 'test'
             ?
@@ -92,7 +89,7 @@ export default class extends React.Component<Props> {
           <Container>
             <Grid>
               <Grid.Row>
-                <Grid.Column width="10">
+                <Grid.Column computer={ 10 } mobile={ 16 } tablet={ 16 }>
                   <Header as="h1">Source</Header>
                   <Header as="h2" style={ { fontWeight: 100 } }>
                       { pageData.unbundlingAid[3].title }
@@ -101,7 +98,7 @@ export default class extends React.Component<Props> {
                     { pageData.unbundlingAid[4].narrative }
                   </p>
                 </Grid.Column>
-                <Grid.Column width="6">
+                <Grid.Column computer={ 6 } mobile={ 16 } tablet={ 16 }>
                   <Header as="h1">{ pageData.unbundlingAid[5].title }</Header>
                   <p>{ pageData.unbundlingAid[6].narrative }</p>
                 </Grid.Column>

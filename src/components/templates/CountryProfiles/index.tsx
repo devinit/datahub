@@ -17,7 +17,7 @@ export default () => (
     <Container>
       <Grid>
         <Grid.Row>
-          <Grid.Column width={ 10 }>
+          <Grid.Column computer={ 10 } mobile={ 16 } tablet={ 16 }>
             <CardContainer>
               <H4 color={ red }>
                 <Icon name="globe" color={ 'red' } />

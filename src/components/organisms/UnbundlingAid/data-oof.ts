@@ -153,7 +153,7 @@ export default {
       { id: 'ex-yugoslavia', name: 'States Ex-Yugoslavia unspecified' },
       { id: 'SD', name: 'Sudan' },
       { id: 'SR', name: 'Suriname' },
-      { id: 'SZ', name: 'Swaziland' },
+      { id: 'SZ', name: 'Eswatini' },
       { id: 'SY', name: 'Syria' },
       { id: 'TJ', name: 'Tajikistan' },
       { id: 'TZ', name: 'Tanzania' },

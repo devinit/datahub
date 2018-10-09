@@ -153,7 +153,7 @@ export default {
       { id: 'ex-yugoslavia', name: 'States Ex-Yugoslavia unspecified' },
       { id: 'SD', name: 'Sudan' },
       { id: 'SR', name: 'Suriname' },
-      { id: 'SZ', name: 'Swaziland' },
+      { id: 'SZ', name: 'Eswatini' },
       { id: 'SY', name: 'Syria' },
       { id: 'TJ', name: 'Tajikistan' },
       { id: 'TZ', name: 'Tanzania' },
@@ -315,18 +315,18 @@ export default {
     channels: [
       { id: 'ngo-donor', name: 'NGO (donor country)' },
       { id: 'ngo-recipient', name: 'NGO (recipient country)' },
-      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
+      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       { id: 'multilateral', name: 'Multilateral' },
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
       {
-        id: 'public-sector-recipient',
-        name: 'Public sector (recipient government)'
-      },
-      {
         id: 'university-research-institute-etc',
         name: 'University, research institute or think-tank, etc'
+      },
+      {
+        id: 'public-sector-recipient',
+        name: 'Public sector (recipient government)'
       },
       { id: 'unspecified', name: 'Unspecified' },
       {
@@ -336,20 +336,20 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
+      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
-      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
-      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
+      { id: 'other-social-services', name: 'Other social services' },
       { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
@@ -363,8 +363,8 @@ export default {
       { id: 'non-transfer', name: 'Non-transfer' },
       { id: 'technical-ooperation', name: 'Technical cooperation' },
       { id: 'cash-grant', name: 'Cash grant' },
-      { id: 'commodities-food', name: 'Commodities & Food' },
-      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' }
+      { id: 'gpgs-nngos', name: 'Global Initiatives & NNGOs' },
+      { id: 'commodities-food', name: 'Commodities & Food' }
     ],
     years: [2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006]
   },

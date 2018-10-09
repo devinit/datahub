@@ -127,10 +127,7 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
       if (!navItem.id || !navItem.name) {
         throw new Error('navbar id and name missing');
       }
-      // FIXME: handle this better i.e more abstraction, perhaps all done via props
-      const href = !this.props.isForSpotlightsKe && !this.props.isForSpotlightsUg
-        ? `/global-picture/${navItem.id}`
-        : `/${navItem.id}`;
+      const href = this.getTabLink(navItem.id);
 
       return (
         <li key={ navItem.id }>
@@ -144,6 +141,19 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
         </li>
       );
     });
+  }
+
+  private getTabLink(themeId: string) {
+    // FIXME: handle this better i.e more abstraction, perhaps all done via props
+    if (!this.props.isForSpotlightsKe && !this.props.isForSpotlightsUg) {
+      return `/global-picture/${themeId}`;
+    } else if (this.props.isForSpotlightsKe) {
+      return `/spotlight-on-kenya/${themeId}`;
+    } else if (this.props.isForSpotlightsUg) {
+      return `/spotlight-on-uganda/${themeId}`;
+    }
+
+    return `/${themeId}`;
   }
 
   fireReduxActions = (activeIndicator: string) => {
@@ -160,12 +170,10 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
 
   handleClick = (index: number) => (event: React.FormEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    if (!this.props.isForSpotlightsKe && !this.props.isForSpotlightsUg) {
-      const activeItem = this.props.navBarItems[index];
-      const path = `/global-picture/${activeItem.id}`;
-      window.history.replaceState({ path }, activeItem.id, path);
-      updateAnalytics(path.split('/')[2], path);
-    }
+    const activeItem = this.props.navBarItems[index];
+    const path = this.getTabLink(activeItem.id);
+    window.history.replaceState({ path }, activeItem.id, path);
+    updateAnalytics(path.split('/')[2], path);
     if (!this.props.navBarItems[index].default_indicator) {
       throw new Error('default indicator missing in nav items');
     }

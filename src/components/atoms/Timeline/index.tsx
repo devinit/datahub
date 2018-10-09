@@ -6,6 +6,7 @@ export interface Props {
   config: any;
   width?: string;
   height?: string;
+  recreate?: boolean;
   onYearChanged(year: string): void;
 }
 
@@ -28,24 +29,33 @@ class Timeline extends React.Component<Props> {
   }
 
   componentDidMount() {
-    const element = this.element;
-    const data = this.props.data;
-    const config = this.props.config;
-    const chart = draw({ element, data, config });
-    chart.then(xchart => {
-      this.chart = xchart;
-      xchart.onAnchorMoved(this.props.onYearChanged);
-    });
+    this.renderChart(this.props);
   }
 
   componentWillUpdate(props: Props) {
     if (this.chart) {
-      this.chart.update(props.data);
+      if (props.recreate) {
+        this.chart.destroy();
+        this.renderChart(props);
+      } else {
+        this.chart.update(props.data);
 
-      if (props.config.anchor.start !== this.props.config.anchor.start) {
-        this.chart.moveAnchor(props.config.anchor.start.toString());
+        if (props.config.anchor.start !== this.props.config.anchor.start) {
+          this.chart.moveAnchor(props.config.anchor.start.toString());
+        }
       }
     }
+  }
+
+  private renderChart(props: Props) {
+    const element = this.element;
+    const data = props.data;
+    const config = props.config;
+    const chart = draw({ element, data, config });
+    chart.then(xchart => {
+      this.chart = xchart;
+      xchart.onAnchorMoved(props.onYearChanged);
+    });
   }
 }
 
