@@ -142,7 +142,7 @@ export default class LinePartition extends React.Component<Props, State> {
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.currency !== this.props.currency && !this.state.recreate) {
       this.setState({ recreate: true });
-    } else if (this.state.recreate) {
+    } else if (nextProps.currency === this.props.currency && this.state.recreate) {
       this.setState({ recreate: false });
     }
   }
