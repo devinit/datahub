@@ -118,7 +118,8 @@ export default class LinePartition extends React.Component<Props, State> {
                     timeAxis: {
                       ...this.props.config.line.timeAxis,
                       axisMinimum: this.props.lowestYear.toString(),
-                      axisMaximum: this.props.highestYear.toString()
+                      axisMaximum: this.props.highestYear.toString(),
+                      tickingStep: this.getTickingStep()
                     },
                     anchor: { start: this.props.year.toString() }
                   } }
@@ -144,6 +145,18 @@ export default class LinePartition extends React.Component<Props, State> {
     } else if (this.state.recreate) {
       this.setState({ recreate: false });
     }
+  }
+
+  private getTickingStep() {
+    const { highestYear, lowestYear } = this.props;
+    const difference = highestYear - lowestYear;
+    if (difference % 5 === 0) {
+      return 5;
+    } else if (difference % 2 === 0) {
+      return 4;
+    }
+
+    return 3;
   }
 
   private renderLinePartitionHeader(showHeader: boolean) {
