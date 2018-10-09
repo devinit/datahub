@@ -89,6 +89,7 @@ export interface State {
   trend: DH.IDomestic[];
   level: string;
   heading: string;
+  recreate: boolean;
 }
 
 export default class LinePartition extends React.Component<Props, State> {
@@ -122,6 +123,7 @@ export default class LinePartition extends React.Component<Props, State> {
                     anchor: { start: this.props.year.toString() }
                   } }
                   data={ trend }
+                  recreate={ this.state.recreate }
                 />
               </CardContainer>
             </Intro>
@@ -134,6 +136,14 @@ export default class LinePartition extends React.Component<Props, State> {
         { this.renderLinePartitionHeader(this.props.inverted || !tree.length) }
       </Container>
     );
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    if (nextProps.currency !== this.props.currency && !this.state.recreate) {
+      this.setState({ recreate: true });
+    } else if (this.state.recreate) {
+      this.setState({ recreate: false });
+    }
   }
 
   private renderLinePartitionHeader(showHeader: boolean) {
@@ -197,7 +207,8 @@ export default class LinePartition extends React.Component<Props, State> {
       level,
       heading,
       trend,
-      treesByYear
+      treesByYear,
+      recreate: false
     };
   }
 

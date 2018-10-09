@@ -60,6 +60,8 @@ export default class MultiLinePartition extends React.Component<Props> {
     // this.setCurrencyBound = this.setCurrency.bind(this);
     // this.setBudgetTypeBound = this.setBudgetType.bind(this);
     this.setYear = this.setYear.bind(this);
+    this.setBudgetType = this.setBudgetType.bind(this);
+    this.setCurrency = this.setCurrency.bind(this);
   }
 
   render() {
@@ -133,10 +135,8 @@ export default class MultiLinePartition extends React.Component<Props> {
             budgetTypeOptions={ this.state.budgetTypeOptions[this.state.year] }
             config={ this.props.config }
             onChangeYear={ this.setYear }
-            // tslint:disable-next-line:jsx-no-lambda
-            onChangeCurrency={ (currency) => this.setCurrency(currency) }
-            // tslint:disable-next-line:jsx-no-lambda
-            onChangeBudgetType={ (budgetType) => this.setBudgetType(budgetType) }
+            onChangeCurrency={ this.setCurrency }
+            onChangeBudgetType={ this.setBudgetType }
           />
         );
       } else {
