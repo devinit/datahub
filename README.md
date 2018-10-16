@@ -11,6 +11,11 @@ Installation
 
 ```
 
+### Scripts/Commands
+
+- `npm run pull` fetches updates from the CMS and syncs the appropriate project files. Be sure to specify the correct API URL, otherwise
+you may pull incorrect data.
+
 TODO:
 _________
 
@@ -54,4 +59,3 @@ The thing with installing with yarn, is that the charts library will stop workin
 may have to do with the way npm installs dependencies vs yarn.
 
 - For some reason cypress tests fail on travis. Temporary measure is to have them run on the git push pre hook.
-
