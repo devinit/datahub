@@ -13,5 +13,5 @@ export {
   InternationalResources,
   Overview,
   Population,
-  Poverty,
+  Poverty
 };
