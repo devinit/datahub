@@ -34,6 +34,7 @@ interface Props {
   country: string;
   currencyCode: string; // TODO: get from a data file
   currencyUSD: string;
+  supportLocalCurrencyOnly: boolean;
   state?: StateToShare;
 }
 
@@ -47,7 +48,11 @@ export default class RegionalProfile extends React.Component<Props, State> {
   static init(props): State {
     const district = getDistrict(props.id, props.country);
     const country: Country = getCountry(props.country);
-    const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
+    const currencyOptions = createCurrencyOptions(
+      props.currencyCode,
+      props.currencyUSD,
+      props.supportLocalCurrencyOnly
+    );
 
     return { district, country, currencyOptions, currency: currencyOptions[0].value };
   }

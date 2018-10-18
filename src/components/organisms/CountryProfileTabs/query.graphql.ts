@@ -29,6 +29,7 @@ export const TAB_QUERY = gql`
       }
     }
     currencyCode
+    supportLocalCurrencyOnly
   }
   povertyTab(id: $id) {
     poverty190Trend {

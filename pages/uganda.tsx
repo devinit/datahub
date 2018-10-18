@@ -24,5 +24,6 @@ export default withData((props: Props) =>
     currencyCode="UGX"
     currencyUSD="constant 2015 USD"
     country="uganda"
+    supportLocalCurrencyOnly={ false }
   />
 );

@@ -6,6 +6,7 @@ query governmentFinance($id: String!) {
     startYear,
     currencyCode,
     currencyUSD,
+    supportLocalCurrencyOnly,
     expenditure {
       uid,
       year,

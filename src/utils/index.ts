@@ -218,11 +218,18 @@ export interface CurrencyOption {
 
 export const createCurrencyOptions = (
   currencyCode: string,
-  currencyUSD: string
-): CurrencyOption[] => [
-  { text: currencyUSD, value: 'US$' },
-  { text: `Current ${currencyCode}`, value: currencyCode }
-];
+  currencyUSD: string,
+  supportLocalCurrencyOnly: boolean): CurrencyOption[] => {
+
+    if (supportLocalCurrencyOnly) {
+      return [ { text: `Current ${currencyCode}`, value: currencyCode } ];
+    }
+
+    return [
+      { text: currencyUSD, value: 'US$' },
+      { text: `Current ${currencyCode}`, value: currencyCode }
+    ];
+};
 
 export const printDiv = (divId: string) => {
   const divElem = document.getElementById(divId);

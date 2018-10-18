@@ -27,6 +27,7 @@ export interface Props {
   currency?: string;
   currencyCode: string;
   currencyUSD: string;
+  supportLocalCurrencyOnly: boolean;
   config: {
     line: any;
     partition: any;
@@ -193,7 +194,7 @@ export default class MultiLinePartition extends React.Component<Props> {
 
   public static createInitialState(props: Props) {
     const everything = Array.prototype.concat.apply([], props.items.map(item => item.data));
-    const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD);
+    const currencyOptions = createCurrencyOptions(props.currencyCode, props.currencyUSD, props.supportLocalCurrencyOnly);
     const budgetTypeOptions = MultiLinePartition.createBudgetTypeOptions(everything);
     const { lowestYear, highestYear } = MultiLinePartition.createTimeLimits(everything);
     const possibleStartYear = props.year || props.startYear;

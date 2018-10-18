@@ -46,6 +46,7 @@ export default withData(({ data }: TChildProps) => {
     config,
     currencyCode: governmentFinance.currencyCode || '',
     currencyUSD: governmentFinance.currencyUSD || '' ,
+    supportLocalCurrencyOnly: !!governmentFinance.supportLocalCurrencyOnly,
     startYear: governmentFinance.startYear,
     items
   };
