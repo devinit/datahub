@@ -47,7 +47,6 @@ const ProfileDataSourceTable = ({ title, data, noDownloads }: Props) =>
                 <Table.Row>
                   <Table.HeaderCell>Name</Table.HeaderCell>
                   <Table.HeaderCell>Description</Table.HeaderCell>
-                  <Table.HeaderCell>Methodology</Table.HeaderCell>
                   <Table.HeaderCell>Unit</Table.HeaderCell>
                   <Table.HeaderCell>Source</Table.HeaderCell>
                   <Table.HeaderCell>Download</Table.HeaderCell>
@@ -61,9 +60,6 @@ const ProfileDataSourceTable = ({ title, data, noDownloads }: Props) =>
                     </Table.Cell>
                     <Table.Cell>
                       { item.description }
-                    </Table.Cell>
-                    <Table.Cell>
-                      { item.methodology }
                     </Table.Cell>
                     <Table.Cell>
                       { item.uom }
