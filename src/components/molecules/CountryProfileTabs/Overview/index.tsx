@@ -51,7 +51,7 @@ const Overview = (props: Props) => {
               props.populationTab && props.populationTab.population &&
                         props.populationTab.population.value ?
                 props.populationTab.population.value : NoData
-            } million people </TabsFootNote>
+            } people </TabsFootNote>
           </Grid.Column>
           : <Grid.Column computer={ 5 } tablet={ 12 } mobile={ 12 }>
             <HeaderTitle>

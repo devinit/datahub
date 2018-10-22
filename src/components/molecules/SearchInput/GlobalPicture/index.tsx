@@ -47,9 +47,9 @@ class Search extends React.Component<Props> {
         <SearchTitle>
           <Container>
             <h2>
-              Explore by
+              Explore by{ ' ' }
               <span onClick={ this.showInput } className="clickable" role="button">
-                { ' ' }country
+                country
               </span>
             </h2>
           </Container>
