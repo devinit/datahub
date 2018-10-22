@@ -71,6 +71,7 @@ app.prepare().then(() => {
     '/unbundling-aid',
     '/unbundling-other-flows',
     '/country-profiles',
+    '/country-profile-print',
     '/where-are-the-poor',
     '/multilaterals',
     '/methodology',
