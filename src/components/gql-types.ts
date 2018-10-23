@@ -250,6 +250,7 @@ export interface GovernmentFinanceQuery {
     // such as constant 2015 USD for tree map
     currencyCode: string | null,
     currencyUSD: string | null,
+    supportLocalCurrencyOnly: boolean,
     // use resourcesRecipient sql
     expenditure:  Array< {
       uid: string,
@@ -324,6 +325,7 @@ export interface LGvmntFinanceQuery {
     startYear: number,
     currencyCode: string,
     currencyUSD: string,
+    supportLocalCurrencyOnly: boolean,
     expenditure:  Array< {
       uid: string,
       year: number,

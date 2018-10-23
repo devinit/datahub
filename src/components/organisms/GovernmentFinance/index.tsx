@@ -41,6 +41,7 @@ export default withData(({ data, chartId, year, shouldScrollIntoView, budgetType
     budgetType,
     currencyCode: governmentFinance.currencyCode || '',
     currencyUSD: governmentFinance.currencyUSD || '' ,
+    supportLocalCurrencyOnly: governmentFinance.supportLocalCurrencyOnly || false,
     startYear: governmentFinance.startYear,
     items: [
       {

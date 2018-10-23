@@ -6,7 +6,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 jest.mock('global', () => global);
 
-global.API = process.env.API || packageJSON.config.API;
+global.API = process.env.NODE_ENV === 'development' ? packageJSON.config.API_DEV : packageJSON.config.API;
 global.APP_VERSION = packageJSON.version;
 global.OLD_DATAHUB_URL = packageJSON.config.OLD_DATAHUB_URL;
 

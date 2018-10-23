@@ -28,21 +28,41 @@ class Chart extends React.Component<Props> {
   }
 
   componentDidMount() {
-    const element = this.element;
-    const data = this.props.data;
-    this.config = this.props.config || visboxConfigs;
-    draw({ element, data, config: this.config }).then(chart => {
-      this.chart = chart;
-      this.chart.onClick(this.props.onClick);
-    });
+    this.drawChart(this.props);
   }
 
   componentWillUpdate(props: Props) {
     if (this.chart) {
-      if (props.config && props.config.type === 'partition' && props.config.labeling) {
-        this.chart.setLabeling(props.config.labeling);
+      if (props.data && props.data.length) {
+        if (props.config && props.config.type === 'partition' && props.config.labeling) {
+          this.chart.setLabeling(props.config.labeling);
+        }
+        this.chart.update(props.data);
+      } else {
+        this.chart.destroy();
+        this.chart = undefined;
+        this.removeElementChildren();
       }
-      this.chart.update(props.data);
+    } else if (props.data && props.data.length) {
+      this.drawChart(props);
+    }
+  }
+
+  drawChart(props: Props) {
+    const element = this.element;
+    const data = props.data;
+    this.config = props.config || visboxConfigs;
+    draw({ element, data, config: this.config }).then(chart => {
+      this.chart = chart;
+      this.chart.onClick(props.onClick);
+    });
+  }
+
+  private removeElementChildren() {
+    if (this.element && this.element.hasChildNodes()) {
+      while (this.element.firstChild) {
+        this.element.removeChild(this.element.firstChild);
+      }
     }
   }
 }

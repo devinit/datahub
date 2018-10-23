@@ -11,6 +11,7 @@ storiesOf('Templates', module)
       country="uganda"
       currencyCode="UGX"
       currencyUSD="constant 2015 USD"
+      supportLocalCurrencyOnly={ false }
     />))
   .add('Regional Profiles Nairobi', () =>
     (<Profile
@@ -18,4 +19,5 @@ storiesOf('Templates', module)
       country="kenya"
       currencyCode="KEX"
       currencyUSD="constant 2015 USD"
+      supportLocalCurrencyOnly={ false }
     />));

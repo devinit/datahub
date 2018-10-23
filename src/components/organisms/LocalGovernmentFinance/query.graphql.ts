@@ -6,6 +6,7 @@ query LGvmntFinance($id: String!, $country: String!) {
     startYear,
     currencyCode,
     currencyUSD,
+    supportLocalCurrencyOnly,
     expenditure {
       uid,
       year,

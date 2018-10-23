@@ -63,7 +63,7 @@ export default {
       id: 'AR',
       name: 'Argentina',
       slug: 'argentina',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: true
     },
@@ -991,7 +991,7 @@ export default {
       id: 'NR',
       name: 'Nauru',
       slug: 'nauru',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: false
     },
@@ -1087,7 +1087,7 @@ export default {
       id: 'PS',
       name: 'Palestine',
       slug: 'palestine',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: true
     },
@@ -1159,7 +1159,7 @@ export default {
       id: 'RU',
       name: 'Russian Federation',
       slug: 'russian-federation',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'donor',
       hasPDF: false
     },
@@ -1279,7 +1279,7 @@ export default {
       id: 'SO',
       name: 'Somalia',
       slug: 'somalia',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: false
     },
@@ -1359,7 +1359,7 @@ export default {
       id: 'SY',
       name: 'Syria',
       slug: 'syria',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: true
     },
@@ -1455,7 +1455,7 @@ export default {
       id: 'TM',
       name: 'Turkmenistan',
       slug: 'turkmenistan',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: true
     },
@@ -1503,7 +1503,7 @@ export default {
       id: 'AE',
       name: 'UAE',
       slug: 'uae',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'donor',
       hasPDF: false
     },
@@ -1543,7 +1543,7 @@ export default {
       id: 'VE',
       name: 'Venezuela',
       slug: 'venezuela',
-      has_domestic_data: '',
+      has_domestic_data: '1',
       countryType: 'recipient',
       hasPDF: true
     },
