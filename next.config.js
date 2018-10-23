@@ -4,8 +4,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const Webpack = require('webpack');
 const withTypescript = require('@zeit/next-typescript');
 const packageJSON = require('./package.json');
-const { ANALYZE } = process.env;
-const API = process.env.API || packageJSON.config.API;
+const { ANALYZE, NODE_ENV } = process.env;
+const API = NODE_ENV === 'development' ? packageJSON.config.API_DEV : packageJSON.config.API;
 
 module.exports = withTypescript({
   webpack(config, options) {

@@ -11,6 +11,10 @@ import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import * as ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 const configFile = '../../tsconfig.json';
 
+const API = process.env.NODE_ENV === 'development'
+  ? process.env.npm_package_config_API
+  : process.env.npm_package_config_API_DEV;
+
 const config = {
   entry: {
     worker_gp: path.resolve(__dirname, '../../src/workers/global-picture.ts'),
@@ -50,7 +54,7 @@ const config = {
     }),
     new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
     new webpack.DefinePlugin({
-      API: JSON.stringify(process.env.npm_package_config_API)
+      API: JSON.stringify(API)
     })
   ]
 };

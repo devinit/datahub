@@ -4,7 +4,7 @@
 import * as fetch from 'isomorphic-fetch';
 import * as fs from 'fs-extra';
 const packageJSON = require('../../package.json');
-const API = process.env.API || packageJSON.config.API;
+const API = process.env.NODE_ENV === 'development' ? packageJSON.config.API_DEV : packageJSON.config.API;
 
 const main = (): void => {
   fetch(API, {
