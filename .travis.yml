@@ -4,6 +4,11 @@ node_js:
 install:
 - npm install --ignore-scripts
 - npm install -g codecov
+jobs:
+  include:
+    - # for branches not master, set node environment to development
+      if: branch != master
+      env: NODE_ENV=development
 script:
 - npm run emit
 - npm run lint
