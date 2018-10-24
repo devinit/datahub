@@ -8,7 +8,7 @@ import {
   URLWrapper
 } from '../../atoms/CountryProfilePrint';
 import { StateToShare } from '../../molecules/ChartShare';
-import { PrintProfileHeader } from '../../molecules/CountryProfilePrint/PrintProfileHeader';
+import PrintProfileHeader from '../../molecules/CountryProfilePrint/PrintProfileHeader';
 import { SectionOne } from '../../molecules/CountryProfilePrint/SectionOne';
 import { Country } from '../../types';
 interface Props {
@@ -33,7 +33,7 @@ class CountryProfilePrint extends React.Component<Props> {
           </URLWrapper>
           <PageTable>
             <tbody>
-              <PrintProfileHeader country={ this.props.country }/>
+              <PrintProfileHeader id={ slug } country={ this.props.country }/>
               <SectionOne/>
             </tbody>
           </PageTable>
