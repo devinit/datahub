@@ -1,13 +1,19 @@
 import * as React from 'react';
 import { List, ListItem, Narrative, PrintHeader, TableCell } from '../../atoms/CountryProfilePrint';
+import { Country } from '../../types';
 
-export class PrintProfileHeader extends React.Component {
+interface Props {
+  country: Country;
+}
+export class PrintProfileHeader extends React.Component<Props> {
   render() {
+    const { name } = this.props.country;
+
     return (
       <React.Fragment>
         <tr>
             <TableCell colSpan={ 4 }>
-              <PrintHeader>Canada</PrintHeader>
+              <PrintHeader>{ name }</PrintHeader>
             </TableCell>
           </tr>
           <tr>

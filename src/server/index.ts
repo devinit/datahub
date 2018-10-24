@@ -71,7 +71,6 @@ app.prepare().then(() => {
     '/unbundling-aid',
     '/unbundling-other-flows',
     '/country-profiles',
-    '/country-profile-print',
     '/where-are-the-poor',
     '/multilaterals',
     '/methodology',
@@ -164,6 +163,15 @@ app.prepare().then(() => {
 
     return isValidCountry
       ? renderAndCache(req, res, '/country', queryParams)
+      : renderAndCache(req, res, '/country-profiles');
+  });
+  server.get('/country/:id/print', (req, res) => {
+    const state = req.query && req.query.state ? JSON.parse(req.query.state) : {};
+    const isValidCountry = countriesData.countries.some(country => country.slug === req.params.id);
+    const queryParams = { id: req.params.id, state };
+
+    return isValidCountry
+      ? renderAndCache(req, res, '/country-profile-print', queryParams)
       : renderAndCache(req, res, '/country-profiles');
   });
   server.get('/critical', (req, res) => {
