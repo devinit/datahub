@@ -1,8 +1,10 @@
 import glamorous from 'glamorous';
-// import { css } from 'glamor';
+import { css } from 'glamor';
 // import { black, red, white } from '../../theme/semantic';
 import { GlamorousComponentT } from '../../types';
 
+export const marginRight = (value: number) => css({ marginRight: `${value}px` });
+export const marginLeft = (value: number) => css({ marginLeft: `${value}px` });
 export const ContentWrapper: GlamorousComponentT = glamorous.div({
   overflow: 'hidden'
 });
@@ -140,4 +142,30 @@ export const BoxUnit: GlamorousComponentT = glamorous.div({
   fontSize: '9px',
   fontWeight: 'normal',
   color: '#666'
+});
+
+export const ChartBoxSmall: GlamorousComponentT = glamorous.div({
+  width: '300px',
+  height: '180px',
+  maxHeight: '180px',
+  padding: 0
+});
+
+export const ChartHeading: GlamorousComponentT = glamorous.h5({
+  width: '100%',
+  color: '#e84439',
+  textTransform: 'none',
+  fontWeight: 'bold',
+  textAlign: 'left',
+  fontSize: '12px',
+  verticalAlign: 'top',
+  minHeight: '50px',
+  padding: 0
+});
+
+export const ChartSubHeading: GlamorousComponentT = glamorous.span({
+  display: 'block',
+  fontWeight: 'normal',
+  paddingTop: '3px',
+  fontSize: '0.9em'
 });

@@ -2,12 +2,20 @@ import * as React from 'react';
 import {
   BoxSubHeader,
   BoxUnit,
+  ChartBoxSmall,
+  ChartHeading,
+  ChartSubHeading,
   GreyBox,
   MutedHeader,
   SectionTitle,
   TableCell,
-  ValueHeader
+  ValueHeader,
+  marginLeft,
+  marginRight
 } from '../../atoms/CountryProfilePrint';
+import { css } from 'glamor';
+import Chart from '../../atoms/Chart';
+import povertyConfig from '../../visbox/printProfiles';
 // import { getCountryProfileData } from '../../pageData';
 
 export interface SectionOneProps {
@@ -17,6 +25,16 @@ export interface SectionOneProps {
   internationalResources?: string | null;
   governmentSpendPerPerson?: string | null;
   depthOfExtremePoverty?: string | null;
+  poverty190Trend?: Array<{
+    year: number;
+    uid: string;
+    value: number | null;
+    name: string;
+  } | null>;
+  incomeDistributionTrend?: Array<{
+    value: number;
+    quintileName: string;
+  } | null>;
 }
 
 export class SectionOne extends React.Component<SectionOneProps> {
@@ -60,7 +78,67 @@ export class SectionOne extends React.Component<SectionOneProps> {
             </GreyBox>
           </TableCell>
         </tr>
+        <tr>
+          <TableCell colSpan={ 2 }>
+            <ChartBoxSmall { ...marginRight(20) }>
+              <ChartHeading>
+                Main Heading
+                <ChartSubHeading>Sub Heading</ChartSubHeading>
+              </ChartHeading>
+              <div { ...css({ paddingTop: '10px' }) }>
+                <Chart
+                  config={ { ...povertyConfig.area, timeAxis: { ...povertyConfig.area.timeAxis, tickingStep: 2 } } }
+                  data={ this.props.poverty190Trend }
+                  height="120px"
+                />
+              </div>
+            </ChartBoxSmall>
+          </TableCell>
+          <TableCell colSpan={ 2 }>
+            <ChartBoxSmall { ...marginLeft(20) }>
+              <ChartHeading>
+                Main Heading
+                <ChartSubHeading>Sub Heading</ChartSubHeading>
+              </ChartHeading>
+              <div { ...css({ paddingTop: '10px' }) }>
+                <Chart
+                  config={ { ...povertyConfig.histogram } }
+                  data={
+                    this.processIncomeDistributionTrend()
+                  }
+                  height="120px"
+                />
+              </div>
+            </ChartBoxSmall>
+          </TableCell>
+        </tr>
       </React.Fragment>
     );
+  }
+
+  private processIncomeDistributionTrend() {
+    if (this.props.incomeDistributionTrend) {
+      return this.props.incomeDistributionTrend
+        .map(d => d && ({ ...d, color: '#e84439' }))
+        .map((data) => {
+          if (data) {
+            if (data.quintileName === 'value bottom 20%') {
+              data.quintileName = 'Low 20%';
+            } else if (data.quintileName === 'value 2nd quintile') {
+              data.quintileName = '2nd 20%';
+            } else if (data.quintileName === 'value 3rd quintile') {
+              data.quintileName = '3rd 20%';
+            } else if (data.quintileName === 'value 4th quintile') {
+              data.quintileName = '4th 20%';
+            } else if (data.quintileName === 'value 5th quintile') {
+              data.quintileName = 'High 20%';
+            }
+          }
+
+          return data;
+        });
+    }
+
+    return null;
   }
 }

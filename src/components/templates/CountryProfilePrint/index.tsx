@@ -72,7 +72,9 @@ class CountryProfilePrint extends React.Component<Props> {
           : undefined,
         depthOfExtremePoverty: povertyTab && povertyTab.depthOfExtremePoverty
           ? `${povertyTab.depthOfExtremePoverty.value}%`
-          : undefined
+          : undefined,
+        poverty190Trend: povertyTab && povertyTab.poverty190Trend ? povertyTab.poverty190Trend.data : [],
+        incomeDistributionTrend: povertyTab && povertyTab.incomeDistTrend ? povertyTab.incomeDistTrend.data : []
       };
     }
 
