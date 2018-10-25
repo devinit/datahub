@@ -33,6 +33,7 @@ const Overview = (props: Props) => {
   const incomeDistDataObj = incomeDistData && incomeDistData[0];
   // make typescript f**n happy
   const incomeValue = incomeDistDataObj ? incomeDistDataObj.value : 'No Data';
+
   return (
     <Container>
       <Grid>

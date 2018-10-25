@@ -1,15 +1,10 @@
 import * as React from 'react';
-import { graphql } from 'react-apollo';
 import { List, ListItem, Narrative, PrintHeader, TableCell } from '../../atoms/CountryProfilePrint';
 import { Country } from '../../types';
-import {
-  PRINT_NARRATIVES_QUERY,
-  PrintNarrative,
-  PrintNarrativeProps,
-  PrintNarrativesQuery
-} from './graphql';
-interface Props extends PrintNarrativeProps {
+import { PrintNarrative } from './graphql';
+interface Props {
   country: Country;
+  printNarratives: PrintNarrative[];
 }
 export class PrintProfileHeader extends React.Component<Props> {
   render() {
@@ -36,12 +31,8 @@ export class PrintProfileHeader extends React.Component<Props> {
   }
 
   private getNarrativeByKey(key: string): PrintNarrative | null {
-    if (this.props.data) {
-      const { printNarratives } = this.props.data;
-
-      if (printNarratives) {
-        return printNarratives.find(item => item.key === key) || null;
-      }
+    if (this.props.printNarratives) {
+        return this.props.printNarratives.find(item => item.key === key) || null;
     }
 
     return null;
@@ -64,14 +55,4 @@ export class PrintProfileHeader extends React.Component<Props> {
   }
 }
 
-const withData = graphql<PrintNarrativesQuery, Props, PrintNarrativeProps>(
-  PRINT_NARRATIVES_QUERY,
-  {
-    options: props => {
-      return {
-        variables: { id: props.id }
-      };
-    }
-  });
-
-export default withData(PrintProfileHeader);
+export default PrintProfileHeader;
