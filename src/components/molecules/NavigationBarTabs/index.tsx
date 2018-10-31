@@ -65,12 +65,12 @@ class Tabs<T, L> extends React.Component<Props<T, L>, State> {
         <LoadingBar loading={ this.state.loading } />
         <div>
           <Div background={ lighterGrey }>
-            <Container textAlign={ this.props.textAlign || 'left' }>
-            <Intro step={ 1 } intro={ howTo.globalPicture.theme }>
-              <TabsContainer>
-                { this.renderTitles() }
-              </TabsContainer>
-            </Intro>
+            <Container fluid textAlign={ this.props.textAlign || 'left' }>
+              <Intro step={ 1 } intro={ howTo.globalPicture.theme }>
+                <TabsContainer>
+                  { this.renderTitles() }
+                </TabsContainer>
+              </Intro>
             </Container>
           </Div>
           { this.renderContent() }
