@@ -7,7 +7,7 @@ import {
   BarChartConfig,
   BarChartDataPoint,
   BarPlot,
-  CustomLabelConfig
+  LabelConfig
 } from './BarChartTypes';
 import { groupBy } from 'lodash';
 
@@ -52,10 +52,14 @@ class BarChart extends React.Component<BarChartProps> {
   }
 
   private renderChart(chartNode: HTMLDivElement, data: BarChartDataPoint[]) {
+    const xConfigs = this.xAxisConfigs();
+    const yConfigs = this.yAxisConfigs();
     const xScale = new Plottable.Scales.Category();
+    xScale.innerPadding(xConfigs.innerPadding as number);
+    xScale.outerPadding(xConfigs.outerPadding as number);
+    const xAxis = new Plottable.Axes.Category(xScale, xConfigs.position || 'bottom');
     const yScale = new Plottable.Scales.Linear();
-    const xAxis = new Plottable.Axes.Category(xScale, this.xAxisConfigs().position || 'bottom');
-    const yAxis = new Plottable.Axes.Numeric(yScale, this.yAxisConfigs().position || 'left');
+    const yAxis = new Plottable.Axes.Numeric(yScale, yConfigs.position || 'left');
     const plot = this.addDatasets(data)
       .x(d => d.x, xScale)
       .y(d => d.y, yScale)
@@ -115,7 +119,13 @@ class BarChart extends React.Component<BarChartProps> {
   }
 
   private xAxisConfigs(): Partial<AxisConfig> {
-    return (this.props.config && this.props.config.xAxis) || {};
+    const defaultXConfigs: Partial<AxisConfig> = {
+      outerPadding: 0,
+      innerPadding: 0.5
+    };
+    const xConfigs = (this.props.config && this.props.config.xAxis) || {};
+
+    return { ...xConfigs, ...defaultXConfigs };
   }
 
   private yAxisConfigs(): Partial<AxisConfig> {
@@ -128,7 +138,7 @@ class BarChart extends React.Component<BarChartProps> {
     });
   }
 
-  private drawLabel(entity: Plottable.Plots.IPlotEntity, plot: BarPlot, config: Partial<CustomLabelConfig>) { // tslint:disable-line
+  private drawLabel(entity: Plottable.Plots.IPlotEntity, plot: BarPlot, config: Partial<LabelConfig>) { // tslint:disable-line
     const { height, width, x, y } = (entity as any).bounds;
     const { prefix = '', suffix = '', orientation = 'vertical' } = config;
 
