@@ -7,15 +7,19 @@ export interface BarChartConfig {
   labels: Partial<LabelConfig>;
 }
 
+export type AxisType = 'linear' | 'category' | 'time';
+
 export interface AxisConfig {
   show: boolean;
+  type: AxisType;
   position: 'top' | 'bottom' | 'left' | 'right';
   outerPadding: number;
   innerPadding: number;
+  tickingStep?: number;
 }
 
 export interface BarChartDataPoint {
-  x: number | string;
+  x: number | string | Date;
   y: number;
   series?: string;
   attributes?: BarChartAttributes;
