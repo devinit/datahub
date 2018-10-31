@@ -403,7 +403,7 @@ export default {
       id: 'how-does-it-work?',
       title: 'How does it work?',
       narrative:
-        'It brings together many data sets,enabling you to dig into these through interactive maps, charts and visualisations. It turns complex data around poverty and resource flows into easy to understand robust information and evidence about what is really going on. The Data Hub is an accessible and easy to use tool for anyone wanting to know more about how resources for development are spent.'
+        'It brings together many data sets, enabling you to dig into these through interactive maps, charts and visualisations. It turns complex data around poverty and resource flows into easy to understand robust information and evidence about what is really going on. The Data Hub is an accessible and easy to use tool for anyone wanting to know more about how resources for development are spent.'
     }
   ],
   front: [
