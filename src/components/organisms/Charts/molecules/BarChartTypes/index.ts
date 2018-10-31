@@ -4,6 +4,7 @@ import { Plots } from 'plottable';
 export interface BarChartConfig {
   xAxis: Partial<AxisConfig>;
   yAxis: Partial<AxisConfig>;
+  labels: Partial<CustomLabelConfig>;
 }
 
 export interface AxisConfig {
@@ -23,6 +24,7 @@ export interface BarChartAttributes {
 }
 
 export interface CustomLabelConfig {
+  show: 'always' | 'hover';
   prefix?: string;
   color?: string;
   suffix?: string;

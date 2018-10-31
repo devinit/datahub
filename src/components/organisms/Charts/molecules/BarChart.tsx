@@ -63,7 +63,13 @@ class BarChart extends React.Component<BarChartProps> {
     this.setAttributes(plot, this.props);
     plot.onAnchor(() => {
       setTimeout(() => {
-        this.createCustomLabels(plot);
+        if (this.props.config && this.props.config.labels) {
+          if (this.props.config.labels.show === 'always') {
+            this.createCustomLabels(plot, plot.entities());
+          } else if (this.props.config.labels.show === 'hover') {
+            this.showLabelsOnHover(plot);
+          }
+        }
       }, 500);
     });
 
@@ -71,7 +77,7 @@ class BarChart extends React.Component<BarChartProps> {
       [ this.yAxisConfigs().show ? yAxis : null, plot ] as any,
       [ null, this.xAxisConfigs().show ? xAxis : null ]
     ]).renderTo(chartNode);
-    if (this.props.getPlot) {
+    if (this.props.getPlot && this.barChart) {
       this.props.getPlot(this.barChart);
     }
   }
@@ -116,14 +122,13 @@ class BarChart extends React.Component<BarChartProps> {
     return (this.props.config && this.props.config.yAxis) || {};
   }
 
-  private createCustomLabels(plot: BarPlot) {
-    const entities = plot.entities();
+  private createCustomLabels(plot: BarPlot, entities) {
     entities.forEach(entity => {
-      this.drawLabel(entity, plot, {});
+      this.drawLabel(entity, plot, this.props.config && this.props.config.labels || {});
     });
   }
 
-  private drawLabel(entity: Plottable.Plots.IPlotEntity, plot: BarPlot, config: CustomLabelConfig) { // tslint:disable-line
+  private drawLabel(entity: Plottable.Plots.IPlotEntity, plot: BarPlot, config: Partial<CustomLabelConfig>) { // tslint:disable-line
     const { height, width, x, y } = (entity as any).bounds;
     const { prefix = '', suffix = '', orientation = 'vertical' } = config;
 
@@ -135,6 +140,25 @@ class BarChart extends React.Component<BarChartProps> {
       .attr('text-anchor', orientation === 'vertical' ? 'middle' : 'start')
       .attr('style', `fill: ${entity.selection.attr('fill')}`)
       .text(`${prefix}${entity.datum.y}${suffix}`);
+  }
+
+  private showLabelsOnHover(plot: BarPlot) {
+    const interaction = new Plottable.Interactions.Pointer()
+      .onPointerExit(() => this.resetPlot(plot))
+      .onPointerMove(point => {
+        this.resetPlot(plot);
+        const entities = plot.entitiesAt(point);
+        if (entities && entities.length) {
+          this.createCustomLabels(plot, entities);
+        }
+      });
+
+    interaction.attachTo(plot);
+    plot.onDetach(interaction.detachFrom);
+  }
+
+  private resetPlot(plot: BarPlot) {
+    plot.foreground().select('text').remove();
   }
 }
 
