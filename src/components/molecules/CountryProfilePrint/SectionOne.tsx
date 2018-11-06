@@ -19,6 +19,8 @@ import povertyConfig from '../../visbox/printProfiles';
 import { BarChartConfig, BarChartDataPoint } from '../../organisms/Charts/molecules/BarChartTypes';
 import dynamic, { DynamicOptions } from 'next/dynamic';
 import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
+import { PrintNarrative } from './graphql';
+import { getNarrativeValueByKey } from '../../../utils/print-narratives';
 // import { getCountryProfileData } from '../../pageData';
 
 export interface SectionOneProps {
@@ -38,6 +40,7 @@ export interface SectionOneProps {
     value: number;
     quintileName: string;
   } | null>;
+  narratives: PrintNarrative[];
 }
 
 export class SectionOne extends React.Component<SectionOneProps> {
@@ -85,8 +88,10 @@ export class SectionOne extends React.Component<SectionOneProps> {
           <TableCell colSpan={ 2 }>
             <ChartBoxSmall { ...marginRight(20) }>
               <ChartHeading>
-                Main Heading
-                <ChartSubHeading>Sub Heading</ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map1_narrative') }
+                <ChartSubHeading>
+                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map1_heading') }
+                </ChartSubHeading>
               </ChartHeading>
               <div { ...css({ paddingTop: '10px' }) }>
                 <Chart
@@ -100,8 +105,10 @@ export class SectionOne extends React.Component<SectionOneProps> {
           <TableCell colSpan={ 2 }>
             <ChartBoxSmall { ...marginLeft(20) }>
               <ChartHeading>
-                Main Heading
-                <ChartSubHeading>Sub Heading</ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map2_narrative') }
+                <ChartSubHeading>
+                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map2_heading') }
+                </ChartSubHeading>
               </ChartHeading>
               <div { ...css({ paddingTop: '10px' }) }>
                 { this.renderBarChart() }
@@ -174,7 +181,15 @@ export class SectionOne extends React.Component<SectionOneProps> {
         show: 'always',
         suffix: '%'
       },
-      xAxis: { show: true, position: 'bottom' },
+      xAxis: {
+        show: true,
+        position: 'bottom',
+        label: {
+          show: true,
+          caption: getNarrativeValueByKey(this.props.narratives, 'page1_section1_map2_footer'),
+          angle: 0
+        }
+      },
       yAxis: { show: true, position: 'left', tickingStep: 10 }
     };
   }

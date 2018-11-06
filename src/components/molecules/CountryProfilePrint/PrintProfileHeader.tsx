@@ -2,6 +2,7 @@ import * as React from 'react';
 import { List, ListItem, Narrative, PrintHeader, TableCell } from '../../atoms/CountryProfilePrint';
 import { Country } from '../../types';
 import { PrintNarrative } from './graphql';
+import { getNarrativeByKey } from '../../../utils/print-narratives';
 interface Props {
   country: Country;
   printNarratives: PrintNarrative[];
@@ -9,7 +10,7 @@ interface Props {
 export class PrintProfileHeader extends React.Component<Props> {
   render() {
     const { name } = this.props.country;
-    const pageIntro = this.getNarrativeByKey('page1_intro');
+    const pageIntro = getNarrativeByKey(this.props.printNarratives, 'page1_intro');
 
     return (
       <React.Fragment>
@@ -30,19 +31,11 @@ export class PrintProfileHeader extends React.Component<Props> {
     );
   }
 
-  private getNarrativeByKey(key: string): PrintNarrative | null {
-    if (this.props.printNarratives) {
-        return this.props.printNarratives.find(item => item.key === key) || null;
-    }
-
-    return null;
-  }
-
   private getIntroBulletPoints() {
     let activePointKey = 'page1_intro_bullet1';
     const bulletPoints: string[] = [];
     while (activePointKey) {
-      const point = this.getNarrativeByKey(activePointKey);
+      const point = getNarrativeByKey(this.props.printNarratives, activePointKey);
       if (point) {
         bulletPoints.push(point.value);
         activePointKey = point.next;

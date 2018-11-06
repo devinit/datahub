@@ -11,7 +11,12 @@ import { StateToShare } from '../../molecules/ChartShare';
 import PrintProfileHeader from '../../molecules/CountryProfilePrint/PrintProfileHeader';
 import { SectionOne, SectionOneProps } from '../../molecules/CountryProfilePrint/SectionOne';
 import { Country } from '../../types';
-import { PRINT_PAGE_QUERY, PrintPageQuery, PrintPageQueryVariables } from '../../molecules/CountryProfilePrint/graphql';
+import {
+  PRINT_PAGE_QUERY,
+  PrintNarrative,
+  PrintPageQuery,
+  PrintPageQueryVariables
+} from '../../molecules/CountryProfilePrint/graphql';
 import { ChildProps, graphql } from 'react-apollo';
 
 type QLPrintPageProps = ChildProps<PrintPageQueryVariables, PrintPageQuery>;
@@ -44,7 +49,7 @@ class CountryProfilePrint extends React.Component<Props> {
     );
   }
 
-  private getPrintNarratives() {
+  private getPrintNarratives(): PrintNarrative[] {
     if (this.props.data) {
       const { printNarratives } = this.props.data;
 
@@ -74,11 +79,12 @@ class CountryProfilePrint extends React.Component<Props> {
           ? `${povertyTab.depthOfExtremePoverty.value}%`
           : undefined,
         poverty190Trend: povertyTab && povertyTab.poverty190Trend ? povertyTab.poverty190Trend.data : [],
-        incomeDistributionTrend: povertyTab && povertyTab.incomeDistTrend ? povertyTab.incomeDistTrend.data : []
+        incomeDistributionTrend: povertyTab && povertyTab.incomeDistTrend ? povertyTab.incomeDistTrend.data : [],
+        narratives: this.getPrintNarratives()
       };
     }
 
-    return {};
+    return { narratives: [] };
   }
 }
 
