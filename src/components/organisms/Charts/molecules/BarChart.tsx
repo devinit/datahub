@@ -1,4 +1,4 @@
-import { Axes, AxisOrientation, Components, Dataset, Interactions, Plots, Scales } from 'plottable';
+import { Axes, AxisOrientation, Component, Components, Dataset, Interactions, Plots, Scales } from 'plottable';
 import * as React from 'react';
 import { Table } from 'plottable/build/src/components';
 import {
@@ -8,7 +8,7 @@ import {
   BarChartConfig,
   BarChartDataPoint,
   BarPlot,
-  LabelConfig
+  PlotLabelConfig
 } from './BarChartTypes';
 import { groupBy } from 'lodash';
 import { TimeAxisOrientation } from 'plottable/build/src/axes';
@@ -30,7 +30,7 @@ class BarChart extends React.Component<BarChartProps> {
     data: [],
     config: {
       xAxis: { show: true, position: 'bottom' },
-      yAxis: { show: true, position: 'left' }
+      yAxis: { show: true, position: 'left', label: { show: false } }
     },
     width: '100%',
     height: '150px'
@@ -93,10 +93,8 @@ class BarChart extends React.Component<BarChartProps> {
       }, 500);
     });
 
-    this.barChart = new Components.Table([
-      [ yConfigs.show ? yAxis : null, plot ] as any,
-      [ null, xConfigs.show ? xAxis : null ]
-    ]).renderTo(chartNode);
+    this.barChart = new Components.Table(this.createTableRows(plot, yConfigs, yAxis, xConfigs, xAxis))
+      .renderTo(chartNode);
     if (this.props.getPlot && this.barChart) {
       this.props.getPlot(this.barChart);
     }
@@ -156,6 +154,36 @@ class BarChart extends React.Component<BarChartProps> {
     }
   }
 
+  private createTableRows(
+    plot: Plots.Bar<{}, {}>,
+    yAxisConfigs: Partial<AxisConfig>,
+    yAxis: Axes.Numeric,
+    xAxisConfigs: Partial<AxisConfig>,
+    xAxis: Axes.Numeric | Axes.Category | Axes.Time): (Component | null | undefined)[][] {
+
+    const row1: (Component | null | undefined)[] = [
+      yAxisConfigs.label && yAxisConfigs.label.show
+        ? new Components.AxisLabel(yAxisConfigs.label.caption, yAxisConfigs.label.angle || -90)
+        : null,
+      yAxisConfigs.show ? yAxis : null,
+      plot
+    ];
+    const row2: (Component | null | undefined)[] = [
+      null,
+      null,
+      xAxisConfigs.show ? xAxis : null
+    ];
+    const row3: (Component | null | undefined)[] = [
+      null,
+      null,
+      xAxisConfigs.label && xAxisConfigs.label.show
+        ? new Components.AxisLabel(xAxisConfigs.label.caption, xAxisConfigs.label.angle || 0)
+        : null
+    ];
+
+    return [ row1, row2, row3 ];
+  }
+
   private xAxisConfigs(data: BarChartDataPoint[]): AxisConfig {
     const defaultXConfigs: AxisConfig = {
       outerPadding: 0,
@@ -188,7 +216,7 @@ class BarChart extends React.Component<BarChartProps> {
     });
   }
 
-  private drawLabel(entity: Plots.IPlotEntity, plot: BarPlot, config: Partial<LabelConfig>) { // tslint:disable-line
+  private drawLabel(entity: Plots.IPlotEntity, plot: BarPlot, config: Partial<PlotLabelConfig>) { // tslint:disable-line
     const { height, width, x, y } = (entity as any).bounds;
     const { prefix = '', suffix = '', orientation = 'vertical' } = config;
 

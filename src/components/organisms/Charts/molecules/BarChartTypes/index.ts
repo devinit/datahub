@@ -4,7 +4,7 @@ import { Plots } from 'plottable';
 export interface BarChartConfig {
   xAxis: Partial<AxisConfig>;
   yAxis: Partial<AxisConfig>;
-  labels: Partial<LabelConfig>;
+  labels: Partial<PlotLabelConfig>;
 }
 
 export type AxisType = 'linear' | 'category' | 'time';
@@ -16,6 +16,13 @@ export interface AxisConfig {
   outerPadding: number;
   innerPadding: number;
   tickingStep?: number;
+  label?: Partial<AxisLabelConfig>;
+}
+
+export interface AxisLabelConfig {
+  show: boolean;
+  caption: string;
+  angle: number;
 }
 
 export interface BarChartDataPoint {
@@ -29,7 +36,7 @@ export interface BarChartAttributes {
   [key: string]: number | string | IAccessor<number> | IAccessor<string>;
 }
 
-export interface LabelConfig {
+export interface PlotLabelConfig {
   show: 'always' | 'hover';
   prefix?: string;
   color?: string;
