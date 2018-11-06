@@ -16,6 +16,9 @@ import {
 import { css } from 'glamor';
 import Chart from '../../atoms/Chart';
 import povertyConfig from '../../visbox/printProfiles';
+import { BarChartConfig, BarChartDataPoint } from '../../organisms/Charts/molecules/BarChartTypes';
+import dynamic, { DynamicOptions } from 'next/dynamic';
+import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
 // import { getCountryProfileData } from '../../pageData';
 
 export interface SectionOneProps {
@@ -101,13 +104,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
                 <ChartSubHeading>Sub Heading</ChartSubHeading>
               </ChartHeading>
               <div { ...css({ paddingTop: '10px' }) }>
-                <Chart
-                  config={ { ...povertyConfig.histogram } }
-                  data={
-                    this.processIncomeDistributionTrend()
-                  }
-                  height="120px"
-                />
+                { this.renderBarChart() }
               </div>
             </ChartBoxSmall>
           </TableCell>
@@ -116,11 +113,28 @@ export class SectionOne extends React.Component<SectionOneProps> {
     );
   }
 
+  private renderBarChart() {
+    const dynamicOptions: DynamicOptions<BarChartProps, {}> = {
+      loading: () => <span>...</span>,
+      ssr: false,
+      modules: () => ({
+        BarChart: import('../../organisms/Charts/molecules/BarChart') as Promise<any>
+      }),
+      render: (props, { BarChart }) => <BarChart { ...props } />
+    };
+
+    return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
+      data: this.processIncomeDistributionTrend() as BarChartDataPoint[],
+      config: this.getBarConfigs()
+    });
+  }
+
   private processIncomeDistributionTrend() {
     if (this.props.incomeDistributionTrend) {
       return this.props.incomeDistributionTrend
+        .filter(data => !!data)
         .map(d => d && ({ ...d, color: '#e84439' }))
-        .map((data) => {
+        .map(data => {
           if (data) {
             if (data.quintileName === 'value bottom 20%') {
               data.quintileName = 'Low 20%';
@@ -136,9 +150,31 @@ export class SectionOne extends React.Component<SectionOneProps> {
           }
 
           return data;
+        })
+        .map(data => {
+          if (data) {
+            return {
+              x: data.quintileName,
+              y: data.value,
+              attributes: { fill: data.color, stroke: data.color }
+            };
+          }
+
+          return data;
         });
     }
 
-    return null;
+    return [];
+  }
+
+  private getBarConfigs(): Partial<BarChartConfig> {
+    return {
+      labels: {
+        show: 'always',
+        suffix: '%'
+      },
+      xAxis: { show: true, position: 'bottom' },
+      yAxis: { show: true, position: 'left', tickingStep: 10 }
+    };
   }
 }

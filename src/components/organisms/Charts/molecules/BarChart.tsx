@@ -13,7 +13,7 @@ import {
 import { groupBy } from 'lodash';
 import { TimeAxisOrientation } from 'plottable/build/src/axes';
 
-interface BarChartProps {
+export interface BarChartProps {
   data: BarChartDataPoint[];
   config?: Partial<BarChartConfig>;
   width?: string;
@@ -43,7 +43,7 @@ class BarChart extends React.Component<BarChartProps> {
   }
 
   render() {
-    return <div ref={ this.setChartNode } style={ { height: '150px' } }/>;
+    return <div ref={ this.setChartNode } style={ { height: '135px' } }/>;
   }
 
   componentDidMount() {
