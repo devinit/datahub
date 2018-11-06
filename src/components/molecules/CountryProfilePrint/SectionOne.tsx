@@ -125,7 +125,8 @@ export class SectionOne extends React.Component<SectionOneProps> {
 
     return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
       data: this.processIncomeDistributionTrend() as BarChartDataPoint[],
-      config: this.getBarConfigs()
+      config: this.getBarConfigs(),
+      height: '135px'
     });
   }
 

@@ -31,7 +31,9 @@ class BarChart extends React.Component<BarChartProps> {
     config: {
       xAxis: { show: true, position: 'bottom' },
       yAxis: { show: true, position: 'left' }
-    }
+    },
+    width: '100%',
+    height: '150px'
   };
   private chartNode?: HTMLDivElement;
   private barChart?: Table;
@@ -43,7 +45,7 @@ class BarChart extends React.Component<BarChartProps> {
   }
 
   render() {
-    return <div ref={ this.setChartNode } style={ { height: '135px' } }/>;
+    return <div ref={ this.setChartNode } style={ { height: this.props.height, width: this.props.width } }/>;
   }
 
   componentDidMount() {
