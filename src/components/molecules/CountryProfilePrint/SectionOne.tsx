@@ -88,9 +88,9 @@ export class SectionOne extends React.Component<SectionOneProps> {
           <TableCell colSpan={ 2 }>
             <ChartBoxSmall { ...marginRight(20) }>
               <ChartHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map1_narrative') }
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_narrative') }
                 <ChartSubHeading>
-                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map1_heading') }
+                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_heading') }
                 </ChartSubHeading>
               </ChartHeading>
               <div { ...css({ paddingTop: '10px' }) }>
@@ -105,9 +105,9 @@ export class SectionOne extends React.Component<SectionOneProps> {
           <TableCell colSpan={ 2 }>
             <ChartBoxSmall { ...marginLeft(20) }>
               <ChartHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map2_narrative') }
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_narrative') }
                 <ChartSubHeading>
-                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_map2_heading') }
+                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_heading') }
                 </ChartSubHeading>
               </ChartHeading>
               <div { ...css({ paddingTop: '10px' }) }>
@@ -186,7 +186,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
         position: 'bottom',
         label: {
           show: true,
-          caption: getNarrativeValueByKey(this.props.narratives, 'page1_section1_map2_footer'),
+          caption: getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer'),
           angle: 0
         }
       },
