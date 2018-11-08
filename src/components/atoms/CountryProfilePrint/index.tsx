@@ -49,9 +49,9 @@ export const PageTable: GlamorousComponentT = glamorous.table({
   marginBottom: '10mm',
   background: 'white',
   tableLayout: 'fixed',
-  // minHeight: '28cm',
-  maxHeight: '28cm'
-  // height: '28cm'
+  minHeight: '28cm',
+  maxHeight: '28cm',
+  height: '28cm'
 });
 
 export const TableCell: GlamorousComponentT = glamorous.td({
@@ -151,6 +151,16 @@ export const ChartBoxSmall: GlamorousComponentT = glamorous.div({
   padding: 0
 });
 
+export const ChartBoxLarge: GlamorousComponentT = glamorous.div({
+  position: 'relative',
+  width: '100%',
+  height: '360px',
+  maxHeight: '360px',
+  padding: 0,
+  margin: '0 auto',
+  marginBottom: '20px'
+});
+
 export const ChartHeading: GlamorousComponentT = glamorous.h5({
   width: '100%',
   color: '#e84439',
@@ -159,7 +169,7 @@ export const ChartHeading: GlamorousComponentT = glamorous.h5({
   textAlign: 'left',
   fontSize: '12px',
   verticalAlign: 'top',
-  minHeight: '50px',
+  // minHeight: '50px',
   padding: 0
 });
 
@@ -168,4 +178,33 @@ export const ChartSubHeading: GlamorousComponentT = glamorous.span({
   fontWeight: 'normal',
   paddingTop: '3px',
   fontSize: '0.9em'
+});
+
+export const ChartAxisLabel: GlamorousComponentT = glamorous.div({
+  paddingLeft: '40px',
+  color: '#a9a6aa',
+  fontSize: '11px',
+  textAlign: 'center'
+});
+
+export const FooterNotes: GlamorousComponentT = glamorous.div({
+  padding: 0,
+  fontSize: '8px',
+  textAlign: 'justify',
+  lineHeight: '11px',
+  maxHeight: '115px',
+  overflow: 'hidden'
+});
+
+export const PageFooter: GlamorousComponentT = glamorous.div({
+  paddingTop: 0,
+  fontSize: '8px',
+  lineHeight: '1em'
+});
+
+export const PageFooterText: GlamorousComponentT = glamorous.span({
+  display: 'inline',
+  color: '#BA0C2F',
+  textTransform: 'uppercase',
+  letterSpacing: '1px'
 });

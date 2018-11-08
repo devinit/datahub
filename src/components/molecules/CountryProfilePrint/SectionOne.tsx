@@ -3,16 +3,15 @@ import {
   BoxSubHeader,
   BoxUnit,
   ChartAxisLabel,
-  ChartBoxSmall,
+  ChartBoxLarge,
   ChartHeading,
   ChartSubHeading,
+  FooterNotes,
   GreyBox,
   MutedHeader,
   SectionTitle,
   TableCell,
-  ValueHeader,
-  marginLeft,
-  marginRight
+  ValueHeader
 } from '../../atoms/CountryProfilePrint';
 import { css } from 'glamor';
 import Chart from '../../atoms/Chart';
@@ -22,7 +21,6 @@ import dynamic, { DynamicOptions } from 'next/dynamic';
 import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
 import { PrintNarrative } from './graphql';
 import { getNarrativeValueByKey } from '../../../utils/print-narratives';
-// import { getCountryProfileData } from '../../pageData';
 
 export interface SectionOneProps {
   poorestPeople?: string | null;
@@ -51,14 +49,22 @@ export class SectionOne extends React.Component<SectionOneProps> {
       <React.Fragment>
         <tr><TableCell colSpan={ 4 }><SectionTitle>Overview</SectionTitle></TableCell></tr>
         <tr>
-          <TableCell>
-            <GreyBox style={ { marginLeft: 0 } }>
+          <TableCell colSpan={ 2 }>
+            <GreyBox { ...css({ height: '100px !important', marginLeft: '0 !important' }) }>
               <MutedHeader>How many of the poorest 20% of people globally live in Uganda</MutedHeader>
               <ValueHeader>{ this.props.poorestPeople || 'No Data' }</ValueHeader>
             </GreyBox>
           </TableCell>
-          <TableCell>
-            <GreyBox>
+          <TableCell colSpan={ 2 }>
+            <GreyBox { ...css({ height: '100px !important' }) }>
+              <MutedHeader>How deep is poverty</MutedHeader>
+              <ValueHeader>{ this.props.depthOfExtremePoverty || 'No Data' }</ValueHeader>
+            </GreyBox>
+          </TableCell>
+        </tr>
+        <tr>
+          <TableCell colSpan={ 2 }>
+            <GreyBox { ...css({ marginLeft: '0 !important' }) }>
               <MutedHeader>What resources are available</MutedHeader>
               <BoxSubHeader>
                 <BoxUnit>Domestic public</BoxUnit>
@@ -70,24 +76,17 @@ export class SectionOne extends React.Component<SectionOneProps> {
               </BoxSubHeader>
             </GreyBox>
           </TableCell>
-          <TableCell>
+          <TableCell colSpan={ 2 }>
             <GreyBox>
               <MutedHeader>How much does the government spend per person</MutedHeader>
               <ValueHeader>{ this.props.governmentSpendPerPerson || 'No Data' }</ValueHeader>
               <BoxSubHeader><BoxUnit>See Notes</BoxUnit></BoxSubHeader>
             </GreyBox>
           </TableCell>
-          <TableCell>
-            <GreyBox>
-              <MutedHeader>How deep is poverty</MutedHeader>
-              <ValueHeader>{ this.props.depthOfExtremePoverty || 'No Data' }</ValueHeader>
-              <BoxSubHeader><BoxUnit>Depth of poverty</BoxUnit></BoxSubHeader>
-            </GreyBox>
-          </TableCell>
         </tr>
-        <tr { ...css({ height: '210px' }) }>
-          <TableCell colSpan={ 2 }>
-            <ChartBoxSmall { ...marginRight(20) }>
+        <tr>
+          <TableCell colSpan={ 4 }>
+            <ChartBoxLarge { ...css({ height: '180px !important' }) }>
               <ChartHeading>
                 { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_narrative') }
                 <ChartSubHeading>
@@ -101,10 +100,12 @@ export class SectionOne extends React.Component<SectionOneProps> {
                   height="100px"
                 />
               </div>
-            </ChartBoxSmall>
+            </ChartBoxLarge>
           </TableCell>
-          <TableCell colSpan={ 2 }>
-            <ChartBoxSmall { ...marginLeft(20) }>
+        </tr>
+        <tr>
+          <TableCell colSpan={ 4 }>
+            <ChartBoxLarge { ...css({ height: '150px !important' }) }>
               <ChartHeading>
                 { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_narrative') }
                 <ChartSubHeading>
@@ -117,8 +118,13 @@ export class SectionOne extends React.Component<SectionOneProps> {
                   { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer') }
                 </ChartAxisLabel>
               </div>
-            </ChartBoxSmall>
+            </ChartBoxLarge>
           </TableCell>
+        </tr>
+        <tr>
+          <td colSpan={ 4 }>
+            <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'page1_footer_narrative') }</FooterNotes>
+          </td>
         </tr>
       </React.Fragment>
     );
@@ -137,7 +143,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
     return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
       data: this.processIncomeDistributionTrend() as BarChartDataPoint[],
       config: this.getBarConfigs(),
-      height: '115px'
+      height: '100px'
     });
   }
 
@@ -149,7 +155,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
         .map(data => {
           if (data) {
             if (data.quintileName === 'value bottom 20%') {
-              data.quintileName = 'Low 20%';
+              data.quintileName = 'Lowest 20%';
             } else if (data.quintileName === 'value 2nd quintile') {
               data.quintileName = '2nd 20%';
             } else if (data.quintileName === 'value 3rd quintile') {
@@ -157,7 +163,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
             } else if (data.quintileName === 'value 4th quintile') {
               data.quintileName = '4th 20%';
             } else if (data.quintileName === 'value 5th quintile') {
-              data.quintileName = 'High 20%';
+              data.quintileName = 'Highest 20%';
             }
           }
 
