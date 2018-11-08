@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   BoxSubHeader,
   BoxUnit,
+  ChartAxisLabel,
   ChartBoxSmall,
   ChartHeading,
   ChartSubHeading,
@@ -84,7 +85,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
             </GreyBox>
           </TableCell>
         </tr>
-        <tr>
+        <tr { ...css({ height: '210px' }) }>
           <TableCell colSpan={ 2 }>
             <ChartBoxSmall { ...marginRight(20) }>
               <ChartHeading>
@@ -97,7 +98,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
                 <Chart
                   config={ { ...povertyConfig.area, timeAxis: { ...povertyConfig.area.timeAxis, tickingStep: 2 } } }
                   data={ this.props.poverty190Trend }
-                  height="120px"
+                  height="100px"
                 />
               </div>
             </ChartBoxSmall>
@@ -112,6 +113,9 @@ export class SectionOne extends React.Component<SectionOneProps> {
               </ChartHeading>
               <div { ...css({ paddingTop: '10px' }) }>
                 { this.renderBarChart() }
+                <ChartAxisLabel>
+                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer') }
+                </ChartAxisLabel>
               </div>
             </ChartBoxSmall>
           </TableCell>
@@ -133,7 +137,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
     return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
       data: this.processIncomeDistributionTrend() as BarChartDataPoint[],
       config: this.getBarConfigs(),
-      height: '135px'
+      height: '115px'
     });
   }
 
@@ -183,12 +187,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
       },
       xAxis: {
         show: true,
-        position: 'bottom',
-        label: {
-          show: true,
-          caption: getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer'),
-          angle: 0
-        }
+        position: 'bottom'
       },
       yAxis: { show: true, position: 'left', tickingStep: 10 }
     };
