@@ -57,6 +57,18 @@ class CountryProfilePrint extends React.Component<Props> {
               </tr>
             </tbody>
           </PageTable>
+          <PageTable>
+            <tbody>
+              <SectionTwo { ...this.getSectionTwoProps() }/>
+              <tr>
+                <td colSpan={ 4 }>
+                <PageFooter>
+                  <PageFooterText>{ this.footerText }</PageFooterText> | { this.version }
+                </PageFooter>
+                </td>
+              </tr>
+            </tbody>
+          </PageTable>
         </div>
       </ContentWrapper>
     );
