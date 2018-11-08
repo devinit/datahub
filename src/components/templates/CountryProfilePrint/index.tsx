@@ -4,6 +4,8 @@ import {
   CountryProfileLink,
   CountryProfileLinkDescription,
   CountryProfileLinkText,
+  PageFooter,
+  PageFooterText,
   PageTable,
   URLWrapper
 } from '../../atoms/CountryProfilePrint';
@@ -18,6 +20,7 @@ import {
   PrintPageQueryVariables
 } from '../../molecules/CountryProfilePrint/graphql';
 import { ChildProps, graphql } from 'react-apollo';
+import { SectionTwo, SectionTwoProps } from '../../molecules/CountryProfilePrint/SectionTwo';
 
 type QLPrintPageProps = ChildProps<PrintPageQueryVariables, PrintPageQuery>;
 interface Props extends QLPrintPageProps {
@@ -26,6 +29,9 @@ interface Props extends QLPrintPageProps {
   state?: StateToShare;
 }
 class CountryProfilePrint extends React.Component<Props> {
+  private version = '2018-30-12';
+  private footerText = 'Country Profiles By Development Initiatives';
+
   render() {
     const { name, slug } = this.props.country;
 
@@ -42,6 +48,13 @@ class CountryProfilePrint extends React.Component<Props> {
             <tbody>
               <PrintProfileHeader country={ this.props.country } printNarratives={ this.getPrintNarratives() }/>
               <SectionOne { ...this.getSectionOneProps() }/>
+              <tr>
+                <td colSpan={ 4 }>
+                <PageFooter>
+                  <PageFooterText>{ this.footerText }</PageFooterText> | { this.version }
+                </PageFooter>
+                </td>
+              </tr>
             </tbody>
           </PageTable>
         </div>
@@ -85,6 +98,35 @@ class CountryProfilePrint extends React.Component<Props> {
     }
 
     return { narratives: [] };
+  }
+
+  private getSectionTwoProps(): SectionTwoProps {
+    if (this.props.data) {
+      const { overviewTab, populationTab, povertyTab } = this.props.data;
+
+      return {
+        country: this.props.country,
+        poorestPeople: overviewTab && overviewTab.poorestPeople ? overviewTab.poorestPeople.value : undefined,
+        population: populationTab && populationTab.population ? populationTab.population.value : undefined,
+        domesticResources: overviewTab && overviewTab.domesticResources
+          ? `US$ ${overviewTab.domesticResources.value}`
+          : undefined,
+        internationalResources: overviewTab && overviewTab.internationalResources
+          ? `US$ ${overviewTab.internationalResources.value}`
+          : undefined,
+        governmentSpendPerPerson: overviewTab && overviewTab.governmentSpendPerPerson
+          ? `PPP$ ${overviewTab.governmentSpendPerPerson.value}`
+          : undefined,
+        depthOfExtremePoverty: povertyTab && povertyTab.depthOfExtremePoverty
+          ? `${povertyTab.depthOfExtremePoverty.value}%`
+          : undefined,
+        poverty190Trend: povertyTab && povertyTab.poverty190Trend ? povertyTab.poverty190Trend.data : [],
+        incomeDistributionTrend: povertyTab && povertyTab.incomeDistTrend ? povertyTab.incomeDistTrend.data : [],
+        narratives: this.getPrintNarratives()
+      };
+    }
+
+    return { narratives: [], country: this.props.country };
   }
 }
 
