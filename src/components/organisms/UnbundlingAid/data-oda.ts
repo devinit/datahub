@@ -336,11 +336,11 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
+      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
-      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },

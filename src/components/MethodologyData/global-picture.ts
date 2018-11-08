@@ -704,9 +704,9 @@ export default {
       }
     },
     {
-      name: 'ODA to Pneumonia received, US$',
+      name: 'ODA to pneumonia received, US$',
       description:
-        'Official Development Assistance (ODA) to combat pneumonia by recipient, data is gross disbursements in US$ constant 2015 prices. Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis and are generated from a methodology which applies a key-word search on ODA project descriptions for pneumonia relevant words, and includes results which are then categorised as being pneumonia focussed. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia relevant component of combination vaccines.',
+        'Official development assistance (ODA) to combat pneumonia by recipient (gross disbursements in US$ constant 2015 prices). Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on ODA project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
@@ -721,9 +721,9 @@ export default {
       }
     },
     {
-      name: 'ODA to Pneumonia received as a percent of health ODA',
+      name: 'ODA to pneumonia received, % of health ODA',
       description:
-        'Official Development Assistance (ODA) to combat pneumonia by recipient as a percent of total health ODA. Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis and are generated from a methodology which applies a key-word search on ODA project descriptions for pneumonia relevant words, and includes results which are then categorised as being pneumonia focussed. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia relevant component of combination vaccines.',
+        'Official development assistance (ODA) to combat pneumonia by recipient as a percentage of total health ODA. Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on ODA project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
       methodology: '',
       uom: 'percent',
       csv:
@@ -740,7 +740,7 @@ export default {
     {
       name: 'Private Development Assistance to Pneumonia received, US$',
       description:
-        'Private development assistance to combat pneumonia by recipient, data is gross disbursements in US$ constant 2015 prices. Figures include private funding from the Bill and Melinda Gates Foundation with a stated relevance to pneumonia vaccines, research, treatment and diagnosis and are generated from a methodology which applies a key-word search on project descriptions for pneumonia relevant words, and includes results which are then categorised as being pneumonia focussed. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia relevant component of combination vaccines.',
+        'Private development assistance to combat pneumonia by recipient (gross disbursements in US$ constant 2015 prices). Figures include private funding from the Bill and Melinda Gates Foundation with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
@@ -757,7 +757,7 @@ export default {
     {
       name: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
       description:
-        'The vast majority of ODA to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of Direct contributions, long-term pledges to the International Finance Facility for Immunisation and Advance Market Commitment and Gavi matching fund. A proportion of this funding received by Gavi, will in-turn be spent by Gavi towards pneumonia relevant vaccines.  As such donors providing funding to Gavi are playing a key role in the provision of pneumonia relevant ODA.',
+        'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be spent on pneumonia-relevant vaccines.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
