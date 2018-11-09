@@ -1087,7 +1087,7 @@ export default {
       id: 'PS',
       name: 'Palestine',
       slug: 'palestine',
-      has_domestic_data: '1',
+      has_domestic_data: '',
       countryType: 'recipient',
       hasPDF: true
     },
@@ -1159,7 +1159,7 @@ export default {
       id: 'RU',
       name: 'Russian Federation',
       slug: 'russian-federation',
-      has_domestic_data: '1',
+      has_domestic_data: '',
       countryType: 'donor',
       hasPDF: false
     },
@@ -1503,7 +1503,7 @@ export default {
       id: 'AE',
       name: 'UAE',
       slug: 'uae',
-      has_domestic_data: '1',
+      has_domestic_data: '',
       countryType: 'donor',
       hasPDF: false
     },

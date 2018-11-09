@@ -702,6 +702,72 @@ export default {
           'Development Initiatives based on IMF Article IV publications and World Economic Outlook.',
         link: ''
       }
+    },
+    {
+      name: 'ODA to pneumonia received, US$',
+      description:
+        'Official development assistance (ODA) to combat pneumonia by recipient (gross disbursements in US$ constant 2015 prices). Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on ODA project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
+      methodology: '',
+      uom: 'constant 2015 US$',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia.zip?raw=true',
+      source: {
+        name:
+          'Development Initiatives based on OECD CRS (for ODA data) and UNICEF (for vaccine price data)',
+        link:
+          'https://stats.oecd.org/Index.aspx?DataSetCode=crs1, https://www.unicef.org/supply/index_57476.html'
+      }
+    },
+    {
+      name: 'ODA to pneumonia received, % of health ODA',
+      description:
+        'Official development assistance (ODA) to combat pneumonia by recipient as a percentage of total health ODA. Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on ODA project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia-percent-health',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia-percent-health.zip?raw=true',
+      source: {
+        name:
+          'Development Initiatives based on OECD CRS (for ODA data) and UNICEF (for vaccine price data)',
+        link:
+          'https://stats.oecd.org/Index.aspx?DataSetCode=crs1, https://www.unicef.org/supply/index_57476.html'
+      }
+    },
+    {
+      name: 'Private Development Assistance to Pneumonia received, US$',
+      description:
+        'Private development assistance to combat pneumonia by recipient (gross disbursements in US$ constant 2015 prices). Figures include private funding from the Bill and Melinda Gates Foundation with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
+      methodology: '',
+      uom: 'constant 2015 US$',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/pda-to-pneumonia',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/pda-to-pneumonia.zip?raw=true',
+      source: {
+        name:
+          'Development Initiatives based on OECD CRS (for ODA data) and UNICEF (for vaccine price data)',
+        link:
+          'https://stats.oecd.org/Index.aspx?DataSetCode=crs1, https://www.unicef.org/supply/index_57476.html'
+      }
+    },
+    {
+      name: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
+      description:
+        'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be spent on pneumonia-relevant vaccines.',
+      methodology: '',
+      uom: 'constant 2015 US$',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/funding-to-gavi',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/funding-to-gavi.zip?raw=true',
+      source: {
+        name: 'Gavi, the Vaccines Alliance',
+        link: 'http://www.gavi.org/funding/donor-contributions-pledges/'
+      }
     }
   ]
 };

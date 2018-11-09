@@ -539,6 +539,48 @@ export default {
         }
       ],
       default_indicator: 'data_series.iati_budgets_gb'
+    },
+    {
+      id: 'pneumonia',
+      name: 'Funding to Pneumonia',
+      indicators: [
+        {
+          id: 'data_series.oda_to_pneumonia',
+          name: 'ODA to pneumonia received, US$',
+          heading:
+            'Official development assistance (ODA) to combat pneumonia by recipient (gross disbursements in US$ constant 2015 prices). Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on ODA project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
+          tooltip: 'ODA to pneumonia received, US$',
+          source:
+            'Development Initiatives based on OECD CRS (for ODA data) and UNICEF (for vaccine price data)'
+        },
+        {
+          id: 'data_series.oda_to_pneumonia_percent_health',
+          name: 'ODA to pneumonia received, % of health ODA',
+          heading:
+            'Official development assistance (ODA) to combat pneumonia by recipient as a percentage of total health ODA. Figures include ODA with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on ODA project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
+          tooltip: 'ODA to pneumonia received, % of health ODA',
+          source:
+            'Development Initiatives based on OECD CRS (for ODA data) and UNICEF (for vaccine price data)'
+        },
+        {
+          id: 'data_series.pda_to_pneumonia',
+          name: 'Private Development Assistance to Pneumonia received, US$',
+          heading:
+            'Private development assistance to combat pneumonia by recipient (gross disbursements in US$ constant 2015 prices). Figures include private funding from the Bill and Melinda Gates Foundation with a stated relevance to pneumonia vaccines, research, treatment and diagnosis as determined by a key-word search on project descriptions for pneumonia-relevant words. Proportions are applied to calculate the pneumonia expenditure in partially relevant projects and to estimate the cost of the pneumonia-relevant component of combination vaccines. Methodology based on that developed by the Institute for Health Metrics and Evaluation and used in the 2014 publication ‘Pushing the Pace: Progress and Challenges in Fighting Childhood Pneumonia’.',
+          tooltip: 'private development assistance to pneumonia received, US$',
+          source:
+            'Development Initiatives based on OECD CRS (for ODA data) and UNICEF (for vaccine price data)'
+        },
+        {
+          id: 'data_series.funding_to_gavi',
+          name: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
+          heading:
+            'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be spent on pneumonia-relevant vaccines.',
+          tooltip: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
+          source: 'Gavi, the Vaccines Alliance'
+        }
+      ],
+      default_indicator: 'data_series.oda_to_pneumonia'
     }
   ]
 };

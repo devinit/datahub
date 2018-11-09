@@ -27,7 +27,7 @@ const LegendContainer = glamorous.div<{length: any; visible: boolean; }>(
   {
     position: 'absolute',
     left: '2%',
-    width: '18%',
+    width: '30%',
     display: 'flex',
     flexDirection: 'column',
     [mediaQueries.tabs]: {
