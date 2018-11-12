@@ -6,13 +6,14 @@ import { StateToShare } from '../../molecules/ChartShare';
 import GovernmentFinance from '../../molecules/CountryProfileTabs/GovernmentFinanceLower';
 import InternationalResourcesLower from '../../molecules/CountryProfileTabs/InternationalResourcesLower';
 import ErrorBoundary from '../../molecules/ErrorBoundary';
+import Chart from '../../molecules/MultiLinePartition';
 import Tabs from '../../molecules/Tabs';
 import { getCountryProfileData } from '../../pageData';
+import { Country, PageUnit } from '../../types';
 import GovernmentFinanceChart from '../GovernmentFinance';
 import InflowsVsOutflows from '../InflowsVsOutflows';
 import InternationalResourcesChart from '../InternationalResourcesChart';
 import data from './data';
-import { Country, PageUnit } from '../../types';
 
 export type Props = StateToShare & {
   id: string,
@@ -56,7 +57,9 @@ export default class CountryProfileLowerTabs extends React.Component<Props, { to
                   id={ props.id }
                   year={ props.year }
                   chartId={ GOVERNMENT_FINANCE_LOWER }
-                />
+                >
+                  <Chart { ...{} as any }/>
+                </GovernmentFinanceChart>
               </ErrorBoundary>
             </GovernmentFinance>
           </ErrorBoundary>

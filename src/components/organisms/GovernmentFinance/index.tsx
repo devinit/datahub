@@ -3,16 +3,19 @@ import { ChildProps, graphql } from 'react-apollo';
 import { LightBg } from '../../atoms/Container';
 import { GovernmentFinanceQuery, GovernmentFinanceQueryVariables } from '../../gql-types';
 import { LoadingIndicator } from '../../molecules/LoadingIndicator';
-import Chart from '../../molecules/MultiLinePartition';
 import config from '../../visbox/linePartition';
 import { GOVERNMENT_FINANCE_QUERY } from './query.graphql';
 
-type QueryVarTs = GovernmentFinanceQueryVariables & {
+type QueryVarTs = GovernmentFinanceQueryVariables & Props & {
   chartId: string,
   year?: number,
   shouldScrollIntoView?: boolean;
   budgetType?: string,
 };
+
+interface Props {
+  children: React.ReactChild;
+}
 
 type TChildProps = ChildProps<QueryVarTs, GovernmentFinanceQuery>;
 
@@ -24,7 +27,7 @@ const withData = graphql<GovernmentFinanceQuery, QueryVarTs, TChildProps>(GOVERN
   })
 });
 
-export default withData(({ data, chartId, year, shouldScrollIntoView, budgetType }: TChildProps) => {
+export default withData(({ data, chartId, year, shouldScrollIntoView, budgetType, children }: TChildProps) => {
   const loading = data && data.loading;
   const governmentFinance = data && data.governmentFinance;
   if (!governmentFinance) {
@@ -61,5 +64,5 @@ export default withData(({ data, chartId, year, shouldScrollIntoView, budgetType
     ]
   };
 
-  return <LightBg><Chart { ...props } /></LightBg>;
+  return <LightBg>{ React.cloneElement(children as React.ReactElement<any>, props) }</LightBg>;
 });
