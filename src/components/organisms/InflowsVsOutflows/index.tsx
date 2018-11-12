@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ChildProps, graphql } from 'react-apollo';
 import SlidingDualSidebar from '../../molecules/SlidingDualSidebar';
+import PrintDualSidebar from '../../molecules/SlidingDualSidebar/print';
 import { Country } from '../../types';
 import { ResourcesOverTimeQuery, ResourcesOverTimeQueryVariables } from '../../gql-types';
 import config from '../../visbox/dualbarChart';
@@ -12,6 +13,9 @@ type QueryVarTs = ResourcesOverTimeQueryVariables & {
   shouldScrollIntoView?: boolean;
   chartId: string;
   onDataLoaded?: (data: any) => void;
+  showYearSlider?: boolean;
+  allowShare?: boolean;
+  printVersion?: boolean;
 };
 
 type TChildProps = ChildProps<QueryVarTs, ResourcesOverTimeQuery>;
@@ -24,7 +28,10 @@ const withData = graphql<ResourcesOverTimeQuery, QueryVarTs, TChildProps>(INTL_R
   })
 });
 
-const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chartId, id, onDataLoaded }) => {
+const Chart: React.SFC<TChildProps> = (props) => {
+  const {
+    data, year, shouldScrollIntoView, chartId, id, showYearSlider, allowShare, printVersion, onDataLoaded
+  } = props;
   if (data && data.loading) {
     return <p>Loading...</p>;
   }
@@ -49,6 +56,23 @@ const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chart
     throw new Error(`Wrong country id, country id ${id} doesnt exist`);
   }
 
+  if (printVersion) {
+    return (
+      <PrintDualSidebar
+        country={ country.name }
+        countryType={ country.countryType }
+        startYear={ internationalResources && internationalResources.startYear || 2016 }
+        year={ year }
+        shouldScrollIntoView={ shouldScrollIntoView }
+        chartId={ chartId }
+        data={ resourcesOverTime && resourcesOverTime.data as DH.IResourceData[] }
+        config={ config }
+        showYearSlider={ showYearSlider }
+        allowShare={ allowShare }
+      />
+    );
+  }
+
   return (
     <SlidingDualSidebar
       country={ country.name }
@@ -59,8 +83,15 @@ const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chart
       chartId={ chartId }
       data={ resourcesOverTime && resourcesOverTime.data as DH.IResourceData[] }
       config={ config }
+      showYearSlider={ showYearSlider }
+      allowShare={ allowShare }
     />
   );
+};
+
+Chart.defaultProps = {
+  showYearSlider: true,
+  allowShare: true
 };
 
 export default withData(Chart);

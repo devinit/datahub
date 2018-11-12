@@ -49,7 +49,7 @@ class CountryProfilePrint extends React.Component<Props> {
               <PrintProfileHeader country={ this.props.country } printNarratives={ this.getPrintNarratives() }/>
               <SectionOne { ...this.getSectionOneProps() }/>
               <tr>
-                <td colSpan={ 4 }>
+                <td colSpan={ 4 } style={ { verticalAlign: 'bottom' } }>
                 <PageFooter>
                   <PageFooterText>{ this.footerText }</PageFooterText> | { this.version }
                 </PageFooter>
@@ -61,7 +61,7 @@ class CountryProfilePrint extends React.Component<Props> {
             <tbody>
               <SectionTwo { ...this.getSectionTwoProps() }/>
               <tr>
-                <td colSpan={ 4 }>
+                <td colSpan={ 4 } style={ { verticalAlign: 'bottom' } }>
                 <PageFooter>
                   <PageFooterText>{ this.footerText }</PageFooterText> | { this.version }
                 </PageFooter>

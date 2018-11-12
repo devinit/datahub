@@ -10,17 +10,17 @@ const config = {
     showAxis: true,
     indicator: 'value',
     ticking: 'odd',
-    absolute: true,
+    absolute: true
   },
   categoryAxis: {
     showAxis: true,
     indicator: 'short_name',
     innerPadding: 1.5,
-    outerPadding: 1,
+    outerPadding: 1
   },
   dualSidebar: {
-    gutter: 150,
-  },
+    gutter: 150
+  }
 };
 
 export default config;

@@ -15,18 +15,18 @@ export class PrintProfileHeader extends React.Component<Props> {
     return (
       <React.Fragment>
         <tr>
-            <TableCell colSpan={ 4 }>
-              <PrintHeader>{ name }</PrintHeader>
-            </TableCell>
-          </tr>
-          <tr>
-            <TableCell colSpan={ 4 }>
-              <Narrative>{ pageIntro ? pageIntro.value : '' }</Narrative>
-              <List>
-                { this.getIntroBulletPoints() }
-              </List>
-            </TableCell>
-          </tr>
+          <TableCell colSpan={ 4 }>
+            <PrintHeader>{ name }</PrintHeader>
+          </TableCell>
+        </tr>
+        <tr>
+          <TableCell colSpan={ 4 }>
+            <Narrative>{ pageIntro ? pageIntro.value : '' }</Narrative>
+            <List>
+              { this.getIntroBulletPoints() }
+            </List>
+          </TableCell>
+        </tr>
       </React.Fragment>
     );
   }
