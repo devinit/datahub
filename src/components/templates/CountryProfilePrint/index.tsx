@@ -4,9 +4,6 @@ import {
   CountryProfileLink,
   CountryProfileLinkDescription,
   CountryProfileLinkText,
-  PageFooter,
-  PageFooterText,
-  PageTable,
   URLWrapper
 } from '../../atoms/CountryProfilePrint';
 import { StateToShare } from '../../molecules/ChartShare';
@@ -21,6 +18,7 @@ import {
 } from '../../molecules/CountryProfilePrint/graphql';
 import { ChildProps, graphql } from 'react-apollo';
 import { SectionTwo, SectionTwoProps } from '../../molecules/CountryProfilePrint/SectionTwo';
+import { Container, Grid } from 'semantic-ui-react';
 
 type QLPrintPageProps = ChildProps<PrintPageQueryVariables, PrintPageQuery>;
 interface Props extends QLPrintPageProps {
@@ -29,8 +27,8 @@ interface Props extends QLPrintPageProps {
   state?: StateToShare;
 }
 class CountryProfilePrint extends React.Component<Props> {
-  private version = '2018-30-12';
-  private footerText = 'Country Profiles By Development Initiatives';
+  // private version = '2018-30-12';
+  // private footerText = 'Country Profiles By Development Initiatives';
 
   render() {
     const { name, slug } = this.props.country;
@@ -38,37 +36,23 @@ class CountryProfilePrint extends React.Component<Props> {
     return (
       <ContentWrapper>
         <div>
-          <URLWrapper>
-            <CountryProfileLink href={ `http://data.devinit.org/country/${slug}` }>
-              <CountryProfileLinkText>{ name } profile on the Development Data Hub:</CountryProfileLinkText>
-              <CountryProfileLinkDescription>http://data.devinit.org/country/{ slug }</CountryProfileLinkDescription>
-            </CountryProfileLink>
-          </URLWrapper>
-          <PageTable>
-            <tbody>
+          <Container>
+            <Grid>
+              <Grid.Row style={ { paddingBottom: 0 } }>
+                <Grid.Column>
+                  <URLWrapper>
+                    <CountryProfileLink href={ `http://data.devinit.org/country/${slug}` }>
+                      <CountryProfileLinkText>{ name } profile on the Development Data Hub:</CountryProfileLinkText>
+                      <CountryProfileLinkDescription>http://data.devinit.org/country/{ slug }</CountryProfileLinkDescription>
+                    </CountryProfileLink>
+                  </URLWrapper>
+                </Grid.Column>
+              </Grid.Row>
               <PrintProfileHeader country={ this.props.country } printNarratives={ this.getPrintNarratives() }/>
               <SectionOne { ...this.getSectionOneProps() }/>
-              <tr>
-                <td colSpan={ 4 } style={ { verticalAlign: 'bottom' } }>
-                <PageFooter>
-                  <PageFooterText>{ this.footerText }</PageFooterText> | { this.version }
-                </PageFooter>
-                </td>
-              </tr>
-            </tbody>
-          </PageTable>
-          <PageTable>
-            <tbody>
               <SectionTwo { ...this.getSectionTwoProps() }/>
-              <tr>
-                <td colSpan={ 4 } style={ { verticalAlign: 'bottom' } }>
-                <PageFooter>
-                  <PageFooterText>{ this.footerText }</PageFooterText> | { this.version }
-                </PageFooter>
-                </td>
-              </tr>
-            </tbody>
-          </PageTable>
+            </Grid>
+          </Container>
         </div>
       </ContentWrapper>
     );

@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { List, ListItem, Narrative, PrintHeader, TableCell } from '../../atoms/CountryProfilePrint';
+import { Grid } from 'semantic-ui-react';
+import { getNarrativeByKey } from '../../../utils/print-narratives';
+import { List, ListItem, Narrative, PrintHeader } from '../../atoms/CountryProfilePrint';
 import { Country } from '../../types';
 import { PrintNarrative } from './graphql';
-import { getNarrativeByKey } from '../../../utils/print-narratives';
 interface Props {
   country: Country;
   printNarratives: PrintNarrative[];
@@ -14,19 +15,19 @@ export class PrintProfileHeader extends React.Component<Props> {
 
     return (
       <React.Fragment>
-        <tr>
-          <TableCell colSpan={ 4 }>
+        <Grid.Row style={ { paddingTop: 0, paddingBottom: 0 } }>
+          <Grid.Column>
             <PrintHeader>{ name }</PrintHeader>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 4 }>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row style={ { paddingTop: 0 } }>
+          <Grid.Column>
             <Narrative>{ pageIntro ? pageIntro.value : '' }</Narrative>
             <List>
               { this.getIntroBulletPoints() }
             </List>
-          </TableCell>
-        </tr>
+          </Grid.Column>
+        </Grid.Row>
       </React.Fragment>
     );
   }

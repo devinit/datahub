@@ -18,6 +18,7 @@ class Chart extends React.Component <Props> {
   render() {
     return (
       <div
+        className="di-chart"
         ref={ element => { this.element = element; } }
         style={ { width: this.props.width, height: this.props.height } }
       />

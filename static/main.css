@@ -5,3 +5,17 @@
 .info.circle.icon {
   cursor: pointer;
 }
+
+@media print		{
+  * {
+    -webkit-print-color-adjust:exact;
+  }
+
+  .di-bar-chart {
+    width: 300px !important;
+  }
+
+  .di-chart {
+    width: 300px !important;
+  }
+}

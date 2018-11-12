@@ -45,15 +45,23 @@ class BarChart extends React.Component<BarChartProps> {
   }
 
   render() {
-    return <div ref={ this.setChartNode } style={ { height: this.props.height, width: this.props.width } }/>;
+    return (
+      <div
+        className="di-bar-chart"
+        ref={ this.setChartNode }
+        style={ { height: this.props.height, width: this.props.width } }
+      />
+    );
   }
 
   componentDidMount() {
     if (this.chartNode) {
       this.renderChart(this.chartNode, this.props.data);
       window.addEventListener('resize', () => {
-        if (this.barChart) {
-          this.barChart.redraw();
+        if (this.barChart && this.chartNode) {
+          // FIXME: handle this better. Plottable must have a way of dealing with this. plot.redraw()
+          this.barChart.destroy();
+          this.renderChart(this.chartNode, this.props.data);
         }
       });
     }

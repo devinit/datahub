@@ -5,13 +5,13 @@ import {
   ChartHeading,
   ChartSubHeading,
   Narrative,
-  SectionTitle,
-  TableCell
+  SectionTitle
 } from '../../atoms/CountryProfilePrint';
 import { Country } from '../../types';
 import { PrintNarrative } from './graphql';
 import InflowsVsOutflows from '../../organisms/InflowsVsOutflows';
 import { INFLOWS_VS_OUTFLOWS } from '../../../utils/constants';
+import { Grid } from 'semantic-ui-react';
 
 export interface SectionTwoProps {
   country: Country;
@@ -38,13 +38,13 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
   render() {
     return (
       <React.Fragment>
-        <tr>
-          <TableCell colSpan={ 4 }>
+        <Grid.Row>
+          <Grid.Column>
             <SectionTitle>Resource flows to and from { this.props.country.name }</SectionTitle>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 4 }>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 }>
             <ChartHeading>
               { getNarrativeValueByKey(this.props.narratives, 'page1_section2_chart1_narrative') }
               <ChartSubHeading>
@@ -61,20 +61,20 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
                 printVersion
               />
             </div>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 4 }>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
             <SectionTitle>Government finance</SectionTitle>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 4 }>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
             <Narrative>
               Grants account for 9% of total government revenue in Uganda, while indirect tax provides the main revenue source. Domestic and international financing provide 26% of the total resourcing bundle. The government spends 55% of its resources on recurrent expenses and 35% on development projects.
             </Narrative>
-          </TableCell>
-        </tr>
+          </Grid.Column>
+        </Grid.Row>
       </React.Fragment>
     );
   }

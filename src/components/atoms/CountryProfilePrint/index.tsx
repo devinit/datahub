@@ -14,19 +14,20 @@ export const URLWrapper: GlamorousComponentT = glamorous.div({
   width: '640px',
   minWidth: '640px',
   maxWidth: '640px',
-  margin: '0 auto'
+  margin: '0 auto',
+  float: 'right'
 });
 
 export const CountryProfileLink: GlamorousComponentT = glamorous.a({
   width: '310px',
   backgroundColor: '#F1F1F1',
   display: 'block',
-  position: 'absolute',
   top: '-10mm',
   right: 0,
   padding: '15px 15px 10px 15px',
   lineHeight: '12px',
-  fontSize: '10px'
+  fontSize: '10px',
+  float: 'right'
 });
 
 export const CountryProfileLinkText: GlamorousComponentT = glamorous.span({
@@ -65,7 +66,8 @@ export const PrintHeader: GlamorousComponentT = glamorous.div({
   color: '#BA0C2F',
   fontSize: '40pt',
   fontWeight: 'bold',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  lineHeight: '0.9em'
 });
 
 export const Narrative: GlamorousComponentT = glamorous.div({

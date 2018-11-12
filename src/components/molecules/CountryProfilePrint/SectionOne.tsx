@@ -3,14 +3,12 @@ import {
   BoxSubHeader,
   BoxUnit,
   ChartAxisLabel,
-  ChartBoxLarge,
   ChartHeading,
   ChartSubHeading,
   FooterNotes,
   GreyBox,
   MutedHeader,
   SectionTitle,
-  TableCell,
   ValueHeader
 } from '../../atoms/CountryProfilePrint';
 import { css } from 'glamor';
@@ -21,6 +19,7 @@ import dynamic, { DynamicOptions } from 'next/dynamic';
 import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
 import { PrintNarrative } from './graphql';
 import { getNarrativeValueByKey } from '../../../utils/print-narratives';
+import { Grid } from 'semantic-ui-react';
 
 export interface SectionOneProps {
   poorestPeople?: string | null;
@@ -47,23 +46,23 @@ export class SectionOne extends React.Component<SectionOneProps> {
   render() {
     return (
       <React.Fragment>
-        <tr><TableCell colSpan={ 4 }><SectionTitle>Overview</SectionTitle></TableCell></tr>
-        <tr>
-          <TableCell colSpan={ 2 }>
+        <div><SectionTitle>Overview</SectionTitle></div>
+        <Grid.Row>
+          <Grid.Column width={ 8 }>
             <GreyBox { ...css({ height: '100px !important', marginLeft: '0 !important' }) }>
               <MutedHeader>How many of the poorest 20% of people globally live in Uganda</MutedHeader>
               <ValueHeader>{ this.props.poorestPeople || 'No Data' }</ValueHeader>
             </GreyBox>
-          </TableCell>
-          <TableCell colSpan={ 2 }>
+          </Grid.Column>
+          <Grid.Column width={ 8 }>
             <GreyBox { ...css({ height: '100px !important' }) }>
               <MutedHeader>How deep is poverty</MutedHeader>
               <ValueHeader>{ this.props.depthOfExtremePoverty || 'No Data' }</ValueHeader>
             </GreyBox>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 2 }>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 8 }>
             <GreyBox { ...css({ marginLeft: '0 !important' }) }>
               <MutedHeader>What resources are available</MutedHeader>
               <BoxSubHeader>
@@ -75,57 +74,50 @@ export class SectionOne extends React.Component<SectionOneProps> {
                 <span>{ this.props.internationalResources || 'No Data' }</span>
               </BoxSubHeader>
             </GreyBox>
-          </TableCell>
-          <TableCell colSpan={ 2 }>
+          </Grid.Column>
+          <Grid.Column width={ 8 }>
             <GreyBox>
               <MutedHeader>How much does the government spend per person</MutedHeader>
               <ValueHeader>{ this.props.governmentSpendPerPerson || 'No Data' }</ValueHeader>
               <BoxSubHeader><BoxUnit>See Notes</BoxUnit></BoxSubHeader>
             </GreyBox>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 4 }>
-            <ChartBoxLarge { ...css({ height: '180px !important' }) }>
-              <ChartHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_narrative') }
-                <ChartSubHeading>
-                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_heading') }
-                </ChartSubHeading>
-              </ChartHeading>
-              <div { ...css({ paddingTop: '10px' }) }>
-                <Chart
-                  config={ { ...povertyConfig.area, timeAxis: { ...povertyConfig.area.timeAxis, tickingStep: 2 } } }
-                  data={ this.props.poverty190Trend }
-                  height="100px"
-                />
-              </div>
-            </ChartBoxLarge>
-          </TableCell>
-        </tr>
-        <tr>
-          <TableCell colSpan={ 4 }>
-            <ChartBoxLarge { ...css({ height: '150px !important' }) }>
-              <ChartHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_narrative') }
-                <ChartSubHeading>
-                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_heading') }
-                </ChartSubHeading>
-              </ChartHeading>
-              <div { ...css({ paddingTop: '10px' }) }>
-                { this.renderBarChart() }
-                <ChartAxisLabel>
-                  { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer') }
-                </ChartAxisLabel>
-              </div>
-            </ChartBoxLarge>
-          </TableCell>
-        </tr>
-        <tr>
-          <td colSpan={ 4 }>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 8 }>
+            <ChartHeading>
+              { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_narrative') }
+              <ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_heading') }
+              </ChartSubHeading>
+            </ChartHeading>
+            <Chart
+              config={ { ...povertyConfig.area, timeAxis: { ...povertyConfig.area.timeAxis, tickingStep: 2 } } }
+              data={ this.props.poverty190Trend }
+              width="300px"
+              height="100px"
+            />
+          </Grid.Column>
+          <Grid.Column width={ 8 }>
+            <ChartHeading>
+              { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_narrative') }
+              <ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_heading') }
+              </ChartSubHeading>
+            </ChartHeading>
+            <div { ...css({ paddingTop: '10px' }) }>
+              { this.renderBarChart() }
+              <ChartAxisLabel>
+                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer') }
+              </ChartAxisLabel>
+            </div>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
             <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'page1_footer_narrative') }</FooterNotes>
-          </td>
-        </tr>
+          </Grid.Column>
+        </Grid.Row>
       </React.Fragment>
     );
   }
@@ -143,6 +135,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
     return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
       data: this.processIncomeDistributionTrend() as BarChartDataPoint[],
       config: this.getBarConfigs(),
+      width: '300px',
       height: '100px'
     });
   }
