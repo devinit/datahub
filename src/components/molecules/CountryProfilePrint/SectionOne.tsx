@@ -195,7 +195,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
         show: true,
         position: 'bottom'
       },
-      yAxis: { show: true, position: 'left', tickingStep: 10 }
+      yAxis: { show: false }
     };
   }
 }
