@@ -51,6 +51,11 @@ class BarChart extends React.Component<BarChartProps> {
   componentDidMount() {
     if (this.chartNode) {
       this.renderChart(this.chartNode, this.props.data);
+      window.addEventListener('resize', () => {
+        if (this.barChart) {
+          this.barChart.redraw();
+        }
+      });
     }
   }
 
