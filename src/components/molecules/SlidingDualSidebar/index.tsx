@@ -32,9 +32,16 @@ export interface Props {
   data: DH.IResourceData[]; // TODO: should be flowData with API integration
   config: any;
   cached?: State;
+  showYearSlider?: boolean;
+  allowShare?: boolean;
 }
 
 class SlidingDualSidebar extends React.Component <Props, State> {
+  static defaultProps: Partial<Props> = {
+    showYearSlider: true,
+    allowShare: true
+  };
+
   public static normalizeDataset(data: any[]) {
     // Group by unique flow-name
     const types = groupBy(
@@ -164,7 +171,26 @@ class SlidingDualSidebar extends React.Component <Props, State> {
 
         <Chart height="550px" config={ this.state.config } data={ this.state.currentYearData } />
 
+        { this.renderFooter() }
+      </LightBg>
+    );
+  }
+
+  private renderFooter() {
+    if (this.props.showYearSlider || this.props.allowShare) {
+      return (
         <Grid centered>
+          { this.renderSlider() }
+          { this.renderShare() }
+        </Grid>
+      );
+    }
+  }
+
+  private renderSlider() {
+    if (this.props.showYearSlider) {
+      return (
+        <Grid.Row>
           <Grid.Column width={ 8 }>
             <Segment padded={ 'very' } basic>
               <YearSlider
@@ -176,23 +202,30 @@ class SlidingDualSidebar extends React.Component <Props, State> {
               />
             </Segment>
           </Grid.Column>
-          <Grid.Row>
-            <Grid.Column width={ 6 } textAlign="center">
-              <ChartShare
-                background={ false }
-                hover
-                color="grey"
-                size="medium"
-                stateToShare={ {
-                  year: this.state.currentYear,
-                  chartId: this.props.chartId
-                } }
-              />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </LightBg>
-    );
+        </Grid.Row>
+      );
+    }
+  }
+
+  private renderShare() {
+    if (this.props.allowShare) {
+      return (
+        <Grid.Row>
+          <Grid.Column width={ 6 } textAlign="center">
+            <ChartShare
+              background={ false }
+              hover
+              color="grey"
+              size="medium"
+              stateToShare={ {
+                year: this.state.currentYear,
+                chartId: this.props.chartId
+              } }
+            />
+          </Grid.Column>
+        </Grid.Row>
+      );
+    }
   }
 }
 
