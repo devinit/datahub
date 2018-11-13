@@ -19,6 +19,7 @@ import {
 import { ChildProps, graphql } from 'react-apollo';
 import { SectionTwo, SectionTwoProps } from '../../molecules/CountryProfilePrint/SectionTwo';
 import { Container, Grid } from 'semantic-ui-react';
+import { SectionThree, SectionThreeProps } from '../../molecules/CountryProfilePrint/SectionThree';
 
 type QLPrintPageProps = ChildProps<PrintPageQueryVariables, PrintPageQuery>;
 interface Props extends QLPrintPageProps {
@@ -51,6 +52,7 @@ class CountryProfilePrint extends React.Component<Props> {
               <PrintProfileHeader country={ this.props.country } printNarratives={ this.getPrintNarratives() }/>
               <SectionOne { ...this.getSectionOneProps() }/>
               <SectionTwo { ...this.getSectionTwoProps() }/>
+              <SectionThree { ...this.getSectionThreeProps() }/>
             </Grid>
           </Container>
         </div>
@@ -97,32 +99,17 @@ class CountryProfilePrint extends React.Component<Props> {
   }
 
   private getSectionTwoProps(): SectionTwoProps {
-    if (this.props.data) {
-      const { overviewTab, populationTab, povertyTab } = this.props.data;
+    return {
+      country: this.props.country,
+      narratives: this.getPrintNarratives()
+    };
+  }
 
-      return {
-        country: this.props.country,
-        poorestPeople: overviewTab && overviewTab.poorestPeople ? overviewTab.poorestPeople.value : undefined,
-        population: populationTab && populationTab.population ? populationTab.population.value : undefined,
-        domesticResources: overviewTab && overviewTab.domesticResources
-          ? `US$ ${overviewTab.domesticResources.value}`
-          : undefined,
-        internationalResources: overviewTab && overviewTab.internationalResources
-          ? `US$ ${overviewTab.internationalResources.value}`
-          : undefined,
-        governmentSpendPerPerson: overviewTab && overviewTab.governmentSpendPerPerson
-          ? `PPP$ ${overviewTab.governmentSpendPerPerson.value}`
-          : undefined,
-        depthOfExtremePoverty: povertyTab && povertyTab.depthOfExtremePoverty
-          ? `${povertyTab.depthOfExtremePoverty.value}%`
-          : undefined,
-        poverty190Trend: povertyTab && povertyTab.poverty190Trend ? povertyTab.poverty190Trend.data : [],
-        incomeDistributionTrend: povertyTab && povertyTab.incomeDistTrend ? povertyTab.incomeDistTrend.data : [],
-        narratives: this.getPrintNarratives()
-      };
-    }
-
-    return { narratives: [], country: this.props.country };
+  private getSectionThreeProps(): SectionThreeProps {
+    return {
+      country: this.props.country,
+      narratives: this.getPrintNarratives()
+    };
   }
 }
 
