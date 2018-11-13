@@ -1,36 +1,23 @@
+import { PrintNarrative } from './graphql';
 import { css } from 'glamor';
-import * as React from 'react';
 import { getNarrativeValueByKey } from '../../../utils/print-narratives';
 import {
   ChartHeading,
   ChartSubHeading,
+  FooterNotes,
   Narrative,
   SectionTitle
 } from '../../atoms/CountryProfilePrint';
 import { Country } from '../../types';
-import { PrintNarrative } from './graphql';
+import * as React from 'react';
 import InflowsVsOutflows from '../../organisms/InflowsVsOutflows';
-import { INFLOWS_VS_OUTFLOWS } from '../../../utils/constants';
+import { GOVERNMENT_FINANCE_LOWER, INFLOWS_VS_OUTFLOWS } from '../../../utils/constants';
 import { Grid } from 'semantic-ui-react';
+import GovernmentFinance from '../../organisms/GovernmentFinance';
+import Chart from '../../molecules/MultiLinePartition';
 
 export interface SectionTwoProps {
   country: Country;
-  poorestPeople?: string | null;
-  population?: string | null;
-  domesticResources?: string | null;
-  internationalResources?: string | null;
-  governmentSpendPerPerson?: string | null;
-  depthOfExtremePoverty?: string | null;
-  poverty190Trend?: Array<{
-    year: number;
-    uid: string;
-    value: number | null;
-    name: string;
-  } | null>;
-  incomeDistributionTrend?: Array<{
-    value: number;
-    quintileName: string;
-  } | null>;
   narratives: PrintNarrative[];
 }
 
@@ -71,8 +58,79 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
         <Grid.Row>
           <Grid.Column>
             <Narrative>
-              Grants account for 9% of total government revenue in Uganda, while indirect tax provides the main revenue source. Domestic and international financing provide 26% of the total resourcing bundle. The government spends 55% of its resources on recurrent expenses and 35% on development projects.
+            { getNarrativeValueByKey(this.props.narratives, 'page2_section1_narrative') }
             </Narrative>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 }>
+            <ChartHeading>
+              { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart1_narrative') }
+              <ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart1_heading') }
+              </ChartSubHeading>
+            </ChartHeading>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 } className="print-tree-chart">
+            <GovernmentFinance
+              shouldScrollIntoView={ false }
+              id={ this.props.country.slug }
+              year={ 2016 }
+              chartId={ GOVERNMENT_FINANCE_LOWER }
+            >
+              <Chart year={ 2016 } renderPrintTreeChart index={ 0 } { ...{} as any }/>
+            </GovernmentFinance>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 }>
+            <ChartHeading>
+              { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart2_narrative') }
+              <ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart2_heading') }
+              </ChartSubHeading>
+            </ChartHeading>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 } className="print-tree-chart">
+            <GovernmentFinance
+              shouldScrollIntoView={ false }
+              id={ this.props.country.slug }
+              year={ 2016 }
+              chartId={ GOVERNMENT_FINANCE_LOWER }
+            >
+              <Chart year={ 2016 } renderPrintTreeChart index={ 1 } { ...{} as any }/>
+            </GovernmentFinance>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 }>
+            <ChartHeading>
+              { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart3_narrative') }
+              <ChartSubHeading>
+                { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart3_heading') }
+              </ChartSubHeading>
+            </ChartHeading>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column width={ 10 } className="print-tree-chart">
+            <GovernmentFinance
+              shouldScrollIntoView={ false }
+              id={ this.props.country.slug }
+              year={ 2016 }
+              chartId={ GOVERNMENT_FINANCE_LOWER }
+            >
+              <Chart year={ 2016 } renderPrintTreeChart index={ 2 } { ...{} as any }/>
+            </GovernmentFinance>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column>
+            <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'page2_footer_narrative') }</FooterNotes>
           </Grid.Column>
         </Grid.Row>
       </React.Fragment>

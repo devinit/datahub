@@ -1,14 +1,15 @@
-import * as React from 'react';
+import GovernmentFinanceTour from '../../atoms/GovernmentFinanceTour';
 import { H4 } from 'glamorous';
+import * as React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 import { CurrencyOption, createCurrencyOptions } from '../../../utils';
 import { PrintContainer } from '../../atoms/Container';
-import GovernmentFinanceTour from '../../atoms/GovernmentFinanceTour';
+import * as introJS from 'intro.js';
 import ExportChart from '../ExportChart';
 import LinePartition from '../LinePartition';
 import LoadingBar from '../LoadingBar';
+import PrintTreeChart from '../PrintTreeChart';
 import TourContainer from '../TourContainer';
-import * as introJS from 'intro.js';
 
 export interface LinePartitionItem {
   title: string;
@@ -33,6 +34,8 @@ export interface Props {
     partition: any;
   };
   items: LinePartitionItem[];
+  index?: number;
+  renderPrintTreeChart?: boolean;
 }
 
 export interface State {
@@ -49,6 +52,10 @@ export interface State {
 }
 
 export default class MultiLinePartition extends React.Component<Props> {
+  static defaultProps: Partial<Props> = {
+    index: 1,
+    renderPrintTreeChart: false
+  };
   readonly state: State = MultiLinePartition.createInitialState(this.props);
 
   // public setCurrencyBound: (currency: string) => void;
@@ -68,6 +75,10 @@ export default class MultiLinePartition extends React.Component<Props> {
   render() {
     if (this.props.loading) {
       return <LoadingBar loading={ this.props.loading } />;
+    }
+
+    if (this.props.renderPrintTreeChart) {
+      return this.renderItems();
     }
 
     return (
@@ -118,6 +129,24 @@ export default class MultiLinePartition extends React.Component<Props> {
   }
 
   private renderItems() {
+    if (this.props.renderPrintTreeChart) {
+      const item = this.props.items[this.props.index || 0];
+
+      return (
+        <PrintTreeChart
+          key={ item.title }
+          inverted={ item.inverted }
+          withoutOptions={ item.withoutOptions }
+          year={ this.state.year }
+          data={ item.data }
+          currency={ this.state.currency }
+          budgetType={ this.state.budgetType }
+          budgetTypeOptions={ this.state.budgetTypeOptions[this.state.year] }
+          config={ this.props.config }
+        />
+      );
+    }
+
     return this.props.items.map((item: LinePartitionItem) => {
       if (item.data && item.data.length) {
         return (

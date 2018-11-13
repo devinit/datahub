@@ -19,3 +19,8 @@
     width: 300px !important;
   }
 }
+
+.print-tree-chart div {
+  padding: 0;
+  background: inherit;
+}
