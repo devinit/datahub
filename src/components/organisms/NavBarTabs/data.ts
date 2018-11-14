@@ -575,7 +575,7 @@ export default {
           id: 'data_series.funding_to_gavi',
           name: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
           heading:
-            'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be spent on pneumonia-relevant vaccines.',
+            'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be directed towards pneumonia-relevant vaccines.',
           tooltip: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
           source: 'Gavi, the Vaccines Alliance'
         }
