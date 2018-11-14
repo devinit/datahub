@@ -14,7 +14,7 @@ import {
 import { css } from 'glamor';
 import Chart from '../../atoms/Chart';
 import povertyConfig from '../../visbox/printProfiles';
-import { BarChartConfig, BarChartDataPoint } from '../../organisms/Charts/molecules/BarChartTypes';
+import { ChartConfig, DataPoint } from '../../organisms/Charts/molecules/BarLineChartTypes';
 import dynamic, { DynamicOptions } from 'next/dynamic';
 import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
 import { PrintNarrative } from './graphql';
@@ -133,7 +133,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
     };
 
     return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
-      data: this.processIncomeDistributionTrend() as BarChartDataPoint[],
+      data: this.processIncomeDistributionTrend() as DataPoint[],
       config: this.getBarConfigs(),
       width: '300px',
       height: '100px'
@@ -178,7 +178,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
     return [];
   }
 
-  private getBarConfigs(): Partial<BarChartConfig> {
+  private getBarConfigs(): Partial<ChartConfig> {
     return {
       labels: {
         show: 'always',

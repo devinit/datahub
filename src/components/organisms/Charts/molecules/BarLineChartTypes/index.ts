@@ -1,7 +1,7 @@
 import { IAccessor } from 'plottable/build/src/core/interfaces';
-import { Plots } from 'plottable';
+import { Axes, Plots, Scales } from 'plottable';
 
-export interface BarChartConfig {
+export interface ChartConfig {
   xAxis: Partial<AxisConfig>;
   yAxis: Partial<AxisConfig>;
   labels: Partial<PlotLabelConfig>;
@@ -25,14 +25,14 @@ export interface AxisLabelConfig {
   angle: number;
 }
 
-export interface BarChartDataPoint {
+export interface DataPoint {
   x: number | string | Date;
   y: number;
   series?: string;
-  attributes?: BarChartAttributes;
+  attributes?: ChartAttributes;
 }
 
-export interface BarChartAttributes {
+export interface ChartAttributes {
   [key: string]: number | string | IAccessor<number> | IAccessor<string>;
 }
 
@@ -44,4 +44,7 @@ export interface PlotLabelConfig {
   orientation?: 'vertical' | 'horizontal';
 }
 
+export type ChartScales = Scales.Linear | Scales.Category | Scales.Time;
+export type ChartAxes = Axes.Numeric | Axes.Category | Axes.Time;
+export type LinePlot = Plots.Line<{}>;
 export type BarPlot = Plots.Bar<{}, {}>;
