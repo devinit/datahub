@@ -1,13 +1,15 @@
 import { IAccessor } from 'plottable/build/src/core/interfaces';
-import { Axes, Plots, Scales } from 'plottable';
+import { Axes, Component, Plots, Scales, XAlignment, YAlignment } from 'plottable';
 
 export interface ChartConfig {
   xAxis: Partial<AxisConfig>;
   yAxis: Partial<AxisConfig>;
   labels: Partial<PlotLabelConfig>;
+  legend: Partial<LegendConfig>;
 }
 
 export type AxisType = 'linear' | 'category' | 'time';
+export type TableRow = Array<Component | null | undefined>;
 
 export interface AxisConfig {
   show: boolean;
@@ -25,6 +27,14 @@ export interface AxisLabelConfig {
   show: boolean;
   caption: string;
   angle: number;
+}
+
+export interface LegendConfig {
+  show: boolean;
+  position: 'top' | 'bottom' | 'right';
+  xAlignment: XAlignment;
+  yAlignment: YAlignment;
+  maxEntriesPerRow: number;
 }
 
 export interface DataPoint {
