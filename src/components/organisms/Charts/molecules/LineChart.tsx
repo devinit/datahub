@@ -70,14 +70,14 @@ class LineChart extends React.Component<LineChartProps> {
       xScale.innerPadding(xConfigs.innerPadding as number);
       xScale.outerPadding(xConfigs.outerPadding as number);
     }
-    const xAxis = getAxis(xConfigs.type, xScale, xConfigs.position || 'bottom');
+    const xAxis = getAxis(xConfigs, xScale);
 
     const yScale = new Scales.Linear();
     if (yConfigs.tickingStep) {
       const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
       yScale.tickGenerator(yScaleTickGenerator);
     }
-    const yAxis = new Axes.Numeric(yScale, yConfigs.position || 'left');
+    const yAxis = getAxis(yConfigs, yScale) as Axes.Numeric;
 
     const plot = this.addDatasets(data)
       .x(d => d.x, xScale)

@@ -17,6 +17,8 @@ export interface AxisConfig {
   innerPadding: number;
   tickingStep?: number;
   label?: Partial<AxisLabelConfig>;
+  prefix?: string;
+  suffix?: string;
 }
 
 export interface AxisLabelConfig {

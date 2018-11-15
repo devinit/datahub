@@ -1,17 +1,16 @@
-import { Axes, AxisOrientation, Component, Components, Dataset, Plots, Scales } from 'plottable';
+import { Axes, Component, Components, Dataset, Plots, Scales } from 'plottable';
 import * as React from 'react';
 import { Table } from 'plottable/build/src/components';
 import {
   AxisConfig,
-  AxisType,
   ChartAttributes,
   ChartConfig,
   DataPoint
 } from './BarLineChartTypes';
 import { groupBy } from 'lodash';
-import { TimeAxisOrientation } from 'plottable/build/src/axes';
 import {
   createCustomLabels,
+  getAxis,
   getScale,
   setAttributes,
   showLabelsOnHover,
@@ -79,14 +78,14 @@ class BarChart extends React.Component<BarChartProps> {
 
   private renderChart(chartNode: HTMLDivElement, data: DataPoint[]) {
     const xConfigs = parseXAxisConfigs(data, this.props.config);
-    const yConfigs = parseYAxisConfigs();
+    const yConfigs = parseYAxisConfigs(this.props.config);
 
     const xScale = getScale(xConfigs.type);
     if (xScale instanceof Scales.Category) {
       xScale.innerPadding(xConfigs.innerPadding as number);
       xScale.outerPadding(xConfigs.outerPadding as number);
     }
-    const xAxis = this.getAxis(xConfigs.type, xScale, xConfigs.position || 'bottom');
+    const xAxis = getAxis(xConfigs, xScale);
 
     const yScale = new Scales.Linear();
     if (yConfigs.tickingStep) {
@@ -117,17 +116,6 @@ class BarChart extends React.Component<BarChartProps> {
     if (this.props.getPlot && this.barChart) {
       this.props.getPlot(this.barChart);
     }
-  }
-
-  private getAxis(type: AxisType, scale: Scales, position: AxisOrientation | TimeAxisOrientation): Axes {
-    if (type === 'linear' && scale instanceof Scales.Linear) {
-      return new Axes.Numeric(scale, position);
-    }
-    if (type === 'category' && scale instanceof Scales.Category) {
-      return new Axes.Category(scale, position);
-    }
-
-    return new Axes.Time(scale as any, position as TimeAxisOrientation);
   }
 
   private addDatasets(data: DataPoint[]) {

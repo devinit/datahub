@@ -10,7 +10,7 @@ import {
   PlotLabelConfig
 } from '../../molecules/BarLineChartTypes';
 import { BarChartProps } from '../../molecules/BarChart';
-import { Axes, AxisOrientation, Interactions, Plots, Scales } from 'plottable';
+import { Axes, Interactions, Plots, Scales } from 'plottable';
 import { TimeAxisOrientation } from 'plottable/build/src/axes';
 
 export const xAxisConfigs = (data: DataPoint[], config?: Partial<ChartConfig>): AxisConfig => {
@@ -35,8 +35,17 @@ export const xAxisConfigs = (data: DataPoint[], config?: Partial<ChartConfig>): 
   return { ...defaultXConfigs, ...xConfigs };
 };
 
-export const yAxisConfigs = (config?: Partial<ChartConfig>): Partial<AxisConfig> => {
-  return (config && config.yAxis) || {};
+export const yAxisConfigs = (config?: Partial<ChartConfig>): AxisConfig => {
+  const defaultYConfigs: AxisConfig = {
+    outerPadding: 0,
+    innerPadding: 0.5,
+    show: true,
+    type: 'linear',
+    position: 'left'
+  };
+  const yConfigs = (config && config.yAxis) || {};
+
+  return { ...defaultYConfigs, ...yConfigs };
 };
 
 export const setAttributes = (plot: BarPlot | LinePlot, props: BarChartProps) => {
@@ -79,9 +88,15 @@ export const getScale = (type: AxisType): ChartScales => {
   return new Scales.Time();
 };
 
-export const getAxis = (type: AxisType, scale: ChartScales, position: AxisOrientation | TimeAxisOrientation): ChartAxes => { // tslint:disable-line
+export const getAxis = (configs: AxisConfig, scale: ChartScales): ChartAxes => { // tslint:disable-line
+  const { position, prefix = '', suffix = '', type } = configs;
   if (type === 'linear' && scale instanceof Scales.Linear) {
-    return new Axes.Numeric(scale, position);
+    const axis = new Axes.Numeric(scale, position);
+    if (prefix || suffix) {
+      axis.formatter(data => `${prefix}${data}${suffix}`);
+    }
+
+    return axis;
   }
   if (type === 'category' && scale instanceof Scales.Category) {
     return new Axes.Category(scale, position);
