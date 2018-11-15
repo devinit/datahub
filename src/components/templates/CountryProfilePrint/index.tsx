@@ -106,10 +106,17 @@ class CountryProfilePrint extends React.Component<Props> {
   }
 
   private getSectionThreeProps(): SectionThreeProps {
-    return {
-      country: this.props.country,
-      narratives: this.getPrintNarratives()
-    };
+    if (this.props.data) {
+      const { recipientODAProfiles } = this.props.data;
+
+      return {
+        country: this.props.country,
+        narratives: this.getPrintNarratives(),
+        ODAProfiles: recipientODAProfiles
+      };
+    }
+
+    return { narratives: [] };
   }
 }
 

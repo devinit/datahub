@@ -7,11 +7,12 @@ import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
 import { ChartConfig, DataPoint } from '../../organisms/Charts/molecules/BarLineChartTypes';
 import { LineChartProps } from '../../organisms/Charts/molecules/LineChart';
 import { Country } from '../../types';
-import { PrintNarrative } from './graphql';
+import { PrintNarrative, RecipientODAProfiles } from './graphql';
 
 export interface SectionThreeProps {
   country?: Country;
   narratives: PrintNarrative[];
+  ODAProfiles?: RecipientODAProfiles;
 }
 
 export class SectionThree extends React.Component<SectionThreeProps> {
@@ -32,20 +33,25 @@ export class SectionThree extends React.Component<SectionThreeProps> {
           <Grid.Column width={ 8 }>
             { this.renderLineChart() }
           </Grid.Column>
+          <Grid.Column width={ 8 }>
+            { this.renderLineChart() }
+          </Grid.Column>
         </Grid.Row>
       </React.Fragment>
     );
   }
 
   private renderLineChart() {
-    const data: DataPoint[] = [
-      { x: 'Jan', y: 1, series: 'm' },
-      { x: 'Feb', y: 3, series: 'm' },
-      { x: 'Mar', y: 2, series: 'm' },
-      { x: 'Jan', y: 4, attributes: { stroke: '#333' } },
-      { x: 'Feb', y: 3, attributes: { stroke: '#333' } },
-      { x: 'Mar', y: 5, attributes: { stroke: '#333' } }
-    ];
+    const formatedODAPerPercentGDP: DataPoint[] = this.props.ODAProfiles
+      ? this.props.ODAProfiles.ODAPerPercentGDP.map(d =>
+        ({ x: d.year, y: d.value * 100, series: 'ODAPerPercentGDP', attributes: { stroke: '#e84439' } }))
+      : [];
+    const formatedODAPerPercentGDPExclNonTransfer: DataPoint[] = this.props.ODAProfiles
+      ? this.props.ODAProfiles.ODAPerPercentGDPExclNonTransfer.map(d =>
+          ({ x: d.year, y: d.value * 100, attributes: { stroke: '#E1656D' } })) // tslint:disable-line
+      : [];
+
+    const data = [ ...formatedODAPerPercentGDP, ...formatedODAPerPercentGDPExclNonTransfer ];
 
     const dynamicOptions: DynamicOptions<LineChartProps, {}> = {
       loading: () => <span>...</span>,
@@ -60,8 +66,7 @@ export class SectionThree extends React.Component<SectionThreeProps> {
       data,
       config: this.getConfigs(),
       width: '300px',
-      height: '100px',
-      attributes: { stroke: '#e84439' }
+      height: '130px'
     });
   }
 
@@ -71,7 +76,12 @@ export class SectionThree extends React.Component<SectionThreeProps> {
         show: true,
         position: 'bottom'
       },
-      yAxis: { show: true }
+      yAxis: {
+        show: true,
+        tickingStep: 10,
+        suffix: '%'
+      },
+      legend: { show: true, position: 'top' }
     };
   }
 }

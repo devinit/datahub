@@ -117,6 +117,16 @@ export const PRINT_PAGE_QUERY = gql`
       }
     }
   }
+  recipientODAProfiles(id: $id) {
+    ODAPerPercentGDP {
+      value
+      year
+    }
+    ODAPerPercentGDPExclNonTransfer {
+      value
+      year
+    }
+  }
   }`;
 
 export interface PrintPageQueryVariables {
@@ -130,8 +140,19 @@ export interface PrintNarrative {
   next: string;
 }
 
+export interface RecipientODAProfiles {
+  ODAPerPercentGDP: ODAData[];
+  ODAPerPercentGDPExclNonTransfer: ODAData[];
+}
+
+interface ODAData {
+  value: number;
+  year: number;
+}
+
 export interface PrintPageQuery extends TabDataQuery {
   printNarratives: [ PrintNarrative ];
+  recipientODAProfiles: RecipientODAProfiles;
 }
 
 export type PrintNarrativeProps = ChildProps<PrintPageQueryVariables, PrintPageQuery>;
