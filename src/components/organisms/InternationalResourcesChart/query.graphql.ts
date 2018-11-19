@@ -17,6 +17,10 @@ export const INTL_RESOURCES_QUERY =  gql`
           direction
           color
         }
+        toolTip {
+          heading
+          source
+        }
       }
     }
   }

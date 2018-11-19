@@ -294,6 +294,10 @@ export interface ResourcesOverTimeQuery {
     startYear: number,
     // for sidebar chart in international resources section & area partition tree chart default data
     resourcesOverTime:  {
+      toolTip: {
+        heading: string,
+        source: string
+      },
       data:  Array< {
         uid: string,
         year: number,
