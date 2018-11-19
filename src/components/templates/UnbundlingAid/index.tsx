@@ -68,7 +68,7 @@ export default class extends React.Component<Props> {
                         }
                         { getUnbundlingAidPageData(props.aidType) }
                       </ToolTip>
-                      <Button onClick={ this.showTour } content="Using This Visualization" />
+                      <Button onClick={ this.showTour } content="Using This Visualisation" />
                     </BottomHeader>
                   </ErrorBoundary>
                 </Header.Subheader>
