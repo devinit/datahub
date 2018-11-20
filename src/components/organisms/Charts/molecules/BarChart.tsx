@@ -5,13 +5,19 @@ import {
   AxisConfig,
   ChartAttributes,
   ChartConfig,
-  DataPoint
+  DataPoint,
+  TableRow
 } from './BarLineChartTypes';
 import { groupBy } from 'lodash';
 import {
   createCustomLabels,
+  createLegend,
   getAxis,
+  getLegendConfig,
   getScale,
+  getSeriesSettingsFromData,
+  getXAxisLabel,
+  getYAxisLabel,
   setAttributes,
   showLabelsOnHover,
   xAxisConfigs as parseXAxisConfigs,
@@ -35,7 +41,8 @@ class BarChart extends React.Component<BarChartProps> {
     data: [],
     config: {
       xAxis: { show: true, position: 'bottom' },
-      yAxis: { show: true, position: 'left', label: { show: false } }
+      yAxis: { show: true, position: 'left', label: { show: false } },
+      legend: { show: true, position: 'top' }
     },
     width: '100%',
     height: '150px'
@@ -72,8 +79,18 @@ class BarChart extends React.Component<BarChartProps> {
     }
   }
 
+  renderTable(table: Table) {
+    if (this.chartNode) {
+      table.renderTo(this.chartNode);
+    }
+  }
+
   private setChartNode(node: HTMLDivElement) {
     this.chartNode = node;
+  }
+
+  private getConfigs(config: Partial<ChartConfig> = {}) {
+    return { ...BarChart.defaultProps.config, ...config };
   }
 
   private renderChart(chartNode: HTMLDivElement, data: DataPoint[]) {
@@ -111,8 +128,9 @@ class BarChart extends React.Component<BarChartProps> {
       }, 500);
     });
 
-    this.barChart = new Components.Table(this.createTableRows(plot, yConfigs, yAxis, xConfigs, xAxis))
-      .renderTo(chartNode);
+    this.barChart = new Components.Table(
+      this.createTableRows(this.getConfigs(this.props.config))(plot, yConfigs, yAxis, xConfigs, xAxis)
+    ).renderTo(chartNode);
     if (this.props.getPlot && this.barChart) {
       this.props.getPlot(this.barChart);
     }
@@ -129,34 +147,40 @@ class BarChart extends React.Component<BarChartProps> {
     return plot;
   }
 
-  private createTableRows(
-    plot: Plots.Bar<{}, {}>,
-    yAxisConfigs: Partial<AxisConfig>,
-    yAxis: Axes.Numeric,
-    xAxisConfigs: Partial<AxisConfig>,
-    xAxis: Axes.Numeric | Axes.Category | Axes.Time): (Component | null | undefined)[][] {
+  private createTableRows(config: Partial<ChartConfig>) {
+    return (
+      plot: Plots.Bar<{}, {}>,
+      yAxisConfigs: Partial<AxisConfig>,
+      yAxis: Axes.Numeric,
+      xAxisConfigs: Partial<AxisConfig>,
+      xAxis: Axes.Numeric | Axes.Category | Axes.Time): (Component | null | undefined)[][] => {
 
-    const row1: (Component | null | undefined)[] = [
-      yAxisConfigs.label && yAxisConfigs.label.show
-        ? new Components.AxisLabel(yAxisConfigs.label.caption, yAxisConfigs.label.angle || -90)
-        : null,
-      yAxisConfigs.show ? yAxis : null,
-      plot
-    ];
-    const row2: (Component | null | undefined)[] = [
-      null,
-      null,
-      xAxisConfigs.show ? xAxis : null
-    ];
-    const row3: (Component | null | undefined)[] = [
-      null,
-      null,
-      xAxisConfigs.label && xAxisConfigs.label.show
-        ? new Components.AxisLabel(xAxisConfigs.label.caption, xAxisConfigs.label.angle || 0)
-        : null
-    ];
+      const row1: TableRow = [
+        getYAxisLabel(yAxisConfigs),
+        yAxisConfigs.show ? yAxis : null,
+        plot
+      ];
+      const row2: TableRow = [ null, null, xAxisConfigs.show ? xAxis : null ];
+      const row3: TableRow = [ null, null, getXAxisLabel(xAxisConfigs) ];
 
-    return [ row1, row2, row3 ];
+      if (config.legend && config.legend.show) {
+        const legendConfig = getLegendConfig(config.legend);
+        const seriesConfigs = getSeriesSettingsFromData(this.props.data);
+        const seriesNames = seriesConfigs.map(c => c.series);
+        const seriesColours = seriesConfigs.map(c => c.colour);
+        const legend = createLegend(legendConfig, seriesNames, seriesColours);
+        if (legendConfig.position === 'top' || legendConfig.position === 'bottom') {
+          const legendRow: TableRow[] = [ [ null, null, legend ] ];
+          const otherRows: TableRow[] = [ row1, row2, row3 ];
+
+          return legendConfig.position === 'top' ? legendRow.concat(otherRows) : otherRows.concat(legendRow);
+        } else if (legendConfig.position === 'right') {
+          return [ row1.concat(legend), row2.concat(null), row3.concat(null) ];
+        }
+      }
+
+      return [ row1, row2, row3 ];
+    };
   }
 }
 
