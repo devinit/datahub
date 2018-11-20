@@ -16,7 +16,15 @@ import {
   xAxisConfigs as parseXAxisConfigs,
   yAxisConfigs as parseYAxisConfigs
 } from '../shared/BarLine';
-import { AxisConfig, ChartAttributes, ChartConfig, DataPoint, TableRow } from './BarLineChartTypes';
+import {
+  AxisConfig,
+  ChartAttributes,
+  ChartConfig,
+  ChartScales,
+  DataPoint,
+  LegendConfig,
+  TableRow
+} from './BarLineChartTypes';
 
 export interface LineChartProps {
   data: DataPoint[];
@@ -40,11 +48,17 @@ class LineChart extends React.Component<LineChartProps> {
   };
   private chartNode?: HTMLDivElement;
   private lineChart?: Table;
+  private xScale: ChartScales;
+  private yScale: Scales.Linear;
+  private xAxis: Axes.Numeric | Axes.Category | Axes.Time;
+  private yAxis: Axes.Numeric;
+  private plot: Plots.Line<{}>;
 
   constructor(props) {
     super(props);
 
     this.setChartNode = this.setChartNode.bind(this);
+    this.onAnchor = this.onAnchor.bind(this);
   }
 
   render() {
@@ -70,41 +84,22 @@ class LineChart extends React.Component<LineChartProps> {
   private renderChart(chartNode: HTMLDivElement, data: DataPoint[]) {
     const xConfigs = parseXAxisConfigs(data, this.props.config);
     const yConfigs = parseYAxisConfigs(this.props.config);
+    const configs = this.getConfigs(this.props.config);
 
-    const xScale = getScale(xConfigs.type);
-    if (xScale instanceof Scales.Category) {
-      xScale.innerPadding(xConfigs.innerPadding as number);
-      xScale.outerPadding(xConfigs.outerPadding as number);
-    }
-    const xAxis = getAxis(xConfigs, xScale);
+    this.createAxes(xConfigs, yConfigs);
 
-    const yScale = new Scales.Linear();
-    if (yConfigs.tickingStep) {
-      const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
-      yScale.tickGenerator(yScaleTickGenerator);
-    }
-    const yAxis = getAxis(yConfigs, yScale) as Axes.Numeric;
-
-    const plot = this.addDatasets(data)
-      .x(d => d.x, xScale)
-      .y(d => d.y, yScale)
+    this.plot = this.addDatasets(data)
+      .x(d => d.x, this.xScale)
+      .y(d => d.y, this.yScale)
       .animated(true);
-    setAttributes(plot, this.props);
-    plot.onAnchor(() => {
-      setTimeout(() => {
-        if (this.props.config && this.props.config.labels) {
-          if (this.props.config.labels.show === 'always') {
-            createCustomLabels(plot, plot.entities(), this.props.config && this.props.config.labels);
-          } else if (this.props.config.labels.show === 'hover') {
-            showLabelsOnHover(plot, this.props.config && this.props.config.labels);
-          }
-        }
-      }, 500);
-    });
+
+    setAttributes(this.plot, this.props);
+    this.plot.onAnchor(() => this.onAnchor(this.plot, configs));
 
     this.lineChart = new Components.Table(
-      this.createTableRows(this.getConfigs(this.props.config))(plot, yConfigs, yAxis, xConfigs, xAxis)
+      this.createTableRows(this.getConfigs(configs))(this.plot, yConfigs, this.yAxis, xConfigs, this.xAxis)
     ).renderTo(chartNode);
+
     if (this.props.getPlot && this.lineChart) {
       this.props.getPlot(this.lineChart);
     }
@@ -112,6 +107,22 @@ class LineChart extends React.Component<LineChartProps> {
 
   private getConfigs(config: Partial<ChartConfig> = {}) {
     return { ...LineChart.defaultProps.config, ...config };
+  }
+
+  private createAxes(xConfigs: AxisConfig, yConfigs: AxisConfig) {
+    this.xScale = getScale(xConfigs.type);
+    if (this.xScale instanceof Scales.Category) {
+      this.xScale.innerPadding(xConfigs.innerPadding as number);
+      this.xScale.outerPadding(xConfigs.outerPadding as number);
+    }
+    this.xAxis = getAxis(xConfigs, this.xScale);
+
+    this.yScale = new Scales.Linear();
+    if (yConfigs.tickingStep) {
+      const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
+      this.yScale.tickGenerator(yScaleTickGenerator);
+    }
+    this.yAxis = getAxis(yConfigs, this.yScale) as Axes.Numeric;
   }
 
   private addDatasets(data: DataPoint[]) {
@@ -141,10 +152,7 @@ class LineChart extends React.Component<LineChartProps> {
 
       if (config.legend && config.legend.show) {
         const legendConfig = getLegendConfig(config.legend);
-        const seriesConfigs = getSeriesSettingsFromData(this.props.data);
-        const seriesNames = seriesConfigs.map(c => c.series);
-        const seriesColours = seriesConfigs.map(c => c.colour);
-        const legend = createLegend(legendConfig, seriesNames, seriesColours);
+        const legend = this.createLineChartLegend(this.props.data, legendConfig);
         if (legendConfig.position === 'top' || legendConfig.position === 'bottom') {
           const legendRow: TableRow[] = [ [ null, null, legend ] ];
           const otherRows: TableRow[] = [ row1, row2, row3 ];
@@ -157,6 +165,26 @@ class LineChart extends React.Component<LineChartProps> {
 
       return [ row1, row2, row3 ];
     };
+  }
+
+  private createLineChartLegend(data: DataPoint[], config: LegendConfig) {
+    const seriesConfigs = getSeriesSettingsFromData(data);
+    const seriesNames = seriesConfigs.map(c => c.series);
+    const seriesColours = seriesConfigs.map(c => c.colour);
+
+    return createLegend(config, seriesNames, seriesColours);
+  }
+
+  private onAnchor(plot: Plots.Line<{}>, config: Partial<ChartConfig>) {
+    setTimeout(() => {
+      if (config && config.labels) {
+        if (config.labels.show === 'always') {
+          createCustomLabels(plot, plot.entities(), config.labels);
+        } else if (config.labels.show === 'hover') {
+          showLabelsOnHover(plot, config.labels);
+        }
+      }
+    }, 500);
   }
 }
 
