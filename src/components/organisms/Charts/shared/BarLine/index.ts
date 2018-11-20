@@ -6,12 +6,14 @@ import {
   ChartConfig,
   ChartScales,
   DataPoint,
+  LegendConfig,
   LinePlot,
   PlotLabelConfig
 } from '../../molecules/BarLineChartTypes';
 import { BarChartProps } from '../../molecules/BarChart';
-import { Axes, Interactions, Plots, Scales } from 'plottable';
+import { Axes, Components, Interactions, Plots, Scales } from 'plottable';
 import { TimeAxisOrientation } from 'plottable/build/src/axes';
+import { groupBy } from 'lodash';
 
 export const xAxisConfigs = (data: DataPoint[], config?: Partial<ChartConfig>): AxisConfig => {
   const defaultXConfigs: AxisConfig = {
@@ -140,4 +142,58 @@ export const showLabelsOnHover = (plot: BarPlot | LinePlot, labelConfig: Partial
 
 export const resetPlot = (plot: BarPlot | LinePlot) => {
   plot.foreground().select('text').remove();
+};
+
+export const getYAxisLabel = (configs: Partial<AxisConfig>): Components.AxisLabel | null => {
+  return configs.label && configs.label.show
+    ? new Components.AxisLabel(configs.label.caption, configs.label.angle || -90)
+    : null;
+};
+
+export const getXAxisLabel = (configs: Partial<AxisConfig>): Components.AxisLabel | null => {
+  return configs.label && configs.label.show
+    ? new Components.AxisLabel(configs.label.caption, configs.label.angle || 0)
+    : null;
+};
+
+export const getLegendConfig = (config: Partial<LegendConfig>): LegendConfig => {
+  const defaultConfig: LegendConfig = {
+    show: true,
+    xAlignment: 'right',
+    yAlignment: 'top',
+    maxEntriesPerRow: 5,
+    position: 'top'
+  };
+
+  return { ...defaultConfig, ...config };
+};
+
+export const createLegend = (configs: LegendConfig, domain: string[], colours: string[]) => {
+  const colorScale = new Scales.Color();
+  const legend = new Components.Legend(colorScale);
+  colorScale.range(colours);
+  colorScale.domain(domain);
+  legend.maxEntriesPerRow(configs.maxEntriesPerRow || 5);
+  legend.xAlignment(configs.xAlignment || 'right');
+  legend.yAlignment(configs.yAlignment || 'top');
+
+  return legend;
+};
+
+export const getSeriesSettingsFromData = (data: DataPoint[]) => {
+  const groupedBySeries = groupBy(data, datum => datum.series);
+  const seriesNames = Object.keys(groupedBySeries);
+  const seriesSettings = seriesNames.map(name => {
+    let match = data.find(datum => datum.series === name && !!(datum.attributes && datum.attributes.stroke));
+    if (!match) {
+      match = data.find(datum => !datum.series);
+    }
+
+    return {
+      series: name !== 'undefined' ? name : 'Unnamed',
+      colour: match && match.attributes ? `${match.attributes.stroke}` : ''
+    };
+  });
+
+  return seriesSettings;
 };
