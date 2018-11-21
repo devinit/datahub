@@ -102,7 +102,7 @@
     "eslint-plugin-chai-friendly": "0.4.1",
     "eslint-plugin-cypress": "2.0.1",
     "eslint-plugin-import": "^2.13.0",
-    "fork-ts-checker-webpack-plugin": "0.4.1",
+    "fork-ts-checker-webpack-plugin": "0.5.0",
     "fs-extra": "5.0.0",
     "git-pre-hooks": "1.2.0",
     "happypack": "4.0.1",
