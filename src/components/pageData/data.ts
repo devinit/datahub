@@ -369,8 +369,8 @@ export default {
         'Between 1990 and 2010, extreme poverty was cut in half and Explore plausible poverty outcomes for 2030 based on models of consumption'
     },
     {
-      id: 'about-this-visualization',
-      title: 'About this visualization',
+      id: 'about-this-visualisation',
+      title: 'About this visualisation',
       narrative:
         'This page allows you to explore three scenarios for future poverty levels both globally and by region up to 2030. The baseline scenario uses current forecasts for growth in consumption and current inequality levels. The best-case scenario shows what happens with more rapid growth that is shared more equally. By contrast, the worst-case scenario sees slower growth and increasing inequality. Forecasting future poverty levels is difficult, given the inherent uncertainties involved. Poverty modelling develops future scenarios to help inform policymaking. These models rely on simplifying assumptions, often focusing on economic growth and income distribution trends which determine how much poor people benefit from that growth.Data accessed from source: 20 August 2013.'
     },
