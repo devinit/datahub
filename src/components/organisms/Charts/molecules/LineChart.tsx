@@ -1,5 +1,5 @@
 import { groupBy } from 'lodash';
-import { Axes, Component, Components, Dataset, Plots, Scales } from 'plottable';
+import { Axes, Components, Dataset, Plots, Scales } from 'plottable';
 import { Table } from 'plottable/build/src/components';
 import * as React from 'react';
 import {
@@ -9,8 +9,6 @@ import {
   getLegendConfig,
   getScale,
   getSeriesSettingsFromData,
-  getXAxisLabel,
-  getYAxisLabel,
   parseAxisMinMaxToDate,
   setAttributes,
   setTimeAxisTickingFormat,
@@ -24,8 +22,7 @@ import {
   ChartConfig,
   ChartScales,
   DataPoint,
-  LegendConfig,
-  TableRow
+  LegendConfig
 } from './BarLineChartTypes';
 
 export interface LineChartProps {
@@ -90,19 +87,20 @@ class LineChart extends React.Component<LineChartProps> {
     const yConfigs = parseYAxisConfigs(this.props.config);
     const configs = this.getConfigs(this.props.config);
 
-    this.createAxes(xConfigs, yConfigs);
+    this.lineChart = new Components.Table();
+
+    this.createAxes(xConfigs, yConfigs, this.lineChart);
+    this.setAxisLabel(xConfigs, this.lineChart, 1, 0);
 
     this.plot = this.addDatasets(data)
       .x(d => d.x, this.xScale)
       .y(d => d.y, this.yScale)
       .animated(true);
+    this.lineChart.add(this.plot, 1, 2);
+    this.createChartLegend(this.props.data, this.lineChart, configs.legend);
 
     setAttributes(this.plot, this.props);
     this.plot.onAnchor(() => this.onAnchor(this.plot, configs));
-
-    this.lineChart = new Components.Table(
-      this.createTableRows(this.getConfigs(configs))(this.plot, yConfigs, this.yAxis, xConfigs, this.xAxis)
-    );
 
     if (this.props.onBeforeRender) {
       this.props.onBeforeRender(this);
@@ -118,45 +116,62 @@ class LineChart extends React.Component<LineChartProps> {
     return { ...LineChart.defaultProps.config, ...config };
   }
 
-  private createAxes(xConfigs: AxisConfig, yConfigs: AxisConfig) {
+  private createAxes(xConfigs: AxisConfig, yConfigs: AxisConfig, chartTable: Table) {
     this.xScale = getScale(xConfigs.type);
     if (this.xScale instanceof Scales.Category) {
       this.xScale.innerPadding(xConfigs.innerPadding as number);
       this.xScale.outerPadding(xConfigs.outerPadding as number);
     }
     this.xAxis = getAxis(xConfigs, this.xScale);
-    this.xAxis.showEndTickLabels(true);
-    this.xAxis.margin(xConfigs.margin);
-    if (xConfigs.tickingStep) {
-      if (this.xScale instanceof Scales.Linear) {
-        const xScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(xConfigs.tickingStep);
-        this.xScale.tickGenerator(xScaleTickGenerator);
-        if (xConfigs.axisMin && typeof xConfigs.axisMin === 'number') {
-          this.xScale.domainMin(xConfigs.axisMin);
-        }
-        if (xConfigs.axisMax && typeof xConfigs.axisMax === 'number') {
-          this.xScale.domainMax(xConfigs.axisMax);
-        }
-      } else if (this.xScale instanceof Scales.Time) {
-        if (xConfigs.axisMin) {
-          this.xScale.domainMin(parseAxisMinMaxToDate(xConfigs.axisMin));
-        }
-        if (xConfigs.axisMax) {
-          this.xScale.domainMax(parseAxisMinMaxToDate(xConfigs.axisMax));
+    if (xConfigs.show) {
+      chartTable.add(this.xAxis, 2, 2);
+
+      this.xAxis.showEndTickLabels(true);
+      this.xAxis.margin(xConfigs.margin);
+
+      if (xConfigs.tickingStep) {
+        if (this.xScale instanceof Scales.Linear) {
+          const xScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(xConfigs.tickingStep);
+          this.xScale.tickGenerator(xScaleTickGenerator);
+          if (xConfigs.axisMin && typeof xConfigs.axisMin === 'number') {
+            this.xScale.domainMin(xConfigs.axisMin);
+          }
+          if (xConfigs.axisMax && typeof xConfigs.axisMax === 'number') {
+            this.xScale.domainMax(xConfigs.axisMax);
+          }
+        } else if (this.xScale instanceof Scales.Time) {
+          if (xConfigs.axisMin) {
+            this.xScale.domainMin(parseAxisMinMaxToDate(xConfigs.axisMin));
+          }
+          if (xConfigs.axisMax) {
+            this.xScale.domainMax(parseAxisMinMaxToDate(xConfigs.axisMax));
+          }
         }
       }
-    }
-    if (this.xAxis instanceof Axes.Time && xConfigs.timeFormat) {
-      this.xAxis.axisConfigurations([ setTimeAxisTickingFormat(xConfigs.timeFormat, xConfigs.tickingStep || 1) ]);
+      if (this.xAxis instanceof Axes.Time && xConfigs.timeFormat) {
+        this.xAxis.axisConfigurations([ setTimeAxisTickingFormat(xConfigs.timeFormat, xConfigs.tickingStep || 1) ]);
+      }
     }
 
     this.yScale = new Scales.Linear();
-    if (yConfigs.tickingStep) {
-      const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
-      this.yScale.tickGenerator(yScaleTickGenerator);
-    }
     this.yAxis = getAxis(yConfigs, this.yScale) as Axes.Numeric;
-    this.yAxis.margin(yConfigs.margin);
+
+    if (yConfigs.show) {
+      chartTable.add(this.yAxis, 1, 1);
+
+      this.yAxis.margin(yConfigs.margin);
+      if (yConfigs.tickingStep) {
+        const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
+        this.yScale.tickGenerator(yScaleTickGenerator);
+      }
+    }
+  }
+
+  private setAxisLabel(configs: AxisConfig, chartTable: Table, row: number, column: number) {
+    if (configs.label && configs.label.show) {
+      const label = new Components.AxisLabel(configs.label.caption, configs.label.angle || -90);
+      chartTable.add(label, row, column);
+    }
   }
 
   private addDatasets(data: DataPoint[]) {
@@ -168,45 +183,20 @@ class LineChart extends React.Component<LineChartProps> {
     return plot;
   }
 
-  private createTableRows(config: Partial<ChartConfig>) {
-    return (
-      plot: Plots.Line<{}>,
-      yAxisConfigs: Partial<AxisConfig>,
-      yAxis: Axes.Numeric,
-      xAxisConfigs: Partial<AxisConfig>,
-      xAxis: Axes.Numeric | Axes.Category | Axes.Time): (Component | null | undefined)[][] => {
-
-      const row1: TableRow = [
-        getYAxisLabel(yAxisConfigs),
-        yAxisConfigs.show ? yAxis : null,
-        plot
-      ];
-      const row2: TableRow = [ null, null, xAxisConfigs.show ? xAxis : null ];
-      const row3: TableRow = [ null, null, getXAxisLabel(xAxisConfigs) ];
-
-      if (config.legend && config.legend.show) {
-        const legendConfig = getLegendConfig(config.legend);
-        const legend = this.createLineChartLegend(this.props.data, legendConfig);
-        if (legendConfig.position === 'top' || legendConfig.position === 'bottom') {
-          const legendRow: TableRow[] = [ [ null, null, legend ] ];
-          const otherRows: TableRow[] = [ row1, row2, row3 ];
-
-          return legendConfig.position === 'top' ? legendRow.concat(otherRows) : otherRows.concat(legendRow);
-        } else if (legendConfig.position === 'right') {
-          return [ row1.concat(legend), row2.concat(null), row3.concat(null) ];
-        }
-      }
-
-      return [ row1, row2, row3 ];
-    };
-  }
-
-  private createLineChartLegend(data: DataPoint[], config: LegendConfig) {
+  private createChartLegend(data: DataPoint[], chartTable: Table, userConfig: Partial<LegendConfig> = {}) {
+    const config = getLegendConfig(userConfig);
     const seriesConfigs = getSeriesSettingsFromData(data);
     const seriesNames = seriesConfigs.map(c => c.series);
     const seriesColours = seriesConfigs.map(c => c.colour);
 
-    return createLegend(config, seriesNames, seriesColours);
+    const legend = createLegend(config, seriesNames, seriesColours);
+    if (config.position === 'top') {
+      chartTable.add(legend, 0, 2);
+    } else if (config.position === 'bottom') {
+      chartTable.add(legend, 3, 2);
+    } else if (config.position === 'right') {
+      chartTable.add(legend, 1, 3);
+    }
   }
 
   private onAnchor(plot: Plots.Line<{}>, config: Partial<ChartConfig>) {
