@@ -105,7 +105,7 @@ class BarChart extends React.Component<BarChartProps> {
     const xAxis = getAxis(xConfigs, xScale);
 
     const yScale = new Scales.Linear();
-    if (yConfigs.tickingStep) {
+    if (yConfigs.tickingStep && typeof yConfigs.tickingStep === 'number') {
       const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
       yScale.tickGenerator(yScaleTickGenerator);
     }

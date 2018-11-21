@@ -131,7 +131,7 @@ class LineChart extends React.Component<LineChartProps> {
       this.xAxis.margin(xConfigs.margin);
 
       if (xConfigs.tickingStep) {
-        if (this.xScale instanceof Scales.Linear) {
+        if (this.xScale instanceof Scales.Linear && typeof xConfigs.tickingStep === 'number') {
           const xScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(xConfigs.tickingStep);
           this.xScale.tickGenerator(xScaleTickGenerator);
           if (xConfigs.axisMin && typeof xConfigs.axisMin === 'number') {
@@ -140,7 +140,7 @@ class LineChart extends React.Component<LineChartProps> {
           if (xConfigs.axisMax && typeof xConfigs.axisMax === 'number') {
             this.xScale.domainMax(xConfigs.axisMax);
           }
-        } else if (this.xScale instanceof Scales.Time) {
+        } else if (this.xScale instanceof Scales.Time && typeof xConfigs.tickingStep !== 'number') {
           if (xConfigs.axisMin) {
             this.xScale.domainMin(parseAxisMinMaxToDate(xConfigs.axisMin));
           }
@@ -150,7 +150,8 @@ class LineChart extends React.Component<LineChartProps> {
         }
       }
       if (this.xAxis instanceof Axes.Time && xConfigs.timeFormat) {
-        this.xAxis.axisConfigurations([ setTimeAxisTickingFormat(xConfigs.timeFormat, xConfigs.tickingStep || 1) ]);
+        const tickingStep = typeof xConfigs.tickingStep !== 'number' ? xConfigs.tickingStep : {};
+        this.xAxis.axisConfigurations([ setTimeAxisTickingFormat(xConfigs.timeFormat, tickingStep || {}) ]);
       }
     }
 
@@ -161,7 +162,7 @@ class LineChart extends React.Component<LineChartProps> {
       chartTable.add(this.yAxis, 1, 1);
 
       this.yAxis.margin(yConfigs.margin);
-      if (yConfigs.tickingStep) {
+      if (typeof yConfigs.tickingStep === 'number') {
         const yScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(yConfigs.tickingStep);
         this.yScale.tickGenerator(yScaleTickGenerator);
       }

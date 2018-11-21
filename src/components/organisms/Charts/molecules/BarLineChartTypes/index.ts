@@ -13,13 +13,19 @@ export type AxisType = 'linear' | 'category' | 'time';
 export type TableRow = Array<Component | null | undefined>;
 
 export type TimeAxisFormat = 'years' | 'months' | 'days' | 'hours';
+export interface TimeTickingSteps {
+  years: number;
+  months: number;
+  days: number;
+  hours: number;
+}
 export interface AxisConfig {
   show: boolean;
   type: AxisType;
   position: 'top' | 'bottom' | 'left' | 'right';
   outerPadding: number;
   innerPadding: number;
-  tickingStep?: number;
+  tickingStep?: number | Partial<TimeTickingSteps>;
   label?: Partial<AxisLabelConfig>;
   prefix?: string;
   suffix?: string;

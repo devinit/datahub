@@ -9,7 +9,8 @@ import {
   LegendConfig,
   LinePlot,
   PlotLabelConfig,
-  TimeAxisFormat
+  TimeAxisFormat,
+  TimeTickingSteps
 } from '../../molecules/BarLineChartTypes';
 import { BarChartProps } from '../../molecules/BarChart';
 import { Axes, Components, Formatters, Interactions, Plots, Scales } from 'plottable';
@@ -204,14 +205,14 @@ export const getSeriesSettingsFromData = (data: DataPoint[]) => {
 export const parseAxisMinMaxToDate = (axisValue: number | Date) =>
   typeof axisValue === 'number' ? new Date(Date.parse(axisValue + '')) : axisValue;
 
-export const setTimeAxisTickingFormat = (ticking: TimeAxisFormat[], tickingStep: number) => {
+export const setTimeAxisTickingFormat = (ticking: TimeAxisFormat[], tickingStep: Partial<TimeTickingSteps>) => {
   const tiers: TimeAxisTierConfiguration[] = [];
 
   if (ticking.includes('hours')) {
     tiers.push({
       formatter: Formatters.time('%H:%M'),
       interval: TimeInterval.hour,
-      step: tickingStep
+      step: tickingStep.hours || 4
     });
   }
 
@@ -219,7 +220,7 @@ export const setTimeAxisTickingFormat = (ticking: TimeAxisFormat[], tickingStep:
     tiers.push({
       formatter: Formatters.time('%d'),
       interval: TimeInterval.day,
-      step: tickingStep
+      step: tickingStep.days || 7
     });
   }
 
@@ -227,7 +228,7 @@ export const setTimeAxisTickingFormat = (ticking: TimeAxisFormat[], tickingStep:
     tiers.push({
       formatter: Formatters.time('%B'),
       interval: TimeInterval.month,
-      step: tickingStep
+      step: tickingStep.months || 1
     });
   }
 
@@ -235,7 +236,7 @@ export const setTimeAxisTickingFormat = (ticking: TimeAxisFormat[], tickingStep:
     tiers.push({
       formatter: Formatters.time('%Y'),
       interval: TimeInterval.year,
-      step: tickingStep
+      step: tickingStep.years || 1
     });
   }
 
