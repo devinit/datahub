@@ -11,6 +11,7 @@ export interface ChartConfig {
 export type AxisType = 'linear' | 'category' | 'time';
 export type TableRow = Array<Component | null | undefined>;
 
+export type TimeAxisFormat = 'years' | 'months' | 'days' | 'hours';
 export interface AxisConfig {
   show: boolean;
   type: AxisType;
@@ -21,6 +22,10 @@ export interface AxisConfig {
   label?: Partial<AxisLabelConfig>;
   prefix?: string;
   suffix?: string;
+  margin: number;
+  axisMin?: number | Date;
+  axisMax?: number | Date;
+  timeFormat?: TimeAxisFormat[];
 }
 
 export interface AxisLabelConfig {

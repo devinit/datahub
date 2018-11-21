@@ -11,7 +11,9 @@ import {
   getSeriesSettingsFromData,
   getXAxisLabel,
   getYAxisLabel,
+  parseAxisMinMaxToDate,
   setAttributes,
+  setTimeAxisTickingFormat,
   showLabelsOnHover,
   xAxisConfigs as parseXAxisConfigs,
   yAxisConfigs as parseYAxisConfigs
@@ -33,6 +35,7 @@ export interface LineChartProps {
   height?: string;
   attributes?: ChartAttributes;
   getPlot?: (plot: Table) => void;
+  onBeforeRender?: (chart: LineChart) => void;
 }
 
 class LineChart extends React.Component<LineChartProps> {
@@ -74,6 +77,7 @@ class LineChart extends React.Component<LineChartProps> {
   componentDidMount() {
     if (this.chartNode) {
       this.renderChart(this.chartNode, this.props.data);
+      this.onResize();
     }
   }
 
@@ -98,7 +102,12 @@ class LineChart extends React.Component<LineChartProps> {
 
     this.lineChart = new Components.Table(
       this.createTableRows(this.getConfigs(configs))(this.plot, yConfigs, this.yAxis, xConfigs, this.xAxis)
-    ).renderTo(chartNode);
+    );
+
+    if (this.props.onBeforeRender) {
+      this.props.onBeforeRender(this);
+    }
+    this.lineChart.renderTo(chartNode);
 
     if (this.props.getPlot && this.lineChart) {
       this.props.getPlot(this.lineChart);
@@ -116,6 +125,30 @@ class LineChart extends React.Component<LineChartProps> {
       this.xScale.outerPadding(xConfigs.outerPadding as number);
     }
     this.xAxis = getAxis(xConfigs, this.xScale);
+    this.xAxis.showEndTickLabels(true);
+    this.xAxis.margin(xConfigs.margin);
+    if (xConfigs.tickingStep) {
+      if (this.xScale instanceof Scales.Linear) {
+        const xScaleTickGenerator = Scales.TickGenerators.intervalTickGenerator(xConfigs.tickingStep);
+        this.xScale.tickGenerator(xScaleTickGenerator);
+        if (xConfigs.axisMin && typeof xConfigs.axisMin === 'number') {
+          this.xScale.domainMin(xConfigs.axisMin);
+        }
+        if (xConfigs.axisMax && typeof xConfigs.axisMax === 'number') {
+          this.xScale.domainMax(xConfigs.axisMax);
+        }
+      } else if (this.xScale instanceof Scales.Time) {
+        if (xConfigs.axisMin) {
+          this.xScale.domainMin(parseAxisMinMaxToDate(xConfigs.axisMin));
+        }
+        if (xConfigs.axisMax) {
+          this.xScale.domainMax(parseAxisMinMaxToDate(xConfigs.axisMax));
+        }
+      }
+    }
+    if (this.xAxis instanceof Axes.Time && xConfigs.timeFormat) {
+      this.xAxis.axisConfigurations([ setTimeAxisTickingFormat(xConfigs.timeFormat, xConfigs.tickingStep || 1) ]);
+    }
 
     this.yScale = new Scales.Linear();
     if (yConfigs.tickingStep) {
@@ -123,6 +156,7 @@ class LineChart extends React.Component<LineChartProps> {
       this.yScale.tickGenerator(yScaleTickGenerator);
     }
     this.yAxis = getAxis(yConfigs, this.yScale) as Axes.Numeric;
+    this.yAxis.margin(yConfigs.margin);
   }
 
   private addDatasets(data: DataPoint[]) {
@@ -185,6 +219,17 @@ class LineChart extends React.Component<LineChartProps> {
         }
       }
     }, 500);
+  }
+
+  private onResize() {
+    window.addEventListener('resize', () => {
+      if (this.lineChart && this.chartNode) {
+        this.lineChart.redraw();
+        this.plot.redraw();
+        this.xAxis.redraw();
+        this.yAxis.redraw();
+      }
+    });
   }
 }
 

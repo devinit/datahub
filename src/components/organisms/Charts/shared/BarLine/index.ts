@@ -8,11 +8,12 @@ import {
   DataPoint,
   LegendConfig,
   LinePlot,
-  PlotLabelConfig
+  PlotLabelConfig,
+  TimeAxisFormat
 } from '../../molecules/BarLineChartTypes';
 import { BarChartProps } from '../../molecules/BarChart';
-import { Axes, Components, Interactions, Plots, Scales } from 'plottable';
-import { TimeAxisOrientation } from 'plottable/build/src/axes';
+import { Axes, Components, Formatters, Interactions, Plots, Scales } from 'plottable';
+import { TimeAxisOrientation, TimeAxisTierConfiguration, TimeInterval } from 'plottable/build/src/axes';
 import { groupBy } from 'lodash';
 
 export const xAxisConfigs = (data: DataPoint[], config?: Partial<ChartConfig>): AxisConfig => {
@@ -21,7 +22,8 @@ export const xAxisConfigs = (data: DataPoint[], config?: Partial<ChartConfig>): 
     innerPadding: 0.5,
     show: true,
     type: 'category',
-    position: 'bottom'
+    position: 'bottom',
+    margin: 0
   };
   const xConfigs: Partial<AxisConfig> = (config && config.xAxis) || {};
   if (!xConfigs.type && data.length && typeof data[0].x === 'number') {
@@ -43,7 +45,8 @@ export const yAxisConfigs = (config?: Partial<ChartConfig>): AxisConfig => {
     innerPadding: 0.5,
     show: true,
     type: 'linear',
-    position: 'left'
+    position: 'left',
+    margin: 0
   };
   const yConfigs = (config && config.yAxis) || {};
 
@@ -196,4 +199,45 @@ export const getSeriesSettingsFromData = (data: DataPoint[]) => {
   });
 
   return seriesSettings;
+};
+
+export const parseAxisMinMaxToDate = (axisValue: number | Date) =>
+  typeof axisValue === 'number' ? new Date(Date.parse(axisValue + '')) : axisValue;
+
+export const setTimeAxisTickingFormat = (ticking: TimeAxisFormat[], tickingStep: number) => {
+  const tiers: TimeAxisTierConfiguration[] = [];
+
+  if (ticking.includes('hours')) {
+    tiers.push({
+      formatter: Formatters.time('%H:%M'),
+      interval: TimeInterval.hour,
+      step: tickingStep
+    });
+  }
+
+  if (ticking.includes('days')) {
+    tiers.push({
+      formatter: Formatters.time('%d'),
+      interval: TimeInterval.day,
+      step: tickingStep
+    });
+  }
+
+  if (ticking.includes('months')) {
+    tiers.push({
+      formatter: Formatters.time('%B'),
+      interval: TimeInterval.month,
+      step: tickingStep
+    });
+  }
+
+  if (ticking.includes('years')) {
+    tiers.push({
+      formatter: Formatters.time('%Y'),
+      interval: TimeInterval.year,
+      step: tickingStep
+    });
+  }
+
+  return tiers;
 };
