@@ -216,7 +216,7 @@ export default {
       { id: 'DE', name: 'Germany' },
       {
         id: 'gavi',
-        name: 'Global Alliance for Vaccines and Immunization (GAVI)'
+        name: 'Global Alliance for Vaccines and Immunisation (GAVI)'
       },
       { id: 'gef', name: 'Global Environment Facility (GEF)' },
       { id: 'global-fund', name: 'Global Fund' },
@@ -321,12 +321,12 @@ export default {
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
       {
-        id: 'public-sector-recipient',
-        name: 'Public sector (recipient government)'
-      },
-      {
         id: 'university-research-institute-etc',
         name: 'University, research institute or think-tank, etc'
+      },
+      {
+        id: 'public-sector-recipient',
+        name: 'Public sector (recipient government)'
       },
       { id: 'unspecified', name: 'Unspecified' },
       {
@@ -345,11 +345,11 @@ export default {
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
+      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
-      { id: 'other-social-services', name: 'Other social services' },
       { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },

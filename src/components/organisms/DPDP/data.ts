@@ -107,7 +107,7 @@ export default {
       { id: 'TL', name: 'Timor-Leste' },
       {
         id: 'gavi',
-        name: 'Global Alliance for Vaccines and Immunization (GAVI)'
+        name: 'Global Alliance for Vaccines and Immunisation (GAVI)'
       },
       { id: 'ceb', name: 'Council of Europe Development Bank (CEB)' },
       { id: 'HU', name: 'Hungary' },
