@@ -6,6 +6,7 @@ export interface ChartConfig {
   yAxis: Partial<AxisConfig>;
   labels: Partial<PlotLabelConfig>;
   legend: Partial<LegendConfig>;
+  gridlines: Partial<GridlinesConfig>;
 }
 
 export type AxisType = 'linear' | 'category' | 'time';
@@ -40,6 +41,11 @@ export interface LegendConfig {
   xAlignment: XAlignment;
   yAlignment: YAlignment;
   maxEntriesPerRow: number;
+}
+
+export interface GridlinesConfig {
+  showXGrid: boolean;
+  showYGrid: boolean;
 }
 
 export interface DataPoint {

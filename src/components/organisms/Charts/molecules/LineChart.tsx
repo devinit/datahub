@@ -97,7 +97,8 @@ class LineChart extends React.Component<LineChartProps> {
       .y(d => d.y, this.yScale)
       .animated(true);
     this.lineChart.add(this.plot, 1, 2);
-    this.createChartLegend(this.props.data, this.lineChart, configs.legend);
+    this.createGridlines(this.lineChart, configs);
+    this.createChartLegend(data, this.lineChart, configs.legend);
 
     setAttributes(this.plot, this.props);
     this.plot.onAnchor(() => this.onAnchor(this.plot, configs));
@@ -112,7 +113,7 @@ class LineChart extends React.Component<LineChartProps> {
     }
   }
 
-  private getConfigs(config: Partial<ChartConfig> = {}) {
+  private getConfigs(config: Partial<ChartConfig> = {}): Partial<ChartConfig> {
     return { ...LineChart.defaultProps.config, ...config };
   }
 
@@ -174,13 +175,20 @@ class LineChart extends React.Component<LineChartProps> {
     }
   }
 
-  private addDatasets(data: DataPoint[]) {
-    const groupedBySeries = groupBy(data, datum => datum.series);
-    const seriesNames = Object.keys(groupedBySeries);
-    const plot = new Plots.Line();
-    seriesNames.forEach(series => plot.addDataset(new Dataset(groupedBySeries[series])));
-
-    return plot;
+  private createGridlines(chartTable: Table, config: Partial<ChartConfig>) {
+    if (config.gridlines) {
+      const { showXGrid, showYGrid } = config.gridlines;
+      if (showXGrid || showYGrid) {
+        const gridlines = new Components.Gridlines(showXGrid ? this.xScale : null, showYGrid ? this.yScale : null);
+        if (chartTable.has(this.plot)) {
+          chartTable.remove(this.plot);
+          const group = new Components.Group([ this.plot, gridlines ]);
+          chartTable.add(group, 1, 2);
+        } else {
+          chartTable.add(gridlines, 1, 2);
+        }
+      }
+    }
   }
 
   private createChartLegend(data: DataPoint[], chartTable: Table, userConfig: Partial<LegendConfig> = {}) {
@@ -197,6 +205,15 @@ class LineChart extends React.Component<LineChartProps> {
     } else if (config.position === 'right') {
       chartTable.add(legend, 1, 3);
     }
+  }
+
+  private addDatasets(data: DataPoint[]) {
+    const groupedBySeries = groupBy(data, datum => datum.series);
+    const seriesNames = Object.keys(groupedBySeries);
+    const plot = new Plots.Line();
+    seriesNames.forEach(series => plot.addDataset(new Dataset(groupedBySeries[series])));
+
+    return plot;
   }
 
   private onAnchor(plot: Plots.Line<{}>, config: Partial<ChartConfig>) {
