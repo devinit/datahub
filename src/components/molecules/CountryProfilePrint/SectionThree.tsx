@@ -30,10 +30,7 @@ export class SectionThree extends React.Component<SectionThreeProps> {
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column width={ 8 }>
-            { this.renderLineChart() }
-          </Grid.Column>
-          <Grid.Column width={ 8 }>
+          <Grid.Column width={ 16 }>
             { this.renderLineChart() }
           </Grid.Column>
         </Grid.Row>
@@ -44,11 +41,11 @@ export class SectionThree extends React.Component<SectionThreeProps> {
   private renderLineChart() {
     const formatedODAPerPercentGDP: DataPoint[] = this.props.ODAProfiles
       ? this.props.ODAProfiles.ODAPerPercentGDP.map(d =>
-        ({ x: d.year, y: d.value * 100, series: 'ODAPerPercentGDP', attributes: { stroke: '#e84439' } }))
+        ({ x: new Date(Date.parse(d.year + '')), y: d.value * 100, series: 'Total ODA as a % of GDP', attributes: { stroke: '#e84439' } })) // tslint:disable-line
       : [];
     const formatedODAPerPercentGDPExclNonTransfer: DataPoint[] = this.props.ODAProfiles
       ? this.props.ODAProfiles.ODAPerPercentGDPExclNonTransfer.map(d =>
-          ({ x: d.year, y: d.value * 100, attributes: { stroke: '#E1656D' } })) // tslint:disable-line
+        ({ x: new Date(Date.parse(d.year + '')), y: d.value * 100, series: 'Total ODA (excl-non-transfer) % of GDP', attributes: { stroke: '#E1656D' } })) // tslint:disable-line
       : [];
 
     const data = [ ...formatedODAPerPercentGDP, ...formatedODAPerPercentGDPExclNonTransfer ];
@@ -69,8 +66,11 @@ export class SectionThree extends React.Component<SectionThreeProps> {
     return React.createElement(dynamic<BarChartProps, {}>(dynamicOptions as any), {
       data,
       config: this.getConfigs(),
-      width: '300px',
-      height: '130px'
+      width: '100%',
+      height: '300px',
+      attributes: {
+        'stroke-width': 5
+      }
     });
   }
 
@@ -78,7 +78,12 @@ export class SectionThree extends React.Component<SectionThreeProps> {
     return {
       xAxis: {
         show: true,
-        position: 'bottom'
+        position: 'bottom',
+        type: 'time',
+        tickingStep: { years: 2 },
+        timeFormat: [ 'years' ],
+        axisMin: 2000,
+        axisMax: 2015
       },
       yAxis: {
         show: true,

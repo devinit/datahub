@@ -192,7 +192,8 @@ export class SectionOne extends React.Component<SectionOneProps> {
         show: true,
         position: 'bottom'
       },
-      yAxis: { show: false }
+      yAxis: { show: false },
+      legend: { show: false }
     };
   }
 }
