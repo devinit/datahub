@@ -6,10 +6,7 @@ import {
   ChartAttributes,
   ChartConfig,
   DataPoint,
-  TableRow
-} from './BarLineChartTypes';
-import { groupBy } from 'lodash';
-import {
+  TableRow,
   createCustomLabels,
   createLegend,
   getAxis,
@@ -22,7 +19,8 @@ import {
   showLabelsOnHover,
   xAxisConfigs as parseXAxisConfigs,
   yAxisConfigs as parseYAxisConfigs
-} from '../shared/BarLine';
+} from '../../shared';
+import { groupBy } from 'lodash';
 
 export interface BarChartProps {
   data: DataPoint[];
@@ -36,7 +34,7 @@ export interface BarChartProps {
 type Scales = Scales.Linear | Scales.Category | Scales.Time;
 type Axes = Axes.Numeric | Axes.Category | Axes.Time;
 
-class BarChart extends React.Component<BarChartProps> {
+export class BarChart extends React.Component<BarChartProps> {
   static defaultProps: BarChartProps = {
     data: [],
     config: {
@@ -183,5 +181,3 @@ class BarChart extends React.Component<BarChartProps> {
     };
   }
 }
-
-export default BarChart;

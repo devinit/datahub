@@ -3,9 +3,9 @@ import * as React from 'react';
 import { Grid } from 'semantic-ui-react';
 import { getNarrativeValueByKey } from '../../../utils/print-narratives';
 import { Narrative, SectionTitle } from '../../atoms/CountryProfilePrint';
-import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
-import { ChartConfig, DataPoint } from '../../organisms/Charts/molecules/BarLineChartTypes';
-import { LineChartProps } from '../../organisms/Charts/molecules/LineChart';
+import { BarChartProps } from '../../organisms/Charts/components/BarChart';
+import { ChartConfig, DataPoint } from '../../organisms/Charts/shared';
+import { LineChartProps } from '../../organisms/Charts/components/LineChart';
 import { Country } from '../../types';
 import { PrintNarrative, RecipientODAProfiles } from './graphql';
 
@@ -57,7 +57,11 @@ export class SectionThree extends React.Component<SectionThreeProps> {
       loading: () => <span>...</span>,
       ssr: false,
       modules: () => ({
-        LineChart: import('../../organisms/Charts/molecules/LineChart') as Promise<any>
+        LineChart: (async () => {
+          const { LineChart } = await import('../../organisms/Charts/components/LineChart');
+
+          return LineChart;
+        })()
       }),
       render: (props, { LineChart }) => <LineChart { ...props } />
     };

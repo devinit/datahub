@@ -11,8 +11,8 @@ import {
   PlotLabelConfig,
   TimeAxisFormat,
   TimeTickingSteps
-} from '../../molecules/BarLineChartTypes';
-import { BarChartProps } from '../../molecules/BarChart';
+} from '../BarLineChartTypes';
+import { BarChartProps } from '../../components/BarChart';
 import { Axes, Components, Formatters, Interactions, Plots, Scales } from 'plottable';
 import { TimeAxisOrientation, TimeAxisTierConfiguration, TimeInterval } from 'plottable/build/src/axes';
 import { groupBy } from 'lodash';

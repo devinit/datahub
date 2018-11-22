@@ -3,6 +3,12 @@ import { Axes, Components, Dataset, Plots, Scales } from 'plottable';
 import { Table } from 'plottable/build/src/components';
 import * as React from 'react';
 import {
+  AxisConfig,
+  ChartAttributes,
+  ChartConfig,
+  ChartScales,
+  DataPoint,
+  LegendConfig,
   createCustomLabels,
   createLegend,
   getAxis,
@@ -15,15 +21,7 @@ import {
   showLabelsOnHover,
   xAxisConfigs as parseXAxisConfigs,
   yAxisConfigs as parseYAxisConfigs
-} from '../shared/BarLine';
-import {
-  AxisConfig,
-  ChartAttributes,
-  ChartConfig,
-  ChartScales,
-  DataPoint,
-  LegendConfig
-} from './BarLineChartTypes';
+} from '../../shared';
 
 export interface LineChartProps {
   data: DataPoint[];
@@ -35,7 +33,7 @@ export interface LineChartProps {
   onBeforeRender?: (chart: LineChart) => void;
 }
 
-class LineChart extends React.Component<LineChartProps> {
+export class LineChart extends React.Component<LineChartProps> {
   static defaultProps: LineChartProps = {
     data: [],
     config: {
@@ -240,5 +238,3 @@ class LineChart extends React.Component<LineChartProps> {
     });
   }
 }
-
-export default LineChart;

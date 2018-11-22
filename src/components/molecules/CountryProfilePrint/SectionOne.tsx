@@ -14,9 +14,9 @@ import {
 import { css } from 'glamor';
 import Chart from '../../atoms/Chart';
 import povertyConfig from '../../visbox/printProfiles';
-import { ChartConfig, DataPoint } from '../../organisms/Charts/molecules/BarLineChartTypes';
+import { ChartConfig, DataPoint } from '../../organisms/Charts/shared';
 import dynamic, { DynamicOptions } from 'next/dynamic';
-import { BarChartProps } from '../../organisms/Charts/molecules/BarChart';
+import { BarChartProps } from '../../organisms/Charts/components/BarChart';
 import { PrintNarrative } from './graphql';
 import { getNarrativeValueByKey } from '../../../utils/print-narratives';
 import { Grid } from 'semantic-ui-react';
@@ -127,7 +127,11 @@ export class SectionOne extends React.Component<SectionOneProps> {
       loading: () => <span>...</span>,
       ssr: false,
       modules: () => ({
-        BarChart: import('../../organisms/Charts/molecules/BarChart') as Promise<any>
+        BarChart: (async () => {
+          const { BarChart } = await import('../../organisms/Charts/components/BarChart');
+
+          return BarChart;
+        })()
       }),
       render: (props, { BarChart }) => <BarChart { ...props } />
     };
