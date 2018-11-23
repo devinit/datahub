@@ -11,6 +11,7 @@ import {
   LegendConfig,
   createCustomLabels,
   createLegend,
+  createTooltip,
   getAxis,
   getLegendConfig,
   getScale,
@@ -223,6 +224,9 @@ export class LineChart extends React.Component<LineChartProps> {
         } else if (config.labels.show === 'hover') {
           showLabelsOnHover(plot, config.labels);
         }
+      }
+      if (this.chartNode && config.tooltip && config.tooltip.show) {
+        createTooltip(this.chartNode, plot, config.tooltip || {});
       }
     }, 500);
   }

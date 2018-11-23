@@ -7,6 +7,7 @@ export interface ChartConfig {
   labels: Partial<PlotLabelConfig>;
   legend: Partial<LegendConfig>;
   gridlines: Partial<GridlinesConfig>;
+  tooltip: Partial<TooltipConfig>;
 }
 
 export type AxisType = 'linear' | 'category' | 'time';
@@ -77,3 +78,16 @@ export type ChartScales = Scales.Linear | Scales.Category | Scales.Time;
 export type ChartAxes = Axes.Numeric | Axes.Category | Axes.Time;
 export type LinePlot = Plots.Line<{}>;
 export type BarPlot = Plots.Bar<{}, {}>;
+
+export interface TooltipConfig {
+  show: boolean;
+  x: Partial<TooltipPointConfig>;
+  y: Partial<TooltipPointConfig>;
+  template?: (datum: DataPoint) => string; // refer to defaultTemplate function in tooltip.ts
+}
+
+export interface TooltipPointConfig {
+  format: string; // can be either a d3.format or a moment().format()
+  prefix?: string;
+  suffix?: string;
+}
