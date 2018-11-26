@@ -90,7 +90,12 @@ export class SectionThree extends React.Component<SectionThreeProps> {
         tickingStep: 10,
         suffix: '%'
       },
-      legend: { show: true, position: 'top' }
+      legend: { show: true, position: 'top' },
+      tooltip: {
+        show: true,
+        x: { format: 'YYYY' },
+        y: { suffix: '%' }
+      }
     };
   }
 }
