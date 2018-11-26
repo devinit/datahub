@@ -1,7 +1,7 @@
-import glamorous, {GlamorousComponent} from 'glamorous';
-import { white, lighterGrey, midWhite } from '../../theme/semantic';
+import glamorous, { GlamorousComponent } from 'glamorous';
+import { lighterGrey, midWhite, red, white } from '../../theme/semantic';
 import { big } from '../../theme';
-import {GlamorousComponentT} from '../../types';
+import { GlamorousComponentT } from '../../types';
 
 export const List: GlamorousComponentT = glamorous.ul({
   'borderRadius': '.125em',
@@ -19,14 +19,21 @@ export const List: GlamorousComponentT = glamorous.ul({
   '& li': {
     padding: '1em',
     fontWeight: '700',
-    cursor: 'pointer',
+    cursor: 'pointer'
   },
   '& li:hover': {
-    backgroundColor: white,
+    backgroundColor: red
   },
   '& li.active': {
-    backgroundColor: midWhite,
+    backgroundColor: midWhite
   },
+  '& li a': {
+    display: 'block',
+    width: '100%'
+  },
+  '& li a:hover': {
+    color: midWhite
+  }
 });
 export const InputContainer: GlamorousComponent<any, any> =
 glamorous.div<{visible: boolean; height: string; profile: boolean; }>(
@@ -39,20 +46,20 @@ glamorous.div<{visible: boolean; height: string; profile: boolean; }>(
     'transition': 'all .3s ease-in-out',
     '& .icon': {
       display: 'inline',
-      marginLeft: '0.25em',
+      marginLeft: '0.25em'
     },
     '& .list': {
-      display: 'none',
+      display: 'none'
     },
     '& input:focus + .list': {
-      display: 'inline-flex',
-    },
+      display: 'inline-flex'
+    }
   },
   props => ({
     height: props.visible ? props.height || '10em' : '0em',
     overflow: props.visible ? 'visible' : 'hidden',
-    backgroundColor: props.profile ? 'transparent' : lighterGrey,
-  }),
+    backgroundColor: props.profile ? 'transparent' : lighterGrey
+  })
 );
 
 export const Input: GlamorousComponentT = glamorous.input({
@@ -67,7 +74,7 @@ export const Input: GlamorousComponentT = glamorous.input({
     outline: 'none',
     paddingLeft: '1.7em',
     backgroundColor: white,
-    borderRadius: '.125em',
+    borderRadius: '.125em'
     // boxShadow: '0 .125em .125em 0 rgba(0,0,0,.2)',
-  },
+  }
 });

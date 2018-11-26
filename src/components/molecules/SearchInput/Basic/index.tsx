@@ -37,9 +37,12 @@ class SearchInput extends React.Component <Props, State> {
   public onBlurTimer: any;
   public textInput?: HTMLInputElement;
   public router: Router;
+
   constructor(props: Props) {
     super(props);
-    if (!props.entities || !props.entities.length) { throw new Error('entities data prop mixing'); }
+    if (!props.entities || !props.entities.length) {
+      throw new Error('entities data prop mixing');
+    }
     this.state = {
       selected: -1,
       entities: props.entities,
@@ -48,6 +51,7 @@ class SearchInput extends React.Component <Props, State> {
     };
     this.router = this.props.router ? this.props.router : router;
   }
+
   public onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     let { selected } = this.state;
     const { entities } = this.state;
@@ -77,13 +81,18 @@ class SearchInput extends React.Component <Props, State> {
     }
     this.setState({ selected });
   }
-  public onChange = (text: string) => {
-    this.setState({ value: text });
+
+  public onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    this.setState({ value });
     const filteredCountries: Entity[] = this.props.entities.filter((country: Entity) =>
-      country.name.toLowerCase().includes(text.toLowerCase())
+      country.name.toLowerCase().includes(value.toLowerCase())
     );
-    if (filteredCountries.length) { this.setState({ entities: filteredCountries }); }
+    if (filteredCountries.length) {
+      this.setState({ entities: filteredCountries });
+    }
   }
+
   public onBlur = () => {
     if (this.setState) {
       this.onBlurTimer = setTimeout(() => {
@@ -91,6 +100,7 @@ class SearchInput extends React.Component <Props, State> {
       }, 200);
     }
   }
+
   public onCaretDownClick = () => {
     this.resetState();
     this.setState({ showList: true });
@@ -98,6 +108,7 @@ class SearchInput extends React.Component <Props, State> {
       this.textInput.focus();
     }
   }
+
   public onSubmit = () => {
     const country: Entity | void = this.state.entities[0] || null;
     if (!country) { return false; }
@@ -107,9 +118,11 @@ class SearchInput extends React.Component <Props, State> {
       this.textInput.blur();
     }
     if (this.props.onSelected) { return this.props.onSelected(country.slug); }
+
     return this.router
       .push(`/${this.props.routePath}?id=${country.slug}`, `/${this.props.routePath}/${country.slug}`);
   }
+
   public resetState() {
     this.setState({
       value: '',
@@ -119,9 +132,12 @@ class SearchInput extends React.Component <Props, State> {
     });
     if (this.onBlurTimer) { clearTimeout(this.onBlurTimer); }
   }
+
   public componentWillReceive(props: Props) {
     this.setState({ entities: props.entities });
   }
+
+  // tslint:disable jsx-no-lambda
   public render() {
     return (
       <Div>
@@ -140,42 +156,55 @@ class SearchInput extends React.Component <Props, State> {
             value={ this.state.value }
             data-cy="Search__Input"
             placeholder={ this.props.profile ? '' : this.props.placeholder }
-            // tslint:disable-next-line:jsx-no-lambda
-            onBlur={ () => this.onBlur() }
-            // tslint:disable-next-line:jsx-no-lambda
+            onBlur={ this.onBlur }
             innerRef={ (input: HTMLInputElement) => { this.textInput = input; } }
-            // tslint:disable-next-line:jsx-no-lambda
             onFocus={ () => this.setState({ showList: true }) }
-            // tslint:disable-next-line:jsx-no-lambda
-            onChange={ (e: React.ChangeEvent<HTMLInputElement>) => this.onChange(e.target.value) }
-            // tslint:disable-next-line:jsx-no-lambda
-            onKeyDown={ (event: React.KeyboardEvent<HTMLInputElement>) => this.onKeyDown(event) }
+            onChange={ this.onChange }
+            onKeyDown={ this.onKeyDown }
           />
         </InputContainer>
         <Div position="relative" visibility={ this.state.showList ? 'visible' : 'hidden' }>
           <List>
-            { this.state.entities
-              ? this.state.entities.map((country, i) =>
-                (<li key={ country.slug } className={ this.state.selected === i ? 'active' : 'not-active' }>
-                  { this.props.nextLink ?
-                      <this.props.nextLink
-                        href={ `/${this.props.routePath}?id=${country.slug}` }
-                        as={ `/${this.props.routePath}/${country.slug}` }
-                      >
-                        <a role="link">
-                          { country.name }
-                        </a>
-                      </this.props.nextLink> :
-                      <a href={ `/${this.props.routePath}/${country.slug}` }>
-                        { country.name }
-                      </a>
-                  }
-                </li>)
-              )
-              : <li>country list is not available</li> }
+            { this.renderCountryList() }
           </List>
         </Div>
       </Div>
+    );
+  }
+
+  private renderCountryList = () => {
+    if (this.state.entities) {
+      return this.state.entities.map(this.renderCountryListItem);
+    }
+
+    return <li>country list is not available</li>;
+  }
+
+  private renderCountryListItem = (country: Entity, index: number) => {
+    const className = this.state.selected === index ? 'active' : 'not-active';
+
+    return (
+      <li key={ country.slug } className={ className }>
+        { this.renderCountryLink(country) }
+      </li>
+    );
+  }
+
+  private renderCountryLink({ name, slug }: Entity) {
+    const { nextLink: NextLink, routePath } = this.props;
+
+    if (NextLink) {
+      return (
+        <NextLink href={ `/${routePath}?id=${slug}` } as={ `/${routePath}/${slug}` }>
+          <a role="link">{ name }</a>
+        </NextLink>
+      );
+    }
+
+    return (
+      <a href={ `/${this.props.routePath}/${slug}` }>
+        { name }
+      </a>
     );
   }
 }
