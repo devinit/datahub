@@ -18,8 +18,7 @@ export const List: GlamorousComponentT = glamorous.ul({
   'zIndex': 9999,
   '& li': {
     padding: '1em',
-    fontWeight: '700',
-    cursor: 'pointer'
+    fontWeight: '700'
   },
   '& li:hover': {
     backgroundColor: red
@@ -29,7 +28,8 @@ export const List: GlamorousComponentT = glamorous.ul({
   },
   '& li a': {
     display: 'block',
-    width: '100%'
+    width: '100%',
+    cursor: 'pointer'
   },
   '& li a:hover': {
     color: midWhite
