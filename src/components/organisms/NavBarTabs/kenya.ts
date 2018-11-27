@@ -403,13 +403,6 @@ export default {
           source: 'Kenya Integrated Household Budget Survey 2015/16'
         },
         {
-          id: 'spotlight_on_kenya_2017.kenya_skilled_deliveries',
-          name: 'Skilled birth attendance based on 2015/16 KIHBS (%)',
-          heading: 'Skilled birth attendance based on 2015/16 KIHBS (%)',
-          tooltip: 'Skilled birth attendance based on 2015/16 KIHBS (%)',
-          source: 'Kenya Integrated Household Budget Survey 2015/16'
-        },
-        {
           id: 'spotlight_on_kenya_2017.kenya_health_insurance_prop_pop',
           name: 'Proportion of the population with health insurance cover (%)',
           heading:

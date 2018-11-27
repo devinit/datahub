@@ -491,20 +491,6 @@ export default {
       }
     },
     {
-      name: 'Skilled birth attendance based on 2015/16 KIHBS (%)',
-      description: 'Skilled birth attendance based on 2015/16 KIHBS (%)',
-      methodology: '',
-      uom: 'percent',
-      csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-skilled-deliveries',
-      zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-skilled-deliveries.zip?raw=true',
-      source: {
-        name: 'Kenya Integrated Household Budget Survey 2015/16',
-        link: null
-      }
-    },
-    {
       name: 'Proportion of the population with health insurance cover (%)',
       description:
         'The percentage distribution of the population with health insurance cover, by county',
