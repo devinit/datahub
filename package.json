@@ -131,6 +131,7 @@
   },
   "git-pre-hooks": {
     "pre-push": [
+      "npm i",
       "npm run lint",
       "npm run emit"
     ]
