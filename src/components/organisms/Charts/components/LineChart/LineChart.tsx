@@ -23,6 +23,7 @@ import {
   xAxisConfigs as parseXAxisConfigs,
   yAxisConfigs as parseYAxisConfigs
 } from '../../shared';
+import { createTimeAxisAnchor } from './utils/anchor';
 
 export interface LineChartProps {
   data: DataPoint[];
@@ -227,6 +228,16 @@ export class LineChart extends React.Component<LineChartProps> {
       }
       if (this.chartNode && config.tooltip && config.tooltip.show) {
         createTooltip(this.chartNode, plot, config.tooltip || {});
+        if (this.lineChart && this.xScale && this.xScale instanceof Scales.Time) {
+          createTimeAxisAnchor({
+            scale: this.xScale,
+            plot: this.lineChart,
+            axis: this.xAxis as Axes.Time,
+            format: 'YYYY',
+            range: {},
+            ...config.anchor
+          });
+        }
       }
     }, 500);
   }

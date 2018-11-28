@@ -1,5 +1,6 @@
 import { IAccessor } from 'plottable/build/src/core/interfaces';
 import { Axes, Component, Plots, Scales, XAlignment, YAlignment } from 'plottable';
+import { Moment } from 'moment';
 
 export interface ChartConfig {
   xAxis: Partial<AxisConfig>;
@@ -8,6 +9,7 @@ export interface ChartConfig {
   legend: Partial<LegendConfig>;
   gridlines: Partial<GridlinesConfig>;
   tooltip: Partial<TooltipConfig>;
+  anchor: Partial<AnchorConfig>;
 }
 
 export type AxisType = 'linear' | 'category' | 'time';
@@ -53,6 +55,15 @@ export interface LegendConfig {
 export interface GridlinesConfig {
   showXGrid: boolean;
   showYGrid: boolean;
+}
+
+export interface AnchorConfig {
+  range: {
+    startDate?: Date;
+    endDate?: Date;
+  };
+  format: string; // can be either a d3.format or a moment().format()
+  onChange?: (date: Date) => void;
 }
 
 export interface DataPoint {
