@@ -10,6 +10,7 @@ export interface ChartConfig {
   gridlines: Partial<GridlinesConfig>;
   tooltip: Partial<TooltipConfig>;
   anchor: Partial<AnchorConfig>;
+  spline?: boolean;
 }
 
 export type AxisType = 'linear' | 'category' | 'time';

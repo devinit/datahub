@@ -1,3 +1,4 @@
+import { curveMonotoneX } from 'd3';
 import { groupBy } from 'lodash';
 import { Axes, Components, Dataset, Plots, Scales } from 'plottable';
 import { Table } from 'plottable/build/src/components';
@@ -99,6 +100,10 @@ export class LineChart extends React.Component<LineChartProps> {
     this.lineChart.add(this.plot, 1, 2);
     this.createGridlines(this.lineChart, configs);
     this.createChartLegend(data, this.lineChart, configs.legend);
+
+    if (configs.spline) {
+      this.plot.curve(curveMonotoneX);
+    }
 
     setAttributes(this.plot, this.props);
     this.plot.onAnchor(() => this.onAnchor(this.plot, configs));
