@@ -23,7 +23,7 @@ import {
   xAxisConfigs as parseXAxisConfigs,
   yAxisConfigs as parseYAxisConfigs
 } from '../../shared';
-import { createTimeAxisAnchor } from './utils/anchor';
+import { createLinearAxisAnchor, createTimeAxisAnchor } from './utils/anchor';
 
 export interface LineChartProps {
   data: DataPoint[];
@@ -234,6 +234,16 @@ export class LineChart extends React.Component<LineChartProps> {
             plot: this.lineChart,
             axis: this.xAxis as Axes.Time,
             format: 'YYYY',
+            range: {},
+            ...config.anchor
+          });
+        }
+        if (this.lineChart && this.xScale && this.xScale instanceof Scales.Linear) {
+          createLinearAxisAnchor({
+            scale: this.xScale,
+            plot: this.lineChart,
+            axis: this.xAxis as Axes.Time,
+            format: '.2f',
             range: {},
             ...config.anchor
           });

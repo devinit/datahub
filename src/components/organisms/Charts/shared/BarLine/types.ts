@@ -1,6 +1,6 @@
 import { IAccessor } from 'plottable/build/src/core/interfaces';
 import { Axes, Component, Plots, Scales, XAlignment, YAlignment } from 'plottable';
-import { Moment } from 'moment';
+import { Table } from 'plottable/build/src/components';
 
 export interface ChartConfig {
   xAxis: Partial<AxisConfig>;
@@ -59,11 +59,11 @@ export interface GridlinesConfig {
 
 export interface AnchorConfig {
   range: {
-    startDate?: Date;
-    endDate?: Date;
+    start?: Date | number;
+    end?: Date | number;
   };
   format: string; // can be either a d3.format or a moment().format()
-  onChange?: (date: Date) => void;
+  onChange?: (value: number | Date) => void;
 }
 
 export interface DataPoint {
@@ -101,4 +101,10 @@ export interface TooltipPointConfig {
   format: string; // can be either a d3.format or a moment().format()
   prefix?: string;
   suffix?: string;
+}
+
+export interface LineAnchorConfig extends AnchorConfig {
+  scale: Scales.Time | Scales.Linear;
+  axis: Axes.Time | Axes.Numeric;
+  plot: Table;
 }
