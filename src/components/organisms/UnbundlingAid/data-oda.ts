@@ -315,8 +315,8 @@ export default {
     channels: [
       { id: 'ngo-donor', name: 'NGO (donor country)' },
       { id: 'ngo-recipient', name: 'NGO (recipient country)' },
-      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
+      { id: 'public-sector-donor', name: 'Public sector (donor government)' },
       { id: 'multilateral', name: 'Multilateral' },
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
@@ -354,8 +354,8 @@ export default {
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
       { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'industry-and-trade', name: 'Industry and trade' },
-      { id: 'other', name: 'Other' }
+      { id: 'other', name: 'Other' },
+      { id: 'industry-and-trade', name: 'Industry and trade' }
     ],
     bundles: [
       { id: 'mixed-project-aid', name: 'Mixed project aid' },
