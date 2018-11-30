@@ -18,6 +18,7 @@ import {
   getScale,
   getSeriesSettingsFromData,
   parseAxisMinMaxToDate,
+  redrawCustomLabels,
   setAttributes,
   setTimeAxisTickingFormat,
   showLabelsOnHover,
@@ -75,7 +76,6 @@ export class LineChart extends React.Component<LineChartProps> {
   componentDidMount() {
     if (this.chartNode) {
       this.renderChart(this.chartNode, this.props.data);
-      this.onResize();
     }
   }
 
@@ -116,6 +116,7 @@ export class LineChart extends React.Component<LineChartProps> {
     if (this.props.getPlot && this.lineChart) {
       this.props.getPlot(this.lineChart);
     }
+    this.onResize(this.plot, configs);
   }
 
   private getConfigs(config: Partial<ChartConfig> = {}): Partial<ChartConfig> {
@@ -199,17 +200,19 @@ export class LineChart extends React.Component<LineChartProps> {
 
   private createChartLegend(data: DataPoint[], chartTable: Table, userConfig: Partial<LegendConfig> = {}) {
     const config = getLegendConfig(userConfig);
-    const seriesConfigs = getSeriesSettingsFromData(data);
-    const seriesNames = seriesConfigs.map(c => c.series);
-    const seriesColours = seriesConfigs.map(c => c.colour);
+    if (config.show) {
+      const seriesConfigs = getSeriesSettingsFromData(data);
+      const seriesNames = seriesConfigs.map(c => c.series);
+      const seriesColours = seriesConfigs.map(c => c.colour);
 
-    const legend = createLegend(config, seriesNames, seriesColours);
-    if (config.position === 'top') {
-      chartTable.add(legend, 0, 2);
-    } else if (config.position === 'bottom') {
-      chartTable.add(legend, 3, 2);
-    } else if (config.position === 'right') {
-      chartTable.add(legend, 1, 3);
+      const legend = createLegend(config, seriesNames, seriesColours);
+      if (config.position === 'top') {
+        chartTable.add(legend, 0, 2);
+      } else if (config.position === 'bottom') {
+        chartTable.add(legend, 3, 2);
+      } else if (config.position === 'right') {
+        chartTable.add(legend, 1, 3);
+      }
     }
   }
 
@@ -257,13 +260,23 @@ export class LineChart extends React.Component<LineChartProps> {
     }, 500);
   }
 
-  private onResize() {
+  private onResize(plot: Plots.Line<{}>, config: Partial<ChartConfig>) {
     window.addEventListener('resize', () => {
       if (this.lineChart && this.chartNode) {
         this.lineChart.redraw();
-        this.plot.redraw();
-        this.xAxis.redraw();
-        this.yAxis.redraw();
+        this.plot.redraw().onResize(() => {
+          setTimeout(() => {
+            if (config && config.labels) {
+              redrawCustomLabels(plot.entities(), config.labels);
+            }
+          }, 100);
+        });
+        if (this.xAxis) {
+          this.xAxis.redraw();
+        }
+        if (this.yAxis) {
+          this.yAxis.redraw();
+        }
       }
     });
   }

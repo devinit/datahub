@@ -1,7 +1,8 @@
 import { BarPlot, DataPoint, LinePlot } from '..';
 import { BarChartProps } from '../../components/BarChart';
+import { LineChartProps } from '../../components/LineChart';
 
-export const setAttributes = (plot: BarPlot | LinePlot, props: BarChartProps) => {
+export const setAttributes = (plot: BarPlot | LinePlot, props: BarChartProps | LineChartProps) => {
   const attributeKeys = props.data.reduce((attributes: string[], data: DataPoint) => {
     if (data.attributes) {
       const keys = Object.keys(data.attributes).filter(key => attributes.indexOf(key) === -1);

@@ -1,5 +1,6 @@
 import { AxisConfig, BarPlot, LinePlot, PlotLabelConfig } from '..';
 import { Components, Interactions, Plots } from 'plottable';
+import { selectAll } from 'd3';
 
 export const createCustomLabels = (plot: BarPlot | LinePlot, entities, labelConfig?: Partial<PlotLabelConfig>) => {
   entities.forEach(entity => drawLabel(entity, plot, labelConfig || {}));
@@ -17,6 +18,21 @@ export const drawLabel = (entity: Plots.IPlotEntity, plot: BarPlot | LinePlot, c
     .attr('text-anchor', orientation === 'vertical' ? 'middle' : 'start')
     .attr('style', `fill: ${entity.selection.attr('fill')}`)
     .text(`${prefix}${entity.datum.y}${suffix}`);
+};
+
+export const redrawCustomLabels = (entities, labelConfig: Partial<PlotLabelConfig> = {}) => {
+  const { orientation = 'vertical' } = labelConfig;
+  entities.forEach(entity => {
+    const { height, width, x, y } = (entity as any).bounds;
+
+    selectAll('.plot-label').filter((_d, index, nodeList) => {
+      const node = nodeList[index] as SVGTextElement;
+
+      return !!(node.textContent && node.textContent.indexOf(entity.datum.y) > -1);
+    })
+      .attr('x', orientation === 'vertical' ? x + (width / 2) : width + x + 5)
+      .attr('y', orientation === 'horizontal' ? y + (height / 2) : y - 10);
+  });
 };
 
 export const showLabelsOnHover = (plot: BarPlot | LinePlot, labelConfig: Partial<PlotLabelConfig>) => {
