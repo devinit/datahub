@@ -55,7 +55,6 @@ export class BarChart extends React.Component<BarChartProps> {
   private yScale: Scales.Linear;
   private xAxis: Axes.Numeric | Axes.Category | Axes.Time;
   private yAxis: Axes.Numeric;
-  private axisLabel: Components.AxisLabel;
   private plot: Plots.Bar<{}, {}>;
 
   constructor(props) {
