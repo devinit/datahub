@@ -315,18 +315,18 @@ export default {
     channels: [
       { id: 'ngo-donor', name: 'NGO (donor country)' },
       { id: 'ngo-recipient', name: 'NGO (recipient country)' },
-      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'public-sector-donor', name: 'Public sector (donor government)' },
+      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'multilateral', name: 'Multilateral' },
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
       {
-        id: 'university-research-institute-etc',
-        name: 'University, research institute or think-tank, etc'
-      },
-      {
         id: 'public-sector-recipient',
         name: 'Public sector (recipient government)'
+      },
+      {
+        id: 'university-research-institute-etc',
+        name: 'University, research institute or think-tank, etc'
       },
       { id: 'unspecified', name: 'Unspecified' },
       {
@@ -336,11 +336,11 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
-      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
+      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },

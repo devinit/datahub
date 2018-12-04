@@ -84,6 +84,42 @@ export default {
       }
     },
     {
+      name: 'Equitable share of Revenue',
+      description:
+        'Proportion of county government revenue obtained from the national government that is equivalent to at least 15% of the most recent audited revenue raised nationally.',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-equitable-percent',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-equitable-percent.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
+      name: 'Conditional grants',
+      description:
+        'Proportion of county government revenue obtained from conditional grants from the national government',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
+      name: 'Water expenditure as a percentage of total expenditure',
+      description:
+        'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
       name: 'ECDE net enrolment rate (boys)',
       description:
         'The number of boy children of official ECD age who are enrolled in ECD education as a percentage of the total children of the official ECDE age population.',

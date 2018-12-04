@@ -488,6 +488,33 @@ export default {
             'The proportion of county government revenue that is funded through donor funding',
           source:
             'County governments budgets, several years, County Governments of Kenya'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_equitable_percent',
+          name: 'Equitable share of Revenue',
+          heading:
+            'Proportion of county government revenue obtained from the national government that is equivalent to at least 15% of the most recent audited revenue raised nationally.',
+          tooltip:
+            'Proportion of county government revenue obtained from the national government that is equivalent to at least 15% of the most recent audited revenue raised nationally.',
+          source: 'Contoller of Budget'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_conditional_percent',
+          name: 'Conditional grants',
+          heading:
+            'Proportion of county government revenue obtained from conditional grants from the national government',
+          tooltip:
+            'Proportion of county government revenue obtained from conditional grants from the national government',
+          source: 'Contoller of Budget'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_water_per_of_revenue',
+          name: 'Water expenditure as a percentage of total expenditure',
+          heading:
+            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+          tooltip:
+            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+          source: 'Contoller of Budget'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_agri_percent'
