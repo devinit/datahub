@@ -31,12 +31,12 @@ const spotlightTabs: React.SFC<TChildProps> = ({ currency, data, id, country }) 
     <Tabs selected={ 0 }>
       <Pane label="Overview" id="spotlight-overview">
         <ErrorBoundary>
-        <Overview
-          { ...data }
-          pageData={ pageData }
-          currency={ currency }
-          config={ overviewConfig }
-        />
+          <Overview
+            { ...data }
+            pageData={ pageData }
+            currency={ currency }
+            config={ overviewConfig }
+          />
         </ErrorBoundary>
       </Pane>
       <Pane label="Poverty" id="spotlight-poverty">
