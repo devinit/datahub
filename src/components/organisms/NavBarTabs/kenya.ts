@@ -44,13 +44,6 @@ export default {
             'The Kenya Intergrated Household Budget Survey, 2016, Kenya National Bureau of Statistics'
         },
         {
-          id: 'spotlight_on_kenya_2017.kenya_disability',
-          name: 'Population with a disability (%)',
-          heading: 'The Socio-Economic Atlas of Kenya 2015',
-          tooltip: 'Percentage of people who have a disability, by county.',
-          source: 'The Socio-Economic Atlas of Kenya 2016'
-        },
-        {
           id: 'spotlight_on_kenya_2017.kenya_poverty_meanpp_exp',
           name: 'Mean per person monthly expenditure, 2016 prices (KES)',
           heading:
@@ -64,7 +57,7 @@ export default {
           name: 'Human Development Index',
           heading:
             'A composite statistic of life expectancy, education, and per capita income indicators, used to rank counties on level of human development. A county scores higher HDI when the lifespan is higher, the education level is higher, and the GDP per capita is higher',
-          tooltip: '\nHuman Development Index for the county\n',
+          tooltip: 'Human Development Index for the county',
           source: 'United Nations Development Programme (UNDP)'
         }
       ],
@@ -79,7 +72,7 @@ export default {
           name: 'Total population',
           heading: 'The number of people who live in a county.',
           tooltip: 'Total population',
-          source: 'Kenya Integrated Household Budget Survey 2015/16'
+          source: 'Analytical report on population projection 2012'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_dens',
@@ -139,6 +132,20 @@ export default {
           source: 'Kenya Integrated Household Budget Survey 2015/16'
         },
         {
+          id: 'spotlight_on_kenya_2017.kenya_disability',
+          name: 'Population with a disability (%)',
+          heading: 'The Socio-Economic Atlas of Kenya 2015',
+          tooltip: 'Percentage of people who have a disability, by county.',
+          source: 'Kenya Integrated Budget Survey 2015/16'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_household_female_head',
+          name: 'Female headed households (%)',
+          heading: 'Percentage of female headed households, by county.',
+          tooltip: 'Female headed households',
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
+        },
+        {
           id: 'spotlight_on_kenya_2017.kenya_pop_disability_engage_econ',
           name:
             'Propotion of the population with disability who have difficulty in engaging in economic activities',
@@ -146,13 +153,6 @@ export default {
             'Percentage Distribution of Persons with Disability that have Difficulty in Engaging in Economic Activity, by county',
           tooltip:
             'Population with disability that have difficulty in engaging in economic activities',
-          source: 'Kenya Integrated Household Budget Survey 2015/16'
-        },
-        {
-          id: 'spotlight_on_kenya_2017.kenya_household_female_head',
-          name: 'Female headed households (%)',
-          heading: 'Percentage of female headed households, by county.',
-          tooltip: 'Female headed households',
           source: 'Kenya Integrated Household Budget Survey 2015/16'
         },
         {
@@ -441,43 +441,39 @@ export default {
       indicators: [
         {
           id: 'spotlight_on_kenya_2017.kenya_agri_percent',
-          name: 'Agriculture allocation as a % of total expenditure',
+          name: 'Agriculture expenditure as a % of total expenditure',
           heading:
             'The proportion of total county government expenditure that is allocated to the agriculture sector, by county.',
           tooltip:
             'The proportion of total county government expenditure that is allocated to the agriculture sector',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_educ_percent',
-          name: 'Education allocation as a % of total expenditure',
+          name: 'Education expenditure as a % of total expenditure',
           heading:
             'The proportion of total county government expenditure that is allocated to the education sector, by county.',
           tooltip:
             'The proportion of total county government expenditure that is allocated to the education sector',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_health_percent',
-          name: 'Health allocation as a % of total expenditure',
+          name: 'Health expenditure as a % of total expenditure',
           heading:
             'The proportion of total county government expenditure that is allocated to the health sector, by county.',
           tooltip:
             'The proportion of total county government expenditure that is allocated to the health sector',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
         },
         {
-          id: 'spotlight_on_kenya_2017.kenya_local_percent',
-          name: 'Locally raised revenues',
+          id: 'spotlight_on_kenya_2017.kenya_water_per_of_revenue',
+          name: 'Water expenditure as a percentage of total expenditure',
           heading:
-            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation, by county.',
+            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
           tooltip:
-            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_donor_percent',
@@ -486,8 +482,16 @@ export default {
             'The proportion of county government revenue that is funded through donor funding, by county.',
           tooltip:
             'The proportion of county government revenue that is funded through donor funding',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_local_percent',
+          name: 'Locally raised revenues',
+          heading:
+            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation, by county.',
+          tooltip:
+            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation',
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_equitable_percent',
@@ -505,15 +509,6 @@ export default {
             'Proportion of county government revenue obtained from conditional grants from the national government',
           tooltip:
             'Proportion of county government revenue obtained from conditional grants from the national government',
-          source: 'Contoller of Budget'
-        },
-        {
-          id: 'spotlight_on_kenya_2017.kenya_water_per_of_revenue',
-          name: 'Water expenditure as a percentage of total expenditure',
-          heading:
-            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
-          tooltip:
-            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
           source: 'Contoller of Budget'
         }
       ],

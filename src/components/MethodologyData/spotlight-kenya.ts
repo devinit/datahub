@@ -4,7 +4,7 @@
 export default {
   methodology: [
     {
-      name: 'Agriculture allocation as a % of total expenditure',
+      name: 'Agriculture expenditure as a % of total expenditure',
       description:
         'The proportion of total county government expenditure that is allocated to the agriculture sector, by county.',
       methodology: '',
@@ -13,11 +13,7 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-agri-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-agri-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
       name: 'Donor funds',
@@ -29,14 +25,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-donor-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-donor-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
-      name: 'Education allocation as a % of total expenditure',
+      name: 'Education expenditure as a % of total expenditure',
       description:
         'The proportion of total county government expenditure that is allocated to the education sector, by county.',
       methodology: '',
@@ -45,14 +37,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-educ-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-educ-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
-      name: 'Health allocation as a % of total expenditure',
+      name: 'Health expenditure as a % of total expenditure',
       description:
         'The proportion of total county government expenditure that is allocated to the health sector, by county.',
       methodology: '',
@@ -61,11 +49,19 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
+      name: 'Water expenditure as a percentage of total expenditure',
+      description:
+        'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
       name: 'Locally raised revenues',
@@ -77,11 +73,7 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-local-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-local-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
       name: 'Equitable share of Revenue',
@@ -105,18 +97,6 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent.zip?raw=true',
-      source: { name: 'Contoller of Budget', link: null }
-    },
-    {
-      name: 'Water expenditure as a percentage of total expenditure',
-      description:
-        'The proportion of total county government expenditure that is allocated to the water sector, by county.',
-      methodology: '',
-      uom: 'percent',
-      csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue',
-      zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
     },
     {
@@ -656,7 +636,7 @@ export default {
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop.zip?raw=true',
       source: {
-        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        name: 'Analytical report on population projection 2012',
         link: null
       }
     },
@@ -673,6 +653,17 @@ export default {
       source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
     },
     {
+      name: 'Population with a disability (%)',
+      description: 'The Socio-Economic Atlas of Kenya 2015',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability.zip?raw=true',
+      source: { name: 'Kenya Integrated Budget Survey 2015/16', link: null }
+    },
+    {
       name:
         'Propotion of the population with disability who have difficulty in engaging in economic activities',
       description:
@@ -687,17 +678,6 @@ export default {
         name: 'Kenya Integrated Household Budget Survey 2015/16',
         link: null
       }
-    },
-    {
-      name: 'Population with a disability (%)',
-      description: 'The Socio-Economic Atlas of Kenya 2015',
-      methodology: '',
-      uom: 'percent',
-      csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability',
-      zip:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
     },
     {
       name: 'Human Development Index',
