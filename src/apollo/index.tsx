@@ -27,7 +27,7 @@ const cache = () => new InMemoryCache({
 const persist = async () => {
   const persistor = new CachePersistor({
     cache: cache(),
-    storage: localforage
+    storage: localforage as any
   });
   // Read the current schema version from AsyncStorage.
   const currentVersion = await localforage.getItem(SCHEMA_VERSION_KEY);

@@ -19,7 +19,14 @@ export type Props = StateToShare & {
   selectedTab?: number
 };
 
-export default class CountryProfileLowerTabs extends React.Component<Props> {
+export default class CountryProfileLowerTabs extends React.Component<Props, { toolTip: any, dataLoaded: boolean }> {
+  constructor(props) {
+    super(props);
+
+    this.state = { toolTip: data.internationalResources.resourcesOverTime.toolTip, dataLoaded: false };
+    this.onInternationFinanceDataLoaded = this.onInternationFinanceDataLoaded.bind(this);
+  }
+
   render() {
     const country = getCountry(this.props.id);
     const pageData = getCountryProfileData(this.props.id);
@@ -63,16 +70,14 @@ export default class CountryProfileLowerTabs extends React.Component<Props> {
   private renderInternationalResourcesPane(pageData: PageUnit[], props: Props) {
     return (
       <Pane label="INTERNATIONAL RESOURCES" id={ INTERNATIONAL_RESOURCES }>
-          <InternationalResourcesLower
-            pageData={ pageData }
-            toolTip={ data.internationalResources.resourcesOverTime.toolTip }
-          >
+          <InternationalResourcesLower pageData={ pageData } toolTip={ this.state.toolTip }>
             <ErrorBoundary>
               <InflowsVsOutflows
                 id={ props.id }
                 shouldScrollIntoView={ props.chartId === INFLOWS_VS_OUTFLOWS }
                 chartId={ INFLOWS_VS_OUTFLOWS }
                 year={ props.chartId === INFLOWS_VS_OUTFLOWS ? props.year : 2016 } // FIXME: this is a hack
+                onDataLoaded={ this.onInternationFinanceDataLoaded }
               />
             </ErrorBoundary>
             <ErrorBoundary>
@@ -84,5 +89,11 @@ export default class CountryProfileLowerTabs extends React.Component<Props> {
           </InternationalResourcesLower>
         </Pane>
     );
+  }
+
+  private onInternationFinanceDataLoaded({ toolTip }: any) {
+    if (!this.state.dataLoaded) {
+      this.setState({ toolTip, dataLoaded: true });
+    }
   }
 }

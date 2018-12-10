@@ -48,7 +48,7 @@ class Select extends React.Component<Props> {
         { toolTip ? <TabsToolTip { ...toolTip } /> : '' }
         <Div display={ showUsingThisViz ? 'inline-block' : 'none' }>
           <Button size="medium" onClick={ onUsingThisVizHandler }>
-            Using this visualization
+            Using this visualisation
           </Button>
         </Div>
       </Wrapper>

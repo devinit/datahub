@@ -216,7 +216,7 @@ export default {
       { id: 'DE', name: 'Germany' },
       {
         id: 'gavi',
-        name: 'Global Alliance for Vaccines and Immunization (GAVI)'
+        name: 'Global Alliance for Vaccines and Immunisation (GAVI)'
       },
       { id: 'gef', name: 'Global Environment Facility (GEF)' },
       { id: 'global-fund', name: 'Global Fund' },

@@ -216,7 +216,7 @@ export default {
       { id: 'DE', name: 'Germany' },
       {
         id: 'gavi',
-        name: 'Global Alliance for Vaccines and Immunization (GAVI)'
+        name: 'Global Alliance for Vaccines and Immunisation (GAVI)'
       },
       { id: 'gef', name: 'Global Environment Facility (GEF)' },
       { id: 'global-fund', name: 'Global Fund' },
@@ -315,8 +315,8 @@ export default {
     channels: [
       { id: 'ngo-donor', name: 'NGO (donor country)' },
       { id: 'ngo-recipient', name: 'NGO (recipient country)' },
-      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'public-sector-donor', name: 'Public sector (donor government)' },
+      { id: 'public-sector-unknown', name: 'Public sector (unknown country)' },
       { id: 'multilateral', name: 'Multilateral' },
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
@@ -336,26 +336,26 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
-      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
+      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
-      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
+      { id: 'other-social-services', name: 'Other social services' },
       { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
       { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'other', name: 'Other' },
-      { id: 'industry-and-trade', name: 'Industry and trade' }
+      { id: 'industry-and-trade', name: 'Industry and trade' },
+      { id: 'other', name: 'Other' }
     ],
     bundles: [
       { id: 'mixed-project-aid', name: 'Mixed project aid' },

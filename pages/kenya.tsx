@@ -4,7 +4,7 @@ import withData from '../src/components/WithData';
 import { StateToShare } from '../src/components/molecules/ChartShare';
 import App from '../src/components/templates/RegionalProfile';
 
-interface Props  {
+interface Props {
   url: {
     pathname: string;
     query: { id: string, state: StateToShare};
@@ -18,11 +18,12 @@ if (typeof window !== 'undefined') {
 }
 
 export default withData((props: Props) =>
-  (<App
+  <App
     id={ props.url.query.id }
     state={ props.url.query.state }
     currencyCode="KES"
     currencyUSD="constant 2015 USD"
     country="kenya"
     supportLocalCurrencyOnly={ false }
-  />));
+  />
+);

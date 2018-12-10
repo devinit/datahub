@@ -57,7 +57,7 @@ export default {
           name: 'Human Development Index',
           heading:
             'A composite statistic of life expectancy, education, and per capita income indicators, used to rank counties on level of human development. A county scores higher HDI when the lifespan is higher, the education level is higher, and the GDP per capita is higher',
-          tooltip: '\nHuman Development Index for the county\n',
+          tooltip: 'Human Development Index for the county',
           source: 'United Nations Development Programme (UNDP)'
         }
       ],
@@ -72,7 +72,7 @@ export default {
           name: 'Total population',
           heading: 'The number of people who live in a county.',
           tooltip: 'Total population',
-          source: 'The Socio-Economic Atlas of Kenya 2014'
+          source: 'Analytical report on population projection 2012'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_dens',
@@ -88,7 +88,7 @@ export default {
             'The number of live births occurring among the population of a county during a given year, per 1,000 mid-year total population of the county area during the same year, by county.',
           tooltip:
             'The number of live births per year per 1,000 midyear population',
-          source: 'The Socio-Economic Atlas of Kenya 2010'
+          source: 'The Socio-Economic Atlas of Kenya 2016'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_pop_deathrate',
@@ -96,7 +96,7 @@ export default {
           heading:
             'The number of deaths occurring among the population of a county during a given year, per 1,000 mid-year total population of the county during the same year, by county.',
           tooltip: 'The number of deaths per year per 1,000 midyear population',
-          source: 'The Socio-Economic Atlas of Kenya 2011'
+          source: 'The Socio-Economic Atlas of Kenya 2016'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_avg_house_size',
@@ -113,7 +113,7 @@ export default {
             'This is the ratio of people over the of 64 years to the total population, expressed as a percentage.',
           tooltip:
             'Population over the age of 64 years, percent of the total (%)',
-          source: 'The Socio-Economic Atlas of Kenya 2007'
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_urban_pop',
@@ -129,21 +129,38 @@ export default {
           heading:
             'Number of males divided by number of females normalized by multiplying by 100, by county.',
           tooltip: 'Sex ratio',
-          source: 'The Socio-Economic Atlas of Kenya 2013'
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_disability',
+          name: 'Population with a disability (%)',
+          heading: 'The Socio-Economic Atlas of Kenya 2015',
+          tooltip: 'Percentage of people who have a disability, by county.',
+          source: 'Kenya Integrated Budget Survey 2015/16'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_household_female_head',
           name: 'Female headed households (%)',
           heading: 'Percentage of female headed households, by county.',
           tooltip: 'Female headed households',
-          source: 'The Socio-Economic Atlas of Kenya 2008'
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_pop_disability_engage_econ',
+          name:
+            'Propotion of the population with disability who have difficulty in engaging in economic activities',
+          heading:
+            'Percentage Distribution of Persons with Disability that have Difficulty in Engaging in Economic Activity, by county',
+          tooltip:
+            'Population with disability that have difficulty in engaging in economic activities',
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_household_number',
           name: 'Number of households',
           heading: 'Number of households, by county.',
           tooltip: 'Number of households',
-          source: 'The Socio-Economic Atlas of Kenya 2009'
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_total_pop'
@@ -317,10 +334,10 @@ export default {
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_measles_vaccine',
-          name: 'Children 1 year-old immunized against measles (%)',
+          name: 'Children 1 year-old immunised against measles (%)',
           heading:
-            'Percentage of children 1 year-old immunized against measles, by county.',
-          tooltip: 'Child immunized against measles',
+            'Percentage of children 1 year-old immunised against measles, by county.',
+          tooltip: 'Child immunised against measles',
           source:
             'Demographic and Health Survey, 2014, Kenya National Bureau of Statistics'
         },
@@ -353,6 +370,45 @@ export default {
           tooltip: 'Anti-malarial drugs treatment for children under 5',
           source:
             'Demographic and Health Survey, 2014, Kenya National Bureau of Statistics'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_diarrhoea',
+          name: 'Proportion of population with Diarrhoea (%)',
+          heading:
+            'Percentage proportion of children suffering from diarrhoea, by county',
+          tooltip: 'Population with Diarrhoea',
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_maternal_mortality',
+          name: 'Maternal mortality rate',
+          heading:
+            'The annual number of female deaths per 100,000 live births, by county',
+          tooltip: 'Maternal mortality rate',
+          source: 'Socio - Economic Atlas of Kenya 2016'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_child_mortality',
+          name: 'Child mortality rate',
+          heading:
+            'The annual number of child deaths under the age of 5 per 1000 live births',
+          tooltip: 'Child mortality rate',
+          source: 'Socio - Economic Atlas of Kenya 2016'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_measles_immunisation',
+          name: 'Measles Immunisation Coverage based on 2015/16 KIHBS',
+          heading: 'Measles Immunisation Coverage based on 2015/16 KIHBS',
+          tooltip: 'Measles Immunisation Coverage based on 2015/16 KIHBS',
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_health_insurance_prop_pop',
+          name: 'Proportion of the population with health insurance cover (%)',
+          heading:
+            'The percentage distribution of the population with health insurance cover, by county',
+          tooltip: 'Health Insurance Cover',
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_births_attendance'
@@ -366,7 +422,7 @@ export default {
           name: 'Households with access to safe water (%)',
           heading: 'Percentage of people with access to safe water, by county.',
           tooltip: 'Access to safe water source',
-          source: 'The Socio-Economic Atlas of Kenya 2014'
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_household_san_fac',
@@ -374,7 +430,7 @@ export default {
           heading:
             'Percentage of the population that has access to improved sanitation facilities, by county.',
           tooltip: 'Access to improved sanitation',
-          source: 'The Socio-Economic Atlas of Kenya 2014'
+          source: 'Kenya Integrated Household Budget Survey 2015/16'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_safe_water'
@@ -385,43 +441,39 @@ export default {
       indicators: [
         {
           id: 'spotlight_on_kenya_2017.kenya_agri_percent',
-          name: 'Agriculture allocation as a % of total expenditure',
+          name: 'Agriculture expenditure as a % of total expenditure',
           heading:
             'The proportion of total county government expenditure that is allocated to the agriculture sector, by county.',
           tooltip:
             'The proportion of total county government expenditure that is allocated to the agriculture sector',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_educ_percent',
-          name: 'Education allocation as a % of total expenditure',
+          name: 'Education expenditure as a % of total expenditure',
           heading:
             'The proportion of total county government expenditure that is allocated to the education sector, by county.',
           tooltip:
             'The proportion of total county government expenditure that is allocated to the education sector',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_health_percent',
-          name: 'Health allocation as a % of total expenditure',
+          name: 'Health expenditure as a % of total expenditure',
           heading:
             'The proportion of total county government expenditure that is allocated to the health sector, by county.',
           tooltip:
             'The proportion of total county government expenditure that is allocated to the health sector',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
         },
         {
-          id: 'spotlight_on_kenya_2017.kenya_local_percent',
-          name: 'Locally raised revenues',
+          id: 'spotlight_on_kenya_2017.kenya_water_per_of_revenue',
+          name: 'Water expenditure as a percentage of total expenditure',
           heading:
-            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation, by county.',
+            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
           tooltip:
-            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+            'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+          source: 'Contoller of Budget'
         },
         {
           id: 'spotlight_on_kenya_2017.kenya_donor_percent',
@@ -430,8 +482,34 @@ export default {
             'The proportion of county government revenue that is funded through donor funding, by county.',
           tooltip:
             'The proportion of county government revenue that is funded through donor funding',
-          source:
-            'County governments budgets, several years, County Governments of Kenya'
+          source: 'Contoller of Budget'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_local_percent',
+          name: 'Locally raised revenues',
+          heading:
+            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation, by county.',
+          tooltip:
+            'The proportion of county government revenue that is locally generated, through collection of fees, fines and other local taxation',
+          source: 'Contoller of Budget'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_equitable_percent',
+          name: 'Equitable share of Revenue',
+          heading:
+            'Proportion of county government revenue obtained from the national government that is equivalent to at least 15% of the most recent audited revenue raised nationally.',
+          tooltip:
+            'Proportion of county government revenue obtained from the national government that is equivalent to at least 15% of the most recent audited revenue raised nationally.',
+          source: 'Contoller of Budget'
+        },
+        {
+          id: 'spotlight_on_kenya_2017.kenya_conditional_percent',
+          name: 'Conditional grants',
+          heading:
+            'Proportion of county government revenue obtained from conditional grants from the national government',
+          tooltip:
+            'Proportion of county government revenue obtained from conditional grants from the national government',
+          source: 'Contoller of Budget'
         }
       ],
       default_indicator: 'spotlight_on_kenya_2017.kenya_agri_percent'

@@ -11,6 +11,7 @@ type QueryVarTs = ResourcesOverTimeQueryVariables & {
   year?: number;
   shouldScrollIntoView?: boolean;
   chartId: string;
+  onDataLoaded?: (data: any) => void;
 };
 
 type TChildProps = ChildProps<QueryVarTs, ResourcesOverTimeQuery>;
@@ -23,7 +24,7 @@ const withData = graphql<ResourcesOverTimeQuery, QueryVarTs, TChildProps>(INTL_R
   })
 });
 
-const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chartId, id }) => {
+const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chartId, id, onDataLoaded }) => {
   if (data && data.loading) {
     return <p>Loading...</p>;
   }
@@ -39,6 +40,8 @@ const Chart: React.SFC<TChildProps> = ({ data, year, shouldScrollIntoView, chart
   const resourcesOverTime = internationalResources && internationalResources.resourcesOverTime;
   if (!resourcesOverTime) {
     return <p>Missing resourcesOverTime</p>;
+  } else if (onDataLoaded && internationalResources && internationalResources.resourcesOverTime) {
+    onDataLoaded(internationalResources.resourcesOverTime);
   }
   const country: Country | undefined =
     countryCache.countries.find((_country: Country) => _country.slug === id);

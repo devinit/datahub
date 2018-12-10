@@ -265,7 +265,7 @@ class BaseMap extends React.Component<Props, State> {
     const detail: string = pointData.detail || NODATA;
     let uom: string = this.props.meta && this.props.meta.uom_display ? this.props.meta.uom_display : '';
     let value: string = NODATA;
-    if (pointData.value && this.props.meta && this.props.meta.id) {
+    if (typeof pointData.value === 'number' && this.props.meta && this.props.meta.id) {
       value = BaseMap.setPointDataValue(pointData.value, uom, this.props.meta.id);
     }
     if (pointData.value === null) { value = NODATA; }

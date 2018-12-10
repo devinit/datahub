@@ -6,7 +6,7 @@ export default {
     {
       name: '% of people in the P20',
       description:
-        'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
+        'The percentage of population of each country who are in the global poorest 20%. 2015 represents the most recent year data is available. Data only available for years where P20 is currently defined.',
       methodology: '',
       uom: 'percent',
       csv:
@@ -22,7 +22,7 @@ export default {
     {
       name: '% of population living in extreme poverty',
       description:
-        "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
+        "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. Interpolations are used to estimate poverty values for years which do not have data available. 2015 represents the most recent year data is available.",
       methodology: '',
       uom: 'percent',
       csv:
@@ -37,7 +37,7 @@ export default {
     {
       name: '% of population living on less than $3.10 a day',
       description:
-        'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
+        'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. Interpolations are used to estimate poverty values for years which do not have data available. 2015 represents the most recent year data is available.',
       methodology: '',
       uom: 'percent',
       csv:
@@ -136,7 +136,7 @@ export default {
       source: {
         name:
           'Notre Dame Global Adaptation Index (ND-GAIN) vulnerability score.',
-        link: 'http://index.gain.org/'
+        link: 'https://gain.nd.edu/our-work/country-index/'
       }
     },
     {
@@ -757,7 +757,7 @@ export default {
     {
       name: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
       description:
-        'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be spent on pneumonia-relevant vaccines.',
+        'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be directed towards pneumonia-relevant vaccines.',
       methodology: '',
       uom: 'constant 2015 US$',
       csv:

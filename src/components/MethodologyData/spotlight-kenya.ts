@@ -4,7 +4,7 @@
 export default {
   methodology: [
     {
-      name: 'Agriculture allocation as a % of total expenditure',
+      name: 'Agriculture expenditure as a % of total expenditure',
       description:
         'The proportion of total county government expenditure that is allocated to the agriculture sector, by county.',
       methodology: '',
@@ -13,11 +13,7 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-agri-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-agri-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
       name: 'Donor funds',
@@ -29,14 +25,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-donor-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-donor-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
-      name: 'Education allocation as a % of total expenditure',
+      name: 'Education expenditure as a % of total expenditure',
       description:
         'The proportion of total county government expenditure that is allocated to the education sector, by county.',
       methodology: '',
@@ -45,14 +37,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-educ-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-educ-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
-      name: 'Health allocation as a % of total expenditure',
+      name: 'Health expenditure as a % of total expenditure',
       description:
         'The proportion of total county government expenditure that is allocated to the health sector, by county.',
       methodology: '',
@@ -61,11 +49,19 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
+      name: 'Water expenditure as a percentage of total expenditure',
+      description:
+        'The proportion of total county government expenditure that is allocated to the water sector, by county.',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
       name: 'Locally raised revenues',
@@ -77,11 +73,31 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-local-percent',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-local-percent.zip?raw=true',
-      source: {
-        name:
-          'County governments budgets, several years, County Governments of Kenya',
-        link: null
-      }
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
+      name: 'Equitable share of Revenue',
+      description:
+        'Proportion of county government revenue obtained from the national government that is equivalent to at least 15% of the most recent audited revenue raised nationally.',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-equitable-percent',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-equitable-percent.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
+    },
+    {
+      name: 'Conditional grants',
+      description:
+        'Proportion of county government revenue obtained from conditional grants from the national government',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent.zip?raw=true',
+      source: { name: 'Contoller of Budget', link: null }
     },
     {
       name: 'ECDE net enrolment rate (boys)',
@@ -390,9 +406,9 @@ export default {
       }
     },
     {
-      name: 'Children 1 year-old immunized against measles (%)',
+      name: 'Children 1 year-old immunised against measles (%)',
       description:
-        'Percentage of children 1 year-old immunized against measles, by county.',
+        'Percentage of children 1 year-old immunised against measles, by county.',
       methodology: '',
       uom: 'percent',
       csv:
@@ -438,6 +454,74 @@ export default {
       }
     },
     {
+      name: 'Proportion of population with Diarrhoea (%)',
+      description:
+        'Percentage proportion of children suffering from diarrhoea, by county',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-diarrhoea',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-diarrhoea.zip?raw=true',
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
+    },
+    {
+      name: 'Maternal mortality rate',
+      description:
+        'The annual number of female deaths per 100,000 live births, by county',
+      methodology: '',
+      uom: 'unit',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-maternal-mortality',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-maternal-mortality.zip?raw=true',
+      source: { name: 'Socio - Economic Atlas of Kenya 2016', link: null }
+    },
+    {
+      name: 'Child mortality rate',
+      description:
+        'The annual number of child deaths under the age of 5 per 1000 live births',
+      methodology: '',
+      uom: 'unit',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-child-mortality',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-child-mortality.zip?raw=true',
+      source: { name: 'Socio - Economic Atlas of Kenya 2016', link: null }
+    },
+    {
+      name: 'Measles Immunisation Coverage based on 2015/16 KIHBS',
+      description: 'Measles Immunisation Coverage based on 2015/16 KIHBS',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-measles-immunisation',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-measles-immunisation.zip?raw=true',
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
+    },
+    {
+      name: 'Proportion of the population with health insurance cover (%)',
+      description:
+        'The percentage distribution of the population with health insurance cover, by county',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-insurance-prop-pop',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-insurance-prop-pop.zip?raw=true',
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
+    },
+    {
       name: 'Average household size',
       description:
         'The number of people who normally live and eat together, by county.',
@@ -459,7 +543,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-dependency-ratio',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-dependency-ratio.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2007', link: null }
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     },
     {
       name: 'Female headed households (%)',
@@ -470,7 +557,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-female-head',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-female-head.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2008', link: null }
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     },
     {
       name: 'Number of households',
@@ -481,7 +571,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-number',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-number.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2009', link: null }
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     },
     {
       name: 'Annual crude birth rate',
@@ -493,7 +586,7 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-birthrate',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-birthrate.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2010', link: null }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
     },
     {
       name: 'Annual crude death rate',
@@ -505,7 +598,7 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-deathrate',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-deathrate.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2011', link: null }
+      source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
     },
     {
       name: 'Population density (per sq km)',
@@ -528,7 +621,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-sex-ratio',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-sex-ratio.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2013', link: null }
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     },
     {
       name: 'Total population',
@@ -539,7 +635,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
+      source: {
+        name: 'Analytical report on population projection 2012',
+        link: null
+      }
     },
     {
       name: 'Urban population (%)',
@@ -562,7 +661,23 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
+      source: { name: 'Kenya Integrated Budget Survey 2015/16', link: null }
+    },
+    {
+      name:
+        'Propotion of the population with disability who have difficulty in engaging in economic activities',
+      description:
+        'Percentage Distribution of Persons with Disability that have Difficulty in Engaging in Economic Activity, by county',
+      methodology: '',
+      uom: 'percent',
+      csv:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-disability-engage-econ',
+      zip:
+        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-disability-engage-econ.zip?raw=true',
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     },
     {
       name: 'Human Development Index',
@@ -681,7 +796,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     },
     {
       name: 'Most commonly used water source',
@@ -704,7 +822,10 @@ export default {
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water.zip?raw=true',
-      source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
+      source: {
+        name: 'Kenya Integrated Household Budget Survey 2015/16',
+        link: null
+      }
     }
   ]
 };

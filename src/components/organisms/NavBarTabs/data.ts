@@ -300,7 +300,7 @@ export default {
           id: 'data_series.poor_people_190',
           name: 'Number of people living in extreme poverty',
           heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. Interpolations are used to estimate poverty values for years which do not have data available. 2015 represents the most recent year data is available.",
           tooltip:
             'Number of poor people living on under 2011 PPP$ 1.90 per day.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -309,7 +309,7 @@ export default {
           id: 'data_series.poverty_190',
           name: '% of population living in extreme poverty',
           heading:
-            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. 2013 represents the most recent year data is available.",
+            "Extreme poverty is defined as living on less than $1.90 a day. It is calculated using the national poverty lines of some of the world's poorest countries at 2011 PPP$. Interpolations are used to estimate poverty values for years which do not have data available. 2015 represents the most recent year data is available.",
           tooltip:
             'Percentage of population living under 2011 PPP$ 1.90 per day.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -318,7 +318,7 @@ export default {
           id: 'data_series.depth_of_extreme_poverty_190',
           name: 'Depth of extreme poverty (poverty gap)',
           heading:
-            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap. 2013 represents the most recent year data is available',
+            'From World Bank PovCalNet, representing the average gap for the whole population of each country, with those above the extreme poverty line counted as having a zero gap. Interpolations are used to estimate poverty values for years which do not have data available. 2015 represents the most recent year data is available',
           tooltip:
             'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -327,7 +327,7 @@ export default {
           id: 'data_series.poverty_310',
           name: '% of population living on less than $3.10 a day',
           heading:
-            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. 2013 represents the most recent year data is available.',
+            'Data for those living under $3.10 a day illustrates that while many people are not in extreme poverty (less than $1.90 a day) they are still very poor. Interpolations are used to estimate poverty values for years which do not have data available. 2015 represents the most recent year data is available.',
           tooltip:
             'Percentage of population living under 2011 PPP$ 3.10 per day.',
           source: 'Development Initiatives based on World Bank PovcalNet'
@@ -336,7 +336,7 @@ export default {
           id: 'data_series.2013_p20_population',
           name: 'Number of people in the P20',
           heading:
-            'The approximate number of people in each country who are in the global poorest 20%. . 2013 represents the most recent year data is available.',
+            'The approximate number of people in each country who are in the global poorest 20%. 2015 represents the most recent year data is available. Data only available for years where P20 is currently defined.',
           tooltip:
             'The approximate number of people in each country who are in the global poorest 20%',
           source:
@@ -346,7 +346,7 @@ export default {
           id: 'data_series.percent_in_p20_national',
           name: '% of people in the P20',
           heading:
-            'The percentage of population of each country who are in the global poorest 20%. 2013 represents the most recent year data is available',
+            'The percentage of population of each country who are in the global poorest 20%. 2015 represents the most recent year data is available. Data only available for years where P20 is currently defined.',
           tooltip:
             'The percentage of population of each country who are in the global poorest 20%',
           source:
@@ -575,7 +575,7 @@ export default {
           id: 'data_series.funding_to_gavi',
           name: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
           heading:
-            'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be spent on pneumonia-relevant vaccines.',
+            'The vast majority of official development assistance (ODA) to pneumonia disbursed over the last decade is reported to be from Gavi, the Vaccines Alliance. This data shows donor proceeds to Gavi and includes funding in the form of direct contributions, long-term pledges to the International Finance Facility for Immunisation, Advance Market Commitment and Gavi Matching Fund. A proportion of this funding received by Gavi will, in turn, be directed towards pneumonia-relevant vaccines.',
           tooltip: 'Funding proceeds to Gavi, the  Vaccine Alliance, US$',
           source: 'Gavi, the Vaccines Alliance'
         }

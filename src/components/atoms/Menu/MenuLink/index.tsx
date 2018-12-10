@@ -56,6 +56,11 @@ const LocalContainer = glamorous.div<{hasSubMenu: boolean}>(
     },
     ':hover': {
       background: redHeaderColor
+    },
+    '& a': {
+      display: 'block',
+      width: '100%',
+      height: '100%'
     }
   },
   props => ({
