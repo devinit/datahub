@@ -19,7 +19,7 @@ export const area = {
     ticking: 'years',
     tickingStep: 20,
     axisMinimum: 2000,
-    axisMaximum: 2013
+    axisMaximum: 2015
   },
   time: {
     interpolate: true
