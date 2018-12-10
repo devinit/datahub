@@ -336,26 +336,26 @@ export default {
       { id: 'other', name: 'Other' }
     ],
     sectors: [
+      { id: 'humanitarian', name: 'Humanitarian' },
       {
         id: 'agriculture-and-food-security',
         name: 'Agriculture and food security'
       },
-      { id: 'humanitarian', name: 'Humanitarian' },
       { id: 'water-and-sanitation', name: 'Water and sanitation' },
       { id: 'general-budget-support', name: 'General budget support' },
       { id: 'education', name: 'Education' },
       { id: 'health', name: 'Health' },
+      { id: 'other-social-services', name: 'Other social services' },
       {
         id: 'governance-security-and-civil-society',
         name: 'Governance, security and civil society'
       },
-      { id: 'other-social-services', name: 'Other social services' },
       { id: 'debt-relief', name: 'Debt relief' },
       { id: 'infrastructure', name: 'Infrastructure' },
       { id: 'environment', name: 'Environment' },
       { id: 'banking-and-business', name: 'Banking and business' },
-      { id: 'industry-and-trade', name: 'Industry and trade' },
-      { id: 'other', name: 'Other' }
+      { id: 'other', name: 'Other' },
+      { id: 'industry-and-trade', name: 'Industry and trade' }
     ],
     bundles: [
       { id: 'mixed-project-aid', name: 'Mixed project aid' },
