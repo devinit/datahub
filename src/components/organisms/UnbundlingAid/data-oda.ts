@@ -321,12 +321,12 @@ export default {
       { id: 'private-sector-institution', name: 'Private Sector Institution' },
       { id: 'ngo-unknown', name: 'NGO (unknown)' },
       {
-        id: 'university-research-institute-etc',
-        name: 'University, research institute or think-tank, etc'
-      },
-      {
         id: 'public-sector-recipient',
         name: 'Public sector (recipient government)'
+      },
+      {
+        id: 'university-research-institute-etc',
+        name: 'University, research institute or think-tank, etc'
       },
       { id: 'unspecified', name: 'Unspecified' },
       {
