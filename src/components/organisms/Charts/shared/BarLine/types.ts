@@ -1,6 +1,6 @@
-import { IAccessor } from 'plottable/build/src/core/interfaces';
 import { Axes, Component, Plots, Scales, XAlignment, YAlignment } from 'plottable';
 import { Table } from 'plottable/build/src/components';
+import { ChartAttributes, PlotLabelConfig } from '../types';
 
 export interface ChartConfig {
   xAxis: Partial<AxisConfig>;
@@ -72,18 +72,6 @@ export interface DataPoint {
   y: number;
   series?: string;
   attributes?: ChartAttributes;
-}
-
-export interface ChartAttributes {
-  [key: string]: number | string | IAccessor<number> | IAccessor<string>;
-}
-
-export interface PlotLabelConfig {
-  show: 'always' | 'hover';
-  prefix?: string;
-  color?: string;
-  suffix?: string;
-  orientation?: 'vertical' | 'horizontal';
 }
 
 export type ChartScales = Scales.Linear | Scales.Category | Scales.Time;
