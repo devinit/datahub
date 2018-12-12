@@ -155,10 +155,7 @@ class Map extends React.Component<Props, State> {
               </Intro>
             </Grid.Column>
           </Grid.Row>
-          {
-            !this.noRankTableList.includes(this.meta.id)
-              ? <RankingsTable { ...this.setCountryRankData() } router={ this.props.router } /> : ''
-          }
+          { this.renderRankingsTable() }
         </Grid>
       </Container>
     );
@@ -180,6 +177,14 @@ class Map extends React.Component<Props, State> {
     if (nextProps.id !== this.props.id && (window as any).gtag) {
       this.updateGoogleAnalytics(nextProps);
     }
+  }
+
+  renderRankingsTable() {
+    if (!this.noRankTableList.includes(this.meta.id)) {
+      return <RankingsTable { ...this.setCountryRankData() } router={ this.props.router } />;
+    }
+
+    return null;
   }
 
   init(props: Props) {
@@ -268,7 +273,7 @@ class Map extends React.Component<Props, State> {
 
         return { name, value, flagUrl, uid: obj.uid || '', position: (index + 1), route, uom };
       });
-    const top = sortedData.slice(0, 10).map(obj => {
+    const largest = sortedData.slice(0, 10).map(obj => {
       if (Number(obj.value) > 10000) {
         return { ...obj, value: Number(obj.value).toFixed(0) };
       }
@@ -278,11 +283,11 @@ class Map extends React.Component<Props, State> {
 
       return obj;
     });
-    const bottom = sortedData.slice(-10);
+    const smallest = sortedData.slice(-10);
 
     return {
       hasflags: this.country === 'global',
-      data: { top, bottom }
+      data: { largest, smallest }
     };
   }
 
