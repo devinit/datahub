@@ -5,13 +5,12 @@ import {
   HierarchyNode,
   TreemapLayout,
   color,
-  easeBackInOut,
-  selectAll,
   stratify,
   treemap,
   treemapResquarify
 } from 'd3';
 import { DataPointCommon } from '../../shared/types';
+import { createScaleAnimator } from './utils/animator';
 
 export interface TreeMapProps extends DataPointCommon {
   data: TreeMapData[];
@@ -68,6 +67,10 @@ export class TreeMap extends React.Component<TreeMapProps> {
   private createAxes(props: TreeMapProps) {
     this.xScale = new Scales.Linear();
     this.yScale = new Scales.Linear();
+    this.resetDomain(props);
+  }
+
+  private resetDomain(props: TreeMapProps) {
     this.xScale.domainMin(0);
     this.yScale.domainMin(0);
     this.xScale.domainMax(props.width);
@@ -92,7 +95,7 @@ export class TreeMap extends React.Component<TreeMapProps> {
         .y(d => d[`y0`], this.yScale)
         .x2(d => d[`x1`])
         .y2(d => d[`y1`])
-        .attr('fill', d => d.fill || '#1F77B4')
+        .attr('fill', d => d.data.fill || '#1F77B4')
         .attr('stroke', '#fff')
         .attr('stroke-width', 1)
         .attr('style', 'fill-opacity: 1;shape-rendering: crispedges')
@@ -193,20 +196,38 @@ export class TreeMap extends React.Component<TreeMapProps> {
   private onClick(point: Point) {
     const entities = this.plot.entitiesAt(point);
     if (entities && entities.length) {
+      const entity = entities.pop();
+      if (entity) {
+        const { datum } = entity;
+        const nextDomain = [ [ 'x0', 'x1' ], [ 'y0', 'y1' ] ].map(([ min, max ]) => [ datum[min], datum[max] ]);
+        const previousDomain = [ this.xScale.domain(), this.yScale.domain() ];
+        const shouldReset = [ [ nextDomain, previousDomain ] ]
+          .every(([ [ [ a, b ], [ c, d ] ], [ [ w, x ], [ y, z ] ] ]) => {
+            const diff = (a + b + c + d) - (w + x + y + z);
+
+            return +diff.toFixed(2) === 0;
+          });
+        const animate = createScaleAnimator(500);
+        if (shouldReset) {
+          animate([ this.xScale, this.yScale ], [ [ 0, this.props.width ], [ 0, this.props.height ] ])
+            .then(() => this.updatePlot(point));
+        } else {
+          animate([ this.xScale, this.yScale ], nextDomain).then(() => this.updatePlot(point));
+        }
+      }
+    }
+  }
+
+  private updatePlot(point: Point) {
+    const entities = this.plot.entitiesAt(point);
+    if (entities && entities.length) {
       const node: HierarchyNode<TreeMapData> = entities[0].datum;
       if (node && node.children && node.id) {
         const data: TreeMapData[] = this.getNodeDescendants(node.data);
         data[0].parentId = ''; // make parent node
         const root: HierarchyNode<TreeMapData> = this.createHierarchy(data);
-        const transition = this.plot.content().transition().duration(750).ease(easeBackInOut);
-        setTimeout(() => selectAll('rect').transition(transition).style('fill-opacity', 0), 0);
-        this.plot.datasets([ new Dataset(this.layout(root).children) ])
-          .attr('style', 'fill-opacity: 0')
-          .labelsEnabled(false);
-        setTimeout(() => {
-          selectAll('rect').transition(transition).style('fill-opacity', 1);
-          this.plot.labelsEnabled(true);
-        }, 50);
+        this.plot.datasets([ new Dataset(this.layout(root).children) ]);
+        this.resetDomain(this.props);
       }
     }
   }
