@@ -13,6 +13,7 @@ import glamorous from 'glamorous';
 import { css } from 'glamor';
 import { DataPointCommon } from '../../shared/types';
 import { createScaleAnimator } from './utils/animator';
+import { createTooltip } from './utils/tooltip';
 
 export interface TreeMapProps extends DataPointCommon {
   data: TreeMapData[];
@@ -286,6 +287,10 @@ export class TreeMap extends React.Component<TreeMapProps, { showNavController: 
       const clickInteraction = new Interactions.Click().onClick(this.onClick);
       clickInteraction.attachTo(plot);
       plot.onDetach(clickInteraction.detachFrom);
+
+      if (this.chartNode && this.props.config && this.props.config.tooltip && this.props.config.tooltip.show) {
+        createTooltip(this.chartNode, this.plot, this.props);
+      }
 
       const hoverInteraction = new Interactions.Pointer()
         .onPointerEnter(point => {

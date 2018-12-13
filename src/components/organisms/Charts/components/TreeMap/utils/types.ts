@@ -8,6 +8,12 @@ export interface TreeMapData {
 
 export interface TreeMapConfig {
   labels: Partial<TreeMapLabelConfig>;
+  tooltip: Partial<TreeMapTooltipConfig>;
+}
+export interface TreeMapTooltipConfig {
+  show: boolean;
+  value: { prefix: string, suffix: string };
+  template?: (datum: TreeMapData) => string; // refer to defaultTemplate function in tooltip.ts
 }
 
 export interface TreeMapLabelConfig extends PlotLabelConfig {
