@@ -1,6 +1,6 @@
 {
   "name": "@devinit/dh-app",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "config": {
     "API": "http://212.111.41.68:9090/graphql",
     "API_DEV": "http://212.111.41.68:9090/graphql",
