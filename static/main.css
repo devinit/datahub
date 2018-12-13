@@ -1,3 +1,7 @@
 .plottable.overflow-hidden .component {
   overflow: hidden;
 }
+
+.info.circle.icon {
+  cursor: pointer;
+}

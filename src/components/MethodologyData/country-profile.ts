@@ -67,7 +67,7 @@ export default {
     {
       name: 'Depth of extreme poverty (poverty gap)',
       description:
-        'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country. Data is for 2013',
+        'Depth of extreme poverty (also known as the poverty gap) tells us how far people are from the extreme poverty line, on average per country. Data is for 2015',
       methodology: '',
       uom: 'percent',
       csv:

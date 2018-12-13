@@ -39,7 +39,11 @@ export interface State {
   profileLoading: boolean; // think loading new country on map click
   shouldForceRedraw: boolean;
 }
-export const indicatorsWith2dp = [ 'fact.oda_to_ldcs_percent_gni', 'fact.oda_percent_gni' ];
+export const indicatorsWith2dp = [
+  'fact.oda_to_ldcs_percent_gni',
+  'fact.oda_percent_gni',
+  'data_series.climate_vulnerability'
+];
 
 export const indicatorsWith0dp = [
   'spotlightonuganda.ugandaurbanpop',
