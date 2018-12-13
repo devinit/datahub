@@ -9,6 +9,8 @@ import {
   treemap,
   treemapResquarify
 } from 'd3';
+import glamorous from 'glamorous';
+import { css } from 'glamor';
 import { DataPointCommon } from '../../shared/types';
 import { createScaleAnimator } from './utils/animator';
 
@@ -19,7 +21,18 @@ export interface TreeMapProps extends DataPointCommon {
   height: number;
 }
 
-export class TreeMap extends React.Component<TreeMapProps> {
+const NavController = glamorous.div({
+  position: 'absolute',
+  top: 0,
+  height: '100%',
+  width: '50px',
+  textAlign: 'center',
+  background: 'rgba(0, 0, 0, 0.4)',
+  zIndex: 1000,
+  cursor: 'pointer'
+});
+
+export class TreeMap extends React.Component<TreeMapProps, { showNavController: boolean }> {
   private chartNode?: HTMLDivElement;
   private plot: Plots.Rectangle<{}, {}>;
   private layout: TreemapLayout<TreeMapData>;
@@ -32,15 +45,28 @@ export class TreeMap extends React.Component<TreeMapProps> {
 
     this.setChartNode = this.setChartNode.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.hideNavController = this.hideNavController.bind(this);
+    this.onGoBack = this.onGoBack.bind(this);
+
+    this.state = { showNavController: false };
   }
 
   render() {
     return (
-      <div
-        className="di-tree-chart"
-        ref={ this.setChartNode }
-        style={ { height: this.props.height, width: this.props.width } }
-      />
+      <div className="plottable-tree-map-wrapper">
+        <div
+          className="plottable-tree-map"
+          ref={ this.setChartNode }
+          style={ { height: this.props.height, width: this.props.width } }
+        />
+        <NavController
+          { ...this.setNavControllerVisibility(this.state.showNavController) }
+          onMouseOut={ this.hideNavController }
+          onClick={ this.onGoBack }
+        >
+          <i className="chevron left big inverted icon" style={ { position: 'relative', top: '45%' } }/>
+        </NavController>
+      </div>
     );
   }
 
@@ -48,6 +74,10 @@ export class TreeMap extends React.Component<TreeMapProps> {
     if (this.chartNode) {
       this.renderChart(this.chartNode, this.props);
     }
+  }
+
+  private setNavControllerVisibility(visible: boolean) {
+    return css({ display: visible ? 'block' : 'none' });
   }
 
   private setChartNode(node: HTMLDivElement) {
@@ -132,7 +162,7 @@ export class TreeMap extends React.Component<TreeMapProps> {
     return () => {
       const foreground = plot.foreground();
       const entities = plot.entities();
-      foreground.selectAll('foreignObject').remove(); // remove all current labels
+      foreground.selectAll('.plot-labels').remove(); // remove all current labels
 
       entities.forEach(entity => {
         const node = entity.selection.node() as SVGRectElement | null;
@@ -154,6 +184,7 @@ export class TreeMap extends React.Component<TreeMapProps> {
                 const autofitFontStyle = autofitStyles(width, height, `${label} ${percentageLabel}${valueLabel}`);
                 foreground
                   .append('foreignObject')
+                  .attr('class', 'plot-labels')
                   .attr('width', width)
                   .attr('height', height)
                   .attr('x', x)
@@ -184,51 +215,100 @@ export class TreeMap extends React.Component<TreeMapProps> {
     return { ...defaultConfig, ...config };
   }
 
-  private onAnchor(plot: Plots.Rectangle<{}, {}>) {
-    setTimeout(() => {
-      const interaction = new Interactions.Click()
-        .onClick(this.onClick);
-      interaction.attachTo(plot);
-      plot.onDetach(interaction.detachFrom);
-    }, 500);
+  private hideNavController() {
+    this.setState({ showNavController: false });
   }
 
-  private onClick(point: Point) {
+  private getEntityAtPoint(point: Point): Plots.IPlotEntity | null {
     const entities = this.plot.entitiesAt(point);
     if (entities && entities.length) {
       const entity = entities.pop();
       if (entity) {
-        const { datum } = entity;
-        const nextDomain = [ [ 'x0', 'x1' ], [ 'y0', 'y1' ] ].map(([ min, max ]) => [ datum[min], datum[max] ]);
-        const previousDomain = [ this.xScale.domain(), this.yScale.domain() ];
-        const shouldReset = [ [ nextDomain, previousDomain ] ]
-          .every(([ [ [ a, b ], [ c, d ] ], [ [ w, x ], [ y, z ] ] ]) => {
-            const diff = (a + b + c + d) - (w + x + y + z);
+        return entity;
+      }
+    }
 
-            return +diff.toFixed(2) === 0;
-          });
-        const animate = createScaleAnimator(500);
-        if (shouldReset) {
-          animate([ this.xScale, this.yScale ], [ [ 0, this.props.width ], [ 0, this.props.height ] ])
-            .then(() => this.updatePlot(point));
-        } else {
-          animate([ this.xScale, this.yScale ], nextDomain).then(() => this.updatePlot(point));
+    return null;
+  }
+
+  private onClick(point: Point) {
+    const entity = this.getEntityAtPoint(point);
+    if (entity) {
+      const { datum } = entity;
+      const nextDomain = [ [ 'x0', 'x1' ], [ 'y0', 'y1' ] ].map(([ min, max ]) => [ datum[min], datum[max] ]);
+      const previousDomain = [ this.xScale.domain(), this.yScale.domain() ];
+      const shouldReset = [ [ nextDomain, previousDomain ] ]
+        .every(([ [ [ a, b ], [ c, d ] ], [ [ w, x ], [ y, z ] ] ]) => {
+          const diff = (a + b + c + d) - (w + x + y + z);
+
+          return +diff.toFixed(2) === 0;
+        });
+      const animate = createScaleAnimator(500);
+      if (shouldReset) {
+        animate([ this.xScale, this.yScale ], [ [ 0, this.props.width ], [ 0, this.props.height ] ])
+          .then(() => this.updatePlot(datum));
+      } else {
+        animate([ this.xScale, this.yScale ], nextDomain).then(() => this.updatePlot(datum));
+      }
+    }
+  }
+
+  private updatePlot(node: HierarchyNode<TreeMapData>) {
+    if (node && node.children && node.id) {
+      this.updatePlotFromData(node.data);
+    }
+  }
+
+  private updatePlotFromData(treeData: TreeMapData) {
+    const data: TreeMapData[] = this.getNodeDescendants(treeData).slice().map(dat => ({ ...dat }));
+    data[0].parentId = ''; // make parent node
+    const root: HierarchyNode<TreeMapData> = this.createHierarchy(data);
+    this.plot.datasets([ new Dataset(this.layout(root).children) ]);
+    this.resetDomain(this.props);
+  }
+
+  private onGoBack() {
+    const entities = this.plot.entities();
+    if (entities && entities.length) {
+      const parentId = entities[0].datum.data.parentId;
+      const parent = this.props.data.find(data => data.label === parentId);
+      if (parent) {
+        const grandParent = this.props.data.find(data => data.label === parent.parentId);
+        if (grandParent) {
+          this.updatePlotFromData(grandParent);
         }
       }
     }
   }
 
-  private updatePlot(point: Point) {
-    const entities = this.plot.entitiesAt(point);
-    if (entities && entities.length) {
-      const node: HierarchyNode<TreeMapData> = entities[0].datum;
-      if (node && node.children && node.id) {
-        const data: TreeMapData[] = this.getNodeDescendants(node.data);
-        data[0].parentId = ''; // make parent node
-        const root: HierarchyNode<TreeMapData> = this.createHierarchy(data);
-        this.plot.datasets([ new Dataset(this.layout(root).children) ]);
-        this.resetDomain(this.props);
-      }
-    }
+  private onAnchor(plot: Plots.Rectangle<{}, {}>) {
+    setTimeout(() => {
+      const clickInteraction = new Interactions.Click().onClick(this.onClick);
+      clickInteraction.attachTo(plot);
+      plot.onDetach(clickInteraction.detachFrom);
+
+      const hoverInteraction = new Interactions.Pointer()
+        .onPointerEnter(point => {
+          const entity = this.getEntityAtPoint(point);
+          if (entity && entity.datum.data.parentId !== this.rootNode.id) {
+            this.setState({ showNavController: true });
+          }
+        })
+        .onPointerMove(point => {
+          if (!this.state.showNavController) {
+            const entity = this.getEntityAtPoint(point);
+            if (entity && entity.datum.data.parentId !== this.rootNode.id) {
+              this.setState({ showNavController: true });
+            }
+          }
+        })
+        .onPointerExit(({ x, y }) => {
+          if (x <= 0 || x >= this.props.width || y <= 0 || y >= this.props.height) { // is cursor out of bounds?
+            this.setState({ showNavController: false });
+          }
+        });
+      hoverInteraction.attachTo(plot);
+      plot.onDetach(hoverInteraction.detachFrom);
+    }, 500);
   }
 }
