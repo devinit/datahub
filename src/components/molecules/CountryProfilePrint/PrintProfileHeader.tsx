@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Grid } from 'semantic-ui-react';
-import { getNarrativeByKey } from '../../../utils/print-narratives';
+import { getNarrativeValueByKey } from '../../../utils/print-narratives';
 import { List, ListItem, Narrative, PrintHeader } from '../../atoms/CountryProfilePrint';
 import { Country } from '../../types';
 import { PrintNarrative } from './graphql';
@@ -11,7 +11,7 @@ interface Props {
 export class PrintProfileHeader extends React.Component<Props> {
   render() {
     const { name } = this.props.country;
-    const pageIntro = getNarrativeByKey(this.props.printNarratives, 'page1_intro');
+    const pageIntro = getNarrativeValueByKey(this.props.printNarratives, 'p1_intro');
 
     return (
       <React.Fragment>
@@ -22,7 +22,7 @@ export class PrintProfileHeader extends React.Component<Props> {
         </Grid.Row>
         <Grid.Row style={ { paddingTop: 0 } }>
           <Grid.Column>
-            <Narrative>{ pageIntro ? pageIntro.value : '' }</Narrative>
+            <Narrative>{ pageIntro }</Narrative>
             <List>
               { this.getIntroBulletPoints() }
             </List>
@@ -33,19 +33,11 @@ export class PrintProfileHeader extends React.Component<Props> {
   }
 
   private getIntroBulletPoints() {
-    let activePointKey = 'page1_intro_bullet1';
-    const bulletPoints: string[] = [];
-    while (activePointKey) {
-      const point = getNarrativeByKey(this.props.printNarratives, activePointKey);
-      if (point) {
-        bulletPoints.push(point.value);
-        activePointKey = point.next;
-      } else {
-        activePointKey = '';
-      }
-    }
+    const bulletPoints: string[] = [ 'p1_bullet1', 'p1_bullet2', 'p1_bullet3' ];
 
-    return bulletPoints.map((point, index) => <ListItem key={ index }>{ point }</ListItem>);
+    return bulletPoints.map((point, index) =>
+      <ListItem key={ index }>{ getNarrativeValueByKey(this.props.printNarratives, point) }</ListItem>
+    );
   }
 }
 

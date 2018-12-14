@@ -86,9 +86,9 @@ export class SectionOne extends React.Component<SectionOneProps> {
         <Grid.Row>
           <Grid.Column width={ 8 }>
             <ChartHeading>
-              { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_narrative') }
+              { getNarrativeValueByKey(this.props.narratives, 'p1_r1') }
               <ChartSubHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart1_heading') }
+                % of population living on under $1.90 per day
               </ChartSubHeading>
             </ChartHeading>
             <Chart
@@ -100,22 +100,20 @@ export class SectionOne extends React.Component<SectionOneProps> {
           </Grid.Column>
           <Grid.Column width={ 8 }>
             <ChartHeading>
-              { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_narrative') }
+              { getNarrativeValueByKey(this.props.narratives, 'p1_r2') }
               <ChartSubHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_heading') }
+                { getNarrativeValueByKey(this.props.narratives, 'p1_r2_year') }
+                , share of income by quintile of population
               </ChartSubHeading>
             </ChartHeading>
             <div { ...css({ paddingTop: '10px' }) }>
               { this.renderBarChart() }
-              <ChartAxisLabel>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section1_chart2_footer') }
-              </ChartAxisLabel>
             </div>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'page1_footer_narrative') }</FooterNotes>
+            <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'p1_notes') }</FooterNotes>
           </Grid.Column>
         </Grid.Row>
       </React.Fragment>
@@ -171,7 +169,7 @@ export class SectionOne extends React.Component<SectionOneProps> {
             return {
               x: data.quintileName,
               y: data.value,
-              attributes: { fill: data.color, stroke: data.color }
+              attributes: { fill: data.color, stroke: data.color, width: 30 }
             };
           }
 
@@ -193,7 +191,8 @@ export class SectionOne extends React.Component<SectionOneProps> {
         position: 'bottom'
       },
       yAxis: { show: false },
-      legend: { show: false }
+      legend: { show: false },
+      tooltip: { show: false }
     };
   }
 }
