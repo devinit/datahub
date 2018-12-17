@@ -7,8 +7,6 @@ export const PRINT_PAGE_QUERY = gql`
     printNarratives(id: $id) {
       key
       value
-      type
-      next
     }
     governmentFinance(id: $id) {
     totalRevenue {
@@ -136,8 +134,6 @@ export interface PrintPageQueryVariables {
 export interface PrintNarrative {
   key: string;
   value: string;
-  type: string;
-  next: string;
 }
 
 export interface RecipientODAProfiles {

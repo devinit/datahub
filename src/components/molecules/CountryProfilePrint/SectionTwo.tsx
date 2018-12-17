@@ -23,6 +23,8 @@ export interface SectionTwoProps {
 
 export class SectionTwo extends React.Component<SectionTwoProps> {
   render() {
+    const year = getNarrativeValueByKey(this.props.narratives, 'p1_r3_year');
+
     return (
       <React.Fragment>
         <Grid.Row>
@@ -33,9 +35,9 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
         <Grid.Row>
           <Grid.Column width={ 10 }>
             <ChartHeading>
-              { getNarrativeValueByKey(this.props.narratives, 'page1_section2_chart1_narrative') }
+              { getNarrativeValueByKey(this.props.narratives, 'p1_r3') }
               <ChartSubHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page1_section2_chart1_heading') }
+                { year }, international resource inflows and outflows (US$ billions, constant { year } prices)
               </ChartSubHeading>
             </ChartHeading>
             <div { ...css({ paddingTop: '10px' }) }>
@@ -58,16 +60,17 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
         <Grid.Row>
           <Grid.Column>
             <Narrative>
-            { getNarrativeValueByKey(this.props.narratives, 'page2_section1_narrative') }
+            { getNarrativeValueByKey(this.props.narratives, 'p2_intro') }
             </Narrative>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={ 10 }>
             <ChartHeading>
-              { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart1_narrative') }
+              { getNarrativeValueByKey(this.props.narratives, 'p2_r4') }
               <ChartSubHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart1_heading') }
+                { getNarrativeValueByKey(this.props.narratives, 'p2_r4_year') },
+                latest year of actual revenue (US$ billions, constant 2015 prices)
               </ChartSubHeading>
             </ChartHeading>
           </Grid.Column>
@@ -87,9 +90,10 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
         <Grid.Row>
           <Grid.Column width={ 10 }>
             <ChartHeading>
-              { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart2_narrative') }
+              { getNarrativeValueByKey(this.props.narratives, 'p2_r5') }
               <ChartSubHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart2_heading') }
+                { getNarrativeValueByKey(this.props.narratives, 'p2_r5_year') },
+                latest year of actual financing (US$ billions, constant 2015 prices)
               </ChartSubHeading>
             </ChartHeading>
           </Grid.Column>
@@ -109,9 +113,10 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
         <Grid.Row>
           <Grid.Column width={ 10 }>
             <ChartHeading>
-              { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart3_narrative') }
+              { getNarrativeValueByKey(this.props.narratives, 'p2_r6') }
               <ChartSubHeading>
-                { getNarrativeValueByKey(this.props.narratives, 'page2_section1_chart3_heading') }
+                { getNarrativeValueByKey(this.props.narratives, 'p2_r6_year') },
+                latest year of actual expenditure (US$ billions, constant 2015 prices)
               </ChartSubHeading>
             </ChartHeading>
           </Grid.Column>
@@ -130,7 +135,7 @@ export class SectionTwo extends React.Component<SectionTwoProps> {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'page2_footer_narrative') }</FooterNotes>
+            <FooterNotes>{ getNarrativeValueByKey(this.props.narratives, 'p2_notes') }</FooterNotes>
           </Grid.Column>
         </Grid.Row>
       </React.Fragment>
