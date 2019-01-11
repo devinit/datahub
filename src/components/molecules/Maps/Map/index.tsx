@@ -273,7 +273,7 @@ class Map extends React.Component<Props, State> {
 
         return { name, value, flagUrl, uid: obj.uid || '', position: (index + 1), route, uom };
       });
-    const largest = sortedData.slice(0, 10).map(obj => {
+    const highest = sortedData.slice(0, 10).map(obj => {
       if (Number(obj.value) > 10000) {
         return { ...obj, value: Number(obj.value).toFixed(0) };
       }
@@ -283,11 +283,11 @@ class Map extends React.Component<Props, State> {
 
       return obj;
     });
-    const smallest = sortedData.slice(-10);
+    const lowest = sortedData.slice(-10);
 
     return {
       hasflags: this.country === 'global',
-      data: { largest, smallest }
+      data: { highest, lowest }
     };
   }
 
