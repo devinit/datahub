@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   BoxSubHeader,
   BoxUnit,
-  ChartAxisLabel,
   ChartHeading,
   ChartSubHeading,
   FooterNotes,
