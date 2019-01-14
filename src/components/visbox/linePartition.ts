@@ -1,6 +1,6 @@
 const line = {
   type: 'timeline',
-  colors: [ '#0095cb' ],
+  colors: [ '#e84439' ],
   linearAxis: {
     indicator: 'value',
     showAxis: true,
@@ -23,7 +23,7 @@ const line = {
 
 const partition = {
   type: 'partition',
-  colors: [ '#0095cb' ],
+  colors: [ '#e84439' ],
   orientation: 'horizontal',
   tree: {
     id: 'nodeId',
