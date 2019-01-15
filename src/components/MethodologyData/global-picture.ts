@@ -10,7 +10,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/poorest-20-percent',
+        'http://212.111.41.68:8000/single_table?indicator=poorest_20_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/poorest-20-percent.zip?raw=true',
       source: {
@@ -26,7 +26,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/poverty-190',
+        'http://212.111.41.68:8000/single_table?indicator=poverty_190&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/poverty-190.zip?raw=true',
       source: {
@@ -41,7 +41,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/poverty-310',
+        'http://212.111.41.68:8000/single_table?indicator=poverty_310&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/poverty-310.zip?raw=true',
       source: {
@@ -56,7 +56,7 @@ export default {
       methodology: '',
       uom: 'index',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/human-hazard',
+        'http://212.111.41.68:8000/single_table?indicator=human_hazard&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/human-hazard.zip?raw=true',
       source: {
@@ -70,7 +70,7 @@ export default {
       methodology: '',
       uom: 'index',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/number-of-un-appeals',
+        'http://212.111.41.68:8000/single_table?indicator=number_of_un_appeals&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/number-of-un-appeals.zip?raw=true',
       source: {
@@ -85,7 +85,7 @@ export default {
       methodology: '',
       uom: 'index',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/natural-hazard',
+        'http://212.111.41.68:8000/single_table?indicator=natural_hazard&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/natural-hazard.zip?raw=true',
       source: { name: 'Inform (Index for Risk Management) v 3.3.3.', link: '' }
@@ -97,7 +97,7 @@ export default {
       methodology: '',
       uom: 'index',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/forgotten-crisis',
+        'http://212.111.41.68:8000/single_table?indicator=forgotten_crisis&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/forgotten-crisis.zip?raw=true',
       source: {
@@ -114,7 +114,7 @@ export default {
       methodology: '',
       uom: 'index',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/fragile-states',
+        'http://212.111.41.68:8000/single_table?indicator=fragile_states&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/fragile-states.zip?raw=true',
       source: {
@@ -130,7 +130,7 @@ export default {
       methodology: '',
       uom: 'index',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/climate-vulnerability',
+        'http://212.111.41.68:8000/single_table?indicator=climate_vulnerability&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/climate-vulnerability.zip?raw=true',
       source: {
@@ -147,7 +147,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/displacement',
+        'http://212.111.41.68:8000/single_table?indicator=displacement&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/displacement.zip?raw=true',
       source: {
@@ -163,7 +163,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/ssc-percent-gni',
+        'http://212.111.41.68:8000/single_table?indicator=ssc_percent_gni&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/ssc-percent-gni.zip?raw=true',
       source: {
@@ -178,7 +178,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-constant',
+        'http://212.111.41.68:8000/single_table?indicator=out_oda_net_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oda-net-constant.zip?raw=true',
       source: {
@@ -193,7 +193,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni',
+        'http://212.111.41.68:8000/single_table?indicator=oda_percent_gni&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-gni.zip?raw=true',
       source: {
@@ -208,7 +208,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni',
+        'http://212.111.41.68:8000/single_table?indicator=oda_to_ldcs_percent_gni&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-ldcs-percent-gni.zip?raw=true',
       source: {
@@ -223,7 +223,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-constant',
+        'http://212.111.41.68:8000/single_table?indicator=out_oof_net_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-oof-net-constant.zip?raw=true',
       source: {
@@ -238,7 +238,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-constant',
+        'http://212.111.41.68:8000/single_table?indicator=out_ssc_net_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/out-ssc-net-constant.zip?raw=true',
       source: {
@@ -253,7 +253,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-constant',
+        'http://212.111.41.68:8000/single_table?indicator=oda_per_poor_person_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-per-poor-person-constant.zip?raw=true',
       source: { name: 'OECD DAC2A and World Bank PovcalNet.', link: '' }
@@ -265,7 +265,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant',
+        'http://212.111.41.68:8000/single_table?indicator=in_oda_gross_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-gross-constant.zip?raw=true',
       source: {
@@ -280,7 +280,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-constant',
+        'http://212.111.41.68:8000/single_table?indicator=in_oda_net_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oda-net-constant.zip?raw=true',
       source: {
@@ -296,7 +296,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-constant',
+        'http://212.111.41.68:8000/single_table?indicator=in_oof_gross_constant&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-oof-gross-constant.zip?raw=true',
       source: {
@@ -310,8 +310,7 @@ export default {
         "Volume of financing received from foreign direct investors divided by the country's population (includes equity, loans and reinvested profits). Data is in constant 2016 prices.",
       methodology: '',
       uom: 'US$ per person',
-      csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/fdi-pp',
+      csv: 'http://212.111.41.68:8000/single_table?indicator=fdi_pp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/fdi-pp.zip?raw=true',
       source: {
@@ -326,7 +325,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/intl-resources-total-percent-gdp',
+        'http://212.111.41.68:8000/single_table?indicator=intl_resources_total_percent_gdp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-resources-total-percent-gdp.zip?raw=true',
       source: {
@@ -342,7 +341,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/remittances-pp',
+        'http://212.111.41.68:8000/single_table?indicator=remittances_pp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/remittances-pp.zip?raw=true',
       source: { name: 'World Bank.', link: '' }
@@ -354,7 +353,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-intl-resources',
+        'http://212.111.41.68:8000/single_table?indicator=oda_percent_intl_resources&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-percent-intl-resources.zip?raw=true',
       source: {
@@ -370,7 +369,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/fdi-percent-gdp',
+        'http://212.111.41.68:8000/single_table?indicator=fdi_percent_gdp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/fdi-percent-gdp.zip?raw=true',
       source: {
@@ -384,8 +383,7 @@ export default {
         'Humanitarian assistance refers to the financial resources for humanitarian action. It is delivered during and in the aftermath of man-made crises and disasters caused by natural hazards.',
       methodology: '',
       uom: 'constant 2016 US$',
-      csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/in-ha',
+      csv: 'http://212.111.41.68:8000/single_table?indicator=in_ha&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/in-ha.zip?raw=true',
       source: {
@@ -401,7 +399,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-gb',
+        'http://212.111.41.68:8000/single_table?indicator=iati_budgets_gb&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-gb.zip?raw=true',
       source: {
@@ -417,7 +415,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-ca',
+        'http://212.111.41.68:8000/single_table?indicator=iati_budgets_ca&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-ca.zip?raw=true',
       source: {
@@ -433,7 +431,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-be',
+        'http://212.111.41.68:8000/single_table?indicator=iati_budgets_be&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-be.zip?raw=true',
       source: {
@@ -449,7 +447,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-nl',
+        'http://212.111.41.68:8000/single_table?indicator=iati_budgets_nl&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-nl.zip?raw=true',
       source: {
@@ -465,7 +463,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-dk',
+        'http://212.111.41.68:8000/single_table?indicator=iati_budgets_dk&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/iati-budgets-dk.zip?raw=true',
       source: {
@@ -481,7 +479,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/agricultural-census',
+        'http://212.111.41.68:8000/single_table?indicator=agricultural_census&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/agricultural-census.zip?raw=true',
       source: {
@@ -497,7 +495,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/number-of-surveys',
+        'http://212.111.41.68:8000/single_table?indicator=number_of_surveys&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/number-of-surveys.zip?raw=true',
       source: {
@@ -512,7 +510,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-births',
+        'http://212.111.41.68:8000/single_table?indicator=civil_reg_births&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-births.zip?raw=true',
       source: {
@@ -528,7 +526,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-deaths',
+        'http://212.111.41.68:8000/single_table?indicator=civil_reg_deaths&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/civil-reg-deaths.zip?raw=true',
       source: {
@@ -544,7 +542,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/educ-mis',
+        'http://212.111.41.68:8000/single_table?indicator=educ_mis&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/educ-mis.zip?raw=true',
       source: {
@@ -560,7 +558,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/latest-census',
+        'http://212.111.41.68:8000/single_table?indicator=latest_census&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/latest-census.zip?raw=true',
       source: {
@@ -576,7 +574,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/stat-capacity',
+        'http://212.111.41.68:8000/single_table?indicator=stat_capacity&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/stat-capacity.zip?raw=true',
       source: { name: 'World Bank Statistical Capacity Indicators.', link: '' }
@@ -588,7 +586,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/latest-hh-survey',
+        'http://212.111.41.68:8000/single_table?indicator=latest_hh_survey&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/latest-hh-survey.zip?raw=true',
       source: { name: 'IHSN Survey Catalog; USAID DHS Program.', link: '' }
@@ -600,7 +598,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/health-mis',
+        'http://212.111.41.68:8000/single_table?indicator=health_mis&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/health-mis.zip?raw=true',
       source: {
@@ -615,7 +613,7 @@ export default {
       methodology: '',
       uom: '2011 PPP$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/non-grant-revenue-ppp-pc',
+        'http://212.111.41.68:8000/single_table?indicator=non_grant_revenue_ppp_pc&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/non-grant-revenue-ppp-pc.zip?raw=true',
       source: {
@@ -631,7 +629,7 @@ export default {
       methodology: '',
       uom: '2011 PPP$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-ppp-pc',
+        'http://212.111.41.68:8000/single_table?indicator=total_revenue_ppp_pc&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-ppp-pc.zip?raw=true',
       source: {
@@ -647,7 +645,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/govt-revenue-pc-gdp',
+        'http://212.111.41.68:8000/single_table?indicator=govt_revenue_pc_gdp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/govt-revenue-pc-gdp.zip?raw=true',
       source: {
@@ -663,7 +661,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-percent-gdp',
+        'http://212.111.41.68:8000/single_table?indicator=total_revenue_percent_gdp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/total-revenue-percent-gdp.zip?raw=true',
       source: {
@@ -678,7 +676,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/grants-percent-total-revenue',
+        'http://212.111.41.68:8000/single_table?indicator=grants_percent_total_revenue&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/grants-percent-total-revenue.zip?raw=true',
       source: {
@@ -694,7 +692,7 @@ export default {
       methodology: '',
       uom: '2011 PPP$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/govt-spend-pc',
+        'http://212.111.41.68:8000/single_table?indicator=govt_spend_pc&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/govt-spend-pc.zip?raw=true',
       source: {
@@ -710,7 +708,7 @@ export default {
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia',
+        'http://212.111.41.68:8000/single_table?indicator=oda_to_pneumonia&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia.zip?raw=true',
       source: {
@@ -727,7 +725,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia-percent-health',
+        'http://212.111.41.68:8000/single_table?indicator=oda_to_pneumonia_percent_health&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/oda-to-pneumonia-percent-health.zip?raw=true',
       source: {
@@ -744,7 +742,7 @@ export default {
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/pda-to-pneumonia',
+        'http://212.111.41.68:8000/single_table?indicator=pda_to_pneumonia&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/pda-to-pneumonia.zip?raw=true',
       source: {
@@ -761,7 +759,7 @@ export default {
       methodology: '',
       uom: 'constant 2015 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/funding-to-gavi',
+        'http://212.111.41.68:8000/single_table?indicator=funding_to_gavi&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/funding-to-gavi.zip?raw=true',
       source: {
