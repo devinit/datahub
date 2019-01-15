@@ -144,8 +144,9 @@ class Map extends React.Component<Props, State> {
               <Intro step={ 7 } intro={ howTo.globalPicture.share }>
                 <Div paddingBottom="2em">
                   <ChartShare
-                    size="big"
+                    size="medium"
                     color="black"
+                    fontWeight="normal"
                     stateToShare={ {
                       year: this.state.currentYear,
                       indicator: this.meta.id

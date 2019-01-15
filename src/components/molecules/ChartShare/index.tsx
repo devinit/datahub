@@ -3,6 +3,7 @@ import { Button, Icon, Modal, SemanticICONS } from 'semantic-ui-react';
 import { black, lightSecondaryColor, white } from '../../theme/semantic';
 import { getShortURL } from '@devinit/prelude/lib/misc';
 import glamorous, { Div, Span } from 'glamorous';
+import { getWarehouseAPILink } from '../../../utils';
 
 export const NoBackground = {
   '& .no-background:hover': {
@@ -79,6 +80,8 @@ export default class ChartShare extends React.Component<Props, State> {
   };
   constructor(props: Props) {
     super(props);
+
+    this.stopPropagation = this.stopPropagation.bind(this);
   }
   public componentDidMount() {
     this.createLink(this.props);
@@ -109,17 +112,28 @@ export default class ChartShare extends React.Component<Props, State> {
    // tslint:disable jsx-no-lambda
   public render() {
     const { className, size, color, label, background, hover, fontSize, iconName, fontWeight } = this.props;
+    let url = '';
+    if (this.props.stateToShare && this.props.stateToShare.indicator) {
+      const indicator = this.props.stateToShare.indicator.split('.')[1].replace(/-/g, '_');
+      url = `${getWarehouseAPILink}/single_table?indicator=${indicator}&format=csv`;
+    }
 
     return (
       <Modal
         trigger={
           <ButtonWrapper background={ background } hover={ hover }>
-            <Button className={ className } size={ size } color={ color }>
-              <Icon name={ iconName || 'share alternate' } />
-              <Span fontWeight={ fontWeight || 'normal' } fontSize={ fontSize || '1em' }>
-                { label || 'Share this chart' }
-              </Span>
-            </Button>
+            <Button.Group>
+              <Button className={ className } size={ size } color={ color }>
+                <Icon name={ iconName || 'share alternate' } />
+                <Span fontWeight={ fontWeight || 'normal' } fontSize={ fontSize || '1em' }>
+                  { label || 'Share this chart' }
+                </Span>
+              </Button>
+              <a href={ url } className="ui medium button" onClick={ this.stopPropagation }>
+                <i aria-hidden="true" className="download alternate icon"/>
+                Download Data
+              </a>
+            </Button.Group>
           </ButtonWrapper>
         }
         size="tiny"
@@ -167,5 +181,9 @@ export default class ChartShare extends React.Component<Props, State> {
         event_label: this.state.link
       });
     }
+  }
+
+  private stopPropagation(event: React.MouseEvent<HTMLAnchorElement>) {
+    event.stopPropagation();
   }
 }
