@@ -10,7 +10,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-poverty-headcount',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_poverty_headcount&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-poverty-headcount.zip?raw=true',
       source: {
@@ -26,7 +26,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-deprivation-living',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_deprivation_living&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-deprivation-living.zip?raw=true',
       source: {
@@ -42,7 +42,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-life-expectancy',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_life_expectancy&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-life-expectancy.zip?raw=true',
       source: {
@@ -57,7 +57,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_disability&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability.zip?raw=true',
       source: {
@@ -73,7 +73,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-hearing',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_disability_hearing&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-hearing.zip?raw=true',
       source: {
@@ -89,7 +89,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-remembering',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_disability_remembering&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-remembering.zip?raw=true',
       source: {
@@ -105,7 +105,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-seeing',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_disability_seeing&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-seeing.zip?raw=true',
       source: {
@@ -121,7 +121,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-walking',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_disability_walking&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-disability-walking.zip?raw=true',
       source: {
@@ -137,7 +137,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-child-marriage-total',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_child_marriage_total&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-child-marriage-total.zip?raw=true',
       source: {
@@ -153,7 +153,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-child-marriage-male',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_child_marriage_male&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-child-marriage-male.zip?raw=true',
       source: {
@@ -169,7 +169,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-child-marriage-female',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_child_marriage_female&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-child-marriage-female.zip?raw=true',
       source: {
@@ -185,7 +185,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-remittance',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_remittance&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-remittance.zip?raw=true',
       source: {
@@ -201,7 +201,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-electricity',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_cooking_electricity&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-electricity.zip?raw=true',
       source: {
@@ -217,7 +217,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-charcoal',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_cooking_charcoal&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-charcoal.zip?raw=true',
       source: {
@@ -233,7 +233,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-firewood',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_cooking_firewood&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-firewood.zip?raw=true',
       source: {
@@ -249,7 +249,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-gas',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_cooking_gas&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-gas.zip?raw=true',
       source: {
@@ -265,7 +265,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-paraffin-stove',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_cooking_paraffin_stove&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-cooking-paraffin-stove.zip?raw=true',
       source: {
@@ -281,7 +281,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-electricity',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_lighting_electricity&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-electricity.zip?raw=true',
       source: {
@@ -297,7 +297,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-paraffin-lantern',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_lighting_paraffin_lantern&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-paraffin-lantern.zip?raw=true',
       source: {
@@ -313,7 +313,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-gas',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_lighting_gas&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-gas.zip?raw=true',
       source: {
@@ -329,7 +329,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-candle',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_lighting_candle&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-candle.zip?raw=true',
       source: {
@@ -345,7 +345,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-paraffin-tadooba',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_lighting_paraffin_tadooba&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-paraffin-tadooba.zip?raw=true',
       source: {
@@ -361,7 +361,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-firewood',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_energy_lighting_firewood&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-energy-lighting-firewood.zip?raw=true',
       source: {
@@ -376,7 +376,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-total-pop',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_total_pop&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-total-pop.zip?raw=true',
       source: {
@@ -391,7 +391,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-dens',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_pop_dens&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-dens.zip?raw=true',
       source: {
@@ -406,7 +406,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-growthrate',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_pop_growthrate&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-growthrate.zip?raw=true',
       source: {
@@ -422,7 +422,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-avg-house-size',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_avg_house_size&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-avg-house-size.zip?raw=true',
       source: {
@@ -438,7 +438,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-dependency-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_dependency_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-dependency-ratio.zip?raw=true',
       source: {
@@ -454,7 +454,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-urban-pop',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_urban_pop&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-urban-pop.zip?raw=true',
       source: {
@@ -470,7 +470,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-sex-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_pop_sex_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-pop-sex-ratio.zip?raw=true',
       source: {
@@ -485,7 +485,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-household-number',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_household_number&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-household-number.zip?raw=true',
       source: {
@@ -501,7 +501,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-leaving-exam-perf-rate',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_leaving_exam_perf_rate&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-leaving-exam-perf-rate.zip?raw=true',
       source: {
@@ -517,7 +517,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-enrol',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_enrol&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-enrol.zip?raw=true',
       source: {
@@ -532,7 +532,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-classroom-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_pupil_classroom_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-classroom-ratio.zip?raw=true',
       source: {
@@ -547,7 +547,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-classroom-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_pupil_classroom_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-classroom-ratio-gov.zip?raw=true',
       source: {
@@ -562,7 +562,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-classroom-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_pupil_classroom_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-classroom-ratio-priv.zip?raw=true',
       source: {
@@ -578,7 +578,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_stu_teach_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio.zip?raw=true',
       source: {
@@ -593,7 +593,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_stu_teach_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio-gov.zip?raw=true',
       source: {
@@ -608,7 +608,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_stu_teach_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-stu-teach-ratio-priv.zip?raw=true',
       source: {
@@ -623,7 +623,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-stance-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_pupil_stance_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-stance-ratio.zip?raw=true',
       source: {
@@ -638,7 +638,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-stance-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_pupil_stance_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-stance-ratio-gov.zip?raw=true',
       source: {
@@ -653,7 +653,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-stance-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_pupil_stance_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-pupil-stance-ratio-priv.zip?raw=true',
       source: {
@@ -670,7 +670,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-sit-write',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_sit_write&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-sit-write.zip?raw=true',
       source: {
@@ -687,7 +687,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-sit-write-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_sit_write_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-sit-write-gov.zip?raw=true',
       source: {
@@ -703,7 +703,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-educ-funding',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_primary_educ_funding&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-primary-educ-funding.zip?raw=true',
       source: {
@@ -719,7 +719,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-educ-spend',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_donor_educ_spend&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-educ-spend.zip?raw=true',
       source: {
@@ -735,7 +735,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-enrol',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_enrol&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-enrol.zip?raw=true',
       source: {
@@ -752,7 +752,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-sit-write-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_sit_write_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-sit-write-gov.zip?raw=true',
       source: {
@@ -769,7 +769,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-sit-write',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_sit_write&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-sit-write.zip?raw=true',
       source: {
@@ -785,7 +785,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-teach-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_teach_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-teach-ratio-gov.zip?raw=true',
       source: {
@@ -801,7 +801,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-teach-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_teach_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-teach-ratio.zip?raw=true',
       source: {
@@ -816,7 +816,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-classroom-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_classroom_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-classroom-ratio.zip?raw=true',
       source: {
@@ -831,7 +831,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-classroom-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_classroom_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-classroom-ratio-gov.zip?raw=true',
       source: {
@@ -846,7 +846,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-classroom-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_classroom_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-classroom-ratio-priv.zip?raw=true',
       source: {
@@ -861,7 +861,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-stance-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_stance_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-stance-ratio.zip?raw=true',
       source: {
@@ -876,7 +876,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-stance-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_stance_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-stance-ratio-gov.zip?raw=true',
       source: {
@@ -891,7 +891,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-stance-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_secondary_stu_stance_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-secondary-stu-stance-ratio-priv.zip?raw=true',
       source: {
@@ -907,7 +907,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-overall-health',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_overall_health&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-overall-health.zip?raw=true',
       source: {
@@ -923,7 +923,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-tb-success',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_tb_success&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-tb-success.zip?raw=true',
       source: {
@@ -939,7 +939,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-dpt3-coverage',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_dpt3_coverage&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-dpt3-coverage.zip?raw=true',
       source: {
@@ -955,7 +955,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-ipt2-coverage',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_ipt2_coverage&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-ipt2-coverage.zip?raw=true',
       source: {
@@ -971,7 +971,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-anc4-coverage',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_anc4_coverage&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-anc4-coverage.zip?raw=true',
       source: {
@@ -987,7 +987,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-posts',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_health_posts&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-posts.zip?raw=true',
       source: {
@@ -1003,7 +1003,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-hmis',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_hmis&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-hmis.zip?raw=true',
       source: {
@@ -1019,7 +1019,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-funding',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_health_funding&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-funding.zip?raw=true',
       source: {
@@ -1035,7 +1035,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-wash-perf-score',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_wash_perf_score&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-wash-perf-score.zip?raw=true',
       source: {
@@ -1051,7 +1051,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-household-water-coverage',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_household_water_coverage&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-household-water-coverage.zip?raw=true',
       source: {
@@ -1067,7 +1067,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-household-san-cov',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_household_san_cov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-household-san-cov.zip?raw=true',
       source: {
@@ -1083,7 +1083,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-rural-safe-water',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_rural_safe_water&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-rural-safe-water.zip?raw=true',
       source: {
@@ -1099,7 +1099,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-rural-water-func',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_rural_water_func&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-rural-water-func.zip?raw=true',
       source: {
@@ -1115,7 +1115,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-water-equity-rural',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_water_equity_rural&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-water-equity-rural.zip?raw=true',
       source: {
@@ -1131,7 +1131,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-water-source-comm-func',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_water_source_comm_func&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-water-source-comm-func.zip?raw=true',
       source: {
@@ -1147,7 +1147,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-water-women-position',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_water_women_position&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-water-women-position.zip?raw=true',
       source: {
@@ -1163,7 +1163,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-agri-percent',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_agri_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-agri-percent.zip?raw=true',
       source: {
@@ -1179,7 +1179,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-educ-percent',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_educ_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-educ-percent.zip?raw=true',
       source: {
@@ -1195,7 +1195,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-percent',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_health_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-health-percent.zip?raw=true',
       source: {
@@ -1211,7 +1211,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-local-percent',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_local_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-local-percent.zip?raw=true',
       source: {
@@ -1227,7 +1227,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-percent',
+        'http://212.111.41.68:8000/single_table?indicator=uganda_donor_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/uganda-donor-percent.zip?raw=true',
       source: {

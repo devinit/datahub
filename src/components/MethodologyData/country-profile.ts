@@ -9,7 +9,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age',
+        'http://212.111.41.68:8000/single_table?indicator=population_by_age&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/population-by-age.zip?raw=true',
       source: {
@@ -25,7 +25,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors',
+        'http://212.111.41.68:8000/single_table?indicator=intl_flows_donors&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-donors.zip?raw=true',
       source: {
@@ -40,7 +40,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$, NCU',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/domestic',
+        'http://212.111.41.68:8000/single_table?indicator=domestic&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/domestic.zip?raw=true',
       source: {
@@ -55,7 +55,7 @@ export default {
       methodology: '',
       uom: 'constant 2016 US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients',
+        'http://212.111.41.68:8000/single_table?indicator=intl_flows_recipients&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/intl-flows-recipients.zip?raw=true',
       source: {
@@ -71,7 +71,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190',
+        'http://212.111.41.68:8000/single_table?indicator=depth_of_extreme_poverty_190&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/depth-of-extreme-poverty-190.zip?raw=true',
       source: {
@@ -86,7 +86,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile',
+        'http://212.111.41.68:8000/single_table?indicator=income_share_by_quintile&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/income-share-by-quintile.zip?raw=true',
       source: {
@@ -101,7 +101,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/population-total',
+        'http://212.111.41.68:8000/single_table?indicator=population_total&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/population-total.zip?raw=true',
       source: { name: 'World Bank World Development Indicators', link: '' }
