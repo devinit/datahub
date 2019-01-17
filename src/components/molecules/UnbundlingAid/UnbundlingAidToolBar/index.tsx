@@ -7,6 +7,7 @@ import { KeyValue, Selections } from '../types';
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd';
 import { Intro } from '../../../atoms/Intro';
 import { howTo } from '../../../../utils/howTo';
+import { SelectionKey } from '../UnbundlingTreemap';
 
 export interface Props {
   aidType: string;
@@ -17,12 +18,12 @@ export interface Props {
   position?: number;
   values: KeyValue[];
   textAlign?: 'left' | 'right'| 'center';
-  onMove: (key: string) => void;
+  onMove: (key: string, keys: SelectionKey[]) => void;
   onChange: (key: string) => (value: string) => void;
 }
 
 export interface State {
-  keys: string[];
+  keys: SelectionKey[];
 }
 
 const ToolBarContainer: GlamorousComponent<any, any> = glamorous.div<{compact?: boolean}>(
@@ -46,7 +47,7 @@ export default class ToolBar extends React.Component<Props, State> {
     return obj ? obj.value : 'All';
   }
 
-  public static reorder(list: string[], startIndex: number, endIndex: number): string[] {
+  public static reorder(list: SelectionKey[], startIndex: number, endIndex: number): SelectionKey[] {
     const [ removed ] = list.splice(startIndex, 1); // gets a hold of the item
     list.splice(endIndex, 0, removed); // adds item in new place
 
@@ -66,7 +67,7 @@ export default class ToolBar extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    const keys = Object.keys(this.props.toolBarOptions).filter(key => key !== 'years');
+    const keys = Object.keys(this.props.toolBarOptions).filter(key => key !== 'years') as SelectionKey[];
     this.state = { keys };
     this.onDragEnd = this.onDragEnd.bind(this);
     this.captureVisualSentence = this.captureVisualSentence.bind(this);
@@ -75,12 +76,12 @@ export default class ToolBar extends React.Component<Props, State> {
   public onDragEnd(result: DropResult) {
     // dropped outside the list
     if (!result.destination) { return; }
-    const keys = ToolBar.reorder(
+    const keys: SelectionKey[] = ToolBar.reorder(
       this.state.keys,
       result.source.index,
       result.destination.index
     );
-    this.props.onMove(result.draggableId);
+    this.props.onMove(result.draggableId, keys);
     this.setState({
       keys
     });
