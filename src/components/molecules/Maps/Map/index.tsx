@@ -151,6 +151,7 @@ class Map extends React.Component<Props, State> {
                       year: this.state.currentYear,
                       indicator: this.meta.id
                     } }
+                    download
                   />
                 </Div>
               </Intro>

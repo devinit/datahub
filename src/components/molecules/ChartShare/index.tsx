@@ -62,6 +62,7 @@ export interface Props {
   background?: boolean;
   hover?: boolean;
   stateToShare?: StateToShare;
+  download?: boolean;
 }
 
 export interface State {
@@ -109,14 +110,9 @@ export default class ChartShare extends React.Component<Props, State> {
 
     return this.setState({ link: shortURL });
   }
-   // tslint:disable jsx-no-lambda
+  // tslint:disable jsx-no-lambda
   public render() {
     const { className, size, color, label, background, hover, fontSize, iconName, fontWeight } = this.props;
-    let url = '';
-    if (this.props.stateToShare && this.props.stateToShare.indicator) {
-      const indicator = this.props.stateToShare.indicator.split('.')[1].replace(/-/g, '_');
-      url = `${getWarehouseAPILink}/single_table?indicator=${indicator}&format=csv`;
-    }
 
     return (
       <Modal
@@ -129,10 +125,7 @@ export default class ChartShare extends React.Component<Props, State> {
                   { label || 'Share this chart' }
                 </Span>
               </Button>
-              <a href={ url } className="ui medium button" onClick={ this.stopPropagation }>
-                <i aria-hidden="true" className="download alternate icon"/>
-                Download Data
-              </a>
+              { this.renderDownloadButton() }
             </Button.Group>
           </ButtonWrapper>
         }
@@ -172,6 +165,25 @@ export default class ChartShare extends React.Component<Props, State> {
           </Modal.Description>
         </Modal.Content>
       </Modal>);
+  }
+
+  private renderDownloadButton() {
+    if (this.props.download) {
+      let url = '';
+      if (this.props.stateToShare && this.props.stateToShare.indicator) {
+        const indicator = this.props.stateToShare.indicator.split('.')[1].replace(/-/g, '_');
+        url = `${getWarehouseAPILink}/single_table?indicator=${indicator}&format=csv`;
+      }
+
+      return (
+        <a href={ url } className="ui medium button" onClick={ this.stopPropagation }>
+          <i aria-hidden="true" className="download alternate icon"/>
+          Download Data
+        </a>
+      );
+    }
+
+    return null;
   }
 
   private updateShareAnalytics(source: 'facebook' | 'twitter' | 'mail') {
