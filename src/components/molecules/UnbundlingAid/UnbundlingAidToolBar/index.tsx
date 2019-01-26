@@ -77,7 +77,7 @@ export default class ToolBar extends React.Component<Props, State> {
     // dropped outside the list
     if (!result.destination) { return; }
     const keys: SelectionKey[] = ToolBar.reorder(
-      this.state.keys,
+      this.state.keys.slice(),
       result.source.index,
       result.destination.index
     );
