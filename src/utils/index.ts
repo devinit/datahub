@@ -27,6 +27,8 @@ export interface PageMeta {
   height?: string;
 }
 
+export const getWarehouseAPILink = 'http://212.111.41.68:8000';
+
 export const createLinkMeta = (args: PageMetaArgs, obj: MenuItem): PageMeta => {
   let title = obj.name;
   if (obj.link === '/uganda') {

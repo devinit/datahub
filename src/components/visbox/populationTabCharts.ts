@@ -1,8 +1,8 @@
-import { blue, red } from '../theme/semantic';
+import { darkRed, lightRed, red } from '../theme/semantic';
 
 export const populationDistribution = {
   type: 'stacked-timearea',
-  colors: [ blue, red ],
+  colors: [ lightRed, red ],
   groupBy: 'group',
   linearAxis: {
     showAxis: true,
@@ -23,7 +23,7 @@ export const populationDistribution = {
 
 export const populationPerAgeBand = {
   type: 'stacked-timearea',
-  colors: [ blue, red, 'rgb(183, 193, 0)' ],
+  colors: [ lightRed, red, darkRed ],
   groupBy: 'band',
   linearAxis: {
     showAxis: true,

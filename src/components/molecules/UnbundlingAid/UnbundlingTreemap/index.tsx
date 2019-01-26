@@ -23,7 +23,7 @@ export interface Props {
   refetch: (variables: object) => any;
 }
 
-type SelectionKey = 'to' | 'from' | 'sectors' | 'channels' | 'forms' | 'years';
+export type SelectionKey = 'to' | 'from' | 'sectors' | 'channels' | 'forms' | 'years';
 
 export interface State {
   position: number;
@@ -88,35 +88,37 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     return value ? [ ...valuesItems, { key, value } ] : valuesItems;
   }
 
-  public static getActiveOption = (position: number): string =>
-    Object.keys(UnbundlingTreemap.groupers)[position]
-
   constructor(props: Props) {
     super(props);
 
-    const position = 1;
-    const keys = Object.keys(props.selections) as SelectionKey[];
+    const position = 0;
+    const keys = Object.keys(props.selections).filter(key => key !== 'years') as SelectionKey[];
     const values = [ { key: 'years', value: props.startYear.toString() } ];
     this.state = { position, keys, values, active: 'to' };
     this.history.push(this.state);
+    this.onMove = this.onMove.bind(this);
+    this.onZoomIn = this.onZoomIn.bind(this);
+    this.onZoomOut = this.onZoomOut.bind(this);
+    this.updateValue = this.updateValue.bind(this);
+
   }
 
-  public onZoomIn = ({ id, color }: Selected) => {
-    const position = this.state.position <= 1 ? 1 : this.state.position;
+  public onZoomIn({ id, color }: Selected) {
+    const position = this.state.position;
 
-    if ((position + 1) < Object.keys(UnbundlingTreemap.groupers).length) {
+    if ((position + 1) < this.state.keys.length) {
       // const newKey = this.state.keys[position + 1];
       // TODO: check if key already exists
-      const currentActive = UnbundlingTreemap.getActiveOption(position);
+      const currentActive = this.state.keys[position];
       const values = UnbundlingTreemap.addNewValue({ key: currentActive, value: id }, this.state.values);
-      const active = UnbundlingTreemap.getActiveOption(position + 1) as SelectionKey;
+      const active = this.state.keys[position + 1] as SelectionKey;
       this.setState({ position: position + 1, values, dimmerColor: color, active });
       this.history.push(this.state);
       this.fetch(active, values);
     } // else zoom out
   }
   // we store states in this.history such that zoom-out is just a reversal back through those states
-  public onZoomOut = () => {
+  public onZoomOut() {
     // remove latest history item
     const newHistory = init(this.history);
     const latestHistory = last(newHistory);
@@ -126,22 +128,29 @@ class UnbundlingTreemap extends React.Component<Props, State> {
     this.fetch(latestHistory.active, latestHistory.values);
   }
 
-  public updateValue = (key: string) => (value: string) => {
-    // making sure we dont have duplicates
-    const values = UnbundlingTreemap.addNewValue({ key, value }, this.state.values);
-    const active = UnbundlingTreemap.getActiveOption(this.state.position) as SelectionKey;
-    this.setState({ values, active });
-    this.history.push(this.state);
-    this.fetch(active, values);
+  public updateValue(key: string) {
+    return (value: string) => {
+      // making sure we dont have duplicates
+      const values = UnbundlingTreemap.addNewValue({ key, value }, this.state.values);
+      const active = this.state.keys[this.state.position] as SelectionKey;
+      this.setState({ values, active });
+      this.history.push(this.state);
+      this.fetch(active, values);
+    };
   }
 
-  public onMove = (key: string) => {
-    const groupersKeys = Object.keys(UnbundlingTreemap.groupers) as SelectionKey[];
-    const activeKeyPosition = indexOf(key, groupersKeys);
-    this.setState({ position: activeKeyPosition, active: key as SelectionKey });
-    this.history.push(this.state);
+  public onMove(key: string, keys: SelectionKey[]) {
+    const keyPosition = indexOf(key, keys);
+    const oldPosition = indexOf(key, this.state.keys);
+    if (keyPosition === this.state.position || oldPosition === this.state.position) {
+      this.setState({ active: key as SelectionKey, keys });
+      this.history.push(this.state);
 
-    return this.fetch(key, this.state.values);
+      const keyToFetch = keyPosition === this.state.position ? key : keys[oldPosition];
+      this.fetch(keyToFetch, this.state.values);
+    } else {
+      this.setState({ keys });
+    }
   }
 
   public fetch(active: string, values: KeyValue[]) {
@@ -215,20 +224,25 @@ class UnbundlingTreemap extends React.Component<Props, State> {
                       onClick={ this.onZoomIn }
                     />
                   }
-                  {
-                    this.state.position <= 1
-                      ? ''
-                      :
-                      <Up className="up" onClick={ this.onZoomOut }>
-                        <Icon name={ 'chevron left' } size="big" inverted />
-                      </Up>
-                  }
+                  { this.renderBackButton() }
               </Intro>
             </Container>
         }
 
       </div>
     );
+  }
+
+  private renderBackButton() {
+    if (this.state.position > 0) {
+      return (
+        <Up className="up" onClick={ this.onZoomOut }>
+          <Icon name={ 'chevron left' } size="big" inverted />
+        </Up>
+      );
+    }
+
+    return null;
   }
 }
 

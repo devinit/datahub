@@ -25,8 +25,8 @@ export interface Props {
   hasflags: boolean;
   router?: SingletonRouter;
   data: {
-    largest: Data[];
-    smallest: Data[];
+    highest: Data[];
+    lowest: Data[];
   };
 }
 

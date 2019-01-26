@@ -31,7 +31,7 @@ const SocialMediaBar = (props?: Props) => (
   <LightBg>
     <Grid centered columns={ 16 }>
       <Grid.Row centered >
-        <Grid.Column width={ 2 }>
+        <Grid.Column width={ 6 } style={ { textAlign: 'center' } }>
           { (process as any).browser ?
             <div>
               <SocialIcon
@@ -60,16 +60,16 @@ const SocialMediaBar = (props?: Props) => (
       </Grid.Row>
       <Intro step={ 4 } intro={ howTo.unbundlingAid.share } style={ { paddingLeft: '1em' } }>
         <Grid.Row>
-          <Grid.Column width={ 3 }>
+          <Grid.Column width={ 6 }>
               <ChartShare
-                label="share this chart view"
-                className="no-background"
+                label="Share this chart"
                 size="medium"
                 fontSize="1.1em"
                 fontWeight="500"
                 iconName="linkify"
-                color="grey"
+                color="black"
                 stateToShare={ props && props.stateToShare ? props.stateToShare : {} }
+                download
               />
           </Grid.Column>
         </Grid.Row>

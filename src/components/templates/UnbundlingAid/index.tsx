@@ -44,6 +44,7 @@ export default class extends React.Component<Props> {
 
   render() {
     const props = this.props;
+    const indicator = props.aidType === 'oda' ? 'fact.oda_constant_new' : 'fact.oof_constant';
 
     return (
       <Generic>
@@ -81,7 +82,7 @@ export default class extends React.Component<Props> {
           process.env.NODE_ENV !== 'test'
             ?
             <section style={ { paddingTop: '2em' } }>
-              <SocialMediaBar />
+              <SocialMediaBar stateToShare={ { indicator } }/>
             </section>
             : ''
         }

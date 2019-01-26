@@ -10,7 +10,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-agri-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_agri_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-agri-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -22,7 +22,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-donor-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_donor_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-donor-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -34,7 +34,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-educ-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_educ_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-educ-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -46,7 +46,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_health_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -58,7 +58,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_water_per_of_revenue&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-water-per-of-revenue.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -70,7 +70,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-local-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_local_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-local-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -82,7 +82,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-equitable-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_equitable_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-equitable-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -94,7 +94,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_conditional_percent&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-conditional-percent.zip?raw=true',
       source: { name: 'Contoller of Budget', link: null }
@@ -106,7 +106,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-ecde-ner-boys',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_ecde_ner_boys&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-ecde-ner-boys.zip?raw=true',
       source: {
@@ -121,7 +121,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-ecde-ner-girls',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_ecde_ner_girls&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-ecde-ner-girls.zip?raw=true',
       source: {
@@ -136,7 +136,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-av-size-gov',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_av_size_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-av-size-gov.zip?raw=true',
       source: {
@@ -151,7 +151,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-av-size-priv',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_av_size_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-av-size-priv.zip?raw=true',
       source: {
@@ -166,7 +166,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-ner-boys',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_ner_boys&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-ner-boys.zip?raw=true',
       source: {
@@ -181,7 +181,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-ner-girls',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_ner_girls&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-ner-girls.zip?raw=true',
       source: {
@@ -196,7 +196,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-stu-teach-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_stu_teach_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-stu-teach-ratio.zip?raw=true',
       source: {
@@ -211,7 +211,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-stu-teach-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_stu_teach_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-stu-teach-ratio-gov.zip?raw=true',
       source: {
@@ -226,7 +226,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-stu-teach-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_primary_stu_teach_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-primary-stu-teach-ratio-priv.zip?raw=true',
       source: {
@@ -241,7 +241,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-av-size-gov',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_av_size_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-av-size-gov.zip?raw=true',
       source: {
@@ -256,7 +256,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-av-size-priv',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_av_size_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-av-size-priv.zip?raw=true',
       source: {
@@ -271,7 +271,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-ner-boys',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_ner_boys&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-ner-boys.zip?raw=true',
       source: {
@@ -286,7 +286,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-ner-girls',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_ner_girls&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-ner-girls.zip?raw=true',
       source: {
@@ -301,7 +301,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-stu-teach-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_stu_teach_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-stu-teach-ratio.zip?raw=true',
       source: {
@@ -316,7 +316,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-stu-teach-ratio-gov',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_stu_teach_ratio_gov&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-stu-teach-ratio-gov.zip?raw=true',
       source: {
@@ -331,7 +331,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-stu-teach-ratio-priv',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_secondary_stu_teach_ratio_priv&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-secondary-stu-teach-ratio-priv.zip?raw=true',
       source: {
@@ -346,7 +346,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-births-attendance',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_births_attendance&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-births-attendance.zip?raw=true',
       source: {
@@ -363,7 +363,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-contraceptives',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_contraceptives&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-contraceptives.zip?raw=true',
       source: {
@@ -379,7 +379,7 @@ export default {
       methodology: '',
       uom: 'US$',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-funding',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_health_funding&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-funding.zip?raw=true',
       source: {
@@ -396,7 +396,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-malaria-drugs-under5',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_malaria_drugs_under5&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-malaria-drugs-under5.zip?raw=true',
       source: {
@@ -412,7 +412,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-measles-vaccine',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_measles_vaccine&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-measles-vaccine.zip?raw=true',
       source: {
@@ -428,7 +428,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-mosquito-nets',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_mosquito_nets&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-mosquito-nets.zip?raw=true',
       source: {
@@ -444,7 +444,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-mosquito-nets-under5',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_mosquito_nets_under5&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-mosquito-nets-under5.zip?raw=true',
       source: {
@@ -460,7 +460,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-diarrhoea',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_diarrhoea&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-diarrhoea.zip?raw=true',
       source: {
@@ -475,7 +475,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-maternal-mortality',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_maternal_mortality&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-maternal-mortality.zip?raw=true',
       source: { name: 'Socio - Economic Atlas of Kenya 2016', link: null }
@@ -487,7 +487,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-child-mortality',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_child_mortality&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-child-mortality.zip?raw=true',
       source: { name: 'Socio - Economic Atlas of Kenya 2016', link: null }
@@ -498,7 +498,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-measles-immunisation',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_measles_immunisation&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-measles-immunisation.zip?raw=true',
       source: {
@@ -513,7 +513,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-insurance-prop-pop',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_health_insurance_prop_pop&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-health-insurance-prop-pop.zip?raw=true',
       source: {
@@ -528,7 +528,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-avg-house-size',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_avg_house_size&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-avg-house-size.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2006', link: null }
@@ -540,7 +540,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-dependency-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_dependency_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-dependency-ratio.zip?raw=true',
       source: {
@@ -554,7 +554,7 @@ export default {
       methodology: '',
       uom: '%',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-female-head',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_household_female_head&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-female-head.zip?raw=true',
       source: {
@@ -568,7 +568,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-number',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_household_number&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-number.zip?raw=true',
       source: {
@@ -583,7 +583,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-birthrate',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_pop_birthrate&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-birthrate.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
@@ -595,7 +595,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-deathrate',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_pop_deathrate&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-deathrate.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2016', link: null }
@@ -606,7 +606,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-dens',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_pop_dens&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-dens.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2012', link: null }
@@ -618,7 +618,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-sex-ratio',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_pop_sex_ratio&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-sex-ratio.zip?raw=true',
       source: {
@@ -632,7 +632,7 @@ export default {
       methodology: '',
       uom: 'unit',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_total_pop&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-total-pop.zip?raw=true',
       source: {
@@ -647,7 +647,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-urban-pop',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_urban_pop&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-urban-pop.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2015', link: null }
@@ -658,7 +658,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_disability&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-disability.zip?raw=true',
       source: { name: 'Kenya Integrated Budget Survey 2015/16', link: null }
@@ -671,7 +671,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-disability-engage-econ',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_pop_disability_engage_econ&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-pop-disability-engage-econ.zip?raw=true',
       source: {
@@ -686,7 +686,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-hdi',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_hdi&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-hdi.zip?raw=true',
       source: {
@@ -701,7 +701,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_poverty_gap&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-gap.zip?raw=true',
       source: {
@@ -717,7 +717,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_poverty_headcount&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-headcount.zip?raw=true',
       source: {
@@ -733,7 +733,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_poverty_meanpp_exp&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-meanpp-exp.zip?raw=true',
       source: {
@@ -749,7 +749,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-hardcore',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_poverty_hardcore&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-hardcore.zip?raw=true',
       source: {
@@ -765,7 +765,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-food',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_poverty_food&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-poverty-food.zip?raw=true',
       source: {
@@ -781,7 +781,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-com',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_household_san_com&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-com.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
@@ -793,7 +793,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_household_san_fac&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-san-fac.zip?raw=true',
       source: {
@@ -808,7 +808,7 @@ export default {
       methodology: '',
       uom: '',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-water-com',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_household_water_com&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-household-water-com.zip?raw=true',
       source: { name: 'The Socio-Economic Atlas of Kenya 2014', link: null }
@@ -819,7 +819,7 @@ export default {
       methodology: '',
       uom: 'percent',
       csv:
-        'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water',
+        'http://212.111.41.68:8000/single_table?indicator=kenya_safe_water&format=csv',
       zip:
         'https://github.com/devinit/digital-platform/blob/master/user-data/kenya-safe-water.zip?raw=true',
       source: {
