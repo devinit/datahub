@@ -88,7 +88,12 @@ export default class ChartShare extends React.Component<Props, State> {
     this.createLink(this.props);
   }
   public componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) { this.createLink(nextProps); }
+    if (nextProps.stateToShare) {
+      const prevStateToShare = this.props.stateToShare ? JSON.stringify(this.props.stateToShare) : '';
+      if (JSON.stringify(nextProps.stateToShare) !== prevStateToShare) {
+        this.createLink(nextProps);
+      }
+    }
   }
   public onLinkChange = () => this.createLink(this.props);
 
@@ -107,8 +112,9 @@ export default class ChartShare extends React.Component<Props, State> {
         { ...props.stateToShare, year: null } : props.stateToShare;
     const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
+    this.setState({ link: shortURL });
 
-    return this.setState({ link: shortURL });
+    return shortURL;
   }
   // tslint:disable jsx-no-lambda
   public render() {
