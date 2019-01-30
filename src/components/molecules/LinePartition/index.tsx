@@ -107,7 +107,7 @@ export default class LinePartition extends React.Component<Props, State> {
       <Container>
         { this.renderLinePartitionHeader(!this.props.inverted || !tree.length) }
         <Grid style={ { paddingBottom: '40px' } }>
-          <Grid.Column mobile={ 16 } computer={ 5 } width={ 5 } style={ { padding: 0 } }>
+          <Grid.Column mobile={ 16 } computer={ 5 } style={ { padding: 0 } }>
             <Intro step={ 2 } intro={ howTo.countryProfile.governmentFinance.timeline }>
               <CardContainer>
                 <Timeline
@@ -130,7 +130,7 @@ export default class LinePartition extends React.Component<Props, State> {
             </Intro>
           </Grid.Column>
 
-          <Grid.Column mobile={ 16 } computer={ 11 } width={ 11 } style={ { padding: 0 } }>
+          <Grid.Column mobile={ 16 } computer={ 11 } style={ { padding: 0 } }>
             { this.renderTreeChart(tree, showLegend) }
           </Grid.Column>
         </Grid>

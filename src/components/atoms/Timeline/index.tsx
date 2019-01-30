@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ReactResizeDetector from 'react-resize-detector';
 import { draw } from '@devinit/charts';
 
 export interface Props {
@@ -15,8 +16,10 @@ class Timeline extends React.Component<Props> {
   public props: Props;
   public element: HTMLDivElement | null;
 
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
+
+    this.onResize = this.onResize.bind(this);
   }
 
   public render() {
@@ -24,7 +27,9 @@ class Timeline extends React.Component<Props> {
       <div
         ref={ element => { this.element = element; } }
         style={ { width: this.props.width || '100%', height: this.props.height } }
-      />
+      >
+        <ReactResizeDetector handleWidth onResize={ this.onResize }/>
+      </div>
     );
   }
 
@@ -56,6 +61,12 @@ class Timeline extends React.Component<Props> {
       this.chart = xchart;
       xchart.onAnchorMoved(props.onYearChanged);
     });
+  }
+
+  private onResize() {
+    this.chart.destroy();
+    this.chart = undefined;
+    this.renderChart(this.props);
   }
 }
 
