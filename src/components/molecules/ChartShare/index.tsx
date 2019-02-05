@@ -79,6 +79,8 @@ export default class ChartShare extends React.Component<Props, State> {
     link: '',
     value: 2 // TODO:  why not a boolean
   };
+  private noDownloadSupport = [ 'survey_p20', 'subnational_p20' ];
+
   constructor(props: Props) {
     super(props);
 
@@ -174,11 +176,16 @@ export default class ChartShare extends React.Component<Props, State> {
   }
 
   private renderDownloadButton() {
-    if (this.props.download) {
+    const { download, stateToShare } = this.props;
+    if (download) {
       let url = '';
-      if (this.props.stateToShare && this.props.stateToShare.indicator) {
-        const indicator = this.props.stateToShare.indicator.split('.')[1].replace(/-/g, '_');
+      if (stateToShare && stateToShare.indicator && this.noDownloadSupport.indexOf(stateToShare.indicator) === -1) {
+        const indicator = stateToShare.indicator.indexOf('.') > -1
+          ? stateToShare.indicator.split('.')[1].replace(/-/g, '_')
+          : stateToShare.indicator;
         url = `${getWarehouseAPILink}/single_table?indicator=${indicator}&format=csv`;
+      } else {
+        return null;
       }
 
       return (
