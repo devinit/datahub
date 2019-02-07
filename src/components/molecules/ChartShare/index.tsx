@@ -79,6 +79,8 @@ export default class ChartShare extends React.Component<Props, State> {
     link: '',
     value: 2 // TODO:  why not a boolean
   };
+  private noDownloadSupport = [ 'survey_p20', 'subnational_p20' ];
+
   constructor(props: Props) {
     super(props);
 
@@ -88,7 +90,12 @@ export default class ChartShare extends React.Component<Props, State> {
     this.createLink(this.props);
   }
   public componentWillReceiveProps(nextProps: Props) {
-    if (nextProps !== this.props) { this.createLink(nextProps); }
+    if (nextProps.stateToShare) {
+      const prevStateToShare = this.props.stateToShare ? JSON.stringify(this.props.stateToShare) : '';
+      if (JSON.stringify(nextProps.stateToShare) !== prevStateToShare) {
+        this.createLink(nextProps);
+      }
+    }
   }
   public onLinkChange = () => this.createLink(this.props);
 
@@ -101,14 +108,15 @@ export default class ChartShare extends React.Component<Props, State> {
   // checkedoption i.e 1 is default 2 is as configured
   public async createLink(props: Props, checkedOption = 2) {
     if (!props.stateToShare) { return this.state; }
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.href.split('?')[0];
     const chartState =
       checkedOption === 1 && props.stateToShare ?
         { ...props.stateToShare, year: null } : props.stateToShare;
     const link = `${currentUrl}?state=${JSON.stringify(chartState)}`;
     const shortURL: string = link.includes('localhost') ? link : await getShortURL(link);
+    this.setState({ link: shortURL });
 
-    return this.setState({ link: shortURL });
+    return shortURL;
   }
   // tslint:disable jsx-no-lambda
   public render() {
@@ -168,11 +176,16 @@ export default class ChartShare extends React.Component<Props, State> {
   }
 
   private renderDownloadButton() {
-    if (this.props.download) {
+    const { download, stateToShare } = this.props;
+    if (download) {
       let url = '';
-      if (this.props.stateToShare && this.props.stateToShare.indicator) {
-        const indicator = this.props.stateToShare.indicator.split('.')[1].replace(/-/g, '_');
+      if (stateToShare && stateToShare.indicator && this.noDownloadSupport.indexOf(stateToShare.indicator) === -1) {
+        const indicator = stateToShare.indicator.indexOf('.') > -1
+          ? stateToShare.indicator.split('.')[1].replace(/-/g, '_')
+          : stateToShare.indicator;
         url = `${getWarehouseAPILink}/single_table?indicator=${indicator}&format=csv`;
+      } else {
+        return null;
       }
 
       return (
