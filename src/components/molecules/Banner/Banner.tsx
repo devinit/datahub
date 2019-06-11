@@ -7,6 +7,7 @@ const messageStyles = css({
   textAlign: 'center',
   marginBottom: '0 !important',
   marginTop: '1rem !important',
+  borderRadius: '0 !important',
   backgroundColor: '#fee7c1 !important'
 });
 const textStyle = css({
@@ -26,7 +27,7 @@ class Banner extends React.Component {
   render() {
     if (this.state.showBanner) {
       return (
-        <Message warning { ...messageStyles } floating size="big">
+        <Message warning { ...messageStyles } floating size="large">
           <Grid columns={ 2 } container stackable>
             <Grid.Row>
               <Grid.Column width={ 1 }>
