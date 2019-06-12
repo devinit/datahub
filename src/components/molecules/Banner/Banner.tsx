@@ -8,7 +8,8 @@ const messageStyles = css({
   marginBottom: '0 !important',
   marginTop: '1rem !important',
   borderRadius: '0 !important',
-  backgroundColor: '#fee7c1 !important'
+  backgroundColor: '#fee7c1 !important',
+  color: '#794b02 !important'
 });
 const textStyle = css({
   fontWeight: 'bold',
