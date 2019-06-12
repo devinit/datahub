@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { css } from 'glamor';
-import { Grid, Message } from 'semantic-ui-react';
+import { Container, Grid, Message } from 'semantic-ui-react';
 import * as localforage from 'localforage';
 
 const messageStyles = css({
   textAlign: 'center',
   marginBottom: '0 !important',
-  marginTop: '1rem !important',
-  borderRadius: '0 !important',
   backgroundColor: '#fee7c1 !important',
   color: '#794b02 !important'
 });
@@ -28,21 +26,23 @@ class Banner extends React.Component {
   render() {
     if (this.state.showBanner) {
       return (
-        <Message warning { ...messageStyles } floating size="large">
-          <Grid columns={ 2 } container stackable>
-            <Grid.Row>
-              <Grid.Column width={ 1 }>
-                <i aria-hidden="true" className="icon warning sign big"/>
-              </Grid.Column>
-              <Grid.Column width={ 15 } { ...textStyle }>
-                The Development Data Hub is not currently displaying the most up-to-date data,
-                as it is soon to undergo redevelopment.
-                If you have any data-related questions please email info@devinit.org
-              </Grid.Column>
-            </Grid.Row>
-          <i aria-hidden="true" className="icon close" { ...closeButtonStyles } onClick={ this.onClose }/>
-          </Grid>
-        </Message>
+        <Container style={ { padding: '1rem' } }>
+          <Message warning { ...messageStyles } floating size="large">
+            <Grid columns={ 2 } container stackable>
+              <Grid.Row>
+                <Grid.Column width={ 1 }>
+                  <i aria-hidden="true" className="icon warning sign big"/>
+                </Grid.Column>
+                <Grid.Column width={ 15 } { ...textStyle }>
+                  The Development Data Hub is not currently displaying the most up-to-date data,
+                  as it is soon to undergo redevelopment.
+                  If you have any data-related questions please email info@devinit.org
+                </Grid.Column>
+              </Grid.Row>
+            <i aria-hidden="true" className="icon close" { ...closeButtonStyles } onClick={ this.onClose }/>
+            </Grid>
+          </Message>
+        </Container>
       );
     }
 
