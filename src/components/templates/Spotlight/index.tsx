@@ -1,5 +1,7 @@
 import { capitalize } from '@devinit/prelude/lib/strings';
+import { css } from 'glamor';
 import { Div, H4, Img } from 'glamorous';
+import Link from 'next/link';
 import router from 'next/router';
 import * as React from 'react';
 import { Container, Grid, Icon } from 'semantic-ui-react';
@@ -10,11 +12,9 @@ import DynamicMap from '../../organisms/Map/DynamicMap';
 import SpotLightNavTabsKe, { SpotlightKeProps } from '../../organisms/NavBarTabs/spotlightKe';
 import SpotLightNavTabsUg, { SpotlightUgProps } from '../../organisms/NavBarTabs/spotlightUg';
 import { getSpotlightPageData } from '../../pageData';
+import { mediaQueries } from '../../theme';
 import { Country } from '../../types';
 import Generic from '../Generic';
-import Link from 'next/link';
-import { css } from 'glamor';
-import { mediaQueries } from '../../theme';
 
 const responsiveCountryProfile = css({
   [mediaQueries.phone]: {
@@ -41,7 +41,7 @@ export default class Spotlight extends React.Component<Props> {
     const navState = { state: this.props.state } as SpotlightKeProps | SpotlightUgProps;
 
     return (
-      <Generic >
+      <Generic>
         <Container>
           <H4 paddingTop="2em" position="absolute" right="20%" { ...responsiveCountryProfile }>
             { this.renderCountryFlag() }

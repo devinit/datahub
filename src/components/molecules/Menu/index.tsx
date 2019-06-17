@@ -1,3 +1,4 @@
+import { css } from 'glamor';
 import glamorous from 'glamorous';
 import { red, white } from '../../theme/semantic';
 import { Container } from 'semantic-ui-react';
@@ -22,13 +23,15 @@ const MenuContainer = glamorous.div({
   height: '57px'
 });
 
+const containerStyles = css({ overflow: 'hidden !important' });
+
 export type Props = Menu & {
   nextLink?: React.ComponentClass<LinkState>;
 };
 
 const menu = (props: Props) =>
   <MenuContainer>
-    <Container>
+    <Container { ...containerStyles }>
       <Logo />
       <DesktopMenu { ...props } />
       <MobileMenu { ...props } />
