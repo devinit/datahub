@@ -70,7 +70,7 @@
     "react-beautiful-dnd": "6.0.2",
     "react-dom": "^16.6.3",
     "react-intersection-observer": "3.0.3",
-    "react-redux": "5.0.7",
+    "react-redux": "5.1.2",
     "react-resize-detector": "^3.4.0",
     "redux": "3.7.2",
     "semantic-ui-react": "^0.84.0"
