@@ -115,7 +115,7 @@
     "pre-commit": "^1.2.2",
     "pretty-format": "22.4.3",
     "progress-bar-webpack-plugin": "1.11.0",
-    "react-test-renderer": "16.2.0",
+    "react-test-renderer": "16.14.0",
     "start-server-and-test": "1.1.0",
     "ts-jest": "22.4.4",
     "ts-loader": "3.5.0",
